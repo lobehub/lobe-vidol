@@ -1,0 +1,39 @@
+{
+  "background_color": "#000000",
+  "description": "Make Virtual Idols Accessible To EveryOne!",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/maskable-icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/maskable-icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "id": "/",
+  "name": "VChat.Chat",
+  "orientation": "portrait",
+  "scope": "/",
+  "short_name": "VChat",
+  "splash_pages": null,
+  "start_url": ".",
+  "theme_color": "#000000"
+}
