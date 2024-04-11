@@ -1,9 +1,12 @@
+import { inject } from '@vercel/analytics';
 import { cookies } from 'next/headers';
 import { PropsWithChildren } from 'react';
 
 import { VIDOL_THEME_APPEARANCE } from '@/constants/common';
 import Layout from '@/layout';
 import StyleRegistry from './StyleRegistry';
+
+inject();
 
 const RootLayout = ({ children }: PropsWithChildren) => {
   // get default theme config to use with ssr
