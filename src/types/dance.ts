@@ -12,6 +12,10 @@ export interface Dance {
    */
   danceId: string;
   /**
+   * 创建时间
+   */
+  createAt: string;
+  /**
    * 舞蹈名
    */
   name: string;
@@ -27,4 +31,8 @@ export interface Dance {
    * 缩略图
    */
   thumb: string;
+  /**
+   * 数据结构版本
+   */
+  schemaVersion: number;
 }
