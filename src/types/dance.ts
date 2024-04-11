@@ -8,6 +8,10 @@ export interface Dance {
    */
   cover: string;
   /**
+   * 创建时间
+   */
+  createAt: string;
+  /**
    * 舞蹈 ID
    */
   danceId: string;
@@ -19,6 +23,10 @@ export interface Dance {
    * 说明文件
    */
   readme: string;
+  /**
+   * 数据结构版本
+   */
+  schemaVersion: number;
   /**
    * 舞蹈文件
    */

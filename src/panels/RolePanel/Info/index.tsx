@@ -1,6 +1,6 @@
 import { sessionSelectors, useSessionStore } from '@/store/session';
 import { Avatar, FormFooter } from '@lobehub/ui';
-import { Button, Form, Input, Upload, message } from 'antd';
+import { Button, Form, Input, message } from 'antd';
 import { createStyles } from 'antd-style';
 import classNames from 'classnames';
 import React from 'react';
@@ -103,25 +103,25 @@ const Info = (props: InfoProps) => {
           </div>
           <div className={styles.more}>
             <FormItem label={'头像'} name={['meta', 'avatar']}>
-              <Upload
+              {/* <Upload
                 showUploadList={false}
                 // action="https://run.mocky.io/v3/435e224c-44fb-4773-9faf-380c5e6a2188"
                 // beforeUpload={beforeUpload}
                 // onChange={handleChange}
-              >
-                <Avatar shape="circle" size={96} src={avatar} />
-              </Upload>
+              > */}
+              <Avatar shape="circle" size={96} src={avatar} />
+              {/* </Upload> */}
             </FormItem>
             <FormItem label={'封面'} name={['meta', 'cover']}>
-              <Upload
+              {/* <Upload
                 showUploadList={false}
                 // action="https://run.mocky.io/v3/435e224c-44fb-4773-9faf-380c5e6a2188"
                 // beforeUpload={beforeUpload}
                 // onChange={handleChange}
-              >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img alt="example" src={cover} width={200} />
-              </Upload>
+              > */}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img alt="example" src={cover} width={220} />
+              {/* </Upload> */}
             </FormItem>
           </div>
         </div>
