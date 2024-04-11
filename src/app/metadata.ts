@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 
 import pkg from '../../package.json';
 
-const title = 'VChat';
+const title = 'Vidol';
 const { description, homepage } = pkg;
 
 const metadata: Metadata = {
@@ -44,7 +44,7 @@ const metadata: Metadata = {
 
   title: {
     default: title,
-    template: '%s · VChat',
+    template: '%s · Vidol',
   },
 };
 

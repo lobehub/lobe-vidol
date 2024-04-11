@@ -29,10 +29,10 @@
     }
   ],
   "id": "/",
-  "name": "VChat.Chat",
+  "name": "Vidol.Chat",
   "orientation": "portrait",
   "scope": "/",
-  "short_name": "VChat",
+  "short_name": "Vidol",
   "splash_pages": null,
   "start_url": ".",
   "theme_color": "#000000"

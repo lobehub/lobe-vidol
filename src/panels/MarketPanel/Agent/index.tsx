@@ -47,7 +47,7 @@ const Agent = (props: AgentProps) => {
     <div className={classNames(className, styles.container)} style={style}>
       <div className={styles.content}>
         <Center>
-          <h1 className={styles.title}>Find Your Lovest VChat</h1>
+          <h1 className={styles.title}>Find Your Lovest Vidol</h1>
           <GridBackground
             animation
             className={styles.background}

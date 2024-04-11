@@ -7,7 +7,7 @@ const PageLoading = ({ title }: { title: string }) => {
   return (
     <Flexbox height={'100%'} width={'100%'}>
       <Center flex={1} gap={12} width={'100%'}>
-        <Logo extra={'VChat'} size={48} type={'combine'} />
+        <Logo extra={'Vidol'} size={48} type={'combine'} />
         <Center gap={16} horizontal>
           <Icon icon={Loader2} spin />
           {title}

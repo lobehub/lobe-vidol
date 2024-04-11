@@ -1,6 +1,6 @@
 <div align="center"><a name="readme-top"></a>
 
-<h1>@LobeHub/VChat</h1>
+<h1>@LobeHub/Vidol</h1>
 
 Make Virtual Idols Accessible To EveryOne!
 
@@ -42,8 +42,8 @@ Or clone it for local development:
 [![][bun-shield]][bun-link]
 
 ```bash
-$ git clone https://github.com/lobehub/lobe-vchat.git
-$ cd lobe-vchat
+$ git clone https://github.com/lobehub/lobe-vidol.git
+$ cd lobe-vidol
 $ bun install
 $ bun dev
 ```
@@ -72,9 +72,9 @@ Contributions of all types are more than welcome, if you are interested in contr
 
 ### More Products
 
-- **[VChat chat market](https://github.com/v-idol/vidol-chat-agents)** - This is the Market Index of VChat Chat. VChat accesses index.json from this repo to show user the list of available agents.
-- **[VChat agent sample](https://github.com/v-idol/vidol-agent-sample)** - This is the sample repo to define an AI agent in VChat.
-- **[VChat dance sample](https://github.com/v-idol/vidol-dance-sample)** - This is the sample repo to define a dance in VChat.
+- **[Vidol chat market](https://github.com/v-idol/vidol-chat-agents)** - This is the Market Index of Vidol Chat. Vidol accesses index.json from this repo to show user the list of available agents.
+- **[Vidol agent sample](https://github.com/v-idol/vidol-agent-sample)** - This is the sample repo to define an AI agent in Vidol.
+- **[Vidol dance sample](https://github.com/v-idol/vidol-dance-sample)** - This is the sample repo to define a dance in Vidol.
 
 ### Credits
 
@@ -98,25 +98,25 @@ This project is [MIT](./LICENSE) licensed.
 
 [profile-link]: https://github.com/lobehub
 [back-to-top]: https://img.shields.io/badge/-BACK_TO_TOP-black?style=flat-square
-[github-issues-link]: https://github.com/lobehub/lobe-vchat/issues
+[github-issues-link]: https://github.com/lobehub/lobe-vidol/issues
 [pr-welcome-shield]: https://img.shields.io/badge/%F0%9F%A4%AF%20PR%20WELCOME-%E2%86%92-ffcb47?labelColor=black&style=for-the-badge
-[pr-welcome-link]: https://github.com/lobehub/lobe-vchat/pulls
+[pr-welcome-link]: https://github.com/lobehub/lobe-vidol/pulls
 [github-contrib-shield]: https://contrib.rocks/image?repo=lobehub%2Fvidol.chat
-[github-contrib-link]: https://github.com/lobehub/lobe-vchat/graphs/contributors
+[github-contrib-link]: https://github.com/lobehub/lobe-vidol/graphs/contributors
 [back-to-top]: https://img.shields.io/badge/-BACK_TO_TOP-black?style=flat-square
 [github-codespace-shield]: https://github.com/codespaces/badge.svg
-[github-codespace-link]: https://codespaces.new/lobehub/lobe-vchat
+[github-codespace-link]: https://codespaces.new/lobehub/lobe-vidol
 [bun-shield]: https://img.shields.io/badge/-speedup%20with%20bun-black?logo=bun&style=for-the-badge
 [bun-link]: https://bun.sh
 [back-to-top]: https://img.shields.io/badge/-BACK_TO_TOP-black?style=flat-square
 [back-to-top]: https://img.shields.io/badge/-BACK_TO_TOP-black?style=flat-square
-[github-contributors-shield]: https://img.shields.io/github/contributors/lobehub/lobe-vchat?color=c4f042&labelColor=black&style=flat-square
-[github-contributors-link]: https://github.com/lobehub/lobe-vchat/graphs/contributors
-[github-forks-shield]: https://img.shields.io/github/forks/lobehub/lobe-vchat?color=8ae8ff&labelColor=black&style=flat-square
-[github-forks-link]: https://github.com/lobehub/lobe-vchat/network/members
-[github-stars-shield]: https://img.shields.io/github/stars/lobehub/lobe-vchat?color=ffcb47&labelColor=black&style=flat-square
-[github-stars-link]: https://github.com/lobehub/lobe-vchat/network/stargazers
-[github-issues-shield]: https://img.shields.io/github/issues/lobehub/lobe-vchat?color=ff80eb&labelColor=black&style=flat-square
-[github-issues-link]: https://github.com/lobehub/lobe-vchat/issues
-[github-license-shield]: https://img.shields.io/github/license/lobehub/lobe-vchat?color=white&labelColor=black&style=flat-square
-[github-license-link]: https://github.com/lobehub/lobe-vchat/blob/main/LICENSE
+[github-contributors-shield]: https://img.shields.io/github/contributors/lobehub/lobe-vidol?color=c4f042&labelColor=black&style=flat-square
+[github-contributors-link]: https://github.com/lobehub/lobe-vidol/graphs/contributors
+[github-forks-shield]: https://img.shields.io/github/forks/lobehub/lobe-vidol?color=8ae8ff&labelColor=black&style=flat-square
+[github-forks-link]: https://github.com/lobehub/lobe-vidol/network/members
+[github-stars-shield]: https://img.shields.io/github/stars/lobehub/lobe-vidol?color=ffcb47&labelColor=black&style=flat-square
+[github-stars-link]: https://github.com/lobehub/lobe-vidol/network/stargazers
+[github-issues-shield]: https://img.shields.io/github/issues/lobehub/lobe-vidol?color=ff80eb&labelColor=black&style=flat-square
+[github-issues-link]: https://github.com/lobehub/lobe-vidol/issues
+[github-license-shield]: https://img.shields.io/github/license/lobehub/lobe-vidol?color=white&labelColor=black&style=flat-square
+[github-license-link]: https://github.com/lobehub/lobe-vidol/blob/main/LICENSE

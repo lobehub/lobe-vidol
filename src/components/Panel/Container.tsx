@@ -65,7 +65,7 @@ const Container = (props: PropsWithChildren<ContainerProps>) => {
       >
         <div className={classNames(styles.header)} ref={setActivatorNodeRef} {...listeners}>
           <div className={styles.logo}>
-            <Logo extra={'VChat'} size={24} type={'combine'} />
+            <Logo extra={'Vidol'} size={24} type={'combine'} />
           </div>
           <div className={styles.title}>{title ? title : null}</div>
           <div className={styles.extra}>
