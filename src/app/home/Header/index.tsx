@@ -14,7 +14,7 @@ const Header = () => {
           size="large"
         />,
       ]}
-      logo={<Logo extra={'VChat'} size={36} type={'combine'} />}
+      logo={<Logo extra={'Vidol'} size={36} type={'combine'} />}
     />
   );
 };
