@@ -48,7 +48,7 @@ const RolePanel = (props: RolePanelProps) => {
               },
               {
                 key: 'touch',
-                label: '触摸设置',
+                label: '触摸设置(TODO)',
               },
             ]}
             onChange={(key) => {
