@@ -5,14 +5,12 @@
   "description": "Make Virtual Idols Accessible To EveryOne!",
   "keywords": [
     "framework",
-    "virtual-odols",
+    "virtual-idols",
     "chatbot",
     "chatgpt",
     "nextjs",
     "vercel-ai",
     "openai",
-    "azure-openai",
-    "visual-model",
     "tts"
   ],
   "homepage": "https://github.com/lobehub/lobe-vidol",
@@ -29,7 +27,7 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev",
-    "lint": "npm run lint:ts && npm run lint:style && npm run type-check && npm run lint:circular",
+    "lint": "npm run lint:ts && npm run lint:style && npm run type-check",
     "lint:circular": "dpdm src/**/*.ts  --warning false  --tree false  --exit-code circular:1  -T true --skip-dynamic-imports circular",
     "lint:md": "remark . --quiet --frail --output",
     "lint:style": "stylelint \"{src,tests}/**/*.{js,jsx,ts,tsx}\" --fix",

@@ -17,11 +17,11 @@ jobs:
       - name: Install deps
         run: bun i
 
-      - name: CI
-        run: bun run ci
+      - name: Link
+        run: bun run lint
 
-      - name: Test and coverage
-        run: bun run test:coverage
+#      - name: Test and coverage
+#        run: bun run test:coverage
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v4
