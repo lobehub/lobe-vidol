@@ -7,7 +7,6 @@ import Layout from '@/layout';
 
 import StyleRegistry from './StyleRegistry';
 
-
 const RootLayout = ({ children }: PropsWithChildren) => {
   // get default theme config to use with ssr
   const cookieStore = cookies();
@@ -19,7 +18,7 @@ const RootLayout = ({ children }: PropsWithChildren) => {
         <StyleRegistry>
           <Layout defaultAppearance={appearance?.value}>{children}</Layout>
         </StyleRegistry>
-        <Analytics/>
+        <Analytics />
       </body>
     </html>
   );
