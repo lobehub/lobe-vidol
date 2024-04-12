@@ -1,6 +1,6 @@
 {
   "background_color": "#000000",
-  "description": "Make Virtual Idols Accessible To EveryOne!",
+  "description": "Making Virtual Idols Accessible for EveryOne",
   "display": "standalone",
   "icons": [
     {
@@ -29,7 +29,7 @@
     }
   ],
   "id": "/",
-  "name": "Vidol.Chat",
+  "name": "LobeVidol",
   "orientation": "portrait",
   "scope": "/",
   "short_name": "Vidol",

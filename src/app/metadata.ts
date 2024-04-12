@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 
 import pkg from '../../package.json';
 
-const title = 'Vidol';
+const title = 'Lobe Vidol';
 const { description, homepage } = pkg;
 
 const metadata: Metadata = {

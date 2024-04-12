@@ -10,7 +10,7 @@ const Header = () => {
         <ActionIcon
           icon={GithubIcon}
           key="github"
-          onClick={() => window.open('https://github.com/v-idol/vidol.chat', '_blank')}
+          onClick={() => window.open('https://github.com/lobehub/lobe-vidol', '_blank')}
           size="large"
         />,
       ]}

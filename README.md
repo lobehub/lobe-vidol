@@ -6,7 +6,9 @@
 
 # Lobe Vidol
 
-Make Virtual Idols Accessible To EveryOne!
+Experience the magic of virtual idol creation with Lobe Vidol, enjoy the elegance of our Exquisite UI Design, dance along using MMD Dance Support, and engage in Smooth Conversations—all in one seamless platform.
+
+<sup>Making Virtual Idols Accessible for EveryOne</sup>
 
 [Changelog](./CHANGELOG.md) · [Report Bug][github-issues-link] · [Request Feature][github-issues-link]
 
@@ -23,7 +25,12 @@ Make Virtual Idols Accessible To EveryOne!
 [![][github-license-shield]][github-license-link]<br>
 [![][sponsor-shield]][sponsor-link]
 
-![](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+![](https://github.com/lobehub/lobe-vidol/assets/17870709/90d7295f-9461-4765-a936-20720afb48c3)
+
+</div>
+
+> \[!NOTE]
+> Lobe Vidol is currently in the early stages of development and available for beta testing. You are welcome to join and contribute.
 
 <details>
 <summary><kbd>Table of contents</kbd></summary>
@@ -43,8 +50,6 @@ Make Virtual Idols Accessible To EveryOne!
 ####
 
 </details>
-
-</div>
 
 ## 👋🏻 Getting Started & Join Our Community
 
@@ -73,7 +78,7 @@ Please be aware that LobeVidol is currently under active development, and feedba
 
 ## ✨ Features
 
-![](./preview.png)
+![](https://github.com/lobehub/lobe-vidol/assets/17870709/f9cb1464-13f9-4d80-a716-def818d968b0)
 
 - [x] 💨 **Vroid Model Preview**: Using the Vroid Editor, you can create and upload your own virtual idol to the website, play with them;
 - [x] 💎 **Exquisite UI Design**: With a carefully designed interface, it offers an elegant appearance and smooth interaction. It supports light and dark themes. PWA support provides a more native-like experience;
