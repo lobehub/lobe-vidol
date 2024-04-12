@@ -138,5 +138,8 @@
     "vite": "^5.2.8",
     "vitest": "~1.2.2",
     "vitest-canvas-mock": "^0.3.3"
+  },
+  "gitmoji": {
+    "capitalizeTitle": false
   }
 }
