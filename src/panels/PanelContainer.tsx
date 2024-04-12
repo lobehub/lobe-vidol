@@ -1,9 +1,10 @@
 'use client';
 
+import React, { PropsWithChildren } from 'react';
+
 import Panel from '@/components/Panel';
 import { configSelectors, useConfigStore } from '@/store/config';
 import { PanelKey } from '@/types/config';
-import React, { PropsWithChildren } from 'react';
 
 interface PanelContainerProps {
   className?: string;

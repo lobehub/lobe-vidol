@@ -1,6 +1,7 @@
 import { animated } from '@react-spring/web';
 import { CSSProperties, memo } from 'react';
 import { DivProps } from 'react-layout-kit';
+
 import { useStyles } from './style';
 
 export interface LaserShineProps extends DivProps {

@@ -1,5 +1,6 @@
-import { ErrorTypeEnum } from '@/types/api';
 import { NextResponse } from 'next/server';
+
+import { ErrorTypeEnum } from '@/types/api';
 
 const getStatusCode = (errorType: ErrorTypeEnum) => {
   switch (errorType) {

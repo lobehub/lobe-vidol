@@ -1,4 +1,5 @@
 import { useConfigStore } from '@/store/config';
+
 import { useStyles } from './style';
 
 const Background = () => {

@@ -1,5 +1,6 @@
 import { useSpring } from '@react-spring/web';
 import { CSSProperties } from 'react';
+
 import { adjust, clamp, round } from '../../utils/math';
 
 const randomSeed = {

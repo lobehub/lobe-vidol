@@ -1,7 +1,9 @@
 'use client';
 
-import { sessionSelectors, useSessionStore } from '@/store/session';
 import { Avatar } from '@lobehub/ui';
+
+import { sessionSelectors, useSessionStore } from '@/store/session';
+
 import { useStyles } from './style';
 
 const AvatarSize = 64;

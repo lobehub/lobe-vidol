@@ -1,8 +1,10 @@
 'use client';
 
-import PanelContainer from '@/panels/PanelContainer';
 import { TabsNav } from '@lobehub/ui';
 import React, { useState } from 'react';
+
+import PanelContainer from '@/panels/PanelContainer';
+
 import Info from './Info';
 import Role from './Role';
 import Touch from './Touch';

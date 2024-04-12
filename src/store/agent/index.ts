@@ -1,9 +1,9 @@
-import { Agent } from '@/types/agent';
 import { produce } from 'immer';
 import { persist } from 'zustand/middleware';
 import { shallow } from 'zustand/shallow';
 import { createWithEqualityFn } from 'zustand/traditional';
 
+import { Agent } from '@/types/agent';
 
 export interface AgentStore {
   activateAgent: (identifier: string) => void;
@@ -65,6 +65,4 @@ export const useAgentStore = createWithEqualityFn<AgentStore>()(
   shallow,
 );
 
-
-
-export {agentListSelectors} from './selectors/agent';
+export { agentListSelectors } from './selectors/agent';

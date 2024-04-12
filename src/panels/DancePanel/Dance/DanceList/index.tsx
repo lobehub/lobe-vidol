@@ -1,9 +1,10 @@
-import { useConfigStore } from '@/store/config';
-import { useDanceStore } from '@/store/dance';
-import { useMarketStore } from '@/store/market';
 import { GradientButton } from '@lobehub/ui';
 import { Card, List } from 'antd';
 import { Flexbox } from 'react-layout-kit';
+
+import { useConfigStore } from '@/store/config';
+import { useDanceStore } from '@/store/dance';
+import { useMarketStore } from '@/store/market';
 
 const { Meta } = Card;
 

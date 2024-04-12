@@ -1,10 +1,12 @@
-import { useSessionStore } from '@/store/session';
-import { sessionSelectors } from '@/store/session/selectors';
-import { ChatMessage } from '@/types/chat';
 import { AlertProps, ChatItem, ChatItemProps } from '@lobehub/ui';
 import { createStyles } from 'antd-style';
 import isEqual from 'fast-deep-equal';
 import { ReactNode, memo, useCallback, useMemo, useState } from 'react';
+
+import { useSessionStore } from '@/store/session';
+import { sessionSelectors } from '@/store/session/selectors';
+import { ChatMessage } from '@/types/chat';
+
 import ActionsBar from './ActionsBar';
 import ErrorMessageExtra, { getErrorAlertConfig } from './Error';
 import { renderMessages } from './Messages';

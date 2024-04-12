@@ -1,8 +1,9 @@
-import { useSpeechRecognition } from '@/hooks/useSpeechRecognition';
-import { useSessionStore } from '@/store/session';
 import { ActionIcon } from '@lobehub/ui';
 import { Mic } from 'lucide-react';
 import { useCallback } from 'react';
+
+import { useSpeechRecognition } from '@/hooks/useSpeechRecognition';
+import { useSessionStore } from '@/store/session';
 
 const Record = () => {
   const [sendMessage, setMessageInput] = useSessionStore((s) => [s.sendMessage, s.setMessageInput]);

@@ -1,8 +1,10 @@
+import { memo, useCallback, useEffect, useState } from 'react';
+
 import PageLoading from '@/components/PageLoading';
 import ToolBar from '@/features/AgentViewer/ToolBar';
 import { sessionSelectors, useSessionStore } from '@/store/session';
 import { useViewerStore } from '@/store/viewer';
-import { memo, useCallback, useEffect, useState } from 'react';
+
 import { useStyles } from './style';
 
 function AgentViewer() {

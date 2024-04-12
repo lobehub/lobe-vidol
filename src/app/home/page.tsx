@@ -8,6 +8,7 @@ import VirtualIdol from '@/app/home/VirtualIdol';
 import { apps } from '@/app/home/apps';
 import { useConfigStore } from '@/store/config';
 import { PanelKey } from '@/types/config';
+
 import Docker from './Docker';
 
 const Desktop = () => {

@@ -1,4 +1,5 @@
 import { VRMExpressionPresetName } from '@pixiv/three-vrm';
+
 import { TTS } from './tts';
 
 export const emotions = ['neutral', 'happy', 'angry', 'sad', 'relaxed'] as const;
@@ -9,7 +10,7 @@ export enum TouchAreaEnum {
   Belly = 'belly',
   Chest = 'chest',
   Head = 'head',
-  Leg = 'leg'
+  Leg = 'leg',
 }
 
 export interface TouchAction {

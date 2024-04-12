@@ -1,6 +1,7 @@
 import { speechApi } from '@/services/tts';
 import { Screenplay } from '@/types/touch';
 import { wait } from '@/utils/wait';
+
 import { Viewer } from '../vrmViewer/viewer';
 
 const createSpeakCharacter = () => {

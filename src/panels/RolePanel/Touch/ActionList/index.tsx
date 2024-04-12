@@ -1,12 +1,13 @@
-import { speakCharacter } from '@/features/messages/speakCharacter';
-import { sessionSelectors, useSessionStore } from '@/store/session';
-import { useTouchStore } from '@/store/touch';
-import { useViewerStore } from '@/store/viewer';
 import { ActionIcon } from '@lobehub/ui';
 import { List } from 'antd';
 import { createStyles } from 'antd-style';
 import { isEqual } from 'lodash-es';
 import { PlayIcon } from 'lucide-react';
+
+import { speakCharacter } from '@/features/messages/speakCharacter';
+import { sessionSelectors, useSessionStore } from '@/store/session';
+import { useTouchStore } from '@/store/touch';
+import { useViewerStore } from '@/store/viewer';
 
 const useStyles = createStyles(({ css, token }) => ({
   active: css`

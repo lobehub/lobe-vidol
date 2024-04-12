@@ -1,8 +1,10 @@
-import { toogleVoice } from '@/services/chat';
-import { useSessionStore } from '@/store/session';
 import { ActionIcon } from '@lobehub/ui';
 import classNames from 'classnames';
 import { Volume2 } from 'lucide-react';
+
+import { toogleVoice } from '@/services/chat';
+import { useSessionStore } from '@/store/session';
+
 import { useStyles } from './style';
 
 const VoiceSwitch = () => {

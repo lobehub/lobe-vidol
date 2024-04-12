@@ -1,8 +1,10 @@
-import { useConfigStore } from '@/store/config';
 import { ActionIcon, SearchBar } from '@lobehub/ui';
 import { Plus } from 'lucide-react';
 import { memo } from 'react';
 import { Flexbox } from 'react-layout-kit';
+
+import { useConfigStore } from '@/store/config';
+
 import { useStyles } from './style';
 
 interface HeaderProps {

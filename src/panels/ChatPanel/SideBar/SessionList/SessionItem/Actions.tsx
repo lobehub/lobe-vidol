@@ -1,7 +1,8 @@
-import { useSessionStore } from '@/store/session';
 import { ActionIcon } from '@lobehub/ui';
 import { App, Dropdown, MenuProps } from 'antd';
 import { MoreVertical, Trash2 } from 'lucide-react';
+
+import { useSessionStore } from '@/store/session';
 
 interface ActionsProps {
   id: string;

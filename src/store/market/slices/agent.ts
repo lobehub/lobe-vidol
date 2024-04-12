@@ -1,8 +1,9 @@
+import { isEqual } from 'lodash-es';
+import { StateCreator } from 'zustand/vanilla';
+
 import { getAgentIndex } from '@/services/agent';
 import { MarketStore } from '@/store/market';
 import { Agent } from '@/types/agent';
-import { isEqual } from 'lodash-es';
-import { StateCreator } from 'zustand/vanilla';
 
 export interface AgentStore {
   activateAgent: (identifier: string) => void;

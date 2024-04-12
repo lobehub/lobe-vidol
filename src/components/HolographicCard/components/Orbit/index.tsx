@@ -1,5 +1,6 @@
 import { animated, useSpring } from '@react-spring/web';
 import { CSSProperties, MouseEventHandler, ReactNode, forwardRef } from 'react';
+
 import { clamp, round } from '../../utils/math';
 import { useStyles } from './styles';
 

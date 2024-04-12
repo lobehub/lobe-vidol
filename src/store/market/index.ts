@@ -2,6 +2,7 @@ import { devtools, persist } from 'zustand/middleware';
 import { shallow } from 'zustand/shallow';
 import { createWithEqualityFn } from 'zustand/traditional';
 import { StateCreator } from 'zustand/vanilla';
+
 import { agentSelectors } from './selectors/agent';
 import { danceSelectors } from './selectors/dance';
 import { AgentStore, createAgentStore } from './slices/agent';

@@ -1,5 +1,6 @@
+import { NextResponse } from 'next/server';
+
 import { voiceMap } from '@/utils/voices';
-import {NextResponse } from 'next/server';
 
 const { v4: uuidv4 } = require('uuid');
 const axios = require('axios');
@@ -21004,12 +21005,12 @@ export const GET = async () => {
   const config = {
     data: data,
     headers: {
-      accept: 'application/json, text/plain, */*',
+      'accept': 'application/json, text/plain, */*',
       'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6',
-      authority: 'southeastasia.api.speech.microsoft.com',
+      'authority': 'southeastasia.api.speech.microsoft.com',
       'content-type': 'application/json',
-      customvoiceconnectionid: uuidv4(),
-      origin: 'https://speech.microsoft.com',
+      'customvoiceconnectionid': uuidv4(),
+      'origin': 'https://speech.microsoft.com',
       'sec-ch-ua': '"Microsoft Edge";v="113", "Chromium";v="113", "Not-A.Brand";v="24"',
       'sec-ch-ua-mobile': '?0',
       'sec-ch-ua-platform': '"Windows"',

@@ -1,6 +1,7 @@
+import { Button, message } from 'antd';
+
 import { danceListSelectors, useDanceStore } from '@/store/dance';
 import { Dance } from '@/types/dance';
-import { Button, message } from 'antd';
 
 interface SubscribeButtonProps {
   dance: Dance;

@@ -1,7 +1,8 @@
-import { useSessionStore } from '@/store/session';
 import { ActionIcon } from '@lobehub/ui';
 import { Popconfirm } from 'antd';
 import { Eraser } from 'lucide-react';
+
+import { useSessionStore } from '@/store/session';
 
 const History = () => {
   const [clearHistory] = useSessionStore((s) => [s.clearHistory]);

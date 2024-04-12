@@ -1,11 +1,12 @@
-import { agentListSelectors, useAgentStore } from '@/store/agent';
-import { useConfigStore } from '@/store/config';
-import { useMarketStore } from '@/store/market';
-import { Agent } from '@/types/agent';
 import { GradientButton } from '@lobehub/ui';
 import { Card, List, Typography } from 'antd';
 import { memo } from 'react';
 import { Flexbox } from 'react-layout-kit';
+
+import { agentListSelectors, useAgentStore } from '@/store/agent';
+import { useConfigStore } from '@/store/config';
+import { useMarketStore } from '@/store/market';
+import { Agent } from '@/types/agent';
 
 const { Text } = Typography;
 const { Meta } = Card;

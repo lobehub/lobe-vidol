@@ -1,4 +1,5 @@
 import { CSSProperties, ReactNode, memo } from 'react';
+
 import { LaserShine, useLaserShine } from './LaserShine';
 import Orbit from './Orbit';
 import { useStyles } from './style';
@@ -28,7 +29,7 @@ const Container = memo<ContainerProps>(({ foil, mask, children, className, loadi
           ...shineStyle,
           '--foil': `url(${foil ?? ''})`,
           '--mask': `url(${mask ?? ''})`,
-          width: 320,
+          'width': 320,
         } as CSSProperties,
         content: {
           display: 'grid',

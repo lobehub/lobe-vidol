@@ -1,11 +1,12 @@
-import AgentInfo from '@/components/AgentInfo';
-import { agentListSelectors, useAgentStore } from '@/store/agent';
-import { useConfigStore } from '@/store/config';
-import { useSessionStore } from '@/store/session';
 import { DraggablePanel } from '@lobehub/ui';
 import { Button, Popconfirm } from 'antd';
 import { createStyles } from 'antd-style';
 import { memo, useState } from 'react';
+
+import AgentInfo from '@/components/AgentInfo';
+import { agentListSelectors, useAgentStore } from '@/store/agent';
+import { useConfigStore } from '@/store/config';
+import { useSessionStore } from '@/store/session';
 
 const useStyles = createStyles(({ css, token }) => ({
   content: css`

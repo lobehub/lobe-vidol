@@ -1,6 +1,7 @@
-import { sessionSelectors, useSessionStore } from '@/store/session';
 import { memo, useMemo, useState } from 'react';
 import { shallow } from 'zustand/shallow';
+
+import { sessionSelectors, useSessionStore } from '@/store/session';
 
 import Actions from './Actions';
 import ListItem from './ListItem';

@@ -1,10 +1,11 @@
-import useChatInput from '@/hooks/useSendMessage';
-import { useSessionStore } from '@/store/session';
-import { isCommandPressed } from '@/utils/keyboard';
 import { TextArea } from '@lobehub/ui';
 import { createStyles } from 'antd-style';
 import { TextAreaRef } from 'antd/es/input/TextArea';
 import React, { memo, useRef } from 'react';
+
+import useChatInput from '@/hooks/useSendMessage';
+import { useSessionStore } from '@/store/session';
+import { isCommandPressed } from '@/utils/keyboard';
 
 const useStyles = createStyles(({ css }) => {
   return {

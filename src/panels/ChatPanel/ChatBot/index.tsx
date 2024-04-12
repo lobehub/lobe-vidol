@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import React, { memo } from 'react';
+
 import ChatInput from '../../../features/ChatInput';
 import ChatHeader from './ChatHeader';
 import ChatList from './ChatList';

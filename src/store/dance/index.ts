@@ -25,6 +25,4 @@ export const useDanceStore = createWithEqualityFn<DanceStore>()(
   shallow,
 );
 
-
-
-export {danceListSelectors} from './selectors/dance';
+export { danceListSelectors } from './selectors/dance';

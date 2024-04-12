@@ -3,6 +3,7 @@ import { DEFAULT_USER_AVATAR } from '@/constants/common';
 import { Agent } from '@/types/agent';
 import { ChatMessage } from '@/types/chat';
 import { Session } from '@/types/session';
+
 import { SessionStore } from './index';
 
 const currentSession = (s: SessionStore): Session | undefined => {

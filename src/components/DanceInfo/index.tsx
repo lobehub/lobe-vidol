@@ -1,8 +1,10 @@
-import { Dance } from '@/types/dance';
 import { Avatar } from '@lobehub/ui';
 import { Space } from 'antd';
 import React, { memo } from 'react';
 import { Center } from 'react-layout-kit';
+
+import { Dance } from '@/types/dance';
+
 import { useStyles } from './style';
 
 interface DanceInfoProps {

@@ -1,8 +1,9 @@
-import { agentListSelectors, useAgentStore } from '@/store/agent';
-import { marketStoreSelectors, useMarketStore } from '@/store/market';
 import { CheckCircleTwoTone } from '@ant-design/icons';
 import { Card, List } from 'antd';
 import { memo } from 'react';
+
+import { agentListSelectors, useAgentStore } from '@/store/agent';
+import { marketStoreSelectors, useMarketStore } from '@/store/market';
 
 const { Meta } = List.Item;
 

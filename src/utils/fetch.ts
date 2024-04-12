@@ -1,6 +1,7 @@
+import { message } from 'antd';
+
 import { APIErrorResponse, ErrorTypeEnum } from '@/types/api';
 import { ChatMessageError } from '@/types/chat';
-import { message } from 'antd';
 
 const getMessageByErrorType = (errorType: ErrorTypeEnum) => {
   const errorMap = {

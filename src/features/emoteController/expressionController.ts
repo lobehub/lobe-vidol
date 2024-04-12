@@ -1,5 +1,6 @@
 import { VRM, VRMExpressionManager, VRMExpressionPresetName } from '@pixiv/three-vrm';
 import * as THREE from 'three';
+
 import { AutoBlink } from './autoBlink';
 import { AutoLookAt } from './autoLookAt';
 

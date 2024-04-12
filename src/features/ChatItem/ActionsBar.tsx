@@ -1,9 +1,11 @@
-import { ActionsBarProps } from '@/features/ChatItem/type';
-import { useChatListActionsBar } from '@/hooks/useChatListActionsBar';
-import { sessionSelectors, useSessionStore } from '@/store/session';
 import { ActionEvent, ActionIconGroup } from '@lobehub/ui';
 import isEqual from 'fast-deep-equal';
 import { memo, useCallback } from 'react';
+
+import { ActionsBarProps } from '@/features/ChatItem/type';
+import { useChatListActionsBar } from '@/hooks/useChatListActionsBar';
+import { sessionSelectors, useSessionStore } from '@/store/session';
+
 import { renderActions, useActionsClick } from './Actions';
 
 const ActionsBar = memo<ActionsBarProps>((props) => {

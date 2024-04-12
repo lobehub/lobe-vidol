@@ -1,6 +1,3 @@
-import { OPENAI_MODEL_LIST } from '@/constants/openai';
-import { chatCompletion } from '@/services/chat';
-import { configSelectors, useConfigStore } from '@/store/config';
 import { Form, FormGroup, FormItem } from '@lobehub/ui';
 import { useRequest } from 'ahooks';
 import { Form as AForm, Button, Input, Select, Tag, message } from 'antd';
@@ -9,6 +6,10 @@ import classNames from 'classnames';
 import { debounce, isEqual } from 'lodash-es';
 import { BotIcon } from 'lucide-react';
 import React, { useEffect } from 'react';
+
+import { OPENAI_MODEL_LIST } from '@/constants/openai';
+import { chatCompletion } from '@/services/chat';
+import { configSelectors, useConfigStore } from '@/store/config';
 
 interface ConfigProps {
   className?: string;

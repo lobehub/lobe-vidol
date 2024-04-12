@@ -1,4 +1,5 @@
 import { Dance } from '@/types/dance';
+
 import { DanceStore } from '../index';
 
 const showSideBar = (s: DanceStore) => !!s.currentIdentifier;

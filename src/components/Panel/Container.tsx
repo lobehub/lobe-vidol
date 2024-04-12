@@ -1,10 +1,12 @@
-import { INITIAL_COORDINATES, INITIAL_Z_INDEX } from '@/constants/common';
 import { useDraggable } from '@dnd-kit/core';
 import { ActionIcon, Logo } from '@lobehub/ui';
 import { Tooltip } from 'antd';
 import classNames from 'classnames';
 import { XIcon } from 'lucide-react';
 import React, { PropsWithChildren, memo } from 'react';
+
+import { INITIAL_COORDINATES, INITIAL_Z_INDEX } from '@/constants/common';
+
 import { useStyles } from './style';
 
 interface ContainerProps {

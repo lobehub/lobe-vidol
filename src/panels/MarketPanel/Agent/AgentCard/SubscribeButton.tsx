@@ -1,6 +1,7 @@
+import { Button, message } from 'antd';
+
 import { agentListSelectors, useAgentStore } from '@/store/agent';
 import { Agent } from '@/types/agent';
-import { Button, message } from 'antd';
 
 interface SubscribeButtonProps {
   agent: Agent;

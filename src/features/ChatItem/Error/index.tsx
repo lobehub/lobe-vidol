@@ -1,7 +1,9 @@
-import { ErrorTypeEnum } from '@/types/api';
-import { ChatMessage, ChatMessageError } from '@/types/chat';
 import type { AlertProps } from '@lobehub/ui';
 import { memo } from 'react';
+
+import { ErrorTypeEnum } from '@/types/api';
+import { ChatMessage, ChatMessageError } from '@/types/chat';
+
 import ApiError from './ApiError';
 import ErrorJsonViewer from './ErrorJsonViewer';
 import OpenAPIKey from './OpenAPIKey';

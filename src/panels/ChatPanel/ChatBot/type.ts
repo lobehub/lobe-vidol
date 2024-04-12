@@ -1,6 +1,7 @@
-import { ChatMessage } from '@/types/chat';
 import { ActionEvent, ActionIconGroupProps } from '@lobehub/ui';
 import { FC, ReactNode } from 'react';
+
+import { ChatMessage } from '@/types/chat';
 
 export type ActionsBarProps = ActionIconGroupProps;
 

@@ -1,4 +1,5 @@
 import { DANCE_INDEX_URL } from '@/constants/common';
+
 /**
  * 请求 Dance 列表
  */

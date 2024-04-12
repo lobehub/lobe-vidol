@@ -1,6 +1,7 @@
-import { Viewer } from '@/features/vrmViewer/viewer';
 import { shallow } from 'zustand/shallow';
 import { createWithEqualityFn } from 'zustand/traditional';
+
+import { Viewer } from '@/features/vrmViewer/viewer';
 
 interface ViewerStore {
   viewer: Viewer;

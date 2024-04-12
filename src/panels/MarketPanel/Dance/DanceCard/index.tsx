@@ -1,9 +1,10 @@
-import DanceInfo from '@/components/DanceInfo';
-import { marketStoreSelectors, useMarketStore } from '@/store/market';
-
 import { DraggablePanel } from '@lobehub/ui';
 import { createStyles } from 'antd-style';
 import { memo, useState } from 'react';
+
+import DanceInfo from '@/components/DanceInfo';
+import { marketStoreSelectors, useMarketStore } from '@/store/market';
+
 import SubscribeButton from './SubscribeButton';
 
 const useStyles = createStyles(({ css, token }) => ({

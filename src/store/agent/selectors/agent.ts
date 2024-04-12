@@ -1,4 +1,5 @@
 import { Agent } from '@/types/agent';
+
 import { AgentStore } from '../index';
 
 const showSideBar = (s: AgentStore) => !!s.currentIdentifier;

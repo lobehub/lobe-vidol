@@ -1,6 +1,7 @@
 import { DraggablePanel } from '@lobehub/ui';
 import { createStyles } from 'antd-style';
 import { memo, useState } from 'react';
+
 import Header from './Header';
 import SessionList from './SessionList/List';
 

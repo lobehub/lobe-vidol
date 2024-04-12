@@ -1,5 +1,6 @@
-import { MarketStore } from '@/store/market';
 import { StateCreator } from 'zustand/vanilla';
+
+import { MarketStore } from '@/store/market';
 
 export type tabType = 'agent' | 'dance';
 

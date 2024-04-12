@@ -96,27 +96,23 @@ Contributions of all types are more than welcome, if you are interested in contr
 Copyright © 2023 [lobehub][profile-link]. <br />
 This project is [MIT](./LICENSE) licensed.
 
-[profile-link]: https://github.com/lobehub
 [back-to-top]: https://img.shields.io/badge/-BACK_TO_TOP-black?style=flat-square
-[github-issues-link]: https://github.com/lobehub/lobe-vidol/issues
-[pr-welcome-shield]: https://img.shields.io/badge/%F0%9F%A4%AF%20PR%20WELCOME-%E2%86%92-ffcb47?labelColor=black&style=for-the-badge
-[pr-welcome-link]: https://github.com/lobehub/lobe-vidol/pulls
-[github-contrib-shield]: https://contrib.rocks/image?repo=lobehub%2Fvidol.chat
-[github-contrib-link]: https://github.com/lobehub/lobe-vidol/graphs/contributors
-[back-to-top]: https://img.shields.io/badge/-BACK_TO_TOP-black?style=flat-square
-[github-codespace-shield]: https://github.com/codespaces/badge.svg
-[github-codespace-link]: https://codespaces.new/lobehub/lobe-vidol
-[bun-shield]: https://img.shields.io/badge/-speedup%20with%20bun-black?logo=bun&style=for-the-badge
 [bun-link]: https://bun.sh
-[back-to-top]: https://img.shields.io/badge/-BACK_TO_TOP-black?style=flat-square
-[back-to-top]: https://img.shields.io/badge/-BACK_TO_TOP-black?style=flat-square
-[github-contributors-shield]: https://img.shields.io/github/contributors/lobehub/lobe-vidol?color=c4f042&labelColor=black&style=flat-square
+[bun-shield]: https://img.shields.io/badge/-speedup%20with%20bun-black?logo=bun&style=for-the-badge
+[github-codespace-link]: https://codespaces.new/lobehub/lobe-vidol
+[github-codespace-shield]: https://github.com/codespaces/badge.svg
+[github-contrib-link]: https://github.com/lobehub/lobe-vidol/graphs/contributors
+[github-contrib-shield]: https://contrib.rocks/image?repo=lobehub%2Fvidol.chat
 [github-contributors-link]: https://github.com/lobehub/lobe-vidol/graphs/contributors
-[github-forks-shield]: https://img.shields.io/github/forks/lobehub/lobe-vidol?color=8ae8ff&labelColor=black&style=flat-square
+[github-contributors-shield]: https://img.shields.io/github/contributors/lobehub/lobe-vidol?color=c4f042&labelColor=black&style=flat-square
 [github-forks-link]: https://github.com/lobehub/lobe-vidol/network/members
-[github-stars-shield]: https://img.shields.io/github/stars/lobehub/lobe-vidol?color=ffcb47&labelColor=black&style=flat-square
-[github-stars-link]: https://github.com/lobehub/lobe-vidol/network/stargazers
-[github-issues-shield]: https://img.shields.io/github/issues/lobehub/lobe-vidol?color=ff80eb&labelColor=black&style=flat-square
+[github-forks-shield]: https://img.shields.io/github/forks/lobehub/lobe-vidol?color=8ae8ff&labelColor=black&style=flat-square
 [github-issues-link]: https://github.com/lobehub/lobe-vidol/issues
-[github-license-shield]: https://img.shields.io/github/license/lobehub/lobe-vidol?color=white&labelColor=black&style=flat-square
+[github-issues-shield]: https://img.shields.io/github/issues/lobehub/lobe-vidol?color=ff80eb&labelColor=black&style=flat-square
 [github-license-link]: https://github.com/lobehub/lobe-vidol/blob/main/LICENSE
+[github-license-shield]: https://img.shields.io/github/license/lobehub/lobe-vidol?color=white&labelColor=black&style=flat-square
+[github-stars-link]: https://github.com/lobehub/lobe-vidol/network/stargazers
+[github-stars-shield]: https://img.shields.io/github/stars/lobehub/lobe-vidol?color=ffcb47&labelColor=black&style=flat-square
+[pr-welcome-link]: https://github.com/lobehub/lobe-vidol/pulls
+[pr-welcome-shield]: https://img.shields.io/badge/%F0%9F%A4%AF%20PR%20WELCOME-%E2%86%92-ffcb47?labelColor=black&style=for-the-badge
+[profile-link]: https://github.com/lobehub

@@ -1,7 +1,3 @@
-import { useConfigStore } from '@/store/config';
-import { useSessionStore } from '@/store/session';
-import { useThemeStore } from '@/store/theme';
-import { BackgroundEffect } from '@/types/config';
 import { CheckCard } from '@ant-design/pro-card';
 import {
   Form,
@@ -16,6 +12,11 @@ import { ThemeMode, createStyles, useTheme } from 'antd-style';
 import classNames from 'classnames';
 import { Monitor, Settings2 } from 'lucide-react';
 import React from 'react';
+
+import { useConfigStore } from '@/store/config';
+import { useSessionStore } from '@/store/session';
+import { useThemeStore } from '@/store/theme';
+import { BackgroundEffect } from '@/types/config';
 
 interface CommonConfigProps {
   className?: string;

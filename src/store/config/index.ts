@@ -1,12 +1,13 @@
-import { Config, Panel, PanelKey } from '@/types/config';
 import { produce } from 'immer';
 import { isEqual, merge } from 'lodash-es';
 import { devtools, persist } from 'zustand/middleware';
 import { shallow } from 'zustand/shallow';
 import { createWithEqualityFn } from 'zustand/traditional';
 import { StateCreator } from 'zustand/vanilla';
-import { ConfigState, initialState } from './initialState';
 
+import { Config, Panel, PanelKey } from '@/types/config';
+
+import { ConfigState, initialState } from './initialState';
 
 const CONFIG_STORAGE_KEY = 'vidol-chat-config-storage';
 
@@ -114,6 +115,4 @@ export const useConfigStore = createWithEqualityFn<ConfigStore>()(
   shallow,
 );
 
-
-
-export {configSelectors} from './selectors/config';
+export { configSelectors } from './selectors/config';

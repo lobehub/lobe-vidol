@@ -1,5 +1,6 @@
 import HolographicCard from '@/components/HolographicCard';
 import { sessionSelectors, useSessionStore } from '@/store/session';
+
 import { useStyles } from './style';
 
 const Docker = () => {

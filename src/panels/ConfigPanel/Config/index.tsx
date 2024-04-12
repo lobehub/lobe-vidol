@@ -1,6 +1,7 @@
 import { TabsNav } from '@lobehub/ui';
 import classNames from 'classnames';
 import React, { memo, useState } from 'react';
+
 import CommonConfig from './common';
 import OpenAIConfig from './model/openai';
 import { useStyles } from './style';

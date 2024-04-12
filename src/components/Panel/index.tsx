@@ -1,4 +1,3 @@
-import { INITIAL_COORDINATES, INITIAL_Z_INDEX } from '@/constants/common';
 import {
   DndContext,
   KeyboardSensor,
@@ -9,6 +8,9 @@ import {
 } from '@dnd-kit/core';
 import type { Coordinates } from '@dnd-kit/utilities';
 import React, { PropsWithChildren, useEffect, useState } from 'react';
+
+import { INITIAL_COORDINATES, INITIAL_Z_INDEX } from '@/constants/common';
+
 import Container from './Container';
 
 interface ControlPanelProps {

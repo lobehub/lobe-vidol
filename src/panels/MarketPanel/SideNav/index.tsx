@@ -1,6 +1,7 @@
-import { useMarketStore } from '@/store/market';
 import { ActionIcon, SideNav as LobeSideNav } from '@lobehub/ui';
 import { Music2, User } from 'lucide-react';
+
+import { useMarketStore } from '@/store/market';
 
 interface SideNavProps {
   className?: string;

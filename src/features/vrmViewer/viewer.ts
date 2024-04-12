@@ -2,6 +2,7 @@ import { Parser } from 'mmd-parser';
 import * as THREE from 'three';
 import { GridHelper, Mesh, MeshLambertMaterial, PlaneGeometry } from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+
 import { Model } from './model';
 
 /**

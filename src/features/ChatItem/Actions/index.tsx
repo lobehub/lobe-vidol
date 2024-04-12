@@ -1,10 +1,12 @@
+import { copyToClipboard } from '@lobehub/ui';
+import { App } from 'antd';
+import { useCallback } from 'react';
+
 import { OnActionsClick, RenderAction } from '@/features/ChatItem/type';
 import { handleSpeakAi } from '@/services/chat';
 import { useSessionStore } from '@/store/session';
 import { LLMRoleType } from '@/types/llm';
-import { copyToClipboard } from '@lobehub/ui';
-import { App } from 'antd';
-import { useCallback } from 'react';
+
 import AssistantActionsBar from './Assistant';
 import UserActionsBar from './User';
 

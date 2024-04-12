@@ -1,4 +1,5 @@
 import { ChatSendButton } from '@lobehub/ui';
+
 import useChatInput from '../../../hooks/useSendMessage';
 
 const Footer = () => {

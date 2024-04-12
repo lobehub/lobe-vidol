@@ -2,6 +2,7 @@ import { Avatar, Icon, Tooltip } from '@lobehub/ui';
 import { cx } from 'antd-style';
 import { LucideIcon } from 'lucide-react';
 import { memo } from 'react';
+
 import { useStyles } from './style';
 
 interface ApplicationProps {

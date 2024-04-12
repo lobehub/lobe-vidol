@@ -4,6 +4,7 @@ import { PropsWithChildren } from 'react';
 
 import { VIDOL_THEME_APPEARANCE } from '@/constants/common';
 import Layout from '@/layout';
+
 import StyleRegistry from './StyleRegistry';
 
 inject();

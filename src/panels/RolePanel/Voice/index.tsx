@@ -1,12 +1,13 @@
-import { speechApi, voiceListApi } from '@/services/tts';
-import { sessionSelectors, useSessionStore } from '@/store/session';
-import { Voice } from '@/types/tts';
 import { FormFooter } from '@lobehub/ui';
 import { useRequest } from 'ahooks';
 import { Button, Divider, Form, Input, Select, Slider, message } from 'antd';
 import { createStyles } from 'antd-style';
 import classNames from 'classnames';
 import React, { useEffect, useRef, useState } from 'react';
+
+import { speechApi, voiceListApi } from '@/services/tts';
+import { sessionSelectors, useSessionStore } from '@/store/session';
+import { Voice } from '@/types/tts';
 
 const FormItem = Form.Item;
 

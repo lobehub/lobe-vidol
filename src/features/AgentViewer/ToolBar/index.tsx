@@ -1,7 +1,8 @@
-import { useViewerStore } from '@/store/viewer';
 import { ActionIconGroup } from '@lobehub/ui';
 import { Expand, Grid3x3, LandPlot, Orbit, RotateCw, SwitchCamera } from 'lucide-react';
 import React from 'react';
+
+import { useViewerStore } from '@/store/viewer';
 
 interface ToolBarProps {
   className?: string;

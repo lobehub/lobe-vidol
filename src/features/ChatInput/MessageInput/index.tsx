@@ -1,12 +1,13 @@
-import { DEFAULT_USER_AVATAR } from '@/constants/common';
-import useChatInput from '@/hooks/useSendMessage';
-import { useSessionStore } from '@/store/session';
-import { isCommandPressed } from '@/utils/keyboard';
 import { Avatar, Input } from '@lobehub/ui';
 import { Button, Space } from 'antd';
 import { createStyles } from 'antd-style';
 import { InputRef } from 'antd/es/input/Input';
 import { memo, useRef } from 'react';
+
+import { DEFAULT_USER_AVATAR } from '@/constants/common';
+import useChatInput from '@/hooks/useSendMessage';
+import { useSessionStore } from '@/store/session';
+import { isCommandPressed } from '@/utils/keyboard';
 
 const useStyles = createStyles(({ css }) => {
   return {

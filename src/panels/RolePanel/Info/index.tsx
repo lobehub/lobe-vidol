@@ -1,9 +1,10 @@
-import { sessionSelectors, useSessionStore } from '@/store/session';
 import { Avatar, FormFooter } from '@lobehub/ui';
 import { Button, Form, Input, message } from 'antd';
 import { createStyles } from 'antd-style';
 import classNames from 'classnames';
 import React from 'react';
+
+import { sessionSelectors, useSessionStore } from '@/store/session';
 
 const FormItem = Form.Item;
 

@@ -1,8 +1,10 @@
-import { Agent } from '@/types/agent';
 import { Avatar } from '@lobehub/ui';
 import { Space, Tag } from 'antd';
 import React, { memo } from 'react';
 import { Center } from 'react-layout-kit';
+
+import { Agent } from '@/types/agent';
+
 import { useStyles } from './style';
 
 interface AgentInfoProps {

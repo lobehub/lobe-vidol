@@ -1,9 +1,11 @@
-import Item from '@/features/ChatItem';
-import { sessionSelectors, useSessionStore } from '@/store/session';
 import isEqual from 'fast-deep-equal';
 import { memo, useEffect, useRef, useState } from 'react';
 import { Flexbox } from 'react-layout-kit';
 import { Virtuoso, VirtuosoHandle } from 'react-virtuoso';
+
+import Item from '@/features/ChatItem';
+import { sessionSelectors, useSessionStore } from '@/store/session';
+
 import AutoScroll from './AutoScroll';
 
 const itemContent = (index: number, id: string) => {

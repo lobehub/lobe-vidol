@@ -1,6 +1,8 @@
-import { AgentMeta } from '@/types/agent';
 import { Avatar } from '@lobehub/ui';
 import { Typography } from 'antd';
+
+import { AgentMeta } from '@/types/agent';
+
 import { useStyles } from './style';
 
 interface AgentMetaProps {

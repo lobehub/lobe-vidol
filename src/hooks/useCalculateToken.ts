@@ -1,6 +1,7 @@
-import { sessionSelectors, useSessionStore } from '@/store/session';
 import { getEncoding } from 'js-tiktoken';
 import { useMemo } from 'react';
+
+import { sessionSelectors, useSessionStore } from '@/store/session';
 
 const enc = getEncoding('cl100k_base');
 

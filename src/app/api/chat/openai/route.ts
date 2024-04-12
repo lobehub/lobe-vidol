@@ -1,7 +1,9 @@
-import { OPENAI_API_KEY, OPENAI_END_POINT } from '@/constants/openai';
-import { ErrorTypeEnum } from '@/types/api';
 import { OpenAIStream, StreamingTextResponse } from 'ai';
 import OpenAI, { ClientOptions } from 'openai';
+
+import { OPENAI_API_KEY, OPENAI_END_POINT } from '@/constants/openai';
+import { ErrorTypeEnum } from '@/types/api';
+
 import { createErrorResponse } from './createErrorResponse';
 
 export const POST = async (req: Request) => {

@@ -1,5 +1,6 @@
 import ChatItem from '@/features/ChatItem';
 import { sessionSelectors, useSessionStore } from '@/store/session';
+
 import { useStyles } from './style';
 
 const Dialog = () => {

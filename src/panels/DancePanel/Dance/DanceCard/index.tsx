@@ -1,9 +1,10 @@
-import DanceInfo from '@/components/DanceInfo';
-import { danceListSelectors, useDanceStore } from '@/store/dance';
 import { DraggablePanel } from '@lobehub/ui';
 import { Button, Popconfirm } from 'antd';
 import { createStyles } from 'antd-style';
 import { memo, useState } from 'react';
+
+import DanceInfo from '@/components/DanceInfo';
+import { danceListSelectors, useDanceStore } from '@/store/dance';
 
 const useStyles = createStyles(({ css, token }) => ({
   content: css`

@@ -1,6 +1,8 @@
+import { ReactNode, memo } from 'react';
+
 import { LOADING_FLAG } from '@/constants/common';
 import { ChatMessage } from '@/types/chat';
-import { ReactNode, memo } from 'react';
+
 import BubblesLoading from './Loading';
 
 export const DefaultMessage = memo<

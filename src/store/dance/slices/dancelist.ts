@@ -1,10 +1,11 @@
+import { produce } from 'immer';
+import { isEqual } from 'lodash-es';
+import { StateCreator } from 'zustand/vanilla';
+
 import { DEFAULT_DANCE } from '@/constants/dance';
 import { getDanceIndex } from '@/services/dance';
 import { DanceStore } from '@/store/dance';
 import { Dance } from '@/types/dance';
-import { produce } from 'immer';
-import { isEqual } from 'lodash-es';
-import { StateCreator } from 'zustand/vanilla';
 
 export interface DanceListStore {
   activateDance: (identifier: string) => void;

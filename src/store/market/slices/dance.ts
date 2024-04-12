@@ -1,16 +1,18 @@
-import { getDanceIndex } from '@/services/dance';
-import { MarketStore } from '@/store/market';
-import { Dance } from '@/types/dance'; // 更改这里
+// 更改这里
 import { isEqual } from 'lodash-es';
 import { StateCreator } from 'zustand/vanilla';
 
+import { getDanceIndex } from '@/services/dance';
+import { MarketStore } from '@/store/market';
+import { Dance } from '@/types/dance';
+
 export interface DanceStore {
   // 更改这里
-  activateDance: (identifier: string) => void; 
+  activateDance: (identifier: string) => void;
   // 更改这里
-  currentDanceId: string; 
+  currentDanceId: string;
   // 更改这里
-  danceList: Dance[]; 
+  danceList: Dance[];
   // 更改这里
   danceLoading: boolean; // 更改这里
   deactivateDance: () => void; // 更改这里
@@ -26,17 +28,17 @@ export const createDanceStore: StateCreator<
 > = (set, get) => {
   return {
     // 更改这里
-activateDance: (identifier) => {
+    activateDance: (identifier) => {
       // 更改这里
       set({ currentDanceId: identifier }); // 更改这里
-    }, 
-    
-currentDanceId: '', 
-    
-// 更改这里
-danceList: [], 
+    },
+
+    currentDanceId: '',
+
     // 更改这里
-danceLoading: false,
+    danceList: [],
+    // 更改这里
+    danceLoading: false,
     deactivateDance: () => {
       // 更改这里
       set({ currentDanceId: undefined }); // 更改这里

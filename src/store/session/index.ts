@@ -1,9 +1,3 @@
-import { LOADING_FLAG } from '@/constants/common';
-import { chatCompletion, handleSpeakAi } from '@/services/chat';
-import { Agent } from '@/types/agent';
-import { ChatMessage } from '@/types/chat';
-import { Session } from '@/types/session';
-import { fetchSEE } from '@/utils/fetch';
 import { nanoid } from 'ai';
 import { produce } from 'immer';
 import { merge } from 'lodash-es';
@@ -12,15 +6,23 @@ import { devtools, persist } from 'zustand/middleware';
 import { shallow } from 'zustand/shallow';
 import { createWithEqualityFn } from 'zustand/traditional';
 import { StateCreator } from 'zustand/vanilla';
+
+import { LOADING_FLAG } from '@/constants/common';
+import { chatCompletion, handleSpeakAi } from '@/services/chat';
+import { Agent } from '@/types/agent';
+import { ChatMessage } from '@/types/chat';
+import { Session } from '@/types/session';
+import { fetchSEE } from '@/utils/fetch';
+
 import { initialState } from './initialState';
 import { MessageActionType, messageReducer } from './reducers/message';
 import { sessionSelectors } from './selectors';
 
-const SESSION_STORAGE_KEY = 'vidol-chat-session-storage';
+export const SESSION_STORAGE_KEY = 'vidol-chat-session-storage';
 
 export enum ViewerModeEnum {
   Img = 'Img',
-  Normal = 'Normal'
+  Normal = 'Normal',
 }
 
 export interface SessionStore {
@@ -131,7 +133,7 @@ export interface SessionStore {
   voiceOn: boolean;
 }
 
-const createSessonStore: StateCreator<SessionStore, [['zustand/devtools', never]]> = (
+export const createSessonStore: StateCreator<SessionStore, [['zustand/devtools', never]]> = (
   set,
   get,
 ) => ({
@@ -242,7 +244,10 @@ const createSessonStore: StateCreator<SessionStore, [['zustand/devtools', never]
             receivedMessage = receivedMessage.slice(sentence.length).trimStart();
 
             if (
-              !sentence.replaceAll(/^[\s()[\]}«»‹›〈〉《》「」『』【】〔〕〘〙〚〛（）［］｛]+$/g, '')
+              !sentence.replaceAll(
+                /^[\s()[\]}«»‹›〈〉《》「」『』【】〔〕〘〙〚〛（）［］｛]+$/g,
+                '',
+              )
             ) {
               return;
             }
@@ -403,6 +408,4 @@ export const useSessionStore = createWithEqualityFn<SessionStore>()(
   shallow,
 );
 
-
-
-export {sessionSelectors} from './selectors';
+export { sessionSelectors } from './selectors';

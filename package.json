@@ -1,17 +1,66 @@
 {
   "name": "@lobehub/vidol",
-  "homepage": "https://github.com/lobehub/lobe-vidol",
-  "description": "Make Virtual Idols Accessible To EveryOne!",
   "version": "0.0.1",
   "private": true,
+  "description": "Make Virtual Idols Accessible To EveryOne!",
+  "keywords": [
+    "framework",
+    "virtual-odols",
+    "chatbot",
+    "chatgpt",
+    "nextjs",
+    "vercel-ai",
+    "openai",
+    "azure-openai",
+    "visual-model",
+    "tts"
+  ],
+  "homepage": "https://github.com/lobehub/lobe-vidol",
+  "bugs": {
+    "url": "https://github.com/lobehub/lobe-vidol/issues/new/choose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lobehub/lobe-vidol.git"
+  },
+  "license": "MIT",
+  "author": "LobeHub <i@lobehub.com>",
+  "sideEffects": false,
   "scripts": {
     "build": "next build",
     "dev": "next dev",
-    "lint": "npm run lint:ts && npm run lint:style && npm run type-check",
+    "lint": "npm run lint:ts && npm run lint:style && npm run type-check && npm run lint:circular",
+    "lint:circular": "dpdm src/**/*.ts  --warning false  --tree false  --exit-code circular:1  -T true --skip-dynamic-imports circular",
+    "lint:md": "remark . --quiet --frail --output",
     "lint:style": "stylelint \"{src,tests}/**/*.{js,jsx,ts,tsx}\" --fix",
     "lint:ts": "eslint \"{src,tests}/**/*.{js,jsx,ts,tsx}\" --fix",
+    "prepare": "husky",
+    "prettier": "prettier -c --write \"**/**\"",
+    "release": "semantic-release",
     "start": "next start",
+    "test": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "test:update": "vitest -u",
     "type-check": "tsc --noEmit"
+  },
+  "lint-staged": {
+    "*.md": [
+      "remark --quiet --output --",
+      "prettier --write --no-error-on-unmatched-pattern"
+    ],
+    "*.json": [
+      "prettier --write --no-error-on-unmatched-pattern"
+    ],
+    "*.{js,jsx}": [
+      "prettier --write",
+      "stylelint --fix",
+      "eslint --fix"
+    ],
+    "*.{ts,tsx}": [
+      "prettier --parser=typescript --write",
+      "stylelint --fix",
+      "eslint --fix"
+    ]
   },
   "dependencies": {
     "@ant-design/icons": "^5.3.6",
@@ -20,7 +69,7 @@
     "@dnd-kit/utilities": "^3.2.2",
     "@gltf-transform/core": "^3.10.1",
     "@lobehub/tts": "^1.24.0",
-    "@lobehub/ui": "^1.137.7",
+    "@lobehub/ui": "^1.138.1",
     "@pixiv/three-vrm": "^2.1.1",
     "@pixiv/three-vrm-core": "^2.1.1",
     "@react-spring/web": "^9.7.3",
@@ -46,12 +95,12 @@
     "polished": "^4.3.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-intersection-observer": "^9.8.1",
+    "react-intersection-observer": "^9.8.2",
     "react-layout-kit": "^1.9.0",
     "react-lazy-load": "^4.0.1",
     "react-virtuoso": "^4.7.8",
+    "swr": "^2.2.5",
     "three": "^0.162.0",
-    "typescript": "5.1.3",
     "ua-parser-js": "^1.0.37",
     "utility-types": "^3.11.0",
     "uuid": "^9.0.1",
@@ -59,19 +108,37 @@
     "zustand": "^4.5.2"
   },
   "devDependencies": {
-    "@lobehub/lint": "^1.23.0",
+    "@commitlint/cli": "^19.2.1",
+    "@ducanh2912/next-pwa": "^10.2.6",
+    "@lobehub/lint": "^1.23.3",
+    "@next/bundle-analyzer": "^14.1.4",
+    "@peculiar/webcrypto": "^1.4.6",
+    "@testing-library/jest-dom": "^6.4.2",
+    "@testing-library/react": "^14.3.0",
     "@types/lodash-es": "^4.17.12",
     "@types/node": "20.3.1",
-    "@types/react": "^18.2.74",
-    "@types/react-dom": "^18.2.24",
+    "@types/react": "^18.2.77",
+    "@types/react-dom": "^18.2.25",
     "@types/three": "^0.162.0",
     "@types/ua-parser-js": "^0.7.39",
+    "@types/uuid": "^9.0.8",
+    "commitlint": "^19.2.1",
+    "dpdm": "^3.14.0",
     "eslint": "^8.57.0",
     "eslint-config-next": "13.4.7",
-    "eslint-plugin-unicorn": "^51.0.1",
+    "glob": "^10.3.12",
+    "husky": "^9.0.11",
+    "jsdom": "^24.0.0",
+    "lint-staged": "^15.2.2",
     "prettier": "^3.2.5",
-    "prettier-plugin-organize-imports": "^3.2.4",
-    "prettier-plugin-packagejson": "^2.4.14",
-    "stylelint": "^15.11.0"
+    "remark": "^14.0.3",
+    "remark-cli": "^11.0.0",
+    "semantic-release": "^21.1.2",
+    "stylelint": "^15.11.0",
+    "tsx": "^4.7.2",
+    "typescript": "^5.4.5",
+    "vite": "^5.2.8",
+    "vitest": "~1.2.2",
+    "vitest-canvas-mock": "^0.3.3"
   }
 }
