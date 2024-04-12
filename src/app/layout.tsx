@@ -1,4 +1,4 @@
-import { inject } from '@vercel/analytics';
+import { Analytics } from '@vercel/analytics/react';
 import { cookies } from 'next/headers';
 import { PropsWithChildren } from 'react';
 
@@ -7,7 +7,6 @@ import Layout from '@/layout';
 
 import StyleRegistry from './StyleRegistry';
 
-inject();
 
 const RootLayout = ({ children }: PropsWithChildren) => {
   // get default theme config to use with ssr
@@ -20,6 +19,7 @@ const RootLayout = ({ children }: PropsWithChildren) => {
         <StyleRegistry>
           <Layout defaultAppearance={appearance?.value}>{children}</Layout>
         </StyleRegistry>
+        <Analytics/>
       </body>
     </html>
   );
