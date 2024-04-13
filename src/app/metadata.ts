@@ -25,13 +25,13 @@ const metadata: Metadata = {
       {
         alt: title,
         height: 360,
-        url: 'https://registry.npmmirror.com/@lobehub/assets-favicons/latest/files/assets/og-480x270.png',
+        url: 'https://registry.npmmirror.com/@lobehub/assets-favicons/latest/files/assets/og-vidol-480x270.png',
         width: 480,
       },
       {
         alt: title,
         height: 720,
-        url: 'https://registry.npmmirror.com/@lobehub/assets-favicons/latest/files/assets/og-960x540.png',
+        url: 'https://registry.npmmirror.com/@lobehub/assets-favicons/latest/files/assets/og-vidol-960x540.png',
         width: 960,
       },
     ],
