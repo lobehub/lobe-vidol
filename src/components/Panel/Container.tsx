@@ -17,6 +17,7 @@ interface ContainerProps {
   onFocus?: React.FocusEventHandler;
   style?: React.CSSProperties;
   title?: React.ReactNode;
+  toolbar?: React.ReactNode;
   x: number;
   y: number;
   zIndex?: number;
@@ -31,6 +32,7 @@ const Container = (props: PropsWithChildren<ContainerProps>) => {
     x = INITIAL_COORDINATES.x,
     y = INITIAL_COORDINATES.y,
     title,
+    toolbar,
     extra,
     zIndex = INITIAL_Z_INDEX,
     onBlur,
@@ -66,12 +68,13 @@ const Container = (props: PropsWithChildren<ContainerProps>) => {
         {...attributes}
       >
         <div className={classNames(styles.header)} ref={setActivatorNodeRef} {...listeners}>
-          <div className={styles.logo}>
-            <Logo extra={'Vidol'} size={24} type={'combine'} />
+          <div className={styles.left}>
+            <Logo size={24} />
+            <div className={styles.title}>{title ? title : null}</div>
           </div>
-          <div className={styles.title}>{title ? title : null}</div>
-          <div className={styles.extra}>
-            {extra ? extra : null}
+          <div className={styles.center}>{extra ? extra : null}</div>
+          <div className={styles.right}>
+            {toolbar ? toolbar : null}
             <Tooltip key="close" title="关闭">
               <ActionIcon icon={XIcon} onClick={handleClose} />
             </Tooltip>

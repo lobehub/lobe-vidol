@@ -28,7 +28,8 @@ const ControlPanel = (props: ControlPanelProps) => {
       className={className}
       panelKey="agent"
       style={style}
-      title={<Segmented options={options} size="small" value={tab} onChange={setTab} />}
+      title="智能体"
+      extra={<Segmented options={options} size="small" value={tab} onChange={setTab} />}
     >
       <div className={styles.content}>{tab === 'agent' ? <Agent /> : <Market />}</div>
     </PanelContainer>
