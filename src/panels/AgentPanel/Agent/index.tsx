@@ -3,8 +3,6 @@ import classNames from 'classnames';
 import dynamic from 'next/dynamic';
 import React, { memo } from 'react';
 
-import { useAgentStore } from '@/store/agent';
-
 import AgentCard from './Card';
 import AgentList from './List';
 
@@ -36,13 +34,12 @@ interface AgentProps {
 const Agent = (props: AgentProps) => {
   const { styles } = useStyles();
   const { style, className } = props;
-  const [subscribedList] = useAgentStore((s) => [s.subscribedList]);
 
   return (
     <div className={classNames(className, styles.container)} style={style}>
       <div className={styles.content}>
         <TopBanner title="Hello, Let's Chat!" />
-        <AgentList dataSource={subscribedList} />
+        <AgentList />
       </div>
       <AgentCard />
     </div>

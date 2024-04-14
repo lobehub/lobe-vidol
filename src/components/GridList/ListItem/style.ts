@@ -8,6 +8,8 @@ interface ListItemProps {
 
 export const useStyles = createStyles(({ css, token }, { active, avatar }: ListItemProps) => ({
   item: css`
+    cursor: pointer;
+
     position: relative;
 
     width: 100%;
@@ -19,18 +21,27 @@ export const useStyles = createStyles(({ css, token }, { active, avatar }: ListI
   `,
   avatar: css``,
 
-  title: css`
+  info: css`
     position: absolute;
     bottom: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
     width: 100%;
     height: 24px;
     padding: 4px;
 
-    font-size: 12px;
-    line-height: 16px;
-
     background-color: ${rgba(token.colorBgContainer, 0.8)};
-    backdrop-filter: saturate(180%) blur(10px);
+    backdrop-filter: saturate(180%) blur(2px);
+  `,
+  title: css`
+    font-size: ${token.sizeSM}px;
+    line-height: 16px;
+  `,
+  check: css`
+    font-size: ${token.sizeSM}px;
+    color: ${token.colorSuccessText};
   `,
 }));

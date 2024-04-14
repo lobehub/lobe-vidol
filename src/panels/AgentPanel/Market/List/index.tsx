@@ -1,51 +1,41 @@
-import { CheckCircleTwoTone } from '@ant-design/icons';
-import { Card, List } from 'antd';
-import { memo } from 'react';
+import React, { memo } from 'react';
 
+import GridList from '@/components/GridList';
 import { agentListSelectors, useAgentStore } from '@/store/agent';
-import { marketStoreSelectors, useMarketStore } from '@/store/market';
+import { useMarketStore } from '@/store/market';
 
-const { Meta } = List.Item;
+interface AgentListProps {
+  className?: string;
+  style?: React.CSSProperties;
+}
 
-const Index = () => {
-  const [activateAgent, agentList, agentLoading, showAgentSidebar] = useMarketStore((s) => [
+const AgentList = (props: AgentListProps) => {
+  const { className, style } = props;
+  const [activateAgent, agentList, agentLoading, currentAgentId] = useMarketStore((s) => [
     s.activateAgent,
     s.agentList,
     s.agentLoading,
-    marketStoreSelectors.showAgentSideBar(s),
+    s.currentAgentId,
   ]);
   const [subscribed] = useAgentStore((s) => [agentListSelectors.subscribed(s)]);
+
   return (
-    <List
-      dataSource={agentList}
-      grid={{ column: showAgentSidebar ? 3 : 4, gutter: 8 }}
+    <GridList
+      className={className}
+      style={style}
       loading={agentLoading}
-      renderItem={(item) => {
-        const { avatar, name } = item?.meta || {};
-        const isSubscribed = subscribed(item.agentId);
-        return (
-          <List.Item style={{ position: 'relative' }}>
-            <Card
-              onClick={() => {
-                activateAgent(item.agentId);
-              }}
-              hoverable
-              // eslint-disable-next-line @next/next/no-img-element,
-              cover={<img src={avatar} alt="cover" />}
-            >
-              <Meta title={name} />
-            </Card>
-            {isSubscribed ? (
-              <CheckCircleTwoTone
-                style={{ fontSize: 24, position: 'absolute', right: 8, top: 8 }}
-                twoToneColor="#52c41a"
-              />
-            ) : null}
-          </List.Item>
-        );
+      items={agentList.map((items) => ({
+        avatar: items.meta.avatar,
+        id: items.agentId,
+        name: items.meta.name,
+      }))}
+      onClick={(id) => {
+        activateAgent(id);
       }}
+      isActivated={(id) => id === currentAgentId}
+      isChecked={(id) => subscribed(id)}
     />
   );
 };
 
-export default memo(Index);
+export default memo(AgentList);
