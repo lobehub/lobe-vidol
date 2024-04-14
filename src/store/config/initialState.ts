@@ -38,14 +38,6 @@ const initialState: ConfigState = {
       coordinates: INITIAL_COORDINATES,
       open: false,
     },
-    live: {
-      coordinates: INITIAL_COORDINATES,
-      open: false,
-    },
-    market: {
-      coordinates: INITIAL_COORDINATES,
-      open: false,
-    },
     role: {
       coordinates: INITIAL_COORDINATES,
       open: false,

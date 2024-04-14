@@ -1,6 +1,6 @@
 import { GridBackground } from '@lobehub/ui';
 import { createStyles } from 'antd-style';
-import React from 'react';
+import React, { memo } from 'react';
 import { Center } from 'react-layout-kit';
 
 const useStyles = createStyles(({ css }) => ({
@@ -34,4 +34,4 @@ const TopBanner = (props: TopBannerProps) => {
   );
 };
 
-export default TopBanner;
+export default memo(TopBanner);

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 
 import GridList from '@/components/GridList';
 import { useAgentStore } from '@/store/agent';
@@ -34,4 +34,4 @@ const AgentList = (props: AgentListProps) => {
   );
 };
 
-export default AgentList;
+export default memo(AgentList);

@@ -1,5 +1,5 @@
 // @ts-ignore
-import { AgentPanel, ChatPanel, ConfigPanel, DancePanel, MarketPanel, RolePanel } from '@/panels';
+import { AgentPanel, ChatPanel, ConfigPanel, DancePanel, RolePanel } from '@/panels';
 
 export const apps = [
   {
@@ -23,14 +23,6 @@ export const apps = [
     key: 'chat',
     label: '聊天',
   },
-  {
-    avatar:
-      'https://registry.npmmirror.com/@lobehub/assets-emoji/latest/files/assets/convenience-store.webp',
-    component: <MarketPanel />,
-    key: 'market',
-    label: '商店',
-  },
-
   {
     avatar:
       'https://registry.npmmirror.com/@lobehub/assets-emoji/latest/files/assets/black-nib.webp',

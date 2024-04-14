@@ -154,7 +154,7 @@ export const createSessonStore: StateCreator<SessionStore, [['zustand/devtools',
       if (index === -1) {
         draft.push(agent);
       } else {
-        draft[index] = merge(agent, draft[index]);
+        merge(draft[index], agent);
       }
     });
     set({ localAgentList: newAgentList });

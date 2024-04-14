@@ -1,12 +1,11 @@
 import { createStyles } from 'antd-style';
 import classNames from 'classnames';
-import dynamic from 'next/dynamic';
 import React, { memo } from 'react';
+
+import TopBanner from '@/components/TopBanner';
 
 import AgentCard from './Card';
 import AgentList from './List';
-
-const TopBanner = dynamic(() => import('../../../components/TopBanner'), { ssr: false });
 
 const useStyles = createStyles(({ css }) => ({
   container: css`
