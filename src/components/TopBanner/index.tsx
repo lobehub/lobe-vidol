@@ -1,5 +1,6 @@
 import { GridBackground } from '@lobehub/ui';
 import { createStyles } from 'antd-style';
+import React, { memo } from 'react';
 import { Center } from 'react-layout-kit';
 
 const useStyles = createStyles(({ css }) => ({
@@ -15,15 +16,22 @@ const useStyles = createStyles(({ css }) => ({
   `,
 }));
 
-const TopBanner = () => {
+interface TopBannerProps {
+  className?: string;
+  style?: React.CSSProperties;
+  title: string;
+}
+
+const TopBanner = (props: TopBannerProps) => {
+  const { style, className, title = '' } = props;
   const { theme, styles } = useStyles();
 
   return (
-    <Center>
-      <h1 className={styles.title}>Hello, Let&apos;s Chat!</h1>
+    <Center className={className} style={style}>
+      <h1 className={styles.title}>{title}</h1>
       <GridBackground animation className={styles.background} colorFront={theme.colorText} random />
     </Center>
   );
 };
 
-export default TopBanner;
+export default memo(TopBanner);

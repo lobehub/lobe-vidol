@@ -21,3 +21,7 @@ export const CHAT_TEXTAREA_HEIGHT = 200;
 export const HEADER_HEIGHT = 64;
 
 export const DEFAULT_USER_AVATAR = '😀';
+
+export const LIST_GRID_WIDTH = 108;
+export const LIST_GRID_GAP = 4;
+export const LIST_GRID_HEIGHT = 108;

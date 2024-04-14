@@ -40,13 +40,6 @@ export const useStyles = createStyles(({ css, token }) => ({
     width: 100%;
     height: 100%;
   `,
-
-  extra: css`
-    display: flex;
-    flex: 1;
-    align-items: center;
-    justify-content: flex-end;
-  `,
   header: css`
     cursor: move;
 
@@ -55,25 +48,29 @@ export const useStyles = createStyles(({ css, token }) => ({
     justify-content: space-between;
 
     width: 100%;
-    height: 32px;
+    height: 42px;
     padding: 0 ${token.paddingXS}px;
 
     border-bottom: 1px solid #999;
   `,
-  logo: css`
+  title: css`
+    margin-left: ${token.marginXS}px;
+  `,
+  left: css`
+    display: flex;
     flex: 1;
+    align-items: center;
     justify-content: flex-start;
   `,
-  max: css`
-    background-color: ${token['green-7']};
-  `,
-  min: css`
-    background-color: ${token['yellow-7']};
-  `,
-
-  title: css`
+  center: css`
     flex: 1;
     font-weight: bold;
     text-align: center;
+  `,
+  right: css`
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: flex-end;
   `,
 }));

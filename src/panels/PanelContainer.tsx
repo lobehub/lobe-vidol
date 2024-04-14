@@ -8,13 +8,15 @@ import { PanelKey } from '@/types/config';
 
 interface PanelContainerProps {
   className?: string;
+  extra?: React.ReactNode;
   panelKey: PanelKey;
   style?: React.CSSProperties;
-  title?: string;
+  title?: React.ReactNode;
+  toolbar?: React.ReactNode;
 }
 
 const PanelContainer = (props: PropsWithChildren<PanelContainerProps>) => {
-  const { style, className, panelKey, title, children } = props;
+  const { style, className, panelKey, title, children, toolbar, extra } = props;
   const [panel, setPanel, focusPanel, closePanel] = useConfigStore((s) => [
     s.panel,
     s.setPanel,
@@ -32,6 +34,8 @@ const PanelContainer = (props: PropsWithChildren<PanelContainerProps>) => {
       onFocus={() => focusPanel(panelKey)}
       style={style}
       title={title}
+      toolbar={toolbar}
+      extra={extra}
       zIndex={zIndex}
     >
       {children}

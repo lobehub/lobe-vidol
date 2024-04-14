@@ -5,11 +5,6 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
 import { Model } from './model';
 
-/**
- * three.jsを使った3Dビューワー
- *
- * setup()でcanvasを渡してから使う
- */
 export class Viewer {
   public isReady: boolean;
   public model?: Model;
@@ -90,9 +85,6 @@ export class Viewer {
     }
   }
 
-  /**
-   * Rectで管理しているCanvasを後から設定する
-   */
   public setup(canvas: HTMLCanvasElement) {
     const parentElement = canvas.parentElement;
     const width = parentElement?.clientWidth || canvas.width;

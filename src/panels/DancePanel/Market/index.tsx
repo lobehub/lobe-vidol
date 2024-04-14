@@ -1,11 +1,11 @@
-import { GridBackground } from '@lobehub/ui';
 import { createStyles } from 'antd-style';
 import classNames from 'classnames';
-import React, { memo } from 'react';
-import { Center } from 'react-layout-kit';
+import React from 'react';
 
-import AgentCard from './AgentCard';
-import AgentIndex from './AgentIndex';
+import TopBanner from '@/components/TopBanner';
+
+import DanceCard from './Card';
+import DanceList from './List';
 
 const useStyles = createStyles(({ css }) => ({
   background: css`
@@ -35,32 +35,23 @@ const useStyles = createStyles(({ css }) => ({
   `,
 }));
 
-interface AgentProps {
+interface DanceProps {
   className?: string;
   style?: React.CSSProperties;
 }
 
-const Agent = (props: AgentProps) => {
-  const { theme, styles } = useStyles();
+const Dance = (props: DanceProps) => {
   const { style, className } = props;
-
+  const { styles } = useStyles();
   return (
     <div className={classNames(className, styles.container)} style={style}>
       <div className={styles.content}>
-        <Center>
-          <h1 className={styles.title}>Find Your Lovest Vidol</h1>
-          <GridBackground
-            animation
-            className={styles.background}
-            colorFront={theme.colorText}
-            random
-          />
-        </Center>
-        <AgentIndex />
+        <TopBanner title="Find Your Favorite Dance" />
+        <DanceList />
       </div>
-      <AgentCard />
+      <DanceCard />
     </div>
   );
 };
 
-export default memo(Agent);
+export default Dance;

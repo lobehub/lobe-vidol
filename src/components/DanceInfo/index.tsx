@@ -20,7 +20,7 @@ const DanceInfo = (props: DanceInfoProps) => {
   return (
     <div className={styles.container}>
       <Center className={styles.header} gap={16}>
-        <Avatar avatar={cover} background={theme.colorFillTertiary} shape="square" size={120} />
+        <Avatar avatar={cover} background={theme.colorFillTertiary} shape="square" size={180} />
         <div className={styles.title}>{name}</div>
         <div className={styles.actions}>
           <Space>{actions}</Space>

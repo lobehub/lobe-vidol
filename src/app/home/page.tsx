@@ -2,14 +2,13 @@
 
 import Background from '@/app/home/Background';
 import Dialog from '@/app/home/Dialog';
+import Docker from '@/app/home/Docker';
 import Header from '@/app/home/Header';
-import RoleSelect from '@/app/home/RoleSelect';
+import QuickSwitch from '@/app/home/QuickSwitch';
 import VirtualIdol from '@/app/home/VirtualIdol';
 import { apps } from '@/app/home/apps';
 import { useConfigStore } from '@/store/config';
 import { PanelKey } from '@/types/config';
-
-import Docker from './Docker';
 
 const Desktop = () => {
   const [panel] = useConfigStore((s) => [s.panel]);
@@ -29,7 +28,7 @@ const Desktop = () => {
         })}
       </div>
       <Docker />
-      <RoleSelect />
+      <QuickSwitch />
       <Dialog />
       <Background />
     </div>

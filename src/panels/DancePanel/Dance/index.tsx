@@ -1,11 +1,11 @@
-import { GridBackground } from '@lobehub/ui';
 import { createStyles } from 'antd-style';
 import classNames from 'classnames';
 import React, { memo } from 'react';
-import { Center } from 'react-layout-kit';
 
-import DanceCard from './DanceCard';
-import DanceList from './DanceList';
+import TopBanner from '@/components/TopBanner';
+
+import DanceCard from './Card';
+import DanceList from './List';
 
 const useStyles = createStyles(({ css }) => ({
   background: css`
@@ -37,25 +37,18 @@ const useStyles = createStyles(({ css }) => ({
 
 interface DanceProps {
   className?: string;
+  setTab?: (tab: string) => void;
   style?: React.CSSProperties;
 }
 
 const Dance = (props: DanceProps) => {
-  const { style, className } = props;
-  const { theme, styles } = useStyles();
+  const { style, className, setTab } = props;
+  const { styles } = useStyles();
   return (
     <div className={classNames(className, styles.container)} style={style}>
       <div className={styles.content}>
-        <Center>
-          <h1 className={styles.title}> Just Dance </h1>
-          <GridBackground
-            animation
-            className={styles.background}
-            colorFront={theme.colorText}
-            random
-          />
-        </Center>
-        <DanceList />
+        <TopBanner title={"Let's Dance"} />
+        <DanceList setTab={setTab} />
       </div>
       <DanceCard />
     </div>

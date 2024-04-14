@@ -1,14 +1,11 @@
 import { createStyles } from 'antd-style';
 import classNames from 'classnames';
-import dynamic from 'next/dynamic';
 import React, { memo } from 'react';
 
-import { useAgentStore } from '@/store/agent';
+import TopBanner from '@/components/TopBanner';
 
-import AgentCard from './AgentCard';
-import AgentList from './AgentList';
-
-const TopBanner = dynamic(() => import('./TopBanner'), { ssr: false });
+import AgentCard from './Card';
+import AgentList from './List';
 
 const useStyles = createStyles(({ css }) => ({
   container: css`
@@ -30,19 +27,19 @@ const useStyles = createStyles(({ css }) => ({
 
 interface AgentProps {
   className?: string;
+  setTab?: (tab: string) => void;
   style?: React.CSSProperties;
 }
 
 const Agent = (props: AgentProps) => {
   const { styles } = useStyles();
-  const { style, className } = props;
-  const [subscribedList] = useAgentStore((s) => [s.subscribedList]);
+  const { style, className, setTab } = props;
 
   return (
     <div className={classNames(className, styles.container)} style={style}>
       <div className={styles.content}>
-        <TopBanner />
-        <AgentList dataSource={subscribedList} title="订阅列表" />
+        <TopBanner title="Hello, Let's Chat!" />
+        <AgentList setTab={setTab} />
       </div>
       <AgentCard />
     </div>

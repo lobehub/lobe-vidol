@@ -1,4 +1,4 @@
-import { Button, message } from 'antd';
+import { Button } from 'antd';
 
 import { danceListSelectors, useDanceStore } from '@/store/dance';
 import { Dance } from '@/types/dance';
@@ -23,10 +23,8 @@ const SubscribeButton = (props: SubscribeButtonProps) => {
       onClick={() => {
         if (isSubscribed) {
           unsubscribe(dance.danceId);
-          message.success('已取消订阅');
         } else {
           subscribe(dance);
-          message.success('订阅成功，请查看订阅列表');
         }
       }}
       type={isSubscribed ? 'default' : 'primary'}

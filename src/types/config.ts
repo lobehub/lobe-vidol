@@ -19,8 +19,6 @@ export interface PanelConfig {
   chat: Panel;
   config: Panel;
   dance: Panel;
-  live: Panel;
-  market: Panel;
   role: Panel;
 }
 

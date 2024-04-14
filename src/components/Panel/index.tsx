@@ -16,12 +16,14 @@ import Container from './Container';
 interface ControlPanelProps {
   className?: string;
   coordinates?: Coordinates;
+  extra?: React.ReactNode;
   onBlur?: React.FocusEventHandler;
   onClose: () => void;
   onCoordinatesChange?: (coordinates: Coordinates) => void;
   onFocus?: React.FocusEventHandler;
   style?: React.CSSProperties;
-  title?: string;
+  title?: React.ReactNode;
+  toolbar?: React.ReactNode;
   zIndex?: number;
 }
 
@@ -32,6 +34,8 @@ const Panel = (props: PropsWithChildren<ControlPanelProps>) => {
     children,
     onClose,
     title,
+    extra,
+    toolbar,
     onCoordinatesChange,
     onBlur,
     onFocus,
@@ -75,6 +79,8 @@ const Panel = (props: PropsWithChildren<ControlPanelProps>) => {
         onFocus={onFocus}
         style={style}
         title={title}
+        extra={extra}
+        toolbar={toolbar}
         x={x}
         y={y}
         zIndex={zIndex}
