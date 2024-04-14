@@ -1,8 +1,8 @@
-import { GridBackground } from '@lobehub/ui';
 import { createStyles } from 'antd-style';
 import classNames from 'classnames';
 import React, { memo } from 'react';
-import { Center } from 'react-layout-kit';
+
+import TopBanner from '@/components/TopBanner';
 
 import AgentCard from './AgentCard';
 import AgentIndex from './AgentIndex';
@@ -41,21 +41,13 @@ interface AgentProps {
 }
 
 const Agent = (props: AgentProps) => {
-  const { theme, styles } = useStyles();
+  const { styles } = useStyles();
   const { style, className } = props;
 
   return (
     <div className={classNames(className, styles.container)} style={style}>
       <div className={styles.content}>
-        <Center>
-          <h1 className={styles.title}>Find Your Lovest Vidol</h1>
-          <GridBackground
-            animation
-            className={styles.background}
-            colorFront={theme.colorText}
-            random
-          />
-        </Center>
+        <TopBanner title="Find Your Lovest Vidol" />
         <AgentIndex />
       </div>
       <AgentCard />

@@ -37,12 +37,22 @@ export const useStyles = createStyles(({ css, token }) => ({
     border: 3px solid ${token.colorPrimary}; /* 轨道颜色和透明度 */
     border-radius: 50%;
   `,
-
-  roleSelect: css`
+  sidebar: css`
     position: fixed;
     top: 64px;
     left: 0;
+  `,
 
+  header: css`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 16px;
+
+    border-bottom: 1px solid ${token.colorBorder};
+  `,
+  list: css`
     overflow: auto;
     display: grid;
     grid-auto-flow: row;
@@ -51,7 +61,6 @@ export const useStyles = createStyles(({ css, token }) => ({
     grid-template-rows: repeat(auto-fill, 64px);
     justify-items: center;
 
-    height: calc(100vh - 64px - 64px);
     padding: 32px;
   `,
 }));

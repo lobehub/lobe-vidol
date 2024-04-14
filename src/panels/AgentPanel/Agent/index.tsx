@@ -8,7 +8,7 @@ import { useAgentStore } from '@/store/agent';
 import AgentCard from './AgentCard';
 import AgentList from './AgentList';
 
-const TopBanner = dynamic(() => import('./TopBanner'), { ssr: false });
+const TopBanner = dynamic(() => import('../../../components/TopBanner'), { ssr: false });
 
 const useStyles = createStyles(({ css }) => ({
   container: css`
@@ -41,7 +41,7 @@ const Agent = (props: AgentProps) => {
   return (
     <div className={classNames(className, styles.container)} style={style}>
       <div className={styles.content}>
-        <TopBanner />
+        <TopBanner title="Hello, Let's Chat!" />
         <AgentList dataSource={subscribedList} title="订阅列表" style={{ marginTop: 12 }} />
       </div>
       <AgentCard />
