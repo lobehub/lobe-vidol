@@ -4,8 +4,8 @@ import React, { memo } from 'react';
 
 import TopBanner from '@/components/TopBanner';
 
-import AgentCard from './AgentCard';
-import AgentIndex from './AgentIndex';
+import AgentCard from './Card';
+import AgentIndex from './List';
 
 const useStyles = createStyles(({ css }) => ({
   background: css`

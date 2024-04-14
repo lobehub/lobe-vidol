@@ -5,8 +5,8 @@ import React, { memo } from 'react';
 
 import { useAgentStore } from '@/store/agent';
 
-import AgentCard from './AgentCard';
-import AgentList from './AgentList';
+import AgentCard from './Card';
+import AgentList from './List';
 
 const TopBanner = dynamic(() => import('../../../components/TopBanner'), { ssr: false });
 
@@ -42,7 +42,7 @@ const Agent = (props: AgentProps) => {
     <div className={classNames(className, styles.container)} style={style}>
       <div className={styles.content}>
         <TopBanner title="Hello, Let's Chat!" />
-        <AgentList dataSource={subscribedList} title="订阅列表" style={{ marginTop: 12 }} />
+        <AgentList dataSource={subscribedList} />
       </div>
       <AgentCard />
     </div>
