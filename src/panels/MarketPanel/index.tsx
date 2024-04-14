@@ -6,7 +6,7 @@ import PanelContainer from '@/panels/PanelContainer';
 import { useMarketStore } from '@/store/market';
 
 import Agent from '../AgentPanel/Market';
-import Dance from './Dance';
+import Dance from '../DancePanel/Market';
 import SideNav from './SideNav';
 import { useStyles } from './style';
 

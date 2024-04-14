@@ -1,8 +1,8 @@
-import { GridBackground } from '@lobehub/ui';
 import { createStyles } from 'antd-style';
 import classNames from 'classnames';
 import React from 'react';
-import { Center } from 'react-layout-kit';
+
+import TopBanner from '@/components/TopBanner';
 
 import DanceCard from './DanceCard';
 import DanceIndex from './DanceIndex';
@@ -42,19 +42,11 @@ interface DanceProps {
 
 const Dance = (props: DanceProps) => {
   const { style, className } = props;
-  const { theme, styles } = useStyles();
+  const { styles } = useStyles();
   return (
     <div className={classNames(className, styles.container)} style={style}>
       <div className={styles.content}>
-        <Center>
-          <h1 className={styles.title}>Find Your Favorite Dance</h1>
-          <GridBackground
-            animation
-            className={styles.background}
-            colorFront={theme.colorText}
-            random
-          />
-        </Center>
+        <TopBanner title="Find Your Favorite Dance" />
         <DanceIndex />
       </div>
       <DanceCard />
