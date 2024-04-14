@@ -1,4 +1,5 @@
 import { Icon } from '@lobehub/ui';
+import { Empty, Space } from 'antd';
 import classNames from 'classnames';
 import { Loader2 } from 'lucide-react';
 import React, { memo } from 'react';
@@ -15,6 +16,9 @@ interface Item {
 
 interface GridListProps {
   className?: string;
+  empty?: {
+    actions?: React.ReactNode[];
+  };
   isActivated?: (id: string) => boolean;
   isChecked?: (id: string) => boolean;
   items: Item[];
@@ -24,35 +28,54 @@ interface GridListProps {
 }
 
 const GridList = (props: GridListProps) => {
-  const { items, className, style, onClick, isActivated, isChecked, loading = false } = props;
+  const {
+    items,
+    className,
+    style,
+    onClick,
+    isActivated,
+    isChecked,
+    loading = false,
+    empty,
+  } = props;
   const { styles } = useStyles();
 
   const Loading = () => (
-    <Center gap={16} horizontal>
+    <Center gap={16} horizontal className={styles.loading}>
       <Icon icon={Loader2} spin />
+      加载中...
     </Center>
   );
 
-  const List = () =>
-    items.map((item) => {
-      const { avatar, name, id } = item;
-      return (
-        <ListItem
-          key={id}
-          title={name}
-          avatar={avatar}
-          onClick={() => {
-            if (onClick) onClick(id);
-          }}
-          active={isActivated ? isActivated(id) : false}
-          checked={isChecked ? isChecked(id) : false}
-        />
-      );
-    });
+  const List = () => (
+    <div className={styles.list}>
+      {items.map((item) => {
+        const { avatar, name, id } = item;
+        return (
+          <ListItem
+            key={id}
+            title={name}
+            avatar={avatar}
+            onClick={() => {
+              if (onClick) onClick(id);
+            }}
+            active={isActivated ? isActivated(id) : false}
+            checked={isChecked ? isChecked(id) : false}
+          />
+        );
+      })}
+    </div>
+  );
+
+  const EmptyList = () => (
+    <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} description="暂无数据">
+      {empty?.actions ? <Space>{empty.actions}</Space> : null}
+    </Empty>
+  );
 
   return (
-    <div className={classNames(className, styles.list)} style={style}>
-      {loading ? <Loading /> : <List />}
+    <div className={classNames(className, styles.grid)} style={style}>
+      {loading ? <Loading /> : items.length === 0 ? <EmptyList /> : <List />}
     </div>
   );
 };

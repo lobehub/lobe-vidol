@@ -1,3 +1,4 @@
+import { GradientButton } from '@lobehub/ui';
 import React, { memo } from 'react';
 
 import GridList from '@/components/GridList';
@@ -5,11 +6,12 @@ import { useAgentStore } from '@/store/agent';
 
 interface AgentListProps {
   className?: string;
+  setTab?: (tab: string) => void;
   style?: React.CSSProperties;
 }
 
 const AgentList = (props: AgentListProps) => {
-  const { className, style } = props;
+  const { className, style, setTab } = props;
 
   const [subscribedList, activateAgent, currentIdentifier] = useAgentStore((s) => [
     s.subscribedList,
@@ -30,6 +32,22 @@ const AgentList = (props: AgentListProps) => {
         activateAgent(id);
       }}
       isActivated={(id) => id === currentIdentifier}
+      empty={{
+        actions: [
+          <GradientButton
+            key="subscribe"
+            glow
+            size={'middle'}
+            onClick={() => {
+              if (setTab) {
+                setTab('market');
+              }
+            }}
+          >
+            + 订阅角色
+          </GradientButton>,
+        ],
+      }}
     />
   );
 };

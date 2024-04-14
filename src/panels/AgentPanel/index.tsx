@@ -28,10 +28,12 @@ const ControlPanel = (props: ControlPanelProps) => {
       className={className}
       panelKey="agent"
       style={style}
-      title="智能体"
+      title="角色"
       extra={<Segmented options={options} size="small" value={tab} onChange={setTab} />}
     >
-      <div className={styles.content}>{tab === 'agent' ? <Agent /> : <Market />}</div>
+      <div className={styles.content}>
+        {tab === 'agent' ? <Agent setTab={setTab} /> : <Market />}
+      </div>
     </PanelContainer>
   );
 };

@@ -27,18 +27,19 @@ const useStyles = createStyles(({ css }) => ({
 
 interface AgentProps {
   className?: string;
+  setTab?: (tab: string) => void;
   style?: React.CSSProperties;
 }
 
 const Agent = (props: AgentProps) => {
   const { styles } = useStyles();
-  const { style, className } = props;
+  const { style, className, setTab } = props;
 
   return (
     <div className={classNames(className, styles.container)} style={style}>
       <div className={styles.content}>
         <TopBanner title="Hello, Let's Chat!" />
-        <AgentList />
+        <AgentList setTab={setTab} />
       </div>
       <AgentCard />
     </div>

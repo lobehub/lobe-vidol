@@ -5,7 +5,7 @@ import React, { memo } from 'react';
 import TopBanner from '@/components/TopBanner';
 
 import AgentCard from './Card';
-import AgentIndex from './List';
+import AgentList from './List';
 
 const useStyles = createStyles(({ css }) => ({
   background: css`
@@ -37,6 +37,7 @@ const useStyles = createStyles(({ css }) => ({
 
 interface AgentProps {
   className?: string;
+  setTab?: (tab: string) => void;
   style?: React.CSSProperties;
 }
 
@@ -48,7 +49,7 @@ const Agent = (props: AgentProps) => {
     <div className={classNames(className, styles.container)} style={style}>
       <div className={styles.content}>
         <TopBanner title="Find Your Lovest Vidol" />
-        <AgentIndex />
+        <AgentList />
       </div>
       <AgentCard />
     </div>

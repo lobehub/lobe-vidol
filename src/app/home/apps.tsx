@@ -7,14 +7,14 @@ export const apps = [
       'https://registry.npmmirror.com/@lobehub/assets-emoji/latest/files/assets/card-index.webp',
     component: <AgentPanel />,
     key: 'agent',
-    label: '角色订阅',
+    label: '角色',
   },
   {
     avatar:
       'https://registry.npmmirror.com/@lobehub/assets-emoji/latest/files/assets/folding-hand-fan.webp',
     component: <DancePanel />,
     key: 'dance',
-    label: '舞蹈',
+    label: '跳舞',
   },
   {
     avatar:

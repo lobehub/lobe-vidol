@@ -31,11 +31,13 @@ const DancePanel = (props: DancePanelProps) => {
       className={className}
       panelKey="dance"
       style={style}
-      title="舞蹈订阅"
+      title="跳舞"
       extra={<Segmented options={options} size="small" value={tab} onChange={setTab} />}
     >
       <div className={styles.content}>
-        <div className={styles.content}>{tab === 'dance' ? <Dance /> : <Market />}</div>
+        <div className={styles.content}>
+          {tab === 'dance' ? <Dance setTab={setTab} /> : <Market />}
+        </div>
       </div>
     </PanelContainer>
   );
