@@ -21,5 +21,7 @@ export const useStyles = createStyles(({ css }) => ({
     grid-template-columns: repeat(auto-fill, ${LIST_GRID_WIDTH}px);
     grid-template-rows: repeat(auto-fill, ${LIST_GRID_HEIGHT}px);
     justify-items: center;
+
+    height: 100%;
   `,
 }));
