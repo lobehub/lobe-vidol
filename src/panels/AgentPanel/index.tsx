@@ -20,7 +20,7 @@ const ControlPanel = (props: ControlPanelProps) => {
 
   const options = [
     { value: 'agent', label: '已订阅', icon: <BarsOutlined /> },
-    { value: 'market', label: '创意工坊', icon: <AppstoreOutlined /> },
+    { value: 'market', label: '发现', icon: <AppstoreOutlined /> },
   ];
 
   return (

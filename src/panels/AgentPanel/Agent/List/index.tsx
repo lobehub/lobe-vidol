@@ -1,11 +1,8 @@
-import classNames from 'classnames';
-import React, { memo } from 'react';
+import React from 'react';
 
-import ListItem from '@/components/ListItem';
+import GridList from '@/components/GridList';
 import { useAgentStore } from '@/store/agent';
 import { Agent } from '@/types/agent';
-
-import { useStyles } from './style';
 
 interface AgentListProps {
   className?: string;
@@ -19,27 +16,22 @@ const AgentList = (props: AgentListProps) => {
     s.activateAgent,
     s.currentIdentifier,
   ]);
-  const { styles } = useStyles();
 
   return (
-    <div className={classNames(className, styles.list)} style={style}>
-      {dataSource.map((item) => {
-        const { avatar, name } = item.meta;
-        const isSelected = item.agentId === currentIdentifier;
-        return (
-          <ListItem
-            key={item.agentId}
-            title={name}
-            avatar={avatar}
-            onClick={() => {
-              activateAgent(item.agentId);
-            }}
-            active={isSelected}
-          />
-        );
-      })}
-    </div>
+    <GridList
+      className={className}
+      style={style}
+      items={dataSource.map((items) => ({
+        avatar: items.meta.avatar,
+        id: items.agentId,
+        name: items.meta.name,
+      }))}
+      onClick={(id) => {
+        activateAgent(id);
+      }}
+      isActivated={(id) => id === currentIdentifier}
+    />
   );
 };
 
-export default memo(AgentList);
+export default AgentList;
