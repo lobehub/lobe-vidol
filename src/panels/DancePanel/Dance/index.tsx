@@ -4,8 +4,8 @@ import classNames from 'classnames';
 import React, { memo } from 'react';
 import { Center } from 'react-layout-kit';
 
-import DanceCard from './DanceCard';
-import DanceList from './DanceList';
+import DanceCard from './Card';
+import DanceList from './List';
 
 const useStyles = createStyles(({ css }) => ({
   background: css`

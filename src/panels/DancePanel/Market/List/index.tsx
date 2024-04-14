@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React, { memo, useEffect } from 'react';
 
 import GridList from '@/components/GridList';
 import { danceListSelectors, useDanceStore } from '@/store/dance';
@@ -11,13 +11,14 @@ interface DanceListProps {
 
 const Index = (props: DanceListProps) => {
   const { className, style } = props;
-  const [activateDance, danceList, danceLoading, currentDanceId] = useMarketStore((s) => [
-    s.activateDance,
-    s.danceList,
-    s.danceLoading,
-    s.currentDanceId,
-  ]);
+  const [activateDance, danceList, danceLoading, currentDanceId, fetchDanceIndex] = useMarketStore(
+    (s) => [s.activateDance, s.danceList, s.danceLoading, s.currentDanceId, s.fetchDanceIndex],
+  );
   const [subscribed] = useDanceStore((s) => [danceListSelectors.subscribed(s)]);
+
+  useEffect(() => {
+    fetchDanceIndex();
+  }, [fetchDanceIndex]);
 
   return (
     <GridList

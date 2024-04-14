@@ -4,8 +4,8 @@ import React from 'react';
 
 import TopBanner from '@/components/TopBanner';
 
-import DanceCard from './DanceCard';
-import DanceIndex from './DanceIndex';
+import DanceCard from './Card';
+import DanceList from './List';
 
 const useStyles = createStyles(({ css }) => ({
   background: css`
@@ -47,7 +47,7 @@ const Dance = (props: DanceProps) => {
     <div className={classNames(className, styles.container)} style={style}>
       <div className={styles.content}>
         <TopBanner title="Find Your Favorite Dance" />
-        <DanceIndex />
+        <DanceList />
       </div>
       <DanceCard />
     </div>

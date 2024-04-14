@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React, { memo, useEffect } from 'react';
 
 import GridList from '@/components/GridList';
 import { agentListSelectors, useAgentStore } from '@/store/agent';
@@ -11,12 +11,13 @@ interface AgentListProps {
 
 const AgentList = (props: AgentListProps) => {
   const { className, style } = props;
-  const [activateAgent, agentList, agentLoading, currentAgentId] = useMarketStore((s) => [
-    s.activateAgent,
-    s.agentList,
-    s.agentLoading,
-    s.currentAgentId,
-  ]);
+  const [activateAgent, agentList, agentLoading, currentAgentId, fetchAgentIndex] = useMarketStore(
+    (s) => [s.activateAgent, s.agentList, s.agentLoading, s.currentAgentId, s.fetchAgentIndex],
+  );
+  useEffect(() => {
+    fetchAgentIndex();
+  }, [fetchAgentIndex]);
+
   const [subscribed] = useAgentStore((s) => [agentListSelectors.subscribed(s)]);
 
   return (
