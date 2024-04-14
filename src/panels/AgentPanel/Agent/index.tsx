@@ -42,7 +42,7 @@ const Agent = (props: AgentProps) => {
     <div className={classNames(className, styles.container)} style={style}>
       <div className={styles.content}>
         <TopBanner />
-        <AgentList dataSource={subscribedList} title="订阅列表" />
+        <AgentList dataSource={subscribedList} title="订阅列表" style={{ marginTop: 12 }} />
       </div>
       <AgentCard />
     </div>

@@ -5,7 +5,7 @@ import React from 'react';
 import PanelContainer from '@/panels/PanelContainer';
 import { useMarketStore } from '@/store/market';
 
-import Agent from './Agent';
+import Agent from '../AgentPanel/Market';
 import Dance from './Dance';
 import SideNav from './SideNav';
 import { useStyles } from './style';
@@ -22,7 +22,7 @@ const MarketPanel = (props: MarketPanelProps) => {
 
   return (
     <PanelContainer className={className} panelKey="market" style={style} title="虚拟商店">
-      <SideNav className="handle" />
+      <SideNav />
       <div className={styles.content}>
         <Dance style={{ display: tab === 'dance' ? 'flex' : 'none' }} />
         <Agent style={{ display: tab === 'agent' ? 'flex' : 'none' }} />

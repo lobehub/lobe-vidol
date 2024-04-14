@@ -10,7 +10,7 @@ interface PanelContainerProps {
   className?: string;
   panelKey: PanelKey;
   style?: React.CSSProperties;
-  title?: string;
+  title?: React.ReactNode;
 }
 
 const PanelContainer = (props: PropsWithChildren<PanelContainerProps>) => {

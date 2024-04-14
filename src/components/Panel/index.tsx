@@ -21,7 +21,7 @@ interface ControlPanelProps {
   onCoordinatesChange?: (coordinates: Coordinates) => void;
   onFocus?: React.FocusEventHandler;
   style?: React.CSSProperties;
-  title?: string;
+  title?: React.ReactNode;
   zIndex?: number;
 }
 

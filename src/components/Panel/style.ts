@@ -55,7 +55,7 @@ export const useStyles = createStyles(({ css, token }) => ({
     justify-content: space-between;
 
     width: 100%;
-    height: 32px;
+    height: 42px;
     padding: 0 ${token.paddingXS}px;
 
     border-bottom: 1px solid #999;
