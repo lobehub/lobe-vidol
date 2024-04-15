@@ -5,6 +5,7 @@ import { ThemeAppearance, createStyles } from 'antd-style';
 import { ReactNode } from 'react';
 
 import { VIDOL_THEME_APPEARANCE } from '@/constants/common';
+import Header from '@/layout/Header';
 import { useConfigStore } from '@/store/config';
 import { useThemeStore } from '@/store/theme';
 import { GlobalStyle } from '@/styles';
@@ -13,13 +14,11 @@ import { setCookie } from '@/utils/cookie';
 import StoreHydration from './StoreHydration';
 
 const useStyles = createStyles(({ css }) => ({
-  bg: css`
-    overflow-y: hidden;
+  content: css`
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    height: 100%;
+    height: calc(100% - 64px);
   `,
 }));
 
@@ -47,7 +46,8 @@ const Layout = (props: LayoutProps) => {
     >
       <StoreHydration />
       <GlobalStyle />
-      <main className={styles.bg}>{children}</main>
+      <Header />
+      <main className={styles.content}>{children}</main>
     </ThemeProvider>
   );
 };
