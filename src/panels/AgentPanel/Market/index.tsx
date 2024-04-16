@@ -1,6 +1,6 @@
 import { createStyles } from 'antd-style';
 import classNames from 'classnames';
-import React, { memo } from 'react';
+import React from 'react';
 
 import TopBanner from '@/components/TopBanner';
 
@@ -37,7 +37,6 @@ const useStyles = createStyles(({ css }) => ({
 
 interface AgentProps {
   className?: string;
-  setTab?: (tab: string) => void;
   style?: React.CSSProperties;
 }
 
@@ -56,4 +55,4 @@ const Agent = (props: AgentProps) => {
   );
 };
 
-export default memo(Agent);
+export default Agent;

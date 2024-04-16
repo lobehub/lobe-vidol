@@ -1,6 +1,6 @@
 import { Agent } from '@/types/agent';
 
-export const V_CHAT_DEFAULT_AGENT_ID = 'v-chat-default-agent';
+export const V_CHAT_DEFAULT_AGENT_ID = 'v-chat-default-market';
 
 export const DEFAULT_AGENT: Agent = {
   agentId: V_CHAT_DEFAULT_AGENT_ID,

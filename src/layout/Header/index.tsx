@@ -8,7 +8,7 @@ import { useState } from 'react';
 const Header = () => {
   const router = useRouter();
   const pathname = usePathname();
-  const [activeKey, setActiveKey] = useState(pathname.replace('/', '') || 'home');
+  const [activeKey, setActiveKey] = useState(pathname.split('/')[1] || 'home');
   return (
     <LobeHeader
       actions={[
@@ -31,6 +31,10 @@ const Header = () => {
             {
               key: 'chat',
               label: '聊天',
+            },
+            {
+              key: 'market',
+              label: '发现',
             },
           ]}
           onChange={(key) => {
