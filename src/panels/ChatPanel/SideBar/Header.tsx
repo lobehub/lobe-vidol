@@ -31,7 +31,7 @@ const Header = memo((props: HeaderProps) => {
           value={value}
         />
       </Flexbox>
-      <ActionIcon icon={Plus} onClick={() => openPanel('agent')} title={'找人聊天'} />
+      <ActionIcon icon={Plus} onClick={() => openPanel('agent')} title={'创建对话'} />
     </div>
   );
 });
