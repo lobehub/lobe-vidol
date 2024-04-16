@@ -1,13 +1,10 @@
 'use client';
 
-import classNames from 'classnames';
 import React from 'react';
 
 import PanelContainer from '@/panels/PanelContainer';
 
 import ChatBot from './ChatBot';
-import SideBar from './SideBar';
-import { useStyles } from './style';
 
 interface ChatPanelProps {
   className?: string;
@@ -16,14 +13,10 @@ interface ChatPanelProps {
 
 const ChatPanel = (props: ChatPanelProps) => {
   const { style, className } = props;
-  const { styles } = useStyles();
 
   return (
     <PanelContainer className={className} panelKey="chat" style={style} title="聊天">
-      <div className={classNames(className, styles.content)} style={style}>
-        <SideBar />
-        <ChatBot />
-      </div>
+      <ChatBot />
     </PanelContainer>
   );
 };

@@ -1,7 +1,7 @@
 import AgentMeta from '@/components/AgentMeta';
+import Voice from '@/features/ChatInput/Actions/Voice';
 import { sessionSelectors, useSessionStore } from '@/store/session';
 
-import Voice from '../../../features/ChatInput/Actions/Voice';
 import { useStyles } from './style';
 
 const Header = () => {
