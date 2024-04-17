@@ -26,7 +26,7 @@ const Header = () => {
           items={[
             {
               key: 'home',
-              label: '首页',
+              label: '互动',
             },
             {
               key: 'chat',
@@ -35,6 +35,10 @@ const Header = () => {
             {
               key: 'market',
               label: '发现',
+            },
+            {
+              key: 'my',
+              label: '我的',
             },
           ]}
           onChange={(key) => {

@@ -19,7 +19,7 @@ const Dance = (props: DanceProps) => {
   return (
     <div className={classNames(className, styles.container)} style={style}>
       <div className={styles.content}>
-        <TopBanner title={"Let's Dance"} />
+        <TopBanner title={"Hi, Let's Dance!"} />
         <DanceList setTab={setTab} />
       </div>
       <DanceCard />

@@ -12,8 +12,8 @@ export interface MarketListProps {
 
 const MarketList = memo<MarketListProps>(({ activeTab, mobile }) => {
   const items = [
-    { icon: Bot, label: '角色', value: MarketTabs.Agent },
-    { icon: Mic2, label: '跳舞', value: MarketTabs.Dance },
+    { icon: Bot, label: '角色订阅', value: MarketTabs.Agent },
+    { icon: Mic2, label: '舞蹈订阅', value: MarketTabs.Dance },
   ];
 
   return items.map(({ value, icon, label }) => (
