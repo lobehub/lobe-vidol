@@ -8,7 +8,6 @@ import PanelContainer from '@/panels/PanelContainer';
 
 import Dance from './Dance';
 import Market from './Market';
-import { useStyles } from './style';
 
 interface DancePanelProps {
   className?: string;
@@ -18,8 +17,6 @@ interface DancePanelProps {
 const DancePanel = (props: DancePanelProps) => {
   const { style, className } = props;
   const [tab, setTab] = useState('dance');
-
-  const { styles } = useStyles();
 
   const options = [
     { value: 'dance', label: '已订阅', icon: <BarsOutlined /> },
@@ -34,11 +31,7 @@ const DancePanel = (props: DancePanelProps) => {
       title="跳舞"
       extra={<Segmented options={options} size="small" value={tab} onChange={setTab} />}
     >
-      <div className={styles.content}>
-        <div className={styles.content}>
-          {tab === 'dance' ? <Dance setTab={setTab} /> : <Market />}
-        </div>
-      </div>
+      {tab === 'dance' ? <Dance setTab={setTab} /> : <Market />}
     </PanelContainer>
   );
 };
