@@ -2,13 +2,18 @@
 
 import { ActionIcon, Header as LobeHeader, Logo, TabsNav } from '@lobehub/ui';
 import { GithubIcon } from 'lucide-react';
-import { usePathname, useRouter } from 'next/navigation';
-import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
-const Header = () => {
+import { HeaderNavKey } from '@/layout/type';
+
+interface Props {
+  headerKey?: HeaderNavKey;
+}
+
+const Header = (props: Props) => {
+  const { headerKey } = props;
   const router = useRouter();
-  const pathname = usePathname();
-  const [activeKey, setActiveKey] = useState(pathname.split('/')[1] || 'home');
+
   return (
     <LobeHeader
       actions={[
@@ -22,27 +27,26 @@ const Header = () => {
       logo={<Logo extra={'Vidol'} size={36} type={'combine'} />}
       nav={
         <TabsNav
-          activeKey={activeKey}
+          activeKey={headerKey}
           items={[
             {
-              key: 'home',
+              key: HeaderNavKey.Home,
               label: '互动',
             },
             {
-              key: 'chat',
+              key: HeaderNavKey.Chat,
               label: '聊天',
             },
             {
-              key: 'market',
+              key: HeaderNavKey.Market,
               label: '发现',
             },
             {
-              key: 'my',
+              key: HeaderNavKey.My,
               label: '我的',
             },
           ]}
           onChange={(key) => {
-            setActiveKey(key);
             router.push(`/${key}`);
           }}
         />

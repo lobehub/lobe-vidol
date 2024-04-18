@@ -5,7 +5,6 @@ import { ThemeAppearance, createStyles } from 'antd-style';
 import { ReactNode } from 'react';
 
 import { VIDOL_THEME_APPEARANCE } from '@/constants/common';
-import Header from '@/layout/Header';
 import { useConfigStore } from '@/store/config';
 import { useThemeStore } from '@/store/theme';
 import { GlobalStyle } from '@/styles';
@@ -46,7 +45,6 @@ const Layout = (props: LayoutProps) => {
     >
       <StoreHydration />
       <GlobalStyle />
-      <Header />
       <main className={styles.content}>{children}</main>
     </ThemeProvider>
   );

@@ -6,6 +6,8 @@ import Panel from '@/components/Panel';
 import { configSelectors, useConfigStore } from '@/store/config';
 import { PanelKey } from '@/types/config';
 
+import { PanelContext } from './PanelContext';
+
 interface PanelContainerProps {
   className?: string;
   extra?: React.ReactNode;
@@ -38,7 +40,7 @@ const PanelContainer = (props: PropsWithChildren<PanelContainerProps>) => {
       extra={extra}
       zIndex={zIndex}
     >
-      {children}
+      <PanelContext.Provider value={true}>{children}</PanelContext.Provider>
     </Panel>
   );
 };

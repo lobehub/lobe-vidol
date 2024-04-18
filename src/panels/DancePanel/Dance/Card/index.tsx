@@ -21,21 +21,14 @@ const useStyles = createStyles(({ css, token }) => ({
 const SideBar = memo(() => {
   const { styles } = useStyles();
   const [tempId, setTempId] = useState<string>('');
-  const [
-    showDanceSidebar,
-    activateDance,
-    deactivateDance,
-    addAndPlayItem,
-    setIsPlaying,
-    unsubscribe,
-  ] = useDanceStore((s) => [
-    danceListSelectors.showSideBar(s),
-    s.activateDance,
-    s.deactivateDance,
-    s.addAndPlayItem,
-    s.setIsPlaying,
-    s.unsubscribe,
-  ]);
+  const [showDanceSidebar, activateDance, deactivateDance, addAndPlayItem, unsubscribe] =
+    useDanceStore((s) => [
+      danceListSelectors.showSideBar(s),
+      s.activateDance,
+      s.deactivateDance,
+      s.addAndPlayItem,
+      s.unsubscribe,
+    ]);
 
   const currentDance = useDanceStore((s) => danceListSelectors.currentDanceItem(s));
 
@@ -64,12 +57,11 @@ const SideBar = memo(() => {
             onClick={() => {
               if (currentDance) {
                 addAndPlayItem(currentDance);
-                setIsPlaying(true);
               }
             }}
             type={'primary'}
           >
-            播放并添加到歌单
+            播放
           </Button>,
           <Popconfirm
             cancelText="取消"
