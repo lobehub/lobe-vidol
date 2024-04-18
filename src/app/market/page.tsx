@@ -1,5 +1,3 @@
-import Redirect from '@/app/market/Redirect';
-
-const Index = () => <Redirect />;
+const Index = () => <div>index</div>;
 
 export default Index;

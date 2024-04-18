@@ -3,6 +3,7 @@
 import { ActionIcon, Header as LobeHeader, Logo, TabsNav } from '@lobehub/ui';
 import { GithubIcon } from 'lucide-react';
 import { useRouter } from 'next/navigation';
+import { memo } from 'react';
 
 import { HeaderNavKey } from '@/layout/type';
 
@@ -55,4 +56,4 @@ const Header = (props: Props) => {
   );
 };
 
-export default Header;
+export default memo(Header);

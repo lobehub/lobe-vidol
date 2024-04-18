@@ -28,4 +28,4 @@ const MarketList = memo<MarketListProps>(({ activeTab, mobile }) => {
   ));
 });
 
-export default MarketList;
+export default memo(MarketList);

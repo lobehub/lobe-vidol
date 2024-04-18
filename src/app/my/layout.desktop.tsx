@@ -1,10 +1,12 @@
 'use client';
 
-import { ReactNode } from 'react';
+import { ReactNode, memo } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
 import SideBar from '@/app/my/SideBar';
 import { MyTabs } from '@/app/my/SideBar/type';
+import AppLayout from '@/layout/AppLayout';
+import { HeaderNavKey } from '@/layout/type';
 
 export interface LayoutProps {
   activeTab: MyTabs;
@@ -14,13 +16,15 @@ export interface LayoutProps {
 const LayoutDesktop = (props: LayoutProps) => {
   const { children, activeTab } = props;
   return (
-    <Flexbox flex={1} height={'100%'} width={'100%'} style={{ position: 'relative' }} horizontal>
-      <SideBar activeTab={activeTab} />
-      <Flexbox align={'center'} flex={1} style={{ overflow: 'scroll' }}>
-        {children}
+    <AppLayout headerKey={HeaderNavKey.My}>
+      <Flexbox flex={1} height={'100%'} width={'100%'} style={{ position: 'relative' }} horizontal>
+        <SideBar activeTab={activeTab} />
+        <Flexbox align={'center'} flex={1} style={{ overflow: 'scroll' }}>
+          {children}
+        </Flexbox>
       </Flexbox>
-    </Flexbox>
+    </AppLayout>
   );
 };
 
-export default LayoutDesktop;
+export default memo(LayoutDesktop);
