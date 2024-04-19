@@ -63,7 +63,7 @@ const Header = () => {
             }}
             type={'primary'}
           >
-            加载
+            聊天
           </Button>,
           <Button
             key="edit"

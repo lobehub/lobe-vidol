@@ -31,12 +31,12 @@ const Header = (props: Props) => {
           activeKey={headerKey}
           items={[
             {
-              key: HeaderNavKey.Home,
-              label: '互动',
-            },
-            {
               key: HeaderNavKey.Chat,
               label: '聊天',
+            },
+            {
+              key: HeaderNavKey.Home,
+              label: '互动',
             },
             {
               key: HeaderNavKey.Market,
