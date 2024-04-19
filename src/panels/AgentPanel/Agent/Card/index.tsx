@@ -1,3 +1,5 @@
+'use client';
+
 import { DraggablePanel } from '@lobehub/ui';
 import { Button, Popconfirm } from 'antd';
 import { createStyles } from 'antd-style';
