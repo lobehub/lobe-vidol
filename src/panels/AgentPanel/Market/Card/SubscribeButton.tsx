@@ -1,4 +1,4 @@
-import { Button } from 'antd';
+import { Button, message } from 'antd';
 
 import { agentListSelectors, useAgentStore } from '@/store/agent';
 import { Agent } from '@/types/agent';
@@ -23,8 +23,10 @@ const SubscribeButton = (props: SubscribeButtonProps) => {
       onClick={() => {
         if (isSubscribed) {
           unsubscribe(agent.agentId);
+          message.success('已取消订阅');
         } else {
           subscribe(agent);
+          message.success('订阅成功');
         }
       }}
       type={isSubscribed ? 'default' : 'primary'}

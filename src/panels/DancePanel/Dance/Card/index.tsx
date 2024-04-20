@@ -1,9 +1,10 @@
 import { DraggablePanel } from '@lobehub/ui';
 import { Button, Popconfirm } from 'antd';
 import { createStyles } from 'antd-style';
-import { memo, useState } from 'react';
+import React, { memo, useState } from 'react';
 
 import DanceInfo from '@/components/DanceInfo';
+import { PanelContext } from '@/panels/PanelContext';
 import { danceListSelectors, useDanceStore } from '@/store/dance';
 
 const useStyles = createStyles(({ css, token }) => ({
@@ -21,14 +22,22 @@ const useStyles = createStyles(({ css, token }) => ({
 const SideBar = memo(() => {
   const { styles } = useStyles();
   const [tempId, setTempId] = useState<string>('');
-  const [showDanceSidebar, activateDance, deactivateDance, addAndPlayItem, unsubscribe] =
-    useDanceStore((s) => [
-      danceListSelectors.showSideBar(s),
-      s.activateDance,
-      s.deactivateDance,
-      s.addAndPlayItem,
-      s.unsubscribe,
-    ]);
+  const [
+    showDanceSidebar,
+    activateDance,
+    deactivateDance,
+    addAndPlayItem,
+    addPlayItem,
+    unsubscribe,
+  ] = useDanceStore((s) => [
+    danceListSelectors.showSideBar(s),
+    s.activateDance,
+    s.deactivateDance,
+    s.addAndPlayItem,
+    s.addPlayItem,
+    s.unsubscribe,
+  ]);
+  const isInPanel = React.useContext(PanelContext);
 
   const currentDance = useDanceStore((s) => danceListSelectors.currentDanceItem(s));
 
@@ -52,17 +61,31 @@ const SideBar = memo(() => {
     >
       <DanceInfo
         actions={[
-          <Button
-            key="play"
-            onClick={() => {
-              if (currentDance) {
-                addAndPlayItem(currentDance);
-              }
-            }}
-            type={'primary'}
-          >
-            播放
-          </Button>,
+          isInPanel ? (
+            <Button
+              key="play"
+              onClick={() => {
+                if (currentDance) {
+                  addAndPlayItem(currentDance);
+                }
+              }}
+              type={'primary'}
+            >
+              播放并添加到列表
+            </Button>
+          ) : (
+            <Button
+              key="play"
+              onClick={() => {
+                if (currentDance) {
+                  addPlayItem(currentDance);
+                }
+              }}
+              type={'primary'}
+            >
+              添加到播放列表
+            </Button>
+          ),
           <Popconfirm
             cancelText="取消"
             description={`确定取消订阅音乐【${currentDance?.name}】吗？`}

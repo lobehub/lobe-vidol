@@ -28,7 +28,7 @@ const DancePanel = (props: DancePanelProps) => {
       className={className}
       panelKey="dance"
       style={style}
-      title="跳舞"
+      title="舞蹈商店"
       extra={<Segmented options={options} size="small" value={tab} onChange={setTab} />}
     >
       {tab === 'dance' ? <Dance setTab={setTab} /> : <Market />}

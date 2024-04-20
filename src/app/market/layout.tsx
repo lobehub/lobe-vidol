@@ -3,22 +3,18 @@
 import { ReactNode, memo } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
-import SideBar from '@/app/market/SideBar';
-import { MarketTabs } from '@/app/market/SideBar/type';
 import AppLayout from '@/layout/AppLayout';
 import { HeaderNavKey } from '@/layout/type';
 
 export interface LayoutProps {
-  activeTab: MarketTabs;
   children?: ReactNode;
 }
 
-const LayoutDesktop = (props: LayoutProps) => {
-  const { children, activeTab } = props;
+const Layout = (props: LayoutProps) => {
+  const { children } = props;
   return (
     <AppLayout headerKey={HeaderNavKey.Market}>
       <Flexbox flex={1} height={'100%'} width={'100%'} style={{ position: 'relative' }} horizontal>
-        <SideBar activeTab={activeTab} />
         <Flexbox align={'center'} flex={1} style={{ overflow: 'scroll' }}>
           {children}
         </Flexbox>
@@ -27,4 +23,4 @@ const LayoutDesktop = (props: LayoutProps) => {
   );
 };
 
-export default memo(LayoutDesktop);
+export default memo(Layout);

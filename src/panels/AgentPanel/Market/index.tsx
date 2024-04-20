@@ -8,11 +8,7 @@ import AgentCard from './Card';
 import AgentList from './List';
 
 const useStyles = createStyles(({ css }) => ({
-  background: css`
-    width: 90%;
-    margin: -24px 0 -12px;
-  `,
-  container: css`
+  market: css`
     position: relative;
 
     display: flex;
@@ -21,11 +17,15 @@ const useStyles = createStyles(({ css }) => ({
     height: 100%;
     min-height: 500px;
   `,
+  container: css`
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+  `,
   content: css`
     overflow-y: auto;
-    flex-grow: 1;
-    padding-right: 24px;
-    padding-left: 24px;
+    max-width: 1024px;
+    margin: 0 auto;
   `,
   title: css`
     z-index: 2;
@@ -45,10 +45,12 @@ const Agent = (props: AgentProps) => {
   const { style, className } = props;
 
   return (
-    <div className={classNames(className, styles.container)} style={style}>
-      <div className={styles.content}>
-        <TopBanner title="Find Your Lovest Vidol" />
-        <AgentList />
+    <div className={classNames(className, styles.market)} style={style}>
+      <div className={styles.container}>
+        <div className={styles.content}>
+          <TopBanner title="Find Your Lovest Vidol" />
+          <AgentList />
+        </div>
       </div>
       <AgentCard />
     </div>

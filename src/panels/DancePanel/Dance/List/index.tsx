@@ -1,9 +1,7 @@
 import { GradientButton } from '@lobehub/ui';
-import { useRouter } from 'next/navigation';
-import React, { useContext } from 'react';
+import React from 'react';
 
 import GridList from '@/components/GridList';
-import { PanelContext } from '@/panels/PanelContext';
 import { useDanceStore } from '@/store/dance';
 
 interface DanceListProps {
@@ -14,8 +12,6 @@ interface DanceListProps {
 
 const DanceList = (props: DanceListProps) => {
   const { className, style, setTab } = props;
-  const router = useRouter();
-  const isTab = useContext(PanelContext);
   const [danceList, activateDance, currentIdentifier] = useDanceStore((s) => [
     s.danceList,
     s.activateDance,
@@ -42,10 +38,8 @@ const DanceList = (props: DanceListProps) => {
             glow
             size={'middle'}
             onClick={() => {
-              if (isTab && setTab) {
+              if (setTab) {
                 setTab('market');
-              } else {
-                router.push('/market/dance');
               }
             }}
           >

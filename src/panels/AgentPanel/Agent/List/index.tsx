@@ -46,7 +46,7 @@ const AgentList = (props: AgentListProps) => {
               if (isTab && setTab) {
                 setTab('market');
               } else {
-                router.push('/market/agent');
+                router.push('/market');
               }
             }}
           >

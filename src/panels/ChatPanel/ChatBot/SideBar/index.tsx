@@ -25,9 +25,9 @@ const SideBar = () => {
   return (
     <DraggablePanel
       className={styles.content}
-      defaultSize={{ width: 256 }}
+      defaultSize={{ width: 280 }}
       maxWidth={316}
-      minWidth={256}
+      minWidth={280}
       mode={'fixed'}
       placement={'left'}
     >

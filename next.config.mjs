@@ -26,11 +26,6 @@ const nextConfig = {
   redirects: async () => {
     return [
       {
-        source: '/market',
-        destination: '/market/agent',
-        permanent: true,
-      },
-      {
         source: '/my',
         destination: '/my/agent',
         permanent: true,
