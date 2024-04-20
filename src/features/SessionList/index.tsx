@@ -1,9 +1,9 @@
 import { DraggablePanel } from '@lobehub/ui';
 import { createStyles } from 'antd-style';
-import { memo, useState } from 'react';
+import { useState } from 'react';
 
 import Header from './Header';
-import SessionList from './SessionList/List';
+import List from './List';
 
 const useStyles = createStyles(({ css, token }) => ({
   content: css`
@@ -25,8 +25,8 @@ const SideBar = () => {
   return (
     <DraggablePanel
       className={styles.content}
-      defaultSize={{ width: 280 }}
-      maxWidth={316}
+      defaultSize={{ width: 360 }}
+      maxWidth={420}
       minWidth={280}
       mode={'fixed'}
       placement={'left'}
@@ -38,10 +38,10 @@ const SideBar = () => {
         value={searchName}
       />
       <div className={styles.list}>
-        <SessionList filter={searchName} />
+        <List filter={searchName} />
       </div>
     </DraggablePanel>
   );
 };
 
-export default memo(SideBar);
+export default SideBar;
