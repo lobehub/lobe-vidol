@@ -1,11 +1,10 @@
 import classNames from 'classnames';
 import React, { memo } from 'react';
 
+import ChatHeader from '@/features/ChatHeader';
 import ChatInput from '@/features/ChatInput';
+import ChatList from '@/features/ChatList';
 
-import ChatHeader from './ChatHeader';
-import ChatList from './ChatList';
-import SideBar from './SideBar';
 import { useStyles } from './style';
 
 interface ChatBotProps {
@@ -19,7 +18,6 @@ const ChatBot = (props: ChatBotProps) => {
 
   return (
     <div className={classNames(styles.chatBot, className)} style={style}>
-      <SideBar />
       <div className={styles.content}>
         <ChatHeader />
         <div style={{ flex: 1, overflow: 'hidden', position: 'relative' }}>

@@ -1,11 +1,31 @@
 'use client';
 
-import React from 'react';
+import React, { memo } from 'react';
 
-import ChatBot from '@/panels/ChatPanel/ChatBot';
+import ChatHeader from '@/features/ChatHeader';
+import ChatInfo from '@/features/ChatInfo';
+import ChatInput from '@/features/ChatInput';
+import ChatList from '@/features/ChatList';
+import SessionList from '@/features/SessionList';
 
-const Chat = () => {
-  return <ChatBot />;
+import { useStyles } from './style';
+
+const ChatBot = () => {
+  const { styles } = useStyles();
+
+  return (
+    <div className={styles.chatBot}>
+      <SessionList />
+      <div className={styles.content}>
+        <ChatHeader />
+        <div style={{ flex: 1, overflow: 'hidden', position: 'relative' }}>
+          <ChatList />
+        </div>
+        <ChatInput />
+      </div>
+      <ChatInfo />
+    </div>
+  );
 };
 
-export default Chat;
+export default memo(ChatBot);
