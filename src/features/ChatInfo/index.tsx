@@ -28,9 +28,8 @@ const Header = () => {
   return (
     <DraggablePanel
       classNames={{ content: styles.content }}
-      defaultSize={{ width: 360 }}
       minWidth={280}
-      maxWidth={420}
+      maxWidth={360}
       mode={'fixed'}
       placement={'right'}
     >
