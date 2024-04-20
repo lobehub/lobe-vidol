@@ -5,7 +5,6 @@ import { LIST_GRID_GAP, LIST_GRID_HEIGHT, LIST_GRID_WIDTH } from '@/constants/co
 export const useStyles = createStyles(({ css }) => ({
   grid: css`
     width: 100%;
-    height: 100%;
   `,
   loading: css`
     display: flex;
@@ -14,14 +13,11 @@ export const useStyles = createStyles(({ css }) => ({
     min-height: 240px;
   `,
   list: css`
-    overflow: auto;
     display: grid;
     grid-auto-flow: row;
+    grid-auto-rows: minmax(${LIST_GRID_HEIGHT}px, auto);
     grid-gap: ${LIST_GRID_GAP}px;
-    grid-template-columns: repeat(auto-fill, ${LIST_GRID_WIDTH}px);
-    grid-template-rows: repeat(auto-fill, ${LIST_GRID_HEIGHT}px);
+    grid-template-columns: repeat(auto-fill, minmax(${LIST_GRID_WIDTH}px, 1fr));
     justify-items: center;
-
-    height: 100%;
   `,
 }));

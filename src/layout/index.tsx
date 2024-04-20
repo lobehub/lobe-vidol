@@ -1,7 +1,7 @@
 'use client';
 
 import { ThemeProvider } from '@lobehub/ui';
-import { ThemeAppearance } from 'antd-style';
+import { ThemeAppearance, createStyles } from 'antd-style';
 import { ReactNode } from 'react';
 
 import { VIDOL_THEME_APPEARANCE } from '@/constants/common';
@@ -17,8 +17,20 @@ export interface LayoutProps {
   defaultAppearance?: ThemeAppearance;
 }
 
+const useStyles = createStyles(({ css }) => ({
+  content: css`
+    overflow-y: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    height: 100%;
+  `,
+}));
+
 const Layout = (props: LayoutProps) => {
   const { children, defaultAppearance } = props;
+  const { styles } = useStyles();
   const themeMode = useThemeStore((s) => s.themeMode);
   const [primaryColor] = useConfigStore((s) => [s.config.primaryColor]);
 
@@ -35,7 +47,7 @@ const Layout = (props: LayoutProps) => {
     >
       <StoreHydration />
       <GlobalStyle />
-      <main>{children}</main>
+      <div className={styles.content}>{children}</div>
     </ThemeProvider>
   );
 };

@@ -1,15 +1,14 @@
 'use client';
 
+import { Flexbox } from 'react-layout-kit';
+
 import AgentMarket from '@/panels/AgentPanel/Market';
 
-import { useStyles } from './style';
-
 const Index = () => {
-  const { styles } = useStyles();
   return (
-    <div className={styles.content}>
+    <Flexbox flex={1} height={'100%'} width={'100%'}>
       <AgentMarket />
-    </div>
+    </Flexbox>
   );
 };
 

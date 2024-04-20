@@ -1,6 +1,7 @@
 'use client';
 
 import React, { memo } from 'react';
+import { Flexbox } from 'react-layout-kit';
 
 import ChatBot from '@/app/chat/ChatBot';
 import VirtualIdol from '@/app/chat/VirtualIdol';
@@ -9,21 +10,18 @@ import ChatInfo from '@/features/ChatInfo';
 import SessionList from '@/features/SessionList';
 import { useSessionStore } from '@/store/session';
 
-import { useStyles } from './style';
-
 const Chat = () => {
-  const { styles } = useStyles();
   const viewerMode = useSessionStore((s) => s.viewerMode);
 
   return (
-    <div className={styles.chat}>
+    <Flexbox flex={1} height={'100%'} width={'100%'} horizontal>
       <SessionList />
-      <div className={styles.content}>
+      <Flexbox flex={1} height={'100%'} width={'100%'}>
         <ChatHeader />
         {viewerMode ? <VirtualIdol /> : <ChatBot />}
-      </div>
+      </Flexbox>
       <ChatInfo />
-    </div>
+    </Flexbox>
   );
 };
 
