@@ -1,8 +1,9 @@
 import { DraggablePanel } from '@lobehub/ui';
 import { createStyles } from 'antd-style';
-import { memo, useState } from 'react';
+import React, { memo, useState } from 'react';
 
 import AgentInfo from '@/components/AgentInfo';
+import { PanelContext } from '@/panels/PanelContext';
 import { marketStoreSelectors, useMarketStore } from '@/store/market';
 
 import DownloadButton from './SubscribeButton';
@@ -21,6 +22,7 @@ const useStyles = createStyles(({ css, token }) => ({
 const Header = () => {
   const { styles } = useStyles();
   const [tempId, setTempId] = useState<string>('');
+  const isPanel = React.useContext(PanelContext);
   const [showAgentSidebar, activateAgent, deactivateAgent, currentAgentItem] = useMarketStore(
     (s) => [
       marketStoreSelectors.showAgentSideBar(s),
@@ -38,10 +40,9 @@ const Header = () => {
   return (
     <DraggablePanel
       classNames={{ content: styles.content }}
-      defaultSize={{ width: 280 }}
+      defaultSize={{ width: isPanel ? 280 : 400 }}
       expand={showAgentSidebar}
-      maxWidth={400}
-      minWidth={280}
+      minWidth={isPanel ? 280 : 400}
       mode={'fixed'}
       onExpandChange={(show) => {
         if (!show) {

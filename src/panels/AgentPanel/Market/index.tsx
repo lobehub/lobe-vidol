@@ -18,13 +18,16 @@ const useStyles = createStyles(({ css }) => ({
     min-height: 500px;
   `,
   container: css`
+    overflow-y: auto;
+
     width: 100%;
     height: 100%;
     min-height: 500px;
+    padding: 0 24px;
   `,
   content: css`
-    overflow-y: auto;
     max-width: 1024px;
+    height: 100%;
     margin: 0 auto;
   `,
   title: css`

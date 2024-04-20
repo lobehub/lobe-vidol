@@ -1,5 +1,5 @@
 import { DraggablePanel } from '@lobehub/ui';
-import { Button, Popconfirm } from 'antd';
+import { Button, Popconfirm, message } from 'antd';
 import { createStyles } from 'antd-style';
 import React, { memo, useState } from 'react';
 
@@ -79,6 +79,7 @@ const SideBar = memo(() => {
               onClick={() => {
                 if (currentDance) {
                   addPlayItem(currentDance);
+                  message.success('已添加到播放列表');
                 }
               }}
               type={'primary'}
