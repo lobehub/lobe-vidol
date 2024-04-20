@@ -11,6 +11,8 @@ import { agentListSelectors, useAgentStore } from '@/store/agent';
 import { useConfigStore } from '@/store/config';
 import { sessionSelectors, useSessionStore } from '@/store/session';
 
+import ViewerMode from '../ViewerMode';
+
 const useStyles = createStyles(({ css, token }) => ({
   content: css`
     display: flex;
@@ -62,6 +64,7 @@ const Header = () => {
             编辑
           </Button>,
           <Voice key={'voice'} />,
+          <ViewerMode key={'viewer'} />,
         ]}
         agent={currentAgent}
       />
