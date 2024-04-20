@@ -2,7 +2,6 @@ import { createStyles } from 'antd-style';
 import { rgba } from 'polished';
 
 export const useStyles = createStyles(({ css, token }) => ({
-  apps: css``,
   docker: css`
     z-index: 100;
 

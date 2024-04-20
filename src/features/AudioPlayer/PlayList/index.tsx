@@ -1,10 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
-import { DanceStore, useDanceStore } from '@/store/dance';
 import { DeleteOutlined } from '@ant-design/icons';
 import { ActionIcon } from '@lobehub/ui';
 import { Button, Drawer, List, Typography, theme } from 'antd';
 import { Pause, PlayIcon, XIcon } from 'lucide-react';
 import { memo } from 'react';
+
+import { DanceStore, useDanceStore } from '@/store/dance';
 
 const { Text } = Typography;
 

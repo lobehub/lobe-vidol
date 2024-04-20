@@ -1,13 +1,15 @@
-import Control from '@/app/home/Docker/AudioPlayer/Control';
-import Duration from '@/app/home/Docker/AudioPlayer/Duration';
-import Volume from '@/app/home/Docker/AudioPlayer/Volume';
-import { DanceStore, useDanceStore } from '@/store/dance';
-import { useViewerStore } from '@/store/viewer';
 import { Avatar } from '@lobehub/ui';
 import { Typography } from 'antd';
 import classNames from 'classnames';
 import { ListMusic } from 'lucide-react';
 import React, { memo, useEffect, useRef, useState } from 'react';
+
+import Control from '@/features/AudioPlayer/Control';
+import Duration from '@/features/AudioPlayer/Duration';
+import Volume from '@/features/AudioPlayer/Volume';
+import { DanceStore, useDanceStore } from '@/store/dance';
+import { useViewerStore } from '@/store/viewer';
+
 import PlayList from './PlayList';
 import { useStyles } from './style';
 

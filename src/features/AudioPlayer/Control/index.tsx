@@ -1,5 +1,7 @@
-import { DanceStore, useDanceStore } from '@/store/dance';
 import { Pause, Play, SkipBack, SkipForward } from 'lucide-react';
+
+import { DanceStore, useDanceStore } from '@/store/dance';
+
 import { useStyles } from './style';
 
 const controlSelectors = (s: DanceStore) => {

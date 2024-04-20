@@ -4,6 +4,7 @@ import { createStyles } from 'antd-style';
 import { ReactNode, memo } from 'react';
 
 import Apps from '@/layout/Apps';
+import Background from '@/layout/Background';
 
 import Header from './Header';
 import { HeaderNavKey } from './type';
@@ -29,6 +30,7 @@ const AppLayoutDesktop = memo<AppLayoutDesktopProps>(({ children, headerKey }) =
       <Header headerKey={headerKey} />
       <div className={styles.content}>{children}</div>
       <Apps />
+      <Background />
     </>
   );
 });

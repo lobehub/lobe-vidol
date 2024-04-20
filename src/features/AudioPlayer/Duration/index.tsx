@@ -1,5 +1,6 @@
 import { ConfigProvider, Slider } from 'antd';
 import { memo } from 'react';
+
 import { useStyles } from './style';
 
 interface DurationProps {

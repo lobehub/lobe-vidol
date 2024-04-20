@@ -2,30 +2,29 @@
 
 import React, { memo } from 'react';
 
+import ChatBot from '@/app/chat/ChatBot';
+import VirtualIdol from '@/app/chat/VirtualIdol';
 import ChatHeader from '@/features/ChatHeader';
 import ChatInfo from '@/features/ChatInfo';
-import ChatInput from '@/features/ChatInput';
-import ChatList from '@/features/ChatList';
 import SessionList from '@/features/SessionList';
+import { useSessionStore } from '@/store/session';
 
 import { useStyles } from './style';
 
-const ChatBot = () => {
+const Chat = () => {
   const { styles } = useStyles();
+  const viewerMode = useSessionStore((s) => s.viewerMode);
 
   return (
-    <div className={styles.chatBot}>
+    <div className={styles.chat}>
       <SessionList />
       <div className={styles.content}>
         <ChatHeader />
-        <div style={{ flex: 1, overflow: 'hidden', position: 'relative' }}>
-          <ChatList />
-        </div>
-        <ChatInput />
+        {viewerMode ? <VirtualIdol /> : <ChatBot />}
       </div>
       <ChatInfo />
     </div>
   );
 };
 
-export default memo(ChatBot);
+export default memo(Chat);

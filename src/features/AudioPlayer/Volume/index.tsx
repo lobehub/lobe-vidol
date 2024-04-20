@@ -1,6 +1,7 @@
 import { ConfigProvider, Slider } from 'antd';
 import { Volume2, VolumeXIcon } from 'lucide-react';
 import React, { memo, useState } from 'react';
+
 import { useStyles } from './style';
 
 interface VolumeProps {
