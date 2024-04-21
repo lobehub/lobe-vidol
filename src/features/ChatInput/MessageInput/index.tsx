@@ -62,9 +62,7 @@ const InputArea = memo(() => {
         }}
         icon={<SendOutlined />}
         type="primary"
-      >
-        发送
-      </Button>
+      ></Button>
     </Flexbox>
   );
 });

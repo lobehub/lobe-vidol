@@ -17,14 +17,14 @@ const Operations = memo<MyListProps>(({ mobile }) => {
   const items = [
     {
       icon: SquarePen,
-      label: '角色与对话设置',
+      label: '角色信息与对话设置',
       onClick: () => {
         openPanel('role');
       },
     },
     {
       icon: Music,
-      label: '我的音乐',
+      label: '音乐订阅与发现',
       onClick: () => {
         openPanel('dance');
       },

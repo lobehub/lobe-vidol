@@ -13,6 +13,7 @@ const Token = () => {
     <TokenTag
       maxValue={OPENAI_MODEL_LIST.find((item) => item.name === config?.model)?.maxToken || 4096}
       value={usedTokens}
+      text={{ overload: 'Token 超出', remained: 'Token 剩余', used: 'Token 已使用' }}
     />
   );
 };

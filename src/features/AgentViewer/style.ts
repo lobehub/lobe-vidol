@@ -10,8 +10,12 @@ export const useStyles = createStyles(({ css, token }) => ({
   dialog: css`
     position: absolute;
     top: ${token.paddingMD}px;
-    left: ${token.paddingMD}px;
+    left: 50%;
+    transform: translateX(-50%);
+
     display: flex;
+
+    min-width: 480px;
   `,
   // controller: css`
   //   position: absolute;

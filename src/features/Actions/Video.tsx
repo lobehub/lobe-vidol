@@ -9,21 +9,16 @@ export default () => {
     viewerMode: s.viewerMode,
   }));
 
-  return viewerMode ? (
+  return (
     <ActionIcon
-      icon={VideoOff}
+      icon={viewerMode ? VideoOff : Video}
       onClick={() => {
-        setViewerMode(false);
+        if (viewerMode) {
+          setViewerMode(false);
+        } else {
+          setViewerMode(true);
+        }
       }}
-      title={'关闭视频通话'}
-    />
-  ) : (
-    <ActionIcon
-      icon={Video}
-      onClick={() => {
-        setViewerMode(true);
-      }}
-      title={'视频通话'}
     />
   );
 };
