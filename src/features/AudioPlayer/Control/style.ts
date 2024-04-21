@@ -3,7 +3,7 @@ import { createStyles } from 'antd-style';
 const useStyles = createStyles(({ token, css }) => ({
   back: css`
     cursor: pointer;
-    margin-right: ${token.marginSM}px;
+    margin-right: ${token.marginMD}px;
   `,
   control: css`
     display: flex;
@@ -12,10 +12,11 @@ const useStyles = createStyles(({ token, css }) => ({
   `,
   forward: css`
     cursor: pointer;
-    margin-left: ${token.marginSM}px;
+    margin-left: ${token.marginMD}px;
   `,
   playPause: css`
     cursor: pointer;
+    color: ${token.colorPrimary};
   `,
 }));
 

@@ -9,6 +9,10 @@ const useStyles = createStyles(({ css }) => ({
     cursor: pointer;
     margin-right: 8px;
   `,
+  slider: css`
+    min-width: 92px;
+    margin: 0;
+  `,
 }));
 
 export { useStyles };

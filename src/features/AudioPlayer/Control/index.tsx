@@ -1,4 +1,4 @@
-import { Pause, Play, SkipBack, SkipForward } from 'lucide-react';
+import { PauseCircle, PlayCircle, SkipBack, SkipForward } from 'lucide-react';
 
 import { DanceStore, useDanceStore } from '@/store/dance';
 
@@ -22,9 +22,9 @@ const Control = () => {
     <div className={styles.control}>
       <SkipBack className={styles.back} onClick={prevDance} size={16} />
       {isPlaying ? (
-        <Pause className={styles.playPause} onClick={togglePlayPause} size={24} />
+        <PauseCircle className={styles.playPause} onClick={togglePlayPause} size={32} />
       ) : (
-        <Play className={styles.playPause} onClick={togglePlayPause} size={24} />
+        <PlayCircle className={styles.playPause} onClick={togglePlayPause} size={32} />
       )}
       <SkipForward className={styles.forward} onClick={nextDance} size={16} />
     </div>

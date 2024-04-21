@@ -1,7 +1,9 @@
+import { Space } from 'antd';
 import React from 'react';
 
 import AgentMeta from '@/components/agent/AgentMeta';
-import AudioPlayer from '@/features/AudioPlayer';
+import Video from '@/features/Actions/Video';
+import Voice from '@/features/Actions/Voice';
 import { sessionSelectors, useSessionStore } from '@/store/session';
 
 import { useStyles } from './style';
@@ -13,9 +15,10 @@ const Header = () => {
   return (
     <div className={styles.header}>
       <AgentMeta meta={currentAgent?.meta} />
-      <div className={styles.player}>
-        <AudioPlayer />
-      </div>
+      <Space>
+        <Voice key={'voice'} />
+        <Video key={'video'} />
+      </Space>
     </div>
   );
 };

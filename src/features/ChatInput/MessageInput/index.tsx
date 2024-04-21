@@ -6,7 +6,6 @@ import React, { memo, useRef } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
 import Record from '@/features/Actions/Record';
-import Video from '@/features/Actions/Video';
 import useChatInput from '@/hooks/useSendMessage';
 import { useSessionStore } from '@/store/session';
 import { isCommandPressed } from '@/utils/keyboard';
@@ -66,7 +65,6 @@ const InputArea = memo(() => {
       >
         发送
       </Button>
-      <Video />
     </Flexbox>
   );
 });

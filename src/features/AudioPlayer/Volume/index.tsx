@@ -51,8 +51,8 @@ const Volume = (props: VolumeProps) => {
             audioRef.current.volume = volume;
             setVolume(volume);
           }}
+          className={styles.slider}
           step={0.05}
-          style={{ margin: 0, width: 64 }}
           tooltip={{ open: false }}
           value={volume}
         />

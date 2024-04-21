@@ -35,11 +35,11 @@ export default () => {
       {apps.map((app) => {
         const open = panel[app.key as PanelKey].open;
         const component = app.component;
-        return open ? (
-          <div key={app.key} style={{ display: 'flex' }}>
+        return (
+          <div key={app.key} style={{ display: open ? 'flex' : 'none' }}>
             {component}
           </div>
-        ) : null;
+        );
       })}
     </>
   );
