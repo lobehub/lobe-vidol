@@ -6,6 +6,8 @@ import React from 'react';
 import { Flexbox } from 'react-layout-kit';
 
 import AgentCard from '@/components/agent/AgentCard';
+import History from '@/features/Actions/History';
+import Token from '@/features/Actions/Token';
 import { sessionSelectors, useSessionStore } from '@/store/session';
 
 import Operations from './Operations';
@@ -34,7 +36,10 @@ const Header = () => {
       mode={'fixed'}
       placement={'right'}
     >
-      <AgentCard agent={currentAgent} />
+      <AgentCard
+        agent={currentAgent}
+        actions={[<Token key="token" />, <History key="history" />]}
+      />
       <Flexbox gap={8} style={{ padding: 8 }}>
         <Operations />
       </Flexbox>

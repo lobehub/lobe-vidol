@@ -19,7 +19,7 @@ const Header = () => {
       <Space>
         <Voice key={'voice'} />
         <Video key={'video'} />
-        <PlayControl />
+        <PlayControl key="play" />
       </Space>
     </div>
   );

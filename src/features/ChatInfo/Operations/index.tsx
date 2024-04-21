@@ -1,4 +1,4 @@
-import { ListMusic, Music2, SquarePen } from 'lucide-react';
+import { ListMusic, Music, SquarePen } from 'lucide-react';
 import React, { memo, useState } from 'react';
 
 import PlayList from '@/features/AudioPlayer/PlayList';
@@ -23,8 +23,8 @@ const Operations = memo<MyListProps>(({ mobile }) => {
       },
     },
     {
-      icon: Music2,
-      label: '歌舞唱见',
+      icon: Music,
+      label: '我的音乐',
       onClick: () => {
         openPanel('dance');
       },
