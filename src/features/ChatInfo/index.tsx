@@ -4,10 +4,9 @@ import { DraggablePanel } from '@lobehub/ui';
 import { createStyles } from 'antd-style';
 import React from 'react';
 
-import AgentInfo from '@/components/AgentInfo';
+import AgentCard from '@/components/agent/AgentCard';
 import Dance from '@/features/Actions/Dance';
 import Edit from '@/features/Actions/Edit';
-import Log from '@/features/Actions/Log';
 import Voice from '@/features/Actions/Voice';
 import { sessionSelectors, useSessionStore } from '@/store/session';
 
@@ -34,13 +33,8 @@ const Header = () => {
       mode={'fixed'}
       placement={'right'}
     >
-      <AgentInfo
-        actions={[
-          <Edit key={'edit'} />,
-          <Voice key={'voice'} />,
-          <Log key={'log'} />,
-          <Dance key={'dance'} />,
-        ]}
+      <AgentCard
+        actions={[<Edit key={'edit'} />, <Voice key={'voice'} />, <Dance key={'dance'} />]}
         agent={currentAgent}
       />
     </DraggablePanel>

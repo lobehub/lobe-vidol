@@ -1,10 +1,9 @@
 import { TabsNav } from '@lobehub/ui';
-import classNames from 'classnames';
 import React, { memo, useState } from 'react';
+import { Flexbox } from 'react-layout-kit';
 
 import CommonConfig from './common';
 import OpenAIConfig from './model/openai';
-import { useStyles } from './style';
 
 interface ConfigProps {
   className?: string;
@@ -13,11 +12,10 @@ interface ConfigProps {
 
 const Config = (props: ConfigProps) => {
   const { style, className } = props;
-  const { styles } = useStyles();
   const [tab, setTab] = useState('common');
 
   return (
-    <div className={classNames(styles.container, className)} style={style}>
+    <Flexbox flex={1} width={'100%'} height={'100%'} className={className} style={style}>
       <div style={{ marginBottom: 12 }}>
         <TabsNav
           activeKey={tab}
@@ -36,11 +34,11 @@ const Config = (props: ConfigProps) => {
           }}
         />
       </div>
-      <div className={styles.content}>
+      <Flexbox flex={1} width={'100%'} height={'100%'}>
         {tab === 'languageModel' ? <OpenAIConfig /> : null}
         {tab === 'common' ? <CommonConfig /> : null}
-      </div>
-    </div>
+      </Flexbox>
+    </Flexbox>
   );
 };
 

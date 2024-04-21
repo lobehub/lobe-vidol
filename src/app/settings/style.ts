@@ -1,14 +1,10 @@
 import { createStyles } from 'antd-style';
 
 export const useStyles = createStyles(({ css }) => ({
-  content: css`
-    position: relative;
-
-    display: flex;
-    flex-direction: row;
-    flex-grow: 1;
-
+  settings: css`
     width: 100%;
-    height: 100%;
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 0 24px;
   `,
 }));

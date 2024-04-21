@@ -26,14 +26,6 @@ const initialState: ConfigState = {
       coordinates: INITIAL_COORDINATES,
       open: false,
     },
-    chat: {
-      coordinates: INITIAL_COORDINATES,
-      open: false,
-    },
-    config: {
-      coordinates: INITIAL_COORDINATES,
-      open: false,
-    },
     dance: {
       coordinates: INITIAL_COORDINATES,
       open: false,

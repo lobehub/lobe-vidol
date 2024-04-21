@@ -8,10 +8,7 @@ export const useStyles = createStyles(({ css, token }) => ({
   avatar: css`
     flex: none;
   `,
-  container: css`
-    overflow-y: auto;
-    height: 100%;
-  `,
+  container: css``,
   date: css`
     font-size: 12px;
     color: ${token.colorTextDescription};

@@ -39,8 +39,8 @@ const Header = (props: Props) => {
               label: '发现',
             },
             {
-              key: HeaderNavKey.My,
-              label: '我的',
+              key: HeaderNavKey.Settings,
+              label: '设置',
             },
           ]}
           onChange={(key) => {

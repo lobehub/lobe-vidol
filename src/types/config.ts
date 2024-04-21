@@ -16,8 +16,6 @@ export interface Panel {
 
 export interface PanelConfig {
   agent: Panel;
-  chat: Panel;
-  config: Panel;
   dance: Panel;
   role: Panel;
 }

@@ -5,7 +5,7 @@ import { Button, Popconfirm } from 'antd';
 import { createStyles } from 'antd-style';
 import { memo, useState } from 'react';
 
-import AgentInfo from '@/components/AgentInfo';
+import AgentInfo from '@/components/agent/AgentInfo';
 import { agentListSelectors, useAgentStore } from '@/store/agent';
 import { useConfigStore } from '@/store/config';
 import { useSessionStore } from '@/store/session';

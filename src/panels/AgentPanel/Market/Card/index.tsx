@@ -2,7 +2,7 @@ import { DraggablePanel } from '@lobehub/ui';
 import { createStyles } from 'antd-style';
 import React, { memo, useState } from 'react';
 
-import AgentInfo from '@/components/AgentInfo';
+import AgentInfo from '@/components/agent/AgentInfo';
 import { PanelContext } from '@/panels/PanelContext';
 import { marketStoreSelectors, useMarketStore } from '@/store/market';
 
@@ -10,6 +10,7 @@ import DownloadButton from './SubscribeButton';
 
 const useStyles = createStyles(({ css, token }) => ({
   content: css`
+    overflow: auto;
     display: flex;
     flex-direction: column;
     height: 100% !important;

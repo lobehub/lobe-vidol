@@ -1,6 +1,6 @@
 import React from 'react';
 
-import AgentMeta from '@/components/AgentMeta';
+import AgentMeta from '@/components/agent/AgentMeta';
 import AudioPlayer from '@/features/AudioPlayer';
 import { sessionSelectors, useSessionStore } from '@/store/session';
 
