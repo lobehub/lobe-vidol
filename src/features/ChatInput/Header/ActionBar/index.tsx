@@ -1,6 +1,6 @@
-import History from '../../Actions/History';
-import Record from '../../Actions/Record';
-import Token from '../../Actions/Token';
+import History from '@/features/Actions/History';
+import Record from '@/features/Actions/Record';
+import Token from '@/features/Actions/Token';
 
 const ActionBar = () => (
   <>

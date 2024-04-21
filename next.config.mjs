@@ -23,12 +23,22 @@ const nextConfig = {
     optimizePackageImports: ['@lobehub/ui', '@lobehub/icons', 'chroma-js', 'shiki'],
     webVitalsAttribution: ['CLS', 'LCP'],
   },
+  redirects: async () => {
+    return [
+      {
+        source: '/my',
+        destination: '/my/agent',
+        permanent: true,
+      }
+    ]
+  },
   reactStrictMode: true,
   webpack(config) {
     config.experiments = {
       asyncWebAssembly: true,
       layers: true,
     };
+
     // to fix shikiji compile error
     // refs: https://github.com/antfu/shikiji/issues/23
     config.module.rules.push({

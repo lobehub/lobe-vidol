@@ -4,13 +4,7 @@ import GridList from '@/components/GridList';
 import { agentListSelectors, useAgentStore } from '@/store/agent';
 import { useMarketStore } from '@/store/market';
 
-interface AgentListProps {
-  className?: string;
-  style?: React.CSSProperties;
-}
-
-const AgentList = (props: AgentListProps) => {
-  const { className, style } = props;
+const AgentList = () => {
   const [activateAgent, agentList, agentLoading, currentAgentId, fetchAgentIndex] = useMarketStore(
     (s) => [s.activateAgent, s.agentList, s.agentLoading, s.currentAgentId, s.fetchAgentIndex],
   );
@@ -22,8 +16,6 @@ const AgentList = (props: AgentListProps) => {
 
   return (
     <GridList
-      className={className}
-      style={style}
       loading={agentLoading}
       items={agentList.map((items) => ({
         avatar: items.meta.avatar,

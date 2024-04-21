@@ -17,7 +17,7 @@ export const useStyles = createStyles(({ css, token }, { active, avatar }: ListI
 
     background: url(${avatar}) no-repeat center center;
     background-size: cover;
-    border: 2px solid ${active ? token.colorPrimary : token.colorFillTertiary};
+    border: 2px solid ${active ? token.colorPrimary : token.colorBgContainer};
   `,
   avatar: css``,
 

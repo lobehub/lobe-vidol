@@ -1,7 +1,9 @@
 import { GradientButton } from '@lobehub/ui';
-import React, { memo } from 'react';
+import { useRouter } from 'next/navigation';
+import React, { memo, useContext } from 'react';
 
 import GridList from '@/components/GridList';
+import { PanelContext } from '@/panels/PanelContext';
 import { useAgentStore } from '@/store/agent';
 
 interface AgentListProps {
@@ -12,6 +14,8 @@ interface AgentListProps {
 
 const AgentList = (props: AgentListProps) => {
   const { className, style, setTab } = props;
+  const router = useRouter();
+  const isTab = useContext(PanelContext);
 
   const [subscribedList, activateAgent, currentIdentifier] = useAgentStore((s) => [
     s.subscribedList,
@@ -39,8 +43,10 @@ const AgentList = (props: AgentListProps) => {
             glow
             size={'middle'}
             onClick={() => {
-              if (setTab) {
+              if (isTab && setTab) {
                 setTab('market');
+              } else {
+                router.push('/market');
               }
             }}
           >

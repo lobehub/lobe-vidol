@@ -1,9 +1,10 @@
-import { Avatar, FormFooter } from '@lobehub/ui';
+import { FormFooter } from '@lobehub/ui';
 import { Button, Form, Input, message } from 'antd';
 import { createStyles } from 'antd-style';
 import classNames from 'classnames';
 import React from 'react';
 
+import HolographicCard from '@/components/HolographicCard';
 import { sessionSelectors, useSessionStore } from '@/store/session';
 
 const FormItem = Form.Item;
@@ -35,9 +36,6 @@ const useStyles = createStyles(({ css, token }) => ({
   `,
   more: css`
     flex: 2;
-    padding: 12px;
-    border: 1px solid ${token.colorBorderSecondary};
-    border-radius: ${token.borderRadius}px;
   `,
 }));
 
@@ -49,15 +47,6 @@ const Info = (props: InfoProps) => {
     sessionSelectors.currentAgent(s),
     s.updateAgentConfig,
   ]);
-
-  const { cover, avatar } = currentAgent?.meta || {};
-
-  // const uploadButton = (
-  //   <div>
-  //     {/* {loading ? <LoadingOutlined /> : <PlusOutlined />} */}
-  //     <div style={{ marginTop: 8 }}>上传</div>
-  //   </div>
-  // );
 
   return (
     <Form
@@ -103,27 +92,7 @@ const Info = (props: InfoProps) => {
             </FormItem>
           </div>
           <div className={styles.more}>
-            <FormItem label={'头像'} name={['meta', 'avatar']}>
-              {/* <Upload
-                showUploadList={false}
-                // action="https://run.mocky.io/v3/435e224c-44fb-4773-9faf-380c5e6a2188"
-                // beforeUpload={beforeUpload}
-                // onChange={handleChange}
-              > */}
-              <Avatar shape="circle" size={96} src={avatar} />
-              {/* </Upload> */}
-            </FormItem>
-            <FormItem label={'封面'} name={['meta', 'cover']}>
-              {/* <Upload
-                showUploadList={false}
-                // action="https://run.mocky.io/v3/435e224c-44fb-4773-9faf-380c5e6a2188"
-                // beforeUpload={beforeUpload}
-                // onChange={handleChange}
-              > */}
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img alt="example" src={cover} width={220} />
-              {/* </Upload> */}
-            </FormItem>
+            <HolographicCard img={currentAgent?.meta.cover} />
           </div>
         </div>
         <div className={styles.footer}>

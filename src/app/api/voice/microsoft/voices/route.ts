@@ -1698,7 +1698,7 @@ const cachedVoiceList: Voice[] = [
       },
     ],
     description:
-      'Confident and capable voice with rich role-play and emotions that is optimized for audio books.',
+      'Confident and capable voice with rich market-play and emotions that is optimized for audio books.',
     id: '197d529b-8158-4bec-ab83-156c8485e81c',
     locale: 'zh-CN',
     masterpieces: [
@@ -18458,7 +18458,7 @@ const cachedVoiceList: Voice[] = [
       },
     ],
     description:
-      'Clear and relaxing voice with rich role-play and emotions that is optimized for audio books.',
+      'Clear and relaxing voice with rich market-play and emotions that is optimized for audio books.',
     id: '0ca5d0ac-5a66-4d8e-9140-de556ef3916d',
     locale: 'zh-CN',
     masterpieces: [

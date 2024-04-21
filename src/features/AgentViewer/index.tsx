@@ -1,7 +1,8 @@
-import { memo, useCallback, useEffect, useState } from 'react';
+import React, { memo, useCallback, useEffect, useState } from 'react';
 
 import PageLoading from '@/components/PageLoading';
 import ToolBar from '@/features/AgentViewer/ToolBar';
+import ChatDialog from '@/features/ChatDialog';
 import { sessionSelectors, useSessionStore } from '@/store/session';
 import { useViewerStore } from '@/store/viewer';
 
@@ -33,6 +34,7 @@ function AgentViewer() {
 
   return (
     <div className={styles.viewer}>
+      <ChatDialog className={styles.dialog} />
       <ToolBar className={styles.toolbar} />
       {loading ? <PageLoading title={'模型加载中，请稍后...'} /> : null}
       <canvas ref={canvasRef}></canvas>

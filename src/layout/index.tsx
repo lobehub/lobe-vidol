@@ -12,8 +12,13 @@ import { setCookie } from '@/utils/cookie';
 
 import StoreHydration from './StoreHydration';
 
+export interface LayoutProps {
+  children?: ReactNode;
+  defaultAppearance?: ThemeAppearance;
+}
+
 const useStyles = createStyles(({ css }) => ({
-  bg: css`
+  content: css`
     overflow-y: hidden;
     display: flex;
     flex-direction: column;
@@ -23,16 +28,11 @@ const useStyles = createStyles(({ css }) => ({
   `,
 }));
 
-export interface LayoutProps {
-  children?: ReactNode;
-  defaultAppearance?: ThemeAppearance;
-}
-
 const Layout = (props: LayoutProps) => {
   const { children, defaultAppearance } = props;
+  const { styles } = useStyles();
   const themeMode = useThemeStore((s) => s.themeMode);
   const [primaryColor] = useConfigStore((s) => [s.config.primaryColor]);
-  const { styles } = useStyles();
 
   return (
     <ThemeProvider
@@ -47,7 +47,7 @@ const Layout = (props: LayoutProps) => {
     >
       <StoreHydration />
       <GlobalStyle />
-      <main className={styles.bg}>{children}</main>
+      <div className={styles.content}>{children}</div>
     </ThemeProvider>
   );
 };

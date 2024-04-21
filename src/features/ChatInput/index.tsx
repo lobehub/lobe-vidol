@@ -2,7 +2,7 @@ import { DraggablePanel } from '@lobehub/ui';
 import { memo, useState } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
-import { CHAT_TEXTAREA_HEIGHT, CHAT_TEXTAREA_MAX_HEIGHT, HEADER_HEIGHT } from '@/constants/common';
+import { CHAT_TEXTAREA_HEIGHT, CHAT_TEXTAREA_MAX_HEIGHT } from '@/constants/common';
 
 import Footer from './Footer';
 import Head from './Header';
@@ -15,7 +15,6 @@ const Index = memo(() => {
   return (
     <DraggablePanel
       fullscreen={expand}
-      headerHeight={HEADER_HEIGHT}
       maxHeight={CHAT_TEXTAREA_MAX_HEIGHT}
       minHeight={CHAT_TEXTAREA_HEIGHT}
       onSizeChange={(_, size) => {

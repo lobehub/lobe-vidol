@@ -17,6 +17,7 @@ interface ControlPanelProps {
   className?: string;
   coordinates?: Coordinates;
   extra?: React.ReactNode;
+  footer?: React.ReactNode;
   onBlur?: React.FocusEventHandler;
   onClose: () => void;
   onCoordinatesChange?: (coordinates: Coordinates) => void;
@@ -35,6 +36,7 @@ const Panel = (props: PropsWithChildren<ControlPanelProps>) => {
     onClose,
     title,
     extra,
+    footer,
     toolbar,
     onCoordinatesChange,
     onBlur,
@@ -80,6 +82,7 @@ const Panel = (props: PropsWithChildren<ControlPanelProps>) => {
         style={style}
         title={title}
         extra={extra}
+        footer={footer}
         toolbar={toolbar}
         x={x}
         y={y}

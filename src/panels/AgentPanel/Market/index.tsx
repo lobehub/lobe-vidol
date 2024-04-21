@@ -1,6 +1,6 @@
 import { createStyles } from 'antd-style';
-import classNames from 'classnames';
-import React, { memo } from 'react';
+import React from 'react';
+import { Flexbox } from 'react-layout-kit';
 
 import TopBanner from '@/components/TopBanner';
 
@@ -8,24 +8,17 @@ import AgentCard from './Card';
 import AgentList from './List';
 
 const useStyles = createStyles(({ css }) => ({
-  background: css`
-    width: 90%;
-    margin: -24px 0 -12px;
-  `,
   container: css`
-    position: relative;
-
-    display: flex;
+    overflow-y: auto;
 
     width: 100%;
     height: 100%;
     min-height: 500px;
+    padding: 0 24px;
   `,
   content: css`
-    overflow-y: auto;
-    flex-grow: 1;
-    padding-right: 24px;
-    padding-left: 24px;
+    max-width: 1024px;
+    margin: 0 auto;
   `,
   title: css`
     z-index: 2;
@@ -35,25 +28,20 @@ const useStyles = createStyles(({ css }) => ({
   `,
 }));
 
-interface AgentProps {
-  className?: string;
-  setTab?: (tab: string) => void;
-  style?: React.CSSProperties;
-}
-
-const Agent = (props: AgentProps) => {
+const Agent = () => {
   const { styles } = useStyles();
-  const { style, className } = props;
 
   return (
-    <div className={classNames(className, styles.container)} style={style}>
-      <div className={styles.content}>
-        <TopBanner title="Find Your Lovest Vidol" />
-        <AgentList />
+    <Flexbox flex={1} height={'100%'} width={'100%'} horizontal>
+      <div className={styles.container}>
+        <div className={styles.content}>
+          <TopBanner title="Find Your Lovest Vidol" />
+          <AgentList />
+        </div>
       </div>
       <AgentCard />
-    </div>
+    </Flexbox>
   );
 };
 
-export default memo(Agent);
+export default Agent;

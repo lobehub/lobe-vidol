@@ -6,15 +6,54 @@ import { DanceStore } from '@/store/dance';
 import { Dance } from '@/types/dance';
 
 export interface PlayListStore {
+  /**
+   * Add a dance to the playlist and play it.
+   * @param dance
+   */
   addAndPlayItem: (dance: Dance) => void;
+
+  /**
+   * Add a dance to the playlist.
+   */
+  addPlayItem: (dance: Dance) => void;
+  /**
+   * Clear the playlist.
+   */
   clearPlayList: () => void;
+  /**
+   * current playing dance.
+   */
   currentPlay: Dance | null;
+  /**
+   * next dance.
+   */
   nextDance: () => void;
+  /**
+   * Play a dance.
+   * @param dance
+   */
   playItem: (dance: Dance) => void;
+  /**
+   * Playlist.
+   */
   playlist: Dance[];
+  /**
+   * previous dance.
+   */
   prevDance: () => void;
+  /**
+   * Remove a dance from the playlist.
+   * @param dance
+   */
   removePlayItem: (dance: Dance) => void;
+  /**
+   * Set the playlist.
+   * @param playlist
+   */
   setPlayList: (playlist: Dance[]) => void;
+  /**
+   * Toggle play or pause.
+   */
   togglePlayPause: () => void;
 }
 
@@ -38,6 +77,18 @@ export const createPlayListStore: StateCreator<
       set({ playlist: nextPlayList });
 
       playItem(dance);
+    },
+    addPlayItem: (dance) => {
+      const { playlist } = get();
+
+      const nextPlayList = produce(playlist, (draftState) => {
+        const index = draftState.findIndex((item) => item.name === dance.name);
+        if (index === -1) {
+          draftState.unshift(dance);
+        }
+      });
+
+      set({ playlist: nextPlayList });
     },
     clearPlayList: () => {
       set({ currentPlay: null, isPlaying: false, playlist: [] });

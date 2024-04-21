@@ -9,9 +9,9 @@ export const useStyles = createStyles(({ css, token }) => ({
 
     width: 900px;
 
-    background-color: ${token.colorBgContainer};
+    background-color: ${token.colorBgMask};
     backdrop-filter: saturate(180%) blur(10px);
-    border: 1px solid #999;
+    border: 1px solid ${token.colorBorder};
     border-radius: ${token.borderRadius}px;
   `,
   button: css`
@@ -32,6 +32,9 @@ export const useStyles = createStyles(({ css, token }) => ({
     flex-grow: 1;
     height: 640px;
   `,
+  footer: css`
+    border-top: 1px solid ${token.colorBorder};
+  `,
   content: css`
     display: flex;
     flex-direction: row;
@@ -51,7 +54,7 @@ export const useStyles = createStyles(({ css, token }) => ({
     height: 42px;
     padding: 0 ${token.paddingXS}px;
 
-    border-bottom: 1px solid #999;
+    border-bottom: 1px solid ${token.colorBorder};
   `,
   title: css`
     margin-left: ${token.marginXS}px;

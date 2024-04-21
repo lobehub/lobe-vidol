@@ -9,7 +9,7 @@ const Redirect = () => {
   useEffect(() => {
     // const hasData = localStorage.getItem('V_IDOL_WELCOME');
     // if (hasData) {
-    router.push('/home');
+    router.push('/chat');
     // } else {
     //   router.push('/welcome');
     // }

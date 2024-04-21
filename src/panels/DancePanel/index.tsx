@@ -3,12 +3,13 @@
 import { AppstoreOutlined, BarsOutlined } from '@ant-design/icons';
 import { Segmented } from 'antd';
 import React, { useState } from 'react';
+import { Flexbox } from 'react-layout-kit';
 
+import AudioPlayer from '@/features/AudioPlayer';
 import PanelContainer from '@/panels/PanelContainer';
 
 import Dance from './Dance';
 import Market from './Market';
-import { useStyles } from './style';
 
 interface DancePanelProps {
   className?: string;
@@ -18,8 +19,6 @@ interface DancePanelProps {
 const DancePanel = (props: DancePanelProps) => {
   const { style, className } = props;
   const [tab, setTab] = useState('dance');
-
-  const { styles } = useStyles();
 
   const options = [
     { value: 'dance', label: '已订阅', icon: <BarsOutlined /> },
@@ -31,14 +30,15 @@ const DancePanel = (props: DancePanelProps) => {
       className={className}
       panelKey="dance"
       style={style}
-      title="跳舞"
+      title="歌舞唱见"
       extra={<Segmented options={options} size="small" value={tab} onChange={setTab} />}
+      footer={
+        <Flexbox style={{ padding: 8 }} flex={1}>
+          <AudioPlayer />
+        </Flexbox>
+      }
     >
-      <div className={styles.content}>
-        <div className={styles.content}>
-          {tab === 'dance' ? <Dance setTab={setTab} /> : <Market />}
-        </div>
-      </div>
+      {tab === 'dance' ? <Dance setTab={setTab} /> : <Market />}
     </PanelContainer>
   );
 };
