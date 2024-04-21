@@ -1,5 +1,5 @@
 import { ActionIcon } from '@lobehub/ui';
-import { Edit2 } from 'lucide-react';
+import { SquarePen } from 'lucide-react';
 
 import { useConfigStore } from '@/store/config';
 
@@ -8,7 +8,7 @@ export default () => {
 
   return (
     <ActionIcon
-      icon={Edit2}
+      icon={SquarePen}
       onClick={() => {
         openPanel('role');
       }}

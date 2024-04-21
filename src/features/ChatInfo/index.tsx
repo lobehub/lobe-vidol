@@ -8,7 +8,6 @@ import AgentInfo from '@/components/AgentInfo';
 import Dance from '@/features/Actions/Dance';
 import Edit from '@/features/Actions/Edit';
 import Log from '@/features/Actions/Log';
-import ViewerMode from '@/features/Actions/ViewerMode';
 import Voice from '@/features/Actions/Voice';
 import { sessionSelectors, useSessionStore } from '@/store/session';
 
@@ -44,7 +43,6 @@ const Header = () => {
         ]}
         agent={currentAgent}
       />
-      <ViewerMode key={'viewer'} />,
     </DraggablePanel>
   );
 };

@@ -2,9 +2,12 @@ import { createStyles } from 'antd-style';
 
 export const useStyles = createStyles(({ css, token }) => ({
   docker: css`
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    max-width: 42vw;
     padding: 8px 12px;
   `,
   alert: css`

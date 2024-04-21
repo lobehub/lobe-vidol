@@ -1,25 +1,17 @@
-import { Avatar, Input } from '@lobehub/ui';
-import { Button, Space } from 'antd';
-import { createStyles } from 'antd-style';
+import { SendOutlined } from '@ant-design/icons';
+import { Input } from '@lobehub/ui';
+import { Button } from 'antd';
 import { InputRef } from 'antd/es/input/Input';
-import { memo, useRef } from 'react';
+import React, { memo, useRef } from 'react';
+import { Flexbox } from 'react-layout-kit';
 
-import { DEFAULT_USER_AVATAR } from '@/constants/common';
 import Record from '@/features/Actions/Record';
+import Video from '@/features/Actions/Video';
 import useChatInput from '@/hooks/useSendMessage';
 import { useSessionStore } from '@/store/session';
 import { isCommandPressed } from '@/utils/keyboard';
 
-const useStyles = createStyles(({ css }) => {
-  return {
-    textarea: css`
-      width: 400px;
-    `,
-  };
-});
-
 const InputArea = memo(() => {
-  const { styles } = useStyles();
   const ref = useRef<InputRef>(null);
   const isChineseInput = useRef(false);
   const onSend = useChatInput();
@@ -31,11 +23,11 @@ const InputArea = memo(() => {
   ]);
 
   return (
-    <Space size={4}>
-      <Avatar avatar={DEFAULT_USER_AVATAR} />
+    <Flexbox height={'100%'} width={'100%'} horizontal>
+      <Record />
       <Input
+        width={'100%'}
         autoFocus
-        className={styles.textarea}
         onBlur={(e) => {
           setMessageInput?.(e.target.value);
         }}
@@ -69,12 +61,13 @@ const InputArea = memo(() => {
           if (loading) return;
           onSend();
         }}
+        icon={<SendOutlined />}
         type="primary"
       >
-        发送
+        {/*发送*/}
       </Button>
-      <Record />
-    </Space>
+      <Video />
+    </Flexbox>
   );
 });
 
