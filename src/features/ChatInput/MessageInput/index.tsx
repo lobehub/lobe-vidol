@@ -23,7 +23,7 @@ const InputArea = memo(() => {
   ]);
 
   return (
-    <Flexbox height={'100%'} width={'100%'} horizontal>
+    <Flexbox height={'100%'} width={'100%'} horizontal gap={4}>
       <Record />
       <Input
         width={'100%'}
@@ -64,7 +64,7 @@ const InputArea = memo(() => {
         icon={<SendOutlined />}
         type="primary"
       >
-        {/*发送*/}
+        发送
       </Button>
       <Video />
     </Flexbox>
