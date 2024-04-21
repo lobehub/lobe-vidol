@@ -2,7 +2,7 @@ import { createStyles } from 'antd-style';
 
 const useStyles = createStyles(({ token, css }) => ({
   container: css`
-    width: 420px;
+    width: 100%;
   `,
   content: css`
     display: flex;

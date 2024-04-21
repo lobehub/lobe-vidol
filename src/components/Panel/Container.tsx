@@ -12,6 +12,7 @@ import { useStyles } from './style';
 interface ContainerProps {
   className?: string;
   extra?: React.ReactNode;
+  footer?: React.ReactNode;
   onBlur?: React.FocusEventHandler;
   onClose: () => void;
   onFocus?: React.FocusEventHandler;
@@ -37,6 +38,7 @@ const Container = (props: PropsWithChildren<ContainerProps>) => {
     zIndex = INITIAL_Z_INDEX,
     onBlur,
     onFocus,
+    footer,
   } = props;
   const { styles } = useStyles();
 
@@ -81,6 +83,7 @@ const Container = (props: PropsWithChildren<ContainerProps>) => {
           </div>
         </div>
         <div className={styles.container}>{children}</div>
+        {footer ? <div className={styles.footer}>{footer}</div> : null}
       </div>
     </div>
   );

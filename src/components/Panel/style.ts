@@ -32,6 +32,9 @@ export const useStyles = createStyles(({ css, token }) => ({
     flex-grow: 1;
     height: 640px;
   `,
+  footer: css`
+    display: flex;
+  `,
   content: css`
     display: flex;
     flex-direction: row;

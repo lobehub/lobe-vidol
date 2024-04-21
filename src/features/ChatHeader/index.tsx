@@ -1,7 +1,9 @@
+import React from 'react';
+
 import AgentMeta from '@/components/AgentMeta';
+import AudioPlayer from '@/features/AudioPlayer';
 import { sessionSelectors, useSessionStore } from '@/store/session';
 
-import ViewerMode from './ViewerMode';
 import { useStyles } from './style';
 
 const Header = () => {
@@ -11,7 +13,9 @@ const Header = () => {
   return (
     <div className={styles.header}>
       <AgentMeta meta={currentAgent?.meta} />
-      <ViewerMode key={'viewer'} />
+      <div className={styles.player}>
+        <AudioPlayer />
+      </div>
     </div>
   );
 };

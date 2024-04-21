@@ -5,6 +5,7 @@ import { InputRef } from 'antd/es/input/Input';
 import { memo, useRef } from 'react';
 
 import { DEFAULT_USER_AVATAR } from '@/constants/common';
+import Record from '@/features/Actions/Record';
 import useChatInput from '@/hooks/useSendMessage';
 import { useSessionStore } from '@/store/session';
 import { isCommandPressed } from '@/utils/keyboard';
@@ -72,6 +73,7 @@ const InputArea = memo(() => {
       >
         发送
       </Button>
+      <Record />
     </Space>
   );
 });

@@ -11,6 +11,7 @@ import { PanelContext } from './PanelContext';
 interface PanelContainerProps {
   className?: string;
   extra?: React.ReactNode;
+  footer?: React.ReactNode;
   panelKey: PanelKey;
   style?: React.CSSProperties;
   title?: React.ReactNode;
@@ -18,7 +19,7 @@ interface PanelContainerProps {
 }
 
 const PanelContainer = (props: PropsWithChildren<PanelContainerProps>) => {
-  const { style, className, panelKey, title, children, toolbar, extra } = props;
+  const { style, className, panelKey, title, children, toolbar, extra, footer } = props;
   const [panel, setPanel, focusPanel, closePanel] = useConfigStore((s) => [
     s.panel,
     s.setPanel,
@@ -37,6 +38,7 @@ const PanelContainer = (props: PropsWithChildren<PanelContainerProps>) => {
       style={style}
       title={title}
       toolbar={toolbar}
+      footer={footer}
       extra={extra}
       zIndex={zIndex}
     >

@@ -1,12 +1,15 @@
 'use client';
 
 import { DraggablePanel } from '@lobehub/ui';
-import { Button } from 'antd';
 import { createStyles } from 'antd-style';
+import React from 'react';
 
 import AgentInfo from '@/components/AgentInfo';
-import Voice from '@/features/ChatInput/Actions/Voice';
-import { useConfigStore } from '@/store/config';
+import Dance from '@/features/Actions/Dance';
+import Edit from '@/features/Actions/Edit';
+import Log from '@/features/Actions/Log';
+import ViewerMode from '@/features/Actions/ViewerMode';
+import Voice from '@/features/Actions/Voice';
 import { sessionSelectors, useSessionStore } from '@/store/session';
 
 const useStyles = createStyles(({ css, token }) => ({
@@ -22,7 +25,6 @@ const useStyles = createStyles(({ css, token }) => ({
 
 const Header = () => {
   const { styles } = useStyles();
-  const [openPanel] = useConfigStore((s) => [s.openPanel, s.closePanel]);
   const [currentAgent] = useSessionStore((s) => [sessionSelectors.currentAgent(s)]);
 
   return (
@@ -35,18 +37,14 @@ const Header = () => {
     >
       <AgentInfo
         actions={[
-          <Button
-            key="edit"
-            onClick={() => {
-              openPanel('role');
-            }}
-          >
-            编辑
-          </Button>,
+          <Edit key={'edit'} />,
           <Voice key={'voice'} />,
+          <Log key={'log'} />,
+          <Dance key={'dance'} />,
         ]}
         agent={currentAgent}
       />
+      <ViewerMode key={'viewer'} />,
     </DraggablePanel>
   );
 };

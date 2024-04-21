@@ -11,6 +11,9 @@ const useStyles = createStyles(({ token, css }) => ({
 
     border-bottom: 1px solid ${token.colorBorderSecondary};
   `,
+  player: css`
+    min-width: 480px;
+  `,
 }));
 
 export { useStyles };
