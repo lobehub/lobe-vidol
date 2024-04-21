@@ -1,11 +1,8 @@
 'use client';
 
-import { Space } from 'antd';
-
-import MessageInput from '@/features/ChatInput/MessageInput';
-
-import ToolBar from './ToolBar';
+import ChatInputDialog from './ChatInputDialog';
 import { useStyles } from './style';
+import AudioPlayer from "@/features/AudioPlayer";
 
 const VirtualIdol = () => {
   const { styles } = useStyles();
@@ -13,14 +10,11 @@ const VirtualIdol = () => {
   return (
       <div className={styles.docker}>
         <div className={styles.message}>
-          <Space size={4}>
-            <MessageInput />
-            <ToolBar />
-          </Space>
+            <ChatInputDialog />
         </div>
-        {/*<div className={styles.player}>*/}
-        {/*  <AudioPlayer />*/}
-        {/*</div>*/}
+        <div className={styles.player}>
+          <AudioPlayer />
+        </div>
     </div>
   );
 };

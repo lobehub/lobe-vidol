@@ -16,7 +16,7 @@ const Chat = () => {
   return (
     <Flexbox flex={1} height={'100%'} width={'100%'} horizontal>
       <SessionList />
-      <Flexbox flex={1} height={'100%'} width={'100%'}>
+      <Flexbox height={'100%'} width={'100%'}>
         <ChatHeader />
         {viewerMode ? <VirtualIdol /> : <ChatBot />}
       </Flexbox>

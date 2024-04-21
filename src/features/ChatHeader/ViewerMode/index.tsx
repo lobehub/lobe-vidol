@@ -18,8 +18,8 @@ const ViewerMode = () => {
         }
       }}
       options={[
-        { label: '3D', value: 'true' },
-        { label: '立绘', value: 'false' },
+        { label: '交互体验', value: 'true' },
+        { label: '聊天模式', value: 'false' },
       ]}
       value={viewerMode ? 'true' : 'false'}
     />

@@ -15,7 +15,7 @@ const ChatPanel = (props: ChatPanelProps) => {
   const { style, className } = props;
 
   return (
-    <PanelContainer className={className} panelKey="chat" style={style} title="聊天">
+    <PanelContainer className={className} panelKey="chat" style={style} title="聊天记录">
       <ChatBot />
     </PanelContainer>
   );

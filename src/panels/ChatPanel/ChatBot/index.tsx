@@ -1,8 +1,6 @@
 import classNames from 'classnames';
 import React, { memo } from 'react';
 
-import ChatHeader from '@/features/ChatHeader';
-import ChatInput from '@/features/ChatInput';
 import ChatList from '@/features/ChatList';
 
 import { useStyles } from './style';
@@ -19,11 +17,7 @@ const ChatBot = (props: ChatBotProps) => {
   return (
     <div className={classNames(styles.chatBot, className)} style={style}>
       <div className={styles.content}>
-        <ChatHeader />
-        <div style={{ flex: 1, overflow: 'hidden', position: 'relative' }}>
-          <ChatList />
-        </div>
-        <ChatInput />
+        <ChatList />
       </div>
     </div>
   );
