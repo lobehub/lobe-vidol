@@ -13,6 +13,11 @@ export const useStyles = createStyles(({ css, token }) => ({
     left: ${token.paddingMD}px;
     display: flex;
   `,
+  // controller: css`
+  //   position: absolute;
+  //   right: ${token.paddingMD}px;
+  //   top: ${token.paddingMD}px;
+  // `,
   viewer: css`
     position: relative;
     width: 100%;

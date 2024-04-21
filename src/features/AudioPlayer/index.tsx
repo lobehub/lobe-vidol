@@ -69,12 +69,7 @@ function Player(props: PlayerProps) {
         src={currentPlay?.audio}
       />
       <div className={styles.player}>
-        <Avatar
-          className={isPlaying ? styles.spin : ''}
-          shape="circle"
-          size={48}
-          src={currentPlay?.cover}
-        />
+        <Avatar shape="circle" size={48} src={currentPlay?.cover} />
         <div className={styles.content}>
           <Duration currentProgress={currentProgress} duration={duration} />
           <div className={styles.controller}>

@@ -32,19 +32,6 @@ const useStyles = createStyles(({ token, css }) => ({
     display: flex;
     align-items: center;
   `,
-  spin: css`
-    @keyframes rotate-animation {
-      from {
-        transform: rotate(0deg);
-      }
-
-      to {
-        transform: rotate(360deg);
-      }
-    }
-
-    animation: rotate-animation 20s linear infinite;
-  `,
 }));
 
 export { useStyles };

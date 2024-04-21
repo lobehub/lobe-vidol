@@ -2,6 +2,7 @@ import { Space } from 'antd';
 import React from 'react';
 
 import AgentMeta from '@/components/agent/AgentMeta';
+import PlayControl from '@/features/Actions/PlayControl';
 import Video from '@/features/Actions/Video';
 import Voice from '@/features/Actions/Voice';
 import { sessionSelectors, useSessionStore } from '@/store/session';
@@ -18,6 +19,7 @@ const Header = () => {
       <Space>
         <Voice key={'voice'} />
         <Video key={'video'} />
+        <PlayControl />
       </Space>
     </div>
   );

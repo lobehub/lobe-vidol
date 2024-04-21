@@ -12,6 +12,7 @@ import Operations from './Operations';
 
 const useStyles = createStyles(({ css, token }) => ({
   content: css`
+    position: relative;
     display: flex;
     flex-direction: column;
     height: 100% !important;
