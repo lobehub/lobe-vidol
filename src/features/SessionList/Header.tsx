@@ -19,20 +19,24 @@ const Header = memo((props: HeaderProps) => {
   const openPanel = useConfigStore((s) => s.openPanel);
 
   return (
-    <div className={styles.header}>
-      <Flexbox flex={1} style={{ marginRight: 4 }}>
-        <SearchBar
-          enableShortKey
-          onChange={(e) => {
-            if (onChange) onChange(e.target.value);
-          }}
-          placeholder="搜索"
-          shortKey="f"
-          value={value}
-        />
-      </Flexbox>
+    <Flexbox
+      justify={'space-between'}
+      horizontal
+      align={'center'}
+      className={styles.header}
+      gap={4}
+    >
+      <SearchBar
+        enableShortKey
+        onChange={(e) => {
+          if (onChange) onChange(e.target.value);
+        }}
+        placeholder="搜索"
+        shortKey="f"
+        value={value}
+      />
       <ActionIcon icon={Plus} onClick={() => openPanel('agent')} title={'创建对话'} />
-    </div>
+    </Flexbox>
   );
 });
 

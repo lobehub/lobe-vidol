@@ -10,12 +10,8 @@ export const useStyles = createStyles(({ css, token }) => ({
     text-align: center;
   `,
   header: css`
-    display: flex;
-    justify-content: space-between;
-
-    width: 100%;
-    padding: 16px 8px;
-
+    height: 64px;
+    padding: ${token.paddingSM}px;
     border-bottom: 1px solid ${token.colorBorderSecondary};
   `,
 

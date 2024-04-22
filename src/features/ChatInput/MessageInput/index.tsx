@@ -28,7 +28,7 @@ const InputArea = memo((props: InputAreaProps) => {
   ]);
 
   return (
-    <Flexbox height={'100%'} width={'100%'} horizontal gap={4} className={className} style={style}>
+    <Flexbox width={'100%'} horizontal gap={4} className={className} style={style}>
       <Record />
       <Input
         width={'100%'}

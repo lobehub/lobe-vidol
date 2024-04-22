@@ -25,7 +25,7 @@ const Chat = () => {
         <Flexbox flex={1} style={{ overflow: 'hidden', position: 'relative' }}>
           {viewerMode === true ? <AgentViewer /> : <ChatList />}
         </Flexbox>
-        <Flexbox align={'center'} width={'100%'} className={styles.docker}>
+        <Flexbox align={'center'} width={'100%'} className={styles.docker} justify={'center'}>
           <MessageInput className={styles.input} />
           <div className={styles.alert}>请谨记：智能体所说的一切都是由 AI 生成的</div>
         </Flexbox>

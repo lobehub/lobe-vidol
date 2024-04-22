@@ -1,8 +1,10 @@
 import { createStyles } from 'antd-style';
 
+import { CHAT_INPUT_HEIGHT } from '@/constants/common';
+
 export const useStyles = createStyles(({ css, token }) => ({
   docker: css`
-    padding: ${token.paddingXS}px;
+    height: ${CHAT_INPUT_HEIGHT}px;
     background-color: rgba(${token.colorBgLayout}, 0.8);
     backdrop-filter: saturate(180%) blur(2px);
   `,

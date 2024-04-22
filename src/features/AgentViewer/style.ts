@@ -1,5 +1,7 @@
 import { createStyles } from 'antd-style';
 
+import { CHAT_INPUT_HEIGHT } from '@/constants/common';
+
 export const useStyles = createStyles(({ css, token }) => ({
   toolbar: css`
     position: absolute;
@@ -17,14 +19,8 @@ export const useStyles = createStyles(({ css, token }) => ({
 
     min-width: 480px;
   `,
-  // controller: css`
-  //   position: absolute;
-  //   right: ${token.paddingMD}px;
-  //   top: ${token.paddingMD}px;
-  // `,
   viewer: css`
-    position: relative;
     width: 100%;
-    height: 100%;
+    height: calc(100vh - 128px - ${CHAT_INPUT_HEIGHT}px);
   `,
 }));

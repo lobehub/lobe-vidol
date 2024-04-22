@@ -1,5 +1,6 @@
 import { Space } from 'antd';
 import React from 'react';
+import { Flexbox } from 'react-layout-kit';
 
 import AgentMeta from '@/components/agent/AgentMeta';
 import PlayControl from '@/features/Actions/PlayControl';
@@ -14,14 +15,14 @@ const Header = () => {
   const [currentAgent] = useSessionStore((s) => [sessionSelectors.currentAgent(s)]);
 
   return (
-    <div className={styles.header}>
+    <Flexbox justify={'space-between'} horizontal align={'center'} className={styles.header}>
       <AgentMeta meta={currentAgent?.meta} />
       <Space>
         <Voice key={'voice'} />
         <Video key={'video'} />
         <PlayControl key="play" />
       </Space>
-    </div>
+    </Flexbox>
   );
 };
 

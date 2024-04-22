@@ -37,7 +37,7 @@ function AgentViewer() {
       <ChatDialog className={styles.dialog} />
       <ToolBar className={styles.toolbar} />
       {loading ? <PageLoading title={'模型加载中，请稍后...'} /> : null}
-      <canvas ref={canvasRef}></canvas>
+      <canvas ref={canvasRef} height={'100%'} width={'100%'}></canvas>
     </div>
   );
 }
