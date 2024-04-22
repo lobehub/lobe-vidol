@@ -1,5 +1,7 @@
 import { createStyles } from 'antd-style';
 
+import { HEADER_HEIGHT } from '@/constants/common';
+
 export const useStyles = createStyles(({ css, token }) => ({
   date: css`
     font-size: 12px;
@@ -10,7 +12,7 @@ export const useStyles = createStyles(({ css, token }) => ({
     text-align: center;
   `,
   header: css`
-    height: 64px;
+    height: ${HEADER_HEIGHT}px;
     padding: ${token.paddingSM}px;
     border-bottom: 1px solid ${token.colorBorderSecondary};
   `,

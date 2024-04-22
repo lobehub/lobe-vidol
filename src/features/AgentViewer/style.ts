@@ -1,6 +1,6 @@
 import { createStyles } from 'antd-style';
 
-import { CHAT_INPUT_HEIGHT } from '@/constants/common';
+import { CHAT_HEADER_HEIGHT, CHAT_INPUT_HEIGHT, HEADER_HEIGHT } from '@/constants/common';
 
 export const useStyles = createStyles(({ css, token }) => ({
   toolbar: css`
@@ -21,6 +21,6 @@ export const useStyles = createStyles(({ css, token }) => ({
   `,
   viewer: css`
     width: 100%;
-    height: calc(100vh - 128px - ${CHAT_INPUT_HEIGHT}px);
+    height: calc(100vh - ${HEADER_HEIGHT}px - ${CHAT_HEADER_HEIGHT}px- ${CHAT_INPUT_HEIGHT}px);
   `,
 }));
