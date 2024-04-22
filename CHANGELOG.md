@@ -2,6 +2,33 @@
 
 # Changelog
 
+### [Version 0.3.1](https://github.com/lobehub/lobe-vidol/compare/v0.3.0...v0.3.1)
+
+<sup>Released on **2024-04-22**</sup>
+
+#### 🐛 Bug Fixes
+
+- **misc**: 修复 Agent 高度问题，修复 ChatInput 位置问题，修复模型展示样式错误.
+
+<br/>
+
+<details>
+<summary><kbd>Improvements and Fixes</kbd></summary>
+
+#### What's fixed
+
+- **misc**: 修复 Agent 高度问题 ([10cece9](https://github.com/lobehub/lobe-vidol/commit/10cece9))
+- **misc**: 修复 ChatInput 位置问题 ([535000c](https://github.com/lobehub/lobe-vidol/commit/535000c))
+- **misc**: 修复模型展示样式错误 ([894c9de](https://github.com/lobehub/lobe-vidol/commit/894c9de))
+
+</details>
+
+<div align="right">
+
+[![](https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square)](#readme-top)
+
+</div>
+
 ## [Version 0.3.0](https://github.com/lobehub/lobe-vidol/compare/v0.2.0...v0.3.0)
 
 <sup>Released on **2024-04-21**</sup>
