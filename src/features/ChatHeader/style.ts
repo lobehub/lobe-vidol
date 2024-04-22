@@ -1,14 +1,11 @@
 import { createStyles } from 'antd-style';
 
+import { CHAT_HEADER_HEIGHT } from '@/constants/common';
+
 const useStyles = createStyles(({ token, css }) => ({
   header: css`
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    width: 100%;
-    padding: 16px 8px;
-
+    height: ${CHAT_HEADER_HEIGHT}px;
+    padding: ${token.paddingSM}px;
     border-bottom: 1px solid ${token.colorBorderSecondary};
   `,
   player: css`

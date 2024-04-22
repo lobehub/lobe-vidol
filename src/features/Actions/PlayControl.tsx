@@ -32,27 +32,20 @@ interface Props {
 export default (props: Props) => {
   const { style, className } = props;
   const { styles } = useStyles();
-  const [isPlaying, togglePlayPause] = useDanceStore((s) => [s.isPlaying, s.togglePlayPause]);
+  const [isPlaying, togglePlayPause, playlist] = useDanceStore((s) => [
+    s.isPlaying,
+    s.togglePlayPause,
+    s.playlist,
+  ]);
 
-  // return (
-  //   <GradientButton
-  //     className={classNames(isPlaying ? styles.spin : '', className)}
-  //     glow={isPlaying}
-  //     onClick={togglePlayPause}
-  //     shape="circle"
-  //   >
-  //     <TikTokOutlined style={{ fontSize: 22 }} />
-  //   </GradientButton>
-  // );
-
-  return (
+  return playlist.length ? (
     <ActionIcon
       className={classNames(isPlaying ? styles.spin : '', className)}
       style={style}
       onClick={togglePlayPause}
       icon={Music2}
     />
-  );
+  ) : null;
 
   // return (
   //   <Avatar

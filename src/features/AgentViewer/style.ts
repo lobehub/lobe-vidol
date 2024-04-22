@@ -1,5 +1,12 @@
 import { createStyles } from 'antd-style';
 
+import {
+  CHAT_HEADER_HEIGHT,
+  CHAT_INPUT_HEIGHT,
+  CHAT_INPUT_WIDTH,
+  HEADER_HEIGHT,
+} from '@/constants/common';
+
 export const useStyles = createStyles(({ css, token }) => ({
   toolbar: css`
     position: absolute;
@@ -15,16 +22,10 @@ export const useStyles = createStyles(({ css, token }) => ({
 
     display: flex;
 
-    min-width: 480px;
+    width: ${CHAT_INPUT_WIDTH};
   `,
-  // controller: css`
-  //   position: absolute;
-  //   right: ${token.paddingMD}px;
-  //   top: ${token.paddingMD}px;
-  // `,
   viewer: css`
-    position: relative;
     width: 100%;
-    height: 100%;
+    height: calc(100vh - ${HEADER_HEIGHT}px - ${CHAT_HEADER_HEIGHT}px - ${CHAT_INPUT_HEIGHT}px);
   `,
 }));

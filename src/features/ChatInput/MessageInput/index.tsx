@@ -10,10 +10,16 @@ import useChatInput from '@/hooks/useSendMessage';
 import { useSessionStore } from '@/store/session';
 import { isCommandPressed } from '@/utils/keyboard';
 
-const InputArea = memo(() => {
+interface InputAreaProps {
+  className?: string;
+  style?: React.CSSProperties;
+}
+
+const InputArea = memo((props: InputAreaProps) => {
   const ref = useRef<InputRef>(null);
   const isChineseInput = useRef(false);
   const onSend = useChatInput();
+  const { className, style } = props;
 
   const [loading, messageInput, setMessageInput] = useSessionStore((s) => [
     !!s.chatLoadingId,
@@ -22,7 +28,7 @@ const InputArea = memo(() => {
   ]);
 
   return (
-    <Flexbox height={'100%'} width={'100%'} horizontal gap={4}>
+    <Flexbox width={'100%'} horizontal gap={4} className={className} style={style}>
       <Record />
       <Input
         width={'100%'}

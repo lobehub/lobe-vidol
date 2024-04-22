@@ -12,7 +12,7 @@ const initialState = {
   localAgentList: [DEFAULT_AGENT],
   messageInput: '',
   sessionList: [defaultSession],
-  viewerMode: true,
+  viewerMode: false,
   voiceOn: true,
 };
 
