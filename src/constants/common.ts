@@ -24,6 +24,8 @@ export const HEADER_HEIGHT = 64;
 
 export const CHAT_HEADER_HEIGHT = 64;
 
+export const CHAT_INPUT_WIDTH = '42vw';
+
 export const DEFAULT_USER_AVATAR = '😀';
 
 export const LIST_GRID_WIDTH = 108;

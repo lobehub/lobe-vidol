@@ -1,6 +1,6 @@
 import { createStyles } from 'antd-style';
 
-import { CHAT_INPUT_HEIGHT } from '@/constants/common';
+import { CHAT_INPUT_HEIGHT, CHAT_INPUT_WIDTH } from '@/constants/common';
 
 export const useStyles = createStyles(({ css, token }) => ({
   docker: css`
@@ -9,7 +9,7 @@ export const useStyles = createStyles(({ css, token }) => ({
     backdrop-filter: saturate(180%) blur(2px);
   `,
   input: css`
-    max-width: 42vw;
+    width: ${CHAT_INPUT_WIDTH};
   `,
   alert: css`
     padding: ${token.marginXS}px;
