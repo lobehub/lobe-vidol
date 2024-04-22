@@ -2,13 +2,12 @@ import { createStyles } from 'antd-style';
 
 export const useStyles = createStyles(({ css, token }) => ({
   docker: css`
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-
+    padding: ${token.paddingXS}px;
+    background-color: rgba(${token.colorBgLayout}, 0.8);
+    backdrop-filter: saturate(180%) blur(2px);
+  `,
+  input: css`
     max-width: 42vw;
-    padding: 8px 12px;
   `,
   alert: css`
     padding: ${token.marginXS}px;
