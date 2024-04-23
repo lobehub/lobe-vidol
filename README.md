@@ -78,12 +78,27 @@ Please be aware that LobeVidol is currently under active development, and feedba
 
 ## ✨ Features
 
-![](https://github.com/lobehub/lobe-vidol/assets/17870709/f9cb1464-13f9-4d80-a716-def818d968b0)
+### 1.🗣️ **Smooth Conversation Experience**
+Fluid responses ensure a smooth conversation experience. It fully supports Markdown rendering, including code highlighting, LaTex formulas and more.
 
-- [x] 💨 **Vroid Model Preview**: Using the Vroid Editor, you can create and upload your own virtual idol to the website, play with them;
-- [x] 💎 **Exquisite UI Design**: With a carefully designed interface, it offers an elegant appearance and smooth interaction. It supports light and dark themes. PWA support provides a more native-like experience;
-- [x] 🎇 **MMD Dance Support**: With the support of mmd-parser, you can play vmd files with your favarite idol; Just Dance!
-- [x] 🗣️ **Smooth Conversation Experience**: Fluid responses ensure a smooth conversation experience. It fully supports Markdown rendering, including code highlighting, LaTex formulas and more.
+<img width="1503" alt="Snipaste_2024-04-23_23-47-02" src="https://github.com/lobehub/lobe-vidol/assets/4705237/51942769-332d-4829-8732-b901dc290b8d">
+
+
+### 2. 💎 **Exquisite UI Design**
+With a carefully designed interface, it offers an elegant appearance and smooth interaction. It supports light and dark themes. PWA support provides a more native-like experience;
+
+<img width="1503" alt="Snipaste_2024-04-23_23-48-56" src="https://github.com/lobehub/lobe-vidol/assets/4705237/3e30f842-dc01-426c-9683-06b00357bc8d">
+
+### 3. 💨 **Vroid Model Preview**
+Using the Vroid Editor, you can create and upload your own virtual idol to the website, play with them;
+
+![324259872-113e4882-6710-4d81-a04f-a407989f947d](https://github.com/lobehub/lobe-vidol/assets/4705237/c3cf87c3-f8c0-49ef-b966-e451e2fbf583)
+
+### 4. 🎇 **MMD Dance Support**
+With the support of mmd-parser, you can play vmd files with your favarite idol; Just Dance!
+
+<img width="1455" alt="Snipaste_2024-04-23_23-43-21" src="https://github.com/lobehub/lobe-vidol/assets/4705237/8d1107c7-bec9-4f20-a8ac-1413d3682587">
+
 
 <div align="right">
 
