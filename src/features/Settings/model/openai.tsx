@@ -10,6 +10,7 @@ import React, { useEffect } from 'react';
 import { OPENAI_MODEL_LIST } from '@/constants/openai';
 import { chatCompletion } from '@/services/chat';
 import { configSelectors, useConfigStore } from '@/store/config';
+import { ChatMessage } from '@/types/chat';
 
 interface ConfigProps {
   className?: string;
@@ -83,7 +84,7 @@ const Config = (props: ConfigProps) => {
                     {
                       content: 'Hi',
                       role: 'user',
-                    },
+                    } as ChatMessage,
                   ],
                   model: 'gpt-3.5-turbo',
                 })

@@ -8,11 +8,13 @@ import { useSessionStore } from '@/store/session';
 import { LLMRoleType } from '@/types/llm';
 
 import AssistantActionsBar from './Assistant';
+import SystemActionBar from './System';
 import UserActionsBar from './User';
 
 export const renderActions: Record<LLMRoleType, RenderAction> = {
   assistant: AssistantActionsBar,
   user: UserActionsBar,
+  system: SystemActionBar,
 };
 
 export const useActionsClick = (): OnActionsClick => {
