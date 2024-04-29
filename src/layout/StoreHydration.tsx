@@ -14,7 +14,7 @@ const StoreHydration = () => {
   }, []);
 
   useEffect(() => {
-    router.prefetch('/home');
+    router.prefetch('/chat');
   }, [router]);
   return null;
 };

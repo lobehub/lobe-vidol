@@ -3,11 +3,12 @@ import OpenAI, { ClientOptions } from 'openai';
 
 import { OPENAI_API_KEY, OPENAI_END_POINT } from '@/constants/openai';
 import { ErrorTypeEnum } from '@/types/api';
+import { ChatStreamPayload } from '@/types/openai/chat';
 
 import { createErrorResponse } from './createErrorResponse';
 
 export const POST = async (req: Request) => {
-  const payload = await req.json();
+  const data = (await req.json()) as ChatStreamPayload;
   const apiKey = (req.headers.get(OPENAI_API_KEY) as string) || process.env.OPENAI_API_KEY;
   const baseURL = (req.headers.get(OPENAI_END_POINT) as string) || process.env.OPENAI_PROXY_URL;
 
@@ -21,14 +22,14 @@ export const POST = async (req: Request) => {
 
   const openai = new OpenAI(config);
 
-  const { model, messages } = payload;
+  const { model, messages } = data;
 
   try {
     const completion = await openai.chat.completions.create({
       messages,
       model,
       stream: true,
-    });
+    } as OpenAI.ChatCompletionCreateParamsStreaming);
 
     const stream = OpenAIStream(completion);
 

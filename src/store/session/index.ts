@@ -209,7 +209,7 @@ export const createSessonStore: StateCreator<SessionStore, [['zustand/devtools',
           {
             content: currentAgent.systemRole,
             role: 'system',
-          },
+          } as ChatMessage,
           ...messages,
         ],
       });
