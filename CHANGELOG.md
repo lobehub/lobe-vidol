@@ -2,6 +2,32 @@
 
 # Changelog
 
+### [Version 0.3.2](https://github.com/lobehub/lobe-vidol/compare/v0.3.1...v0.3.2)
+
+<sup>Released on **2024-04-29**</sup>
+
+#### 🐛 Bug Fixes
+
+- **misc**: Prefetch chat, 修复 openai 直连时的参数校验问题.
+
+<br/>
+
+<details>
+<summary><kbd>Improvements and Fixes</kbd></summary>
+
+#### What's fixed
+
+- **misc**: Prefetch chat ([609086e](https://github.com/lobehub/lobe-vidol/commit/609086e))
+- **misc**: 修复 openai 直连时的参数校验问题 ([615195f](https://github.com/lobehub/lobe-vidol/commit/615195f))
+
+</details>
+
+<div align="right">
+
+[![](https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square)](#readme-top)
+
+</div>
+
 ### [Version 0.3.1](https://github.com/lobehub/lobe-vidol/compare/v0.3.0...v0.3.1)
 
 <sup>Released on **2024-04-22**</sup>
