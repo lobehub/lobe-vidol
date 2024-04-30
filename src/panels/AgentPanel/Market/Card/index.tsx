@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import React, { memo, useState } from 'react';
 
 import AgentInfo from '@/components/agent/AgentInfo';
-import { PanelContext } from '@/panels/PanelContext';
+import { SIDEBAR_MAX_WIDTH, SIDEBAR_WIDTH } from '@/constants/common';
 import { agentListSelectors, useAgentStore } from '@/store/agent';
 import { marketStoreSelectors, useMarketStore } from '@/store/market';
 import { useSessionStore } from '@/store/session';
@@ -26,7 +26,6 @@ const Header = () => {
   const { styles } = useStyles();
   const router = useRouter();
   const [tempId, setTempId] = useState<string>('');
-  const isPanel = React.useContext(PanelContext);
   const [showAgentSidebar, activateAgent, deactivateAgent, currentAgentItem] = useMarketStore(
     (s) => [
       marketStoreSelectors.showAgentSideBar(s),
@@ -83,10 +82,10 @@ const Header = () => {
   return (
     <DraggablePanel
       classNames={{ content: styles.content }}
-      defaultSize={{ width: isPanel ? 280 : 360 }}
+      defaultSize={{ width: SIDEBAR_WIDTH }}
       expand={showAgentSidebar}
-      minWidth={isPanel ? 280 : 360}
-      maxWidth={420}
+      minWidth={SIDEBAR_WIDTH}
+      maxWidth={SIDEBAR_MAX_WIDTH}
       mode={'fixed'}
       onExpandChange={(show) => {
         if (!show) {

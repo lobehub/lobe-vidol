@@ -22,6 +22,9 @@ export const CHAT_INPUT_HEIGHT = 90;
 
 export const HEADER_HEIGHT = 64;
 
+export const SIDEBAR_WIDTH = 280;
+export const SIDEBAR_MAX_WIDTH = 400;
+
 export const CHAT_HEADER_HEIGHT = 64;
 
 export const CHAT_INPUT_WIDTH = '42vw';

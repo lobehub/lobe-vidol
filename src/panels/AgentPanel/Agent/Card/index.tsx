@@ -6,6 +6,7 @@ import { createStyles } from 'antd-style';
 import { memo, useState } from 'react';
 
 import AgentInfo from '@/components/agent/AgentInfo';
+import { SIDEBAR_MAX_WIDTH, SIDEBAR_WIDTH } from '@/constants/common';
 import { agentListSelectors, useAgentStore } from '@/store/agent';
 import { useConfigStore } from '@/store/config';
 import { useSessionStore } from '@/store/session';
@@ -37,10 +38,10 @@ const Header = () => {
   return (
     <DraggablePanel
       classNames={{ content: styles.content }}
-      defaultSize={{ width: 280 }}
+      defaultSize={{ width: SIDEBAR_WIDTH }}
       expand={showAgentSidebar}
-      maxWidth={400}
-      minWidth={280}
+      maxWidth={SIDEBAR_MAX_WIDTH}
+      minWidth={SIDEBAR_WIDTH}
       mode={'fixed'}
       onExpandChange={(show) => {
         if (!show) {

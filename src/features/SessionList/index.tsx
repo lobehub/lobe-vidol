@@ -2,6 +2,8 @@ import { DraggablePanel } from '@lobehub/ui';
 import { createStyles } from 'antd-style';
 import { useState } from 'react';
 
+import { SIDEBAR_MAX_WIDTH, SIDEBAR_WIDTH } from '@/constants/common';
+
 import Header from './Header';
 import List from './List';
 
@@ -25,8 +27,8 @@ const SideBar = () => {
   return (
     <DraggablePanel
       className={styles.content}
-      maxWidth={360}
-      minWidth={280}
+      maxWidth={SIDEBAR_MAX_WIDTH}
+      minWidth={SIDEBAR_WIDTH}
       mode={'fixed'}
       placement={'left'}
     >

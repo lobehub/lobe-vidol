@@ -5,7 +5,10 @@ import { Button, Drawer, List, Typography, theme } from 'antd';
 import { Pause, PlayIcon, XIcon } from 'lucide-react';
 import { memo } from 'react';
 
+import { SIDEBAR_WIDTH } from '@/constants/common';
 import { DanceStore, useDanceStore } from '@/store/dance';
+
+import { useStyles } from './style';
 
 const { Text } = Typography;
 
@@ -30,6 +33,7 @@ const playListSelectors = (s: DanceStore) => {
 
 const PlayList = (props: PlayListProps) => {
   const { open = false, onClose } = props;
+  const { styles } = useStyles();
   const { token } = theme.useToken();
   const {
     playlist,
@@ -51,12 +55,13 @@ const PlayList = (props: PlayListProps) => {
       }
       onClose={onClose}
       open={open}
-      styles={{
-        body: { padding: 0 },
-        header: { padding: 12 },
+      classNames={{
+        content: styles.content,
+        body: styles.body,
+        header: styles.header,
       }}
       title="当前播放列表"
-      width={400}
+      width={SIDEBAR_WIDTH}
     >
       <List
         dataSource={playlist}

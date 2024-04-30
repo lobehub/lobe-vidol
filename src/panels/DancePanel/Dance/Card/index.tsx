@@ -4,6 +4,7 @@ import { createStyles } from 'antd-style';
 import React, { memo, useState } from 'react';
 
 import DanceInfo from '@/components/DanceInfo';
+import { SIDEBAR_MAX_WIDTH, SIDEBAR_WIDTH } from '@/constants/common';
 import { PanelContext } from '@/panels/PanelContext';
 import { danceListSelectors, useDanceStore } from '@/store/dance';
 
@@ -44,10 +45,10 @@ const SideBar = memo(() => {
   return (
     <DraggablePanel
       classNames={{ content: styles.content }}
-      defaultSize={{ width: 280 }}
+      defaultSize={{ width: SIDEBAR_WIDTH }}
       expand={showDanceSidebar}
-      maxWidth={400}
-      minWidth={280}
+      maxWidth={SIDEBAR_MAX_WIDTH}
+      minWidth={SIDEBAR_WIDTH}
       mode={'fixed'}
       onExpandChange={(show) => {
         if (!show) {

@@ -6,6 +6,7 @@ import React from 'react';
 import { Flexbox } from 'react-layout-kit';
 
 import AgentCard from '@/components/agent/AgentCard';
+import { SIDEBAR_WIDTH } from '@/constants/common';
 import History from '@/features/Actions/History';
 import Token from '@/features/Actions/Token';
 import { sessionSelectors, useSessionStore } from '@/store/session';
@@ -31,8 +32,8 @@ const Header = () => {
   return (
     <DraggablePanel
       classNames={{ content: styles.content }}
-      minWidth={280}
-      maxWidth={280}
+      minWidth={SIDEBAR_WIDTH}
+      maxWidth={SIDEBAR_WIDTH}
       mode={'fixed'}
       placement={'right'}
     >
