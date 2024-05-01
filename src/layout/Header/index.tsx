@@ -1,7 +1,7 @@
 'use client';
 
 import { ActionIcon, Header as LobeHeader, Logo, TabsNav } from '@lobehub/ui';
-import { GithubIcon } from 'lucide-react';
+import { GithubIcon, UserRoundPlusIcon } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { memo } from 'react';
 
@@ -19,8 +19,16 @@ const Header = (props: Props) => {
     <LobeHeader
       actions={[
         <ActionIcon
+          icon={UserRoundPlusIcon}
+          key="user-plus"
+          title={'提交助手'}
+          onClick={() => window.open('https://github.com/lobehub/lobe-vidol-market', '_blank')}
+          size="large"
+        />,
+        <ActionIcon
           icon={GithubIcon}
           key="github"
+          title={'✨ GitHub'}
           onClick={() => window.open('https://github.com/lobehub/lobe-vidol', '_blank')}
           size="large"
         />,

@@ -12,6 +12,7 @@ export default () => {
   return (
     <ActionIcon
       icon={viewerMode ? VideoOff : Video}
+      title={'视频通话'}
       onClick={() => {
         if (viewerMode) {
           setViewerMode(false);
