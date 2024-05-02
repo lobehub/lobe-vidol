@@ -7,6 +7,7 @@ import { Flexbox } from 'react-layout-kit';
 
 import AgentCard from '@/components/agent/AgentCard';
 import { SIDEBAR_WIDTH } from '@/constants/common';
+import MiniPlayer from '@/features/AudioPlayer/MiniPlayer';
 import { sessionSelectors, useSessionStore } from '@/store/session';
 
 import Operations from './Operations';
@@ -35,7 +36,14 @@ const Header = () => {
       mode={'fixed'}
       placement={'right'}
     >
-      <AgentCard agent={currentAgent} />
+      <AgentCard
+        agent={currentAgent}
+        extra={
+          <Flexbox>
+            <MiniPlayer />
+          </Flexbox>
+        }
+      />
       <Flexbox gap={8} style={{ padding: 8 }}>
         <Operations />
       </Flexbox>

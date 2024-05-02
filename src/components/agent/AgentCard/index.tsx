@@ -10,12 +10,13 @@ import { useStyles } from './style';
 interface Props {
   actions?: React.ReactNode[];
   agent?: Agent;
+  extra?: React.ReactNode;
 }
 
 export default (props: Props) => {
   const { styles, theme } = useStyles();
 
-  const { actions = [], agent } = props;
+  const { actions = [], agent, extra } = props;
   const { meta } = agent || {};
   const { avatar, name, description, homepage } = meta || {};
 
@@ -36,9 +37,12 @@ export default (props: Props) => {
         </Tag>
       </div>
       <div className={styles.desc}>{description}</div>
-      <div className={styles.actions}>
-        <Space>{actions}</Space>
-      </div>
+      {actions ? (
+        <div className={styles.actions}>
+          <Space>{actions}</Space>
+        </div>
+      ) : null}
+      {extra}
     </Center>
   );
 };
