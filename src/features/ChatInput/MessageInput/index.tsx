@@ -29,7 +29,6 @@ const InputArea = memo((props: InputAreaProps) => {
 
   return (
     <Flexbox width={'100%'} horizontal gap={4} className={className} style={style}>
-      <Record />
       <TextArea
         autoFocus
         onBlur={(e) => {
@@ -69,6 +68,7 @@ const InputArea = memo((props: InputAreaProps) => {
         icon={<SendOutlined />}
         type="primary"
       ></Button>
+      <Record />
     </Flexbox>
   );
 });

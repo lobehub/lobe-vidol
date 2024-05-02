@@ -4,6 +4,7 @@ import React, { memo } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
 import AgentViewer from '@/features/AgentViewer';
+import Alert from '@/features/Alert';
 import ChatHeader from '@/features/ChatHeader';
 import ChatInfo from '@/features/ChatInfo';
 import MessageInput from '@/features/ChatInput/MessageInput';
@@ -26,8 +27,10 @@ const Chat = () => {
           {viewerMode === true ? <AgentViewer /> : <ChatList />}
         </Flexbox>
         <Flexbox align={'center'} width={'100%'} className={styles.docker} justify={'center'}>
-          <MessageInput className={styles.input} />
-          <div className={styles.alert}>请谨记：智能体所说的一切都是由 AI 生成的</div>
+          <div className={styles.input}>
+            <MessageInput />
+            <Alert className={styles.alert} />
+          </div>
         </Flexbox>
       </Flexbox>
       <ChatInfo />

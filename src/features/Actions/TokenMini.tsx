@@ -13,7 +13,7 @@ const TokenMini = () => {
   return (
     <Tooltip title="上下文消耗 Token 数量计算，数字代表 {总计使用} / {总计可用}]">
       <Typography.Text type={'secondary'}>
-        {usedTokens} / {maxValue}
+        Token Count: {usedTokens} / {maxValue}
       </Typography.Text>
     </Tooltip>
   );
