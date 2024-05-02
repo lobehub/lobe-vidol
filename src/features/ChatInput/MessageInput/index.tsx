@@ -6,6 +6,7 @@ import React, { memo, useRef } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
 import Record from '@/features/Actions/Record';
+import TokenMini from '@/features/Actions/TokenMini';
 import useChatInput from '@/hooks/useSendMessage';
 import { useSessionStore } from '@/store/session';
 import { isCommandPressed } from '@/utils/keyboard';
@@ -58,6 +59,7 @@ const InputArea = memo((props: InputAreaProps) => {
         }}
         placeholder="请输入内容开始聊天"
         ref={ref}
+        suffix={<TokenMini />}
         type={'block'}
         value={messageInput}
       />
