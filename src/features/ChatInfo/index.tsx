@@ -3,7 +3,6 @@
 import { DraggablePanel } from '@lobehub/ui';
 import { createStyles } from 'antd-style';
 import React from 'react';
-import { Flexbox } from 'react-layout-kit';
 
 import AgentCard from '@/components/agent/AgentCard';
 import { SIDEBAR_WIDTH } from '@/constants/common';
@@ -36,17 +35,7 @@ const Header = () => {
       mode={'fixed'}
       placement={'right'}
     >
-      <AgentCard
-        agent={currentAgent}
-        extra={
-          <Flexbox>
-            <MiniPlayer />
-          </Flexbox>
-        }
-      />
-      <Flexbox gap={8} style={{ padding: 8 }}>
-        <Operations />
-      </Flexbox>
+      <AgentCard agent={currentAgent} extra={<MiniPlayer />} footer={<Operations />} />
     </DraggablePanel>
   );
 };

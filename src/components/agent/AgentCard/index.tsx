@@ -11,17 +11,18 @@ interface Props {
   actions?: React.ReactNode[];
   agent?: Agent;
   extra?: React.ReactNode;
+  footer?: React.ReactNode;
 }
 
 export default (props: Props) => {
   const { styles, theme } = useStyles();
 
-  const { actions = [], agent, extra } = props;
+  const { actions = [], agent, extra, footer } = props;
   const { meta } = agent || {};
   const { avatar, name, description, homepage } = meta || {};
 
   return (
-    <Center className={styles.header} gap={16}>
+    <Center className={styles.container} gap={16}>
       <Avatar
         avatar={avatar}
         background={theme.colorFillTertiary}
@@ -37,12 +38,13 @@ export default (props: Props) => {
         </Tag>
       </div>
       <div className={styles.desc}>{description}</div>
-      {actions ? (
+      {actions && actions.length !== 0 ? (
         <div className={styles.actions}>
           <Space>{actions}</Space>
         </div>
       ) : null}
-      {extra}
+      {extra ? extra : null}
+      {footer ? <div className={styles.footer}>{footer}</div> : null}
     </Center>
   );
 };

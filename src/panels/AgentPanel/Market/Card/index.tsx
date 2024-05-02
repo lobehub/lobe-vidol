@@ -4,7 +4,8 @@ import { createStyles } from 'antd-style';
 import { useRouter } from 'next/navigation';
 import React, { memo, useState } from 'react';
 
-import AgentInfo from '@/components/agent/AgentInfo';
+import AgentCard from '@/components/agent/AgentCard';
+import SystemRole from '@/components/agent/SystemRole';
 import { SIDEBAR_MAX_WIDTH, SIDEBAR_WIDTH } from '@/constants/common';
 import { agentListSelectors, useAgentStore } from '@/store/agent';
 import { marketStoreSelectors, useMarketStore } from '@/store/market';
@@ -97,7 +98,11 @@ const Header = () => {
       }}
       placement={'right'}
     >
-      <AgentInfo actions={actions} agent={currentAgentItem} />
+      <AgentCard
+        actions={actions}
+        agent={currentAgentItem}
+        footer={<SystemRole systemRole={currentAgentItem?.systemRole} style={{ marginTop: 16 }} />}
+      />
     </DraggablePanel>
   );
 };

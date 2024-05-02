@@ -3,9 +3,10 @@
 import { DraggablePanel } from '@lobehub/ui';
 import { Button, Popconfirm } from 'antd';
 import { createStyles } from 'antd-style';
-import { memo, useState } from 'react';
+import React, { memo, useState } from 'react';
 
-import AgentInfo from '@/components/agent/AgentInfo';
+import AgentCard from '@/components/agent/AgentCard';
+import SystemRole from '@/components/agent/SystemRole';
 import { SIDEBAR_MAX_WIDTH, SIDEBAR_WIDTH } from '@/constants/common';
 import { agentListSelectors, useAgentStore } from '@/store/agent';
 import { useConfigStore } from '@/store/config';
@@ -53,7 +54,7 @@ const Header = () => {
       }}
       placement={'right'}
     >
-      <AgentInfo
+      <AgentCard
         actions={[
           <Button
             key="chat"
@@ -91,6 +92,7 @@ const Header = () => {
           </Popconfirm>,
         ]}
         agent={currentAgent}
+        footer={<SystemRole systemRole={currentAgent?.systemRole} style={{ marginTop: 16 }} />}
       />
     </DraggablePanel>
   );

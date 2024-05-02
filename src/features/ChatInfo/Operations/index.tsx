@@ -17,17 +17,6 @@ export interface MyListProps {
 const Operations = memo<MyListProps>(({ mobile }) => {
   const [openPanel] = useConfigStore((s) => [s.openPanel]);
   const [clearHistory] = useSessionStore((s) => [s.clearHistory]);
-  // return (
-  //   <Popconfirm
-  //     cancelText="取消"
-  //     description="该操作不可逆，请谨慎操作"
-  //     okText="确定"
-  //     onConfirm={clearHistory}
-  //     title="
-  //   >
-  //     <ActionIcon icon={Eraser} title="清除上下文" />
-  //   </Popconfirm>
-  // );
 
   const items = [
     {

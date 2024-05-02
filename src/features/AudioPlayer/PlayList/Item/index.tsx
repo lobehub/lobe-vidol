@@ -44,15 +44,15 @@ const PlayItem = (props: PlayItemProps) => {
   return (
     <List.Item
       ref={hoverRef}
-      actions={[
+      extra={
         <ActionIcon
           icon={Trash2}
           key="delete"
           title={'从列表中移除'}
           onClick={() => removePlayItem(item)}
           size="small"
-        />,
-      ]}
+        />
+      }
       onDoubleClick={() => {
         if (isCurrentPlay && isPlaying) {
           setIsPlaying(false);
@@ -88,7 +88,11 @@ const PlayItem = (props: PlayItemProps) => {
             ) : null}
           </div>
         }
-        title={<Text style={{ width: 200 }}>{item.name}</Text>}
+        title={
+          <Text ellipsis={{ tooltip: item.name }} style={{ width: 200 }}>
+            {item.name}
+          </Text>
+        }
         description={
           <Text type="secondary" ellipsis={{ tooltip: item.createAt }}>
             {item.createAt}
