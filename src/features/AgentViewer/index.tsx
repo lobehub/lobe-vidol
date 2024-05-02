@@ -12,6 +12,7 @@ function AgentViewer() {
   const viewer = useViewerStore((s) => s.viewer);
   const { styles } = useStyles();
   const [loading, setLoading] = useState(false);
+  const [open, setOpen] = useState(true);
   const currentAgentModel = useSessionStore((s) => sessionSelectors.currentAgentModel(s));
 
   useEffect(() => {
@@ -34,8 +35,8 @@ function AgentViewer() {
 
   return (
     <div className={styles.viewer}>
-      <ChatDialog className={styles.dialog} />
-      <ToolBar className={styles.toolbar} />
+      {open ? <ChatDialog className={styles.dialog} setOpen={setOpen} /> : null}
+      <ToolBar className={styles.toolbar} setOpen={setOpen} />
       {loading ? <PageLoading title={'模型加载中，请稍后...'} /> : null}
       <canvas ref={canvasRef} height={'100%'} width={'100%'}></canvas>
     </div>
