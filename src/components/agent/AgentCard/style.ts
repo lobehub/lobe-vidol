@@ -22,6 +22,7 @@ export const useStyles = createStyles(({ css, token }) => ({
   `,
   footer: css`
     width: 100%;
+    height: 100%;
     border-top: 1px solid ${token.colorBorderSecondary};
   `,
 

@@ -16,7 +16,6 @@ const useStyles = createStyles(({ css, token }) => ({
     position: relative;
     display: flex;
     flex-direction: column;
-    height: 100% !important;
   `,
   header: css`
     border-bottom: 1px solid ${token.colorBorder};

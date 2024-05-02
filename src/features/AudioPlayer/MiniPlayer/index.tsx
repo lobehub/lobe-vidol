@@ -1,4 +1,5 @@
 import { ActionIcon, Avatar } from '@lobehub/ui';
+import { Tooltip } from 'antd';
 import { createStyles } from 'antd-style';
 import classNames from 'classnames';
 import { ListMusic } from 'lucide-react';
@@ -36,24 +37,24 @@ export default (props: Props) => {
   const { style, className } = props;
   const { styles } = useStyles();
   const [open, setOpen] = useState(false);
-  const [isPlaying, togglePlayPause, playlist, currentPlay] = useDanceStore((s) => [
+  const [isPlaying, playlist, currentPlay] = useDanceStore((s) => [
     s.isPlaying,
-    s.togglePlayPause,
     s.playlist,
     s.currentPlay,
   ]);
 
   return playlist.length ? (
-    <Flexbox horizontal gap={8} align={'center'} justify={'space-between'} flex={1}>
+    <Flexbox horizontal gap={8} align={'center'} justify={'space-between'}>
       <PlayList onClose={() => setOpen(false)} open={open} />
-      <Avatar
-        className={classNames(isPlaying ? styles.spin : '', className)}
-        style={style}
-        shape="circle"
-        size={42}
-        onClick={togglePlayPause}
-        src={currentPlay?.cover}
-      />
+      <Tooltip title={currentPlay?.name}>
+        <Avatar
+          className={classNames(isPlaying ? styles.spin : '', className)}
+          style={style}
+          shape="circle"
+          size={42}
+          src={currentPlay?.cover}
+        />
+      </Tooltip>
       <Control />
       <ActionIcon icon={ListMusic} onClick={() => setOpen(true)} title={'播放列表'} />
     </Flexbox>
