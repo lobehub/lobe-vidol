@@ -1,10 +1,12 @@
-import { Avatar } from '@lobehub/ui';
+import { ActionIcon, Avatar } from '@lobehub/ui';
 import { Typography } from 'antd';
 import classNames from 'classnames';
+import { ListMusic } from 'lucide-react';
 import React, { memo, useEffect, useRef, useState } from 'react';
 
 import Control from '@/features/AudioPlayer/Control';
 import Duration from '@/features/AudioPlayer/Duration';
+import PlayList from '@/features/AudioPlayer/PlayList';
 import Volume from '@/features/AudioPlayer/Volume';
 import { DanceStore, useDanceStore } from '@/store/dance';
 import { useViewerStore } from '@/store/viewer';
@@ -28,6 +30,7 @@ function Player(props: PlayerProps) {
   const { style, className } = props;
   const ref = useRef<HTMLAudioElement>(null);
   const [volume, setVolume] = useState(0.2);
+  const [open, setOpen] = useState(false);
   const [duration, setDuration] = useState(0);
   const [currentProgress, setCurrentProgress] = useState(0);
   const { nextDance, currentPlay, isPlaying } = useDanceStore(danceSelectors);
@@ -52,6 +55,7 @@ function Player(props: PlayerProps) {
 
   return (
     <div className={classNames(styles.container, className)} style={style}>
+      <PlayList onClose={() => setOpen(false)} open={open} />
       <audio
         onCanPlay={(e) => {
           e.currentTarget.volume = volume;
@@ -83,6 +87,7 @@ function Player(props: PlayerProps) {
             </Typography.Text>
             <Control />
             <div className={styles.right}>
+              <ActionIcon icon={ListMusic} onClick={() => setOpen(true)} title={'播放列表'} />
               <Volume audioRef={ref} setVolume={setVolume} volume={volume} />
             </div>
           </div>

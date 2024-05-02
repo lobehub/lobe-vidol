@@ -7,7 +7,6 @@ import { Flexbox } from 'react-layout-kit';
 
 import AgentCard from '@/components/agent/AgentCard';
 import { SIDEBAR_WIDTH } from '@/constants/common';
-import History from '@/features/Actions/History';
 import Token from '@/features/Actions/Token';
 import { sessionSelectors, useSessionStore } from '@/store/session';
 
@@ -37,10 +36,7 @@ const Header = () => {
       mode={'fixed'}
       placement={'right'}
     >
-      <AgentCard
-        agent={currentAgent}
-        actions={[<Token key="token" />, <History key="history" />]}
-      />
+      <AgentCard agent={currentAgent} actions={[<Token key="token" />]} />
       <Flexbox gap={8} style={{ padding: 8 }}>
         <Operations />
       </Flexbox>

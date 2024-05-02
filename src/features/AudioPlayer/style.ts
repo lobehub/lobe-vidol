@@ -30,6 +30,7 @@ const useStyles = createStyles(({ token, css }) => ({
   `,
   right: css`
     display: flex;
+    gap: ${token.marginXS}px;
     align-items: center;
   `,
   spin: css`

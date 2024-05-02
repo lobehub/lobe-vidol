@@ -42,6 +42,7 @@ const PlayList = (props: PlayListProps) => {
       }}
       title="播放列表"
       width={SIDEBAR_WIDTH}
+      getContainer={false}
     >
       <List dataSource={playlist} renderItem={(item) => <PlayItem item={item} />} size="small" />
     </Drawer>
