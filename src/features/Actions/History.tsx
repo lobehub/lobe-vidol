@@ -14,7 +14,7 @@ const History = () => {
       onConfirm={clearHistory}
       title="确定删除历史消息？"
     >
-      <ActionIcon icon={Eraser} title="删除历史消息" />
+      <ActionIcon icon={Eraser} title="清除上下文" />
     </Popconfirm>
   );
 };

@@ -24,7 +24,7 @@ const Operations = memo<MyListProps>(({ mobile }) => {
     },
     {
       icon: Music,
-      label: '音乐订阅与发现',
+      label: '音乐与舞蹈控制',
       onClick: () => {
         openPanel('dance');
       },
