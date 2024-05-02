@@ -22,7 +22,7 @@ export const useStyles = createStyles(({ css, token }) => ({
 
     display: flex;
 
-    width: ${CHAT_INPUT_WIDTH};
+    max-width: ${CHAT_INPUT_WIDTH};
   `,
   viewer: css`
     width: 100%;

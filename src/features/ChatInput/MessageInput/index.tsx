@@ -1,12 +1,11 @@
 import { SendOutlined } from '@ant-design/icons';
-import { Input } from '@lobehub/ui';
+import { TextArea } from '@lobehub/ui';
 import { Button } from 'antd';
 import { InputRef } from 'antd/es/input/Input';
 import React, { memo, useRef } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
 import Record from '@/features/Actions/Record';
-import TokenMini from '@/features/Actions/TokenMini';
 import useChatInput from '@/hooks/useSendMessage';
 import { useSessionStore } from '@/store/session';
 import { isCommandPressed } from '@/utils/keyboard';
@@ -31,8 +30,7 @@ const InputArea = memo((props: InputAreaProps) => {
   return (
     <Flexbox width={'100%'} horizontal gap={4} className={className} style={style}>
       <Record />
-      <Input
-        width={'100%'}
+      <TextArea
         autoFocus
         onBlur={(e) => {
           setMessageInput?.(e.target.value);
@@ -59,7 +57,7 @@ const InputArea = memo((props: InputAreaProps) => {
         }}
         placeholder="请输入内容开始聊天"
         ref={ref}
-        suffix={<TokenMini />}
+        autoSize={{ minRows: 1, maxRows: 4 }}
         type={'block'}
         value={messageInput}
       />
