@@ -19,7 +19,10 @@ const VirtualizedList = memo<VirtualizedListProps>(({ mobile }) => {
   const virtuosoRef = useRef<VirtuosoHandle>(null);
   const [atBottom, setAtBottom] = useState(true);
 
-  const data = useSessionStore((s) => ['empty', ...sessionSelectors.currentChatIDs(s)], isEqual);
+  const data = useSessionStore(
+    (s) => ['empty', ...sessionSelectors.currentChatIDsWithGreetingMessage(s)],
+    isEqual,
+  );
   const [id, chatLoading] = useSessionStore((s) => [s.activeId, !!s.chatLoadingId]);
 
   useEffect(() => {

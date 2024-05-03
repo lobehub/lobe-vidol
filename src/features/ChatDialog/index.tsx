@@ -20,7 +20,7 @@ interface DialogProps {
 const Dialog = (props: DialogProps) => {
   const { styles } = useStyles();
   const { className, style, setOpen } = props;
-  const currentChats = useSessionStore((s) => sessionSelectors.currentChats(s));
+  const currentChats = useSessionStore((s) => sessionSelectors.currentChatsWithGreetingMessage(s));
   const lastAgentChatIndex = currentChats.findLastIndex((item) => item.role === 'assistant');
   const ref = React.useRef<HTMLDivElement>(null);
   const isHovered = useHover(ref);

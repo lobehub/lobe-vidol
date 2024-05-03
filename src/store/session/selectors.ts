@@ -16,12 +16,6 @@ const sessionListIds = (s: SessionStore): string[] => {
   return sessionList.map((item) => item.agentId);
 };
 
-const currentChatIDs = (s: SessionStore): string[] => {
-  const session = currentSession(s);
-  if (!session) return [];
-  return session.messages.map((item) => item.id);
-};
-
 const currentAgent = (s: SessionStore): Agent | undefined => {
   const { activeId, localAgentList } = s;
   return localAgentList.find((item) => item.agentId === activeId);
@@ -45,6 +39,40 @@ const currentChats = (s: SessionStore): ChatMessage[] => {
       },
     };
   });
+};
+
+const currentChatsWithGreetingMessage = (s: SessionStore): ChatMessage[] => {
+  const data = currentChats(s);
+
+  const isBrandNewChat = data.length === 0;
+
+  if (!isBrandNewChat) return data;
+
+  const agent = currentAgent(s);
+
+  const initTime = Date.now();
+
+  console.log('agent.greeting', agent?.greeting);
+
+  const emptyGuideMessage = {
+    content: agent?.greeting || '',
+    createdAt: initTime,
+    id: 'default',
+    meta: {
+      avatar: agent?.meta.avatar,
+      title: agent?.meta.name,
+      description: agent?.meta.description,
+    },
+    role: 'assistant',
+    updatedAt: initTime,
+  } as ChatMessage;
+
+  return [emptyGuideMessage];
+};
+
+const currentChatIDsWithGreetingMessage = (s: SessionStore): string[] => {
+  const currentChats = currentChatsWithGreetingMessage(s);
+  return currentChats.map((item) => item.id);
 };
 
 const previousChats = (s: SessionStore, id: string): ChatMessage[] => {
@@ -98,9 +126,10 @@ const isDefaultAgent = (s: SessionStore) => {
 };
 
 export const sessionSelectors = {
+  currentChatsWithGreetingMessage,
   currentAgent,
   currentAgentModel,
-  currentChatIDs,
+  currentChatIDsWithGreetingMessage,
   isDefaultAgent,
   currentChatMessage,
   currentChats,
