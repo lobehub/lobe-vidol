@@ -1,5 +1,5 @@
 import { SendOutlined } from '@ant-design/icons';
-import { Input } from '@lobehub/ui';
+import { TextArea } from '@lobehub/ui';
 import { Button } from 'antd';
 import { InputRef } from 'antd/es/input/Input';
 import React, { memo, useRef } from 'react';
@@ -29,9 +29,7 @@ const InputArea = memo((props: InputAreaProps) => {
 
   return (
     <Flexbox width={'100%'} horizontal gap={4} className={className} style={style}>
-      <Record />
-      <Input
-        width={'100%'}
+      <TextArea
         autoFocus
         onBlur={(e) => {
           setMessageInput?.(e.target.value);
@@ -58,6 +56,7 @@ const InputArea = memo((props: InputAreaProps) => {
         }}
         placeholder="请输入内容开始聊天"
         ref={ref}
+        autoSize={{ minRows: 1, maxRows: 3 }}
         type={'block'}
         value={messageInput}
       />
@@ -69,6 +68,7 @@ const InputArea = memo((props: InputAreaProps) => {
         icon={<SendOutlined />}
         type="primary"
       ></Button>
+      <Record />
     </Flexbox>
   );
 });

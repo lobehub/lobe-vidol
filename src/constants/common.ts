@@ -18,9 +18,12 @@ export const INITIAL_Z_INDEX = 10;
 export const CHAT_TEXTAREA_MAX_HEIGHT = 570;
 export const CHAT_TEXTAREA_HEIGHT = 200;
 
-export const CHAT_INPUT_HEIGHT = 90;
+export const CHAT_INPUT_MIN_HEIGHT = 90;
 
 export const HEADER_HEIGHT = 64;
+
+export const SIDEBAR_WIDTH = 280;
+export const SIDEBAR_MAX_WIDTH = 400;
 
 export const CHAT_HEADER_HEIGHT = 64;
 

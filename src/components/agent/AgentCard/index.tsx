@@ -1,7 +1,8 @@
 import { Avatar } from '@lobehub/ui';
 import { Space, Tag } from 'antd';
+import classNames from 'classnames';
 import React from 'react';
-import { Center } from 'react-layout-kit';
+import { Flexbox } from 'react-layout-kit';
 
 import { Agent } from '@/types/agent';
 
@@ -10,17 +11,27 @@ import { useStyles } from './style';
 interface Props {
   actions?: React.ReactNode[];
   agent?: Agent;
+  className?: string;
+  extra?: React.ReactNode;
+  footer?: React.ReactNode;
+  style?: React.CSSProperties;
 }
 
 export default (props: Props) => {
   const { styles, theme } = useStyles();
 
-  const { actions = [], agent } = props;
+  const { actions = [], agent, extra, footer, className, style } = props;
   const { meta } = agent || {};
   const { avatar, name, description, homepage } = meta || {};
 
   return (
-    <Center className={styles.header} gap={16}>
+    <Flexbox
+      className={classNames(styles.container, className)}
+      gap={16}
+      style={style}
+      flex={1}
+      align={'center'}
+    >
       <Avatar
         avatar={avatar}
         background={theme.colorFillTertiary}
@@ -36,9 +47,17 @@ export default (props: Props) => {
         </Tag>
       </div>
       <div className={styles.desc}>{description}</div>
-      <div className={styles.actions}>
-        <Space>{actions}</Space>
-      </div>
-    </Center>
+      {actions && actions.length !== 0 ? (
+        <div className={styles.actions}>
+          <Space>{actions}</Space>
+        </div>
+      ) : null}
+      {extra ? extra : null}
+      {footer ? (
+        <Flexbox className={styles.footer} flex={1}>
+          {footer}
+        </Flexbox>
+      ) : null}
+    </Flexbox>
   );
 };

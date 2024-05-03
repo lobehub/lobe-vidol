@@ -8,7 +8,10 @@ export const useStyles = createStyles(({ css, token }) => ({
   avatar: css`
     flex: none;
   `,
-  container: css``,
+  container: css`
+    position: relative;
+    padding: ${token.padding}px;
+  `,
   date: css`
     font-size: 12px;
     color: ${token.colorTextDescription};
@@ -18,13 +21,9 @@ export const useStyles = createStyles(({ css, token }) => ({
     text-align: center;
   `,
   footer: css`
-    padding: 16px 16px 24px;
-    white-space: break-spaces;
-  `,
-  header: css`
-    position: relative;
-    padding: 16px 16px 24px;
-    border-bottom: 1px solid ${token.colorBorderSecondary};
+    width: 100%;
+    height: 100%;
+    border-top: 1px solid ${token.colorBorderSecondary};
   `,
 
   title: css`

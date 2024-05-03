@@ -23,15 +23,6 @@ const nextConfig = {
     optimizePackageImports: ['@lobehub/ui', '@lobehub/icons', 'chroma-js', 'shiki'],
     webVitalsAttribution: ['CLS', 'LCP'],
   },
-  redirects: async () => {
-    return [
-      {
-        source: '/my',
-        destination: '/my/agent',
-        permanent: true,
-      }
-    ]
-  },
   reactStrictMode: true,
   webpack(config) {
     config.experiments = {

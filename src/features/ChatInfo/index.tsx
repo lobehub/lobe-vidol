@@ -3,11 +3,10 @@
 import { DraggablePanel } from '@lobehub/ui';
 import { createStyles } from 'antd-style';
 import React from 'react';
-import { Flexbox } from 'react-layout-kit';
 
 import AgentCard from '@/components/agent/AgentCard';
-import History from '@/features/Actions/History';
-import Token from '@/features/Actions/Token';
+import { SIDEBAR_WIDTH } from '@/constants/common';
+import MiniPlayer from '@/features/AudioPlayer/MiniPlayer';
 import { sessionSelectors, useSessionStore } from '@/store/session';
 
 import Operations from './Operations';
@@ -17,7 +16,6 @@ const useStyles = createStyles(({ css, token }) => ({
     position: relative;
     display: flex;
     flex-direction: column;
-    height: 100% !important;
   `,
   header: css`
     border-bottom: 1px solid ${token.colorBorder};
@@ -31,18 +29,12 @@ const Header = () => {
   return (
     <DraggablePanel
       classNames={{ content: styles.content }}
-      minWidth={280}
-      maxWidth={280}
+      minWidth={SIDEBAR_WIDTH}
+      maxWidth={SIDEBAR_WIDTH}
       mode={'fixed'}
       placement={'right'}
     >
-      <AgentCard
-        agent={currentAgent}
-        actions={[<Token key="token" />, <History key="history" />]}
-      />
-      <Flexbox gap={8} style={{ padding: 8 }}>
-        <Operations />
-      </Flexbox>
+      <AgentCard agent={currentAgent} extra={<MiniPlayer />} footer={<Operations />} />
     </DraggablePanel>
   );
 };
