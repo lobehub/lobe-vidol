@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useEffect, useState } from 'react';
+import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
 
 import PageLoading from '@/components/PageLoading';
 import ToolBar from '@/features/AgentViewer/ToolBar';
@@ -13,6 +13,7 @@ function AgentViewer() {
   const { styles } = useStyles();
   const [loading, setLoading] = useState(false);
   const [open, setOpen] = useState(true);
+  const ref = useRef<HTMLDivElement>(null);
   const currentAgentModel = useSessionStore((s) => sessionSelectors.currentAgentModel(s));
 
   useEffect(() => {
@@ -34,11 +35,11 @@ function AgentViewer() {
   );
 
   return (
-    <div className={styles.viewer}>
+    <div ref={ref} className={styles.viewer}>
       {open ? <ChatDialog className={styles.dialog} setOpen={setOpen} /> : null}
-      <ToolBar className={styles.toolbar} setOpen={setOpen} />
+      <ToolBar className={styles.toolbar} setOpen={setOpen} viewerRef={ref} />
       {loading ? <PageLoading title={'模型加载中，请稍后...'} /> : null}
-      <canvas ref={canvasRef} height={'100%'} width={'100%'}></canvas>
+      <canvas ref={canvasRef} className={styles.canvas}></canvas>
     </div>
   );
 }

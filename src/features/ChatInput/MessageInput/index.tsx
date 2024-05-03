@@ -56,7 +56,7 @@ const InputArea = memo((props: InputAreaProps) => {
         }}
         placeholder="请输入内容开始聊天"
         ref={ref}
-        autoSize={{ minRows: 1, maxRows: 4 }}
+        autoSize={{ minRows: 1, maxRows: 3 }}
         type={'block'}
         value={messageInput}
       />

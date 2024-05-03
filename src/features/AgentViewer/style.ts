@@ -25,7 +25,14 @@ export const useStyles = createStyles(({ css, token }) => ({
     max-width: ${CHAT_INPUT_WIDTH};
   `,
   viewer: css`
+    min-height: 0;
+  `,
+  canvas: css`
+    display: block;
+
     width: 100%;
+    max-width: 100%;
     height: calc(100vh - ${HEADER_HEIGHT}px - ${CHAT_HEADER_HEIGHT}px - ${CHAT_INPUT_MIN_HEIGHT}px);
+    max-height: 100%;
   `,
 }));

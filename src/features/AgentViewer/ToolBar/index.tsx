@@ -16,19 +16,19 @@ interface ToolBarProps {
   className?: string;
   setOpen?: (open: boolean) => void;
   style?: React.CSSProperties;
+  viewerRef?: React.RefObject<HTMLDivElement>;
 }
 
-const toggleFullScreen = () => {
-  if (!document.fullscreenElement) {
-    document.body.requestFullscreen();
-  } else if (document.exitFullscreen) {
-    document.exitFullscreen();
-  }
-};
-
 const ToolBar = (props: ToolBarProps) => {
-  const { style, className, setOpen } = props;
+  const { style, className, setOpen, viewerRef } = props;
   const viewer = useViewerStore((s) => s.viewer);
+  const toggleFullScreen = () => {
+    if (!document.fullscreenElement) {
+      viewerRef?.current?.requestFullscreen();
+    } else {
+      document.exitFullscreen();
+    }
+  };
 
   const dropdownMenu = [
     {
