@@ -2,6 +2,46 @@
 
 # Changelog
 
+## [Version 0.4.0](https://github.com/lobehub/lobe-vidol/compare/v0.3.2...v0.4.0)
+
+<sup>Released on **2024-05-03**</sup>
+
+#### ✨ Features
+
+- **misc**: Input 替换为 textarea，可以扩展到最多四列，优化使用 Token 数量计算与显示，优化按钮标识，添加助手按钮，优化播放列表抽屉样式，对话框可关闭，添加迷你播放器，调整音乐播放器样式，重构播放列表样式.
+
+#### 🐛 Bug Fixes
+
+- **misc**: 修复视频模式下 resize 体验问题.
+
+<br/>
+
+<details>
+<summary><kbd>Improvements and Fixes</kbd></summary>
+
+#### What's improved
+
+- **misc**: Input 替换为 textarea，可以扩展到最多四列 ([74c9d54](https://github.com/lobehub/lobe-vidol/commit/74c9d54))
+- **misc**: 优化使用 Token 数量计算与显示 ([b549b4d](https://github.com/lobehub/lobe-vidol/commit/b549b4d))
+- **misc**: 优化按钮标识，添加助手按钮 ([6683c98](https://github.com/lobehub/lobe-vidol/commit/6683c98))
+- **misc**: 优化播放列表抽屉样式 ([8f44409](https://github.com/lobehub/lobe-vidol/commit/8f44409))
+- **misc**: 对话框可关闭 ([a696c24](https://github.com/lobehub/lobe-vidol/commit/a696c24))
+- **misc**: 添加迷你播放器 ([1dfd979](https://github.com/lobehub/lobe-vidol/commit/1dfd979))
+- **misc**: 调整音乐播放器样式 ([fad7269](https://github.com/lobehub/lobe-vidol/commit/fad7269))
+- **misc**: 重构播放列表样式 ([e5e596e](https://github.com/lobehub/lobe-vidol/commit/e5e596e))
+
+#### What's fixed
+
+- **misc**: 修复视频模式下 resize 体验问题 ([5ee68be](https://github.com/lobehub/lobe-vidol/commit/5ee68be))
+
+</details>
+
+<div align="right">
+
+[![](https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square)](#readme-top)
+
+</div>
+
 ### [Version 0.3.2](https://github.com/lobehub/lobe-vidol/compare/v0.3.1...v0.3.2)
 
 <sup>Released on **2024-04-29**</sup>
