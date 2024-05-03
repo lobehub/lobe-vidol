@@ -4,6 +4,10 @@ export interface Dance {
    */
   audio: string;
   /**
+   * 作者名
+   */
+  author: string;
+  /**
    * 封面图片
    */
   cover: string;
@@ -15,6 +19,10 @@ export interface Dance {
    * 舞蹈 ID
    */
   danceId: string;
+  /**
+   * 作者主页
+   */
+  homepage: string;
   /**
    * 舞蹈名
    */

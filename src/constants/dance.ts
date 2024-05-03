@@ -4,6 +4,8 @@ export const DEFAULT_DANCE: Dance = {
   danceId: 'vidol-dance-gokuraku',
   name: '極楽浄土',
   createAt: '2023-10-31',
+  author: 'Vidol',
+  homepage: 'https://github.com/lobehub/lobe-vidol',
   src: 'https://registry.npmmirror.com/@v-idol/vidol-dance-gokuraku/1.0.0/files/gokuraku.vmd',
   audio:
     'https://registry.npmmirror.com/@v-idol/vidol-dance-gokuraku/1.0.0/files/Gokuraku jodo.mp3',

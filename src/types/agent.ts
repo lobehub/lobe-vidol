@@ -1,11 +1,29 @@
 import { TouchActionConfig } from './touch';
 import { TTS } from './tts';
 
+/**
+ * Category Enum, 当前包括 Anime, Game, Realistic, VTuber, Book, History, Movie, Animal, Vroid
+ */
+export enum CategoryEnum {
+  ANIMAL = 'Animal',
+  ANIME = 'Anime',
+  BOOK = 'Book',
+  GAME = 'Game',
+  HISTORY = 'History',
+  MOVIE = 'Movie',
+  REALISTIC = 'Realistic',
+  VROID = 'Vroid',
+  VTUBER = 'VTuber',
+}
 export interface AgentMeta {
   /**
    * 头像图片路径
    */
   avatar: string;
+  /**
+   * 模型分类
+   */
+  category?: CategoryEnum;
   /**
    * 封面图片路径
    */
@@ -38,10 +56,25 @@ export interface Agent {
    */
   agentId: string;
   /**
+   * 作者名
+   */
+  author: string;
+  /**
+   * 创建时间
+   */
+  createAt: string;
+  /**
+   * 问候语，角色在每次聊天开始时说的第一句话
+   */
+  greeting: string;
+  /**
+   * 作者主页
+   */
+  homepage: string;
+  /**
    * 角色元数据
    */
   meta: AgentMeta;
-
   /**
    * 角色设定
    */
