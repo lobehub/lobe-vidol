@@ -4,9 +4,9 @@ export const LOBE_VIDOL_DEFAULT_AGENT_ID = 'lobe-vidol-default-agent';
 
 const OFFICIAL_ROBOT_NAME = 'V';
 
-export const DEFAULT_AGENT: Agent = {
+export const DEFAULT_VIDOL_AGENT: Agent = {
   agentId: LOBE_VIDOL_DEFAULT_AGENT_ID,
-  greeting: `哈喽，亲爱的主人！我是你的私人助理${OFFICIAL_ROBOT_NAME}，愉快地为你服务！有什么我可以帮你的吗？`,
+  greeting: `哈喽，亲爱的主人！我是你的私人助理 ${OFFICIAL_ROBOT_NAME}，愉快地为你服务！有什么我可以帮你的吗？`,
   createAt: '2023-10-30',
   author: 'LobeVidol',
   homepage: 'https://github.com/lobehub/lobe-vidol',
