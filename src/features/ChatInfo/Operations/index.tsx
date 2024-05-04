@@ -1,8 +1,9 @@
 import { ExclamationCircleFilled } from '@ant-design/icons';
 import { Modal } from 'antd';
-import { Eraser, Music, SquarePen } from 'lucide-react';
+import { Eraser, History, Music, Settings2Icon, SquarePen } from 'lucide-react';
 import React, { memo } from 'react';
 
+import { LOBE_VIDOL_DEFAULT_AGENT_ID } from '@/constants/agent';
 import { useConfigStore } from '@/store/config';
 import { useSessionStore } from '@/store/session';
 
@@ -16,19 +17,38 @@ export interface MyListProps {
 
 const Operations = memo<MyListProps>(({ mobile }) => {
   const [openPanel] = useConfigStore((s) => [s.openPanel]);
-  const [clearHistory] = useSessionStore((s) => [s.clearHistory]);
+  const [clearHistory, activeId] = useSessionStore((s) => [s.clearHistory, s.activeId]);
+
+  console.log('activeId', activeId);
 
   const items = [
     {
       icon: SquarePen,
-      label: '角色信息与对话设置',
+      label: '新话题',
+      key: 'new-topic',
+      onClick: () => {},
+    },
+    {
+      icon: History,
+      label: '聊天历史记录',
+      key: 'history',
       onClick: () => {
-        openPanel('role');
+        // openPanel('role');
       },
     },
     {
+      icon: Settings2Icon,
+      label: '角色设定',
+      key: 'setting',
+      onClick: () => {
+        openPanel('role');
+      },
+      hidden: activeId === LOBE_VIDOL_DEFAULT_AGENT_ID,
+    },
+    {
       icon: Music,
-      label: '音乐与舞蹈控制',
+      key: 'music',
+      label: '音乐与舞蹈',
       onClick: () => {
         openPanel('dance');
       },
@@ -36,6 +56,7 @@ const Operations = memo<MyListProps>(({ mobile }) => {
     {
       icon: Eraser,
       label: '清除上下文',
+      key: 'context',
       onClick: () => {
         confirm({
           title: '确定删除历史消息？',
@@ -54,9 +75,11 @@ const Operations = memo<MyListProps>(({ mobile }) => {
 
   return (
     <>
-      {items.map(({ icon, label, onClick }) => (
-        <Item hoverable={!mobile} icon={icon} label={label} key={label} onClick={onClick} />
-      ))}
+      {items
+        .filter((item) => !item.hidden)
+        .map(({ icon, label, onClick }) => (
+          <Item hoverable={!mobile} icon={icon} label={label} key={label} onClick={onClick} />
+        ))}
     </>
   );
 });

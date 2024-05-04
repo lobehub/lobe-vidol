@@ -67,14 +67,24 @@ const Info = (props: InfoProps) => {
         <div className={styles.form}>
           <div className={styles.config}>
             <FormItem
-              label={'系统设定'}
+              label={'系统角色'}
               name="systemRole"
               rules={[{ message: '请输入角色的系统设定', required: true }]}
             >
               <Input.TextArea
-                autoSize={{ maxRows: 18, minRows: 18 }}
+                autoSize={{ maxRows: 16, minRows: 16 }}
                 placeholder="请输入角色的系统设定"
                 showCount
+              />
+            </FormItem>
+            <FormItem
+              label={'招呼用语'}
+              name="greeting"
+              rules={[{ message: '请输入角色与你打招呼时的用语', required: true }]}
+            >
+              <Input.TextArea
+                autoSize={{ maxRows: 3, minRows: 1 }}
+                placeholder="请输入角色与你打招呼时的用语"
               />
             </FormItem>
           </div>

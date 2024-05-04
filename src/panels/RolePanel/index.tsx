@@ -22,7 +22,7 @@ const RolePanel = (props: RolePanelProps) => {
   const [tab, setTab] = useState('info');
 
   return (
-    <PanelContainer className={className} panelKey="role" style={style} title="编辑角色">
+    <PanelContainer className={className} panelKey="role" style={style} title="角色设定">
       <div
         style={{
           display: 'flex',
@@ -42,7 +42,7 @@ const RolePanel = (props: RolePanelProps) => {
               },
               {
                 key: 'role',
-                label: '角色设定',
+                label: '系统角色',
               },
               {
                 key: 'voice',
