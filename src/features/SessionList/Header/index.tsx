@@ -13,19 +13,13 @@ interface HeaderProps {
 }
 
 // eslint-disable-next-line react/display-name
-const Header = memo((props: HeaderProps) => {
+const Index = memo((props: HeaderProps) => {
   const { value, onChange } = props;
   const { styles } = useStyles();
   const openPanel = useConfigStore((s) => s.openPanel);
 
   return (
-    <Flexbox
-      justify={'space-between'}
-      horizontal
-      align={'center'}
-      className={styles.header}
-      gap={4}
-    >
+    <Flexbox justify={'space-between'} horizontal align={'center'} className={styles.header}>
       <SearchBar
         enableShortKey
         onChange={(e) => {
@@ -34,10 +28,11 @@ const Header = memo((props: HeaderProps) => {
         placeholder="搜索"
         shortKey="f"
         value={value}
+        style={{ width: '100%' }}
       />
       <ActionIcon icon={Plus} onClick={() => openPanel('agent')} title={'创建对话'} />
     </Flexbox>
   );
 });
 
-export default Header;
+export default Index;

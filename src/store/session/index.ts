@@ -49,6 +49,10 @@ export interface SessionStore {
    */
   createSession: (agent: Agent) => void;
   /**
+   * 默认会话
+   */
+  defaultSession: Session;
+  /**
    *  删除消息
    */
   deleteMessage: (id: string) => void;

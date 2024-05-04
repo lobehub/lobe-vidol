@@ -14,9 +14,7 @@ export const useStyles = createStyles(({ css, token }) => ({
   header: css`
     height: ${HEADER_HEIGHT}px;
     padding: ${token.paddingSM}px;
-    border-bottom: 1px solid ${token.colorBorderSecondary};
   `,
-
   title: css`
     font-size: 20px;
     font-weight: 600;

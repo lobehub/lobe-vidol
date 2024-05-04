@@ -1,4 +1,4 @@
-import { V_CHAT_DEFAULT_AGENT_ID } from '@/constants/agent';
+import { LOBE_VIDOL_DEFAULT_AGENT_ID } from '@/constants/agent';
 import { DEFAULT_USER_AVATAR } from '@/constants/common';
 import { Agent } from '@/types/agent';
 import { ChatMessage } from '@/types/chat';
@@ -121,7 +121,7 @@ const getAgentById = (s: SessionStore) => {
 const isDefaultAgent = (s: SessionStore) => {
   return (id: string): boolean => {
     const agent = getAgentById(s)(id);
-    return agent?.agentId === V_CHAT_DEFAULT_AGENT_ID;
+    return agent?.agentId === LOBE_VIDOL_DEFAULT_AGENT_ID;
   };
 };
 
