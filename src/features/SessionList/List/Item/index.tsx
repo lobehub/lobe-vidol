@@ -1,9 +1,9 @@
 import { memo, useMemo, useState } from 'react';
 import { shallow } from 'zustand/shallow';
 
-import ListItem from '@/features/SessionList/ListItem';
 import { sessionSelectors, useSessionStore } from '@/store/session';
 
+import ListItem from '../../ListItem';
 import Actions from './Actions';
 
 interface SessionItemProps {

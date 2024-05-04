@@ -7,6 +7,7 @@ import React from 'react';
 import AgentCard from '@/components/agent/AgentCard';
 import { SIDEBAR_WIDTH } from '@/constants/common';
 import MiniPlayer from '@/features/AudioPlayer/MiniPlayer';
+import { useGlobalStore } from '@/store/global';
 import { sessionSelectors, useSessionStore } from '@/store/session';
 
 import Operations from './Operations';
@@ -22,7 +23,11 @@ const useStyles = createStyles(({ css, token }) => ({
   `,
 }));
 
-const Header = () => {
+export default () => {
+  const [showChatSidebar, setChatSidebar] = useGlobalStore((s) => [
+    s.showChatSidebar,
+    s.setChatSidebar,
+  ]);
   const { styles } = useStyles();
   const [currentAgent] = useSessionStore((s) => [sessionSelectors.currentAgent(s)]);
 
@@ -32,11 +37,11 @@ const Header = () => {
       minWidth={SIDEBAR_WIDTH}
       maxWidth={SIDEBAR_WIDTH}
       mode={'fixed'}
+      onExpandChange={(expand) => setChatSidebar(expand)}
+      expand={showChatSidebar}
       placement={'right'}
     >
       <AgentCard agent={currentAgent} extra={<MiniPlayer />} footer={<Operations />} />
     </DraggablePanel>
   );
 };
-
-export default Header;

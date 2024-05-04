@@ -33,7 +33,7 @@ const Header = (props: Props) => {
           size="large"
         />,
       ]}
-      logo={<Logo extra={'Vidol'} size={36} type={'combine'} />}
+      logo={<Logo extra={'Lobe Vidol'} size={36} />}
       nav={
         <TabsNav
           activeKey={headerKey}

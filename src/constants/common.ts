@@ -27,7 +27,7 @@ export const SIDEBAR_MAX_WIDTH = 400;
 
 export const CHAT_HEADER_HEIGHT = 64;
 
-export const CHAT_INPUT_WIDTH = '42vw';
+export const CHAT_INPUT_WIDTH = '48rem';
 
 export const DEFAULT_USER_AVATAR = '😀';
 

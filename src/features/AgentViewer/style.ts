@@ -23,6 +23,10 @@ export const useStyles = createStyles(({ css, token }) => ({
     display: flex;
 
     max-width: ${CHAT_INPUT_WIDTH};
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
   `,
   viewer: css`
     min-height: 0;

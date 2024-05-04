@@ -1,20 +1,14 @@
-import { DraggablePanel, Icon } from '@lobehub/ui';
+import { Icon } from '@lobehub/ui';
 import { Collapse } from 'antd';
 import { createStyles } from 'antd-style';
 import { ChevronDown } from 'lucide-react';
 import { useState } from 'react';
 
-import { SIDEBAR_MAX_WIDTH, SIDEBAR_WIDTH } from '@/constants/common';
-import V from '@/features/SessionList/V';
-
-import Header from './Header';
 import List from './List';
+import SearchBar from './SearchBar';
+import V from './V';
 
 const useStyles = createStyles(({ css, token, prefixCls }) => ({
-  content: css`
-    display: flex;
-    flex-direction: column;
-  `,
   list: css`
     padding: 8px;
   `,
@@ -52,46 +46,39 @@ const SideBar = () => {
   const [searchName, setSearchName] = useState<string>();
 
   return (
-    <DraggablePanel
-      className={styles.content}
-      maxWidth={SIDEBAR_MAX_WIDTH}
-      minWidth={SIDEBAR_WIDTH}
-      mode={'fixed'}
-      placement={'left'}
-    >
-      <Header
+    <div className={styles.list}>
+      <SearchBar
         onChange={(value) => {
           setSearchName(value);
         }}
         value={searchName}
+        style={{ marginBottom: 8 }}
       />
-      <div className={styles.list}>
-        <V />
-        <Collapse
-          bordered={false}
-          defaultActiveKey={'default'}
-          className={styles.container}
-          expandIcon={({ isActive }) => (
-            <Icon
-              className={styles.icon}
-              icon={ChevronDown}
-              size={{ fontSize: 16 }}
-              style={isActive ? {} : { rotate: '-90deg' }}
-            />
-          )}
-          expandIconPosition={'end'}
-          ghost
-          size={'small'}
-          items={[
-            {
-              children: <List filter={searchName} />,
-              label: '会话列表',
-              key: 'default',
-            },
-          ]}
-        />
-      </div>
-    </DraggablePanel>
+      <V />
+      <Collapse
+        bordered={false}
+        defaultActiveKey={'default'}
+        className={styles.container}
+        expandIcon={({ isActive }) => (
+          <Icon
+            className={styles.icon}
+            icon={ChevronDown}
+            size={{ fontSize: 16 }}
+            style={isActive ? {} : { rotate: '-90deg' }}
+          />
+        )}
+        expandIconPosition={'end'}
+        ghost
+        size={'small'}
+        items={[
+          {
+            children: <List filter={searchName} />,
+            label: '默认列表',
+            key: 'default',
+          },
+        ]}
+      />
+    </div>
   );
 };
 

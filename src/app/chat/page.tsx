@@ -9,9 +9,9 @@ import ChatHeader from '@/features/ChatHeader';
 import ChatInfo from '@/features/ChatInfo';
 import MessageInput from '@/features/ChatInput/MessageInput';
 import ChatList from '@/features/ChatList';
-import SessionList from '@/features/SessionList';
 import { useSessionStore } from '@/store/session';
 
+import SideBar from './SideBar';
 import { useStyles } from './style';
 
 const Chat = () => {
@@ -20,14 +20,20 @@ const Chat = () => {
 
   return (
     <Flexbox flex={1} height={'100%'} width={'100%'} horizontal>
-      <SessionList />
+      <SideBar />
       <Flexbox height={'100%'} width={'100%'}>
         <ChatHeader />
-        <Flexbox flex={1} style={{ overflow: 'hidden', position: 'relative' }}>
-          {viewerMode === true ? <AgentViewer /> : <ChatList />}
+        <Flexbox flex={1} style={{ overflow: 'hidden', position: 'relative' }} align={'center'}>
+          {viewerMode === true ? (
+            <AgentViewer />
+          ) : (
+            <Flexbox className={styles.content} height={'100%'}>
+              <ChatList />
+            </Flexbox>
+          )}
         </Flexbox>
         <Flexbox align={'center'} width={'100%'} className={styles.docker} justify={'center'}>
-          <div className={styles.input}>
+          <div className={styles.content}>
             <MessageInput />
             <Alert className={styles.alert} />
           </div>

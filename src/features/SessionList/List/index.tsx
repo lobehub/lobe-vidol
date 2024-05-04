@@ -5,7 +5,7 @@ import LazyLoad from 'react-lazy-load';
 import { useSessionStore } from '@/store/session';
 import { sessionSelectors } from '@/store/session/selectors';
 
-import SessionItem from './SessionItem';
+import SessionItem from './Item';
 
 const useStyles = createStyles(
   ({ css }) => css`
