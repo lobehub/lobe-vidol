@@ -22,6 +22,7 @@ const SideBar = () => {
       mode={'fixed'}
       placement={'left'}
     >
+      {/*<Header />*/}
       <SessionList />
     </DraggablePanel>
   );

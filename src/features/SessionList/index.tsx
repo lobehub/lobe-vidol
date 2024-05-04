@@ -1,11 +1,13 @@
-import { Icon } from '@lobehub/ui';
+import { Icon, SearchBar } from '@lobehub/ui';
 import { Collapse } from 'antd';
 import { createStyles } from 'antd-style';
 import { ChevronDown } from 'lucide-react';
-import { useState } from 'react';
+import React, { useState } from 'react';
+import { Flexbox } from 'react-layout-kit';
+
+import Agent from '@/features/Actions/Agent';
 
 import List from './List';
-import SearchBar from './SearchBar';
 import V from './V';
 
 const useStyles = createStyles(({ css, token, prefixCls }) => ({
@@ -47,13 +49,20 @@ const SideBar = () => {
 
   return (
     <div className={styles.list}>
-      <SearchBar
-        onChange={(value) => {
-          setSearchName(value);
-        }}
-        value={searchName}
-        style={{ marginBottom: 8 }}
-      />
+      <Flexbox justify={'space-between'} horizontal align={'center'} style={{ marginBottom: 8 }}>
+        <SearchBar
+          enableShortKey
+          onChange={(e) => {
+            setSearchName(e.target.value);
+          }}
+          placeholder="搜索"
+          shortKey="f"
+          spotlight
+          type={'block'}
+          value={searchName}
+        />
+        <Agent />
+      </Flexbox>
       <V />
       <Collapse
         bordered={false}
@@ -73,7 +82,7 @@ const SideBar = () => {
         items={[
           {
             children: <List filter={searchName} />,
-            label: '默认列表',
+            label: '会话列表',
             key: 'default',
           },
         ]}
