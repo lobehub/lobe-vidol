@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import { Music2 } from 'lucide-react';
 import React from 'react';
 
+import { DESKTOP_HEADER_ICON_SIZE } from '@/constants/common';
 import { useDanceStore } from '@/store/dance';
 
 const useStyles = createStyles(({ css }) => ({
@@ -42,6 +43,7 @@ export default (props: Props) => {
     <ActionIcon
       className={classNames(isPlaying ? styles.spin : '', className)}
       style={style}
+      size={DESKTOP_HEADER_ICON_SIZE}
       onClick={togglePlayPause}
       icon={Music2}
     />

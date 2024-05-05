@@ -5,6 +5,7 @@ import { ChevronDown } from 'lucide-react';
 import React, { useState } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
+import { HEADER_HEIGHT } from '@/constants/common';
 import Agent from '@/features/Actions/Agent';
 
 import List from './List';
@@ -48,8 +49,13 @@ const SideBar = () => {
   const [searchName, setSearchName] = useState<string>();
 
   return (
-    <div className={styles.list}>
-      <Flexbox justify={'space-between'} horizontal align={'center'} style={{ marginBottom: 8 }}>
+    <>
+      <Flexbox
+        justify={'space-between'}
+        horizontal
+        align={'center'}
+        style={{ height: HEADER_HEIGHT, padding: '8px 8px 0' }}
+      >
         <SearchBar
           enableShortKey
           onChange={(e) => {
@@ -63,31 +69,37 @@ const SideBar = () => {
         />
         <Agent />
       </Flexbox>
-      <V />
-      <Collapse
-        bordered={false}
-        defaultActiveKey={'default'}
-        className={styles.container}
-        expandIcon={({ isActive }) => (
-          <Icon
-            className={styles.icon}
-            icon={ChevronDown}
-            size={{ fontSize: 16 }}
-            style={isActive ? {} : { rotate: '-90deg' }}
-          />
-        )}
-        expandIconPosition={'end'}
-        ghost
-        size={'small'}
-        items={[
-          {
-            children: <List filter={searchName} />,
-            label: '会话列表',
-            key: 'default',
-          },
-        ]}
-      />
-    </div>
+      <div className={styles.list}>
+        <Collapse
+          bordered={false}
+          defaultActiveKey={'default'}
+          className={styles.container}
+          expandIcon={({ isActive }) => (
+            <Icon
+              className={styles.icon}
+              icon={ChevronDown}
+              size={{ fontSize: 16 }}
+              style={isActive ? {} : { rotate: '-90deg' }}
+            />
+          )}
+          expandIconPosition={'end'}
+          ghost
+          size={'small'}
+          items={[
+            {
+              children: (
+                <>
+                  <V />
+                  <List filter={searchName} />
+                </>
+              ),
+              label: '会话列表',
+              key: 'default',
+            },
+          ]}
+        />
+      </div>
+    </>
   );
 };
 

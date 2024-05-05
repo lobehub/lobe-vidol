@@ -19,8 +19,6 @@ const Operations = memo<MyListProps>(({ mobile }) => {
   const [openPanel] = useConfigStore((s) => [s.openPanel]);
   const [clearHistory, activeId] = useSessionStore((s) => [s.clearHistory, s.activeId]);
 
-  console.log('activeId', activeId);
-
   const items = [
     // {
     //   icon: SquarePen,

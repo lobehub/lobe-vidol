@@ -37,7 +37,12 @@ function AgentViewer() {
   return (
     <div ref={ref} className={styles.viewer}>
       {open ? <ChatDialog className={styles.dialog} setOpen={setOpen} /> : null}
-      <ToolBar className={styles.toolbar} setOpen={setOpen} viewerRef={ref} />
+      <ToolBar
+        className={styles.toolbar}
+        toggleOpen={() => setOpen(!open)}
+        viewerRef={ref}
+        open={open}
+      />
       {loading ? <PageLoading title={'模型加载中，请稍后...'} /> : null}
       <canvas ref={canvasRef} className={styles.canvas}></canvas>
     </div>

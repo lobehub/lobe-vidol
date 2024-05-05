@@ -85,7 +85,7 @@
     "immer": "^10.1.1",
     "js-tiktoken": "^1.0.11",
     "lodash-es": "^4.17.21",
-    "lucide-react": "^0.308.0",
+    "lucide-react": "^0.309.0",
     "mmd-parser": "^1.0.4",
     "next": "^14.2.3",
     "next-pwa": "^5.6.0",
