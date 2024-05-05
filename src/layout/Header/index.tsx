@@ -43,6 +43,10 @@ const Header = (props: Props) => {
               label: '聊天',
             },
             {
+              key: HeaderNavKey.Role,
+              label: '角色',
+            },
+            {
               key: HeaderNavKey.Market,
               label: '发现',
             },

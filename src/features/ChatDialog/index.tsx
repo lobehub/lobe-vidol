@@ -1,15 +1,12 @@
 import { ActionIcon } from '@lobehub/ui';
 import { useHover } from 'ahooks';
 import { Tooltip } from 'antd';
-import classNames from 'classnames';
 import { XIcon } from 'lucide-react';
 import React from 'react';
 import { Flexbox } from 'react-layout-kit';
 
 import ChatItem from '@/features/ChatItem';
 import { sessionSelectors, useSessionStore } from '@/store/session';
-
-import { useStyles } from './style';
 
 interface DialogProps {
   className?: string;
@@ -18,7 +15,6 @@ interface DialogProps {
 }
 
 const Dialog = (props: DialogProps) => {
-  const { styles } = useStyles();
   const { className, style, setOpen } = props;
   const currentChats = useSessionStore((s) => sessionSelectors.currentChatsWithGreetingMessage(s));
   const lastAgentChatIndex = currentChats.findLastIndex((item) => item.role === 'assistant');
@@ -29,7 +25,7 @@ const Dialog = (props: DialogProps) => {
     if (setOpen) setOpen(false);
   };
   return lastAgentChatIndex !== -1 ? (
-    <Flexbox className={classNames(styles.dialog, className)} style={style} ref={ref} horizontal>
+    <Flexbox className={className} style={style} ref={ref} horizontal>
       <ChatItem
         id={currentChats[lastAgentChatIndex].id}
         index={lastAgentChatIndex}

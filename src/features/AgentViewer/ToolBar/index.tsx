@@ -1,28 +1,17 @@
 import { ActionIconGroup } from '@lobehub/ui';
-import {
-  Expand,
-  Grid3x3,
-  LandPlot,
-  MessageCircle,
-  MessageCircleOff,
-  Orbit,
-  RotateCw,
-  SwitchCamera,
-} from 'lucide-react';
+import { Expand, Grid3x3, LandPlot, Orbit, RotateCw, SwitchCamera } from 'lucide-react';
 import React from 'react';
 
 import { useViewerStore } from '@/store/viewer';
 
 interface ToolBarProps {
   className?: string;
-  open?: boolean;
   style?: React.CSSProperties;
-  toggleOpen?: () => void;
   viewerRef?: React.RefObject<HTMLDivElement>;
 }
 
 const ToolBar = (props: ToolBarProps) => {
-  const { style, className, toggleOpen, viewerRef, open } = props;
+  const { style, className, viewerRef } = props;
   const viewer = useViewerStore((s) => s.viewer);
   const toggleFullScreen = () => {
     if (!document.fullscreenElement) {
@@ -62,11 +51,6 @@ const ToolBar = (props: ToolBarProps) => {
           label: '重置镜头',
         },
         {
-          icon: open ? MessageCircleOff : MessageCircle,
-          key: 'dialog',
-          label: '对话框',
-        },
-        {
           icon: Expand,
           key: 'expand',
           label: '全屏',
@@ -81,11 +65,6 @@ const ToolBar = (props: ToolBarProps) => {
         switch (action.key) {
           case 'resetCamera': {
             viewer.resetCamera();
-
-            break;
-          }
-          case 'dialog': {
-            toggleOpen?.();
 
             break;
           }

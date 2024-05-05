@@ -1,24 +1,43 @@
 import { createStyles } from 'antd-style';
-import { rgba } from 'polished';
 
-import { CHAT_INPUT_MIN_HEIGHT, CHAT_INPUT_WIDTH } from '@/constants/common';
+import { CHAT_HEADER_HEIGHT, CHAT_INPUT_WIDTH } from '@/constants/common';
 
 export const useStyles = createStyles(({ css, token }) => ({
-  docker: css`
-    height: ${CHAT_INPUT_MIN_HEIGHT}px;
-    padding: 0 ${token.paddingSM}px;
-    background-color: ${rgba(token.colorBgLayout, 0.8)};
-    backdrop-filter: saturate(180%) blur(10px);
+  header: css`
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
   `,
+
   content: css`
-    width: ${CHAT_INPUT_WIDTH};
     max-width: 100vw;
 
     @media (max-width: 768px) {
       width: 100%;
     }
   `,
-  alert: css`
-    margin-top: ${token.marginXS}px;
+  list: css`
+    width: ${CHAT_INPUT_WIDTH};
+  `,
+  input: css`
+    width: ${CHAT_INPUT_WIDTH};
+  `,
+  dialog: css`
+    position: absolute;
+    z-index: 1;
+    top: ${CHAT_HEADER_HEIGHT}px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+  `,
+  docker: css`
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    padding: ${token.paddingSM}px;
   `,
 }));
