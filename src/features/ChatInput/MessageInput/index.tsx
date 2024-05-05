@@ -21,6 +21,7 @@ const InputArea = memo((props: InputAreaProps) => {
   const isChineseInput = useRef(false);
   const onSend = useChatInput();
   const { className, style } = props;
+  const [viewerMode] = useSessionStore((s) => [s.viewerMode]);
 
   const [loading, messageInput, setMessageInput] = useSessionStore((s) => [
     !!s.chatLoadingId,
@@ -71,7 +72,7 @@ const InputArea = memo((props: InputAreaProps) => {
         type="primary"
       ></Button>
 
-      <ToggleChatDialog />
+      {viewerMode ? <ToggleChatDialog /> : null}
     </Flexbox>
   );
 });
