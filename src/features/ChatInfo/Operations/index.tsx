@@ -1,6 +1,6 @@
 import { ExclamationCircleFilled } from '@ant-design/icons';
 import { Modal } from 'antd';
-import { Eraser, History, Music, Settings2Icon, SquarePen } from 'lucide-react';
+import { Eraser, Music, Settings2Icon } from 'lucide-react';
 import React, { memo } from 'react';
 
 import { LOBE_VIDOL_DEFAULT_AGENT_ID } from '@/constants/agent';
@@ -22,20 +22,20 @@ const Operations = memo<MyListProps>(({ mobile }) => {
   console.log('activeId', activeId);
 
   const items = [
-    {
-      icon: SquarePen,
-      label: '新话题',
-      key: 'new-topic',
-      onClick: () => {},
-    },
-    {
-      icon: History,
-      label: '聊天历史记录',
-      key: 'history',
-      onClick: () => {
-        // openPanel('role');
-      },
-    },
+    // {
+    //   icon: SquarePen,
+    //   label: '新话题',
+    //   key: 'new-topic',
+    //   onClick: () => {},
+    // },
+    // {
+    //   icon: History,
+    //   label: '聊天历史记录',
+    //   key: 'history',
+    //   onClick: () => {
+    //     // openPanel('role');
+    //   },
+    // },
     {
       icon: Settings2Icon,
       label: '角色设定',

@@ -1,6 +1,6 @@
 import { ActionIcon } from '@lobehub/ui';
 import { Space } from 'antd';
-import { SlidersHorizontal } from 'lucide-react';
+import { PanelRightClose, PanelRightOpen } from 'lucide-react';
 import React from 'react';
 import { Flexbox } from 'react-layout-kit';
 
@@ -15,7 +15,10 @@ import { useStyles } from './style';
 const Header = () => {
   const { styles } = useStyles();
   const [currentAgent] = useSessionStore((s) => [sessionSelectors.currentAgent(s)]);
-  const [toggleChatSideBar] = useGlobalStore((s) => [s.toggleChatSideBar]);
+  const [showChatSidebar, toggleChatSideBar] = useGlobalStore((s) => [
+    s.showChatSidebar,
+    s.toggleChatSideBar,
+  ]);
 
   return (
     <Flexbox justify={'space-between'} horizontal align={'center'} className={styles.header}>
@@ -24,9 +27,9 @@ const Header = () => {
         <Voice key={'voice'} />
         <Video key={'video'} />
         <ActionIcon
-          icon={SlidersHorizontal}
+          icon={showChatSidebar ? PanelRightClose : PanelRightOpen}
           onClick={() => toggleChatSideBar()}
-          title={'角色信息'}
+          title={'侧边栏'}
         />
       </Space>
     </Flexbox>
