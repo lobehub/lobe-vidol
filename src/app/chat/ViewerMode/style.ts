@@ -7,6 +7,9 @@ export const useStyles = createStyles(({ css, token }) => ({
     position: absolute;
     top: 0;
     left: 0;
+
+    width: 100%;
+    height: 100%;
   `,
   content: css`
     width: ${CHAT_INPUT_WIDTH};
@@ -18,20 +21,13 @@ export const useStyles = createStyles(({ css, token }) => ({
     }
   `,
   dialog: css`
-    position: absolute;
     z-index: 1;
-    top: ${CHAT_HEADER_HEIGHT}px;
-    left: 50%;
-    transform: translateX(-50%);
+    margin: ${CHAT_HEADER_HEIGHT}px auto 0;
   `,
   docker: css`
-    position: absolute;
-    z-index: 1;
-    bottom: 0;
-    left: 0;
-
     width: 100%;
     padding: ${token.paddingSM}px;
   `,
   input: css``,
+  mask: css``,
 }));

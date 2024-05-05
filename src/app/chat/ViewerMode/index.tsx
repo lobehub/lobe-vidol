@@ -21,11 +21,13 @@ export default memo(() => {
 
   return (
     <Flexbox flex={1} style={{ position: 'relative' }}>
-      <AgentViewer className={styles.viewer} />
+      <div className={styles.viewer}>
+        <AgentViewer />
+      </div>
       {showChatDialog ? (
         <ChatDialog className={classNames(styles.dialog, styles.content)} setOpen={setChatDialog} />
       ) : null}
-
+      <Flexbox flex={1} className={styles.mask} />
       <Flexbox align={'center'} className={styles.docker}>
         <div className={classNames(styles.input, styles.content)}>
           <MessageInput />

@@ -11,6 +11,7 @@ export const useStyles = createStyles(({ css, token }) => ({
   `,
   viewer: css`
     position: relative;
+    height: 100%;
     min-height: 0;
   `,
   canvas: css`
