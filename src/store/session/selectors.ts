@@ -128,6 +128,18 @@ const getAgentById = (s: SessionStore) => {
   };
 };
 
+const getLastMessageByAgentId = (s: SessionStore) => {
+  return (id: string): ChatMessage | undefined => {
+    const { sessionList, defaultSession } = s;
+    if (id === LOBE_VIDOL_DEFAULT_AGENT_ID) {
+      return defaultSession.messages.at(-1);
+    }
+    const session = sessionList.find((item) => item.agentId === id);
+    if (!session) return;
+    return session.messages.at(-1);
+  };
+};
+
 const isDefaultAgent = (s: SessionStore) => {
   return (id: string): boolean => {
     const agent = getAgentById(s)(id);
@@ -141,6 +153,7 @@ export const sessionSelectors = {
   currentAgentModel,
   currentChatIDsWithGreetingMessage,
   isDefaultAgent,
+  getLastMessageByAgentId,
   currentChatMessage,
   currentChats,
   currentChatsString,

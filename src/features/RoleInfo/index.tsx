@@ -1,13 +1,15 @@
 'use client';
 
 import { DraggablePanel } from '@lobehub/ui';
-import { Button, Popconfirm } from 'antd';
+import { Button } from 'antd';
 import { createStyles } from 'antd-style';
+import { useRouter } from 'next/navigation';
 import React, { memo, useState } from 'react';
 
 import AgentCard from '@/components/agent/AgentCard';
 import SystemRole from '@/components/agent/SystemRole';
 import { SIDEBAR_MAX_WIDTH, SIDEBAR_WIDTH } from '@/constants/common';
+import UnSubscribeButton from '@/features/Actions/UnSubscribeButton';
 import { agentListSelectors, useAgentStore } from '@/store/agent';
 import { useConfigStore } from '@/store/config';
 import { useSessionStore } from '@/store/session';
@@ -25,14 +27,14 @@ const useStyles = createStyles(({ css, token }) => ({
 
 const Header = () => {
   const { styles } = useStyles();
+  const router = useRouter();
   const [tempId, setTempId] = useState<string>('');
-  const [showAgentSidebar, activateAgent, deactivateAgent, unsubscribe] = useAgentStore((s) => [
+  const [showAgentSidebar, activateAgent, deactivateAgent] = useAgentStore((s) => [
     agentListSelectors.showSideBar(s),
     s.activateAgent,
     s.deactivateAgent,
-    s.unsubscribe,
   ]);
-  const [openPanel, closePanel] = useConfigStore((s) => [s.openPanel, s.closePanel]);
+  const [openPanel] = useConfigStore((s) => [s.openPanel, s.closePanel]);
   const currentAgent = useAgentStore((s) => agentListSelectors.currentAgentItem(s));
   const createSession = useSessionStore((s) => s.createSession);
 
@@ -61,7 +63,7 @@ const Header = () => {
             onClick={() => {
               if (!currentAgent) return;
               createSession(currentAgent);
-              closePanel('agent');
+              router.push('/chat');
             }}
             type={'primary'}
           >
@@ -77,19 +79,7 @@ const Header = () => {
           >
             编辑
           </Button>,
-          <Popconfirm
-            cancelText="取消"
-            description={`确定取消角色 ${currentAgent?.meta.name} 的订阅吗？`}
-            key="delete"
-            okText="确定"
-            onConfirm={() => {
-              if (!currentAgent) return;
-              unsubscribe(currentAgent.agentId);
-            }}
-            title="取消订阅？"
-          >
-            <Button danger>取消订阅</Button>
-          </Popconfirm>,
+          <UnSubscribeButton key="unsubscribe" />,
         ]}
         agent={currentAgent}
         footer={<SystemRole systemRole={currentAgent?.systemRole} style={{ marginTop: 16 }} />}

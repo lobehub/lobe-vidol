@@ -14,14 +14,17 @@ interface SessionItemProps {
 const SessionItem = memo<SessionItemProps>(({ id, onClick }) => {
   const [open, setOpen] = useState(false);
   const [active] = useSessionStore((s) => [s.activeId === id]);
-  const [getAgentById, isDefaultAgent] = useSessionStore((s) => [
+  const [getAgentById, isDefaultAgent, getLastMessageByAgentId] = useSessionStore((s) => [
     sessionSelectors.getAgentById(s),
     sessionSelectors.isDefaultAgent(s),
+    sessionSelectors.getLastMessageByAgentId(s),
   ]);
+
+  const lastMessage = getLastMessageByAgentId(id);
 
   const isDefault = isDefaultAgent(id);
   const agent = getAgentById(id);
-  const { name, description, avatar } = agent?.meta || {};
+  const { name, avatar } = agent?.meta || {};
 
   const actions = useMemo(() => <Actions id={id} setOpen={setOpen} />, [id]);
 
@@ -30,7 +33,7 @@ const SessionItem = memo<SessionItemProps>(({ id, onClick }) => {
       actions={isDefault ? null : actions}
       active={active}
       avatar={avatar || ''}
-      description={description || agent?.systemRole}
+      description={lastMessage?.content || agent?.greeting || ''}
       onClick={onClick}
       showAction={open}
       title={name}
