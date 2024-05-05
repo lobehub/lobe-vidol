@@ -3,12 +3,16 @@ import { persist } from 'zustand/middleware';
 import { shallow } from 'zustand/shallow';
 import { createWithEqualityFn } from 'zustand/traditional';
 
+import { LOBE_VIDOL_DEFAULT_AGENT_ID } from '@/constants/agent';
 import { Agent } from '@/types/agent';
+
+import { initialState } from './initialState';
 
 export interface AgentStore {
   activateAgent: (identifier: string) => void;
   currentIdentifier: string;
   deactivateAgent: () => void;
+  defaultAgent: Agent;
   getAgentById: (agentId: string) => Agent | undefined;
   subscribe: (agent: Agent) => void;
   subscribedList: Agent[];
@@ -18,15 +22,18 @@ export interface AgentStore {
 export const useAgentStore = createWithEqualityFn<AgentStore>()(
   persist(
     (set, get) => ({
+      ...initialState,
       activateAgent: (identifier) => {
         set({ currentIdentifier: identifier });
       },
-      currentIdentifier: '',
+
       deactivateAgent: () => {
         set({ currentIdentifier: undefined });
       },
       getAgentById: (agentId: string): Agent | undefined => {
-        const { subscribedList } = get();
+        const { subscribedList, defaultAgent } = get();
+
+        if (agentId === LOBE_VIDOL_DEFAULT_AGENT_ID) return defaultAgent;
 
         const currentAgent = subscribedList.find((item) => item.agentId === agentId);
         if (!currentAgent) return undefined;
@@ -45,7 +52,6 @@ export const useAgentStore = createWithEqualityFn<AgentStore>()(
         });
         set({ subscribedList: newList });
       },
-      subscribedList: [],
       unsubscribe: (agentId) => {
         const { subscribedList } = get();
         const newList = produce(subscribedList, (draft) => {

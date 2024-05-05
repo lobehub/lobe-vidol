@@ -2,7 +2,7 @@
 
 import { ReactNode, memo } from 'react';
 
-import Apps from '@/app/chat/Apps';
+import Apps from '@/app/role/Apps';
 import AppLayout from '@/layout/AppLayout';
 import { HeaderNavKey } from '@/layout/type';
 

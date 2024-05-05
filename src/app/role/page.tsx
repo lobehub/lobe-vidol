@@ -3,8 +3,8 @@
 import React, { memo } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
-import AgentViewer from '@/features/AgentViewer';
-import ChatInfo from '@/features/ChatInfo';
+import RoleDisplay from '@/features/AgentViewer/RoleDisplay';
+import RoleInfo from '@/features/RoleInfo';
 
 import SideBar from './SideBar';
 
@@ -13,9 +13,9 @@ const Chat = () => {
     <Flexbox flex={1} height={'100%'} width={'100%'} horizontal>
       <SideBar />
       <Flexbox height={'100%'} width={'100%'}>
-        <AgentViewer />
+        <RoleDisplay />
       </Flexbox>
-      <ChatInfo />
+      <RoleInfo />
     </Flexbox>
   );
 };

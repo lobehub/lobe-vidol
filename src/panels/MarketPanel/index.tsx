@@ -2,7 +2,7 @@ import React from 'react';
 
 import PanelContainer from '@/panels/PanelContainer';
 
-import Agent from './Agent';
+import Market from './Market';
 import { useStyles } from './style';
 
 interface ControlPanelProps {
@@ -15,9 +15,9 @@ const ControlPanel = (props: ControlPanelProps) => {
   const { styles } = useStyles();
 
   return (
-    <PanelContainer className={className} panelKey="agent" style={style} title="我的角色">
+    <PanelContainer className={className} panelKey="market" style={style} title="发现">
       <div className={styles.content}>
-        <Agent />
+        <Market />
       </div>
     </PanelContainer>
   );

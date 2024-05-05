@@ -34,6 +34,10 @@ const initialState: ConfigState = {
       coordinates: INITIAL_COORDINATES,
       open: false,
     },
+    market: {
+      coordinates: INITIAL_COORDINATES,
+      open: false,
+    },
   },
 };
 

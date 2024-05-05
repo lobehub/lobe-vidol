@@ -3,8 +3,8 @@ import classNames from 'classnames';
 import React, { memo } from 'react';
 
 import TopBanner from '@/components/TopBanner';
+import RoleInfo from '@/features/RoleInfo';
 
-import AgentCard from './Card';
 import AgentList from './List';
 
 const useStyles = createStyles(({ css }) => ({
@@ -27,21 +27,20 @@ const useStyles = createStyles(({ css }) => ({
 
 interface AgentProps {
   className?: string;
-  setTab?: (tab: string) => void;
   style?: React.CSSProperties;
 }
 
 const Agent = (props: AgentProps) => {
   const { styles } = useStyles();
-  const { style, className, setTab } = props;
+  const { style, className } = props;
 
   return (
     <div className={classNames(className, styles.container)} style={style}>
       <div className={styles.content}>
         <TopBanner title="Hello, Let's Chat!" />
-        <AgentList setTab={setTab} />
+        <AgentList />
       </div>
-      <AgentCard />
+      <RoleInfo />
     </div>
   );
 };

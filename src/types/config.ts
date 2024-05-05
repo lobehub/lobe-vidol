@@ -17,6 +17,7 @@ export interface Panel {
 export interface PanelConfig {
   agent: Panel;
   dance: Panel;
+  market: Panel;
   role: Panel;
 }
 

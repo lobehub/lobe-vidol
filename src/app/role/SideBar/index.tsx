@@ -2,7 +2,7 @@ import { DraggablePanel } from '@lobehub/ui';
 import { createStyles } from 'antd-style';
 
 import { SIDEBAR_MAX_WIDTH, SIDEBAR_WIDTH } from '@/constants/common';
-import SessionList from '@/features/SessionList';
+import RoleList from '@/features/RoleList';
 import { useGlobalStore } from '@/store/global';
 
 const useStyles = createStyles(({ css }) => ({
@@ -14,10 +14,7 @@ const useStyles = createStyles(({ css }) => ({
 
 const SideBar = () => {
   const { styles } = useStyles();
-  const [showSessionList, setSessionList] = useGlobalStore((s) => [
-    s.showSessionList,
-    s.setSessionList,
-  ]);
+  const [showRoleList, setRoleList] = useGlobalStore((s) => [s.showRoleList, s.setRoleList]);
 
   return (
     <DraggablePanel
@@ -26,11 +23,11 @@ const SideBar = () => {
       minWidth={SIDEBAR_WIDTH}
       mode={'fixed'}
       placement={'left'}
-      onExpandChange={(expand) => setSessionList(expand)}
-      expand={showSessionList}
+      onExpandChange={(expand) => setRoleList(expand)}
+      expand={showRoleList}
     >
       {/*<Header />*/}
-      <SessionList />
+      <RoleList />
     </DraggablePanel>
   );
 };

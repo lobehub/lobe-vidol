@@ -10,8 +10,8 @@ export default () => {
   return (
     <ActionIcon
       icon={PlusCircle}
-      onClick={() => openPanel('agent')}
-      title={'新的会话'}
+      onClick={() => openPanel('market')}
+      title={'发现'}
       size={DESKTOP_HEADER_ICON_SIZE}
     />
   );
