@@ -6,6 +6,7 @@ import React, { memo, useRef } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
 import Record from '@/features/Actions/Record';
+import ToggleChatDialog from '@/features/Actions/ToggleChatDialog';
 import useChatInput from '@/hooks/useSendMessage';
 import { useSessionStore } from '@/store/session';
 import { isCommandPressed } from '@/utils/keyboard';
@@ -29,6 +30,7 @@ const InputArea = memo((props: InputAreaProps) => {
 
   return (
     <Flexbox width={'100%'} horizontal gap={4} className={className} style={style}>
+      <Record />
       <TextArea
         autoFocus
         onBlur={(e) => {
@@ -56,7 +58,7 @@ const InputArea = memo((props: InputAreaProps) => {
         }}
         placeholder="请输入内容开始聊天"
         ref={ref}
-        autoSize={{ minRows: 1, maxRows: 3 }}
+        autoSize={true}
         type={'block'}
         value={messageInput}
       />
@@ -68,7 +70,8 @@ const InputArea = memo((props: InputAreaProps) => {
         icon={<SendOutlined />}
         type="primary"
       ></Button>
-      <Record />
+
+      <ToggleChatDialog />
     </Flexbox>
   );
 });

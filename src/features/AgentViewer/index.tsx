@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
 
 import PageLoading from '@/components/PageLoading';
@@ -7,8 +8,14 @@ import { useViewerStore } from '@/store/viewer';
 
 import { useStyles } from './style';
 
-function AgentViewer() {
+interface Props {
+  className?: string;
+  style?: React.CSSProperties;
+}
+
+function AgentViewer(props: Props) {
   const viewer = useViewerStore((s) => s.viewer);
+  const { className, style } = props;
   const { styles } = useStyles();
   const [loading, setLoading] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -33,7 +40,7 @@ function AgentViewer() {
   );
 
   return (
-    <div ref={ref} className={styles.viewer}>
+    <div ref={ref} className={classNames(styles.viewer, className)} style={style}>
       <ToolBar className={styles.toolbar} viewerRef={ref} />
       {loading ? <PageLoading title={'模型加载中，请稍后...'} /> : null}
       <canvas ref={canvasRef} className={styles.canvas}></canvas>

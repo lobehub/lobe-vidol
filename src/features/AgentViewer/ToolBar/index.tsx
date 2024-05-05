@@ -1,5 +1,5 @@
 import { ActionIconGroup } from '@lobehub/ui';
-import { Expand, Grid3x3, LandPlot, Orbit, RotateCw, SwitchCamera } from 'lucide-react';
+import { Grid3x3, LandPlot, Orbit, RotateCw, SwitchCamera } from 'lucide-react';
 import React from 'react';
 
 import { useViewerStore } from '@/store/viewer';
@@ -50,11 +50,11 @@ const ToolBar = (props: ToolBarProps) => {
           key: 'resetCamera',
           label: '重置镜头',
         },
-        {
-          icon: Expand,
-          key: 'expand',
-          label: '全屏',
-        },
+        // {
+        //   icon: Expand,
+        //   key: 'expand',
+        //   label: '全屏',
+        // },
         {
           icon: Grid3x3,
           key: 'grid',

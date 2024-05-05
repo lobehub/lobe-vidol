@@ -3,6 +3,7 @@ import { createStyles } from 'antd-style';
 import isEqual from 'fast-deep-equal';
 import { ReactNode, memo, useCallback, useMemo, useState } from 'react';
 
+import { CHAT_INPUT_WIDTH } from '@/constants/common';
 import { useSessionStore } from '@/store/session';
 import { sessionSelectors } from '@/store/session/selectors';
 import { ChatMessage } from '@/types/chat';
@@ -13,9 +14,17 @@ import { renderMessages } from './Messages';
 
 const useStyles = createStyles(({ css, prefixCls }) => ({
   message: css`
+    width: ${CHAT_INPUT_WIDTH};
+    min-width: 480px;
+    max-width: 100vw;
+    margin: 0 auto;
     // prevent the textarea too long
     .${prefixCls}-input {
       max-height: 900px;
+    }
+
+    @media (max-width: 1024px) {
+      width: 100%;
     }
   `,
 }));
