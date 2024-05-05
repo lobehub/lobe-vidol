@@ -2,6 +2,45 @@
 
 # Changelog
 
+## [Version 0.5.0](https://github.com/lobehub/lobe-vidol/compare/v0.4.0...v0.5.0)
+
+<sup>Released on **2024-05-05**</sup>
+
+#### ✨ Features
+
+- **misc**: 优化 chat 侧边栏展示，优化侧边 SessionList 样式，添加默认助手专属栏位，助手添加默认打招呼消息，发现页添加作者和日期时间，添加两遍侧栏快捷方式.
+
+#### 🐛 Bug Fixes
+
+- **misc**: 修复部分表述信息，修复默认 session 数据读取错误，默认没有设置 greeting 时的默认用法。.
+
+<br/>
+
+<details>
+<summary><kbd>Improvements and Fixes</kbd></summary>
+
+#### What's improved
+
+- **misc**: 优化 chat 侧边栏展示 ([77e5467](https://github.com/lobehub/lobe-vidol/commit/77e5467))
+- **misc**: 优化侧边 SessionList 样式，添加默认助手专属栏位 ([e6d3e31](https://github.com/lobehub/lobe-vidol/commit/e6d3e31))
+- **misc**: 助手添加默认打招呼消息 ([07eec41](https://github.com/lobehub/lobe-vidol/commit/07eec41))
+- **misc**: 发现页添加作者和日期时间 ([600cd70](https://github.com/lobehub/lobe-vidol/commit/600cd70))
+- **misc**: 添加两遍侧栏快捷方式 ([5f1b9db](https://github.com/lobehub/lobe-vidol/commit/5f1b9db))
+
+#### What's fixed
+
+- **misc**: 修复部分表述信息 ([0c95181](https://github.com/lobehub/lobe-vidol/commit/0c95181))
+- **misc**: 修复默认 session 数据读取错误 ([22deca3](https://github.com/lobehub/lobe-vidol/commit/22deca3))
+- **misc**: 默认没有设置 greeting 时的默认用法。 ([4d6f547](https://github.com/lobehub/lobe-vidol/commit/4d6f547))
+
+</details>
+
+<div align="right">
+
+[![](https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square)](#readme-top)
+
+</div>
+
 ## [Version 0.4.0](https://github.com/lobehub/lobe-vidol/compare/v0.3.2...v0.4.0)
 
 <sup>Released on **2024-05-03**</sup>
