@@ -112,7 +112,7 @@
     "@next/bundle-analyzer": "^14.2.3",
     "@peculiar/webcrypto": "^1.4.6",
     "@testing-library/jest-dom": "^6.4.5",
-    "@testing-library/react": "^14.3.1",
+    "@testing-library/react": "^15.0.0",
     "@types/lodash-es": "^4.17.12",
     "@types/node": "20.3.1",
     "@types/react": "^18.3.1",
