@@ -21,7 +21,7 @@ const Header = (props: Props) => {
         <ActionIcon
           icon={UserRoundPlusIcon}
           key="user-plus"
-          title={'提交助手'}
+          title={'创建角色'}
           onClick={() => window.open('https://github.com/lobehub/lobe-vidol-market', '_blank')}
           size="large"
         />,
