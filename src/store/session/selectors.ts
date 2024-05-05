@@ -59,7 +59,7 @@ const currentChatsWithGreetingMessage = (s: SessionStore): ChatMessage[] => {
   const initTime = Date.now();
 
   const emptyGuideMessage = {
-    content: agent?.greeting || '',
+    content: agent?.greeting || `你好，我是${agent?.meta.name}，有什么可以帮助你的吗？`,
     createdAt: initTime,
     id: 'default',
     meta: {
