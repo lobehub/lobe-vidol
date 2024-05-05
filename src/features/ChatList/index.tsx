@@ -19,7 +19,10 @@ const VirtualizedList = memo<VirtualizedListProps>(({ mobile }) => {
   const virtuosoRef = useRef<VirtuosoHandle>(null);
   const [atBottom, setAtBottom] = useState(true);
 
-  const data = useSessionStore((s) => ['empty', ...sessionSelectors.currentChatIDs(s)], isEqual);
+  const data = useSessionStore(
+    (s) => ['empty', ...sessionSelectors.currentChatIDsWithGreetingMessage(s)],
+    isEqual,
+  );
   const [id, chatLoading] = useSessionStore((s) => [s.activeId, !!s.chatLoadingId]);
 
   useEffect(() => {
@@ -32,7 +35,7 @@ const VirtualizedList = memo<VirtualizedListProps>(({ mobile }) => {
   const overscan = typeof window !== 'undefined' ? window.innerHeight * 1.5 : 0;
 
   return chatLoading && data.length === 2 ? null : (
-    <Flexbox height={'100%'}>
+    <Flexbox height={'100%'} width={'100%'}>
       <Virtuoso
         atBottomStateChange={setAtBottom}
         atBottomThreshold={60 * (mobile ? 2 : 1)}

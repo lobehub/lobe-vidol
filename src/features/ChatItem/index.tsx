@@ -32,11 +32,11 @@ const Item = memo<ChatListItemProps>(({ index, id, showTitle = false, type = 'bl
   const [editing, setEditing] = useState(false);
 
   const item = useSessionStore((s) => {
-    const chats = sessionSelectors.currentChats(s);
+    const chats = sessionSelectors.currentChatsWithGreetingMessage(s);
 
     if (index >= chats.length) return;
 
-    return sessionSelectors.currentChats(s)[index];
+    return chats[index];
   }, isEqual);
 
   const [loading, updateMessageContent] = useSessionStore((s) => [

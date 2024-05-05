@@ -4,6 +4,7 @@ import {
   Grid3x3,
   LandPlot,
   MessageCircle,
+  MessageCircleOff,
   Orbit,
   RotateCw,
   SwitchCamera,
@@ -14,13 +15,14 @@ import { useViewerStore } from '@/store/viewer';
 
 interface ToolBarProps {
   className?: string;
-  setOpen?: (open: boolean) => void;
+  open?: boolean;
   style?: React.CSSProperties;
+  toggleOpen?: () => void;
   viewerRef?: React.RefObject<HTMLDivElement>;
 }
 
 const ToolBar = (props: ToolBarProps) => {
-  const { style, className, setOpen, viewerRef } = props;
+  const { style, className, toggleOpen, viewerRef, open } = props;
   const viewer = useViewerStore((s) => s.viewer);
   const toggleFullScreen = () => {
     if (!document.fullscreenElement) {
@@ -60,7 +62,7 @@ const ToolBar = (props: ToolBarProps) => {
           label: '重置镜头',
         },
         {
-          icon: MessageCircle,
+          icon: open ? MessageCircleOff : MessageCircle,
           key: 'dialog',
           label: '对话框',
         },
@@ -83,7 +85,7 @@ const ToolBar = (props: ToolBarProps) => {
             break;
           }
           case 'dialog': {
-            setOpen?.(true);
+            toggleOpen?.();
 
             break;
           }

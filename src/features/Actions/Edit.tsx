@@ -12,7 +12,7 @@ export default () => {
       onClick={() => {
         openPanel('role');
       }}
-      title={'编辑角色'}
+      title={'角色设定'}
     />
   );
 };

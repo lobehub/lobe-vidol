@@ -10,11 +10,12 @@ import { useStyles } from './style';
 interface DanceInfoProps {
   actions?: React.ReactNode[];
   dance?: Dance;
+  extra?: React.ReactNode;
 }
 
 const DanceInfo = (props: DanceInfoProps) => {
   const { styles, theme } = useStyles();
-  const { dance, actions = [] } = props;
+  const { dance, actions = [], extra } = props;
   const { name, readme, cover } = dance || {};
 
   return (
@@ -25,6 +26,7 @@ const DanceInfo = (props: DanceInfoProps) => {
         <div className={styles.actions}>
           <Space>{actions}</Space>
         </div>
+        {extra}
       </Center>
       <div className={styles.footer}>
         <div className={styles.desc}>{readme}</div>

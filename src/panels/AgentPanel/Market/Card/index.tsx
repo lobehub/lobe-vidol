@@ -4,6 +4,7 @@ import { createStyles } from 'antd-style';
 import { useRouter } from 'next/navigation';
 import React, { memo, useState } from 'react';
 
+import Author from '@/components/Author';
 import AgentCard from '@/components/agent/AgentCard';
 import SystemRole from '@/components/agent/SystemRole';
 import { SIDEBAR_MAX_WIDTH, SIDEBAR_WIDTH } from '@/constants/common';
@@ -101,7 +102,8 @@ const Header = () => {
       <AgentCard
         actions={actions}
         agent={currentAgentItem}
-        footer={<SystemRole systemRole={currentAgentItem?.systemRole} style={{ marginTop: 16 }} />}
+        extra={<Author item={currentAgentItem} />}
+        footer={<SystemRole systemRole={currentAgentItem?.meta.readme} style={{ marginTop: 16 }} />}
       />
     </DraggablePanel>
   );

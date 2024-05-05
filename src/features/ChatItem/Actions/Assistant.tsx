@@ -5,13 +5,17 @@ import { memo } from 'react';
 
 import type { RenderAction } from '@/features/ChatItem/type';
 
-const AssistantActionsBar: RenderAction = ({ onActionClick }) => {
+const AssistantActionsBar: RenderAction = ({ onActionClick, id }) => {
   const { copy, regenerate, divider, del, edit } = useChatListActionsBar({
     copy: '复制',
     delete: '删除',
     edit: '编辑',
     regenerate: '重新生成',
   });
+
+  console.log('AssistantActionsBar', id);
+
+  if (id === 'default') return;
 
   const tts = {
     icon: Play,

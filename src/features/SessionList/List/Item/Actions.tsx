@@ -19,7 +19,7 @@ export default (props: ActionsProps) => {
       danger: true,
       icon: <Trash2 />,
       key: 'delete',
-      label: '删除对话',
+      label: '删除会话',
       onClick: ({ domEvent }) => {
         domEvent.stopPropagation();
         modal.confirm({

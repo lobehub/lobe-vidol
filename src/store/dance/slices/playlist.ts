@@ -15,7 +15,7 @@ export interface PlayListStore {
   /**
    * Add a dance to the playlist.
    */
-  addPlayItem: (dance: Dance) => void;
+  addToPlayList: (dance: Dance) => void;
   /**
    * Clear the playlist.
    */
@@ -64,12 +64,19 @@ export const createPlayListStore: StateCreator<
   PlayListStore
 > = (set, get) => {
   return {
+    /**
+     * Add a dance to the playlist and play it. add to the first.
+     * @param dance
+     */
     addAndPlayItem: (dance) => {
       const { playlist, playItem } = get();
 
       const nextPlayList = produce(playlist, (draftState) => {
         const index = draftState.findIndex((item) => item.name === dance.name);
         if (index === -1) {
+          draftState.unshift(dance);
+        } else {
+          draftState.splice(index, 1);
           draftState.unshift(dance);
         }
       });
@@ -78,13 +85,17 @@ export const createPlayListStore: StateCreator<
 
       playItem(dance);
     },
-    addPlayItem: (dance) => {
+    /**
+     * Add a dance to the playlist. add to the last.
+     * @param dance
+     */
+    addToPlayList: (dance) => {
       const { playlist } = get();
 
       const nextPlayList = produce(playlist, (draftState) => {
         const index = draftState.findIndex((item) => item.name === dance.name);
         if (index === -1) {
-          draftState.unshift(dance);
+          draftState.push(dance);
         }
       });
 

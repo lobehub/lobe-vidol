@@ -1,22 +1,46 @@
-import { DraggablePanel } from '@lobehub/ui';
+import { Icon, SearchBar } from '@lobehub/ui';
+import { Collapse } from 'antd';
 import { createStyles } from 'antd-style';
-import { useState } from 'react';
+import { ChevronDown } from 'lucide-react';
+import React, { useState } from 'react';
+import { Flexbox } from 'react-layout-kit';
 
-import { SIDEBAR_MAX_WIDTH, SIDEBAR_WIDTH } from '@/constants/common';
+import { HEADER_HEIGHT } from '@/constants/common';
+import Agent from '@/features/Actions/Agent';
 
-import Header from './Header';
 import List from './List';
+import V from './V';
 
-const useStyles = createStyles(({ css, token }) => ({
-  content: css`
-    display: flex;
-    flex-direction: column;
-  `,
-  header: css`
-    border-bottom: 1px solid ${token.colorBorder};
-  `,
+const useStyles = createStyles(({ css, token, prefixCls }) => ({
   list: css`
     padding: 8px;
+  `,
+  container: css`
+    .${prefixCls}-collapse-header {
+      padding-inline: 8px !important;
+      color: ${token.colorTextDescription} !important;
+      border-radius: ${token.borderRadius}px !important;
+
+      &:hover {
+        color: ${token.colorText} !important;
+        background: ${token.colorFillTertiary};
+        .${prefixCls}-collapse-extra {
+          display: block;
+        }
+      }
+    }
+    .${prefixCls}-collapse-extra {
+      display: none;
+    }
+    .${prefixCls}-collapse-content {
+      border-radius: 0 !important;
+    }
+    .${prefixCls}-collapse-content-box {
+      padding: 0 !important;
+    }
+  `,
+  icon: css`
+    transition: all 100ms ${token.motionEaseOut};
   `,
 }));
 
@@ -25,23 +49,57 @@ const SideBar = () => {
   const [searchName, setSearchName] = useState<string>();
 
   return (
-    <DraggablePanel
-      className={styles.content}
-      maxWidth={SIDEBAR_MAX_WIDTH}
-      minWidth={SIDEBAR_WIDTH}
-      mode={'fixed'}
-      placement={'left'}
-    >
-      <Header
-        onChange={(value) => {
-          setSearchName(value);
-        }}
-        value={searchName}
-      />
+    <>
+      <Flexbox
+        justify={'space-between'}
+        horizontal
+        align={'center'}
+        style={{ height: HEADER_HEIGHT, padding: '8px 8px 0' }}
+      >
+        <SearchBar
+          enableShortKey
+          onChange={(e) => {
+            setSearchName(e.target.value);
+          }}
+          placeholder="搜索"
+          shortKey="f"
+          spotlight
+          type={'block'}
+          value={searchName}
+        />
+        <Agent />
+      </Flexbox>
       <div className={styles.list}>
-        <List filter={searchName} />
+        <Collapse
+          bordered={false}
+          defaultActiveKey={'default'}
+          className={styles.container}
+          expandIcon={({ isActive }) => (
+            <Icon
+              className={styles.icon}
+              icon={ChevronDown}
+              size={{ fontSize: 16 }}
+              style={isActive ? {} : { rotate: '-90deg' }}
+            />
+          )}
+          expandIconPosition={'end'}
+          ghost
+          size={'small'}
+          items={[
+            {
+              children: (
+                <>
+                  <V />
+                  <List filter={searchName} />
+                </>
+              ),
+              label: '会话列表',
+              key: 'default',
+            },
+          ]}
+        />
       </div>
-    </DraggablePanel>
+    </>
   );
 };
 

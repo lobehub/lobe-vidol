@@ -7,6 +7,7 @@ import { shallow } from 'zustand/shallow';
 import { createWithEqualityFn } from 'zustand/traditional';
 import { StateCreator } from 'zustand/vanilla';
 
+import { LOBE_VIDOL_DEFAULT_AGENT_ID } from '@/constants/agent';
 import { LOADING_FLAG } from '@/constants/common';
 import { chatCompletion, handleSpeakAi } from '@/services/chat';
 import { Agent } from '@/types/agent';
@@ -48,6 +49,10 @@ export interface SessionStore {
    * @returns
    */
   createSession: (agent: Agent) => void;
+  /**
+   * 默认会话
+   */
+  defaultSession: Session;
   /**
    *  删除消息
    */
@@ -351,6 +356,10 @@ export const createSessonStore: StateCreator<SessionStore, [['zustand/devtools',
   },
   switchSession: (agentId) => {
     const { sessionList } = get();
+    if (agentId === LOBE_VIDOL_DEFAULT_AGENT_ID) {
+      set({ activeId: agentId });
+      return;
+    }
     const targetSession = sessionList.find((session) => session.agentId === agentId);
     if (!targetSession) {
       const session = {
@@ -386,13 +395,20 @@ export const createSessonStore: StateCreator<SessionStore, [['zustand/devtools',
     });
   },
   updateSessionMessages: (messages) => {
-    const { sessionList, activeId } = get();
-    const sessions = produce(sessionList, (draft) => {
-      const index = draft.findIndex((session) => session.agentId === activeId);
-      if (index === -1) return;
-      draft[index].messages = messages;
-    });
-    set({ sessionList: sessions });
+    const { sessionList, activeId, defaultSession } = get();
+    if (activeId === LOBE_VIDOL_DEFAULT_AGENT_ID) {
+      const mergeSession = produce(defaultSession, (draft) => {
+        draft.messages = messages;
+      });
+      set({ defaultSession: mergeSession });
+    } else {
+      const sessions = produce(sessionList, (draft) => {
+        const index = draft.findIndex((session) => session.agentId === activeId);
+        if (index === -1) return;
+        draft[index].messages = messages;
+      });
+      set({ sessionList: sessions });
+    }
   },
 });
 

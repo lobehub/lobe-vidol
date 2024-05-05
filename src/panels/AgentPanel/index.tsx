@@ -28,7 +28,7 @@ const ControlPanel = (props: ControlPanelProps) => {
       className={className}
       panelKey="agent"
       style={style}
-      title="角色列表"
+      title="我的角色"
       extra={<Segmented options={options} size="small" value={tab} onChange={setTab} />}
     >
       <div className={styles.content}>

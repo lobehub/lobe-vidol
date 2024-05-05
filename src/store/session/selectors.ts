@@ -1,4 +1,4 @@
-import { V_CHAT_DEFAULT_AGENT_ID } from '@/constants/agent';
+import { DEFAULT_VIDOL_AGENT, LOBE_VIDOL_DEFAULT_AGENT_ID } from '@/constants/agent';
 import { DEFAULT_USER_AVATAR } from '@/constants/common';
 import { Agent } from '@/types/agent';
 import { ChatMessage } from '@/types/chat';
@@ -7,7 +7,10 @@ import { Session } from '@/types/session';
 import { SessionStore } from './index';
 
 const currentSession = (s: SessionStore): Session | undefined => {
-  const { activeId, sessionList } = s;
+  const { activeId, sessionList, defaultSession } = s;
+  if (activeId === LOBE_VIDOL_DEFAULT_AGENT_ID) {
+    return defaultSession;
+  }
   return sessionList.find((item) => item.agentId === activeId);
 };
 
@@ -16,14 +19,11 @@ const sessionListIds = (s: SessionStore): string[] => {
   return sessionList.map((item) => item.agentId);
 };
 
-const currentChatIDs = (s: SessionStore): string[] => {
-  const session = currentSession(s);
-  if (!session) return [];
-  return session.messages.map((item) => item.id);
-};
-
 const currentAgent = (s: SessionStore): Agent | undefined => {
   const { activeId, localAgentList } = s;
+  if (activeId === LOBE_VIDOL_DEFAULT_AGENT_ID) {
+    return DEFAULT_VIDOL_AGENT;
+  }
   return localAgentList.find((item) => item.agentId === activeId);
 };
 
@@ -45,6 +45,38 @@ const currentChats = (s: SessionStore): ChatMessage[] => {
       },
     };
   });
+};
+
+const currentChatsWithGreetingMessage = (s: SessionStore): ChatMessage[] => {
+  const data = currentChats(s);
+
+  const isBrandNewChat = data.length === 0;
+
+  if (!isBrandNewChat) return data;
+
+  const agent = currentAgent(s);
+
+  const initTime = Date.now();
+
+  const emptyGuideMessage = {
+    content: agent?.greeting || `你好，我是${agent?.meta.name}，有什么可以帮助你的吗？`,
+    createdAt: initTime,
+    id: 'default',
+    meta: {
+      avatar: agent?.meta.avatar,
+      title: agent?.meta.name,
+      description: agent?.meta.description,
+    },
+    role: 'assistant',
+    updatedAt: initTime,
+  } as ChatMessage;
+
+  return [emptyGuideMessage];
+};
+
+const currentChatIDsWithGreetingMessage = (s: SessionStore): string[] => {
+  const currentChats = currentChatsWithGreetingMessage(s);
+  return currentChats.map((item) => item.id);
 };
 
 const previousChats = (s: SessionStore, id: string): ChatMessage[] => {
@@ -87,20 +119,27 @@ const currentChatMessage = (s: SessionStore): ChatMessage | undefined => {
 const getAgentById = (s: SessionStore) => {
   const { localAgentList } = s;
 
-  return (id: string): Agent | undefined => localAgentList.find((item) => item.agentId === id);
+  return (id: string): Agent | undefined => {
+    if (id === LOBE_VIDOL_DEFAULT_AGENT_ID) {
+      return DEFAULT_VIDOL_AGENT;
+    } else {
+      return localAgentList.find((item) => item.agentId === id);
+    }
+  };
 };
 
 const isDefaultAgent = (s: SessionStore) => {
   return (id: string): boolean => {
     const agent = getAgentById(s)(id);
-    return agent?.agentId === V_CHAT_DEFAULT_AGENT_ID;
+    return agent?.agentId === LOBE_VIDOL_DEFAULT_AGENT_ID;
   };
 };
 
 export const sessionSelectors = {
+  currentChatsWithGreetingMessage,
   currentAgent,
   currentAgentModel,
-  currentChatIDs,
+  currentChatIDsWithGreetingMessage,
   isDefaultAgent,
   currentChatMessage,
   currentChats,

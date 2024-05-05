@@ -3,8 +3,8 @@ import { shallow } from 'zustand/shallow';
 
 import { sessionSelectors, useSessionStore } from '@/store/session';
 
+import ListItem from '../../ListItem';
 import Actions from './Actions';
-import ListItem from './ListItem';
 
 interface SessionItemProps {
   id: string;

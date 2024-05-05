@@ -6,6 +6,7 @@ import { ListMusic } from 'lucide-react';
 import React, { useState } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
+import { DESKTOP_HEADER_ICON_SIZE } from '@/constants/common';
 import Control from '@/features/AudioPlayer/Control';
 import PlayList from '@/features/AudioPlayer/PlayList';
 import { useDanceStore } from '@/store/dance';
@@ -56,7 +57,12 @@ export default (props: Props) => {
         />
       </Tooltip>
       <Control />
-      <ActionIcon icon={ListMusic} onClick={() => setOpen(true)} title={'播放列表'} />
+      <ActionIcon
+        icon={ListMusic}
+        onClick={() => setOpen(true)}
+        title={'播放列表'}
+        size={DESKTOP_HEADER_ICON_SIZE}
+      />
     </Flexbox>
   ) : null;
 };

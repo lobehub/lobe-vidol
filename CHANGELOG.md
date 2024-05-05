@@ -101,7 +101,7 @@
 
 #### ✨ Features
 
-- **misc**: Add chat page, 在我的中添加系统设置。, 添加 Header tabs, 添加发现板块 Layout, 添加我的 Tab, 统一聊天模式和视频模式的输入方式.
+- **misc**: Add chat page, 在我的中添加系统设置。, 添加 Index tabs, 添加发现板块 Layout, 添加我的 Tab, 统一聊天模式和视频模式的输入方式.
 
 #### 🐛 Bug Fixes
 
@@ -116,7 +116,7 @@
 
 - **misc**: Add chat page ([43c0057](https://github.com/lobehub/lobe-vidol/commit/43c0057))
 - **misc**: 在我的中添加系统设置。 ([3645f9a](https://github.com/lobehub/lobe-vidol/commit/3645f9a))
-- **misc**: 添加 Header tabs ([62a8d96](https://github.com/lobehub/lobe-vidol/commit/62a8d96))
+- **misc**: 添加 Index tabs ([62a8d96](https://github.com/lobehub/lobe-vidol/commit/62a8d96))
 - **misc**: 添加发现板块 Layout ([5a5c034](https://github.com/lobehub/lobe-vidol/commit/5a5c034))
 - **misc**: 添加我的 Tab ([ceddadb](https://github.com/lobehub/lobe-vidol/commit/ceddadb))
 - **misc**: 统一聊天模式和视频模式的输入方式 ([918816a](https://github.com/lobehub/lobe-vidol/commit/918816a))

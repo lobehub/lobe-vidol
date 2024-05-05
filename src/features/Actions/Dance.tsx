@@ -12,7 +12,7 @@ export default () => {
       onClick={() => {
         openPanel('dance');
       }}
-      title={'音乐与舞蹈控制'}
+      title={'音乐与舞蹈'}
     />
   );
 };
