@@ -1,10 +1,8 @@
-import { FormFooter } from '@lobehub/ui';
-import { Button, Form, Input, message } from 'antd';
+import { Form, Input, message } from 'antd';
 import { createStyles } from 'antd-style';
 import classNames from 'classnames';
 import React from 'react';
 
-import HolographicCard from '@/components/HolographicCard';
 import { sessionSelectors, useSessionStore } from '@/store/session';
 
 const FormItem = Form.Item;
@@ -17,11 +15,8 @@ interface InfoProps {
 const useStyles = createStyles(({ css, token }) => ({
   config: css`
     flex: 3;
-
     margin-right: 12px;
     padding: 12px;
-
-    border: 1px solid ${token.colorBorderSecondary};
     border-radius: ${token.borderRadius}px;
   `,
   container: css`
@@ -36,6 +31,9 @@ const useStyles = createStyles(({ css, token }) => ({
   `,
   more: css`
     flex: 2;
+    padding: 12px;
+    border: 1px solid ${token.colorBorderSecondary};
+    border-radius: ${token.borderRadius}px;
   `,
 }));
 
@@ -65,43 +63,16 @@ const Info = (props: InfoProps) => {
         <div className={styles.form}>
           <div className={styles.config}>
             <FormItem
-              label={'名称'}
-              name={['meta', 'name']}
-              required
-              rules={[{ message: '请输入角色名称', required: true }]}
-            >
-              <Input placeholder="请输入角色名称" />
-            </FormItem>
-            <FormItem
-              label={'描述'}
-              name={['meta', 'description']}
-              rules={[{ message: '请输入角色描述', required: true }]}
-            >
-              <Input placeholder="请输入角色描述" />
-            </FormItem>
-            <FormItem
-              label={'说明'}
-              name={['meta', 'readme']}
-              rules={[{ message: '请输入角色说明', required: true }]}
+              name="systemRole"
+              rules={[{ message: '请输入角色的系统设定', required: true }]}
             >
               <Input.TextArea
-                autoSize={{ maxRows: 11, minRows: 11 }}
-                placeholder="请输入角色说明"
-                showCount
+                autoSize={{ maxRows: 24, minRows: 24 }}
+                placeholder="请输入角色的系统设定"
+                showCount // TODO: 这里应该计算 Token 数量
               />
             </FormItem>
           </div>
-          <div className={styles.more}>
-            <HolographicCard img={currentAgent?.meta.cover} />
-          </div>
-        </div>
-        <div className={styles.footer}>
-          <FormFooter>
-            <Button htmlType="button">取消</Button>
-            <Button htmlType="submit" type="primary">
-              应用
-            </Button>
-          </FormFooter>
         </div>
       </div>
     </Form>

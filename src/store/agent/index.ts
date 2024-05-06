@@ -1,4 +1,6 @@
 import { produce } from 'immer';
+import { merge } from 'lodash-es';
+import { DeepPartial } from 'utility-types';
 import { persist } from 'zustand/middleware';
 import { shallow } from 'zustand/shallow';
 import { createWithEqualityFn } from 'zustand/traditional';
@@ -17,6 +19,10 @@ export interface AgentStore {
   subscribe: (agent: Agent) => void;
   subscribedList: Agent[];
   unsubscribe: (agentId: string) => void;
+  /**
+   * 更新角色配置
+   */
+  updateAgentConfig: (agent: DeepPartial<Agent>) => void;
 }
 
 export const useAgentStore = createWithEqualityFn<AgentStore>()(
@@ -39,6 +45,15 @@ export const useAgentStore = createWithEqualityFn<AgentStore>()(
         if (!currentAgent) return undefined;
 
         return currentAgent;
+      },
+      updateAgentConfig: (agent) => {
+        const { subscribedList, currentIdentifier } = get();
+        const agents = produce(subscribedList, (draft) => {
+          const index = draft.findIndex((localAgent) => localAgent.agentId === currentIdentifier);
+          if (index === -1) return;
+          draft[index] = merge(draft[index], agent);
+        });
+        set({ subscribedList: agents });
       },
       subscribe: (agent) => {
         const { subscribedList } = get();

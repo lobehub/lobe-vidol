@@ -59,7 +59,6 @@ const useStyles = createStyles(({ css, token }) => ({
   config: css`
     flex: 3;
     padding: 12px;
-    border: 1px solid ${token.colorBorderSecondary};
     border-radius: ${token.borderRadius}px;
   `,
   container: css`
@@ -171,7 +170,7 @@ const Config = (props: ConfigProps) => {
               {() => (
                 <FormItem extra={getExtraNode()} name="message" style={{ marginBottom: 0 }}>
                   <Input.TextArea
-                    autoSize={{ maxRows: 18, minRows: 18 }}
+                    autoSize={{ maxRows: 24, minRows: 24 }}
                     maxLength={800}
                     placeholder="请输入要转换的文字"
                   />

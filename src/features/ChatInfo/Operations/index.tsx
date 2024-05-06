@@ -36,10 +36,10 @@ const Operations = memo<MyListProps>(({ mobile }) => {
     // },
     {
       icon: Settings2Icon,
-      label: '角色设定',
+      label: '对话设定',
       key: 'setting',
       onClick: () => {
-        openPanel('role');
+        Modal.info({ title: '对话设定', content: '暂未开放' });
       },
       hidden: activeId === LOBE_VIDOL_DEFAULT_AGENT_ID,
     },
