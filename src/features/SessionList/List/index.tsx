@@ -1,4 +1,5 @@
 import { createStyles } from 'antd-style';
+import { isEqual } from 'lodash-es';
 import { memo } from 'react';
 import LazyLoad from 'react-lazy-load';
 
@@ -18,20 +19,14 @@ interface SessionListProps {
 }
 
 const SessionList = memo<SessionListProps>(({ filter }) => {
-  const [sessionListIds, getAgentById] = useSessionStore((s) => [
-    sessionSelectors.sessionListIds(s),
-    sessionSelectors.getAgentById(s),
-  ]);
+  const sessionListIds = useSessionStore(
+    (s) => sessionSelectors.filterSessionListIds(s, filter),
+    isEqual,
+  );
   const [switchSession] = useSessionStore((s) => [s.switchSession]);
   const { styles } = useStyles();
 
-  const dataSource = sessionListIds.filter((agentId) => {
-    const agent = getAgentById(agentId);
-    const { name, description } = agent?.meta || {};
-    return !filter || name?.includes(filter) || description?.includes(filter);
-  });
-
-  return dataSource.map((id) => (
+  return sessionListIds.map((id) => (
     <LazyLoad className={styles} key={id}>
       <SessionItem
         id={id}

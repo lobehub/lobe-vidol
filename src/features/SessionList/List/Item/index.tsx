@@ -1,5 +1,4 @@
 import { memo, useMemo, useState } from 'react';
-import { shallow } from 'zustand/shallow';
 
 import { sessionSelectors, useSessionStore } from '@/store/session';
 
@@ -14,16 +13,9 @@ interface SessionItemProps {
 const SessionItem = memo<SessionItemProps>(({ id, onClick }) => {
   const [open, setOpen] = useState(false);
   const [active] = useSessionStore((s) => [s.activeId === id]);
-  const [getAgentById, isDefaultAgent, getLastMessageByAgentId] = useSessionStore((s) => [
-    sessionSelectors.getAgentById(s),
-    sessionSelectors.isDefaultAgent(s),
-    sessionSelectors.getLastMessageByAgentId(s),
-  ]);
+  const agent = useSessionStore((s) => sessionSelectors.getAgentById(s)(id));
+  const isDefault = useSessionStore((s) => sessionSelectors.isDefaultAgent(s)(id));
 
-  const lastMessage = getLastMessageByAgentId(id);
-
-  const isDefault = isDefaultAgent(id);
-  const agent = getAgentById(id);
   const { name, avatar } = agent?.meta || {};
 
   const actions = useMemo(() => <Actions id={id} setOpen={setOpen} />, [id]);
@@ -33,12 +25,12 @@ const SessionItem = memo<SessionItemProps>(({ id, onClick }) => {
       actions={isDefault ? null : actions}
       active={active}
       avatar={avatar || ''}
-      description={lastMessage?.content || agent?.greeting || ''}
+      description={agent?.greeting || agent?.meta.description || ''}
       onClick={onClick}
       showAction={open}
       title={name}
     />
   );
-}, shallow);
+});
 
 export default SessionItem;
