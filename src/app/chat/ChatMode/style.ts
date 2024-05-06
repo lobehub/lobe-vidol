@@ -3,6 +3,7 @@ import { createStyles } from 'antd-style';
 import { CHAT_HEADER_HEIGHT, CHAT_INPUT_WIDTH } from '@/constants/common';
 
 export const useStyles = createStyles(({ css, token }) => ({
+  chat: css``,
   list: css`
     margin-top: ${CHAT_HEADER_HEIGHT}px;
   `,

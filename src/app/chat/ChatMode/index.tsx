@@ -13,9 +13,14 @@ import { useStyles } from './style';
 const Chat = () => {
   const { styles } = useStyles();
   const ref = React.useRef<HTMLDivElement>(null);
+  // const background = useSessionStore((s) => sessionSelectors.currentAgent(s)?.meta?.cover);
 
   return (
-    <Flexbox flex={1}>
+    <Flexbox
+      flex={1}
+      className={styles.chat}
+      // style={{ backgroundImage: `url(${background})` }}
+    >
       <ChatList className={styles.list} />
       <Flexbox align={'center'} className={styles.docker} ref={ref}>
         <div className={classNames(styles.input)}>
