@@ -3,12 +3,12 @@
 import { DraggablePanel } from '@lobehub/ui';
 import { Button } from 'antd';
 import { createStyles } from 'antd-style';
-import { useRouter } from 'next/navigation';
 import React, { memo, useState } from 'react';
 
 import AgentCard from '@/components/agent/AgentCard';
 import SystemRole from '@/components/agent/SystemRole';
 import { SIDEBAR_MAX_WIDTH, SIDEBAR_WIDTH } from '@/constants/common';
+import Chat from '@/features/Actions/Chat';
 import UnSubscribeButton from '@/features/Actions/UnSubscribeButton';
 import { agentListSelectors, useAgentStore } from '@/store/agent';
 import { useConfigStore } from '@/store/config';
@@ -27,7 +27,6 @@ const useStyles = createStyles(({ css, token }) => ({
 
 const Header = () => {
   const { styles } = useStyles();
-  const router = useRouter();
   const [tempId, setTempId] = useState<string>('');
   const [showAgentSidebar, activateAgent, deactivateAgent] = useAgentStore((s) => [
     agentListSelectors.showSideBar(s),
@@ -58,17 +57,7 @@ const Header = () => {
     >
       <AgentCard
         actions={[
-          <Button
-            key="chat"
-            onClick={() => {
-              if (!currentAgent) return;
-              createSession(currentAgent);
-              router.push('/chat');
-            }}
-            type={'primary'}
-          >
-            聊天
-          </Button>,
+          <Chat key={'chat'} />,
           <Button
             key="edit"
             onClick={() => {

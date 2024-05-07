@@ -7,4 +7,5 @@ export const useStyles = createStyles(({ css }) => ({
     margin: 0 auto;
     padding: 0 24px;
   `,
+  model: css``,
 }));

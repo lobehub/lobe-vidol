@@ -6,12 +6,17 @@ import { shallow } from 'zustand/shallow';
 import { createWithEqualityFn } from 'zustand/traditional';
 
 import { LOBE_VIDOL_DEFAULT_AGENT_ID } from '@/constants/agent';
+import { SESSION_STORAGE_KEY } from '@/store/session';
 import { Agent } from '@/types/agent';
 
 import { initialState } from './initialState';
 
 export interface AgentStore {
   activateAgent: (identifier: string) => void;
+  /**
+   * 清除角色配置
+   */
+  clearAgentStorage: () => void;
   currentIdentifier: string;
   deactivateAgent: () => void;
   defaultAgent: Agent;
@@ -32,6 +37,10 @@ export const useAgentStore = createWithEqualityFn<AgentStore>()(
       activateAgent: (identifier) => {
         set({ currentIdentifier: identifier });
       },
+      clearAgentStorage: () => {
+        localStorage.removeItem(SESSION_STORAGE_KEY);
+        set({ ...initialState });
+      },
 
       deactivateAgent: () => {
         set({ currentIdentifier: undefined });
@@ -47,7 +56,15 @@ export const useAgentStore = createWithEqualityFn<AgentStore>()(
         return currentAgent;
       },
       updateAgentConfig: (agent) => {
-        const { subscribedList, currentIdentifier } = get();
+        const { subscribedList, currentIdentifier, defaultAgent } = get();
+        if (currentIdentifier === LOBE_VIDOL_DEFAULT_AGENT_ID) {
+          const mergeAgent = produce(defaultAgent, (draft) => {
+            merge(draft, agent);
+          });
+          set({ defaultAgent: mergeAgent });
+          return;
+        }
+
         const agents = produce(subscribedList, (draft) => {
           const index = draft.findIndex((localAgent) => localAgent.agentId === currentIdentifier);
           if (index === -1) return;

@@ -13,6 +13,7 @@ import classNames from 'classnames';
 import { Monitor, Settings2 } from 'lucide-react';
 import React from 'react';
 
+import { useAgentStore } from '@/store/agent';
 import { useConfigStore } from '@/store/config';
 import { useSessionStore } from '@/store/session';
 import { useThemeStore } from '@/store/theme';
@@ -42,6 +43,7 @@ const CommonConfig = (props: CommonConfigProps) => {
     s.config.primaryColor,
     s.config.backgroundEffect,
   ]);
+  const clearAgentStorage = useAgentStore((s) => s.clearAgentStorage);
   const [themeMode, setThemeMode] = useThemeStore((s) => [s.themeMode, s.setThemeMode]);
   const setConfig = useConfigStore((s) => s.setConfig);
   const theme = useTheme();
@@ -60,6 +62,7 @@ const CommonConfig = (props: CommonConfigProps) => {
       okText: '确定',
       onOk: () => {
         clearSessions();
+        clearAgentStorage();
         message.success('清除成功');
       },
       title: '确认清除所有会话消息?',
@@ -149,7 +152,7 @@ const CommonConfig = (props: CommonConfigProps) => {
         </FormGroup>
         <FormGroup icon={Monitor} title={'系统设置'}>
           <FormItem
-            desc={'将会清除所有会话数据，包括角色设置、消息等'}
+            desc={'将会清除所有会话与角色数据，包括会话列表，角色列表、会话消息等'}
             divider
             label={'清除所有会话消息'}
           >

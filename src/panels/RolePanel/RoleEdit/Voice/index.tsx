@@ -154,10 +154,14 @@ const Config = (props: ConfigProps) => {
       }}
       onValuesChange={(changedValues) => {
         if (changedValues.engine) {
+          form.setFieldsValue({ voice: undefined });
           getVoiceList();
         }
-        if (changedValues.locale || changedValues.engine) {
-          form.setFieldsValue({ voice: undefined });
+        if (changedValues.locale) {
+          const sample = suportedLocales.find((item) => item.value === changedValues.locale)
+            ?.samples[1];
+
+          form.setFieldsValue({ voice: undefined, message: sample });
         }
       }}
       preserve={false}

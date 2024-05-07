@@ -3,8 +3,8 @@
 import React, { memo } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
+import TopBanner from '@/components/TopBanner';
 import RoleDisplay from '@/features/AgentViewer/RoleDisplay';
-import RoleHeader from '@/features/RoleHeader';
 import RoleEdit from '@/panels/RolePanel/RoleEdit';
 
 import SideBar from './SideBar';
@@ -15,13 +15,13 @@ const Role = () => {
   return (
     <Flexbox flex={1} height={'100%'} width={'100%'} horizontal>
       <SideBar />
-      <Flexbox flex={1} style={{ position: 'relative' }} height={'100%'} width={'100%'}>
-        <RoleHeader />
-        <Flexbox height={'100%'} horizontal>
-          <RoleEdit className={styles.edit} />
-          <Flexbox width={'30%'}>
-            <RoleDisplay />
-          </Flexbox>
+      <Flexbox flex={1} horizontal>
+        <Flexbox className={styles.edit}>
+          <TopBanner title={'Adust Your Virtual Idol'} />
+          <RoleEdit />
+        </Flexbox>
+        <Flexbox width={'30%'} className={styles.model}>
+          <RoleDisplay />
         </Flexbox>
       </Flexbox>
     </Flexbox>

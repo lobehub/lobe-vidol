@@ -12,9 +12,6 @@ export const useStyles = createStyles(({ css }) => ({
   edit: css`
     display: flex;
     flex-direction: column;
-
     width: 100%;
-    padding-right: 24px;
-    padding-left: 24px;
   `,
 }));

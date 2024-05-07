@@ -4,6 +4,7 @@ import React from 'react';
 import { Flexbox } from 'react-layout-kit';
 
 import AgentMeta from '@/components/agent/AgentMeta';
+import Chat from '@/features/Actions/Chat';
 import { agentListSelectors, useAgentStore } from '@/store/agent';
 
 import { useStyles } from './style';
@@ -27,7 +28,9 @@ export default (props: Props) => {
         {/*<ToggleSessionList />*/}
         <AgentMeta meta={currentAgent?.meta} />
       </Space>
-      <Space></Space>
+      <Space>
+        <Chat key={'chat'} />
+      </Space>
     </Flexbox>
   );
 };
