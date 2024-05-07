@@ -14,9 +14,9 @@ import { renderMessages } from './Messages';
 
 const useStyles = createStyles(({ css, prefixCls }) => ({
   message: css`
-    width: ${CHAT_INPUT_WIDTH};
+    width: 100%;
     min-width: 480px;
-    max-width: 100vw;
+    max-width: ${CHAT_INPUT_WIDTH};
     margin: 0 auto;
     // prevent the textarea too long
     .${prefixCls}-input {

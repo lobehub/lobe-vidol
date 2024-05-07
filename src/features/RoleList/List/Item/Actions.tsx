@@ -1,8 +1,10 @@
 import { ActionIcon } from '@lobehub/ui';
 import { App, Dropdown, MenuProps } from 'antd';
-import { MoreVertical, Trash2 } from 'lucide-react';
+import { MessageCircle, MoreVertical, Trash2 } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 import { useAgentStore } from '@/store/agent';
+import { useSessionStore } from '@/store/session';
 
 interface ActionsProps {
   id: string;
@@ -12,9 +14,23 @@ interface ActionsProps {
 export default (props: ActionsProps) => {
   const { id, setOpen } = props;
   const { modal } = App.useApp();
+  const router = useRouter();
   const [unsubscribe] = useAgentStore((s) => [s.unsubscribe]);
+  const currentAgent = useAgentStore((s) => s.getAgentById(id));
+  const createSession = useSessionStore((s) => s.createSession);
 
   const items: MenuProps['items'] = [
+    {
+      icon: <MessageCircle />,
+      label: '开始聊天',
+      key: 'chat',
+      onClick: ({ domEvent }) => {
+        domEvent.stopPropagation();
+        if (!currentAgent) return;
+        createSession(currentAgent);
+        router.push('/chat');
+      },
+    },
     {
       danger: true,
       icon: <Trash2 />,

@@ -88,7 +88,7 @@ const Info = (props: InfoProps) => {
               rules={[{ message: '请输入角色说明', required: true }]}
             >
               <Input.TextArea
-                autoSize={{ maxRows: 11, minRows: 11 }}
+                autoSize={{ maxRows: 15, minRows: 15 }}
                 placeholder="请输入角色说明"
                 showCount
               />

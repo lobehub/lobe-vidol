@@ -174,7 +174,7 @@ const Config = (props: ConfigProps) => {
               {() => (
                 <FormItem extra={getExtraNode()} name="message" style={{ marginBottom: 0 }}>
                   <Input.TextArea
-                    autoSize={{ maxRows: 24, minRows: 24 }}
+                    autoSize={{ maxRows: 28, minRows: 28 }}
                     maxLength={800}
                     placeholder="请输入要转换的文字"
                   />

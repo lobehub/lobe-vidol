@@ -67,7 +67,7 @@ const Info = (props: InfoProps) => {
               rules={[{ message: '请输入角色的系统设定', required: true }]}
             >
               <Input.TextArea
-                autoSize={{ maxRows: 24, minRows: 24 }}
+                autoSize={{ maxRows: 28, minRows: 28 }}
                 placeholder="请输入角色的系统设定"
                 showCount // TODO: 这里应该计算 Token 数量
               />

@@ -100,12 +100,12 @@ export class Viewer {
 
     // camera 全身
     this._camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 20);
-    this._camera.position.set(0, 1.3, 1.5);
+    this._camera.position.set(0.4, 1.3, 1.5);
 
     // camera 控制
     this._cameraControls = new OrbitControls(this._camera, this._renderer.domElement);
     this._cameraControls.screenSpacePanning = true;
-    this._cameraControls?.target.set(0, 1.3, 0);
+    this._cameraControls?.target.set(0, 0, 0);
     this._cameraControls.update();
 
     window.addEventListener('resize', () => {

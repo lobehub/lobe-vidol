@@ -13,7 +13,7 @@ interface Props {
   style?: React.CSSProperties;
 }
 
-function RoleDisplay(props: Props) {
+function Index(props: Props) {
   const viewer = useViewerStore((s) => s.viewer);
   const { className, style } = props;
   const { styles } = useStyles();
@@ -48,4 +48,4 @@ function RoleDisplay(props: Props) {
   );
 }
 
-export default memo(RoleDisplay);
+export default memo(Index);
