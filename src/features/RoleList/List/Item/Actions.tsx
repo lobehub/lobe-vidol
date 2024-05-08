@@ -18,6 +18,7 @@ export default (props: ActionsProps) => {
   const [unsubscribe] = useAgentStore((s) => [s.unsubscribe]);
   const currentAgent = useAgentStore((s) => s.getAgentById(id));
   const createSession = useSessionStore((s) => s.createSession);
+  const removeSession = useSessionStore((s) => s.removeSession);
 
   const items: MenuProps['items'] = [
     {
@@ -43,6 +44,7 @@ export default (props: ActionsProps) => {
           okButtonProps: { danger: true },
           onOk: () => {
             unsubscribe(id);
+            removeSession(id);
           },
           okText: '删除',
           cancelText: '取消',

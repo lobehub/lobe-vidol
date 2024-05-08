@@ -1,7 +1,6 @@
 import { produce } from 'immer';
 import { StateCreator } from 'zustand/vanilla';
 
-import { DEFAULT_DANCE } from '@/constants/dance';
 import { DanceStore } from '@/store/dance';
 import { Dance } from '@/types/dance';
 
@@ -123,7 +122,7 @@ export const createPlayListStore: StateCreator<
     playItem: (dance) => {
       set({ currentPlay: dance, isPlaying: true });
     },
-    playlist: [DEFAULT_DANCE],
+    playlist: [],
     prevDance: () => {
       const { currentPlay, playlist, playItem } = get();
       if (currentPlay && playlist.length > 0) {

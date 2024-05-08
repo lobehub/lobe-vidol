@@ -290,7 +290,7 @@ export const createSessonStore: StateCreator<SessionStore, [['zustand/devtools',
     set({ sessionList: sessions });
 
     if (activeId === id) {
-      set({ activeId: sessions[0]?.agentId });
+      set({ activeId: undefined });
     }
   },
   sendMessage: async (message: string) => {
