@@ -1,6 +1,7 @@
 'use client';
 
 import { ActionIcon, Header as LobeHeader, Logo, TabsNav } from '@lobehub/ui';
+import { Space, Tag, Tooltip } from 'antd';
 import { GithubIcon, UserRoundPlusIcon } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { memo } from 'react';
@@ -33,7 +34,14 @@ const Header = (props: Props) => {
           size="large"
         />,
       ]}
-      logo={<Logo extra={'Lobe Vidol'} size={36} />}
+      logo={
+        <Space>
+          <Logo extra={'Lobe Vidol'} size={36} />
+          <Tooltip title="项目当前正在施工中，不保证数据稳定性，如果遇到问题可以在系统设置中清除会话消息与重置系统设置，造成地不便敬请谅解">
+            <Tag color="yellow">WIP</Tag>
+          </Tooltip>
+        </Space>
+      }
       nav={
         <TabsNav
           activeKey={headerKey}
@@ -41,6 +49,10 @@ const Header = (props: Props) => {
             {
               key: HeaderNavKey.Chat,
               label: '聊天',
+            },
+            {
+              key: HeaderNavKey.Role,
+              label: '角色',
             },
             {
               key: HeaderNavKey.Market,

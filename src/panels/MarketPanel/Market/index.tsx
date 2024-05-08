@@ -3,8 +3,8 @@ import React from 'react';
 import { Flexbox } from 'react-layout-kit';
 
 import TopBanner from '@/components/TopBanner';
+import MarketInfo from '@/features/MarketInfo';
 
-import AgentCard from './Card';
 import AgentList from './List';
 
 const useStyles = createStyles(({ css }) => ({
@@ -39,7 +39,7 @@ const Agent = () => {
           <AgentList />
         </div>
       </div>
-      <AgentCard />
+      <MarketInfo />
     </Flexbox>
   );
 };

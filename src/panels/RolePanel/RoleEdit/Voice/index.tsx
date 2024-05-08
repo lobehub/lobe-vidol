@@ -3,10 +3,11 @@ import { useRequest } from 'ahooks';
 import { Button, Divider, Form, Input, Select, Slider, message } from 'antd';
 import { createStyles } from 'antd-style';
 import classNames from 'classnames';
+import { isEqual } from 'lodash-es';
 import React, { useEffect, useRef, useState } from 'react';
 
 import { speechApi, voiceListApi } from '@/services/tts';
-import { sessionSelectors, useSessionStore } from '@/store/session';
+import { agentListSelectors, useAgentStore } from '@/store/agent';
 import { Voice } from '@/types/tts';
 
 const FormItem = Form.Item;
@@ -59,7 +60,6 @@ const useStyles = createStyles(({ css, token }) => ({
   config: css`
     flex: 3;
     padding: 12px;
-    border: 1px solid ${token.colorBorderSecondary};
     border-radius: ${token.borderRadius}px;
   `,
   container: css`
@@ -81,10 +81,8 @@ const Config = (props: ConfigProps) => {
   const ref = useRef<HTMLAudioElement>(null);
   const [form] = Form.useForm();
   const [voices, setVoices] = useState<Voice[]>([]);
-  const [currentAgent, updateAgentConfig] = useSessionStore((s) => [
-    sessionSelectors.currentAgent(s),
-    s.updateAgentConfig,
-  ]);
+  const currentAgent = useAgentStore((s) => agentListSelectors.currentAgentItem(s), isEqual);
+  const updateAgentConfig = useAgentStore((s) => s.updateAgentConfig);
   const [audioUrl, setAudioUrl] = useState<string | undefined>(undefined);
 
   useEffect(() => {
@@ -155,10 +153,14 @@ const Config = (props: ConfigProps) => {
       }}
       onValuesChange={(changedValues) => {
         if (changedValues.engine) {
+          form.setFieldsValue({ voice: undefined });
           getVoiceList();
         }
-        if (changedValues.locale || changedValues.engine) {
-          form.setFieldsValue({ voice: undefined });
+        if (changedValues.locale) {
+          const sample = suportedLocales.find((item) => item.value === changedValues.locale)
+            ?.samples[1];
+
+          form.setFieldsValue({ voice: undefined, message: sample });
         }
       }}
       preserve={false}
@@ -171,7 +173,7 @@ const Config = (props: ConfigProps) => {
               {() => (
                 <FormItem extra={getExtraNode()} name="message" style={{ marginBottom: 0 }}>
                   <Input.TextArea
-                    autoSize={{ maxRows: 18, minRows: 18 }}
+                    autoSize={{ maxRows: 28, minRows: 28 }}
                     maxLength={800}
                     placeholder="请输入要转换的文字"
                   />

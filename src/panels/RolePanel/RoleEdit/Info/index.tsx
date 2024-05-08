@@ -1,11 +1,10 @@
-import { FormFooter } from '@lobehub/ui';
-import { Button, Form, Input, message } from 'antd';
+import { Form, Input } from 'antd';
 import { createStyles } from 'antd-style';
 import classNames from 'classnames';
-import React from 'react';
+import { debounce, isEqual } from 'lodash-es';
+import React, { useEffect } from 'react';
 
-import HolographicCard from '@/components/HolographicCard';
-import { sessionSelectors, useSessionStore } from '@/store/session';
+import { agentListSelectors, useAgentStore } from '@/store/agent';
 
 const FormItem = Form.Item;
 
@@ -17,11 +16,8 @@ interface InfoProps {
 const useStyles = createStyles(({ css, token }) => ({
   config: css`
     flex: 3;
-
     margin-right: 12px;
     padding: 12px;
-
-    border: 1px solid ${token.colorBorderSecondary};
     border-radius: ${token.borderRadius}px;
   `,
   container: css`
@@ -43,22 +39,19 @@ const Info = (props: InfoProps) => {
   const { style, className } = props;
   const { styles } = useStyles();
   const [form] = Form.useForm();
-  const [currentAgent, updateAgentConfig] = useSessionStore((s) => [
-    sessionSelectors.currentAgent(s),
-    s.updateAgentConfig,
-  ]);
+  const currentAgent = useAgentStore((s) => agentListSelectors.currentAgentItem(s), isEqual);
+  const updateAgentConfig = useAgentStore((s) => s.updateAgentConfig);
+
+  useEffect(() => {
+    form.setFieldsValue(currentAgent);
+  }, [currentAgent, form]);
 
   return (
     <Form
       form={form}
       initialValues={currentAgent}
+      onValuesChange={debounce(updateAgentConfig, 100)}
       layout="horizontal"
-      onFinish={() => {
-        form.validateFields().then((values) => {
-          updateAgentConfig(values);
-          message.success('保存成功');
-        });
-      }}
       requiredMark={false}
     >
       <div className={classNames(className, styles.container)} style={style}>
@@ -80,28 +73,27 @@ const Info = (props: InfoProps) => {
               <Input placeholder="请输入角色描述" />
             </FormItem>
             <FormItem
+              label={'招呼'}
+              name="greeting"
+              rules={[{ message: '请输入角色与你打招呼时的用语', required: true }]}
+            >
+              <Input.TextArea
+                autoSize={{ maxRows: 6, minRows: 6 }}
+                placeholder="请输入角色与你打招呼时的用语"
+              />
+            </FormItem>
+            <FormItem
               label={'说明'}
               name={['meta', 'readme']}
               rules={[{ message: '请输入角色说明', required: true }]}
             >
               <Input.TextArea
-                autoSize={{ maxRows: 11, minRows: 11 }}
+                autoSize={{ maxRows: 15, minRows: 15 }}
                 placeholder="请输入角色说明"
                 showCount
               />
             </FormItem>
           </div>
-          <div className={styles.more}>
-            <HolographicCard img={currentAgent?.meta.cover} />
-          </div>
-        </div>
-        <div className={styles.footer}>
-          <FormFooter>
-            <Button htmlType="button">取消</Button>
-            <Button htmlType="submit" type="primary">
-              应用
-            </Button>
-          </FormFooter>
         </div>
       </div>
     </Form>

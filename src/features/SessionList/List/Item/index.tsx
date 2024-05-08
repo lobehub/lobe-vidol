@@ -1,5 +1,4 @@
 import { memo, useMemo, useState } from 'react';
-import { shallow } from 'zustand/shallow';
 
 import { sessionSelectors, useSessionStore } from '@/store/session';
 
@@ -14,28 +13,23 @@ interface SessionItemProps {
 const SessionItem = memo<SessionItemProps>(({ id, onClick }) => {
   const [open, setOpen] = useState(false);
   const [active] = useSessionStore((s) => [s.activeId === id]);
-  const [getAgentById, isDefaultAgent] = useSessionStore((s) => [
-    sessionSelectors.getAgentById(s),
-    sessionSelectors.isDefaultAgent(s),
-  ]);
+  const agent = useSessionStore((s) => sessionSelectors.getAgentById(s)(id));
 
-  const isDefault = isDefaultAgent(id);
-  const agent = getAgentById(id);
-  const { name, description, avatar } = agent?.meta || {};
+  const { name, avatar } = agent?.meta || {};
 
   const actions = useMemo(() => <Actions id={id} setOpen={setOpen} />, [id]);
 
   return (
     <ListItem
-      actions={isDefault ? null : actions}
+      actions={actions}
       active={active}
       avatar={avatar || ''}
-      description={description || agent?.systemRole}
+      description={agent?.greeting || agent?.meta.description || ''}
       onClick={onClick}
       showAction={open}
       title={name}
     />
   );
-}, shallow);
+});
 
 export default SessionItem;

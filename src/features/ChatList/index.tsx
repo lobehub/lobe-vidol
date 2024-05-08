@@ -1,5 +1,6 @@
+import classNames from 'classnames';
 import isEqual from 'fast-deep-equal';
-import { memo, useEffect, useRef, useState } from 'react';
+import React, { memo, useEffect, useRef, useState } from 'react';
 import { Flexbox } from 'react-layout-kit';
 import { Virtuoso, VirtuosoHandle } from 'react-virtuoso';
 
@@ -7,17 +8,21 @@ import Item from '@/features/ChatItem';
 import { sessionSelectors, useSessionStore } from '@/store/session';
 
 import AutoScroll from './AutoScroll';
+import { useStyles } from './style';
 
 const itemContent = (index: number, id: string) => {
   return index === 0 ? <div style={{ height: 24 }} /> : <Item id={id} index={index - 1} />;
 };
 
 interface VirtualizedListProps {
+  className?: string;
   mobile?: boolean;
+  style?: React.CSSProperties;
 }
-const VirtualizedList = memo<VirtualizedListProps>(({ mobile }) => {
+const VirtualizedList = memo<VirtualizedListProps>(({ mobile, className, style }) => {
   const virtuosoRef = useRef<VirtuosoHandle>(null);
   const [atBottom, setAtBottom] = useState(true);
+  const { styles } = useStyles();
 
   const data = useSessionStore(
     (s) => ['empty', ...sessionSelectors.currentChatIDsWithGreetingMessage(s)],
@@ -35,7 +40,7 @@ const VirtualizedList = memo<VirtualizedListProps>(({ mobile }) => {
   const overscan = typeof window !== 'undefined' ? window.innerHeight * 1.5 : 0;
 
   return chatLoading && data.length === 2 ? null : (
-    <Flexbox height={'100%'} width={'100%'}>
+    <Flexbox style={style} className={classNames(className, styles.list)}>
       <Virtuoso
         atBottomStateChange={setAtBottom}
         atBottomThreshold={60 * (mobile ? 2 : 1)}

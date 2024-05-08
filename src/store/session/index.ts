@@ -1,7 +1,5 @@
 import { nanoid } from 'ai';
 import { produce } from 'immer';
-import { merge } from 'lodash-es';
-import { DeepPartial } from 'utility-types';
 import { devtools, persist } from 'zustand/middleware';
 import { shallow } from 'zustand/shallow';
 import { createWithEqualityFn } from 'zustand/traditional';
@@ -69,10 +67,6 @@ export interface SessionStore {
    */
   fetchAIResponse: (messages: ChatMessage[], assistantId: string) => void;
   /**
-   * 本地角色列表
-   */
-  localAgentList: Agent[];
-  /**
    * 当前消息输入
    */
   messageInput: string;
@@ -114,10 +108,7 @@ export interface SessionStore {
    * 触发语音开关
    */
   toggleVoice: () => void;
-  /**
-   * 更新角色配置
-   */
-  updateAgentConfig: (agent: DeepPartial<Agent>) => void;
+
   /**
    * 更新消息
    * @returns
@@ -152,17 +143,7 @@ export const createSessonStore: StateCreator<SessionStore, [['zustand/devtools',
     set({ ...initialState });
   },
   createSession: (agent: Agent) => {
-    const { sessionList, localAgentList } = get();
-
-    const newAgentList = produce(localAgentList, (draft) => {
-      const index = draft.findIndex((localAgent) => localAgent.agentId === agent.agentId);
-      if (index === -1) {
-        draft.push(agent);
-      } else {
-        merge(draft[index], agent);
-      }
-    });
-    set({ localAgentList: newAgentList });
+    const { sessionList } = get();
 
     const newSessionList = produce(sessionList, (draft) => {
       const index = draft.findIndex((session) => session.agentId === agent.agentId);
@@ -373,15 +354,6 @@ export const createSessonStore: StateCreator<SessionStore, [['zustand/devtools',
   toggleVoice: () => {
     const { voiceOn } = get();
     set({ voiceOn: !voiceOn });
-  },
-  updateAgentConfig: (agent) => {
-    const { localAgentList, activeId } = get();
-    const agents = produce(localAgentList, (draft) => {
-      const index = draft.findIndex((localAgent) => localAgent.agentId === activeId);
-      if (index === -1) return;
-      draft[index] = merge(draft[index], agent);
-    });
-    set({ localAgentList: agents });
   },
   updateMessage: (id, content) => {
     const { dispatchMessage } = get();

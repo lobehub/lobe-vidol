@@ -1,10 +1,10 @@
-import { FormFooter } from '@lobehub/ui';
-import { Button, Form, Input, message } from 'antd';
+import { Form, Input, message } from 'antd';
 import { createStyles } from 'antd-style';
 import classNames from 'classnames';
+import { isEqual } from 'lodash-es';
 import React from 'react';
 
-import { sessionSelectors, useSessionStore } from '@/store/session';
+import { agentListSelectors, useAgentStore } from '@/store/agent';
 
 const FormItem = Form.Item;
 
@@ -16,11 +16,8 @@ interface InfoProps {
 const useStyles = createStyles(({ css, token }) => ({
   config: css`
     flex: 3;
-
     margin-right: 12px;
     padding: 12px;
-
-    border: 1px solid ${token.colorBorderSecondary};
     border-radius: ${token.borderRadius}px;
   `,
   container: css`
@@ -45,10 +42,8 @@ const Info = (props: InfoProps) => {
   const { style, className } = props;
   const { styles } = useStyles();
   const [form] = Form.useForm();
-  const [currentAgent, updateAgentConfig] = useSessionStore((s) => [
-    sessionSelectors.currentAgent(s),
-    s.updateAgentConfig,
-  ]);
+  const currentAgent = useAgentStore((s) => agentListSelectors.currentAgentItem(s), isEqual);
+  const updateAgentConfig = useAgentStore((s) => s.updateAgentConfig);
 
   return (
     <Form
@@ -67,37 +62,16 @@ const Info = (props: InfoProps) => {
         <div className={styles.form}>
           <div className={styles.config}>
             <FormItem
-              label={'系统角色'}
               name="systemRole"
               rules={[{ message: '请输入角色的系统设定', required: true }]}
             >
               <Input.TextArea
-                autoSize={{ maxRows: 16, minRows: 16 }}
+                autoSize={{ maxRows: 28, minRows: 28 }}
                 placeholder="请输入角色的系统设定"
-                showCount
-              />
-            </FormItem>
-            <FormItem
-              label={'招呼用语'}
-              name="greeting"
-              rules={[{ message: '请输入角色与你打招呼时的用语', required: true }]}
-            >
-              <Input.TextArea
-                autoSize={{ maxRows: 3, minRows: 1 }}
-                placeholder="请输入角色与你打招呼时的用语"
+                showCount // TODO: 这里应该计算 Token 数量
               />
             </FormItem>
           </div>
-        </div>
-        <div className={styles.footer}>
-          <FormFooter>
-            <Button htmlType="button" onClick={() => {}}>
-              取消
-            </Button>
-            <Button htmlType="submit" type="primary">
-              应用
-            </Button>
-          </FormFooter>
         </div>
       </div>
     </Form>

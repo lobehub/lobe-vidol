@@ -28,6 +28,8 @@ export default (props: ActionsProps) => {
           onOk: () => {
             removeSession(id);
           },
+          okText: '删除',
+          cancelText: '取消',
           title: '确认删除对话吗？删除后无法恢复, 请谨慎操作！',
         });
       },

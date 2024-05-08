@@ -2,7 +2,7 @@ import { Agent, CategoryEnum } from '@/types/agent';
 
 export const LOBE_VIDOL_DEFAULT_AGENT_ID = 'lobe-vidol-default-agent';
 
-const OFFICIAL_ROBOT_NAME = 'V';
+const OFFICIAL_ROBOT_NAME = 'Elsa';
 
 export const DEFAULT_VIDOL_AGENT: Agent = {
   agentId: LOBE_VIDOL_DEFAULT_AGENT_ID,

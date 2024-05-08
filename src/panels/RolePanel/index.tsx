@@ -1,15 +1,10 @@
 'use client';
 
-import { TabsNav } from '@lobehub/ui';
-import React, { useState } from 'react';
+import React from 'react';
 
 import PanelContainer from '@/panels/PanelContainer';
 
-import Info from './Info';
-import Role from './Role';
-import Touch from './Touch';
-import Voice from './Voice';
-import { useStyles } from './style';
+import RoleEdit from './RoleEdit';
 
 interface RolePanelProps {
   className?: string;
@@ -18,53 +13,10 @@ interface RolePanelProps {
 
 const RolePanel = (props: RolePanelProps) => {
   const { style, className } = props;
-  const { styles } = useStyles();
-  const [tab, setTab] = useState('info');
 
   return (
     <PanelContainer className={className} panelKey="role" style={style} title="角色设定">
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          paddingLeft: 24,
-          paddingRight: 24,
-          width: '100%',
-        }}
-      >
-        <div style={{ marginBottom: 12 }}>
-          <TabsNav
-            activeKey={tab}
-            items={[
-              {
-                key: 'info',
-                label: '基本信息',
-              },
-              {
-                key: 'role',
-                label: '系统角色',
-              },
-              {
-                key: 'voice',
-                label: '语音',
-              },
-              {
-                key: 'touch',
-                label: '触摸设置(TODO)',
-              },
-            ]}
-            onChange={(key) => {
-              setTab(key);
-            }}
-          />
-        </div>
-        <div className={styles.content}>
-          {tab === 'info' ? <Info /> : null}
-          {tab === 'role' ? <Role /> : null}
-          {tab === 'voice' ? <Voice /> : null}
-          {tab === 'touch' ? <Touch /> : null}
-        </div>
-      </div>
+      <RoleEdit />
     </PanelContainer>
   );
 };

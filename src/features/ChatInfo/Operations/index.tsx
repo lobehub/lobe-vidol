@@ -1,9 +1,8 @@
 import { ExclamationCircleFilled } from '@ant-design/icons';
 import { Modal } from 'antd';
-import { Eraser, Music, Settings2Icon } from 'lucide-react';
+import { Eraser, Music } from 'lucide-react';
 import React, { memo } from 'react';
 
-import { LOBE_VIDOL_DEFAULT_AGENT_ID } from '@/constants/agent';
 import { useConfigStore } from '@/store/config';
 import { useSessionStore } from '@/store/session';
 
@@ -17,7 +16,7 @@ export interface MyListProps {
 
 const Operations = memo<MyListProps>(({ mobile }) => {
   const [openPanel] = useConfigStore((s) => [s.openPanel]);
-  const [clearHistory, activeId] = useSessionStore((s) => [s.clearHistory, s.activeId]);
+  const [clearHistory] = useSessionStore((s) => [s.clearHistory]);
 
   const items = [
     // {
@@ -34,15 +33,14 @@ const Operations = memo<MyListProps>(({ mobile }) => {
     //     // openPanel('role');
     //   },
     // },
-    {
-      icon: Settings2Icon,
-      label: '角色设定',
-      key: 'setting',
-      onClick: () => {
-        openPanel('role');
-      },
-      hidden: activeId === LOBE_VIDOL_DEFAULT_AGENT_ID,
-    },
+    // {
+    //   icon: Settings2Icon,
+    //   label: '对话设定',
+    //   key: 'setting',
+    //   onClick: () => {
+    //     Modal.info({ title: '对话设定', content: '暂未开放' });
+    //   },
+    // },
     {
       icon: Music,
       key: 'music',
@@ -73,11 +71,9 @@ const Operations = memo<MyListProps>(({ mobile }) => {
 
   return (
     <>
-      {items
-        .filter((item) => !item.hidden)
-        .map(({ icon, label, onClick }) => (
-          <Item hoverable={!mobile} icon={icon} label={label} key={label} onClick={onClick} />
-        ))}
+      {items.map(({ icon, label, onClick }) => (
+        <Item hoverable={!mobile} icon={icon} label={label} key={label} onClick={onClick} />
+      ))}
     </>
   );
 });

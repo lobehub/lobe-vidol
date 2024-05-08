@@ -1,4 +1,5 @@
 import { Space } from 'antd';
+import classNames from 'classnames';
 import React from 'react';
 import { Flexbox } from 'react-layout-kit';
 
@@ -10,12 +11,21 @@ import { sessionSelectors, useSessionStore } from '@/store/session';
 
 import { useStyles } from './style';
 
-const Header = () => {
+interface Props {
+  className?: string;
+}
+export default (props: Props) => {
+  const { className } = props;
   const { styles } = useStyles();
   const [currentAgent] = useSessionStore((s) => [sessionSelectors.currentAgent(s)]);
 
   return (
-    <Flexbox justify={'space-between'} horizontal align={'center'} className={styles.header}>
+    <Flexbox
+      justify={'space-between'}
+      horizontal
+      align={'center'}
+      className={classNames(styles.header, className)}
+    >
       <Space>
         {/*<ToggleSessionList />*/}
         <AgentMeta meta={currentAgent?.meta} />
@@ -28,5 +38,3 @@ const Header = () => {
     </Flexbox>
   );
 };
-
-export default Header;
