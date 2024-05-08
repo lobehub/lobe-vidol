@@ -2,6 +2,42 @@
 
 # Changelog
 
+## [Version 0.6.0](https://github.com/lobehub/lobe-vidol/compare/v0.5.0...v0.6.0)
+
+<sup>Released on **2024-05-08**</sup>
+
+#### ✨ Features
+
+- **misc**: 使用 agent store 作为唯一 agent store, 使用最后一条消息作为会话列表的描述，添加角色 tab, 添加角色编辑页面.
+
+#### 🐛 Bug Fixes
+
+- **misc**: 调整角色列表样式和功能.
+
+<br/>
+
+<details>
+<summary><kbd>Improvements and Fixes</kbd></summary>
+
+#### What's improved
+
+- **misc**: 使用 agent store 作为唯一 agent store ([4480c24](https://github.com/lobehub/lobe-vidol/commit/4480c24))
+- **misc**: 使用最后一条消息作为会话列表的描述 ([c143621](https://github.com/lobehub/lobe-vidol/commit/c143621))
+- **misc**: 添加角色 tab ([f4a2a8c](https://github.com/lobehub/lobe-vidol/commit/f4a2a8c))
+- **misc**: 添加角色编辑页面 ([1fb5ac4](https://github.com/lobehub/lobe-vidol/commit/1fb5ac4))
+
+#### What's fixed
+
+- **misc**: 调整角色列表样式和功能 ([09a0871](https://github.com/lobehub/lobe-vidol/commit/09a0871))
+
+</details>
+
+<div align="right">
+
+[![](https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square)](#readme-top)
+
+</div>
+
 ## [Version 0.5.0](https://github.com/lobehub/lobe-vidol/compare/v0.4.0...v0.5.0)
 
 <sup>Released on **2024-05-05**</sup>
