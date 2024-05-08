@@ -7,8 +7,8 @@ import { Flexbox } from 'react-layout-kit';
 
 import { HEADER_HEIGHT } from '@/constants/common';
 import Market from '@/features/Actions/Market';
+import Elsa from '@/features/RoleList/List/Elsa';
 
-import V from './Elsa';
 import List from './List';
 
 const useStyles = createStyles(({ css, token, prefixCls }) => ({
@@ -70,6 +70,7 @@ const SideBar = () => {
         <Market />
       </Flexbox>
       <div className={styles.list}>
+        <Elsa />
         <Collapse
           bordered={false}
           defaultActiveKey={'default'}
@@ -87,12 +88,7 @@ const SideBar = () => {
           size={'small'}
           items={[
             {
-              children: (
-                <>
-                  <V />
-                  <List filter={searchName} />
-                </>
-              ),
+              children: <List filter={searchName} />,
               label: '角色列表',
               key: 'default',
             },

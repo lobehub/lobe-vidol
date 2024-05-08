@@ -1,7 +1,7 @@
 import { memo, useMemo, useState } from 'react';
 import { shallow } from 'zustand/shallow';
 
-import { agentListSelectors, useAgentStore } from '@/store/agent';
+import { useAgentStore } from '@/store/agent';
 
 import ListItem from '../../ListItem';
 import Actions from './Actions';
@@ -14,12 +14,8 @@ interface SessionItemProps {
 const SessionItem = memo<SessionItemProps>(({ id, onClick }) => {
   const [open, setOpen] = useState(false);
   const [active] = useAgentStore((s) => [s.currentIdentifier === id]);
-  const [getAgentById, isDefaultAgent] = useAgentStore((s) => [
-    s.getAgentById,
-    agentListSelectors.isDefaultAgent(s),
-  ]);
+  const [getAgentById] = useAgentStore((s) => [s.getAgentById]);
 
-  const isDefault = isDefaultAgent(id);
   const agent = getAgentById(id);
   const { name, description, avatar } = agent?.meta || {};
 
@@ -27,7 +23,7 @@ const SessionItem = memo<SessionItemProps>(({ id, onClick }) => {
 
   return (
     <ListItem
-      actions={isDefault ? null : actions}
+      actions={actions}
       active={active}
       avatar={avatar || ''}
       description={description || agent?.systemRole}

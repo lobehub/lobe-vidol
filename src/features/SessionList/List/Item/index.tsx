@@ -14,7 +14,6 @@ const SessionItem = memo<SessionItemProps>(({ id, onClick }) => {
   const [open, setOpen] = useState(false);
   const [active] = useSessionStore((s) => [s.activeId === id]);
   const agent = useSessionStore((s) => sessionSelectors.getAgentById(s)(id));
-  const isDefault = useSessionStore((s) => sessionSelectors.isDefaultAgent(s)(id));
 
   const { name, avatar } = agent?.meta || {};
 
@@ -22,7 +21,7 @@ const SessionItem = memo<SessionItemProps>(({ id, onClick }) => {
 
   return (
     <ListItem
-      actions={isDefault ? null : actions}
+      actions={actions}
       active={active}
       avatar={avatar || ''}
       description={agent?.greeting || agent?.meta.description || ''}

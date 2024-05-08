@@ -6,10 +6,11 @@ import { shallow } from 'zustand/shallow';
 import { createWithEqualityFn } from 'zustand/traditional';
 
 import { LOBE_VIDOL_DEFAULT_AGENT_ID } from '@/constants/agent';
-import { SESSION_STORAGE_KEY } from '@/store/session';
 import { Agent } from '@/types/agent';
 
 import { initialState } from './initialState';
+
+const AGENT_STORAGE_KEY = 'vidol-chat-agent-storage';
 
 export interface AgentStore {
   activateAgent: (identifier: string) => void;
@@ -20,7 +21,7 @@ export interface AgentStore {
   currentIdentifier: string;
   deactivateAgent: () => void;
   defaultAgent: Agent;
-  getAgentById: (agentId: string) => Agent | undefined;
+  getAgentById: (agentId?: string) => Agent | undefined;
   subscribe: (agent: Agent) => void;
   subscribedList: Agent[];
   unsubscribe: (agentId: string) => void;
@@ -38,14 +39,15 @@ export const useAgentStore = createWithEqualityFn<AgentStore>()(
         set({ currentIdentifier: identifier });
       },
       clearAgentStorage: () => {
-        localStorage.removeItem(SESSION_STORAGE_KEY);
+        localStorage.removeItem(AGENT_STORAGE_KEY);
         set({ ...initialState });
       },
 
       deactivateAgent: () => {
         set({ currentIdentifier: undefined });
       },
-      getAgentById: (agentId: string): Agent | undefined => {
+      getAgentById: (agentId?: string): Agent | undefined => {
+        if (!agentId) return undefined;
         const { subscribedList, defaultAgent } = get();
 
         if (agentId === LOBE_VIDOL_DEFAULT_AGENT_ID) return defaultAgent;
@@ -93,11 +95,11 @@ export const useAgentStore = createWithEqualityFn<AgentStore>()(
             draft.splice(index, 1);
           }
         });
-        set({ currentIdentifier: newList[0]?.agentId, subscribedList: newList });
+        set({ currentIdentifier: LOBE_VIDOL_DEFAULT_AGENT_ID, subscribedList: newList });
       },
     }),
     {
-      name: 'vidol-chat-agent-storage',
+      name: AGENT_STORAGE_KEY,
     },
   ),
   shallow,

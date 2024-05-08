@@ -1,9 +1,10 @@
 import { Form, Input, message } from 'antd';
 import { createStyles } from 'antd-style';
 import classNames from 'classnames';
+import { isEqual } from 'lodash-es';
 import React from 'react';
 
-import { sessionSelectors, useSessionStore } from '@/store/session';
+import { agentListSelectors, useAgentStore } from '@/store/agent';
 
 const FormItem = Form.Item;
 
@@ -41,10 +42,8 @@ const Info = (props: InfoProps) => {
   const { style, className } = props;
   const { styles } = useStyles();
   const [form] = Form.useForm();
-  const [currentAgent, updateAgentConfig] = useSessionStore((s) => [
-    sessionSelectors.currentAgent(s),
-    s.updateAgentConfig,
-  ]);
+  const currentAgent = useAgentStore((s) => agentListSelectors.currentAgentItem(s), isEqual);
+  const updateAgentConfig = useAgentStore((s) => s.updateAgentConfig);
 
   return (
     <Form

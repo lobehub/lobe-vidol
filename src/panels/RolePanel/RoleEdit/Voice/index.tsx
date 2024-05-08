@@ -3,10 +3,11 @@ import { useRequest } from 'ahooks';
 import { Button, Divider, Form, Input, Select, Slider, message } from 'antd';
 import { createStyles } from 'antd-style';
 import classNames from 'classnames';
+import { isEqual } from 'lodash-es';
 import React, { useEffect, useRef, useState } from 'react';
 
 import { speechApi, voiceListApi } from '@/services/tts';
-import { sessionSelectors, useSessionStore } from '@/store/session';
+import { agentListSelectors, useAgentStore } from '@/store/agent';
 import { Voice } from '@/types/tts';
 
 const FormItem = Form.Item;
@@ -80,10 +81,8 @@ const Config = (props: ConfigProps) => {
   const ref = useRef<HTMLAudioElement>(null);
   const [form] = Form.useForm();
   const [voices, setVoices] = useState<Voice[]>([]);
-  const [currentAgent, updateAgentConfig] = useSessionStore((s) => [
-    sessionSelectors.currentAgent(s),
-    s.updateAgentConfig,
-  ]);
+  const currentAgent = useAgentStore((s) => agentListSelectors.currentAgentItem(s), isEqual);
+  const updateAgentConfig = useAgentStore((s) => s.updateAgentConfig);
   const [audioUrl, setAudioUrl] = useState<string | undefined>(undefined);
 
   useEffect(() => {

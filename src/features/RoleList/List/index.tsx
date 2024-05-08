@@ -17,29 +17,26 @@ interface SessionListProps {
 }
 
 const SessionList = memo<SessionListProps>(({ filter }) => {
-  const [agentListIds, getAgentById, activateAgent] = useAgentStore((s) => [
-    agentListSelectors.agentListIds(s),
-    s.getAgentById,
+  const [filterAgentListIds, activateAgent] = useAgentStore((s) => [
+    agentListSelectors.filterAgentListIds(s, filter),
     s.activateAgent,
   ]);
   const { styles } = useStyles();
 
-  const dataSource = agentListIds.filter((agentId) => {
-    const agent = getAgentById(agentId);
-    const { name, description } = agent?.meta || {};
-    return !filter || name?.includes(filter) || description?.includes(filter);
-  });
-
-  return dataSource.map((id) => (
-    <LazyLoad className={styles} key={id}>
-      <SessionItem
-        id={id}
-        onClick={() => {
-          activateAgent(id);
-        }}
-      />
-    </LazyLoad>
-  ));
+  return (
+    <>
+      {filterAgentListIds.map((id) => (
+        <LazyLoad className={styles} key={id}>
+          <SessionItem
+            id={id}
+            onClick={() => {
+              activateAgent(id);
+            }}
+          />
+        </LazyLoad>
+      ))}
+    </>
+  );
 });
 
 export default SessionList;

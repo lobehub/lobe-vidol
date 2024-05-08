@@ -20,6 +20,16 @@ const agentListIds = (s: AgentStore): string[] => {
   return subscribedList.map((item) => item.agentId);
 };
 
+const filterAgentListIds = (s: AgentStore, filter: string | undefined) => {
+  const dataSource = agentListIds(s);
+  if (!filter) return dataSource;
+  return dataSource.filter((agentId) => {
+    const agent = s.getAgentById(agentId);
+    const { name, description } = agent?.meta || {};
+    return !filter || name?.includes(filter) || description?.includes(filter);
+  });
+};
+
 const currentAgentModel = (s: AgentStore): string | undefined => {
   const currentAgent = currentAgentItem(s);
   if (!currentAgent) return undefined;
@@ -43,6 +53,7 @@ const subscribed = (s: AgentStore) => (agentId: string) => {
 
 export const agentListSelectors = {
   currentAgentItem,
+  filterAgentListIds,
   agentListIds,
   isDefaultAgent,
   showSideBar,

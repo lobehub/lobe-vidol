@@ -4,7 +4,7 @@ import { memo } from 'react';
 import { LOBE_VIDOL_DEFAULT_AGENT_ID } from '@/constants/agent';
 import { useAgentStore } from '@/store/agent';
 
-import ListItem from '../ListItem';
+import ListItem from '../../ListItem';
 
 const V = memo(() => {
   const [activeId, activateAgent, defaultAgent] = useAgentStore((s) => [
