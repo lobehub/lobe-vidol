@@ -1,4 +1,5 @@
 import { ErrorTypeEnum } from '@/types/api';
+import { BaseDataModel } from '@/types/common';
 
 import { LLMRoleType } from './llm';
 
@@ -36,15 +37,11 @@ export interface MetaData {
 /**
  * 消息体定义,与 LobeUI ChatList 组件一致
  */
-export interface ChatMessage {
+export interface ChatMessage extends BaseDataModel {
   /**
    * 消息内容
    */
   content: string;
-  /**
-   * 创建时间
-   */
-  createdAt: number;
   /**
    * 错误
    */
@@ -54,10 +51,6 @@ export interface ChatMessage {
    */
   extra?: any;
   /**
-   * 消息id
-   */
-  id: string;
-  /**
    * 元数据
    */
   meta: MetaData;
@@ -65,8 +58,4 @@ export interface ChatMessage {
    * 角色
    */
   role: LLMRoleType;
-  /**
-   * 更新时间
-   */
-  updatedAt: number;
 }
