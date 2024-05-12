@@ -5,6 +5,7 @@ import { Flexbox } from 'react-layout-kit';
 
 import TopBanner from '@/components/TopBanner';
 import RoleDisplay from '@/features/AgentViewer/RoleDisplay/index';
+import RoleInfo from '@/features/RoleInfo';
 import RoleEdit from '@/panels/RolePanel/RoleEdit';
 
 import SideBar from './SideBar';
@@ -15,15 +16,18 @@ const Role = () => {
   return (
     <Flexbox flex={1} height={'100%'} width={'100%'} horizontal>
       <SideBar />
-      <Flexbox horizontal className={styles.preview}>
-        <Flexbox className={styles.edit} flex={1}>
-          <TopBanner title={'Role Preview and Setting'} />
-          <RoleEdit />
-        </Flexbox>
-        <Flexbox className={styles.model} flex={1}>
-          <RoleDisplay />
+      <Flexbox className={styles.preview}>
+        <TopBanner title={'Role Preview and Setting'} />
+        <Flexbox horizontal>
+          <Flexbox className={styles.edit} flex={2}>
+            <RoleEdit />
+          </Flexbox>
+          <Flexbox className={styles.model} flex={1}>
+            <RoleDisplay />
+          </Flexbox>
         </Flexbox>
       </Flexbox>
+      <RoleInfo />
     </Flexbox>
   );
 };
