@@ -15,12 +15,12 @@ const Role = () => {
   return (
     <Flexbox flex={1} height={'100%'} width={'100%'} horizontal>
       <SideBar />
-      <Flexbox flex={1} horizontal>
-        <Flexbox className={styles.edit}>
-          <TopBanner title={'Adust Your Virtual Idol'} />
+      <Flexbox horizontal className={styles.preview}>
+        <Flexbox className={styles.edit} flex={1}>
+          <TopBanner title={'Role Preview and Setting'} />
           <RoleEdit />
         </Flexbox>
-        <Flexbox width={'30%'} className={styles.model}>
+        <Flexbox className={styles.model} flex={1}>
           <RoleDisplay />
         </Flexbox>
       </Flexbox>

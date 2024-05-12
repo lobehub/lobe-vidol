@@ -1,10 +1,11 @@
 import { createStyles } from 'antd-style';
 
 export const useStyles = createStyles(({ css }) => ({
-  edit: css`
+  preview: css`
     width: 100%;
-    max-width: 1024px;
-    margin: 64px auto;
+    margin: 64px;
+  `,
+  edit: css`
     padding: 0 24px;
   `,
   model: css``,

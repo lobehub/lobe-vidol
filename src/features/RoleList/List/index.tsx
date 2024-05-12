@@ -17,9 +17,10 @@ interface SessionListProps {
 }
 
 const SessionList = memo<SessionListProps>(({ filter }) => {
-  const [filterAgentListIds, activateAgent] = useAgentStore((s) => [
+  const [filterAgentListIds, activateAgent, agentListIds] = useAgentStore((s) => [
     agentListSelectors.filterAgentListIds(s, filter),
     s.activateAgent,
+    agentListSelectors.agentListIds(s),
   ]);
   const { styles } = useStyles();
 
@@ -35,6 +36,7 @@ const SessionList = memo<SessionListProps>(({ filter }) => {
           />
         </LazyLoad>
       ))}
+      {agentListIds.length === 0 && <div></div>}
     </>
   );
 });

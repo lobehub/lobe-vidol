@@ -2,6 +2,7 @@ import classNames from 'classnames';
 import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
 
 import PageLoading from '@/components/PageLoading';
+import ToolBar from '@/features/AgentViewer/ToolBar';
 import { agentListSelectors, useAgentStore } from '@/store/agent';
 import { useViewerStore } from '@/store/viewer';
 
@@ -40,6 +41,7 @@ function Index(props: Props) {
 
   return (
     <div ref={ref} className={classNames(styles.viewer, className)} style={style}>
+      <ToolBar className={styles.toolbar} viewerRef={ref} />
       {loading ? <PageLoading title={'模型加载中，请稍后...'} /> : null}
       <canvas ref={canvasRef} className={styles.canvas}></canvas>
     </div>
