@@ -2,7 +2,7 @@ import { TabsNav } from '@lobehub/ui';
 import React, { useState } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
-import Agent from '@/features/Actions/Agent';
+import Market from '@/features/Actions/Market';
 
 import { useStyles } from './style';
 
@@ -18,7 +18,7 @@ const Index = () => {
   return (
     <Flexbox justify={'space-between'} horizontal align={'center'} className={styles.header}>
       <TabsNav items={options} size="small" activeKey={tab} onChange={setTab} variant={'compact'} />
-      <Agent key={'agent'} />
+      <Market key={'market'} />
     </Flexbox>
   );
 };

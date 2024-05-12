@@ -3,7 +3,6 @@ import classNames from 'classnames';
 import React, { memo } from 'react';
 
 import TopBanner from '@/components/TopBanner';
-import RoleInfo from '@/features/RoleInfo';
 
 import AgentList from './List';
 
@@ -40,7 +39,6 @@ const Agent = (props: AgentProps) => {
         <TopBanner title="Hello, Let's Chat!" />
         <AgentList />
       </div>
-      <RoleInfo />
     </div>
   );
 };

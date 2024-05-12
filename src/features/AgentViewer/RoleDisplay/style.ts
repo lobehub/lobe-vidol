@@ -14,8 +14,10 @@ export const useStyles = createStyles(({ css, token }) => ({
   `,
   canvas: css`
     display: block;
+
     width: 100%;
     max-width: 100%;
+    height: 720px;
     max-height: 100%;
   `,
 }));
