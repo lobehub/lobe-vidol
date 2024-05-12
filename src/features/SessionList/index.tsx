@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
 import { HEADER_HEIGHT } from '@/constants/common';
-import Agent from '@/features/Actions/Agent';
+import Market from '@/features/Actions/Market';
 
 import V from './Elsa';
 import List from './List';
@@ -65,7 +65,7 @@ const SideBar = () => {
           type={'block'}
           value={searchName}
         />
-        <Agent />
+        <Market />
       </Flexbox>
       <div className={styles.list}>
         <V />
