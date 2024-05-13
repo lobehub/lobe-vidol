@@ -131,7 +131,7 @@ const currentSystemRole = (s: SessionStore): string => {
   return agent.systemRole;
 };
 
-const currentAgentModel = (s: SessionStore): string => {
+const currentAgentModel = (s: SessionStore): string | undefined => {
   const agent = currentAgent(s);
   if (!agent) return '';
   return agent.meta.model;

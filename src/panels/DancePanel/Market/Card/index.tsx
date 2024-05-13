@@ -108,7 +108,13 @@ const Header = () => {
       <DanceInfo
         actions={actions}
         dance={currentDanceItem}
-        extra={<Author item={currentDanceItem} />}
+        extra={
+          <Author
+            homepage={currentDanceItem?.homepage}
+            author={currentDanceItem?.author}
+            createAt={currentDanceItem?.createAt}
+          />
+        }
       />
     </DraggablePanel>
   );

@@ -39,13 +39,14 @@ function Index(props: Props) {
     [viewer],
   );
 
-  return (
+  return currentAgentModel ? (
     <div ref={ref} className={classNames(styles.viewer, className)} style={style}>
       <ToolBar className={styles.toolbar} viewerRef={ref} />
       {loading ? <PageLoading title={'模型加载中，请稍后...'} /> : null}
       <canvas ref={canvasRef} className={styles.canvas}></canvas>
     </div>
-  );
+  ) : null;
+  //   TODO: 添加自定义上传模型
 }
 
 export default memo(Index);

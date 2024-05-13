@@ -6,18 +6,18 @@ import { AgentStore } from '../index';
 const showSideBar = (s: AgentStore) => !!s.currentIdentifier;
 
 const currentAgentItem = (s: AgentStore): Agent | undefined => {
-  const { currentIdentifier, subscribedList, defaultAgent } = s;
+  const { currentIdentifier, localAgentList, defaultAgent } = s;
   if (currentIdentifier === LOBE_VIDOL_DEFAULT_AGENT_ID) return defaultAgent;
 
-  const currentAgent = subscribedList.find((item) => item.agentId === currentIdentifier);
+  const currentAgent = localAgentList.find((item) => item.agentId === currentIdentifier);
   if (!currentAgent) return undefined;
 
   return currentAgent;
 };
 
 const agentListIds = (s: AgentStore): string[] => {
-  const { subscribedList } = s;
-  return subscribedList.map((item) => item.agentId);
+  const { localAgentList } = s;
+  return localAgentList.map((item) => item.agentId);
 };
 
 const filterAgentListIds = (s: AgentStore, filter: string | undefined) => {
@@ -45,8 +45,8 @@ const isDefaultAgent = (s: AgentStore) => {
 };
 
 const subscribed = (s: AgentStore) => (agentId: string) => {
-  const { subscribedList } = s;
-  const index = subscribedList.findIndex((item) => item.agentId === agentId);
+  const { localAgentList } = s;
+  const index = localAgentList.findIndex((item) => item.agentId === agentId);
 
   return index !== -1;
 };

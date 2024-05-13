@@ -105,7 +105,13 @@ const Header = () => {
       <AgentCard
         actions={actions}
         agent={currentAgentItem}
-        extra={<Author item={currentAgentItem} />}
+        extra={
+          <Author
+            author={currentAgentItem?.author}
+            homepage={currentAgentItem?.homepage}
+            createAt={currentAgentItem?.createAt}
+          />
+        }
         footer={<SystemRole systemRole={currentAgentItem?.meta.readme} style={{ marginTop: 16 }} />}
       />
     </DraggablePanel>
