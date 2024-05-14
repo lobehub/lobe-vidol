@@ -3,11 +3,11 @@ import { useRequest } from 'ahooks';
 import { Button, Divider, Form, Input, Select, Slider, message } from 'antd';
 import { createStyles } from 'antd-style';
 import classNames from 'classnames';
-import { isEqual } from 'lodash-es';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 
+import { useSyncSettings } from '@/panels/RolePanel/RoleEdit/useSyncSetting';
 import { speechApi, voiceListApi } from '@/services/tts';
-import { agentListSelectors, useAgentStore } from '@/store/agent';
+import { useAgentStore } from '@/store/agent';
 import { Voice } from '@/types/tts';
 
 const FormItem = Form.Item;
@@ -81,13 +81,10 @@ const Config = (props: ConfigProps) => {
   const ref = useRef<HTMLAudioElement>(null);
   const [form] = Form.useForm();
   const [voices, setVoices] = useState<Voice[]>([]);
-  const currentAgent = useAgentStore((s) => agentListSelectors.currentAgentItem(s), isEqual);
   const updateAgentConfig = useAgentStore((s) => s.updateAgentConfig);
   const [audioUrl, setAudioUrl] = useState<string | undefined>(undefined);
 
-  useEffect(() => {
-    form.setFieldsValue(currentAgent?.tts);
-  }, [currentAgent, form]);
+  useSyncSettings(form);
 
   const { loading, run: speek } = useRequest(speechApi, {
     manual: true,
@@ -112,7 +109,7 @@ const Config = (props: ConfigProps) => {
 
   const { loading: voiceLoading, run: getVoiceList } = useRequest(
     () => {
-      const engine = form.getFieldValue('engine');
+      const engine = form.getFieldValue(['tts', 'engine']);
       return voiceListApi(engine);
     },
     {
@@ -124,12 +121,13 @@ const Config = (props: ConfigProps) => {
 
   const getExtraNode = () => {
     const samples =
-      suportedLocales.find((item) => item.value === form.getFieldValue('locale'))?.samples || [];
+      suportedLocales.find((item) => item.value === form.getFieldValue(['tts', 'locale']))
+        ?.samples || [];
     const nodes: React.ReactNode[] = [];
 
     samples.forEach((item, index) => {
       nodes.push(
-        <a href="#" onClick={() => form.setFieldValue('message', item)}>
+        <a href="#" onClick={() => form.setFieldValue(['tts', 'message'], item)}>
           {item}
         </a>,
       );
@@ -143,24 +141,23 @@ const Config = (props: ConfigProps) => {
   return (
     <Form
       form={form}
-      initialValues={currentAgent?.tts}
       layout="horizontal"
       onFinish={() => {
         form.validateFields().then((values) => {
-          updateAgentConfig({ tts: values });
+          updateAgentConfig(values);
           message.success('保存成功');
         });
       }}
       onValuesChange={(changedValues) => {
-        if (changedValues.engine) {
-          form.setFieldsValue({ voice: undefined });
+        if (changedValues.tts.engine) {
+          form.setFieldsValue({ tts: { voice: undefined } });
           getVoiceList();
         }
-        if (changedValues.locale) {
+        if (changedValues.tts.locale) {
           const sample = suportedLocales.find((item) => item.value === changedValues.locale)
             ?.samples[1];
 
-          form.setFieldsValue({ voice: undefined, message: sample });
+          form.setFieldsValue({ tts: { voice: undefined, message: sample } });
         }
       }}
       preserve={false}
@@ -169,9 +166,13 @@ const Config = (props: ConfigProps) => {
       <div className={classNames(className, styles.container)} style={style}>
         <div className={styles.form}>
           <div className={styles.message}>
-            <FormItem dependencies={['locale']} noStyle>
+            <FormItem dependencies={[['tts', 'locale']]} noStyle>
               {() => (
-                <FormItem extra={getExtraNode()} name="message" style={{ marginBottom: 0 }}>
+                <FormItem
+                  extra={getExtraNode()}
+                  name={['tts', 'message']}
+                  style={{ marginBottom: 0 }}
+                >
                   <Input.TextArea
                     autoSize={{ maxRows: 28, minRows: 28 }}
                     maxLength={800}
@@ -182,7 +183,7 @@ const Config = (props: ConfigProps) => {
             </FormItem>
           </div>
           <div className={styles.config}>
-            <FormItem label={'引擎'} name="engine">
+            <FormItem label={'引擎'} name={['tts', 'engine']}>
               <Select
                 options={[
                   {
@@ -196,14 +197,14 @@ const Config = (props: ConfigProps) => {
                 ]}
               />
             </FormItem>
-            <FormItem label={'语言'} name="locale">
+            <FormItem label={'语言'} name={['tts', 'locale']}>
               <Select options={suportedLocales} />
             </FormItem>
-            <FormItem dependencies={['locale']} noStyle>
+            <FormItem dependencies={[['tts', 'locale']]} noStyle>
               {() => (
                 <FormItem
                   label={'语音'}
-                  name="voice"
+                  name={['tts', 'voice']}
                   rules={[{ message: '请选择语音', required: true }]}
                 >
                   <Select
@@ -211,7 +212,7 @@ const Config = (props: ConfigProps) => {
                     disabled={voiceLoading}
                     loading={voiceLoading}
                     options={voices
-                      .filter((voice) => voice.locale === form.getFieldValue('locale'))
+                      .filter((voice) => voice.locale === form.getFieldValue(['tts', 'locale']))
                       .map((item) => ({
                         label: `${item.DisplayName}-${item.LocalName}`,
                         value: item.ShortName,
@@ -220,10 +221,10 @@ const Config = (props: ConfigProps) => {
                 </FormItem>
               )}
             </FormItem>
-            <FormItem label={'语速'} name="speed">
+            <FormItem label={'语速'} name={['tts', 'speed']}>
               <Slider max={3} min={0} step={0.01} />
             </FormItem>
-            <FormItem label={'音调'} name="pitch">
+            <FormItem label={'音调'} name={['tts', 'pitch']}>
               <Slider max={2} min={0} step={0.01} />
             </FormItem>
             <FormFooter>
@@ -250,7 +251,7 @@ const Config = (props: ConfigProps) => {
                 loading={loading}
                 onClick={() => {
                   const values = form.getFieldsValue();
-                  speek(values);
+                  speek({ ...values.tts });
                 }}
               >
                 试听

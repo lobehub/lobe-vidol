@@ -1,10 +1,12 @@
 import { Form, Input } from 'antd';
 import { createStyles } from 'antd-style';
 import classNames from 'classnames';
-import { debounce, isEqual } from 'lodash-es';
-import React, { useEffect } from 'react';
+import { debounce } from 'lodash-es';
+import React from 'react';
 
-import { agentListSelectors, useAgentStore } from '@/store/agent';
+import { useAgentStore } from '@/store/agent';
+
+import { useSyncSettings } from '../useSyncSetting';
 
 const FormItem = Form.Item;
 
@@ -39,17 +41,13 @@ const Info = (props: InfoProps) => {
   const { style, className } = props;
   const { styles } = useStyles();
   const [form] = Form.useForm();
-  const currentAgent = useAgentStore((s) => agentListSelectors.currentAgentItem(s), isEqual);
   const updateAgentConfig = useAgentStore((s) => s.updateAgentConfig);
 
-  useEffect(() => {
-    form.setFieldsValue(currentAgent);
-  }, [currentAgent, form]);
+  useSyncSettings(form);
 
   return (
     <Form
       form={form}
-      initialValues={currentAgent}
       onValuesChange={debounce(updateAgentConfig, 100)}
       layout="horizontal"
       requiredMark={false}
@@ -82,11 +80,7 @@ const Info = (props: InfoProps) => {
                 placeholder="请输入角色与你打招呼时的用语"
               />
             </FormItem>
-            <FormItem
-              label={'说明'}
-              name={['meta', 'readme']}
-              rules={[{ message: '请输入角色说明', required: true }]}
-            >
+            <FormItem label={'说明'} name={['meta', 'readme']}>
               <Input.TextArea
                 autoSize={{ maxRows: 15, minRows: 15 }}
                 placeholder="请输入角色说明"

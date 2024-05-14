@@ -3,9 +3,10 @@ import { Form } from 'antd';
 import { createStyles } from 'antd-style';
 import classNames from 'classnames';
 import { debounce, isEqual } from 'lodash-es';
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import HolographicCard from '@/components/HolographicCard';
+import { useSyncSettings } from '@/panels/RolePanel/RoleEdit/useSyncSetting';
 import { agentListSelectors, useAgentStore } from '@/store/agent';
 
 const FormItem = Form.Item;
@@ -44,9 +45,7 @@ const Info = (props: InfoProps) => {
   const currentAgent = useAgentStore((s) => agentListSelectors.currentAgentItem(s), isEqual);
   const updateAgentConfig = useAgentStore((s) => s.updateAgentConfig);
 
-  useEffect(() => {
-    form.setFieldsValue(currentAgent);
-  }, [currentAgent, form]);
+  useSyncSettings(form);
 
   return (
     <Form

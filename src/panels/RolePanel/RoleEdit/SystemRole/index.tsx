@@ -6,6 +6,8 @@ import React from 'react';
 
 import { agentListSelectors, useAgentStore } from '@/store/agent';
 
+import { useSyncSettings } from '../useSyncSetting';
+
 const FormItem = Form.Item;
 
 interface InfoProps {
@@ -44,6 +46,8 @@ const Info = (props: InfoProps) => {
   const [form] = Form.useForm();
   const currentAgent = useAgentStore((s) => agentListSelectors.currentAgentItem(s), isEqual);
   const updateAgentConfig = useAgentStore((s) => s.updateAgentConfig);
+
+  useSyncSettings(form);
 
   return (
     <Form

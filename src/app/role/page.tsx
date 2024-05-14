@@ -5,7 +5,6 @@ import { Flexbox } from 'react-layout-kit';
 
 import TopBanner from '@/components/TopBanner';
 import RoleDisplay from '@/features/AgentViewer/RoleDisplay/index';
-import RoleInfo from '@/features/RoleInfo';
 import RoleEdit from '@/panels/RolePanel/RoleEdit';
 
 import SideBar from './SideBar';
@@ -27,7 +26,7 @@ const Role = () => {
           </Flexbox>
         </Flexbox>
       </Flexbox>
-      <RoleInfo />
+      {/*<RoleInfo />*/}
     </Flexbox>
   );
 };
