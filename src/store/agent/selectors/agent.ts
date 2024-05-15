@@ -37,6 +37,13 @@ const currentAgentModel = (s: AgentStore): string | undefined => {
   return currentAgent.meta.model;
 };
 
+const currentAgentId = (s: AgentStore): string | undefined => {
+  const currentAgent = currentAgentItem(s);
+  if (!currentAgent) return undefined;
+
+  return currentAgent.agentId;
+};
+
 const isDefaultAgent = (s: AgentStore) => {
   return (id: string): boolean => {
     const agent = s.getAgentById(id);
@@ -58,5 +65,6 @@ export const agentListSelectors = {
   isDefaultAgent,
   showSideBar,
   currentAgentModel,
+  currentAgentId,
   subscribed,
 };
