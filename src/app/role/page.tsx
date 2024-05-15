@@ -4,7 +4,7 @@ import React, { memo } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
 import TopBanner from '@/components/TopBanner';
-import RoleDisplay from '@/features/AgentViewer/RoleDisplay/index';
+import AgentViewer from '@/features/AgentViewer/index';
 import RoleEdit from '@/panels/RolePanel/RoleEdit';
 
 import SideBar from './SideBar';
@@ -22,7 +22,7 @@ const Role = () => {
             <RoleEdit />
           </Flexbox>
           <Flexbox className={styles.model} flex={1}>
-            <RoleDisplay />
+            <AgentViewer height={720} />
           </Flexbox>
         </Flexbox>
       </Flexbox>

@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import React, { memo } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
+import { HEADER_HEIGHT } from '@/constants/common';
 import AgentViewer from '@/features/AgentViewer';
 import Alert from '@/features/Alert';
 import ChatDialog from '@/features/ChatDialog';
@@ -22,7 +23,7 @@ export default memo(() => {
   return (
     <Flexbox flex={1} style={{ position: 'relative' }}>
       <div className={styles.viewer}>
-        <AgentViewer />
+        <AgentViewer height={`calc(100vh - ${HEADER_HEIGHT}px);`} />
       </div>
       {showChatDialog ? (
         <ChatDialog className={classNames(styles.dialog, styles.content)} setOpen={setChatDialog} />
