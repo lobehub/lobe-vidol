@@ -1,11 +1,10 @@
 import classNames from 'classnames';
 import localforage from 'localforage';
-import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
+import React, { memo, useCallback, useRef, useState } from 'react';
 
 import PageLoading from '@/components/PageLoading';
 import ToolBar from '@/features/AgentViewer/ToolBar';
 import { agentListSelectors, useAgentStore } from '@/store/agent';
-import { sessionSelectors, useSessionStore } from '@/store/session';
 import { useViewerStore } from '@/store/viewer';
 
 import { useStyles } from './style';
@@ -22,9 +21,11 @@ function AgentViewer(props: Props) {
   const { styles } = useStyles();
   const [loading, setLoading] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
-  const currentAgentModel = useSessionStore((s) => sessionSelectors.currentAgentModel(s));
+  const currentAgentModel = useAgentStore((s) => agentListSelectors.currentAgentModel(s));
   const currentAgentId = useAgentStore((s) => agentListSelectors.currentAgentId(s));
   const updateAgentConfig = useAgentStore((s) => s.updateAgentConfig);
+
+  console.log('currentAgentModel', currentAgentModel, currentAgentId);
 
   const loadVrm = async (url?: string) => {
     let vrmUrl = url;
@@ -36,6 +37,7 @@ function AgentViewer(props: Props) {
         vrmUrl = undefined;
       }
     }
+    console.log('loadVrm', vrmUrl);
     if (vrmUrl) {
       setLoading(true);
       viewer.loadVrm(vrmUrl).finally(() => {
@@ -46,13 +48,11 @@ function AgentViewer(props: Props) {
     }
   };
 
-  useEffect(() => {
-    loadVrm(currentAgentModel);
-  }, [currentAgentModel]);
-
   const canvasRef = useCallback(
     (canvas: HTMLCanvasElement) => {
       viewer.setup(canvas);
+      console.log('currentAgentModel', currentAgentModel);
+      loadVrm(currentAgentModel);
 
       const dragoverHandler = (event: DragEvent) => {
         event.preventDefault();
@@ -89,7 +89,7 @@ function AgentViewer(props: Props) {
         canvas.removeEventListener('drop', dropHandler);
       };
     },
-    [viewer, currentAgentId],
+    [viewer, currentAgentId, currentAgentModel],
   );
 
   return (

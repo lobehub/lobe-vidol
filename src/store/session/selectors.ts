@@ -131,12 +131,6 @@ const currentSystemRole = (s: SessionStore): string => {
   return agent.systemRole;
 };
 
-const currentAgentModel = (s: SessionStore): string | undefined => {
-  const agent = currentAgent(s);
-  if (!agent) return '';
-  return agent.meta.model;
-};
-
 const currentChatMessage = (s: SessionStore): ChatMessage | undefined => {
   const { chatLoadingId } = s;
   return currentChats(s).find((item) => item.id === chatLoadingId);
@@ -159,7 +153,6 @@ export const sessionSelectors = {
   filterSessionListIds,
   currentAgent,
   getAgentById,
-  currentAgentModel,
   currentChatIDsWithGreetingMessage,
   getLastMessageByAgentId,
   currentChatMessage,

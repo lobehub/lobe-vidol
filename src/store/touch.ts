@@ -146,6 +146,6 @@ const createTouchStore: StateCreator<TouchStore, [['zustand/devtools', never]]> 
 
 export const useTouchStore = create<TouchStore>()(
   devtools(createTouchStore, {
-    name: 'TOUCH_STORE',
+    name: 'VIDOL_TOUCH_STORE',
   }),
 );

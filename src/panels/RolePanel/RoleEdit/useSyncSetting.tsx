@@ -7,7 +7,6 @@ import { agentListSelectors, useAgentStore } from '@/store/agent';
 export const useSyncSettings = (form: FormInstance) => {
   useLayoutEffect(() => {
     const currentAgent = agentListSelectors.currentAgentItem(useAgentStore.getState());
-    console.log('currentAgent', currentAgent);
     form.setFieldsValue(currentAgent);
 
     // sync with later updated settings
