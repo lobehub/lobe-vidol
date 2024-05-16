@@ -33,7 +33,7 @@ export interface OpenAIChatMessage {
 }
 
 /**
- * @title Chat Stream Payload
+ * @title Role Stream Payload
  */
 export interface ChatStreamPayload {
   /**

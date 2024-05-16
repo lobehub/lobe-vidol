@@ -56,7 +56,7 @@ const Config = (props: ConfigProps) => {
       >
         {/* @ts-ignore */}
         <FormGroup icon={BotIcon} title={'OpenAI 语言模型'}>
-          <FormItem desc={'Chat GPT 模型'} label={'模型'} name="model">
+          <FormItem desc={'Role GPT 模型'} label={'模型'} name="model">
             <Select
               options={OPENAI_MODEL_LIST.map((model) => ({
                 label: (

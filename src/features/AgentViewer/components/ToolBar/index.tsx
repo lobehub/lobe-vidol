@@ -2,24 +2,16 @@ import { ActionIconGroup } from '@lobehub/ui';
 import { Grid3x3, LandPlot, Orbit, RotateCw, SwitchCamera } from 'lucide-react';
 import React from 'react';
 
-import { useViewerStore } from '@/store/viewer';
+import { Viewer } from '@/features/vrmViewer/viewer';
 
 interface ToolBarProps {
   className?: string;
   style?: React.CSSProperties;
-  viewerRef?: React.RefObject<HTMLDivElement>;
+  viewer: Viewer;
 }
 
 const ToolBar = (props: ToolBarProps) => {
-  const { style, className, viewerRef } = props;
-  const viewer = useViewerStore((s) => s.viewer);
-  const toggleFullScreen = () => {
-    if (!document.fullscreenElement) {
-      viewerRef?.current?.requestFullscreen();
-    } else {
-      document.exitFullscreen();
-    }
-  };
+  const { style, className, viewer } = props;
 
   const dropdownMenu = [
     {
@@ -50,11 +42,6 @@ const ToolBar = (props: ToolBarProps) => {
           key: 'resetCamera',
           label: '重置镜头',
         },
-        // {
-        //   icon: Expand,
-        //   key: 'expand',
-        //   label: '全屏',
-        // },
         {
           icon: Grid3x3,
           key: 'grid',
@@ -65,11 +52,6 @@ const ToolBar = (props: ToolBarProps) => {
         switch (action.key) {
           case 'resetCamera': {
             viewer.resetCamera();
-
-            break;
-          }
-          case 'expand': {
-            toggleFullScreen();
 
             break;
           }

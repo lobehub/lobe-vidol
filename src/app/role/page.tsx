@@ -4,7 +4,7 @@ import React, { memo } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
 import TopBanner from '@/components/TopBanner';
-import AgentViewer from '@/features/AgentViewer/index';
+import AgentViewer from '@/features/AgentViewer/Role';
 import RoleEdit from '@/panels/RolePanel/RoleEdit';
 
 import SideBar from './SideBar';
