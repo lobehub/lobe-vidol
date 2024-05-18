@@ -13,6 +13,7 @@ import classNames from 'classnames';
 import { Monitor, Settings2 } from 'lucide-react';
 import React from 'react';
 
+import AvatarWithUpload from '@/features/AvatarWithUpload';
 import { useAgentStore } from '@/store/agent';
 import { useConfigStore } from '@/store/config';
 import { useSessionStore } from '@/store/session';
@@ -90,6 +91,9 @@ const CommonConfig = (props: CommonConfigProps) => {
     <div className={classNames(styles.config, className)} style={style}>
       <Form style={{ display: 'flex', flexGrow: 1 }}>
         <FormGroup icon={Settings2} title={'主题设置'}>
+          <FormItem desc={'头像'} divider label={'自定义头像'} name={'avatar'}>
+            <AvatarWithUpload />
+          </FormItem>
           <FormItem desc={'主题色'} divider label={'自定义主题色'} name={'primaryColor'}>
             <Swatches
               activeColor={primaryColor}

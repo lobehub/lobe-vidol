@@ -24,6 +24,7 @@ export interface PanelConfig {
 export type PanelKey = keyof PanelConfig;
 
 export interface CommonConfig {
+  avatar: string;
   /**
    * 背景类型
    */
