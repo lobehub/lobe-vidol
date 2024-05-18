@@ -64,12 +64,13 @@ const currentChats = (s: SessionStore): ChatMessage[] => {
   const { messages } = session;
   return messages?.map((message) => {
     const userAvatar = useConfigStore.getState().config.avatar;
+    const userNickName = useConfigStore.getState().config.nickName;
     return {
       ...message,
       meta: {
         avatar: message.role === 'user' ? (userAvatar ? userAvatar : DEFAULT_USER_AVATAR) : avatar,
         description: message.role === 'user' ? undefined : description,
-        title: message.role === 'user' ? '你' : name,
+        title: message.role === 'user' ? (userNickName ? userNickName : '你') : name,
       },
     };
   });

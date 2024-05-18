@@ -13,4 +13,5 @@ export const DEFAULT_SETTINGS: Config = {
   },
   primaryColor: DEFAULT_PRIMARY_COLOR,
   avatar: DEFAULT_USER_AVATAR,
+  nickName: '',
 };
