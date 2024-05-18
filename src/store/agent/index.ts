@@ -1,4 +1,3 @@
-import { nanoid } from 'ai';
 import { produce } from 'immer';
 import { merge } from 'lodash-es';
 import { DeepPartial } from 'utility-types';
@@ -7,7 +6,7 @@ import { shallow } from 'zustand/shallow';
 import { createWithEqualityFn } from 'zustand/traditional';
 import { StateCreator } from 'zustand/vanilla';
 
-import { LOBE_VIDOL_DEFAULT_AGENT_ID } from '@/constants/agent';
+import { DEFAULT_AGENT_CONFIG, LOBE_VIDOL_DEFAULT_AGENT_ID } from '@/constants/agent';
 import { Agent } from '@/types/agent';
 
 import { initialState } from './initialState';
@@ -90,17 +89,7 @@ const createAgentStore: StateCreator<AgentStore, [['zustand/devtools', never]]> 
   },
   createNewAgent: () => {
     const { localAgentList } = get();
-    const newAgent: Agent = {
-      agentId: nanoid(),
-      greeting: '你好，我是自定义角色，有什么可以帮助你的吗？',
-      systemRole: '',
-      meta: {
-        name: '自定义角色',
-        description: '这是一个自定义角色',
-        avatar: '🤖',
-        readme: '',
-      },
-    };
+    const newAgent: Agent = DEFAULT_AGENT_CONFIG;
 
     const newList = produce(localAgentList, (draft) => {
       draft.unshift(newAgent);

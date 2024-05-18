@@ -1,4 +1,4 @@
-import { INITIAL_COORDINATES } from '@/constants/common';
+import { INITIAL_COORDINATES } from '@/constants/token';
 import { Config, PanelConfig, PanelKey } from '@/types/config';
 
 export interface ConfigState {

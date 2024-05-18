@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import React, { memo } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
-import { HEADER_HEIGHT } from '@/constants/common';
+import { HEADER_HEIGHT } from '@/constants/token';
 import AgentViewer from '@/features/AgentViewer/Chat';
 import Alert from '@/features/Alert';
 import ChatDialog from '@/features/ChatDialog';

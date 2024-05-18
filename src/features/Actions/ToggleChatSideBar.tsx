@@ -2,7 +2,7 @@ import { ActionIcon } from '@lobehub/ui';
 import { PanelRightClose, PanelRightOpen } from 'lucide-react';
 import React from 'react';
 
-import { DESKTOP_HEADER_ICON_SIZE } from '@/constants/common';
+import { DESKTOP_HEADER_ICON_SIZE } from '@/constants/token';
 import { useGlobalStore } from '@/store/global';
 
 export default () => {

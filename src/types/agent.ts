@@ -52,7 +52,7 @@ export interface AgentMeta {
 
 export interface Agent {
   /**
-   * 角色 ID，为本地文件目录
+   * 角色 ID
    */
   agentId: string;
   /**

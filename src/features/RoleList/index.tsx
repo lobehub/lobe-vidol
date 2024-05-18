@@ -5,7 +5,7 @@ import { ChevronDown } from 'lucide-react';
 import React, { useState } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
-import { HEADER_HEIGHT } from '@/constants/common';
+import { HEADER_HEIGHT } from '@/constants/token';
 import Agent from '@/features/Actions/Agent';
 import Elsa from '@/features/RoleList/List/Elsa';
 

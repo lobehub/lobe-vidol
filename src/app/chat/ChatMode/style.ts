@@ -1,6 +1,6 @@
 import { createStyles } from 'antd-style';
 
-import { CHAT_HEADER_HEIGHT, CHAT_INPUT_WIDTH } from '@/constants/common';
+import { CHAT_HEADER_HEIGHT, CHAT_INPUT_WIDTH } from '@/constants/token';
 
 export const useStyles = createStyles(({ css, token }) => ({
   chat: css``,

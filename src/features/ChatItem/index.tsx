@@ -3,7 +3,7 @@ import { createStyles } from 'antd-style';
 import isEqual from 'fast-deep-equal';
 import { ReactNode, memo, useCallback, useMemo, useState } from 'react';
 
-import { CHAT_INPUT_WIDTH } from '@/constants/common';
+import { CHAT_INPUT_WIDTH } from '@/constants/token';
 import { useSessionStore } from '@/store/session';
 import { sessionSelectors } from '@/store/session/selectors';
 import { ChatMessage } from '@/types/chat';

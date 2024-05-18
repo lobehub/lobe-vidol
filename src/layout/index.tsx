@@ -4,7 +4,7 @@ import { ThemeProvider } from '@lobehub/ui';
 import { ThemeAppearance, createStyles } from 'antd-style';
 import { ReactNode } from 'react';
 
-import { VIDOL_THEME_APPEARANCE } from '@/constants/common';
+import { VIDOL_THEME_APPEARANCE } from '@/constants/theme';
 import { useConfigStore } from '@/store/config';
 import { useThemeStore } from '@/store/theme';
 import { GlobalStyle } from '@/styles';

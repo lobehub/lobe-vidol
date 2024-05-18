@@ -1,6 +1,6 @@
 import { createStyles } from 'antd-style';
 
-import { CHAT_HEADER_HEIGHT } from '@/constants/common';
+import { CHAT_HEADER_HEIGHT } from '@/constants/token';
 
 const useStyles = createStyles(({ token, css }) => ({
   header: css`

@@ -1,7 +1,7 @@
 import { DraggablePanel } from '@lobehub/ui';
 import { createStyles } from 'antd-style';
 
-import { SIDEBAR_MAX_WIDTH, SIDEBAR_WIDTH } from '@/constants/common';
+import { SIDEBAR_MAX_WIDTH, SIDEBAR_WIDTH } from '@/constants/token';
 import RoleList from '@/features/RoleList';
 import { useGlobalStore } from '@/store/global';
 

@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import { XIcon } from 'lucide-react';
 import React, { PropsWithChildren, memo } from 'react';
 
-import { INITIAL_COORDINATES, INITIAL_Z_INDEX } from '@/constants/common';
+import { INITIAL_COORDINATES, INITIAL_Z_INDEX } from '@/constants/token';
 
 import { useStyles } from './style';
 

@@ -1,7 +1,7 @@
 import { ActionIcon } from '@lobehub/ui';
 import { Video, VideoOff } from 'lucide-react';
 
-import { DESKTOP_HEADER_ICON_SIZE } from '@/constants/common';
+import { DESKTOP_HEADER_ICON_SIZE } from '@/constants/token';
 import { useSessionStore } from '@/store/session';
 
 export default () => {

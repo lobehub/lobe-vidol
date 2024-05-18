@@ -1,7 +1,7 @@
 import { ActionIcon } from '@lobehub/ui';
 import { PlusCircle } from 'lucide-react';
 
-import { DESKTOP_HEADER_ICON_SIZE } from '@/constants/common';
+import { DESKTOP_HEADER_ICON_SIZE } from '@/constants/token';
 import { useAgentStore } from '@/store/agent';
 
 export default () => {

@@ -3,7 +3,7 @@ import { DeleteOutlined } from '@ant-design/icons';
 import { Button, Drawer, List } from 'antd';
 import { memo } from 'react';
 
-import { SIDEBAR_WIDTH } from '@/constants/common';
+import { SIDEBAR_WIDTH } from '@/constants/token';
 import { DanceStore, useDanceStore } from '@/store/dance';
 
 import PlayItem from './Item';

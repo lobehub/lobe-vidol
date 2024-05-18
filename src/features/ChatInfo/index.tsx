@@ -5,7 +5,7 @@ import { createStyles } from 'antd-style';
 import React from 'react';
 
 import AgentCard from '@/components/agent/AgentCard';
-import { SIDEBAR_WIDTH } from '@/constants/common';
+import { SIDEBAR_WIDTH } from '@/constants/token';
 import MiniPlayer from '@/features/AudioPlayer/MiniPlayer';
 import { useGlobalStore } from '@/store/global';
 import { sessionSelectors, useSessionStore } from '@/store/session';

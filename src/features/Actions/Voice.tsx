@@ -3,7 +3,7 @@ import { createStyles } from 'antd-style';
 import classNames from 'classnames';
 import { Volume2, VolumeXIcon } from 'lucide-react';
 
-import { DESKTOP_HEADER_ICON_SIZE } from '@/constants/common';
+import { DESKTOP_HEADER_ICON_SIZE } from '@/constants/token';
 import { toogleVoice } from '@/services/chat';
 import { useSessionStore } from '@/store/session';
 

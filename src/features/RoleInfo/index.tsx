@@ -6,7 +6,7 @@ import React, { memo, useState } from 'react';
 
 import AgentCard from '@/components/agent/AgentCard';
 import SystemRole from '@/components/agent/SystemRole';
-import { SIDEBAR_MAX_WIDTH, SIDEBAR_WIDTH } from '@/constants/common';
+import { SIDEBAR_MAX_WIDTH, SIDEBAR_WIDTH } from '@/constants/token';
 import Chat from '@/features/Actions/Chat';
 import UnSubscribeButton from '@/features/Actions/UnSubscribeButton';
 import { agentListSelectors, useAgentStore } from '@/store/agent';

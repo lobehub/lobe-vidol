@@ -6,7 +6,7 @@ import { ListMusic } from 'lucide-react';
 import React, { useState } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
-import { DESKTOP_HEADER_ICON_SIZE } from '@/constants/common';
+import { DESKTOP_HEADER_ICON_SIZE } from '@/constants/token';
 import Control from '@/features/AudioPlayer/Control';
 import PlayList from '@/features/AudioPlayer/PlayList';
 import { useDanceStore } from '@/store/dance';

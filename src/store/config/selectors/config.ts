@@ -1,4 +1,4 @@
-import { INITIAL_Z_INDEX } from '@/constants/common';
+import { INITIAL_Z_INDEX } from '@/constants/token';
 import { ConfigStore } from '@/store/config';
 import { OpenAIConfig, PanelKey } from '@/types/config';
 
