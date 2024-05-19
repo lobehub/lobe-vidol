@@ -1,3 +1,4 @@
+import { nanoid } from 'ai';
 import { produce } from 'immer';
 import { merge } from 'lodash-es';
 import { DeepPartial } from 'utility-types';
@@ -93,7 +94,10 @@ const createAgentStore: StateCreator<AgentStore, [['zustand/devtools', never]]> 
   },
   createNewAgent: () => {
     const { localAgentList } = get();
-    const newAgent: Agent = DEFAULT_AGENT_CONFIG;
+    const newAgent: Agent = {
+      agentId: nanoid(),
+      ...DEFAULT_AGENT_CONFIG,
+    };
 
     const newList = produce(localAgentList, (draft) => {
       draft.unshift(newAgent);

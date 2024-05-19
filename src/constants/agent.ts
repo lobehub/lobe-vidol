@@ -1,5 +1,3 @@
-import { nanoid } from 'ai';
-
 import { DEFAULT_AGENT_AVATAR_URL } from '@/constants/common';
 import { DEFAULT_TOUCH_CONFIG } from '@/constants/touch';
 import { DEFAULT_TTS_CONFIG } from '@/constants/tts';
@@ -31,7 +29,6 @@ export const DEFAULT_VIDOL_AGENT: Agent = {
 };
 
 export const DEFAULT_AGENT_CONFIG = {
-  agentId: nanoid(),
   greeting: '',
   systemRole: '',
   meta: {

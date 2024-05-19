@@ -1,3 +1,4 @@
+import { Empty } from 'antd';
 import { createStyles } from 'antd-style';
 import { memo } from 'react';
 import LazyLoad from 'react-lazy-load';
@@ -36,7 +37,12 @@ const SessionList = memo<SessionListProps>(({ filter }) => {
           />
         </LazyLoad>
       ))}
-      {agentListIds.length === 0 && <div></div>}
+      {agentListIds.length === 0 && (
+        <Empty
+          description={'暂无角色，可以通过 + 创建自定义角色，也可通过发现页添加角色'}
+          image={Empty.PRESENTED_IMAGE_SIMPLE}
+        />
+      )}
     </>
   );
 });
