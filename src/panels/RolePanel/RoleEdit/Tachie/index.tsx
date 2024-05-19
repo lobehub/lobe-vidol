@@ -7,7 +7,7 @@ import React from 'react';
 
 import HolographicCard from '@/components/HolographicCard';
 import { useSyncSettings } from '@/panels/RolePanel/RoleEdit/useSyncSetting';
-import { agentListSelectors, useAgentStore } from '@/store/agent';
+import { agentSelectors, useAgentStore } from '@/store/agent';
 
 const FormItem = Form.Item;
 
@@ -42,7 +42,7 @@ const Info = (props: InfoProps) => {
   const { style, className } = props;
   const { styles } = useStyles();
   const [form] = Form.useForm();
-  const currentAgent = useAgentStore((s) => agentListSelectors.currentAgentItem(s), isEqual);
+  const currentAgent = useAgentStore((s) => agentSelectors.currentAgentItem(s), isEqual);
   const updateAgentConfig = useAgentStore((s) => s.updateAgentConfig);
 
   useSyncSettings(form);

@@ -4,7 +4,7 @@ import React, { memo, useCallback, useRef } from 'react';
 
 import PageLoading from '@/components/PageLoading';
 import { useLoadVrm } from '@/hooks/useLoadVrm';
-import { agentListSelectors, useAgentStore } from '@/store/agent';
+import { agentSelectors, useAgentStore } from '@/store/agent';
 import { useViewerStore } from '@/store/viewer';
 
 import ToolBar from '../components/ToolBar';
@@ -22,8 +22,8 @@ function AgentViewer(props: Props) {
   const ref = useRef<HTMLDivElement>(null);
   const viewer = useViewerStore((s) => s.viewer);
   const [currentAgentModel, currentAgentId, updateAgentConfig] = useAgentStore((s) => [
-    agentListSelectors.currentAgentModel(s),
-    agentListSelectors.currentAgentId(s),
+    agentSelectors.currentAgentModel(s),
+    agentSelectors.currentAgentId(s),
     s.updateAgentConfig,
   ]);
 

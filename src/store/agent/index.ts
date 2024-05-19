@@ -7,7 +7,7 @@ import { createWithEqualityFn } from 'zustand/traditional';
 import { StateCreator } from 'zustand/vanilla';
 
 import { DEFAULT_AGENT_CONFIG, LOBE_VIDOL_DEFAULT_AGENT_ID } from '@/constants/agent';
-import { Agent } from '@/types/agent';
+import { Agent, AgentMeta } from '@/types/agent';
 
 import { initialState } from './initialState';
 
@@ -61,6 +61,10 @@ export interface AgentStore {
    * 更新角色配置
    */
   updateAgentConfig: (agent: DeepPartial<Agent>) => void;
+  /**
+   *  更新角色元数据
+   */
+  updateAgentMeta: (meta: DeepPartial<AgentMeta>) => void;
 }
 
 const createAgentStore: StateCreator<AgentStore, [['zustand/devtools', never]]> = (set, get) => ({
@@ -114,6 +118,10 @@ const createAgentStore: StateCreator<AgentStore, [['zustand/devtools', never]]> 
     });
     set({ localAgentList: agents });
   },
+  updateAgentMeta: (meta) => {
+    const { updateAgentConfig } = get();
+    updateAgentConfig({ meta });
+  },
   subscribe: (agent) => {
     const { localAgentList } = get();
 
@@ -153,4 +161,4 @@ export const useAgentStore = createWithEqualityFn<AgentStore>()(
   shallow,
 );
 
-export { agentListSelectors } from './selectors/agent';
+export { agentSelectors } from './selectors/agent';

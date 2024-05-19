@@ -15,6 +15,7 @@ import { INPUT_WIDTH_L } from '@/constants/token';
 import { useAgentStore } from '@/store/agent';
 
 import { useSyncSettings } from '../useSyncSetting';
+import AvatarWithUpload from './AvatarWithUpload';
 
 interface InfoProps {
   className?: string;
@@ -61,9 +62,13 @@ const Info = (props: InfoProps) => {
       <div className={classNames(className, styles.container)} style={style}>
         <div className={styles.form}>
           <div className={styles.config}>
+            <FormItem desc={'自定义头像'} label={'头像'} name={'avatar'}>
+              <AvatarWithUpload />
+            </FormItem>
             <FormItem
               label={'名称'}
               desc={'角色名称，与角色聊天时的称呼'}
+              divider
               name={['meta', 'name']}
               required
               rules={[{ message: '请输入角色名称', required: true }]}

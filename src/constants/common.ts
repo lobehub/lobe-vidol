@@ -15,3 +15,6 @@ export const MAX_README_LENGTH = 800;
 
 export const DEFAULT_USER_AVATAR_URL =
   'https://registry.npmmirror.com/@lobehub/assets-logo/1.2.0/files/assets/logo-3d.webp';
+
+export const DEFAULT_AGENT_AVATAR_URL =
+  'https://registry.npmmirror.com/@lobehub/assets-logo/1.2.0/files/assets/logo-3d.webp';

@@ -8,7 +8,7 @@ import Author from '@/components/Author';
 import AgentCard from '@/components/agent/AgentCard';
 import SystemRole from '@/components/agent/SystemRole';
 import { SIDEBAR_MAX_WIDTH, SIDEBAR_WIDTH } from '@/constants/token';
-import { agentListSelectors, useAgentStore } from '@/store/agent';
+import { agentSelectors, useAgentStore } from '@/store/agent';
 import { useConfigStore } from '@/store/config';
 import { marketStoreSelectors, useMarketStore } from '@/store/market';
 import { useSessionStore } from '@/store/session';
@@ -41,7 +41,7 @@ const Header = () => {
   const [subscribe, unsubscribe, subscribed] = useAgentStore((s) => [
     s.subscribe,
     s.unsubscribe,
-    agentListSelectors.subscribed(s),
+    agentSelectors.subscribed(s),
   ]);
 
   const createSession = useSessionStore((s) => s.createSession);

@@ -7,7 +7,6 @@ import { Monitor, Settings2, User2Icon } from 'lucide-react';
 import React from 'react';
 
 import { MAX_NAME_LENGTH } from '@/constants/common';
-import AvatarWithUpload from '@/features/AvatarWithUpload';
 import ThemeSwatchesPrimary from '@/features/Settings/features/ThemeSwatchesPrimary';
 import { useSyncSettings } from '@/features/Settings/useSyncSettings';
 import { useAgentStore } from '@/store/agent';
@@ -15,6 +14,8 @@ import { useConfigStore } from '@/store/config';
 import { useSessionStore } from '@/store/session';
 import { useThemeStore } from '@/store/theme';
 import { BackgroundEffect } from '@/types/config';
+
+import AvatarWithUpload from './features/AvatarWithUpload';
 
 interface CommonConfigProps {
   className?: string;

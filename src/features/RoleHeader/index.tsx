@@ -5,7 +5,7 @@ import { Flexbox } from 'react-layout-kit';
 
 import AgentMeta from '@/components/agent/AgentMeta';
 import Chat from '@/features/Actions/Chat';
-import { agentListSelectors, useAgentStore } from '@/store/agent';
+import { agentSelectors, useAgentStore } from '@/store/agent';
 
 import { useStyles } from './style';
 
@@ -15,7 +15,7 @@ interface Props {
 export default (props: Props) => {
   const { className } = props;
   const { styles } = useStyles();
-  const [currentAgent] = useAgentStore((s) => [agentListSelectors.currentAgentItem(s)]);
+  const [currentAgent] = useAgentStore((s) => [agentSelectors.currentAgentItem(s)]);
 
   return (
     <Flexbox

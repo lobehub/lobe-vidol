@@ -2,7 +2,7 @@ import { createStyles } from 'antd-style';
 import { memo } from 'react';
 import LazyLoad from 'react-lazy-load';
 
-import { agentListSelectors, useAgentStore } from '@/store/agent';
+import { agentSelectors, useAgentStore } from '@/store/agent';
 
 import SessionItem from './Item';
 
@@ -18,9 +18,9 @@ interface SessionListProps {
 
 const SessionList = memo<SessionListProps>(({ filter }) => {
   const [filterAgentListIds, activateAgent, agentListIds] = useAgentStore((s) => [
-    agentListSelectors.filterAgentListIds(s, filter),
+    agentSelectors.filterAgentListIds(s, filter),
     s.activateAgent,
-    agentListSelectors.agentListIds(s),
+    agentSelectors.agentListIds(s),
   ]);
   const { styles } = useStyles();
 

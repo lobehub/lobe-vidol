@@ -9,7 +9,7 @@ import SystemRole from '@/components/agent/SystemRole';
 import { SIDEBAR_MAX_WIDTH, SIDEBAR_WIDTH } from '@/constants/token';
 import Chat from '@/features/Actions/Chat';
 import UnSubscribeButton from '@/features/Actions/UnSubscribeButton';
-import { agentListSelectors, useAgentStore } from '@/store/agent';
+import { agentSelectors, useAgentStore } from '@/store/agent';
 
 const useStyles = createStyles(({ css, token }) => ({
   content: css`
@@ -26,11 +26,11 @@ const Header = () => {
   const { styles } = useStyles();
   const [tempId, setTempId] = useState<string>('');
   const [showAgentSidebar, activateAgent, deactivateAgent] = useAgentStore((s) => [
-    agentListSelectors.showSideBar(s),
+    agentSelectors.showSideBar(s),
     s.activateAgent,
     s.deactivateAgent,
   ]);
-  const currentAgent = useAgentStore((s) => agentListSelectors.currentAgentItem(s));
+  const currentAgent = useAgentStore((s) => agentSelectors.currentAgentItem(s));
 
   return (
     <DraggablePanel

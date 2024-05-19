@@ -1,5 +1,5 @@
 import { LOBE_VIDOL_DEFAULT_AGENT_ID } from '@/constants/agent';
-import { Agent } from '@/types/agent';
+import { Agent, AgentMeta } from '@/types/agent';
 
 import { AgentStore } from '../index';
 
@@ -13,6 +13,13 @@ const currentAgentItem = (s: AgentStore): Agent | undefined => {
   if (!currentAgent) return undefined;
 
   return currentAgent;
+};
+
+const currentAgentMeta = (s: AgentStore): AgentMeta | undefined => {
+  const currentAgent = currentAgentItem(s);
+  if (!currentAgent) return undefined;
+
+  return currentAgent.meta;
 };
 
 const agentListIds = (s: AgentStore): string[] => {
@@ -58,8 +65,9 @@ const subscribed = (s: AgentStore) => (agentId: string) => {
   return index !== -1;
 };
 
-export const agentListSelectors = {
+export const agentSelectors = {
   currentAgentItem,
+  currentAgentMeta,
   filterAgentListIds,
   agentListIds,
   isDefaultAgent,
