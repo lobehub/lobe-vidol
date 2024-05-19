@@ -1,10 +1,20 @@
 import { TTS } from '@/types/tts';
 
+export const DEFAULT_TTS_PITCH = 1;
+export const DEFAULT_TTS_SPEED = 1;
+
+export const MAX_TTS_PITCH = 2;
+export const MIN_TTS_PITCH = 0;
+export const MAX_TTS_SPEED = 3;
+export const MIN_TTS_SPEED = 0;
+export const TTS_PITCH_STEP = 0.01;
+export const TTS_SPEED_STEP = 0.01;
+
 export const DEFAULT_TTS_CONFIG: TTS = {
   engine: 'edge',
   locale: 'zh-CN',
-  pitch: 1,
-  speed: 1,
+  pitch: DEFAULT_TTS_PITCH,
+  speed: DEFAULT_TTS_SPEED,
   voice: 'zh-CN-XiaoxiaoNeural',
 };
 export const supportedLocales = [

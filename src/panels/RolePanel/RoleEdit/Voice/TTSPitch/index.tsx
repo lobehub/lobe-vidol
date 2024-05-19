@@ -1,6 +1,8 @@
-import { Slider } from 'antd';
+import { InputNumber, Slider } from 'antd';
 import React, { CSSProperties, memo } from 'react';
+import { Flexbox } from 'react-layout-kit';
 
+import { MAX_TTS_PITCH, MIN_TTS_PITCH, TTS_PITCH_STEP } from '@/constants/tts';
 import { agentSelectors, useAgentStore } from '@/store/agent';
 
 interface Props {
@@ -16,16 +18,27 @@ export default memo<Props>((props) => {
   ]);
 
   return (
-    <Slider
-      className={className}
-      style={style}
-      value={tts?.pitch}
-      max={2}
-      min={0}
-      step={0.01}
-      onChange={(value) => {
-        updateAgentTTS({ pitch: value });
-      }}
-    />
+    <Flexbox className={className} style={style} flex={1} horizontal gap={8}>
+      <Slider
+        value={tts?.pitch}
+        max={MAX_TTS_PITCH}
+        style={{ flex: 1 }}
+        min={MIN_TTS_PITCH}
+        step={TTS_PITCH_STEP}
+        onChange={(value) => {
+          updateAgentTTS({ pitch: value });
+        }}
+      />
+      <InputNumber
+        min={MIN_TTS_PITCH}
+        max={MAX_TTS_PITCH}
+        step={TTS_PITCH_STEP}
+        style={{ width: 80 }}
+        value={tts?.pitch}
+        onChange={(value) => {
+          updateAgentTTS({ pitch: value === null ? undefined : value });
+        }}
+      />
+    </Flexbox>
   );
 });

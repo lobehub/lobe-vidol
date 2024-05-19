@@ -1,6 +1,8 @@
-import { Slider } from 'antd';
+import { InputNumber, Slider } from 'antd';
 import React, { CSSProperties, memo } from 'react';
+import { Flexbox } from 'react-layout-kit';
 
+import { MAX_TTS_SPEED, MIN_TTS_SPEED, TTS_SPEED_STEP } from '@/constants/tts';
 import { agentSelectors, useAgentStore } from '@/store/agent';
 
 interface Props {
@@ -16,16 +18,27 @@ export default memo<Props>((props) => {
   ]);
 
   return (
-    <Slider
-      className={className}
-      style={style}
-      value={tts?.speed}
-      max={3}
-      min={0}
-      step={0.01}
-      onChange={(value) => {
-        updateAgentTTS({ speed: value });
-      }}
-    />
+    <Flexbox className={className} style={style} flex={1} horizontal gap={8}>
+      <Slider
+        value={tts?.speed}
+        style={{ flex: 1 }}
+        min={MIN_TTS_SPEED}
+        max={MAX_TTS_SPEED}
+        step={TTS_SPEED_STEP}
+        onChange={(value) => {
+          updateAgentTTS({ speed: value });
+        }}
+      />
+      <InputNumber
+        min={MIN_TTS_SPEED}
+        max={MAX_TTS_SPEED}
+        step={TTS_SPEED_STEP}
+        style={{ width: 80 }}
+        value={tts?.speed}
+        onChange={(value) => {
+          updateAgentTTS({ speed: value === null ? undefined : value });
+        }}
+      />
+    </Flexbox>
   );
 });
