@@ -77,10 +77,11 @@ const Info = (props: InfoProps) => {
             </FormItem>
           </div>
           <div className={styles.more}>
-            <div className={styles.cover}>
-              <div className={styles.name}>角色封面</div>
-              <div className={styles.description}>用于发现页展示角色，点击图片自定义上传</div>
-            </div>
+            <FormItem
+              label={'角色说明'}
+              name={'readme'}
+              desc="角色的说明文件，用于发现页展示角色的详细说明"
+            />
             <CoverWithUpload />
           </div>
         </div>

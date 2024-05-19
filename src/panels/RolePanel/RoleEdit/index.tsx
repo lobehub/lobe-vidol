@@ -4,8 +4,8 @@ import { TabsNav } from '@lobehub/ui';
 import classNames from 'classnames';
 import React, { useState } from 'react';
 
-import Touch from '../Touch';
 import Info from './Info';
+import Model from './Model';
 import Role from './Role';
 import Voice from './Voice';
 import { useStyles } from './style';
@@ -52,7 +52,7 @@ const RolePanel = (props: RolePanelProps) => {
         {tab === 'info' ? <Info /> : null}
         {tab === 'role' ? <Role /> : null}
         {tab === 'voice' ? <Voice /> : null}
-        {tab === 'model' ? <Touch /> : null}
+        {tab === 'model' ? <Model /> : null}
       </div>
     </div>
   );

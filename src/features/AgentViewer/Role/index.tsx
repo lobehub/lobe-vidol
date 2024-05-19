@@ -34,42 +34,42 @@ function AgentViewer(props: Props) {
       if (canvas) {
         viewer.setup(canvas);
         loadVrm(currentAgentModel);
+
+        const dragoverHandler = (event: DragEvent) => {
+          event.preventDefault();
+        };
+
+        const dropHandler = (event: DragEvent) => {
+          event.preventDefault();
+
+          const files = event.dataTransfer?.files;
+          if (!files) {
+            return;
+          }
+
+          const file = files[0];
+          if (!file) {
+            return;
+          }
+
+          const file_type = file.name.split('.').pop();
+          if (file_type === 'vrm') {
+            const blob = new Blob([file], { type: 'application/octet-stream' });
+            const modelKey = `model:${currentAgentId}`;
+            localforage.setItem(modelKey, blob).then(() => {
+              updateAgentConfig({ meta: { model: modelKey } });
+              loadVrm(modelKey);
+            });
+          }
+        };
+
+        canvas.addEventListener('dragover', dragoverHandler);
+        canvas.addEventListener('drop', dropHandler);
+        return () => {
+          canvas.removeEventListener('dragover', dragoverHandler);
+          canvas.removeEventListener('drop', dropHandler);
+        };
       }
-
-      const dragoverHandler = (event: DragEvent) => {
-        event.preventDefault();
-      };
-
-      const dropHandler = (event: DragEvent) => {
-        event.preventDefault();
-
-        const files = event.dataTransfer?.files;
-        if (!files) {
-          return;
-        }
-
-        const file = files[0];
-        if (!file) {
-          return;
-        }
-
-        const file_type = file.name.split('.').pop();
-        if (file_type === 'vrm') {
-          const blob = new Blob([file], { type: 'application/octet-stream' });
-          const modelKey = `model:${currentAgentId}`;
-          localforage.setItem(modelKey, blob).then(() => {
-            updateAgentConfig({ meta: { model: modelKey } });
-            loadVrm(modelKey);
-          });
-        }
-      };
-
-      canvas.addEventListener('dragover', dragoverHandler);
-      canvas.addEventListener('drop', dropHandler);
-      return () => {
-        canvas.removeEventListener('dragover', dragoverHandler);
-        canvas.removeEventListener('drop', dropHandler);
-      };
     },
     [viewer, currentAgentId, currentAgentModel],
   );
