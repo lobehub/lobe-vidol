@@ -1,6 +1,5 @@
 import { nanoid } from 'ai';
 import { produce } from 'immer';
-import { merge } from 'lodash-es';
 import { DeepPartial } from 'utility-types';
 import { devtools, persist, subscribeWithSelector } from 'zustand/middleware';
 import { shallow } from 'zustand/shallow';
@@ -9,6 +8,8 @@ import { StateCreator } from 'zustand/vanilla';
 
 import { DEFAULT_AGENT_CONFIG, LOBE_VIDOL_DEFAULT_AGENT_ID } from '@/constants/agent';
 import { Agent, AgentMeta } from '@/types/agent';
+import { TTS } from '@/types/tts';
+import { mergeWithUndefined } from '@/utils/common';
 
 import { initialState } from './initialState';
 
@@ -66,6 +67,10 @@ export interface AgentStore {
    *  更新角色元数据
    */
   updateAgentMeta: (meta: DeepPartial<AgentMeta>) => void;
+  /**
+   * 更新角色 TTS
+   */
+  updateAgentTTS: (tts: DeepPartial<TTS>) => void;
 }
 
 const createAgentStore: StateCreator<AgentStore, [['zustand/devtools', never]]> = (set, get) => ({
@@ -109,7 +114,7 @@ const createAgentStore: StateCreator<AgentStore, [['zustand/devtools', never]]> 
     const { localAgentList, currentIdentifier, defaultAgent } = get();
     if (currentIdentifier === LOBE_VIDOL_DEFAULT_AGENT_ID) {
       const mergeAgent = produce(defaultAgent, (draft) => {
-        merge(draft, agent);
+        mergeWithUndefined(draft, agent);
       });
       set({ defaultAgent: mergeAgent });
       return;
@@ -118,13 +123,17 @@ const createAgentStore: StateCreator<AgentStore, [['zustand/devtools', never]]> 
     const agents = produce(localAgentList, (draft) => {
       const index = draft.findIndex((localAgent) => localAgent.agentId === currentIdentifier);
       if (index === -1) return;
-      draft[index] = merge(draft[index], agent);
+      draft[index] = mergeWithUndefined(draft[index], agent);
     });
     set({ localAgentList: agents });
   },
   updateAgentMeta: (meta) => {
     const { updateAgentConfig } = get();
     updateAgentConfig({ meta });
+  },
+  updateAgentTTS: (tts) => {
+    const { updateAgentConfig } = get();
+    updateAgentConfig({ tts });
   },
   subscribe: (agent) => {
     const { localAgentList } = get();
