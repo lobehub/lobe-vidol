@@ -14,3 +14,7 @@ export const CHAT_INPUT_WIDTH = '48rem';
 export const LIST_GRID_WIDTH = 108;
 export const LIST_GRID_GAP = 4;
 export const LIST_GRID_HEIGHT = 108;
+
+export const INPUT_WIDTH_S = 240;
+export const INPUT_WIDTH_M = 320;
+export const INPUT_WIDTH_L = 480;

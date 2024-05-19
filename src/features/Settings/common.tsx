@@ -6,6 +6,7 @@ import { isEqual } from 'lodash-es';
 import { Monitor, Settings2, User2Icon } from 'lucide-react';
 import React from 'react';
 
+import { MAX_NAME_LENGTH } from '@/constants/common';
 import AvatarWithUpload from '@/features/AvatarWithUpload';
 import ThemeSwatchesPrimary from '@/features/Settings/features/ThemeSwatchesPrimary';
 import { useSyncSettings } from '@/features/Settings/useSyncSettings';
@@ -97,7 +98,7 @@ const CommonConfig = (props: CommonConfigProps) => {
             <Input
               defaultValue={config.nickName}
               placeholder={'请输入昵称'}
-              maxLength={20}
+              maxLength={MAX_NAME_LENGTH}
               showCount
               onChange={(e) => {
                 setConfig({ nickName: e.target.value });
