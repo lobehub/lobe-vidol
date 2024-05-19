@@ -1,5 +1,6 @@
 import { nanoid } from 'ai';
 
+import { DEFAULT_AGENT_AVATAR_URL } from '@/constants/common';
 import { DEFAULT_TOUCH_CONFIG } from '@/constants/touch';
 import { DEFAULT_TTS_CONFIG } from '@/constants/tts';
 import { Agent, CategoryEnum } from '@/types/agent';
@@ -18,7 +19,6 @@ export const DEFAULT_VIDOL_AGENT: Agent = {
     avatar: 'https://registry.npmmirror.com/@v-idol/vidol-agent-sample-a/1.0.0/files/avatar.jpg',
     cover: 'https://registry.npmmirror.com/@v-idol/vidol-agent-sample-a/1.0.0/files/cover.jpg',
     description: `${OFFICIAL_ROLE_NAME} 是 Vidol 的默认角色，是你的专属私人助理`,
-    homepage: 'https://hub.vroid.com/characters/2843975675147313744/models/5644550979324015604',
     model: 'https://registry.npmmirror.com/@v-idol/vidol-agent-sample-a/1.0.0/files/model.vrm',
     name: OFFICIAL_ROLE_NAME,
     category: CategoryEnum.VROID,
@@ -37,7 +37,7 @@ export const DEFAULT_AGENT_CONFIG = {
   meta: {
     name: '自定义角色',
     description: '这是一个自定义角色',
-    avatar: '🤖',
+    avatar: DEFAULT_AGENT_AVATAR_URL,
     readme: '',
   },
   touch: DEFAULT_TOUCH_CONFIG,

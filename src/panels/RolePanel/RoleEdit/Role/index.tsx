@@ -1,15 +1,15 @@
-import { Avatar } from '@lobehub/ui';
-import { Form } from 'antd';
+import { Form, FormItem } from '@lobehub/ui';
 import { createStyles } from 'antd-style';
 import classNames from 'classnames';
-import { debounce, isEqual } from 'lodash-es';
+import { isEqual } from 'lodash-es';
 import React from 'react';
 
-import HolographicCard from '@/components/HolographicCard';
-import { useSyncSettings } from '@/panels/RolePanel/RoleEdit/useSyncSetting';
+import { INPUT_WIDTH_L, INPUT_WIDTH_XL } from '@/constants/token';
+import Greeting from '@/panels/RolePanel/RoleEdit/Role/Greeting';
+import SystemRole from '@/panels/RolePanel/RoleEdit/Role/SystemRole';
 import { agentSelectors, useAgentStore } from '@/store/agent';
 
-const FormItem = Form.Item;
+import { useSyncSettings } from '../useSyncSetting';
 
 interface InfoProps {
   className?: string;
@@ -27,14 +27,9 @@ const useStyles = createStyles(({ css, token }) => ({
     display: flex;
     flex-direction: column;
   `,
-  footer: css`
-    margin-top: 20px;
-  `,
+
   form: css`
     display: flex;
-  `,
-  more: css`
-    flex: 2;
   `,
 }));
 
@@ -43,26 +38,24 @@ const Info = (props: InfoProps) => {
   const { styles } = useStyles();
   const [form] = Form.useForm();
   const currentAgent = useAgentStore((s) => agentSelectors.currentAgentItem(s), isEqual);
-  const updateAgentConfig = useAgentStore((s) => s.updateAgentConfig);
 
   useSyncSettings(form);
 
   return (
-    <Form
-      form={form}
-      initialValues={currentAgent}
-      onValuesChange={debounce(updateAgentConfig, 100)}
-      layout="horizontal"
-      requiredMark={false}
-    >
+    <Form form={form} initialValues={currentAgent} layout="horizontal">
       <div className={classNames(className, styles.container)} style={style}>
         <div className={styles.form}>
           <div className={styles.config}>
-            <FormItem label={'头像'} name={['meta', 'avatar']}>
-              <Avatar src={currentAgent?.meta.avatar} size={96} />
+            <FormItem label={'招呼'} desc={'与角色初次聊天时的招呼用语'} name="greeting">
+              <Greeting style={{ width: INPUT_WIDTH_L }} />
             </FormItem>
-            <FormItem label={'立绘'} name={['meta', 'cover']}>
-              <HolographicCard img={currentAgent?.meta.cover} />
+            <FormItem
+              name="systemRole"
+              divider
+              label="系统角色设定"
+              desc="角色的背景设定，在与角色聊天时会发送给模型"
+            >
+              <SystemRole style={{ width: INPUT_WIDTH_XL }} />
             </FormItem>
           </div>
         </div>

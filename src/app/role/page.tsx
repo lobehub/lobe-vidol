@@ -4,7 +4,6 @@ import React, { memo } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
 import TopBanner from '@/components/TopBanner';
-import AgentViewer from '@/features/AgentViewer/Role';
 import RoleEdit from '@/panels/RolePanel/RoleEdit';
 
 import SideBar from './SideBar';
@@ -21,9 +20,9 @@ const Role = () => {
           <Flexbox className={styles.edit} flex={2}>
             <RoleEdit />
           </Flexbox>
-          <Flexbox className={styles.model} flex={1}>
-            <AgentViewer height={720} />
-          </Flexbox>
+          {/*<Flexbox className={styles.model} flex={1}>*/}
+          {/*  <AgentViewer height={720} />*/}
+          {/*</Flexbox>*/}
         </Flexbox>
       </Flexbox>
       {/*<RoleInfo />*/}

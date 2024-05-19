@@ -21,7 +21,7 @@ export interface AgentMeta {
    */
   avatar: string;
   /**
-   * 模型分类
+   * 角色分类
    */
   category?: CategoryEnum;
   /**
@@ -32,10 +32,6 @@ export interface AgentMeta {
    * 角色描述
    */
   description: string;
-  /**
-   * 主页地址，一般为 Vroid Hub 的地址
-   */
-  homepage?: string;
   /**
    * 模型文件路径
    */

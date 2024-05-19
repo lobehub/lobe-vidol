@@ -1,5 +1,5 @@
 import { Avatar } from '@lobehub/ui';
-import { Space, Tag } from 'antd';
+import { Space } from 'antd';
 import classNames from 'classnames';
 import React from 'react';
 import { Flexbox } from 'react-layout-kit';
@@ -22,7 +22,7 @@ export default (props: Props) => {
 
   const { actions = [], agent, extra, footer, className, style } = props;
   const { meta } = agent || {};
-  const { avatar, name, description, homepage } = meta || {};
+  const { avatar, name, description } = meta || {};
 
   return (
     <Flexbox
@@ -38,14 +38,7 @@ export default (props: Props) => {
         className={styles.avatar}
         size={100}
       />
-      <div className={styles.title}>
-        {name}
-        <Tag color="#108ee9" style={{ marginLeft: 8 }}>
-          <a href={homepage} rel="noreferrer" target="_blank">
-            主页
-          </a>
-        </Tag>
-      </div>
+      <div className={styles.title}>{name}</div>
       <div className={styles.desc}>{description}</div>
       {actions && actions.length !== 0 ? (
         <div className={styles.actions}>

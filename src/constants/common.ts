@@ -13,6 +13,16 @@ export const MAX_DESCRIPTION_LENGTH = 100;
 export const MAX_GREETING_LENGTH = 200;
 export const MAX_README_LENGTH = 800;
 
+export const MAX_SYSTEM_ROLE_LENGTH = 9999;
+
+export const AVATAR_COMPRESS_SIZE = 256;
+
+export const COVER_IMAGE_WIDTH = 300;
+export const COVER_IMAGE_HEIGHT = 400;
+
+export const COVER_COMPRESS_WIDTH = COVER_IMAGE_WIDTH * 2;
+export const COVER_COMPRESS_HEIGHT = COVER_IMAGE_HEIGHT * 2;
+
 export const DEFAULT_USER_AVATAR_URL =
   'https://registry.npmmirror.com/@lobehub/assets-logo/1.2.0/files/assets/logo-3d.webp';
 

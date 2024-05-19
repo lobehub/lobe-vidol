@@ -1,7 +1,7 @@
 import { Upload } from 'antd';
 import { createStyles } from 'antd-style';
 import NextImage from 'next/image';
-import { CSSProperties, memo, useCallback } from 'react';
+import React, { CSSProperties, memo, useCallback } from 'react';
 
 import { DEFAULT_AGENT_AVATAR_URL } from '@/constants/common';
 import { agentSelectors, useAgentStore } from '@/store/agent';
