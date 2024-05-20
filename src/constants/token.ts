@@ -19,5 +19,3 @@ export const INPUT_WIDTH_S = 240;
 export const INPUT_WIDTH_M = 320;
 export const INPUT_WIDTH_L = 480;
 export const INPUT_WIDTH_XL = 640;
-
-export const ROLE_VIEWER_HEIGHT = 640;

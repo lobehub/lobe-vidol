@@ -1,42 +1,48 @@
 import classNames from 'classnames';
-import { isEqual } from 'lodash-es';
-import React, { memo, useCallback, useRef } from 'react';
+import React, { memo, useCallback, useEffect, useRef } from 'react';
 
 import PageLoading from '@/components/PageLoading';
 import { useLoadVrm } from '@/hooks/useLoadVrm';
-import { sessionSelectors, useSessionStore } from '@/store/session';
 import { useViewerStore } from '@/store/viewer';
 
-import ToolBar from '../components/ToolBar';
+import ToolBar from './ToolBar';
 import { useStyles } from './style';
 
 interface Props {
   className?: string;
   height?: number | string;
+  modelUrl?: string;
   style?: React.CSSProperties;
+  width?: number | string;
 }
 
 function AgentViewer(props: Props) {
-  const { className, style, height } = props;
+  const { className, style, height, modelUrl, width } = props;
   const { styles } = useStyles();
   const ref = useRef<HTMLDivElement>(null);
   const viewer = useViewerStore((s) => s.viewer);
-  const [currentAgent] = useSessionStore((s) => [sessionSelectors.currentAgent(s), isEqual]);
 
   const { loading, loadVrm } = useLoadVrm(viewer);
+
+  useEffect(() => {
+    loadVrm(modelUrl);
+  }, [modelUrl]);
 
   const canvasRef = useCallback(
     (canvas: HTMLCanvasElement) => {
       if (canvas) {
         viewer.setup(canvas);
-        loadVrm(currentAgent?.meta.model);
       }
     },
-    [viewer, currentAgent?.meta.model],
+    [viewer],
   );
 
   return (
-    <div ref={ref} className={classNames(styles.viewer, className)} style={{ height, ...style }}>
+    <div
+      ref={ref}
+      className={classNames(styles.viewer, className)}
+      style={{ height, width, ...style }}
+    >
       <ToolBar className={styles.toolbar} viewer={viewer} />
       {loading ? <PageLoading title={'模型加载中，请稍后...'} className={styles.loading} /> : null}
       <canvas ref={canvasRef} className={styles.canvas}></canvas>

@@ -3,7 +3,7 @@ import { createStyles } from 'antd-style';
 import classNames from 'classnames';
 import React from 'react';
 
-import AgentViewer from '@/features/AgentViewer/Role';
+import ViewerWithUpload from '@/panels/RolePanel/RoleEdit/Model/ViewerWithUpload';
 
 import Touch from './Touch';
 
@@ -45,7 +45,7 @@ const Model = (props: ModelProps) => {
         </div>
         <div className={styles.right}>
           <FormItem label={'模型预览'} name={'model'} desc="模型预览，可拖动模型文件以替换" />
-          <AgentViewer />
+          <ViewerWithUpload />
         </div>
       </div>
     </Form>
