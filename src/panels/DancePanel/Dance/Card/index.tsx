@@ -4,7 +4,7 @@ import { createStyles } from 'antd-style';
 import React, { memo, useState } from 'react';
 
 import DanceInfo from '@/components/DanceInfo';
-import { SIDEBAR_MAX_WIDTH, SIDEBAR_WIDTH } from '@/constants/common';
+import { SIDEBAR_MAX_WIDTH, SIDEBAR_WIDTH } from '@/constants/token';
 import { danceListSelectors, useDanceStore } from '@/store/dance';
 
 const useStyles = createStyles(({ css, token }) => ({

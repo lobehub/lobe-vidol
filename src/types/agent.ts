@@ -21,25 +21,21 @@ export interface AgentMeta {
    */
   avatar: string;
   /**
-   * 模型分类
+   * 角色分类
    */
   category?: CategoryEnum;
   /**
    * 封面图片路径
    */
-  cover: string;
+  cover?: string;
   /**
    * 角色描述
    */
   description: string;
   /**
-   * 主页地址，一般为 Vroid Hub 的地址
-   */
-  homepage: string;
-  /**
    * 模型文件路径
    */
-  model: string;
+  model?: string;
   /**
    * 角色名
    */
@@ -47,22 +43,22 @@ export interface AgentMeta {
   /**
    * 说明文件
    */
-  readme: string;
+  readme?: string;
 }
 
 export interface Agent {
   /**
-   * 角色 ID，为本地文件目录
+   * 角色 ID
    */
   agentId: string;
   /**
    * 作者名
    */
-  author: string;
+  author?: string;
   /**
    * 创建时间
    */
-  createAt: string;
+  createAt?: string;
   /**
    * 问候语，角色在每次聊天开始时说的第一句话
    */
@@ -70,7 +66,7 @@ export interface Agent {
   /**
    * 作者主页
    */
-  homepage: string;
+  homepage?: string;
   /**
    * 角色元数据
    */
@@ -82,9 +78,9 @@ export interface Agent {
   /**
    * 触摸配置
    */
-  touch: TouchActionConfig;
+  touch?: TouchActionConfig;
   /**
    * 角色 tts 配置文件
    */
-  tts: TTS;
+  tts?: TTS;
 }

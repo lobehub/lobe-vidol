@@ -5,7 +5,7 @@ import { isEqual } from 'lodash-es';
 import { PlayIcon } from 'lucide-react';
 
 import { speakCharacter } from '@/features/messages/speakCharacter';
-import { sessionSelectors, useSessionStore } from '@/store/session';
+import { agentSelectors, useAgentStore } from '@/store/agent';
 import { useTouchStore } from '@/store/touch';
 import { useViewerStore } from '@/store/viewer';
 
@@ -27,7 +27,7 @@ const useStyles = createStyles(({ css, token }) => ({
 const AreaList = () => {
   const { styles } = useStyles();
   const { actionConfig, currentTouchArea } = useTouchStore();
-  const currentAgent = useSessionStore((s) => sessionSelectors.currentAgent(s), isEqual);
+  const currentAgentTTS = useAgentStore((s) => agentSelectors.currentAgentTTS(s), isEqual);
 
   const { viewer } = useViewerStore();
 
@@ -49,7 +49,7 @@ const AreaList = () => {
                   {
                     emotion: item.emotion,
                     tts: {
-                      ...currentAgent?.tts,
+                      ...currentAgentTTS,
                       message: item.text,
                     },
                   },

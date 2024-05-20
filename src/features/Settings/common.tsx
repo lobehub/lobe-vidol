@@ -1,23 +1,21 @@
-import { CheckCard } from '@ant-design/pro-card';
-import {
-  Form,
-  FormGroup,
-  FormItem,
-  PrimaryColors,
-  Swatches,
-  findCustomThemeName,
-} from '@lobehub/ui';
-import { App, Button, Segmented } from 'antd';
-import { ThemeMode, createStyles, useTheme } from 'antd-style';
+import { Form, FormGroup, FormItem } from '@lobehub/ui';
+import { App, Button, Input, Segmented } from 'antd';
+import { ThemeMode, createStyles } from 'antd-style';
 import classNames from 'classnames';
-import { Monitor, Settings2 } from 'lucide-react';
+import { isEqual } from 'lodash-es';
+import { Monitor, Settings2, User2Icon } from 'lucide-react';
 import React from 'react';
 
+import { MAX_NAME_LENGTH } from '@/constants/common';
+import ThemeSwatchesPrimary from '@/features/Settings/features/ThemeSwatchesPrimary';
+import { useSyncSettings } from '@/features/Settings/useSyncSettings';
 import { useAgentStore } from '@/store/agent';
 import { useConfigStore } from '@/store/config';
 import { useSessionStore } from '@/store/session';
 import { useThemeStore } from '@/store/theme';
 import { BackgroundEffect } from '@/types/config';
+
+import AvatarWithUpload from './features/AvatarWithUpload';
 
 interface CommonConfigProps {
   className?: string;
@@ -39,17 +37,16 @@ const useStyles = createStyles(({ css }) => ({
 const CommonConfig = (props: CommonConfigProps) => {
   const { style, className } = props;
   const { styles } = useStyles();
-  const [primaryColor, backgroundEffect] = useConfigStore((s) => [
-    s.config.primaryColor,
-    s.config.backgroundEffect,
-  ]);
+  const [config, setConfig] = useConfigStore((s) => [s.config, s.setConfig], isEqual);
   const clearAgentStorage = useAgentStore((s) => s.clearAgentStorage);
   const [themeMode, setThemeMode] = useThemeStore((s) => [s.themeMode, s.setThemeMode]);
-  const setConfig = useConfigStore((s) => s.setConfig);
-  const theme = useTheme();
   const clearSessions = useSessionStore((s) => s.clearSessions);
   const resetConfig = useConfigStore((s) => s.resetConfig);
   const { message, modal } = App.useApp();
+
+  const [form] = Form.useForm();
+
+  useSyncSettings(form);
 
   const handleClear = () => {
     modal.confirm({
@@ -88,43 +85,53 @@ const CommonConfig = (props: CommonConfigProps) => {
 
   return (
     <div className={classNames(styles.config, className)} style={style}>
-      <Form style={{ display: 'flex', flexGrow: 1 }}>
-        <FormGroup icon={Settings2} title={'主题设置'}>
-          <FormItem desc={'主题色'} divider label={'自定义主题色'} name={'primaryColor'}>
-            <Swatches
-              activeColor={primaryColor}
-              colors={[
-                theme.red,
-                theme.orange,
-                theme.gold,
-                theme.yellow,
-                theme.lime,
-                theme.green,
-                theme.cyan,
-                theme.blue,
-                theme.geekblue,
-                theme.purple,
-                theme.magenta,
-                theme.volcano,
-              ]}
-              onSelect={(color: any) => {
-                const name = findCustomThemeName('primary', color) as PrimaryColors;
-                setConfig({ primaryColor: name || '' });
+      <Form
+        style={{ display: 'flex', flexGrow: 1 }}
+        initialValues={config}
+        form={form}
+        onValuesChange={setConfig}
+      >
+        <FormGroup icon={User2Icon} title={'用户设置'}>
+          <FormItem desc={'自定义头像'} divider label={'头像'} name={'avatar'}>
+            <AvatarWithUpload />
+          </FormItem>
+          <FormItem desc={'自定义昵称'} divider label={'昵称'} name={'nickName'}>
+            <Input
+              defaultValue={config.nickName}
+              placeholder={'请输入昵称'}
+              maxLength={MAX_NAME_LENGTH}
+              showCount
+              onChange={(e) => {
+                setConfig({ nickName: e.target.value });
               }}
             />
           </FormItem>
+        </FormGroup>
+        <FormGroup icon={Settings2} title={'主题设置'}>
+          <FormItem desc={'主题色'} divider label={'自定义主题色'} name={'primaryColor'}>
+            <ThemeSwatchesPrimary />
+          </FormItem>
           <FormItem desc={'自定义主题模式'} divider label={'主题模式'} name={'themeMode'}>
-            <CheckCard.Group
+            <Segmented
               defaultValue={themeMode}
-              onChange={(value) => {
+              onChange={(value: ThemeMode) => {
                 setThemeMode(value as ThemeMode);
               }}
-              size="small"
-            >
-              <CheckCard className={styles.effect} title="🔆 亮色模式" value="light" />
-              <CheckCard className={styles.effect} title="🌙 暗色模式" value="dark" />
-              <CheckCard className={styles.effect} title="💻 跟随系统" value="auto" />
-            </CheckCard.Group>
+              options={[
+                {
+                  label: '🔆 亮色模式',
+                  value: 'light',
+                },
+                {
+                  label: '🌙 暗色模式',
+                  value: 'dark',
+                },
+                {
+                  label: '💻 跟随系统',
+                  value: 'auto',
+                },
+              ]}
+            />
           </FormItem>
           <FormItem
             desc={'自定义背景效果，可关闭以提升性能'}
@@ -133,7 +140,7 @@ const CommonConfig = (props: CommonConfigProps) => {
             name={'backgroundEffect'}
           >
             <Segmented
-              defaultValue={backgroundEffect}
+              defaultValue={config.backgroundEffect}
               onChange={(value: BackgroundEffect) => {
                 setConfig({ backgroundEffect: value });
               }}

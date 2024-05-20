@@ -16849,9 +16849,9 @@ const cachedVoiceList: Voice[] = [
       DisplayName: 'Aria',
       DisplayVoiceName: 'AriaNeural',
       ExpressAsRoleValues:
-        'Default,Chat,Cheerful,CustomerService,Empathy,Newscast-Formal,Newscast-Casual',
+        'Default,Role,Cheerful,CustomerService,Empathy,Newscast-Formal,Newscast-Casual',
       ExpressAsStyleValues:
-        'Default,Chat,Cheerful,CustomerService,Empathy,Newscast-Formal,Newscast-Casual',
+        'Default,Role,Cheerful,CustomerService,Empathy,Newscast-Formal,Newscast-Casual',
       FrontendVoiceType: 'Neural',
       Gender: 'Female',
       LocalName: 'Aria',

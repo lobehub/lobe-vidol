@@ -1,6 +1,7 @@
 import { LOBE_VIDOL_DEFAULT_AGENT_ID } from '@/constants/agent';
 import { DEFAULT_USER_AVATAR } from '@/constants/common';
 import { useAgentStore } from '@/store/agent';
+import { useConfigStore } from '@/store/config';
 import { Agent } from '@/types/agent';
 import { ChatMessage } from '@/types/chat';
 import { Session } from '@/types/session';
@@ -62,12 +63,14 @@ const currentChats = (s: SessionStore): ChatMessage[] => {
 
   const { messages } = session;
   return messages?.map((message) => {
+    const userAvatar = useConfigStore.getState().config.avatar;
+    const userNickName = useConfigStore.getState().config.nickName;
     return {
       ...message,
       meta: {
-        avatar: message.role === 'user' ? DEFAULT_USER_AVATAR : avatar,
+        avatar: message.role === 'user' ? (userAvatar ? userAvatar : DEFAULT_USER_AVATAR) : avatar,
         description: message.role === 'user' ? undefined : description,
-        title: message.role === 'user' ? '你' : name,
+        title: message.role === 'user' ? (userNickName ? userNickName : '你') : name,
       },
     };
   });
@@ -131,12 +134,6 @@ const currentSystemRole = (s: SessionStore): string => {
   return agent.systemRole;
 };
 
-const currentAgentModel = (s: SessionStore): string => {
-  const agent = currentAgent(s);
-  if (!agent) return '';
-  return agent.meta.model;
-};
-
 const currentChatMessage = (s: SessionStore): ChatMessage | undefined => {
   const { chatLoadingId } = s;
   return currentChats(s).find((item) => item.id === chatLoadingId);
@@ -159,7 +156,6 @@ export const sessionSelectors = {
   filterSessionListIds,
   currentAgent,
   getAgentById,
-  currentAgentModel,
   currentChatIDsWithGreetingMessage,
   getLastMessageByAgentId,
   currentChatMessage,

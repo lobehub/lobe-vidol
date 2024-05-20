@@ -1,4 +1,5 @@
-import { INITIAL_COORDINATES } from '@/constants/common';
+import { DEFAULT_SETTINGS } from '@/constants/settings';
+import { INITIAL_COORDINATES } from '@/constants/token';
 import { Config, PanelConfig, PanelKey } from '@/types/config';
 
 export interface ConfigState {
@@ -8,17 +9,7 @@ export interface ConfigState {
 }
 
 const initialState: ConfigState = {
-  config: {
-    backgroundEffect: 'glow',
-    languageModel: {
-      openAI: {
-        apikey: '',
-        endpoint: '',
-        model: 'gpt-3.5-turbo',
-      },
-    },
-    primaryColor: 'blue',
-  },
+  config: DEFAULT_SETTINGS,
   focusList: [],
 
   panel: {

@@ -9,7 +9,7 @@ import {
 import type { Coordinates } from '@dnd-kit/utilities';
 import React, { PropsWithChildren, useEffect, useState } from 'react';
 
-import { INITIAL_COORDINATES, INITIAL_Z_INDEX } from '@/constants/common';
+import { INITIAL_COORDINATES, INITIAL_Z_INDEX } from '@/constants/token';
 
 import Container from './Container';
 

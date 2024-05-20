@@ -2,7 +2,7 @@ import { Analytics } from '@vercel/analytics/react';
 import { cookies } from 'next/headers';
 import { PropsWithChildren } from 'react';
 
-import { VIDOL_THEME_APPEARANCE } from '@/constants/common';
+import { VIDOL_THEME_APPEARANCE } from '@/constants/theme';
 import Layout from '@/layout';
 
 import StyleRegistry from './StyleRegistry';

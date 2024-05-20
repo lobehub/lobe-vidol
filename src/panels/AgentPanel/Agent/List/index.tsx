@@ -14,8 +14,8 @@ const AgentList = (props: AgentListProps) => {
   const { className, style } = props;
   const router = useRouter();
 
-  const [subscribedList, activateAgent, currentIdentifier] = useAgentStore((s) => [
-    s.subscribedList,
+  const [localAgentList, activateAgent, currentIdentifier] = useAgentStore((s) => [
+    s.localAgentList,
     s.activateAgent,
     s.currentIdentifier,
   ]);
@@ -24,7 +24,7 @@ const AgentList = (props: AgentListProps) => {
     <GridList
       className={className}
       style={style}
-      items={subscribedList.map((items) => ({
+      items={localAgentList.map((items) => ({
         avatar: items.meta.avatar,
         id: items.agentId,
         name: items.meta.name,

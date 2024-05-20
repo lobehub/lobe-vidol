@@ -4,10 +4,9 @@ import { TabsNav } from '@lobehub/ui';
 import classNames from 'classnames';
 import React, { useState } from 'react';
 
-import Touch from '../Touch';
 import Info from './Info';
-import Role from './SystemRole';
-import Tachie from './Tachie';
+import Model from './Model';
+import Role from './Role';
 import Voice from './Voice';
 import { useStyles } from './style';
 
@@ -33,19 +32,15 @@ const RolePanel = (props: RolePanelProps) => {
             },
             {
               key: 'role',
-              label: '系统角色',
-            },
-            {
-              key: 'tachie',
-              label: '头像和立绘',
+              label: '角色设定',
             },
             {
               key: 'voice',
               label: '语音',
             },
             {
-              key: 'touch',
-              label: '触摸设置(TODO)',
+              key: 'model',
+              label: '3D 模型',
             },
           ]}
           onChange={(key) => {
@@ -56,9 +51,8 @@ const RolePanel = (props: RolePanelProps) => {
       <div className={styles.content}>
         {tab === 'info' ? <Info /> : null}
         {tab === 'role' ? <Role /> : null}
-        {tab === 'tachie' ? <Tachie /> : null}
         {tab === 'voice' ? <Voice /> : null}
-        {tab === 'touch' ? <Touch /> : null}
+        {tab === 'model' ? <Model /> : null}
       </div>
     </div>
   );

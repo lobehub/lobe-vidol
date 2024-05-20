@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import { Music2 } from 'lucide-react';
 import React from 'react';
 
-import { DESKTOP_HEADER_ICON_SIZE } from '@/constants/common';
+import { DESKTOP_HEADER_ICON_SIZE } from '@/constants/token';
 import { useDanceStore } from '@/store/dance';
 
 const useStyles = createStyles(({ css }) => ({

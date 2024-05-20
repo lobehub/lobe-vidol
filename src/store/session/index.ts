@@ -144,6 +144,10 @@ export const createSessonStore: StateCreator<SessionStore, [['zustand/devtools',
   },
   createSession: (agent: Agent) => {
     const { sessionList } = get();
+    if (agent.agentId === LOBE_VIDOL_DEFAULT_AGENT_ID) {
+      set({ activeId: agent.agentId });
+      return;
+    }
 
     const newSessionList = produce(sessionList, (draft) => {
       const index = draft.findIndex((session) => session.agentId === agent.agentId);

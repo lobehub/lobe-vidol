@@ -25,9 +25,17 @@ export type PanelKey = keyof PanelConfig;
 
 export interface CommonConfig {
   /**
+   * 用户头像
+   */
+  avatar: string;
+  /**
    * 背景类型
    */
   backgroundEffect: BackgroundEffect;
+  /**
+   * 用户昵称
+   */
+  nickName: string;
   /**
    * 主题色
    */

@@ -12,7 +12,7 @@ const useStyles = createStyles(({ css, token }) => ({
     display: flex;
 
     width: 100%;
-    min-height: 500px;
+    min-height: 740px;
 
     border: 1px solid ${token.colorBorder};
     border-radius: ${token.borderRadius}px;

@@ -54,9 +54,8 @@ const Config = (props: ConfigProps) => {
         onValuesChange={debounce(setOpenAIConfig, 100)}
         style={{ display: 'flex', flexGrow: 1 }}
       >
-        {/* @ts-ignore */}
         <FormGroup icon={BotIcon} title={'OpenAI 语言模型'}>
-          <FormItem desc={'Chat GPT 模型'} label={'模型'} name="model">
+          <FormItem desc={'Role GPT 模型'} label={'模型'} name="model">
             <Select
               options={OPENAI_MODEL_LIST.map((model) => ({
                 label: (

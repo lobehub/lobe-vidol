@@ -1,6 +1,7 @@
 import { memo, useMemo, useState } from 'react';
 import { shallow } from 'zustand/shallow';
 
+import { DEFAULT_AGENT_AVATAR_URL } from '@/constants/common';
 import { useAgentStore } from '@/store/agent';
 
 import ListItem from '../../ListItem';
@@ -25,7 +26,7 @@ const SessionItem = memo<SessionItemProps>(({ id, onClick }) => {
     <ListItem
       actions={actions}
       active={active}
-      avatar={avatar || ''}
+      avatar={avatar || DEFAULT_AGENT_AVATAR_URL}
       description={description || agent?.systemRole}
       onClick={onClick}
       showAction={open}

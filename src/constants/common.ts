@@ -2,37 +2,32 @@ export const AGENT_INDEX_URL = 'https://vidol-market.lobehub.com/agents/index.js
 
 export const DANCE_INDEX_URL = 'https://vidol-market.lobehub.com/dances/index.json';
 
-export const VIDOL_THEME_APPEARANCE = 'VIDOL_THEME_APPEARANCE';
-export const VIDOL_THEME_NEUTRAL_COLOR = 'VIDOL_THEME_NEUTRAL_COLOR';
-export const VIDOL_THEME_PRIMARY_COLOR = 'VIDOL_THEME_PRIMARY_COLOR';
 export const COOKIE_CACHE_DAYS = 30;
 
 export const LOADING_FLAG = '...';
 
-// 默认坐标
-export const INITIAL_COORDINATES = { x: 360, y: 360 };
-
-export const DESKTOP_HEADER_ICON_SIZE = { fontSize: 24 };
-
-// 默认 zIndex
-export const INITIAL_Z_INDEX = 10;
-
-export const CHAT_TEXTAREA_MAX_HEIGHT = 570;
-export const CHAT_TEXTAREA_HEIGHT = 200;
-
-export const CHAT_INPUT_MIN_HEIGHT = 90;
-
-export const HEADER_HEIGHT = 64;
-
-export const SIDEBAR_WIDTH = 280;
-export const SIDEBAR_MAX_WIDTH = 400;
-
-export const CHAT_HEADER_HEIGHT = 64;
-
-export const CHAT_INPUT_WIDTH = '48rem';
-
 export const DEFAULT_USER_AVATAR = '😀';
 
-export const LIST_GRID_WIDTH = 108;
-export const LIST_GRID_GAP = 4;
-export const LIST_GRID_HEIGHT = 108;
+export const MAX_NAME_LENGTH = 20;
+export const MAX_DESCRIPTION_LENGTH = 100;
+export const MAX_GREETING_LENGTH = 200;
+export const MAX_README_LENGTH = 800;
+
+export const MAX_SYSTEM_ROLE_LENGTH = 9999;
+
+export const AVATAR_IMAGE_SIZE = 48;
+export const AVATAR_COMPRESS_SIZE = 256;
+
+export const COVER_IMAGE_WIDTH = 320;
+export const COVER_IMAGE_HEIGHT = 480;
+
+export const COVER_COMPRESS_WIDTH = COVER_IMAGE_WIDTH * 2;
+export const COVER_COMPRESS_HEIGHT = COVER_IMAGE_HEIGHT * 2;
+
+export const DEFAULT_USER_AVATAR_URL =
+  'https://registry.npmmirror.com/@lobehub/assets-logo/1.2.0/files/assets/logo-3d.webp';
+
+export const DEFAULT_AGENT_AVATAR_URL =
+  'https://registry.npmmirror.com/@lobehub/assets-logo/1.2.0/files/assets/logo-3d.webp';
+export const ROLE_VIEWER_HEIGHT = 640;
+export const ROLE_VIEWER_WIDTH = 400;

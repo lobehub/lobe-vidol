@@ -11,7 +11,11 @@ import AutoScroll from './AutoScroll';
 import { useStyles } from './style';
 
 const itemContent = (index: number, id: string) => {
-  return index === 0 ? <div style={{ height: 24 }} /> : <Item id={id} index={index - 1} />;
+  return index === 0 ? (
+    <div style={{ height: 24 }} />
+  ) : (
+    <Item id={id} index={index - 1} showTitle />
+  );
 };
 
 interface VirtualizedListProps {

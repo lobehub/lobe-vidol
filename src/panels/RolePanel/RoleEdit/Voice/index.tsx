@@ -1,64 +1,26 @@
-import { FormFooter } from '@lobehub/ui';
-import { useRequest } from 'ahooks';
-import { Button, Divider, Form, Input, Select, Slider, message } from 'antd';
+import { Form, FormItem } from '@lobehub/ui';
 import { createStyles } from 'antd-style';
 import classNames from 'classnames';
-import { isEqual } from 'lodash-es';
-import React, { useEffect, useRef, useState } from 'react';
+import React from 'react';
 
-import { speechApi, voiceListApi } from '@/services/tts';
-import { agentListSelectors, useAgentStore } from '@/store/agent';
-import { Voice } from '@/types/tts';
-
-const FormItem = Form.Item;
+import { INPUT_WIDTH_M } from '@/constants/token';
+import TTSEngine from '@/panels/RolePanel/RoleEdit/Voice/TTSEngine';
+import TTSLocale from '@/panels/RolePanel/RoleEdit/Voice/TTSLocale';
+import TTSPitch from '@/panels/RolePanel/RoleEdit/Voice/TTSPitch';
+import TTSPlay from '@/panels/RolePanel/RoleEdit/Voice/TTSPlay';
+import TTSSpeed from '@/panels/RolePanel/RoleEdit/Voice/TTSSpeed';
+import TTSVoice from '@/panels/RolePanel/RoleEdit/Voice/TTSVoice';
 
 interface ConfigProps {
   className?: string;
   style?: React.CSSProperties;
 }
 
-const suportedLocales = [
-  {
-    label: '中文(普通话)',
-    samples: ['哈喽，早上好', '正在为你准备我的整个世界', '你好，旅行者!'],
-    value: 'zh-CN',
-  },
-  {
-    label: '日语(日本)',
-    samples: [
-      'こんにちは、おはようございます！',
-      'あなたのために私の全世界を準備しています',
-      'こんにちは、旅行者さん！',
-    ],
-    value: 'ja-JP',
-  },
-  {
-    label: '英语(美国)',
-    samples: ['Hello, traveler!', "I'm preparing my whole world for you.", 'Hello, traveler!'],
-    value: 'en-US',
-  },
-  {
-    label: '韩语(韩国)',
-    samples: [
-      '안녕하세요, 여행자!',
-      '당신을 위해 내 전 세계를 준비하고 있습니다.',
-      '안녕, 여행자!',
-    ],
-    value: 'ko-KR',
-  },
-  {
-    label: '中文(粤语)',
-    samples: ['哈喽，早晨好', '正在为您准备我的整个世界', '你好，旅行者！'],
-    value: 'zh-HK',
-  },
-];
-
 const useStyles = createStyles(({ css, token }) => ({
   audio: css`
     margin-top: 20px;
   `,
   config: css`
-    flex: 3;
     padding: 12px;
     border-radius: ${token.borderRadius}px;
   `,
@@ -66,205 +28,41 @@ const useStyles = createStyles(({ css, token }) => ({
     display: flex;
     flex-direction: column;
   `,
-  form: css`
-    display: flex;
-  `,
-  message: css`
-    flex: 5;
-    margin-right: 12px;
-  `,
 }));
 
-const Config = (props: ConfigProps) => {
+export default (props: ConfigProps) => {
   const { style, className } = props;
   const { styles } = useStyles();
-  const ref = useRef<HTMLAudioElement>(null);
-  const [form] = Form.useForm();
-  const [voices, setVoices] = useState<Voice[]>([]);
-  const currentAgent = useAgentStore((s) => agentListSelectors.currentAgentItem(s), isEqual);
-  const updateAgentConfig = useAgentStore((s) => s.updateAgentConfig);
-  const [audioUrl, setAudioUrl] = useState<string | undefined>(undefined);
-
-  useEffect(() => {
-    form.setFieldsValue(currentAgent?.tts);
-  }, [currentAgent, form]);
-
-  const { loading, run: speek } = useRequest(speechApi, {
-    manual: true,
-    onError: (err) => {
-      message.error(err.message);
-      if (ref.current) {
-        ref.current.pause();
-        ref.current.currentTime = 0;
-        ref.current.src = '';
-      }
-    },
-    onSuccess: (res) => {
-      message.success('转换成功');
-      const adUrl = URL.createObjectURL(new Blob([res]));
-      setAudioUrl(adUrl);
-      if (ref.current) {
-        ref.current.src = adUrl;
-        ref.current.play();
-      }
-    },
-  });
-
-  const { loading: voiceLoading, run: getVoiceList } = useRequest(
-    () => {
-      const engine = form.getFieldValue('engine');
-      return voiceListApi(engine);
-    },
-    {
-      onSuccess: (res) => {
-        setVoices(res.data);
-      },
-    },
-  );
-
-  const getExtraNode = () => {
-    const samples =
-      suportedLocales.find((item) => item.value === form.getFieldValue('locale'))?.samples || [];
-    const nodes: React.ReactNode[] = [];
-
-    samples.forEach((item, index) => {
-      nodes.push(
-        <a href="#" onClick={() => form.setFieldValue('message', item)}>
-          {item}
-        </a>,
-      );
-      if (index !== samples.length - 1) {
-        nodes.push(<Divider type="vertical" />);
-      }
-    });
-    return nodes;
-  };
 
   return (
-    <Form
-      form={form}
-      initialValues={currentAgent?.tts}
-      layout="horizontal"
-      onFinish={() => {
-        form.validateFields().then((values) => {
-          updateAgentConfig({ tts: values });
-          message.success('保存成功');
-        });
-      }}
-      onValuesChange={(changedValues) => {
-        if (changedValues.engine) {
-          form.setFieldsValue({ voice: undefined });
-          getVoiceList();
-        }
-        if (changedValues.locale) {
-          const sample = suportedLocales.find((item) => item.value === changedValues.locale)
-            ?.samples[1];
-
-          form.setFieldsValue({ voice: undefined, message: sample });
-        }
-      }}
-      preserve={false}
-      requiredMark={false}
-    >
+    <Form layout="horizontal" preserve={false} requiredMark={false}>
       <div className={classNames(className, styles.container)} style={style}>
-        <div className={styles.form}>
-          <div className={styles.message}>
-            <FormItem dependencies={['locale']} noStyle>
-              {() => (
-                <FormItem extra={getExtraNode()} name="message" style={{ marginBottom: 0 }}>
-                  <Input.TextArea
-                    autoSize={{ maxRows: 28, minRows: 28 }}
-                    maxLength={800}
-                    placeholder="请输入要转换的文字"
-                  />
-                </FormItem>
-              )}
-            </FormItem>
-          </div>
-          <div className={styles.config}>
-            <FormItem label={'引擎'} name="engine">
-              <Select
-                options={[
-                  {
-                    label: 'Edge',
-                    value: 'edge',
-                  },
-                  {
-                    label: 'MicroSoft（不稳定）',
-                    value: 'microsoft',
-                  },
-                ]}
-              />
-            </FormItem>
-            <FormItem label={'语言'} name="locale">
-              <Select options={suportedLocales} />
-            </FormItem>
-            <FormItem dependencies={['locale']} noStyle>
-              {() => (
-                <FormItem
-                  label={'语音'}
-                  name="voice"
-                  rules={[{ message: '请选择语音', required: true }]}
-                >
-                  <Select
-                    defaultActiveFirstOption
-                    disabled={voiceLoading}
-                    loading={voiceLoading}
-                    options={voices
-                      .filter((voice) => voice.locale === form.getFieldValue('locale'))
-                      .map((item) => ({
-                        label: `${item.DisplayName}-${item.LocalName}`,
-                        value: item.ShortName,
-                      }))}
-                  />
-                </FormItem>
-              )}
-            </FormItem>
-            <FormItem label={'语速'} name="speed">
-              <Slider max={3} min={0} step={0.01} />
-            </FormItem>
-            <FormItem label={'音调'} name="pitch">
-              <Slider max={2} min={0} step={0.01} />
-            </FormItem>
-            <FormFooter>
-              <Button
-                disabled={!audioUrl}
-                onClick={() => {
-                  const link = document.createElement('a');
-                  link.href = audioUrl!;
-                  link.download = 'audio.mp3';
-
-                  link.dispatchEvent(
-                    new MouseEvent('click', {
-                      bubbles: true,
-                      cancelable: true,
-                      view: window,
-                    }),
-                  );
-                }}
-              >
-                下载试听片段
-              </Button>
-              <Button
-                htmlType="button"
-                loading={loading}
-                onClick={() => {
-                  const values = form.getFieldsValue();
-                  speek(values);
-                }}
-              >
-                试听
-              </Button>
-              <Button htmlType="submit" type="primary">
-                应用
-              </Button>
-            </FormFooter>
-          </div>
+        <div className={styles.config}>
+          <FormItem label={'语音引擎'} name={'engine'} desc="语音合成引擎，建议优先选择 Edge ">
+            <TTSEngine style={{ width: INPUT_WIDTH_M }} />
+          </FormItem>
+          <FormItem
+            label={'语言'}
+            name={'locale'}
+            divider
+            desc="语音合成的语种，当前仅支持最常见的几种语言，如有需要请联系"
+          >
+            <TTSLocale style={{ width: INPUT_WIDTH_M }} />
+          </FormItem>
+          <FormItem label={'语音'} divider name={'voice'} desc="根据引擎和语种不同">
+            <TTSVoice style={{ width: INPUT_WIDTH_M }} />
+          </FormItem>
+          <FormItem label={'语速'} name={'speed'} desc="控制语速，取值范围 0 ~ 3，默认为 1" divider>
+            <TTSSpeed style={{ width: INPUT_WIDTH_M }} />
+          </FormItem>
+          <FormItem label={'音调'} name={'pitch'} desc="控制音调，取值范围 0 ~ 2，默认为 1" divider>
+            <TTSPitch style={{ width: INPUT_WIDTH_M }} />
+          </FormItem>
+          <FormItem label={'试听'} desc={`试听文案根据语言不同`} divider>
+            <TTSPlay style={{ width: INPUT_WIDTH_M }} />
+          </FormItem>
         </div>
-        <audio ref={ref} />
       </div>
     </Form>
   );
 };
-
-export default Config;

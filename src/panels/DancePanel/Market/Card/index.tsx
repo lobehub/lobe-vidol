@@ -5,7 +5,7 @@ import React, { memo, useState } from 'react';
 
 import Author from '@/components/Author';
 import DanceInfo from '@/components/DanceInfo';
-import { SIDEBAR_MAX_WIDTH, SIDEBAR_WIDTH } from '@/constants/common';
+import { SIDEBAR_MAX_WIDTH, SIDEBAR_WIDTH } from '@/constants/token';
 import { danceListSelectors, useDanceStore } from '@/store/dance';
 import { marketStoreSelectors, useMarketStore } from '@/store/market';
 
@@ -108,7 +108,13 @@ const Header = () => {
       <DanceInfo
         actions={actions}
         dance={currentDanceItem}
-        extra={<Author item={currentDanceItem} />}
+        extra={
+          <Author
+            homepage={currentDanceItem?.homepage}
+            author={currentDanceItem?.author}
+            createAt={currentDanceItem?.createAt}
+          />
+        }
       />
     </DraggablePanel>
   );
