@@ -36,10 +36,10 @@ function AgentViewer(props: Props) {
   );
 
   return (
-    <div ref={ref} className={classNames(styles.viewer, className)} style={style}>
+    <div ref={ref} className={classNames(styles.viewer, className)} style={{ height, ...style }}>
       <ToolBar className={styles.toolbar} viewer={viewer} />
       {loading ? <PageLoading title={'模型加载中，请稍后...'} className={styles.loading} /> : null}
-      <canvas ref={canvasRef} className={styles.canvas} style={{ height }}></canvas>
+      <canvas ref={canvasRef} className={styles.canvas}></canvas>
     </div>
   );
 }

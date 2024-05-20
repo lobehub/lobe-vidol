@@ -12,12 +12,11 @@ import { useStyles } from './style';
 
 interface Props {
   className?: string;
-  height?: number | string;
   style?: React.CSSProperties;
 }
 
 function AgentViewer(props: Props) {
-  const { className, style, height } = props;
+  const { className, style } = props;
   const { styles } = useStyles();
   const ref = useRef<HTMLDivElement>(null);
   const viewer = useViewerStore((s) => s.viewer);
@@ -78,7 +77,7 @@ function AgentViewer(props: Props) {
     <div ref={ref} className={classNames(styles.viewer, className)} style={style}>
       <ToolBar className={styles.toolbar} viewer={viewer} />
       {loading ? <PageLoading title={'模型加载中，请稍后...'} className={styles.loading} /> : null}
-      <canvas ref={canvasRef} className={styles.canvas} style={{ height }}></canvas>
+      <canvas ref={canvasRef} className={styles.canvas}></canvas>
     </div>
   );
 }

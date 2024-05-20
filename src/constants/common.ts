@@ -15,10 +15,11 @@ export const MAX_README_LENGTH = 800;
 
 export const MAX_SYSTEM_ROLE_LENGTH = 9999;
 
+export const AVATAR_IMAGE_SIZE = 48;
 export const AVATAR_COMPRESS_SIZE = 256;
 
-export const COVER_IMAGE_WIDTH = 300;
-export const COVER_IMAGE_HEIGHT = 400;
+export const COVER_IMAGE_WIDTH = 320;
+export const COVER_IMAGE_HEIGHT = 480;
 
 export const COVER_COMPRESS_WIDTH = COVER_IMAGE_WIDTH * 2;
 export const COVER_COMPRESS_HEIGHT = COVER_IMAGE_HEIGHT * 2;

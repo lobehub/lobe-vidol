@@ -3,6 +3,7 @@ import { createStyles } from 'antd-style';
 import classNames from 'classnames';
 import React from 'react';
 
+import { COVER_COMPRESS_HEIGHT, COVER_COMPRESS_WIDTH } from '@/constants/common';
 import { INPUT_WIDTH_L, INPUT_WIDTH_M } from '@/constants/token';
 import CoverWithUpload from '@/panels/RolePanel/RoleEdit/Info/CoverWithUpload';
 import Greeting from '@/panels/RolePanel/RoleEdit/Info/Greeting';
@@ -81,7 +82,11 @@ const Info = (props: InfoProps) => {
             </FormItem>
           </div>
           <div className={styles.more}>
-            <FormItem label={'封面'} name={'cover'} desc="角色的封面，用于发现页展示角色" />
+            <FormItem
+              label={'封面'}
+              name={'cover'}
+              desc={`用于发现页展示角色，推荐尺寸 ${COVER_COMPRESS_WIDTH} * ${COVER_COMPRESS_HEIGHT}`}
+            />
             <CoverWithUpload />
           </div>
         </div>

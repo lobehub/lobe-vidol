@@ -3,7 +3,11 @@ import { createStyles } from 'antd-style';
 import NextImage from 'next/image';
 import React, { CSSProperties, memo, useCallback } from 'react';
 
-import { DEFAULT_AGENT_AVATAR_URL } from '@/constants/common';
+import {
+  AVATAR_COMPRESS_SIZE,
+  AVATAR_IMAGE_SIZE,
+  DEFAULT_AGENT_AVATAR_URL,
+} from '@/constants/common';
 import { agentSelectors, useAgentStore } from '@/store/agent';
 import { createUploadImageHandler } from '@/utils/common';
 import { imageToBase64 } from '@/utils/imageToBase64';
@@ -35,7 +39,7 @@ interface AvatarWithUploadProps {
 }
 
 const AvatarWithUpload = memo<AvatarWithUploadProps>(
-  ({ size = 40, compressSize = 256, style, id }) => {
+  ({ size = AVATAR_IMAGE_SIZE, compressSize = AVATAR_COMPRESS_SIZE, style, id }) => {
     const { styles } = useStyle();
     const [meta, updateAgentMeta] = useAgentStore((s) => [
       agentSelectors.currentAgentMeta(s),
