@@ -2,6 +2,53 @@
 
 # Changelog
 
+## [Version 0.7.0](https://github.com/lobehub/lobe-vidol/compare/v0.6.0...v0.7.0)
+
+<sup>Released on **2024-05-20**</sup>
+
+#### ✨ Features
+
+- **misc**: AgentViewer 抽象，优化模型上传提示，优化角色封面上传提示，优化语音设置样式，使用 localforage 上传本地模型文件，支持上传用户自定义头像，支持用户设置，添加 3D 模型 Tab, 添加头像上传与设置，添加自定义角色，角色设置同步.
+
+#### 🐛 Bug Fixes
+
+- **misc**: 修复 Chat 和 Role 角色预览错乱，修复官方助手聊天产生新的 session, 修复角色预览，修复角色预览加载，角色侧边栏可滚动.
+
+<br/>
+
+<details>
+<summary><kbd>Improvements and Fixes</kbd></summary>
+
+#### What's improved
+
+- **misc**: AgentViewer 抽象 ([8d4ceab](https://github.com/lobehub/lobe-vidol/commit/8d4ceab))
+- **misc**: 优化模型上传提示 ([75fba52](https://github.com/lobehub/lobe-vidol/commit/75fba52))
+- **misc**: 优化角色封面上传提示 ([c4be31f](https://github.com/lobehub/lobe-vidol/commit/c4be31f))
+- **misc**: 优化语音设置样式 ([000183c](https://github.com/lobehub/lobe-vidol/commit/000183c))
+- **misc**: 使用 localforage 上传本地模型文件 ([abc1fcf](https://github.com/lobehub/lobe-vidol/commit/abc1fcf))
+- **misc**: 支持上传用户自定义头像 ([ac50d24](https://github.com/lobehub/lobe-vidol/commit/ac50d24))
+- **misc**: 支持用户设置 ([da8b343](https://github.com/lobehub/lobe-vidol/commit/da8b343))
+- **misc**: 添加 3D 模型 Tab ([6ee5043](https://github.com/lobehub/lobe-vidol/commit/6ee5043))
+- **misc**: 添加头像上传与设置 ([472918f](https://github.com/lobehub/lobe-vidol/commit/472918f))
+- **misc**: 添加自定义角色 ([c0b225b](https://github.com/lobehub/lobe-vidol/commit/c0b225b))
+- **misc**: 角色设置同步 ([fadef78](https://github.com/lobehub/lobe-vidol/commit/fadef78))
+
+#### What's fixed
+
+- **misc**: 修复 Chat 和 Role 角色预览错乱 ([75311e2](https://github.com/lobehub/lobe-vidol/commit/75311e2))
+- **misc**: 修复官方助手聊天产生新的 session ([618dfbb](https://github.com/lobehub/lobe-vidol/commit/618dfbb))
+- **misc**: 修复角色预览 ([ca18074](https://github.com/lobehub/lobe-vidol/commit/ca18074))
+- **misc**: 修复角色预览加载 ([739931d](https://github.com/lobehub/lobe-vidol/commit/739931d))
+- **misc**: 角色侧边栏可滚动 ([94e30b1](https://github.com/lobehub/lobe-vidol/commit/94e30b1))
+
+</details>
+
+<div align="right">
+
+[![](https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square)](#readme-top)
+
+</div>
+
 ## [Version 0.6.0](https://github.com/lobehub/lobe-vidol/compare/v0.5.0...v0.6.0)
 
 <sup>Released on **2024-05-08**</sup>
