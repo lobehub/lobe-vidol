@@ -5,6 +5,7 @@ import { ThemeAppearance, createStyles } from 'antd-style';
 import { ReactNode } from 'react';
 
 import { VIDOL_THEME_APPEARANCE } from '@/constants/theme';
+import StyleRegistry from '@/layout/StyleRegistry';
 import { useConfigStore } from '@/store/config';
 import { useThemeStore } from '@/store/theme';
 import { GlobalStyle } from '@/styles';
@@ -35,20 +36,22 @@ const Layout = (props: LayoutProps) => {
   const [primaryColor] = useConfigStore((s) => [s.config.primaryColor]);
 
   return (
-    <ThemeProvider
-      customTheme={{
-        primaryColor: primaryColor,
-      }}
-      defaultAppearance={defaultAppearance as ThemeAppearance}
-      onAppearanceChange={(appearance) => {
-        setCookie(VIDOL_THEME_APPEARANCE, appearance);
-      }}
-      themeMode={themeMode}
-    >
-      <StoreHydration />
-      <GlobalStyle />
-      <div className={styles.content}>{children}</div>
-    </ThemeProvider>
+    <StyleRegistry>
+      <ThemeProvider
+        customTheme={{
+          primaryColor: primaryColor,
+        }}
+        defaultAppearance={defaultAppearance as ThemeAppearance}
+        onAppearanceChange={(appearance) => {
+          setCookie(VIDOL_THEME_APPEARANCE, appearance);
+        }}
+        themeMode={themeMode}
+      >
+        <StoreHydration />
+        <GlobalStyle />
+        <div className={styles.content}>{children}</div>
+      </ThemeProvider>
+    </StyleRegistry>
   );
 };
 
