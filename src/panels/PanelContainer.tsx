@@ -3,7 +3,7 @@
 import React, { PropsWithChildren } from 'react';
 
 import Panel from '@/components/Panel';
-import { configSelectors, useConfigStore } from '@/store/config';
+import { globalSelectors, useGlobalStore } from '@/store/global';
 import { PanelKey } from '@/types/config';
 
 import { PanelContext } from './PanelContext';
@@ -20,13 +20,13 @@ interface PanelContainerProps {
 
 const PanelContainer = (props: PropsWithChildren<PanelContainerProps>) => {
   const { style, className, panelKey, title, children, toolbar, extra, footer } = props;
-  const [panel, setPanel, focusPanel, closePanel] = useConfigStore((s) => [
+  const [panel, setPanel, focusPanel, closePanel] = useGlobalStore((s) => [
     s.panel,
     s.setPanel,
     s.focusPanel,
     s.closePanel,
   ]);
-  const zIndex = useConfigStore((s) => configSelectors.getPanelZIndex(s, panelKey));
+  const zIndex = useGlobalStore((s) => globalSelectors.getPanelZIndex(s, panelKey));
 
   return (
     <Panel
