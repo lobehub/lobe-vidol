@@ -10,7 +10,7 @@ interface Props {
 
 export default memo<Props>((props) => {
   const { style } = props;
-  const [themeMode, setThemeMode] = useSettingStore((s) => [s.themeMode, s.setThemeMode]);
+  const [themeMode, setThemeMode] = useSettingStore((s) => [s.config.themeMode, s.setThemeMode]);
 
   return (
     <Segmented

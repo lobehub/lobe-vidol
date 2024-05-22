@@ -63,8 +63,8 @@ const currentChats = (s: SessionStore): ChatMessage[] => {
 
   const { messages } = session;
   return messages?.map((message) => {
-    const userAvatar = useSettingStore.getState().avatar;
-    const userNickName = useSettingStore.getState().nickName;
+    const userAvatar = useSettingStore.getState().config.avatar;
+    const userNickName = useSettingStore.getState().config.nickName;
     return {
       ...message,
       meta: {

@@ -12,7 +12,7 @@ interface Props {
 export default memo<Props>((props) => {
   const { style } = props;
   const [backgroundEffect, setBackgroundEffect] = useSettingStore(
-    (s) => [s.backgroundEffect, s.setBackgroundEffect],
+    (s) => [s.config.backgroundEffect, s.setBackgroundEffect],
     isEqual,
   );
 

@@ -11,7 +11,7 @@ import { useSettingStore } from '@/store/setting';
 
 const ThemeSwatchesPrimary = memo(() => {
   const [primaryColor, setPrimaryColor] = useSettingStore((s) => [
-    s.primaryColor,
+    s.config.primaryColor,
     s.setPrimaryColor,
   ]);
 

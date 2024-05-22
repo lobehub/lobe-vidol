@@ -31,7 +31,10 @@ const useStyles = createStyles(({ css }) => ({
 const Layout = (props: LayoutProps) => {
   const { children, defaultAppearance } = props;
   const { styles } = useStyles();
-  const [primaryColor, themeMode] = useSettingStore((s) => [s.primaryColor, s.themeMode]);
+  const [primaryColor, themeMode] = useSettingStore((s) => [
+    s.config.primaryColor,
+    s.config.themeMode,
+  ]);
 
   return (
     <StyleRegistry>

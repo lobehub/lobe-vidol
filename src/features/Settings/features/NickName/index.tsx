@@ -11,12 +11,15 @@ interface Props {
 
 const NickName = memo<Props>((props) => {
   const { style } = props;
-  const [nickName, setNickName] = useSettingStore((s) => [s.nickName, s.setNickName], isEqual);
+  const [nickName, setNickName] = useSettingStore(
+    (s) => [s.config.nickName, s.setNickName],
+    isEqual,
+  );
 
   return (
     <Input
       style={style}
-      defaultValue={nickName}
+      value={nickName}
       placeholder={'请输入昵称'}
       maxLength={MAX_NAME_LENGTH}
       showCount

@@ -37,7 +37,7 @@ interface AvatarWithUploadProps {
 const AvatarWithUpload = memo<AvatarWithUploadProps>(
   ({ size = 40, compressSize = 256, style, id }) => {
     const { styles } = useStyle();
-    const [avatar, setAvatar] = useSettingStore((s) => [s.avatar, s.setAvatar]);
+    const [avatar, setAvatar] = useSettingStore((s) => [s.config.avatar, s.setAvatar]);
 
     const handleUploadAvatar = useCallback(
       createUploadImageHandler((avatar) => {
