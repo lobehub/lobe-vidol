@@ -1,3 +1,5 @@
+'use client';
+
 import { useRouter } from 'next/navigation';
 import { memo, useEffect } from 'react';
 
@@ -15,6 +17,9 @@ const StoreHydration = () => {
 
   useEffect(() => {
     router.prefetch('/chat');
+    router.prefetch('/settings');
+    router.prefetch('/role');
+    router.prefetch('/market');
   }, [router]);
   return null;
 };

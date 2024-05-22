@@ -1,57 +1,41 @@
-'use client';
-
-import { ThemeProvider } from '@lobehub/ui';
-import { ThemeAppearance, createStyles } from 'antd-style';
+import { PrimaryColors } from '@lobehub/ui';
+import { ThemeAppearance } from 'antd-style';
+import { cookies } from 'next/headers';
 import { ReactNode } from 'react';
 
-import { VIDOL_THEME_APPEARANCE } from '@/constants/theme';
+import {
+  VIDOL_THEME_APPEARANCE,
+  VIDOL_THEME_NEUTRAL_COLOR,
+  VIDOL_THEME_PRIMARY_COLOR,
+} from '@/constants/theme';
+import AppTheme from '@/layout/AppTheme';
+import StoreHydration from '@/layout/StoreHydration';
 import StyleRegistry from '@/layout/StyleRegistry';
-import { useSettingStore } from '@/store/setting';
-import { GlobalStyle } from '@/styles';
-import { setCookie } from '@/utils/cookie';
-
-import StoreHydration from './StoreHydration';
 
 export interface LayoutProps {
   children?: ReactNode;
   defaultAppearance?: ThemeAppearance;
+  defaultPrimaryColor?: PrimaryColors;
 }
 
-const useStyles = createStyles(({ css }) => ({
-  content: css`
-    overflow-y: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    height: 100%;
-  `,
-}));
-
 const Layout = (props: LayoutProps) => {
-  const { children, defaultAppearance } = props;
-  const { styles } = useStyles();
-  const [primaryColor, themeMode] = useSettingStore((s) => [
-    s.config.primaryColor,
-    s.config.themeMode,
-  ]);
+  const { children } = props;
+
+  const cookieStore = cookies();
+  const appearance = cookieStore.get(VIDOL_THEME_APPEARANCE);
+  const primaryColor = cookieStore.get(VIDOL_THEME_PRIMARY_COLOR);
+  const neutralColor = cookieStore.get(VIDOL_THEME_NEUTRAL_COLOR);
 
   return (
     <StyleRegistry>
-      <ThemeProvider
-        customTheme={{
-          primaryColor: primaryColor,
-        }}
-        defaultAppearance={defaultAppearance as ThemeAppearance}
-        onAppearanceChange={(appearance) => {
-          setCookie(VIDOL_THEME_APPEARANCE, appearance);
-        }}
-        themeMode={themeMode}
+      <AppTheme
+        defaultAppearance={appearance?.value}
+        defaultNeutralColor={neutralColor?.value as any}
+        defaultPrimaryColor={primaryColor?.value as any}
       >
         <StoreHydration />
-        <GlobalStyle />
-        <div className={styles.content}>{children}</div>
-      </ThemeProvider>
+        {children}
+      </AppTheme>
     </StyleRegistry>
   );
 };

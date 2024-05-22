@@ -1,5 +1,5 @@
 import { Coordinates } from '@dnd-kit/utilities';
-import { PrimaryColors } from '@lobehub/ui';
+import { NeutralColors, PrimaryColors } from '@lobehub/ui';
 import type { ThemeMode } from 'antd-style';
 
 export type BackgroundEffect = 'glow' | 'none';
@@ -48,6 +48,10 @@ export interface UserConfig {
    * 语言模型配置
    */
   languageModel: LanguageModelConfig;
+  /**
+   * 中性色
+   */
+  neutralColor?: NeutralColors;
   /**
    * 用户昵称
    */
