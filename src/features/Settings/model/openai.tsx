@@ -9,7 +9,7 @@ import React, { useEffect } from 'react';
 
 import { OPENAI_MODEL_LIST } from '@/constants/openai';
 import { chatCompletion } from '@/services/chat';
-import { configSelectors, useConfigStore } from '@/store/config';
+import { configSelectors, useSettingStore } from '@/store/setting';
 import { ChatMessage } from '@/types/chat';
 
 interface ConfigProps {
@@ -29,8 +29,8 @@ const Config = (props: ConfigProps) => {
   const { style, className } = props;
   const { styles } = useStyles();
   const [form] = AForm.useForm();
-  const openAIConfig = useConfigStore((s) => configSelectors.currentOpenAIConfig(s), isEqual);
-  const setOpenAIConfig = useConfigStore((s) => s.setOpenAIConfig);
+  const openAIConfig = useSettingStore((s) => configSelectors.currentOpenAIConfig(s), isEqual);
+  const setOpenAIConfig = useSettingStore((s) => s.setOpenAIConfig);
 
   useEffect(() => {
     form.setFieldsValue(openAIConfig);

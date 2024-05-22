@@ -1,7 +1,7 @@
 import { LOBE_VIDOL_DEFAULT_AGENT_ID } from '@/constants/agent';
 import { DEFAULT_USER_AVATAR } from '@/constants/common';
 import { useAgentStore } from '@/store/agent';
-import { useConfigStore } from '@/store/config';
+import { useSettingStore } from '@/store/setting';
 import { Agent } from '@/types/agent';
 import { ChatMessage } from '@/types/chat';
 import { Session } from '@/types/session';
@@ -63,8 +63,8 @@ const currentChats = (s: SessionStore): ChatMessage[] => {
 
   const { messages } = session;
   return messages?.map((message) => {
-    const userAvatar = useConfigStore.getState().config.avatar;
-    const userNickName = useConfigStore.getState().config.nickName;
+    const userAvatar = useSettingStore.getState().avatar;
+    const userNickName = useSettingStore.getState().nickName;
     return {
       ...message,
       meta: {

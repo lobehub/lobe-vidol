@@ -4,7 +4,7 @@ import NextImage from 'next/image';
 import { CSSProperties, memo, useCallback } from 'react';
 
 import { DEFAULT_USER_AVATAR_URL } from '@/constants/common';
-import { useConfigStore } from '@/store/config';
+import { useSettingStore } from '@/store/setting';
 import { createUploadImageHandler } from '@/utils/common';
 import { imageToBase64 } from '@/utils/imageToBase64';
 
@@ -37,7 +37,7 @@ interface AvatarWithUploadProps {
 const AvatarWithUpload = memo<AvatarWithUploadProps>(
   ({ size = 40, compressSize = 256, style, id }) => {
     const { styles } = useStyle();
-    const [avatar, setConfig] = useConfigStore((s) => [s.config.avatar, s.setConfig]);
+    const [avatar, setAvatar] = useSettingStore((s) => [s.avatar, s.setAvatar]);
 
     const handleUploadAvatar = useCallback(
       createUploadImageHandler((avatar) => {
@@ -45,7 +45,7 @@ const AvatarWithUpload = memo<AvatarWithUploadProps>(
         img.src = avatar;
         img.addEventListener('load', () => {
           const webpBase64 = imageToBase64({ img, size: compressSize });
-          setConfig({ avatar: webpBase64 });
+          setAvatar(webpBase64);
         });
       }),
       [],

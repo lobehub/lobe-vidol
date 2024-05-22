@@ -6,8 +6,7 @@ import { ReactNode } from 'react';
 
 import { VIDOL_THEME_APPEARANCE } from '@/constants/theme';
 import StyleRegistry from '@/layout/StyleRegistry';
-import { useConfigStore } from '@/store/config';
-import { useThemeStore } from '@/store/theme';
+import { useSettingStore } from '@/store/setting';
 import { GlobalStyle } from '@/styles';
 import { setCookie } from '@/utils/cookie';
 
@@ -32,8 +31,7 @@ const useStyles = createStyles(({ css }) => ({
 const Layout = (props: LayoutProps) => {
   const { children, defaultAppearance } = props;
   const { styles } = useStyles();
-  const themeMode = useThemeStore((s) => s.themeMode);
-  const [primaryColor] = useConfigStore((s) => [s.config.primaryColor]);
+  const [primaryColor, themeMode] = useSettingStore((s) => [s.primaryColor, s.themeMode]);
 
   return (
     <StyleRegistry>
