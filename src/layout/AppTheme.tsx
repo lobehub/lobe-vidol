@@ -1,27 +1,17 @@
 'use client';
 
 import { NeutralColors, PrimaryColors, ThemeProvider } from '@lobehub/ui';
-import { ThemeAppearance, createStyles } from 'antd-style';
+import { createStyles } from 'antd-style';
 import { ReactNode, memo, useEffect } from 'react';
 
-import {
-  VIDOL_THEME_APPEARANCE,
-  VIDOL_THEME_NEUTRAL_COLOR,
-  VIDOL_THEME_PRIMARY_COLOR,
-} from '@/constants/theme';
+import { VIDOL_THEME_NEUTRAL_COLOR, VIDOL_THEME_PRIMARY_COLOR } from '@/constants/theme';
+import { useGlobalStore } from '@/store/global';
 import { useSettingStore } from '@/store/setting';
 import { GlobalStyle } from '@/styles';
 import { setCookie } from '@/utils/cookie';
 
-export interface LayoutProps {
-  children?: ReactNode;
-  defaultAppearance?: ThemeAppearance;
-  defaultPrimaryColor?: PrimaryColors;
-}
-
 export interface AppThemeProps {
   children?: ReactNode;
-  defaultAppearance?: ThemeAppearance;
   defaultNeutralColor?: NeutralColors;
   defaultPrimaryColor?: PrimaryColors;
 }
@@ -38,17 +28,17 @@ const useStyles = createStyles(({ css }) => ({
 }));
 
 const AppTheme = memo((props: AppThemeProps) => {
-  const { children, defaultAppearance, defaultNeutralColor, defaultPrimaryColor } = props;
-  const [primaryColor, neutralColor, themeMode] = useSettingStore((s) => [
+  const { children, defaultNeutralColor, defaultPrimaryColor } = props;
+  const [primaryColor, neutralColor] = useSettingStore((s) => [
     s.config.primaryColor,
     s.config.neutralColor,
-    s.config.themeMode,
   ]);
+
+  const themeMode = useGlobalStore((s) => s.themeMode);
 
   const { styles } = useStyles();
 
   useEffect(() => {
-    console.log('primaryColor', primaryColor);
     setCookie(VIDOL_THEME_PRIMARY_COLOR, primaryColor);
   }, [primaryColor]);
 
@@ -61,11 +51,6 @@ const AppTheme = memo((props: AppThemeProps) => {
       customTheme={{
         primaryColor: primaryColor ?? defaultPrimaryColor,
         neutralColor: neutralColor ?? defaultNeutralColor,
-      }}
-      defaultAppearance={defaultAppearance as ThemeAppearance}
-      onAppearanceChange={(appearance) => {
-        console.log('onAppearanceChange', appearance);
-        setCookie(VIDOL_THEME_APPEARANCE, appearance);
       }}
       themeMode={themeMode}
     >

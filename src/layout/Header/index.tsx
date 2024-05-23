@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { memo } from 'react';
 
+import ThemeMode from '@/features/Actions/ThemeMode';
 import { HeaderNavKey } from '@/layout/type';
 
 interface Props {
@@ -34,6 +35,7 @@ const Header = (props: Props) => {
           onClick={() => window.open('https://github.com/lobehub/lobe-vidol', '_blank')}
           size="large"
         />,
+        <ThemeMode key={'theme'} />,
       ]}
       logo={
         <Space>

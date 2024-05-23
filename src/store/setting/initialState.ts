@@ -1,9 +1,7 @@
-import type { ThemeMode } from 'antd-style';
-
-import { UserConfig } from '@/types/config';
+import { Config } from '@/types/config';
 
 export interface SettingState {
-  config: UserConfig;
+  config: Config;
 }
 
 const initialState: SettingState = {
@@ -16,8 +14,6 @@ const initialState: SettingState = {
         model: 'gpt-3.5-turbo',
       },
     },
-    nickName: '',
-    themeMode: 'auto' as ThemeMode,
   },
 };
 

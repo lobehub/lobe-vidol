@@ -1,6 +1,5 @@
 import { Coordinates } from '@dnd-kit/utilities';
 import { NeutralColors, PrimaryColors } from '@lobehub/ui';
-import type { ThemeMode } from 'antd-style';
 
 export type BackgroundEffect = 'glow' | 'none';
 
@@ -34,7 +33,14 @@ export interface LanguageModelConfig {
   openAI: OpenAIConfig;
 }
 
-export interface UserConfig {
+export interface Config extends CommonConfig {
+  /**
+   * 语言模型配置
+   */
+  languageModel: LanguageModelConfig;
+}
+
+export interface CommonConfig {
   /**
    * 用户头像
    */
@@ -42,12 +48,7 @@ export interface UserConfig {
   /**
    * 背景类型
    */
-  backgroundEffect: BackgroundEffect;
-
-  /**
-   * 语言模型配置
-   */
-  languageModel: LanguageModelConfig;
+  backgroundEffect?: BackgroundEffect;
   /**
    * 中性色
    */
@@ -55,13 +56,9 @@ export interface UserConfig {
   /**
    * 用户昵称
    */
-  nickName: string;
+  nickName?: string;
   /**
    * 主题色
    */
   primaryColor?: PrimaryColors;
-  /**
-   * 主题模式
-   */
-  themeMode: ThemeMode;
 }

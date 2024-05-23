@@ -1,3 +1,4 @@
+import type { ThemeMode } from 'antd-style';
 import { produce } from 'immer';
 import { isEqual, merge } from 'lodash-es';
 import { shallow } from 'zustand/shallow';
@@ -36,10 +37,16 @@ export interface GlobalStore {
   setPanel: (panel: PanelKey, config: Partial<Panel>) => void;
   setRoleList: (show: boolean) => void;
   setSessionList: (show: boolean) => void;
+  setThemeMode: (themeMode: ThemeMode) => void;
   showChatDialog: boolean;
   showChatSidebar: boolean;
   showRoleList: boolean;
+
   showSessionList: boolean;
+  /**
+   * 主题模式
+   */
+  themeMode: ThemeMode;
   toggleChatDialog: () => void;
   toggleChatSideBar: () => void;
   toggleRoleList: () => void;
@@ -47,6 +54,10 @@ export interface GlobalStore {
 }
 
 const initialState = {
+  /**
+   * 主题模式
+   */
+  themeMode: 'auto' as ThemeMode,
   showChatSidebar: true,
   showSessionList: true,
   showChatDialog: true,
@@ -80,6 +91,10 @@ export const useGlobalStore = createWithEqualityFn<GlobalStore>()(
       setPanel(key, { open: false });
       const nextSetting = focusList.filter((item) => item !== key);
       set({ focusList: nextSetting });
+    },
+
+    setThemeMode: (themeMode) => {
+      set({ themeMode });
     },
 
     focusPanel: (key: PanelKey) => {

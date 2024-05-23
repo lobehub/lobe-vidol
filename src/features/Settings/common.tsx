@@ -7,7 +7,6 @@ import React from 'react';
 
 import BackgroundEffect from '@/features/Settings/features/BackgroundEffect';
 import NickName from '@/features/Settings/features/NickName';
-import ThemeMode from '@/features/Settings/features/ThemeMode';
 import ThemeSwatchesNetural from '@/features/Settings/features/ThemeSwatchesNetural';
 import ThemeSwatchesPrimary from '@/features/Settings/features/ThemeSwatchesPrimary';
 import { useAgentStore } from '@/store/agent';
@@ -98,9 +97,6 @@ const CommonConfig = (props: CommonConfigProps) => {
             name={'neutralColor'}
           >
             <ThemeSwatchesNetural />
-          </FormItem>
-          <FormItem desc={'自定义主题模式'} divider label={'主题模式'} name={'themeMode'}>
-            <ThemeMode />
           </FormItem>
           <FormItem desc={'自定义背景效果'} divider label={'背景效果'} name={'backgroundEffect'}>
             <BackgroundEffect />

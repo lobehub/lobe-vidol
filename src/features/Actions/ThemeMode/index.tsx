@@ -2,7 +2,7 @@ import { Segmented } from 'antd';
 import { ThemeMode } from 'antd-style';
 import React, { CSSProperties, memo } from 'react';
 
-import { useSettingStore } from '@/store/setting';
+import { useGlobalStore } from '@/store/global';
 
 interface Props {
   style?: CSSProperties;
@@ -10,7 +10,7 @@ interface Props {
 
 export default memo<Props>((props) => {
   const { style } = props;
-  const [themeMode, setThemeMode] = useSettingStore((s) => [s.config.themeMode, s.setThemeMode]);
+  const [themeMode, setThemeMode] = useGlobalStore((s) => [s.themeMode, s.setThemeMode]);
 
   return (
     <Segmented
