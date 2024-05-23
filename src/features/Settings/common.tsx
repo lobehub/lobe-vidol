@@ -113,7 +113,7 @@ const CommonConfig = (props: CommonConfigProps) => {
             </Button>
           </FormItem>
           <FormItem
-            desc={'将会重置所有系统设置，包括主题设置、背景效果、语言模型设置、窗口位置等'}
+            desc={'将会重置所有系统设置，包括主题设置、聊天设置、语言模型设置等'}
             divider
             label={'重置系统设置'}
           >
