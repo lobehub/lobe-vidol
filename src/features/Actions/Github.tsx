@@ -1,11 +1,30 @@
 import { SiGithub } from '@icons-pack/react-simple-icons';
 import { ActionIcon } from '@lobehub/ui';
-import { useTheme } from 'antd-style';
+import { createStyles, useTheme } from 'antd-style';
+
+const useStyles = createStyles(({ css, token }) => {
+  return {
+    icon: css`
+      svg {
+        fill: ${token.colorTextDescription};
+      }
+
+      &:hover {
+        svg {
+          fill: ${token.colorText};
+        }
+      }
+    `,
+  };
+});
 
 export default () => {
   const theme = useTheme();
+
+  const { styles } = useStyles();
   return (
     <ActionIcon
+      className={styles.icon}
       icon={SiGithub}
       key="github"
       title={'✨ GitHub'}

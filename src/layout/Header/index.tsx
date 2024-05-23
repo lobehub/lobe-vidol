@@ -23,14 +23,6 @@ const Header = (props: Props) => {
   return (
     <LobeHeader
       actions={[
-        // <ActionIcon
-        //   icon={UserRoundPlusIcon}
-        //   key="user-plus"
-        //   title={'创建角色'}
-        //   onClick={() => window.open('https://github.com/lobehub/lobe-vidol-market', '_blank')}
-        //   style={{ border: `1px solid ${theme.colorFillSecondary}` }}
-        // />,
-
         <UserAvatar key="user" />,
         <Github key="github" />,
         <ThemeMode key={'theme'} />,
