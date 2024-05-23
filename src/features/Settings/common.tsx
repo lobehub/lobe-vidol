@@ -8,6 +8,7 @@ import React from 'react';
 import BackgroundEffect from '@/features/Settings/features/BackgroundEffect';
 import NickName from '@/features/Settings/features/NickName';
 import ThemeMode from '@/features/Settings/features/ThemeMode';
+import ThemeSwatchesNetural from '@/features/Settings/features/ThemeSwatchesNetural';
 import ThemeSwatchesPrimary from '@/features/Settings/features/ThemeSwatchesPrimary';
 import { useAgentStore } from '@/store/agent';
 import { useSessionStore } from '@/store/session';
@@ -78,7 +79,7 @@ const CommonConfig = (props: CommonConfigProps) => {
   return (
     <div className={classNames(styles.config, className)} style={style}>
       <Form style={{ display: 'flex', flexGrow: 1 }}>
-        <FormGroup icon={User2Icon} title={'用户设置'}>
+        <FormGroup icon={User2Icon} title={'聊天设置'}>
           <FormItem desc={'自定义头像'} divider label={'头像'} name={'avatar'}>
             <AvatarWithUpload />
           </FormItem>
@@ -89,6 +90,14 @@ const CommonConfig = (props: CommonConfigProps) => {
         <FormGroup icon={Settings2} title={'主题设置'}>
           <FormItem desc={'主题色'} divider label={'自定义主题色'} name={'primaryColor'}>
             <ThemeSwatchesPrimary />
+          </FormItem>
+          <FormItem
+            desc={'不同色彩倾向的灰阶自定义'}
+            divider
+            label={'中性色'}
+            name={'neutralColor'}
+          >
+            <ThemeSwatchesNetural />
           </FormItem>
           <FormItem desc={'自定义主题模式'} divider label={'主题模式'} name={'themeMode'}>
             <ThemeMode />

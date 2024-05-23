@@ -1,4 +1,4 @@
-import { PrimaryColors } from '@lobehub/ui';
+import { NeutralColors, PrimaryColors } from '@lobehub/ui';
 import type { ThemeMode } from 'antd-style';
 import { produce } from 'immer';
 import { isEqual, merge } from 'lodash-es';
@@ -34,10 +34,16 @@ export interface SettingAction {
    */
   setConfig: (config: Partial<UserConfig>) => void;
   /**
+   * Set neutral color
+   * @param neutralColor
+   */
+  setNeutralColor: (neutralColor: NeutralColors) => void;
+  /**
    * Set nick name
    * @param nickName
    */
   setNickName: (nickName: string) => void;
+
   /**
    * Set OpenAI config
    * @param config
@@ -70,6 +76,9 @@ const createStore: StateCreator<SettingStore, [['zustand/devtools', never]]> = (
   },
   setPrimaryColor: (primaryColor) => {
     get().setConfig({ primaryColor });
+  },
+  setNeutralColor: (neutralColor) => {
+    get().setConfig({ neutralColor });
   },
   setBackgroundEffect: (backgroundEffect) => {
     get().setConfig({ backgroundEffect });
