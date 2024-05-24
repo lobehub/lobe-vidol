@@ -2,6 +2,41 @@
 
 # Changelog
 
+## [Version 0.8.0](https://github.com/lobehub/lobe-vidol/compare/v0.7.0...v0.8.0)
+
+<sup>Released on **2024-05-24**</sup>
+
+#### ✨ Features
+
+- **misc**: 添加 Discord Icon, 添加灰阶设定，添加错误处理逻辑.
+
+#### 🐛 Bug Fixes
+
+- **misc**: Config data lost.
+
+<br/>
+
+<details>
+<summary><kbd>Improvements and Fixes</kbd></summary>
+
+#### What's improved
+
+- **misc**: 添加 Discord Icon ([ffdccc2](https://github.com/lobehub/lobe-vidol/commit/ffdccc2))
+- **misc**: 添加灰阶设定 ([b7dd792](https://github.com/lobehub/lobe-vidol/commit/b7dd792))
+- **misc**: 添加错误处理逻辑 ([23b2d5d](https://github.com/lobehub/lobe-vidol/commit/23b2d5d))
+
+#### What's fixed
+
+- **misc**: Config data lost ([7ccca77](https://github.com/lobehub/lobe-vidol/commit/7ccca77))
+
+</details>
+
+<div align="right">
+
+[![](https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square)](#readme-top)
+
+</div>
+
 ## [Version 0.7.0](https://github.com/lobehub/lobe-vidol/compare/v0.6.0...v0.7.0)
 
 <sup>Released on **2024-05-20**</sup>
