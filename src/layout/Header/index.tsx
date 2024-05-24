@@ -9,7 +9,6 @@ import { memo } from 'react';
 import Discord from '@/features/Actions/Discord';
 import Github from '@/features/Actions/Github';
 import ThemeMode from '@/features/Actions/ThemeMode';
-import UserAvatar from '@/features/Actions/UserAvatar';
 import { HeaderNavKey } from '@/layout/type';
 
 interface Props {
@@ -23,10 +22,10 @@ const Header = (props: Props) => {
   return (
     <LobeHeader
       actions={[
-        <UserAvatar key="user" />,
         <Github key="github" />,
         <ThemeMode key={'theme'} />,
         <Discord key={'discord'} />,
+        // <UserAvatar key="user" />,
       ]}
       logo={
         <Space>

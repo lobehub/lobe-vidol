@@ -1,17 +1,15 @@
 import { Form, FormGroup, FormItem } from '@lobehub/ui';
-import { App, Button } from 'antd';
 import { createStyles } from 'antd-style';
 import classNames from 'classnames';
 import { Monitor, Settings2, User2Icon } from 'lucide-react';
 import React from 'react';
 
+import ResetConfig from '@/features/Actions/ClearSession';
+import ClearChat from '@/features/Actions/ResetConfig';
 import BackgroundEffect from '@/features/Settings/features/BackgroundEffect';
 import NickName from '@/features/Settings/features/NickName';
 import ThemeSwatchesNetural from '@/features/Settings/features/ThemeSwatchesNetural';
 import ThemeSwatchesPrimary from '@/features/Settings/features/ThemeSwatchesPrimary';
-import { useAgentStore } from '@/store/agent';
-import { useSessionStore } from '@/store/session';
-import { useSettingStore } from '@/store/setting';
 
 import AvatarWithUpload from './features/AvatarWithUpload';
 
@@ -35,45 +33,6 @@ const useStyles = createStyles(({ css }) => ({
 const CommonConfig = (props: CommonConfigProps) => {
   const { style, className } = props;
   const { styles } = useStyles();
-  const clearAgentStorage = useAgentStore((s) => s.clearAgentStorage);
-  const clearSessions = useSessionStore((s) => s.clearSessions);
-  const resetConfig = useSettingStore((s) => s.resetConfig);
-  const { message, modal } = App.useApp();
-
-  const handleClear = () => {
-    modal.confirm({
-      cancelText: '取消',
-      centered: true,
-      content: '操作无法撤销，清除后数据将无法恢复，请慎重操作',
-      okButtonProps: {
-        danger: true,
-      },
-      okText: '确定',
-      onOk: () => {
-        clearSessions();
-        clearAgentStorage();
-        message.success('清除成功');
-      },
-      title: '确认清除所有会话消息?',
-    });
-  };
-
-  const handleReset = () => {
-    modal.confirm({
-      cancelText: '取消',
-      centered: true,
-      content: '操作无法撤销，重置后数据将无法恢复，请慎重操作',
-      okButtonProps: {
-        danger: true,
-      },
-      okText: '确定',
-      onOk: () => {
-        resetConfig();
-        message.success('重置成功');
-      },
-      title: '确认重置所有系统设置?',
-    });
-  };
 
   return (
     <div className={classNames(styles.config, className)} style={style}>
@@ -108,18 +67,14 @@ const CommonConfig = (props: CommonConfigProps) => {
             divider
             label={'清除所有会话消息'}
           >
-            <Button danger onClick={handleClear} type={'primary'}>
-              立即清除
-            </Button>
+            <ClearChat />
           </FormItem>
           <FormItem
             desc={'将会重置所有系统设置，包括主题设置、聊天设置、语言模型设置等'}
             divider
             label={'重置系统设置'}
           >
-            <Button danger onClick={handleReset} type={'primary'}>
-              立即重置
-            </Button>
+            <ResetConfig />
           </FormItem>
         </FormGroup>
       </Form>
