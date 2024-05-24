@@ -9,7 +9,7 @@ import AgentCard from '@/components/agent/AgentCard';
 import SystemRole from '@/components/agent/SystemRole';
 import { SIDEBAR_MAX_WIDTH, SIDEBAR_WIDTH } from '@/constants/token';
 import { agentSelectors, useAgentStore } from '@/store/agent';
-import { useConfigStore } from '@/store/config';
+import { useGlobalStore } from '@/store/global';
 import { marketStoreSelectors, useMarketStore } from '@/store/market';
 import { useSessionStore } from '@/store/session';
 
@@ -37,7 +37,7 @@ const Header = () => {
       marketStoreSelectors.currentAgentItem(s),
     ],
   );
-  const [closePanel] = useConfigStore((s) => [s.closePanel]);
+  const [closePanel] = useGlobalStore((s) => [s.closePanel]);
   const [subscribe, unsubscribe, subscribed] = useAgentStore((s) => [
     s.subscribe,
     s.unsubscribe,

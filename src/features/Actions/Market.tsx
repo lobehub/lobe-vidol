@@ -2,10 +2,10 @@ import { ActionIcon } from '@lobehub/ui';
 import { PlusCircle } from 'lucide-react';
 
 import { DESKTOP_HEADER_ICON_SIZE } from '@/constants/token';
-import { useConfigStore } from '@/store/config';
+import { useGlobalStore } from '@/store/global';
 
 export default () => {
-  const openPanel = useConfigStore((s) => s.openPanel);
+  const openPanel = useGlobalStore((s) => s.openPanel);
 
   return (
     <ActionIcon

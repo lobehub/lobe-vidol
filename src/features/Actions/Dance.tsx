@@ -1,10 +1,10 @@
 import { ActionIcon } from '@lobehub/ui';
 import { Music2 } from 'lucide-react';
 
-import { useConfigStore } from '@/store/config';
+import { useGlobalStore } from '@/store/global';
 
 export default () => {
-  const [openPanel] = useConfigStore((s) => [s.openPanel]);
+  const [openPanel] = useGlobalStore((s) => [s.openPanel]);
 
   return (
     <ActionIcon

@@ -3,10 +3,10 @@ import { isEqual } from 'lodash-es';
 
 import { OPENAI_MODEL_LIST } from '@/constants/openai';
 import { useCalculateToken } from '@/hooks/useCalculateToken';
-import { configSelectors, useConfigStore } from '@/store/config';
+import { configSelectors, useSettingStore } from '@/store/setting';
 
 const TokenMini = () => {
-  const config = useConfigStore((s) => configSelectors.currentOpenAIConfig(s), isEqual);
+  const config = useSettingStore((s) => configSelectors.currentOpenAIConfig(s), isEqual);
   const usedTokens = useCalculateToken();
   const maxValue = OPENAI_MODEL_LIST.find((item) => item.name === config?.model)?.maxToken || 4096;
 

@@ -1,13 +1,13 @@
 import { OPENAI_API_KEY, OPENAI_END_POINT } from '@/constants/openai';
 import { speakCharacter } from '@/features/messages/speakCharacter';
-import { configSelectors, useConfigStore } from '@/store/config';
 import { sessionSelectors, useSessionStore } from '@/store/session';
+import { configSelectors, useSettingStore } from '@/store/setting';
 import { useViewerStore } from '@/store/viewer';
 import { ChatMessage } from '@/types/chat';
 import { ChatStreamPayload } from '@/types/openai/chat';
 
 const createHeader = (header?: any) => {
-  const config = configSelectors.currentOpenAIConfig(useConfigStore.getState());
+  const config = configSelectors.currentOpenAIConfig(useSettingStore.getState());
   return {
     'Content-Type': 'application/json',
     [OPENAI_API_KEY]: config?.apikey || '',
@@ -21,7 +21,7 @@ interface ChatCompletionPayload extends Partial<Omit<ChatStreamPayload, 'message
 }
 
 export const chatCompletion = async (payload: ChatCompletionPayload) => {
-  const config = configSelectors.currentOpenAIConfig(useConfigStore.getState());
+  const config = configSelectors.currentOpenAIConfig(useSettingStore.getState());
   const { messages } = payload;
 
   const postMessages = messages.map((m) => ({ content: m.content, role: m.role }));

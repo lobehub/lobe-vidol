@@ -4,8 +4,8 @@ import { Network } from 'lucide-react';
 import { memo, useState } from 'react';
 import { Center, Flexbox } from 'react-layout-kit';
 
-import { configSelectors, useConfigStore } from '@/store/config';
 import { useSessionStore } from '@/store/session';
+import { configSelectors, useSettingStore } from '@/store/setting';
 
 import { FormAction } from './style';
 
@@ -16,7 +16,7 @@ interface APIKeyFormProps {
 const APIKeyForm = ({ id }: APIKeyFormProps) => {
   const [showProxy, setShow] = useState(false);
 
-  const [currentOpenAIConfig, setConfig] = useConfigStore((s) => [
+  const [currentOpenAIConfig, setConfig] = useSettingStore((s) => [
     configSelectors.currentOpenAIConfig(s),
     s.setOpenAIConfig,
   ]);

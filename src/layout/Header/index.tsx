@@ -1,12 +1,14 @@
 'use client';
 
-import { ActionIcon, Header as LobeHeader, Logo, TabsNav } from '@lobehub/ui';
+import { Header as LobeHeader, Logo, TabsNav } from '@lobehub/ui';
 import { Space, Tag, Tooltip } from 'antd';
-import { GithubIcon, UserRoundPlusIcon } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { memo } from 'react';
 
+import Discord from '@/features/Actions/Discord';
+import Github from '@/features/Actions/Github';
+import ThemeMode from '@/features/Actions/ThemeMode';
 import { HeaderNavKey } from '@/layout/type';
 
 interface Props {
@@ -20,20 +22,10 @@ const Header = (props: Props) => {
   return (
     <LobeHeader
       actions={[
-        <ActionIcon
-          icon={UserRoundPlusIcon}
-          key="user-plus"
-          title={'创建角色'}
-          onClick={() => window.open('https://github.com/lobehub/lobe-vidol-market', '_blank')}
-          size="large"
-        />,
-        <ActionIcon
-          icon={GithubIcon}
-          key="github"
-          title={'✨ GitHub'}
-          onClick={() => window.open('https://github.com/lobehub/lobe-vidol', '_blank')}
-          size="large"
-        />,
+        <Github key="github" />,
+        <ThemeMode key={'theme'} />,
+        <Discord key={'discord'} />,
+        // <UserAvatar key="user" />,
       ]}
       logo={
         <Space>

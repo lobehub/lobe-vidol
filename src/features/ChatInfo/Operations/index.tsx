@@ -3,7 +3,7 @@ import { Modal } from 'antd';
 import { Eraser, Music } from 'lucide-react';
 import React, { memo } from 'react';
 
-import { useConfigStore } from '@/store/config';
+import { useGlobalStore } from '@/store/global';
 import { useSessionStore } from '@/store/session';
 
 import Item from './Item';
@@ -15,7 +15,7 @@ export interface MyListProps {
 }
 
 const Operations = memo<MyListProps>(({ mobile }) => {
-  const [openPanel] = useConfigStore((s) => [s.openPanel]);
+  const [openPanel] = useGlobalStore((s) => [s.openPanel]);
   const [clearHistory] = useSessionStore((s) => [s.clearHistory]);
 
   const items = [

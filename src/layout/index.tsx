@@ -1,54 +1,44 @@
-'use client';
+import { PrimaryColors } from '@lobehub/ui';
+import { ThemeAppearance } from 'antd-style';
+import dynamic from 'next/dynamic';
+import { cookies } from 'next/headers';
+import { FC, ReactNode } from 'react';
 
-import { ThemeProvider } from '@lobehub/ui';
-import { ThemeAppearance, createStyles } from 'antd-style';
-import { ReactNode } from 'react';
+import { VIDOL_THEME_NEUTRAL_COLOR, VIDOL_THEME_PRIMARY_COLOR } from '@/constants/theme';
+import AppTheme from '@/layout/AppTheme';
+import StoreHydration from '@/layout/StoreHydration';
+import StyleRegistry from '@/layout/StyleRegistry';
 
-import { VIDOL_THEME_APPEARANCE } from '@/constants/theme';
-import { useConfigStore } from '@/store/config';
-import { useThemeStore } from '@/store/theme';
-import { GlobalStyle } from '@/styles';
-import { setCookie } from '@/utils/cookie';
+let DebugUI: FC = () => null;
 
-import StoreHydration from './StoreHydration';
+if (process.env.NODE_ENV === 'development') {
+  DebugUI = dynamic(() => import('@/features/DebugUI'), { ssr: false }) as FC;
+}
 
 export interface LayoutProps {
   children?: ReactNode;
   defaultAppearance?: ThemeAppearance;
+  defaultPrimaryColor?: PrimaryColors;
 }
 
-const useStyles = createStyles(({ css }) => ({
-  content: css`
-    overflow-y: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    height: 100%;
-  `,
-}));
-
 const Layout = (props: LayoutProps) => {
-  const { children, defaultAppearance } = props;
-  const { styles } = useStyles();
-  const themeMode = useThemeStore((s) => s.themeMode);
-  const [primaryColor] = useConfigStore((s) => [s.config.primaryColor]);
+  const { children } = props;
+
+  const cookieStore = cookies();
+  const primaryColor = cookieStore.get(VIDOL_THEME_PRIMARY_COLOR);
+  const neutralColor = cookieStore.get(VIDOL_THEME_NEUTRAL_COLOR);
 
   return (
-    <ThemeProvider
-      customTheme={{
-        primaryColor: primaryColor,
-      }}
-      defaultAppearance={defaultAppearance as ThemeAppearance}
-      onAppearanceChange={(appearance) => {
-        setCookie(VIDOL_THEME_APPEARANCE, appearance);
-      }}
-      themeMode={themeMode}
-    >
-      <StoreHydration />
-      <GlobalStyle />
-      <div className={styles.content}>{children}</div>
-    </ThemeProvider>
+    <StyleRegistry>
+      <AppTheme
+        defaultNeutralColor={neutralColor?.value as any}
+        defaultPrimaryColor={primaryColor?.value as any}
+      >
+        <DebugUI />
+        <StoreHydration />
+        {children}
+      </AppTheme>
+    </StyleRegistry>
   );
 };
 

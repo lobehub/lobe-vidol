@@ -7,14 +7,17 @@ import {
 } from '@lobehub/ui';
 import { memo } from 'react';
 
-import { useConfigStore } from '@/store/config';
+import { useSettingStore } from '@/store/setting';
 
 const ThemeSwatchesPrimary = memo(() => {
-  const [primaryColor, setConfig] = useConfigStore((s) => [s.config.primaryColor, s.setConfig]);
+  const [primaryColor, setPrimaryColor] = useSettingStore((s) => [
+    s.config.primaryColor,
+    s.setPrimaryColor,
+  ]);
 
   const handleSelect = (v: any) => {
     const name = findCustomThemeName('primary', v) as PrimaryColors;
-    setConfig({ primaryColor: name || '' });
+    setPrimaryColor(name || '');
   };
 
   return (

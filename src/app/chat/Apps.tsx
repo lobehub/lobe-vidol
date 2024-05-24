@@ -1,5 +1,5 @@
 import { DancePanel, MarketPanel } from '@/panels';
-import { useConfigStore } from '@/store/config';
+import { useGlobalStore } from '@/store/global';
 import { PanelKey } from '@/types/config';
 
 export const apps = [
@@ -16,7 +16,7 @@ export const apps = [
 ];
 
 export default () => {
-  const [panel] = useConfigStore((s) => [s.panel]);
+  const [panel] = useGlobalStore((s) => [s.panel]);
 
   return (
     <>

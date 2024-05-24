@@ -20,8 +20,7 @@ const nextConfig = {
   compress: isProd,
   pageExtensions: ['tsx', 'ts'],
   experimental: {
-    optimizePackageImports: ['@lobehub/ui', '@lobehub/icons', 'chroma-js', 'shiki'],
-    webVitalsAttribution: ['CLS', 'LCP'],
+    optimizePackageImports: ['@lobehub/ui', '@lobehub/icons', 'chroma-js', 'shiki', '@icons-pack/react-simple-icons','gpt-tokenizer'],
   },
   reactStrictMode: true,
   webpack(config) {
