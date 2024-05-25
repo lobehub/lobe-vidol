@@ -32,7 +32,7 @@ const Header = (props: Props) => {
           <Link href="/" style={{ color: 'inherit' }}>
             <Logo extra={'Lobe Vidol'} size={36} />
           </Link>
-          <Tooltip title="项目当前正在施工中，不保证数据稳定性，如果遇到问题可以在系统设置中清除会话消息与重置系统设置，造成地不便敬请谅解">
+          <Tooltip title="项目当前正在施工中，不保证数据稳定性，如果遇到问题可以在系统设置中清除会话消息与重置系统设置，造成不便敬请谅解">
             <Tag color="yellow">WIP</Tag>
           </Tooltip>
         </Space>

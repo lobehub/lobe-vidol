@@ -108,9 +108,11 @@ export class Viewer {
     this._cameraControls?.target.set(0, 0, 0);
     this._cameraControls.update();
 
-    window.addEventListener('resize', () => {
-      this.resize();
+    const resizeObserver = new ResizeObserver(() => {
+      setTimeout(() => this.resize(), 0);
     });
+
+    resizeObserver.observe(parentElement!);
 
     this.isReady = true;
     this.update();
