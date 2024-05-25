@@ -1,13 +1,13 @@
 import { ActionIcon } from '@lobehub/ui';
 import { List } from 'antd';
 import { createStyles } from 'antd-style';
-import { isEqual } from 'lodash-es';
+import { get, isEqual } from 'lodash-es';
 import { PlayIcon } from 'lucide-react';
 
 import { speakCharacter } from '@/features/messages/speakCharacter';
 import { agentSelectors, useAgentStore } from '@/store/agent';
 import { useGlobalStore } from '@/store/global';
-import { useTouchStore } from '@/store/touch';
+import { TouchAction } from '@/types/touch';
 
 const useStyles = createStyles(({ css, token }) => ({
   active: css`
@@ -24,14 +24,20 @@ const useStyles = createStyles(({ css, token }) => ({
   `,
 }));
 
-const AreaList = () => {
+interface AreaListProps {
+  currentTouchArea: string;
+}
+
+const AreaList = (props: AreaListProps) => {
   const { styles } = useStyles();
-  const { actionConfig, currentTouchArea } = useTouchStore();
+  const { currentTouchArea } = props;
+  const [currentAgentTouch] = useAgentStore((s) => [agentSelectors.currentAgentTouch(s)]);
   const currentAgentTTS = useAgentStore((s) => agentSelectors.currentAgentTTS(s), isEqual);
 
   const viewer = useGlobalStore((s) => s.viewer);
 
-  const data = actionConfig[currentTouchArea];
+  const data = currentAgentTouch ? (get(currentAgentTouch, currentTouchArea) as TouchAction[]) : [];
+
   return (
     <List
       className={styles.list}

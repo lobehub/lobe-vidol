@@ -8,8 +8,12 @@ const { Item } = List;
 const useStyles = createStyles(({ css, token, responsive }) => ({
   container: css`
     position: relative;
+
+    align-items: center;
+
     padding-top: 16px;
     padding-bottom: 16px;
+
     border-radius: ${token.borderRadius}px;
     ${responsive.mobile} {
       border-radius: 0;
@@ -21,6 +25,7 @@ const useStyles = createStyles(({ css, token, responsive }) => ({
 }));
 
 export interface ItemProps {
+  actions?: ReactNode;
   active?: boolean;
   className?: string;
   hoverable?: boolean;
@@ -31,7 +36,7 @@ export interface ItemProps {
 }
 
 const SettingItem = memo<ItemProps>(
-  ({ label, icon, hoverable = true, onClick, style, className }) => {
+  ({ label, icon, hoverable = true, actions, onClick, style, className }) => {
     const { cx, styles } = useStyles();
     return (
       <Item
@@ -41,7 +46,9 @@ const SettingItem = memo<ItemProps>(
         style={style}
         onClick={onClick}
         title={label as string}
-      ></Item>
+      >
+        {actions}
+      </Item>
     );
   },
 );

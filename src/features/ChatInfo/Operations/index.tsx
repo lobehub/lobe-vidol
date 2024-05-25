@@ -1,8 +1,9 @@
 import { ExclamationCircleFilled } from '@ant-design/icons';
 import { Modal } from 'antd';
-import { Eraser, Music } from 'lucide-react';
+import { Eraser, Music, VideoIcon } from 'lucide-react';
 import React, { memo } from 'react';
 
+import ViewerMode from '@/features/Actions/ViewerMode';
 import { useGlobalStore } from '@/store/global';
 import { useSessionStore } from '@/store/session';
 
@@ -42,6 +43,12 @@ const Operations = memo<MyListProps>(({ mobile }) => {
     //   },
     // },
     {
+      icon: VideoIcon,
+      key: 'video',
+      label: '聊天模式',
+      actions: <ViewerMode />,
+    },
+    {
       icon: Music,
       key: 'music',
       label: '音乐与舞蹈',
@@ -71,8 +78,15 @@ const Operations = memo<MyListProps>(({ mobile }) => {
 
   return (
     <>
-      {items.map(({ icon, label, onClick }) => (
-        <Item hoverable={!mobile} icon={icon} label={label} key={label} onClick={onClick} />
+      {items.map(({ icon, label, onClick, actions }) => (
+        <Item
+          hoverable={!mobile}
+          icon={icon}
+          label={label}
+          key={label}
+          onClick={onClick}
+          actions={actions}
+        />
       ))}
     </>
   );

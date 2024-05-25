@@ -5,7 +5,7 @@ import { createStyles } from 'antd-style';
 import React from 'react';
 
 import AgentCard from '@/components/agent/AgentCard';
-import { SIDEBAR_WIDTH } from '@/constants/token';
+import { SIDEBAR_MAX_WIDTH, SIDEBAR_WIDTH } from '@/constants/token';
 import MiniPlayer from '@/features/AudioPlayer/MiniPlayer';
 import { useGlobalStore } from '@/store/global';
 import { sessionSelectors, useSessionStore } from '@/store/session';
@@ -36,7 +36,7 @@ export default () => {
     <DraggablePanel
       classNames={{ content: styles.content }}
       minWidth={SIDEBAR_WIDTH}
-      maxWidth={SIDEBAR_WIDTH}
+      maxWidth={SIDEBAR_MAX_WIDTH}
       mode={'fixed'}
       onExpandChange={(expand) => {
         setChatSidebar(expand);
