@@ -1,5 +1,6 @@
 import { LOBE_VIDOL_DEFAULT_AGENT_ID } from '@/constants/agent';
 import { Agent, AgentMeta } from '@/types/agent';
+import { TouchActionConfig } from '@/types/touch';
 import { TTS } from '@/types/tts';
 
 import { AgentStore } from '../index';
@@ -28,6 +29,13 @@ const currentAgentTTS = (s: AgentStore): TTS | undefined => {
   if (!currentAgent) return undefined;
 
   return currentAgent.tts;
+};
+
+const currentAgentTouch = (s: AgentStore): TouchActionConfig | undefined => {
+  const currentAgent = currentAgentItem(s);
+  if (!currentAgent) return undefined;
+
+  return currentAgent.touch;
 };
 
 const agentListIds = (s: AgentStore): string[] => {
@@ -77,6 +85,7 @@ export const agentSelectors = {
   currentAgentItem,
   currentAgentMeta,
   currentAgentTTS,
+  currentAgentTouch,
   filterAgentListIds,
   agentListIds,
   isDefaultAgent,

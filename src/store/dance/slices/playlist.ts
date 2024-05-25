@@ -104,7 +104,7 @@ export const createPlayListStore: StateCreator<
     clearPlayList: () => {
       set({ currentPlay: null, isPlaying: false, playlist: [] });
     },
-    currentPlay: null,
+    currentPlay: DEFAULT_DANCE,
 
     isPlaying: false,
 
