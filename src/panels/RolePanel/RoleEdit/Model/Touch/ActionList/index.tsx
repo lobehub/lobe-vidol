@@ -2,12 +2,12 @@ import { ActionIcon } from '@lobehub/ui';
 import { List } from 'antd';
 import { createStyles } from 'antd-style';
 import { get, isEqual } from 'lodash-es';
-import { PlayIcon } from 'lucide-react';
+import { PlayIcon, XIcon } from 'lucide-react';
 
 import { speakCharacter } from '@/features/messages/speakCharacter';
 import { agentSelectors, useAgentStore } from '@/store/agent';
 import { useGlobalStore } from '@/store/global';
-import { TouchAction } from '@/types/touch';
+import { TouchAction, TouchAreaEnum } from '@/types/touch';
 
 const useStyles = createStyles(({ css, token }) => ({
   active: css`
@@ -25,13 +25,16 @@ const useStyles = createStyles(({ css, token }) => ({
 }));
 
 interface AreaListProps {
-  currentTouchArea: string;
+  currentTouchArea: TouchAreaEnum;
 }
 
 const AreaList = (props: AreaListProps) => {
   const { styles } = useStyles();
   const { currentTouchArea } = props;
-  const [currentAgentTouch] = useAgentStore((s) => [agentSelectors.currentAgentTouch(s)]);
+  const [currentAgentTouch, removeTouchAction] = useAgentStore((s) => [
+    agentSelectors.currentAgentTouch(s),
+    s.removeTouchAction,
+  ]);
   const currentAgentTTS = useAgentStore((s) => agentSelectors.currentAgentTTS(s), isEqual);
 
   const viewer = useGlobalStore((s) => s.viewer);
@@ -43,11 +46,10 @@ const AreaList = (props: AreaListProps) => {
       className={styles.list}
       dataSource={data}
       header={<div>触摸反应列表</div>}
-      renderItem={(item) => (
+      renderItem={(item, index) => (
         <List.Item
           actions={[
             <ActionIcon
-              /* @ts-ignore */
               icon={PlayIcon}
               key="play"
               onClick={() => {
@@ -61,6 +63,13 @@ const AreaList = (props: AreaListProps) => {
                   },
                   viewer,
                 );
+              }}
+            />,
+            <ActionIcon
+              icon={XIcon}
+              key="delete"
+              onClick={() => {
+                removeTouchAction(currentTouchArea, index);
               }}
             />,
           ]}

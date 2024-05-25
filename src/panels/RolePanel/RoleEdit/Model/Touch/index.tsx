@@ -29,7 +29,7 @@ interface TouchProps {
 const Touch = (props: TouchProps) => {
   const { style, className } = props;
   const { styles } = useStyles();
-  const [currentTouchArea, setCurrentTouchArea] = useState(TouchAreaEnum.Head);
+  const [currentTouchArea, setCurrentTouchArea] = useState<TouchAreaEnum>(TouchAreaEnum.Head);
 
   return (
     <div className={classNames(className, styles.container)} style={style}>
