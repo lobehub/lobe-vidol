@@ -1,6 +1,6 @@
 import { Icon, List } from '@lobehub/ui';
-import { createStyles, useResponsive } from 'antd-style';
-import { ChevronRight, type LucideIcon } from 'lucide-react';
+import { createStyles } from 'antd-style';
+import { type LucideIcon } from 'lucide-react';
 import { CSSProperties, ReactNode, memo } from 'react';
 
 const { Item } = List;
@@ -33,7 +33,6 @@ export interface ItemProps {
 const SettingItem = memo<ItemProps>(
   ({ label, icon, hoverable = true, onClick, style, className }) => {
     const { cx, styles } = useStyles();
-    const { mobile } = useResponsive();
     return (
       <Item
         active={false}
@@ -42,9 +41,7 @@ const SettingItem = memo<ItemProps>(
         style={style}
         onClick={onClick}
         title={label as string}
-      >
-        {mobile && <Icon icon={ChevronRight} size={{ fontSize: 16 }} />}
-      </Item>
+      ></Item>
     );
   },
 );

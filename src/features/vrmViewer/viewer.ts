@@ -111,6 +111,7 @@ export class Viewer {
     window.addEventListener('resize', () => {
       this.resize();
     });
+
     this.isReady = true;
     this.update();
   }

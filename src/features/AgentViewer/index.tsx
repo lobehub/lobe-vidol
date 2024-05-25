@@ -3,7 +3,7 @@ import React, { memo, useCallback, useEffect, useRef } from 'react';
 
 import PageLoading from '@/components/PageLoading';
 import { useLoadVrm } from '@/hooks/useLoadVrm';
-import { useViewerStore } from '@/store/viewer';
+import { useGlobalStore } from '@/store/global';
 
 import ToolBar from './ToolBar';
 import { useStyles } from './style';
@@ -20,7 +20,7 @@ function AgentViewer(props: Props) {
   const { className, style, height, modelUrl, width } = props;
   const { styles } = useStyles();
   const ref = useRef<HTMLDivElement>(null);
-  const viewer = useViewerStore((s) => s.viewer);
+  const viewer = useGlobalStore((s) => s.viewer);
 
   const { loading, loadVrm } = useLoadVrm(viewer);
 

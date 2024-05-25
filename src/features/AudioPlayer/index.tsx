@@ -9,7 +9,7 @@ import Duration from '@/features/AudioPlayer/Duration';
 import PlayList from '@/features/AudioPlayer/PlayList';
 import Volume from '@/features/AudioPlayer/Volume';
 import { DanceStore, useDanceStore } from '@/store/dance';
-import { useViewerStore } from '@/store/viewer';
+import { useGlobalStore } from '@/store/global';
 
 import { useStyles } from './style';
 
@@ -34,7 +34,7 @@ function Player(props: PlayerProps) {
   const [duration, setDuration] = useState(0);
   const [currentProgress, setCurrentProgress] = useState(0);
   const { nextDance, currentPlay, isPlaying } = useDanceStore(danceSelectors);
-  const viewer = useViewerStore((s) => s.viewer);
+  const viewer = useGlobalStore((s) => s.viewer);
 
   const { styles } = useStyles();
 

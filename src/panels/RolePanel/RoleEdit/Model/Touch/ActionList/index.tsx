@@ -6,8 +6,8 @@ import { PlayIcon } from 'lucide-react';
 
 import { speakCharacter } from '@/features/messages/speakCharacter';
 import { agentSelectors, useAgentStore } from '@/store/agent';
+import { useGlobalStore } from '@/store/global';
 import { useTouchStore } from '@/store/touch';
-import { useViewerStore } from '@/store/viewer';
 
 const useStyles = createStyles(({ css, token }) => ({
   active: css`
@@ -29,7 +29,7 @@ const AreaList = () => {
   const { actionConfig, currentTouchArea } = useTouchStore();
   const currentAgentTTS = useAgentStore((s) => agentSelectors.currentAgentTTS(s), isEqual);
 
-  const { viewer } = useViewerStore();
+  const viewer = useGlobalStore((s) => s.viewer);
 
   const data = actionConfig[currentTouchArea];
   return (

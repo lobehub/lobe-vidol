@@ -28,6 +28,7 @@ export default () => {
     s.showChatSidebar,
     s.setChatSidebar,
   ]);
+
   const { styles } = useStyles();
   const [currentAgent] = useSessionStore((s) => [sessionSelectors.currentAgent(s)]);
 
@@ -37,7 +38,9 @@ export default () => {
       minWidth={SIDEBAR_WIDTH}
       maxWidth={SIDEBAR_WIDTH}
       mode={'fixed'}
-      onExpandChange={(expand) => setChatSidebar(expand)}
+      onExpandChange={(expand) => {
+        setChatSidebar(expand);
+      }}
       expand={showChatSidebar}
       placement={'right'}
     >
