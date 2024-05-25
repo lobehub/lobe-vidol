@@ -4,8 +4,8 @@ import classNames from 'classnames';
 import { Monitor, Settings2, User2Icon } from 'lucide-react';
 import React from 'react';
 
-import ResetConfig from '@/features/Actions/ClearSession';
-import ClearChat from '@/features/Actions/ResetConfig';
+import ClearSession from '@/features/Actions/ClearSession';
+import ResetConfig from '@/features/Actions/ResetConfig';
 import BackgroundEffect from '@/features/Settings/features/BackgroundEffect';
 import NickName from '@/features/Settings/features/NickName';
 import ThemeSwatchesNetural from '@/features/Settings/features/ThemeSwatchesNetural';
@@ -67,7 +67,7 @@ const CommonConfig = (props: CommonConfigProps) => {
             divider
             label={'清除所有会话消息'}
           >
-            <ClearChat />
+            <ClearSession />
           </FormItem>
           <FormItem
             desc={'将会重置所有系统设置，包括主题设置、聊天设置、语言模型设置等'}
