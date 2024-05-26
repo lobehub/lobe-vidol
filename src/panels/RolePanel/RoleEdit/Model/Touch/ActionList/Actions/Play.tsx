@@ -9,17 +9,17 @@ import { useGlobalStore } from '@/store/global';
 import { TouchAction } from '@/types/touch';
 
 interface Props {
-  item: TouchAction;
+  touchAction: TouchAction;
 }
 
 export default memo((props: Props) => {
-  const { item } = props;
+  const { touchAction } = props;
   const [loading, setLoading] = useState(false);
   const viewer = useGlobalStore((s) => s.viewer);
 
   const currentAgentTTS = useAgentStore((s) => agentSelectors.currentAgentTTS(s), isEqual);
 
-  if (!item) {
+  if (!touchAction) {
     return null;
   }
 
@@ -28,15 +28,16 @@ export default memo((props: Props) => {
       icon={loading ? Loader2 : PlayIcon}
       spin={loading}
       disable={loading}
+      title="播放"
       key="play"
       onClick={() => {
         setLoading(true);
         speakCharacter(
           {
-            emotion: item.emotion,
+            emotion: touchAction.emotion,
             tts: {
               ...currentAgentTTS,
-              message: item.text,
+              message: touchAction.text,
             },
           },
           viewer,

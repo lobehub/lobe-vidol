@@ -2,7 +2,7 @@ import { List } from 'antd';
 import { createStyles } from 'antd-style';
 import classNames from 'classnames';
 
-import { TOUCH_AREA_LIST } from '@/constants/touch';
+import { TOUCH_AREA_OPTIONS } from '@/constants/touch';
 import { TouchAreaEnum } from '@/types/touch';
 
 const useStyles = createStyles(({ css, token }) => ({
@@ -32,7 +32,7 @@ const Index = (props: IndexProps) => {
   return (
     <List
       className={styles.list}
-      dataSource={TOUCH_AREA_LIST}
+      dataSource={TOUCH_AREA_OPTIONS}
       header={<div style={{ padding: 12 }}>触摸区域列表</div>}
       renderItem={(item) => (
         <List.Item

@@ -9,7 +9,7 @@ import { StateCreator } from 'zustand/vanilla';
 import { DEFAULT_AGENT_CONFIG, LOBE_VIDOL_DEFAULT_AGENT_ID } from '@/constants/agent';
 import { TouchActionType, touchReducer } from '@/store/agent/reducers/touch';
 import { Agent, AgentMeta } from '@/types/agent';
-import { TouchAreaEnum } from '@/types/touch';
+import { TouchAction, TouchAreaEnum } from '@/types/touch';
 import { TTS } from '@/types/tts';
 import { mergeWithUndefined } from '@/utils/common';
 
@@ -87,6 +87,13 @@ export interface AgentStore {
    * 更新角色 TTS
    */
   updateAgentTTS: (tts: DeepPartial<TTS>) => void;
+  /**
+   * 更新触摸配置
+   * @param currentTouchArea
+   * @param index
+   * @param action
+   */
+  updateTouchAction: (currentTouchArea: TouchAreaEnum, index: number, action: TouchAction) => void;
 }
 
 const createAgentStore: StateCreator<AgentStore, [['zustand/devtools', never]]> = (set, get) => ({
@@ -182,6 +189,17 @@ const createAgentStore: StateCreator<AgentStore, [['zustand/devtools', never]]> 
       payload: {
         touchArea: currentTouchArea,
         index: index,
+      },
+    });
+  },
+  updateTouchAction: (currentTouchArea, index, action) => {
+    const { dispatchTouchAction } = get();
+    dispatchTouchAction({
+      type: 'UPDATE_TOUCH_ACTION',
+      payload: {
+        touchArea: currentTouchArea,
+        index: index,
+        action,
       },
     });
   },

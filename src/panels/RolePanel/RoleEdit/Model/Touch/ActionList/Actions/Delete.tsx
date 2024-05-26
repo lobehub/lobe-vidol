@@ -24,7 +24,7 @@ export default memo((props: Props) => {
         removeTouchAction(touchArea, index);
       }}
     >
-      <ActionIcon icon={XIcon} />
+      <ActionIcon icon={XIcon} title={'删除'} />
     </Popconfirm>
   );
 });

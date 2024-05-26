@@ -2,8 +2,9 @@ import { List } from 'antd';
 import { createStyles } from 'antd-style';
 import { get } from 'lodash-es';
 
-import { TOUCH_AREA_LIST } from '@/constants/touch';
+import { TOUCH_AREA_OPTIONS } from '@/constants/touch';
 import Delete from '@/panels/RolePanel/RoleEdit/Model/Touch/ActionList/Actions/Delete';
+import Edit from '@/panels/RolePanel/RoleEdit/Model/Touch/ActionList/Actions/Edit';
 import Play from '@/panels/RolePanel/RoleEdit/Model/Touch/ActionList/Actions/Play';
 import { agentSelectors, useAgentStore } from '@/store/agent';
 import { TouchAction, TouchAreaEnum } from '@/types/touch';
@@ -16,11 +17,7 @@ const useStyles = createStyles(({ css, token }) => ({
     width: 100%;
     padding: 24px;
   `,
-  listItem: css`
-    &:hover {
-      cursor: pointer;
-    }
-  `,
+  listItem: css``,
 }));
 
 interface AreaListProps {
@@ -34,7 +31,7 @@ const AreaList = (props: AreaListProps) => {
 
   const data = currentAgentTouch ? (get(currentAgentTouch, currentTouchArea) as TouchAction[]) : [];
 
-  const touchArea = TOUCH_AREA_LIST.find((item) => item.value === currentTouchArea)?.label;
+  const touchArea = TOUCH_AREA_OPTIONS.find((item) => item.value === currentTouchArea)?.label;
 
   return (
     <List
@@ -44,7 +41,13 @@ const AreaList = (props: AreaListProps) => {
       renderItem={(item, index) => (
         <List.Item
           actions={[
-            <Play key={`${currentTouchArea}_play_${index}`} item={item} />,
+            <Play key={`${currentTouchArea}_play_${index}`} touchAction={item} />,
+            <Edit
+              key={`${currentTouchArea}_edit_${index}`}
+              index={index}
+              touchArea={currentTouchArea}
+              touchAction={item}
+            />,
             <Delete
               key={`${currentTouchArea}_delete_${index}`}
               index={index}
