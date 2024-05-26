@@ -1,5 +1,13 @@
 import { TouchActionConfig, TouchAreaEnum } from '@/types/touch';
 
+export const TOUCH_AREA_LIST = [
+  { label: '头部', value: TouchAreaEnum.Head },
+  { label: '手臂', value: TouchAreaEnum.Arm },
+  { label: '腿部', value: TouchAreaEnum.Leg },
+  { label: '胸部', value: TouchAreaEnum.Chest },
+  { label: '腹部', value: TouchAreaEnum.Belly },
+];
+
 export const DEFAULT_TOUCH_ACTION_CONFIG: TouchActionConfig = {
   [TouchAreaEnum.Head]: [
     {
