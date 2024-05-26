@@ -11,11 +11,15 @@ export const TOUCH_AREA_OPTIONS = [
 ];
 
 export const TOUCH_EMOTION_OPTIONS = [
-  { label: '中性', value: VRMExpressionPresetName.Neutral },
+  { label: '自然', value: VRMExpressionPresetName.Neutral },
   { label: '开心', value: VRMExpressionPresetName.Happy },
   { label: '生气', value: VRMExpressionPresetName.Angry },
   { label: '伤心', value: VRMExpressionPresetName.Sad },
   { label: '放松', value: VRMExpressionPresetName.Relaxed },
+  { label: '惊讶', value: VRMExpressionPresetName.Surprised },
+  { label: '眨眼', value: VRMExpressionPresetName.Blink },
+  { label: '眨左眼', value: VRMExpressionPresetName.BlinkLeft },
+  { label: '眨右眼', value: VRMExpressionPresetName.BlinkRight },
 ];
 
 export const MAX_TOUCH_ACTION_TEXT_LENGTH = 100;

@@ -19,7 +19,15 @@ export interface UpdateTouchAction {
   type: 'UPDATE_TOUCH_ACTION';
 }
 
-export type TouchActionType = DeleteTouchAction | UpdateTouchAction;
+export interface CreateTouchAction {
+  payload: {
+    action: TouchAction;
+    touchArea: TouchAreaEnum;
+  };
+  type: 'CREATE_TOUCH_ACTION';
+}
+
+export type TouchActionType = DeleteTouchAction | UpdateTouchAction | CreateTouchAction;
 
 export const touchReducer = (
   state: TouchActionConfig,
@@ -36,6 +44,12 @@ export const touchReducer = (
       return produce(state, (draft) => {
         const { index, touchArea, action: newAction } = action.payload;
         draft[touchArea][index] = newAction;
+      });
+    }
+    case 'CREATE_TOUCH_ACTION': {
+      return produce(state, (draft) => {
+        const { touchArea, action: newAction } = action.payload;
+        draft[touchArea].push(newAction);
       });
     }
     default: {

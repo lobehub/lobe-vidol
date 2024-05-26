@@ -32,6 +32,12 @@ export interface AgentStore {
    */
   createNewAgent: () => void;
   /**
+   * 创建触摸配置
+   * @param currentTouchArea
+   * @param action
+   */
+  createTouchAction: (currentTouchArea: TouchAreaEnum, action: TouchAction) => void;
+  /**
    * 当前激活的角色
    */
   currentIdentifier: string;
@@ -199,6 +205,16 @@ const createAgentStore: StateCreator<AgentStore, [['zustand/devtools', never]]> 
       payload: {
         touchArea: currentTouchArea,
         index: index,
+        action,
+      },
+    });
+  },
+  createTouchAction: (currentTouchArea, action) => {
+    const { dispatchTouchAction } = get();
+    dispatchTouchAction({
+      type: 'CREATE_TOUCH_ACTION',
+      payload: {
+        touchArea: currentTouchArea,
         action,
       },
     });

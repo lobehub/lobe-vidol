@@ -1,6 +1,7 @@
 import { ActionIcon, Form, FormItem } from '@lobehub/ui';
+import { VRMExpressionPresetName } from '@pixiv/three-vrm';
 import { Input, Modal, Select } from 'antd';
-import { Edit2Icon } from 'lucide-react';
+import { Edit2Icon, PlusCircleIcon } from 'lucide-react';
 import React, { memo, useState } from 'react';
 
 import { INPUT_WIDTH_M, INPUT_WIDTH_S } from '@/constants/token';
@@ -9,17 +10,21 @@ import { useAgentStore } from '@/store/agent';
 import { TouchAction, TouchAreaEnum } from '@/types/touch';
 
 interface Props {
-  index: number;
-  touchAction: TouchAction;
+  index?: number;
+  isEdit?: boolean;
+  touchAction?: TouchAction;
   touchArea: TouchAreaEnum;
 }
 
 export default memo((props: Props) => {
-  const { touchArea, index, touchAction } = props;
+  const { touchArea, index, touchAction, isEdit = true } = props;
   const [open, setOpen] = useState(false);
   const [form] = Form.useForm();
 
-  const [updateTouchAction] = useAgentStore((s) => [s.updateTouchAction]);
+  const [updateTouchAction, createTouchAction] = useAgentStore((s) => [
+    s.updateTouchAction,
+    s.createTouchAction,
+  ]);
 
   const showModal = () => {
     setOpen(true);
@@ -28,7 +33,11 @@ export default memo((props: Props) => {
   const handleOk = () => {
     setOpen(false);
     const values = form.getFieldsValue();
-    updateTouchAction(touchArea, index, values);
+    if (isEdit) {
+      updateTouchAction(touchArea, index!, values);
+    } else {
+      createTouchAction(touchArea, values);
+    }
   };
 
   const handleCancel = () => {
@@ -37,32 +46,49 @@ export default memo((props: Props) => {
 
   return (
     <>
-      <ActionIcon icon={Edit2Icon} title={'编辑'} onClick={showModal} />
+      <ActionIcon
+        icon={isEdit ? Edit2Icon : PlusCircleIcon}
+        title={isEdit ? '编辑' : '添加'}
+        onClick={showModal}
+      />
       <Modal
         onCancel={handleCancel}
         onOk={handleOk}
         open={open}
-        width={640}
-        title="编辑响应动作"
+        width={800}
+        destroyOnClose
+        title={isEdit ? '编辑响应动作' : '添加响应动作'}
         okText={'确定'}
         cancelText={'取消'}
       >
-        <Form layout="horizontal" requiredMark={false} initialValues={touchAction} form={form}>
-          <FormItem desc={'自定义响应文案'} label={'文案'} name={'text'} divider>
-            <Input
+        <Form
+          layout="horizontal"
+          requiredMark={false}
+          initialValues={touchAction}
+          form={form}
+          preserve={false}
+        >
+          <FormItem desc={'自定义响应文案'} label={'文案'} name={'text'}>
+            <Input.TextArea
               placeholder="请输入响应文案"
               maxLength={MAX_TOUCH_ACTION_TEXT_LENGTH}
               showCount
+              autoSize
               style={{ width: INPUT_WIDTH_M }}
             />
           </FormItem>
           <FormItem
-            label={'情绪'}
+            label={'表情与情绪'}
             desc={'选择响应时的情绪，会影响角色的表情变化'}
             divider
             name="emotion"
           >
-            <Select options={TOUCH_EMOTION_OPTIONS} style={{ width: INPUT_WIDTH_S }} />
+            <Select
+              options={TOUCH_EMOTION_OPTIONS}
+              style={{ width: INPUT_WIDTH_S }}
+              defaultValue={VRMExpressionPresetName.Neutral}
+              defaultActiveFirstOption={true}
+            />
           </FormItem>
         </Form>
       </Modal>

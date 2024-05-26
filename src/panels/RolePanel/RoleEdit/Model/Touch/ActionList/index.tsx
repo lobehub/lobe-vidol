@@ -1,10 +1,11 @@
 import { List } from 'antd';
 import { createStyles } from 'antd-style';
 import { get } from 'lodash-es';
+import { Flexbox } from 'react-layout-kit';
 
 import { TOUCH_AREA_OPTIONS } from '@/constants/touch';
+import AddOrEdit from '@/panels/RolePanel/RoleEdit/Model/Touch/ActionList/Actions/AddOrEdit';
 import Delete from '@/panels/RolePanel/RoleEdit/Model/Touch/ActionList/Actions/Delete';
-import Edit from '@/panels/RolePanel/RoleEdit/Model/Touch/ActionList/Actions/Edit';
 import Play from '@/panels/RolePanel/RoleEdit/Model/Touch/ActionList/Actions/Play';
 import { agentSelectors, useAgentStore } from '@/store/agent';
 import { TouchAction, TouchAreaEnum } from '@/types/touch';
@@ -12,6 +13,11 @@ import { TouchAction, TouchAreaEnum } from '@/types/touch';
 const useStyles = createStyles(({ css, token }) => ({
   active: css`
     background-color: ${token.controlItemBgActiveHover};
+  `,
+  title: css`
+    font-size: ${token.fontSizeLG};
+    font-weight: 600;
+    color: ${token.colorPrimary};
   `,
   list: css`
     width: 100%;
@@ -37,16 +43,22 @@ const AreaList = (props: AreaListProps) => {
     <List
       className={styles.list}
       dataSource={data}
-      header={<div>触摸{touchArea}时的反应列表</div>}
+      header={
+        <Flexbox justify="space-between" horizontal>
+          <span className={styles.title}>触摸{touchArea}时的反应列表</span>
+          <AddOrEdit isEdit={false} touchArea={currentTouchArea} />
+        </Flexbox>
+      }
       renderItem={(item, index) => (
         <List.Item
           actions={[
             <Play key={`${currentTouchArea}_play_${index}`} touchAction={item} />,
-            <Edit
+            <AddOrEdit
               key={`${currentTouchArea}_edit_${index}`}
               index={index}
               touchArea={currentTouchArea}
               touchAction={item}
+              isEdit={true}
             />,
             <Delete
               key={`${currentTouchArea}_delete_${index}`}
