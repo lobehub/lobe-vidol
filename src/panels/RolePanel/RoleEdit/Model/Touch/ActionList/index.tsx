@@ -1,69 +1,83 @@
-import { ActionIcon } from '@lobehub/ui';
-import { List } from 'antd';
 import { createStyles } from 'antd-style';
-import { isEqual } from 'lodash-es';
-import { PlayIcon } from 'lucide-react';
+import classNames from 'classnames';
+import { get } from 'lodash-es';
+import React from 'react';
+import { Flexbox } from 'react-layout-kit';
 
-import { speakCharacter } from '@/features/messages/speakCharacter';
+import ListItem from '@/components/ListItem';
+import { TOUCH_AREA_OPTIONS } from '@/constants/touch';
+import AddOrEdit from '@/panels/RolePanel/RoleEdit/Model/Touch/ActionList/Actions/AddOrEdit';
+import Delete from '@/panels/RolePanel/RoleEdit/Model/Touch/ActionList/Actions/Delete';
+import Play from '@/panels/RolePanel/RoleEdit/Model/Touch/ActionList/Actions/Play';
+import Header from '@/panels/RolePanel/RoleEdit/Model/components/Header';
 import { agentSelectors, useAgentStore } from '@/store/agent';
-import { useTouchStore } from '@/store/touch';
-import { useViewerStore } from '@/store/viewer';
+import { TouchAction, TouchAreaEnum } from '@/types/touch';
 
 const useStyles = createStyles(({ css, token }) => ({
-  active: css`
-    background-color: ${token.controlItemBgActiveHover};
-  `,
   list: css`
     width: 100%;
-    padding: 24px;
   `,
+
   listItem: css`
-    &:hover {
-      cursor: pointer;
-    }
+    position: relative;
+
+    margin-block: 2px;
+
+    font-size: ${token.fontSize}px;
+
+    background-color: ${token.colorBgContainer};
+    border-radius: ${token.borderRadius}px;
   `,
 }));
 
-const AreaList = () => {
+interface AreaListProps {
+  className?: string;
+  currentTouchArea: TouchAreaEnum;
+  style?: React.CSSProperties;
+}
+
+const AreaList = (props: AreaListProps) => {
   const { styles } = useStyles();
-  const { actionConfig, currentTouchArea } = useTouchStore();
-  const currentAgentTTS = useAgentStore((s) => agentSelectors.currentAgentTTS(s), isEqual);
+  const { currentTouchArea, style, className } = props;
+  const [currentAgentTouch] = useAgentStore((s) => [agentSelectors.currentAgentTouch(s)]);
 
-  const { viewer } = useViewerStore();
+  const data = currentAgentTouch ? (get(currentAgentTouch, currentTouchArea) as TouchAction[]) : [];
 
-  const data = actionConfig[currentTouchArea];
+  const touchArea = TOUCH_AREA_OPTIONS.find((item) => item.value === currentTouchArea)?.label;
+
   return (
-    <List
-      className={styles.list}
-      dataSource={data}
-      header={<div>触摸反应列表</div>}
-      renderItem={(item) => (
-        <List.Item
-          actions={[
-            <ActionIcon
-              /* @ts-ignore */
-              icon={PlayIcon}
-              key="play"
-              onClick={() => {
-                speakCharacter(
-                  {
-                    emotion: item.emotion,
-                    tts: {
-                      ...currentAgentTTS,
-                      message: item.text,
-                    },
-                  },
-                  viewer,
-                );
-              }}
-            />,
-          ]}
-          className={styles.listItem}
-        >
-          <List.Item.Meta title={item.text}></List.Item.Meta>
-        </List.Item>
-      )}
-    />
+    <Flexbox flex={1} style={style} className={className}>
+      <Header
+        title={`触摸${touchArea}时的反应列表`}
+        extra={<AddOrEdit isEdit={false} touchArea={currentTouchArea} />}
+      />
+      {data.map((item, index) => {
+        return (
+          <ListItem
+            key={`${item.text}_${index}`}
+            className={classNames(styles.listItem)}
+            showAction={true}
+            avatar={<Play key={`${currentTouchArea}_play_${index}`} touchAction={item} />}
+            title={item.text}
+            active={false}
+            actions={[
+              <AddOrEdit
+                key={`${currentTouchArea}_edit_${index}`}
+                index={index}
+                touchArea={currentTouchArea}
+                touchAction={item}
+                isEdit={true}
+              />,
+              <Delete
+                key={`${currentTouchArea}_delete_${index}`}
+                index={index}
+                touchArea={currentTouchArea}
+              />,
+            ]}
+          />
+        );
+      })}
+    </Flexbox>
   );
 };
 

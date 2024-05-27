@@ -27,7 +27,7 @@ export default memo(() => {
     <Flexbox flex={1} style={{ position: 'relative' }}>
       <div className={styles.viewer}>
         <AgentViewer
-          height={`calc(100vh - ${HEADER_HEIGHT}px);`}
+          height={`calc(100vh - ${HEADER_HEIGHT}px)`}
           modelUrl={currentAgent?.meta.model}
         />
       </div>

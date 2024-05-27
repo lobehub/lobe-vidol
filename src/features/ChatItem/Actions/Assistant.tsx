@@ -13,8 +13,6 @@ const AssistantActionsBar: RenderAction = ({ onActionClick, id }) => {
     regenerate: '重新生成',
   });
 
-  console.log('AssistantActionsBar', id);
-
   if (id === 'default') return;
 
   const tts = {

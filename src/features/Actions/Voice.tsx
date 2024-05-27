@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import { Volume2, VolumeXIcon } from 'lucide-react';
 
 import { DESKTOP_HEADER_ICON_SIZE } from '@/constants/token';
-import { toogleVoice } from '@/services/chat';
+import { toggleVoice } from '@/services/chat';
 import { useSessionStore } from '@/store/session';
 
 const useStyles = createStyles(({ token, css }) => ({
@@ -25,7 +25,7 @@ const VoiceSwitch = () => {
     <ActionIcon
       className={classNames(styles.voice, voiceOn && styles.voiceOn)}
       icon={voiceOn ? Volume2 : VolumeXIcon}
-      onClick={toogleVoice}
+      onClick={toggleVoice}
       size={DESKTOP_HEADER_ICON_SIZE}
       title={'语音合成'}
     />

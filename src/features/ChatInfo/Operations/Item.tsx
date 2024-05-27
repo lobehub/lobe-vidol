@@ -1,6 +1,6 @@
 import { Icon, List } from '@lobehub/ui';
-import { createStyles, useResponsive } from 'antd-style';
-import { ChevronRight, type LucideIcon } from 'lucide-react';
+import { createStyles } from 'antd-style';
+import { type LucideIcon } from 'lucide-react';
 import { CSSProperties, ReactNode, memo } from 'react';
 
 const { Item } = List;
@@ -8,8 +8,12 @@ const { Item } = List;
 const useStyles = createStyles(({ css, token, responsive }) => ({
   container: css`
     position: relative;
+
+    align-items: center;
+
     padding-top: 16px;
     padding-bottom: 16px;
+
     border-radius: ${token.borderRadius}px;
     ${responsive.mobile} {
       border-radius: 0;
@@ -21,6 +25,7 @@ const useStyles = createStyles(({ css, token, responsive }) => ({
 }));
 
 export interface ItemProps {
+  actions?: ReactNode;
   active?: boolean;
   className?: string;
   hoverable?: boolean;
@@ -31,9 +36,8 @@ export interface ItemProps {
 }
 
 const SettingItem = memo<ItemProps>(
-  ({ label, icon, hoverable = true, onClick, style, className }) => {
+  ({ label, icon, hoverable = true, actions, onClick, style, className }) => {
     const { cx, styles } = useStyles();
-    const { mobile } = useResponsive();
     return (
       <Item
         active={false}
@@ -43,7 +47,7 @@ const SettingItem = memo<ItemProps>(
         onClick={onClick}
         title={label as string}
       >
-        {mobile && <Icon icon={ChevronRight} size={{ fontSize: 16 }} />}
+        {actions}
       </Item>
     );
   },

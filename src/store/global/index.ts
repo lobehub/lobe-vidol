@@ -5,9 +5,11 @@ import { shallow } from 'zustand/shallow';
 import { createWithEqualityFn } from 'zustand/traditional';
 
 import { INITIAL_COORDINATES } from '@/constants/token';
+import { Viewer } from '@/features/vrmViewer/viewer';
 import { Panel, PanelConfig, PanelKey } from '@/types/config';
 
 export * from './selectors/panel';
+const viewer = new Viewer();
 
 export interface GlobalStore {
   /**
@@ -41,8 +43,8 @@ export interface GlobalStore {
   showChatDialog: boolean;
   showChatSidebar: boolean;
   showRoleList: boolean;
-
   showSessionList: boolean;
+
   /**
    * 主题模式
    */
@@ -51,9 +53,11 @@ export interface GlobalStore {
   toggleChatSideBar: () => void;
   toggleRoleList: () => void;
   toggleSessionList: () => void;
+  viewer: Viewer;
 }
 
 const initialState = {
+  viewer,
   /**
    * 主题模式
    */
@@ -86,6 +90,7 @@ const initialState = {
 export const useGlobalStore = createWithEqualityFn<GlobalStore>()(
   (set, get) => ({
     ...initialState,
+
     closePanel: (key: PanelKey) => {
       const { setPanel, focusList } = get();
       setPanel(key, { open: false });

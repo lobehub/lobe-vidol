@@ -10,7 +10,7 @@ export const useStyles = createStyles(({ css, token }) => ({
   `,
   container: css`
     position: relative;
-    padding: ${token.padding}px;
+    padding: ${token.paddingXS}px;
   `,
   date: css`
     font-size: 12px;

@@ -72,7 +72,7 @@ const SideBar = memo(() => {
             播放
           </Button>,
           <Button
-            key="play"
+            key="addAndPlay"
             onClick={() => {
               if (currentDance) {
                 addToPlayList(currentDance);

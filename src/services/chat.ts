@@ -1,8 +1,8 @@
 import { OPENAI_API_KEY, OPENAI_END_POINT } from '@/constants/openai';
 import { speakCharacter } from '@/features/messages/speakCharacter';
+import { useGlobalStore } from '@/store/global';
 import { sessionSelectors, useSessionStore } from '@/store/session';
 import { configSelectors, useSettingStore } from '@/store/setting';
-import { useViewerStore } from '@/store/viewer';
 import { ChatMessage } from '@/types/chat';
 import { ChatStreamPayload } from '@/types/openai/chat';
 
@@ -38,7 +38,7 @@ export const chatCompletion = async (payload: ChatCompletionPayload) => {
 };
 
 export const handleSpeakAi = async (message: string) => {
-  const viewer = useViewerStore.getState().viewer;
+  const viewer = useGlobalStore.getState().viewer;
   const currentAgent = sessionSelectors.currentAgent(useSessionStore.getState());
 
   speakCharacter(
@@ -53,10 +53,10 @@ export const handleSpeakAi = async (message: string) => {
   );
 };
 
-export const toogleVoice = async () => {
+export const toggleVoice = async () => {
   const { toggleVoice, voiceOn } = useSessionStore.getState();
   if (voiceOn) {
-    const viewer = useViewerStore.getState().viewer;
+    const viewer = useGlobalStore.getState().viewer;
     viewer.model?.stopSpeak();
   }
   toggleVoice();

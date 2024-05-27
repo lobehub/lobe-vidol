@@ -44,7 +44,7 @@ const ErrorCapture = memo<ErrorCaptureProps>(({ reset, error }) => {
         项目当前正在施工中，不保证数据稳定性，如果遇到问题可以尝试
         <ClearChat text="清除会话消息" type={'link'} />
         或 <ResetConfig text="重置系统设置" type={'link'} />
-        ，造成地不便敬请谅解
+        ，造成不便敬请谅解
       </p>
       <Flexbox gap={12} horizontal style={{ marginBottom: '1em' }}>
         <Button onClick={() => reset()}>重新加载</Button>
