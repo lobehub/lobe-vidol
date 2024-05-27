@@ -2,6 +2,44 @@
 
 # Changelog
 
+## [Version 0.9.0](https://github.com/lobehub/lobe-vidol/compare/v0.8.0...v0.9.0)
+
+<sup>Released on **2024-05-27**</sup>
+
+#### ✨ Features
+
+- **misc**: 支持删除触摸反应列表，支持添加反应列表，支持编辑反应列表，触摸设置迁移到角色编辑，触摸设置迁移到角色编辑.
+
+#### 🐛 Bug Fixes
+
+- **misc**: Agent viewer not resize with parent, 修复系统设置错位.
+
+<br/>
+
+<details>
+<summary><kbd>Improvements and Fixes</kbd></summary>
+
+#### What's improved
+
+- **misc**: 支持删除触摸反应列表 ([be66ad5](https://github.com/lobehub/lobe-vidol/commit/be66ad5))
+- **misc**: 支持添加反应列表 ([6a926fd](https://github.com/lobehub/lobe-vidol/commit/6a926fd))
+- **misc**: 支持编辑反应列表 ([217d2d2](https://github.com/lobehub/lobe-vidol/commit/217d2d2))
+- **misc**: 触摸设置迁移到角色编辑 ([d85e0ef](https://github.com/lobehub/lobe-vidol/commit/d85e0ef))
+- **misc**: 触摸设置迁移到角色编辑 ([d71cc0f](https://github.com/lobehub/lobe-vidol/commit/d71cc0f))
+
+#### What's fixed
+
+- **misc**: Agent viewer not resize with parent ([5090d9c](https://github.com/lobehub/lobe-vidol/commit/5090d9c))
+- **misc**: 修复系统设置错位 ([efa1598](https://github.com/lobehub/lobe-vidol/commit/efa1598))
+
+</details>
+
+<div align="right">
+
+[![](https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square)](#readme-top)
+
+</div>
+
 ## [Version 0.8.0](https://github.com/lobehub/lobe-vidol/compare/v0.7.0...v0.8.0)
 
 <sup>Released on **2024-05-24**</sup>
