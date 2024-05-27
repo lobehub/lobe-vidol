@@ -1,7 +1,7 @@
 'use client';
 
 import { Icon } from '@lobehub/ui';
-import { Loader2, MessageSquare } from 'lucide-react';
+import { Loader2 } from 'lucide-react';
 import { CSSProperties, HTMLAttributes, ReactNode, forwardRef } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
@@ -120,8 +120,7 @@ const ListItem = forwardRef<HTMLDivElement, ListItemProps & HTMLAttributes<any>>
             <div className={styles.triangle}></div>
           </div>
         )}
-        {avatar ?? <Icon icon={MessageSquare} style={{ marginTop: 4 }} />}
-
+        {avatar}
         <Flexbox className={styles.content} gap={8}>
           <Flexbox distribution={'space-between'} horizontal>
             <div className={styles.title}>{title}</div>
@@ -129,7 +128,6 @@ const ListItem = forwardRef<HTMLDivElement, ListItemProps & HTMLAttributes<any>>
           {description && <div className={styles.desc}>{description}</div>}
           {addon}
         </Flexbox>
-
         {loading ? (
           <Icon icon={Loader2} spin />
         ) : (

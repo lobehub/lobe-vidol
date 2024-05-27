@@ -29,7 +29,7 @@ const Touch = (props: TouchProps) => {
   return (
     <div className={classNames(className, styles.container)} style={style}>
       <SideBar currentTouchArea={currentTouchArea} setCurrentTouchArea={setCurrentTouchArea} />
-      <ActionList currentTouchArea={currentTouchArea} style={{ marginLeft: 32 }} />
+      <ActionList currentTouchArea={currentTouchArea} style={{ marginLeft: 12 }} />
     </div>
   );
 };
