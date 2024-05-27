@@ -1,10 +1,10 @@
-import { List } from '@lobehub/ui';
 import { createStyles } from 'antd-style';
 import classNames from 'classnames';
 import { get } from 'lodash-es';
 import React from 'react';
 import { Flexbox } from 'react-layout-kit';
 
+import ListItem from '@/components/ListItem';
 import { TOUCH_AREA_OPTIONS } from '@/constants/touch';
 import AddOrEdit from '@/panels/RolePanel/RoleEdit/Model/Touch/ActionList/Actions/AddOrEdit';
 import Delete from '@/panels/RolePanel/RoleEdit/Model/Touch/ActionList/Actions/Delete';
@@ -53,7 +53,7 @@ const AreaList = (props: AreaListProps) => {
       />
       {data.map((item, index) => {
         return (
-          <List.Item
+          <ListItem
             key={`${item.text}_${index}`}
             className={classNames(styles.listItem)}
             showAction={true}

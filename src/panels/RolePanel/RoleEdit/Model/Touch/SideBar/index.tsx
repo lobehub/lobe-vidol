@@ -1,9 +1,9 @@
-import { List } from '@lobehub/ui';
 import { ConfigProvider } from 'antd';
 import { createStyles } from 'antd-style';
 import classNames from 'classnames';
 import { Flexbox } from 'react-layout-kit';
 
+import ListItem from '@/components/ListItem';
 import { TOUCH_AREA_OPTIONS } from '@/constants/touch';
 import { TouchAreaEnum } from '@/types/touch';
 
@@ -38,7 +38,7 @@ const Index = (props: IndexProps) => {
         }}
       >
         {TOUCH_AREA_OPTIONS.map((item) => (
-          <List.Item
+          <ListItem
             avatar={item.avatar}
             className={classNames(styles.listItem)}
             active={item.value === currentTouchArea}
