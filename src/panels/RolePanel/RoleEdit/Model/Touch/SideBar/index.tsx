@@ -1,22 +1,20 @@
-import { List } from 'antd';
+import { List } from '@lobehub/ui';
+import { ConfigProvider } from 'antd';
 import { createStyles } from 'antd-style';
 import classNames from 'classnames';
+import { Flexbox } from 'react-layout-kit';
 
 import { TOUCH_AREA_OPTIONS } from '@/constants/touch';
 import { TouchAreaEnum } from '@/types/touch';
 
+import Header from '../../components/Header';
+
 const useStyles = createStyles(({ css, token }) => ({
-  active: css`
-    background-color: ${token.controlItemBgActiveHover};
-  `,
-  list: css`
-    width: 240px;
-    border-right: 1px solid ${token.colorBorder};
-  `,
   listItem: css`
-    &:hover {
-      cursor: pointer;
-    }
+    position: relative;
+    width: 180px;
+    margin-block: 2px;
+    border-radius: ${token.borderRadius}px;
   `,
 }));
 
@@ -30,22 +28,27 @@ const Index = (props: IndexProps) => {
   const { currentTouchArea, setCurrentTouchArea } = props;
 
   return (
-    <List
-      className={styles.list}
-      dataSource={TOUCH_AREA_OPTIONS}
-      header={<div style={{ padding: 12 }}>触摸区域列表</div>}
-      renderItem={(item) => (
-        <List.Item
-          className={classNames(styles.listItem, {
-            [styles.active]: item.value === currentTouchArea,
-          })}
-          onClick={() => setCurrentTouchArea(item.value)}
-          style={{ padding: 12 }}
-        >
-          {item.label}
-        </List.Item>
-      )}
-    />
+    <Flexbox>
+      <Header title="触摸区域" />
+      <ConfigProvider
+        theme={{
+          token: {
+            fontSize: 12,
+          },
+        }}
+      >
+        {TOUCH_AREA_OPTIONS.map((item) => (
+          <List.Item
+            avatar={item.avatar}
+            className={classNames(styles.listItem)}
+            active={item.value === currentTouchArea}
+            key={item.value}
+            title={item.label}
+            onClick={() => setCurrentTouchArea(item.value)}
+          />
+        ))}
+      </ConfigProvider>
+    </Flexbox>
   );
 };
 

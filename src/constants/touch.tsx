@@ -1,13 +1,34 @@
+import { FluentEmoji } from '@lobehub/ui';
 import { VRMExpressionPresetName } from '@pixiv/three-vrm';
 
 import { TouchActionConfig, TouchAreaEnum } from '@/types/touch';
 
 export const TOUCH_AREA_OPTIONS = [
-  { label: '头部', value: TouchAreaEnum.Head },
-  { label: '手臂', value: TouchAreaEnum.Arm },
-  { label: '腿部', value: TouchAreaEnum.Leg },
-  { label: '胸部', value: TouchAreaEnum.Chest },
-  { label: '腹部', value: TouchAreaEnum.Belly },
+  {
+    label: '头部',
+    value: TouchAreaEnum.Head,
+    avatar: <FluentEmoji emoji="👩" type="flat" size={32} />,
+  },
+  {
+    label: '手臂',
+    value: TouchAreaEnum.Arm,
+    avatar: <FluentEmoji emoji="💪" type="flat" size={32} />,
+  },
+  {
+    label: '腿部',
+    value: TouchAreaEnum.Leg,
+    avatar: <FluentEmoji emoji="🦵" type="flat" size={32} />,
+  },
+  {
+    label: '胸部',
+    value: TouchAreaEnum.Chest,
+    avatar: <FluentEmoji emoji="👙" type="flat" size={32} />,
+  },
+  {
+    label: '腹部',
+    value: TouchAreaEnum.Belly,
+    avatar: <FluentEmoji emoji="🩹" type="flat" size={32} />,
+  },
 ];
 
 export const TOUCH_EMOTION_OPTIONS = [

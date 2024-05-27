@@ -7,17 +7,12 @@ import { TouchAreaEnum } from '@/types/touch';
 import ActionList from './ActionList';
 import SideBar from './SideBar';
 
-const useStyles = createStyles(({ css, token }) => ({
+const useStyles = createStyles(({ css }) => ({
   container: css`
     position: relative;
-
     display: flex;
-
     width: 100%;
     min-height: 740px;
-
-    border: 1px solid ${token.colorBorder};
-    border-radius: ${token.borderRadius}px;
   `,
 }));
 
@@ -34,7 +29,7 @@ const Touch = (props: TouchProps) => {
   return (
     <div className={classNames(className, styles.container)} style={style}>
       <SideBar currentTouchArea={currentTouchArea} setCurrentTouchArea={setCurrentTouchArea} />
-      <ActionList currentTouchArea={currentTouchArea} />
+      <ActionList currentTouchArea={currentTouchArea} style={{ marginLeft: 32 }} />
     </div>
   );
 };

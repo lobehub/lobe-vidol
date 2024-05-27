@@ -24,12 +24,11 @@ const useStyles = createStyles(({ css, token }) => ({
 
   right: css`
     flex: 1;
-
     max-height: 740px;
-    padding: 12px;
-
-    border: 1px solid ${token.colorBorder};
-    border-radius: ${token.borderRadius}px;
+  `,
+  description: css`
+    font-size: ${token.fontSizeSM}px;
+    color: ${token.colorTextDescription};
   `,
 }));
 

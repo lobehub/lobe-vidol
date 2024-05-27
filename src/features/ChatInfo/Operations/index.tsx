@@ -45,7 +45,7 @@ const Operations = memo<MyListProps>(({ mobile }) => {
     {
       icon: VideoIcon,
       key: 'video',
-      label: '聊天模式',
+      label: '交互模式',
       actions: <ViewerMode />,
     },
     {

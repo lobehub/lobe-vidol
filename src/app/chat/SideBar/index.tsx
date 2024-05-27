@@ -29,7 +29,7 @@ const SideBar = () => {
       onExpandChange={(expand) => setSessionList(expand)}
       expand={showSessionList}
     >
-      {/*<Header />*/}
+      {/*<Header.tsx />*/}
       <SessionList />
     </DraggablePanel>
   );

@@ -21,7 +21,7 @@ const Index = memo(() => {
         if (!size) return;
 
         setInputHeight(
-          typeof size.height === 'string' ? Number.parseInt(size.height) : size.height,
+          typeof size.height === 'string' ? Number.parseInt(size.height) : size.height!,
         );
       }}
       placement="bottom"

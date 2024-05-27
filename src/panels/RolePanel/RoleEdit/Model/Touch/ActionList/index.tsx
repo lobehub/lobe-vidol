@@ -1,38 +1,44 @@
-import { List } from 'antd';
+import { List } from '@lobehub/ui';
 import { createStyles } from 'antd-style';
+import classNames from 'classnames';
 import { get } from 'lodash-es';
+import React from 'react';
 import { Flexbox } from 'react-layout-kit';
 
 import { TOUCH_AREA_OPTIONS } from '@/constants/touch';
 import AddOrEdit from '@/panels/RolePanel/RoleEdit/Model/Touch/ActionList/Actions/AddOrEdit';
 import Delete from '@/panels/RolePanel/RoleEdit/Model/Touch/ActionList/Actions/Delete';
 import Play from '@/panels/RolePanel/RoleEdit/Model/Touch/ActionList/Actions/Play';
+import Header from '@/panels/RolePanel/RoleEdit/Model/components/Header';
 import { agentSelectors, useAgentStore } from '@/store/agent';
 import { TouchAction, TouchAreaEnum } from '@/types/touch';
 
 const useStyles = createStyles(({ css, token }) => ({
-  active: css`
-    background-color: ${token.controlItemBgActiveHover};
-  `,
-  title: css`
-    font-size: ${token.fontSizeLG};
-    font-weight: 600;
-    color: ${token.colorPrimary};
-  `,
   list: css`
     width: 100%;
-    padding: 24px;
   `,
-  listItem: css``,
+
+  listItem: css`
+    position: relative;
+
+    margin-block: 2px;
+
+    font-size: ${token.fontSize}px;
+
+    background-color: ${token.colorBgContainer};
+    border-radius: ${token.borderRadius}px;
+  `,
 }));
 
 interface AreaListProps {
+  className?: string;
   currentTouchArea: TouchAreaEnum;
+  style?: React.CSSProperties;
 }
 
 const AreaList = (props: AreaListProps) => {
   const { styles } = useStyles();
-  const { currentTouchArea } = props;
+  const { currentTouchArea, style, className } = props;
   const [currentAgentTouch] = useAgentStore((s) => [agentSelectors.currentAgentTouch(s)]);
 
   const data = currentAgentTouch ? (get(currentAgentTouch, currentTouchArea) as TouchAction[]) : [];
@@ -40,38 +46,38 @@ const AreaList = (props: AreaListProps) => {
   const touchArea = TOUCH_AREA_OPTIONS.find((item) => item.value === currentTouchArea)?.label;
 
   return (
-    <List
-      className={styles.list}
-      dataSource={data}
-      header={
-        <Flexbox justify="space-between" horizontal>
-          <span className={styles.title}>触摸{touchArea}时的反应列表</span>
-          <AddOrEdit isEdit={false} touchArea={currentTouchArea} />
-        </Flexbox>
-      }
-      renderItem={(item, index) => (
-        <List.Item
-          actions={[
-            <Play key={`${currentTouchArea}_play_${index}`} touchAction={item} />,
-            <AddOrEdit
-              key={`${currentTouchArea}_edit_${index}`}
-              index={index}
-              touchArea={currentTouchArea}
-              touchAction={item}
-              isEdit={true}
-            />,
-            <Delete
-              key={`${currentTouchArea}_delete_${index}`}
-              index={index}
-              touchArea={currentTouchArea}
-            />,
-          ]}
-          className={styles.listItem}
-        >
-          <List.Item.Meta title={item.text}></List.Item.Meta>
-        </List.Item>
-      )}
-    />
+    <Flexbox flex={1} style={style} className={className}>
+      <Header
+        title={`触摸${touchArea}时的反应列表`}
+        extra={<AddOrEdit isEdit={false} touchArea={currentTouchArea} />}
+      />
+      {data.map((item, index) => {
+        return (
+          <List.Item
+            key={`${item.text}_${index}`}
+            className={classNames(styles.listItem)}
+            showAction={true}
+            avatar={<Play key={`${currentTouchArea}_play_${index}`} touchAction={item} />}
+            title={item.text}
+            active={false}
+            actions={[
+              <AddOrEdit
+                key={`${currentTouchArea}_edit_${index}`}
+                index={index}
+                touchArea={currentTouchArea}
+                touchAction={item}
+                isEdit={true}
+              />,
+              <Delete
+                key={`${currentTouchArea}_delete_${index}`}
+                index={index}
+                touchArea={currentTouchArea}
+              />,
+            ]}
+          />
+        );
+      })}
+    </Flexbox>
   );
 };
 

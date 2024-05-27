@@ -1,7 +1,7 @@
 import { ActionIcon, Form, FormItem } from '@lobehub/ui';
 import { VRMExpressionPresetName } from '@pixiv/three-vrm';
 import { Input, Modal, Select } from 'antd';
-import { Edit2Icon, PlusCircleIcon } from 'lucide-react';
+import { Edit2Icon, Plus } from 'lucide-react';
 import React, { memo, useState } from 'react';
 
 import { INPUT_WIDTH_M, INPUT_WIDTH_S } from '@/constants/token';
@@ -47,7 +47,7 @@ export default memo((props: Props) => {
   return (
     <>
       <ActionIcon
-        icon={isEdit ? Edit2Icon : PlusCircleIcon}
+        icon={isEdit ? Edit2Icon : Plus}
         title={isEdit ? '编辑' : '添加'}
         onClick={showModal}
       />
