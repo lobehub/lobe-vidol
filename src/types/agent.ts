@@ -15,6 +15,11 @@ export enum CategoryEnum {
   VROID = 'Vroid',
   VTUBER = 'VTuber',
 }
+export enum GenderEnum {
+  FEMALE = 'Female',
+  MALE = 'Male',
+  OTHER = 'Other',
+}
 export interface AgentMeta {
   /**
    * 头像图片路径
@@ -32,6 +37,10 @@ export interface AgentMeta {
    * 角色描述
    */
   description: string;
+  /**
+   * 性别
+   */
+  gender: GenderEnum;
   /**
    * 模型文件路径
    */

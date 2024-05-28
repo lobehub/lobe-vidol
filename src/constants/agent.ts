@@ -1,7 +1,7 @@
 import { DEFAULT_AGENT_AVATAR_URL } from '@/constants/common';
 import { DEFAULT_TOUCH_ACTION_CONFIG } from '@/constants/touch';
 import { DEFAULT_TTS_CONFIG } from '@/constants/tts';
-import { Agent, CategoryEnum } from '@/types/agent';
+import { Agent, CategoryEnum, GenderEnum } from '@/types/agent';
 
 export const LOBE_VIDOL_DEFAULT_AGENT_ID = 'lobe-vidol-default-agent';
 
@@ -9,17 +9,18 @@ const OFFICIAL_ROLE_NAME = 'Elsa';
 
 export const DEFAULT_VIDOL_AGENT: Agent = {
   agentId: LOBE_VIDOL_DEFAULT_AGENT_ID,
-  greeting: `哈喽，亲爱的主人！我是你的私人助理 ${OFFICIAL_ROLE_NAME}，愉快地为你服务！有什么我可以帮你的吗？`,
-  createAt: '2023-10-30',
   author: 'LobeVidol',
+  createAt: '2023-10-30',
+  greeting: `哈喽，亲爱的主人！我是你的私人助理 ${OFFICIAL_ROLE_NAME}，愉快地为你服务！有什么我可以帮你的吗？`,
   homepage: 'https://github.com/lobehub/lobe-vidol',
   meta: {
     avatar: 'https://registry.npmmirror.com/@v-idol/vidol-agent-sample-a/1.0.0/files/avatar.jpg',
+    category: CategoryEnum.VROID,
     cover: 'https://registry.npmmirror.com/@v-idol/vidol-agent-sample-a/1.0.0/files/cover.jpg',
     description: `${OFFICIAL_ROLE_NAME} 是 Vidol 的默认角色，是你的专属私人助理`,
+    gender: GenderEnum.FEMALE,
     model: 'https://registry.npmmirror.com/@v-idol/vidol-agent-sample-a/1.0.0/files/model.vrm',
     name: OFFICIAL_ROLE_NAME,
-    category: CategoryEnum.VROID,
     readme:
       "AvatarSample_Aは、VRoid Studioに付属されているサンプルモデルの１つです。\r\n良識の範囲内で、本モデルに設定されているVRoid Hubの利用条件に沿って利用することができます。\r\nVRoid Hub連携アプリや、外部サービス等でぜひご活用ください。\r\nなお、本モデルはCC0ライセンスではありません、著作権は放棄はしておりませんので予めご了承ください。\r\n本モデルの利用条件は、以下ヘルプ記事をご覧ください。\r\nvroid.pixiv.help/hc/ja/articles/4402394424089\r\n\r\nAvatarSample_A is one of the sample models included in VRoid Studio.\r\nIt can be used in accordance with its VRoid Hub conditions of use, within reason.\r\nFeel free to use this model in applications linked to VRoid Hub and on external services.\r\nPlease note that this model is not under the CC0 license and its copyright has not been waived.\r\nTo learn more about this model's conditions of use, consult the following Help article.\r\nvroid.pixiv.help/hc/en-us/articles/4402394424089",
   },
@@ -35,8 +36,15 @@ export const DEFAULT_AGENT_CONFIG = {
     name: '自定义角色',
     description: '这是一个自定义角色',
     avatar: DEFAULT_AGENT_AVATAR_URL,
+    gender: GenderEnum.FEMALE,
     readme: '',
   },
   touch: DEFAULT_TOUCH_ACTION_CONFIG,
   tts: DEFAULT_TTS_CONFIG,
 };
+
+export const AGENT_GENDER_OPTIONS = [
+  { label: '女性', value: GenderEnum.FEMALE },
+  { label: '男性', value: GenderEnum.MALE },
+  { label: '其他', value: GenderEnum.OTHER },
+];
