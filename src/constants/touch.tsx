@@ -37,6 +37,14 @@ export const TOUCH_EMOTION_OPTIONS = [
   { label: '眨右眼', value: VRMExpressionPresetName.BlinkRight },
 ];
 
+export const EMPTY_TTS_CONFIG: TouchActionConfig = {
+  [TouchAreaEnum.Head]: [],
+  [TouchAreaEnum.Arm]: [],
+  [TouchAreaEnum.Leg]: [],
+  [TouchAreaEnum.Chest]: [],
+  [TouchAreaEnum.Belly]: [],
+};
+
 export const MAX_TOUCH_ACTION_TEXT_LENGTH = 100;
 
 export const DEFAULT_TOUCH_ACTION_CONFIG_FEMALE: TouchActionConfig = {

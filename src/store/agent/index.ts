@@ -247,6 +247,7 @@ const createAgentStore: StateCreator<AgentStore, [['zustand/devtools', never]]> 
   },
   createTouchAction: (currentTouchArea, action) => {
     const { dispatchTouchAction } = get();
+
     dispatchTouchAction({
       type: 'CREATE_TOUCH_ACTION',
       payload: {
