@@ -10,13 +10,22 @@ export const MIN_TTS_SPEED = 0;
 export const TTS_PITCH_STEP = 0.01;
 export const TTS_SPEED_STEP = 0.01;
 
-export const DEFAULT_TTS_CONFIG: TTS = {
+export const DEFAULT_TTS_CONFIG_FEMALE: TTS = {
   engine: 'edge',
   locale: 'zh-CN',
   pitch: DEFAULT_TTS_PITCH,
   speed: DEFAULT_TTS_SPEED,
   voice: 'zh-CN-XiaoxiaoNeural',
 };
+
+export const DEFAULT_TTS_CONFIG_MALE: TTS = {
+  engine: 'edge',
+  locale: 'zh-CN',
+  pitch: DEFAULT_TTS_PITCH,
+  speed: DEFAULT_TTS_SPEED,
+  voice: 'zh-CN-YunxiNeural',
+};
+
 export const supportedLocales = [
   {
     label: '中文(普通话)',

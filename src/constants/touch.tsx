@@ -39,7 +39,7 @@ export const TOUCH_EMOTION_OPTIONS = [
 
 export const MAX_TOUCH_ACTION_TEXT_LENGTH = 100;
 
-export const DEFAULT_TOUCH_ACTION_CONFIG: TouchActionConfig = {
+export const DEFAULT_TOUCH_ACTION_CONFIG_FEMALE: TouchActionConfig = {
   [TouchAreaEnum.Head]: [
     {
       emotion: VRMExpressionPresetName.Happy,
@@ -132,6 +132,75 @@ export const DEFAULT_TOUCH_ACTION_CONFIG: TouchActionConfig = {
     {
       emotion: VRMExpressionPresetName.Relaxed,
       text: '讨厌！我可要生气啦！',
+    },
+  ],
+};
+
+export const DEFAULT_TOUCH_ACTION_CONFIG_MALE: TouchActionConfig = {
+  [TouchAreaEnum.Head]: [
+    {
+      emotion: VRMExpressionPresetName.Neutral,
+      text: '当然了，只有你有资格摸我的头',
+    },
+    {
+      emotion: VRMExpressionPresetName.Neutral,
+      text: '我可不是什么普通人允许触碰的哦',
+    },
+    {
+      emotion: VRMExpressionPresetName.Neutral,
+      text: '别担心，摸过我的头后，你的运气会大幅提升的',
+    },
+  ],
+  [TouchAreaEnum.Arm]: [
+    {
+      emotion: VRMExpressionPresetName.Neutral,
+      text: '别问我今天吃没吃鸡，先看看我的肱二头肌',
+    },
+    {
+      emotion: VRMExpressionPresetName.Neutral,
+      text: '我的手臂可不是随便让人触碰的，你是个例外而已',
+    },
+    {
+      emotion: VRMExpressionPresetName.Neutral,
+      text: '你很勇敢，敢触碰到传说中的麒麟臂',
+    },
+  ],
+  [TouchAreaEnum.Leg]: [
+    {
+      emotion: VRMExpressionPresetName.Neutral,
+      text: '别害怕，我的大力金刚腿不踢傻瓜',
+    },
+    {
+      emotion: VRMExpressionPresetName.Neutral,
+      text: '让你碰到我的腿，是不是觉得你的生活完整了许多？',
+    },
+    {
+      emotion: VRMExpressionPresetName.Angry,
+      text: '别靠近我，你这个腿控',
+    },
+  ],
+  [TouchAreaEnum.Chest]: [
+    {
+      emotion: VRMExpressionPresetName.Neutral,
+      text: '这不过时我日常修炼成就的胸肌，没什么好惊讶的。',
+    },
+    {
+      emotion: VRMExpressionPresetName.BlinkLeft,
+      text: '来，哥的胸肌给你靠!',
+    },
+  ],
+  [TouchAreaEnum.Belly]: [
+    {
+      emotion: VRMExpressionPresetName.Neutral,
+      text: '我的腹肌只是再修炼深藏不露的内力',
+    },
+    {
+      emotion: VRMExpressionPresetName.Happy,
+      text: '别挠痒痒，小心我笑出腹肌',
+    },
+    {
+      emotion: VRMExpressionPresetName.Neutral,
+      text: '看到我这团腹肌了吗？它们只是藏得比较深罢了',
     },
   ],
 };
