@@ -25,6 +25,7 @@ export enum ViewerModeEnum {
 }
 
 export interface SessionStore {
+  abortController?: AbortController;
   /**
    * 当前会话 ID
    */
@@ -70,6 +71,7 @@ export interface SessionStore {
    * 当前消息输入
    */
   messageInput: string;
+
   /**
    * 重新生成消息
    * @returns
@@ -98,6 +100,10 @@ export interface SessionStore {
    * 触发 3D 渲染开关
    */
   setViewerMode: (mode: boolean) => void;
+  /**
+   * 停止生成消息
+   */
+  stopGenerateMessage: () => void;
   /**
    * 切换会话
    * @param agent
@@ -182,6 +188,12 @@ export const createSessonStore: StateCreator<SessionStore, [['zustand/devtools',
 
     updateSessionMessages(messages);
   },
+  stopGenerateMessage: () => {
+    const { abortController } = get();
+    if (!abortController) return;
+    abortController.abort();
+    set({ chatLoadingId: undefined });
+  },
   fetchAIResponse: async (messages, assistantId) => {
     const { dispatchMessage } = get();
     const currentSession = sessionSelectors.currentSession(get());
@@ -191,18 +203,23 @@ export const createSessonStore: StateCreator<SessionStore, [['zustand/devtools',
       return;
     }
 
-    set({ chatLoadingId: assistantId });
+    const abortController = new AbortController();
+
+    set({ chatLoadingId: assistantId, abortController });
 
     const fetcher = () => {
-      return chatCompletion({
-        messages: [
-          {
-            content: currentAgent.systemRole,
-            role: 'system',
-          } as ChatMessage,
-          ...messages,
-        ],
-      });
+      return chatCompletion(
+        {
+          messages: [
+            {
+              content: currentAgent.systemRole,
+              role: 'system',
+            } as ChatMessage,
+            ...messages,
+          ],
+        },
+        { signal: abortController.signal },
+      );
     };
 
     let receivedMessage = '';

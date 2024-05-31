@@ -4,7 +4,7 @@ import { memo } from 'react';
 import type { RenderAction } from '@/features/ChatItem/type';
 
 const UserActionsBar: RenderAction = ({ onActionClick }) => {
-  const { copy, divider, del, edit } = useChatListActionsBar({
+  const { copy, divider, del, edit, regenerate } = useChatListActionsBar({
     copy: '复制',
     delete: '删除',
     edit: '编辑',
@@ -13,7 +13,7 @@ const UserActionsBar: RenderAction = ({ onActionClick }) => {
   return (
     <ActionIconGroup
       dropdownMenu={[copy, divider, del]}
-      items={[edit]}
+      items={[regenerate, edit]}
       onActionClick={onActionClick}
       type="ghost"
     />
