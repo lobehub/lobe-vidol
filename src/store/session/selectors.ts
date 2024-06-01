@@ -108,13 +108,6 @@ const currentChatIDsWithGreetingMessage = (s: SessionStore): string[] => {
   return currentChats.map((item) => item.id);
 };
 
-const previousChats = (s: SessionStore, id: string): ChatMessage[] => {
-  const chatList = currentChats(s);
-  const index = chatList.findIndex((item) => item.id === id);
-  if (index === -1) return [];
-  return chatList.slice(0, index);
-};
-
 const currentChatsString = (s: SessionStore): string => {
   const session = currentSession(s);
   const agent = currentAgent(s);
@@ -163,6 +156,5 @@ export const sessionSelectors = {
   currentChatsString,
   currentSession,
   currentSystemRole,
-  previousChats,
   sessionListIds,
 };

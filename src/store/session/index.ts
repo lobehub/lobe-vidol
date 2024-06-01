@@ -283,8 +283,30 @@ export const createSessonStore: StateCreator<SessionStore, [['zustand/devtools',
     if (!currentSession) {
       return;
     }
+    const chats = sessionSelectors.currentChats(get());
+    const currentIndex = chats.findIndex((item) => item.id === id);
+    const currentMessage = chats[currentIndex];
 
-    const previousChats = sessionSelectors.previousChats(get(), id);
+    let contextMessages: ChatMessage[] = [];
+
+    switch (currentMessage.role) {
+      case 'user': {
+        contextMessages = chats.slice(0, currentIndex + 1);
+        break;
+      }
+      case 'assistant': {
+        // 消息是 AI 发出的因此需要找到它的 user 消息
+        const userId = currentMessage.parentId;
+        const userIndex = chats.findIndex((c) => c.id === userId);
+        // 如果消息没有 parentId，那么同 user/function 模式
+        contextMessages = chats.slice(0, userIndex < 0 ? currentIndex + 1 : userIndex + 1);
+        break;
+      }
+    }
+
+    const latestMsg = contextMessages.filter((s) => s.role === 'user').at(-1);
+
+    if (!latestMsg) return;
 
     const assistantId = nanoid();
 
@@ -293,12 +315,13 @@ export const createSessonStore: StateCreator<SessionStore, [['zustand/devtools',
       payload: {
         content: LOADING_FLAG,
         id: assistantId,
+        parentId: latestMsg.id,
         role: 'assistant', // 占位符
       },
       type: 'ADD_MESSAGE',
     });
 
-    fetchAIResponse(previousChats, assistantId);
+    fetchAIResponse(contextMessages, assistantId);
   },
   removeSession: (id) => {
     const { sessionList, activeId } = get();
@@ -342,6 +365,7 @@ export const createSessonStore: StateCreator<SessionStore, [['zustand/devtools',
       payload: {
         content: LOADING_FLAG,
         id: assistantId,
+        parentId: userId,
         role: 'assistant', // 占位符
       },
       type: 'ADD_MESSAGE',
