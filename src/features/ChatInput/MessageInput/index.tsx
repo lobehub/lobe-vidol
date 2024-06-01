@@ -74,8 +74,8 @@ const InputArea = memo((props: InputAreaProps) => {
           }
         }}
         icon={loading ? <StopLoadingIcon /> : <SendOutlined />}
-        type="primary"
-      ></Button>
+        type={loading ? undefined : 'primary'}
+      />
 
       {viewerMode ? <ToggleChatDialog /> : null}
     </Flexbox>
