@@ -68,6 +68,7 @@ const Header = () => {
 
     actions.push(
       <Button
+        key={'subscribe'}
         onClick={() => {
           if (isSubscribed) {
             unsubscribe(currentAgentItem.agentId);
