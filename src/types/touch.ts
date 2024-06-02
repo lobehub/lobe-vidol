@@ -14,7 +14,6 @@ export enum TouchAreaEnum {
 
 export interface TouchAction {
   emotion: EmotionType;
-  enabled: boolean;
   motion?: string;
   text: string;
 }
@@ -25,7 +24,6 @@ export interface TouchActionConfig {
   [TouchAreaEnum.Leg]: TouchAction[];
   [TouchAreaEnum.Chest]: TouchAction[];
   [TouchAreaEnum.Belly]: TouchAction[];
-  enabled: boolean;
 }
 
 export type Screenplay = {

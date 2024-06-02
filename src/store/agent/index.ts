@@ -7,8 +7,13 @@ import { createWithEqualityFn } from 'zustand/traditional';
 import { StateCreator } from 'zustand/vanilla';
 
 import { DEFAULT_AGENT_CONFIG, LOBE_VIDOL_DEFAULT_AGENT_ID } from '@/constants/agent';
+import {
+  DEFAULT_TOUCH_ACTION_CONFIG_FEMALE,
+  DEFAULT_TOUCH_ACTION_CONFIG_MALE,
+} from '@/constants/touch';
+import { DEFAULT_TTS_CONFIG_FEMALE, DEFAULT_TTS_CONFIG_MALE } from '@/constants/tts';
 import { TouchActionType, touchReducer } from '@/store/agent/reducers/touch';
-import { Agent, AgentMeta } from '@/types/agent';
+import { Agent, AgentMeta, GenderEnum } from '@/types/agent';
 import { TouchAction, TouchAreaEnum } from '@/types/touch';
 import { TTS } from '@/types/tts';
 import { mergeWithUndefined } from '@/utils/common';
@@ -30,7 +35,7 @@ export interface AgentStore {
   /**
    * 创建新角色
    */
-  createNewAgent: () => void;
+  createNewAgent: (gender: GenderEnum) => void;
   /**
    * 创建触摸配置
    * @param currentTouchArea
@@ -102,6 +107,34 @@ export interface AgentStore {
   updateTouchAction: (currentTouchArea: TouchAreaEnum, index: number, action: TouchAction) => void;
 }
 
+const getTouchConfigByGender = (gender: GenderEnum) => {
+  switch (gender) {
+    case GenderEnum.FEMALE: {
+      return DEFAULT_TOUCH_ACTION_CONFIG_FEMALE;
+    }
+    case GenderEnum.MALE: {
+      return DEFAULT_TOUCH_ACTION_CONFIG_MALE;
+    }
+    default: {
+      return undefined;
+    }
+  }
+};
+
+const getTTSConfigByGender = (gender: GenderEnum) => {
+  switch (gender) {
+    case GenderEnum.FEMALE: {
+      return DEFAULT_TTS_CONFIG_FEMALE;
+    }
+    case GenderEnum.MALE: {
+      return DEFAULT_TTS_CONFIG_MALE;
+    }
+    default: {
+      return undefined;
+    }
+  }
+};
+
 const createAgentStore: StateCreator<AgentStore, [['zustand/devtools', never]]> = (set, get) => ({
   ...initialState,
   activateAgent: (identifier) => {
@@ -126,11 +159,14 @@ const createAgentStore: StateCreator<AgentStore, [['zustand/devtools', never]]> 
 
     return currentAgent;
   },
-  createNewAgent: () => {
+  createNewAgent: (gender) => {
     const { localAgentList } = get();
+
     const newAgent: Agent = {
       agentId: nanoid(),
       ...DEFAULT_AGENT_CONFIG,
+      touch: getTouchConfigByGender(gender),
+      tts: getTTSConfigByGender(gender),
     };
 
     const newList = produce(localAgentList, (draft) => {
@@ -211,6 +247,7 @@ const createAgentStore: StateCreator<AgentStore, [['zustand/devtools', never]]> 
   },
   createTouchAction: (currentTouchArea, action) => {
     const { dispatchTouchAction } = get();
+
     dispatchTouchAction({
       type: 'CREATE_TOUCH_ACTION',
       payload: {

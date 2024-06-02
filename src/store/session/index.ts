@@ -25,6 +25,7 @@ export enum ViewerModeEnum {
 }
 
 export interface SessionStore {
+  abortController?: AbortController;
   /**
    * 当前会话 ID
    */
@@ -70,6 +71,7 @@ export interface SessionStore {
    * 当前消息输入
    */
   messageInput: string;
+
   /**
    * 重新生成消息
    * @returns
@@ -98,6 +100,10 @@ export interface SessionStore {
    * 触发 3D 渲染开关
    */
   setViewerMode: (mode: boolean) => void;
+  /**
+   * 停止生成消息
+   */
+  stopGenerateMessage: () => void;
   /**
    * 切换会话
    * @param agent
@@ -182,6 +188,12 @@ export const createSessonStore: StateCreator<SessionStore, [['zustand/devtools',
 
     updateSessionMessages(messages);
   },
+  stopGenerateMessage: () => {
+    const { abortController } = get();
+    if (!abortController) return;
+    abortController.abort();
+    set({ chatLoadingId: undefined });
+  },
   fetchAIResponse: async (messages, assistantId) => {
     const { dispatchMessage } = get();
     const currentSession = sessionSelectors.currentSession(get());
@@ -191,18 +203,23 @@ export const createSessonStore: StateCreator<SessionStore, [['zustand/devtools',
       return;
     }
 
-    set({ chatLoadingId: assistantId });
+    const abortController = new AbortController();
+
+    set({ chatLoadingId: assistantId, abortController });
 
     const fetcher = () => {
-      return chatCompletion({
-        messages: [
-          {
-            content: currentAgent.systemRole,
-            role: 'system',
-          } as ChatMessage,
-          ...messages,
-        ],
-      });
+      return chatCompletion(
+        {
+          messages: [
+            {
+              content: currentAgent.systemRole,
+              role: 'system',
+            } as ChatMessage,
+            ...messages,
+          ],
+        },
+        { signal: abortController.signal },
+      );
     };
 
     let receivedMessage = '';
@@ -266,8 +283,30 @@ export const createSessonStore: StateCreator<SessionStore, [['zustand/devtools',
     if (!currentSession) {
       return;
     }
+    const chats = sessionSelectors.currentChats(get());
+    const currentIndex = chats.findIndex((item) => item.id === id);
+    const currentMessage = chats[currentIndex];
 
-    const previousChats = sessionSelectors.previousChats(get(), id);
+    let contextMessages: ChatMessage[] = [];
+
+    switch (currentMessage.role) {
+      case 'user': {
+        contextMessages = chats.slice(0, currentIndex + 1);
+        break;
+      }
+      case 'assistant': {
+        // 消息是 AI 发出的因此需要找到它的 user 消息
+        const userId = currentMessage.parentId;
+        const userIndex = chats.findIndex((c) => c.id === userId);
+        // 如果消息没有 parentId，那么同 user/function 模式
+        contextMessages = chats.slice(0, userIndex < 0 ? currentIndex + 1 : userIndex + 1);
+        break;
+      }
+    }
+
+    const latestMsg = contextMessages.filter((s) => s.role === 'user').at(-1);
+
+    if (!latestMsg) return;
 
     const assistantId = nanoid();
 
@@ -276,12 +315,13 @@ export const createSessonStore: StateCreator<SessionStore, [['zustand/devtools',
       payload: {
         content: LOADING_FLAG,
         id: assistantId,
+        parentId: latestMsg.id,
         role: 'assistant', // 占位符
       },
       type: 'ADD_MESSAGE',
     });
 
-    fetchAIResponse(previousChats, assistantId);
+    fetchAIResponse(contextMessages, assistantId);
   },
   removeSession: (id) => {
     const { sessionList, activeId } = get();
@@ -325,6 +365,7 @@ export const createSessonStore: StateCreator<SessionStore, [['zustand/devtools',
       payload: {
         content: LOADING_FLAG,
         id: assistantId,
+        parentId: userId,
         role: 'assistant', // 占位符
       },
       type: 'ADD_MESSAGE',

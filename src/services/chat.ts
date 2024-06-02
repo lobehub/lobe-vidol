@@ -20,7 +20,14 @@ interface ChatCompletionPayload extends Partial<Omit<ChatStreamPayload, 'message
   messages: ChatMessage[];
 }
 
-export const chatCompletion = async (payload: ChatCompletionPayload) => {
+interface ChatCompletionOptions {
+  signal?: AbortSignal;
+}
+
+export const chatCompletion = async (
+  payload: ChatCompletionPayload,
+  options?: ChatCompletionOptions,
+) => {
   const config = configSelectors.currentOpenAIConfig(useSettingStore.getState());
   const { messages } = payload;
 
@@ -34,6 +41,7 @@ export const chatCompletion = async (payload: ChatCompletionPayload) => {
     }),
     headers: createHeader(),
     method: 'POST',
+    signal: options?.signal,
   });
 };
 

@@ -9,6 +9,7 @@ import CoverWithUpload from '@/panels/RolePanel/RoleEdit/Info/CoverWithUpload';
 import Greeting from '@/panels/RolePanel/RoleEdit/Info/Greeting';
 import ReadMe from '@/panels/RolePanel/RoleEdit/Info/ReadMe';
 import RoleDescription from '@/panels/RolePanel/RoleEdit/Info/RoleDescription';
+import RoleGender from '@/panels/RolePanel/RoleEdit/Info/RoleGender';
 import RoleName from '@/panels/RolePanel/RoleEdit/Info/RoleName';
 
 import AvatarWithUpload from './AvatarWithUpload';
@@ -61,8 +62,13 @@ const Info = (props: InfoProps) => {
             <FormItem label={'名称'} desc={'角色名称，与角色聊天时的称呼'} divider name={['name']}>
               <RoleName style={{ width: INPUT_WIDTH_M }} />
             </FormItem>
-            <FormItem label={'招呼'} desc={'与角色初次聊天时的招呼用语'} name="greeting" divider>
-              <Greeting style={{ width: INPUT_WIDTH_L }} />
+            <FormItem
+              label={'性别'}
+              desc={'角色性别，影响角色的触摸响应'}
+              divider
+              name={['gender']}
+            >
+              <RoleGender style={{ width: INPUT_WIDTH_M }} />
             </FormItem>
             <FormItem
               label={'描述'}
@@ -71,6 +77,9 @@ const Info = (props: InfoProps) => {
               name={'description'}
             >
               <RoleDescription style={{ width: INPUT_WIDTH_L }} />
+            </FormItem>
+            <FormItem label={'招呼'} desc={'与角色初次聊天时的招呼用语'} name="greeting" divider>
+              <Greeting style={{ width: INPUT_WIDTH_L }} />
             </FormItem>
             <FormItem
               label={'角色说明'}

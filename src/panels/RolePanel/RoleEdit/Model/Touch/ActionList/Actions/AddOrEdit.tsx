@@ -31,13 +31,15 @@ export default memo((props: Props) => {
   };
 
   const handleOk = () => {
-    setOpen(false);
-    const values = form.getFieldsValue();
-    if (isEdit) {
-      updateTouchAction(touchArea, index!, values);
-    } else {
-      createTouchAction(touchArea, values);
-    }
+    form.validateFields().then((values) => {
+      console.log('values', values);
+      setOpen(false);
+      if (isEdit) {
+        updateTouchAction(touchArea, index!, values);
+      } else {
+        createTouchAction(touchArea, values);
+      }
+    });
   };
 
   const handleCancel = () => {
@@ -63,12 +65,17 @@ export default memo((props: Props) => {
       >
         <Form
           layout="horizontal"
-          requiredMark={false}
-          initialValues={touchAction}
+          requiredMark
+          initialValues={isEdit ? touchAction : { emotion: VRMExpressionPresetName.Neutral }}
           form={form}
           preserve={false}
         >
-          <FormItem desc={'自定义响应文案'} label={'文案'} name={'text'}>
+          <FormItem
+            desc={'自定义响应文案'}
+            label={'文案'}
+            name={'text'}
+            rules={[{ required: true, message: '请输入自定义文案' }]}
+          >
             <Input.TextArea
               placeholder="请输入响应文案"
               maxLength={MAX_TOUCH_ACTION_TEXT_LENGTH}
@@ -81,12 +88,12 @@ export default memo((props: Props) => {
             label={'表情与情绪'}
             desc={'选择响应时的情绪，会影响角色的表情变化'}
             divider
+            rules={[{ required: true, message: '请输入角色响应时的表情' }]}
             name="emotion"
           >
             <Select
               options={TOUCH_EMOTION_OPTIONS}
               style={{ width: INPUT_WIDTH_S }}
-              defaultValue={VRMExpressionPresetName.Neutral}
               defaultActiveFirstOption={true}
             />
           </FormItem>

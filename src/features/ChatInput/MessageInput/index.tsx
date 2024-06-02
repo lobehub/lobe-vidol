@@ -5,6 +5,7 @@ import { InputRef } from 'antd/es/input/Input';
 import React, { memo, useRef } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
+import StopLoadingIcon from '@/components/StopLoading';
 import Record from '@/features/Actions/Record';
 import ToggleChatDialog from '@/features/Actions/ToggleChatDialog';
 import useChatInput from '@/hooks/useSendMessage';
@@ -23,10 +24,11 @@ const InputArea = memo((props: InputAreaProps) => {
   const { className, style } = props;
   const [viewerMode] = useSessionStore((s) => [s.viewerMode]);
 
-  const [loading, messageInput, setMessageInput] = useSessionStore((s) => [
+  const [loading, messageInput, setMessageInput, stopGenerateMessage] = useSessionStore((s) => [
     !!s.chatLoadingId,
     s.messageInput,
     s.setMessageInput,
+    s.stopGenerateMessage,
   ]);
 
   return (
@@ -65,12 +67,15 @@ const InputArea = memo((props: InputAreaProps) => {
       />
       <Button
         onClick={() => {
-          if (loading) return;
-          onSend();
+          if (loading) {
+            stopGenerateMessage();
+          } else {
+            onSend();
+          }
         }}
-        icon={<SendOutlined />}
-        type="primary"
-      ></Button>
+        icon={loading ? <StopLoadingIcon /> : <SendOutlined />}
+        type={loading ? undefined : 'primary'}
+      />
 
       {viewerMode ? <ToggleChatDialog /> : null}
     </Flexbox>

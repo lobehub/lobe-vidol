@@ -1,6 +1,6 @@
-import { ConfigProvider } from 'antd';
 import { createStyles } from 'antd-style';
 import classNames from 'classnames';
+import { MousePointerClick } from 'lucide-react';
 import { Flexbox } from 'react-layout-kit';
 
 import ListItem from '@/components/ListItem';
@@ -30,24 +30,16 @@ const Index = (props: IndexProps) => {
   return (
     <Flexbox>
       <Header title="触摸区域" />
-      <ConfigProvider
-        theme={{
-          token: {
-            fontSize: 12,
-          },
-        }}
-      >
-        {TOUCH_AREA_OPTIONS.map((item) => (
-          <ListItem
-            avatar={item.avatar}
-            className={classNames(styles.listItem)}
-            active={item.value === currentTouchArea}
-            key={item.value}
-            title={item.label}
-            onClick={() => setCurrentTouchArea(item.value)}
-          />
-        ))}
-      </ConfigProvider>
+      {TOUCH_AREA_OPTIONS.map((item) => (
+        <ListItem
+          avatar={<MousePointerClick />}
+          className={classNames(styles.listItem)}
+          active={item.value === currentTouchArea}
+          key={item.value}
+          title={item.label}
+          onClick={() => setCurrentTouchArea(item.value)}
+        />
+      ))}
     </Flexbox>
   );
 };
