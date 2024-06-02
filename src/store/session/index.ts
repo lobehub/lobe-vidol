@@ -371,7 +371,7 @@ export const createSessonStore: StateCreator<SessionStore, [['zustand/devtools',
       type: 'ADD_MESSAGE',
     });
 
-    await fetchAIResponse(currentChats, assistantId);
+    fetchAIResponse(currentChats, assistantId);
   },
 
   setMessageInput: (messageInput) => {
