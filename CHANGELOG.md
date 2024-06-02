@@ -2,6 +2,44 @@
 
 # Changelog
 
+## [Version 0.10.0](https://github.com/lobehub/lobe-vidol/compare/v0.9.0...v0.10.0)
+
+<sup>Released on **2024-06-02**</sup>
+
+#### ✨ Features
+
+- **misc**: Add message smooth animation, 支持停止 chat message 生成，根据性别生成对应不同的默认触摸动作和语音，添加角色性别.
+
+#### 🐛 Bug Fixes
+
+- **misc**: Loading animation, 修复触摸反应表单创建，修复重新生成时的逻辑错误.
+
+<br/>
+
+<details>
+<summary><kbd>Improvements and Fixes</kbd></summary>
+
+#### What's improved
+
+- **misc**: Add message smooth animation ([35dfd8b](https://github.com/lobehub/lobe-vidol/commit/35dfd8b))
+- **misc**: 支持停止 chat message 生成 ([cb8f445](https://github.com/lobehub/lobe-vidol/commit/cb8f445))
+- **misc**: 根据性别生成对应不同的默认触摸动作和语音 ([25bf520](https://github.com/lobehub/lobe-vidol/commit/25bf520))
+- **misc**: 添加角色性别 ([6008d89](https://github.com/lobehub/lobe-vidol/commit/6008d89))
+
+#### What's fixed
+
+- **misc**: Loading animation ([e4532f9](https://github.com/lobehub/lobe-vidol/commit/e4532f9))
+- **misc**: 修复触摸反应表单创建 ([005b823](https://github.com/lobehub/lobe-vidol/commit/005b823))
+- **misc**: 修复重新生成时的逻辑错误 ([3e324e4](https://github.com/lobehub/lobe-vidol/commit/3e324e4))
+
+</details>
+
+<div align="right">
+
+[![](https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square)](#readme-top)
+
+</div>
+
 ## [Version 0.9.0](https://github.com/lobehub/lobe-vidol/compare/v0.8.0...v0.9.0)
 
 <sup>Released on **2024-05-27**</sup>
