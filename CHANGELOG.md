@@ -2,6 +2,32 @@
 
 # Changelog
 
+### [Version 0.10.1](https://github.com/lobehub/lobe-vidol/compare/v0.10.0...v0.10.1)
+
+<sup>Released on **2024-06-02**</sup>
+
+#### 🐛 Bug Fixes
+
+- **misc**: Add alert message, 更新 agent oss 地址.
+
+<br/>
+
+<details>
+<summary><kbd>Improvements and Fixes</kbd></summary>
+
+#### What's fixed
+
+- **misc**: Add alert message ([d6d657e](https://github.com/lobehub/lobe-vidol/commit/d6d657e))
+- **misc**: 更新 agent oss 地址 ([9a8a9ca](https://github.com/lobehub/lobe-vidol/commit/9a8a9ca))
+
+</details>
+
+<div align="right">
+
+[![](https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square)](#readme-top)
+
+</div>
+
 ## [Version 0.10.0](https://github.com/lobehub/lobe-vidol/compare/v0.9.0...v0.10.0)
 
 <sup>Released on **2024-06-02**</sup>
