@@ -1,5 +1,5 @@
 import { Button, Progress, message } from 'antd';
-import React from 'react';
+import React, { memo } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
 import { agentSelectors, useAgentStore } from '@/store/agent';
@@ -12,7 +12,7 @@ interface SubscribeButtonProps {
   agent: Agent;
 }
 
-const SubscribeButton = (props: SubscribeButtonProps) => {
+const SubscribeButton = memo((props: SubscribeButtonProps) => {
   const [downloading, setDownloading] = React.useState(false);
   const [percent, setPercent] = React.useState(0);
   const [addLocalAgent, removeLocalAgent, subscribed] = useAgentStore((s) => [
@@ -70,6 +70,6 @@ const SubscribeButton = (props: SubscribeButtonProps) => {
       )}
     </Button>
   );
-};
+});
 
 export default SubscribeButton;

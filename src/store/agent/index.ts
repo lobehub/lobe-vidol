@@ -38,7 +38,7 @@ export interface AgentStore {
   /**
    * 清除角色配置
    */
-  clearAgentStorage: () => void;
+  clearAgentStorage: () => Promise<void>;
   /**
    * 创建新角色
    */
@@ -142,8 +142,9 @@ const createAgentStore: StateCreator<AgentStore, [['zustand/devtools', never]]> 
   activateAgent: (identifier) => {
     set({ currentIdentifier: identifier });
   },
-  clearAgentStorage: () => {
+  clearAgentStorage: async () => {
     localStorage.removeItem(AGENT_STORAGE_KEY);
+    await storage.clear();
     set({ ...initialState });
   },
 

@@ -82,7 +82,8 @@ const isDefaultAgent = (s: AgentStore) => {
   };
 };
 
-const subscribed = (s: AgentStore) => (agentId: string) => {
+const subscribed = (s: AgentStore) => (agentId: string | undefined) => {
+  if (!agentId) return false;
   const { localAgentList } = s;
   const index = localAgentList.findIndex((item) => item.agentId === agentId);
 

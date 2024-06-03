@@ -12,8 +12,13 @@ export const removeItem = async (key: string) => {
   return await localforage.removeItem(key);
 };
 
+export const clear = async () => {
+  return await localforage.clear();
+};
+
 export default {
   getItem,
   setItem,
+  clear,
   removeItem,
 };

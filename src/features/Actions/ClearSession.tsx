@@ -12,7 +12,7 @@ interface Props {
 export default (props: Props) => {
   const { text = '立即清除', type = 'primary' } = props;
   const clearAgentStorage = useAgentStore((s) => s.clearAgentStorage);
-  const clearSessions = useSessionStore((s) => s.clearSessions);
+  const clearSessionStorage = useSessionStore((s) => s.clearSessionStorage);
   const { message, modal } = App.useApp();
 
   const handleClear = () => {
@@ -25,9 +25,10 @@ export default (props: Props) => {
       },
       okText: '确定',
       onOk: () => {
-        clearSessions();
-        clearAgentStorage();
-        message.success('清除成功');
+        clearSessionStorage();
+        clearAgentStorage().then(() => {
+          message.success('清除成功');
+        });
       },
       title: '确认清除所有会话消息?',
     });
