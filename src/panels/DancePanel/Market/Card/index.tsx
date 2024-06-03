@@ -6,6 +6,7 @@ import React, { memo, useState } from 'react';
 import Author from '@/components/Author';
 import DanceInfo from '@/components/DanceInfo';
 import { SIDEBAR_MAX_WIDTH, SIDEBAR_WIDTH } from '@/constants/token';
+import SubscribeButton from '@/panels/DancePanel/Market/Card/SubscribeButton';
 import { danceListSelectors, useDanceStore } from '@/store/dance';
 import { marketStoreSelectors, useMarketStore } from '@/store/market';
 
@@ -32,9 +33,7 @@ const Header = () => {
     ],
   );
 
-  const [subscribe, unsubscribe, subscribed, addAndPlayItem, addToPlayList] = useDanceStore((s) => [
-    s.subscribe,
-    s.unsubscribe,
+  const [subscribed, addAndPlayItem, addToPlayList] = useDanceStore((s) => [
     danceListSelectors.subscribed(s),
     s.addAndPlayItem,
     s.addToPlayList,
@@ -71,20 +70,7 @@ const Header = () => {
       ]);
     }
 
-    actions.push(
-      <Button
-        onClick={() => {
-          if (isSubscribed) {
-            unsubscribe(currentDanceItem.danceId);
-          } else {
-            subscribe(currentDanceItem);
-          }
-        }}
-        type={isSubscribed ? 'default' : 'primary'}
-      >
-        {isSubscribed ? '取消订阅' : '订阅'}
-      </Button>,
-    );
+    actions.push(<SubscribeButton dance={currentDanceItem} key={'subscribe'} />);
   }
 
   return (

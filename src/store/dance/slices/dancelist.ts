@@ -9,15 +9,15 @@ import { Dance } from '@/types/dance';
 
 export interface DanceListStore {
   activateDance: (identifier: string) => void;
+  addDanceItem: (dance: Dance) => void;
   currentIdentifier: string;
   danceList: Dance[];
   danceLoading: boolean;
   deactivateDance: () => void;
   fetchDanceIndex: () => void;
   isPlaying: boolean;
+  removeDanceItem: (danceId: string) => void;
   setIsPlaying: (isPlaying: boolean) => void;
-  subscribe: (dance: Dance) => void;
-  unsubscribe: (danceId: string) => void;
 }
 
 export const createDanceStore: StateCreator<
@@ -52,7 +52,7 @@ export const createDanceStore: StateCreator<
     setIsPlaying: (isPlaying) => {
       set({ isPlaying });
     },
-    subscribe: (dance) => {
+    addDanceItem: (dance) => {
       const { danceList } = get();
 
       const newList = produce(danceList, (draft) => {
@@ -64,7 +64,7 @@ export const createDanceStore: StateCreator<
       });
       set({ danceList: newList });
     },
-    unsubscribe: (danceId) => {
+    removeDanceItem: (danceId) => {
       const { danceList } = get();
       const newList = produce(danceList, (draft) => {
         const index = draft.findIndex((item) => item.danceId === danceId);

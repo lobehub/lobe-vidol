@@ -29,6 +29,11 @@ export interface AgentStore {
    */
   activateAgent: (identifier: string) => void;
   /**
+   * 添加角色
+   * @param agent
+   */
+  addLocalAgent: (agent: Agent) => void;
+  /**
    * 清除角色配置
    */
   clearAgentStorage: () => void;
@@ -69,6 +74,11 @@ export interface AgentStore {
    */
   localAgentList: Agent[];
   /**
+   * 移除本地角色
+   * @param agentId
+   */
+  removeLocalAgent: (agentId: string) => void;
+  /**
    * 删除触摸配置
    */
   removeTouchAction: (currentTouchArea: TouchAreaEnum, index: number) => void;
@@ -76,16 +86,6 @@ export interface AgentStore {
    * 设置角色配置
    */
   setAgentConfig: (agent: Agent) => void;
-  /**
-   * 订阅角色
-   * @param agent
-   */
-  subscribe: (agent: Agent) => void;
-  /**
-   * 取消订阅角色
-   * @param agentId
-   */
-  unsubscribe: (agentId: string) => void;
   /**
    * 更新角色配置
    */
@@ -260,7 +260,7 @@ const createAgentStore: StateCreator<AgentStore, [['zustand/devtools', never]]> 
     const { updateAgentConfig } = get();
     updateAgentConfig({ tts });
   },
-  subscribe: (agent) => {
+  addLocalAgent: (agent) => {
     const { localAgentList } = get();
 
     const newList = produce(localAgentList, (draft) => {
@@ -272,7 +272,7 @@ const createAgentStore: StateCreator<AgentStore, [['zustand/devtools', never]]> 
     });
     set({ localAgentList: newList });
   },
-  unsubscribe: (agentId) => {
+  removeLocalAgent: (agentId) => {
     const { localAgentList } = get();
     const newList = produce(localAgentList, (draft) => {
       const index = draft.findIndex((item) => item.agentId === agentId);

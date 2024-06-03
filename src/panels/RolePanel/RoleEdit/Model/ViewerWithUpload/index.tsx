@@ -1,12 +1,12 @@
 import { Upload } from 'antd';
-import localforage from 'localforage';
 import React, { CSSProperties, memo } from 'react';
 
 import EmptyGuide from '@/components/EmptyGuide';
 import { ROLE_VIEWER_HEIGHT, ROLE_VIEWER_WIDTH } from '@/constants/common';
 import AgentViewer from '@/features/AgentViewer';
 import { agentSelectors, useAgentStore } from '@/store/agent';
-import { generateModelKey } from '@/utils/model';
+import { generateLocalModelKey } from '@/utils/model';
+import storage from '@/utils/storage';
 
 interface ViewerWithUploadProps {
   style?: CSSProperties;
@@ -21,8 +21,8 @@ const ViewerWithUpload = memo<ViewerWithUploadProps>(({ style }) => {
   const handleUploadAvatar = (file: any) => {
     const { name, size } = file;
     const blob = new Blob([file], { type: 'application/octet-stream' });
-    const modelKey = generateModelKey(name, size);
-    localforage.setItem(modelKey, blob).then(() => {
+    const modelKey = generateLocalModelKey(name, size);
+    storage.setItem(modelKey, blob).then(() => {
       updateAgentConfig({ meta: { model: modelKey } });
     });
   };

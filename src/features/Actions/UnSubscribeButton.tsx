@@ -6,7 +6,7 @@ import { useSessionStore } from '@/store/session';
 
 export default () => {
   const currentAgent = useAgentStore((s) => agentSelectors.currentAgentItem(s));
-  const unsubscribe = useAgentStore((s) => s.unsubscribe);
+  const removeLocalAgent = useAgentStore((s) => s.removeLocalAgent);
   const removeSession = useSessionStore((s) => s.removeSession);
 
   return (
@@ -17,7 +17,7 @@ export default () => {
       okText="确定"
       onConfirm={() => {
         if (!currentAgent) return;
-        unsubscribe(currentAgent.agentId);
+        removeLocalAgent(currentAgent.agentId);
         removeSession(currentAgent.agentId);
       }}
       title="取消订阅？"

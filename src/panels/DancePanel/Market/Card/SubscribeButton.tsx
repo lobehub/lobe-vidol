@@ -8,9 +8,9 @@ interface SubscribeButtonProps {
 }
 
 const SubscribeButton = (props: SubscribeButtonProps) => {
-  const [subscribe, unsubscribe, subscribed] = useDanceStore((s) => [
-    s.subscribe,
-    s.unsubscribe,
+  const [addDanceItem, removeDanceItem, subscribed] = useDanceStore((s) => [
+    s.addDanceItem,
+    s.removeDanceItem,
     danceListSelectors.subscribed(s),
   ]);
 
@@ -22,9 +22,9 @@ const SubscribeButton = (props: SubscribeButtonProps) => {
     <Button
       onClick={() => {
         if (isSubscribed) {
-          unsubscribe(dance.danceId);
+          removeDanceItem(dance.danceId);
         } else {
-          subscribe(dance);
+          addDanceItem(dance);
         }
       }}
       type={isSubscribed ? 'default' : 'primary'}
