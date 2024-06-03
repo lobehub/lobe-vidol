@@ -17,6 +17,8 @@ import { Agent, AgentMeta, GenderEnum } from '@/types/agent';
 import { TouchAction, TouchAreaEnum } from '@/types/touch';
 import { TTS } from '@/types/tts';
 import { mergeWithUndefined } from '@/utils/common';
+import { getModelPathByAgentId } from '@/utils/model';
+import storage from '@/utils/storage';
 
 import { initialState } from './initialState';
 import { agentSelectors } from './selectors/agent';
@@ -77,7 +79,7 @@ export interface AgentStore {
    * 移除本地角色
    * @param agentId
    */
-  removeLocalAgent: (agentId: string) => void;
+  removeLocalAgent: (agentId: string) => Promise<void>;
   /**
    * 删除触摸配置
    */
@@ -272,7 +274,7 @@ const createAgentStore: StateCreator<AgentStore, [['zustand/devtools', never]]> 
     });
     set({ localAgentList: newList });
   },
-  removeLocalAgent: (agentId) => {
+  removeLocalAgent: async (agentId) => {
     const { localAgentList } = get();
     const newList = produce(localAgentList, (draft) => {
       const index = draft.findIndex((item) => item.agentId === agentId);
@@ -281,6 +283,7 @@ const createAgentStore: StateCreator<AgentStore, [['zustand/devtools', never]]> 
         draft.splice(index, 1);
       }
     });
+    await storage.removeItem(getModelPathByAgentId(agentId));
     set({ currentIdentifier: LOBE_VIDOL_DEFAULT_AGENT_ID, localAgentList: newList });
   },
 });

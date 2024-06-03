@@ -5,7 +5,8 @@ import EmptyGuide from '@/components/EmptyGuide';
 import { ROLE_VIEWER_HEIGHT, ROLE_VIEWER_WIDTH } from '@/constants/common';
 import AgentViewer from '@/features/AgentViewer';
 import { agentSelectors, useAgentStore } from '@/store/agent';
-import { generateLocalModelKey } from '@/utils/model';
+import { useGlobalStore } from '@/store/global';
+import { getModelPathByAgentId } from '@/utils/model';
 import storage from '@/utils/storage';
 
 interface ViewerWithUploadProps {
@@ -13,17 +14,22 @@ interface ViewerWithUploadProps {
 }
 
 const ViewerWithUpload = memo<ViewerWithUploadProps>(({ style }) => {
-  const [currentAgentModel, updateAgentConfig] = useAgentStore((s) => [
+  const viewer = useGlobalStore((s) => s.viewer);
+
+  const [currentAgentId, currentAgentModel, updateAgentConfig] = useAgentStore((s) => [
+    agentSelectors.currentAgentId(s),
     agentSelectors.currentAgentModel(s),
     s.updateAgentConfig,
   ]);
 
   const handleUploadAvatar = (file: any) => {
-    const { name, size } = file;
     const blob = new Blob([file], { type: 'application/octet-stream' });
-    const modelKey = generateLocalModelKey(name, size);
+    const modelKey = getModelPathByAgentId(currentAgentId!);
+
     storage.setItem(modelKey, blob).then(() => {
       updateAgentConfig({ meta: { model: modelKey } });
+      const vrmUrl = window.URL.createObjectURL(blob as Blob);
+      viewer.loadVrm(vrmUrl);
     });
   };
 
@@ -36,10 +42,10 @@ const ViewerWithUpload = memo<ViewerWithUploadProps>(({ style }) => {
       style={style}
       openFileDialogOnClick={!currentAgentModel}
     >
-      {currentAgentModel ? (
+      {currentAgentModel && currentAgentId ? (
         <AgentViewer
           height={ROLE_VIEWER_HEIGHT}
-          modelUrl={currentAgentModel}
+          agentId={currentAgentId}
           width={ROLE_VIEWER_WIDTH}
         />
       ) : (

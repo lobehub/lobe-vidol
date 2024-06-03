@@ -9,15 +9,15 @@ import ToolBar from './ToolBar';
 import { useStyles } from './style';
 
 interface Props {
+  agentId: string;
   className?: string;
   height?: number | string;
-  modelUrl?: string;
   style?: React.CSSProperties;
   width?: number | string;
 }
 
 function AgentViewer(props: Props) {
-  const { className, style, height, modelUrl, width } = props;
+  const { className, style, height, agentId, width } = props;
   const { styles } = useStyles();
   const ref = useRef<HTMLDivElement>(null);
   const viewer = useGlobalStore((s) => s.viewer);
@@ -25,8 +25,8 @@ function AgentViewer(props: Props) {
   const { loading, loadVrm } = useLoadVrm(viewer);
 
   useEffect(() => {
-    loadVrm(modelUrl);
-  }, [modelUrl]);
+    loadVrm(agentId);
+  }, [agentId]);
 
   const canvasRef = useCallback(
     (canvas: HTMLCanvasElement) => {

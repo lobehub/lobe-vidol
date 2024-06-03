@@ -1,7 +1,6 @@
 'use client';
 
 import classNames from 'classnames';
-import { isEqual } from 'lodash-es';
 import React, { memo } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
@@ -11,7 +10,7 @@ import Alert from '@/features/Alert';
 import ChatDialog from '@/features/ChatDialog';
 import MessageInput from '@/features/ChatInput/MessageInput';
 import { useGlobalStore } from '@/store/global';
-import { sessionSelectors, useSessionStore } from '@/store/session';
+import { useSessionStore } from '@/store/session';
 
 import { useStyles } from './style';
 
@@ -21,15 +20,12 @@ export default memo(() => {
     s.setChatDialog,
   ]);
   const { styles } = useStyles();
-  const [currentAgent] = useSessionStore((s) => [sessionSelectors.currentAgent(s), isEqual]);
+  const activeId = useSessionStore((s) => s.activeId);
 
   return (
     <Flexbox flex={1} style={{ position: 'relative' }}>
       <div className={styles.viewer}>
-        <AgentViewer
-          height={`calc(100vh - ${HEADER_HEIGHT}px)`}
-          modelUrl={currentAgent?.meta.model}
-        />
+        <AgentViewer height={`calc(100vh - ${HEADER_HEIGHT}px)`} agentId={activeId} />
       </div>
       {showChatDialog ? (
         <ChatDialog className={classNames(styles.dialog, styles.content)} setOpen={setChatDialog} />

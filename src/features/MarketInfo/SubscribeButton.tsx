@@ -5,7 +5,7 @@ import { Flexbox } from 'react-layout-kit';
 import { agentSelectors, useAgentStore } from '@/store/agent';
 import { Agent } from '@/types/agent';
 import { fetchWithProgress } from '@/utils/fetch';
-import { generateRemoteModelKey } from '@/utils/model';
+import { getModelPathByAgentId } from '@/utils/model';
 import { setItem } from '@/utils/storage';
 
 interface SubscribeButtonProps {
@@ -31,8 +31,9 @@ const SubscribeButton = (props: SubscribeButtonProps) => {
       disabled={downloading}
       onClick={async () => {
         if (isSubscribed) {
-          removeLocalAgent(agent.agentId);
-          message.success('已取消订阅');
+          removeLocalAgent(agent.agentId).then(() => {
+            message.success('已取消订阅');
+          });
         } else {
           if (agent.meta.model) {
             setDownloading(true);
@@ -43,7 +44,8 @@ const SubscribeButton = (props: SubscribeButtonProps) => {
                   setPercent((loaded / total) * 100);
                 },
               });
-              await setItem(generateRemoteModelKey(agent.agentId), blob);
+              const modelKey = getModelPathByAgentId(agent.agentId);
+              await setItem(modelKey, blob);
             } catch (e) {
               console.error(e);
               message.error('下载失败');
