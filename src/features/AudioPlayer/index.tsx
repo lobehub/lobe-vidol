@@ -1,6 +1,7 @@
 import { ActionIcon, Avatar } from '@lobehub/ui';
 import { Typography } from 'antd';
 import classNames from 'classnames';
+import { isEqual } from 'lodash-es';
 import { ListMusic } from 'lucide-react';
 import React, { memo, useEffect, useRef, useState } from 'react';
 
@@ -8,10 +9,8 @@ import Control from '@/features/AudioPlayer/Control';
 import Duration from '@/features/AudioPlayer/Duration';
 import PlayList from '@/features/AudioPlayer/PlayList';
 import Volume from '@/features/AudioPlayer/Volume';
-import { useDanceStore } from '@/store/dance';
+import { danceListSelectors, useDanceStore } from '@/store/dance';
 import { useGlobalStore } from '@/store/global';
-import { getDancePathByDanceId } from '@/utils/file';
-import storage from '@/utils/storage';
 
 import { useStyles } from './style';
 
@@ -27,32 +26,27 @@ function Player(props: PlayerProps) {
   const [open, setOpen] = useState(false);
   const [duration, setDuration] = useState(0);
   const [currentProgress, setCurrentProgress] = useState(0);
-  const { nextDance, currentPlay, isPlaying } = useDanceStore((s) => ({
-    currentPlay: s.currentPlay,
-    isPlaying: s.isPlaying,
-    nextDance: s.nextDance,
-  }));
+  const { nextDance, currentPlay, isPlaying, getCurrentPlayData } = useDanceStore(
+    (s) => ({
+      currentPlay: s.currentPlay,
+      isPlaying: s.isPlaying,
+      nextDance: s.nextDance,
+      getCurrentPlayData: danceListSelectors.getCurrentPlayData(s),
+    }),
+    isEqual,
+  );
   const viewer = useGlobalStore((s) => s.viewer);
 
   const { styles } = useStyles();
 
   useEffect(() => {
     if (isPlaying && currentPlay) {
-      const localDancePath = getDancePathByDanceId(currentPlay.danceId);
-      storage.getItem(localDancePath).then((res) => {
-        if (res) {
-          viewer.model?.dance(res as ArrayBuffer);
-          ref.current?.play();
-          return;
-        } else {
-          fetch(currentPlay.src)
-            .then((res) => res.arrayBuffer())
-            .then((buffer) => {
-              storage.setItem(localDancePath, buffer);
-              viewer.model?.dance(buffer);
-              ref.current?.play();
-            });
-        }
+      getCurrentPlayData.then((res) => {
+        if (!res) return;
+        const { danceBuffer, audioBlob } = res;
+        viewer.model?.dance(danceBuffer);
+        if (ref.current) ref.current.src = URL.createObjectURL(audioBlob);
+        if (ref.current) ref.current.play();
       });
     } else {
       viewer.model?.stopDance();
@@ -78,7 +72,6 @@ function Player(props: PlayerProps) {
         }}
         preload="metadata"
         ref={ref}
-        src={currentPlay?.audio}
       />
       <div className={styles.player}>
         <Avatar
