@@ -6,7 +6,7 @@ import { ROLE_VIEWER_HEIGHT, ROLE_VIEWER_WIDTH } from '@/constants/common';
 import AgentViewer from '@/features/AgentViewer';
 import { agentSelectors, useAgentStore } from '@/store/agent';
 import { useGlobalStore } from '@/store/global';
-import { getModelPathByAgentId } from '@/utils/model';
+import { getModelPathByAgentId } from '@/utils/file';
 import storage from '@/utils/storage';
 
 interface ViewerWithUploadProps {

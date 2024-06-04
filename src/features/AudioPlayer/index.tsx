@@ -8,8 +8,10 @@ import Control from '@/features/AudioPlayer/Control';
 import Duration from '@/features/AudioPlayer/Duration';
 import PlayList from '@/features/AudioPlayer/PlayList';
 import Volume from '@/features/AudioPlayer/Volume';
-import { DanceStore, useDanceStore } from '@/store/dance';
+import { useDanceStore } from '@/store/dance';
 import { useGlobalStore } from '@/store/global';
+import { getDancePathByDanceId } from '@/utils/file';
+import storage from '@/utils/storage';
 
 import { useStyles } from './style';
 
@@ -18,14 +20,6 @@ interface PlayerProps {
   style?: React.CSSProperties;
 }
 
-const danceSelectors = (s: DanceStore) => {
-  return {
-    currentPlay: s.currentPlay,
-    isPlaying: s.isPlaying,
-    nextDance: s.nextDance,
-  };
-};
-
 function Player(props: PlayerProps) {
   const { style, className } = props;
   const ref = useRef<HTMLAudioElement>(null);
@@ -33,19 +27,33 @@ function Player(props: PlayerProps) {
   const [open, setOpen] = useState(false);
   const [duration, setDuration] = useState(0);
   const [currentProgress, setCurrentProgress] = useState(0);
-  const { nextDance, currentPlay, isPlaying } = useDanceStore(danceSelectors);
+  const { nextDance, currentPlay, isPlaying } = useDanceStore((s) => ({
+    currentPlay: s.currentPlay,
+    isPlaying: s.isPlaying,
+    nextDance: s.nextDance,
+  }));
   const viewer = useGlobalStore((s) => s.viewer);
 
   const { styles } = useStyles();
 
   useEffect(() => {
     if (isPlaying && currentPlay) {
-      fetch(currentPlay.src)
-        .then((res) => res.arrayBuffer())
-        .then((buffer) => {
-          viewer.model?.dance(buffer);
+      const localDancePath = getDancePathByDanceId(currentPlay.danceId);
+      storage.getItem(localDancePath).then((res) => {
+        if (res) {
+          viewer.model?.dance(res as ArrayBuffer);
           ref.current?.play();
-        });
+          return;
+        } else {
+          fetch(currentPlay.src)
+            .then((res) => res.arrayBuffer())
+            .then((buffer) => {
+              storage.setItem(localDancePath, buffer);
+              viewer.model?.dance(buffer);
+              ref.current?.play();
+            });
+        }
+      });
     } else {
       viewer.model?.stopDance();
       ref.current?.pause();

@@ -5,7 +5,7 @@ import { Flexbox } from 'react-layout-kit';
 import { agentSelectors, useAgentStore } from '@/store/agent';
 import { Agent } from '@/types/agent';
 import { fetchWithProgress } from '@/utils/fetch';
-import { getModelPathByAgentId } from '@/utils/model';
+import { getModelPathByAgentId } from '@/utils/file';
 import { setItem } from '@/utils/storage';
 
 interface SubscribeButtonProps {

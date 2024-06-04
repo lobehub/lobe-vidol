@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { Viewer } from '@/features/vrmViewer/viewer';
 import { agentSelectors, useAgentStore } from '@/store/agent';
-import { getModelPathByAgentId } from '@/utils/model';
+import { getModelPathByAgentId } from '@/utils/file';
 import storage from '@/utils/storage';
 
 export const useLoadVrm = (viewer: Viewer) => {

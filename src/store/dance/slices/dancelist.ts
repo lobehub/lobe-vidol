@@ -6,6 +6,8 @@ import { DEFAULT_DANCE } from '@/constants/dance';
 import { getDanceIndex } from '@/services/dance';
 import { DanceStore } from '@/store/dance';
 import { Dance } from '@/types/dance';
+import { getAudioPathByDanceId, getDancePathByDanceId } from '@/utils/file';
+import storage from '@/utils/storage';
 
 export interface DanceListStore {
   activateDance: (identifier: string) => void;
@@ -16,7 +18,7 @@ export interface DanceListStore {
   deactivateDance: () => void;
   fetchDanceIndex: () => void;
   isPlaying: boolean;
-  removeDanceItem: (danceId: string) => void;
+  removeDanceItem: (danceId: string) => Promise<void>;
   setIsPlaying: (isPlaying: boolean) => void;
 }
 
@@ -64,7 +66,7 @@ export const createDanceStore: StateCreator<
       });
       set({ danceList: newList });
     },
-    removeDanceItem: (danceId) => {
+    removeDanceItem: async (danceId) => {
       const { danceList } = get();
       const newList = produce(danceList, (draft) => {
         const index = draft.findIndex((item) => item.danceId === danceId);
@@ -73,6 +75,8 @@ export const createDanceStore: StateCreator<
           draft.splice(index, 1);
         }
       });
+      await storage.removeItem(getDancePathByDanceId(danceId));
+      await storage.removeItem(getAudioPathByDanceId(danceId));
       set({ currentIdentifier: newList[0]?.danceId, danceList: newList });
     },
   };

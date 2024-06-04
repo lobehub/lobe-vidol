@@ -17,7 +17,7 @@ import { Agent, AgentMeta, GenderEnum } from '@/types/agent';
 import { TouchAction, TouchAreaEnum } from '@/types/touch';
 import { TTS } from '@/types/tts';
 import { mergeWithUndefined } from '@/utils/common';
-import { getModelPathByAgentId } from '@/utils/model';
+import { getModelPathByAgentId } from '@/utils/file';
 import storage from '@/utils/storage';
 
 import { initialState } from './initialState';
