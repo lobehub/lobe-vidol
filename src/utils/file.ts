@@ -38,9 +38,9 @@ export const getCurrentPlayData = async (
 
   // 音频文件
   const localAudioPath = getAudioPathByDanceId(currentPlay.danceId);
-  const audioBlob = (await storage.getItem(localAudioPath)) as Blob;
+  let audioBlob = (await storage.getItem(localAudioPath)) as Blob;
   if (!audioBlob) {
-    const audioBlob = await fetch(currentPlay.audio).then((res) => res.blob());
+    audioBlob = await fetch(currentPlay.audio).then((res) => res.blob());
     await storage.setItem(localAudioPath, audioBlob);
   }
 

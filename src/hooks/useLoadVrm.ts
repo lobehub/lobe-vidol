@@ -18,6 +18,8 @@ export const useLoadVrm = (viewer: Viewer) => {
       return;
     }
 
+    setLoading(true);
+
     const modelPath = getModelPathByAgentId(agentId);
 
     // 根据 AgentId 获取本地模型数据
@@ -30,7 +32,6 @@ export const useLoadVrm = (viewer: Viewer) => {
 
     vrmUrl = window.URL.createObjectURL(blob as Blob);
 
-    setLoading(true);
     viewer.loadVrm(vrmUrl).finally(() => {
       setLoading(false);
     });

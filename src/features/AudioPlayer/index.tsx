@@ -46,7 +46,6 @@ function Player(props: PlayerProps) {
         if (!res) return;
         const { danceBuffer, audioBlob } = res;
         viewer.model?.dance(danceBuffer);
-        console.log('audioBlob', audioBlob);
         if (ref.current) ref.current.src = URL.createObjectURL(audioBlob);
         if (ref.current) ref.current.play();
       });
