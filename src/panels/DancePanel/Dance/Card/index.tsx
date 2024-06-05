@@ -64,7 +64,7 @@ const SideBar = memo(() => {
             key="play"
             onClick={() => {
               if (currentDance) {
-                addAndPlayItem(currentDance);
+                addAndPlayItem(currentDance.danceId);
               }
             }}
             type={'primary'}
@@ -75,7 +75,7 @@ const SideBar = memo(() => {
             key="addAndPlay"
             onClick={() => {
               if (currentDance) {
-                addToPlayList(currentDance);
+                addToPlayList(currentDance.danceId);
                 message.success('已添加到播放列表');
               }
             }}

@@ -1,7 +1,9 @@
 import { Dance } from '@/types/dance';
 
+export const LOBE_VIDOL_DEFAULT_DANCE_ID = 'vidol-dance-gokuraku';
+
 export const DEFAULT_DANCE: Dance = {
-  danceId: 'vidol-dance-gokuraku',
+  danceId: LOBE_VIDOL_DEFAULT_DANCE_ID,
   name: '極楽浄土',
   author: 'rdmclin2',
   homepage: 'https://github.com/rdmclin2',

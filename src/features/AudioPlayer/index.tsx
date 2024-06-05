@@ -10,6 +10,7 @@ import Duration from '@/features/AudioPlayer/Duration';
 import PlayList from '@/features/AudioPlayer/PlayList';
 import Volume from '@/features/AudioPlayer/Volume';
 import { useDanceStore } from '@/store/dance';
+import { playListSelectors } from '@/store/dance/selectors/playlist';
 import { useGlobalStore } from '@/store/global';
 import { getCurrentPlayData } from '@/utils/file';
 
@@ -29,7 +30,7 @@ function Player(props: PlayerProps) {
   const [currentProgress, setCurrentProgress] = useState(0);
   const { nextDance, currentPlay, isPlaying } = useDanceStore(
     (s) => ({
-      currentPlay: s.currentPlay,
+      currentPlay: playListSelectors.currentPlay(s),
       isPlaying: s.isPlaying,
       nextDance: s.nextDance,
     }),
@@ -45,6 +46,7 @@ function Player(props: PlayerProps) {
         if (!res) return;
         const { danceBuffer, audioBlob } = res;
         viewer.model?.dance(danceBuffer);
+        console.log('audioBlob', audioBlob);
         if (ref.current) ref.current.src = URL.createObjectURL(audioBlob);
         if (ref.current) ref.current.play();
       });

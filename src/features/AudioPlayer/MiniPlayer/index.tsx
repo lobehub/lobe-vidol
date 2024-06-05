@@ -10,6 +10,7 @@ import { DESKTOP_HEADER_ICON_SIZE } from '@/constants/token';
 import Control from '@/features/AudioPlayer/Control';
 import PlayList from '@/features/AudioPlayer/PlayList';
 import { useDanceStore } from '@/store/dance';
+import { playListSelectors } from '@/store/dance/selectors/playlist';
 
 const useStyles = createStyles(({ css }) => ({
   spin: css`
@@ -41,7 +42,7 @@ export default (props: Props) => {
   const [isPlaying, playlist, currentPlay] = useDanceStore((s) => [
     s.isPlaying,
     s.playlist,
-    s.currentPlay,
+    playListSelectors.currentPlay(s),
   ]);
 
   return playlist.length ? (

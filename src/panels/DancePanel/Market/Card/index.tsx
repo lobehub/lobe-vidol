@@ -49,7 +49,7 @@ const Header = () => {
           key="play"
           onClick={() => {
             if (currentDanceItem) {
-              addAndPlayItem(currentDanceItem);
+              addAndPlayItem(currentDanceItem.danceId);
             }
           }}
           type={'primary'}
@@ -60,7 +60,7 @@ const Header = () => {
           key="add"
           onClick={() => {
             if (currentDanceItem) {
-              addToPlayList(currentDanceItem);
+              addToPlayList(currentDanceItem.danceId);
               message.success('已添加到播放列表');
             }
           }}
