@@ -18,12 +18,17 @@ export const useLoadVrm = (viewer: Viewer) => {
       return;
     }
 
-    // 根据 AgentId 获取本地模型数据
-    const blob = await storage.getItem(getModelPathByAgentId(agentId));
+    const modelPath = getModelPathByAgentId(agentId);
 
-    if (blob) {
-      vrmUrl = window.URL.createObjectURL(blob as Blob);
+    // 根据 AgentId 获取本地模型数据
+    let blob = await storage.getItem(modelPath);
+
+    if (!blob) {
+      blob = await fetch(vrmUrl).then((res) => res.blob());
+      await storage.setItem(modelPath, blob);
     }
+
+    vrmUrl = window.URL.createObjectURL(blob as Blob);
 
     setLoading(true);
     viewer.loadVrm(vrmUrl).finally(() => {

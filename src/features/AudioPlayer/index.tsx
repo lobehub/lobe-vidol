@@ -9,8 +9,9 @@ import Control from '@/features/AudioPlayer/Control';
 import Duration from '@/features/AudioPlayer/Duration';
 import PlayList from '@/features/AudioPlayer/PlayList';
 import Volume from '@/features/AudioPlayer/Volume';
-import { danceListSelectors, useDanceStore } from '@/store/dance';
+import { useDanceStore } from '@/store/dance';
 import { useGlobalStore } from '@/store/global';
+import { getCurrentPlayData } from '@/utils/file';
 
 import { useStyles } from './style';
 
@@ -26,12 +27,11 @@ function Player(props: PlayerProps) {
   const [open, setOpen] = useState(false);
   const [duration, setDuration] = useState(0);
   const [currentProgress, setCurrentProgress] = useState(0);
-  const { nextDance, currentPlay, isPlaying, getCurrentPlayData } = useDanceStore(
+  const { nextDance, currentPlay, isPlaying } = useDanceStore(
     (s) => ({
       currentPlay: s.currentPlay,
       isPlaying: s.isPlaying,
       nextDance: s.nextDance,
-      getCurrentPlayData: danceListSelectors.getCurrentPlayData(s),
     }),
     isEqual,
   );
@@ -41,7 +41,7 @@ function Player(props: PlayerProps) {
 
   useEffect(() => {
     if (isPlaying && currentPlay) {
-      getCurrentPlayData.then((res) => {
+      getCurrentPlayData(currentPlay).then((res) => {
         if (!res) return;
         const { danceBuffer, audioBlob } = res;
         viewer.model?.dance(danceBuffer);
