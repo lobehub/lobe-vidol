@@ -1,5 +1,5 @@
 import { ActionIcon, Avatar } from '@lobehub/ui';
-import { Typography } from 'antd';
+import { Progress, Typography } from 'antd';
 import classNames from 'classnames';
 import { isEqual } from 'lodash-es';
 import { ListMusic } from 'lucide-react';
@@ -9,10 +9,11 @@ import Control from '@/features/AudioPlayer/Control';
 import Duration from '@/features/AudioPlayer/Duration';
 import PlayList from '@/features/AudioPlayer/PlayList';
 import Volume from '@/features/AudioPlayer/Volume';
+import { useLoadAudio } from '@/hooks/useLoadAudio';
+import { useLoadDance } from '@/hooks/useLoadDance';
 import { useDanceStore } from '@/store/dance';
 import { playListSelectors } from '@/store/dance/selectors/playlist';
 import { useGlobalStore } from '@/store/global';
-import { getCurrentPlayData } from '@/utils/file';
 
 import { useStyles } from './style';
 
@@ -38,15 +39,20 @@ function Player(props: PlayerProps) {
   );
   const viewer = useGlobalStore((s) => s.viewer);
 
+  const { downloading: audioDownloading, percent: audioPercent, fetchAudioUrl } = useLoadAudio();
+  const { downloading: danceDownloading, percent: dancePercent, fetchDanceBuffer } = useLoadDance();
+
   const { styles } = useStyles();
 
   useEffect(() => {
     if (isPlaying && currentPlay) {
-      getCurrentPlayData(currentPlay).then((res) => {
+      const audioPromise = fetchAudioUrl(currentPlay.danceId, currentPlay.audio);
+      const dancePromise = fetchDanceBuffer(currentPlay.danceId, currentPlay.src);
+      Promise.all([audioPromise, dancePromise]).then((res) => {
         if (!res) return;
-        const { danceBuffer, audioBlob } = res;
+        const [audioUrl, danceBuffer] = res;
         viewer.model?.dance(danceBuffer);
-        if (ref.current) ref.current.src = URL.createObjectURL(audioBlob);
+        if (ref.current) ref.current.src = audioUrl;
         if (ref.current) ref.current.play();
       });
     } else {
@@ -75,12 +81,17 @@ function Player(props: PlayerProps) {
         ref={ref}
       />
       <div className={styles.player}>
-        <Avatar
-          shape="circle"
-          size={48}
-          src={currentPlay?.cover}
-          className={isPlaying ? styles.spin : ''}
-        />
+        <div style={{ position: 'relative' }}>
+          <Avatar shape="circle" size={48} src={currentPlay?.cover} />
+          {danceDownloading || audioDownloading ? (
+            <Progress
+              type="circle"
+              className={styles.progress}
+              percent={Math.ceil((dancePercent + audioPercent) / 2)}
+              size={[48, 48]}
+            />
+          ) : null}
+        </div>
         <div className={styles.content}>
           <Duration currentProgress={currentProgress} duration={duration} />
           <div className={styles.controller}>

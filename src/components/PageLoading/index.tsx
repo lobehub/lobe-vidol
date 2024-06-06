@@ -7,7 +7,7 @@ interface PageLoadingProps {
   className?: string;
   description?: string;
   style?: React.CSSProperties;
-  title: string;
+  title: React.ReactNode;
 }
 
 const PageLoading = (props: PageLoadingProps) => {
