@@ -10,7 +10,7 @@ import Alert from '@/features/Alert';
 import ChatDialog from '@/features/ChatDialog';
 import MessageInput from '@/features/ChatInput/MessageInput';
 import { useGlobalStore } from '@/store/global';
-import { useSessionStore } from '@/store/session';
+import { sessionSelectors, useSessionStore } from '@/store/session';
 
 import { useStyles } from './style';
 
@@ -20,13 +20,15 @@ export default memo(() => {
     s.setChatDialog,
   ]);
   const { styles } = useStyles();
-  const activeId = useSessionStore((s) => s.activeId);
+  const currentAgent = useSessionStore((s) => sessionSelectors.currentAgent(s));
 
   return (
     <Flexbox flex={1} style={{ position: 'relative' }}>
-      <div className={styles.viewer}>
-        <AgentViewer height={`calc(100vh - ${HEADER_HEIGHT}px)`} agentId={activeId} />
-      </div>
+      {currentAgent ? (
+        <div className={styles.viewer}>
+          <AgentViewer height={`calc(100vh - ${HEADER_HEIGHT}px)`} agent={currentAgent} />
+        </div>
+      ) : null}
       {showChatDialog ? (
         <ChatDialog className={classNames(styles.dialog, styles.content)} setOpen={setChatDialog} />
       ) : null}
