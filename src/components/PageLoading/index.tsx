@@ -5,7 +5,7 @@ import { Center, Flexbox } from 'react-layout-kit';
 
 interface PageLoadingProps {
   className?: string;
-  description?: string;
+  description?: React.ReactNode;
   style?: React.CSSProperties;
   title: React.ReactNode;
 }
@@ -16,7 +16,7 @@ const PageLoading = (props: PageLoadingProps) => {
     <Flexbox height={'100%'} width={'100%'} className={className} style={style}>
       <Center flex={1} gap={12} width={'100%'}>
         <Logo extra={'Vidol'} size={48} type={'combine'} />
-        <Center gap={16} horizontal>
+        <Center gap={8} horizontal>
           <Icon icon={Loader2} spin />
           {title}
         </Center>

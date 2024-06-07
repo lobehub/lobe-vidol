@@ -1,6 +1,6 @@
-import { Progress, Space } from 'antd';
+import { Progress } from 'antd';
 import classNames from 'classnames';
-import React, { memo, useEffect, useRef, useState } from 'react';
+import React, { memo, useRef } from 'react';
 
 import PageLoading from '@/components/PageLoading';
 import Viewer from '@/features/AgentViewer/Viewer';
@@ -21,20 +21,11 @@ interface Props {
 
 function AgentViewer(props: Props) {
   const { className, style, height, agent, width } = props;
-  const [vrmUrl, setVrmUrl] = useState<string | null>(null);
   const { styles } = useStyles();
   const ref = useRef<HTMLDivElement>(null);
   const viewer = useGlobalStore((s) => s.viewer);
 
-  const { downloading, percent, fetchVrmUrl } = useLoadModel();
-
-  useEffect(() => {
-    if (!agent.meta.model) return;
-    console.log('fetchVrmUrl', agent.agentId, agent.meta.model);
-    fetchVrmUrl(agent.agentId, agent.meta.model).then((vrmUrl) => {
-      setVrmUrl(vrmUrl);
-    });
-  }, [agent.agentId]);
+  const { downloading, percent, vrmUrl } = useLoadModel(agent.agentId, agent.meta.model!);
 
   return (
     <div
@@ -45,12 +36,8 @@ function AgentViewer(props: Props) {
       <ToolBar className={styles.toolbar} viewer={viewer} />
       {downloading ? (
         <PageLoading
-          title={
-            <Space>
-              模型加载中，请稍后...
-              <Progress percent={percent} type="circle" size={[20, 20]} />
-            </Space>
-          }
+          title="模型下载中，请稍后..."
+          description={<Progress percent={percent} size="small" steps={50} />}
           className={styles.loading}
         />
       ) : null}

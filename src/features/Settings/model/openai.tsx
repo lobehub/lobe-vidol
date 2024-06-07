@@ -60,10 +60,10 @@ const Config = (props: ConfigProps) => {
               options={OPENAI_MODEL_LIST.map((model) => ({
                 label: (
                   <>
-                    {model.name} <Tag color="green">{model.maxToken}</Tag>
+                    {model.displayName} <Tag color="green">{model.tokens}</Tag>
                   </>
                 ),
-                value: model.name,
+                value: model.id,
               }))}
               style={{ width: 300 }}
             />
