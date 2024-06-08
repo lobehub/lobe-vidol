@@ -64,7 +64,7 @@
     "@ant-design/icons": "^5.3.7",
     "@dnd-kit/core": "^6.1.0",
     "@dnd-kit/utilities": "^3.2.2",
-    "@gltf-transform/core": "^3.10.1",
+    "@gltf-transform/core": "^4.0.0",
     "@icons-pack/react-simple-icons": "^9.5.0",
     "@lobehub/tts": "^1.24.1",
     "@lobehub/ui": "^1.141.3",
