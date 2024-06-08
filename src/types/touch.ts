@@ -2,8 +2,7 @@ import { VRMExpressionPresetName } from '@pixiv/three-vrm';
 
 import { TTS } from './tts';
 
-export const emotions = ['neutral', 'happy', 'angry', 'sad', 'relaxed'] as const;
-export type EmotionType = (typeof emotions)[number] | VRMExpressionPresetName;
+export type EmotionType = VRMExpressionPresetName;
 
 export enum TouchAreaEnum {
   Arm = 'arm',
@@ -15,7 +14,6 @@ export enum TouchAreaEnum {
 
 export interface TouchAction {
   emotion: EmotionType;
-  enabled: boolean;
   motion?: string;
   text: string;
 }
@@ -26,7 +24,6 @@ export interface TouchActionConfig {
   [TouchAreaEnum.Leg]: TouchAction[];
   [TouchAreaEnum.Chest]: TouchAction[];
   [TouchAreaEnum.Belly]: TouchAction[];
-  enabled: boolean;
 }
 
 export type Screenplay = {

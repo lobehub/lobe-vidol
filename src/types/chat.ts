@@ -62,6 +62,10 @@ export interface ChatMessage {
    */
   meta: MetaData;
   /**
+   * 父id
+   */
+  parentId?: string;
+  /**
    * 角色
    */
   role: LLMRoleType;

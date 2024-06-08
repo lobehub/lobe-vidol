@@ -1,7 +1,7 @@
 import { ActionIcon } from '@lobehub/ui';
 import { Video, VideoOff } from 'lucide-react';
 
-import { DESKTOP_HEADER_ICON_SIZE } from '@/constants/common';
+import { DESKTOP_HEADER_ICON_SIZE } from '@/constants/token';
 import { useSessionStore } from '@/store/session';
 
 export default () => {
@@ -13,7 +13,6 @@ export default () => {
   return (
     <ActionIcon
       icon={viewerMode ? VideoOff : Video}
-      title={'视频通话'}
       size={DESKTOP_HEADER_ICON_SIZE}
       onClick={() => {
         if (viewerMode) {

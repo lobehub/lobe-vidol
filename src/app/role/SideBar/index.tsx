@@ -1,14 +1,20 @@
 import { DraggablePanel } from '@lobehub/ui';
 import { createStyles } from 'antd-style';
 
-import { SIDEBAR_MAX_WIDTH, SIDEBAR_WIDTH } from '@/constants/common';
+import { HEADER_HEIGHT, SIDEBAR_MAX_WIDTH, SIDEBAR_WIDTH } from '@/constants/token';
 import RoleList from '@/features/RoleList';
 import { useGlobalStore } from '@/store/global';
 
 const useStyles = createStyles(({ css }) => ({
+  content: css`
+    display: flex;
+    flex-direction: column;
+    height: 100% !important;
+  `,
   sidebar: css`
     display: flex;
     flex-direction: column;
+    height: calc(100vh - ${HEADER_HEIGHT}px);
   `,
 }));
 
@@ -19,6 +25,7 @@ const SideBar = () => {
   return (
     <DraggablePanel
       className={styles.sidebar}
+      classNames={{ content: styles.content }}
       maxWidth={SIDEBAR_MAX_WIDTH}
       minWidth={SIDEBAR_WIDTH}
       mode={'fixed'}
@@ -26,7 +33,7 @@ const SideBar = () => {
       onExpandChange={(expand) => setRoleList(expand)}
       expand={showRoleList}
     >
-      {/*<Header />*/}
+      {/*<Header.tsx />*/}
       <RoleList />
     </DraggablePanel>
   );

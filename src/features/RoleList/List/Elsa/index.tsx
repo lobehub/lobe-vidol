@@ -23,7 +23,7 @@ const V = memo(() => {
       title={
         <Space align={'center'}>
           {defaultAgent.meta.name}
-          <Tag color="geekblue">官方助手</Tag>
+          <Tag color="geekblue">默认助手</Tag>
         </Space>
       }
       description={defaultAgent.meta.description}

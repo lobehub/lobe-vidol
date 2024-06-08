@@ -7,6 +7,7 @@ export interface AddMessageAction {
   payload: {
     content: string;
     id: string;
+    parentId?: string;
     role: LLMRoleType;
   };
   type: 'ADD_MESSAGE';
@@ -34,11 +35,12 @@ export const messageReducer = (state: ChatMessage[], action: MessageActionType):
   switch (action.type) {
     case 'ADD_MESSAGE': {
       return produce(state, (draft) => {
-        const { role, content, id } = action.payload;
+        const { role, content, id, parentId } = action.payload;
         draft.push({
           content,
           createdAt: Date.now(),
           id,
+          parentId,
           meta: {},
           role,
           updatedAt: Date.now(),

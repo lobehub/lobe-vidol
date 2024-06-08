@@ -1,8 +1,9 @@
+import { Empty } from 'antd';
 import { createStyles } from 'antd-style';
 import { memo } from 'react';
 import LazyLoad from 'react-lazy-load';
 
-import { agentListSelectors, useAgentStore } from '@/store/agent';
+import { agentSelectors, useAgentStore } from '@/store/agent';
 
 import SessionItem from './Item';
 
@@ -18,9 +19,9 @@ interface SessionListProps {
 
 const SessionList = memo<SessionListProps>(({ filter }) => {
   const [filterAgentListIds, activateAgent, agentListIds] = useAgentStore((s) => [
-    agentListSelectors.filterAgentListIds(s, filter),
+    agentSelectors.filterAgentListIds(s, filter),
     s.activateAgent,
-    agentListSelectors.agentListIds(s),
+    agentSelectors.agentListIds(s),
   ]);
   const { styles } = useStyles();
 
@@ -36,7 +37,12 @@ const SessionList = memo<SessionListProps>(({ filter }) => {
           />
         </LazyLoad>
       ))}
-      {agentListIds.length === 0 && <div></div>}
+      {agentListIds.length === 0 && (
+        <Empty
+          description={'暂无角色，可以通过 + 创建自定义角色，也可通过发现页添加角色'}
+          image={Empty.PRESENTED_IMAGE_SIMPLE}
+        />
+      )}
     </>
   );
 });

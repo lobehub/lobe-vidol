@@ -13,7 +13,6 @@ export interface LaserShineProps extends DivProps {
 export const LaserShine = memo<LaserShineProps>(({ mask, className, ...res }) => {
   const { styles, cx } = useStyles();
 
-  console.log(className);
   return (
     <animated.div
       className={cx(

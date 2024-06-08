@@ -14,24 +14,21 @@ const useStyles = createStyles(({ css, token }) => ({
 }));
 
 interface Props {
-  item?: { author: string; createAt: string; homepage: string };
+  author?: string;
+  createAt?: string;
+  homepage?: string;
 }
 
 export default memo((props: Props) => {
-  const { item } = props;
+  const { author, createAt, homepage } = props;
 
   const { styles } = useStyles();
   return (
     <Space>
-      <Link
-        aria-label={item?.author}
-        className={styles.author}
-        href={item?.homepage}
-        target={'_blank'}
-      >
-        @{item?.author}
+      <Link aria-label={author} className={styles.author} href={homepage} target={'_blank'}>
+        @{author}
       </Link>
-      <div className={styles.date}>{item?.createAt}</div>
+      <div className={styles.date}>{createAt}</div>
     </Space>
   );
 });

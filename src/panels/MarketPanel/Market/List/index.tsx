@@ -1,7 +1,7 @@
 import React, { memo, useEffect } from 'react';
 
 import GridList from '@/components/GridList';
-import { agentListSelectors, useAgentStore } from '@/store/agent';
+import { agentSelectors, useAgentStore } from '@/store/agent';
 import { useMarketStore } from '@/store/market';
 
 const AgentList = () => {
@@ -12,7 +12,7 @@ const AgentList = () => {
     fetchAgentIndex();
   }, [fetchAgentIndex]);
 
-  const [subscribed] = useAgentStore((s) => [agentListSelectors.subscribed(s)]);
+  const [subscribed] = useAgentStore((s) => [agentSelectors.subscribed(s)]);
 
   return (
     <GridList

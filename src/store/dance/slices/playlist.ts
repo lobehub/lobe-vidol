@@ -1,21 +1,20 @@
 import { produce } from 'immer';
 import { StateCreator } from 'zustand/vanilla';
 
-import { DEFAULT_DANCE } from '@/constants/dance';
+import { LOBE_VIDOL_DEFAULT_DANCE_ID } from '@/constants/dance';
 import { DanceStore } from '@/store/dance';
-import { Dance } from '@/types/dance';
 
 export interface PlayListStore {
   /**
    * Add a dance to the playlist and play it.
    * @param dance
    */
-  addAndPlayItem: (dance: Dance) => void;
+  addAndPlayItem: (danceId: string) => void;
 
   /**
    * Add a dance to the playlist.
    */
-  addToPlayList: (dance: Dance) => void;
+  addToPlayList: (danceId: string) => void;
   /**
    * Clear the playlist.
    */
@@ -23,7 +22,7 @@ export interface PlayListStore {
   /**
    * current playing dance.
    */
-  currentPlay: Dance | null;
+  currentPlayId: string;
   /**
    * next dance.
    */
@@ -32,11 +31,11 @@ export interface PlayListStore {
    * Play a dance.
    * @param dance
    */
-  playItem: (dance: Dance) => void;
+  playItem: (danceId: string) => void;
   /**
    * Playlist.
    */
-  playlist: Dance[];
+  playlist: string[];
   /**
    * previous dance.
    */
@@ -45,12 +44,12 @@ export interface PlayListStore {
    * Remove a dance from the playlist.
    * @param dance
    */
-  removePlayItem: (dance: Dance) => void;
+  removePlayItem: (danceId: string) => void;
   /**
    * Set the playlist.
    * @param playlist
    */
-  setPlayList: (playlist: Dance[]) => void;
+  setPlayList: (playlist: string[]) => void;
   /**
    * Toggle play or pause.
    */
@@ -66,52 +65,52 @@ export const createPlayListStore: StateCreator<
   return {
     /**
      * Add a dance to the playlist and play it. add to the first.
-     * @param dance
+     * @param danceId
      */
-    addAndPlayItem: (dance) => {
+    addAndPlayItem: (danceId) => {
       const { playlist, playItem } = get();
 
       const nextPlayList = produce(playlist, (draftState) => {
-        const index = draftState.findIndex((item) => item.name === dance.name);
+        const index = draftState.indexOf(danceId);
         if (index === -1) {
-          draftState.unshift(dance);
+          draftState.unshift(danceId);
         } else {
           draftState.splice(index, 1);
-          draftState.unshift(dance);
+          draftState.unshift(danceId);
         }
       });
 
       set({ playlist: nextPlayList });
 
-      playItem(dance);
+      playItem(danceId);
     },
     /**
      * Add a dance to the playlist. add to the last.
-     * @param dance
+     * @param danceId
      */
-    addToPlayList: (dance) => {
+    addToPlayList: (danceId) => {
       const { playlist } = get();
 
       const nextPlayList = produce(playlist, (draftState) => {
-        const index = draftState.findIndex((item) => item.name === dance.name);
+        const index = draftState.indexOf(danceId);
         if (index === -1) {
-          draftState.push(dance);
+          draftState.push(danceId);
         }
       });
 
       set({ playlist: nextPlayList });
     },
     clearPlayList: () => {
-      set({ currentPlay: null, isPlaying: false, playlist: [] });
+      set({ currentPlayId: undefined, isPlaying: false, playlist: [] });
     },
-    currentPlay: null,
 
+    currentPlayId: LOBE_VIDOL_DEFAULT_DANCE_ID,
     isPlaying: false,
 
     nextDance: () => {
-      const { currentPlay, playlist, playItem } = get();
-      if (currentPlay && playlist.length > 0) {
-        const currentPlayIndex = playlist.findIndex((item) => item.name === currentPlay.name);
+      const { currentPlayId, playlist, playItem } = get();
+      if (currentPlayId && playlist.length > 0) {
+        const currentPlayIndex = playlist.indexOf(currentPlayId);
         if (currentPlayIndex < playlist.length - 1) {
           playItem(playlist[currentPlayIndex + 1]);
         } else {
@@ -120,14 +119,14 @@ export const createPlayListStore: StateCreator<
       }
     },
 
-    playItem: (dance) => {
-      set({ currentPlay: dance, isPlaying: true });
+    playItem: (danceId) => {
+      set({ currentPlayId: danceId, isPlaying: true });
     },
-    playlist: [DEFAULT_DANCE],
+    playlist: [LOBE_VIDOL_DEFAULT_DANCE_ID],
     prevDance: () => {
-      const { currentPlay, playlist, playItem } = get();
-      if (currentPlay && playlist.length > 0) {
-        const currentPlayIndex = playlist.findIndex((item) => item.name === currentPlay.name);
+      const { currentPlayId, playlist, playItem } = get();
+      if (currentPlayId && playlist.length > 0) {
+        const currentPlayIndex = playlist.indexOf(currentPlayId);
         if (currentPlayIndex > 0) {
           playItem(playlist[currentPlayIndex - 1]);
         } else {
@@ -136,15 +135,15 @@ export const createPlayListStore: StateCreator<
         }
       }
     },
-    removePlayItem: (dance) => {
+    removePlayItem: (danceId) => {
       const { playlist } = get();
       const nextPlayList = produce(playlist, (draftState) => {
-        const currentPlayIndex = draftState.findIndex((item) => item.name === dance.name);
+        const currentPlayIndex = playlist.indexOf(danceId);
         draftState.splice(currentPlayIndex, 1);
       });
 
       if (nextPlayList.length === 0) {
-        set({ currentPlay: null, isPlaying: false, playlist: nextPlayList });
+        set({ currentPlayId: undefined, isPlaying: false, playlist: nextPlayList });
       } else {
         set({ playlist: nextPlayList });
       }
@@ -153,7 +152,7 @@ export const createPlayListStore: StateCreator<
       set({ playlist: playlist });
     },
     togglePlayPause: () => {
-      if (!get().currentPlay) return;
+      if (!get().currentPlayId) return;
       set({ isPlaying: !get().isPlaying });
     },
   };

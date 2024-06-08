@@ -1,6 +1,6 @@
 import { createStyles } from 'antd-style';
 
-import { LIST_GRID_GAP, LIST_GRID_HEIGHT, LIST_GRID_WIDTH } from '@/constants/common';
+import { LIST_GRID_GAP, LIST_GRID_HEIGHT, LIST_GRID_WIDTH } from '@/constants/token';
 
 export const useStyles = createStyles(({ css }) => ({
   grid: css`

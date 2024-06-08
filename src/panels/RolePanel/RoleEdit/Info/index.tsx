@@ -1,12 +1,18 @@
-import { Form, Input } from 'antd';
+import { Form, FormItem } from '@lobehub/ui';
 import { createStyles } from 'antd-style';
 import classNames from 'classnames';
-import { debounce, isEqual } from 'lodash-es';
-import React, { useEffect } from 'react';
+import React from 'react';
 
-import { agentListSelectors, useAgentStore } from '@/store/agent';
+import { COVER_COMPRESS_HEIGHT, COVER_COMPRESS_WIDTH } from '@/constants/common';
+import { INPUT_WIDTH_L, INPUT_WIDTH_M } from '@/constants/token';
+import CoverWithUpload from '@/panels/RolePanel/RoleEdit/Info/CoverWithUpload';
+import Greeting from '@/panels/RolePanel/RoleEdit/Info/Greeting';
+import ReadMe from '@/panels/RolePanel/RoleEdit/Info/ReadMe';
+import RoleDescription from '@/panels/RolePanel/RoleEdit/Info/RoleDescription';
+import RoleGender from '@/panels/RolePanel/RoleEdit/Info/RoleGender';
+import RoleName from '@/panels/RolePanel/RoleEdit/Info/RoleName';
 
-const FormItem = Form.Item;
+import AvatarWithUpload from './AvatarWithUpload';
 
 interface InfoProps {
   className?: string;
@@ -15,8 +21,7 @@ interface InfoProps {
 
 const useStyles = createStyles(({ css, token }) => ({
   config: css`
-    flex: 3;
-    margin-right: 12px;
+    flex: 2;
     padding: 12px;
     border-radius: ${token.borderRadius}px;
   `,
@@ -24,14 +29,20 @@ const useStyles = createStyles(({ css, token }) => ({
     display: flex;
     flex-direction: column;
   `,
-  footer: css`
-    margin-top: 20px;
-  `,
   form: css`
     display: flex;
   `,
   more: css`
-    flex: 2;
+    flex: 1;
+    padding: 12px;
+  `,
+  cover: css`
+    padding: 16px 0;
+  `,
+  name: css``,
+  description: css`
+    font-size: 12px;
+    color: ${token.colorTextDescription};
   `,
 }));
 
@@ -39,60 +50,53 @@ const Info = (props: InfoProps) => {
   const { style, className } = props;
   const { styles } = useStyles();
   const [form] = Form.useForm();
-  const currentAgent = useAgentStore((s) => agentListSelectors.currentAgentItem(s), isEqual);
-  const updateAgentConfig = useAgentStore((s) => s.updateAgentConfig);
-
-  useEffect(() => {
-    form.setFieldsValue(currentAgent);
-  }, [currentAgent, form]);
 
   return (
-    <Form
-      form={form}
-      initialValues={currentAgent}
-      onValuesChange={debounce(updateAgentConfig, 100)}
-      layout="horizontal"
-      requiredMark={false}
-    >
+    <Form form={form} layout="horizontal" requiredMark={false}>
       <div className={classNames(className, styles.container)} style={style}>
         <div className={styles.form}>
           <div className={styles.config}>
+            <FormItem desc={'自定义头像，点击头像自定义上传'} label={'头像'} name={'avatar'}>
+              <AvatarWithUpload />
+            </FormItem>
+            <FormItem label={'名称'} desc={'角色名称，与角色聊天时的称呼'} divider name={['name']}>
+              <RoleName style={{ width: INPUT_WIDTH_M }} />
+            </FormItem>
             <FormItem
-              label={'名称'}
-              name={['meta', 'name']}
-              required
-              rules={[{ message: '请输入角色名称', required: true }]}
+              label={'性别'}
+              desc={'角色性别，影响角色的触摸响应'}
+              divider
+              name={['gender']}
             >
-              <Input placeholder="请输入角色名称" />
+              <RoleGender style={{ width: INPUT_WIDTH_M }} />
             </FormItem>
             <FormItem
               label={'描述'}
-              name={['meta', 'description']}
-              rules={[{ message: '请输入角色描述', required: true }]}
+              divider
+              desc={'角色描述，用于角色的简单介绍'}
+              name={'description'}
             >
-              <Input placeholder="请输入角色描述" />
+              <RoleDescription style={{ width: INPUT_WIDTH_L }} />
+            </FormItem>
+            <FormItem label={'招呼'} desc={'与角色初次聊天时的招呼用语'} name="greeting" divider>
+              <Greeting style={{ width: INPUT_WIDTH_L }} />
             </FormItem>
             <FormItem
-              label={'招呼'}
-              name="greeting"
-              rules={[{ message: '请输入角色与你打招呼时的用语', required: true }]}
+              label={'角色说明'}
+              name={'readme'}
+              divider
+              desc="角色的说明文件，用于发现页展示角色的详细说明"
             >
-              <Input.TextArea
-                autoSize={{ maxRows: 6, minRows: 6 }}
-                placeholder="请输入角色与你打招呼时的用语"
-              />
+              <ReadMe style={{ width: INPUT_WIDTH_L }} />
             </FormItem>
+          </div>
+          <div className={styles.more}>
             <FormItem
-              label={'说明'}
-              name={['meta', 'readme']}
-              rules={[{ message: '请输入角色说明', required: true }]}
-            >
-              <Input.TextArea
-                autoSize={{ maxRows: 15, minRows: 15 }}
-                placeholder="请输入角色说明"
-                showCount
-              />
-            </FormItem>
+              label={'封面'}
+              name={'cover'}
+              desc={`用于发现页展示角色，推荐尺寸 ${COVER_COMPRESS_WIDTH} * ${COVER_COMPRESS_HEIGHT}`}
+            />
+            <CoverWithUpload />
           </div>
         </div>
       </div>

@@ -3,7 +3,7 @@ import { DeleteOutlined } from '@ant-design/icons';
 import { Button, Drawer, List } from 'antd';
 import { memo } from 'react';
 
-import { SIDEBAR_WIDTH } from '@/constants/common';
+import { SIDEBAR_WIDTH } from '@/constants/token';
 import { DanceStore, useDanceStore } from '@/store/dance';
 
 import PlayItem from './Item';
@@ -44,7 +44,7 @@ const PlayList = (props: PlayListProps) => {
       width={SIDEBAR_WIDTH}
       getContainer={false}
     >
-      <List dataSource={playlist} renderItem={(item) => <PlayItem item={item} />} size="small" />
+      <List dataSource={playlist} renderItem={(id) => <PlayItem playItemId={id} />} size="small" />
     </Drawer>
   );
 };

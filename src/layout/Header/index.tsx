@@ -1,11 +1,14 @@
 'use client';
 
-import { ActionIcon, Header as LobeHeader, Logo, TabsNav } from '@lobehub/ui';
+import { Header as LobeHeader, Logo, TabsNav } from '@lobehub/ui';
 import { Space, Tag, Tooltip } from 'antd';
-import { GithubIcon, UserRoundPlusIcon } from 'lucide-react';
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { memo } from 'react';
 
+import Discord from '@/features/Actions/Discord';
+import Github from '@/features/Actions/Github';
+import ThemeMode from '@/features/Actions/ThemeMode';
 import { HeaderNavKey } from '@/layout/type';
 
 interface Props {
@@ -19,25 +22,23 @@ const Header = (props: Props) => {
   return (
     <LobeHeader
       actions={[
-        <ActionIcon
-          icon={UserRoundPlusIcon}
-          key="user-plus"
-          title={'创建角色'}
-          onClick={() => window.open('https://github.com/lobehub/lobe-vidol-market', '_blank')}
-          size="large"
-        />,
-        <ActionIcon
-          icon={GithubIcon}
-          key="github"
-          title={'✨ GitHub'}
-          onClick={() => window.open('https://github.com/lobehub/lobe-vidol', '_blank')}
-          size="large"
-        />,
+        // <Alert
+        //   message="近期由于 OSS 服务商限制，部分资源可能无法加载，可以从发现页重新订阅角色与舞蹈，造成的不便敬请谅解"
+        //   key={'alert'}
+        //   banner
+        //   closable
+        // />,
+        <Github key="github" />,
+        <ThemeMode key={'theme'} />,
+        <Discord key={'discord'} />,
+        // <UserAvatar key="user" />,
       ]}
       logo={
         <Space>
-          <Logo extra={'Lobe Vidol'} size={36} />
-          <Tooltip title="项目当前正在施工中，不保证数据稳定性，如果遇到问题可以在系统设置中清除会话消息与重置系统设置，造成地不便敬请谅解">
+          <Link href="/" style={{ color: 'inherit' }}>
+            <Logo extra={'Lobe Vidol'} size={36} />
+          </Link>
+          <Tooltip title="项目当前正在施工中，不保证数据稳定性，如果遇到问题可以在系统设置中清除会话消息与重置系统设置，造成不便敬请谅解">
             <Tag color="yellow">WIP</Tag>
           </Tooltip>
         </Space>

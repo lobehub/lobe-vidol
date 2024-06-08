@@ -1,15 +1,15 @@
 import { ActionIcon, Avatar } from '@lobehub/ui';
 import { Tooltip } from 'antd';
 import { createStyles } from 'antd-style';
-import classNames from 'classnames';
 import { ListMusic } from 'lucide-react';
 import React, { useState } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
-import { DESKTOP_HEADER_ICON_SIZE } from '@/constants/common';
+import { DESKTOP_HEADER_ICON_SIZE } from '@/constants/token';
 import Control from '@/features/AudioPlayer/Control';
 import PlayList from '@/features/AudioPlayer/PlayList';
 import { useDanceStore } from '@/store/dance';
+import { playListSelectors } from '@/store/dance/selectors/playlist';
 
 const useStyles = createStyles(({ css }) => ({
   spin: css`
@@ -36,25 +36,24 @@ interface Props {
 
 export default (props: Props) => {
   const { style, className } = props;
-  const { styles } = useStyles();
   const [open, setOpen] = useState(false);
-  const [isPlaying, playlist, currentPlay] = useDanceStore((s) => [
-    s.isPlaying,
+  const [playlist, currentPlay] = useDanceStore((s) => [
     s.playlist,
-    s.currentPlay,
+    playListSelectors.currentPlay(s),
   ]);
 
   return playlist.length ? (
-    <Flexbox horizontal gap={8} align={'center'} justify={'space-between'}>
+    <Flexbox
+      horizontal
+      gap={8}
+      align={'center'}
+      justify={'space-between'}
+      style={style}
+      className={className}
+    >
       <PlayList onClose={() => setOpen(false)} open={open} />
       <Tooltip title={currentPlay?.name}>
-        <Avatar
-          className={classNames(isPlaying ? styles.spin : '', className)}
-          style={style}
-          shape="circle"
-          size={42}
-          src={currentPlay?.cover}
-        />
+        <Avatar style={style} shape="circle" size={42} src={currentPlay?.cover} />
       </Tooltip>
       <Control />
       <ActionIcon

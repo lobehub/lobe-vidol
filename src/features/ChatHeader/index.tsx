@@ -31,8 +31,8 @@ export default (props: Props) => {
         <AgentMeta meta={currentAgent?.meta} />
       </Space>
       <Space>
+        <Video key="video" />
         <Voice key={'voice'} />
-        <Video key={'video'} />
         <ToggleChatSideBar key={'sidebar'} />
       </Space>
     </Flexbox>

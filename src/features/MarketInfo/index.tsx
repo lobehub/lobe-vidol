@@ -1,5 +1,5 @@
 import { DraggablePanel } from '@lobehub/ui';
-import { Button, message } from 'antd';
+import { Button } from 'antd';
 import { createStyles } from 'antd-style';
 import { useRouter } from 'next/navigation';
 import React, { memo, useState } from 'react';
@@ -7,8 +7,10 @@ import React, { memo, useState } from 'react';
 import Author from '@/components/Author';
 import AgentCard from '@/components/agent/AgentCard';
 import SystemRole from '@/components/agent/SystemRole';
-import { SIDEBAR_MAX_WIDTH, SIDEBAR_WIDTH } from '@/constants/common';
-import { agentListSelectors, useAgentStore } from '@/store/agent';
+import { SIDEBAR_MAX_WIDTH, SIDEBAR_WIDTH } from '@/constants/token';
+import SubscribeButton from '@/features/MarketInfo/SubscribeButton';
+import { agentSelectors, useAgentStore } from '@/store/agent';
+import { useGlobalStore } from '@/store/global';
 import { marketStoreSelectors, useMarketStore } from '@/store/market';
 import { useSessionStore } from '@/store/session';
 
@@ -36,11 +38,8 @@ const Header = () => {
       marketStoreSelectors.currentAgentItem(s),
     ],
   );
-  const [subscribe, unsubscribe, subscribed] = useAgentStore((s) => [
-    s.subscribe,
-    s.unsubscribe,
-    agentListSelectors.subscribed(s),
-  ]);
+  const [closePanel] = useGlobalStore((s) => [s.closePanel]);
+  const [subscribed] = useAgentStore((s) => [agentSelectors.subscribed(s)]);
 
   const createSession = useSessionStore((s) => s.createSession);
 
@@ -55,6 +54,7 @@ const Header = () => {
           onClick={() => {
             createSession(currentAgentItem);
             router.push('/chat');
+            closePanel('market');
           }}
           type={'primary'}
         >
@@ -63,22 +63,7 @@ const Header = () => {
       );
     }
 
-    actions.push(
-      <Button
-        onClick={() => {
-          if (isSubscribed) {
-            unsubscribe(currentAgentItem.agentId);
-            message.success('已取消订阅');
-          } else {
-            subscribe(currentAgentItem);
-            message.success('订阅成功');
-          }
-        }}
-        type={isSubscribed ? 'default' : 'primary'}
-      >
-        {isSubscribed ? '取消订阅' : '订阅'}
-      </Button>,
-    );
+    actions.push(<SubscribeButton agent={currentAgentItem} key={'subscribe'} />);
   }
 
   return (
@@ -102,7 +87,13 @@ const Header = () => {
       <AgentCard
         actions={actions}
         agent={currentAgentItem}
-        extra={<Author item={currentAgentItem} />}
+        extra={
+          <Author
+            author={currentAgentItem?.author}
+            homepage={currentAgentItem?.homepage}
+            createAt={currentAgentItem?.createAt}
+          />
+        }
         footer={<SystemRole systemRole={currentAgentItem?.meta.readme} style={{ marginTop: 16 }} />}
       />
     </DraggablePanel>

@@ -46,6 +46,15 @@ const useStyles = createStyles(({ token, css }) => ({
 
     animation: rotate-animation 20s linear infinite;
   `,
+  progress: css`
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    background-color: rgba(${token.colorBgLayout}, 0.8);
+    backdrop-filter: saturate(180%) blur(10px);
+    border-radius: 100%;
+  `,
 }));
 
 export { useStyles };

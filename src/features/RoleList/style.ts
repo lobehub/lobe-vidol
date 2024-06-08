@@ -1,6 +1,6 @@
 import { createStyles } from 'antd-style';
 
-import { HEADER_HEIGHT } from '@/constants/common';
+import { HEADER_HEIGHT } from '@/constants/token';
 
 export const useStyles = createStyles(({ css, token }) => ({
   date: css`

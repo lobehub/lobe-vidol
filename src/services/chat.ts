@@ -1,13 +1,13 @@
 import { OPENAI_API_KEY, OPENAI_END_POINT } from '@/constants/openai';
 import { speakCharacter } from '@/features/messages/speakCharacter';
-import { configSelectors, useConfigStore } from '@/store/config';
+import { useGlobalStore } from '@/store/global';
 import { sessionSelectors, useSessionStore } from '@/store/session';
-import { useViewerStore } from '@/store/viewer';
+import { configSelectors, useSettingStore } from '@/store/setting';
 import { ChatMessage } from '@/types/chat';
 import { ChatStreamPayload } from '@/types/openai/chat';
 
 const createHeader = (header?: any) => {
-  const config = configSelectors.currentOpenAIConfig(useConfigStore.getState());
+  const config = configSelectors.currentOpenAIConfig(useSettingStore.getState());
   return {
     'Content-Type': 'application/json',
     [OPENAI_API_KEY]: config?.apikey || '',
@@ -20,8 +20,15 @@ interface ChatCompletionPayload extends Partial<Omit<ChatStreamPayload, 'message
   messages: ChatMessage[];
 }
 
-export const chatCompletion = async (payload: ChatCompletionPayload) => {
-  const config = configSelectors.currentOpenAIConfig(useConfigStore.getState());
+interface ChatCompletionOptions {
+  signal?: AbortSignal;
+}
+
+export const chatCompletion = async (
+  payload: ChatCompletionPayload,
+  options?: ChatCompletionOptions,
+) => {
+  const config = configSelectors.currentOpenAIConfig(useSettingStore.getState());
   const { messages } = payload;
 
   const postMessages = messages.map((m) => ({ content: m.content, role: m.role }));
@@ -34,11 +41,12 @@ export const chatCompletion = async (payload: ChatCompletionPayload) => {
     }),
     headers: createHeader(),
     method: 'POST',
+    signal: options?.signal,
   });
 };
 
 export const handleSpeakAi = async (message: string) => {
-  const viewer = useViewerStore.getState().viewer;
+  const viewer = useGlobalStore.getState().viewer;
   const currentAgent = sessionSelectors.currentAgent(useSessionStore.getState());
 
   speakCharacter(
@@ -53,10 +61,10 @@ export const handleSpeakAi = async (message: string) => {
   );
 };
 
-export const toogleVoice = async () => {
+export const toggleVoice = async () => {
   const { toggleVoice, voiceOn } = useSessionStore.getState();
   if (voiceOn) {
-    const viewer = useViewerStore.getState().viewer;
+    const viewer = useGlobalStore.getState().viewer;
     viewer.model?.stopSpeak();
   }
   toggleVoice();

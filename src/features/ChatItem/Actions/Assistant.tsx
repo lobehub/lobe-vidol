@@ -1,19 +1,13 @@
-import { ActionIconGroup, useChatListActionsBar } from '@lobehub/ui';
+import { ActionIconGroup } from '@lobehub/ui';
 import { ActionIconGroupItems } from '@lobehub/ui/es/ActionIconGroup';
 import { Play } from 'lucide-react';
 import { memo } from 'react';
 
 import type { RenderAction } from '@/features/ChatItem/type';
+import { useChatListActionsBar } from '@/hooks/useChatListActionsBar';
 
 const AssistantActionsBar: RenderAction = ({ onActionClick, id }) => {
-  const { copy, regenerate, divider, del, edit } = useChatListActionsBar({
-    copy: '复制',
-    delete: '删除',
-    edit: '编辑',
-    regenerate: '重新生成',
-  });
-
-  console.log('AssistantActionsBar', id);
+  const { copy, regenerate, divider, del, delAndRegenerate, edit } = useChatListActionsBar();
 
   if (id === 'default') return;
 
@@ -25,8 +19,8 @@ const AssistantActionsBar: RenderAction = ({ onActionClick, id }) => {
 
   return (
     <ActionIconGroup
-      dropdownMenu={[tts, regenerate, copy, divider, del]}
-      items={[regenerate, edit]}
+      dropdownMenu={[edit, copy, divider, tts, regenerate, delAndRegenerate, divider, del]}
+      items={[edit, copy]}
       onActionClick={onActionClick}
       type="ghost"
     />

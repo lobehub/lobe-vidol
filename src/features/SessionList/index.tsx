@@ -3,7 +3,7 @@ import { createStyles } from 'antd-style';
 import React, { useState } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
-import { HEADER_HEIGHT } from '@/constants/common';
+import { HEADER_HEIGHT } from '@/constants/token';
 import Market from '@/features/Actions/Market';
 
 import V from './Elsa';

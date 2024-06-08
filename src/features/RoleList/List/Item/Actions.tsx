@@ -15,7 +15,7 @@ export default (props: ActionsProps) => {
   const { id, setOpen } = props;
   const { modal } = App.useApp();
   const router = useRouter();
-  const [unsubscribe] = useAgentStore((s) => [s.unsubscribe]);
+  const [removeLocalAgent] = useAgentStore((s) => [s.removeLocalAgent]);
   const currentAgent = useAgentStore((s) => s.getAgentById(id));
   const createSession = useSessionStore((s) => s.createSession);
 
@@ -42,7 +42,7 @@ export default (props: ActionsProps) => {
           centered: true,
           okButtonProps: { danger: true },
           onOk: () => {
-            unsubscribe(id);
+            removeLocalAgent(id);
           },
           okText: '删除',
           cancelText: '取消',
