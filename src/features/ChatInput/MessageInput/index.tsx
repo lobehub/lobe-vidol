@@ -7,7 +7,6 @@ import { Flexbox } from 'react-layout-kit';
 
 import StopLoadingIcon from '@/components/StopLoading';
 import Record from '@/features/Actions/Record';
-import ToggleChatDialog from '@/features/Actions/ToggleChatDialog';
 import useChatInput from '@/hooks/useSendMessage';
 import { useSessionStore } from '@/store/session';
 import { isCommandPressed } from '@/utils/keyboard';
@@ -22,7 +21,6 @@ const InputArea = memo((props: InputAreaProps) => {
   const isChineseInput = useRef(false);
   const onSend = useChatInput();
   const { className, style } = props;
-  const [viewerMode] = useSessionStore((s) => [s.viewerMode]);
 
   const [loading, messageInput, setMessageInput, stopGenerateMessage] = useSessionStore((s) => [
     !!s.chatLoadingId,
@@ -76,8 +74,6 @@ const InputArea = memo((props: InputAreaProps) => {
         icon={loading ? <StopLoadingIcon /> : <SendOutlined />}
         type={loading ? undefined : 'primary'}
       />
-
-      {viewerMode ? <ToggleChatDialog /> : null}
     </Flexbox>
   );
 });
