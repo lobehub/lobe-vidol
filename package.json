@@ -66,6 +66,7 @@
     "@dnd-kit/utilities": "^3.2.2",
     "@gltf-transform/core": "^4.0.0",
     "@icons-pack/react-simple-icons": "^9.5.0",
+    "@lobehub/icons": "^1.22.1",
     "@lobehub/tts": "^1.24.1",
     "@lobehub/ui": "^1.141.3",
     "@pixiv/three-vrm": "2.1.1",

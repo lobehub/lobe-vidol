@@ -5,6 +5,7 @@ import { Flexbox } from 'react-layout-kit';
 
 import AgentMeta from '@/components/agent/AgentMeta';
 import ToggleChatSideBar from '@/features/Actions/ToggleChatSideBar';
+import Video from '@/features/Actions/Video';
 import Voice from '@/features/Actions/Voice';
 import { sessionSelectors, useSessionStore } from '@/store/session';
 
@@ -30,6 +31,7 @@ export default (props: Props) => {
         <AgentMeta meta={currentAgent?.meta} />
       </Space>
       <Space>
+        <Video key="video" />
         <Voice key={'voice'} />
         <ToggleChatSideBar key={'sidebar'} />
       </Space>

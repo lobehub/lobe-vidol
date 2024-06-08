@@ -11,6 +11,8 @@ export const useStyles = createStyles(({ css, token }) => ({
   `,
   desc: css`
     max-width: 480px;
+    margin-top: ${token.marginXXS}px;
+
     font-size: ${token.fontSizeSM}px;
     line-height: 18px;
     color: ${token.colorTextDescription};

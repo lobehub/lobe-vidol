@@ -1,7 +1,8 @@
 import { Avatar } from '@lobehub/ui';
-import { Typography } from 'antd';
+import { Space, Typography } from 'antd';
 import React from 'react';
 
+import ModelSelect from '@/features/Actions/ModelSelect';
 import { AgentMeta } from '@/types/agent';
 
 import { useStyles } from './style';
@@ -21,7 +22,11 @@ export default (props: AgentMetaProps) => {
     <div className={cx(styles.container, className)} style={style}>
       <Avatar avatar={avatar} size={36} />
       <div className={styles.content}>
-        <div className={styles.title}>{name}</div>
+        <div className={styles.title}>
+          <Space size={4} align={'center'}>
+            {name} <ModelSelect />
+          </Space>
+        </div>
         <Typography.Text className={styles.desc} ellipsis>
           {description}
         </Typography.Text>

@@ -1,7 +1,7 @@
 'use client';
 
 import { Header as LobeHeader, Logo, TabsNav } from '@lobehub/ui';
-import { Alert, Space, Tag, Tooltip } from 'antd';
+import { Space, Tag, Tooltip } from 'antd';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { memo } from 'react';
@@ -22,12 +22,12 @@ const Header = (props: Props) => {
   return (
     <LobeHeader
       actions={[
-        <Alert
-          message="近期由于 OSS 服务商限制，部分资源可能无法加载，可以从发现页重新订阅角色与舞蹈，造成的不便敬请谅解"
-          key={'alert'}
-          banner
-          closable
-        />,
+        // <Alert
+        //   message="近期由于 OSS 服务商限制，部分资源可能无法加载，可以从发现页重新订阅角色与舞蹈，造成的不便敬请谅解"
+        //   key={'alert'}
+        //   banner
+        //   closable
+        // />,
         <Github key="github" />,
         <ThemeMode key={'theme'} />,
         <Discord key={'discord'} />,

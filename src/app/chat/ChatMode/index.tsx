@@ -4,9 +4,8 @@ import classNames from 'classnames';
 import React, { memo } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
-import Alert from '@/features/Alert';
-import MessageInput from '@/features/ChatInput/MessageInput';
 import ChatList from '@/features/ChatList';
+import MessageInput from '@/features/MessageInput';
 
 import { useStyles } from './style';
 
@@ -25,7 +24,6 @@ const Chat = () => {
       <Flexbox align={'center'} className={styles.docker} ref={ref}>
         <div className={classNames(styles.input)}>
           <MessageInput />
-          <Alert style={{ marginTop: 8 }} />
         </div>
       </Flexbox>
     </Flexbox>

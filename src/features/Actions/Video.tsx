@@ -13,7 +13,6 @@ export default () => {
   return (
     <ActionIcon
       icon={viewerMode ? VideoOff : Video}
-      title={'视频通话'}
       size={DESKTOP_HEADER_ICON_SIZE}
       onClick={() => {
         if (viewerMode) {

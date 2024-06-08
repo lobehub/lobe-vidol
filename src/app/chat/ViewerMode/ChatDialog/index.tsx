@@ -6,25 +6,27 @@ import React from 'react';
 import { Flexbox } from 'react-layout-kit';
 
 import ChatItem from '@/features/ChatItem';
+import { useGlobalStore } from '@/store/global';
 import { sessionSelectors, useSessionStore } from '@/store/session';
 
 interface DialogProps {
   className?: string;
-  setOpen?: (open: boolean) => void;
   style?: React.CSSProperties;
 }
 
 const Dialog = (props: DialogProps) => {
-  const { className, style, setOpen } = props;
+  const { className, style } = props;
   const currentChats = useSessionStore((s) => sessionSelectors.currentChatsWithGreetingMessage(s));
   const lastAgentChatIndex = currentChats.findLastIndex((item) => item.role === 'assistant');
   const ref = React.useRef<HTMLDivElement>(null);
   const isHovered = useHover(ref);
 
-  const handleClose = () => {
-    if (setOpen) setOpen(false);
-  };
-  return lastAgentChatIndex !== -1 ? (
+  const [showChatDialog, setChatDialog] = useGlobalStore((s) => [
+    s.showChatDialog,
+    s.setChatDialog,
+  ]);
+
+  return lastAgentChatIndex !== -1 && showChatDialog ? (
     <Flexbox className={className} style={style} ref={ref} horizontal>
       <ChatItem
         id={currentChats[lastAgentChatIndex].id}
@@ -33,7 +35,11 @@ const Dialog = (props: DialogProps) => {
         type="pure"
       />
       <Tooltip key="close" title="关闭">
-        <ActionIcon icon={XIcon} onClick={handleClose} style={{ opacity: isHovered ? 1 : 0 }} />
+        <ActionIcon
+          icon={XIcon}
+          onClick={() => setChatDialog(false)}
+          style={{ opacity: isHovered ? 1 : 0 }}
+        />
       </Tooltip>
     </Flexbox>
   ) : null;
