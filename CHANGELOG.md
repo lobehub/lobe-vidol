@@ -2,6 +2,39 @@
 
 # Changelog
 
+## [Version 0.12.0](https://github.com/lobehub/lobe-vidol/compare/v0.11.0...v0.12.0)
+
+<sup>Released on **2024-06-08**</sup>
+
+#### ✨ Features
+
+- **misc**: Support model select.
+
+#### 🐛 Bug Fixes
+
+- **misc**: Viewer model load.
+
+<br/>
+
+<details>
+<summary><kbd>Improvements and Fixes</kbd></summary>
+
+#### What's improved
+
+- **misc**: Support model select ([65fcaaa](https://github.com/lobehub/lobe-vidol/commit/65fcaaa))
+
+#### What's fixed
+
+- **misc**: Viewer model load ([decdfed](https://github.com/lobehub/lobe-vidol/commit/decdfed))
+
+</details>
+
+<div align="right">
+
+[![](https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square)](#readme-top)
+
+</div>
+
 ## [Version 0.11.0](https://github.com/lobehub/lobe-vidol/compare/v0.10.1...v0.11.0)
 
 <sup>Released on **2024-06-08**</sup>
