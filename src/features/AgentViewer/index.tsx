@@ -1,12 +1,13 @@
 import { Progress } from 'antd';
 import classNames from 'classnames';
-import React, { memo, useRef } from 'react';
+import React, { memo, useCallback, useRef } from 'react';
 
 import PageLoading from '@/components/PageLoading';
-import Viewer from '@/features/AgentViewer/Viewer';
 import { useLoadModel } from '@/hooks/useLoadModel';
 import { useGlobalStore } from '@/store/global';
 import { Agent } from '@/types/agent';
+import { getModelPathByAgentId } from '@/utils/file';
+import storage from '@/utils/storage';
 
 import ToolBar from './ToolBar';
 import { useStyles } from './style';
@@ -25,7 +26,28 @@ function AgentViewer(props: Props) {
   const ref = useRef<HTMLDivElement>(null);
   const viewer = useGlobalStore((s) => s.viewer);
 
-  const { downloading, percent, vrmUrl } = useLoadModel(agent.agentId, agent.meta.model!);
+  const { downloading, percent, fetchModelBlob } = useLoadModel();
+
+  const canvasRef = useCallback(
+    (canvas: HTMLCanvasElement) => {
+      if (canvas) {
+        viewer.setup(canvas);
+        const modelPath = getModelPathByAgentId(agent.agentId);
+        storage.getItem(modelPath).then((blob) => {
+          if (!blob) {
+            fetchModelBlob(agent.agentId, agent.meta.model!).then((res) => {
+              const modelUrl = URL.createObjectURL(res);
+              viewer.loadVrm(modelUrl);
+            });
+          } else {
+            const modelUrl = URL.createObjectURL(blob as Blob);
+            viewer.loadVrm(modelUrl);
+          }
+        });
+      }
+    },
+    [viewer, agent.agentId],
+  );
 
   return (
     <div
@@ -41,7 +63,7 @@ function AgentViewer(props: Props) {
           className={styles.loading}
         />
       ) : null}
-      {vrmUrl ? <Viewer vrmUrl={vrmUrl} /> : null}
+      <canvas ref={canvasRef} className={styles.canvas}></canvas>
     </div>
   );
 }

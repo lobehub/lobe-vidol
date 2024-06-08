@@ -32,7 +32,6 @@ export default memo((props: Props) => {
 
   const handleOk = () => {
     form.validateFields().then((values) => {
-      console.log('values', values);
       setOpen(false);
       if (isEdit) {
         updateTouchAction(touchArea, index!, values);
