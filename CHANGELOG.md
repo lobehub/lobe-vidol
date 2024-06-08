@@ -2,6 +2,44 @@
 
 # Changelog
 
+## [Version 0.11.0](https://github.com/lobehub/lobe-vidol/compare/v0.10.1...v0.11.0)
+
+<sup>Released on **2024-06-08**</sup>
+
+#### ✨ Features
+
+- **misc**: Remove role cache, 下载订阅模型文件到本地加载., 优先使用本地模型文件，提高使用体验，支持 gpt-4o, 添加 dance 和 audio 下载，统一 storage 操作.
+
+#### 🐛 Bug Fixes
+
+- **misc**: 修复 audio 加载与 vrm loading 问题.
+
+<br/>
+
+<details>
+<summary><kbd>Improvements and Fixes</kbd></summary>
+
+#### What's improved
+
+- **misc**: Remove role cache ([9754be4](https://github.com/lobehub/lobe-vidol/commit/9754be4))
+- **misc**: 下载订阅模型文件到本地加载. ([83b35ee](https://github.com/lobehub/lobe-vidol/commit/83b35ee))
+- **misc**: 优先使用本地模型文件，提高使用体验 ([a564806](https://github.com/lobehub/lobe-vidol/commit/a564806))
+- **misc**: 支持 gpt-4o ([af1a724](https://github.com/lobehub/lobe-vidol/commit/af1a724))
+- **misc**: 添加 dance 和 audio 下载 ([292f9f2](https://github.com/lobehub/lobe-vidol/commit/292f9f2))
+- **misc**: 统一 storage 操作 ([0810fb5](https://github.com/lobehub/lobe-vidol/commit/0810fb5))
+
+#### What's fixed
+
+- **misc**: 修复 audio 加载与 vrm loading 问题 ([cc8b784](https://github.com/lobehub/lobe-vidol/commit/cc8b784))
+
+</details>
+
+<div align="right">
+
+[![](https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square)](#readme-top)
+
+</div>
+
 ### [Version 0.10.1](https://github.com/lobehub/lobe-vidol/compare/v0.10.0...v0.10.1)
 
 <sup>Released on **2024-06-02**</sup>
