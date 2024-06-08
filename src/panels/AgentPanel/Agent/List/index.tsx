@@ -36,7 +36,7 @@ const AgentList = (props: AgentListProps) => {
       empty={{
         actions: [
           <GradientButton
-            key="subscribe"
+            key="addLocalAgent"
             glow
             size={'middle'}
             onClick={() => {

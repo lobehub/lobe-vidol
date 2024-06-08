@@ -41,7 +41,7 @@ export interface SessionStore {
   /**
    *  清空会话
    */
-  clearSessions: () => void;
+  clearSessionStorage: () => void;
   /**
    * 创建会话
    * @param agent
@@ -144,7 +144,7 @@ export const createSessonStore: StateCreator<SessionStore, [['zustand/devtools',
     const { updateSessionMessages } = get();
     updateSessionMessages([]);
   },
-  clearSessions: () => {
+  clearSessionStorage: () => {
     localStorage.removeItem(SESSION_STORAGE_KEY);
     set({ ...initialState });
   },

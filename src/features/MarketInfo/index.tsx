@@ -1,5 +1,5 @@
 import { DraggablePanel } from '@lobehub/ui';
-import { Button, message } from 'antd';
+import { Button } from 'antd';
 import { createStyles } from 'antd-style';
 import { useRouter } from 'next/navigation';
 import React, { memo, useState } from 'react';
@@ -8,6 +8,7 @@ import Author from '@/components/Author';
 import AgentCard from '@/components/agent/AgentCard';
 import SystemRole from '@/components/agent/SystemRole';
 import { SIDEBAR_MAX_WIDTH, SIDEBAR_WIDTH } from '@/constants/token';
+import SubscribeButton from '@/features/MarketInfo/SubscribeButton';
 import { agentSelectors, useAgentStore } from '@/store/agent';
 import { useGlobalStore } from '@/store/global';
 import { marketStoreSelectors, useMarketStore } from '@/store/market';
@@ -38,11 +39,7 @@ const Header = () => {
     ],
   );
   const [closePanel] = useGlobalStore((s) => [s.closePanel]);
-  const [subscribe, unsubscribe, subscribed] = useAgentStore((s) => [
-    s.subscribe,
-    s.unsubscribe,
-    agentSelectors.subscribed(s),
-  ]);
+  const [subscribed] = useAgentStore((s) => [agentSelectors.subscribed(s)]);
 
   const createSession = useSessionStore((s) => s.createSession);
 
@@ -66,23 +63,7 @@ const Header = () => {
       );
     }
 
-    actions.push(
-      <Button
-        key={'subscribe'}
-        onClick={() => {
-          if (isSubscribed) {
-            unsubscribe(currentAgentItem.agentId);
-            message.success('已取消订阅');
-          } else {
-            subscribe(currentAgentItem);
-            message.success('订阅成功');
-          }
-        }}
-        type={isSubscribed ? 'default' : 'primary'}
-      >
-        {isSubscribed ? '取消订阅' : '订阅'}
-      </Button>,
-    );
+    actions.push(<SubscribeButton agent={currentAgentItem} key={'subscribe'} />);
   }
 
   return (

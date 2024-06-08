@@ -28,14 +28,14 @@ const SideBar = memo(() => {
     deactivateDance,
     addAndPlayItem,
     addToPlayList,
-    unsubscribe,
+    removeDanceItem,
   ] = useDanceStore((s) => [
     danceListSelectors.showSideBar(s),
     s.activateDance,
     s.deactivateDance,
     s.addAndPlayItem,
     s.addToPlayList,
-    s.unsubscribe,
+    s.removeDanceItem,
   ]);
 
   const currentDance = useDanceStore((s) => danceListSelectors.currentDanceItem(s));
@@ -64,7 +64,7 @@ const SideBar = memo(() => {
             key="play"
             onClick={() => {
               if (currentDance) {
-                addAndPlayItem(currentDance);
+                addAndPlayItem(currentDance.danceId);
               }
             }}
             type={'primary'}
@@ -75,7 +75,7 @@ const SideBar = memo(() => {
             key="addAndPlay"
             onClick={() => {
               if (currentDance) {
-                addToPlayList(currentDance);
+                addToPlayList(currentDance.danceId);
                 message.success('已添加到播放列表');
               }
             }}
@@ -89,7 +89,7 @@ const SideBar = memo(() => {
             okText="确定"
             onConfirm={() => {
               if (currentDance) {
-                unsubscribe(currentDance.danceId);
+                removeDanceItem(currentDance.danceId);
               }
             }}
             title="取消订阅？"

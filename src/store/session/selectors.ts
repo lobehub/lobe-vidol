@@ -48,9 +48,6 @@ const getAgentById = (s: SessionStore) => {
 const currentAgent = (s: SessionStore): Agent | undefined => {
   const { activeId } = s;
   const agentStore = useAgentStore.getState();
-  if (activeId === LOBE_VIDOL_DEFAULT_AGENT_ID) {
-    return agentStore.defaultAgent;
-  }
   return agentStore.getAgentById(activeId);
 };
 

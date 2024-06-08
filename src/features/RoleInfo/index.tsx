@@ -51,7 +51,7 @@ const Header = () => {
       placement={'right'}
     >
       <AgentCard
-        actions={[<Chat key={'chat'} />, <UnSubscribeButton key="unsubscribe" />]}
+        actions={[<Chat key={'chat'} />, <UnSubscribeButton key="removeLocalAgent" />]}
         agent={currentAgent}
         footer={<SystemRole systemRole={currentAgent?.systemRole} style={{ marginTop: 16 }} />}
       />

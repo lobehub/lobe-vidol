@@ -1,41 +1,31 @@
+import { Progress } from 'antd';
 import classNames from 'classnames';
-import React, { memo, useCallback, useEffect, useRef } from 'react';
+import React, { memo, useRef } from 'react';
 
 import PageLoading from '@/components/PageLoading';
-import { useLoadVrm } from '@/hooks/useLoadVrm';
+import Viewer from '@/features/AgentViewer/Viewer';
+import { useLoadModel } from '@/hooks/useLoadModel';
 import { useGlobalStore } from '@/store/global';
+import { Agent } from '@/types/agent';
 
 import ToolBar from './ToolBar';
 import { useStyles } from './style';
 
 interface Props {
+  agent: Agent;
   className?: string;
   height?: number | string;
-  modelUrl?: string;
   style?: React.CSSProperties;
   width?: number | string;
 }
 
 function AgentViewer(props: Props) {
-  const { className, style, height, modelUrl, width } = props;
+  const { className, style, height, agent, width } = props;
   const { styles } = useStyles();
   const ref = useRef<HTMLDivElement>(null);
   const viewer = useGlobalStore((s) => s.viewer);
 
-  const { loading, loadVrm } = useLoadVrm(viewer);
-
-  useEffect(() => {
-    loadVrm(modelUrl);
-  }, [modelUrl]);
-
-  const canvasRef = useCallback(
-    (canvas: HTMLCanvasElement) => {
-      if (canvas) {
-        viewer.setup(canvas);
-      }
-    },
-    [viewer],
-  );
+  const { downloading, percent, vrmUrl } = useLoadModel(agent.agentId, agent.meta.model!);
 
   return (
     <div
@@ -44,8 +34,14 @@ function AgentViewer(props: Props) {
       style={{ height, width, ...style }}
     >
       <ToolBar className={styles.toolbar} viewer={viewer} />
-      {loading ? <PageLoading title={'模型加载中，请稍后...'} className={styles.loading} /> : null}
-      <canvas ref={canvasRef} className={styles.canvas}></canvas>
+      {downloading ? (
+        <PageLoading
+          title="模型下载中，请稍后..."
+          description={<Progress percent={percent} size="small" steps={50} />}
+          className={styles.loading}
+        />
+      ) : null}
+      {vrmUrl ? <Viewer vrmUrl={vrmUrl} /> : null}
     </div>
   );
 }

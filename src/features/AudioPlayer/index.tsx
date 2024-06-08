@@ -1,6 +1,7 @@
 import { ActionIcon, Avatar } from '@lobehub/ui';
-import { Typography } from 'antd';
+import { Progress, Typography } from 'antd';
 import classNames from 'classnames';
+import { isEqual } from 'lodash-es';
 import { ListMusic } from 'lucide-react';
 import React, { memo, useEffect, useRef, useState } from 'react';
 
@@ -8,7 +9,10 @@ import Control from '@/features/AudioPlayer/Control';
 import Duration from '@/features/AudioPlayer/Duration';
 import PlayList from '@/features/AudioPlayer/PlayList';
 import Volume from '@/features/AudioPlayer/Volume';
-import { DanceStore, useDanceStore } from '@/store/dance';
+import { useLoadAudio } from '@/hooks/useLoadAudio';
+import { useLoadDance } from '@/hooks/useLoadDance';
+import { useDanceStore } from '@/store/dance';
+import { playListSelectors } from '@/store/dance/selectors/playlist';
 import { useGlobalStore } from '@/store/global';
 
 import { useStyles } from './style';
@@ -18,14 +22,6 @@ interface PlayerProps {
   style?: React.CSSProperties;
 }
 
-const danceSelectors = (s: DanceStore) => {
-  return {
-    currentPlay: s.currentPlay,
-    isPlaying: s.isPlaying,
-    nextDance: s.nextDance,
-  };
-};
-
 function Player(props: PlayerProps) {
   const { style, className } = props;
   const ref = useRef<HTMLAudioElement>(null);
@@ -33,19 +29,32 @@ function Player(props: PlayerProps) {
   const [open, setOpen] = useState(false);
   const [duration, setDuration] = useState(0);
   const [currentProgress, setCurrentProgress] = useState(0);
-  const { nextDance, currentPlay, isPlaying } = useDanceStore(danceSelectors);
+  const { nextDance, currentPlay, isPlaying } = useDanceStore(
+    (s) => ({
+      currentPlay: playListSelectors.currentPlay(s),
+      isPlaying: s.isPlaying,
+      nextDance: s.nextDance,
+    }),
+    isEqual,
+  );
   const viewer = useGlobalStore((s) => s.viewer);
+
+  const { downloading: audioDownloading, percent: audioPercent, fetchAudioUrl } = useLoadAudio();
+  const { downloading: danceDownloading, percent: dancePercent, fetchDanceBuffer } = useLoadDance();
 
   const { styles } = useStyles();
 
   useEffect(() => {
     if (isPlaying && currentPlay) {
-      fetch(currentPlay.src)
-        .then((res) => res.arrayBuffer())
-        .then((buffer) => {
-          viewer.model?.dance(buffer);
-          ref.current?.play();
-        });
+      const audioPromise = fetchAudioUrl(currentPlay.danceId, currentPlay.audio);
+      const dancePromise = fetchDanceBuffer(currentPlay.danceId, currentPlay.src);
+      Promise.all([audioPromise, dancePromise]).then((res) => {
+        if (!res) return;
+        const [audioUrl, danceBuffer] = res;
+        viewer.model?.dance(danceBuffer);
+        if (ref.current) ref.current.src = audioUrl;
+        if (ref.current) ref.current.play();
+      });
     } else {
       viewer.model?.stopDance();
       ref.current?.pause();
@@ -70,15 +79,19 @@ function Player(props: PlayerProps) {
         }}
         preload="metadata"
         ref={ref}
-        src={currentPlay?.audio}
       />
       <div className={styles.player}>
-        <Avatar
-          shape="circle"
-          size={48}
-          src={currentPlay?.cover}
-          className={isPlaying ? styles.spin : ''}
-        />
+        <div style={{ position: 'relative' }}>
+          <Avatar shape="circle" size={48} src={currentPlay?.cover} />
+          {danceDownloading || audioDownloading ? (
+            <Progress
+              type="circle"
+              className={styles.progress}
+              percent={Math.ceil((dancePercent + audioPercent) / 2)}
+              size={[48, 48]}
+            />
+          ) : null}
+        </div>
         <div className={styles.content}>
           <Duration currentProgress={currentProgress} duration={duration} />
           <div className={styles.controller}>

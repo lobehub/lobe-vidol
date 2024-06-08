@@ -17,6 +17,8 @@ import { Agent, AgentMeta, GenderEnum } from '@/types/agent';
 import { TouchAction, TouchAreaEnum } from '@/types/touch';
 import { TTS } from '@/types/tts';
 import { mergeWithUndefined } from '@/utils/common';
+import { getModelPathByAgentId } from '@/utils/file';
+import storage from '@/utils/storage';
 
 import { initialState } from './initialState';
 import { agentSelectors } from './selectors/agent';
@@ -29,9 +31,14 @@ export interface AgentStore {
    */
   activateAgent: (identifier: string) => void;
   /**
+   * 添加角色
+   * @param agent
+   */
+  addLocalAgent: (agent: Agent) => void;
+  /**
    * 清除角色配置
    */
-  clearAgentStorage: () => void;
+  clearAgentStorage: () => Promise<void>;
   /**
    * 创建新角色
    */
@@ -69,6 +76,11 @@ export interface AgentStore {
    */
   localAgentList: Agent[];
   /**
+   * 移除本地角色
+   * @param agentId
+   */
+  removeLocalAgent: (agentId: string) => Promise<void>;
+  /**
    * 删除触摸配置
    */
   removeTouchAction: (currentTouchArea: TouchAreaEnum, index: number) => void;
@@ -76,16 +88,6 @@ export interface AgentStore {
    * 设置角色配置
    */
   setAgentConfig: (agent: Agent) => void;
-  /**
-   * 订阅角色
-   * @param agent
-   */
-  subscribe: (agent: Agent) => void;
-  /**
-   * 取消订阅角色
-   * @param agentId
-   */
-  unsubscribe: (agentId: string) => void;
   /**
    * 更新角色配置
    */
@@ -140,8 +142,9 @@ const createAgentStore: StateCreator<AgentStore, [['zustand/devtools', never]]> 
   activateAgent: (identifier) => {
     set({ currentIdentifier: identifier });
   },
-  clearAgentStorage: () => {
+  clearAgentStorage: async () => {
     localStorage.removeItem(AGENT_STORAGE_KEY);
+    await storage.clear();
     set({ ...initialState });
   },
 
@@ -260,7 +263,7 @@ const createAgentStore: StateCreator<AgentStore, [['zustand/devtools', never]]> 
     const { updateAgentConfig } = get();
     updateAgentConfig({ tts });
   },
-  subscribe: (agent) => {
+  addLocalAgent: (agent) => {
     const { localAgentList } = get();
 
     const newList = produce(localAgentList, (draft) => {
@@ -272,7 +275,7 @@ const createAgentStore: StateCreator<AgentStore, [['zustand/devtools', never]]> 
     });
     set({ localAgentList: newList });
   },
-  unsubscribe: (agentId) => {
+  removeLocalAgent: async (agentId) => {
     const { localAgentList } = get();
     const newList = produce(localAgentList, (draft) => {
       const index = draft.findIndex((item) => item.agentId === agentId);
@@ -281,6 +284,7 @@ const createAgentStore: StateCreator<AgentStore, [['zustand/devtools', never]]> 
         draft.splice(index, 1);
       }
     });
+    await storage.removeItem(getModelPathByAgentId(agentId));
     set({ currentIdentifier: LOBE_VIDOL_DEFAULT_AGENT_ID, localAgentList: newList });
   },
 });

@@ -68,6 +68,13 @@ const currentAgentId = (s: AgentStore): string | undefined => {
   return currentAgent.agentId;
 };
 
+const getAgentModelById = (s: AgentStore) => {
+  return (id: string): string | undefined => {
+    const agent = s.getAgentById(id);
+    return agent?.meta.model;
+  };
+};
+
 const isDefaultAgent = (s: AgentStore) => {
   return (id: string): boolean => {
     const agent = s.getAgentById(id);
@@ -75,7 +82,8 @@ const isDefaultAgent = (s: AgentStore) => {
   };
 };
 
-const subscribed = (s: AgentStore) => (agentId: string) => {
+const subscribed = (s: AgentStore) => (agentId: string | undefined) => {
+  if (!agentId) return false;
   const { localAgentList } = s;
   const index = localAgentList.findIndex((item) => item.agentId === agentId);
 
@@ -88,6 +96,7 @@ export const agentSelectors = {
   currentAgentTTS,
   currentAgentTouch,
   filterAgentListIds,
+  getAgentModelById,
   agentListIds,
   isDefaultAgent,
   showSideBar,

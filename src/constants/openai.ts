@@ -1,61 +1,180 @@
 export const OPENAI_API_KEY = 'x-openai-apikey';
 export const OPENAI_END_POINT = 'x-openai-endpoint';
 
-interface OPENAI_MODEL {
+export interface ChatModelCard {
   /**
-   * 最大 Token 数
+   * only used in azure
    */
-  maxToken: number;
+  deploymentName?: string;
+  description?: string;
   /**
-   * 模型名称
+   * the name show for end user
    */
-  name: string;
+  displayName?: string;
+
+  /**
+   * whether model is enabled by default
+   */
+  enabled?: boolean;
+  /**
+   * whether model supports file upload
+   */
+  files?: boolean;
+  /**
+   * whether model supports function call
+   */
+  functionCall?: boolean;
+  id: string;
+  /**
+   * whether model is custom
+   */
+  isCustom?: boolean;
+  /**
+   * whether model is legacy (deprecated but not removed yet)
+   */
+  legacy?: boolean;
+  maxOutput?: number;
+  /**
+   * the context window (or input + output tokens limit)
+   */
+  tokens?: number;
+  /**
+   *  whether model supports vision
+   */
+  vision?: boolean;
 }
 
 /**
  * OpenAI 模型列表
  */
-export const OPENAI_MODEL_LIST: OPENAI_MODEL[] = [
+export const OPENAI_MODEL_LIST: ChatModelCard[] = [
   // GPT 3.5: https://platform.openai.com/docs/models/gpt-3-5
   {
-    maxToken: 16_385,
-    name: 'gpt-3.5-turbo-1106',
+    description: 'GPT 3.5 Turbo，适用于各种文本生成和理解任务',
+    displayName: 'GPT-3.5 Turbo',
+    enabled: true,
+    functionCall: true,
+    id: 'gpt-3.5-turbo',
+    tokens: 16_385,
   },
   {
-    maxToken: 4096,
-    name: 'gpt-3.5-turbo',
+    displayName: 'GPT-3.5 Turbo (0125)',
+    functionCall: true,
+    id: 'gpt-3.5-turbo-0125',
+    tokens: 16_385,
   },
   {
-    maxToken: 16_385,
-    name: 'gpt-3.5-turbo-16k',
+    displayName: 'GPT-3.5 Turbo (1106)',
+    functionCall: true,
+    id: 'gpt-3.5-turbo-1106',
+    tokens: 16_385,
   },
   {
-    maxToken: 4096,
-    name: 'gpt-3.5-turbo-instruct',
-  },
-  // GPT 4.0 https://platform.openai.com/docs/models/gpt-4-and-gpt-4-turbo
-  {
-    maxToken: 128_000,
-    name: 'gpt-4-1106-preview',
+    displayName: 'GPT-3.5 Turbo Instruct',
+    id: 'gpt-3.5-turbo-instruct',
+    tokens: 4096,
   },
   {
-    maxToken: 128_000,
-    name: 'gpt-4-vision-preview',
+    description: 'Currently points to gpt-3.5-turbo-16k-0613',
+    displayName: 'GPT-3.5 Turbo 16K',
+    id: 'gpt-3.5-turbo-16k',
+    legacy: true,
+    tokens: 16_385,
   },
   {
-    maxToken: 8192,
-    name: 'gpt-4',
+    displayName: 'GPT-3.5 Turbo (0613)',
+    id: 'gpt-3.5-turbo-0613',
+    legacy: true,
+    tokens: 4096,
   },
   {
-    maxToken: 32_768,
-    name: 'gpt-4-32k',
+    displayName: 'GPT-3.5 Turbo 16K (0613)',
+    id: 'gpt-3.5-turbo-16k-0613',
+    legacy: true,
+    tokens: 16_385,
   },
   {
-    maxToken: 8192,
-    name: 'gpt-4-0613',
+    description: 'Currently points to gpt-4-0125-preview',
+    displayName: 'GPT-4 Turbo Preview',
+    functionCall: true,
+    id: 'gpt-4-turbo-preview',
+    tokens: 128_000,
   },
   {
-    maxToken: 32_768,
-    name: 'gpt-4-32k-0613',
+    displayName: 'GPT-4 Turbo Preview (0125)',
+    functionCall: true,
+    id: 'gpt-4-0125-preview',
+    tokens: 128_000,
+  },
+  {
+    description: 'Currently points to gpt-4-1106-vision-preview',
+    displayName: 'GPT-4 Turbo Vision Preview',
+    id: 'gpt-4-vision-preview',
+    tokens: 128_000,
+    vision: true,
+  },
+  {
+    displayName: 'GPT-4 Turbo Vision Preview (1106)',
+    id: 'gpt-4-1106-vision-preview',
+    tokens: 128_000,
+    vision: true,
+  },
+  {
+    displayName: 'GPT-4 Turbo Preview (1106)',
+    functionCall: true,
+    id: 'gpt-4-1106-preview',
+    tokens: 128_000,
+  },
+  {
+    description: 'Currently points to gpt-4-0613',
+    displayName: 'GPT-4',
+    functionCall: true,
+    id: 'gpt-4',
+    tokens: 8192,
+  },
+  {
+    displayName: 'GPT-4 (0613)',
+    functionCall: true,
+    id: 'gpt-4-0613',
+    tokens: 8192,
+  },
+  {
+    description: 'Currently points to gpt-4-32k-0613',
+    displayName: 'GPT-4 32K',
+    functionCall: true,
+    id: 'gpt-4-32k',
+    tokens: 32_768,
+  },
+  {
+    displayName: 'GPT-4 32K (0613)',
+    functionCall: true,
+    id: 'gpt-4-32k-0613',
+    tokens: 32_768,
+  },
+  {
+    description: 'GPT-4 Turbo with Vision',
+    displayName: 'GPT-4 Turbo',
+    enabled: true,
+    functionCall: true,
+    id: 'gpt-4-turbo',
+    tokens: 128_000,
+    vision: true,
+  },
+  {
+    description: 'GPT-4 Turbo 视觉版 (240409)',
+    displayName: 'GPT-4 Turbo Vision (240409)',
+    functionCall: true,
+    id: 'gpt-4-turbo-2024-04-09',
+    tokens: 128_000,
+    vision: true,
+  },
+  {
+    description: 'Currently points to gpt-4o-2024-05-13',
+    displayName: 'GPT-4o',
+    enabled: true,
+    functionCall: true,
+    id: 'gpt-4o',
+    tokens: 128_000,
+    vision: true,
   },
 ];
