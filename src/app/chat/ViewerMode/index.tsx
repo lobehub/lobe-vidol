@@ -6,8 +6,7 @@ import { Flexbox } from 'react-layout-kit';
 
 import { HEADER_HEIGHT } from '@/constants/token';
 import AgentViewer from '@/features/AgentViewer';
-import Alert from '@/features/Alert';
-import MessageInput from '@/features/ChatInput/MessageInput';
+import MessageInput from '@/features/MessageInput';
 import { sessionSelectors, useSessionStore } from '@/store/session';
 
 import ChatDialog from './ChatDialog';
@@ -29,7 +28,6 @@ export default memo(() => {
       <Flexbox align={'center'} className={styles.docker}>
         <div className={classNames(styles.input, styles.content)}>
           <MessageInput />
-          <Alert style={{ marginTop: 8 }} />
         </div>
       </Flexbox>
     </Flexbox>
