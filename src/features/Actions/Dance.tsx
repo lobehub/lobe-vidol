@@ -1,5 +1,5 @@
 import { ActionIcon } from '@lobehub/ui';
-import { Music2 } from 'lucide-react';
+import { Music } from 'lucide-react';
 
 import { useGlobalStore } from '@/store/global';
 
@@ -8,7 +8,7 @@ export default () => {
 
   return (
     <ActionIcon
-      icon={Music2}
+      icon={Music}
       onClick={() => {
         openPanel('dance');
       }}
