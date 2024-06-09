@@ -1,23 +1,23 @@
 'use client';
 
-import { Alert, Modal, type ModalProps } from '@lobehub/ui';
-import { Button, Divider, Input } from 'antd';
+import { Alert, Icon, Modal, type ModalProps } from '@lobehub/ui';
+import { Button, Divider, Input, Space } from 'antd';
 import { useTheme } from 'antd-style';
 import isEqual from 'fast-deep-equal';
 import { kebabCase } from 'lodash-es';
+import { Dices } from 'lucide-react';
 import qs from 'query-string';
 import { memo, useState } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
 import AgentCard from '@/components/agent/AgentCard';
 import { AGENTS_INDEX_GITHUB_ISSUE } from '@/constants/url';
-import { useSessionStore } from '@/store/session';
-import { sessionSelectors } from '@/store/session/selectors';
+import { agentSelectors, useAgentStore } from '@/store/agent';
 
 const SubmitAgentModal = memo<ModalProps>(({ open, onCancel }) => {
   const [agentId, setAgentId] = useState('');
   const theme = useTheme();
-  const currentAgent = useSessionStore(sessionSelectors.currentAgent, isEqual);
+  const currentAgent = useAgentStore(agentSelectors.currentAgentItem, isEqual);
   const { meta } = currentAgent;
 
   const isFormPass = Boolean(
@@ -83,13 +83,23 @@ const SubmitAgentModal = memo<ModalProps>(({ open, onCancel }) => {
         <Divider style={{ margin: '8px 0' }} />
         <strong>
           <span style={{ color: theme.colorError, marginRight: 4 }}>*</span>
-          identifier 助手标识符
+          agentId 助手标识符
         </strong>
-        <Input
-          onChange={(e) => setAgentId(e.target.value)}
-          placeholder={'请输入助手的标识符，需要是唯一的，比如 vidol-agent-klee'}
-          value={agentId}
-        />
+        <Space.Compact style={{ width: '100%' }}>
+          <Input
+            onChange={(e) => setAgentId(e.target.value)}
+            placeholder={'请输入助手的标识符，需要是唯一的，比如 vidol-agent-klee'}
+            value={agentId}
+          />
+          <Button
+            type="primary"
+            icon={<Icon icon={Dices} />}
+            onClick={() => {
+              const randomId = Math.random().toString(36).slice(7);
+              setAgentId(`vidol-agent-${randomId}`);
+            }}
+          ></Button>
+        </Space.Compact>
       </Flexbox>
     </Modal>
   );
