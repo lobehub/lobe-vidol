@@ -29,8 +29,9 @@ export const DEFAULT_VIDOL_AGENT: Agent = {
   tts: DEFAULT_TTS_CONFIG_FEMALE,
 };
 
-export const DEFAULT_AGENT_CONFIG = {
-  greeting: '',
+export const DEFAULT_AGENT_CONFIG: Agent = {
+  agentId: '',
+  greeting: '你好呀',
   systemRole: '',
   meta: {
     name: '自定义角色',

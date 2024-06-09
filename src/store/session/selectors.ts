@@ -41,14 +41,19 @@ const getAgentById = (s: SessionStore) => {
     if (agentId === LOBE_VIDOL_DEFAULT_AGENT_ID) {
       return agentStore.defaultAgent;
     }
-    return agentStore.getAgentById(agentId);
+    return agentStore.getAgentById(agentId || '');
   };
 };
 
-const currentAgent = (s: SessionStore): Agent | undefined => {
+const currentAgent = (s: SessionStore): Agent => {
   const { activeId } = s;
   const agentStore = useAgentStore.getState();
   return agentStore.getAgentById(activeId);
+};
+
+const currentAgentMeta = (s: SessionStore) => {
+  const agent = currentAgent(s);
+  return agent?.meta;
 };
 
 const currentChats = (s: SessionStore): ChatMessage[] => {
@@ -144,6 +149,7 @@ const getLastMessageByAgentId = (s: SessionStore) => {
 export const sessionSelectors = {
   currentChatsWithGreetingMessage,
   filterSessionListIds,
+  currentAgentMeta,
   currentAgent,
   getAgentById,
   currentChatIDsWithGreetingMessage,
