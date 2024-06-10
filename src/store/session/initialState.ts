@@ -9,6 +9,7 @@ const defaultSession: Session = {
 const initialState = {
   activeId: defaultSession.agentId,
   chatLoadingId: undefined,
+  shareLoading: false,
   messageInput: '',
   sessionList: [],
   defaultSession: defaultSession,
