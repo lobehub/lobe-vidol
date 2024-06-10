@@ -29,7 +29,7 @@ const SubmitAgentModal = memo<ModalProps>(({ open, onCancel }) => {
       meta.gender,
   );
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     const body = [
       '### systemRole',
       currentAgent.systemRole,
