@@ -14,6 +14,7 @@ export default () => {
     <ActionIcon
       icon={viewerMode ? VideoOff : Video}
       size={DESKTOP_HEADER_ICON_SIZE}
+      title={'切换视频模式'}
       onClick={() => {
         if (viewerMode) {
           setViewerMode(false);

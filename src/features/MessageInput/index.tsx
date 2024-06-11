@@ -1,13 +1,17 @@
 import { SendOutlined } from '@ant-design/icons';
 import { TextArea } from '@lobehub/ui';
-import { Button } from 'antd';
+import { Button, Space } from 'antd';
 import { InputRef } from 'antd/es/input/Input';
 import React, { memo, useRef } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
 import StopLoadingIcon from '@/components/StopLoading';
+import Dance from '@/features/Actions/Dance';
+import History from '@/features/Actions/History';
 import Record from '@/features/Actions/Record';
+import ToggleChatDialog from '@/features/Actions/ToggleChatDialog';
 import TokenMini from '@/features/Actions/TokenMini';
+import Video from '@/features/Actions/Video';
 import useChatInput from '@/hooks/useSendMessage';
 import { useSessionStore } from '@/store/session';
 import { isCommandPressed } from '@/utils/keyboard';
@@ -36,8 +40,18 @@ const InputArea = memo((props: InputAreaProps) => {
 
   return (
     <Flexbox className={className} style={style}>
+      <Flexbox horizontal justify={'space-between'} align={'center'} style={{ marginBottom: 4 }}>
+        <Space size={4}>
+          <Record />
+          <Video key="video" />
+          <Dance key={'dance'} />
+        </Space>
+        <Space size={4}>
+          <ToggleChatDialog key={'dialog'} />
+          <History key={'history'} />
+        </Space>
+      </Flexbox>
       <Flexbox width={'100%'} horizontal gap={4}>
-        <Record />
         <TextArea
           autoFocus
           onBlur={(e) => {
@@ -78,10 +92,10 @@ const InputArea = memo((props: InputAreaProps) => {
             }
           }}
           icon={loading ? <StopLoadingIcon /> : <SendOutlined />}
-          type={loading ? undefined : 'primary'}
+          // type={loading ? undefined : 'primary'}
         />
       </Flexbox>
-      <Flexbox horizontal justify={'space-between'} align={'center'} style={{ marginTop: 8 }}>
+      <Flexbox horizontal justify={'space-between'} align={'center'} style={{ marginTop: 4 }}>
         <div className={styles.alert}>请谨记：智能体所说的一切都是由 AI 生成的</div>
         <TokenMini />
       </Flexbox>

@@ -35,27 +35,26 @@ const SubscribeButton = memo((props: SubscribeButtonProps) => {
             message.success('已取消订阅');
           });
         } else {
-          if (agent.meta.model) {
-            setDownloading(true);
+          setDownloading(true);
+          setPercent(0);
+          try {
+            const blob = await fetchWithProgress(agent.meta.model!, {
+              onProgress: (loaded, total) => {
+                setPercent((loaded / total) * 100);
+              },
+            });
+            const modelKey = getModelPathByAgentId(agent.agentId);
+            await setItem(modelKey, blob);
+
+            addLocalAgent(agent);
+            message.success('订阅成功');
+          } catch (e) {
+            console.error(e);
+            message.error('下载失败');
+          } finally {
+            setDownloading(false);
             setPercent(0);
-            try {
-              const blob = await fetchWithProgress(agent.meta.model!, {
-                onProgress: (loaded, total) => {
-                  setPercent((loaded / total) * 100);
-                },
-              });
-              const modelKey = getModelPathByAgentId(agent.agentId);
-              await setItem(modelKey, blob);
-            } catch (e) {
-              console.error(e);
-              message.error('下载失败');
-            } finally {
-              setDownloading(false);
-              setPercent(0);
-            }
           }
-          addLocalAgent(agent);
-          message.success('订阅成功');
         }
       }}
       type={isSubscribed ? 'default' : 'primary'}
