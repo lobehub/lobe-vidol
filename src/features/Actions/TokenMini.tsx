@@ -11,10 +11,8 @@ const TokenMini = () => {
   const maxValue = OPENAI_MODEL_LIST.find((item) => item.id === config?.model)?.tokens || 4096;
 
   return (
-    <Tooltip title="上下文消耗 Token 数量计算，数字代表 {总计使用} / {总计可用}]">
-      <Typography.Text type={'secondary'}>
-        Token Count: {usedTokens} / {maxValue}
-      </Typography.Text>
+    <Tooltip title={`消耗 Token 数量计算，包括消息，角色设定与上下文：${usedTokens} / ${maxValue}`}>
+      <Typography.Text type={'secondary'}>Token Count: {usedTokens}</Typography.Text>
     </Tooltip>
   );
 };
