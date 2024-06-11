@@ -122,7 +122,7 @@ const InputArea = memo((props: InputAreaProps) => {
             }
           }}
           icon={loading ? <StopLoadingIcon /> : <SendOutlined />}
-          // type={loading ? undefined : 'primary'}
+          type={loading ? undefined : 'primary'}
         />
       </Flexbox>
       <Flexbox horizontal justify={'space-between'} align={'center'} style={{ marginTop: 4 }}>

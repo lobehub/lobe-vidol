@@ -105,6 +105,7 @@ const ShareModal = memo<ModalProps>(({ onCancel, open }) => {
     <Modal
       allowFullscreen
       centered={false}
+      width={800}
       footer={
         <>
           {tab === Tab.Screenshot && (
