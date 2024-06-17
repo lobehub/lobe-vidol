@@ -2,7 +2,6 @@ import { produce } from 'immer';
 import { isEqual } from 'lodash-es';
 import { StateCreator } from 'zustand/vanilla';
 
-import { DEFAULT_DANCE } from '@/constants/dance';
 import { getDanceIndex } from '@/services/dance';
 import { DanceStore } from '@/store/dance';
 import { Dance } from '@/types/dance';
@@ -33,7 +32,7 @@ export const createDanceStore: StateCreator<
       set({ currentIdentifier: identifier });
     },
     currentIdentifier: '',
-    danceList: [DEFAULT_DANCE],
+    danceList: [],
     danceLoading: false,
     deactivateDance: () => {
       set({ currentIdentifier: undefined });
