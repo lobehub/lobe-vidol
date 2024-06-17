@@ -63,7 +63,9 @@ const Header = () => {
       );
     }
 
-    actions.push(<SubscribeButton agent={currentAgentItem} key={'subscribe'} />);
+    actions.push(
+      <SubscribeButton agent={currentAgentItem} key={`${currentAgentItem.agentId}-subscribe`} />,
+    );
   }
 
   return (

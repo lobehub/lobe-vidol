@@ -10,42 +10,33 @@ import { setItem } from '@/utils/storage';
 
 export const useDownloadAgent = () => {
   const [downloading, setDownloading] = useState(false);
-  const [avatarTotal, setAvatarTotal] = useState(0);
-  const [avatarLoaded, setAvatarLoaded] = useState(0);
-  const [coverTotal, setCoverTotal] = useState(0);
-  const [coverLoaded, setCoverLoaded] = useState(0);
-  const [modelTotal, setModelTotal] = useState(0);
-  const [modelLoaded, setModelLoaded] = useState(0);
+  const [avatarProgress, setAvatarProgress] = useState(0);
+  const [coverProgress, setCoverProgress] = useState(0);
+  const [modelProgress, setModelProgress] = useState(0);
 
   const [addLocalAgent] = useAgentStore((s) => [s.addLocalAgent]);
 
   const fetchAgentData = async (agent: Agent) => {
     setDownloading(true);
-    setAvatarTotal(0);
-    setAvatarLoaded(0);
-    setCoverTotal(0);
-    setCoverLoaded(0);
-    setModelTotal(0);
-    setModelLoaded(0);
+    setAvatarProgress(0);
+    setCoverProgress(0);
+    setModelProgress(0);
 
     const avatarPromise = fetchWithProgress(agent.meta.avatar!, {
       onProgress: (loaded, total) => {
-        setAvatarTotal(total);
-        setAvatarLoaded(loaded);
+        setAvatarProgress(Math.ceil((loaded / total) * 100));
       },
     }).then(blobToDataURI);
 
     const coverPromise = fetchWithProgress(agent.meta.cover!, {
       onProgress: (loaded, total) => {
-        setCoverLoaded(loaded);
-        setCoverTotal(total);
+        setCoverProgress(Math.ceil((loaded / total) * 100));
       },
     }).then(blobToDataURI);
 
     const modelPromise = fetchWithProgress(agent.meta.model!, {
       onProgress: (loaded, total) => {
-        setModelLoaded(loaded);
-        setModelTotal(total);
+        setModelProgress(Math.ceil((loaded / total) * 100));
       },
     });
 
@@ -66,12 +57,11 @@ export const useDownloadAgent = () => {
 
   return {
     downloading,
-    percent: downloading
-      ? Math.ceil(
-          ((avatarLoaded + coverLoaded + modelLoaded) / (avatarTotal + coverTotal + modelTotal)) *
-            100,
-        )
-      : 0,
+    percent: {
+      avatar: avatarProgress,
+      cover: coverProgress,
+      model: modelProgress,
+    },
     fetchAgentData,
   };
 };

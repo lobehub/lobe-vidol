@@ -1,4 +1,4 @@
-import { Button, Progress, message } from 'antd';
+import { Button, Popover, Progress, Space, message } from 'antd';
 import React, { memo } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
@@ -23,29 +23,42 @@ const SubscribeButton = memo((props: SubscribeButtonProps) => {
   const isSubscribed = subscribed(agent.agentId);
 
   return (
-    <Button
-      key={'subscribe'}
-      disabled={downloading}
-      onClick={async () => {
-        if (isSubscribed) {
-          removeLocalAgent(agent.agentId).then(() => {
-            message.success('已取消订阅');
-          });
-        } else {
-          await fetchAgentData(agent);
-        }
-      }}
-      type={isSubscribed ? 'default' : 'primary'}
-    >
-      {isSubscribed ? (
-        '取消订阅'
-      ) : (
-        <Flexbox align={'center'} horizontal gap={8}>
-          下载订阅{' '}
-          {downloading ? <Progress type="circle" percent={percent} size={[20, 20]} /> : null}
+    <Popover
+      open={downloading}
+      title={
+        <Flexbox>
+          <Space>
+            <Progress steps={30} percent={percent.cover} size="small" />
+            <span>下载封面</span>
+          </Space>
+          <Space>
+            <Progress steps={30} percent={percent.avatar} size="small" />
+            <span>下载头像</span>
+          </Space>
+          <Space>
+            <Progress steps={30} percent={percent.model} size="small" />
+            <span>下载模型</span>
+          </Space>
         </Flexbox>
-      )}
-    </Button>
+      }
+    >
+      <Button
+        key={'subscribe'}
+        disabled={downloading}
+        onClick={async () => {
+          if (isSubscribed) {
+            removeLocalAgent(agent.agentId).then(() => {
+              message.success('已取消订阅');
+            });
+          } else {
+            await fetchAgentData(agent);
+          }
+        }}
+        type={isSubscribed ? 'default' : 'primary'}
+      >
+        {isSubscribed ? '取消订阅' : '下载订阅'}
+      </Button>
+    </Popover>
   );
 });
 
