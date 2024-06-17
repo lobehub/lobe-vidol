@@ -2,24 +2,21 @@ import { Button, Progress, message } from 'antd';
 import React, { memo } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
+import { useDownloadAgent } from '@/hooks/useDownloadAgent';
 import { agentSelectors, useAgentStore } from '@/store/agent';
 import { Agent } from '@/types/agent';
-import { fetchWithProgress } from '@/utils/fetch';
-import { getModelPathByAgentId } from '@/utils/file';
-import { setItem } from '@/utils/storage';
 
 interface SubscribeButtonProps {
   agent: Agent;
 }
 
 const SubscribeButton = memo((props: SubscribeButtonProps) => {
-  const [downloading, setDownloading] = React.useState(false);
-  const [percent, setPercent] = React.useState(0);
-  const [addLocalAgent, removeLocalAgent, subscribed] = useAgentStore((s) => [
-    s.addLocalAgent,
+  const [removeLocalAgent, subscribed] = useAgentStore((s) => [
     s.removeLocalAgent,
     agentSelectors.subscribed(s),
   ]);
+
+  const { fetchAgentData, percent, downloading } = useDownloadAgent();
 
   const { agent } = props;
 
@@ -35,26 +32,7 @@ const SubscribeButton = memo((props: SubscribeButtonProps) => {
             message.success('已取消订阅');
           });
         } else {
-          setDownloading(true);
-          setPercent(0);
-          try {
-            const blob = await fetchWithProgress(agent.meta.model!, {
-              onProgress: (loaded, total) => {
-                setPercent((loaded / total) * 100);
-              },
-            });
-            const modelKey = getModelPathByAgentId(agent.agentId);
-            await setItem(modelKey, blob);
-
-            addLocalAgent(agent);
-            message.success('订阅成功');
-          } catch (e) {
-            console.error(e);
-            message.error('下载失败');
-          } finally {
-            setDownloading(false);
-            setPercent(0);
-          }
+          await fetchAgentData(agent);
         }
       }}
       type={isSubscribed ? 'default' : 'primary'}
