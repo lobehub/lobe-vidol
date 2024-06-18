@@ -11,7 +11,11 @@ import {
   DEFAULT_TOUCH_ACTION_CONFIG_FEMALE,
   DEFAULT_TOUCH_ACTION_CONFIG_MALE,
 } from '@/constants/touch';
-import { DEFAULT_TTS_CONFIG_FEMALE, DEFAULT_TTS_CONFIG_MALE } from '@/constants/tts';
+import {
+  DEFAULT_TTS_CONFIG_FEMALE,
+  DEFAULT_TTS_CONFIG_MALE,
+  DEFAULT_TTS_CONFIG_OTHER,
+} from '@/constants/tts';
 import { TouchActionType, touchReducer } from '@/store/agent/reducers/touch';
 import { Agent, AgentMeta, GenderEnum } from '@/types/agent';
 import { TouchAction, TouchAreaEnum } from '@/types/touch';
@@ -132,7 +136,7 @@ const getTTSConfigByGender = (gender: GenderEnum) => {
       return DEFAULT_TTS_CONFIG_MALE;
     }
     default: {
-      return undefined;
+      return DEFAULT_TTS_CONFIG_OTHER;
     }
   }
 };
@@ -166,6 +170,10 @@ const createAgentStore: StateCreator<AgentStore, [['zustand/devtools', never]]> 
 
     const newAgent: Agent = {
       ...DEFAULT_AGENT_CONFIG,
+      meta: {
+        ...DEFAULT_AGENT_CONFIG.meta,
+        gender,
+      },
       agentId: nanoid(),
       touch: getTouchConfigByGender(gender),
       tts: getTTSConfigByGender(gender),

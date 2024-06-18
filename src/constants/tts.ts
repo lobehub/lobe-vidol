@@ -26,6 +26,14 @@ export const DEFAULT_TTS_CONFIG_MALE: TTS = {
   voice: 'zh-CN-YunxiNeural',
 };
 
+export const DEFAULT_TTS_CONFIG_OTHER: TTS = {
+  engine: 'edge',
+  locale: 'zh-CN',
+  pitch: DEFAULT_TTS_PITCH,
+  speed: DEFAULT_TTS_SPEED,
+  voice: 'zh-CN-YunxiaNeural',
+};
+
 export const supportedLocales = [
   {
     label: '中文(普通话)',
