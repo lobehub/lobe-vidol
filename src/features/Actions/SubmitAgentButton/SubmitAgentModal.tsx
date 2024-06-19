@@ -12,6 +12,7 @@ import { Flexbox } from 'react-layout-kit';
 
 import AgentCard from '@/components/agent/AgentCard';
 import { AGENTS_INDEX_GITHUB_ISSUE } from '@/constants/url';
+import { upload } from '@/services/upload';
 import { agentSelectors, useAgentStore } from '@/store/agent';
 
 const SubmitAgentModal = memo<ModalProps>(({ open, onCancel }) => {
@@ -30,13 +31,28 @@ const SubmitAgentModal = memo<ModalProps>(({ open, onCancel }) => {
   );
 
   const handleSubmit = async () => {
+    let avatarUrl = meta.avatar;
+    if (meta.avatar.includes('base64')) {
+      const arr = meta.avatar.split('base64,');
+      const binaryString = atob(arr[1]);
+      // @ts-ignore
+      const mime = arr[0].match(/:(.*?);/)[1];
+      const uint8Array = Uint8Array.from(binaryString, (char) => char.charCodeAt(0));
+      // base64
+      const { success, url } = await upload(
+        new File([uint8Array], `${agentId}-avatar.png`, { type: mime }),
+      );
+      if (success) {
+        avatarUrl = url;
+      }
+    }
     const body = [
       '### systemRole',
       currentAgent.systemRole,
       '### agentId',
       kebabCase(agentId),
       '### avatar',
-      meta.avatar,
+      avatarUrl,
       '### cover',
       meta.cover,
       '### name',
