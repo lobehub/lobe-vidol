@@ -1,6 +1,7 @@
-import { ActionIcon, Icon } from '@lobehub/ui';
+import { ManOutlined, QuestionCircleOutlined, WomanOutlined } from '@ant-design/icons';
+import { ActionIcon } from '@lobehub/ui';
 import { Popover } from 'antd';
-import { Monitor, Moon, PlusCircle, Sun } from 'lucide-react';
+import { PlusCircle } from 'lucide-react';
 import { memo, useMemo } from 'react';
 
 import Menu, { type MenuProps } from '@/components/Menu';
@@ -8,9 +9,9 @@ import { useAgentStore } from '@/store/agent';
 import { GenderEnum } from '@/types/agent';
 
 const genderIcons = {
-  female: Monitor,
-  male: Moon,
-  other: Sun,
+  female: <WomanOutlined />,
+  male: <ManOutlined />,
+  other: <QuestionCircleOutlined />,
 };
 
 const ThemeButton = memo(() => {
@@ -19,19 +20,19 @@ const ThemeButton = memo(() => {
   const items: MenuProps['items'] = useMemo(
     () => [
       {
-        icon: <Icon icon={genderIcons.female} />,
+        icon: genderIcons.female,
         key: 'light',
         label: '女性',
         onClick: () => createNewAgent(GenderEnum.FEMALE),
       },
       {
-        icon: <Icon icon={genderIcons.male} />,
+        icon: genderIcons.male,
         key: 'auto',
         label: '男性',
         onClick: () => createNewAgent(GenderEnum.MALE),
       },
       {
-        icon: <Icon icon={genderIcons.other} />,
+        icon: genderIcons.other,
         key: 'dark',
         label: '其他',
         onClick: () => createNewAgent(GenderEnum.OTHER),
@@ -47,7 +48,7 @@ const ThemeButton = memo(() => {
       overlayInnerStyle={{
         padding: 0,
       }}
-      trigger={['click', 'hover']}
+      trigger={['click']}
     >
       <ActionIcon icon={PlusCircle} />
     </Popover>

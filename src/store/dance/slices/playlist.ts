@@ -1,7 +1,6 @@
 import { produce } from 'immer';
 import { StateCreator } from 'zustand/vanilla';
 
-import { LOBE_VIDOL_DEFAULT_DANCE_ID } from '@/constants/dance';
 import { DanceStore } from '@/store/dance';
 
 export interface PlayListStore {
@@ -104,7 +103,7 @@ export const createPlayListStore: StateCreator<
       set({ currentPlayId: undefined, isPlaying: false, playlist: [] });
     },
 
-    currentPlayId: LOBE_VIDOL_DEFAULT_DANCE_ID,
+    currentPlayId: '',
     isPlaying: false,
 
     nextDance: () => {
@@ -122,7 +121,7 @@ export const createPlayListStore: StateCreator<
     playItem: (danceId) => {
       set({ currentPlayId: danceId, isPlaying: true });
     },
-    playlist: [LOBE_VIDOL_DEFAULT_DANCE_ID],
+    playlist: [],
     prevDance: () => {
       const { currentPlayId, playlist, playItem } = get();
       if (currentPlayId && playlist.length > 0) {

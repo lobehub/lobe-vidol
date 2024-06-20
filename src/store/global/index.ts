@@ -43,8 +43,8 @@ export interface GlobalStore {
   showChatDialog: boolean;
   showChatSidebar: boolean;
   showRoleList: boolean;
-  showSessionList: boolean;
 
+  showSessionList: boolean;
   /**
    * 主题模式
    */

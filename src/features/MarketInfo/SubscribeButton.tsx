@@ -1,74 +1,64 @@
-import { Button, Progress, message } from 'antd';
+import { Button, Popover, Progress, Space, message } from 'antd';
 import React, { memo } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
+import { useDownloadAgent } from '@/hooks/useDownloadAgent';
 import { agentSelectors, useAgentStore } from '@/store/agent';
 import { Agent } from '@/types/agent';
-import { fetchWithProgress } from '@/utils/fetch';
-import { getModelPathByAgentId } from '@/utils/file';
-import { setItem } from '@/utils/storage';
 
 interface SubscribeButtonProps {
   agent: Agent;
 }
 
 const SubscribeButton = memo((props: SubscribeButtonProps) => {
-  const [downloading, setDownloading] = React.useState(false);
-  const [percent, setPercent] = React.useState(0);
-  const [addLocalAgent, removeLocalAgent, subscribed] = useAgentStore((s) => [
-    s.addLocalAgent,
+  const [removeLocalAgent, subscribed] = useAgentStore((s) => [
     s.removeLocalAgent,
     agentSelectors.subscribed(s),
   ]);
+
+  const { fetchAgentData, percent, downloading } = useDownloadAgent();
 
   const { agent } = props;
 
   const isSubscribed = subscribed(agent.agentId);
 
   return (
-    <Button
-      key={'subscribe'}
-      disabled={downloading}
-      onClick={async () => {
-        if (isSubscribed) {
-          removeLocalAgent(agent.agentId).then(() => {
-            message.success('已取消订阅');
-          });
-        } else {
-          if (agent.meta.model) {
-            setDownloading(true);
-            setPercent(0);
-            try {
-              const blob = await fetchWithProgress(agent.meta.model!, {
-                onProgress: (loaded, total) => {
-                  setPercent((loaded / total) * 100);
-                },
-              });
-              const modelKey = getModelPathByAgentId(agent.agentId);
-              await setItem(modelKey, blob);
-            } catch (e) {
-              console.error(e);
-              message.error('下载失败');
-            } finally {
-              setDownloading(false);
-              setPercent(0);
-            }
-          }
-          addLocalAgent(agent);
-          message.success('订阅成功');
-        }
-      }}
-      type={isSubscribed ? 'default' : 'primary'}
-    >
-      {isSubscribed ? (
-        '取消订阅'
-      ) : (
-        <Flexbox align={'center'} horizontal gap={8}>
-          下载订阅{' '}
-          {downloading ? <Progress type="circle" percent={percent} size={[20, 20]} /> : null}
+    <Popover
+      open={downloading}
+      title={
+        <Flexbox>
+          <Space>
+            <Progress steps={30} percent={percent.cover} size="small" />
+            <span>下载封面</span>
+          </Space>
+          <Space>
+            <Progress steps={30} percent={percent.avatar} size="small" />
+            <span>下载头像</span>
+          </Space>
+          <Space>
+            <Progress steps={30} percent={percent.model} size="small" />
+            <span>下载模型</span>
+          </Space>
         </Flexbox>
-      )}
-    </Button>
+      }
+    >
+      <Button
+        key={'subscribe'}
+        disabled={downloading}
+        onClick={async () => {
+          if (isSubscribed) {
+            removeLocalAgent(agent.agentId).then(() => {
+              message.success('已取消订阅');
+            });
+          } else {
+            await fetchAgentData(agent);
+          }
+        }}
+        type={isSubscribed ? 'default' : 'primary'}
+      >
+        {isSubscribed ? '取消订阅' : '下载订阅'}
+      </Button>
+    </Popover>
   );
 });
 

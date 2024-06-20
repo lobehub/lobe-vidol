@@ -12,8 +12,6 @@ interface InfoProps {
 
 const useStyles = createStyles(({ css, token }) => ({
   config: css`
-    flex: 3;
-    margin-right: 12px;
     padding: 12px;
     border-radius: ${token.borderRadius}px;
   `,
