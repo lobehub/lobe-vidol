@@ -4,8 +4,6 @@ import { TabsNav } from '@lobehub/ui';
 import classNames from 'classnames';
 import React, { useState } from 'react';
 
-import SubmitAgentButton from '@/features/Actions/SubmitAgentButton';
-
 import Info from './Info';
 import Model from './Model';
 import Role from './Role';
@@ -45,7 +43,7 @@ const RolePanel = (props: RolePanelProps) => {
               label: '3D 模型',
             },
           ]}
-          tabBarExtraContent={<SubmitAgentButton modal />}
+          // tabBarExtraContent={<SubmitAgentButton modal />}
           onChange={(key) => {
             setTab(key);
           }}
