@@ -11,17 +11,22 @@ export const useLoadModel = () => {
   const fetchModelBlob = async (agentId: string, modelUrl: string) => {
     setDownloading(true);
     setPercent(0);
+    try {
+      const blob = await fetchWithProgress(modelUrl, {
+        onProgress: (loaded, total) => {
+          setPercent(Math.ceil((loaded / total) * 100));
+        },
+      });
+      const modelPath = getModelPathByAgentId(agentId);
+      await storage.setItem(modelPath, blob);
 
-    const blob = await fetchWithProgress(modelUrl, {
-      onProgress: (loaded, total) => {
-        setPercent(Math.ceil((loaded / total) * 100));
-      },
-    });
-    setDownloading(false);
-
-    const modelPath = getModelPathByAgentId(agentId);
-    await storage.setItem(modelPath, blob);
-    return blob;
+      return blob;
+    } catch (e) {
+      console.error(e);
+      return null;
+    } finally {
+      setDownloading(false);
+    }
   };
 
   return {

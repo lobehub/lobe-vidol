@@ -6,9 +6,6 @@ import React from 'react';
 
 import AgentCard from '@/components/agent/AgentCard';
 import { SIDEBAR_MAX_WIDTH, SIDEBAR_WIDTH } from '@/constants/token';
-import Dance from '@/features/Actions/Dance';
-import History from '@/features/Actions/History';
-import ToggleChatDialog from '@/features/Actions/ToggleChatDialog';
 import MiniPlayer from '@/features/AudioPlayer/MiniPlayer';
 import { useGlobalStore } from '@/store/global';
 import { sessionSelectors, useSessionStore } from '@/store/session';
@@ -49,11 +46,6 @@ export default () => {
         agent={currentAgent}
         extra={<MiniPlayer />}
         // footer={<Operations />}
-        actions={[
-          <History key={'history'} />,
-          <Dance key={'dance'} />,
-          <ToggleChatDialog key={'dialog'} />,
-        ]}
       />
     </DraggablePanel>
   );

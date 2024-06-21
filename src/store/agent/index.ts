@@ -11,7 +11,11 @@ import {
   DEFAULT_TOUCH_ACTION_CONFIG_FEMALE,
   DEFAULT_TOUCH_ACTION_CONFIG_MALE,
 } from '@/constants/touch';
-import { DEFAULT_TTS_CONFIG_FEMALE, DEFAULT_TTS_CONFIG_MALE } from '@/constants/tts';
+import {
+  DEFAULT_TTS_CONFIG_FEMALE,
+  DEFAULT_TTS_CONFIG_MALE,
+  DEFAULT_TTS_CONFIG_OTHER,
+} from '@/constants/tts';
 import { TouchActionType, touchReducer } from '@/store/agent/reducers/touch';
 import { Agent, AgentMeta, GenderEnum } from '@/types/agent';
 import { TouchAction, TouchAreaEnum } from '@/types/touch';
@@ -70,7 +74,7 @@ export interface AgentStore {
    * 根据 ID 获取角色
    * @param id
    */
-  getAgentById: (id?: string) => Agent | undefined;
+  getAgentById: (id: string) => Agent;
   /**
    * 本地角色列表
    */
@@ -132,7 +136,7 @@ const getTTSConfigByGender = (gender: GenderEnum) => {
       return DEFAULT_TTS_CONFIG_MALE;
     }
     default: {
-      return undefined;
+      return DEFAULT_TTS_CONFIG_OTHER;
     }
   }
 };
@@ -151,14 +155,13 @@ const createAgentStore: StateCreator<AgentStore, [['zustand/devtools', never]]> 
   deactivateAgent: () => {
     set({ currentIdentifier: undefined });
   },
-  getAgentById: (agentId?: string): Agent | undefined => {
-    if (!agentId) return undefined;
+  getAgentById: (agentId: string): Agent => {
     const { localAgentList, defaultAgent } = get();
 
     if (agentId === LOBE_VIDOL_DEFAULT_AGENT_ID) return defaultAgent;
 
     const currentAgent = localAgentList.find((item) => item.agentId === agentId);
-    if (!currentAgent) return undefined;
+    if (!currentAgent) return DEFAULT_AGENT_CONFIG;
 
     return currentAgent;
   },
@@ -166,8 +169,12 @@ const createAgentStore: StateCreator<AgentStore, [['zustand/devtools', never]]> 
     const { localAgentList } = get();
 
     const newAgent: Agent = {
-      agentId: nanoid(),
       ...DEFAULT_AGENT_CONFIG,
+      meta: {
+        ...DEFAULT_AGENT_CONFIG.meta,
+        gender,
+      },
+      agentId: nanoid(),
       touch: getTouchConfigByGender(gender),
       tts: getTTSConfigByGender(gender),
     };

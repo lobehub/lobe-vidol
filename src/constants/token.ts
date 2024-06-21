@@ -1,6 +1,14 @@
 // 默认坐标
+import type { FormProps } from '@lobehub/ui';
+
 export const INITIAL_COORDINATES = { x: 360, y: 360 };
 export const DESKTOP_HEADER_ICON_SIZE = { fontSize: 24 };
+export const MAX_WIDTH = 1024;
+
+export const FORM_STYLE: FormProps = {
+  itemMinWidth: 'max(30%,240px)',
+  style: { maxWidth: MAX_WIDTH, width: '100%' },
+};
 // 默认 zIndex
 export const INITIAL_Z_INDEX = 10;
 export const CHAT_TEXTAREA_MAX_HEIGHT = 570;

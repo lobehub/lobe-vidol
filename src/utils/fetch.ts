@@ -160,7 +160,12 @@ export const fetchWithProgress = async (
     onProgress?: (loaded: number, total: number) => void;
   },
 ) => {
-  const res = await fetch(url);
+  const res = await fetch(url, {
+    method: 'GET',
+    // 禁用缓存，可能导致跨域问题
+    cache: 'no-cache',
+    // mode: 'no-cors',
+  });
 
   if (!res.ok || !res.body) {
     throw new Error(`HTTP error! status: ${res.status}`);
