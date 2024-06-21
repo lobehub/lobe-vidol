@@ -71,7 +71,7 @@
     "@lobehub/icons": "^1.22.1",
     "@lobehub/tts": "^1.24.1",
     "@lobehub/ui": "^1.141.3",
-    "@pixiv/three-vrm": "2.1.1",
+    "@pixiv/three-vrm": "2.1.2",
     "@pixiv/three-vrm-core": "2.1.2",
     "@react-spring/web": "^9.7.3",
     "@types/react-speech-recognition": "^3.9.5",
