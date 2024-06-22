@@ -107,14 +107,6 @@ const createI18nInstance = (lang) => {
 
 ## 添加新的语言支持
 
-我们通过以下工作，已经支持了全球多种语言：
-
-- [✨ feat: adding Arabic Language Support #1049](https://github.com/lobehub/lobe-chat/pull/1049)
-- [🌐 style: Add Vietnamese files and add the vi-VN option in the General Settings #860](https://github.com/lobehub/lobe-chat/pull/860)
-- [🌐 style: support it-IT nl-NL and pl-PL locales #759](https://github.com/lobehub/lobe-chat/pull/759)
-- [🌐 feat(locale): Add fr-FR (#637) #645](https://github.com/lobehub/lobe-chat/pull/645)
-- [🌐 Add russian localy #137](https://github.com/lobehub/lobe-chat/pull/137)
-
 要添加新的语种支持， 详细步骤请参考：[新语种添加指南](Add-New-Locale.zh-CN.md)。
 
 ## 资源和进一步阅读
