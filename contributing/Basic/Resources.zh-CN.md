@@ -8,12 +8,10 @@ LobeVidol 的设计和开发离不开社区和生态中的优秀项目。我们�
 
 3. **AI SDK**：我们使用 Vercel 的 AI SDK 来获取和处理 AI 的会话数据。你可以查看 [AI SDK](https://sdk.vercel.ai/docs) 的文档来了解更多详情。
 
-4. **LangChain**：我们早期的会话功能是基于 LangChain 实现的。你可以访问 [LangChain](https://langchain.com) 来了解更多关于它的信息。
+4. **Next.js 文档**：我们的项目是基于 Next.js 构建的，你可以查看 [Next.js 文档](https://nextjs.org/docs) 来了解更多关于 Next.js 的信息。
 
-5. **Chat-Next-Web**：Chat Next Web 是一个优秀的项目，LobeVidol 的部分功能、Workflow 等参考了它的实现。你可以在 [Chat-Next-Web](https://github.com/Yidadaa/ChatGPT-Next-Web) 的 GitHub 仓库中查看源码和文档。
+5. **Three VRM**：我们使用 Three.js 和 VRM 来实现 3D 角色的展示。你可以查看 [Three VRM](https://github.com/pixiv/three-vrm>) 的 GitHub 仓库来了解更多关于 Three VRM 的信息。
 
-6. **Next.js 文档**：我们的项目是基于 Next.js 构建的，你可以查看 [Next.js 文档](https://nextjs.org/docs) 来了解更多关于 Next.js 的信息。
-
-7. **FlowGPT**：FlowGPT 是目前全球最大的 Prompt 社区，LobeVidol 中的一些 Agent 来自 FlowGPT 的活跃作者。你可以访问 [FlowGPT](https://flowgpt.com/) 来了解更多关于它的信息。
+6. **mmd-parser**：我们使用 mmd-parser 来解析 MMD 文件，使角色能够跟随音乐舞蹈。你可以查看 [mmd-parser](https://github.com/takahirox/mmd-parser) 的 GitHub 仓库来了解更多关于 mmd-parser 的信息。
 
 我们会持续更新和补充这个列表，为开发者提供更多的参考资源。
