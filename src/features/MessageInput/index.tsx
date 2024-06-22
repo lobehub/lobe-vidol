@@ -13,6 +13,7 @@ import History from '@/features/Actions/History';
 import Record from '@/features/Actions/Record';
 import ToggleChatDialog from '@/features/Actions/ToggleChatDialog';
 import TokenMini from '@/features/Actions/TokenMini';
+import Tool from '@/features/Actions/Tool';
 import Video from '@/features/Actions/Video';
 import useChatInput from '@/hooks/useSendMessage';
 import { useSessionStore } from '@/store/session';
@@ -73,7 +74,8 @@ const InputArea = memo((props: InputAreaProps) => {
         <Space size={4}>
           <Record />
           <Video key="video" />
-          <Dance key={'dance'} />
+          <Dance key="dance" />
+          <Tool key="tool" />
           <TokenMini />
         </Space>
         <Space size={4}>

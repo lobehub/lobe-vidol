@@ -84,6 +84,10 @@ const initialState = {
       coordinates: INITIAL_COORDINATES,
       open: false,
     },
+    pluginStore: {
+      coordinates: INITIAL_COORDINATES,
+      open: false,
+    },
   },
 };
 

@@ -1,4 +1,4 @@
-import { DancePanel, MarketPanel } from '@/panels';
+import { DancePanel, MarketPanel, PluginStorePanel } from '@/panels';
 import { useGlobalStore } from '@/store/global';
 import { PanelKey } from '@/types/config';
 
@@ -12,6 +12,11 @@ export const apps = [
     component: <MarketPanel />,
     key: 'market',
     label: '发现',
+  },
+  {
+    component: <PluginStorePanel />,
+    key: 'pluginStore',
+    label: '插件商店',
   },
 ];
 

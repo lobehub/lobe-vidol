@@ -18,6 +18,7 @@ export interface PanelConfig {
   agent: Panel;
   dance: Panel;
   market: Panel;
+  pluginStore: Panel;
   role: Panel;
 }
 
