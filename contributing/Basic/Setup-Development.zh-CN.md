@@ -11,7 +11,7 @@
 
 ## 在线开发
 
-如果你有 GitHub Codespaces 的使用权限，可以点击下方按钮一键进入在线开发环境：
+如果你有 GitHub CodeSpaces 的使用权限，可以点击下方按钮一键进入在线开发环境：
 
 [![][codespaces-shield]][codespaces-link]
 

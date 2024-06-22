@@ -17,7 +17,7 @@ LobeVidol 的大模型 AI 实现主要依赖于 OpenAI 的 API，包括后端的
 
 ### 核心会话 API
 
-在 `src/app/api/openai/chat/route.ts` 中，定义了一个处理 POST 请求的方法，主要负责从请求体中提取 `OpenAIChatStreamPayload` 类型的 payload，并使用 `createBizOpenAI` 函数根据请求和模型信息创建 OpenAI 实例。随后，该方法调用 `createChatCompletion` 来处理实际的会话，并返回响应结果。如果创建 OpenAI 实例过程中出现错误，则直接返回错误响应。
+在 `src/app/api/chat/openai/route.ts` 中，定义了一个处理 POST 请求的方法，主要负责从请求体中提取 `OpenAIChatStreamPayload` 类型的 payload，并使用 `createBizOpenAI` 函数根据请求和模型信息创建 OpenAI 实例。随后，该方法调用 `createChatCompletion` 来处理实际的会话，并返回响应结果。如果创建 OpenAI 实例过程中出现错误，则直接返回错误响应。
 
 ```ts
 export const POST = async (req: Request) => {
@@ -94,10 +94,6 @@ export const createChatCompletion = async ({ payload, openai }: CreateChatComple
 
 `getChatCompletion` 方法用于获取聊天完成任务。它接收一个 `OpenAIChatStreamPayload` 对象和一个可选的 `FetchOptions` 对象。这个方法会合并默认的代理配置和传入的参数，然后发送 POST 请求到 OpenAI 的聊天 API。
 
-`runPluginApi` 方法用于运行插件 API 并获取结果。它接收一个 `PluginRequestPayload` 对象和一个可选的 `FetchOptions` 对象。这个方法会从工具存储中获取状态，通过插件标识符获取插件设置和清单，然后发送 POST 请求到插件的网关 URL。
-
-`fetchPresetTaskResult` 方法用于获取预设任务的结果。它使用 `fetchAIFactory` 工厂函数创建一个新的函数，这个函数接收一个聊天完成任务的参数，并返回一个 Promise。当 Promise 解析时，返回的结果是聊天完成任务的结果。
-
 `processMessages` 方法用于处理聊天消息。它接收一个聊天消息数组，一个可选的模型名称，和一个可选的工具数组。这个方法会处理消息内容，将输入的 `messages` 数组映射为 `OpenAIChatMessage` 类型的数组，如果存在启用的工具，将工具的系统角色添加到系统消息中。
 
 ```ts
@@ -109,16 +105,6 @@ class ChatService {
 
   // 获取聊天完成任务
   getChatCompletion(payload: OpenAIChatStreamPayload, fetchOptions?: FetchOptions) {
-    // 实现细节...
-  }
-
-  // 运行插件 API 并获取结果
-  runPluginApi(payload: PluginRequestPayload, fetchOptions?: FetchOptions) {
-    // 实现细节...
-  }
-
-  // 获取预设任务的结果
-  fetchPresetTaskResult() {
     // 实现细节...
   }
 
