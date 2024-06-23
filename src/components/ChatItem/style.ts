@@ -142,7 +142,7 @@ export const useStyles = createStyles(
       `,
       errorContainer: css`
         position: relative;
-        overflow: hidden;
+        overflow: scroll;
         width: 100%;
       `,
 

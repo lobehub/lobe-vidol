@@ -4,7 +4,7 @@ export const useStyles = createStyles(({ css, cx }) => ({
   dialog: cx(
     'chat-dialog',
     css`
-      max-height: 360px;
+      max-height: 640px;
     `,
   ),
 }));
