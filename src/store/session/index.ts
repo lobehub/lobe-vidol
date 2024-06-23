@@ -153,7 +153,7 @@ export interface SessionStore {
   voiceOn: boolean;
 }
 
-export const createSessonStore: StateCreator<SessionStore, [['zustand/devtools', never]]> = (
+export const createSessionStore: StateCreator<SessionStore, [['zustand/devtools', never]]> = (
   set,
   get,
 ) => ({
@@ -495,7 +495,7 @@ export const createSessonStore: StateCreator<SessionStore, [['zustand/devtools',
 
 export const useSessionStore = createWithEqualityFn<SessionStore>()(
   persist(
-    devtools(createSessonStore, {
+    devtools(createSessionStore, {
       name: 'VIDOL_SESSION_STORE',
     }),
     {

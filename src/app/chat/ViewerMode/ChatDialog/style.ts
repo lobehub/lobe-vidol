@@ -1,8 +1,11 @@
 import { createStyles } from 'antd-style';
 
-export const useStyles = createStyles(({ css }) => ({
-  dialog: css`
-    overflow-y: auto;
-    max-height: 480px;
-  `,
+export const useStyles = createStyles(({ css, cx }) => ({
+  dialog: cx(
+    'chat-dialog',
+    css`
+      overflow-y: scroll;
+      height: 480px;
+    `,
+  ),
 }));
