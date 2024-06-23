@@ -11,6 +11,8 @@ import { PanelStore, createPanelStore } from './slices/panel';
 
 export type MarketStore = PanelStore & AgentStore & DanceStore;
 
+const MARKET_STORAGE_KEY = 'vidol-chat-market-storage';
+
 const createStore: StateCreator<MarketStore, [['zustand/devtools', never]]> = (...parameters) => ({
   ...createAgentStore(...parameters),
   ...createDanceStore(...parameters),
@@ -23,7 +25,7 @@ export const useMarketStore = createWithEqualityFn<MarketStore>()(
       name: 'VIDOL_MARKET_STORE',
     }),
     {
-      name: 'vidol-chat-market-storage', // name of the item in the storage (must be unique)
+      name: MARKET_STORAGE_KEY, // name of the item in the storage (must be unique)
     },
   ),
   shallow,

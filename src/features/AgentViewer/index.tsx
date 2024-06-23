@@ -35,12 +35,11 @@ function AgentViewer(props: Props) {
         const modelPath = getModelPathByAgentId(agent.agentId);
         storage.getItem(modelPath).then((blob) => {
           if (!blob) {
+            viewer.unloadVRM();
             fetchModelBlob(agent.agentId, agent.meta.model!).then((res) => {
               if (res) {
                 const modelUrl = URL.createObjectURL(res);
                 viewer.loadVrm(modelUrl);
-              } else {
-                viewer.unloadVRM();
               }
             });
           } else {

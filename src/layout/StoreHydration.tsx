@@ -3,16 +3,41 @@
 import { useRouter } from 'next/navigation';
 import { memo, useEffect } from 'react';
 
-import { useSessionStore } from '@/store/session';
-import { useSettingStore } from '@/store/setting';
+import { AGENT_STORAGE_KEY, useAgentStore } from '@/store/agent';
+import { DANCE_STORAGE_KEY, useDanceStore } from '@/store/dance';
+import { SESSION_STORAGE_KEY, useSessionStore } from '@/store/session';
+import { SETTING_STORAGE_KEY, useSettingStore } from '@/store/setting';
+import storage from '@/utils/storage';
 
+const MIGRATION_KEY = 'MIGRATE_TO_INDEXED_DB';
+
+const migrateLocalStorageToIndexedDB = async (storageKey: string) => {
+  const localStorageData = localStorage.getItem(storageKey);
+  if (localStorageData) {
+    await storage.setItem(storageKey, localStorageData);
+    localStorage.removeItem(storageKey);
+  }
+};
+
+const migrate = async () => {
+  if (localStorage.getItem(MIGRATION_KEY)) return;
+  await migrateLocalStorageToIndexedDB(AGENT_STORAGE_KEY);
+  await migrateLocalStorageToIndexedDB(SESSION_STORAGE_KEY);
+  await migrateLocalStorageToIndexedDB(SETTING_STORAGE_KEY);
+  await migrateLocalStorageToIndexedDB(DANCE_STORAGE_KEY);
+  localStorage.setItem(MIGRATION_KEY, 'true');
+};
 const StoreHydration = () => {
   const router = useRouter();
 
   useEffect(() => {
     // refs: https://github.com/pmndrs/zustand/blob/main/docs/integrations/persisting-store-data.md#hashydrated
-    useSessionStore.persist.rehydrate();
-    useSettingStore.persist.rehydrate();
+    migrate().then(() => {
+      useAgentStore.persist.rehydrate();
+      useSessionStore.persist.rehydrate();
+      useSettingStore.persist.rehydrate();
+      useDanceStore.persist.rehydrate();
+    });
   }, []);
 
   useEffect(() => {
@@ -21,6 +46,7 @@ const StoreHydration = () => {
     router.prefetch('/role');
     router.prefetch('/market');
   }, [router]);
+
   return null;
 };
 

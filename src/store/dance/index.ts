@@ -1,12 +1,16 @@
 import { StateCreator } from 'zustand';
-import { devtools, persist } from 'zustand/middleware';
+import { createJSONStorage, devtools, persist } from 'zustand/middleware';
 import { shallow } from 'zustand/shallow';
 import { createWithEqualityFn } from 'zustand/traditional';
+
+import storage from '@/utils/storage';
 
 import { DanceListStore, createDanceStore } from './slices/dancelist';
 import { PlayListStore, createPlayListStore } from './slices/playlist';
 
 export type DanceStore = DanceListStore & PlayListStore;
+
+export const DANCE_STORAGE_KEY = 'vidol-chat-dance-storage';
 
 const createStore: StateCreator<DanceStore, [['zustand/devtools', never]]> = (...parameters) => ({
   ...createDanceStore(...parameters),
@@ -19,7 +23,10 @@ export const useDanceStore = createWithEqualityFn<DanceStore>()(
       name: 'VIDOL_DANCE_STORE',
     }),
     {
-      name: 'vidol-chat-dance-storage', // name of the item in the storage (must be unique)
+      name: DANCE_STORAGE_KEY, // name of the item in the storage (must be unique)
+      storage: createJSONStorage(() => storage),
+      version: 0,
+      skipHydration: true,
     },
   ),
   shallow,

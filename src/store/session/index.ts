@@ -1,7 +1,7 @@
 import { nanoid } from 'ai';
 import dayjs from 'dayjs';
 import { produce } from 'immer';
-import { devtools, persist } from 'zustand/middleware';
+import { createJSONStorage, devtools, persist } from 'zustand/middleware';
 import { shallow } from 'zustand/shallow';
 import { createWithEqualityFn } from 'zustand/traditional';
 import { StateCreator } from 'zustand/vanilla';
@@ -15,6 +15,7 @@ import { ChatMessage } from '@/types/chat';
 import { Session } from '@/types/session';
 import { ShareGPTConversation } from '@/types/share';
 import { fetchSEE } from '@/utils/fetch';
+import storage from '@/utils/storage';
 
 import { initialState } from './initialState';
 import { MessageActionType, messageReducer } from './reducers/message';
@@ -499,6 +500,9 @@ export const useSessionStore = createWithEqualityFn<SessionStore>()(
     }),
     {
       name: SESSION_STORAGE_KEY, // name of the item in the storage (must be unique)
+      storage: createJSONStorage(() => storage),
+      version: 0,
+      skipHydration: true,
     },
   ),
   shallow,

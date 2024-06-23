@@ -1,6 +1,10 @@
 import localforage from 'localforage';
 
-export const getItem = async (key: string) => {
+localforage.config({
+  name: 'LobeVidol',
+});
+
+export const getItem = async (key: string): Promise<any> => {
   return await localforage.getItem(key);
 };
 

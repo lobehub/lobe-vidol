@@ -1,7 +1,7 @@
 import { nanoid } from 'ai';
 import { produce } from 'immer';
 import { DeepPartial } from 'utility-types';
-import { devtools, persist, subscribeWithSelector } from 'zustand/middleware';
+import { createJSONStorage, devtools, persist, subscribeWithSelector } from 'zustand/middleware';
 import { shallow } from 'zustand/shallow';
 import { createWithEqualityFn } from 'zustand/traditional';
 import { StateCreator } from 'zustand/vanilla';
@@ -27,7 +27,7 @@ import storage from '@/utils/storage';
 import { initialState } from './initialState';
 import { agentSelectors } from './selectors/agent';
 
-const AGENT_STORAGE_KEY = 'vidol-chat-agent-storage';
+export const AGENT_STORAGE_KEY = 'vidol-chat-agent-storage';
 
 export interface AgentStore {
   /**
@@ -304,6 +304,9 @@ export const useAgentStore = createWithEqualityFn<AgentStore>()(
       }),
       {
         name: AGENT_STORAGE_KEY,
+        storage: createJSONStorage(() => storage),
+        version: 0,
+        skipHydration: true,
       },
     ),
   ),
