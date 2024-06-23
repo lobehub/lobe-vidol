@@ -29,7 +29,7 @@
 
 </div>
 
-> \[!IMPORTANT]
+> \[!NOTE]
 > Lobe Vidol 目前处于开发初期，现已开放 Beta 测试。欢迎您加入我们，一起参与贡献！
 
 <details>
@@ -116,8 +116,8 @@ LobeVidol 目前正在积极开发中，有任何需求或者问题，欢迎提�
 | [@lobehub/lint][lobe-lint-link]   | [lobehub/lobe-lint][lobe-lint-github]   | LobeHub 代码样式规范 ESlint，Stylelint，Commitlint，Prettier，Remark 和 Semantic Release | [![][lobe-lint-shield]][lobe-lint-link]   |
 
 - **[Vidol market](https://github.com/v-idol/vidol-chat-agents)** - This is the Market Index of Vidol Chat. Vidol accesses index.json from this repo to show user the list of available agents and dances.
-- **[Vidol agent sample](https://github.com/v-idol/vidol-agent-sample)** - This is the sample repo to define an AI agent in Vidol.
-- **[Vidol dance sample](https://github.com/v-idol/vidol-dance-sample)** - This is the sample repo to define a dance in Vidol.
+- **[Vidol agent sample](https://github.com/v-idol/vidol-agent-sample)** - Vidol人物数据模版
+- **[Vidol dance sample](https://github.com/v-idol/vidol-dance-sample)** - Vidol舞蹈数据模版
 
 <div align="right">
 
