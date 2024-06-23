@@ -1,6 +1,6 @@
 import { EditableMessage } from '@lobehub/ui';
 import { useResponsive } from 'antd-style';
-import { type ReactNode, memo } from 'react';
+import { type ReactNode, memo, useEffect, useRef } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
 import { ChatItemProps } from '@/components/ChatItem';
@@ -38,6 +38,7 @@ const MessageContent = ({
 }: MessageContentProps) => {
   const { cx, styles } = useStyles({ editing, placement, primary, type });
   const { mobile } = useResponsive();
+  const ref = useRef<HTMLDivElement>(null);
 
   const content = (
     <EditableMessage
@@ -55,8 +56,15 @@ const MessageContent = ({
   );
   const messageContent = renderMessage ? renderMessage(content) : content;
 
+  useEffect(() => {
+    if (ref.current) {
+      ref.current.scrollTop = ref.current.scrollHeight;
+    }
+  }, [message]);
+
   return (
     <Flexbox
+      ref={ref}
       className={cx(styles.message, editing && styles.editingContainer)}
       onDoubleClick={onDoubleClick}
     >

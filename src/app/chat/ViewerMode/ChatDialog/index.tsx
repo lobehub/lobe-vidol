@@ -29,14 +29,6 @@ const Dialog = (props: DialogProps) => {
 
   const [showChatDialog, setChatDialog] = useState(true);
 
-  // ChatItem too long scroll to bottom
-  // const currentChatString = useSettingStore((s) => sessionSelectors.currentChatsString(s));
-  // useEffect(() => {
-  //   if (chatLoading && currentChatString && ref.current) {
-  //     ref.current.scrollTop = ref.current.scrollHeight;
-  //   }
-  // }, [chatLoading, currentChatString]);
-
   useEffect(() => {
     if (chatLoading) setChatDialog(true);
   }, [chatLoading]);
