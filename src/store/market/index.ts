@@ -1,9 +1,7 @@
-import { createJSONStorage, devtools, persist } from 'zustand/middleware';
+import { devtools, persist } from 'zustand/middleware';
 import { shallow } from 'zustand/shallow';
 import { createWithEqualityFn } from 'zustand/traditional';
 import { StateCreator } from 'zustand/vanilla';
-
-import storage from '@/utils/storage';
 
 import { agentSelectors } from './selectors/agent';
 import { danceSelectors } from './selectors/dance';
@@ -28,8 +26,6 @@ export const useMarketStore = createWithEqualityFn<MarketStore>()(
     }),
     {
       name: MARKET_STORAGE_KEY, // name of the item in the storage (must be unique)
-      storage: createJSONStorage(() => storage),
-      version: 0,
     },
   ),
   shallow,

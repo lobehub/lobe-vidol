@@ -27,7 +27,7 @@ import storage from '@/utils/storage';
 import { initialState } from './initialState';
 import { agentSelectors } from './selectors/agent';
 
-const AGENT_STORAGE_KEY = 'vidol-chat-agent-storage';
+export const AGENT_STORAGE_KEY = 'vidol-chat-agent-storage';
 
 export interface AgentStore {
   /**
@@ -306,6 +306,7 @@ export const useAgentStore = createWithEqualityFn<AgentStore>()(
         name: AGENT_STORAGE_KEY,
         storage: createJSONStorage(() => storage),
         version: 0,
+        skipHydration: true,
       },
     ),
   ),

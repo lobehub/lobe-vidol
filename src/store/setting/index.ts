@@ -11,7 +11,7 @@ import storage from '@/utils/storage';
 
 import { SettingState, initialState } from './initialState';
 
-const SETTING_STORAGE_KEY = 'vidol-chat-config-storage';
+export const SETTING_STORAGE_KEY = 'vidol-chat-config-storage';
 
 export interface SettingAction {
   /**
@@ -105,6 +105,7 @@ export const useSettingStore = createWithEqualityFn<SettingStore>()(
         name: SETTING_STORAGE_KEY, // name of the item in the storage (must be unique)
         storage: createJSONStorage(() => storage),
         version: 0,
+        skipHydration: true,
       },
     ),
   ),

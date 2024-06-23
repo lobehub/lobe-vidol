@@ -10,7 +10,7 @@ import { PlayListStore, createPlayListStore } from './slices/playlist';
 
 export type DanceStore = DanceListStore & PlayListStore;
 
-const DANCE_STORAGE_KEY = 'vidol-chat-dance-storage';
+export const DANCE_STORAGE_KEY = 'vidol-chat-dance-storage';
 
 const createStore: StateCreator<DanceStore, [['zustand/devtools', never]]> = (...parameters) => ({
   ...createDanceStore(...parameters),
@@ -26,6 +26,7 @@ export const useDanceStore = createWithEqualityFn<DanceStore>()(
       name: DANCE_STORAGE_KEY, // name of the item in the storage (must be unique)
       storage: createJSONStorage(() => storage),
       version: 0,
+      skipHydration: true,
     },
   ),
   shallow,
