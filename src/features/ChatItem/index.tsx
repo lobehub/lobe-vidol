@@ -1,9 +1,10 @@
-import { AlertProps, ChatItem, ChatItemProps } from '@lobehub/ui';
+import { AlertProps } from '@lobehub/ui';
 import { createStyles } from 'antd-style';
 import classNames from 'classnames';
 import isEqual from 'fast-deep-equal';
 import { ReactNode, memo, useCallback, useMemo, useState } from 'react';
 
+import ChatItem, { ChatItemProps } from '@/components/ChatItem';
 import { CHAT_INPUT_WIDTH } from '@/constants/token';
 import { useSessionStore } from '@/store/session';
 import { sessionSelectors } from '@/store/session/selectors';
