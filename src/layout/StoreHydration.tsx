@@ -9,6 +9,8 @@ import { SESSION_STORAGE_KEY, useSessionStore } from '@/store/session';
 import { SETTING_STORAGE_KEY, useSettingStore } from '@/store/setting';
 import storage from '@/utils/storage';
 
+const MIGRATION_KEY = 'MIGRATE_TO_INDEXED_DB';
+
 const migrateLocalStorageToIndexedDB = async (storageKey: string) => {
   const localStorageData = localStorage.getItem(storageKey);
   if (localStorageData) {
@@ -16,25 +18,24 @@ const migrateLocalStorageToIndexedDB = async (storageKey: string) => {
     localStorage.removeItem(storageKey);
   }
 };
+
+const migrate = async () => {
+  if (localStorage.getItem(MIGRATION_KEY)) return;
+  await migrateLocalStorageToIndexedDB(AGENT_STORAGE_KEY);
+  await migrateLocalStorageToIndexedDB(SESSION_STORAGE_KEY);
+  await migrateLocalStorageToIndexedDB(SETTING_STORAGE_KEY);
+  await migrateLocalStorageToIndexedDB(DANCE_STORAGE_KEY);
+  localStorage.setItem(MIGRATION_KEY, 'true');
+};
 const StoreHydration = () => {
   const router = useRouter();
 
   useEffect(() => {
     // refs: https://github.com/pmndrs/zustand/blob/main/docs/integrations/persisting-store-data.md#hashydrated
-
-    migrateLocalStorageToIndexedDB(AGENT_STORAGE_KEY).then(() => {
+    migrate().then(() => {
       useAgentStore.persist.rehydrate();
-    });
-
-    migrateLocalStorageToIndexedDB(SESSION_STORAGE_KEY).then(() => {
       useSessionStore.persist.rehydrate();
-    });
-
-    migrateLocalStorageToIndexedDB(SETTING_STORAGE_KEY).then(() => {
       useSettingStore.persist.rehydrate();
-    });
-
-    migrateLocalStorageToIndexedDB(DANCE_STORAGE_KEY).then(() => {
       useDanceStore.persist.rehydrate();
     });
   }, []);
