@@ -1,12 +1,13 @@
 import { NeutralColors, PrimaryColors } from '@lobehub/ui';
 import { produce } from 'immer';
 import { isEqual, merge } from 'lodash-es';
-import { devtools, persist, subscribeWithSelector } from 'zustand/middleware';
+import { createJSONStorage, devtools, persist, subscribeWithSelector } from 'zustand/middleware';
 import { shallow } from 'zustand/shallow';
 import { createWithEqualityFn } from 'zustand/traditional';
 import { StateCreator } from 'zustand/vanilla';
 
 import { BackgroundEffect, Config, OpenAIConfig } from '@/types/config';
+import storage from '@/utils/storage';
 
 import { SettingState, initialState } from './initialState';
 
@@ -100,7 +101,11 @@ export const useSettingStore = createWithEqualityFn<SettingStore>()(
       devtools(createStore, {
         name: 'VIDOL_CONFIG_STORE',
       }),
-      { name: SETTING_STORAGE_KEY },
+      {
+        name: SETTING_STORAGE_KEY, // name of the item in the storage (must be unique)
+        storage: createJSONStorage(() => storage),
+        version: 0,
+      },
     ),
   ),
   shallow,
