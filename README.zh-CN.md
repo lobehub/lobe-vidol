@@ -6,11 +6,11 @@
 
 # Lobe Vidol
 
-Experience the magic of virtual idol creation with Lobe Vidol, enjoy the elegance of our Exquisite UI Design, dance along using MMD Dance Support, and engage in Smooth Conversations—all in one seamless platform.
+与Lobe Vidol一起体验虚拟偶像创作的魔力，享受我们精致的UI设计，支持MMD的舞蹈内容，并能与人物进行流畅的对话—所有这些功能都集成在一个无缝的平台上。
 
-<sup>Making Virtual Idols Accessible for EveryOne</sup>
+<sup>每个人都可以创造虚拟偶像</sup>
 
-**English** · [简体中文](./README.zh-CN.md) · [Changelog](./CHANGELOG.md) · [Report Bug][github-issues-link] · [Request Feature][github-issues-link]
+[English](./README.md) · **简体中文** · [Changelog](./CHANGELOG.md) · [Report Bug][github-issues-link] · [Request Feature][github-issues-link]
 
 [![][github-release-shield]][github-release-link]
 [![][vercel-shield]][vercel-link]
@@ -29,39 +29,39 @@ Experience the magic of virtual idol creation with Lobe Vidol, enjoy the eleganc
 
 </div>
 
-> \[!NOTE]
-> Lobe Vidol is currently in the early stages of development and available for beta testing. You are welcome to join and contribute.
+> \[!IMPORTANT]
+> Lobe Vidol 目前处于开发初期，现已开放 Beta 测试。欢迎您加入我们，一起参与贡献！
 
 <details>
-<summary><kbd>Table of contents</kbd></summary>
+<summary><kbd>目录</kbd></summary>
 
 #### TOC
 
-- [👋🏻 Getting Started & Join Our Community](#-getting-started--join-our-community)
-- [✨ Features](#-features)
-- [📦 Ecosystem](#-ecosystem)
-- [⌨️ Local Development](#️-local-development)
-- [🤝 Contributing](#-contributing)
-- [🩷 Sponsor](#-sponsor)
-- [🔗 Links](#-links)
-  - [More Products](#more-products)
-  - [Credits](#credits)
+- [👋🏻 开始使用 & 交流](#-开始使用--交流)
+- [✨ 特性一览](#-特性一览)
+- [📦 生态](#-生态)
+- [⌨️ 本地开发](#-本地开发)
+- [🤝 参与贡献](#-参与贡献)
+- [🩷 社区赞助](#-社区赞助)
+- [🔗 更多工具](#-更多工具)
+  - [更多项目](#更多项目)
+  - [相关链接](#相关链接)
 
 ####
 
 </details>
 
-## 👋🏻 Getting Started & Join Our Community
+## 👋🏻 开始使用 & 交流
 
-Please be aware that LobeVidol is currently under active development, and feedback is welcome for any [issues][github-issues-link] encountered.
+LobeVidol 目前正在积极开发中，有任何需求或者问题，欢迎提交 [issues][issues-link]
 
-| [![][vercel-shield-badge]][vercel-link]   | No installation or registration necessary! Visit our website to experience it firsthand.                           |
+| [![][vercel-shield-badge]][vercel-link]   | 无需安装或注册！访问我们的网站，即可快速体验                          |
 | :---------------------------------------- | :----------------------------------------------------------------------------------------------------------------- |
-| [![][discord-shield-badge]][discord-link] | Join our Discord community! This is where you can connect with developers and other enthusiastic users of LobeHub. |
+| [![][discord-shield-badge]][discord-link] | 加入我们的 Discord 社区！这是你可以与开发者和其他 LobeHub 热衷用户交流的地方. |
 
 > \[!IMPORTANT]
 >
-> **Star Us**, You will receive all release notifications from GitHub without any delay \~ ⭐️
+> **收藏项目**，你将从 GitHub 上无延迟地接收所有发布通知～⭐️
 
 <details><summary><kbd>Star History</kbd></summary>
   <picture>
@@ -76,26 +76,26 @@ Please be aware that LobeVidol is currently under active development, and feedba
 
 </div>
 
-## ✨ Features
+## ✨ 特性一览
 
-### 1.🗣️ **Smooth Conversation Experience**
-Fluid responses ensure a smooth conversation experience. It fully supports Markdown rendering, including code highlighting, LaTex formulas and more.
+### 1.🗣️ **流畅的对话体验**
+流式响应带来流畅的对话体验，并且支持完整的 Markdown 渲染，包括代码高亮、LaTex 公式、Mermaid 流程图等。
 
 <img width="1503" alt="Snipaste_2024-04-23_23-47-02" src="https://github.com/lobehub/lobe-vidol/assets/4705237/51942769-332d-4829-8732-b901dc290b8d">
 
 
-### 2. 💎 **Exquisite UI Design**
-With a carefully designed interface, it offers an elegant appearance and smooth interaction. It supports light and dark themes. PWA support provides a more native-like experience;
+### 2. 💎 **精致 UI 设计**
+经过精心设计的界面，具有优雅的外观和流畅的交互效果，支持亮暗色主题，适配移动端。支持 PWA，提供更加接近原生应用的体验。
 
 <img width="1503" alt="Snipaste_2024-04-23_23-48-56" src="https://github.com/lobehub/lobe-vidol/assets/4705237/3e30f842-dc01-426c-9683-06b00357bc8d">
 
-### 3. 💨 **Vroid Model Preview**
-Using the Vroid Editor, you can create and upload your own virtual idol to the website, play with them;
+### 3. 💨 **Vroid 模型预览**
+使用 Vroid 编辑器，你可以创建属于你自己的虚拟偶像并上传到网站，并与他们互动。 
 
 ![324259872-113e4882-6710-4d81-a04f-a407989f947d](https://github.com/lobehub/lobe-vidol/assets/4705237/c3cf87c3-f8c0-49ef-b966-e451e2fbf583)
 
-### 4. 🎇 **MMD Dance Support**
-With the support of mmd-parser, you can play vmd files with your favarite idol; Just Dance!
+### 4. 🎇 **MMD Dance 支持**
+借助 mmd-parser 的支持，你可以使用vmd文件和你最喜欢的偶像一起跳舞; Just Dance!
 
 <img width="1455" alt="Snipaste_2024-04-23_23-43-21" src="https://github.com/lobehub/lobe-vidol/assets/4705237/8d1107c7-bec9-4f20-a8ac-1413d3682587">
 
@@ -106,14 +106,14 @@ With the support of mmd-parser, you can play vmd files with your favarite idol; 
 
 </div>
 
-## 📦 Ecosystem
+## 📦 生态
 
-| NPM                               | Repository                              | Description                                                                                           | Version                                   |
-| --------------------------------- | --------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------- |
-| [@lobehub/ui][lobe-ui-link]       | [lobehub/lobe-ui][lobe-ui-github]       | Open-source UI component library dedicated to building AIGC web applications.                         | [![][lobe-ui-shield]][lobe-ui-link]       |
-| [@lobehub/icons][lobe-icons-link] | [lobehub/lobe-icons][lobe-icons-github] | Popular AI / LLM Model Brand SVG Logo and Icon Collection.                                            | [![][lobe-icons-shield]][lobe-icons-link] |
-| [@lobehub/tts][lobe-tts-link]     | [lobehub/lobe-tts][lobe-tts-github]     | High-quality & reliable TTS/STT React Hooks library                                                   | [![][lobe-tts-shield]][lobe-tts-link]     |
-| [@lobehub/lint][lobe-lint-link]   | [lobehub/lobe-lint][lobe-lint-github]   | Configurations for ESlint, Stylelint, Commitlint, Prettier, Remark, and Semantic Release for LobeHub. | [![][lobe-lint-shield]][lobe-lint-link]   |
+| NPM                               | 仓库                                    | 描述                                                                                     | 版本                                      |
+| --------------------------------- | --------------------------------------- | ---------------------------------------------------------------------------------------- | ----------------------------------------- |
+| [@lobehub/ui][lobe-ui-link]       | [lobehub/lobe-ui][lobe-ui-github]       | 构建 AIGC 网页应用程序而设计的开源 UI 组件库                                             | [![][lobe-ui-shield]][lobe-ui-link]       |
+| [@lobehub/icons][lobe-icons-link] | [lobehub/lobe-icons][lobe-icons-github] | 主流 AI / LLM 模型和公司 SVG Logo 与 Icon 合集                                           | [![][lobe-icons-shield]][lobe-icons-link] |
+| [@lobehub/tts][lobe-tts-link]     | [lobehub/lobe-tts][lobe-tts-github]     | AI TTS / STT 语音合成 / 识别 React Hooks 库                                              | [![][lobe-tts-shield]][lobe-tts-link]     |
+| [@lobehub/lint][lobe-lint-link]   | [lobehub/lobe-lint][lobe-lint-github]   | LobeHub 代码样式规范 ESlint，Stylelint，Commitlint，Prettier，Remark 和 Semantic Release | [![][lobe-lint-shield]][lobe-lint-link]   |
 
 - **[Vidol market](https://github.com/v-idol/vidol-chat-agents)** - This is the Market Index of Vidol Chat. Vidol accesses index.json from this repo to show user the list of available agents and dances.
 - **[Vidol agent sample](https://github.com/v-idol/vidol-agent-sample)** - This is the sample repo to define an AI agent in Vidol.
@@ -125,13 +125,13 @@ With the support of mmd-parser, you can play vmd files with your favarite idol; 
 
 </div>
 
-## ⌨️ Local Development
+## ⌨️ 本地开发
 
-You can use Github Codespaces for online development:
+可以使用 GitHub Codespaces 进行在线开发：
 
 [![][github-codespace-shield]][github-codespace-link]
 
-Or clone it for local development:
+或者使用以下命令进行本地开发：
 
 [![][bun-shield]][bun-link]
 
@@ -148,9 +148,9 @@ $ bun dev
 
 </div>
 
-## 🤝 Contributing
+## 🤝 参与贡献
 
-Contributions of all types are more than welcome, if you are interested in contributing code, feel free to check out our GitHub [Issues][github-issues-link] to get stuck in to show us what you’re made of.
+我们非常欢迎各种形式的贡献。如果你对贡献代码感兴趣，可以查看我们的 GitHub [Issues][github-issues-link] 和 [Projects][github-project-link]，大展身手，向我们展示你的奇思妙想。
 
 [![][pr-welcome-shield]][pr-welcome-link]
 
@@ -192,9 +192,9 @@ Contributions of all types are more than welcome, if you are interested in contr
 
 </div>
 
-## 🩷 Sponsor
+## 🩷 社区赞助
 
-Every bit counts and your one-time donation sparkles in our galaxy of support! You're a shooting star, making a swift and bright impact on our journey. Thank you for believing in us – your generosity guides us toward our mission, one brilliant flash at a time.
+每一分支持都珍贵无比，汇聚成我们支持的璀璨银河！你就像一颗划破夜空的流星，瞬间点亮我们前行的道路。感谢你对我们的信任 —— 你的支持笔就像星辰导航，一次又一次地为项目指明前进的光芒。
 
 <a href="https://opencollective.com/lobehub" target="_blank">
   <picture>
@@ -209,16 +209,16 @@ Every bit counts and your one-time donation sparkles in our galaxy of support! Y
 
 </div>
 
-## 🔗 Links
+## 🔗 更多工具
 
-### More Products
+### 更多项目
 
-- **[🤖 Lobe Chat][lobe-chat] :** An open-source, extensible (Function Calling), high-performance chatbot framework. It supports one-click free deployment of your private ChatGPT/LLM web application.
-- **[🅰️ Lobe SD Theme][lobe-theme]:** Modern theme for Stable Diffusion WebUI, exquisite interface design, highly customizable UI, and efficiency-boosting features.
-- **[⛵️ Lobe Midjourney WebUI][lobe-midjourney-webui]:** WebUI for Midjourney, leverages AI to quickly generate a wide array of rich and diverse images from text prompts, sparking creativity and enhancing conversations.
-- **[🌏 Lobe i18n][lobe-i18n] :** Lobe i18n is an automation tool for the i18n (internationalization) translation process, powered by ChatGPT. It supports features such as automatic splitting of large files, incremental updates, and customization options for the OpenAI model, API proxy, and temperature.
+- **[🤖 Lobe Chat][lobe-chat] :** 一个开源、支持可扩展（Function Calling）的插件系统、现代化设计 ChatGPT/LLMs 聊天应用与开发框架。支持一键免费部署您的私人 ChatGPT/LLMs 应用
+- **[🅰️ Lobe SD Theme][lobe-theme]:** Stable Diffusion WebUI 的现代主题，精致的界面设计，高度可定制的 UI，以及提高效率的功能。
+- **[⛵️ Lobe Midjourney WebUI][lobe-midjourney-webui]:** Midjourney WebUI, 能够根据文本提示快速生成丰富多样的图像，激发创造力，增强对话交流。
+- **[🌏 Lobe i18n][lobe-i18n]:** Lobe i18n 是一个由 ChatGPT 驱动的 i18n（国际化）翻译过程的自动化工具。它支持自动分割大文件、增量更新，以及为 OpenAI 模型、API 代理和温度提供定制选项的功能。
 
-### Credits
+### 相关链接
 
 - **mmd-parser** - <https://github.com/takahirox/mmd-parser>
 - **three-vrm** - <https://github.com/pixiv/three-vrm>
