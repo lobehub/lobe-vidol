@@ -8,6 +8,7 @@ import {
   Vector3,
   VectorKeyframeTrack,
 } from 'three';
+
 import { convert as convertSync } from './vmd2vrmanim';
 import VRMIKHandler from './vrm-ik-handler';
 
@@ -17,23 +18,36 @@ export interface AnimationData {
 }
 
 export interface Timeline {
-  name: VRMHumanBoneName | VRMExpressionPresetName;
-  type: string;
   isIK?: boolean;
+  name: VRMHumanBoneName | VRMExpressionPresetName;
   times: number[];
+  type: string;
   values: number[];
 }
 
 export interface VRMOffsets {
   hipsOffset?: number[];
   leftFootOffset?: number[];
-  rightFootOffset?: number[];
   leftToeOffset?: number[];
+  rightFootOffset?: number[];
   rightToeOffset?: number[];
 }
 
-export function convert(buffer: ArrayBufferLike, vrm?: VRM) {
-  return convertSync(buffer, vrm ? toOffset(vrm) : undefined);
+const tempV3 = new Vector3();
+
+function calculatePosition(from?: Object3D | null, to?: Object3D | null) {
+  if (!from || !to) return;
+  let current: Object3D | null = to;
+  const chain: Object3D[] = [to];
+  while (current.parent && current !== from) {
+    chain.push(current.parent);
+    current = current.parent;
+  }
+  if (current === null) return;
+  chain.reverse();
+  const position = tempV3.set(0, 0, 0);
+  for (const node of chain) position.add(node.position);
+  return position.toArray();
 }
 
 export function toOffset(vrm: VRM): VRMOffsets {
@@ -56,20 +70,8 @@ export function toOffset(vrm: VRM): VRMOffsets {
   };
 }
 
-const tempV3 = new Vector3();
-function calculatePosition(from?: Object3D | null, to?: Object3D | null) {
-  if (!from || !to) return;
-  let current: Object3D | null = to;
-  const chain: Object3D[] = [to];
-  while (current.parent && current !== from) {
-    chain.push(current.parent);
-    current = current.parent;
-  }
-  if (current == null) return;
-  chain.reverse();
-  const position = tempV3.set(0, 0, 0);
-  for (const node of chain) position.add(node.position);
-  return position.toArray();
+export function convert(buffer: ArrayBufferLike, vrm?: VRM) {
+  return convertSync(buffer, vrm ? toOffset(vrm) : undefined);
 }
 
 export function bindToVRM(data: AnimationData, vrm: VRM) {
@@ -97,19 +99,23 @@ export function bindToVRM(data: AnimationData, vrm: VRM) {
         }
         break;
       }
-      default:
+      default: {
         continue;
+      }
     }
     switch (type) {
-      case 'morph':
+      case 'morph': {
         tracks.push(new NumberKeyframeTrack(srcName, times, values));
         break;
-      case 'position':
+      }
+      case 'position': {
         tracks.push(new VectorKeyframeTrack(`${srcName}.position`, times, values));
         break;
-      case 'rotation':
+      }
+      case 'rotation': {
         tracks.push(new QuaternionKeyframeTrack(`${srcName}.quaternion`, times, values));
         break;
+      }
     }
   }
   return new AnimationClip(`clip${Date.now()}`, data.duration, tracks);

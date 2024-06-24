@@ -2,6 +2,7 @@ import { GLTF as GLTFSchema } from '@gltf-transform/core';
 import { VRMHumanBoneName, VRMHumanBoneParentMap } from '@pixiv/three-vrm';
 import * as THREE from 'three';
 import { GLTF, GLTFLoaderPlugin, GLTFParser } from 'three/examples/jsm/loaders/GLTFLoader';
+
 import { VRMAnimation } from './VRMAnimation';
 import { VRMAnimationLoaderPluginOptions } from './VRMAnimationLoaderPluginOptions';
 import { VRMCVRMAnimation } from './VRMCVRMAnimation';
