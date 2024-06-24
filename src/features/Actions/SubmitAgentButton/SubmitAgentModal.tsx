@@ -23,6 +23,7 @@ const SubmitAgentModal = memo<ModalProps>(({ open, onCancel }) => {
 
   const isFormPass = Boolean(
     currentAgent.greeting &&
+      currentAgent.systemRole &&
       meta.name &&
       meta.description &&
       meta.avatar &&
@@ -39,11 +40,11 @@ const SubmitAgentModal = memo<ModalProps>(({ open, onCancel }) => {
       const mime = arr[0].match(/:(.*?);/)[1];
       const uint8Array = Uint8Array.from(binaryString, (char) => char.charCodeAt(0));
       // base64
-      const { success, url } = await upload(
+      const { success, pathname } = await upload(
         new File([uint8Array], `${agentId}-avatar.png`, { type: mime }),
       );
       if (success) {
-        avatarUrl = url;
+        avatarUrl = pathname;
       }
     }
     const body = [
