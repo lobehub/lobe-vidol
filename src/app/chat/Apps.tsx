@@ -1,3 +1,5 @@
+import { t } from 'i18next';
+
 import { DancePanel, MarketPanel } from '@/panels';
 import { useGlobalStore } from '@/store/global';
 import { PanelKey } from '@/types/config';
@@ -6,12 +8,12 @@ export const apps = [
   {
     component: <DancePanel />,
     key: 'dance',
-    label: '跳舞',
+    label: t('dance', { ns: 'chat' }),
   },
   {
     component: <MarketPanel />,
     key: 'market',
-    label: '发现',
+    label: t('market', { ns: 'chat' }),
   },
 ];
 
