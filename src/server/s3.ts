@@ -21,9 +21,6 @@ export class S3 {
     });
   }
 
-  public getClient() {
-    return this.client;
-  }
   public async createPreSignedUrl(key: string): Promise<string> {
     const command = new PutObjectCommand({
       ACL: 'public-read',
