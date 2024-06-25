@@ -39,6 +39,7 @@ export const DEFAULT_AGENT_CONFIG: Agent = {
     name: '自定义角色',
     description: '这是一个自定义角色',
     avatar: DEFAULT_AGENT_AVATAR_URL,
+    cover: '',
     gender: GenderEnum.FEMALE,
     readme: '',
   },

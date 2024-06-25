@@ -14,11 +14,12 @@ import AgentCard from '@/components/agent/AgentCard';
 import { AGENTS_INDEX_GITHUB_ISSUE } from '@/constants/url';
 import { upload } from '@/services/upload';
 import { agentSelectors, useAgentStore } from '@/store/agent';
+import { Agent } from '@/types/agent';
 
 const SubmitAgentModal = memo<ModalProps>(({ open, onCancel }) => {
   const [agentId, setAgentId] = useState('');
   const theme = useTheme();
-  const currentAgent = useAgentStore(agentSelectors.currentAgentItem, isEqual);
+  const currentAgent: Agent = useAgentStore((s) => agentSelectors.currentAgentItem(s), isEqual);
   const { meta } = currentAgent;
 
   const isFormPass = Boolean(
@@ -28,7 +29,8 @@ const SubmitAgentModal = memo<ModalProps>(({ open, onCancel }) => {
       meta.description &&
       meta.avatar &&
       meta.cover &&
-      meta.gender,
+      meta.gender &&
+      meta.model,
   );
 
   const handleSubmit = async () => {
@@ -40,13 +42,30 @@ const SubmitAgentModal = memo<ModalProps>(({ open, onCancel }) => {
       const mime = arr[0].match(/:(.*?);/)[1];
       const uint8Array = Uint8Array.from(binaryString, (char) => char.charCodeAt(0));
       // base64
-      const { success, pathname } = await upload(
+      const { success, url } = await upload(
         new File([uint8Array], `${agentId}-avatar.png`, { type: mime }),
       );
       if (success) {
-        avatarUrl = pathname;
+        avatarUrl = url;
       }
     }
+
+    let coverUrl = meta.cover;
+    if (meta.cover.includes('base64')) {
+      const arr = meta.cover.split('base64,');
+      const binaryString = atob(arr[1]);
+      // @ts-ignore
+      const mime = arr[0]?.match(/:(.*?);/)[1];
+      const uint8Array = Uint8Array.from(binaryString, (char) => char.charCodeAt(0));
+      // base64
+      const { success, url } = await upload(
+        new File([uint8Array], `${agentId}-cover.png`, { type: mime }),
+      );
+      if (success) {
+        coverUrl = url;
+      }
+    }
+
     const body = [
       '### systemRole',
       currentAgent.systemRole,
@@ -55,7 +74,7 @@ const SubmitAgentModal = memo<ModalProps>(({ open, onCancel }) => {
       '### avatar',
       avatarUrl,
       '### cover',
-      meta.cover,
+      coverUrl,
       '### name',
       meta.name,
       '### description',
@@ -113,7 +132,7 @@ const SubmitAgentModal = memo<ModalProps>(({ open, onCancel }) => {
             icon={<Icon icon={Dices} />}
             onClick={() => {
               const randomId = Math.random().toString(36).slice(7);
-              setAgentId(`vidol-agent-${randomId}`);
+              setAgentId(randomId);
             }}
           ></Button>
         </Space.Compact>

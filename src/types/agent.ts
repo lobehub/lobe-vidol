@@ -32,7 +32,7 @@ export interface AgentMeta {
   /**
    * 封面图片路径
    */
-  cover?: string;
+  cover: string;
   /**
    * 角色描述
    */

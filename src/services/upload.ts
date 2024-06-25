@@ -24,7 +24,11 @@ export const upload = async (file: File) => {
   });
 
   if (res.ok) {
-    return { success: true, message: 'File uploaded successfully', pathname: pathname };
+    return {
+      success: true,
+      message: 'File uploaded successfully',
+      url: `https://r2.vidol.chat/${pathname}`,
+    };
   } else {
     throw new Error('Upload Error');
   }
