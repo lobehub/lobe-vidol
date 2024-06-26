@@ -10,7 +10,7 @@ const TTSSeting = memo(() => {
   const tts: ItemGroup = {
     children: [
       {
-        children: <Select options={[{ label: '跟随系统', value: 'auto' }]} />,
+        children: <Select options={[{ label: '跟随系统', value: 'auto' }]} placeholder="请选择" />,
         desc: '语音输入的语种，此选项可提高语音识别准确率',
         label: '语音识别语种',
         name: 'sttLocale',

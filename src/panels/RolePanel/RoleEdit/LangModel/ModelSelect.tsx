@@ -28,9 +28,9 @@ const ModelSelect = memo<ModelSelectProps>(({ value, onChange }) => {
         value: model.id,
       }))}
       popupClassName={styles.select}
-      popupMatchSelectWidth={false}
       value={value}
       onChange={onChange}
+      placeholder="请选择"
     />
   );
 });

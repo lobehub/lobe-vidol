@@ -40,10 +40,10 @@ const ChatSetting = memo(() => {
         minWidth: undefined,
       },
     ],
-    title: '对话设置',
+    title: '聊天设置',
   };
 
-  return <Form items={[chat]} itemsType={'group'} variant={'pure'} {...FORM_STYLE} />;
+  return <Form items={[chat]} itemsType={'group'} {...FORM_STYLE} />;
 });
 
 export default ChatSetting;

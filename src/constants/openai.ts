@@ -1,4 +1,5 @@
 import { ChatModelCard } from '@/types/llm';
+import { ChatStreamPayload } from '@/types/openai/chat';
 
 export const OPENAI_API_KEY = 'x-openai-apikey';
 export const OPENAI_END_POINT = 'x-openai-endpoint';
@@ -137,3 +138,14 @@ export const OPENAI_MODEL_LIST: ChatModelCard[] = [
     vision: true,
   },
 ];
+
+/**
+ * 默认使用的 ChatGPT 聊天模型配置
+ */
+export const DEFAULT_CHAT_MODEL: Partial<ChatStreamPayload> = {
+  model: OPENAI_MODEL_LIST[0].id,
+  frequency_penalty: 0,
+  presence_penalty: 0,
+  temperature: 1,
+  top_p: 1,
+};

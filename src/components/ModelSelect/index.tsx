@@ -1,5 +1,6 @@
 import { OpenAI } from '@lobehub/icons';
 import { Icon, Tooltip } from '@lobehub/ui';
+import { Typography } from 'antd';
 import { Infinity, LucideEye, LucidePaperclip, ToyBrick } from 'lucide-react';
 import numeral from 'numeral';
 import { memo } from 'react';
@@ -89,13 +90,14 @@ interface ModelItemRenderProps extends ChatModelCard {
 }
 
 export const ModelItemRender = memo<ModelItemRenderProps>(({ showInfoTag = true, ...model }) => {
-  return (
-    <Flexbox align={'center'} gap={32} horizontal justify={'space-between'}>
-      <Flexbox align={'center'} gap={8} horizontal>
-        <ModelIcon model={model.id} size={20} />
-        {model.displayName || model.id}
-      </Flexbox>
+  const modelName = model.displayName || model.id;
 
+  return (
+    <Flexbox horizontal align={'center'} gap={32} justify={'space-between'}>
+      <Flexbox horizontal align={'center'} gap={8} style={{ overflow: 'hidden' }}>
+        <ModelIcon model={model.id} size={20} />
+        <Typography.Text ellipsis={{ tooltip: modelName }}>{modelName}</Typography.Text>
+      </Flexbox>
       {showInfoTag && <ModelInfoTags {...model} />}
     </Flexbox>
   );
