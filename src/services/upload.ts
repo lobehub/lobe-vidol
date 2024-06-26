@@ -6,6 +6,7 @@ import { uuid } from '@/utils/uuid';
 export const upload = async (file: File) => {
   const dateFolder = dayjs().format('YYYY/MM/DD'); // 使用当前日期作为文件夹名称
   const folderName = `files/${dateFolder}`; // e.g., "files/2023/10/10"
+  console.log('filename', file.name);
   const fileName = `${uuid()}.${file.name.split('.').at(-1)}`;
 
   const pathname = `${folderName}/${fileName}`;

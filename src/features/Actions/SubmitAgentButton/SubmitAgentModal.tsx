@@ -6,19 +6,24 @@ import { useTheme } from 'antd-style';
 import isEqual from 'fast-deep-equal';
 import { kebabCase } from 'lodash-es';
 import { Dices } from 'lucide-react';
+import mime from 'mime';
 import qs from 'query-string';
 import { memo, useState } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
 import AgentCard from '@/components/agent/AgentCard';
+import SystemRole from '@/components/agent/SystemRole';
 import { AGENTS_INDEX_GITHUB_ISSUE } from '@/constants/url';
 import { upload } from '@/services/upload';
 import { agentSelectors, useAgentStore } from '@/store/agent';
 import { Agent } from '@/types/agent';
+import { isLocalModelPath } from '@/utils/file';
+import storage from '@/utils/storage';
 
 const SubmitAgentModal = memo<ModalProps>(({ open, onCancel }) => {
   const [agentId, setAgentId] = useState('');
   const theme = useTheme();
+  const [loading, setLoading] = useState(false);
   const currentAgent: Agent = useAgentStore((s) => agentSelectors.currentAgentItem(s), isEqual);
   const { meta } = currentAgent;
 
@@ -29,21 +34,23 @@ const SubmitAgentModal = memo<ModalProps>(({ open, onCancel }) => {
       meta.description &&
       meta.avatar &&
       meta.cover &&
-      meta.gender &&
       meta.model,
   );
 
   const handleSubmit = async () => {
+    setLoading(true);
     let avatarUrl = meta.avatar;
     if (meta.avatar.includes('base64')) {
       const arr = meta.avatar.split('base64,');
       const binaryString = atob(arr[1]);
       // @ts-ignore
-      const mime = arr[0].match(/:(.*?);/)[1];
+      const mimeType = arr[0].match(/:(.*?);/)[1];
       const uint8Array = Uint8Array.from(binaryString, (char) => char.charCodeAt(0));
       // base64
       const { success, url } = await upload(
-        new File([uint8Array], `${agentId}-avatar.png`, { type: mime }),
+        new File([uint8Array], `${agentId}-avatar.${mime.getExtension(mimeType)}`, {
+          type: mimeType,
+        }),
       );
       if (success) {
         avatarUrl = url;
@@ -55,14 +62,30 @@ const SubmitAgentModal = memo<ModalProps>(({ open, onCancel }) => {
       const arr = meta.cover.split('base64,');
       const binaryString = atob(arr[1]);
       // @ts-ignore
-      const mime = arr[0]?.match(/:(.*?);/)[1];
+      const mimeType = arr[0]?.match(/:(.*?);/)[1];
       const uint8Array = Uint8Array.from(binaryString, (char) => char.charCodeAt(0));
       // base64
       const { success, url } = await upload(
-        new File([uint8Array], `${agentId}-cover.png`, { type: mime }),
+        new File([uint8Array], `${agentId}-cover.${mime.getExtension(mimeType)}`, {
+          type: mimeType,
+        }),
       );
       if (success) {
         coverUrl = url;
+      }
+    }
+
+    let modelUrl = meta.model;
+    // 本地模型上传
+    if (modelUrl && isLocalModelPath(modelUrl)) {
+      const modelBlob = await storage.getItem(modelUrl);
+      if (modelBlob) {
+        const { success, url } = await upload(
+          new File([modelBlob], `${agentId}-model.vrm`, { type: 'application/octet-stream' }),
+        );
+        if (success) {
+          modelUrl = url;
+        }
       }
     }
 
@@ -70,11 +93,13 @@ const SubmitAgentModal = memo<ModalProps>(({ open, onCancel }) => {
       '### systemRole',
       currentAgent.systemRole,
       '### agentId',
-      kebabCase(agentId),
+      agentId,
       '### avatar',
       avatarUrl,
       '### cover',
       coverUrl,
+      '### model',
+      modelUrl,
       '### name',
       meta.name,
       '### description',
@@ -87,6 +112,7 @@ const SubmitAgentModal = memo<ModalProps>(({ open, onCancel }) => {
     });
 
     window.open(url, '_blank');
+    setLoading(false);
   };
 
   return (
@@ -99,6 +125,7 @@ const SubmitAgentModal = memo<ModalProps>(({ open, onCancel }) => {
           onClick={handleSubmit}
           size={'large'}
           type={'primary'}
+          loading={loading}
         >
           提交助手
         </Button>
@@ -110,12 +137,14 @@ const SubmitAgentModal = memo<ModalProps>(({ open, onCancel }) => {
       <Flexbox gap={16}>
         {!isFormPass && (
           <Alert
-            message={'请补全助手信息后提交，需要包含名称、描述、头像和封面'}
+            message={'请补全助手信息后提交，需要包含名称、描述、头像、封面、和 3D模型'}
             showIcon
             type={'warning'}
           />
         )}
         <AgentCard agent={currentAgent} />
+        <Divider style={{ margin: '8px 0' }} />
+        <SystemRole systemRole={currentAgent.systemRole} />
         <Divider style={{ margin: '8px 0' }} />
         <strong>
           <span style={{ color: theme.colorError, marginRight: 4 }}>*</span>
@@ -132,7 +161,7 @@ const SubmitAgentModal = memo<ModalProps>(({ open, onCancel }) => {
             icon={<Icon icon={Dices} />}
             onClick={() => {
               const randomId = Math.random().toString(36).slice(7);
-              setAgentId(randomId);
+              setAgentId(kebabCase(randomId));
             }}
           ></Button>
         </Space.Compact>
