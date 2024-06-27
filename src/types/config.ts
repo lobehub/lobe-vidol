@@ -26,7 +26,6 @@ export type PanelKey = keyof PanelConfig;
 export interface OpenAIConfig {
   apikey?: string;
   endpoint?: string;
-  model?: string;
 }
 
 export interface LanguageModelConfig {

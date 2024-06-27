@@ -1,3 +1,4 @@
+import { ChatStreamPayload } from './openai/chat';
 import { TouchActionConfig } from './touch';
 import { TTS } from './tts';
 
@@ -20,6 +21,7 @@ export enum GenderEnum {
   MALE = 'Male',
   OTHER = 'Other',
 }
+
 export interface AgentMeta {
   /**
    * 头像图片路径
@@ -64,6 +66,10 @@ export interface Agent {
    * 作者名
    */
   author?: string;
+  /**
+   * 角色对话模型配置
+   */
+  chatModel?: Partial<ChatStreamPayload>;
   /**
    * 创建时间
    */

@@ -1,13 +1,12 @@
 import { Form, FormGroup, FormItem } from '@lobehub/ui';
 import { useRequest } from 'ahooks';
-import { Form as AForm, Button, Input, Select, Tag, message } from 'antd';
+import { Form as AForm, Button, Input, message } from 'antd';
 import { createStyles } from 'antd-style';
 import classNames from 'classnames';
 import { debounce, isEqual } from 'lodash-es';
 import { BotIcon } from 'lucide-react';
 import React, { useEffect } from 'react';
 
-import { OPENAI_MODEL_LIST } from '@/constants/openai';
 import { chatCompletion } from '@/services/chat';
 import { configSelectors, useSettingStore } from '@/store/setting';
 import { ChatMessage } from '@/types/chat';
@@ -55,19 +54,6 @@ const Config = (props: ConfigProps) => {
         style={{ display: 'flex', flexGrow: 1 }}
       >
         <FormGroup icon={BotIcon} title={'OpenAI 语言模型'}>
-          <FormItem desc={'Role GPT 模型'} label={'模型'} name="model">
-            <Select
-              options={OPENAI_MODEL_LIST.map((model) => ({
-                label: (
-                  <>
-                    {model.displayName} <Tag color="green">{model.tokens}</Tag>
-                  </>
-                ),
-                value: model.id,
-              }))}
-              style={{ width: 300 }}
-            />
-          </FormItem>
           <FormItem desc={'请使用自己的 OpenAI Key'} divider label={'API Key'} name="apikey">
             <Input.Password placeholder="sk-" style={{ width: 480 }} />
           </FormItem>

@@ -1,48 +1,8 @@
+import { ChatModelCard } from '@/types/llm';
+import { ChatStreamPayload } from '@/types/openai/chat';
+
 export const OPENAI_API_KEY = 'x-openai-apikey';
 export const OPENAI_END_POINT = 'x-openai-endpoint';
-
-export interface ChatModelCard {
-  /**
-   * only used in azure
-   */
-  deploymentName?: string;
-  description?: string;
-  /**
-   * the name show for end user
-   */
-  displayName?: string;
-
-  /**
-   * whether model is enabled by default
-   */
-  enabled?: boolean;
-  /**
-   * whether model supports file upload
-   */
-  files?: boolean;
-  /**
-   * whether model supports function call
-   */
-  functionCall?: boolean;
-  id: string;
-  /**
-   * whether model is custom
-   */
-  isCustom?: boolean;
-  /**
-   * whether model is legacy (deprecated but not removed yet)
-   */
-  legacy?: boolean;
-  maxOutput?: number;
-  /**
-   * the context window (or input + output tokens limit)
-   */
-  tokens?: number;
-  /**
-   *  whether model supports vision
-   */
-  vision?: boolean;
-}
 
 /**
  * OpenAI 模型列表
@@ -178,3 +138,14 @@ export const OPENAI_MODEL_LIST: ChatModelCard[] = [
     vision: true,
   },
 ];
+
+/**
+ * 默认使用的 ChatGPT 聊天模型配置
+ */
+export const DEFAULT_CHAT_MODEL: Partial<ChatStreamPayload> = {
+  model: OPENAI_MODEL_LIST[0].id,
+  frequency_penalty: 0,
+  presence_penalty: 0,
+  temperature: 1,
+  top_p: 1,
+};

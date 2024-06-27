@@ -1,14 +1,13 @@
 import { Tooltip, Typography } from 'antd';
-import { isEqual } from 'lodash-es';
 
 import { OPENAI_MODEL_LIST } from '@/constants/openai';
 import { useCalculateToken } from '@/hooks/useCalculateToken';
-import { configSelectors, useSettingStore } from '@/store/setting';
+import { agentSelectors, useAgentStore } from '@/store/agent';
 
 const TokenMini = () => {
-  const config = useSettingStore((s) => configSelectors.currentOpenAIConfig(s), isEqual);
+  const chatModel = agentSelectors.currentAgentChatModel(useAgentStore.getState());
   const usedTokens = useCalculateToken();
-  const maxValue = OPENAI_MODEL_LIST.find((item) => item.id === config?.model)?.tokens || 4096;
+  const maxValue = OPENAI_MODEL_LIST.find((item) => item.id === chatModel?.model)?.tokens || 4096;
 
   return (
     <Tooltip title={`消耗 Token 数量计算，包括消息，角色设定与上下文：${usedTokens} / ${maxValue}`}>
