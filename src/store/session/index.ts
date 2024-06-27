@@ -8,6 +8,7 @@ import { StateCreator } from 'zustand/vanilla';
 
 import { LOBE_VIDOL_DEFAULT_AGENT_ID } from '@/constants/agent';
 import { DEFAULT_USER_AVATAR_URL, LOADING_FLAG } from '@/constants/common';
+import { DEFAULT_CHAT_MODEL } from '@/constants/openai';
 import { chatCompletion, handleSpeakAi } from '@/services/chat';
 import { shareService } from '@/services/share';
 import { Agent } from '@/types/agent';
@@ -228,6 +229,8 @@ export const createSessionStore: StateCreator<SessionStore, [['zustand/devtools'
     const fetcher = () => {
       return chatCompletion(
         {
+          ...DEFAULT_CHAT_MODEL,
+          ...currentAgent.chatModel,
           messages: [
             {
               content: currentAgent.systemRole,

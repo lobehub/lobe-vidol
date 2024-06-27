@@ -40,7 +40,7 @@ const SubscribeButton = (props: SubscribeButtonProps) => {
         '取消订阅'
       ) : (
         <Flexbox align={'center'} horizontal gap={8}>
-          下载订阅{' '}
+          下载订阅
           {downloading ? (
             <Progress
               type="circle"

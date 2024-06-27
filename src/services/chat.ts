@@ -28,14 +28,12 @@ export const chatCompletion = async (
   payload: ChatCompletionPayload,
   options?: ChatCompletionOptions,
 ) => {
-  const config = configSelectors.currentOpenAIConfig(useSettingStore.getState());
   const { messages } = payload;
 
   const postMessages = messages.map((m) => ({ content: m.content, role: m.role }));
 
   return await fetch('/api/chat/openai', {
     body: JSON.stringify({
-      model: config?.model,
       ...payload,
       messages: postMessages,
     }),

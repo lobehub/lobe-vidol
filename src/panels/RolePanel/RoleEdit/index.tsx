@@ -5,6 +5,7 @@ import classNames from 'classnames';
 import React, { useState } from 'react';
 
 import Info from './Info';
+import LangModel from './LangModel';
 import Model from './Model';
 import Role from './Role';
 import Voice from './Voice';
@@ -42,6 +43,10 @@ const RolePanel = (props: RolePanelProps) => {
               key: 'model',
               label: '3D 模型',
             },
+            {
+              key: 'langModel',
+              label: '语言模型',
+            },
           ]}
           // tabBarExtraContent={<SubmitAgentButton modal />}
           onChange={(key) => {
@@ -54,6 +59,7 @@ const RolePanel = (props: RolePanelProps) => {
         {tab === 'role' ? <Role /> : null}
         {tab === 'voice' ? <Voice /> : null}
         {tab === 'model' ? <Model /> : null}
+        {tab === 'langModel' ? <LangModel /> : null}
       </div>
     </div>
   );

@@ -1,6 +1,7 @@
 import { DEFAULT_AGENT_CONFIG, LOBE_VIDOL_DEFAULT_AGENT_ID } from '@/constants/agent';
 import { EMPTY_TTS_CONFIG } from '@/constants/touch';
 import { Agent, AgentMeta } from '@/types/agent';
+import { ChatStreamPayload } from '@/types/openai/chat';
 import { TouchActionConfig } from '@/types/touch';
 import { TTS } from '@/types/tts';
 
@@ -30,6 +31,13 @@ const currentAgentTTS = (s: AgentStore): TTS | undefined => {
   if (!currentAgent) return undefined;
 
   return currentAgent.tts;
+};
+
+const currentAgentChatModel = (s: AgentStore): Partial<ChatStreamPayload> | undefined => {
+  const currentAgent = currentAgentItem(s);
+  if (!currentAgent) return undefined;
+
+  return currentAgent.chatModel;
 };
 
 const currentAgentTouch = (s: AgentStore): TouchActionConfig | undefined => {
@@ -94,6 +102,7 @@ export const agentSelectors = {
   currentAgentItem,
   currentAgentMeta,
   currentAgentTTS,
+  currentAgentChatModel,
   currentAgentTouch,
   filterAgentListIds,
   getAgentModelById,
