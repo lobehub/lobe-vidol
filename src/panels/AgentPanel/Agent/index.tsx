@@ -1,6 +1,7 @@
 import { createStyles } from 'antd-style';
 import classNames from 'classnames';
 import React, { memo } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import TopBanner from '@/components/TopBanner';
 
@@ -32,11 +33,12 @@ interface AgentProps {
 const Agent = (props: AgentProps) => {
   const { styles } = useStyles();
   const { style, className } = props;
+  const { t } = useTranslation('chat');
 
   return (
     <div className={classNames(className, styles.container)} style={style}>
       <div className={styles.content}>
-        <TopBanner title="Hello, Let's Chat!" />
+        <TopBanner title={t('helloChat')} />
         <AgentList />
       </div>
     </div>

@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import React, { memo } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import TopBanner from '@/components/TopBanner';
 
@@ -16,10 +17,12 @@ interface DanceProps {
 const Dance = (props: DanceProps) => {
   const { style, className, setTab } = props;
   const { styles } = useStyles();
+  const { t } = useTranslation('chat');
+
   return (
     <div className={classNames(className, styles.container)} style={style}>
       <div className={styles.content}>
-        <TopBanner title={"Hi, Let's Dance!"} />
+        <TopBanner title={t('helloDance')} />
         <DanceList setTab={setTab} />
       </div>
       <DanceCard />

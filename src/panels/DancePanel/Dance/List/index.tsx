@@ -1,5 +1,6 @@
 import { GradientButton } from '@lobehub/ui';
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 import GridList from '@/components/GridList';
 import { useDanceStore } from '@/store/dance';
@@ -17,6 +18,7 @@ const DanceList = (props: DanceListProps) => {
     s.activateDance,
     s.currentIdentifier,
   ]);
+  const { t } = useTranslation('common');
 
   return (
     <GridList
@@ -43,7 +45,7 @@ const DanceList = (props: DanceListProps) => {
               }
             }}
           >
-            + 订阅舞蹈
+            + {t('actions.subscribeDance')}
           </GradientButton>,
         ],
       }}
