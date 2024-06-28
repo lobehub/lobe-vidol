@@ -2,6 +2,52 @@
 
 # Changelog
 
+## [Version 0.13.0](https://github.com/lobehub/lobe-vidol/compare/v0.12.0...v0.13.0)
+
+<sup>Released on **2024-06-28**</sup>
+
+#### ✨ Features
+
+- **misc**: Storage 迁移到 indexDB, 使用 indexedDB 替代 localStorage, 其他类型的角色默认语音设置，同时下载头像和 cover 覆盖，修复解决分享时的头像缺失问题与本地图片的加载问题。, 引入 ChatItem 并改造，支持分享截图和 ShareGPT, 支持显示所有文件的下载进度，支持服务器上传，本地下载音乐舞蹈文件 & 修复角色编辑页面滚动问题，本地下载音乐舞蹈文件 & 修复角色编辑页面滚动问题，添加 s3 客户端，默认本地 cover 与 avatar，删除默认音乐.
+
+#### 🐛 Bug Fixes
+
+- **misc**: Localforage init error, 修复 AgentSubmit Modal agent 信息，模型加载错误.
+
+<br/>
+
+<details>
+<summary><kbd>Improvements and Fixes</kbd></summary>
+
+#### What's improved
+
+- **misc**: Storage 迁移到 indexDB ([3014668](https://github.com/lobehub/lobe-vidol/commit/3014668))
+- **misc**: 使用 indexedDB 替代 localStorage ([cc77c4b](https://github.com/lobehub/lobe-vidol/commit/cc77c4b))
+- **misc**: 其他类型的角色默认语音设置 ([8a1ce76](https://github.com/lobehub/lobe-vidol/commit/8a1ce76))
+- **misc**: 同时下载头像和 cover 覆盖，修复解决分享时的头像缺失问题与本地图片的加载问题。 ([f43e0d6](https://github.com/lobehub/lobe-vidol/commit/f43e0d6))
+- **misc**: 引入 ChatItem 并改造 ([83d3d1b](https://github.com/lobehub/lobe-vidol/commit/83d3d1b))
+- **misc**: 支持分享截图和 ShareGPT ([afe6d2e](https://github.com/lobehub/lobe-vidol/commit/afe6d2e))
+- **misc**: 支持显示所有文件的下载进度 ([d987b50](https://github.com/lobehub/lobe-vidol/commit/d987b50))
+- **misc**: 支持服务器上传 ([40cdcef](https://github.com/lobehub/lobe-vidol/commit/40cdcef))
+- **misc**: 本地下载音乐舞蹈文件 & 修复角色编辑页面滚动问题 ([1e31441](https://github.com/lobehub/lobe-vidol/commit/1e31441))
+- **misc**: 本地下载音乐舞蹈文件 & 修复角色编辑页面滚动问题 ([8214fa2](https://github.com/lobehub/lobe-vidol/commit/8214fa2))
+- **misc**: 添加 s3 客户端 ([09274cf](https://github.com/lobehub/lobe-vidol/commit/09274cf))
+- **misc**: 默认本地 cover 与 avatar，删除默认音乐 ([bee4727](https://github.com/lobehub/lobe-vidol/commit/bee4727))
+
+#### What's fixed
+
+- **misc**: Localforage init error ([29c1a3b](https://github.com/lobehub/lobe-vidol/commit/29c1a3b))
+- **misc**: 修复 AgentSubmit Modal agent 信息 ([4a7f789](https://github.com/lobehub/lobe-vidol/commit/4a7f789))
+- **misc**: 模型加载错误 ([25cf5f9](https://github.com/lobehub/lobe-vidol/commit/25cf5f9))
+
+</details>
+
+<div align="right">
+
+[![](https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square)](#readme-top)
+
+</div>
+
 ## [Version 0.12.0](https://github.com/lobehub/lobe-vidol/compare/v0.11.0...v0.12.0)
 
 <sup>Released on **2024-06-08**</sup>
