@@ -1,21 +1,31 @@
 'use client';
 
-import React, { memo } from 'react';
+import React, { memo, useEffect } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
 import ChatMode from '@/app/chat/ChatMode';
 import ViewerMode from '@/app/chat/ViewerMode';
 import ChatHeader from '@/features/ChatHeader';
 import ChatInfo from '@/features/ChatInfo';
+import useSessionContext from '@/hooks/useSessionContext';
 import { useSessionStore } from '@/store/session';
 
 import SideBar from './SideBar';
 import { useStyles } from './style';
 
 const Chat = () => {
-  const [viewerMode] = useSessionStore((s) => [s.viewerMode]);
+  const [viewerMode, activeId] = useSessionStore((s) => [s.viewerMode, s.activeId]);
+
+  const { onSwitchSession } = useSessionContext();
 
   const { styles } = useStyles();
+
+  /**
+   * when enter chat page, activate the active session's agent
+   */
+  useEffect(() => {
+    onSwitchSession(activeId);
+  }, []);
 
   return (
     <Flexbox flex={1} height={'100%'} width={'100%'} horizontal>

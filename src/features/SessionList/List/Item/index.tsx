@@ -1,6 +1,6 @@
 import { memo, useMemo, useState } from 'react';
 
-import { sessionSelectors, useSessionStore } from '@/store/session';
+import useSessionContext from '@/hooks/useSessionContext';
 
 import ListItem from '../../ListItem';
 import Actions from './Actions';
@@ -12,19 +12,19 @@ interface SessionItemProps {
 
 const SessionItem = memo<SessionItemProps>(({ id, onClick }) => {
   const [open, setOpen] = useState(false);
-  const [active] = useSessionStore((s) => [s.activeId === id]);
-  const agent = useSessionStore((s) => sessionSelectors.getAgentById(s)(id));
+  const { activeSessionId, getSessionAgent } = useSessionContext();
 
-  const { name, avatar } = agent?.meta || {};
+  const { greeting, meta: { name = '', avatar = '', description = '' } = {} } =
+    getSessionAgent(id) || {};
 
   const actions = useMemo(() => <Actions id={id} setOpen={setOpen} />, [id]);
 
   return (
     <ListItem
       actions={actions}
-      active={active}
+      active={activeSessionId === id}
       avatar={avatar || ''}
-      description={agent?.greeting || agent?.meta.description || ''}
+      description={greeting || description || ''}
       onClick={onClick}
       showAction={open}
       title={name}
