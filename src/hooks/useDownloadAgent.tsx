@@ -1,5 +1,6 @@
 import { message } from 'antd';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { useAgentStore } from '@/store/agent';
 import { Agent } from '@/types/agent';
@@ -13,6 +14,8 @@ export const useDownloadAgent = () => {
   const [avatarProgress, setAvatarProgress] = useState(0);
   const [coverProgress, setCoverProgress] = useState(0);
   const [modelProgress, setModelProgress] = useState(0);
+
+  const { t } = useTranslation('common');
 
   const [addLocalAgent] = useAgentStore((s) => [s.addLocalAgent]);
 
@@ -46,10 +49,10 @@ export const useDownloadAgent = () => {
       await setItem(modelKey, model);
 
       addLocalAgent({ ...agent, meta: { ...agent.meta, avatar, cover } });
-      message.success(agent.meta.name + '下载成功');
+      message.success(agent.meta.name + t('actions.downloadSuccess'));
     } catch (e) {
       console.error(e);
-      message.error(agent.meta.name + '下载失败');
+      message.error(agent.meta.name + t('actions.downloadFailed'));
     } finally {
       setDownloading(false);
     }
