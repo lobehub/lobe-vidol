@@ -5,7 +5,8 @@ import { memo } from 'react';
 import ModelIcon from '@/components/ModelIcon';
 import ModelTag from '@/components/ModelTag';
 import { OPENAI_MODEL_LIST } from '@/constants/openai';
-import { agentSelectors, useAgentStore } from '@/store/agent';
+import useSessionContext from '@/hooks/useSessionContext';
+import { useAgentStore } from '@/store/agent';
 
 const useStyles = createStyles(({ css, prefixCls }) => ({
   menu: css`
@@ -34,7 +35,7 @@ const ModelSelect = memo(() => {
 
   const { updateChatModel } = useAgentStore();
 
-  const { model } = agentSelectors.currentAgentChatModel(useAgentStore.getState()) || {};
+  const model = useSessionContext()?.sessionAgent?.chatModel?.model;
 
   const items = OPENAI_MODEL_LIST.map((item) => {
     return {
