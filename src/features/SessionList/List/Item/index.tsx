@@ -12,10 +12,10 @@ interface SessionItemProps {
 
 const SessionItem = memo<SessionItemProps>(({ id, onClick }) => {
   const [open, setOpen] = useState(false);
-  const { activeSessionId, getSessionAgent } = useSessionContext();
+  const { activeSessionId, getAgentById } = useSessionContext();
 
   const { greeting, meta: { name = '', avatar = '', description = '' } = {} } =
-    getSessionAgent(id) || {};
+    getAgentById(id) || {};
 
   const actions = useMemo(() => <Actions id={id} setOpen={setOpen} />, [id]);
 

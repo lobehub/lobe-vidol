@@ -26,11 +26,11 @@ const SessionList = memo<SessionListProps>(({ filter }) => {
   );
   const { styles } = useStyles();
 
-  const { onSwitchSession } = useSessionContext();
+  const { switchSession } = useSessionContext();
 
   return sessionListIds.map((id) => (
     <LazyLoad className={styles} key={id}>
-      <SessionItem id={id} onClick={() => onSwitchSession(id)} />
+      <SessionItem id={id} onClick={() => switchSession(id)} />
     </LazyLoad>
   ));
 });

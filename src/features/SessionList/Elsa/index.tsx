@@ -9,11 +9,11 @@ import ListItem from '../ListItem';
 
 const Elsa = memo(() => {
   const defaultAgent = useAgentStore((s) => s.defaultAgent);
-  const { activeSessionId, onSwitchSession } = useSessionContext();
+  const { activeSessionId, switchSession } = useSessionContext();
 
   return (
     <ListItem
-      onClick={() => onSwitchSession(LOBE_VIDOL_DEFAULT_AGENT_ID)}
+      onClick={() => switchSession(LOBE_VIDOL_DEFAULT_AGENT_ID)}
       active={activeSessionId === LOBE_VIDOL_DEFAULT_AGENT_ID}
       avatar={defaultAgent.meta.avatar}
       title={
