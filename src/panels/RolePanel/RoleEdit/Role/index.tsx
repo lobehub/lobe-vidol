@@ -2,6 +2,7 @@ import { Form, FormItem } from '@lobehub/ui';
 import { createStyles } from 'antd-style';
 import classNames from 'classnames';
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 import SystemRole from '@/panels/RolePanel/RoleEdit/Role/SystemRole';
 
@@ -28,7 +29,7 @@ const useStyles = createStyles(({ css, token }) => ({
 const Info = (props: InfoProps) => {
   const { style, className } = props;
   const { styles } = useStyles();
-
+  const { t } = useTranslation('panel');
   return (
     <Form>
       <div className={classNames(className, styles.container)} style={style}>
@@ -36,8 +37,8 @@ const Info = (props: InfoProps) => {
           <FormItem
             name="systemRole"
             divider
-            label="系统角色设定"
-            desc="角色的背景设定，在与角色聊天时会发送给模型"
+            label={t('role.roleSettingLabel')}
+            desc={t('role.roleSettingDescription')}
           ></FormItem>
           <SystemRole />
         </div>

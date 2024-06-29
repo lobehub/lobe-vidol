@@ -17,6 +17,9 @@ export default {
     roleReadmeTip: '请输入角色说明',
     roleDescriptionTip: '请输入角色描述',
     roleNameTip: '请输入角色名称',
+    inputRoleSetting: '请输入角色的系统设定',
+    roleSettingLabel: '系统角色设定',
+    roleSettingDescription: '角色的背景设定，在与角色聊天时会发送给模型',
   },
   info: {
     avatarLabel: '头像',
