@@ -10,4 +10,9 @@ export default {
   },
   reload: '重新加载',
   goBack: '返回首页',
+  apiKeyMiss: 'OpenAI API Key 为空，请添加自定义 OpenAI API Key',
+  serverError: '服务器错误，请联系管理员',
+  openaiError: 'OpenAI API 错误，请检查 OpenAI API Key 和 Endpoint 是否正确',
+  unknownError: '未知错误',
+  s3envError: 'S3 环境变量未完全设置，请检查您的环境变量',
 };
