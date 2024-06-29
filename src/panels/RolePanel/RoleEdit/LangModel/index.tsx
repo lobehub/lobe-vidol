@@ -11,13 +11,13 @@ import ModelSelect from './ModelSelect';
 const LangModel = memo(() => {
   const [form] = Form.useForm();
 
-  const { updateChatModel } = useAgentStore();
+  const { updateAgentConfig } = useAgentStore();
 
-  const agentChatModel = agentSelectors.currentAgentChatModel(useAgentStore.getState());
+  const agent = agentSelectors.currentAgentItem(useAgentStore());
 
   useEffect(() => {
-    form.setFieldsValue(agentChatModel);
-  }, [agentChatModel]);
+    form.setFieldsValue(agent);
+  }, [agent]);
 
   const model: ItemGroup = {
     children: [
@@ -32,28 +32,28 @@ const LangModel = memo(() => {
         children: <SliderWithInput max={1} min={0} step={0.1} />,
         desc: '值越大，回复越随机',
         label: '随机性',
-        name: 'temperature',
+        name: ['params', 'temperature'],
         tag: 'temperature',
       },
       {
         children: <SliderWithInput max={1} min={0} step={0.1} />,
         desc: '与随机性类型，但不要和随机性一起更改',
         label: '核采样',
-        name: 'top_p',
+        name: ['params', 'top_p'],
         tag: 'top_p',
       },
       {
         children: <SliderWithInput max={2} min={-2} step={0.1} />,
         desc: '值越大，越有可能拓展到新话题',
         label: '话题新鲜度',
-        name: 'presence_penalty',
+        name: ['params', 'presence_penalty'],
         tag: 'presence_penalty',
       },
       {
         children: <SliderWithInput max={2} min={-2} step={0.1} />,
         desc: '值越大，越有可能降低重复字词',
         label: '频率惩罚度',
-        name: 'frequency_penalty',
+        name: ['params', 'frequency_penalty'],
         tag: 'frequency_penalty',
       },
     ],
@@ -63,7 +63,7 @@ const LangModel = memo(() => {
   return (
     <Form
       form={form}
-      onValuesChange={updateChatModel}
+      onValuesChange={(_, values) => updateAgentConfig(values)}
       items={[model]}
       itemsType={'group'}
       variant={'pure'}

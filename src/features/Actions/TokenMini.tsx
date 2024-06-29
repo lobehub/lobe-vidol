@@ -5,7 +5,7 @@ import { useCalculateToken } from '@/hooks/useCalculateToken';
 import useSessionContext from '@/hooks/useSessionContext';
 
 const TokenMini = () => {
-  const model = useSessionContext()?.sessionAgent?.chatModel?.model;
+  const model = useSessionContext()?.sessionAgent?.model;
 
   const usedTokens = useCalculateToken();
   const maxValue = OPENAI_MODEL_LIST.find((item) => item.id === model)?.tokens || 4096;

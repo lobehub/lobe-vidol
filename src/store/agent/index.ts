@@ -18,7 +18,6 @@ import {
 } from '@/constants/tts';
 import { TouchActionType, touchReducer } from '@/store/agent/reducers/touch';
 import { Agent, AgentMeta, GenderEnum } from '@/types/agent';
-import { ChatStreamPayload } from '@/types/openai/chat';
 import { TouchAction, TouchAreaEnum } from '@/types/touch';
 import { TTS } from '@/types/tts';
 import { mergeWithUndefined } from '@/utils/common';
@@ -96,7 +95,7 @@ export interface AgentStore {
   /**
    * 更新角色配置
    */
-  updateAgentConfig: (agent: DeepPartial<Agent>) => void;
+  updateAgentConfig: (agent: DeepPartial<Agent>, updateAgentId?: string) => void;
   /**
    *  更新角色元数据
    */
@@ -105,10 +104,6 @@ export interface AgentStore {
    * 更新角色 TTS
    */
   updateAgentTTS: (tts: DeepPartial<TTS>) => void;
-  /**
-   * 更新角色对话模型配置
-   */
-  updateChatModel: (chatModel: Partial<ChatStreamPayload>) => void;
   /**
    * 更新触摸配置
    * @param currentTouchArea
@@ -190,9 +185,12 @@ const createAgentStore: StateCreator<AgentStore, [['zustand/devtools', never]]> 
 
     set({ currentIdentifier: newAgent.agentId, localAgentList: newList });
   },
-  updateAgentConfig: (agent) => {
+  updateAgentConfig: (agent, updateAgentId) => {
     const { localAgentList, currentIdentifier, defaultAgent } = get();
-    if (currentIdentifier === LOBE_VIDOL_DEFAULT_AGENT_ID) {
+
+    const updateIdentifier = updateAgentId || currentIdentifier;
+
+    if (updateIdentifier === LOBE_VIDOL_DEFAULT_AGENT_ID) {
       const mergeAgent = produce(defaultAgent, (draft) => {
         mergeWithUndefined(draft, agent);
       });
@@ -201,7 +199,7 @@ const createAgentStore: StateCreator<AgentStore, [['zustand/devtools', never]]> 
     }
 
     const agents = produce(localAgentList, (draft) => {
-      const index = draft.findIndex((localAgent) => localAgent.agentId === currentIdentifier);
+      const index = draft.findIndex((localAgent) => localAgent.agentId === updateIdentifier);
       if (index === -1) return;
       mergeWithUndefined(draft[index], agent);
     });
@@ -298,10 +296,6 @@ const createAgentStore: StateCreator<AgentStore, [['zustand/devtools', never]]> 
     });
     await storage.removeItem(getModelPathByAgentId(agentId));
     set({ currentIdentifier: LOBE_VIDOL_DEFAULT_AGENT_ID, localAgentList: newList });
-  },
-  updateChatModel: (chatModel) => {
-    const { updateAgentConfig } = get();
-    updateAgentConfig({ chatModel });
   },
 });
 

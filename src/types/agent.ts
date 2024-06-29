@@ -67,10 +67,6 @@ export interface Agent {
    */
   author?: string;
   /**
-   * 角色对话模型配置
-   */
-  chatModel?: Partial<ChatStreamPayload>;
-  /**
    * 创建时间
    */
   createAt?: string;
@@ -86,6 +82,14 @@ export interface Agent {
    * 角色元数据
    */
   meta: AgentMeta;
+  /**
+   * 大语言模型
+   */
+  model?: string;
+  /**
+   * 语言模型配置
+   */
+  params?: Partial<ChatStreamPayload>;
   /**
    * 角色设定
    */

@@ -5,7 +5,7 @@ import { useCalculateToken } from '@/hooks/useCalculateToken';
 import useSessionContext from '@/hooks/useSessionContext';
 
 const Token = () => {
-  const model = useSessionContext()?.sessionAgent?.chatModel?.model;
+  const model = useSessionContext()?.sessionAgent?.model;
   const usedTokens = useCalculateToken();
 
   return (
