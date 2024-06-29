@@ -1,5 +1,6 @@
 import { Input } from 'antd';
 import React, { CSSProperties, memo } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { MAX_GREETING_LENGTH } from '@/constants/common';
 import { agentSelectors, useAgentStore } from '@/store/agent';
@@ -11,6 +12,7 @@ interface Props {
 
 export default memo<Props>((props) => {
   const { style, className } = props;
+  const { t } = useTranslation('panel');
   const [agent, updateAgentConfig] = useAgentStore((s) => [
     agentSelectors.currentAgentItem(s),
     s.updateAgentConfig,
@@ -22,7 +24,7 @@ export default memo<Props>((props) => {
       style={style}
       value={agent?.greeting}
       autoSize={{ minRows: 2, maxRows: 4 }}
-      placeholder="请输入角色与你打招呼时的用语"
+      placeholder={t('role.greetTip')}
       showCount
       maxLength={MAX_GREETING_LENGTH}
       onChange={(e) => {
