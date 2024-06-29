@@ -15,5 +15,11 @@ export default {
     downloadFailed: '下载失败',
     subscribeRole: '订阅角色',
     subscribeDance: '订阅舞蹈',
+    subscribe: '订阅',
+    subscribed: '已订阅',
+    unsubscribe: '取消订阅',
+    unsubscribeSuccess: '已取消订阅',
+    downloadSubscribe: '下载订阅',
+    market: '发现',
   },
 };
