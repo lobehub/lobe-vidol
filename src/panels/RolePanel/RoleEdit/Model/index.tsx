@@ -2,6 +2,7 @@ import { Form, FormItem } from '@lobehub/ui';
 import { createStyles } from 'antd-style';
 import classNames from 'classnames';
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 import ViewerWithUpload from '@/panels/RolePanel/RoleEdit/Model/ViewerWithUpload';
 
@@ -35,6 +36,7 @@ const useStyles = createStyles(({ css, token }) => ({
 const Model = (props: ModelProps) => {
   const { style, className } = props;
   const { styles } = useStyles();
+  const { t } = useTranslation('panel');
 
   return (
     <Form>
@@ -43,7 +45,7 @@ const Model = (props: ModelProps) => {
           <Touch />
         </div>
         <div className={styles.right}>
-          <FormItem label={'模型预览'} name={'model'} desc="模型预览，可拖动模型文件以替换" />
+          <FormItem label={t('info.modelLabel')} name={'model'} desc={t('info.modelDescription')} />
           <ViewerWithUpload />
         </div>
       </div>

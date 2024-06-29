@@ -33,5 +33,23 @@ export default {
     readmeDescription: '角色的说明文件，用于发现页展示角色的详细说明',
     coverLabel: '封面',
     coverDescription: '用于发现页展示角色，推荐尺寸 {{width}} * {{height}} ',
+    textLabel: '文案',
+    textDescription: '自定义响应文案',
+    emotionLabel: '表情与情绪',
+    emotionDescription: '选择响应时的情绪，会影响角色的表情变化',
+    modelLabel: '模型预览',
+    modelDescription: '模型预览，可拖动模型文件以替换',
+  },
+  touch: {
+    editAction: '编辑响应动作',
+    addAction: '添加响应动作',
+    inputDIYText: '请输入自定义文案',
+    inputActionText: '请输入响应文案',
+    inputActionEmotion: '请输入角色响应时的表情',
+    touchActionList: '触摸{{touchArea}}时的反应列表',
+    touchArea: '触摸区域',
+  },
+  upload: {
+    support: '支持单个文件上传，当前仅支持 .vrm 格式文件',
   },
 };

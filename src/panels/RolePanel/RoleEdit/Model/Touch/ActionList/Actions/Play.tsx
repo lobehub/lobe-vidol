@@ -2,6 +2,7 @@ import { ActionIcon } from '@lobehub/ui';
 import { isEqual } from 'lodash-es';
 import { Loader2, PlayIcon } from 'lucide-react';
 import { memo, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { speakCharacter } from '@/features/messages/speakCharacter';
 import { agentSelectors, useAgentStore } from '@/store/agent';
@@ -16,6 +17,7 @@ export default memo((props: Props) => {
   const { touchAction } = props;
   const [loading, setLoading] = useState(false);
   const viewer = useGlobalStore((s) => s.viewer);
+  const { t } = useTranslation('panel');
 
   const currentAgentTTS = useAgentStore((s) => agentSelectors.currentAgentTTS(s), isEqual);
 
@@ -28,7 +30,7 @@ export default memo((props: Props) => {
       icon={loading ? Loader2 : PlayIcon}
       spin={loading}
       disable={loading}
-      title="播放"
+      title={t('dance.play')}
       key="play"
       onClick={() => {
         setLoading(true);

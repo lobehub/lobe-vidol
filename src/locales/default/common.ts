@@ -8,6 +8,8 @@ export default {
   actions: {
     copy: '复制',
     del: '删除',
+    confirmDel: '确定删除吗？',
+    add: '添加',
     delAndRegenerate: '删除并重新生成',
     edit: '编辑',
     regenerate: '重新生成',
