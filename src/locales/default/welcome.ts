@@ -9,4 +9,5 @@ export default {
       description: '这是一个自定义角色',
     },
   },
+  greet: '你好，我是{{name}}，有什么可以帮助你的吗？',
 };
