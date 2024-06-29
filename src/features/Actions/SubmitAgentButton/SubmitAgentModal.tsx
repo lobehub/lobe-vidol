@@ -8,6 +8,7 @@ import { kebabCase } from 'lodash-es';
 import { Dices } from 'lucide-react';
 import qs from 'query-string';
 import { memo, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
 import AgentCard from '@/components/agent/AgentCard';
@@ -20,6 +21,7 @@ const SubmitAgentModal = memo<ModalProps>(({ open, onCancel }) => {
   const theme = useTheme();
   const currentAgent = useAgentStore(agentSelectors.currentAgentItem, isEqual);
   const { meta } = currentAgent;
+  const { t } = useTranslation('features');
 
   const isFormPass = Boolean(
     currentAgent.greeting &&
@@ -80,31 +82,25 @@ const SubmitAgentModal = memo<ModalProps>(({ open, onCancel }) => {
           size={'large'}
           type={'primary'}
         >
-          提交助手
+          {t('submit.submitAssistant')}
         </Button>
       }
       onCancel={onCancel}
       open={open}
-      title={'分享到助手市场'}
+      title={t('share.shareToMarket')}
     >
       <Flexbox gap={16}>
-        {!isFormPass && (
-          <Alert
-            message={'请补全助手信息后提交，需要包含名称、描述、头像和封面'}
-            showIcon
-            type={'warning'}
-          />
-        )}
+        {!isFormPass && <Alert message={t('submit.submitWarning')} showIcon type={'warning'} />}
         <AgentCard agent={currentAgent} />
         <Divider style={{ margin: '8px 0' }} />
         <strong>
           <span style={{ color: theme.colorError, marginRight: 4 }}>*</span>
-          agentId 助手标识符
+          agentId {t('submit.assistantId')}
         </strong>
         <Space.Compact style={{ width: '100%' }}>
           <Input
             onChange={(e) => setAgentId(e.target.value)}
-            placeholder={'请输入助手的标识符，需要是唯一的，比如 vidol-agent-klee'}
+            placeholder={t('submit.assistantIdTip')}
             value={agentId}
           />
           <Button

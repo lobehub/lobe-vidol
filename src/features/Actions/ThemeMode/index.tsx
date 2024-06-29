@@ -3,6 +3,7 @@ import { Popover } from 'antd';
 import { useTheme } from 'antd-style';
 import { Monitor, Moon, Sun } from 'lucide-react';
 import { memo, useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import Menu, { type MenuProps } from '@/components/Menu';
 import { useGlobalStore } from '@/store/global';
@@ -16,25 +17,25 @@ const themeIcons = {
 const ThemeButton = memo(() => {
   const theme = useTheme();
   const [themeMode, switchThemeMode] = useGlobalStore((s) => [s.themeMode, s.setThemeMode]);
-
+  const { t } = useTranslation('features');
   const items: MenuProps['items'] = useMemo(
     () => [
       {
         icon: <Icon icon={themeIcons.auto} />,
         key: 'auto',
-        label: '跟随系统',
+        label: t('theme.auto'),
         onClick: () => switchThemeMode('auto'),
       },
       {
         icon: <Icon icon={themeIcons.light} />,
         key: 'light',
-        label: '亮色模式',
+        label: t('theme.light'),
         onClick: () => switchThemeMode('light'),
       },
       {
         icon: <Icon icon={themeIcons.dark} />,
         key: 'dark',
-        label: '暗黑模式',
+        label: t('theme.dark'),
         onClick: () => switchThemeMode('dark'),
       },
     ],
