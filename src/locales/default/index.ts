@@ -2,6 +2,7 @@ import chat from './chat';
 import common from './common';
 import constants from './constants';
 import error from './error';
+import features from './features';
 import layout from './layout';
 import my from './my';
 import panel from './panel';
@@ -18,6 +19,7 @@ const resources = {
   constants,
   layout,
   panel,
+  features,
 } as const;
 
 export default resources;

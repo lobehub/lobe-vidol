@@ -12,6 +12,8 @@ export default {
     add: '添加',
     delAndRegenerate: '删除并重新生成',
     edit: '编辑',
+    save: '保存',
+    share: '分享',
     regenerate: '重新生成',
     downloadSuccess: '下载成功',
     downloadFailed: '下载失败',
