@@ -55,4 +55,27 @@ export default {
   upload: {
     support: '支持单个文件上传，当前仅支持 .vrm 格式文件',
   },
+  tts: {
+    transfromSuccess: '转换成功',
+    selectLanguage: '请先选择语言',
+    selectVoice: '请先选择语音',
+    audition: '试听',
+    engineLabel: '语音引擎',
+    engineDescription: '语音合成引擎，建议优先选择 Edge 浏览器',
+    localeLabel: '语言',
+    localeDescription: '语音合成的语种，当前仅支持最常见的几种语言，如有需要请联系',
+    voiceLabel: '语音',
+    voiceDescription: '根据引擎和语种不同',
+    speedLabel: '语速',
+    speedDescription: '控制语速，取值范围 0 ~ 3，默认为 1',
+    pitchLabel: '音调',
+    pitchDescription: '控制音调，取值范围 0 ~ 2，默认为 1',
+    auditionDescription: '试听文案根据语言不同',
+  },
+  nav: {
+    info: '基本信息',
+    role: '角色设定',
+    voice: '语音',
+    model: '3D模型',
+  },
 };

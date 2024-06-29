@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 import PanelContainer from '@/panels/PanelContainer';
 
@@ -13,9 +14,10 @@ interface RolePanelProps {
 
 const RolePanel = (props: RolePanelProps) => {
   const { style, className } = props;
+  const { t } = useTranslation('panel');
 
   return (
-    <PanelContainer className={className} panelKey="role" style={style} title="角色设定">
+    <PanelContainer className={className} panelKey="role" style={style} title={t('nav.role')}>
       <RoleEdit />
     </PanelContainer>
   );
