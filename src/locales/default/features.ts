@@ -1,4 +1,12 @@
 export default {
+  support: '社区支持',
+  token: {
+    overload: 'Token 超出',
+    remained: 'Token 剩余',
+    used: 'Token 已使用',
+    useToken: '消耗 Token 数量计算，包括消息，角色设定与上下文：{{usedTokens}} / {{maxValue}}',
+    tokenCount: 'Token 数量',
+  },
   share: {
     screenshot: '截图',
     shareGPT: '分享GPT',
@@ -21,5 +29,17 @@ export default {
     auto: '跟随系统',
     light: '亮色模式',
     dark: '暗黑模式',
+  },
+  agent: {
+    female: '女性',
+    male: '男性',
+    other: '其他',
+  },
+  actions: {
+    useVideo: '切换视频模式',
+  },
+  mode: {
+    chat: '聊天',
+    video: '视频',
   },
 };
