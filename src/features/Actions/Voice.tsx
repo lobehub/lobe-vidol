@@ -2,6 +2,7 @@ import { ActionIcon } from '@lobehub/ui';
 import { createStyles } from 'antd-style';
 import classNames from 'classnames';
 import { Volume2, VolumeXIcon } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 import { DESKTOP_HEADER_ICON_SIZE } from '@/constants/token';
 import { toggleVoice } from '@/services/chat';
@@ -20,14 +21,14 @@ const useStyles = createStyles(({ token, css }) => ({
 const VoiceSwitch = () => {
   const { styles } = useStyles();
   const [voiceOn] = useSessionStore((s) => [s.voiceOn]);
-
+  const { t } = useTranslation('common');
   return (
     <ActionIcon
       className={classNames(styles.voice, voiceOn && styles.voiceOn)}
       icon={voiceOn ? Volume2 : VolumeXIcon}
       onClick={toggleVoice}
       size={DESKTOP_HEADER_ICON_SIZE}
-      title={'语音合成'}
+      title={t('ttsCombine')}
     />
   );
 };

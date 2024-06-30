@@ -2,19 +2,21 @@ import { ActionIconGroup } from '@lobehub/ui';
 import { ActionIconGroupItems } from '@lobehub/ui/es/ActionIconGroup';
 import { Play } from 'lucide-react';
 import { memo } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import type { RenderAction } from '@/features/ChatItem/type';
 import { useChatListActionsBar } from '@/hooks/useChatListActionsBar';
 
 const AssistantActionsBar: RenderAction = ({ onActionClick, id }) => {
   const { copy, regenerate, divider, del, delAndRegenerate, edit } = useChatListActionsBar();
+  const { t } = useTranslation('common');
 
   if (id === 'default') return;
 
   const tts = {
     icon: Play,
     key: 'tts',
-    label: '语音合成',
+    label: t('ttsCombine'),
   } as ActionIconGroupItems;
 
   return (
