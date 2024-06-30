@@ -3,6 +3,7 @@ import { ActionIcon } from '@lobehub/ui';
 import { Popover } from 'antd';
 import { PlusCircle } from 'lucide-react';
 import { memo, useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import Menu, { type MenuProps } from '@/components/Menu';
 import { useAgentStore } from '@/store/agent';
@@ -16,25 +17,25 @@ const genderIcons = {
 
 const ThemeButton = memo(() => {
   const createNewAgent = useAgentStore((s) => s.createNewAgent);
-
+  const { t } = useTranslation('features');
   const items: MenuProps['items'] = useMemo(
     () => [
       {
         icon: genderIcons.female,
         key: 'light',
-        label: '女性',
+        label: t('agent.female'),
         onClick: () => createNewAgent(GenderEnum.FEMALE),
       },
       {
         icon: genderIcons.male,
         key: 'auto',
-        label: '男性',
+        label: t('agent.male'),
         onClick: () => createNewAgent(GenderEnum.MALE),
       },
       {
         icon: genderIcons.other,
         key: 'dark',
-        label: '其他',
+        label: t('agent.other'),
         onClick: () => createNewAgent(GenderEnum.OTHER),
       },
     ],

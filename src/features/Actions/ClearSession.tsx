@@ -1,6 +1,7 @@
 import { App, Button } from 'antd';
 import { ButtonType } from 'antd/es/button';
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { useAgentStore } from '@/store/agent';
 import { useSessionStore } from '@/store/session';
@@ -10,27 +11,28 @@ interface Props {
   type?: ButtonType;
 }
 export default (props: Props) => {
-  const { text = '立即清除', type = 'primary' } = props;
+  const { t } = useTranslation('common');
+  const { text = t('actions.clearNow'), type = 'primary' } = props;
   const clearAgentStorage = useAgentStore((s) => s.clearAgentStorage);
   const clearSessionStorage = useSessionStore((s) => s.clearSessionStorage);
   const { message, modal } = App.useApp();
 
   const handleClear = () => {
     modal.confirm({
-      cancelText: '取消',
+      cancelText: t('cancel'),
       centered: true,
-      content: '操作无法撤销，清除后数据将无法恢复，请慎重操作',
+      content: t('actions.clearTip'),
       okButtonProps: {
         danger: true,
       },
-      okText: '确定',
+      okText: t('confirm'),
       onOk: () => {
         clearSessionStorage();
         clearAgentStorage().then(() => {
-          message.success('清除成功');
+          message.success(t('actions.clearSuccess'));
         });
       },
-      title: '确认清除所有会话消息?',
+      title: t('actions.clearTitle'),
     });
   };
 
