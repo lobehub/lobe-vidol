@@ -18,7 +18,7 @@ const Role = () => {
       <SideBar />
       <Flexbox className={styles.preview}>
         <Flexbox className={styles.container}>
-          <TopBanner title={t('TopBannerTitle')} />
+          <TopBanner title={t('topBannerTitle')} />
           <Flexbox horizontal>
             <Flexbox className={styles.edit} flex={2}>
               <RoleEdit />
