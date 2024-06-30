@@ -6,4 +6,7 @@ export default {
     market: '发现',
     settings: '设置',
   },
+  dialog: '对话框',
+  siderBar: '侧边栏',
+  sessionList: '会话列表',
 };
