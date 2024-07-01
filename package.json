@@ -27,6 +27,8 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev",
+    "docs:i18n": "lobe-i18n md && npm run lint:mdx",
+    "i18n": "npm run workflow:i18n && lobe-i18n",
     "lint": "npm run lint:ts && npm run lint:style && npm run type-check",
     "lint:circular": "dpdm src/**/*.ts  --warning false  --tree false  --exit-code circular:1  -T true --skip-dynamic-imports circular",
     "lint:md": "remark . --quiet --frail --output",
@@ -39,7 +41,8 @@
     "test": "vitest",
     "test:coverage": "vitest run --coverage",
     "test:update": "vitest -u",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "workflow:i18n": "tsx scripts/i18nWorkflow/index.ts"
   },
   "lint-staged": {
     "*.md": [
