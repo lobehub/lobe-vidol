@@ -2,6 +2,7 @@
 import { DeleteOutlined } from '@ant-design/icons';
 import { Button, Drawer, List } from 'antd';
 import { memo } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { SIDEBAR_WIDTH } from '@/constants/token';
 import { DanceStore, useDanceStore } from '@/store/dance';
@@ -25,12 +26,13 @@ const PlayList = (props: PlayListProps) => {
   const { open = false, onClose } = props;
   const { styles } = useStyles();
   const { playlist, clearPlayList } = useDanceStore((s) => playListSelectors(s));
+  const { t } = useTranslation('common');
 
   return (
     <Drawer
       extra={
         <Button icon={<DeleteOutlined />} onClick={() => clearPlayList()} size="small">
-          清空
+          {t('actions.clearAll')}
         </Button>
       }
       onClose={onClose}
@@ -40,7 +42,7 @@ const PlayList = (props: PlayListProps) => {
         body: styles.body,
         header: styles.header,
       }}
-      title="播放列表"
+      title={t('playlist')}
       width={SIDEBAR_WIDTH}
       getContainer={false}
     >
