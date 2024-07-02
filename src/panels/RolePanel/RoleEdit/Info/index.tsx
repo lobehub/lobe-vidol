@@ -52,33 +52,52 @@ const Info = (props: InfoProps) => {
   const [form] = Form.useForm();
 
   return (
-    <Form form={form} layout="horizontal" requiredMark={false}>
+    <Form form={form} layout="horizontal">
       <div className={classNames(className, styles.container)} style={style}>
         <div className={styles.form}>
           <div className={styles.config}>
-            <FormItem desc={'自定义头像，点击头像自定义上传'} label={'头像'} name={'avatar'}>
+            <FormItem
+              desc={'自定义头像，点击头像自定义上传'}
+              label={'头像'}
+              name={'avatar'}
+              required
+            >
               <AvatarWithUpload />
             </FormItem>
-            <FormItem label={'名称'} desc={'角色名称，与角色聊天时的称呼'} divider name={['name']}>
+            <FormItem
+              label={'名称'}
+              desc={'角色名称，与角色聊天时的称呼'}
+              divider
+              name={['name']}
+              required
+            >
               <RoleName style={{ width: INPUT_WIDTH_M }} />
             </FormItem>
             <FormItem
               label={'性别'}
-              desc={'角色性别，影响角色的触摸响应'}
+              desc={'角色性别，影响角色的交互响应'}
               divider
               name={['gender']}
+              required
             >
               <RoleGender style={{ width: INPUT_WIDTH_M }} />
             </FormItem>
             <FormItem
               label={'描述'}
               divider
+              required
               desc={'角色描述，用于角色的简单介绍'}
               name={'description'}
             >
               <RoleDescription style={{ width: INPUT_WIDTH_L }} />
             </FormItem>
-            <FormItem label={'招呼'} desc={'与角色初次聊天时的招呼用语'} name="greeting" divider>
+            <FormItem
+              label={'招呼'}
+              desc={'与角色初次聊天时的招呼用语'}
+              name="greeting"
+              divider
+              required
+            >
               <Greeting style={{ width: INPUT_WIDTH_L }} />
             </FormItem>
             <FormItem
@@ -94,6 +113,7 @@ const Info = (props: InfoProps) => {
             <FormItem
               label={'封面'}
               name={'cover'}
+              required
               desc={`用于发现页展示角色，推荐尺寸 ${COVER_COMPRESS_WIDTH} * ${COVER_COMPRESS_HEIGHT}`}
             />
             <CoverWithUpload />

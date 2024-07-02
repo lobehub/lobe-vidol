@@ -6,7 +6,6 @@ import { useTheme } from 'antd-style';
 import isEqual from 'fast-deep-equal';
 import { kebabCase } from 'lodash-es';
 import { Dices } from 'lucide-react';
-import mime from 'mime';
 import qs from 'query-string';
 import { memo, useState } from 'react';
 import { Flexbox } from 'react-layout-kit';
@@ -18,6 +17,7 @@ import { upload } from '@/services/upload';
 import { agentSelectors, useAgentStore } from '@/store/agent';
 import { Agent } from '@/types/agent';
 import { isLocalModelPath } from '@/utils/file';
+import { base64ToFile } from '@/utils/imageToBase64';
 import storage from '@/utils/storage';
 
 const SubmitAgentModal = memo<ModalProps>(({ open, onCancel }) => {
@@ -41,17 +41,8 @@ const SubmitAgentModal = memo<ModalProps>(({ open, onCancel }) => {
     setLoading(true);
     let avatarUrl = meta.avatar;
     if (meta.avatar.includes('base64')) {
-      const arr = meta.avatar.split('base64,');
-      const binaryString = atob(arr[1]);
-      // @ts-ignore
-      const mimeType = arr[0].match(/:(.*?);/)[1];
-      const uint8Array = Uint8Array.from(binaryString, (char) => char.charCodeAt(0));
-      // base64
-      const { success, url } = await upload(
-        new File([uint8Array], `${agentId}-avatar.${mime.getExtension(mimeType)}`, {
-          type: mimeType,
-        }),
-      );
+      const file = base64ToFile(meta.avatar, `${agentId}-avatar`);
+      const { success, url } = await upload(file);
       if (success) {
         avatarUrl = url;
       }
@@ -59,17 +50,8 @@ const SubmitAgentModal = memo<ModalProps>(({ open, onCancel }) => {
 
     let coverUrl = meta.cover;
     if (meta.cover.includes('base64')) {
-      const arr = meta.cover.split('base64,');
-      const binaryString = atob(arr[1]);
-      // @ts-ignore
-      const mimeType = arr[0]?.match(/:(.*?);/)[1];
-      const uint8Array = Uint8Array.from(binaryString, (char) => char.charCodeAt(0));
-      // base64
-      const { success, url } = await upload(
-        new File([uint8Array], `${agentId}-cover.${mime.getExtension(mimeType)}`, {
-          type: mimeType,
-        }),
-      );
+      const file = base64ToFile(meta.avatar, `${agentId}-cover`);
+      const { success, url } = await upload(file);
       if (success) {
         coverUrl = url;
       }

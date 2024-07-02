@@ -36,6 +36,7 @@ const Info = (props: InfoProps) => {
           <FormItem
             name="systemRole"
             divider
+            required
             label="系统角色设定"
             desc="角色的背景设定，在与角色聊天时会发送给模型"
           ></FormItem>
