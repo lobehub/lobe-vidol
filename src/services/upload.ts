@@ -7,7 +7,7 @@ import { uuid } from '@/utils/uuid';
 export const upload = async (
   file: File,
   handlers: {
-    onProgress?: (loaded: number, total: number) => void;
+    onProgress?: (progress: number) => void;
   },
 ) => {
   const dateFolder = dayjs().format('YYYY/MM/DD'); // 使用当前日期作为文件夹名称
@@ -25,11 +25,8 @@ export const upload = async (
     headers: {
       'Content-Type': file.type,
     },
-    onUploadProgress: (e) => {
-      if (e.lengthComputable) {
-        console.log(e.loaded, e.total);
-        handlers.onProgress?.(e.loaded, e.total || file.size);
-      }
+    onUploadProgress: ({ progress }) => {
+      handlers.onProgress?.(progress ? Math.ceil(progress * 100) : 0);
     },
   });
 

@@ -23,8 +23,8 @@ export const useUploadAgent = () => {
       if (meta.avatar.includes('base64')) {
         const file = base64ToFile(meta.avatar, `${agentId}-avatar`);
         upload(file, {
-          onProgress: (loaded: number, total: number) => {
-            setAvatarProgress(Math.ceil((loaded / total) * 100));
+          onProgress: (progress: number) => {
+            setAvatarProgress(progress);
           },
         })
           .then((url) => resolve(url))
@@ -39,8 +39,8 @@ export const useUploadAgent = () => {
       if (meta.cover.includes('base64')) {
         const file = base64ToFile(meta.cover, `${agentId}-cover`);
         upload(file, {
-          onProgress: (loaded: number, total: number) => {
-            setCoverProgress(Math.ceil((loaded / total) * 100));
+          onProgress: (progress) => {
+            setCoverProgress(progress);
           },
         })
           .then((url) => resolve(url))
@@ -60,8 +60,8 @@ export const useUploadAgent = () => {
               upload(
                 new File([modelBlob], `${agentId}-model.vrm`, { type: 'application/octet-stream' }),
                 {
-                  onProgress: (loaded: number, total: number) => {
-                    setModelProgress(Math.ceil((loaded / total) * 100));
+                  onProgress: (progress) => {
+                    setModelProgress(progress);
                   },
                 },
               )
