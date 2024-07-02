@@ -1,6 +1,7 @@
 import { Progress } from 'antd';
 import classNames from 'classnames';
 import React, { memo, useCallback, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import PageLoading from '@/components/PageLoading';
 import { useLoadModel } from '@/hooks/useLoadModel';
@@ -25,6 +26,7 @@ function AgentViewer(props: Props) {
   const { styles } = useStyles();
   const ref = useRef<HTMLDivElement>(null);
   const viewer = useGlobalStore((s) => s.viewer);
+  const { t } = useTranslation('features');
 
   const { downloading, percent, fetchModelBlob } = useLoadModel();
 
@@ -62,7 +64,7 @@ function AgentViewer(props: Props) {
       <ToolBar className={styles.toolbar} viewer={viewer} />
       {downloading ? (
         <PageLoading
-          title="模型下载中，请稍后..."
+          title={t('toolBar.downloadModel')}
           description={<Progress percent={percent} size="small" steps={50} />}
           className={styles.loading}
         />

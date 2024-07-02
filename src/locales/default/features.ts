@@ -42,4 +42,12 @@ export default {
     chat: '聊天',
     video: '视频',
   },
+  toolBar: {
+    cameraHelper: '镜头辅助',
+    cameraControl: '镜头控制',
+    floor: '切换地板',
+    resetCamera: '重置镜头',
+    grid: '网格',
+    downloadModel: '模型下载中，请稍后...',
+  },
 };
