@@ -1,31 +1,29 @@
 'use client';
 
 import { Alert, Icon, Modal, type ModalProps } from '@lobehub/ui';
-import { Button, Divider, Input, Space } from 'antd';
+import { Button, Divider, Input, Popover, Progress, Space } from 'antd';
 import { useTheme } from 'antd-style';
 import isEqual from 'fast-deep-equal';
 import { kebabCase } from 'lodash-es';
 import { Dices } from 'lucide-react';
 import qs from 'query-string';
-import { memo, useState } from 'react';
+import React, { memo, useState } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
 import AgentCard from '@/components/agent/AgentCard';
 import SystemRole from '@/components/agent/SystemRole';
 import { AGENTS_INDEX_GITHUB_ISSUE } from '@/constants/url';
-import { upload } from '@/services/upload';
+import { useUploadAgent } from '@/hooks/useUploadAgent';
 import { agentSelectors, useAgentStore } from '@/store/agent';
 import { Agent } from '@/types/agent';
-import { isLocalModelPath } from '@/utils/file';
-import { base64ToFile } from '@/utils/imageToBase64';
-import storage from '@/utils/storage';
 
 const SubmitAgentModal = memo<ModalProps>(({ open, onCancel }) => {
   const [agentId, setAgentId] = useState('');
   const theme = useTheme();
-  const [loading, setLoading] = useState(false);
   const currentAgent: Agent = useAgentStore((s) => agentSelectors.currentAgentItem(s), isEqual);
   const { meta } = currentAgent;
+
+  const { uploading, uploadAgentData, percent } = useUploadAgent();
 
   const isFormPass = Boolean(
     currentAgent.greeting &&
@@ -38,38 +36,7 @@ const SubmitAgentModal = memo<ModalProps>(({ open, onCancel }) => {
   );
 
   const handleSubmit = async () => {
-    setLoading(true);
-    let avatarUrl = meta.avatar;
-    if (meta.avatar.includes('base64')) {
-      const file = base64ToFile(meta.avatar, `${agentId}-avatar`);
-      const { success, url } = await upload(file);
-      if (success) {
-        avatarUrl = url;
-      }
-    }
-
-    let coverUrl = meta.cover;
-    if (meta.cover.includes('base64')) {
-      const file = base64ToFile(meta.avatar, `${agentId}-cover`);
-      const { success, url } = await upload(file);
-      if (success) {
-        coverUrl = url;
-      }
-    }
-
-    let modelUrl = meta.model;
-    // 本地模型上传
-    if (modelUrl && isLocalModelPath(modelUrl)) {
-      const modelBlob = await storage.getItem(modelUrl);
-      if (modelBlob) {
-        const { success, url } = await upload(
-          new File([modelBlob], `${agentId}-model.vrm`, { type: 'application/octet-stream' }),
-        );
-        if (success) {
-          modelUrl = url;
-        }
-      }
-    }
+    const { avatarUrl, coverUrl, modelUrl } = await uploadAgentData(agentId, meta);
 
     const body = [
       '### systemRole',
@@ -94,23 +61,42 @@ const SubmitAgentModal = memo<ModalProps>(({ open, onCancel }) => {
     });
 
     window.open(url, '_blank');
-    setLoading(false);
   };
 
   return (
     <Modal
       allowFullscreen
       footer={
-        <Button
-          block
-          disabled={!isFormPass || !agentId}
-          onClick={handleSubmit}
-          size={'large'}
-          type={'primary'}
-          loading={loading}
+        <Popover
+          open={uploading}
+          title={
+            <Flexbox>
+              <Space>
+                <Progress steps={30} percent={percent.cover} size="small" />
+                <span>上传封面</span>
+              </Space>
+              <Space>
+                <Progress steps={30} percent={percent.avatar} size="small" />
+                <span>上传头像</span>
+              </Space>
+              <Space>
+                <Progress steps={30} percent={percent.model} size="small" />
+                <span>上传模型</span>
+              </Space>
+            </Flexbox>
+          }
         >
-          提交助手
-        </Button>
+          <Button
+            block
+            disabled={!isFormPass || !agentId}
+            onClick={handleSubmit}
+            size={'large'}
+            type={'primary'}
+            loading={uploading}
+          >
+            提交助手
+          </Button>
+        </Popover>
       }
       onCancel={onCancel}
       open={open}
