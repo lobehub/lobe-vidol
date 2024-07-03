@@ -1,6 +1,7 @@
 import { Empty } from 'antd';
 import { createStyles } from 'antd-style';
 import { memo } from 'react';
+import { useTranslation } from 'react-i18next';
 import LazyLoad from 'react-lazy-load';
 
 import { agentSelectors, useAgentStore } from '@/store/agent';
@@ -24,6 +25,7 @@ const SessionList = memo<SessionListProps>(({ filter }) => {
     agentSelectors.agentListIds(s),
   ]);
   const { styles } = useStyles();
+  const { t } = useTranslation('role');
 
   return (
     <>
@@ -38,10 +40,7 @@ const SessionList = memo<SessionListProps>(({ filter }) => {
         </LazyLoad>
       ))}
       {agentListIds.length === 0 && (
-        <Empty
-          description={'暂无角色，可以通过 + 创建自定义角色，也可通过发现页添加角色'}
-          image={Empty.PRESENTED_IMAGE_SIMPLE}
-        />
+        <Empty description={t('noRole')} image={Empty.PRESENTED_IMAGE_SIMPLE} />
       )}
     </>
   );
