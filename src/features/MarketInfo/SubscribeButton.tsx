@@ -1,5 +1,6 @@
 import { Button, Popover, Progress, Space, message } from 'antd';
 import React, { memo } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
 import { useDownloadAgent } from '@/hooks/useDownloadAgent';
@@ -22,6 +23,8 @@ const SubscribeButton = memo((props: SubscribeButtonProps) => {
 
   const isSubscribed = subscribed(agent.agentId);
 
+  const { t } = useTranslation('common');
+
   return (
     <Popover
       open={downloading}
@@ -29,15 +32,15 @@ const SubscribeButton = memo((props: SubscribeButtonProps) => {
         <Flexbox>
           <Space>
             <Progress steps={30} percent={percent.cover} size="small" />
-            <span>下载封面</span>
+            <span>{t('actions.downloadCover')}</span>
           </Space>
           <Space>
             <Progress steps={30} percent={percent.avatar} size="small" />
-            <span>下载头像</span>
+            <span>{t('actions.downloadAvatar')}</span>
           </Space>
           <Space>
             <Progress steps={30} percent={percent.model} size="small" />
-            <span>下载模型</span>
+            <span>{t('actions.downloadModel')}</span>
           </Space>
         </Flexbox>
       }
@@ -48,7 +51,7 @@ const SubscribeButton = memo((props: SubscribeButtonProps) => {
         onClick={async () => {
           if (isSubscribed) {
             removeLocalAgent(agent.agentId).then(() => {
-              message.success('已取消订阅');
+              message.success(t('actions.unsubscribeSuccess'));
             });
           } else {
             await fetchAgentData(agent);
@@ -56,7 +59,7 @@ const SubscribeButton = memo((props: SubscribeButtonProps) => {
         }}
         type={isSubscribed ? 'default' : 'primary'}
       >
-        {isSubscribed ? '取消订阅' : '下载订阅'}
+        {isSubscribed ? t('actions.unsubscribe') : t('actions.downloadSubscribe')}
       </Button>
     </Popover>
   );
