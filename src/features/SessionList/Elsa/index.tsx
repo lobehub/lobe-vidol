@@ -1,5 +1,6 @@
 import { Space, Tag } from 'antd';
 import { memo } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { LOBE_VIDOL_DEFAULT_AGENT_ID } from '@/constants/agent';
 import { useAgentStore } from '@/store/agent';
@@ -8,6 +9,7 @@ import { useSessionStore } from '@/store/session';
 import ListItem from '../ListItem';
 
 const Elsa = memo(() => {
+  const { t } = useTranslation('common');
   const [activeId, switchSession] = useSessionStore((s) => [s.activeId, s.switchSession]);
   const defaultAgent = useAgentStore((s) => s.defaultAgent);
 
@@ -21,7 +23,7 @@ const Elsa = memo(() => {
       title={
         <Space align={'center'}>
           {defaultAgent.meta.name}
-          <Tag color="geekblue">默认助手</Tag>
+          <Tag color="geekblue">{t('defaultAssistant')}</Tag>
         </Space>
       }
       description={defaultAgent.greeting || defaultAgent.meta.description || ''}
