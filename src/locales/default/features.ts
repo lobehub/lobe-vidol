@@ -57,4 +57,9 @@ export default {
     comfirmRetry: '确认并重试',
     closeTip: '关闭提示',
   },
+  settings: {
+    glow: '光辉',
+    none: '无背景',
+    nickName: '请输入昵称',
+  },
 };
