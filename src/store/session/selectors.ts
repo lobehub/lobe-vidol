@@ -37,10 +37,12 @@ const getAgentById = (s: SessionStore) => {
   const { sessionList } = s;
   const agentStore = useAgentStore.getState();
   return (id: string) => {
-    const agentId = sessionList.find((item) => item.agentId === id)?.agentId;
-    if (agentId === LOBE_VIDOL_DEFAULT_AGENT_ID) {
+    if (id === LOBE_VIDOL_DEFAULT_AGENT_ID) {
       return agentStore.defaultAgent;
     }
+
+    const agentId = sessionList.find((item) => item.agentId === id)?.agentId;
+
     return agentStore.getAgentById(agentId || '');
   };
 };
