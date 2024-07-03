@@ -4,8 +4,10 @@ import { memo } from 'react';
 
 import ModelIcon from '@/components/ModelIcon';
 import ModelTag from '@/components/ModelTag';
+import { LOBE_VIDOL_DEFAULT_AGENT_ID } from '@/constants/agent';
 import { OPENAI_MODEL_LIST } from '@/constants/openai';
-import { agentSelectors, useAgentStore } from '@/store/agent';
+import useSessionContext from '@/hooks/useSessionContext';
+import { useAgentStore } from '@/store/agent';
 
 const useStyles = createStyles(({ css, prefixCls }) => ({
   menu: css`
@@ -32,16 +34,16 @@ const useStyles = createStyles(({ css, prefixCls }) => ({
 const ModelSelect = memo(() => {
   const { styles } = useStyles();
 
-  const { updateChatModel } = useAgentStore();
+  const { updateAgentConfig } = useAgentStore();
 
-  const { model } = agentSelectors.currentAgentChatModel(useAgentStore.getState()) || {};
+  const { model, agentId } = useSessionContext()?.sessionAgent || {};
 
   const items = OPENAI_MODEL_LIST.map((item) => {
     return {
       icon: <ModelIcon model={item.id} size={18} />,
       key: item.id,
       label: item.displayName,
-      onClick: () => updateChatModel({ model: item.id }),
+      onClick: () => updateAgentConfig({ model: item.id }, agentId || LOBE_VIDOL_DEFAULT_AGENT_ID),
     };
   });
 
