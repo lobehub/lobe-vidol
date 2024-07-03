@@ -1,5 +1,6 @@
 export default {
   error: '错误',
+  triggerError: '触发错误',
   errorTip: {
     problem: '页面遇到一点问题...',
     description: '项目当前正在施工中，不保证数据稳定性，如果遇到问题可以尝试',
