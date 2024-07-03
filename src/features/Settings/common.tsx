@@ -3,6 +3,7 @@ import { createStyles } from 'antd-style';
 import classNames from 'classnames';
 import { Monitor, Settings2, User2Icon } from 'lucide-react';
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 import ClearSession from '@/features/Actions/ClearSession';
 import ResetConfig from '@/features/Actions/ResetConfig';
@@ -33,46 +34,62 @@ const useStyles = createStyles(({ css }) => ({
 const CommonConfig = (props: CommonConfigProps) => {
   const { style, className } = props;
   const { styles } = useStyles();
-
+  const { t } = useTranslation('common');
+  t('words.');
   return (
     <div className={classNames(styles.config, className)} style={style}>
       <Form style={{ display: 'flex', flexGrow: 1 }}>
-        <FormGroup icon={User2Icon} title={'聊天设置'}>
-          <FormItem desc={'自定义头像'} divider label={'头像'} name={'avatar'}>
+        <FormGroup icon={User2Icon} title={t('words.chatSetting')}>
+          <FormItem desc={t('words.DIYAvatar')} divider label={t('words.avatar')} name={'avatar'}>
             <AvatarWithUpload />
           </FormItem>
-          <FormItem desc={'自定义昵称'} divider label={'昵称'} name={'nickName'}>
+          <FormItem
+            desc={t('words.DIYNickname')}
+            divider
+            label={t('words.nickname')}
+            name={'nickName'}
+          >
             <NickName />
           </FormItem>
         </FormGroup>
-        <FormGroup icon={Settings2} title={'主题设置'}>
-          <FormItem desc={'主题色'} divider label={'自定义主题色'} name={'primaryColor'}>
+        <FormGroup icon={Settings2} title={t('words.topicSetting')}>
+          <FormItem
+            desc={t('words.topicColor')}
+            divider
+            label={t('words.DIYTopicColor')}
+            name={'primaryColor'}
+          >
             <ThemeSwatchesPrimary />
           </FormItem>
           <FormItem
-            desc={'不同色彩倾向的灰阶自定义'}
+            desc={t('words.DIYColor')}
             divider
-            label={'中性色'}
+            label={t('words.midColor')}
             name={'neutralColor'}
           >
             <ThemeSwatchesNetural />
           </FormItem>
-          <FormItem desc={'自定义背景效果'} divider label={'背景效果'} name={'backgroundEffect'}>
+          <FormItem
+            desc={t('words.DIYBackgroundEffect')}
+            divider
+            label={t('words.backgroundEffect')}
+            name={'backgroundEffect'}
+          >
             <BackgroundEffect />
           </FormItem>
         </FormGroup>
-        <FormGroup icon={Monitor} title={'系统设置'}>
+        <FormGroup icon={Monitor} title={t('words.systemSetting')}>
           <FormItem
-            desc={'将会清除所有会话与角色数据，包括会话列表，角色列表、会话消息等'}
+            desc={t('words.clearAllSession')}
             divider
-            label={'清除所有会话消息'}
+            label={t('words.clearAllSessionDesc')}
           >
             <ClearSession />
           </FormItem>
           <FormItem
-            desc={'将会重置所有系统设置，包括主题设置、聊天设置、语言模型设置等'}
+            desc={t('words.resetSystemSettingDesc')}
             divider
-            label={'重置系统设置'}
+            label={t('words.resetSystemSetting')}
           >
             <ResetConfig />
           </FormItem>

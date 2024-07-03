@@ -1,6 +1,7 @@
 import { Input } from 'antd';
 import { isEqual } from 'lodash-es';
 import React, { CSSProperties, memo } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { MAX_NAME_LENGTH } from '@/constants/common';
 import { useSettingStore } from '@/store/setting';
@@ -11,6 +12,8 @@ interface Props {
 
 const NickName = memo<Props>((props) => {
   const { style } = props;
+  const { t } = useTranslation('features');
+
   const [nickName, setNickName] = useSettingStore(
     (s) => [s.config.nickName, s.setNickName],
     isEqual,
@@ -20,7 +23,7 @@ const NickName = memo<Props>((props) => {
     <Input
       style={style}
       value={nickName}
-      placeholder={'请输入昵称'}
+      placeholder={t('settings.nickName')}
       maxLength={MAX_NAME_LENGTH}
       showCount
       onChange={(e) => {

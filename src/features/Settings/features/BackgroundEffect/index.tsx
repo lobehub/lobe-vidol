@@ -1,6 +1,7 @@
 import { Segmented } from 'antd';
 import { isEqual } from 'lodash-es';
 import React, { CSSProperties, memo } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { useSettingStore } from '@/store/setting';
 import { BackgroundEffect } from '@/types/config';
@@ -11,6 +12,7 @@ interface Props {
 
 export default memo<Props>((props) => {
   const { style } = props;
+  const { t } = useTranslation('features');
   const [backgroundEffect, setBackgroundEffect] = useSettingStore(
     (s) => [s.config.backgroundEffect, s.setBackgroundEffect],
     isEqual,
@@ -25,11 +27,11 @@ export default memo<Props>((props) => {
       }}
       options={[
         {
-          label: '光辉',
+          label: t('settings.glow'),
           value: 'glow',
         },
         {
-          label: '无背景',
+          label: t('settings.none'),
           value: 'none',
         },
       ]}
