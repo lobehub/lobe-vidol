@@ -1,4 +1,5 @@
-import { ChatStreamPayload } from './openai/chat';
+import { LLMParams } from '@/types/llm';
+
 import { TouchActionConfig } from './touch';
 import { TTS } from './tts';
 
@@ -89,7 +90,7 @@ export interface Agent {
   /**
    * 语言模型配置
    */
-  params?: Partial<ChatStreamPayload>;
+  params?: LLMParams;
   /**
    * 角色设定
    */

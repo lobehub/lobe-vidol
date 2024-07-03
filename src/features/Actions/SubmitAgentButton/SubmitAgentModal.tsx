@@ -50,7 +50,7 @@ const SubmitAgentModal = memo<ModalProps>(({ open, onCancel }) => {
       currentAgent.systemRole,
       '### greeting',
       currentAgent.greeting,
-      '### model',
+      '### modelUrl',
       modelUrl,
       '### name',
       meta.name,
@@ -59,9 +59,13 @@ const SubmitAgentModal = memo<ModalProps>(({ open, onCancel }) => {
       '### gender',
       meta.gender,
       '### tts',
-      currentAgent.tts,
+      JSON.stringify(currentAgent.tts),
       '### touch',
-      currentAgent.touch,
+      JSON.stringify(currentAgent.touch),
+      '### model',
+      currentAgent.model,
+      '### params',
+      JSON.stringify(currentAgent.params),
     ].join('\n\n');
 
     const url = qs.stringifyUrl({
