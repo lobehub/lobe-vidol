@@ -2,6 +2,7 @@ import { TextArea } from '@lobehub/ui';
 import { createStyles } from 'antd-style';
 import { TextAreaRef } from 'antd/es/input/TextArea';
 import React, { memo, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import useChatInput from '@/hooks/useSendMessage';
 import { useSessionStore } from '@/store/session';
@@ -35,6 +36,7 @@ const InputArea = memo<InputAreaProps>(({ setExpand }) => {
   const ref = useRef<TextAreaRef>(null);
   const isChineseInput = useRef(false);
   const onSend = useChatInput();
+  const { t } = useTranslation('common');
 
   const [loading, messageInput, setMessageInput] = useSessionStore((s) => [
     !!s.chatLoadingId,
@@ -75,7 +77,7 @@ const InputArea = memo<InputAreaProps>(({ setExpand }) => {
 
           send(e);
         }}
-        placeholder="请输入内容开始聊天"
+        placeholder={t('startChat')}
         ref={ref}
         type={'pure'}
         value={messageInput}
