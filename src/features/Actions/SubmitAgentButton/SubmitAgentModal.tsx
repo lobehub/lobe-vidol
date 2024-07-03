@@ -1,7 +1,7 @@
 'use client';
 
 import { Alert, Icon, Modal, type ModalProps } from '@lobehub/ui';
-import { Button, Divider, Input, Popover, Progress, Space } from 'antd';
+import { Button, Divider, Input, Popover, Progress, Space, Typography } from 'antd';
 import { useTheme } from 'antd-style';
 import isEqual from 'fast-deep-equal';
 import { kebabCase } from 'lodash-es';
@@ -32,27 +32,36 @@ const SubmitAgentModal = memo<ModalProps>(({ open, onCancel }) => {
       meta.description &&
       meta.avatar &&
       meta.cover &&
-      meta.model,
+      meta.model &&
+      meta.gender,
   );
 
   const handleSubmit = async () => {
     const { avatarUrl, coverUrl, modelUrl } = await uploadAgentData(agentId, meta);
 
     const body = [
-      '### systemRole',
-      currentAgent.systemRole,
       '### agentId',
       agentId,
       '### avatar',
       avatarUrl,
       '### cover',
       coverUrl,
+      '### systemRole',
+      currentAgent.systemRole,
+      '### greeting',
+      currentAgent.greeting,
       '### model',
       modelUrl,
       '### name',
       meta.name,
       '### description',
       meta.description,
+      '### gender',
+      meta.gender,
+      '### tts',
+      currentAgent.tts,
+      '### touch',
+      currentAgent.touch,
     ].join('\n\n');
 
     const url = qs.stringifyUrl({
@@ -71,17 +80,18 @@ const SubmitAgentModal = memo<ModalProps>(({ open, onCancel }) => {
           open={uploading}
           title={
             <Flexbox>
+              <Typography.Text type={'secondary'}>上传处理中，请勿关闭页面...</Typography.Text>
               <Space>
                 <Progress steps={30} percent={percent.cover} size="small" />
-                <span>上传封面</span>
+                <Typography.Text style={{ fontSize: 12 }}>上传封面</Typography.Text>
               </Space>
               <Space>
                 <Progress steps={30} percent={percent.avatar} size="small" />
-                <span>上传头像</span>
+                <Typography.Text style={{ fontSize: 12 }}>上传头像</Typography.Text>
               </Space>
               <Space>
                 <Progress steps={30} percent={percent.model} size="small" />
-                <span>上传模型</span>
+                <Typography.Text style={{ fontSize: 12 }}>上传模型</Typography.Text>
               </Space>
             </Flexbox>
           }
