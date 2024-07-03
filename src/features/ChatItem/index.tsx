@@ -2,6 +2,7 @@ import { AlertProps, ChatItem, ChatItemProps } from '@lobehub/ui';
 import { createStyles } from 'antd-style';
 import isEqual from 'fast-deep-equal';
 import { ReactNode, memo, useCallback, useMemo, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { CHAT_INPUT_WIDTH } from '@/constants/token';
 import { useSessionStore } from '@/store/session';
@@ -39,6 +40,7 @@ export interface ChatListItemProps {
 const Item = memo<ChatListItemProps>(({ index, id, showTitle = false, type = 'block' }) => {
   const { styles } = useStyles();
   const [editing, setEditing] = useState(false);
+  const { t } = useTranslation('common');
 
   const item = useSessionStore((s) => {
     const chats = sessionSelectors.currentChatsWithGreetingMessage(s);
@@ -100,9 +102,9 @@ const Item = memo<ChatListItemProps>(({ index, id, showTitle = false, type = 'bl
         )}
         showTitle={showTitle}
         text={{
-          cancel: '取消',
-          confirm: '确定',
-          edit: '编辑',
+          cancel: t('cancel'),
+          confirm: t('confirm'),
+          edit: t('actions.edit'),
         }}
         time={item.updatedAt || item.createdAt}
         type={type}
