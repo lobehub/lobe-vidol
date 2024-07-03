@@ -50,4 +50,11 @@ export default {
     grid: '网格',
     downloadModel: '模型下载中，请稍后...',
   },
+  feature: {
+    startDesc: '输入你的 OpenAI API Key 即可开始会话。应用不会记录你的 API Key',
+    startTitle: '自定义 API Key',
+    addProxy: '添加 OpenAI 代理地址（可选）',
+    comfirmRetry: '确认并重试',
+    closeTip: '关闭提示',
+  },
 };

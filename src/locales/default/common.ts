@@ -26,6 +26,7 @@ export default {
     resetNow: '立即重置',
     play: '播放',
     pause: '暂停',
+    copySuccess: '复制成功',
     removeInList: '从列表中移除',
     downloadSuccess: '下载成功',
     downloadFailed: '下载失败',
@@ -48,5 +49,6 @@ export default {
     resetTip: '操作无法撤销，重置后数据将无法恢复，请慎重操作',
     resetSuccess: '重置成功',
     resetTitle: '确认重置所有系统设置?',
+    goBottom: '返回底部',
   },
 };
