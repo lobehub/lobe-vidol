@@ -1,0 +1,81 @@
+{
+  "dance": {
+    "addPlay": "리스트에 추가",
+    "addPlaySuccess": "재생 목록에 추가되었습니다",
+    "cancelAddPlay": "{{musicName}} 음악 구독을 취소 하시겠습니까?",
+    "cancelSubscribed": "구독 취소",
+    "findDance": "좋아하는 춤을 찾아보세요",
+    "musicAndDance": "음악과 춤",
+    "play": "재생"
+  },
+  "info": {
+    "avatarDescription": "사용자 정의 아바타, 클릭하여 업로드",
+    "avatarLabel": "아바타",
+    "coverDescription": "캐릭터를 발견 페이지에서 표시하는 데 사용되는 커버, 권장 크기 {{width}} x {{height}} ",
+    "coverLabel": "커버",
+    "descDescription": "캐릭터 설명, 캐릭터의 간단한 소개에 사용됩니다",
+    "descLabel": "설명",
+    "emotionDescription": "응답할 때 선택한 감정, 캐릭터의 표정 변화에 영향을 줍니다",
+    "emotionLabel": "표정과 감정",
+    "genderDescription": "캐릭터 성별, 캐릭터의 터치 응답에 영향을 줍니다",
+    "genderLabel": "성별",
+    "greetDescription": "캐릭터와 처음 대화할 때 사용되는 인사말",
+    "greetLabel": "인사",
+    "modelDescription": "모델 미리보기, 모델 파일을 드래그하여 교체할 수 있습니다",
+    "modelLabel": "모델 미리보기",
+    "nameDescription": "캐릭터 이름, 캐릭터와 대화할 때 사용되는 이름",
+    "nameLabel": "이름",
+    "readmeDescription": "캐릭터 설명서, 발견 페이지에서 캐릭터의 자세한 설명을 표시하는 데 사용됩니다",
+    "readmeLabel": "캐릭터 설명서",
+    "textDescription": "사용자 정의 응답 문구",
+    "textLabel": "문구"
+  },
+  "market": {
+    "findVidol": "좋아하는 아이돌을 찾아보세요"
+  },
+  "nav": {
+    "info": "기본 정보",
+    "model": "3D 모델",
+    "role": "캐릭터 설정",
+    "voice": "음성"
+  },
+  "role": {
+    "greetTip": "캐릭터와 인사할 때 사용할 문구를 입력하세요",
+    "inputRoleSetting": "캐릭터 시스템 설정을 입력하세요",
+    "roleDescriptionTip": "캐릭터 설명을 입력하세요",
+    "roleNameTip": "캐릭터 이름을 입력하세요",
+    "roleReadmeTip": "캐릭터 설명을 입력하세요",
+    "roleSettingDescription": "캐릭터의 배경 설정, 캐릭터와 대화할 때 모델에게 전송됩니다",
+    "roleSettingLabel": "시스템 캐릭터 설정",
+    "uploadSize": "단일 파일 업로드가 지원되며, 권장 크기는 {{width}} x {{height}}의 배수입니다"
+  },
+  "touch": {
+    "addAction": "응답 동작 추가",
+    "editAction": "응답 동작 편집",
+    "inputActionEmotion": "캐릭터 응답 시 사용할 표정을 입력하세요",
+    "inputActionText": "응답 문구를 입력하세요",
+    "inputDIYText": "사용자 정의 문구를 입력하세요",
+    "touchActionList": "{{touchArea}}을(를) 터치할 때의 반응 목록",
+    "touchArea": "터치 영역"
+  },
+  "tts": {
+    "audition": "시험 듣기",
+    "auditionDescription": "언어에 따라 시험 듣기 문구가 다릅니다",
+    "engineDescription": "음성 합성 엔진, 우선적으로 Edge 브라우저를 선택하는 것이 좋습니다",
+    "engineLabel": "음성 엔진",
+    "localeDescription": "음성 합성 언어, 현재 가장 일반적인 몇 가지 언어만 지원됩니다. 필요한 경우 연락하세요",
+    "localeLabel": "언어",
+    "pitchDescription": "음높이를 제어하고 0 ~ 2의 값을 취합니다. 기본값은 1입니다",
+    "pitchLabel": "음높이",
+    "selectLanguage": "먼저 언어를 선택하세요",
+    "selectVoice": "먼저 음성을 선택하세요",
+    "speedDescription": "속도를 제어하고 0 ~ 3의 값을 취합니다. 기본값은 1입니다",
+    "speedLabel": "속도",
+    "transfromSuccess": "변환 성공",
+    "voiceDescription": "엔진 및 언어에 따라 다릅니다",
+    "voiceLabel": "음성"
+  },
+  "upload": {
+    "support": "단일 파일 업로드가 지원되며, 현재 vrm 형식 파일만 지원됩니다"
+  }
+}
