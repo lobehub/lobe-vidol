@@ -1,0 +1,65 @@
+{
+  "actions": {
+    "useVideo": "切換視訊模式"
+  },
+  "agent": {
+    "female": "女性",
+    "male": "男性",
+    "other": "其他"
+  },
+  "feature": {
+    "addProxy": "添加 OpenAI 代理地址（可選）",
+    "closeTip": "關閉提示",
+    "comfirmRetry": "確認並重試",
+    "startDesc": "輸入你的 OpenAI API Key 即可開始會話。應用不會記錄你的 API Key",
+    "startTitle": "自定義 API Key"
+  },
+  "mode": {
+    "chat": "聊天",
+    "video": "視訊"
+  },
+  "settings": {
+    "glow": "光輝",
+    "nickName": "請輸入暱稱",
+    "none": "無背景"
+  },
+  "share": {
+    "downloadScreenshot": "下載螢幕截圖",
+    "imageType": "圖片格式",
+    "screenshot": "螢幕截圖",
+    "share": "分享",
+    "shareGPT": "分享 GPT",
+    "shareToGPT": "生成分享至 ShareGPT 的連結",
+    "shareToMarket": "分享至助手市場",
+    "withBackground": "包含背景圖片",
+    "withFooter": "包含頁腳",
+    "withSystemRole": "包含助手角色設定"
+  },
+  "submit": {
+    "assistantId": "助手識別符",
+    "assistantIdTip": "請輸入助手的識別符，需要是唯一的，例如 vidol-agent-klee",
+    "submitAssistant": "提交助手",
+    "submitWarning": "請補全助手資訊後提交，需要包含名稱、描述、頭像和封面"
+  },
+  "support": "社區支援",
+  "theme": {
+    "auto": "跟隨系統",
+    "dark": "暗黑模式",
+    "light": "亮色模式"
+  },
+  "token": {
+    "overload": "令牌超出",
+    "remained": "令牌剩餘",
+    "tokenCount": "令牌數量",
+    "useToken": "消耗令牌數量計算，包括訊息、角色設定與上下文：{{usedTokens}} / {{maxValue}}",
+    "used": "令牌已使用"
+  },
+  "toolBar": {
+    "cameraControl": "鏡頭控制",
+    "cameraHelper": "鏡頭輔助",
+    "downloadModel": "模型下載中，請稍後...",
+    "floor": "切換地板",
+    "grid": "網格",
+    "resetCamera": "重設鏡頭"
+  }
+}
