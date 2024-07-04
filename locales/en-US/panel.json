@@ -1,0 +1,81 @@
+{
+  "dance": {
+    "addPlay": "Add to playlist",
+    "addPlaySuccess": "Added to playlist",
+    "cancelAddPlay": "Are you sure you want to cancel subscribing to {{musicName}}?",
+    "cancelSubscribed": "Unsubscribe",
+    "findDance": "Find your favorite dance",
+    "musicAndDance": "Music and Dance",
+    "play": "Play"
+  },
+  "info": {
+    "avatarDescription": "Customize your avatar. Click to upload",
+    "avatarLabel": "Avatar",
+    "coverDescription": "Used for displaying the character on the discovery page. Recommended size {{width}} x {{height}}",
+    "coverLabel": "Cover",
+    "descDescription": "Character description, used for a brief introduction",
+    "descLabel": "Description",
+    "emotionDescription": "Select the emotion when responding, which will affect the character's expression",
+    "emotionLabel": "Expression and Emotion",
+    "genderDescription": "Character gender, affects character's touch response",
+    "genderLabel": "Gender",
+    "greetDescription": "Greeting used when chatting with the character for the first time",
+    "greetLabel": "Greeting",
+    "modelDescription": "Model preview, drag and drop the model file to replace",
+    "modelLabel": "Model Preview",
+    "nameDescription": "Character name, used when chatting with the character",
+    "nameLabel": "Name",
+    "readmeDescription": "Character's description file, used for detailed introduction on the discovery page",
+    "readmeLabel": "Character Description",
+    "textDescription": "Custom response text",
+    "textLabel": "Text"
+  },
+  "market": {
+    "findVidol": "Find your favorite idol"
+  },
+  "nav": {
+    "info": "Basic Information",
+    "model": "3D Model",
+    "role": "Character Settings",
+    "voice": "Voice"
+  },
+  "role": {
+    "greetTip": "Enter the greeting used by the character when greeting you",
+    "inputRoleSetting": "Enter the character's system settings",
+    "roleDescriptionTip": "Enter the character description",
+    "roleNameTip": "Enter the character name",
+    "roleReadmeTip": "Enter the character description",
+    "roleSettingDescription": "Character's background settings, will be sent to the model when chatting with the character",
+    "roleSettingLabel": "System Character Settings",
+    "uploadSize": "Supports uploading a single file, recommended size is a multiple of {{width}} x {{height}}"
+  },
+  "touch": {
+    "addAction": "Add response action",
+    "editAction": "Edit response action",
+    "inputActionEmotion": "Enter the character's expression when responding",
+    "inputActionText": "Enter response text",
+    "inputDIYText": "Enter custom text",
+    "touchActionList": "Reaction list when touching {{touchArea}}",
+    "touchArea": "Touch area"
+  },
+  "tts": {
+    "audition": "Audition",
+    "auditionDescription": "Audition text varies depending on the language",
+    "engineDescription": "Speech synthesis engine, it is recommended to choose Edge browser first",
+    "engineLabel": "Speech Engine",
+    "localeDescription": "Language used for speech synthesis, currently only supports several common languages. Please contact us if you need more",
+    "localeLabel": "Language",
+    "pitchDescription": "Control the pitch, range is 0 ~ 2, default is 1",
+    "pitchLabel": "Pitch",
+    "selectLanguage": "Please select a language first",
+    "selectVoice": "Please select a voice first",
+    "speedDescription": "Control the speed, range is 0 ~ 3, default is 1",
+    "speedLabel": "Speed",
+    "transfromSuccess": "Conversion successful",
+    "voiceDescription": "Different depending on the engine and language",
+    "voiceLabel": "Voice"
+  },
+  "upload": {
+    "support": "Supports uploading a single file, currently only supports vrm format files"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "apiKeyMiss": "OpenAI API Key is missing, please add a custom OpenAI API Key",
+  "error": "Error",
+  "errorTip": {
+    "clearSession": "Clear Session Messages",
+    "description": "The project is currently under construction and data stability is not guaranteed. If you encounter any issues, please try",
+    "forgive": "",
+    "or": "or",
+    "problem": "Oops...something went wrong with the page.",
+    "resetSystem": "Reset System Settings"
+  },
+  "goBack": "Go Back to Homepage",
+  "openaiError": "OpenAI API Error, please check if the OpenAI API Key and Endpoint are correct.",
+  "reload": "Reload",
+  "s3envError": "S3 environment variables are not fully set, please check your environment variables.",
+  "serverError": "Server Error, please contact the administrator.",
+  "triggerError": "Trigger Error",
+  "unknownError": "Unknown Error"
+}

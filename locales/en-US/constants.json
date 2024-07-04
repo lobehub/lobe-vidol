@@ -1,0 +1,92 @@
+{
+  "agent": {
+    "gender": {
+      "female": "Female",
+      "male": "Male",
+      "other": "Other"
+    },
+    "meta": {
+      "description": "This is a custom role",
+      "name": "Custom Role"
+    }
+  },
+  "touch": {
+    "area": {
+      "arm": "Arm",
+      "belly": "Belly",
+      "chest": "Chest",
+      "head": "Head",
+      "leg": "Leg"
+    },
+    "emotion": {
+      "angry": "Angry",
+      "blink": "Blink",
+      "blinkLeft": "Blink Left",
+      "blinkRight": "Blink Right",
+      "happy": "Happy",
+      "natural": "Natural",
+      "relaxed": "Relaxed",
+      "sad": "Sad",
+      "surprised": "Surprised"
+    },
+    "femaleAction": {
+      "armAction": {
+        "happyA": "Ah, I love this~",
+        "happyB": "Haha, holding hands makes me happy~",
+        "relaxedA": "Master's hands are so warm~"
+      },
+      "bellyAction": {
+        "angryA": "Why are you touching me? Be careful, I might bite you!",
+        "relaxedA": "Wake up, we're not meant to be!",
+        "relaxedB": "I hate it! I'm getting angry!",
+        "surprisedA": "It was an accident... right?"
+      },
+      "chestAction": {
+        "angryA": "You can't bully me like this! Get your hands off!",
+        "angryB": "What's wrong? There's a pervert touching me!",
+        "angryC": "If you touch me again, I'll call the police!",
+        "surprisedA": "Why are you poking me? Can't we have a pleasant conversation anymore?"
+      },
+      "headAction": {
+        "angryA": "I heard that being patted on the head stunts growth!",
+        "angryB": "Why are you poking me?",
+        "happyA": "Wow! I love head pats!",
+        "happyB": "I feel so energized!",
+        "happyC": "Wow, the feeling of a head pat is amazing!",
+        "happyD": "Head pats make me happy all day long!"
+      },
+      "legAction": {
+        "angryA": "Hey, are you trying to pick a fight?",
+        "angryB": "Is Master's hand not following commands again?",
+        "angryC": "I hate it~ it's ticklish!",
+        "surprisedA": "Can't we maintain a pure friendship?"
+      }
+    },
+    "maleAction": {
+      "armAction": {
+        "neutralA": "Don't ask if I had chicken today, first look at my biceps.",
+        "neutralB": "My arms are not for anyone to touch, you are an exception.",
+        "neutralC": "You are brave, daring to touch the legendary Kirin arm."
+      },
+      "bellyAction": {
+        "happyA": "Stop tickling, be careful I might laugh out my abs.",
+        "neutralA": "My abs are just inner strength honed through training.",
+        "neutralB": "Have you seen my group of abs? They are just well-hidden."
+      },
+      "chestAction": {
+        "blinkLeftA": "Come on, you can lean on my chest muscles!",
+        "neutralA": "This is just the chest muscle I have developed through daily training, nothing to be surprised about."
+      },
+      "headAction": {
+        "neutralA": "Of course, only you have the privilege to touch my head.",
+        "neutralB": "I am not an ordinary person that anyone can touch.",
+        "neutralC": "Don't worry, after you touch my head, your luck will greatly improve."
+      },
+      "legAction": {
+        "angryA": "Don't come near me, you leg enthusiast.",
+        "neutralA": "Don't be afraid, my powerful steel legs don't kick fools.",
+        "neutralB": "Do you feel like your life is much more complete after touching my leg?"
+      }
+    }
+  }
+}
