@@ -1,7 +1,7 @@
 import { consola } from 'consola';
 import { colors } from 'consola/utils';
 import { diff } from 'just-diff';
-import { unset } from 'lodash';
+import { unset } from 'lodash-es';
 import { existsSync } from 'node:fs';
 
 import {

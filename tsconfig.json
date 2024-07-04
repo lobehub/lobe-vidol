@@ -34,5 +34,10 @@
     "**/*.d.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
-  ]
+  ],
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  }
 }
