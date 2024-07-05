@@ -8,6 +8,7 @@ import { INPUT_WIDTH_L, INPUT_WIDTH_M } from '@/constants/token';
 import CoverWithUpload from '@/panels/RolePanel/RoleEdit/Info/CoverWithUpload';
 import Greeting from '@/panels/RolePanel/RoleEdit/Info/Greeting';
 import ReadMe from '@/panels/RolePanel/RoleEdit/Info/ReadMe';
+import RoleCategory from '@/panels/RolePanel/RoleEdit/Info/RoleCategory';
 import RoleDescription from '@/panels/RolePanel/RoleEdit/Info/RoleDescription';
 import RoleGender from '@/panels/RolePanel/RoleEdit/Info/RoleGender';
 import RoleName from '@/panels/RolePanel/RoleEdit/Info/RoleName';
@@ -82,6 +83,9 @@ const Info = (props: InfoProps) => {
             >
               <RoleGender style={{ width: INPUT_WIDTH_M }} />
             </FormItem>
+            <FormItem label={'类别'} desc={'角色类别，用于展示分类'} divider name={['category']}>
+              <RoleCategory style={{ width: INPUT_WIDTH_M }} />
+            </FormItem>
             <FormItem
               label={'描述'}
               divider
@@ -101,7 +105,7 @@ const Info = (props: InfoProps) => {
               <Greeting style={{ width: INPUT_WIDTH_L }} />
             </FormItem>
             <FormItem
-              label={'角色说明'}
+              label={'说明'}
               name={'readme'}
               divider
               desc="角色的说明文件，用于发现页展示角色的详细说明"
