@@ -1,0 +1,65 @@
+{
+  "actions": {
+    "useVideo": "Videomodus verwenden"
+  },
+  "agent": {
+    "female": "Weiblich",
+    "male": "Männlich",
+    "other": "Andere"
+  },
+  "feature": {
+    "addProxy": "OpenAI-Proxy hinzufügen (optional)",
+    "closeTip": "Tipp schließen",
+    "comfirmRetry": "Bestätigen und erneut versuchen",
+    "startDesc": "Geben Sie Ihren OpenAI-API-Schlüssel ein, um das Gespräch zu beginnen. Die App speichert Ihren API-Schlüssel nicht.",
+    "startTitle": "Benutzerdefinierter API-Schlüssel"
+  },
+  "mode": {
+    "chat": "Chat",
+    "video": "Video"
+  },
+  "settings": {
+    "glow": "Leuchten",
+    "nickName": "Geben Sie einen Spitznamen ein",
+    "none": "Kein Hintergrund"
+  },
+  "share": {
+    "downloadScreenshot": "Screenshot herunterladen",
+    "imageType": "Bildformat",
+    "screenshot": "Screenshot",
+    "share": "Teilen",
+    "shareGPT": "GPT teilen",
+    "shareToGPT": "Erstellen Sie einen ShareGPT-Link zum Teilen",
+    "shareToMarket": "Auf dem Assistentenmarkt teilen",
+    "withBackground": "Mit Hintergrundbild",
+    "withFooter": "Mit Fußzeile",
+    "withSystemRole": "Mit Assistentenrolleneinstellung"
+  },
+  "submit": {
+    "assistantId": "Assistenten-ID",
+    "assistantIdTip": "Geben Sie die ID des Assistenten ein. Sie muss eindeutig sein, z. B. vidol-agent-klee",
+    "submitAssistant": "Assistenten einreichen",
+    "submitWarning": "Bitte vervollständigen Sie die Assistenteninformationen, bevor Sie sie einreichen. Es müssen Name, Beschreibung, Avatar und Cover enthalten sein."
+  },
+  "support": "Community-Support",
+  "theme": {
+    "auto": "System folgen",
+    "dark": "Dunkler Modus",
+    "light": "Heller Modus"
+  },
+  "token": {
+    "overload": "Token-Überlastung",
+    "remained": "Verbleibende Token",
+    "tokenCount": "Token-Anzahl",
+    "useToken": "Verbrauchen Sie Token zur Berechnung, einschließlich Nachrichten, Rolleneinstellungen und Kontext: {{usedTokens}} / {{maxValue}}",
+    "used": "Verwendete Token"
+  },
+  "toolBar": {
+    "cameraControl": "Kamerasteuerung",
+    "cameraHelper": "Kamerahilfe",
+    "downloadModel": "Modell wird heruntergeladen, bitte warten...",
+    "floor": "Boden wechseln",
+    "grid": "Raster",
+    "resetCamera": "Kamera zurücksetzen"
+  }
+}
