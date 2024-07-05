@@ -75,23 +75,11 @@ const Info = (props: InfoProps) => {
               <RoleName style={{ width: INPUT_WIDTH_M }} />
             </FormItem>
             <FormItem
-              label={'性别'}
-              desc={'角色性别，影响角色的交互响应'}
-              divider
-              name={['gender']}
-              required
-            >
-              <RoleGender style={{ width: INPUT_WIDTH_M }} />
-            </FormItem>
-            <FormItem label={'类别'} desc={'角色类别，用于展示分类'} divider name={['category']}>
-              <RoleCategory style={{ width: INPUT_WIDTH_M }} />
-            </FormItem>
-            <FormItem
               label={'描述'}
               divider
-              required
               desc={'角色描述，用于角色的简单介绍'}
               name={'description'}
+              required
             >
               <RoleDescription style={{ width: INPUT_WIDTH_L }} />
             </FormItem>
@@ -103,6 +91,17 @@ const Info = (props: InfoProps) => {
               required
             >
               <Greeting style={{ width: INPUT_WIDTH_L }} />
+            </FormItem>
+            <FormItem
+              label={'性别'}
+              desc={'角色性别，影响角色的交互响应'}
+              divider
+              name={['gender']}
+            >
+              <RoleGender style={{ width: INPUT_WIDTH_M }} />
+            </FormItem>
+            <FormItem label={'类别'} desc={'角色类别，用于展示分类'} divider name={['category']}>
+              <RoleCategory style={{ width: INPUT_WIDTH_M }} />
             </FormItem>
             <FormItem
               label={'说明'}

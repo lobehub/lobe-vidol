@@ -32,8 +32,7 @@ const SubmitAgentModal = memo<ModalProps>(({ open, onCancel }) => {
       meta.description &&
       meta.avatar &&
       meta.cover &&
-      meta.model &&
-      meta.gender,
+      meta.model,
   );
 
   const handleSubmit = async () => {
@@ -123,7 +122,7 @@ const SubmitAgentModal = memo<ModalProps>(({ open, onCancel }) => {
       <Flexbox gap={16}>
         {!isFormPass && (
           <Alert
-            message={'请补全助手信息后提交，需要包含名称、描述、头像、封面、和 3D模型'}
+            message={'请补全助手信息后提交，需要包含名称、描述、头像、封面、招呼和 3D 模型'}
             showIcon
             type={'warning'}
           />

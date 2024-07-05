@@ -44,6 +44,7 @@ export const DEFAULT_AGENT_CONFIG: Agent = {
     avatar: DEFAULT_AGENT_AVATAR_URL,
     cover: '',
     gender: GenderEnum.FEMALE,
+    category: CategoryEnum.ANIME,
     readme: '',
   },
   touch: DEFAULT_TOUCH_ACTION_CONFIG_FEMALE,
