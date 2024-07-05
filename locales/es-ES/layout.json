@@ -1,0 +1,12 @@
+{
+  "dialog": "Cuadro de diálogo",
+  "header": {
+    "chat": "Chat",
+    "market": "Descubrir",
+    "role": "Rol",
+    "settings": "Configuración",
+    "tips": "El proyecto está actualmente en construcción, no se garantiza la estabilidad de los datos. Si encuentra algún problema, puede borrar los mensajes de la sesión y restablecer la configuración del sistema en la configuración del sistema. Lamentamos las molestias ocasionadas."
+  },
+  "sessionList": "Lista de sesiones",
+  "siderBar": "Barra lateral"
+}
