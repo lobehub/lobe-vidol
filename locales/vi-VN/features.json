@@ -1,0 +1,65 @@
+{
+  "actions": {
+    "useVideo": "Chuyển sang chế độ video"
+  },
+  "agent": {
+    "female": "Nữ",
+    "male": "Nam",
+    "other": "Khác"
+  },
+  "feature": {
+    "addProxy": "Thêm địa chỉ proxy OpenAI (tùy chọn)",
+    "closeTip": "Đóng gợi ý",
+    "comfirmRetry": "Xác nhận và thử lại",
+    "startDesc": "Nhập OpenAI API Key của bạn để bắt đầu cuộc trò chuyện. Ứng dụng sẽ không ghi lại API Key của bạn",
+    "startTitle": "Tùy chỉnh API Key"
+  },
+  "mode": {
+    "chat": "Trò chuyện",
+    "video": "Video"
+  },
+  "settings": {
+    "glow": "Ánh sáng",
+    "nickName": "Nhập biệt danh của bạn",
+    "none": "Không có nền"
+  },
+  "share": {
+    "downloadScreenshot": "Tải xuống ảnh chụp màn hình",
+    "imageType": "Định dạng hình ảnh",
+    "screenshot": "Ảnh chụp màn hình",
+    "share": "Chia sẻ",
+    "shareGPT": "Chia sẻ GPT",
+    "shareToGPT": "Tạo liên kết chia sẻ GPT",
+    "shareToMarket": "Chia sẻ đến thị trường trợ lý",
+    "withBackground": "Bao gồm hình nền",
+    "withFooter": "Bao gồm chân trang",
+    "withSystemRole": "Bao gồm thiết lập vai trò trợ lý"
+  },
+  "submit": {
+    "assistantId": "ID trợ lý",
+    "assistantIdTip": "Vui lòng nhập ID của trợ lý, cần phải là duy nhất, ví dụ: vidol-agent-klee",
+    "submitAssistant": "Gửi trợ lý",
+    "submitWarning": "Vui lòng điền đầy đủ thông tin trợ lý trước khi gửi, bao gồm tên, mô tả, hình đại diện và bìa"
+  },
+  "support": "Hỗ trợ cộng đồng",
+  "theme": {
+    "auto": "Theo hệ thống",
+    "dark": "Chế độ tối",
+    "light": "Chế độ sáng"
+  },
+  "token": {
+    "overload": "Token vượt quá",
+    "remained": "Token còn lại",
+    "tokenCount": "Số lượng Token",
+    "useToken": "Số lượng Token đã sử dụng, bao gồm tin nhắn, thiết lập vai trò và ngữ cảnh: {{usedTokens}} / {{maxValue}}",
+    "used": "Token đã sử dụng"
+  },
+  "toolBar": {
+    "cameraControl": "Điều khiển camera",
+    "cameraHelper": "Trợ lý camera",
+    "downloadModel": "Đang tải xuống mô hình, vui lòng đợi...",
+    "floor": "Chuyển đổi sàn",
+    "grid": "Lưới",
+    "resetCamera": "Đặt lại camera"
+  }
+}

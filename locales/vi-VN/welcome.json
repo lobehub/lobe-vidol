@@ -1,0 +1,14 @@
+{
+  "agent": {
+    "description": "{{name}} là nhân vật mặc định của Vidol, là trợ lý riêng của bạn",
+    "greeting": "哈喽，亲爱的主人！我是你的私人助理 {{name}}，愉快地为你服务！有什么我可以帮你的吗？",
+    "hello": "Xin chào",
+    "meta": {
+      "description": "Đây là một nhân vật tùy chỉnh",
+      "name": "Nhân vật tùy chỉnh"
+    }
+  },
+  "greet": "Xin chào, tôi là {{name}}, có thứ gì tôi có thể giúp bạn không?",
+  "loadingTitle": "Ứng dụng đang khởi tạo, vui lòng đợi...",
+  "waitting": "Đang chuẩn bị thế giới của tôi cho bạn"
+}
