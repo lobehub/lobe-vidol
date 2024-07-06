@@ -1,0 +1,19 @@
+{
+  "apiKeyMiss": "OpenAI API Key jest pusty. Proszę dodać niestandardowy klucz API OpenAI.",
+  "error": "Błąd",
+  "errorTip": {
+    "clearSession": "Wyczyść sesję",
+    "description": "Projekt jest obecnie w trakcie budowy, nie gwarantuje stabilności danych. W razie problemów można spróbować",
+    "forgive": ", przepraszamy za wszelkie niedogodności",
+    "or": "lub",
+    "problem": "Strona napotkała pewien problem...",
+    "resetSystem": "Zresetuj ustawienia systemu"
+  },
+  "goBack": "Powrót do strony głównej",
+  "openaiError": "Błąd OpenAI API. Proszę sprawdź, czy klucz API OpenAI i Endpoint są poprawne.",
+  "reload": "Przeładuj",
+  "s3envError": "Błąd środowiska S3. Sprawdź, czy Twoje zmienne środowiskowe są ustawione poprawnie.",
+  "serverError": "Błąd serwera. Skontaktuj się z administratorem.",
+  "triggerError": "Wystąpił błąd",
+  "unknownError": "Nieznany błąd"
+}

@@ -1,0 +1,11 @@
+{
+  "delRole": "Usuń rolę",
+  "delRoleDesc": "Czy na pewno chcesz usunąć rolę {{name}} wraz z powiązanymi wiadomościami sesji? Po usunięciu nie będzie możliwe przywrócenie, dlatego działaj ostrożnie!",
+  "header": {
+    "role": "Rola",
+    "session": "Sesja"
+  },
+  "noRole": "Brak ról, możesz utworzyć niestandardową rolę za pomocą + lub dodać rolę ze strony odkrywania",
+  "roleList": "Lista ról",
+  "topBannerTitle": "Podgląd i ustawienia roli"
+}

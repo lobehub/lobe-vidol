@@ -1,0 +1,14 @@
+{
+  "agent": {
+    "description": "{{name}} jest domyślną postacią Vidola, twoim osobistym asystentem",
+    "greeting": "哈喽，亲爱的主人！我是你的私人助理 {{name}}，愉快地为你服务！有什么我可以帮你的吗？",
+    "hello": "你好呀",
+    "meta": {
+      "description": "这是一个自定义角色",
+      "name": "自定义角色"
+    }
+  },
+  "greet": "你好，我是{{name}}，有什么可以帮助你的吗？",
+  "loadingTitle": "应用初始化中，请稍后...",
+  "waitting": "正在为你准备我的整个世界"
+}
