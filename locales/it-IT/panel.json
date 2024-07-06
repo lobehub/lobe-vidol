@@ -1,0 +1,81 @@
+{
+  "dance": {
+    "addPlay": "Aggiungi alla lista",
+    "addPlaySuccess": "Aggiunto alla lista di riproduzione",
+    "cancelAddPlay": "Sei sicuro di voler annullare l'iscrizione alla musica {{musicName}}?",
+    "cancelSubscribed": "Annulla iscrizione",
+    "findDance": "Trova la tua danza preferita",
+    "musicAndDance": "Musica e danza",
+    "play": "Riproduci"
+  },
+  "info": {
+    "avatarDescription": "Personalizza l'avatar, fai clic sull'avatar per caricare personalizzazioni",
+    "avatarLabel": "Avatar",
+    "coverDescription": "Utilizzato per mostrare il personaggio nella pagina di scoperta, dimensioni consigliate {{width}} x {{height}}",
+    "coverLabel": "Copertina",
+    "descDescription": "Descrizione del personaggio, utilizzata per una breve presentazione del personaggio",
+    "descLabel": "Descrizione",
+    "emotionDescription": "Seleziona l'emozione durante la risposta, influenzerà i cambiamenti di espressione del personaggio",
+    "emotionLabel": "Espressione ed emozione",
+    "genderDescription": "Sesso del personaggio, influisce sulla risposta tattile del personaggio",
+    "genderLabel": "Sesso",
+    "greetDescription": "Saluto iniziale al personaggio durante la chat",
+    "greetLabel": "Saluto",
+    "modelDescription": "Anteprima del modello, trascina il file del modello per sostituirlo",
+    "modelLabel": "Anteprima del modello",
+    "nameDescription": "Nome del personaggio, utilizzato per chiamare il personaggio durante la chat",
+    "nameLabel": "Nome",
+    "readmeDescription": "File di istruzioni del personaggio, utilizzato per mostrare una descrizione dettagliata del personaggio nella pagina di scoperta",
+    "readmeLabel": "Istruzioni del personaggio",
+    "textDescription": "Testo di risposta personalizzato",
+    "textLabel": "Testo"
+  },
+  "market": {
+    "findVidol": "Trova il tuo idolo preferito"
+  },
+  "nav": {
+    "info": "Informazioni di base",
+    "model": "Modello 3D",
+    "role": "Impostazioni del personaggio",
+    "voice": "Voce"
+  },
+  "role": {
+    "greetTip": "Inserisci il saluto del personaggio quando ti saluta",
+    "inputRoleSetting": "Inserisci le impostazioni di sistema del personaggio",
+    "roleDescriptionTip": "Inserisci la descrizione del personaggio",
+    "roleNameTip": "Inserisci il nome del personaggio",
+    "roleReadmeTip": "Inserisci le istruzioni del personaggio",
+    "roleSettingDescription": "Impostazioni di background del personaggio, inviate al modello durante la chat con il personaggio",
+    "roleSettingLabel": "Impostazioni di sistema del personaggio",
+    "uploadSize": "Supporto per il caricamento di un singolo file, dimensioni consigliate {{width}} x {{height}} o multipli"
+  },
+  "touch": {
+    "addAction": "Aggiungi azione di risposta",
+    "editAction": "Modifica azione di risposta",
+    "inputActionEmotion": "Inserisci l'emozione del personaggio durante la risposta",
+    "inputActionText": "Inserisci il testo di risposta",
+    "inputDIYText": "Inserisci il testo personalizzato",
+    "touchActionList": "Elenco di reazioni quando tocchi {{touchArea}}",
+    "touchArea": "Area di tocco"
+  },
+  "tts": {
+    "audition": "Audizione",
+    "auditionDescription": "Il testo di audizione varia a seconda della lingua",
+    "engineDescription": "Motore di sintesi vocale, si consiglia di utilizzare il browser Edge",
+    "engineLabel": "Motore vocale",
+    "localeDescription": "Lingua di sintesi vocale supportata, contattare per richieste specifiche",
+    "localeLabel": "Lingua",
+    "pitchDescription": "Controlla il tono, compreso tra 0 e 2, predefinito 1",
+    "pitchLabel": "Tono",
+    "selectLanguage": "Seleziona prima la lingua",
+    "selectVoice": "Seleziona prima la voce",
+    "speedDescription": "Controlla la velocità, compresa tra 0 e 3, predefinito 1",
+    "speedLabel": "Velocità",
+    "transfromSuccess": "Trasformazione riuscita",
+    "voiceDescription": "Varia a seconda del motore e della lingua",
+    "voiceLabel": "Voce"
+  },
+  "upload": {
+    "support": "Supporto per il caricamento di un singolo file, attualmente supporta solo file in formato vrm"
+  }
+}
