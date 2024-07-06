@@ -1,0 +1,81 @@
+{
+  "dance": {
+    "addPlay": "Adicionar à lista",
+    "addPlaySuccess": "Adicionado à lista de reprodução",
+    "cancelAddPlay": "Tem certeza de que deseja cancelar a inscrição na música {{musicName}}?",
+    "cancelSubscribed": "Cancelar inscrição",
+    "findDance": "Encontre sua dança favorita",
+    "musicAndDance": "Música e Dança",
+    "play": "Reproduzir"
+  },
+  "info": {
+    "avatarDescription": "Avatar personalizado, clique no avatar para fazer upload personalizado",
+    "avatarLabel": "Avatar",
+    "coverDescription": "Usado para mostrar o personagem na página de descoberta, tamanho recomendado {{width}} x {{height}}",
+    "coverLabel": "Capa",
+    "descDescription": "Descrição do personagem, usada para uma breve introdução do personagem",
+    "descLabel": "Descrição",
+    "emotionDescription": "Escolha a emoção ao responder, afetará a mudança de expressão do personagem",
+    "emotionLabel": "Expressão e Emoção",
+    "genderDescription": "Gênero do personagem, afeta a resposta ao toque do personagem",
+    "genderLabel": "Gênero",
+    "greetDescription": "Saudação inicial ao conversar com o personagem",
+    "greetLabel": "Saudação",
+    "modelDescription": "Visualização do modelo, arraste o arquivo do modelo para substituir",
+    "modelLabel": "Visualização do Modelo",
+    "nameDescription": "Nome do personagem, usado para se referir ao personagem durante o chat",
+    "nameLabel": "Nome",
+    "readmeDescription": "Arquivo de instruções do personagem, usado para mostrar uma descrição detalhada do personagem na página de descoberta",
+    "readmeLabel": "Instruções do personagem",
+    "textDescription": "Texto de resposta personalizado",
+    "textLabel": "Texto"
+  },
+  "market": {
+    "findVidol": "Encontre seu ídolo favorito"
+  },
+  "nav": {
+    "info": "Informações Básicas",
+    "model": "Modelo 3D",
+    "role": "Configuração do Personagem",
+    "voice": "Voz"
+  },
+  "role": {
+    "greetTip": "Digite a saudação do personagem para você",
+    "inputRoleSetting": "Digite as configurações do sistema do personagem",
+    "roleDescriptionTip": "Digite a descrição do personagem",
+    "roleNameTip": "Digite o nome do personagem",
+    "roleReadmeTip": "Digite as instruções do personagem",
+    "roleSettingDescription": "Configurações de fundo do personagem, serão enviadas ao modelo durante o chat com o personagem",
+    "roleSettingLabel": "Configurações do Sistema do Personagem",
+    "uploadSize": "Suporta upload de um único arquivo, tamanho recomendado é múltiplo de {{width}} x {{height}}"
+  },
+  "touch": {
+    "addAction": "Adicionar ação de resposta",
+    "editAction": "Editar ação de resposta",
+    "inputActionEmotion": "Digite a emoção do personagem ao responder",
+    "inputActionText": "Digite o texto de resposta",
+    "inputDIYText": "Digite o texto personalizado",
+    "touchActionList": "Lista de reações ao tocar {{touchArea}}",
+    "touchArea": "Área de toque"
+  },
+  "tts": {
+    "audition": "Audição",
+    "auditionDescription": "Texto de audição varia de acordo com o idioma",
+    "engineDescription": "Motor de síntese de voz, é recomendado priorizar o navegador Edge",
+    "engineLabel": "Motor de Voz",
+    "localeDescription": "Idioma da síntese de voz, atualmente suporta apenas os idiomas mais comuns, entre em contato se precisar de mais",
+    "localeLabel": "Idioma",
+    "pitchDescription": "Controla o tom, varia de 0 a 2, padrão é 1",
+    "pitchLabel": "Tom",
+    "selectLanguage": "Por favor, selecione o idioma primeiro",
+    "selectVoice": "Por favor, selecione a voz primeiro",
+    "speedDescription": "Controla a velocidade, varia de 0 a 3, padrão é 1",
+    "speedLabel": "Velocidade",
+    "transfromSuccess": "Transformação bem-sucedida",
+    "voiceDescription": "Varia de acordo com o motor e idioma",
+    "voiceLabel": "Voz"
+  },
+  "upload": {
+    "support": "Suporta upload de um único arquivo, atualmente suporta arquivos no formato vrm"
+  }
+}
