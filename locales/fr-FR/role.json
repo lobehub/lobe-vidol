@@ -1,0 +1,11 @@
+{
+  "delRole": "Supprimer le rôle",
+  "delRoleDesc": "Êtes-vous sûr de vouloir supprimer le rôle {{name}} ainsi que les messages de session associés ? Cette action est irréversible, veuillez procéder avec prudence !",
+  "header": {
+    "role": "Rôle",
+    "session": "Session"
+  },
+  "noRole": "Aucun rôle disponible. Vous pouvez créer un rôle personnalisé en utilisant le symbole +, ou ajouter un rôle depuis la page de découverte.",
+  "roleList": "Liste des rôles",
+  "topBannerTitle": "Aperçu et configuration des rôles"
+}

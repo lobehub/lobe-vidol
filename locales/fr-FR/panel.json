@@ -1,0 +1,81 @@
+{
+  "dance": {
+    "addPlay": "Ajouter à la liste",
+    "addPlaySuccess": "Ajouté à la liste de lecture",
+    "cancelAddPlay": "Voulez-vous vraiment annuler l'abonnement à la musique {{musicName}}?",
+    "cancelSubscribed": "Annuler l'abonnement",
+    "findDance": "Trouvez votre danse préférée",
+    "musicAndDance": "Musique et danse",
+    "play": "Jouer"
+  },
+  "info": {
+    "avatarDescription": "Avatar personnalisé, cliquez sur l'avatar pour télécharger",
+    "avatarLabel": "Avatar",
+    "coverDescription": "Utilisé pour afficher le personnage sur la page de découverte, taille recommandée {{width}} x {{height}}",
+    "coverLabel": "Couverture",
+    "descDescription": "Description du personnage, utilisée pour une brève introduction",
+    "descLabel": "Description",
+    "emotionDescription": "Sélectionnez l'émotion lors de la réponse, affectera l'expression du personnage",
+    "emotionLabel": "Expression et émotion",
+    "genderDescription": "Genre du personnage, affecte la réponse au toucher",
+    "genderLabel": "Genre",
+    "greetDescription": "Phrase de salutation lors de la première conversation avec le personnage",
+    "greetLabel": "Salutation",
+    "modelDescription": "Aperçu du modèle, vous pouvez faire glisser le fichier du modèle pour le remplacer",
+    "modelLabel": "Aperçu du modèle",
+    "nameDescription": "Nom du personnage, utilisé pour l'appeler lors de la conversation",
+    "nameLabel": "Nom",
+    "readmeDescription": "Fichier de description du personnage, utilisé pour afficher une description détaillée sur la page de découverte",
+    "readmeLabel": "Description du personnage",
+    "textDescription": "Réponse personnalisée",
+    "textLabel": "Texte"
+  },
+  "market": {
+    "findVidol": "Trouvez votre idole préférée"
+  },
+  "nav": {
+    "info": "Informations de base",
+    "model": "Modèle 3D",
+    "role": "Paramètres du personnage",
+    "voice": "Voix"
+  },
+  "role": {
+    "greetTip": "Entrez la phrase de salutation du personnage",
+    "inputRoleSetting": "Entrez les paramètres système du personnage",
+    "roleDescriptionTip": "Entrez la description du personnage",
+    "roleNameTip": "Entrez le nom du personnage",
+    "roleReadmeTip": "Entrez la description du personnage",
+    "roleSettingDescription": "Paramètres de fond du personnage, envoyés au modèle lors de la conversation avec le personnage",
+    "roleSettingLabel": "Paramètres système du personnage",
+    "uploadSize": "Prise en charge du téléchargement de fichiers uniques, taille recommandée multiple de {{width}} x {{height}}"
+  },
+  "touch": {
+    "addAction": "Ajouter une action de réponse",
+    "editAction": "Modifier l'action de réponse",
+    "inputActionEmotion": "Entrez l'expression du personnage lors de la réponse",
+    "inputActionText": "Entrez le texte de réponse",
+    "inputDIYText": "Entrez le texte personnalisé",
+    "touchActionList": "Liste de réactions lors du toucher {{touchArea}}",
+    "touchArea": "Zone de toucher"
+  },
+  "tts": {
+    "audition": "Audition",
+    "auditionDescription": "Texte d'audition en fonction de la langue",
+    "engineDescription": "Moteur de synthèse vocale, il est recommandé de choisir en priorité le navigateur Edge",
+    "engineLabel": "Moteur de synthèse vocale",
+    "localeDescription": "Langue de synthèse vocale, seules quelques langues courantes sont actuellement prises en charge, veuillez nous contacter si nécessaire",
+    "localeLabel": "Langue",
+    "pitchDescription": "Contrôle la tonalité de la voix, plage de valeurs 0 ~ 2, valeur par défaut 1",
+    "pitchLabel": "Tonalité",
+    "selectLanguage": "Veuillez sélectionner la langue",
+    "selectVoice": "Veuillez sélectionner la voix",
+    "speedDescription": "Contrôle la vitesse de synthèse vocale, plage de valeurs 0 ~ 3, valeur par défaut 1",
+    "speedLabel": "Vitesse",
+    "transfromSuccess": "Conversion réussie",
+    "voiceDescription": "Différentes voix sont disponibles en fonction du moteur et de la langue",
+    "voiceLabel": "Voix"
+  },
+  "upload": {
+    "support": "Prise en charge du téléchargement de fichiers uniques, actuellement uniquement au format vrm"
+  }
+}

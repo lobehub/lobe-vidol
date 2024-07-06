@@ -1,0 +1,65 @@
+{
+  "actions": {
+    "useVideo": "Activer le mode vidéo"
+  },
+  "agent": {
+    "female": "Femme",
+    "male": "Homme",
+    "other": "Autre"
+  },
+  "feature": {
+    "addProxy": "Ajouter une adresse proxy OpenAI (facultatif)",
+    "closeTip": "Fermer l'astuce",
+    "comfirmRetry": "Confirmer et réessayer",
+    "startDesc": "Entrez votre clé d'API OpenAI pour commencer la session. L'application ne stockera pas votre clé d'API.",
+    "startTitle": "Personnaliser la clé d'API"
+  },
+  "mode": {
+    "chat": "Discussion",
+    "video": "Vidéo"
+  },
+  "settings": {
+    "glow": "Lueur",
+    "nickName": "Veuillez entrer un pseudonyme",
+    "none": "Aucun arrière-plan"
+  },
+  "share": {
+    "downloadScreenshot": "Télécharger la capture d'écran",
+    "imageType": "Format de l'image",
+    "screenshot": "Capture d'écran",
+    "share": "Partager",
+    "shareGPT": "Partager GPT",
+    "shareToGPT": "Générer un lien de partage ShareGPT",
+    "shareToMarket": "Partager sur le marché des assistants",
+    "withBackground": "Inclure l'image d'arrière-plan",
+    "withFooter": "Inclure le pied de page",
+    "withSystemRole": "Inclure le rôle de l'assistant"
+  },
+  "submit": {
+    "assistantId": "Identifiant de l'assistant",
+    "assistantIdTip": "Veuillez entrer l'identifiant de l'assistant. Il doit être unique, par exemple : vidol-agent-klee",
+    "submitAssistant": "Soumettre l'assistant",
+    "submitWarning": "Veuillez compléter les informations de l'assistant avant de soumettre. Cela doit inclure le nom, la description, l'avatar et la couverture."
+  },
+  "support": "Support communautaire",
+  "theme": {
+    "auto": "Système par défaut",
+    "dark": "Mode sombre",
+    "light": "Mode clair"
+  },
+  "token": {
+    "overload": "Dépassement de tokens",
+    "remained": "Tokens restants",
+    "tokenCount": "Nombre de tokens",
+    "useToken": "Calcul du nombre de tokens utilisés, y compris les messages, les rôles et le contexte : {{usedTokens}} / {{maxValue}}",
+    "used": "Tokens utilisés"
+  },
+  "toolBar": {
+    "cameraControl": "Contrôle de la caméra",
+    "cameraHelper": "Assistant de caméra",
+    "downloadModel": "Téléchargement du modèle en cours, veuillez patienter...",
+    "floor": "Changer de sol",
+    "grid": "Grille",
+    "resetCamera": "Réinitialiser la caméra"
+  }
+}

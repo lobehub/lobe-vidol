@@ -1,0 +1,92 @@
+{
+  "agent": {
+    "gender": {
+      "female": "femme",
+      "male": "homme",
+      "other": "autre"
+    },
+    "meta": {
+      "description": "This is a custom role",
+      "name": "Custom Role"
+    }
+  },
+  "touch": {
+    "area": {
+      "arm": "bras",
+      "belly": "ventre",
+      "chest": "poitrine",
+      "head": "tête",
+      "leg": "jambe"
+    },
+    "emotion": {
+      "angry": "en colère",
+      "blink": "cligner des yeux",
+      "blinkLeft": "cligner de l'œil gauche",
+      "blinkRight": "cligner de l'œil droit",
+      "happy": "heureux",
+      "natural": "naturel",
+      "relaxed": "détendu",
+      "sad": "triste",
+      "surprised": "surpris"
+    },
+    "femaleAction": {
+      "armAction": {
+        "happyA": "Ah, j'aime ça !",
+        "happyB": "Haha, tenir la main me rend heureuse !",
+        "relaxedA": "Les mains de mon propriétaire sont si chaudes !"
+      },
+      "bellyAction": {
+        "angryA": "Pourquoi tu me touches ? Attention, je pourrais te mordre !",
+        "relaxedA": "Réveille-toi, il n'y a pas d'avenir entre nous !",
+        "relaxedB": "Je déteste ça ! Je vais me fâcher !",
+        "surprisedA": "C'était un accident, n'est-ce pas ?"
+      },
+      "chestAction": {
+        "angryA": "Arrête de me taquiner ! Retire tes mains !",
+        "angryB": "Qu'est-ce que tu fais ? Il y a un pervers qui me touche tout le temps !",
+        "angryC": "Si tu continues, je vais appeler la police !",
+        "surprisedA": "Pourquoi tu me touches ? On ne peut plus discuter joyeusement ?"
+      },
+      "headAction": {
+        "angryA": "On dit que se faire caresser la tête empêche de grandir !",
+        "angryB": "Pourquoi tu me touches ?",
+        "happyA": "Waouh ! J'adore quand on me caresse la tête !",
+        "happyB": "Je me sens plein d'énergie !",
+        "happyC": "Waouh, cette sensation de caresse sur la tête est incroyable !",
+        "happyD": "Me caresser la tête me rend heureuse toute la journée !"
+      },
+      "legAction": {
+        "angryA": "Hé, tu veux mourir ?",
+        "angryB": "Les mains de mon propriétaire ne m'écoutent plus ?",
+        "angryC": "Je déteste ça, ça me chatouille !",
+        "surprisedA": "Pourquoi ne pas garder notre amitié pure ?"
+      }
+    },
+    "maleAction": {
+      "armAction": {
+        "neutralA": "Ne me demande pas si j'ai mangé du poulet aujourd'hui, regarde plutôt mes biceps.",
+        "neutralB": "Mon bras n'est pas fait pour être touché par n'importe qui, tu es une exception.",
+        "neutralC": "Tu es courageux, oser toucher mon bras légendaire."
+      },
+      "bellyAction": {
+        "happyA": "Ne me chatouille pas, tu risques de me faire rire et de voir mes abdominaux !",
+        "neutralA": "Mes abdominaux cachent simplement ma force intérieure que je continue de cultiver.",
+        "neutralB": "As-tu vu mes abdominaux ? Ils sont simplement bien cachés."
+      },
+      "chestAction": {
+        "blinkLeftA": "Viens, tu peux te reposer sur mes pectoraux !",
+        "neutralA": "Ce sont juste mes pectoraux que j'ai développés grâce à mon entraînement quotidien, rien de surprenant."
+      },
+      "headAction": {
+        "neutralA": "Bien sûr, tu es la seule personne autorisée à me caresser la tête.",
+        "neutralB": "Je ne suis pas quelqu'un que n'importe qui peut toucher.",
+        "neutralC": "Ne t'inquiète pas, après m'avoir caressé la tête, ta chance augmentera considérablement."
+      },
+      "legAction": {
+        "angryA": "Ne t'approche pas de moi, fétichiste des jambes !",
+        "neutralA": "N'aie pas peur, ma jambe de fer ne frappe pas les idiots.",
+        "neutralB": "Maintenant que tu as touché ma jambe, ta vie est-elle plus complète ?"
+      }
+    }
+  }
+}
