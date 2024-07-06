@@ -1,0 +1,92 @@
+{
+  "agent": {
+    "gender": {
+      "female": "Kadın",
+      "male": "Erkek",
+      "other": "Diğer"
+    },
+    "meta": {
+      "description": "Bu bir özel rol.",
+      "name": "Özel Rol"
+    }
+  },
+  "touch": {
+    "area": {
+      "arm": "Kol",
+      "belly": "Karın",
+      "chest": "Göğüs",
+      "head": "Baş",
+      "leg": "Bacak"
+    },
+    "emotion": {
+      "angry": "Kızgın",
+      "blink": "Göz kırpması",
+      "blinkLeft": "Sol göz kırpması",
+      "blinkRight": "Sağ göz kırpması",
+      "happy": "Mutlu",
+      "natural": "Doğal",
+      "relaxed": "Rahat",
+      "sad": "Üzgün",
+      "surprised": "Şaşırmış"
+    },
+    "femaleAction": {
+      "armAction": {
+        "happyA": "Ah, bunu gerçekten seviyorum~",
+        "happyB": "Haha, el ele tutuşmak beni mutlu ediyor~",
+        "relaxedA": "Sahibimin elleri çok sıcak~"
+      },
+      "bellyAction": {
+        "angryA": "Niye beni rahatsız ediyorsun, seni ısırırım!",
+        "relaxedA": "Uyan, aramızda bir şey olmayacak!",
+        "relaxedB": "Nefret ediyorum! Sinirleniyorum!",
+        "surprisedA": "Kazara dokundun değil mi..."
+      },
+      "chestAction": {
+        "angryA": "Beni böyle taciz etme! Hemen elini çek!",
+        "angryB": "911 mi? Burada bir sapık sürekli beni okşuyor!",
+        "angryC": "Bir daha dokunursan polisi arayacağım!",
+        "surprisedA": "Niye beni dürtüyorsun? Hala keyifli bir şekilde sohbet edebilecek miyiz?"
+      },
+      "headAction": {
+        "angryA": "Başını okşamanın boyunu uzatmayacağını duydum!",
+        "angryB": "Niye beni dürtüyorsun?",
+        "happyA": "Vay! Başımı okşamayı en çok seviyorum!",
+        "happyB": "Güç dolu hissettiriyor!",
+        "happyC": "Vay be, başımı okşamanın hissi çok garip!",
+        "happyD": "Başımı okşamak beni bütün gün mutlu ediyor!"
+      },
+      "legAction": {
+        "angryA": "Hey, intihar mı etmek istiyorsun?",
+        "angryB": "Sahibimin elleri artık komutları dinlemiyor mu?",
+        "angryC": "İğnelenecek, kaşınacak!",
+        "surprisedA": "Neden saf dostluğumuzu koruyamıyoruz?"
+      }
+    },
+    "maleAction": {
+      "armAction": {
+        "neutralA": "Bugün tavuk yedin mi diye sorma, önce bicepsime bak.",
+        "neutralB": "Kolumu herkesin dokunmasına izin vermiyorum, sen istisnasın.",
+        "neutralC": "Çok cesursun, efsanevi kollarıma dokunmaya cesaret ediyorsun."
+      },
+      "bellyAction": {
+        "happyA": "Kaşınmamaya çalış, gülerken karın kaslarımı ortaya çıkarabilirsin.",
+        "neutralA": "Karın kaslarım sadece gizli iç gücümü geliştirmek için antrenman yapıyor.",
+        "neutralB": "Bu yumru karın kaslarımı gördün mü? Sadece derinlerde saklanıyorlar."
+      },
+      "chestAction": {
+        "blinkLeftA": "Gel, abinin göğüs kaslarına dayan!",
+        "neutralA": "Bu sadece günlük egzersizlerimle geliştirdiğim göğüs kaslarım, şaşılacak bir şey yok."
+      },
+      "headAction": {
+        "neutralA": "Tabii ki, sadece senin başımı okşama yetkisi var.",
+        "neutralB": "Ben sıradan insanların dokunmasına izin veren biri değilim.",
+        "neutralC": "Endişelenme, başımı okşadıktan sonra şansın büyük ölçüde artacak."
+      },
+      "legAction": {
+        "angryA": "Bana yaklaşma, bacak sapığı.",
+        "neutralA": "Korkma, güçlü bacaklarım aptallara tekme atmaz.",
+        "neutralB": "Bacaklarıma dokunmak senin hayatını daha mı anlamlı hale getirdi?"
+      }
+    }
+  }
+}
