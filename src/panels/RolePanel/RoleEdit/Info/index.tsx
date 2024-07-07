@@ -3,13 +3,12 @@ import React from 'react';
 
 import { INPUT_WIDTH_L, INPUT_WIDTH_M } from '@/constants/token';
 import Greeting from '@/panels/RolePanel/RoleEdit/Info/Greeting';
+import PreviewWithUpload from '@/panels/RolePanel/RoleEdit/Info/PreviewWithUpload';
 import ReadMe from '@/panels/RolePanel/RoleEdit/Info/ReadMe';
 import RoleCategory from '@/panels/RolePanel/RoleEdit/Info/RoleCategory';
 import RoleDescription from '@/panels/RolePanel/RoleEdit/Info/RoleDescription';
 import RoleGender from '@/panels/RolePanel/RoleEdit/Info/RoleGender';
 import RoleName from '@/panels/RolePanel/RoleEdit/Info/RoleName';
-
-import AvatarWithUpload from './AvatarWithUpload';
 
 const Info = () => {
   const [form] = Form.useForm();
@@ -17,9 +16,9 @@ const Info = () => {
   const basic: FormProps['items'] = [
     {
       label: '头像',
-      desc: '自定义头像，点击头像自定义上传',
+      desc: '自定义头像，点击自定义上传',
       name: 'avatar',
-      children: <AvatarWithUpload />,
+      children: <PreviewWithUpload />,
     },
     {
       label: '名称',
