@@ -8,6 +8,7 @@ import { useTranslation } from 'react-i18next';
 import ClearSession from '@/features/Actions/ClearSession';
 import ResetConfig from '@/features/Actions/ResetConfig';
 import BackgroundEffect from '@/features/Settings/features/BackgroundEffect';
+import LanguageSetting from '@/features/Settings/features/LanguageSetting';
 import NickName from '@/features/Settings/features/NickName';
 import ThemeSwatchesNetural from '@/features/Settings/features/ThemeSwatchesNetural';
 import ThemeSwatchesPrimary from '@/features/Settings/features/ThemeSwatchesPrimary';
@@ -76,6 +77,9 @@ const CommonConfig = (props: CommonConfigProps) => {
             name={'backgroundEffect'}
           >
             <BackgroundEffect />
+          </FormItem>
+          <FormItem divider label={t('words.languageSetting')} name={'langSetting'}>
+            <LanguageSetting style={{ width: '200px' }} />
           </FormItem>
         </FormGroup>
         <FormGroup icon={Monitor} title={t('words.systemSetting')}>
