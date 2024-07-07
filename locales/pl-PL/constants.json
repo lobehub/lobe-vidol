@@ -1,91 +1,91 @@
 {
   "agent": {
     "gender": {
-      "female": "女",
-      "male": "男",
-      "other": "其他"
+      "female": "Kobieta",
+      "male": "Mężczyzna",
+      "other": "Inne"
     },
     "meta": {
-      "description": "这是一个自定义角色",
-      "name": "自定义角色"
+      "description": "To jest niestandardowa postać",
+      "name": "Niestandardowa postać"
     }
   },
   "touch": {
     "area": {
-      "arm": "手臂",
-      "belly": "腹部",
-      "chest": "胸部",
-      "head": "头部",
-      "leg": "腿部"
+      "arm": "Ramiona",
+      "belly": "Brzuch",
+      "chest": "Część piersiowa",
+      "head": "Głowa",
+      "leg": "Nogi"
     },
     "emotion": {
-      "angry": "生气",
-      "blink": "眨眼",
-      "blinkLeft": "眨左眼",
-      "blinkRight": "眨右眼",
-      "happy": "开心",
-      "natural": "自然",
-      "relaxed": "放松",
-      "sad": "伤心",
-      "surprised": "惊讶"
+      "angry": "Zły",
+      "blink": "Mrugnięcie",
+      "blinkLeft": "Mrugnięcie lewym okiem",
+      "blinkRight": "Mrugnięcie prawym okiem",
+      "happy": "Szczęśliwy",
+      "natural": "Naturalny",
+      "relaxed": "Spokojny",
+      "sad": "Smutny",
+      "surprised": "Zaskoczony"
     },
     "femaleAction": {
       "armAction": {
-        "happyA": "啊，好喜欢呢~",
-        "happyB": "哈哈，牵手让我感到快乐~",
-        "relaxedA": "主人的手好温暖啊~"
+        "happyA": "Ah, bardzo mi się to podoba~",
+        "happyB": "Ha ha, trzymanie dłoni sprawia mi przyjemność~",
+        "relaxedA": "Ręce Pana są tak ciepłe~"
       },
       "bellyAction": {
-        "angryA": "干嘛动我呀，小心我咬你哦！",
-        "relaxedA": "醒醒，我们之间没有结果的！",
-        "relaxedB": "讨厌！我可要生气啦！",
-        "surprisedA": "是不小心碰到的吧..."
+        "angryA": "Co się śmiejesz, trzymając mnie? Uważaj, żebym cię nie ugryzła!",
+        "relaxedA": "Budź się, między nami nie będzie wyniku!",
+        "relaxedB": "Niesłuchanie! W końcu się rozgniewam!",
+        "surprisedA": "To bynajmniej nie było celowe... "
       },
       "chestAction": {
-        "angryA": "不可以这样欺负我啦！快把手拿开！",
-        "angryB": "幺幺零吗？这里有个变态一直在摸我！",
-        "angryC": "再摸的话我可要报警了",
-        "surprisedA": "干嘛戳我呀！还能不能愉快地聊天了!"
+        "angryA": "Nie można tak mnie traktować! Usuń ręce!",
+        "angryB": "Jest tu policyjny numer 110? Tutaj jest someone, który ciągle mnie dotyka!",
+        "angryC": "Kontynuuj dotykanie, a wywołam policyjną pomoc",
+        "surprisedA": "Co to za picie? Czy możemy rozmawiać spokojnie?"
       },
       "headAction": {
-        "angryA": "听说被摸头是会长不高的呢！",
-        "angryB": "干嘛戳我呀？",
-        "happyA": "哇！最喜欢摸摸头！",
-        "happyB": "感觉又充满了力量呢！",
-        "happyC": "哇塞，这个摸摸头的感觉好神奇！",
-        "happyD": "摸摸头让我开心一整天！"
+        "angryA": "Słyszałam, że głowę trzymać może przestać rosnąć!",
+        "angryB": "Co to za picie?",
+        "happyA": "Wau! Najbardziej lubię, gdy ktoś mnie głowę trzymać!",
+        "happyB": "Czuję, że znów jestem pełen sił!",
+        "happyC": "Wow, to trzymanie głowy jest cudowne!",
+        "happyD": "Tym trzymaniem głowy, mogę być szczęśliwa przez cały dzień!"
       },
       "legAction": {
-        "angryA": "喂，你是要作死吗？",
-        "angryB": "主人的手又不听指挥了吗？",
-        "angryC": "讨厌~会痒的啦~!",
-        "surprisedA": "让我们保持纯洁的友谊不好吗？"
+        "angryA": "Hej, czy chcesz umrzeć?",
+        "angryB": "Czy ręce Pana nie słuchają?",
+        "angryC": "Niesłuchanie~ To jest denerwujące!",
+        "surprisedA": "Nie mogłabyś zachować naszej niewinnej przyjaźni?"
       }
     },
     "maleAction": {
       "armAction": {
-        "neutralA": "别问我今天吃没吃鸡，先看看我的肱二头肌",
-        "neutralB": "我的手臂可不是随便让人触碰的，你是个例外而已",
-        "neutralC": "你很勇敢，敢触碰到传说中的麒麟臂"
+        "neutralA": "Nie pytaj mnie, czy jadłem kurczaka dzisiaj, spójrz najpierw na mój biceps",
+        "neutralB": "Moje ramiona nie są dla każdego do dotknięcia, jesteś wyjątkiem",
+        "neutralC": "Jesteś odważny, dotknąłeś się legendarnego ramienia Kirin"
       },
       "bellyAction": {
-        "happyA": "别挠痒痒，小心我笑出腹肌",
-        "neutralA": "我的腹肌只是再修炼深藏不露的内力",
-        "neutralB": "看到我这团腹肌了吗？它们只是藏得比较深罢了"
+        "happyA": "Nie hałasuj, uważa, żebym nie wylał sił",
+        "neutralA": "To są tylko moje brzuchowe mięśnie, które ukrywają swoją siłę",
+        "neutralB": "Zobaczyłeś te brzuchowe mięśnie? Po prostu są głęboko ukryte"
       },
       "chestAction": {
-        "blinkLeftA": "来，哥的胸肌给你靠!",
-        "neutralA": "这不过时我日常修炼成就的胸肌，没什么好惊讶的。"
+        "blinkLeftA": "No, bierz na ramiona, moje piersiowe mięśnie są dla ciebie!",
+        "neutralA": "To tylko jest osiągnięcie z codziennych treningów, nic się nie dziwnego."
       },
       "headAction": {
-        "neutralA": "当然了，只有你有资格摸我的头",
-        "neutralB": "我可不是什么普通人允许触碰的哦",
-        "neutralC": "别担心，摸过我的头后，你的运气会大幅提升的"
+        "neutralA": "Oczywiście, tylko ty masz kwalifikacje, aby trzymać głowę",
+        "neutralB": "Nie jestem tak samo, jak zwykła osoba, którą można dotknąć",
+        "neutralC": "Nie martw się, po tym, jak dotkniesz się mojej głowy, twoja szczęśliwa rzeka będzie znacznie większa"
       },
       "legAction": {
-        "angryA": "别靠近我，你这个腿控",
-        "neutralA": "别害怕，我的大力金刚腿不踢傻瓜",
-        "neutralB": "让你碰到我的腿，是不是觉得你的生活完整了许多？"
+        "angryA": "Nie przystąp do mnie, ty fanatyczny miłośnik nóg",
+        "neutralA": "Nie obawiaj się, moje potężne nogi nie biją głupców",
+        "neutralB": "Pozwól mi dotknąć twoich nóg, czy nie czujesz, że twoje życie jest teraz pełne?"
       }
     }
   }

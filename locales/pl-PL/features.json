@@ -1,65 +1,65 @@
 {
   "actions": {
-    "useVideo": "切换视频模式"
+    "useVideo": "Przełącz na tryb wideo"
   },
   "agent": {
-    "female": "女性",
-    "male": "男性",
-    "other": "其他"
+    "female": "Kobieta",
+    "male": "Mężczyzna",
+    "other": "Inne"
   },
   "feature": {
-    "addProxy": "添加 OpenAI 代理地址（可选）",
-    "closeTip": "关闭提示",
-    "comfirmRetry": "确认并重试",
-    "startDesc": "输入你的 OpenAI API Key 即可开始会话。应用不会记录你的 API Key",
-    "startTitle": "自定义 API Key"
+    "addProxy": "Dodaj adres proxy OpenAI (opcjonalnie)",
+    "closeTip": "Zamknij wskazówkę",
+    "comfirmRetry": "Potwierdź i spróbuj ponownie",
+    "startDesc": "Wprowadź swój klucz API OpenAI, aby rozpocząć rozmowę. Aplikacja nie będzie rejestrować Twojego klucza API",
+    "startTitle": "Niestandardowy klucz API"
   },
   "mode": {
-    "chat": "聊天",
-    "video": "视频"
+    "chat": "Czat",
+    "video": "Wideo"
   },
   "settings": {
-    "glow": "光辉",
-    "nickName": "请输入昵称",
-    "none": "无背景"
+    "glow": "Płomien",
+    "nickName": "Wprowadź pseudonim",
+    "none": "Brak tła"
   },
   "share": {
-    "downloadScreenshot": "下载截图",
-    "imageType": "图片格式",
-    "screenshot": "截图",
-    "share": "分享",
-    "shareGPT": "分享GPT",
-    "shareToGPT": "生成 ShareGPT 分享链接",
-    "shareToMarket": "分享到助手市场",
-    "withBackground": "包含背景图片",
-    "withFooter": "包含页脚",
-    "withSystemRole": "包含助手角色设定"
+    "downloadScreenshot": "Pobierz zrzut ekranu",
+    "imageType": "Typ obrazu",
+    "screenshot": "Zrzut ekranu",
+    "share": "Udostępnij",
+    "shareGPT": "Udostępnij GPT",
+    "shareToGPT": "Utwórz link udostępniania ShareGPT",
+    "shareToMarket": "Udostępnij na rynku asystentów",
+    "withBackground": "Z obrazem tła",
+    "withFooter": "Z stopką",
+    "withSystemRole": "Z ustawieniami roli asystenta"
   },
   "submit": {
-    "assistantId": "助手标识符",
-    "assistantIdTip": "请输入助手的标识符，需要是唯一的，比如 vidol-agent-klee",
-    "submitAssistant": "提交助手",
-    "submitWarning": "请补全助手信息后提交，需要包含名称、描述、头像和封面"
+    "assistantId": "Identyfikator asystenta",
+    "assistantIdTip": "Wprowadź identyfikator asystenta, musi być unikalny, np. vidol-agent-klee",
+    "submitAssistant": "Prześlij asystenta",
+    "submitWarning": "Proszę uzupełnić informacje o asystencie przed przesłaniem, w tym nazwę, opis, awatar i okładkę"
   },
-  "support": "社区支持",
+  "support": "Wsparcie społeczności",
   "theme": {
-    "auto": "跟随系统",
-    "dark": "暗黑模式",
-    "light": "亮色模式"
+    "auto": "Śledzenie systemu",
+    "dark": "Ciemny motyw",
+    "light": "Jasny motyw"
   },
   "token": {
-    "overload": "Token 超出",
-    "remained": "Token 剩余",
-    "tokenCount": "Token 数量",
-    "useToken": "消耗 Token 数量计算，包括消息，角色设定与上下文：{{usedTokens}} / {{maxValue}}",
-    "used": "Token 已使用"
+    "overload": "Przekroczenie tokenów",
+    "remained": "Pozostało tokenów",
+    "tokenCount": "Liczba tokenów",
+    "useToken": "Obliczanie zużycia tokenów, w tym wiadomości, ustawienia roli i kontekstu: {{usedTokens}} / {{maxValue}}",
+    "used": "Tokenów użytych"
   },
   "toolBar": {
-    "cameraControl": "镜头控制",
-    "cameraHelper": "镜头辅助",
-    "downloadModel": "模型下载中，请稍后...",
-    "floor": "切换地板",
-    "grid": "网格",
-    "resetCamera": "重置镜头"
+    "cameraControl": "Kontrola kamery",
+    "cameraHelper": "Asystent kamery",
+    "downloadModel": "Pobieranie modelu, proszę czekać...",
+    "floor": "Przełącz podłogę",
+    "grid": "Siatka",
+    "resetCamera": "Zresetuj kamerę"
   }
 }
