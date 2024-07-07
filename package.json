@@ -113,6 +113,7 @@
     "react-lazy-load": "^4.0.1",
     "react-virtuoso": "^4.7.11",
     "remark-html": "^16.0.1",
+    "resolve-accept-language": "^3.1.4",
     "swr": "^2.2.5",
     "three": "^0.165.0",
     "ua-parser-js": "^1.0.37",
