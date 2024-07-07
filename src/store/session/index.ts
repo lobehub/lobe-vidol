@@ -371,7 +371,7 @@ export const createSessionStore: StateCreator<SessionStore, [['zustand/devtools'
       }
     }
 
-    const latestMsg = contextMessages.filter((s) => s.role === 'user').at(-1);
+    const latestMsg = contextMessages.findLast((s) => s.role === 'user');
 
     if (!latestMsg) return;
 
