@@ -1,12 +1,12 @@
 {
-  "dialog": "对话框",
+  "dialog": "Dialoogvenster",
   "header": {
-    "chat": "聊天",
-    "market": "发现",
-    "role": "角色",
-    "settings": "设置",
-    "tips": "项目当前正在施工中，不保证数据稳定性，如果遇到问题可以在系统设置中清除会话消息与重置系统设置，造成不便敬请谅解"
+    "chat": "Chat",
+    "market": "Ontdekken",
+    "role": "Rol",
+    "settings": "Instellingen",
+    "tips": "Het project is momenteel in ontwikkeling en we kunnen de stabiliteit van de gegevens niet garanderen. Als u problemen ondervindt, kunt u dialoogberichten wissen en systeeminstellingen resetten in de systeeminstellingen. Excuses voor het ongemak."
   },
-  "sessionList": "会话列表",
-  "siderBar": "侧边栏"
+  "sessionList": "Sessielijst",
+  "siderBar": "Zijbalk"
 }

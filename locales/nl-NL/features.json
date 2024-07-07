@@ -1,65 +1,65 @@
 {
   "actions": {
-    "useVideo": "切换视频模式"
+    "useVideo": "Overschakelen naar videomodus"
   },
   "agent": {
-    "female": "女性",
-    "male": "男性",
-    "other": "其他"
+    "female": "Vrouw",
+    "male": "Man",
+    "other": "Anders"
   },
   "feature": {
-    "addProxy": "添加 OpenAI 代理地址（可选）",
-    "closeTip": "关闭提示",
-    "comfirmRetry": "确认并重试",
-    "startDesc": "输入你的 OpenAI API Key 即可开始会话。应用不会记录你的 API Key",
-    "startTitle": "自定义 API Key"
+    "addProxy": "Voeg OpenAI proxy-adres toe (optioneel)",
+    "closeTip": "Tip sluiten",
+    "comfirmRetry": "Bevestig en opnieuw proberen",
+    "startDesc": "Voer je OpenAI API Key in om de sessie te starten. De applicatie zal je API Key niet opslaan",
+    "startTitle": "Aangepaste API Key"
   },
   "mode": {
-    "chat": "聊天",
-    "video": "视频"
+    "chat": "Chat",
+    "video": "Video"
   },
   "settings": {
-    "glow": "光辉",
-    "nickName": "请输入昵称",
-    "none": "无背景"
+    "glow": "Gloed",
+    "nickName": "Voer een bijnaam in",
+    "none": "Geen achtergrond"
   },
   "share": {
-    "downloadScreenshot": "下载截图",
-    "imageType": "图片格式",
-    "screenshot": "截图",
-    "share": "分享",
-    "shareGPT": "分享GPT",
-    "shareToGPT": "生成 ShareGPT 分享链接",
-    "shareToMarket": "分享到助手市场",
-    "withBackground": "包含背景图片",
-    "withFooter": "包含页脚",
-    "withSystemRole": "包含助手角色设定"
+    "downloadScreenshot": "Download screenshot",
+    "imageType": "Afbeeldingsformaat",
+    "screenshot": "Screenshot",
+    "share": "Delen",
+    "shareGPT": "Deel GPT",
+    "shareToGPT": "Genereer een ShareGPT deellink",
+    "shareToMarket": "Deel op de markt van assistenten",
+    "withBackground": "Met achtergrondafbeelding",
+    "withFooter": "Met voettekst",
+    "withSystemRole": "Met assistent rolinstellingen"
   },
   "submit": {
-    "assistantId": "助手标识符",
-    "assistantIdTip": "请输入助手的标识符，需要是唯一的，比如 vidol-agent-klee",
-    "submitAssistant": "提交助手",
-    "submitWarning": "请补全助手信息后提交，需要包含名称、描述、头像和封面"
+    "assistantId": "Assistent identificatie",
+    "assistantIdTip": "Voer de identificatie van de assistent in, moet uniek zijn, bijvoorbeeld vidol-agent-klee",
+    "submitAssistant": "Assistent indienen",
+    "submitWarning": "Vul alstublieft alle informatie van de assistent in voordat je indient, moet naam, beschrijving, avatar en omslag bevatten"
   },
-  "support": "社区支持",
+  "support": "Communityondersteuning",
   "theme": {
-    "auto": "跟随系统",
-    "dark": "暗黑模式",
-    "light": "亮色模式"
+    "auto": "Volgens systeem",
+    "dark": "Donkere modus",
+    "light": "Lichte modus"
   },
   "token": {
-    "overload": "Token 超出",
-    "remained": "Token 剩余",
-    "tokenCount": "Token 数量",
-    "useToken": "消耗 Token 数量计算，包括消息，角色设定与上下文：{{usedTokens}} / {{maxValue}}",
-    "used": "Token 已使用"
+    "overload": "Token overschreden",
+    "remained": "Token resterend",
+    "tokenCount": "Token aantal",
+    "useToken": "Token verbruikberekening, inclusief berichten, rolinstellingen en context: {{usedTokens}} / {{maxValue}}",
+    "used": "Token gebruikt"
   },
   "toolBar": {
-    "cameraControl": "镜头控制",
-    "cameraHelper": "镜头辅助",
-    "downloadModel": "模型下载中，请稍后...",
-    "floor": "切换地板",
-    "grid": "网格",
-    "resetCamera": "重置镜头"
+    "cameraControl": "Camerabediening",
+    "cameraHelper": "Camerahulp",
+    "downloadModel": "Model downloaden, even geduld aub...",
+    "floor": "Verander vloer",
+    "grid": "Raster",
+    "resetCamera": "Camera resetten"
   }
 }

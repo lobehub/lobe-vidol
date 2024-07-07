@@ -1,14 +1,14 @@
 {
-  "chat": "聊天",
+  "chat": "Chatten",
   "chatDialog": {
-    "close": "关闭"
+    "close": "Sluiten"
   },
-  "dance": "跳舞",
+  "dance": "Dansen",
   "header": {
-    "role": "角色",
-    "session": "对话"
+    "role": "Rol",
+    "session": "Sessie"
   },
-  "helloChat": "你好，让我们来聊天吧",
-  "helloDance": "嗨，让我们一起跳舞吧",
-  "market": "发现"
+  "helloChat": "Hallo, laten we chatten",
+  "helloDance": "Hoi, laten we dansen",
+  "market": "Ontdek"
 }
