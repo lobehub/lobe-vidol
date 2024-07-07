@@ -42,7 +42,9 @@ export const DEFAULT_AGENT_CONFIG: Agent = {
     name: '自定义角色',
     description: '这是一个自定义角色',
     avatar: DEFAULT_AGENT_AVATAR_URL,
+    cover: '',
     gender: GenderEnum.FEMALE,
+    category: CategoryEnum.ANIME,
     readme: '',
   },
   touch: DEFAULT_TOUCH_ACTION_CONFIG_FEMALE,
@@ -54,4 +56,16 @@ export const AGENT_GENDER_OPTIONS = [
   { label: '女性', value: GenderEnum.FEMALE },
   { label: '男性', value: GenderEnum.MALE },
   { label: '其他', value: GenderEnum.OTHER },
+];
+
+export const AGENT_CATEGORY_OPTIONS = [
+  { label: '动物', value: CategoryEnum.ANIMAL },
+  { label: '动漫', value: CategoryEnum.ANIME },
+  { label: '书籍', value: CategoryEnum.BOOK },
+  { label: '游戏', value: CategoryEnum.GAME },
+  { label: '历史', value: CategoryEnum.HISTORY },
+  { label: '电影', value: CategoryEnum.MOVIE },
+  { label: '现实', value: CategoryEnum.REALISTIC },
+  { label: 'Vroid', value: CategoryEnum.VROID },
+  { label: 'VTuber', value: CategoryEnum.VTUBER },
 ];

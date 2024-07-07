@@ -8,6 +8,7 @@ import { INPUT_WIDTH_L, INPUT_WIDTH_M } from '@/constants/token';
 import CoverWithUpload from '@/panels/RolePanel/RoleEdit/Info/CoverWithUpload';
 import Greeting from '@/panels/RolePanel/RoleEdit/Info/Greeting';
 import ReadMe from '@/panels/RolePanel/RoleEdit/Info/ReadMe';
+import RoleCategory from '@/panels/RolePanel/RoleEdit/Info/RoleCategory';
 import RoleDescription from '@/panels/RolePanel/RoleEdit/Info/RoleDescription';
 import RoleGender from '@/panels/RolePanel/RoleEdit/Info/RoleGender';
 import RoleName from '@/panels/RolePanel/RoleEdit/Info/RoleName';
@@ -52,37 +53,58 @@ const Info = (props: InfoProps) => {
   const [form] = Form.useForm();
 
   return (
-    <Form form={form} layout="horizontal" requiredMark={false}>
+    <Form form={form} layout="horizontal">
       <div className={classNames(className, styles.container)} style={style}>
         <div className={styles.form}>
           <div className={styles.config}>
-            <FormItem desc={'自定义头像，点击头像自定义上传'} label={'头像'} name={'avatar'}>
+            <FormItem
+              desc={'自定义头像，点击头像自定义上传'}
+              label={'头像'}
+              name={'avatar'}
+              required
+            >
               <AvatarWithUpload />
             </FormItem>
-            <FormItem label={'名称'} desc={'角色名称，与角色聊天时的称呼'} divider name={['name']}>
-              <RoleName style={{ width: INPUT_WIDTH_M }} />
-            </FormItem>
             <FormItem
-              label={'性别'}
-              desc={'角色性别，影响角色的触摸响应'}
+              label={'名称'}
+              desc={'角色名称，与角色聊天时的称呼'}
               divider
-              name={['gender']}
+              name={['name']}
+              required
             >
-              <RoleGender style={{ width: INPUT_WIDTH_M }} />
+              <RoleName style={{ width: INPUT_WIDTH_M }} />
             </FormItem>
             <FormItem
               label={'描述'}
               divider
               desc={'角色描述，用于角色的简单介绍'}
               name={'description'}
+              required
             >
               <RoleDescription style={{ width: INPUT_WIDTH_L }} />
             </FormItem>
-            <FormItem label={'招呼'} desc={'与角色初次聊天时的招呼用语'} name="greeting" divider>
+            <FormItem
+              label={'招呼'}
+              desc={'与角色初次聊天时的招呼用语'}
+              name="greeting"
+              divider
+              required
+            >
               <Greeting style={{ width: INPUT_WIDTH_L }} />
             </FormItem>
             <FormItem
-              label={'角色说明'}
+              label={'性别'}
+              desc={'角色性别，影响角色的交互响应'}
+              divider
+              name={['gender']}
+            >
+              <RoleGender style={{ width: INPUT_WIDTH_M }} />
+            </FormItem>
+            <FormItem label={'类别'} desc={'角色类别，用于展示分类'} divider name={['category']}>
+              <RoleCategory style={{ width: INPUT_WIDTH_M }} />
+            </FormItem>
+            <FormItem
+              label={'说明'}
               name={'readme'}
               divider
               desc="角色的说明文件，用于发现页展示角色的详细说明"
@@ -94,6 +116,7 @@ const Info = (props: InfoProps) => {
             <FormItem
               label={'封面'}
               name={'cover'}
+              required
               desc={`用于发现页展示角色，推荐尺寸 ${COVER_COMPRESS_WIDTH} * ${COVER_COMPRESS_HEIGHT}`}
             />
             <CoverWithUpload />

@@ -1,6 +1,7 @@
-import { clampVector3ByRadian } from '@/utils/three-helpers';
 import { VRM, VRMHumanBoneName } from '@pixiv/three-vrm';
 import { Bone, MathUtils, Object3D, Quaternion, Vector3 } from 'three';
+
+import { clampVector3ByRadian } from '@/utils/three-helpers';
 
 const BoneNames = VRMHumanBoneName;
 const boneNameOrder: VRMHumanBoneName[] = [

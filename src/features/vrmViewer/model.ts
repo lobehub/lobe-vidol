@@ -2,12 +2,12 @@ import { VRM, VRMLoaderPlugin, VRMUtils } from '@pixiv/three-vrm';
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 
-import { convert } from '@/lib/VMDAnimation/vmd2vrmanim';
-import { bindToVRM, toOffset } from '@/lib/VMDAnimation/vmd2vrmanim.binding';
-import IKHandler from '@/lib/VMDAnimation/vrm-ik-handler';
-import { VRMAnimation } from '@/lib/VRMAnimation/VRMAnimation';
-import { loadVRMAnimation } from '@/lib/VRMAnimation/loadVRMAnimation';
-import { VRMLookAtSmootherLoaderPlugin } from '@/lib/VRMLookAtSmootherLoaderPlugin/VRMLookAtSmootherLoaderPlugin';
+import { convert } from '@/libs/VMDAnimation/vmd2vrmanim';
+import { bindToVRM, toOffset } from '@/libs/VMDAnimation/vmd2vrmanim.binding';
+import IKHandler from '@/libs/VMDAnimation/vrm-ik-handler';
+import { VRMAnimation } from '@/libs/VRMAnimation/VRMAnimation';
+import { loadVRMAnimation } from '@/libs/VRMAnimation/loadVRMAnimation';
+import { VRMLookAtSmootherLoaderPlugin } from '@/libs/VRMLookAtSmootherLoaderPlugin/VRMLookAtSmootherLoaderPlugin';
 import { Screenplay } from '@/types/touch';
 
 import { EmoteController } from '../emoteController/emoteController';

@@ -4,6 +4,7 @@ import {
 } from '@pixiv/three-vrm-core';
 import { CharsetEncoder, Parser, VmdFile } from 'mmd-parser';
 import { MathUtils, Quaternion, Vector3 } from 'three';
+
 import { AnimationData, Timeline, VRMOffsets } from './vmd2vrmanim.binding';
 
 export function isTruely<T>(x: T): x is Exclude<T, false | '' | 0 | null | undefined> {

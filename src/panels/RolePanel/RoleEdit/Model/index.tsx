@@ -43,7 +43,12 @@ const Model = (props: ModelProps) => {
           <Touch />
         </div>
         <div className={styles.right}>
-          <FormItem label={'模型预览'} name={'model'} desc="模型预览，可拖动模型文件以替换" />
+          <FormItem
+            label={'模型预览'}
+            name={'model'}
+            desc="模型预览，可拖动模型文件以替换"
+            required
+          />
           <ViewerWithUpload />
         </div>
       </div>

@@ -6,6 +6,10 @@ export const getModelPathByAgentId = (agentId: string) => {
   return `${MODEL_SCHEMA}://${agentId}`;
 };
 
+export const isLocalModelPath = (path: string) => {
+  return path.startsWith(MODEL_SCHEMA);
+};
+
 export const getAudioPathByDanceId = (danceId: string) => {
   return `${AUDIO_SCHEMA}://${danceId}`;
 };

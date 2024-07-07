@@ -50,7 +50,7 @@ const ThemeButton = memo(() => {
       }}
       trigger={['click']}
     >
-      <ActionIcon icon={PlusCircle} />
+      <ActionIcon icon={PlusCircle} title="创建角色" />
     </Popover>
   );
 });
