@@ -1,6 +1,7 @@
 import axios from 'axios';
 import dayjs from 'dayjs';
 
+import { OSS_PREFIX } from '@/constants/common';
 import { edgeClient } from '@/libs/trpc/client';
 import { uuid } from '@/utils/uuid';
 
@@ -18,10 +19,10 @@ export const upload = async (
 
   const url = await edgeClient.upload.createS3PreSignedUrl.mutate({ pathname });
 
-  const formData = new FormData();
-  formData.append('file', file);
-
-  await axios.put(url, formData, {
+  await axios({
+    method: 'put',
+    url,
+    data: file,
     headers: {
       'Content-Type': file.type,
     },
@@ -30,5 +31,5 @@ export const upload = async (
     },
   });
 
-  return `https://r2.vidol.chat/${pathname}`;
+  return `${OSS_PREFIX}/${pathname}`;
 };
