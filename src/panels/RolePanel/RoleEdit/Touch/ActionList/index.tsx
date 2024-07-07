@@ -6,12 +6,13 @@ import { Flexbox } from 'react-layout-kit';
 
 import ListItem from '@/components/ListItem';
 import { TOUCH_AREA_OPTIONS } from '@/constants/touch';
-import AddOrEdit from '@/panels/RolePanel/RoleEdit/Model/Touch/ActionList/Actions/AddOrEdit';
-import Delete from '@/panels/RolePanel/RoleEdit/Model/Touch/ActionList/Actions/Delete';
-import Play from '@/panels/RolePanel/RoleEdit/Model/Touch/ActionList/Actions/Play';
-import Header from '@/panels/RolePanel/RoleEdit/Model/components/Header';
 import { agentSelectors, useAgentStore } from '@/store/agent';
 import { TouchAction, TouchAreaEnum } from '@/types/touch';
+
+import Header from '../components/Header';
+import AddOrEdit from './Actions/AddOrEdit';
+import Delete from './Actions/Delete';
+import Play from './Actions/Play';
 
 const useStyles = createStyles(({ css, token }) => ({
   list: css`

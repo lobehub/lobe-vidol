@@ -21,7 +21,7 @@ export default memo<Props>((props) => {
       className={className}
       style={style}
       value={meta?.readme}
-      autoSize={{ minRows: 10, maxRows: 10 }}
+      autoSize={{ minRows: 8, maxRows: 8 }}
       placeholder="请输入角色说明"
       showCount
       maxLength={MAX_README_LENGTH}

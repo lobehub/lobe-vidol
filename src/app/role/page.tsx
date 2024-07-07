@@ -16,15 +16,8 @@ const Role = () => {
       <SideBar />
       <Flexbox className={styles.preview}>
         <Flexbox className={styles.container}>
-          <TopBanner title={'Role Preview and Setting'} />
-          <Flexbox horizontal>
-            <Flexbox className={styles.edit} flex={2}>
-              <RoleEdit />
-            </Flexbox>
-            {/*<Flexbox className={styles.model} flex={1}>*/}
-            {/*  <AgentViewer height={720} />*/}
-            {/*</Flexbox>*/}
-          </Flexbox>
+          <TopBanner title={'Role Preview and Setting'} style={{ height: 180 }} />
+          <RoleEdit />
         </Flexbox>
       </Flexbox>
       {/*<RoleInfo />*/}
