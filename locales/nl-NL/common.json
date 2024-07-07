@@ -92,6 +92,7 @@
     "resetSystemSetting": "重置系统设置",
     "resetSystemSettingDesc": "将会重置所有系统设置，包括主题设置、聊天设置、语言模型设置等",
     "systemSetting": "系统设置",
+    "languageSetting": "语言设置",
     "topicColor": "主题色",
     "topicSetting": "主题设置"
   }

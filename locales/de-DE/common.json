@@ -92,6 +92,7 @@
     "resetSystemSetting": "Systemeinstellungen zurücksetzen",
     "resetSystemSettingDesc": "Alle Systemeinstellungen werden zurückgesetzt, einschließlich Themen-, Chat- und Sprachmodell-Einstellungen",
     "systemSetting": "Systemeinstellungen",
+    "languageSetting": "Spracheinstellungen",
     "topicColor": "Themenfarbe",
     "topicSetting": "Themen-Einstellungen"
   }

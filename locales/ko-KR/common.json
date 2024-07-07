@@ -92,6 +92,7 @@
     "resetSystemSetting": "시스템 설정 재설정",
     "resetSystemSettingDesc": "주제 설정, 채팅 설정, 언어 모델 설정 등 모든 시스템 설정을 재설정합니다.",
     "systemSetting": "시스템 설정",
+    "languageSetting": "언어 설정",
     "topicColor": "주제 색상",
     "topicSetting": "주제 설정"
   }

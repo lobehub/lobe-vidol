@@ -92,6 +92,7 @@
     "resetSystemSetting": "Reset System Settings",
     "resetSystemSettingDesc": "This will reset all system settings, including theme settings, chat settings, language model settings, etc.",
     "systemSetting": "System Settings",
+    "languageSetting": "Language Settings",
     "topicColor": "Theme Color",
     "topicSetting": "Topic Settings"
   }

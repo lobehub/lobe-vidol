@@ -92,6 +92,7 @@
     "resetSystemSetting": "Ripristina impostazioni di sistema",
     "resetSystemSettingDesc": "Ripristina tutte le impostazioni di sistema, inclusi le impostazioni dell'argomento, della chat, del modello linguistico, ecc.",
     "systemSetting": "Impostazioni di sistema",
+    "languageSetting": "Impostazioni lingua",
     "topicColor": "Colore dell'argomento",
     "topicSetting": "Impostazioni argomento"
   }

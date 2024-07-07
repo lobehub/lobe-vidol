@@ -92,6 +92,7 @@
     "resetSystemSetting": "Đặt lại cài đặt hệ thống",
     "resetSystemSettingDesc": "Sẽ đặt lại tất cả cài đặt hệ thống, bao gồm cài đặt chủ đề, cài đặt trò chuyện, cài đặt mô hình ngôn ngữ, v.v.",
     "systemSetting": "Cài đặt hệ thống",
+    "languageSetting": "Cài đặt ngôn ngữ",
     "topicColor": "Màu chủ đề",
     "topicSetting": "Cài đặt chủ đề"
   }

@@ -92,6 +92,7 @@
     "resetSystemSetting": "Réinitialiser les paramètres système",
     "resetSystemSettingDesc": "Cela réinitialisera tous les paramètres système, y compris les paramètres de sujet, les paramètres de conversation, les paramètres du modèle de langue, etc.",
     "systemSetting": "Paramètres système",
+    "languageSetting": "Paramètres de langue",
     "topicColor": "Couleur de sujet",
     "topicSetting": "Paramètres de sujet"
   }

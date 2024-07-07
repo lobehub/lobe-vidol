@@ -92,6 +92,7 @@
     "resetSystemSetting": "システム設定をリセット",
     "resetSystemSettingDesc": "トピック設定、チャット設定、言語モデル設定などを含むすべてのシステム設定をリセットします",
     "systemSetting": "システム設定",
+    "languageSetting": "言語設定",
     "topicColor": "トピックカラー",
     "topicSetting": "トピック設定"
   }

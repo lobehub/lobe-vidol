@@ -92,6 +92,7 @@
     "resetSystemSetting": "Redefinir configurações do sistema",
     "resetSystemSettingDesc": "Isso redefinirá todas as configurações do sistema, incluindo configurações de tópicos, chat, modelos de idioma, etc.",
     "systemSetting": "Configuração do sistema",
+    "languageSetting": "Configuração de idioma",
     "topicColor": "Cor do tópico",
     "topicSetting": "Configuração de tópico"
   }

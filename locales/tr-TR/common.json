@@ -92,6 +92,7 @@
     "resetSystemSetting": "Sistem Ayarlarını Sıfırla",
     "resetSystemSettingDesc": "Tüm sistem ayarlarını, konu ayarlarını, sohbet ayarlarını, dil modeli ayarlarını vb. sıfırlayacaktır",
     "systemSetting": "Sistem Ayarları",
+    "languageSetting": "Dil Ayarları",
     "topicColor": "Konu Rengi",
     "topicSetting": "Konu Ayarları"
   }
