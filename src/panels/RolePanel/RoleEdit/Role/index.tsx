@@ -5,24 +5,19 @@ import React from 'react';
 
 import SystemRole from '@/panels/RolePanel/RoleEdit/Role/SystemRole';
 
-interface InfoProps {
-  className?: string;
-  style?: React.CSSProperties;
-}
-
 const useStyles = createStyles(({ css }) => ({
   container: css`
     display: flex;
     flex-direction: column;
+    padding: 0 16px;
   `,
 }));
 
-const Info = (props: InfoProps) => {
-  const { style, className } = props;
+const Info = () => {
   const { styles } = useStyles();
 
   return (
-    <div className={classNames(className, styles.container)} style={style}>
+    <div className={classNames(styles.container)}>
       <Form>
         <SystemRole />
       </Form>

@@ -1,6 +1,4 @@
-import { Form, FormItem } from '@lobehub/ui';
-import { createStyles } from 'antd-style';
-import classNames from 'classnames';
+import { Form, FormProps } from '@lobehub/ui';
 import React from 'react';
 
 import { INPUT_WIDTH_M } from '@/constants/token';
@@ -11,49 +9,43 @@ import TTSPlay from '@/panels/RolePanel/RoleEdit/Voice/TTSPlay';
 import TTSSpeed from '@/panels/RolePanel/RoleEdit/Voice/TTSSpeed';
 import TTSVoice from '@/panels/RolePanel/RoleEdit/Voice/TTSVoice';
 
-interface ConfigProps {
-  className?: string;
-  style?: React.CSSProperties;
-}
-
-const useStyles = createStyles(({ css }) => ({
-  container: css`
-    display: flex;
-    flex-direction: column;
-  `,
-}));
-
-export default (props: ConfigProps) => {
-  const { style, className } = props;
-  const { styles } = useStyles();
-
-  return (
-    <Form layout="horizontal" preserve={false} requiredMark={false}>
-      <div className={classNames(className, styles.container)} style={style}>
-        <FormItem label={'语音引擎'} name={'engine'} desc="语音合成引擎，建议优先选择 Edge ">
-          <TTSEngine style={{ width: INPUT_WIDTH_M }} />
-        </FormItem>
-        <FormItem
-          label={'语言'}
-          name={'locale'}
-          divider
-          desc="语音合成的语种，当前仅支持最常见的几种语言，如有需要请联系"
-        >
-          <TTSLocale style={{ width: INPUT_WIDTH_M }} />
-        </FormItem>
-        <FormItem label={'语音'} divider name={'voice'} desc="根据引擎和语种不同">
-          <TTSVoice style={{ width: INPUT_WIDTH_M }} />
-        </FormItem>
-        <FormItem label={'语速'} name={'speed'} desc="控制语速，取值范围 0 ~ 3，默认为 1" divider>
-          <TTSSpeed style={{ width: INPUT_WIDTH_M }} />
-        </FormItem>
-        <FormItem label={'音调'} name={'pitch'} desc="控制音调，取值范围 0 ~ 2，默认为 1" divider>
-          <TTSPitch style={{ width: INPUT_WIDTH_M }} />
-        </FormItem>
-        <FormItem label={'试听'} desc={`试听文案根据语言不同`} divider>
-          <TTSPlay style={{ width: INPUT_WIDTH_M }} />
-        </FormItem>
-      </div>
-    </Form>
-  );
+export default () => {
+  const voice: FormProps['items'] = [
+    {
+      label: '引擎',
+      desc: '语音合成引擎，建议优先选择 Edge ',
+      name: 'engine',
+      children: <TTSEngine style={{ width: INPUT_WIDTH_M }} />,
+    },
+    {
+      label: '语言',
+      desc: '语音合成的语种，当前仅支持最常见的几种语言，如有需要请联系',
+      name: 'locale',
+      children: <TTSLocale style={{ width: INPUT_WIDTH_M }} />,
+    },
+    {
+      label: '语音',
+      desc: '根据引擎和语种不同',
+      name: 'voice',
+      children: <TTSVoice style={{ width: INPUT_WIDTH_M }} />,
+    },
+    {
+      label: '语速',
+      desc: '控制语速，取值范围 0 ~ 3，默认为 1',
+      name: 'speed',
+      children: <TTSSpeed style={{ width: INPUT_WIDTH_M }} />,
+    },
+    {
+      label: '音调',
+      desc: '控制音调，取值范围 0 ~ 2，默认为 1',
+      name: 'pitch',
+      children: <TTSPitch style={{ width: INPUT_WIDTH_M }} />,
+    },
+    {
+      label: '试听',
+      desc: `试听文案根据语言不同`,
+      children: <TTSPlay style={{ width: INPUT_WIDTH_M }} />,
+    },
+  ];
+  return <Form items={voice} itemsType={'flat'} variant={'block'} />;
 };
