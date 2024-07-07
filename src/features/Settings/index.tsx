@@ -16,21 +16,23 @@ const Config = (props: ConfigProps) => {
   const [tab, setTab] = useState('common');
   const { t } = useTranslation('common');
 
+  const options = [
+    {
+      key: 'common',
+      label: t('commonSetting'),
+    },
+    {
+      key: 'languageModel',
+      label: t('languageModel'),
+    },
+  ];
+
   return (
     <Flexbox flex={1} width={'100%'} height={'100%'} className={className} style={style}>
       <div style={{ marginBottom: 12 }}>
         <TabsNav
           activeKey={tab}
-          items={[
-            {
-              key: 'common',
-              label: t('commonSetting'),
-            },
-            {
-              key: 'languageModel',
-              label: t('languageModel'),
-            },
-          ]}
+          items={options}
           onChange={(key) => {
             setTab(key);
           }}

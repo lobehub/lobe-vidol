@@ -7,4 +7,5 @@ export const switchLang = (locale: LocaleMode) => {
 
   changeLanguage(lang);
   document.documentElement.lang = lang;
+  // window.location.reload()
 };

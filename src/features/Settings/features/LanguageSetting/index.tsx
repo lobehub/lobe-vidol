@@ -12,12 +12,7 @@ interface Props {
 export default memo<Props>((props) => {
   const { style } = props;
   const { t } = useTranslation('features');
+  const options = [{ label: t('theme.auto'), value: 'auto' }, ...localeOptions];
 
-  return (
-    <Select
-      style={style}
-      onChange={switchLang}
-      options={[{ label: t('theme.auto'), value: 'auto' }, ...localeOptions]}
-    />
-  );
+  return <Select style={style} defaultValue={'auto'} onChange={switchLang} options={options} />;
 });
