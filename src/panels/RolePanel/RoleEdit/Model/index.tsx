@@ -1,12 +1,9 @@
-import { Form, FormItem } from '@lobehub/ui';
+import { Form } from '@lobehub/ui';
 import { createStyles } from 'antd-style';
 import classNames from 'classnames';
 import React from 'react';
-import { useTranslation } from 'react-i18next';
 
 import ViewerWithUpload from '@/panels/RolePanel/RoleEdit/Model/ViewerWithUpload';
-
-import Touch from './Touch';
 
 interface ModelProps {
   className?: string;
@@ -16,6 +13,8 @@ interface ModelProps {
 const useStyles = createStyles(({ css, token }) => ({
   container: css`
     display: flex;
+    width: 100%;
+    height: 100%;
   `,
   left: css`
     flex: 2;
@@ -36,23 +35,11 @@ const useStyles = createStyles(({ css, token }) => ({
 const Model = (props: ModelProps) => {
   const { style, className } = props;
   const { styles } = useStyles();
-  const { t } = useTranslation('panel');
 
   return (
     <Form>
       <div className={classNames(className, styles.container)} style={style}>
-        <div className={styles.left}>
-          <Touch />
-        </div>
-        <div className={styles.right}>
-          <FormItem
-            label={t('info.modelLabel')}
-            name={'model'}
-            desc={t('info.modelDescription')}
-            required
-          />
-          <ViewerWithUpload />
-        </div>
+        <ViewerWithUpload />
       </div>
     </Form>
   );

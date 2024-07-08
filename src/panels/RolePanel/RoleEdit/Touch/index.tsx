@@ -7,12 +7,18 @@ import { TouchAreaEnum } from '@/types/touch';
 import ActionList from './ActionList';
 import SideBar from './SideBar';
 
-const useStyles = createStyles(({ css }) => ({
+const useStyles = createStyles(({ css, token }) => ({
   container: css`
     position: relative;
+
     display: flex;
+
     width: 100%;
-    min-height: 740px;
+    min-height: 480px;
+    padding: 0 16px;
+
+    background-color: rgba(255, 255, 255, 2%);
+    border-radius: ${token.borderRadius}px;
   `,
 }));
 

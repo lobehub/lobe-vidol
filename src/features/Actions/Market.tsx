@@ -7,7 +7,7 @@ import { useGlobalStore } from '@/store/global';
 
 export default () => {
   const openPanel = useGlobalStore((s) => s.openPanel);
-  const { t } = useTranslation('features');
+  const { t } = useTranslation('common');
   return (
     <ActionIcon
       icon={PlusCircle}

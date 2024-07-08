@@ -84,9 +84,9 @@ const CommonConfig = (props: CommonConfigProps) => {
         </FormGroup>
         <FormGroup icon={Monitor} title={t('words.systemSetting')}>
           <FormItem
-            desc={t('words.clearAllSession')}
+            desc={t('words.clearAllSessionDesc')}
             divider
-            label={t('words.clearAllSessionDesc')}
+            label={t('words.clearAllSession')}
           >
             <ClearSession />
           </FormItem>

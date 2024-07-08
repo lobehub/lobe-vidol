@@ -4,6 +4,7 @@ import { TabsNav } from '@lobehub/ui';
 import classNames from 'classnames';
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Flexbox } from 'react-layout-kit';
 
 import SubmitAgentButton from '@/features/Actions/SubmitAgentButton';
 
@@ -11,6 +12,7 @@ import Info from './Info';
 import LangModel from './LangModel';
 import Model from './Model';
 import Role from './Role';
+import Touch from './Touch';
 import Voice from './Voice';
 import { useStyles } from './style';
 
@@ -27,44 +29,51 @@ const RolePanel = (props: RolePanelProps) => {
 
   return (
     <div className={classNames(styles.edit, className)} style={style}>
-      <div style={{ marginBottom: 12 }}>
-        <TabsNav
-          activeKey={tab}
-          items={[
-            {
-              key: 'info',
-              label: t('nav.info'),
-            },
-            {
-              key: 'role',
-              label: t('nav.role'),
-            },
-            {
-              key: 'voice',
-              label: t('nav.voice'),
-            },
-            {
-              key: 'model',
-              label: t('nav.model'),
-            },
-            {
-              key: 'langModel',
-              label: '语言模型',
-            },
-          ]}
-          tabBarExtraContent={<SubmitAgentButton modal />}
-          onChange={(key) => {
-            setTab(key);
-          }}
-        />
-      </div>
-      <div className={styles.content}>
-        {tab === 'info' ? <Info /> : null}
-        {tab === 'role' ? <Role /> : null}
-        {tab === 'voice' ? <Voice /> : null}
-        {tab === 'model' ? <Model /> : null}
-        {tab === 'langModel' ? <LangModel /> : null}
-      </div>
+      <Flexbox horizontal flex={1} gap={12}>
+        <Flexbox flex={2}>
+          <div style={{ marginBottom: 12 }}>
+            <TabsNav
+              activeKey={tab}
+              items={[
+                {
+                  key: 'info',
+                  label: t('nav.info'),
+                },
+                {
+                  key: 'role',
+                  label: t('nav.role'),
+                },
+                {
+                  key: 'voice',
+                  label: t('nav.voice'),
+                },
+                {
+                  key: 'touch',
+                  label: t('nav.touch'),
+                },
+                {
+                  key: 'llm',
+                  label: t('nav.llm'),
+                },
+              ]}
+              tabBarExtraContent={<SubmitAgentButton modal />}
+              onChange={(key) => {
+                setTab(key);
+              }}
+            />
+          </div>
+          <div className={styles.content}>
+            {tab === 'info' ? <Info /> : null}
+            {tab === 'role' ? <Role /> : null}
+            {tab === 'voice' ? <Voice /> : null}
+            {tab === 'touch' ? <Touch /> : null}
+            {tab === 'llm' ? <LangModel /> : null}
+          </div>
+        </Flexbox>
+        <Flexbox flex={1}>
+          <Model />
+        </Flexbox>
+      </Flexbox>
     </div>
   );
 };

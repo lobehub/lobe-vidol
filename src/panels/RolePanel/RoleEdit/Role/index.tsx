@@ -1,50 +1,27 @@
-import { Form, FormItem } from '@lobehub/ui';
+import { Form } from '@lobehub/ui';
 import { createStyles } from 'antd-style';
 import classNames from 'classnames';
 import React from 'react';
-import { useTranslation } from 'react-i18next';
 
 import SystemRole from '@/panels/RolePanel/RoleEdit/Role/SystemRole';
 
-interface InfoProps {
-  className?: string;
-  style?: React.CSSProperties;
-}
-
-const useStyles = createStyles(({ css, token }) => ({
-  config: css`
-    padding: 12px;
-    border-radius: ${token.borderRadius}px;
-  `,
+const useStyles = createStyles(({ css }) => ({
   container: css`
     display: flex;
     flex-direction: column;
-  `,
-
-  form: css`
-    display: flex;
+    padding: 0 16px;
   `,
 }));
 
-const Info = (props: InfoProps) => {
-  const { style, className } = props;
+const Info = () => {
   const { styles } = useStyles();
-  const { t } = useTranslation('panel');
+
   return (
-    <Form>
-      <div className={classNames(className, styles.container)} style={style}>
-        <div className={styles.config}>
-          <FormItem
-            name="systemRole"
-            label={t('role.roleSettingLabel')}
-            desc={t('role.roleSettingDescription')}
-            divider
-            required
-          ></FormItem>
-          <SystemRole />
-        </div>
-      </div>
-    </Form>
+    <div className={classNames(styles.container)}>
+      <Form>
+        <SystemRole />
+      </Form>
+    </div>
   );
 };
 

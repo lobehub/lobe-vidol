@@ -39,7 +39,8 @@
     "info": "基本信息",
     "role": "角色设定",
     "voice": "语音",
-    "model": "3D模型"
+    "model": "3D模型",
+    "touch": "触摸"
   },
   "role": {
     "uploadSize": "支持单个文件上传，推荐尺寸为 {{width}} x {{height}} 的倍数",

@@ -8,7 +8,7 @@ import ListItem from '@/components/ListItem';
 import { TOUCH_AREA_OPTIONS } from '@/constants/touch';
 import { TouchAreaEnum } from '@/types/touch';
 
-import Header from '../../components/Header';
+import Header from '../components/Header';
 
 const useStyles = createStyles(({ css, token }) => ({
   listItem: css`

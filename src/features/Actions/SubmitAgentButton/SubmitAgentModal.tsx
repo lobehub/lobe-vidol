@@ -33,7 +33,6 @@ const SubmitAgentModal = memo<ModalProps>(({ open, onCancel }) => {
       meta.name &&
       meta.description &&
       meta.avatar &&
-      meta.cover &&
       meta.model,
   );
 

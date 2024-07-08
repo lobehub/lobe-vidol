@@ -1,6 +1,4 @@
-import { Form, FormItem } from '@lobehub/ui';
-import { createStyles } from 'antd-style';
-import classNames from 'classnames';
+import { Form, FormProps } from '@lobehub/ui';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -12,74 +10,45 @@ import TTSPlay from '@/panels/RolePanel/RoleEdit/Voice/TTSPlay';
 import TTSSpeed from '@/panels/RolePanel/RoleEdit/Voice/TTSSpeed';
 import TTSVoice from '@/panels/RolePanel/RoleEdit/Voice/TTSVoice';
 
-interface ConfigProps {
-  className?: string;
-  style?: React.CSSProperties;
-}
-
-const useStyles = createStyles(({ css, token }) => ({
-  audio: css`
-    margin-top: 20px;
-  `,
-  config: css`
-    padding: 12px;
-    border-radius: ${token.borderRadius}px;
-  `,
-  container: css`
-    display: flex;
-    flex-direction: column;
-  `,
-}));
-
-export default (props: ConfigProps) => {
-  const { style, className } = props;
-  const { styles } = useStyles();
+export default () => {
   const { t } = useTranslation('panel');
 
-  return (
-    <Form layout="horizontal" preserve={false} requiredMark={false}>
-      <div className={classNames(className, styles.container)} style={style}>
-        <div className={styles.config}>
-          <FormItem label={t('tts.engineLabel')} name={'engine'} desc={t('tts.engineDescription')}>
-            <TTSEngine style={{ width: INPUT_WIDTH_M }} />
-          </FormItem>
-          <FormItem
-            label={t('tts.localeLabel')}
-            desc={t('tts.localeDescription')}
-            name={'locale'}
-            divider
-          >
-            <TTSLocale style={{ width: INPUT_WIDTH_M }} />
-          </FormItem>
-          <FormItem
-            label={t('tts.voiceLabel')}
-            desc={t('tts.voiceDescription')}
-            divider
-            name={'voice'}
-          >
-            <TTSVoice style={{ width: INPUT_WIDTH_M }} />
-          </FormItem>
-          <FormItem
-            label={t('tts.speedLabel')}
-            desc={t('tts.speedDescription')}
-            name={'speed'}
-            divider
-          >
-            <TTSSpeed style={{ width: INPUT_WIDTH_M }} />
-          </FormItem>
-          <FormItem
-            label={t('tts.pitchLabel')}
-            desc={t('tts.pitchDescription')}
-            name={'pitch'}
-            divider
-          >
-            <TTSPitch style={{ width: INPUT_WIDTH_M }} />
-          </FormItem>
-          <FormItem label={t('tts.audition')} desc={t('tts.auditionDescription')} divider>
-            <TTSPlay style={{ width: INPUT_WIDTH_M }} />
-          </FormItem>
-        </div>
-      </div>
-    </Form>
-  );
+  const voice: FormProps['items'] = [
+    {
+      label: t('tts.engineLabel'),
+      desc: t('tts.engineDescription'),
+      name: 'engine',
+      children: <TTSEngine style={{ width: INPUT_WIDTH_M }} />,
+    },
+    {
+      label: t('tts.localeLabel'),
+      desc: t('tts.localeDescription'),
+      name: 'locale',
+      children: <TTSLocale style={{ width: INPUT_WIDTH_M }} />,
+    },
+    {
+      label: t('tts.voiceLabel'),
+      desc: t('tts.voiceDescription'),
+      name: 'voice',
+      children: <TTSVoice style={{ width: INPUT_WIDTH_M }} />,
+    },
+    {
+      label: t('tts.speedLabel'),
+      desc: t('tts.speedDescription'),
+      name: 'speed',
+      children: <TTSSpeed style={{ width: INPUT_WIDTH_M }} />,
+    },
+    {
+      label: t('tts.pitchLabel'),
+      desc: t('tts.pitchDescription'),
+      name: 'pitch',
+      children: <TTSPitch style={{ width: INPUT_WIDTH_M }} />,
+    },
+    {
+      label: t('tts.audition'),
+      desc: t('tts.auditionDescription'),
+      children: <TTSPlay style={{ width: INPUT_WIDTH_M }} />,
+    },
+  ];
+  return <Form items={voice} itemsType={'flat'} variant={'block'} />;
 };
