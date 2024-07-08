@@ -52,8 +52,8 @@ const RolePanel = (props: RolePanelProps) => {
                   label: t('nav.touch'),
                 },
                 {
-                  key: 'langModel',
-                  label: '语言模型',
+                  key: 'llm',
+                  label: t('nav.llm'),
                 },
               ]}
               tabBarExtraContent={<SubmitAgentButton modal />}
@@ -67,7 +67,7 @@ const RolePanel = (props: RolePanelProps) => {
             {tab === 'role' ? <Role /> : null}
             {tab === 'voice' ? <Voice /> : null}
             {tab === 'touch' ? <Touch /> : null}
-            {tab === 'langModel' ? <LangModel /> : null}
+            {tab === 'llm' ? <LangModel /> : null}
           </div>
         </Flexbox>
         <Flexbox flex={1}>
