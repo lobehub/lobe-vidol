@@ -42,6 +42,8 @@ export default {
     emotionDescription: '选择响应时的情绪，会影响角色的表情变化',
     modelLabel: '模型预览',
     modelDescription: '模型预览，可拖动模型文件以替换',
+    categoryLabel: '类别',
+    categoryDescription: '角色类别，用于展示分类',
   },
   touch: {
     editAction: '编辑响应动作',

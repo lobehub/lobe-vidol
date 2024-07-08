@@ -20,6 +20,7 @@ export default {
   delSession: '删除会话',
   delAlert: '确认删除角色以及相关联的会话消息吗？删除后无法恢复, 请谨慎操作！',
   delSessionAlert: '确认删除对话吗？删除后无法恢复, 请谨慎操作！',
+  setLocalStorage: '设置 LocalStorage',
   actions: {
     copy: '复制',
     del: '删除',
