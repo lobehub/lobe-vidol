@@ -1,0 +1,65 @@
+{
+  "actions": {
+    "useVideo": "Switch to video mode"
+  },
+  "agent": {
+    "female": "Female",
+    "male": "Male",
+    "other": "Other"
+  },
+  "feature": {
+    "addProxy": "Add OpenAI proxy address (optional)",
+    "closeTip": "Close tip",
+    "comfirmRetry": "Confirm and retry",
+    "startDesc": "Enter your OpenAI API Key to start the session. The application will not record your API Key.",
+    "startTitle": "Customize API Key"
+  },
+  "mode": {
+    "chat": "Chat",
+    "video": "Video"
+  },
+  "settings": {
+    "glow": "Glow",
+    "nickName": "Please enter a nickname",
+    "none": "None"
+  },
+  "share": {
+    "downloadScreenshot": "Download screenshot",
+    "imageType": "Image format",
+    "screenshot": "Screenshot",
+    "share": "Share",
+    "shareGPT": "Share GPT",
+    "shareToGPT": "Generate ShareGPT sharing link",
+    "shareToMarket": "Share to Assistant Market",
+    "withBackground": "Include background image",
+    "withFooter": "Include footer",
+    "withSystemRole": "Include assistant role setting"
+  },
+  "submit": {
+    "assistantId": "Assistant identifier",
+    "assistantIdTip": "Please enter a unique identifier for the assistant, e.g., vidol-agent-klee",
+    "submitAssistant": "Submit assistant",
+    "submitWarning": "Please complete assistant information before submitting. It should include name, description, avatar, and cover image."
+  },
+  "support": "Community support",
+  "theme": {
+    "auto": "Follow system",
+    "dark": "Dark mode",
+    "light": "Light mode"
+  },
+  "token": {
+    "overload": "Token overload",
+    "remained": "Tokens remaining",
+    "tokenCount": "Token count",
+    "useToken": "Token consumption calculation, including messages, role settings, and context: {{usedTokens}} / {{maxValue}}",
+    "used": "Tokens used"
+  },
+  "toolBar": {
+    "cameraControl": "Camera control",
+    "cameraHelper": "Camera helper",
+    "downloadModel": "Model download in progress, please wait...",
+    "floor": "Switch floor",
+    "grid": "Grid",
+    "resetCamera": "Reset camera"
+  }
+}

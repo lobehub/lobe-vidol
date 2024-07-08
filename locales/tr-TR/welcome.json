@@ -1,0 +1,14 @@
+{
+  "agent": {
+    "description": "{{name}} Vidol'un varsayılan karakteridir ve size özel bir kişisel asistandır",
+    "greeting": "Merhaba, sevgili sahibim! Ben senin kişisel asistanın {{name}} ve hizmet için buradayım! Size nasıl yardımcı olabilirim?",
+    "hello": "Merhaba",
+    "meta": {
+      "description": "Bu bir özel karakterdir",
+      "name": "Özel karakter"
+    }
+  },
+  "greet": "Merhaba, ben {{name}}. Size nasıl yardımcı olabilirim?",
+  "loadingTitle": "Uygulama başlatılıyor, lütfen bekleyin...",
+  "waitting": "Benim dünyamı hazırlamak için çalışıyor"
+}

@@ -1,0 +1,19 @@
+{
+  "apiKeyMiss": "OpenAI API Key boş, lütfen özel OpenAI API Key ekleyin",
+  "error": "Hata",
+  "errorTip": {
+    "clearSession": "Oturum mesajlarını temizle",
+    "description": "Proje şu anda yapım aşamasında olduğundan veri stabilitesi garanti edilemez, sorun yaşarsanız deneyebilirsiniz",
+    "forgive": "rağmen rahatsızlık için özür dileriz",
+    "or": "veya",
+    "problem": "Sayfa bir sorunla karşılaştı...",
+    "resetSystem": "Sistemi sıfırla"
+  },
+  "goBack": "Ana sayfaya dön",
+  "openaiError": "OpenAI API hatası, lütfen OpenAI API Key ve Endpoint'i doğru şekilde kontrol edin",
+  "reload": "Yeniden yükle",
+  "s3envError": "S3 ortam değişkeni tam olarak ayarlanmadı, lütfen ortam değişkenlerinizi kontrol edin",
+  "serverError": "Sunucu hatası, lütfen yöneticiyle iletişime geçin",
+  "triggerError": "Hata tetiklendi",
+  "unknownError": "Bilinmeyen hata"
+}

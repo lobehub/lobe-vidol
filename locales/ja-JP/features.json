@@ -1,0 +1,65 @@
+{
+  "actions": {
+    "useVideo": "ビデオモードに切り替える"
+  },
+  "agent": {
+    "female": "女性",
+    "male": "男性",
+    "other": "その他"
+  },
+  "feature": {
+    "addProxy": "OpenAIプロキシアドレスを追加（オプション）",
+    "closeTip": "ヒントを閉じる",
+    "comfirmRetry": "確認して再試行する",
+    "startDesc": "OpenAI APIキーを入力して会話を開始できます。アプリはAPIキーを記録しません",
+    "startTitle": "APIキーをカスタマイズする"
+  },
+  "mode": {
+    "chat": "チャット",
+    "video": "ビデオ"
+  },
+  "settings": {
+    "glow": "グロー",
+    "nickName": "ニックネームを入力してください",
+    "none": "背景なし"
+  },
+  "share": {
+    "downloadScreenshot": "スクリーンショットをダウンロードする",
+    "imageType": "画像形式",
+    "screenshot": "スクリーンショット",
+    "share": "共有する",
+    "shareGPT": "GPTを共有する",
+    "shareToGPT": "ShareGPT共有リンクを生成する",
+    "shareToMarket": "アシスタントマーケットに共有する",
+    "withBackground": "背景画像を含む",
+    "withFooter": "フッターを含む",
+    "withSystemRole": "アシスタントの役割設定を含む"
+  },
+  "submit": {
+    "assistantId": "アシスタントID",
+    "assistantIdTip": "アシスタントのIDを入力してください。一意である必要があります。例：vidol-agent-klee",
+    "submitAssistant": "アシスタントを提出する",
+    "submitWarning": "名前、説明、アイコン、カバーを含めたアシスタント情報を入力してから提出してください"
+  },
+  "support": "コミュニティサポート",
+  "theme": {
+    "auto": "システムに従う",
+    "dark": "ダークモード",
+    "light": "ライトモード"
+  },
+  "token": {
+    "overload": "トークン超過",
+    "remained": "トークン残量",
+    "tokenCount": "トークン数",
+    "useToken": "メッセージ、ロール設定、およびコンテキストを含むトークン数の消費：{{usedTokens}} / {{maxValue}}",
+    "used": "使用済みトークン"
+  },
+  "toolBar": {
+    "cameraControl": "カメラ制御",
+    "cameraHelper": "カメラアシスト",
+    "downloadModel": "モデルのダウンロード中、しばらくお待ちください...",
+    "floor": "床を切り替える",
+    "grid": "グリッド",
+    "resetCamera": "カメラをリセットする"
+  }
+}

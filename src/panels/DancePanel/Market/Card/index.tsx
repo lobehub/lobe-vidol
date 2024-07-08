@@ -2,6 +2,7 @@ import { DraggablePanel } from '@lobehub/ui';
 import { Button, message } from 'antd';
 import { createStyles } from 'antd-style';
 import React, { memo, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import Author from '@/components/Author';
 import DanceInfo from '@/components/DanceInfo';
@@ -38,6 +39,7 @@ const Header = () => {
     s.addAndPlayItem,
     s.addToPlayList,
   ]);
+  const { t } = useTranslation('panel');
 
   const actions = [];
   if (currentDanceItem) {
@@ -54,18 +56,18 @@ const Header = () => {
           }}
           type={'primary'}
         >
-          播放
+          {t('dance.play')}
         </Button>,
         <Button
           key="add"
           onClick={() => {
             if (currentDanceItem) {
               addToPlayList(currentDanceItem.danceId);
-              message.success('已添加到播放列表');
+              message.success(t('dance.addPlaySuccess'));
             }
           }}
         >
-          添加到列表
+          {t('dance.addPlay')}
         </Button>,
       ]);
     }

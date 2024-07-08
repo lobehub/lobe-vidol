@@ -1,6 +1,7 @@
 'use client';
 
 import React, { memo } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
 import TopBanner from '@/components/TopBanner';
@@ -11,12 +12,13 @@ import { useStyles } from './style';
 
 const Role = () => {
   const { styles } = useStyles();
+  const { t } = useTranslation('role');
   return (
     <Flexbox flex={1} height={'100%'} width={'100%'} horizontal>
       <SideBar />
       <Flexbox className={styles.preview}>
         <Flexbox className={styles.container}>
-          <TopBanner title={'Role Preview and Setting'} />
+          <TopBanner title={t('topBannerTitle')} />
           <Flexbox horizontal>
             <Flexbox className={styles.edit} flex={2}>
               <RoleEdit />

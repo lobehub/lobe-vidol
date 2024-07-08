@@ -1,5 +1,6 @@
 import { message } from 'antd';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { useDanceStore } from '@/store/dance';
 import { Dance } from '@/types/dance';
@@ -14,6 +15,7 @@ export const useDownloadDance = () => {
   const [coverProgress, setCoverProgress] = useState(0);
   const [danceProgress, setDanceProgress] = useState(0);
 
+  const { t } = useTranslation('common');
   const [addDanceItem] = useDanceStore((s) => [s.addDanceItem]);
   const fetchDanceData = async (dance: Dance) => {
     setDownloading(true);
@@ -52,10 +54,10 @@ export const useDownloadDance = () => {
       await setItem(audioKey, audioBlob);
 
       addDanceItem({ ...dance, cover: coverBase64 });
-      message.success(dance.name + '下载成功');
+      message.success(dance.name + t('actions.downloadSuccess'));
     } catch (e) {
       console.error(e);
-      message.error(dance.name + '下载失败');
+      message.error(dance.name + t('actions.downloadFailed'));
     } finally {
       setDownloading(false);
     }

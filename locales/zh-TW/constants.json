@@ -1,0 +1,92 @@
+{
+  "agent": {
+    "gender": {
+      "female": "女",
+      "male": "男",
+      "other": "其他"
+    },
+    "meta": {
+      "description": "這是一個自訂角色",
+      "name": "自訂角色"
+    }
+  },
+  "touch": {
+    "area": {
+      "arm": "手臂",
+      "belly": "腹部",
+      "chest": "胸部",
+      "head": "頭部",
+      "leg": "腿部"
+    },
+    "emotion": {
+      "angry": "生氣",
+      "blink": "眨眼",
+      "blinkLeft": "眨左眼",
+      "blinkRight": "眨右眼",
+      "happy": "開心",
+      "natural": "自然",
+      "relaxed": "放鬆",
+      "sad": "傷心",
+      "surprised": "驚訝"
+    },
+    "femaleAction": {
+      "armAction": {
+        "happyA": "啊，好喜歡呢~",
+        "happyB": "哈哈，牽手讓我感到快樂~",
+        "relaxedA": "主人的手好溫暖啊~"
+      },
+      "bellyAction": {
+        "angryA": "幹嘛動我啊，小心我咬你哦！",
+        "relaxedA": "醒醒，我們之間沒有結果的!",
+        "relaxedB": "討厭！我可要生氣啦！",
+        "surprisedA": "是不小心碰到的吧..."
+      },
+      "chestAction": {
+        "angryA": "不可以這樣欺負我啦！快把手拿開！",
+        "angryB": "幺幺零嗎？這裡有個變態一直在摸我！",
+        "angryC": "再摸的話我可要報警了",
+        "surprisedA": "幹嘛戳我啊！還能不能愉快地聊天了!"
+      },
+      "headAction": {
+        "angryA": "聽說被摸頭是會長不高的呢！",
+        "angryB": "幹嘛戳我呀？",
+        "happyA": "哇！最喜歡摸摸頭！",
+        "happyB": "感覺又充滿了力量呢！",
+        "happyC": "哇塞，這個摸摸頭的感覺好神奇！",
+        "happyD": "摸摸頭讓我開心一整天！"
+      },
+      "legAction": {
+        "angryA": "喂，你是要作死嗎?",
+        "angryB": "主人的手又不聽指揮了嗎?",
+        "angryC": "討厭~會癢的啦~!",
+        "surprisedA": "讓我們保持純潔的友誼不好嗎？"
+      }
+    },
+    "maleAction": {
+      "armAction": {
+        "neutralA": "別問我今天吃沒吃雞，先看看我的肱二頭肌",
+        "neutralB": "我的手臂可不是隨便讓人觸碰的，你是個例外而已",
+        "neutralC": "你很勇敢，敢觸碰到傳說中的麒麟臂"
+      },
+      "bellyAction": {
+        "happyA": "別挠痒痒，小心我笑出腹肌",
+        "neutralA": "我的腹肌只是再修煉深藏不露的內力",
+        "neutralB": "看到我這團腹肌了嗎？它們只是藏得比較深罷了"
+      },
+      "chestAction": {
+        "blinkLeftA": "來，哥的胸肌給你靠!",
+        "neutralA": "這不過時我日常修煉成就的胸肌，沒什麼好驚訝的。"
+      },
+      "headAction": {
+        "neutralA": "當然了，只有你有資格摸我的頭",
+        "neutralB": "我可不是什麼普通人允許觸碰的哦",
+        "neutralC": "別擔心，摸過我的頭後，你的運氣會大幅提升的"
+      },
+      "legAction": {
+        "angryA": "別靠近我，你這個腿控",
+        "neutralA": "別害怕，我的大力金剛腿不踢傻瓜",
+        "neutralB": "讓你碰到我的腿，是不是覺得你的生活完整了許多？"
+      }
+    }
+  }
+}

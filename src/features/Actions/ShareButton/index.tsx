@@ -4,6 +4,7 @@ import { ActionIcon } from '@lobehub/ui';
 import { Share2 } from 'lucide-react';
 import dynamic from 'next/dynamic';
 import React, { memo, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { DESKTOP_HEADER_ICON_SIZE } from '@/constants/token';
 import { useSessionStore } from '@/store/session';
@@ -19,7 +20,7 @@ interface ShareButtonProps {
 const ShareButton = memo<ShareButtonProps>(({ className, style }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [shareLoading] = useSessionStore((s) => [s.shareLoading]);
-
+  const { t } = useTranslation('common');
   return (
     <>
       <ActionIcon
@@ -29,7 +30,7 @@ const ShareButton = memo<ShareButtonProps>(({ className, style }) => {
         loading={shareLoading}
         onClick={() => setIsModalOpen(true)}
         size={DESKTOP_HEADER_ICON_SIZE}
-        title={'分享'}
+        title={t('actions.share')}
       />
       <ShareModal onCancel={() => setIsModalOpen(false)} open={isModalOpen} />
     </>

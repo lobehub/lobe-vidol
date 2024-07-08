@@ -1,0 +1,83 @@
+{
+  "dance": {
+    "addPlay": "Thêm vào danh sách",
+    "addPlaySuccess": "Đã thêm vào danh sách phát",
+    "cancelAddPlay": "Bạn có chắc muốn hủy đăng ký âm nhạc {{musicName}} không?",
+    "cancelSubscribed": "Hủy đăng ký",
+    "findDance": "Tìm kiếm những bước nhảy bạn yêu thích",
+    "musicAndDance": "Âm nhạc và nhảy múa",
+    "play": "Phát"
+  },
+  "info": {
+    "avatarDescription": "Tùy chỉnh hình đại diện, nhấn vào hình đại diện để tải lên",
+    "avatarLabel": "Hình đại diện",
+    "coverDescription": "Dùng để hiển thị nhân vật trên trang khám phá, kích thước đề xuất {{width}} x {{height}}",
+    "coverLabel": "Bìa",
+    "descDescription": "Mô tả nhân vật, dùng để giới thiệu ngắn gọn về nhân vật",
+    "descLabel": "Mô tả",
+    "emotionDescription": "Chọn tâm trạng khi phản ứng, ảnh hưởng đến biểu cảm của nhân vật",
+    "emotionLabel": "Biểu cảm và tâm trạng",
+    "genderDescription": "Giới tính của nhân vật, ảnh hưởng đến phản ứng chạm của nhân vật",
+    "genderLabel": "Giới tính",
+    "greetDescription": "Lời chào khi trò chuyện lần đầu với nhân vật",
+    "greetLabel": "Chào hỏi",
+    "modelDescription": "Xem trước mô hình, kéo thả tệp mô hình để thay thế",
+    "modelLabel": "Xem trước mô hình",
+    "nameDescription": "Tên nhân vật, được gọi khi trò chuyện với nhân vật",
+    "nameLabel": "Tên",
+    "readmeDescription": "Tài liệu hướng dẫn về nhân vật, dùng để hiển thị thông tin chi tiết về nhân vật trên trang khám phá",
+    "readmeLabel": "Hướng dẫn nhân vật",
+    "textDescription": "Tùy chỉnh văn bản phản hồi",
+    "textLabel": "Văn bản",
+    "categoryLabel": "Danh mục",
+    "categoryDescription": "Danh mục nhân vật, dùng để phân loại"
+  },
+  "market": {
+    "findVidol": "Tìm thấy ngôi sao mà bạn yêu thích nhất"
+  },
+  "nav": {
+    "info": "Thông tin cơ bản",
+    "model": "Mô hình 3D",
+    "role": "Thiết lập nhân vật",
+    "voice": "Giọng nói"
+  },
+  "role": {
+    "greetTip": "Nhập lời chào khi nhân vật chào bạn",
+    "inputRoleSetting": "Nhập cài đặt hệ thống cho nhân vật",
+    "roleDescriptionTip": "Nhập mô tả về nhân vật",
+    "roleNameTip": "Nhập tên nhân vật",
+    "roleReadmeTip": "Nhập hướng dẫn về nhân vật",
+    "roleSettingDescription": "Cài đặt nền cho nhân vật, sẽ gửi cho mô hình khi trò chuyện với nhân vật",
+    "roleSettingLabel": "Cài đặt hệ thống nhân vật",
+    "uploadSize": "Hỗ trợ tải lên một tệp, kích thước đề xuất là bội số của {{width}} x {{height}}"
+  },
+  "touch": {
+    "addAction": "Thêm hành động phản ứng",
+    "editAction": "Chỉnh sửa hành động phản ứng",
+    "inputActionEmotion": "Nhập tâm trạng của nhân vật khi phản ứng",
+    "inputActionText": "Nhập văn bản phản ứng",
+    "inputDIYText": "Nhập văn bản tùy chỉnh",
+    "touchActionList": "Danh sách phản ứng khi chạm vào {{touchArea}}",
+    "touchArea": "Khu vực chạm"
+  },
+  "tts": {
+    "audition": "Nghe thử",
+    "auditionDescription": "Văn bản nghe thử tùy theo ngôn ngữ",
+    "engineDescription": "Bộ công cụ tổng hợp giọng nói, nên ưu tiên chọn trình duyệt Edge",
+    "engineLabel": "Bộ công cụ giọng nói",
+    "localeDescription": "Ngôn ngữ tổng hợp giọng nói, hiện chỉ hỗ trợ một số ngôn ngữ phổ biến, nếu cần hỗ trợ thêm vui lòng liên hệ",
+    "localeLabel": "Ngôn ngữ",
+    "pitchDescription": "Điều chỉnh âm cao, giá trị từ 0 đến 2, mặc định là 1",
+    "pitchLabel": "Âm cao",
+    "selectLanguage": "Vui lòng chọn ngôn ngữ trước",
+    "selectVoice": "Vui lòng chọn giọng",
+    "speedDescription": "Điều chỉnh tốc độ, giá trị từ 0 đến 3, mặc định là 1",
+    "speedLabel": "Tốc độ",
+    "transfromSuccess": "Chuyển đổi thành công",
+    "voiceDescription": "Tùy theo bộ công cụ và ngôn ngữ",
+    "voiceLabel": "Giọng"
+  },
+  "upload": {
+    "support": "Hỗ trợ tải lên một tệp, hiện chỉ hỗ trợ định dạng tệp vrm"
+  }
+}

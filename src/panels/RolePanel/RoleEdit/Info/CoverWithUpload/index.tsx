@@ -1,5 +1,6 @@
 import { Upload } from 'antd';
 import React, { CSSProperties, memo, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import EmptyGuide from '@/components/EmptyGuide';
 import HolographicCard from '@/components/HolographicCard';
@@ -47,6 +48,7 @@ const CoverWithUpload = memo<CoverWithUploadProps>(
       }),
       [],
     );
+    const { t } = useTranslation('panel');
 
     return (
       <div style={{ height: size.height, width: size.width, ...style }}>
@@ -56,7 +58,7 @@ const CoverWithUpload = memo<CoverWithUploadProps>(
           ) : (
             <EmptyGuide
               size={size}
-              extra={`支持单个文件上传，推荐尺寸为 ${size.width} * ${size.height} 的倍数`}
+              extra={t('role.uploadSize', { width: size.width, height: size.height })}
             />
           )}
         </Upload>

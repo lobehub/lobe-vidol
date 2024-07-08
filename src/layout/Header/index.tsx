@@ -5,6 +5,7 @@ import { Space, Tag, Tooltip } from 'antd';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { memo } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import Discord from '@/features/Actions/Discord';
 import Github from '@/features/Actions/Github';
@@ -18,6 +19,7 @@ interface Props {
 const Header = (props: Props) => {
   const { headerKey } = props;
   const router = useRouter();
+  const { t } = useTranslation('layout');
 
   return (
     <LobeHeader
@@ -38,7 +40,7 @@ const Header = (props: Props) => {
           <Link href="/" style={{ color: 'inherit' }}>
             <Logo extra={'Lobe Vidol'} size={36} />
           </Link>
-          <Tooltip title="项目当前正在施工中，不保证数据稳定性，如果遇到问题可以在系统设置中清除会话消息与重置系统设置，造成不便敬请谅解">
+          <Tooltip title={t('header.tips')}>
             <Tag color="yellow">WIP</Tag>
           </Tooltip>
         </Space>
@@ -49,19 +51,19 @@ const Header = (props: Props) => {
           items={[
             {
               key: HeaderNavKey.Chat,
-              label: '聊天',
+              label: t('header.chat'),
             },
             {
               key: HeaderNavKey.Role,
-              label: '角色',
+              label: t('header.role'),
             },
             {
               key: HeaderNavKey.Market,
-              label: '发现',
+              label: t('header.market'),
             },
             {
               key: HeaderNavKey.Settings,
-              label: '设置',
+              label: t('header.settings'),
             },
           ]}
           onChange={(key) => {

@@ -3,6 +3,7 @@
 import { Button } from 'antd';
 import { useRouter } from 'next/navigation';
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { agentSelectors, useAgentStore } from '@/store/agent';
 import { useSessionStore } from '@/store/session';
@@ -12,7 +13,7 @@ export default () => {
 
   const currentAgent = useAgentStore((s) => agentSelectors.currentAgentItem(s));
   const createSession = useSessionStore((s) => s.createSession);
-
+  const { t } = useTranslation('layout');
   return (
     <Button
       key="chat"
@@ -23,7 +24,7 @@ export default () => {
       }}
       type={'primary'}
     >
-      聊天
+      {t('header.chat')}
     </Button>
   );
 };

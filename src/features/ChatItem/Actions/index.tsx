@@ -1,6 +1,7 @@
 import { copyToClipboard } from '@lobehub/ui';
 import { App } from 'antd';
 import { useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { OnActionsClick, RenderAction } from '@/features/ChatItem/type';
 import { handleSpeakAi } from '@/services/chat';
@@ -23,12 +24,13 @@ export const useActionsClick = (): OnActionsClick => {
     s.regenerateMessage,
   ]);
   const { message } = App.useApp();
+  const { t } = useTranslation('common');
 
   return useCallback<OnActionsClick>(async (action, { id, content, error }) => {
     switch (action.key) {
       case 'copy': {
         await copyToClipboard(content);
-        message.success('复制成功');
+        message.success(t('actions.copySuccess'));
         break;
       }
 

@@ -2,6 +2,7 @@ import { Form, FormItem } from '@lobehub/ui';
 import { createStyles } from 'antd-style';
 import classNames from 'classnames';
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { INPUT_WIDTH_M } from '@/constants/token';
 import TTSEngine from '@/panels/RolePanel/RoleEdit/Voice/TTSEngine';
@@ -33,32 +34,48 @@ const useStyles = createStyles(({ css, token }) => ({
 export default (props: ConfigProps) => {
   const { style, className } = props;
   const { styles } = useStyles();
+  const { t } = useTranslation('panel');
 
   return (
     <Form layout="horizontal" preserve={false} requiredMark={false}>
       <div className={classNames(className, styles.container)} style={style}>
         <div className={styles.config}>
-          <FormItem label={'语音引擎'} name={'engine'} desc="语音合成引擎，建议优先选择 Edge ">
+          <FormItem label={t('tts.engineLabel')} name={'engine'} desc={t('tts.engineDescription')}>
             <TTSEngine style={{ width: INPUT_WIDTH_M }} />
           </FormItem>
           <FormItem
-            label={'语言'}
+            label={t('tts.localeLabel')}
+            desc={t('tts.localeDescription')}
             name={'locale'}
             divider
-            desc="语音合成的语种，当前仅支持最常见的几种语言，如有需要请联系"
           >
             <TTSLocale style={{ width: INPUT_WIDTH_M }} />
           </FormItem>
-          <FormItem label={'语音'} divider name={'voice'} desc="根据引擎和语种不同">
+          <FormItem
+            label={t('tts.voiceLabel')}
+            desc={t('tts.voiceDescription')}
+            divider
+            name={'voice'}
+          >
             <TTSVoice style={{ width: INPUT_WIDTH_M }} />
           </FormItem>
-          <FormItem label={'语速'} name={'speed'} desc="控制语速，取值范围 0 ~ 3，默认为 1" divider>
+          <FormItem
+            label={t('tts.speedLabel')}
+            desc={t('tts.speedDescription')}
+            name={'speed'}
+            divider
+          >
             <TTSSpeed style={{ width: INPUT_WIDTH_M }} />
           </FormItem>
-          <FormItem label={'音调'} name={'pitch'} desc="控制音调，取值范围 0 ~ 2，默认为 1" divider>
+          <FormItem
+            label={t('tts.pitchLabel')}
+            desc={t('tts.pitchDescription')}
+            name={'pitch'}
+            divider
+          >
             <TTSPitch style={{ width: INPUT_WIDTH_M }} />
           </FormItem>
-          <FormItem label={'试听'} desc={`试听文案根据语言不同`} divider>
+          <FormItem label={t('tts.audition')} desc={t('tts.auditionDescription')} divider>
             <TTSPlay style={{ width: INPUT_WIDTH_M }} />
           </FormItem>
         </div>

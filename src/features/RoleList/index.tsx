@@ -3,6 +3,7 @@ import { Collapse } from 'antd';
 import { createStyles } from 'antd-style';
 import { ChevronDown } from 'lucide-react';
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
 import { HEADER_HEIGHT } from '@/constants/token';
@@ -51,6 +52,7 @@ const useStyles = createStyles(({ css, token, prefixCls }) => ({
 const RoleList = () => {
   const { styles } = useStyles();
   const [searchName, setSearchName] = useState<string>();
+  const { t } = useTranslation(['role', 'common']);
 
   return (
     <div className={styles.role}>
@@ -65,7 +67,7 @@ const RoleList = () => {
           onChange={(e) => {
             setSearchName(e.target.value);
           }}
-          placeholder="搜索"
+          placeholder={t('search')}
           shortKey="f"
           spotlight
           type={'block'}
@@ -93,7 +95,7 @@ const RoleList = () => {
           items={[
             {
               children: <List filter={searchName} />,
-              label: '角色列表',
+              label: t('roleList'),
               key: 'default',
             },
           ]}

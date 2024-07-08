@@ -4,6 +4,7 @@ import { Icon } from '@lobehub/ui';
 import { FloatButton } from 'antd';
 import { LucideBugPlay } from 'lucide-react';
 import { memo } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { AGENT_STORAGE_KEY } from '@/store/agent';
 import { DANCE_STORAGE_KEY } from '@/store/dance';
@@ -13,6 +14,7 @@ import { SETTING_STORAGE_KEY } from '@/store/setting';
 import { agents, dances, sessions, settings } from './data';
 
 const DebugUI = memo(() => {
+  const { t } = useTranslation('common');
   return (
     <FloatButton.Group>
       <FloatButton
@@ -23,7 +25,7 @@ const DebugUI = memo(() => {
           localStorage.setItem(SESSION_STORAGE_KEY, JSON.stringify(sessions));
           localStorage.setItem(SETTING_STORAGE_KEY, JSON.stringify(settings));
         }}
-        tooltip={'设置 LocalStorage'}
+        tooltip={t('setLocalStorage')}
       />
 
       {/*<FloatButton*/}

@@ -1,0 +1,83 @@
+{
+  "dance": {
+    "addPlay": "Listeye Ekle",
+    "addPlaySuccess": "Oynatma listesine eklendi",
+    "cancelAddPlay": "{{musicName}} müziğini abonelikten çıkarmak istediğinize emin misiniz?",
+    "cancelSubscribed": "Aboneliği iptal et",
+    "findDance": "Favori dansını bul",
+    "musicAndDance": "Müzik ve Dans",
+    "play": "Oynat"
+  },
+  "info": {
+    "avatarDescription": "Özel avatar, avatar'a tıklayarak özelleştirme yapın",
+    "avatarLabel": "Avatar",
+    "coverDescription": "Keşfetme sayfasında karakterin gösterilmesi için önerilen boyut {{width}} x {{height}} ",
+    "coverLabel": "Kapak",
+    "descDescription": "Karakter açıklaması, karakterin basit tanıtımı için kullanılır",
+    "descLabel": "Açıklama",
+    "emotionDescription": "Tepki verirken kullanılan duygu, karakterin ifadesini etkiler",
+    "emotionLabel": "Duygu ve Hareket",
+    "genderDescription": "Karakter cinsiyeti, karakterin dokunmatik tepkisini etkiler",
+    "genderLabel": "Cinsiyet",
+    "greetDescription": "Karakterle ilk konuşma sırasında kullanılan bir selam",
+    "greetLabel": "Merhaba",
+    "modelDescription": "Model önizleme, model dosyasını sürükleyerek değiştirin",
+    "modelLabel": "Model Önizleme",
+    "nameDescription": "Karakter adı, karakterle konuşurken kullanılan hitap",
+    "nameLabel": "İsim",
+    "readmeDescription": "Karakterin ayrıntılı açıklamasını keşfetme sayfasında göster",
+    "readmeLabel": "Karakter Açıklaması",
+    "textDescription": "Özel yanıt metni",
+    "textLabel": "Metin",
+    "categoryLabel": "Kategori",
+    "categoryDescription": "Karakter kategorisi, sınıflandırmada kullanılır"
+  },
+  "market": {
+    "findVidol": "Favori idolünü bul"
+  },
+  "nav": {
+    "info": "Temel Bilgiler",
+    "model": "3D Model",
+    "role": "Karakter Ayarları",
+    "voice": "Ses"
+  },
+  "role": {
+    "greetTip": "Karakterle iletişim kurarken kullanılan selamı girin",
+    "inputRoleSetting": "Karakterin sistem ayarlarını girin",
+    "roleDescriptionTip": "Karakter açıklamasını girin",
+    "roleNameTip": "Karakter adını girin",
+    "roleReadmeTip": "Karakter açıklamasını girin",
+    "roleSettingDescription": "Karakterin arka plan ayarları, karakterle konuşurken modelle paylaşılır",
+    "roleSettingLabel": "Karakter Sistem Ayarları",
+    "uploadSize": "Tek dosya yükleme desteği, önerilen boyut {{width}} x {{height}} 'in katları"
+  },
+  "touch": {
+    "addAction": "Tepki eylemi ekle",
+    "editAction": "Tepki eylemini düzenle",
+    "inputActionEmotion": "Karakter tepki verirken kullanılan duygu",
+    "inputActionText": "Tepki metnini girin",
+    "inputDIYText": "Özel metin girin",
+    "touchActionList": "{{touchArea}} dokunduğunda tepki listesi",
+    "touchArea": "Dokunma Alanı"
+  },
+  "tts": {
+    "audition": "Audiyon",
+    "auditionDescription": "Dil farklı olduğunda audiyo",
+    "engineDescription": "Konuşma sentezi motoru, öncelikle Edge tarayıcısını seçmeniz önerilir",
+    "engineLabel": "Ses Motoru",
+    "localeDescription": "Konuşma sentezi dil seçeneği, şu anda yalnızca yaygın bazı diller desteklenmektedir, ihtiyacınız varsa lütfen bize ulaşın",
+    "localeLabel": "Dil",
+    "pitchDescription": "Tonu kontrol eder, değer aralığı 0 ~ 2, varsayılan 1",
+    "pitchLabel": "Ton",
+    "selectLanguage": "Lütfen önce dil seçin",
+    "selectVoice": "Lütfen önce ses seçin",
+    "speedDescription": "Hızı kontrol eder, değer aralığı 0 ~ 3, varsayılan 1",
+    "speedLabel": "Hız",
+    "transfromSuccess": "Dönüşüm başarılı",
+    "voiceDescription": "Motor ve dilin birleşimine göre değişir",
+    "voiceLabel": "Ses"
+  },
+  "upload": {
+    "support": "Tek dosya yükleme desteği, şu anda yalnızca vrm formatı desteklenmektedir"
+  }
+}

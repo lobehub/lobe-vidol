@@ -2,6 +2,7 @@ import { Icon } from '@lobehub/ui';
 import { Button } from 'antd';
 import { ListEnd } from 'lucide-react';
 import { memo } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { useStyles } from './style';
 
@@ -12,6 +13,7 @@ export interface BackBottomProps {
 
 const BackBottom = memo<BackBottomProps>(({ visible, onScrollToBottom }) => {
   const { styles, cx } = useStyles();
+  const { t } = useTranslation('common');
 
   return (
     <Button
@@ -20,7 +22,7 @@ const BackBottom = memo<BackBottomProps>(({ visible, onScrollToBottom }) => {
       onClick={onScrollToBottom}
       size={'small'}
     >
-      返回底部
+      {t('actions.goBottom')}
     </Button>
   );
 });

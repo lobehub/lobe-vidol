@@ -1,0 +1,14 @@
+{
+  "chat": "Chat",
+  "chatDialog": {
+    "close": "Fermer"
+  },
+  "dance": "Danser",
+  "header": {
+    "role": "Rôle",
+    "session": "Session"
+  },
+  "helloChat": "Bonjour, commençons à discuter",
+  "helloDance": "Salut, dansons ensemble",
+  "market": "Découvrir"
+}

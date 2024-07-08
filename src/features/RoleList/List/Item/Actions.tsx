@@ -2,6 +2,7 @@ import { ActionIcon } from '@lobehub/ui';
 import { App, Dropdown, MenuProps } from 'antd';
 import { MessageCircle, MoreVertical, Trash2 } from 'lucide-react';
 import { useRouter } from 'next/navigation';
+import { useTranslation } from 'react-i18next';
 
 import { useAgentStore } from '@/store/agent';
 import { useSessionStore } from '@/store/session';
@@ -15,6 +16,7 @@ export default (props: ActionsProps) => {
   const { id, setOpen } = props;
   const { modal } = App.useApp();
   const router = useRouter();
+  const { t } = useTranslation('common');
   const [removeLocalAgent] = useAgentStore((s) => [s.removeLocalAgent]);
   const currentAgent = useAgentStore((s) => s.getAgentById(id));
   const createSession = useSessionStore((s) => s.createSession);
@@ -22,7 +24,7 @@ export default (props: ActionsProps) => {
   const items: MenuProps['items'] = [
     {
       icon: <MessageCircle />,
-      label: '开始聊天',
+      label: t('startChat'),
       key: 'chat',
       onClick: ({ domEvent }) => {
         domEvent.stopPropagation();
@@ -35,7 +37,7 @@ export default (props: ActionsProps) => {
       danger: true,
       icon: <Trash2 />,
       key: 'delete',
-      label: '删除角色',
+      label: t('delRole'),
       onClick: ({ domEvent }) => {
         domEvent.stopPropagation();
         modal.confirm({
@@ -44,9 +46,9 @@ export default (props: ActionsProps) => {
           onOk: () => {
             removeLocalAgent(id);
           },
-          okText: '删除',
-          cancelText: '取消',
-          title: '确认删除角色以及相关联的会话消息吗？删除后无法恢复, 请谨慎操作！',
+          okText: t('actions.del'),
+          cancelText: t('cancel'),
+          title: t('delAlert'),
         });
       },
     },

@@ -2,6 +2,7 @@ import { PlayCircleOutlined } from '@ant-design/icons';
 import { useRequest } from 'ahooks';
 import { Button, message } from 'antd';
 import React, { CSSProperties, memo, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { supportedLocales } from '@/constants/tts';
 import { speechApi } from '@/services/tts';
@@ -15,6 +16,7 @@ interface Props {
 export default memo<Props>((props) => {
   const { style, className } = props;
   const ref = useRef<HTMLAudioElement>(null);
+  const { t } = useTranslation('panel');
 
   const tts = useAgentStore((s) => agentSelectors.currentAgentTTS(s));
   const sample = supportedLocales.find((item) => item.value === tts?.locale)?.sample;
@@ -30,7 +32,7 @@ export default memo<Props>((props) => {
       }
     },
     onSuccess: (res) => {
-      message.success('转换成功');
+      message.success(t('tts.transfromSuccess'));
       const adUrl = URL.createObjectURL(new Blob([res]));
       if (ref.current) {
         ref.current.src = adUrl;
@@ -50,11 +52,11 @@ export default memo<Props>((props) => {
         loading={loading}
         onClick={() => {
           if (!tts?.locale) {
-            message.error('请先选择语言');
+            message.error(t('tts.selectLanguage'));
             return;
           }
           if (!tts?.voice) {
-            message.error('请先选择语音');
+            message.error(t('tts.selectVoice'));
             return;
           }
           if (sample) {
@@ -62,7 +64,7 @@ export default memo<Props>((props) => {
           }
         }}
       >
-        试听
+        {t('tts.audition')}
       </Button>
       <audio ref={ref} />
     </>

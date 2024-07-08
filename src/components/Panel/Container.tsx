@@ -4,6 +4,7 @@ import { Tooltip } from 'antd';
 import classNames from 'classnames';
 import { XIcon } from 'lucide-react';
 import React, { PropsWithChildren, memo } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { INITIAL_COORDINATES, INITIAL_Z_INDEX } from '@/constants/token';
 
@@ -41,6 +42,7 @@ const Container = (props: PropsWithChildren<ContainerProps>) => {
     footer,
   } = props;
   const { styles } = useStyles();
+  const { t } = useTranslation('chat');
 
   const { attributes, listeners, transform, setNodeRef, setActivatorNodeRef } = useDraggable({
     id: 'draggable',
@@ -77,7 +79,7 @@ const Container = (props: PropsWithChildren<ContainerProps>) => {
           <div className={styles.center}>{extra ? extra : null}</div>
           <div className={styles.right}>
             {toolbar ? toolbar : null}
-            <Tooltip key="close" title="关闭">
+            <Tooltip key="close" title={t('close')}>
               <ActionIcon icon={XIcon} onClick={handleClose} />
             </Tooltip>
           </div>

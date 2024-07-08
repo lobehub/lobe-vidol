@@ -1,0 +1,14 @@
+{
+  "agent": {
+    "description": "{{name}} é o personagem padrão da Vidol, sendo sua assistente pessoal exclusiva.",
+    "greeting": "Olá, querido mestre! Eu sou sua assistente pessoal {{name}}, pronta para te ajudar! Em que posso ajudar?",
+    "hello": "Olá!",
+    "meta": {
+      "description": "Este é um personagem personalizado",
+      "name": "Personagem Personalizado"
+    }
+  },
+  "greet": "Olá, eu sou {{name}}, como posso te ajudar?",
+  "loadingTitle": "Inicializando o aplicativo, por favor aguarde...",
+  "waitting": "Preparando todo o meu mundo para você"
+}

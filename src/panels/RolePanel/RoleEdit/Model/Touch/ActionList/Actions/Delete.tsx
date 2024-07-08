@@ -2,6 +2,7 @@ import { ActionIcon } from '@lobehub/ui';
 import { Popconfirm } from 'antd';
 import { XIcon } from 'lucide-react';
 import { memo } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { useAgentStore } from '@/store/agent';
 import { TouchAreaEnum } from '@/types/touch';
@@ -13,18 +14,19 @@ interface Props {
 
 export default memo((props: Props) => {
   const { touchArea, index } = props;
+  const { t } = useTranslation('common');
   const [removeTouchAction] = useAgentStore((s) => [s.removeTouchAction]);
   return (
     <Popconfirm
-      title={'确定删除吗？'}
+      title={t('actions.confirmDel')}
       key="delete"
-      okText={'确定'}
-      cancelText={'取消'}
+      okText={t('confirm')}
+      cancelText={t('cancel')}
       onConfirm={() => {
         removeTouchAction(touchArea, index);
       }}
     >
-      <ActionIcon icon={XIcon} title={'删除'} />
+      <ActionIcon icon={XIcon} title={t('actions.del')} />
     </Popconfirm>
   );
 });

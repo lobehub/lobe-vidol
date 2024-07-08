@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import { isEqual } from 'lodash-es';
 import { ListMusic } from 'lucide-react';
 import React, { memo, useEffect, useRef, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import Control from '@/features/AudioPlayer/Control';
 import Duration from '@/features/AudioPlayer/Duration';
@@ -41,6 +42,7 @@ function Player(props: PlayerProps) {
 
   const { downloading: audioDownloading, percent: audioPercent, fetchAudioUrl } = useLoadAudio();
   const { downloading: danceDownloading, percent: dancePercent, fetchDanceBuffer } = useLoadDance();
+  const { t } = useTranslation('common');
 
   const { styles } = useStyles();
 
@@ -96,11 +98,11 @@ function Player(props: PlayerProps) {
           <Duration currentProgress={currentProgress} duration={duration} />
           <div className={styles.controller}>
             <Typography.Text className={styles.name} ellipsis={{ tooltip: currentPlay?.name }}>
-              {currentPlay?.name || '请从舞蹈列表中选取'}
+              {currentPlay?.name || t('selectInDanceList')}
             </Typography.Text>
             <Control />
             <div className={styles.right}>
-              <ActionIcon icon={ListMusic} onClick={() => setOpen(true)} title={'播放列表'} />
+              <ActionIcon icon={ListMusic} onClick={() => setOpen(true)} title={t('playlist')} />
               <Volume audioRef={ref} setVolume={setVolume} volume={volume} />
             </div>
           </div>

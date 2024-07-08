@@ -1,5 +1,6 @@
 import { createStyles } from 'antd-style';
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
 import TopBanner from '@/components/TopBanner';
@@ -30,12 +31,13 @@ const useStyles = createStyles(({ css }) => ({
 
 const Agent = () => {
   const { styles } = useStyles();
+  const { t } = useTranslation('panel');
 
   return (
     <Flexbox flex={1} height={'100%'} width={'100%'} horizontal>
       <div className={styles.container}>
         <div className={styles.content}>
-          <TopBanner title="Find Your Lovest Vidol" />
+          <TopBanner title={t('market.findVidol')} />
           <AgentList />
         </div>
       </div>

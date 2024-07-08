@@ -2,6 +2,7 @@ import { Form, FormItem } from '@lobehub/ui';
 import { createStyles } from 'antd-style';
 import classNames from 'classnames';
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { COVER_COMPRESS_HEIGHT, COVER_COMPRESS_WIDTH } from '@/constants/common';
 import { INPUT_WIDTH_L, INPUT_WIDTH_M } from '@/constants/token';
@@ -51,6 +52,7 @@ const Info = (props: InfoProps) => {
   const { style, className } = props;
   const { styles } = useStyles();
   const [form] = Form.useForm();
+  const { t } = useTranslation('panel');
 
   return (
     <Form form={form} layout="horizontal">
@@ -58,16 +60,16 @@ const Info = (props: InfoProps) => {
         <div className={styles.form}>
           <div className={styles.config}>
             <FormItem
-              desc={'自定义头像，点击头像自定义上传'}
-              label={'头像'}
+              label={t('info.avatarLabel')}
+              desc={t('info.avatarDescription')}
               name={'avatar'}
               required
             >
               <AvatarWithUpload />
             </FormItem>
             <FormItem
-              label={'名称'}
-              desc={'角色名称，与角色聊天时的称呼'}
+              label={t('info.nameLabel')}
+              desc={t('info.nameDescription')}
               divider
               name={['name']}
               required
@@ -75,17 +77,17 @@ const Info = (props: InfoProps) => {
               <RoleName style={{ width: INPUT_WIDTH_M }} />
             </FormItem>
             <FormItem
-              label={'描述'}
+              label={t('info.descLabel')}
+              desc={t('info.descDescription')}
               divider
-              desc={'角色描述，用于角色的简单介绍'}
               name={'description'}
               required
             >
               <RoleDescription style={{ width: INPUT_WIDTH_L }} />
             </FormItem>
             <FormItem
-              label={'招呼'}
-              desc={'与角色初次聊天时的招呼用语'}
+              label={t('info.greetLabel')}
+              desc={t('info.greetDescription')}
               name="greeting"
               divider
               required
@@ -93,31 +95,39 @@ const Info = (props: InfoProps) => {
               <Greeting style={{ width: INPUT_WIDTH_L }} />
             </FormItem>
             <FormItem
-              label={'性别'}
-              desc={'角色性别，影响角色的交互响应'}
+              label={t('info.genderLabel')}
+              desc={t('info.genderDescription')}
               divider
               name={['gender']}
             >
               <RoleGender style={{ width: INPUT_WIDTH_M }} />
             </FormItem>
-            <FormItem label={'类别'} desc={'角色类别，用于展示分类'} divider name={['category']}>
+            <FormItem
+              label={t('info.categoryLabel')}
+              desc={t('info.categoryDescription')}
+              divider
+              name={['category']}
+            >
               <RoleCategory style={{ width: INPUT_WIDTH_M }} />
             </FormItem>
             <FormItem
-              label={'说明'}
+              label={t('info.readmeLabel')}
+              desc={t('info.readmeDescription')}
               name={'readme'}
               divider
-              desc="角色的说明文件，用于发现页展示角色的详细说明"
             >
               <ReadMe style={{ width: INPUT_WIDTH_L }} />
             </FormItem>
           </div>
           <div className={styles.more}>
             <FormItem
-              label={'封面'}
+              label={t('info.coverLabel')}
+              desc={t('info.coverDescription', {
+                width: COVER_COMPRESS_WIDTH,
+                height: COVER_COMPRESS_HEIGHT,
+              })}
               name={'cover'}
               required
-              desc={`用于发现页展示角色，推荐尺寸 ${COVER_COMPRESS_WIDTH} * ${COVER_COMPRESS_HEIGHT}`}
             />
             <CoverWithUpload />
           </div>

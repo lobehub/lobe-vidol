@@ -1,3 +1,5 @@
+import { t } from 'i18next';
+
 import { APIErrorResponse, ErrorTypeEnum } from '@/types/api';
 import { ChatMessageError } from '@/types/chat';
 
@@ -76,11 +78,11 @@ const createSmoothMessage = (params: { onTextUpdate: (delta: string, text: strin
 
 const getMessageByErrorType = (errorType: ErrorTypeEnum) => {
   const errorMap = {
-    API_KEY_MISSING: 'OpenAI API Key 为空，请添加自定义 OpenAI API Key',
-    INTERNAL_SERVER_ERROR: '服务器错误，请联系管理员',
-    OPENAI_API_ERROR: 'OpenAI API 错误，请检查 OpenAI API Key 和 Endpoint 是否正确',
+    API_KEY_MISSING: t('apiKeyMiss', { ns: 'error' }),
+    INTERNAL_SERVER_ERROR: t('serverError', { ns: 'error' }),
+    OPENAI_API_ERROR: t('openaiError', { ns: 'error' }),
   };
-  return errorMap[errorType] || 'unknown error';
+  return errorMap[errorType] || t('unknownError', { ns: 'error' });
 };
 /**
  * @description: 封装fetch请求，使用流式方法获取数据

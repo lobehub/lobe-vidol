@@ -1,5 +1,6 @@
 import { Space, Tag } from 'antd';
 import { memo } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { LOBE_VIDOL_DEFAULT_AGENT_ID } from '@/constants/agent';
 import { useAgentStore } from '@/store/agent';
@@ -7,6 +8,7 @@ import { useAgentStore } from '@/store/agent';
 import ListItem from '../../ListItem';
 
 const V = memo(() => {
+  const { t } = useTranslation('common');
   const [activeId, activateAgent, defaultAgent] = useAgentStore((s) => [
     s.currentIdentifier,
     s.activateAgent,
@@ -23,7 +25,7 @@ const V = memo(() => {
       title={
         <Space align={'center'}>
           {defaultAgent.meta.name}
-          <Tag color="geekblue">默认助手</Tag>
+          <Tag color="geekblue">{t('defaultAssistant')}</Tag>
         </Space>
       }
       description={defaultAgent.meta.description}

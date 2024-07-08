@@ -1,40 +1,56 @@
 import { VRMExpressionPresetName } from '@pixiv/three-vrm';
+import { t } from 'i18next';
 
 import { TouchActionConfig, TouchAreaEnum } from '@/types/touch';
 
 export const TOUCH_AREA_OPTIONS = [
   {
-    label: '头部',
+    label: t('touch.area.head', { ns: 'constants' }),
     value: TouchAreaEnum.Head,
   },
   {
-    label: '手臂',
+    label: t('touch.area.arm', { ns: 'constants' }),
     value: TouchAreaEnum.Arm,
   },
   {
-    label: '腿部',
+    label: t('touch.area.leg', { ns: 'constants' }),
     value: TouchAreaEnum.Leg,
   },
   {
-    label: '胸部',
+    label: t('touch.area.chest', { ns: 'constants' }),
     value: TouchAreaEnum.Chest,
   },
   {
-    label: '腹部',
+    label: t('touch.area.belly', { ns: 'constants' }),
     value: TouchAreaEnum.Belly,
   },
 ];
 
 export const TOUCH_EMOTION_OPTIONS = [
-  { label: '自然', value: VRMExpressionPresetName.Neutral },
-  { label: '开心', value: VRMExpressionPresetName.Happy },
-  { label: '生气', value: VRMExpressionPresetName.Angry },
-  { label: '伤心', value: VRMExpressionPresetName.Sad },
-  { label: '放松', value: VRMExpressionPresetName.Relaxed },
-  { label: '惊讶', value: VRMExpressionPresetName.Surprised },
-  { label: '眨眼', value: VRMExpressionPresetName.Blink },
-  { label: '眨左眼', value: VRMExpressionPresetName.BlinkLeft },
-  { label: '眨右眼', value: VRMExpressionPresetName.BlinkRight },
+  {
+    label: t('touch.emotion.natural', { ns: 'constants' }),
+    value: VRMExpressionPresetName.Neutral,
+  },
+  { label: t('touch.emotion.happy', { ns: 'constants' }), value: VRMExpressionPresetName.Happy },
+  { label: t('touch.emotion.angry', { ns: 'constants' }), value: VRMExpressionPresetName.Angry },
+  { label: t('touch.emotion.sad', { ns: 'constants' }), value: VRMExpressionPresetName.Sad },
+  {
+    label: t('touch.emotion.relaxed', { ns: 'constants' }),
+    value: VRMExpressionPresetName.Relaxed,
+  },
+  {
+    label: t('touch.emotion.surprised', { ns: 'constants' }),
+    value: VRMExpressionPresetName.Surprised,
+  },
+  { label: t('touch.emotion.blink', { ns: 'constants' }), value: VRMExpressionPresetName.Blink },
+  {
+    label: t('touch.emotion.blinkLeft', { ns: 'constants' }),
+    value: VRMExpressionPresetName.BlinkLeft,
+  },
+  {
+    label: t('touch.emotion.blinkRight', { ns: 'constants' }),
+    value: VRMExpressionPresetName.BlinkRight,
+  },
 ];
 
 export const EMPTY_TTS_CONFIG: TouchActionConfig = {
@@ -51,95 +67,95 @@ export const DEFAULT_TOUCH_ACTION_CONFIG_FEMALE: TouchActionConfig = {
   [TouchAreaEnum.Head]: [
     {
       emotion: VRMExpressionPresetName.Happy,
-      text: '哇!最喜欢摸摸头!',
+      text: t('touch.femaleAction.headAction.happyA', { ns: 'constants' }),
     },
     {
       emotion: VRMExpressionPresetName.Happy,
-      text: '感觉又充满了力量呢!',
+      text: t('touch.femaleAction.headAction.happyB', { ns: 'constants' }),
     },
     {
       emotion: VRMExpressionPresetName.Happy,
-      text: '哇塞，这个摸摸头的感觉好神奇!',
+      text: t('touch.femaleAction.headAction.happyC', { ns: 'constants' }),
     },
     {
       emotion: VRMExpressionPresetName.Happy,
-      text: '摸摸头让我开心一整天!',
+      text: t('touch.femaleAction.headAction.happyD', { ns: 'constants' }),
     },
     {
       emotion: VRMExpressionPresetName.Angry,
-      text: '听说被摸头是会长不高的呢!',
+      text: t('touch.femaleAction.headAction.angryA', { ns: 'constants' }),
     },
     {
       emotion: VRMExpressionPresetName.Angry,
-      text: '干嘛戳我呀？',
+      text: t('touch.femaleAction.headAction.angryB', { ns: 'constants' }),
     },
   ],
   [TouchAreaEnum.Arm]: [
     {
       emotion: VRMExpressionPresetName.Happy,
-      text: '啊，好喜欢呢~',
+      text: t('touch.femaleAction.armAction.happyA', { ns: 'constants' }),
     },
     {
       emotion: VRMExpressionPresetName.Relaxed,
-      text: '主人的手好温暖啊~',
+      text: t('touch.femaleAction.armAction.relaxedA', { ns: 'constants' }),
     },
     {
       emotion: VRMExpressionPresetName.Happy,
-      text: '哈哈，牵手让我感到快乐~',
+      text: t('touch.femaleAction.armAction.happyB', { ns: 'constants' }),
     },
   ],
   [TouchAreaEnum.Leg]: [
     {
       emotion: VRMExpressionPresetName.Surprised,
-      text: '让我们保持纯洁的友谊不好吗？',
+      text: t('touch.femaleAction.legAction.surprisedA', { ns: 'constants' }),
     },
     {
       emotion: VRMExpressionPresetName.Angry,
-      text: '喂，你是要作死吗?',
+      text: t('touch.femaleAction.legAction.angryA', { ns: 'constants' }),
     },
     {
       emotion: VRMExpressionPresetName.Angry,
-      text: '主人的手又不听指挥了吗?',
+      text: t('touch.femaleAction.legAction.angryB', { ns: 'constants' }),
     },
     {
       emotion: VRMExpressionPresetName.Angry,
-      text: '讨厌~会痒的啦~!',
+      text: t('touch.femaleAction.legAction.angryC', { ns: 'constants' }),
     },
   ],
   [TouchAreaEnum.Chest]: [
     {
       emotion: VRMExpressionPresetName.Angry,
-      text: '不可以这样欺负我啦！快把手拿开！',
+      text: t('touch.femaleAction.chestAction.angryA', { ns: 'constants' }),
     },
     {
       emotion: VRMExpressionPresetName.Angry,
-      text: '幺幺零吗？这里有个变态一直在摸我！',
+      text: t('touch.femaleAction.chestAction.angryB', { ns: 'constants' }),
     },
     {
       emotion: VRMExpressionPresetName.Angry,
-      text: '再摸的话我可要报警了',
+      text: t('touch.femaleAction.chestAction.angryC', { ns: 'constants' }),
     },
     {
       emotion: VRMExpressionPresetName.Surprised,
-      text: '干嘛戳我呀！还能不能愉快地聊天了!',
+      text: t('touch.femaleAction.chestAction.surprisedA', { ns: 'constants' }),
     },
   ],
   [TouchAreaEnum.Belly]: [
     {
       emotion: VRMExpressionPresetName.Surprised,
-      text: '是不小心碰到的吧...',
+      text: t('touch.femaleAction.bellyAction.surprisedA', { ns: 'constants' }),
     },
     {
       emotion: VRMExpressionPresetName.Angry,
-      text: '干嘛动我呀，小心我咬你哦！',
+      text: t('touch.femaleAction.bellyAction.angryA', { ns: 'constants' }),
     },
     {
       emotion: VRMExpressionPresetName.Relaxed,
-      text: '醒醒，我们之间没有结果的!',
+      text: t('touch.femaleAction.bellyAction.relaxedA', { ns: 'constants' }),
     },
     {
       emotion: VRMExpressionPresetName.Relaxed,
-      text: '讨厌！我可要生气啦！',
+      text: t('touch.femaleAction.bellyAction.relaxedB', { ns: 'constants' }),
     },
   ],
 };
@@ -148,67 +164,67 @@ export const DEFAULT_TOUCH_ACTION_CONFIG_MALE: TouchActionConfig = {
   [TouchAreaEnum.Head]: [
     {
       emotion: VRMExpressionPresetName.Neutral,
-      text: '当然了，只有你有资格摸我的头',
+      text: t('touch.maleAction.headAction.neutralA', { ns: 'constants' }),
     },
     {
       emotion: VRMExpressionPresetName.Neutral,
-      text: '我可不是什么普通人允许触碰的哦',
+      text: t('touch.maleAction.headAction.neutralB', { ns: 'constants' }),
     },
     {
       emotion: VRMExpressionPresetName.Neutral,
-      text: '别担心，摸过我的头后，你的运气会大幅提升的',
+      text: t('touch.maleAction.headAction.neutralC', { ns: 'constants' }),
     },
   ],
   [TouchAreaEnum.Arm]: [
     {
       emotion: VRMExpressionPresetName.Neutral,
-      text: '别问我今天吃没吃鸡，先看看我的肱二头肌',
+      text: t('touch.maleAction.armAction.neutralA', { ns: 'constants' }),
     },
     {
       emotion: VRMExpressionPresetName.Neutral,
-      text: '我的手臂可不是随便让人触碰的，你是个例外而已',
+      text: t('touch.maleAction.armAction.neutralB', { ns: 'constants' }),
     },
     {
       emotion: VRMExpressionPresetName.Neutral,
-      text: '你很勇敢，敢触碰到传说中的麒麟臂',
+      text: t('touch.maleAction.armAction.neutralC', { ns: 'constants' }),
     },
   ],
   [TouchAreaEnum.Leg]: [
     {
       emotion: VRMExpressionPresetName.Neutral,
-      text: '别害怕，我的大力金刚腿不踢傻瓜',
+      text: t('touch.maleAction.legAction.neutralA', { ns: 'constants' }),
     },
     {
       emotion: VRMExpressionPresetName.Neutral,
-      text: '让你碰到我的腿，是不是觉得你的生活完整了许多？',
+      text: t('touch.maleAction.legAction.neutralB', { ns: 'constants' }),
     },
     {
       emotion: VRMExpressionPresetName.Angry,
-      text: '别靠近我，你这个腿控',
+      text: t('touch.maleAction.legAction.angryA', { ns: 'constants' }),
     },
   ],
   [TouchAreaEnum.Chest]: [
     {
       emotion: VRMExpressionPresetName.Neutral,
-      text: '这不过时我日常修炼成就的胸肌，没什么好惊讶的。',
+      text: t('touch.maleAction.chestAction.neutralA', { ns: 'constants' }),
     },
     {
       emotion: VRMExpressionPresetName.BlinkLeft,
-      text: '来，哥的胸肌给你靠!',
+      text: t('touch.maleAction.chestAction.blinkLeftA', { ns: 'constants' }),
     },
   ],
   [TouchAreaEnum.Belly]: [
     {
       emotion: VRMExpressionPresetName.Neutral,
-      text: '我的腹肌只是再修炼深藏不露的内力',
+      text: t('touch.maleAction.bellyAction.neutralA', { ns: 'constants' }),
     },
     {
       emotion: VRMExpressionPresetName.Happy,
-      text: '别挠痒痒，小心我笑出腹肌',
+      text: t('touch.maleAction.bellyAction.happyA', { ns: 'constants' }),
     },
     {
       emotion: VRMExpressionPresetName.Neutral,
-      text: '看到我这团腹肌了吗？它们只是藏得比较深罢了',
+      text: t('touch.maleAction.bellyAction.neutralB', { ns: 'constants' }),
     },
   ],
 };

@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 import TopBanner from '@/components/TopBanner';
 
@@ -15,10 +16,11 @@ interface DanceProps {
 const Dance = (props: DanceProps) => {
   const { style, className } = props;
   const { styles } = useStyles();
+  const { t } = useTranslation('panel');
   return (
     <div className={classNames(className, styles.container)} style={style}>
       <div className={styles.content}>
-        <TopBanner title="Find Your Favorite Dance" />
+        <TopBanner title={t('dance.findDance')} />
         <DanceList />
       </div>
       <DanceCard />

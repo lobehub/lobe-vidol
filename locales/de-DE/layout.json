@@ -1,0 +1,12 @@
+{
+  "dialog": "Dialogfeld",
+  "header": {
+    "chat": "Chat",
+    "market": "Entdecken",
+    "role": "Rolle",
+    "settings": "Einstellungen",
+    "tips": "Das Projekt befindet sich derzeit im Bau. Die Datenstabilität kann nicht garantiert werden. Wenn Probleme auftreten, können Sie die Sitzungsnachrichten im System löschen und die Systemeinstellungen zurücksetzen. Wir entschuldigen uns für eventuelle Unannehmlichkeiten."
+  },
+  "sessionList": "Sitzungsliste",
+  "siderBar": "Seitenleiste"
+}

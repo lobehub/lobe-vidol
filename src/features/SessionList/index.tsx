@@ -1,6 +1,7 @@
 import { SearchBar } from '@lobehub/ui';
 import { createStyles } from 'antd-style';
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
 import { HEADER_HEIGHT } from '@/constants/token';
@@ -45,7 +46,7 @@ const useStyles = createStyles(({ css, token, prefixCls }) => ({
 const SideBar = () => {
   const { styles } = useStyles();
   const [searchName, setSearchName] = useState<string>();
-
+  const { t } = useTranslation('common');
   return (
     <>
       <Flexbox
@@ -59,7 +60,7 @@ const SideBar = () => {
           onChange={(e) => {
             setSearchName(e.target.value);
           }}
-          placeholder="搜索"
+          placeholder={t('search')}
           shortKey="f"
           spotlight
           type={'block'}

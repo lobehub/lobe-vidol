@@ -4,6 +4,7 @@ import { Tooltip } from 'antd';
 import classNames from 'classnames';
 import { XIcon } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
 import ChatItem from '@/features/ChatItem';
@@ -25,6 +26,7 @@ const Dialog = (props: DialogProps) => {
   const lastAgentChatIndex = currentChats.findLastIndex((item) => item.role === 'assistant');
   const ref = React.useRef<HTMLDivElement>(null);
   const isHovered = useHover(ref);
+  const { t } = useTranslation('chat');
   const { styles } = useStyles();
 
   const [showChatDialog, setChatDialog] = useState(true);
@@ -41,7 +43,7 @@ const Dialog = (props: DialogProps) => {
         showTitle={false}
         type="pure"
       />
-      <Tooltip key="close" title="关闭">
+      <Tooltip key="close" title={t('chatDialog.close')}>
         <ActionIcon
           icon={XIcon}
           onClick={() => setChatDialog(false)}

@@ -1,6 +1,7 @@
 import { createStyles } from 'antd-style';
 import classNames from 'classnames';
 import { MousePointerClick } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
 import ListItem from '@/components/ListItem';
@@ -26,10 +27,10 @@ interface IndexProps {
 const Index = (props: IndexProps) => {
   const { styles } = useStyles();
   const { currentTouchArea, setCurrentTouchArea } = props;
-
+  const { t } = useTranslation('panel');
   return (
     <Flexbox>
-      <Header title="触摸区域" />
+      <Header title={t('touch.touchArea')} />
       {TOUCH_AREA_OPTIONS.map((item) => (
         <ListItem
           avatar={<MousePointerClick />}

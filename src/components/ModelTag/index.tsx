@@ -1,5 +1,6 @@
 import { Tag } from '@lobehub/ui';
 import { memo } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { OPENAI_MODEL_LIST } from '@/constants/openai';
 
@@ -9,11 +10,12 @@ interface ModelTagProps {
   model?: string;
 }
 const ModelTag = memo<ModelTagProps>(({ model }) => {
+  const { t } = useTranslation('common');
   const selectedModel = OPENAI_MODEL_LIST.find(({ id }) => id === model);
 
   return (
     <Tag icon={<ModelIcon model={model} />}>
-      {selectedModel ? selectedModel?.displayName : '请选择模型'}
+      {selectedModel ? selectedModel?.displayName : t('selectModel')}
     </Tag>
   );
 });

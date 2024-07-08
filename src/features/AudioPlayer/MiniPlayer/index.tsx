@@ -3,6 +3,7 @@ import { Tooltip } from 'antd';
 import { createStyles } from 'antd-style';
 import { ListMusic } from 'lucide-react';
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
 import { DESKTOP_HEADER_ICON_SIZE } from '@/constants/token';
@@ -37,6 +38,7 @@ interface Props {
 export default (props: Props) => {
   const { style, className } = props;
   const [open, setOpen] = useState(false);
+  const { t } = useTranslation('common');
   const [playlist, currentPlay] = useDanceStore((s) => [
     s.playlist,
     playListSelectors.currentPlay(s),
@@ -59,7 +61,7 @@ export default (props: Props) => {
       <ActionIcon
         icon={ListMusic}
         onClick={() => setOpen(true)}
-        title={'播放列表'}
+        title={t('playlist')}
         size={DESKTOP_HEADER_ICON_SIZE}
       />
     </Flexbox>
