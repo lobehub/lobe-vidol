@@ -28,7 +28,9 @@
     "readmeDescription": "Tài liệu hướng dẫn về nhân vật, dùng để hiển thị thông tin chi tiết về nhân vật trên trang khám phá",
     "readmeLabel": "Hướng dẫn nhân vật",
     "textDescription": "Tùy chỉnh văn bản phản hồi",
-    "textLabel": "Văn bản"
+    "textLabel": "Văn bản",
+    "categoryLabel": "Danh mục",
+    "categoryDescription": "Danh mục nhân vật, dùng để phân loại"
   },
   "market": {
     "findVidol": "Tìm thấy ngôi sao mà bạn yêu thích nhất"

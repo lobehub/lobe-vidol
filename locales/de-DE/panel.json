@@ -28,7 +28,9 @@
     "readmeDescription": "Anleitungsdatei des Charakters, zur detaillierten Vorstellung des Charakters auf der Entdeckungsseite",
     "readmeLabel": "Charakteranleitung",
     "textDescription": "Benutzerdefinierter Antworttext",
-    "textLabel": "Text"
+    "textLabel": "Text",
+    "categoryLabel": "Kategorie",
+    "categoryDescription": "Charakterkategorie, zur Klassifizierung"
   },
   "market": {
     "findVidol": "Finde deinen Lieblingsidol"

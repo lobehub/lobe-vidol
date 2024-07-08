@@ -28,7 +28,9 @@
     "readmeDescription": "Karakterin ayrıntılı açıklamasını keşfetme sayfasında göster",
     "readmeLabel": "Karakter Açıklaması",
     "textDescription": "Özel yanıt metni",
-    "textLabel": "Metin"
+    "textLabel": "Metin",
+    "categoryLabel": "Kategori",
+    "categoryDescription": "Karakter kategorisi, sınıflandırmada kullanılır"
   },
   "market": {
     "findVidol": "Favori idolünü bul"

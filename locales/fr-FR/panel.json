@@ -28,7 +28,9 @@
     "readmeDescription": "Fichier de description du personnage, utilisé pour afficher une description détaillée sur la page de découverte",
     "readmeLabel": "Description du personnage",
     "textDescription": "Réponse personnalisée",
-    "textLabel": "Texte"
+    "textLabel": "Texte",
+    "categoryLabel": "Catégorie",
+    "categoryDescription": "Catégorie du personnage, utilisée pour la classification"
   },
   "market": {
     "findVidol": "Trouvez votre idole préférée"

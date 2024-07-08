@@ -28,7 +28,9 @@
     "emotionLabel": "表情与情绪",
     "emotionDescription": "选择响应时的情绪，会影响角色的表情变化",
     "modelLabel": "模型预览",
-    "modelDescription": "模型预览，可拖动模型文件以替换"
+    "modelDescription": "模型预览，可拖动模型文件以替换",
+    "categoryLabel": "类别",
+    "categoryDescription": "角色类别，用于展示分类"
   },
   "market": {
     "findVidol": "找到你最爱的偶像"

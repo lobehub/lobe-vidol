@@ -28,7 +28,9 @@
     "readmeDescription": "File di istruzioni del personaggio, utilizzato per mostrare una descrizione dettagliata del personaggio nella pagina di scoperta",
     "readmeLabel": "Istruzioni del personaggio",
     "textDescription": "Testo di risposta personalizzato",
-    "textLabel": "Testo"
+    "textLabel": "Testo",
+    "categoryLabel": "Categoria",
+    "categoryDescription": "Categoria del personaggio, utilizzata per la classificazione"
   },
   "market": {
     "findVidol": "Trova il tuo idolo preferito"

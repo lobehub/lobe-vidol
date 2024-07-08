@@ -28,7 +28,9 @@
     "readmeDescription": "角色的說明文件，用於發現頁展示角色的詳細說明",
     "readmeLabel": "角色說明",
     "textDescription": "自定義回應文案",
-    "textLabel": "文案"
+    "textLabel": "文案",
+    "categoryLabel": "類別",
+    "categoryDescription": "角色類別，用於展示分類"
   },
   "market": {
     "findVidol": "找到您最愛的偶像"

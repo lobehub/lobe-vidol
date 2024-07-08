@@ -28,7 +28,9 @@
     "readmeDescription": "キャラクターの説明ファイル、発見ページでキャラクターの詳細な説明を表示するために使用される",
     "readmeLabel": "キャラクター説明",
     "textDescription": "カスタム応答文案",
-    "textLabel": "文案"
+    "textLabel": "文案",
+    "categoryLabel": "カテゴリ",
+    "categoryDescription": "キャラクターカテゴリ、分類に使用される"
   },
   "market": {
     "findVidol": "お気に入りのアイドルを見つける"

@@ -28,7 +28,9 @@
     "readmeDescription": "Plik z opisem postaci, używany do prezentacji szczegółowego opisu postaci na stronie odkrywania",
     "readmeLabel": "Opis postaci",
     "textDescription": "Niestandardowe tło odpowiedzi",
-    "textLabel": "Treść"
+    "textLabel": "Treść",
+    "categoryLabel": "Kategoria",
+    "categoryDescription": "Kategoria postaci, używana do klasyfikacji"
   },
   "market": {
     "findVidol": "Znajdź swojego ulubionego idola"

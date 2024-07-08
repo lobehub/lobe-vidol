@@ -28,7 +28,9 @@
     "readmeDescription": "De handleiding van de rol, voor het presenteren van de rol op de ontdek-pagina",
     "readmeLabel": "Rolhandleiding",
     "textDescription": "Aangepaste responstekst",
-    "textLabel": "Tekst"
+    "textLabel": "Tekst",
+    "categoryLabel": "Categorie",
+    "categoryDescription": "Rolcategorie, voor classificatie"
   },
   "market": {
     "findVidol": "Vind je favoriete idool"

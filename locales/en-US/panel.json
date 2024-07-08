@@ -28,7 +28,9 @@
     "readmeDescription": "Character's description file, used for detailed introduction on the discovery page",
     "readmeLabel": "Character Description",
     "textDescription": "Custom response text",
-    "textLabel": "Text"
+    "textLabel": "Text",
+    "categoryLabel": "Category",
+    "categoryDescription": "Character category, used for classification"
   },
   "market": {
     "findVidol": "Find your favorite idol"

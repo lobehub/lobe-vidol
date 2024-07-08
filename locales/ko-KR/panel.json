@@ -28,7 +28,9 @@
     "readmeDescription": "캐릭터 설명서, 발견 페이지에서 캐릭터의 자세한 설명을 표시하는 데 사용됩니다",
     "readmeLabel": "캐릭터 설명서",
     "textDescription": "사용자 정의 응답 문구",
-    "textLabel": "문구"
+    "textLabel": "문구",
+    "categoryLabel": "카테고리",
+    "categoryDescription": "캐릭터 카테고리, 분류에 사용됩니다"
   },
   "market": {
     "findVidol": "좋아하는 아이돌을 찾아보세요"
