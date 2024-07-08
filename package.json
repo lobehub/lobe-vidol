@@ -149,8 +149,6 @@
     "jsdom": "^24.1.0",
     "lint-staged": "^15.2.5",
     "prettier": "^3.2.5",
-    "remark": "^15.0.0",
-    "remark-cli": "^12.0.0",
     "semantic-release": "^21.1.2",
     "stylelint": "^15.11.0",
     "tsx": "^4.15.7",
