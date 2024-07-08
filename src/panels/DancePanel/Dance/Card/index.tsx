@@ -2,6 +2,7 @@ import { DraggablePanel } from '@lobehub/ui';
 import { Button, Popconfirm, message } from 'antd';
 import { createStyles } from 'antd-style';
 import React, { memo, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import DanceInfo from '@/components/DanceInfo';
 import { SIDEBAR_MAX_WIDTH, SIDEBAR_WIDTH } from '@/constants/token';
@@ -39,7 +40,7 @@ const SideBar = memo(() => {
   ]);
 
   const currentDance = useDanceStore((s) => danceListSelectors.currentDanceItem(s));
-
+  const { t } = useTranslation(['panel', 'common']);
   return (
     <DraggablePanel
       classNames={{ content: styles.content }}
@@ -69,32 +70,32 @@ const SideBar = memo(() => {
             }}
             type={'primary'}
           >
-            播放
+            {t('dance.play')}
           </Button>,
           <Button
             key="addAndPlay"
             onClick={() => {
               if (currentDance) {
                 addToPlayList(currentDance.danceId);
-                message.success('已添加到播放列表');
+                message.success(t('dance.addPlaySuccess'));
               }
             }}
           >
-            添加到列表
+            {t('dance.addPlay')}
           </Button>,
           <Popconfirm
-            cancelText="取消"
-            description={`确定取消订阅音乐【${currentDance?.name}】吗？`}
+            cancelText={t('cancel')}
+            description={t('dance.cancelAddPlay', { musicName: currentDance?.name })}
             key="delete"
-            okText="确定"
+            okText={t('confirm')}
             onConfirm={() => {
               if (currentDance) {
                 removeDanceItem(currentDance.danceId);
               }
             }}
-            title="取消订阅？"
+            title={t('dance.cancelSubscribed') + '?'}
           >
-            <Button danger>取消订阅</Button>
+            <Button danger>{t('dance.cancelSubscribed')}</Button>
           </Popconfirm>,
         ]}
         dance={currentDance}

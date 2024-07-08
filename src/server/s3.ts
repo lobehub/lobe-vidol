@@ -1,5 +1,6 @@
 import { PutObjectCommand, S3Client } from '@aws-sdk/client-s3';
 import { getSignedUrl } from '@aws-sdk/s3-request-presigner';
+import { t } from 'i18next';
 
 export class S3 {
   private readonly client: S3Client;
@@ -9,7 +10,7 @@ export class S3 {
       !process.env.CLOUDFLARE_R2_SECRET_ACCESS_KEY ||
       !process.env.CLOUDFLARE_R2_BUCKET_NAME
     ) {
-      throw new Error('S3 environment variables are not set completely, please check your env');
+      throw new Error(t('s3envError', { ns: 'error' }));
     }
     this.client = new S3Client({
       endpoint: process.env.CLOUDFLARE_R2_ENDPOINT,

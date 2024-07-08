@@ -1,0 +1,11 @@
+{
+  "delRole": "Verwijder rol",
+  "delRoleDesc": "Weet je zeker dat je de rol {{name}} en gerelateerde sessieberichten wilt verwijderen? Deze actie kan niet ongedaan worden gemaakt, wees voorzichtig!",
+  "header": {
+    "role": "Rol",
+    "session": "Sessie"
+  },
+  "noRole": "Er zijn momenteel geen rollen. Je kunt een aangepaste rol maken door op + te klikken, of rollen toevoegen via de ontdekkingspagina.",
+  "roleList": "Rollenlijst",
+  "topBannerTitle": "Rolvoorbeeld en instellingen"
+}

@@ -1,0 +1,65 @@
+{
+  "actions": {
+    "useVideo": "Alternar para modo de vídeo"
+  },
+  "agent": {
+    "female": "Feminino",
+    "male": "Masculino",
+    "other": "Outro"
+  },
+  "feature": {
+    "addProxy": "Adicionar endereço de proxy OpenAI (opcional)",
+    "closeTip": "Fechar dica",
+    "comfirmRetry": "Confirmar e tentar novamente",
+    "startDesc": "Digite sua chave de API OpenAI para iniciar a sessão. O aplicativo não irá armazenar sua chave de API",
+    "startTitle": "Chave de API personalizada"
+  },
+  "mode": {
+    "chat": "Chat",
+    "video": "Vídeo"
+  },
+  "settings": {
+    "glow": "Brilho",
+    "nickName": "Digite um apelido",
+    "none": "Sem fundo"
+  },
+  "share": {
+    "downloadScreenshot": "Baixar captura de tela",
+    "imageType": "Tipo de imagem",
+    "screenshot": "Captura de tela",
+    "share": "Compartilhar",
+    "shareGPT": "Compartilhar GPT",
+    "shareToGPT": "Gerar link de compartilhamento ShareGPT",
+    "shareToMarket": "Compartilhar no mercado de assistentes",
+    "withBackground": "Incluir imagem de fundo",
+    "withFooter": "Incluir rodapé",
+    "withSystemRole": "Incluir configuração de papel de assistente"
+  },
+  "submit": {
+    "assistantId": "Identificador do assistente",
+    "assistantIdTip": "Digite o identificador único do assistente, como vidol-agent-klee",
+    "submitAssistant": "Enviar assistente",
+    "submitWarning": "Por favor, complete as informações do assistente antes de enviar, incluindo nome, descrição, avatar e capa"
+  },
+  "support": "Suporte da comunidade",
+  "theme": {
+    "auto": "Seguir sistema",
+    "dark": "Modo escuro",
+    "light": "Modo claro"
+  },
+  "token": {
+    "overload": "Token excedido",
+    "remained": "Token restante",
+    "tokenCount": "Quantidade de token",
+    "useToken": "Cálculo de quantidade de token consumido, incluindo mensagens, configurações de papel e contexto: {{usedTokens}} / {{maxValue}}",
+    "used": "Token usado"
+  },
+  "toolBar": {
+    "cameraControl": "Controle de câmera",
+    "cameraHelper": "Assistente de câmera",
+    "downloadModel": "Modelo sendo baixado, por favor, aguarde...",
+    "floor": "Alternar piso",
+    "grid": "Grade",
+    "resetCamera": "Redefinir câmera"
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "actions": {
+    "useVideo": "Przełącz na tryb wideo"
+  },
+  "agent": {
+    "female": "Kobieta",
+    "male": "Mężczyzna",
+    "other": "Inne"
+  },
+  "feature": {
+    "addProxy": "Dodaj adres proxy OpenAI (opcjonalnie)",
+    "closeTip": "Zamknij wskazówkę",
+    "comfirmRetry": "Potwierdź i spróbuj ponownie",
+    "startDesc": "Wprowadź swój klucz API OpenAI, aby rozpocząć rozmowę. Aplikacja nie będzie rejestrować Twojego klucza API",
+    "startTitle": "Niestandardowy klucz API"
+  },
+  "mode": {
+    "chat": "Czat",
+    "video": "Wideo"
+  },
+  "settings": {
+    "glow": "Płomien",
+    "nickName": "Wprowadź pseudonim",
+    "none": "Brak tła"
+  },
+  "share": {
+    "downloadScreenshot": "Pobierz zrzut ekranu",
+    "imageType": "Typ obrazu",
+    "screenshot": "Zrzut ekranu",
+    "share": "Udostępnij",
+    "shareGPT": "Udostępnij GPT",
+    "shareToGPT": "Utwórz link udostępniania ShareGPT",
+    "shareToMarket": "Udostępnij na rynku asystentów",
+    "withBackground": "Z obrazem tła",
+    "withFooter": "Z stopką",
+    "withSystemRole": "Z ustawieniami roli asystenta"
+  },
+  "submit": {
+    "assistantId": "Identyfikator asystenta",
+    "assistantIdTip": "Wprowadź identyfikator asystenta, musi być unikalny, np. vidol-agent-klee",
+    "submitAssistant": "Prześlij asystenta",
+    "submitWarning": "Proszę uzupełnić informacje o asystencie przed przesłaniem, w tym nazwę, opis, awatar i okładkę"
+  },
+  "support": "Wsparcie społeczności",
+  "theme": {
+    "auto": "Śledzenie systemu",
+    "dark": "Ciemny motyw",
+    "light": "Jasny motyw"
+  },
+  "token": {
+    "overload": "Przekroczenie tokenów",
+    "remained": "Pozostało tokenów",
+    "tokenCount": "Liczba tokenów",
+    "useToken": "Obliczanie zużycia tokenów, w tym wiadomości, ustawienia roli i kontekstu: {{usedTokens}} / {{maxValue}}",
+    "used": "Tokenów użytych"
+  },
+  "toolBar": {
+    "cameraControl": "Kontrola kamery",
+    "cameraHelper": "Asystent kamery",
+    "downloadModel": "Pobieranie modelu, proszę czekać...",
+    "floor": "Przełącz podłogę",
+    "grid": "Siatka",
+    "resetCamera": "Zresetuj kamerę"
+  }
+}

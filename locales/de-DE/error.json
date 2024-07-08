@@ -1,0 +1,19 @@
+{
+  "apiKeyMiss": "OpenAI API-Schlüssel fehlt. Bitte fügen Sie Ihren benutzerdefinierten OpenAI API-Schlüssel hinzu.",
+  "error": "Fehler",
+  "errorTip": {
+    "clearSession": "Sitzung löschen",
+    "description": "Das Projekt befindet sich derzeit im Aufbau. Die Datenstabilität kann nicht garantiert werden. Wenn Probleme auftreten, können Sie es versuchen",
+    "forgive": ", wir bitten um Ihr Verständnis für eventuelle Unannehmlichkeiten",
+    "or": "oder",
+    "problem": "Es gab ein Problem mit der Seite...",
+    "resetSystem": "Systemeinstellungen zurücksetzen"
+  },
+  "goBack": "Zurück zur Startseite",
+  "openaiError": "OpenAI API-Fehler. Bitte überprüfen Sie den OpenAI API-Schlüssel und den Endpunkt.",
+  "reload": "Neu laden",
+  "s3envError": "S3-Umgebungsvariablen sind nicht vollständig konfiguriert. Bitte überprüfen Sie Ihre Umgebungsvariablen.",
+  "serverError": "Serverfehler. Bitte kontaktieren Sie den Administrator.",
+  "triggerError": "Fehler auslösen",
+  "unknownError": "Unbekannter Fehler"
+}

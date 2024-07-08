@@ -1,6 +1,7 @@
 import { ActionIconGroup } from '@lobehub/ui';
 import { Grid3x3, LandPlot, Orbit, RotateCw, SwitchCamera } from 'lucide-react';
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { Viewer } from '@/features/vrmViewer/viewer';
 
@@ -12,22 +13,23 @@ interface ToolBarProps {
 
 const ToolBar = (props: ToolBarProps) => {
   const { style, className, viewer } = props;
+  const { t } = useTranslation('features');
 
   const dropdownMenu = [
     {
       icon: SwitchCamera,
       key: 'cameraHelper',
-      label: '镜头辅助',
+      label: t('toolBar.cameraHelper'),
     },
     {
       icon: Orbit,
       key: 'cameraControl',
-      label: '镜头控制',
+      label: t('toolBar.cameraControl'),
     },
     {
       icon: LandPlot,
       key: 'floor',
-      label: '切换地板',
+      label: t('toolBar.floor'),
     },
   ];
 
@@ -40,12 +42,12 @@ const ToolBar = (props: ToolBarProps) => {
         {
           icon: RotateCw,
           key: 'resetCamera',
-          label: '重置镜头',
+          label: t('toolBar.resetCamera'),
         },
         {
           icon: Grid3x3,
           key: 'grid',
-          label: '网格',
+          label: t('toolBar.grid'),
         },
       ]}
       onActionClick={(action) => {

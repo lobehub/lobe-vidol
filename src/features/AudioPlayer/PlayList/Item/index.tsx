@@ -3,6 +3,7 @@ import { useHover } from 'ahooks';
 import { List, Typography, theme } from 'antd';
 import { Pause, Play, Trash2 } from 'lucide-react';
 import { memo, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { useDanceStore } from '@/store/dance';
 import { playListSelectors } from '@/store/dance/selectors/playlist';
@@ -21,6 +22,8 @@ const PlayItem = (props: PlayItemProps) => {
   const { playItemId } = props;
   const { styles } = useStyles();
   const { token } = theme.useToken();
+  const { t } = useTranslation('common');
+
   const { playItem, removePlayItem, currentPlayId, isPlaying, setIsPlaying, getDanceItemByPlayId } =
     useDanceStore((s) => ({
       clearPlayList: s.clearPlayList,
@@ -45,7 +48,7 @@ const PlayItem = (props: PlayItemProps) => {
         <ActionIcon
           icon={Trash2}
           key="delete"
-          title={'从列表中移除'}
+          title={t('actions.removeInList')}
           onClick={() => removePlayItem(playItemId)}
           size="small"
         />
@@ -78,7 +81,7 @@ const PlayItem = (props: PlayItemProps) => {
               >
                 <Icon
                   icon={isCurrentPlay && isPlaying ? Pause : Play}
-                  title={isCurrentPlay && isPlaying ? '暂停' : '播放'}
+                  title={isCurrentPlay && isPlaying ? t('actions.pause') : t('actions.play')}
                   className={styles.playIcon}
                 />
               </div>

@@ -1,0 +1,19 @@
+{
+  "apiKeyMiss": "La clé API OpenAI est manquante. Veuillez ajouter une clé API OpenAI personnalisée.",
+  "error": "Erreur",
+  "errorTip": {
+    "clearSession": "Effacer les messages de session",
+    "description": "Le projet est actuellement en cours de construction et la stabilité des données n'est pas garantie. Si vous rencontrez un problème, vous pouvez essayer",
+    "forgive": "",
+    "or": "ou",
+    "problem": "Le site a rencontré un problème...",
+    "resetSystem": "Réinitialiser les paramètres système"
+  },
+  "goBack": "Retour à la page d'accueil",
+  "openaiError": "Erreur de l'API OpenAI. Veuillez vérifier votre clé API OpenAI et votre point de terminaison.",
+  "reload": "Recharger la page",
+  "s3envError": "Les variables d'environnement S3 ne sont pas entièrement configurées. Veuillez vérifier vos variables d'environnement.",
+  "serverError": "Erreur serveur. Veuillez contacter l'administrateur.",
+  "triggerError": "Erreur déclenchée",
+  "unknownError": "Erreur inconnue"
+}

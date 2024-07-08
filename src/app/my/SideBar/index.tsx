@@ -2,6 +2,7 @@
 
 import { createStyles, useResponsive } from 'antd-style';
 import { memo } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
 import MyList, { MyListProps } from './MyList';
@@ -24,10 +25,12 @@ const SideBar = memo<MyListProps>(({ activeTab }) => {
 
   const { mobile } = useResponsive();
 
+  const { t } = useTranslation('my');
+
   return (
     <Flexbox className={styles.container} width={280}>
       <Flexbox className={styles.top} padding={16}>
-        我的
+        {t('my')}
       </Flexbox>
       <Flexbox gap={8} style={{ paddingInline: 8 }}>
         <MyList activeTab={activeTab} mobile={mobile} />

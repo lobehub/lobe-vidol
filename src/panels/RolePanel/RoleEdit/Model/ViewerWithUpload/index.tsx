@@ -1,5 +1,6 @@
 import { Upload } from 'antd';
 import React, { CSSProperties, memo } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import EmptyGuide from '@/components/EmptyGuide';
 import { ROLE_VIEWER_HEIGHT, ROLE_VIEWER_WIDTH } from '@/constants/common';
@@ -15,7 +16,7 @@ interface ViewerWithUploadProps {
 
 const ViewerWithUpload = memo<ViewerWithUploadProps>(({ style }) => {
   const viewer = useGlobalStore((s) => s.viewer);
-
+  const { t } = useTranslation('panel');
   const [currentAgent, currentAgentModel, updateAgentConfig] = useAgentStore((s) => [
     agentSelectors.currentAgentItem(s),
     agentSelectors.currentAgentModel(s),
@@ -48,7 +49,7 @@ const ViewerWithUpload = memo<ViewerWithUploadProps>(({ style }) => {
       ) : (
         <EmptyGuide
           size={{ height: ROLE_VIEWER_HEIGHT, width: ROLE_VIEWER_WIDTH }}
-          extra={`支持单个文件上传，当前仅支持 .vrm 格式文件`}
+          extra={t('upload.support')}
         />
       )}
     </Upload>

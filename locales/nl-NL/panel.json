@@ -1,0 +1,83 @@
+{
+  "dance": {
+    "addPlay": "Aan lijst toevoegen",
+    "addPlaySuccess": "Is toegevoegd aan de afspeellijst",
+    "cancelAddPlay": "Weet u zeker dat u wilt afmelden voor muziek {{musicName}}?",
+    "cancelSubscribed": "Afmelden",
+    "findDance": "Vind je favoriete dans",
+    "musicAndDance": "Muziek en Dans",
+    "play": "Afspelen"
+  },
+  "info": {
+    "avatarDescription": "Aangepast avatar, klik op het avatar om een aangepaste upload te selecteren",
+    "avatarLabel": "Avatar",
+    "coverDescription": "Wordt gebruikt voor het presenteren van de rol op de ontdek-pagina, aanbevolen formaat {{width}} x {{height}}",
+    "coverLabel": "Omslag",
+    "descDescription": "Rolbeschrijving, voor een eenvoudige inleiding van de rol",
+    "descLabel": "Beschrijving",
+    "emotionDescription": "Selecteer de emotie bij het reageren, beïnvloedt de expressie van de rol",
+    "emotionLabel": "Uitdrukking en emotie",
+    "genderDescription": "Geslacht van de rol, beïnvloedt de touch-respons van de rol",
+    "genderLabel": "Geslacht",
+    "greetDescription": "Groet bij de eerste keer praten met de rol",
+    "greetLabel": "Groet",
+    "modelDescription": "Modelvoorbeeld, sleep het modelbestand om te vervangen",
+    "modelLabel": "Modelvoorbeeld",
+    "nameDescription": "Rolnaam, hoe de rol wordt aangesproken tijdens het chatten",
+    "nameLabel": "Naam",
+    "readmeDescription": "De handleiding van de rol, voor het presenteren van de rol op de ontdek-pagina",
+    "readmeLabel": "Rolhandleiding",
+    "textDescription": "Aangepaste responstekst",
+    "textLabel": "Tekst",
+    "categoryLabel": "Categorie",
+    "categoryDescription": "Rolcategorie, voor classificatie"
+  },
+  "market": {
+    "findVidol": "Vind je favoriete idool"
+  },
+  "nav": {
+    "info": "Basisinformatie",
+    "model": "3D Model",
+    "role": "Rolinstelling",
+    "voice": "Stem"
+  },
+  "role": {
+    "greetTip": "Voer de groet in die de rol gebruikt wanneer hij met je praat",
+    "inputRoleSetting": "Voer de systeeminstellingen van de rol in",
+    "roleDescriptionTip": "Voer de beschrijving van de rol in",
+    "roleNameTip": "Voer de naam van de rol in",
+    "roleReadmeTip": "Voer de handleiding van de rol in",
+    "roleSettingDescription": "De achtergrondinstelling van de rol, zal worden verzonden naar het model tijdens het chatten met de rol",
+    "roleSettingLabel": "Systeemrolinstelling",
+    "uploadSize": "Ondersteuning voor individuele bestandsuploads, aanbevolen formaat is een veelvoud van {{width}} x {{height}}"
+  },
+  "touch": {
+    "addAction": "Voeg reagerend gebaar toe",
+    "editAction": "Bewerk reagerend gebaar",
+    "inputActionEmotion": "Voer de uitdrukking in die de rol moet tonen bij reageren",
+    "inputActionText": "Voer de responstekst in",
+    "inputDIYText": "Voer aangepaste tekst in",
+    "touchActionList": "Reactielijst bij het aanraken van {{touchArea}}",
+    "touchArea": "Aanraakgebied"
+  },
+  "tts": {
+    "audition": "Afspeellijst",
+    "auditionDescription": "Afspeellijst kan verschillen per taal",
+    "engineDescription": "Stemsynthesizengine, het is aanbevolen om de Edge-browser te gebruiken",
+    "engineLabel": "Stemengine",
+    "localeDescription": "Taal voor stemsynthese, momenteel alleen de meest voorkomende talen ondersteund, neem contact op indien nodig",
+    "localeLabel": "Taal",
+    "pitchDescription": "Bewaar toonhoogte, waardebereik 0 ~ 2, standaard is 1",
+    "pitchLabel": "Toonhoogte",
+    "selectLanguage": "Selecteer eerst de taal",
+    "selectVoice": "Selecteer eerst de stem",
+    "speedDescription": "Bewaar spraaksnelheid, waardebereik 0 ~ 3, standaard is 1",
+    "speedLabel": "Spraaksnelheid",
+    "transfromSuccess": "Converteren succesvol",
+    "voiceDescription": "Kan verschillen afhankelijk van de engine en taal",
+    "voiceLabel": "Stem"
+  },
+  "upload": {
+    "support": "Ondersteuning voor individuele bestandsuploads, momenteel alleen vrm-formaat bestanden ondersteund"
+  }
+}

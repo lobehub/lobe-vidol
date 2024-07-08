@@ -1,0 +1,19 @@
+{
+  "apiKeyMiss": "La clave de API de OpenAI está vacía. Por favor, agregue su clave de API personalizada de OpenAI.",
+  "error": "Error",
+  "errorTip": {
+    "clearSession": "Limpiar mensajes de sesión",
+    "description": "El proyecto está actualmente en construcción y no se garantiza la estabilidad de los datos. Si encuentra algún problema, puede intentar",
+    "forgive": ", le pedimos disculpas por las molestias causadas",
+    "or": "o",
+    "problem": "Se ha producido un problema en la página...",
+    "resetSystem": "Restablecer la configuración del sistema"
+  },
+  "goBack": "Volver a la página de inicio",
+  "openaiError": "Error de la API de OpenAI. Por favor, verifique que la clave de API de OpenAI y el punto final sean correctos.",
+  "reload": "Recargar",
+  "s3envError": "Error en la configuración de la variable de entorno S3. Por favor, verifique sus variables de entorno.",
+  "serverError": "Error del servidor. Por favor, contacte al administrador.",
+  "triggerError": "Error desencadenado",
+  "unknownError": "Error desconocido"
+}

@@ -3,6 +3,7 @@ import { Empty, Space } from 'antd';
 import classNames from 'classnames';
 import { Loader2 } from 'lucide-react';
 import React, { memo } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Center } from 'react-layout-kit';
 
 import ListItem from './ListItem';
@@ -39,11 +40,12 @@ const GridList = (props: GridListProps) => {
     empty,
   } = props;
   const { styles } = useStyles();
+  const { t } = useTranslation('common');
 
   const Loading = () => (
     <Center gap={16} horizontal className={styles.loading}>
       <Icon icon={Loader2} spin />
-      加载中...
+      {t('loading')}
     </Center>
   );
 
@@ -68,7 +70,7 @@ const GridList = (props: GridListProps) => {
   );
 
   const EmptyList = () => (
-    <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} description="暂无数据">
+    <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} description={t('noData')}>
       {empty?.actions ? <Space>{empty.actions}</Space> : null}
     </Empty>
   );

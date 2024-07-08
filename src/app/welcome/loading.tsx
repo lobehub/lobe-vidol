@@ -1,6 +1,7 @@
 'use client';
 
 import { createStyles } from 'antd-style';
+import { useTranslation } from 'react-i18next';
 
 import PageLoading from '@/components/PageLoading';
 
@@ -15,9 +16,10 @@ const useStyles = createStyles(({ css }) => ({
 
 const Loading = () => {
   const { styles } = useStyles();
+  const { t } = useTranslation('welcome');
   return (
     <div className={styles.content}>
-      <PageLoading title={'应用初始化中，请稍后...'} />
+      <PageLoading title={t('loadingTitle')} />
     </div>
   );
 };

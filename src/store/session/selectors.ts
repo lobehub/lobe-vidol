@@ -1,3 +1,5 @@
+import { t } from 'i18next';
+
 import { LOBE_VIDOL_DEFAULT_AGENT_ID } from '@/constants/agent';
 import { DEFAULT_USER_AVATAR } from '@/constants/common';
 import { useAgentStore } from '@/store/agent';
@@ -92,7 +94,7 @@ const currentChatsWithGreetingMessage = (s: SessionStore): ChatMessage[] => {
   const initTime = Date.now();
 
   const emptyGuideMessage = {
-    content: agent?.greeting || `你好，我是${agent?.meta.name}，有什么可以帮助你的吗？`,
+    content: agent?.greeting || t('greet', { ns: 'welcome', name: agent?.meta.name }),
     createdAt: initTime,
     id: 'default',
     meta: {

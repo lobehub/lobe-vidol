@@ -1,6 +1,7 @@
 import { Form, type FormItemProps, Modal, type ModalProps } from '@lobehub/ui';
 import { Button, Segmented, SegmentedProps, Switch } from 'antd';
 import { memo, useMemo, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
 import { FORM_STYLE } from '@/constants/token';
@@ -45,6 +46,7 @@ const DEFAULT_FIELD_VALUE: FieldType = {
 const ShareModal = memo<ModalProps>(({ onCancel, open }) => {
   const [fieldValue, setFieldValue] = useState<FieldType>(DEFAULT_FIELD_VALUE);
   const [tab, setTab] = useState<Tab>(Tab.Screenshot);
+  const { t } = useTranslation('features');
   const [shareLoading, shareToShareGPT] = useSessionStore((s) => [
     s.shareLoading,
     s.shareToShareGPT,
@@ -54,11 +56,11 @@ const ShareModal = memo<ModalProps>(({ onCancel, open }) => {
   const options: SegmentedProps['options'] = useMemo(
     () => [
       {
-        label: '截图',
+        label: t('share.screenshot'),
         value: Tab.Screenshot,
       },
       {
-        label: 'ShareGPT',
+        label: t('share.shareGPT'),
         value: Tab.ShareGPT,
       },
     ],
@@ -69,7 +71,7 @@ const ShareModal = memo<ModalProps>(({ onCancel, open }) => {
     () => [
       {
         children: <Switch />,
-        label: '包含助手角色设定',
+        label: t('share.withSystemRole'),
         minWidth: undefined,
         name: 'withSystemRole',
         valuePropName: 'checked',
@@ -77,7 +79,7 @@ const ShareModal = memo<ModalProps>(({ onCancel, open }) => {
       {
         children: <Switch />,
         hidden: tab !== Tab.Screenshot,
-        label: '包含背景图片',
+        label: t('share.withBackground'),
         minWidth: undefined,
         name: 'withBackground',
         valuePropName: 'checked',
@@ -85,7 +87,7 @@ const ShareModal = memo<ModalProps>(({ onCancel, open }) => {
       {
         children: <Switch />,
         hidden: tab !== Tab.Screenshot,
-        label: '包含页脚',
+        label: t('share.withFooter'),
         minWidth: undefined,
         name: 'withFooter',
         valuePropName: 'checked',
@@ -93,7 +95,7 @@ const ShareModal = memo<ModalProps>(({ onCancel, open }) => {
       {
         children: <Segmented options={imageTypeOptions} />,
         hidden: tab !== Tab.Screenshot,
-        label: '图片格式',
+        label: t('share.imageType'),
         minWidth: undefined,
         name: 'imageType',
       },
@@ -110,7 +112,7 @@ const ShareModal = memo<ModalProps>(({ onCancel, open }) => {
         <>
           {tab === Tab.Screenshot && (
             <Button block loading={loading} onClick={onDownload} size={'large'} type={'primary'}>
-              下载截图
+              {t('share.downloadScreenshot')}
             </Button>
           )}
           {tab === Tab.ShareGPT && (
@@ -121,7 +123,7 @@ const ShareModal = memo<ModalProps>(({ onCancel, open }) => {
               size={'large'}
               type={'primary'}
             >
-              生成 ShareGPT 分享链接
+              {t('share.shareToGPT')}
             </Button>
           )}
         </>
@@ -129,7 +131,7 @@ const ShareModal = memo<ModalProps>(({ onCancel, open }) => {
       maxHeight={false}
       onCancel={onCancel}
       open={open}
-      title={'分享'}
+      title={t('share.share')}
     >
       <Flexbox gap={16}>
         <Segmented

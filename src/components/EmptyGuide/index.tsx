@@ -1,5 +1,6 @@
 import { InboxOutlined } from '@ant-design/icons';
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
 import { useStyles } from './style';
@@ -12,6 +13,7 @@ interface EmptyGuideProps {
 const EmptyGuide = (props: EmptyGuideProps) => {
   const { styles } = useStyles();
   const { size, extra } = props;
+  const { t } = useTranslation('common');
 
   return (
     <Flexbox
@@ -21,7 +23,7 @@ const EmptyGuide = (props: EmptyGuideProps) => {
       style={{ height: size.height, width: size.width }}
     >
       <InboxOutlined className={styles.icon} />
-      <p className={styles.info}>点击或拖拽文件到此区域上传</p>
+      <p className={styles.info}>{t('uploadTip')}</p>
       {extra ? <p className={styles.extra}>{extra}</p> : null}
     </Flexbox>
   );

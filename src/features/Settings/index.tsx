@@ -1,5 +1,6 @@
 import { TabsNav } from '@lobehub/ui';
 import React, { memo, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
 import CommonConfig from './common';
@@ -13,22 +14,25 @@ interface ConfigProps {
 const Config = (props: ConfigProps) => {
   const { style, className } = props;
   const [tab, setTab] = useState('common');
+  const { t } = useTranslation('common');
+
+  const options = [
+    {
+      key: 'common',
+      label: t('commonSetting'),
+    },
+    {
+      key: 'languageModel',
+      label: t('languageModel'),
+    },
+  ];
 
   return (
     <Flexbox flex={1} width={'100%'} height={'100%'} className={className} style={style}>
       <div style={{ marginBottom: 12 }}>
         <TabsNav
           activeKey={tab}
-          items={[
-            {
-              key: 'common',
-              label: '通用设置',
-            },
-            {
-              key: 'languageModel',
-              label: '语言模型',
-            },
-          ]}
+          items={options}
           onChange={(key) => {
             setTab(key);
           }}

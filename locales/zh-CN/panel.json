@@ -1,0 +1,84 @@
+{
+  "dance": {
+    "play": "播放",
+    "addPlay": "添加到列表",
+    "addPlaySuccess": "已添加到播放列表",
+    "cancelAddPlay": "确定取消订阅音乐{{musicName}}吗？",
+    "cancelSubscribed": "取消订阅",
+    "findDance": "找到你最喜欢的舞蹈",
+    "musicAndDance": "音乐与舞蹈"
+  },
+  "info": {
+    "avatarLabel": "头像",
+    "avatarDescription": "自定义头像，点击头像自定义上传",
+    "nameLabel": "名称",
+    "nameDescription": "角色名称，与角色聊天时的称呼",
+    "genderLabel": "性别",
+    "genderDescription": "角色性别，影响角色的触摸响应",
+    "descLabel": "描述",
+    "descDescription": "角色描述，用于角色的简单介绍",
+    "greetLabel": "招呼",
+    "greetDescription": "与角色初次聊天时的招呼用语",
+    "readmeLabel": "角色说明",
+    "readmeDescription": "角色的说明文件，用于发现页展示角色的详细说明",
+    "coverLabel": "封面",
+    "coverDescription": "用于发现页展示角色，推荐尺寸 {{width}} x {{height}} ",
+    "textLabel": "文案",
+    "textDescription": "自定义响应文案",
+    "emotionLabel": "表情与情绪",
+    "emotionDescription": "选择响应时的情绪，会影响角色的表情变化",
+    "modelLabel": "模型预览",
+    "modelDescription": "模型预览，可拖动模型文件以替换",
+    "categoryLabel": "类别",
+    "categoryDescription": "角色类别，用于展示分类"
+  },
+  "market": {
+    "findVidol": "找到你最爱的偶像"
+  },
+  "nav": {
+    "info": "基本信息",
+    "role": "角色设定",
+    "voice": "语音",
+    "model": "3D模型",
+    "touch": "触摸"
+  },
+  "role": {
+    "uploadSize": "支持单个文件上传，推荐尺寸为 {{width}} x {{height}} 的倍数",
+    "greetTip": "请输入角色与你打招呼时的用语",
+    "roleReadmeTip": "请输入角色说明",
+    "roleDescriptionTip": "请输入角色描述",
+    "roleNameTip": "请输入角色名称",
+    "inputRoleSetting": "请输入角色的系统设定",
+    "roleSettingLabel": "系统角色设定",
+    "roleSettingDescription": "角色的背景设定，在与角色聊天时会发送给模型"
+  },
+  "touch": {
+    "editAction": "编辑响应动作",
+    "addAction": "添加响应动作",
+    "inputDIYText": "请输入自定义文案",
+    "inputActionText": "请输入响应文案",
+    "inputActionEmotion": "请输入角色响应时的表情",
+    "touchActionList": "触摸{{touchArea}}时的反应列表",
+    "touchArea": "触摸区域"
+  },
+  "tts": {
+    "transfromSuccess": "转换成功",
+    "selectLanguage": "请先选择语言",
+    "selectVoice": "请先选择语音",
+    "audition": "试听",
+    "engineLabel": "语音引擎",
+    "engineDescription": "语音合成引擎，建议优先选择 Edge 浏览器",
+    "localeLabel": "语言",
+    "localeDescription": "语音合成的语种，当前仅支持最常见的几种语言，如有需要请联系",
+    "voiceLabel": "语音",
+    "voiceDescription": "根据引擎和语种不同",
+    "speedLabel": "语速",
+    "speedDescription": "控制语速，取值范围 0 ~ 3,默认为 1",
+    "pitchLabel": "音调",
+    "pitchDescription": "控制音调，取值范围 0 ~ 2,默认为 1",
+    "auditionDescription": "试听文案根据语言不同"
+  },
+  "upload": {
+    "support": "支持单个文件上传，当前仅支持 vrm 格式文件"
+  }
+}

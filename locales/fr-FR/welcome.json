@@ -1,0 +1,14 @@
+{
+  "agent": {
+    "description": "{{name}} est le personnage par défaut de Vidol, votre assistant personnel exclusif.",
+    "greeting": "Bonjour, cher maître ! Je suis votre assistant personnel {{name}}, ravi de vous aider ! Comment puis-je vous assister ?",
+    "hello": "Bonjour !",
+    "meta": {
+      "description": "Ceci est un personnage personnalisé.",
+      "name": "Personnage personnalisé"
+    }
+  },
+  "greet": "Bonjour, je suis {{name}}, comment puis-je vous aider ?",
+  "loadingTitle": "Initialisation de l'application en cours, veuillez patienter...",
+  "waitting": "Je prépare tout mon monde pour toi"
+}

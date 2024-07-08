@@ -1,0 +1,14 @@
+{
+  "chat": "대화",
+  "chatDialog": {
+    "close": "닫기"
+  },
+  "dance": "춤을 추다",
+  "header": {
+    "role": "역할",
+    "session": "세션"
+  },
+  "helloChat": "안녕하세요, 대화를 나눠보세요",
+  "helloDance": "'안녕, 함께 춤을 추자'",
+  "market": "시장"
+}

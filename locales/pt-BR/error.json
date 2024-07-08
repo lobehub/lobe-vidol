@@ -1,0 +1,19 @@
+{
+  "apiKeyMiss": "OpenAI API Key está vazio, por favor adicione sua chave de API personalizada OpenAI",
+  "error": "Erro",
+  "errorTip": {
+    "clearSession": "Limpar mensagens da sessão",
+    "description": "O projeto está em andamento e a estabilidade dos dados não é garantida. Se encontrar problemas, pode tentar",
+    "forgive": ", pedimos desculpas pelo inconveniente causado",
+    "or": "ou",
+    "problem": "A página encontrou um problema...",
+    "resetSystem": "Redefinir configurações do sistema"
+  },
+  "goBack": "Voltar",
+  "openaiError": "Erro na API OpenAI, por favor verifique se a chave da API OpenAI e o Endpoint estão corretos",
+  "reload": "Recarregar",
+  "s3envError": "Variáveis de ambiente S3 não estão totalmente configuradas, por favor verifique suas variáveis de ambiente",
+  "serverError": "Erro do servidor, por favor entre em contato com o administrador",
+  "triggerError": "Erro acionado",
+  "unknownError": "Erro desconhecido"
+}

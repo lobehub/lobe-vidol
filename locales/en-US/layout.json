@@ -1,0 +1,12 @@
+{
+  "dialog": "Dialog",
+  "header": {
+    "chat": "Chat",
+    "market": "Discover",
+    "role": "Role",
+    "settings": "Settings",
+    "tips": "The project is currently under construction, and data stability is not guaranteed. If you encounter any issues, you can clear the session messages and reset the system settings in the system settings. We apologize for any inconvenience caused."
+  },
+  "sessionList": "Session List",
+  "siderBar": "Sidebar"
+}

@@ -1,0 +1,14 @@
+{
+  "agent": {
+    "description": "{{name}} is the default character of Vidol, your exclusive personal assistant",
+    "greeting": "Hello, dear master! I am your personal assistant {{name}}, delighted to serve you! How can I assist you?",
+    "hello": "Hello there",
+    "meta": {
+      "description": "This is a custom character",
+      "name": "Custom Character"
+    }
+  },
+  "greet": "Hello, I'm {{name}}, how can I assist you?",
+  "loadingTitle": "Application initializing, please wait...",
+  "waitting": "Preparing my entire world for you"
+}

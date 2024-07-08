@@ -1,0 +1,19 @@
+{
+  "apiKeyMiss": "OpenAI API Key ontbreekt, voeg alstublieft uw aangepaste OpenAI API Key toe",
+  "error": "Fout",
+  "errorTip": {
+    "clearSession": "Sessieberichten wissen",
+    "description": "Het project is momenteel in aanbouw en de gegevensstabiliteit kan niet worden gegarandeerd. Als u problemen ondervindt, kunt u proberen",
+    "forgive": ", excuses voor het ongemak",
+    "or": "of",
+    "problem": "Er is een probleem opgetreden op de pagina...",
+    "resetSystem": "Systeeminstellingen resetten"
+  },
+  "goBack": "Terug naar startpagina",
+  "openaiError": "OpenAI API-fout, controleer of de OpenAI API Key en Endpoint correct zijn",
+  "reload": "Herladen",
+  "s3envError": "S3-omgevingsvariabelen zijn niet volledig ingesteld, controleer uw omgevingsvariabelen",
+  "serverError": "Serverfout, neem contact op met de beheerder",
+  "triggerError": "Fout activeren",
+  "unknownError": "Onbekende fout"
+}

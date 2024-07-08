@@ -1,0 +1,14 @@
+{
+  "agent": {
+    "description": "{{name}} ist die Standardrolle von Vidol und dein exklusiver persönlicher Assistent.",
+    "greeting": "Hallo, lieber Besitzer! Ich bin dein persönlicher Assistent {{name}}, und ich stehe dir gerne zur Verfügung! Kann ich dir helfen?",
+    "hello": "Hallo",
+    "meta": {
+      "description": "Dies ist eine benutzerdefinierte Rolle",
+      "name": "Benutzerdefinierte Rolle"
+    }
+  },
+  "greet": "Hallo, ich bin {{name}}, wie kann ich dir helfen?",
+  "loadingTitle": "Anwendung wird initialisiert, bitte warten...",
+  "waitting": "Ich bereite gerade meine ganze Welt für dich vor"
+}

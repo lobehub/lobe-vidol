@@ -2,6 +2,7 @@ import { ExclamationCircleFilled } from '@ant-design/icons';
 import { Modal } from 'antd';
 import { Eraser, Music } from 'lucide-react';
 import React, { memo } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { useGlobalStore } from '@/store/global';
 import { useSessionStore } from '@/store/session';
@@ -17,7 +18,7 @@ export interface MyListProps {
 const Operations = memo<MyListProps>(({ mobile }) => {
   const [openPanel] = useGlobalStore((s) => [s.openPanel]);
   const [clearHistory] = useSessionStore((s) => [s.clearHistory]);
-
+  const { t } = useTranslation(['panel', 'common']);
   const items = [
     // {
     //   icon: SquarePen,
@@ -50,22 +51,22 @@ const Operations = memo<MyListProps>(({ mobile }) => {
     {
       icon: Music,
       key: 'music',
-      label: '音乐与舞蹈',
+      label: t('dance.musicAndDance'),
       onClick: () => {
         openPanel('dance');
       },
     },
     {
       icon: Eraser,
-      label: '清除上下文',
+      label: t('actions.clearContext'),
       key: 'context',
       onClick: () => {
         confirm({
-          title: '确定删除历史消息？',
+          title: t('actions.clearHistoryTitle'),
           icon: <ExclamationCircleFilled />,
-          content: '该操作不可逆，请谨慎操作',
-          okText: '确定',
-          cancelText: '取消',
+          content: t('actions.clearHistoryTip'),
+          okText: t('confirm'),
+          cancelText: t('cancel'),
           onOk() {
             clearHistory();
           },

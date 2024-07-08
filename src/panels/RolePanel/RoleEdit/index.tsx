@@ -3,6 +3,7 @@
 import { TabsNav } from '@lobehub/ui';
 import classNames from 'classnames';
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
 import SubmitAgentButton from '@/features/Actions/SubmitAgentButton';
@@ -24,6 +25,7 @@ const RolePanel = (props: RolePanelProps) => {
   const { styles } = useStyles();
   const { className, style } = props;
   const [tab, setTab] = useState('info');
+  const { t } = useTranslation('panel');
 
   return (
     <div className={classNames(styles.edit, className)} style={style}>
@@ -35,19 +37,19 @@ const RolePanel = (props: RolePanelProps) => {
               items={[
                 {
                   key: 'info',
-                  label: '信息',
+                  label: t('nav.info'),
                 },
                 {
                   key: 'role',
-                  label: '角色设定',
+                  label: t('nav.role'),
                 },
                 {
                   key: 'voice',
-                  label: '语音',
+                  label: t('nav.voice'),
                 },
                 {
                   key: 'touch',
-                  label: '触摸设置',
+                  label: t('nav.touch'),
                 },
                 {
                   key: 'langModel',

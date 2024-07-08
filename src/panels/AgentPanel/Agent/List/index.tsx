@@ -1,6 +1,7 @@
 import { GradientButton } from '@lobehub/ui';
 import { useRouter } from 'next/navigation';
 import React, { memo } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import GridList from '@/components/GridList';
 import { useAgentStore } from '@/store/agent';
@@ -13,6 +14,7 @@ interface AgentListProps {
 const AgentList = (props: AgentListProps) => {
   const { className, style } = props;
   const router = useRouter();
+  const { t } = useTranslation('common');
 
   const [localAgentList, activateAgent, currentIdentifier] = useAgentStore((s) => [
     s.localAgentList,
@@ -43,7 +45,7 @@ const AgentList = (props: AgentListProps) => {
               router.push('/market');
             }}
           >
-            + 订阅角色
+            + {t('actions.subscribeRole')}
           </GradientButton>,
         ],
       }}

@@ -5,6 +5,7 @@ import { useTheme } from 'antd-style';
 import { InputRef } from 'antd/es/input/Input';
 import { ChevronUp, CornerDownLeft, LucideCommand } from 'lucide-react';
 import React, { memo, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Center, Flexbox } from 'react-layout-kit';
 
 import StopLoadingIcon from '@/components/StopLoading';
@@ -34,6 +35,7 @@ const InputArea = memo((props: InputAreaProps) => {
   const onSend = useChatInput();
   const { styles } = useStyles();
   const theme = useTheme();
+  const { t } = useTranslation('common');
 
   const { className, style } = props;
 
@@ -60,10 +62,10 @@ const InputArea = memo((props: InputAreaProps) => {
   const ShortCuts = (
     <Flexbox gap={4} horizontal style={{ color: theme.colorTextDescription, fontSize: 12 }}>
       {enter}
-      <span>发送</span>
+      <span>{t('actions.send')}</span>
       <span>/</span>
       {cmdEnter}
-      <span>换行</span>
+      <span>{t('actions.warp')}</span>
     </Flexbox>
   );
 
@@ -107,7 +109,7 @@ const InputArea = memo((props: InputAreaProps) => {
             e.preventDefault();
             onSend();
           }}
-          placeholder="请输入内容开始聊天"
+          placeholder={t('inputStartChat')}
           ref={ref}
           autoSize={true}
           type={'block'}
@@ -126,7 +128,7 @@ const InputArea = memo((props: InputAreaProps) => {
         />
       </Flexbox>
       <Flexbox horizontal justify={'space-between'} align={'center'} style={{ marginTop: 4 }}>
-        <div className={styles.alert}>请谨记：智能体所说的一切都是由 AI 生成的</div>
+        <div className={styles.alert}>{t('aiAlert')}</div>
         {ShortCuts}
       </Flexbox>
     </Flexbox>

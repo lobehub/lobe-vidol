@@ -1,5 +1,6 @@
 import { Button, Progress, message } from 'antd';
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
 import { useDownloadDance } from '@/hooks/useDownloadDance';
@@ -22,13 +23,15 @@ const SubscribeButton = (props: SubscribeButtonProps) => {
 
   const { downloading, percent, fetchDanceData } = useDownloadDance();
 
+  const { t } = useTranslation('common');
+
   return (
     <Button
       disabled={downloading}
       onClick={async () => {
         if (isSubscribed) {
           removeDanceItem(dance.danceId).then(() => {
-            message.success('已取消订阅');
+            message.success(t('actions.unsubscribeSuccess'));
           });
         } else {
           await fetchDanceData(dance);
@@ -37,10 +40,10 @@ const SubscribeButton = (props: SubscribeButtonProps) => {
       type={isSubscribed ? 'default' : 'primary'}
     >
       {isSubscribed ? (
-        '取消订阅'
+        t('actions.unsubscribe')
       ) : (
         <Flexbox align={'center'} horizontal gap={8}>
-          下载订阅
+          {t('actions.downloadSubscribe')}
           {downloading ? (
             <Progress
               type="circle"

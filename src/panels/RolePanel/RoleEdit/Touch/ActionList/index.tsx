@@ -2,6 +2,7 @@ import { createStyles } from 'antd-style';
 import classNames from 'classnames';
 import { get } from 'lodash-es';
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
 import ListItem from '@/components/ListItem';
@@ -41,7 +42,7 @@ const AreaList = (props: AreaListProps) => {
   const { styles } = useStyles();
   const { currentTouchArea, style, className } = props;
   const [currentAgentTouch] = useAgentStore((s) => [agentSelectors.currentAgentTouch(s)]);
-
+  const { t } = useTranslation('panel');
   const data = currentAgentTouch ? (get(currentAgentTouch, currentTouchArea) as TouchAction[]) : [];
 
   const touchArea = TOUCH_AREA_OPTIONS.find((item) => item.value === currentTouchArea)?.label;
@@ -49,7 +50,7 @@ const AreaList = (props: AreaListProps) => {
   return (
     <Flexbox flex={1} style={style} className={className}>
       <Header
-        title={`触摸${touchArea}时的反应列表`}
+        title={t('touch.touchActionList', { touchArea })}
         extra={<AddOrEdit isEdit={false} touchArea={currentTouchArea} />}
       />
       {data.map((item, index) => {

@@ -1,5 +1,6 @@
 import { Form, FormProps } from '@lobehub/ui';
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { INPUT_WIDTH_M } from '@/constants/token';
 import TTSEngine from '@/panels/RolePanel/RoleEdit/Voice/TTSEngine';
@@ -10,40 +11,42 @@ import TTSSpeed from '@/panels/RolePanel/RoleEdit/Voice/TTSSpeed';
 import TTSVoice from '@/panels/RolePanel/RoleEdit/Voice/TTSVoice';
 
 export default () => {
+  const { t } = useTranslation('panel');
+
   const voice: FormProps['items'] = [
     {
-      label: '引擎',
-      desc: '语音合成引擎，建议优先选择 Edge ',
+      label: t('tts.engineLabel'),
+      desc: t('tts.engineDescription'),
       name: 'engine',
       children: <TTSEngine style={{ width: INPUT_WIDTH_M }} />,
     },
     {
-      label: '语言',
-      desc: '语音合成的语种，当前仅支持最常见的几种语言，如有需要请联系',
+      label: t('tts.localeLabel'),
+      desc: t('tts.localeDescription'),
       name: 'locale',
       children: <TTSLocale style={{ width: INPUT_WIDTH_M }} />,
     },
     {
-      label: '语音',
-      desc: '根据引擎和语种不同',
+      label: t('tts.voiceLabel'),
+      desc: t('tts.voiceDescription'),
       name: 'voice',
       children: <TTSVoice style={{ width: INPUT_WIDTH_M }} />,
     },
     {
-      label: '语速',
-      desc: '控制语速，取值范围 0 ~ 3，默认为 1',
+      label: t('tts.speedLabel'),
+      desc: t('tts.speedDescription'),
       name: 'speed',
       children: <TTSSpeed style={{ width: INPUT_WIDTH_M }} />,
     },
     {
-      label: '音调',
-      desc: '控制音调，取值范围 0 ~ 2，默认为 1',
+      label: t('tts.pitchLabel'),
+      desc: t('tts.pitchDescription'),
       name: 'pitch',
       children: <TTSPitch style={{ width: INPUT_WIDTH_M }} />,
     },
     {
-      label: '试听',
-      desc: `试听文案根据语言不同`,
+      label: t('tts.audition'),
+      desc: t('tts.auditionDescription'),
       children: <TTSPlay style={{ width: INPUT_WIDTH_M }} />,
     },
   ];

@@ -1,5 +1,6 @@
 import { Input } from 'antd';
 import React, { CSSProperties, memo } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { MAX_DESCRIPTION_LENGTH } from '@/constants/common';
 import { agentSelectors, useAgentStore } from '@/store/agent';
@@ -11,6 +12,7 @@ interface Props {
 
 export default memo<Props>((props) => {
   const { style, className } = props;
+  const { t } = useTranslation('panel');
   const [meta, updateAgentMeta] = useAgentStore((s) => [
     agentSelectors.currentAgentMeta(s),
     s.updateAgentMeta,
@@ -21,7 +23,7 @@ export default memo<Props>((props) => {
       className={className}
       style={style}
       value={meta?.description}
-      placeholder="请输入角色描述"
+      placeholder={t('role.roleDescriptionTip')}
       maxLength={MAX_DESCRIPTION_LENGTH}
       showCount
       onChange={(e) => {

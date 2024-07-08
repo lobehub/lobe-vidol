@@ -1,5 +1,6 @@
 import { TabsNav } from '@lobehub/ui';
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
 import Agent from '@/features/Actions/Agent';
@@ -9,10 +10,11 @@ import { useStyles } from './style';
 const Index = () => {
   const { styles } = useStyles();
   const [tab, setTab] = useState('session');
+  const { t } = useTranslation('role');
 
   const options = [
-    { key: 'session', label: '对话' },
-    { key: 'character', label: '角色' },
+    { key: 'session', label: t('header.session') },
+    { key: 'character', label: t('header.role') },
   ];
 
   return (

@@ -1,0 +1,83 @@
+{
+  "dance": {
+    "addPlay": "リストに追加",
+    "addPlaySuccess": "再生リストに追加されました",
+    "cancelAddPlay": "音楽{{musicName}}の購読をキャンセルしますか？",
+    "cancelSubscribed": "購読をキャンセルする",
+    "findDance": "お気に入りのダンスを見つける",
+    "musicAndDance": "音楽とダンス",
+    "play": "再生する"
+  },
+  "info": {
+    "avatarDescription": "カスタムアバター、アバターをクリックしてカスタムアップロード",
+    "avatarLabel": "アバター",
+    "coverDescription": "キャラクターを発見ページに表示するために使用される、推奨サイズ {{width}} x {{height}} ",
+    "coverLabel": "カバー",
+    "descDescription": "キャラクターの説明、キャラクターの簡単な紹介に使用される",
+    "descLabel": "説明",
+    "emotionDescription": "応答を選択するときの感情、キャラクターの表情変化に影響を与える",
+    "emotionLabel": "表情と感情",
+    "genderDescription": "キャラクターの性別、キャラクターのタッチ反応に影響を与える",
+    "genderLabel": "性別",
+    "greetDescription": "キャラクターと初めて話すときの挨拶の言葉",
+    "greetLabel": "挨拶",
+    "modelDescription": "モデルプレビュー、モデルファイルをドラッグして置き換えることができます",
+    "modelLabel": "モデルプレビュー",
+    "nameDescription": "キャラクター名、キャラクターとのチャット時の呼び名",
+    "nameLabel": "名前",
+    "readmeDescription": "キャラクターの説明ファイル、発見ページでキャラクターの詳細な説明を表示するために使用される",
+    "readmeLabel": "キャラクター説明",
+    "textDescription": "カスタム応答文案",
+    "textLabel": "文案",
+    "categoryLabel": "カテゴリ",
+    "categoryDescription": "キャラクターカテゴリ、分類に使用される"
+  },
+  "market": {
+    "findVidol": "お気に入りのアイドルを見つける"
+  },
+  "nav": {
+    "info": "基本情報",
+    "model": "3Dモデル",
+    "role": "キャラクター設定",
+    "voice": "音声"
+  },
+  "role": {
+    "greetTip": "キャラクターがあなたに挨拶するときに使用する言葉を入力してください",
+    "inputRoleSetting": "キャラクターのシステム設定を入力してください",
+    "roleDescriptionTip": "キャラクターの説明を入力してください",
+    "roleNameTip": "キャラクター名を入力してください",
+    "roleReadmeTip": "キャラクターの説明を入力してください",
+    "roleSettingDescription": "キャラクターの背景設定、キャラクターとのチャット時にモデルに送信されます",
+    "roleSettingLabel": "システムキャラクター設定",
+    "uploadSize": "単一ファイルのアップロードがサポートされています、推奨サイズは {{width}} x {{height}} の倍数です"
+  },
+  "touch": {
+    "addAction": "応答アクションを追加する",
+    "editAction": "応答アクションを編集する",
+    "inputActionEmotion": "キャラクターが応答するときの表情を入力してください",
+    "inputActionText": "応答文案を入力してください",
+    "inputDIYText": "カスタムテキストを入力してください",
+    "touchActionList": "{{touchArea}}をタッチしたときの反応リスト",
+    "touchArea": "タッチエリア"
+  },
+  "tts": {
+    "audition": "オーディション",
+    "auditionDescription": "言語によって異なります",
+    "engineDescription": "音声合成エンジン、Edgeブラウザを優先的に選択することをお勧めします",
+    "engineLabel": "音声エンジン",
+    "localeDescription": "音声合成の言語、現在は最も一般的な言語のみサポートされています。必要に応じてお問い合わせください",
+    "localeLabel": "言語",
+    "pitchDescription": "音程を制御します、値の範囲は0〜2、デフォルトは1です",
+    "pitchLabel": "ピッチ",
+    "selectLanguage": "言語を選択してください",
+    "selectVoice": "音声を選択してください",
+    "speedDescription": "速度を制御します、値の範囲は0〜3、デフォルトは1です",
+    "speedLabel": "速度",
+    "transfromSuccess": "変換成功",
+    "voiceDescription": "エンジンと言語によって異なります",
+    "voiceLabel": "音声"
+  },
+  "upload": {
+    "support": "単一ファイルのアップロードがサポートされています、現在はvrm形式のファイルのみサポートされています"
+  }
+}

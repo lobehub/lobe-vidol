@@ -1,0 +1,14 @@
+{
+  "chat": "チャット",
+  "chatDialog": {
+    "close": "閉じる"
+  },
+  "dance": "ダンス",
+  "header": {
+    "role": "役割",
+    "session": "セッション"
+  },
+  "helloChat": "こんにちは、チャットしましょう",
+  "helloDance": "こんにちは、一緒にダンスしましょう",
+  "market": "マーケット"
+}

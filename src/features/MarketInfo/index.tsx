@@ -3,6 +3,7 @@ import { Button } from 'antd';
 import { createStyles } from 'antd-style';
 import { useRouter } from 'next/navigation';
 import React, { memo, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import Author from '@/components/Author';
 import AgentCard from '@/components/agent/AgentCard';
@@ -29,6 +30,7 @@ const useStyles = createStyles(({ css, token }) => ({
 const Header = () => {
   const { styles } = useStyles();
   const router = useRouter();
+  const { t } = useTranslation('chat');
   const [tempId, setTempId] = useState<string>('');
   const [showAgentSidebar, activateAgent, deactivateAgent, currentAgentItem] = useMarketStore(
     (s) => [
@@ -58,7 +60,7 @@ const Header = () => {
           }}
           type={'primary'}
         >
-          聊天
+          {t('chat')}
         </Button>,
       );
     }

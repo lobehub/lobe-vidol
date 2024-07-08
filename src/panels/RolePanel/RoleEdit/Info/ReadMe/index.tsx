@@ -1,5 +1,6 @@
 import { Input } from 'antd';
 import React, { CSSProperties, memo } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { MAX_README_LENGTH } from '@/constants/common';
 import { agentSelectors, useAgentStore } from '@/store/agent';
@@ -11,6 +12,7 @@ interface Props {
 
 export default memo<Props>((props) => {
   const { style, className } = props;
+  const { t } = useTranslation('panel');
   const [meta, updateAgentMeta] = useAgentStore((s) => [
     agentSelectors.currentAgentMeta(s),
     s.updateAgentMeta,
@@ -21,8 +23,8 @@ export default memo<Props>((props) => {
       className={className}
       style={style}
       value={meta?.readme}
-      autoSize={{ minRows: 8, maxRows: 8 }}
-      placeholder="请输入角色说明"
+      autoSize={{ minRows: 10, maxRows: 10 }}
+      placeholder={t('role.roleReadmeTip')}
       showCount
       maxLength={MAX_README_LENGTH}
       onChange={(e) => {

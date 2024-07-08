@@ -1,6 +1,7 @@
 import { App, Button } from 'antd';
 import { ButtonType } from 'antd/es/button';
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { useSettingStore } from '@/store/setting';
 
@@ -9,24 +10,25 @@ interface Props {
   type?: ButtonType;
 }
 export default (props: Props) => {
-  const { text = '立即重置', type = 'primary' } = props;
+  const { t } = useTranslation('common');
+  const { text = t('actions.resetNow'), type = 'primary' } = props;
   const resetConfig = useSettingStore((s) => s.resetConfig);
   const { message, modal } = App.useApp();
 
   const handleReset = () => {
     modal.confirm({
-      cancelText: '取消',
+      cancelText: t('cancel'),
       centered: true,
-      content: '操作无法撤销，重置后数据将无法恢复，请慎重操作',
+      content: t('actions.resetTip'),
       okButtonProps: {
         danger: true,
       },
-      okText: '确定',
+      okText: t('confirm'),
       onOk: () => {
         resetConfig();
-        message.success('重置成功');
+        message.success(t('actions.resetSuccess'));
       },
-      title: '确认重置所有系统设置?',
+      title: t('actions.resetTitle'),
     });
   };
 
