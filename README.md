@@ -10,7 +10,7 @@ Experience the magic of virtual idol creation with Lobe Vidol, enjoy the eleganc
 
 <sup>Making Virtual Idols Accessible for EveryOne</sup>
 
-[Changelog](./CHANGELOG.md) · [Report Bug][github-issues-link] · [Request Feature][github-issues-link]
+**English** · [简体中文](./README.zh-CN.md) · [Changelog](./CHANGELOG.md) · [Report Bug][github-issues-link] · [Request Feature][github-issues-link]
 
 [![][github-release-shield]][github-release-link]
 [![][vercel-shield]][vercel-link]

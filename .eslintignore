@@ -30,3 +30,5 @@ logs
 # misc
 # add other ignore file below
 .next
+
+libs

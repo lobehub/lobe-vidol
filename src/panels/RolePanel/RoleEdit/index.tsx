@@ -5,7 +5,10 @@ import classNames from 'classnames';
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import SubmitAgentButton from '@/features/Actions/SubmitAgentButton';
+
 import Info from './Info';
+import LangModel from './LangModel';
 import Model from './Model';
 import Role from './Role';
 import Voice from './Voice';
@@ -44,8 +47,12 @@ const RolePanel = (props: RolePanelProps) => {
               key: 'model',
               label: t('nav.model'),
             },
+            {
+              key: 'langModel',
+              label: '语言模型',
+            },
           ]}
-          // tabBarExtraContent={<SubmitAgentButton modal />}
+          tabBarExtraContent={<SubmitAgentButton modal />}
           onChange={(key) => {
             setTab(key);
           }}
@@ -56,6 +63,7 @@ const RolePanel = (props: RolePanelProps) => {
         {tab === 'role' ? <Role /> : null}
         {tab === 'voice' ? <Voice /> : null}
         {tab === 'model' ? <Model /> : null}
+        {tab === 'langModel' ? <LangModel /> : null}
       </div>
     </div>
   );

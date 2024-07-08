@@ -11,7 +11,6 @@ const initialState: SettingState = {
       openAI: {
         apikey: '',
         endpoint: '',
-        model: 'gpt-3.5-turbo',
       },
     },
   },

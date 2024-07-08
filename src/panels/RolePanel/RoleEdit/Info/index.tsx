@@ -9,6 +9,7 @@ import { INPUT_WIDTH_L, INPUT_WIDTH_M } from '@/constants/token';
 import CoverWithUpload from '@/panels/RolePanel/RoleEdit/Info/CoverWithUpload';
 import Greeting from '@/panels/RolePanel/RoleEdit/Info/Greeting';
 import ReadMe from '@/panels/RolePanel/RoleEdit/Info/ReadMe';
+import RoleCategory from '@/panels/RolePanel/RoleEdit/Info/RoleCategory';
 import RoleDescription from '@/panels/RolePanel/RoleEdit/Info/RoleDescription';
 import RoleGender from '@/panels/RolePanel/RoleEdit/Info/RoleGender';
 import RoleName from '@/panels/RolePanel/RoleEdit/Info/RoleName';
@@ -54,7 +55,7 @@ const Info = (props: InfoProps) => {
   const { t } = useTranslation('panel');
 
   return (
-    <Form form={form} layout="horizontal" requiredMark={false}>
+    <Form form={form} layout="horizontal">
       <div className={classNames(className, styles.container)} style={style}>
         <div className={styles.form}>
           <div className={styles.config}>
@@ -62,6 +63,7 @@ const Info = (props: InfoProps) => {
               label={t('info.avatarLabel')}
               desc={t('info.avatarDescription')}
               name={'avatar'}
+              required
             >
               <AvatarWithUpload />
             </FormItem>
@@ -70,8 +72,27 @@ const Info = (props: InfoProps) => {
               desc={t('info.nameDescription')}
               divider
               name={['name']}
+              required
             >
               <RoleName style={{ width: INPUT_WIDTH_M }} />
+            </FormItem>
+            <FormItem
+              label={t('info.descLabel')}
+              desc={t('info.descDescription')}
+              divider
+              name={'description'}
+              required
+            >
+              <RoleDescription style={{ width: INPUT_WIDTH_L }} />
+            </FormItem>
+            <FormItem
+              label={t('info.greetLabel')}
+              desc={t('info.greetDescription')}
+              name="greeting"
+              divider
+              required
+            >
+              <Greeting style={{ width: INPUT_WIDTH_L }} />
             </FormItem>
             <FormItem
               label={t('info.genderLabel')}
@@ -82,20 +103,12 @@ const Info = (props: InfoProps) => {
               <RoleGender style={{ width: INPUT_WIDTH_M }} />
             </FormItem>
             <FormItem
-              label={t('info.descLabel')}
-              desc={t('info.descDescription')}
+              label={t('info.categoryLabel')}
+              desc={t('info.categoryDescription')}
               divider
-              name={'description'}
+              name={['category']}
             >
-              <RoleDescription style={{ width: INPUT_WIDTH_L }} />
-            </FormItem>
-            <FormItem
-              label={t('info.greetLabel')}
-              desc={t('info.greetDescription')}
-              name="greeting"
-              divider
-            >
-              <Greeting style={{ width: INPUT_WIDTH_L }} />
+              <RoleCategory style={{ width: INPUT_WIDTH_M }} />
             </FormItem>
             <FormItem
               label={t('info.readmeLabel')}
@@ -114,6 +127,7 @@ const Info = (props: InfoProps) => {
                 height: COVER_COMPRESS_HEIGHT,
               })}
               name={'cover'}
+              required
             />
             <CoverWithUpload />
           </div>

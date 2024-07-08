@@ -66,7 +66,6 @@ export interface ChatStreamPayload {
    * @default 0
    */
   presence_penalty?: number;
-
   /**
    * @title 是否开启流式请求
    * @default true
@@ -74,7 +73,12 @@ export interface ChatStreamPayload {
   stream?: boolean;
   /**
    * @title 生成文本的随机度量，用于控制文本的创造性和多样性
-   * @default 0.5
+   * @default 1
    */
   temperature: number;
+  /**
+   * @title 在生成文本等任务中，选择可能性最高的前 P 个词的概率累加和
+   * @default 1
+   */
+  top_p?: number;
 }

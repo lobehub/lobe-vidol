@@ -29,7 +29,7 @@ export default () => {
       icon={SiDiscord}
       key="discord"
       title={t('support')}
-      onClick={() => window.open('https://discord.gg/AYFPHvv2jT', '_blank')}
+      onClick={() => window.open('https://discord.gg/8Gq83ZCK9u', '_blank')}
       style={{ border: `1px solid ${theme.colorFillSecondary}` }}
     />
   );

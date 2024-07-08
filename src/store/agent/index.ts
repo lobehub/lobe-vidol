@@ -1,7 +1,7 @@
 import { nanoid } from 'ai';
 import { produce } from 'immer';
 import { DeepPartial } from 'utility-types';
-import { devtools, persist, subscribeWithSelector } from 'zustand/middleware';
+import { createJSONStorage, devtools, persist, subscribeWithSelector } from 'zustand/middleware';
 import { shallow } from 'zustand/shallow';
 import { createWithEqualityFn } from 'zustand/traditional';
 import { StateCreator } from 'zustand/vanilla';
@@ -27,7 +27,7 @@ import storage from '@/utils/storage';
 import { initialState } from './initialState';
 import { agentSelectors } from './selectors/agent';
 
-const AGENT_STORAGE_KEY = 'vidol-chat-agent-storage';
+export const AGENT_STORAGE_KEY = 'vidol-chat-agent-storage';
 
 export interface AgentStore {
   /**
@@ -95,7 +95,7 @@ export interface AgentStore {
   /**
    * 更新角色配置
    */
-  updateAgentConfig: (agent: DeepPartial<Agent>) => void;
+  updateAgentConfig: (agent: DeepPartial<Agent>, updateAgentId?: string) => void;
   /**
    *  更新角色元数据
    */
@@ -185,9 +185,12 @@ const createAgentStore: StateCreator<AgentStore, [['zustand/devtools', never]]> 
 
     set({ currentIdentifier: newAgent.agentId, localAgentList: newList });
   },
-  updateAgentConfig: (agent) => {
+  updateAgentConfig: (agent, updateAgentId) => {
     const { localAgentList, currentIdentifier, defaultAgent } = get();
-    if (currentIdentifier === LOBE_VIDOL_DEFAULT_AGENT_ID) {
+
+    const updateIdentifier = updateAgentId || currentIdentifier;
+
+    if (updateIdentifier === LOBE_VIDOL_DEFAULT_AGENT_ID) {
       const mergeAgent = produce(defaultAgent, (draft) => {
         mergeWithUndefined(draft, agent);
       });
@@ -196,7 +199,7 @@ const createAgentStore: StateCreator<AgentStore, [['zustand/devtools', never]]> 
     }
 
     const agents = produce(localAgentList, (draft) => {
-      const index = draft.findIndex((localAgent) => localAgent.agentId === currentIdentifier);
+      const index = draft.findIndex((localAgent) => localAgent.agentId === updateIdentifier);
       if (index === -1) return;
       mergeWithUndefined(draft[index], agent);
     });
@@ -304,6 +307,9 @@ export const useAgentStore = createWithEqualityFn<AgentStore>()(
       }),
       {
         name: AGENT_STORAGE_KEY,
+        storage: createJSONStorage(() => storage),
+        version: 0,
+        skipHydration: true,
       },
     ),
   ),

@@ -7,6 +7,8 @@ import { ChatStreamPayload } from '@/types/openai/chat';
 
 import { createErrorResponse } from './createErrorResponse';
 
+export const runtime = 'edge';
+
 export const POST = async (req: Request) => {
   const data = (await req.json()) as ChatStreamPayload;
   const apiKey = (req.headers.get(OPENAI_API_KEY) as string) || process.env.OPENAI_API_KEY;

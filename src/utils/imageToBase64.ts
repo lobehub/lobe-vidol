@@ -1,3 +1,5 @@
+import mime from 'mime';
+
 export const imageToBase64 = ({
   size,
   img,
@@ -79,5 +81,16 @@ export const blobToDataURI = (blob: Blob) => {
       resolve(reader.result as string);
     });
     reader.readAsDataURL(blob);
+  });
+};
+
+export const base64ToFile = (base64: string, fileName: string) => {
+  const arr = base64.split('base64,');
+  const binaryString = atob(arr[1]);
+  // @ts-ignore
+  const mimeType = arr[0].match(/:(.*?);/)[1];
+  const uint8Array = Uint8Array.from(binaryString, (char) => char.charCodeAt(0));
+  return new File([uint8Array], `${fileName}.${mime.getExtension(mimeType)}`, {
+    type: mimeType,
   });
 };

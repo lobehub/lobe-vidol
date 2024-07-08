@@ -45,7 +45,12 @@ const Model = (props: ModelProps) => {
           <Touch />
         </div>
         <div className={styles.right}>
-          <FormItem label={t('info.modelLabel')} name={'model'} desc={t('info.modelDescription')} />
+          <FormItem
+            label={t('info.modelLabel')}
+            name={'model'}
+            desc={t('info.modelDescription')}
+            required
+          />
           <ViewerWithUpload />
         </div>
       </div>

@@ -36,9 +36,10 @@ const Info = (props: InfoProps) => {
         <div className={styles.config}>
           <FormItem
             name="systemRole"
-            divider
             label={t('role.roleSettingLabel')}
             desc={t('role.roleSettingDescription')}
+            divider
+            required
           ></FormItem>
           <SystemRole />
         </div>

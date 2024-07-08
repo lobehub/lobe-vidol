@@ -3,6 +3,7 @@ import { isEqual } from 'lodash-es';
 import { memo } from 'react';
 import LazyLoad from 'react-lazy-load';
 
+import useSessionContext from '@/hooks/useSessionContext';
 import { useSessionStore } from '@/store/session';
 import { sessionSelectors } from '@/store/session/selectors';
 
@@ -23,17 +24,13 @@ const SessionList = memo<SessionListProps>(({ filter }) => {
     (s) => sessionSelectors.filterSessionListIds(s, filter),
     isEqual,
   );
-  const [switchSession] = useSessionStore((s) => [s.switchSession]);
   const { styles } = useStyles();
+
+  const { switchSession } = useSessionContext();
 
   return sessionListIds.map((id) => (
     <LazyLoad className={styles} key={id}>
-      <SessionItem
-        id={id}
-        onClick={() => {
-          switchSession(id);
-        }}
-      />
+      <SessionItem id={id} onClick={() => switchSession(id)} />
     </LazyLoad>
   ));
 });

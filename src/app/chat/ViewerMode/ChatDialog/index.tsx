@@ -1,14 +1,16 @@
 import { ActionIcon } from '@lobehub/ui';
 import { useHover } from 'ahooks';
 import { Tooltip } from 'antd';
+import classNames from 'classnames';
 import { XIcon } from 'lucide-react';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
 import ChatItem from '@/features/ChatItem';
-import { useGlobalStore } from '@/store/global';
 import { sessionSelectors, useSessionStore } from '@/store/session';
+
+import { useStyles } from './style';
 
 interface DialogProps {
   className?: string;
@@ -17,18 +19,24 @@ interface DialogProps {
 
 const Dialog = (props: DialogProps) => {
   const { className, style } = props;
-  const currentChats = useSessionStore((s) => sessionSelectors.currentChatsWithGreetingMessage(s));
+  const [currentChats, chatLoading] = useSessionStore((s) => [
+    sessionSelectors.currentChatsWithGreetingMessage(s),
+    !!s.chatLoadingId,
+  ]);
   const lastAgentChatIndex = currentChats.findLastIndex((item) => item.role === 'assistant');
   const ref = React.useRef<HTMLDivElement>(null);
   const isHovered = useHover(ref);
   const { t } = useTranslation('chat');
-  const [showChatDialog, setChatDialog] = useGlobalStore((s) => [
-    s.showChatDialog,
-    s.setChatDialog,
-  ]);
+  const { styles } = useStyles();
+
+  const [showChatDialog, setChatDialog] = useState(true);
+
+  useEffect(() => {
+    if (chatLoading) setChatDialog(true);
+  }, [chatLoading]);
 
   return lastAgentChatIndex !== -1 && showChatDialog ? (
-    <Flexbox className={className} style={style} ref={ref} horizontal>
+    <Flexbox className={classNames(className, styles.dialog)} style={style} ref={ref} horizontal>
       <ChatItem
         id={currentChats[lastAgentChatIndex].id}
         index={lastAgentChatIndex}

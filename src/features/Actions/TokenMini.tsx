@@ -1,16 +1,16 @@
 import { Tooltip, Typography } from 'antd';
-import { isEqual } from 'lodash-es';
 import { useTranslation } from 'react-i18next';
 
 import { OPENAI_MODEL_LIST } from '@/constants/openai';
 import { useCalculateToken } from '@/hooks/useCalculateToken';
-import { configSelectors, useSettingStore } from '@/store/setting';
+import useSessionContext from '@/hooks/useSessionContext';
 
 const TokenMini = () => {
-  const config = useSettingStore((s) => configSelectors.currentOpenAIConfig(s), isEqual);
+  const model = useSessionContext()?.sessionAgent?.model;
+
   const usedTokens = useCalculateToken();
-  const maxValue = OPENAI_MODEL_LIST.find((item) => item.id === config?.model)?.tokens || 4096;
   const { t } = useTranslation('features');
+  const maxValue = OPENAI_MODEL_LIST.find((item) => item.id === model)?.tokens || 4096;
 
   return (
     <Tooltip title={t('token.useToken', { usedTokens, maxValue })}>

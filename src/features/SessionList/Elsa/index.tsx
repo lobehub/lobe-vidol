@@ -3,22 +3,20 @@ import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { LOBE_VIDOL_DEFAULT_AGENT_ID } from '@/constants/agent';
+import useSessionContext from '@/hooks/useSessionContext';
 import { useAgentStore } from '@/store/agent';
-import { useSessionStore } from '@/store/session';
 
 import ListItem from '../ListItem';
 
 const Elsa = memo(() => {
   const { t } = useTranslation('common');
-  const [activeId, switchSession] = useSessionStore((s) => [s.activeId, s.switchSession]);
   const defaultAgent = useAgentStore((s) => s.defaultAgent);
+  const { activeSessionId, switchSession } = useSessionContext();
 
   return (
     <ListItem
-      onClick={() => {
-        switchSession(LOBE_VIDOL_DEFAULT_AGENT_ID);
-      }}
-      active={activeId === LOBE_VIDOL_DEFAULT_AGENT_ID}
+      onClick={() => switchSession(LOBE_VIDOL_DEFAULT_AGENT_ID)}
+      active={activeSessionId === LOBE_VIDOL_DEFAULT_AGENT_ID}
       avatar={defaultAgent.meta.avatar}
       title={
         <Space align={'center'}>

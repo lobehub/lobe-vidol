@@ -2,6 +2,8 @@ export const AGENT_INDEX_URL = 'https://vidol-market.lobehub.com/agents/index.js
 
 export const DANCE_INDEX_URL = 'https://vidol-market.lobehub.com/dances/index.json';
 
+export const OSS_PREFIX = 'https://r2.vidol.chat';
+
 export const COOKIE_CACHE_DAYS = 30;
 
 export const LOADING_FLAG = '...';

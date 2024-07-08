@@ -4,10 +4,7 @@ import { Flexbox } from 'react-layout-kit';
 
 import pkg from '@/../package.json';
 import ModelTag from '@/components/ModelTag';
-import { useSessionStore } from '@/store/session';
-import { sessionSelectors } from '@/store/session/selectors';
-import { useSettingStore } from '@/store/setting';
-import { configSelectors } from '@/store/setting/selectors/config';
+import useSessionContext from '@/hooks/useSessionContext';
 
 import ChatList from './ChatList';
 import { useStyles } from './style';
@@ -15,8 +12,7 @@ import { FieldType } from './type';
 
 const Preview = memo<FieldType & { title?: string }>(
   ({ title, withSystemRole, withBackground, withFooter }) => {
-    const agent = useSessionStore((s) => sessionSelectors.currentAgent(s));
-    const config = useSettingStore((s) => configSelectors.currentOpenAIConfig(s));
+    const { sessionAgent } = useSessionContext();
 
     const { styles } = useStyles(withBackground);
 
@@ -26,16 +22,16 @@ const Preview = memo<FieldType & { title?: string }>(
           <Flexbox className={styles.container} gap={16}>
             <div className={styles.header}>
               <Flexbox align={'flex-start'} gap={12} horizontal>
-                <Avatar avatar={agent.meta.avatar} size={40} title={title} />
+                <Avatar avatar={sessionAgent.meta.avatar} size={40} title={title} />
                 <ChatHeaderTitle
-                  desc={agent.meta.description}
-                  tag={<ModelTag model={config.model} />}
+                  desc={sessionAgent.meta.description}
+                  tag={<ModelTag model={sessionAgent?.model} />}
                   title={title}
                 />
               </Flexbox>
-              {withSystemRole && agent.systemRole && (
+              {withSystemRole && sessionAgent.systemRole && (
                 <div className={styles.role}>
-                  <Markdown variant={'chat'}>{agent.systemRole}</Markdown>
+                  <Markdown variant={'chat'}>{sessionAgent.systemRole}</Markdown>
                 </div>
               )}
             </div>

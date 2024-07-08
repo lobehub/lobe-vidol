@@ -1,66 +1,76 @@
 'use client';
 
 import { Alert, Icon, Modal, type ModalProps } from '@lobehub/ui';
-import { Button, Divider, Input, Space } from 'antd';
+import { Button, Divider, Input, Popover, Progress, Space, Typography } from 'antd';
 import { useTheme } from 'antd-style';
 import isEqual from 'fast-deep-equal';
 import { kebabCase } from 'lodash-es';
 import { Dices } from 'lucide-react';
 import qs from 'query-string';
-import { memo, useState } from 'react';
+import React, { memo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
 import AgentCard from '@/components/agent/AgentCard';
+import SystemRole from '@/components/agent/SystemRole';
 import { AGENTS_INDEX_GITHUB_ISSUE } from '@/constants/url';
-import { upload } from '@/services/upload';
+import { useUploadAgent } from '@/hooks/useUploadAgent';
 import { agentSelectors, useAgentStore } from '@/store/agent';
+import { Agent } from '@/types/agent';
 
 const SubmitAgentModal = memo<ModalProps>(({ open, onCancel }) => {
   const [agentId, setAgentId] = useState('');
   const theme = useTheme();
-  const currentAgent = useAgentStore(agentSelectors.currentAgentItem, isEqual);
+  const currentAgent: Agent = useAgentStore((s) => agentSelectors.currentAgentItem(s), isEqual);
   const { meta } = currentAgent;
   const { t } = useTranslation('features');
 
+  const { uploading, uploadAgentData, percent } = useUploadAgent();
+
   const isFormPass = Boolean(
     currentAgent.greeting &&
+      currentAgent.systemRole &&
       meta.name &&
       meta.description &&
       meta.avatar &&
       meta.cover &&
-      meta.gender,
+      meta.model,
   );
 
   const handleSubmit = async () => {
-    let avatarUrl = meta.avatar;
-    if (meta.avatar.includes('base64')) {
-      const arr = meta.avatar.split('base64,');
-      const binaryString = atob(arr[1]);
-      // @ts-ignore
-      const mime = arr[0].match(/:(.*?);/)[1];
-      const uint8Array = Uint8Array.from(binaryString, (char) => char.charCodeAt(0));
-      // base64
-      const { success, url } = await upload(
-        new File([uint8Array], `${agentId}-avatar.png`, { type: mime }),
-      );
-      if (success) {
-        avatarUrl = url;
-      }
-    }
+    const { avatarUrl, coverUrl, modelUrl } = await uploadAgentData(agentId, meta);
+
     const body = [
-      '### systemRole',
-      currentAgent.systemRole,
       '### agentId',
-      kebabCase(agentId),
+      agentId,
       '### avatar',
       avatarUrl,
       '### cover',
-      meta.cover,
+      coverUrl,
+      '### systemRole',
+      currentAgent.systemRole,
+      '### greeting',
+      currentAgent.greeting,
+      '### modelUrl',
+      modelUrl,
       '### name',
       meta.name,
       '### description',
       meta.description,
+      '### category',
+      meta.category,
+      '### readme',
+      meta.readme,
+      '### gender',
+      meta.gender,
+      '### tts',
+      JSON.stringify(currentAgent.tts),
+      '### touch',
+      JSON.stringify(currentAgent.touch),
+      '### model',
+      currentAgent.model,
+      '### params',
+      JSON.stringify(currentAgent.params),
     ].join('\n\n');
 
     const url = qs.stringifyUrl({
@@ -75,15 +85,37 @@ const SubmitAgentModal = memo<ModalProps>(({ open, onCancel }) => {
     <Modal
       allowFullscreen
       footer={
-        <Button
-          block
-          disabled={!isFormPass || !agentId}
-          onClick={handleSubmit}
-          size={'large'}
-          type={'primary'}
+        <Popover
+          open={uploading}
+          title={
+            <Flexbox>
+              <Typography.Text type={'secondary'}>上传处理中，请勿关闭页面...</Typography.Text>
+              <Space>
+                <Progress steps={30} percent={percent.cover} size="small" />
+                <Typography.Text style={{ fontSize: 12 }}>上传封面</Typography.Text>
+              </Space>
+              <Space>
+                <Progress steps={30} percent={percent.avatar} size="small" />
+                <Typography.Text style={{ fontSize: 12 }}>上传头像</Typography.Text>
+              </Space>
+              <Space>
+                <Progress steps={30} percent={percent.model} size="small" />
+                <Typography.Text style={{ fontSize: 12 }}>上传模型</Typography.Text>
+              </Space>
+            </Flexbox>
+          }
         >
-          {t('submit.submitAssistant')}
-        </Button>
+          <Button
+            block
+            disabled={!isFormPass || !agentId}
+            onClick={handleSubmit}
+            size={'large'}
+            type={'primary'}
+            loading={uploading}
+          >
+            {t('submit.submitAssistant')}
+          </Button>
+        </Popover>
       }
       onCancel={onCancel}
       open={open}
@@ -92,6 +124,8 @@ const SubmitAgentModal = memo<ModalProps>(({ open, onCancel }) => {
       <Flexbox gap={16}>
         {!isFormPass && <Alert message={t('submit.submitWarning')} showIcon type={'warning'} />}
         <AgentCard agent={currentAgent} />
+        <Divider style={{ margin: '8px 0' }} />
+        <SystemRole systemRole={currentAgent.systemRole} />
         <Divider style={{ margin: '8px 0' }} />
         <strong>
           <span style={{ color: theme.colorError, marginRight: 4 }}>*</span>
@@ -108,7 +142,7 @@ const SubmitAgentModal = memo<ModalProps>(({ open, onCancel }) => {
             icon={<Icon icon={Dices} />}
             onClick={() => {
               const randomId = Math.random().toString(36).slice(7);
-              setAgentId(`vidol-agent-${randomId}`);
+              setAgentId(kebabCase(randomId));
             }}
           ></Button>
         </Space.Compact>

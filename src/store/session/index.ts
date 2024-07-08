@@ -1,13 +1,14 @@
 import { nanoid } from 'ai';
 import dayjs from 'dayjs';
 import { produce } from 'immer';
-import { devtools, persist } from 'zustand/middleware';
+import { createJSONStorage, devtools, persist } from 'zustand/middleware';
 import { shallow } from 'zustand/shallow';
 import { createWithEqualityFn } from 'zustand/traditional';
 import { StateCreator } from 'zustand/vanilla';
 
 import { LOBE_VIDOL_DEFAULT_AGENT_ID } from '@/constants/agent';
 import { DEFAULT_USER_AVATAR_URL, LOADING_FLAG } from '@/constants/common';
+import { DEFAULT_LLM_CONFIG } from '@/constants/openai';
 import { chatCompletion, handleSpeakAi } from '@/services/chat';
 import { shareService } from '@/services/share';
 import { Agent } from '@/types/agent';
@@ -15,6 +16,7 @@ import { ChatMessage } from '@/types/chat';
 import { Session } from '@/types/session';
 import { ShareGPTConversation } from '@/types/share';
 import { fetchSEE } from '@/utils/fetch';
+import storage from '@/utils/storage';
 
 import { initialState } from './initialState';
 import { MessageActionType, messageReducer } from './reducers/message';
@@ -152,7 +154,7 @@ export interface SessionStore {
   voiceOn: boolean;
 }
 
-export const createSessonStore: StateCreator<SessionStore, [['zustand/devtools', never]]> = (
+export const createSessionStore: StateCreator<SessionStore, [['zustand/devtools', never]]> = (
   set,
   get,
 ) => ({
@@ -227,6 +229,8 @@ export const createSessonStore: StateCreator<SessionStore, [['zustand/devtools',
     const fetcher = () => {
       return chatCompletion(
         {
+          model: currentAgent.model || DEFAULT_LLM_CONFIG.model,
+          ...(currentAgent.params || DEFAULT_LLM_CONFIG.params),
           messages: [
             {
               content: currentAgent.systemRole,
@@ -367,7 +371,7 @@ export const createSessonStore: StateCreator<SessionStore, [['zustand/devtools',
       }
     }
 
-    const latestMsg = contextMessages.filter((s) => s.role === 'user').at(-1);
+    const latestMsg = contextMessages.findLast((s) => s.role === 'user');
 
     if (!latestMsg) return;
 
@@ -494,11 +498,14 @@ export const createSessonStore: StateCreator<SessionStore, [['zustand/devtools',
 
 export const useSessionStore = createWithEqualityFn<SessionStore>()(
   persist(
-    devtools(createSessonStore, {
+    devtools(createSessionStore, {
       name: 'VIDOL_SESSION_STORE',
     }),
     {
       name: SESSION_STORAGE_KEY, // name of the item in the storage (must be unique)
+      storage: createJSONStorage(() => storage),
+      version: 0,
+      skipHydration: true,
     },
   ),
   shallow,

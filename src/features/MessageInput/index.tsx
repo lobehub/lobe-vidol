@@ -12,9 +12,9 @@ import StopLoadingIcon from '@/components/StopLoading';
 import Dance from '@/features/Actions/Dance';
 import History from '@/features/Actions/History';
 import Record from '@/features/Actions/Record';
-import ToggleChatDialog from '@/features/Actions/ToggleChatDialog';
 import TokenMini from '@/features/Actions/TokenMini';
 import Video from '@/features/Actions/Video';
+import Voice from '@/features/Actions/Voice';
 import useChatInput from '@/hooks/useSendMessage';
 import { useSessionStore } from '@/store/session';
 import { isCommandPressed } from '@/utils/keyboard';
@@ -79,7 +79,7 @@ const InputArea = memo((props: InputAreaProps) => {
           <TokenMini />
         </Space>
         <Space size={4}>
-          <ToggleChatDialog key={'dialog'} />
+          <Voice key={'voice'} />
           <History key={'history'} />
         </Space>
       </Flexbox>

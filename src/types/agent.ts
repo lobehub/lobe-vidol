@@ -1,3 +1,5 @@
+import { LLMParams } from '@/types/llm';
+
 import { TouchActionConfig } from './touch';
 import { TTS } from './tts';
 
@@ -20,6 +22,7 @@ export enum GenderEnum {
   MALE = 'Male',
   OTHER = 'Other',
 }
+
 export interface AgentMeta {
   /**
    * 头像图片路径
@@ -32,7 +35,7 @@ export interface AgentMeta {
   /**
    * 封面图片路径
    */
-  cover?: string;
+  cover: string;
   /**
    * 角色描述
    */
@@ -80,6 +83,14 @@ export interface Agent {
    * 角色元数据
    */
   meta: AgentMeta;
+  /**
+   * 大语言模型
+   */
+  model?: string;
+  /**
+   * 语言模型配置
+   */
+  params?: LLMParams;
   /**
    * 角色设定
    */
