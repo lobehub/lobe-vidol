@@ -2,6 +2,51 @@
 
 # Changelog
 
+## [Version&nbsp;0.16.0](https://github.com/lobehub/lobe-vidol/compare/v0.15.0...v0.16.0)
+<sup>Released on **2024-07-08**</sup>
+
+
+#### ✨ Features
+
+- **misc**: Upload avatar with cover, 迁移 voice 表单, 迁移表单到 json 表单，设计角色设定布局.
+
+
+#### 🐛 Bug Fixes
+
+- **misc**: Duplicate version of remark, i18n problem.
+
+
+<br/>
+
+
+
+<details>
+<summary><kbd>Improvements and Fixes</kbd></summary>
+
+
+
+#### What's improved
+
+* **misc**: Upload avatar with cover ([28273ba](https://github.com/lobehub/lobe-vidol/commit/28273ba))
+* **misc**: 迁移 voice 表单 ([c5ad9bf](https://github.com/lobehub/lobe-vidol/commit/c5ad9bf))
+* **misc**: 迁移表单到 json 表单，设计角色设定布局 ([0ca3192](https://github.com/lobehub/lobe-vidol/commit/0ca3192))
+
+
+
+#### What's fixed
+
+* **misc**: Duplicate version of remark ([c8d89d6](https://github.com/lobehub/lobe-vidol/commit/c8d89d6))
+* **misc**: I18n problem ([bafdf39](https://github.com/lobehub/lobe-vidol/commit/bafdf39))
+
+</details>
+
+
+<div align="right">
+
+[![](https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square)](#readme-top)
+
+</div>
+
 ## [Version&nbsp;0.15.0](https://github.com/lobehub/lobe-vidol/compare/v0.14.0...v0.15.0)
 <sup>Released on **2024-07-08**</sup>
 
