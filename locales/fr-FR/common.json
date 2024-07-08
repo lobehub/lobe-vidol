@@ -72,6 +72,7 @@
   "search": "Rechercher",
   "selectInDanceList": "Veuillez sélectionner dans la liste de danses",
   "selectModel": "Veuillez sélectionner un modèle",
+  "setLocalStorage": "Définir le stockage local",
   "startChat": "Commencer la conversation",
   "ttsCombine": "Synthèse vocale",
   "ttsTip": "Reconnaissance vocale (nécessite une connexion Internet)",

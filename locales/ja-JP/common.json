@@ -72,6 +72,7 @@
   "search": "検索",
   "selectInDanceList": "ダンスリストから選択してください",
   "selectModel": "モデルを選択してください",
+  "setLocalStorage": "ローカルストレージを設定",
   "startChat": "チャットを開始",
   "ttsCombine": "音声合成",
   "ttsTip": "音声認識（科学的インターネット接続が必要です）",

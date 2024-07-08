@@ -72,6 +72,7 @@
   "search": "Search",
   "selectInDanceList": "Please select from the dance list",
   "selectModel": "Please select a model",
+  "setLocalStorage": "Set Local Storage",
   "startChat": "Start Chat",
   "ttsCombine": "Text-to-Speech Combine",
   "ttsTip": "Speech Recognition (requires VPN)",

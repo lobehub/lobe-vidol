@@ -72,6 +72,7 @@
   "search": "검색",
   "selectInDanceList": "댄스 목록에서 선택하세요",
   "selectModel": "모델 선택",
+  "setLocalStorage": "로컬 저장소 설정",
   "startChat": "채팅 시작",
   "ttsCombine": "음성 합성",
   "ttsTip": "음성 인식 (VPN 필요)",
