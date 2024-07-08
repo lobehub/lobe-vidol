@@ -2,6 +2,49 @@
 
 # Changelog
 
+## [Version&nbsp;0.15.0](https://github.com/lobehub/lobe-vidol/compare/v0.14.0...v0.15.0)
+<sup>Released on **2024-07-08**</sup>
+
+
+#### ✨ Features
+
+- **misc**: Add chat file i18n, add componets file i18n, add constant about i18n, add i18n default, add i18n language file, add i18next, add jest file, add judge environment utils, add my file i18n, add role file i18n, add test file, i18n-cli config file, 更新i18n相关依赖.
+
+
+<br/>
+
+
+
+<details>
+<summary><kbd>Improvements and Fixes</kbd></summary>
+
+
+
+#### What's improved
+
+* **misc**: Add chat file i18n ([21ec05c](https://github.com/lobehub/lobe-vidol/commit/21ec05c))
+* **misc**: Add componets file i18n ([96ad19f](https://github.com/lobehub/lobe-vidol/commit/96ad19f))
+* **misc**: Add constant about i18n ([b8efb5e](https://github.com/lobehub/lobe-vidol/commit/b8efb5e))
+* **misc**: Add i18n default ([e4ef91e](https://github.com/lobehub/lobe-vidol/commit/e4ef91e))
+* **misc**: Add i18n language file ([27b57e4](https://github.com/lobehub/lobe-vidol/commit/27b57e4))
+* **misc**: Add i18next ([c19f4c3](https://github.com/lobehub/lobe-vidol/commit/c19f4c3))
+* **misc**: Add jest file ([65cd766](https://github.com/lobehub/lobe-vidol/commit/65cd766))
+* **misc**: Add judge environment utils ([08a8d4c](https://github.com/lobehub/lobe-vidol/commit/08a8d4c))
+* **misc**: Add my file i18n ([12128ff](https://github.com/lobehub/lobe-vidol/commit/12128ff))
+* **misc**: Add role file i18n ([66bb7d4](https://github.com/lobehub/lobe-vidol/commit/66bb7d4))
+* **misc**: Add test file ([01d8f39](https://github.com/lobehub/lobe-vidol/commit/01d8f39))
+* **misc**: I18n-cli config file ([6345b7c](https://github.com/lobehub/lobe-vidol/commit/6345b7c))
+* **misc**: 更新 i18n 相关依赖 ([cf54e7e](https://github.com/lobehub/lobe-vidol/commit/cf54e7e))
+
+</details>
+
+
+<div align="right">
+
+[![](https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square)](#readme-top)
+
+</div>
+
 ## [Version&nbsp;0.14.0](https://github.com/lobehub/lobe-vidol/compare/v0.13.0...v0.14.0)
 <sup>Released on **2024-07-07**</sup>
 
