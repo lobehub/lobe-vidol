@@ -2,6 +2,38 @@
 
 # Changelog
 
+## [Version&nbsp;0.17.0](https://github.com/lobehub/lobe-vidol/compare/v0.16.0...v0.17.0)
+<sup>Released on **2024-07-09**</sup>
+
+
+#### ✨ Features
+
+- **misc**: Add llm i18n, 添加语言设置存储.
+
+
+<br/>
+
+
+
+<details>
+<summary><kbd>Improvements and Fixes</kbd></summary>
+
+
+
+#### What's improved
+
+* **misc**: Add llm i18n ([16c3a95](https://github.com/lobehub/lobe-vidol/commit/16c3a95))
+* **misc**: 添加语言设置存储 ([48ae825](https://github.com/lobehub/lobe-vidol/commit/48ae825))
+
+</details>
+
+
+<div align="right">
+
+[![](https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square)](#readme-top)
+
+</div>
+
 ## [Version&nbsp;0.16.0](https://github.com/lobehub/lobe-vidol/compare/v0.15.0...v0.16.0)
 <sup>Released on **2024-07-08**</sup>
 
