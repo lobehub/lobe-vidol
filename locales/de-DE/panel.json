@@ -11,6 +11,8 @@
   "info": {
     "avatarDescription": "Benutzerdefiniertes Profilbild, klicken Sie auf das Bild, um es hochzuladen",
     "avatarLabel": "Profilbild",
+    "categoryDescription": "Charakterkategorie, zur Klassifizierung",
+    "categoryLabel": "Kategorie",
     "coverDescription": "Zur Präsentation des Charakters auf der Entdeckungsseite, empfohlene Größe {{width}} x {{height}}",
     "coverLabel": "Cover",
     "descDescription": "Charakterbeschreibung, zur einfachen Vorstellung des Charakters",
@@ -28,17 +30,29 @@
     "readmeDescription": "Anleitungsdatei des Charakters, zur detaillierten Vorstellung des Charakters auf der Entdeckungsseite",
     "readmeLabel": "Charakteranleitung",
     "textDescription": "Benutzerdefinierter Antworttext",
-    "textLabel": "Text",
-    "categoryLabel": "Kategorie",
-    "categoryDescription": "Charakterkategorie, zur Klassifizierung"
+    "textLabel": "Text"
+  },
+  "llm": {
+    "frequencyPenaltyDescription": "Je höher der Wert, desto wahrscheinlicher ist es, dass sich wiederholende Wörter reduziert werden.",
+    "frequencyPenaltyLabel": "Frequenzstrafe",
+    "modelDescription": "Wählen Sie ein Sprachmodell aus. Unterschiedliche Modelle beeinflussen die Antworten der Charaktere.",
+    "modelLabel": "Modell",
+    "presencePenaltyDescription": "Je höher der Wert, desto wahrscheinlicher ist es, dass neue Themen erweitert werden.",
+    "presencePenaltyLabel": "Themenfrische",
+    "temperatureDescription": "Je höher der Wert, desto zufälliger die Antwort.",
+    "temperatureLabel": "Zufälligkeit",
+    "topPDescription": "Ähnlich wie Zufälligkeit, aber nicht zusammen mit Zufälligkeit ändern.",
+    "topPLabel": "Top-P-Sampling"
   },
   "market": {
     "findVidol": "Finde deinen Lieblingsidol"
   },
   "nav": {
     "info": "Grundinformationen",
+    "llm": "Sprachmodell",
     "model": "3D-Modell",
     "role": "Charaktereinstellungen",
+    "touch": "Berühren",
     "voice": "Stimme"
   },
   "role": {
@@ -73,7 +87,7 @@
     "selectVoice": "Bitte wählen Sie zuerst die Stimme aus",
     "speedDescription": "Steuerung der Sprechgeschwindigkeit, Werte von 0 bis 3, Standardwert ist 1",
     "speedLabel": "Geschwindigkeit",
-    "transfromSuccess": "Erfolgreich umgewandelt",
+    "transformSuccess": "Erfolgreich umgewandelt",
     "voiceDescription": "Je nach Engine und Sprache unterschiedlich",
     "voiceLabel": "Stimme"
   },

@@ -88,12 +88,12 @@
     "chatSetting": "Chat-Einstellungen",
     "clearAllSession": "Alle Sitzungsnachrichten löschen",
     "clearAllSessionDesc": "Alle Sitzungen und Rollendaten werden gelöscht, einschließlich Sitzungsliste, Rollenliste und Sitzungsnachrichten",
+    "localeSetting": "Spracheinstellungen",
     "midColor": "Mittlere Farbe",
     "nickname": "Spitzname",
     "resetSystemSetting": "Systemeinstellungen zurücksetzen",
     "resetSystemSettingDesc": "Alle Systemeinstellungen werden zurückgesetzt, einschließlich Themen-, Chat- und Sprachmodell-Einstellungen",
     "systemSetting": "Systemeinstellungen",
-    "languageSetting": "Spracheinstellungen",
     "topicColor": "Themenfarbe",
     "topicSetting": "Themen-Einstellungen"
   }

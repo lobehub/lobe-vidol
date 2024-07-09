@@ -11,6 +11,8 @@
   "info": {
     "avatarDescription": "사용자 정의 아바타, 클릭하여 업로드",
     "avatarLabel": "아바타",
+    "categoryDescription": "캐릭터 카테고리, 분류에 사용됩니다",
+    "categoryLabel": "카테고리",
     "coverDescription": "캐릭터를 발견 페이지에서 표시하는 데 사용되는 커버, 권장 크기 {{width}} x {{height}} ",
     "coverLabel": "커버",
     "descDescription": "캐릭터 설명, 캐릭터의 간단한 소개에 사용됩니다",
@@ -28,17 +30,29 @@
     "readmeDescription": "캐릭터 설명서, 발견 페이지에서 캐릭터의 자세한 설명을 표시하는 데 사용됩니다",
     "readmeLabel": "캐릭터 설명서",
     "textDescription": "사용자 정의 응답 문구",
-    "textLabel": "문구",
-    "categoryLabel": "카테고리",
-    "categoryDescription": "캐릭터 카테고리, 분류에 사용됩니다"
+    "textLabel": "문구"
+  },
+  "llm": {
+    "frequencyPenaltyDescription": "값이 클수록 반복 단어가 줄어듭니다",
+    "frequencyPenaltyLabel": "빈도 패널티",
+    "modelDescription": "언어 모델을 선택하면 역할의 응답에 영향을 줄 수 있습니다",
+    "modelLabel": "모델",
+    "presencePenaltyDescription": "값이 클수록 새로운 주제로 확장될 가능성이 높아집니다",
+    "presencePenaltyLabel": "주제 신선도",
+    "temperatureDescription": "값이 클수록 더 랜덤한 응답이 생성됩니다",
+    "temperatureLabel": "랜덤성",
+    "topPDescription": "랜덤성과 유사하지만 함께 변경하지 마세요",
+    "topPLabel": "상위 P 샘플링"
   },
   "market": {
     "findVidol": "좋아하는 아이돌을 찾아보세요"
   },
   "nav": {
     "info": "기본 정보",
+    "llm": "언어 모델",
     "model": "3D 모델",
     "role": "캐릭터 설정",
+    "touch": "터치",
     "voice": "음성"
   },
   "role": {
@@ -73,7 +87,7 @@
     "selectVoice": "먼저 음성을 선택하세요",
     "speedDescription": "속도를 제어하고 0 ~ 3의 값을 취합니다. 기본값은 1입니다",
     "speedLabel": "속도",
-    "transfromSuccess": "변환 성공",
+    "transformSuccess": "변환 성공",
     "voiceDescription": "엔진 및 언어에 따라 다릅니다",
     "voiceLabel": "음성"
   },

@@ -11,6 +11,8 @@
   "info": {
     "avatarDescription": "Tùy chỉnh hình đại diện, nhấn vào hình đại diện để tải lên",
     "avatarLabel": "Hình đại diện",
+    "categoryDescription": "Danh mục nhân vật, dùng để phân loại",
+    "categoryLabel": "Danh mục",
     "coverDescription": "Dùng để hiển thị nhân vật trên trang khám phá, kích thước đề xuất {{width}} x {{height}}",
     "coverLabel": "Bìa",
     "descDescription": "Mô tả nhân vật, dùng để giới thiệu ngắn gọn về nhân vật",
@@ -28,17 +30,29 @@
     "readmeDescription": "Tài liệu hướng dẫn về nhân vật, dùng để hiển thị thông tin chi tiết về nhân vật trên trang khám phá",
     "readmeLabel": "Hướng dẫn nhân vật",
     "textDescription": "Tùy chỉnh văn bản phản hồi",
-    "textLabel": "Văn bản",
-    "categoryLabel": "Danh mục",
-    "categoryDescription": "Danh mục nhân vật, dùng để phân loại"
+    "textLabel": "Văn bản"
+  },
+  "llm": {
+    "frequencyPenaltyDescription": "Giá trị càng lớn, càng có khả năng giảm sự lặp lại của từ ngữ",
+    "frequencyPenaltyLabel": "Mức phạt tần suất",
+    "modelDescription": "Chọn mô hình ngôn ngữ, các mô hình khác nhau sẽ ảnh hưởng đến câu trả lời của nhân vật",
+    "modelLabel": "Mô hình",
+    "presencePenaltyDescription": "Giá trị càng lớn, càng có khả năng mở rộng sang chủ đề mới",
+    "presencePenaltyLabel": "Độ mới lạ của chủ đề",
+    "temperatureDescription": "Giá trị càng lớn, câu trả lời càng ngẫu nhiên",
+    "temperatureLabel": "Độ ngẫu nhiên",
+    "topPDescription": "Tương tự như độ ngẫu nhiên, nhưng không nên thay đổi cùng lúc với độ ngẫu nhiên",
+    "topPLabel": "Lấy mẫu hàng đầu"
   },
   "market": {
     "findVidol": "Tìm thấy ngôi sao mà bạn yêu thích nhất"
   },
   "nav": {
     "info": "Thông tin cơ bản",
+    "llm": "Mô hình ngôn ngữ",
     "model": "Mô hình 3D",
     "role": "Thiết lập nhân vật",
+    "touch": "Chạm",
     "voice": "Giọng nói"
   },
   "role": {
@@ -73,7 +87,7 @@
     "selectVoice": "Vui lòng chọn giọng",
     "speedDescription": "Điều chỉnh tốc độ, giá trị từ 0 đến 3, mặc định là 1",
     "speedLabel": "Tốc độ",
-    "transfromSuccess": "Chuyển đổi thành công",
+    "transformSuccess": "Chuyển đổi thành công",
     "voiceDescription": "Tùy theo bộ công cụ và ngôn ngữ",
     "voiceLabel": "Giọng"
   },

@@ -88,12 +88,12 @@
     "chatSetting": "チャット設定",
     "clearAllSession": "すべてのセッションをクリア",
     "clearAllSessionDesc": "会話リスト、役割リスト、セッションメッセージなどを含むすべてのセッションと役割データを削除します",
+    "localeSetting": "言語設定",
     "midColor": "中間色",
     "nickname": "ニックネーム",
     "resetSystemSetting": "システム設定をリセット",
     "resetSystemSettingDesc": "トピック設定、チャット設定、言語モデル設定などを含むすべてのシステム設定をリセットします",
     "systemSetting": "システム設定",
-    "languageSetting": "言語設定",
     "topicColor": "トピックカラー",
     "topicSetting": "トピック設定"
   }

@@ -11,6 +11,8 @@
   "info": {
     "avatarDescription": "Niestandardowe zdjęcie profilowe, kliknij zdjęcie profilowe, aby przesłać własne",
     "avatarLabel": "Zdjęcie profilowe",
+    "categoryDescription": "Kategoria postaci, używana do klasyfikacji",
+    "categoryLabel": "Kategoria",
     "coverDescription": "Używane do prezentacji postaci na stronie odkrywania, zalecany rozmiar {{width}} x {{height}}",
     "coverLabel": "Okładka",
     "descDescription": "Opis postaci, używany do prostego przedstawienia postaci",
@@ -28,17 +30,29 @@
     "readmeDescription": "Plik z opisem postaci, używany do prezentacji szczegółowego opisu postaci na stronie odkrywania",
     "readmeLabel": "Opis postaci",
     "textDescription": "Niestandardowe tło odpowiedzi",
-    "textLabel": "Treść",
-    "categoryLabel": "Kategoria",
-    "categoryDescription": "Kategoria postaci, używana do klasyfikacji"
+    "textLabel": "Treść"
+  },
+  "llm": {
+    "frequencyPenaltyDescription": "The higher the value, the more likely to reduce repeated words",
+    "frequencyPenaltyLabel": "Frequency Penalty",
+    "modelDescription": "Choose a language model, different models will affect the responses of the character",
+    "modelLabel": "Model",
+    "presencePenaltyDescription": "The higher the value, the more likely to expand to new topics",
+    "presencePenaltyLabel": "Topic Freshness",
+    "temperatureDescription": "The higher the value, the more random the response",
+    "temperatureLabel": "Randomness",
+    "topPDescription": "Similar to randomness, but do not change it together with randomness",
+    "topPLabel": "Top P Sampling"
   },
   "market": {
     "findVidol": "Znajdź swojego ulubionego idola"
   },
   "nav": {
     "info": "Podstawowe informacje",
+    "llm": "Model językowy",
     "model": "Model 3D",
     "role": "Ustawienia postaci",
+    "touch": "Dotyk",
     "voice": "Głos"
   },
   "role": {
@@ -73,7 +87,7 @@
     "selectVoice": "Najpierw wybierz głos",
     "speedDescription": "Kontrola szybkości mówienia, zakres 0 ~ 3, domyślnie 1",
     "speedLabel": "Prędkość mówienia",
-    "transfromSuccess": "Konwersja powiodła się",
+    "transformSuccess": "Konwersja powiodła się",
     "voiceDescription": "Zależy od silnika i języka",
     "voiceLabel": "Głos"
   },

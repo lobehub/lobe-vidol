@@ -11,6 +11,8 @@
   "info": {
     "avatarDescription": "Özel avatar, avatar'a tıklayarak özelleştirme yapın",
     "avatarLabel": "Avatar",
+    "categoryDescription": "Karakter kategorisi, sınıflandırmada kullanılır",
+    "categoryLabel": "Kategori",
     "coverDescription": "Keşfetme sayfasında karakterin gösterilmesi için önerilen boyut {{width}} x {{height}} ",
     "coverLabel": "Kapak",
     "descDescription": "Karakter açıklaması, karakterin basit tanıtımı için kullanılır",
@@ -28,17 +30,29 @@
     "readmeDescription": "Karakterin ayrıntılı açıklamasını keşfetme sayfasında göster",
     "readmeLabel": "Karakter Açıklaması",
     "textDescription": "Özel yanıt metni",
-    "textLabel": "Metin",
-    "categoryLabel": "Kategori",
-    "categoryDescription": "Karakter kategorisi, sınıflandırmada kullanılır"
+    "textLabel": "Metin"
+  },
+  "llm": {
+    "frequencyPenaltyDescription": "The higher the value, the more likely to reduce repeated words",
+    "frequencyPenaltyLabel": "Frequency Penalty",
+    "modelDescription": "Select a language model, different models will affect the responses of the character",
+    "modelLabel": "Model",
+    "presencePenaltyDescription": "The higher the value, the more likely to expand to new topics",
+    "presencePenaltyLabel": "Topic Freshness",
+    "temperatureDescription": "The higher the value, the more random the response",
+    "temperatureLabel": "Randomness",
+    "topPDescription": "Similar to randomness, but do not change it together with randomness",
+    "topPLabel": "Top P Sampling"
   },
   "market": {
     "findVidol": "Favori idolünü bul"
   },
   "nav": {
     "info": "Temel Bilgiler",
+    "llm": "Dil Modeli",
     "model": "3D Model",
     "role": "Karakter Ayarları",
+    "touch": "Dokunma",
     "voice": "Ses"
   },
   "role": {
@@ -73,7 +87,7 @@
     "selectVoice": "Lütfen önce ses seçin",
     "speedDescription": "Hızı kontrol eder, değer aralığı 0 ~ 3, varsayılan 1",
     "speedLabel": "Hız",
-    "transfromSuccess": "Dönüşüm başarılı",
+    "transformSuccess": "Dönüşüm başarılı",
     "voiceDescription": "Motor ve dilin birleşimine göre değişir",
     "voiceLabel": "Ses"
   },

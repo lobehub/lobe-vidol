@@ -58,7 +58,7 @@ export default {
     support: '支持单个文件上传，当前仅支持 .vrm 格式文件',
   },
   tts: {
-    transfromSuccess: '转换成功',
+    transformSuccess: '转换成功',
     selectLanguage: '请先选择语言',
     selectVoice: '请先选择语音',
     audition: '试听',
@@ -73,6 +73,18 @@ export default {
     pitchLabel: '音调',
     pitchDescription: '控制音调，取值范围 0 ~ 2，默认为 1',
     auditionDescription: '试听文案根据语言不同',
+  },
+  llm: {
+    modelLabel: '模型',
+    modelDescription: '选择语言模型，不同模型会影响角色的回答',
+    temperatureLabel: '随机性',
+    temperatureDescription: '值越大，回复越随机',
+    topPLabel: '核采样',
+    topPDescription: '与随机性类型，但不要和随机性一起更改',
+    presencePenaltyLabel: '话题新鲜度',
+    presencePenaltyDescription: '值越大，越有可能拓展到新话题',
+    frequencyPenaltyLabel: '频率惩罚度',
+    frequencyPenaltyDescription: '值越大，越有可能降低重复字词',
   },
   nav: {
     info: '基本信息',

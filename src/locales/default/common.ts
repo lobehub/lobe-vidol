@@ -81,7 +81,7 @@ export default {
     chatSetting: '聊天设置',
     topicSetting: '主题设置',
     systemSetting: '系统设置',
-    languageSetting: '语言设置',
+    localeSetting: '语言',
     resetSystemSetting: '重置系统设置',
     resetSystemSettingDesc: '将会重置所有系统设置，包括主题设置、聊天设置、语言模型设置等',
     clearAllSession: '清除所有会话消息',

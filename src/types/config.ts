@@ -1,6 +1,8 @@
 import { Coordinates } from '@dnd-kit/utilities';
 import { NeutralColors, PrimaryColors } from '@lobehub/ui';
 
+import { LocaleMode } from '@/types/locale';
+
 export type BackgroundEffect = 'glow' | 'none';
 
 export interface Panel {
@@ -48,6 +50,10 @@ export interface CommonConfig {
    * 背景类型
    */
   backgroundEffect?: BackgroundEffect;
+  /**
+   * 语言地区
+   */
+  locale: LocaleMode;
   /**
    * 中性色
    */

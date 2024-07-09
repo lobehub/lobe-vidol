@@ -11,6 +11,8 @@
   "info": {
     "avatarDescription": "Customize your avatar. Click to upload",
     "avatarLabel": "Avatar",
+    "categoryDescription": "Character category, used for classification",
+    "categoryLabel": "Category",
     "coverDescription": "Used for displaying the character on the discovery page. Recommended size {{width}} x {{height}}",
     "coverLabel": "Cover",
     "descDescription": "Character description, used for a brief introduction",
@@ -28,17 +30,29 @@
     "readmeDescription": "Character's description file, used for detailed introduction on the discovery page",
     "readmeLabel": "Character Description",
     "textDescription": "Custom response text",
-    "textLabel": "Text",
-    "categoryLabel": "Category",
-    "categoryDescription": "Character category, used for classification"
+    "textLabel": "Text"
+  },
+  "llm": {
+    "frequencyPenaltyDescription": "The higher the value, the more likely to reduce repeated words",
+    "frequencyPenaltyLabel": "Frequency Penalty",
+    "modelDescription": "Select a language model, different models will affect the responses of the character",
+    "modelLabel": "Model",
+    "presencePenaltyDescription": "The higher the value, the more likely to expand to new topics",
+    "presencePenaltyLabel": "Topic Freshness",
+    "temperatureDescription": "The higher the value, the more random the responses",
+    "temperatureLabel": "Randomness",
+    "topPDescription": "Similar to randomness, but do not change together with randomness",
+    "topPLabel": "Top P Sampling"
   },
   "market": {
     "findVidol": "Find your favorite idol"
   },
   "nav": {
     "info": "Basic Information",
+    "llm": "Language Model",
     "model": "3D Model",
     "role": "Character Settings",
+    "touch": "Touch",
     "voice": "Voice"
   },
   "role": {
@@ -73,7 +87,7 @@
     "selectVoice": "Please select a voice first",
     "speedDescription": "Control the speed, range is 0 ~ 3, default is 1",
     "speedLabel": "Speed",
-    "transfromSuccess": "Conversion successful",
+    "transformSuccess": "Conversion successful",
     "voiceDescription": "Different depending on the engine and language",
     "voiceLabel": "Voice"
   },

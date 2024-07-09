@@ -7,7 +7,9 @@ import { createWithEqualityFn } from 'zustand/traditional';
 import { StateCreator } from 'zustand/vanilla';
 
 import { BackgroundEffect, Config, OpenAIConfig } from '@/types/config';
+import { LocaleMode } from '@/types/locale';
 import storage from '@/utils/storage';
+import { switchLang } from '@/utils/switchLang';
 
 import { SettingState, initialState } from './initialState';
 
@@ -43,7 +45,6 @@ export interface SettingAction {
    * @param nickName
    */
   setNickName: (nickName: string) => void;
-
   /**
    * Set OpenAI config
    * @param config
@@ -55,6 +56,12 @@ export interface SettingAction {
    * @param primaryColor
    */
   setPrimaryColor: (primaryColor: PrimaryColors) => void;
+
+  /**
+   * Switch locale
+   * @param locale
+   */
+  switchLocale: (locale: LocaleMode) => void;
 }
 
 export interface SettingStore extends SettingState, SettingAction {}
@@ -80,6 +87,10 @@ const createStore: StateCreator<SettingStore, [['zustand/devtools', never]]> = (
   },
   setNickName: (nickName) => {
     get().setConfig({ nickName });
+  },
+  switchLocale: (locale) => {
+    get().setConfig({ locale });
+    switchLang(locale);
   },
   setConfig: (config) => {
     const prevSetting = get().config;

@@ -88,12 +88,12 @@
     "chatSetting": "Configuración de chat",
     "clearAllSession": "Limpiar todas las conversaciones",
     "clearAllSessionDesc": "Esto eliminará todas las conversaciones y datos de rol, incluidas las listas de conversaciones, roles y mensajes de conversación.",
+    "localeSetting": "Configuración de idioma",
     "midColor": "Color neutro",
     "nickname": "Apodo",
     "resetSystemSetting": "Restablecer configuración del sistema",
     "resetSystemSettingDesc": "Esto restablecerá todas las configuraciones del sistema, incluidas las de tema, chat, modelo de lenguaje, etc.",
     "systemSetting": "Configuración del sistema",
-    "languageSetting": "Configuración de idioma",
     "topicColor": "Color de tema",
     "topicSetting": "Configuración de tema"
   }

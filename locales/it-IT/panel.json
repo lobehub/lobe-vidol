@@ -11,6 +11,8 @@
   "info": {
     "avatarDescription": "Personalizza l'avatar, fai clic sull'avatar per caricare personalizzazioni",
     "avatarLabel": "Avatar",
+    "categoryDescription": "Categoria del personaggio, utilizzata per la classificazione",
+    "categoryLabel": "Categoria",
     "coverDescription": "Utilizzato per mostrare il personaggio nella pagina di scoperta, dimensioni consigliate {{width}} x {{height}}",
     "coverLabel": "Copertina",
     "descDescription": "Descrizione del personaggio, utilizzata per una breve presentazione del personaggio",
@@ -28,17 +30,29 @@
     "readmeDescription": "File di istruzioni del personaggio, utilizzato per mostrare una descrizione dettagliata del personaggio nella pagina di scoperta",
     "readmeLabel": "Istruzioni del personaggio",
     "textDescription": "Testo di risposta personalizzato",
-    "textLabel": "Testo",
-    "categoryLabel": "Categoria",
-    "categoryDescription": "Categoria del personaggio, utilizzata per la classificazione"
+    "textLabel": "Testo"
+  },
+  "llm": {
+    "frequencyPenaltyDescription": "Più alto è il valore, più probabile sarà la riduzione delle ripetizioni di parole",
+    "frequencyPenaltyLabel": "Penalità di frequenza",
+    "modelDescription": "Scegli il modello linguistico, modelli diversi influenzeranno le risposte del personaggio",
+    "modelLabel": "Modello",
+    "presencePenaltyDescription": "Più alto è il valore, più probabile sarà l'espansione verso nuovi argomenti",
+    "presencePenaltyLabel": "Freschezza dell'argomento",
+    "temperatureDescription": "Più alto è il valore, più casuale sarà la risposta",
+    "temperatureLabel": "Casualità",
+    "topPDescription": "Simile alla casualità, ma non modificare insieme alla casualità",
+    "topPLabel": "Campionamento principale"
   },
   "market": {
     "findVidol": "Trova il tuo idolo preferito"
   },
   "nav": {
     "info": "Informazioni di base",
+    "llm": "Modello linguistico",
     "model": "Modello 3D",
     "role": "Impostazioni del personaggio",
+    "touch": "Tocco",
     "voice": "Voce"
   },
   "role": {
@@ -73,7 +87,7 @@
     "selectVoice": "Seleziona prima la voce",
     "speedDescription": "Controlla la velocità, compresa tra 0 e 3, predefinito 1",
     "speedLabel": "Velocità",
-    "transfromSuccess": "Trasformazione riuscita",
+    "transformSuccess": "Trasformazione riuscita",
     "voiceDescription": "Varia a seconda del motore e della lingua",
     "voiceLabel": "Voce"
   },

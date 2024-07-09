@@ -11,6 +11,8 @@
   "info": {
     "avatarDescription": "Aangepast avatar, klik op het avatar om een aangepaste upload te selecteren",
     "avatarLabel": "Avatar",
+    "categoryDescription": "Rolcategorie, voor classificatie",
+    "categoryLabel": "Categorie",
     "coverDescription": "Wordt gebruikt voor het presenteren van de rol op de ontdek-pagina, aanbevolen formaat {{width}} x {{height}}",
     "coverLabel": "Omslag",
     "descDescription": "Rolbeschrijving, voor een eenvoudige inleiding van de rol",
@@ -28,17 +30,29 @@
     "readmeDescription": "De handleiding van de rol, voor het presenteren van de rol op de ontdek-pagina",
     "readmeLabel": "Rolhandleiding",
     "textDescription": "Aangepaste responstekst",
-    "textLabel": "Tekst",
-    "categoryLabel": "Categorie",
-    "categoryDescription": "Rolcategorie, voor classificatie"
+    "textLabel": "Tekst"
+  },
+  "llm": {
+    "frequencyPenaltyDescription": "The higher the value, the more likely to reduce repeated words",
+    "frequencyPenaltyLabel": "Frequency Penalty",
+    "modelDescription": "Choose a language model, different models will affect the character's responses",
+    "modelLabel": "Model",
+    "presencePenaltyDescription": "The higher the value, the more likely to expand to new topics",
+    "presencePenaltyLabel": "Topic Freshness",
+    "temperatureDescription": "The higher the value, the more random the replies",
+    "temperatureLabel": "Randomness",
+    "topPDescription": "Similar to randomness, but do not change together with randomness",
+    "topPLabel": "Top P Sampling"
   },
   "market": {
     "findVidol": "Vind je favoriete idool"
   },
   "nav": {
     "info": "Basisinformatie",
+    "llm": "taalmodel",
     "model": "3D Model",
     "role": "Rolinstelling",
+    "touch": "aanraken",
     "voice": "Stem"
   },
   "role": {
@@ -73,7 +87,7 @@
     "selectVoice": "Selecteer eerst de stem",
     "speedDescription": "Bewaar spraaksnelheid, waardebereik 0 ~ 3, standaard is 1",
     "speedLabel": "Spraaksnelheid",
-    "transfromSuccess": "Converteren succesvol",
+    "transformSuccess": "Converteren succesvol",
     "voiceDescription": "Kan verschillen afhankelijk van de engine en taal",
     "voiceLabel": "Stem"
   },
