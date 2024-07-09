@@ -88,7 +88,7 @@
     "chatSetting": "Chat Settings",
     "clearAllSession": "Clear All Session Messages",
     "clearAllSessionDesc": "This will clear all session and role data, including session list, role list, session messages, etc.",
-    "languageSetting": "Language Settings",
+    "localeSetting": "Language Settings",
     "midColor": "Neutral Color",
     "nickname": "Nickname",
     "resetSystemSetting": "Reset System Settings",

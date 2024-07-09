@@ -88,7 +88,7 @@
     "chatSetting": "Настройки чата",
     "clearAllSession": "Очистить все сессии",
     "clearAllSessionDesc": "Это очистит все данные сессий и ролей, включая список сессий, список ролей и сообщения сессий.",
-    "languageSetting": "Настройки языка",
+    "localeSetting": "Настройки языка",
     "midColor": "Средний цвет",
     "nickname": "Никнейм",
     "resetSystemSetting": "Сбросить системные настройки",

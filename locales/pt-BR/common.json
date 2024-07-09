@@ -88,7 +88,7 @@
     "chatSetting": "Configuração de chat",
     "clearAllSession": "Limpar todas as mensagens da sessão",
     "clearAllSessionDesc": "Isso limpará todas as conversas e dados de papel, incluindo listas de conversas, listas de papéis, mensagens de conversa, etc.",
-    "languageSetting": "Configuração de idioma",
+    "localeSetting": "Configuração de idioma",
     "midColor": "Cor neutra",
     "nickname": "Apelido",
     "resetSystemSetting": "Redefinir configurações do sistema",

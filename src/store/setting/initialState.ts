@@ -6,6 +6,7 @@ export interface SettingState {
 
 const initialState: SettingState = {
   config: {
+    locale: 'auto',
     backgroundEffect: 'glow',
     languageModel: {
       openAI: {
