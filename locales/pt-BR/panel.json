@@ -11,6 +11,8 @@
   "info": {
     "avatarDescription": "Avatar personalizado, clique no avatar para fazer upload personalizado",
     "avatarLabel": "Avatar",
+    "categoryDescription": "Categoria do personagem, usada para classificação",
+    "categoryLabel": "Categoria",
     "coverDescription": "Usado para mostrar o personagem na página de descoberta, tamanho recomendado {{width}} x {{height}}",
     "coverLabel": "Capa",
     "descDescription": "Descrição do personagem, usada para uma breve introdução do personagem",
@@ -28,17 +30,29 @@
     "readmeDescription": "Arquivo de instruções do personagem, usado para mostrar uma descrição detalhada do personagem na página de descoberta",
     "readmeLabel": "Instruções do personagem",
     "textDescription": "Texto de resposta personalizado",
-    "textLabel": "Texto",
-    "categoryLabel": "Categoria",
-    "categoryDescription": "Categoria do personagem, usada para classificação"
+    "textLabel": "Texto"
+  },
+  "llm": {
+    "frequencyPenaltyDescription": "Quanto maior o valor, maior a probabilidade de reduzir palavras repetidas",
+    "frequencyPenaltyLabel": "Penalidade de frequência",
+    "modelDescription": "Escolha o modelo de linguagem, modelos diferentes afetarão as respostas do personagem",
+    "modelLabel": "Modelo",
+    "presencePenaltyDescription": "Quanto maior o valor, maior a probabilidade de expandir para novos tópicos",
+    "presencePenaltyLabel": "Frescor do tópico",
+    "temperatureDescription": "Quanto maior o valor, mais aleatória será a resposta",
+    "temperatureLabel": "Aleatoriedade",
+    "topPDescription": "Semelhante à aleatoriedade, mas não deve ser alterado junto com a aleatoriedade",
+    "topPLabel": "Amostragem principal"
   },
   "market": {
     "findVidol": "Encontre seu ídolo favorito"
   },
   "nav": {
     "info": "Informações Básicas",
+    "llm": "Modelo de Linguagem",
     "model": "Modelo 3D",
     "role": "Configuração do Personagem",
+    "touch": "Toque",
     "voice": "Voz"
   },
   "role": {
@@ -73,7 +87,7 @@
     "selectVoice": "Por favor, selecione a voz primeiro",
     "speedDescription": "Controla a velocidade, varia de 0 a 3, padrão é 1",
     "speedLabel": "Velocidade",
-    "transfromSuccess": "Transformação bem-sucedida",
+    "transformSuccess": "Transformação bem-sucedida",
     "voiceDescription": "Varia de acordo com o motor e idioma",
     "voiceLabel": "Voz"
   },

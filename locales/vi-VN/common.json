@@ -88,12 +88,12 @@
     "chatSetting": "Cài đặt trò chuyện",
     "clearAllSession": "Xóa tất cả phiên trò chuyện",
     "clearAllSessionDesc": "Sẽ xóa tất cả dữ liệu phiên và vai trò, bao gồm danh sách phiên, danh sách vai trò, tin nhắn phiên, v.v.",
+    "languageSetting": "Cài đặt ngôn ngữ",
     "midColor": "Màu trung tính",
     "nickname": "Biệt danh",
     "resetSystemSetting": "Đặt lại cài đặt hệ thống",
     "resetSystemSettingDesc": "Sẽ đặt lại tất cả cài đặt hệ thống, bao gồm cài đặt chủ đề, cài đặt trò chuyện, cài đặt mô hình ngôn ngữ, v.v.",
     "systemSetting": "Cài đặt hệ thống",
-    "languageSetting": "Cài đặt ngôn ngữ",
     "topicColor": "Màu chủ đề",
     "topicSetting": "Cài đặt chủ đề"
   }

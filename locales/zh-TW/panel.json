@@ -11,6 +11,8 @@
   "info": {
     "avatarDescription": "自訂頭像，點擊頭像自訂上傳",
     "avatarLabel": "頭像",
+    "categoryDescription": "角色類別，用於展示分類",
+    "categoryLabel": "類別",
     "coverDescription": "用於發現頁展示角色，推薦尺寸 {{width}} x {{height}} ",
     "coverLabel": "封面",
     "descDescription": "角色描述，用於角色的簡單介紹",
@@ -28,17 +30,29 @@
     "readmeDescription": "角色的說明文件，用於發現頁展示角色的詳細說明",
     "readmeLabel": "角色說明",
     "textDescription": "自定義回應文案",
-    "textLabel": "文案",
-    "categoryLabel": "類別",
-    "categoryDescription": "角色類別，用於展示分類"
+    "textLabel": "文案"
+  },
+  "llm": {
+    "frequencyPenaltyDescription": "值越大，越有可能降低重複字詞",
+    "frequencyPenaltyLabel": "頻率懲罰度",
+    "modelDescription": "選擇語言模型，不同模型會影響角色的回答",
+    "modelLabel": "模型",
+    "presencePenaltyDescription": "值越大，越有可能拓展到新話題",
+    "presencePenaltyLabel": "話題新鮮度",
+    "temperatureDescription": "值越大，回覆越隨機",
+    "temperatureLabel": "隨機性",
+    "topPDescription": "與隨機性類型，但不要和隨機性一起更改",
+    "topPLabel": "核採樣"
   },
   "market": {
     "findVidol": "找到您最愛的偶像"
   },
   "nav": {
     "info": "基本資訊",
+    "llm": "語言模型",
     "model": "3D模型",
     "role": "角色設定",
+    "touch": "觸摸",
     "voice": "語音"
   },
   "role": {
@@ -73,7 +87,7 @@
     "selectVoice": "請先選擇語音",
     "speedDescription": "控制語速，取值範圍 0 ~ 3，默認為 1",
     "speedLabel": "語速",
-    "transfromSuccess": "轉換成功",
+    "transformSuccess": "轉換成功",
     "voiceDescription": "根據引擎和語種不同",
     "voiceLabel": "語音"
   },

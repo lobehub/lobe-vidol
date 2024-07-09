@@ -11,6 +11,8 @@
   "info": {
     "avatarDescription": "Avatar personnalisé, cliquez sur l'avatar pour télécharger",
     "avatarLabel": "Avatar",
+    "categoryDescription": "Catégorie du personnage, utilisée pour la classification",
+    "categoryLabel": "Catégorie",
     "coverDescription": "Utilisé pour afficher le personnage sur la page de découverte, taille recommandée {{width}} x {{height}}",
     "coverLabel": "Couverture",
     "descDescription": "Description du personnage, utilisée pour une brève introduction",
@@ -28,17 +30,29 @@
     "readmeDescription": "Fichier de description du personnage, utilisé pour afficher une description détaillée sur la page de découverte",
     "readmeLabel": "Description du personnage",
     "textDescription": "Réponse personnalisée",
-    "textLabel": "Texte",
-    "categoryLabel": "Catégorie",
-    "categoryDescription": "Catégorie du personnage, utilisée pour la classification"
+    "textLabel": "Texte"
+  },
+  "llm": {
+    "frequencyPenaltyDescription": "Plus la valeur est grande, plus il est probable de réduire les mots répétés",
+    "frequencyPenaltyLabel": "Pénalité de fréquence",
+    "modelDescription": "Choisissez un modèle de langue, différents modèles affecteront les réponses du personnage",
+    "modelLabel": "Modèle",
+    "presencePenaltyDescription": "Plus la valeur est grande, plus il est probable d'explorer de nouveaux sujets",
+    "presencePenaltyLabel": "Frais de nouveauté",
+    "temperatureDescription": "Plus la valeur est grande, plus la réponse est aléatoire",
+    "temperatureLabel": "Aléatoire",
+    "topPDescription": "Similaire à l'aléatoire, mais ne modifiez pas en même temps que l'aléatoire",
+    "topPLabel": "Échantillonnage topP"
   },
   "market": {
     "findVidol": "Trouvez votre idole préférée"
   },
   "nav": {
     "info": "Informations de base",
+    "llm": "Modèle de langue",
     "model": "Modèle 3D",
     "role": "Paramètres du personnage",
+    "touch": "Toucher",
     "voice": "Voix"
   },
   "role": {
@@ -73,7 +87,7 @@
     "selectVoice": "Veuillez sélectionner la voix",
     "speedDescription": "Contrôle la vitesse de synthèse vocale, plage de valeurs 0 ~ 3, valeur par défaut 1",
     "speedLabel": "Vitesse",
-    "transfromSuccess": "Conversion réussie",
+    "transformSuccess": "Conversion réussie",
     "voiceDescription": "Différentes voix sont disponibles en fonction du moteur et de la langue",
     "voiceLabel": "Voix"
   },

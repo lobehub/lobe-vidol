@@ -88,12 +88,12 @@
     "chatSetting": "Ustawienia czatu",
     "clearAllSession": "Wyczyść wszystkie wiadomości sesji",
     "clearAllSessionDesc": "Spowoduje usunięcie wszystkich danych sesji i postaci, w tym listy rozmów, listy postaci, wiadomości sesji itp.",
+    "languageSetting": "Ustawienia języka",
     "midColor": "Kolor średni",
     "nickname": "Nazwa użytkownika",
     "resetSystemSetting": "Resetuj ustawienia systemowe",
     "resetSystemSettingDesc": "Spowoduje zresetowanie wszystkich ustawień systemowych, w tym ustawień motywów, czat, modeli językowych itp.",
     "systemSetting": "Ustawienia systemowe",
-    "languageSetting": "Ustawienia języka",
     "topicColor": "Kolor tematu",
     "topicSetting": "Ustawienia tematu"
   }

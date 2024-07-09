@@ -88,12 +88,12 @@
     "chatSetting": "채팅 설정",
     "clearAllSession": "모든 대화 메시지 지우기",
     "clearAllSessionDesc": "대화 목록, 역할 목록, 대화 메시지 등 모든 대화와 역할 데이터를 지웁니다.",
+    "languageSetting": "언어 설정",
     "midColor": "중간 색상",
     "nickname": "닉네임",
     "resetSystemSetting": "시스템 설정 재설정",
     "resetSystemSettingDesc": "주제 설정, 채팅 설정, 언어 모델 설정 등 모든 시스템 설정을 재설정합니다.",
     "systemSetting": "시스템 설정",
-    "languageSetting": "언어 설정",
     "topicColor": "주제 색상",
     "topicSetting": "주제 설정"
   }

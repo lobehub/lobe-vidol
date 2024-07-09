@@ -88,12 +88,12 @@
     "chatSetting": "Paramètres de conversation",
     "clearAllSession": "Effacer toutes les sessions",
     "clearAllSessionDesc": "Cela effacera toutes les données de session et de rôle, y compris la liste des sessions, la liste des rôles, les messages de session, etc.",
+    "languageSetting": "Paramètres de langue",
     "midColor": "Couleur neutre",
     "nickname": "Pseudo",
     "resetSystemSetting": "Réinitialiser les paramètres système",
     "resetSystemSettingDesc": "Cela réinitialisera tous les paramètres système, y compris les paramètres de sujet, les paramètres de conversation, les paramètres du modèle de langue, etc.",
     "systemSetting": "Paramètres système",
-    "languageSetting": "Paramètres de langue",
     "topicColor": "Couleur de sujet",
     "topicSetting": "Paramètres de sujet"
   }

@@ -32,7 +32,7 @@ export default memo<Props>((props) => {
       }
     },
     onSuccess: (res) => {
-      message.success(t('tts.transfromSuccess'));
+      message.success(t('tts.transformSuccess'));
       const adUrl = URL.createObjectURL(new Blob([res]));
       if (ref.current) {
         ref.current.src = adUrl;

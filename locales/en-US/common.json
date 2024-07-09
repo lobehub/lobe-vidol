@@ -88,12 +88,12 @@
     "chatSetting": "Chat Settings",
     "clearAllSession": "Clear All Session Messages",
     "clearAllSessionDesc": "This will clear all session and role data, including session list, role list, session messages, etc.",
+    "languageSetting": "Language Settings",
     "midColor": "Neutral Color",
     "nickname": "Nickname",
     "resetSystemSetting": "Reset System Settings",
     "resetSystemSettingDesc": "This will reset all system settings, including theme settings, chat settings, language model settings, etc.",
     "systemSetting": "System Settings",
-    "languageSetting": "Language Settings",
     "topicColor": "Theme Color",
     "topicSetting": "Topic Settings"
   }

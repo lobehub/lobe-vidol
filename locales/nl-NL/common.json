@@ -88,12 +88,12 @@
     "chatSetting": "Chatinstellingen",
     "clearAllSession": "Verwijder alle gespreksberichten",
     "clearAllSessionDesc": "Zal alle gesprekken en rolgegevens wissen, inclusief gesprekslijst, rollijst, gespreksberichten, enz.",
+    "languageSetting": "Taalinstellingen",
     "midColor": "Middenkleur",
     "nickname": "Bijnaam",
     "resetSystemSetting": "Reset systeeminstellingen",
     "resetSystemSettingDesc": "Zal alle systeeminstellingen resetten, inclusief thema-instellingen, chatinstellingen, taalmodelinstellingen, enz.",
     "systemSetting": "Systeeminstellingen",
-    "languageSetting": "Taalinstellingen",
     "topicColor": "Themakleur",
     "topicSetting": "Thema-instellingen"
   }

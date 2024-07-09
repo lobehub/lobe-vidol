@@ -11,6 +11,8 @@
   "info": {
     "avatarDescription": "カスタムアバター、アバターをクリックしてカスタムアップロード",
     "avatarLabel": "アバター",
+    "categoryDescription": "キャラクターカテゴリ、分類に使用される",
+    "categoryLabel": "カテゴリ",
     "coverDescription": "キャラクターを発見ページに表示するために使用される、推奨サイズ {{width}} x {{height}} ",
     "coverLabel": "カバー",
     "descDescription": "キャラクターの説明、キャラクターの簡単な紹介に使用される",
@@ -28,17 +30,29 @@
     "readmeDescription": "キャラクターの説明ファイル、発見ページでキャラクターの詳細な説明を表示するために使用される",
     "readmeLabel": "キャラクター説明",
     "textDescription": "カスタム応答文案",
-    "textLabel": "文案",
-    "categoryLabel": "カテゴリ",
-    "categoryDescription": "キャラクターカテゴリ、分類に使用される"
+    "textLabel": "文案"
+  },
+  "llm": {
+    "frequencyPenaltyDescription": "値が大きいほど、単語の繰り返しを減らす可能性が高くなります",
+    "frequencyPenaltyLabel": "頻度ペナルティ",
+    "modelDescription": "言語モデルを選択します。異なるモデルはキャラクターの回答に影響を与えます",
+    "modelLabel": "モデル",
+    "presencePenaltyDescription": "値が大きいほど、新しいトピックに展開する可能性が高くなります",
+    "presencePenaltyLabel": "トピックの新鮮さ",
+    "temperatureDescription": "値が大きいほど、返信がよりランダムになります",
+    "temperatureLabel": "ランダム性",
+    "topPDescription": "ランダム性と同様ですが、一緒に変更しないでください",
+    "topPLabel": "トップPサンプリング"
   },
   "market": {
     "findVidol": "お気に入りのアイドルを見つける"
   },
   "nav": {
     "info": "基本情報",
+    "llm": "言語モデル",
     "model": "3Dモデル",
     "role": "キャラクター設定",
+    "touch": "タッチ",
     "voice": "音声"
   },
   "role": {
@@ -73,7 +87,7 @@
     "selectVoice": "音声を選択してください",
     "speedDescription": "速度を制御します、値の範囲は0〜3、デフォルトは1です",
     "speedLabel": "速度",
-    "transfromSuccess": "変換成功",
+    "transformSuccess": "変換成功",
     "voiceDescription": "エンジンと言語によって異なります",
     "voiceLabel": "音声"
   },

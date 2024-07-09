@@ -88,12 +88,12 @@
     "chatSetting": "Sohbet Ayarları",
     "clearAllSession": "Tüm Oturumları Temizle",
     "clearAllSessionDesc": "Tüm oturumları ve rol verilerini, oturum listelerini, rol listelerini, oturum mesajlarını vb. temizleyecektir",
+    "languageSetting": "Dil Ayarları",
     "midColor": "Orta Renk",
     "nickname": "Takma Ad",
     "resetSystemSetting": "Sistem Ayarlarını Sıfırla",
     "resetSystemSettingDesc": "Tüm sistem ayarlarını, konu ayarlarını, sohbet ayarlarını, dil modeli ayarlarını vb. sıfırlayacaktır",
     "systemSetting": "Sistem Ayarları",
-    "languageSetting": "Dil Ayarları",
     "topicColor": "Konu Rengi",
     "topicSetting": "Konu Ayarları"
   }
