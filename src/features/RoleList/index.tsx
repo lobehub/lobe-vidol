@@ -52,7 +52,7 @@ const useStyles = createStyles(({ css, token, prefixCls }) => ({
 const RoleList = () => {
   const { styles } = useStyles();
   const [searchName, setSearchName] = useState<string>();
-  const { t } = useTranslation(['role', 'common']);
+  const { t } = useTranslation(['common', 'role']);
 
   return (
     <div className={styles.role}>
@@ -95,7 +95,7 @@ const RoleList = () => {
           items={[
             {
               children: <List filter={searchName} />,
-              label: t('roleList'),
+              label: t('roleList', { ns: 'role' }),
               key: 'default',
             },
           ]}

@@ -14,7 +14,7 @@ export default () => {
   return (
     <Popconfirm
       cancelText={t('cancel')}
-      description={t('delRoleDesc', { name: currentAgent?.meta.name })}
+      description={t('delRoleDesc', { name: currentAgent?.meta.name, ns: 'role' })}
       key="delete"
       okText={t('confirm')}
       onConfirm={() => {
@@ -24,7 +24,7 @@ export default () => {
       }}
       title={t('actions.unsubscribe') + '?'}
     >
-      <Button danger>{t('delRole')}</Button>
+      <Button danger>{t('delRole', { ns: 'role' })}</Button>
     </Popconfirm>
   );
 };

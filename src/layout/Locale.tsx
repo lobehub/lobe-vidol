@@ -1,6 +1,7 @@
 'use client';
 
 import { ConfigProvider } from 'antd';
+import i18next from 'i18next';
 import { PropsWithChildren, memo, useEffect, useState } from 'react';
 
 import { createI18nNext } from '@/locales/create';
@@ -19,13 +20,18 @@ const Locale = memo<LocaleLayoutProps>(({ children, defaultLang, antdLocale }) =
 
   // if run on server side, init i18n instance everytime
   if (isOnServerSide) {
-    i18n.init();
+    i18n.init().then(() => {
+      console.debug('inited server.');
+      console.debug(i18next.t('openai.checkOk', { ns: 'common' }));
+      console.debug(i18next.t('agent.female', { ns: 'features' }));
+      console.debug(i18next.t('chatDialog.close'));
+    });
   } else {
     // if on browser side, init i18n instance only once
     if (!i18n.instance.isInitialized)
       // console.debug('locale', lang);
       i18n.init().then(() => {
-        // console.debug('inited.');
+        console.debug('inited client');
       });
   }
 

@@ -60,7 +60,9 @@ export default memo((props: Props) => {
         open={open}
         width={800}
         destroyOnClose
-        title={isEdit ? t('touch.editAction') : t('touch.addAction')}
+        title={
+          isEdit ? t('touch.editAction', { ns: 'panel' }) : t('touch.addAction', { ns: 'panel' })
+        }
         okText={t('confirm')}
         cancelText={t('cancel')}
       >
@@ -72,13 +74,13 @@ export default memo((props: Props) => {
           preserve={false}
         >
           <FormItem
-            label={t('info.textLabel')}
-            desc={t('info.textDescription')}
+            label={t('info.textLabel', { ns: 'panel' })}
+            desc={t('info.textDescription', { ns: 'panel' })}
             name={'text'}
-            rules={[{ required: true, message: t('touch.inputDIYText') }]}
+            rules={[{ required: true, message: t('touch.inputDIYText', { ns: 'panel' }) }]}
           >
             <Input.TextArea
-              placeholder={t('touch.inputActionText')}
+              placeholder={t('touch.inputActionText', { ns: 'panel' })}
               maxLength={MAX_TOUCH_ACTION_TEXT_LENGTH}
               showCount
               autoSize
@@ -86,10 +88,10 @@ export default memo((props: Props) => {
             />
           </FormItem>
           <FormItem
-            label={t('info.emotionLabel')}
-            desc={t('info.emotionDescription')}
+            label={t('info.emotionLabel', { ns: 'panel' })}
+            desc={t('info.emotionDescription', { ns: 'panel' })}
             divider
-            rules={[{ required: true, message: t('touch.inputActionEmotion') }]}
+            rules={[{ required: true, message: t('touch.inputActionEmotion', { ns: 'panel' }) }]}
             name="emotion"
           >
             <Select

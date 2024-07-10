@@ -18,7 +18,7 @@ export interface MyListProps {
 const Operations = memo<MyListProps>(({ mobile }) => {
   const [openPanel] = useGlobalStore((s) => [s.openPanel]);
   const [clearHistory] = useSessionStore((s) => [s.clearHistory]);
-  const { t } = useTranslation(['panel', 'common']);
+  const { t } = useTranslation(['common', 'panel']);
   const items = [
     // {
     //   icon: SquarePen,
@@ -51,7 +51,7 @@ const Operations = memo<MyListProps>(({ mobile }) => {
     {
       icon: Music,
       key: 'music',
-      label: t('dance.musicAndDance'),
+      label: t('dance.musicAndDance', { ns: 'panel' }),
       onClick: () => {
         openPanel('dance');
       },

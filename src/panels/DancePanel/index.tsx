@@ -32,7 +32,7 @@ const DancePanel = (props: DancePanelProps) => {
       className={className}
       panelKey="dance"
       style={style}
-      title={t('dance.musicAndDance')}
+      title={t('dance.musicAndDance', { ns: 'panel' })}
       extra={<Segmented options={options} size="small" value={tab} onChange={setTab} />}
       footer={
         <Flexbox style={{ padding: 8 }} flex={1}>
