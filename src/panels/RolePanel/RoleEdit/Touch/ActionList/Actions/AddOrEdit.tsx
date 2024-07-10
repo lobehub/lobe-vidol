@@ -6,7 +6,7 @@ import React, { memo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { INPUT_WIDTH_M, INPUT_WIDTH_S } from '@/constants/token';
-import { MAX_TOUCH_ACTION_TEXT_LENGTH, TOUCH_EMOTION_OPTIONS } from '@/constants/touch';
+import { MAX_TOUCH_ACTION_TEXT_LENGTH } from '@/constants/touch';
 import { useAgentStore } from '@/store/agent';
 import { TouchAction, TouchAreaEnum } from '@/types/touch';
 
@@ -21,7 +21,7 @@ export default memo((props: Props) => {
   const { touchArea, index, touchAction, isEdit = true } = props;
   const [open, setOpen] = useState(false);
   const [form] = Form.useForm();
-  const { t } = useTranslation(['common', 'panel']);
+  const { t } = useTranslation(['common', 'panel', 'constants']);
 
   const [updateTouchAction, createTouchAction] = useAgentStore((s) => [
     s.updateTouchAction,
@@ -95,7 +95,44 @@ export default memo((props: Props) => {
             name="emotion"
           >
             <Select
-              options={TOUCH_EMOTION_OPTIONS}
+              options={[
+                {
+                  label: t('touch.emotion.natural', { ns: 'constants' }),
+                  value: VRMExpressionPresetName.Neutral,
+                },
+                {
+                  label: t('touch.emotion.happy', { ns: 'constants' }),
+                  value: VRMExpressionPresetName.Happy,
+                },
+                {
+                  label: t('touch.emotion.angry', { ns: 'constants' }),
+                  value: VRMExpressionPresetName.Angry,
+                },
+                {
+                  label: t('touch.emotion.sad', { ns: 'constants' }),
+                  value: VRMExpressionPresetName.Sad,
+                },
+                {
+                  label: t('touch.emotion.relaxed', { ns: 'constants' }),
+                  value: VRMExpressionPresetName.Relaxed,
+                },
+                {
+                  label: t('touch.emotion.surprised', { ns: 'constants' }),
+                  value: VRMExpressionPresetName.Surprised,
+                },
+                {
+                  label: t('touch.emotion.blink', { ns: 'constants' }),
+                  value: VRMExpressionPresetName.Blink,
+                },
+                {
+                  label: t('touch.emotion.blinkLeft', { ns: 'constants' }),
+                  value: VRMExpressionPresetName.BlinkLeft,
+                },
+                {
+                  label: t('touch.emotion.blinkRight', { ns: 'constants' }),
+                  value: VRMExpressionPresetName.BlinkRight,
+                },
+              ]}
               style={{ width: INPUT_WIDTH_S }}
               defaultActiveFirstOption={true}
             />

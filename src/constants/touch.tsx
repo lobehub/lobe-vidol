@@ -3,56 +3,6 @@ import { t } from 'i18next';
 
 import { TouchActionConfig, TouchAreaEnum } from '@/types/touch';
 
-export const TOUCH_AREA_OPTIONS = [
-  {
-    label: t('touch.area.head', { ns: 'constants' }),
-    value: TouchAreaEnum.Head,
-  },
-  {
-    label: t('touch.area.arm', { ns: 'constants' }),
-    value: TouchAreaEnum.Arm,
-  },
-  {
-    label: t('touch.area.leg', { ns: 'constants' }),
-    value: TouchAreaEnum.Leg,
-  },
-  {
-    label: t('touch.area.chest', { ns: 'constants' }),
-    value: TouchAreaEnum.Chest,
-  },
-  {
-    label: t('touch.area.belly', { ns: 'constants' }),
-    value: TouchAreaEnum.Belly,
-  },
-];
-
-export const TOUCH_EMOTION_OPTIONS = [
-  {
-    label: t('touch.emotion.natural', { ns: 'constants' }),
-    value: VRMExpressionPresetName.Neutral,
-  },
-  { label: t('touch.emotion.happy', { ns: 'constants' }), value: VRMExpressionPresetName.Happy },
-  { label: t('touch.emotion.angry', { ns: 'constants' }), value: VRMExpressionPresetName.Angry },
-  { label: t('touch.emotion.sad', { ns: 'constants' }), value: VRMExpressionPresetName.Sad },
-  {
-    label: t('touch.emotion.relaxed', { ns: 'constants' }),
-    value: VRMExpressionPresetName.Relaxed,
-  },
-  {
-    label: t('touch.emotion.surprised', { ns: 'constants' }),
-    value: VRMExpressionPresetName.Surprised,
-  },
-  { label: t('touch.emotion.blink', { ns: 'constants' }), value: VRMExpressionPresetName.Blink },
-  {
-    label: t('touch.emotion.blinkLeft', { ns: 'constants' }),
-    value: VRMExpressionPresetName.BlinkLeft,
-  },
-  {
-    label: t('touch.emotion.blinkRight', { ns: 'constants' }),
-    value: VRMExpressionPresetName.BlinkRight,
-  },
-];
-
 export const EMPTY_TTS_CONFIG: TouchActionConfig = {
   [TouchAreaEnum.Head]: [],
   [TouchAreaEnum.Arm]: [],

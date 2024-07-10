@@ -5,7 +5,6 @@ import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
 import ListItem from '@/components/ListItem';
-import { TOUCH_AREA_OPTIONS } from '@/constants/touch';
 import { TouchAreaEnum } from '@/types/touch';
 
 import Header from '../components/Header';
@@ -20,18 +19,20 @@ const useStyles = createStyles(({ css, token }) => ({
 }));
 
 interface IndexProps {
+  areaOptions: { label: string; value: TouchAreaEnum }[];
   currentTouchArea: TouchAreaEnum;
   setCurrentTouchArea: (area: TouchAreaEnum) => void;
 }
 
 const Index = (props: IndexProps) => {
   const { styles } = useStyles();
-  const { currentTouchArea, setCurrentTouchArea } = props;
-  const { t } = useTranslation('panel');
+  const { currentTouchArea, setCurrentTouchArea, areaOptions = [] } = props;
+  const { t } = useTranslation(['panel', 'constants']);
+
   return (
     <Flexbox>
       <Header title={t('touch.touchArea')} />
-      {TOUCH_AREA_OPTIONS.map((item) => (
+      {areaOptions.map((item) => (
         <ListItem
           avatar={<MousePointerClick />}
           className={classNames(styles.listItem)}
