@@ -2,6 +2,39 @@
 
 # Changelog
 
+### [Version&nbsp;0.17.1](https://github.com/lobehub/lobe-vidol/compare/v0.17.0...v0.17.1)
+<sup>Released on **2024-07-11**</sup>
+
+
+#### 🐛 Bug Fixes
+
+- **misc**: 修复多语言未加载问题, 修复多语言未加载问题, 修复多语言未加载问题.
+
+
+<br/>
+
+
+
+<details>
+<summary><kbd>Improvements and Fixes</kbd></summary>
+
+
+
+#### What's fixed
+
+* **misc**: 修复多语言未加载问题 ([0ec684b](https://github.com/lobehub/lobe-vidol/commit/0ec684b))
+* **misc**: 修复多语言未加载问题 ([848da10](https://github.com/lobehub/lobe-vidol/commit/848da10))
+* **misc**: 修复多语言未加载问题 ([23118dc](https://github.com/lobehub/lobe-vidol/commit/23118dc))
+
+</details>
+
+
+<div align="right">
+
+[![](https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square)](#readme-top)
+
+</div>
+
 ## [Version&nbsp;0.17.0](https://github.com/lobehub/lobe-vidol/compare/v0.16.0...v0.17.0)
 <sup>Released on **2024-07-09**</sup>
 
