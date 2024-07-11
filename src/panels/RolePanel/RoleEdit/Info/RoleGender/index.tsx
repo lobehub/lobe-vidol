@@ -1,8 +1,9 @@
 import { Select } from 'antd';
 import React, { CSSProperties, memo } from 'react';
+import { useTranslation } from 'react-i18next';
 
-import { AGENT_GENDER_OPTIONS } from '@/constants/agent';
 import { agentSelectors, useAgentStore } from '@/store/agent';
+import { GenderEnum } from '@/types/agent';
 
 interface Props {
   className?: string;
@@ -16,11 +17,17 @@ export default memo<Props>((props) => {
     s.updateAgentMeta,
   ]);
 
+  const { t } = useTranslation('constants');
+
   return (
     <Select
       className={className}
       style={style}
-      options={AGENT_GENDER_OPTIONS}
+      options={[
+        { label: t('agent.gender.male'), value: GenderEnum.FEMALE },
+        { label: t('agent.gender.female'), value: GenderEnum.MALE },
+        { label: t('agent.gender.other'), value: GenderEnum.OTHER },
+      ]}
       value={meta?.gender}
       defaultActiveFirstOption={true}
       onChange={(value) => {

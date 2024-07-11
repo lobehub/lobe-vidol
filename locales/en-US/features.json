@@ -3,6 +3,7 @@
     "useVideo": "Switch to video mode"
   },
   "agent": {
+    "create": "Create Role",
     "female": "Female",
     "male": "Male",
     "other": "Other"
@@ -10,7 +11,7 @@
   "feature": {
     "addProxy": "Add OpenAI proxy address (optional)",
     "closeTip": "Close tip",
-    "comfirmRetry": "Confirm and retry",
+    "confirmRetry": "Confirm and retry",
     "startDesc": "Enter your OpenAI API Key to start the session. The application will not record your API Key.",
     "startTitle": "Customize API Key"
   },

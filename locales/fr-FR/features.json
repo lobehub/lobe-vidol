@@ -3,6 +3,7 @@
     "useVideo": "Activer le mode vidéo"
   },
   "agent": {
+    "create": "Créer un personnage",
     "female": "Femme",
     "male": "Homme",
     "other": "Autre"
@@ -10,7 +11,7 @@
   "feature": {
     "addProxy": "Ajouter une adresse proxy OpenAI (facultatif)",
     "closeTip": "Fermer l'astuce",
-    "comfirmRetry": "Confirmer et réessayer",
+    "confirmRetry": "Confirmer et réessayer",
     "startDesc": "Entrez votre clé d'API OpenAI pour commencer la session. L'application ne stockera pas votre clé d'API.",
     "startTitle": "Personnaliser la clé d'API"
   },

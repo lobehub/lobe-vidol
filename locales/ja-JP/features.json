@@ -3,6 +3,7 @@
     "useVideo": "ビデオモードに切り替える"
   },
   "agent": {
+    "create": "キャラクターを作成する",
     "female": "女性",
     "male": "男性",
     "other": "その他"
@@ -10,7 +11,7 @@
   "feature": {
     "addProxy": "OpenAIプロキシアドレスを追加（オプション）",
     "closeTip": "ヒントを閉じる",
-    "comfirmRetry": "確認して再試行する",
+    "confirmRetry": "確認して再試行する",
     "startDesc": "OpenAI APIキーを入力して会話を開始できます。アプリはAPIキーを記録しません",
     "startTitle": "APIキーをカスタマイズする"
   },

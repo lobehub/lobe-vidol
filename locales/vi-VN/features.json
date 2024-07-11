@@ -3,6 +3,7 @@
     "useVideo": "Chuyển sang chế độ video"
   },
   "agent": {
+    "create": "Tạo nhân vật",
     "female": "Nữ",
     "male": "Nam",
     "other": "Khác"
@@ -10,7 +11,7 @@
   "feature": {
     "addProxy": "Thêm địa chỉ proxy OpenAI (tùy chọn)",
     "closeTip": "Đóng gợi ý",
-    "comfirmRetry": "Xác nhận và thử lại",
+    "confirmRetry": "Xác nhận và thử lại",
     "startDesc": "Nhập OpenAI API Key của bạn để bắt đầu cuộc trò chuyện. Ứng dụng sẽ không ghi lại API Key của bạn",
     "startTitle": "Tùy chỉnh API Key"
   },

@@ -84,10 +84,10 @@ const SideBar = memo(() => {
             {t('dance.addPlay')}
           </Button>,
           <Popconfirm
-            cancelText={t('cancel')}
+            cancelText={t('cancel', { ns: 'common' })}
             description={t('dance.cancelAddPlay', { musicName: currentDance?.name })}
             key="delete"
-            okText={t('confirm')}
+            okText={t('confirm', { ns: 'common' })}
             onConfirm={() => {
               if (currentDance) {
                 removeDanceItem(currentDance.danceId);

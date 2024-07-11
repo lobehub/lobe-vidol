@@ -19,13 +19,15 @@ const Locale = memo<LocaleLayoutProps>(({ children, defaultLang, antdLocale }) =
 
   // if run on server side, init i18n instance everytime
   if (isOnServerSide) {
-    i18n.init();
+    i18n.init().then(() => {
+      console.debug('inited server.');
+    });
   } else {
     // if on browser side, init i18n instance only once
     if (!i18n.instance.isInitialized)
       // console.debug('locale', lang);
       i18n.init().then(() => {
-        // console.debug('inited.');
+        console.debug('inited client');
       });
   }
 

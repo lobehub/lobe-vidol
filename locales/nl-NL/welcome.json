@@ -1,7 +1,5 @@
 {
   "agent": {
-    "description": "{{name}} is de standaardrol van Vidol, en je persoonlijke assistent",
-    "greeting": "Hallo, lieve meester! Ik ben je persoonlijke assistent {{name}}, ik ben blij je te kunnen bedienen! Is er iets waar ik je bij kan helpen?",
     "hello": "Hallo",
     "meta": {
       "description": "Dit is een aangepaste rol",

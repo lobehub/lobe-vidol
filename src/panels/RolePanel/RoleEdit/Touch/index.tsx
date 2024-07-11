@@ -1,6 +1,7 @@
 import { createStyles } from 'antd-style';
 import classNames from 'classnames';
 import React, { memo, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { TouchAreaEnum } from '@/types/touch';
 
@@ -32,10 +33,43 @@ const Touch = (props: TouchProps) => {
   const { styles } = useStyles();
   const [currentTouchArea, setCurrentTouchArea] = useState<TouchAreaEnum>(TouchAreaEnum.Head);
 
+  const { t } = useTranslation(['panel', 'constants']);
+
+  const TOUCH_AREA_OPTIONS = [
+    {
+      label: t('touch.area.head', { ns: 'constants' }),
+      value: TouchAreaEnum.Head,
+    },
+    {
+      label: t('touch.area.arm', { ns: 'constants' }),
+      value: TouchAreaEnum.Arm,
+    },
+    {
+      label: t('touch.area.leg', { ns: 'constants' }),
+      value: TouchAreaEnum.Leg,
+    },
+    {
+      label: t('touch.area.chest', { ns: 'constants' }),
+      value: TouchAreaEnum.Chest,
+    },
+    {
+      label: t('touch.area.belly', { ns: 'constants' }),
+      value: TouchAreaEnum.Belly,
+    },
+  ];
+
   return (
     <div className={classNames(className, styles.container)} style={style}>
-      <SideBar currentTouchArea={currentTouchArea} setCurrentTouchArea={setCurrentTouchArea} />
-      <ActionList currentTouchArea={currentTouchArea} style={{ marginLeft: 12 }} />
+      <SideBar
+        currentTouchArea={currentTouchArea}
+        setCurrentTouchArea={setCurrentTouchArea}
+        areaOptions={TOUCH_AREA_OPTIONS}
+      />
+      <ActionList
+        currentTouchArea={currentTouchArea}
+        style={{ marginLeft: 12 }}
+        areaOptions={TOUCH_AREA_OPTIONS}
+      />
     </div>
   );
 };

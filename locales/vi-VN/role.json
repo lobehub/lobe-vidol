@@ -1,4 +1,15 @@
 {
+  "category": {
+    "animal": "Động vật",
+    "anime": "Anime",
+    "book": "Sách",
+    "game": "Trò chơi",
+    "history": "Lịch sử",
+    "movie": "Phim",
+    "realistic": "Hiện thực",
+    "vroid": "Vroid",
+    "vtuber": "VTuber"
+  },
   "delRole": "Xóa vai trò",
   "delRoleDesc": "Bạn có chắc chắn muốn xóa vai trò {{name}} và các tin nhắn liên quan không? Hành động này không thể hoàn tác, hãy cẩn thận!",
   "header": {

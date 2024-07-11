@@ -3,6 +3,7 @@
     "useVideo": "Video Modunu Değiştir"
   },
   "agent": {
+    "create": "Rol Oluştur",
     "female": "Kadın",
     "male": "Erkek",
     "other": "Diğer"
@@ -10,7 +11,7 @@
   "feature": {
     "addProxy": "OpenAI Proxy Adresi Ekle (isteğe bağlı)",
     "closeTip": "İpucunu Kapat",
-    "comfirmRetry": "Onayla ve Yeniden Dene",
+    "confirmRetry": "Onayla ve Yeniden Dene",
     "startDesc": "Sohbete başlamak için OpenAI API Anahtarınızı girin. Uygulama API Anahtarınızı kaydetmez.",
     "startTitle": "Özel API Anahtarı"
   },

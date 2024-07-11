@@ -3,6 +3,7 @@
     "useVideo": "Overschakelen naar videomodus"
   },
   "agent": {
+    "create": "Maak een rol aan",
     "female": "Vrouw",
     "male": "Man",
     "other": "Anders"
@@ -10,7 +11,7 @@
   "feature": {
     "addProxy": "Voeg OpenAI proxy-adres toe (optioneel)",
     "closeTip": "Tip sluiten",
-    "comfirmRetry": "Bevestig en opnieuw proberen",
+    "confirmRetry": "Bevestig en opnieuw proberen",
     "startDesc": "Voer je OpenAI API Key in om de sessie te starten. De applicatie zal je API Key niet opslaan",
     "startTitle": "Aangepaste API Key"
   },

@@ -1,7 +1,5 @@
 {
   "agent": {
-    "description": "{{name}}是 Vidol 的預設角色，是您的專屬私人助理",
-    "greeting": "哈囉，親愛的主人！我是您的私人助理{{name}}，很高興為您服務！有什麼我可以幫到您的嗎？",
     "hello": "你好呀",
     "meta": {
       "description": "這是一個自訂角色",

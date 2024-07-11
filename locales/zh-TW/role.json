@@ -1,4 +1,15 @@
 {
+  "category": {
+    "animal": "動物",
+    "anime": "動漫",
+    "book": "書籍",
+    "game": "遊戲",
+    "history": "歷史",
+    "movie": "電影",
+    "realistic": "現實",
+    "vroid": "Vroid",
+    "vtuber": "VTuber"
+  },
   "delRole": "刪除角色",
   "delRoleDesc": "確定刪除角色 {{name}} 以及相關聯的對話消息嗎？刪除後無法復原，請慎重操作！",
   "header": {

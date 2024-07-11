@@ -18,6 +18,7 @@ const genderIcons = {
 const ThemeButton = memo(() => {
   const createNewAgent = useAgentStore((s) => s.createNewAgent);
   const { t } = useTranslation('features');
+
   const items: MenuProps['items'] = useMemo(
     () => [
       {
@@ -51,7 +52,7 @@ const ThemeButton = memo(() => {
       }}
       trigger={['click']}
     >
-      <ActionIcon icon={PlusCircle} title="创建角色" />
+      <ActionIcon icon={PlusCircle} title={t('agent.create')} />
     </Popover>
   );
 });

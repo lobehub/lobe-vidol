@@ -1,4 +1,15 @@
 {
+  "category": {
+    "animal": "Hayvan",
+    "anime": "Anime",
+    "book": "Kitap",
+    "game": "Oyun",
+    "history": "Tarih",
+    "movie": "Film",
+    "realistic": "Gerçekçi",
+    "vroid": "Vroid",
+    "vtuber": "VTuber"
+  },
   "delRole": "Rolü Sil",
   "delRoleDesc": " {{name}} adlı rolü ve ilgili oturum mesajlarını silmek istediğinizden emin misiniz? Silindikten sonra geri alınamaz, lütfen dikkatli olun!",
   "header": {

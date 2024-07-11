@@ -1,8 +1,9 @@
 import { Select } from 'antd';
 import React, { CSSProperties, memo } from 'react';
+import { useTranslation } from 'react-i18next';
 
-import { AGENT_CATEGORY_OPTIONS } from '@/constants/agent';
 import { agentSelectors, useAgentStore } from '@/store/agent';
+import { CategoryEnum } from '@/types/agent';
 
 interface Props {
   className?: string;
@@ -16,11 +17,23 @@ export default memo<Props>((props) => {
     s.updateAgentMeta,
   ]);
 
+  const { t } = useTranslation('role');
+
   return (
     <Select
       className={className}
       style={style}
-      options={AGENT_CATEGORY_OPTIONS}
+      options={[
+        { label: t('category.animal'), value: CategoryEnum.ANIMAL },
+        { label: t('agent.anime'), value: CategoryEnum.ANIME },
+        { label: t('agent.book'), value: CategoryEnum.BOOK },
+        { label: t('agent.game'), value: CategoryEnum.GAME },
+        { label: t('agent.history'), value: CategoryEnum.HISTORY },
+        { label: t('agent.movie'), value: CategoryEnum.MOVIE },
+        { label: t('agent.realistic'), value: CategoryEnum.REALISTIC },
+        { label: t('agent.vroid'), value: CategoryEnum.VROID },
+        { label: t('agent.vtuber'), value: CategoryEnum.VTUBER },
+      ]}
       value={meta?.category}
       defaultActiveFirstOption={true}
       onChange={(value) => {

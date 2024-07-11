@@ -3,6 +3,7 @@
     "useVideo": "切換視訊模式"
   },
   "agent": {
+    "create": "建立角色",
     "female": "女性",
     "male": "男性",
     "other": "其他"
@@ -10,7 +11,7 @@
   "feature": {
     "addProxy": "添加 OpenAI 代理地址（可選）",
     "closeTip": "關閉提示",
-    "comfirmRetry": "確認並重試",
+    "confirmRetry": "確認並重試",
     "startDesc": "輸入你的 OpenAI API Key 即可開始會話。應用不會記錄你的 API Key",
     "startTitle": "自定義 API Key"
   },

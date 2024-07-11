@@ -3,6 +3,7 @@
     "useVideo": "비디오 모드 전환"
   },
   "agent": {
+    "create": "역할 생성",
     "female": "여성",
     "male": "남성",
     "other": "기타"
@@ -10,7 +11,7 @@
   "feature": {
     "addProxy": "OpenAI 프록시 주소 추가 (선택 사항)",
     "closeTip": "팁 닫기",
-    "comfirmRetry": "확인 및 다시 시도",
+    "confirmRetry": "확인 및 다시 시도",
     "startDesc": "OpenAI API 키를 입력하여 대화를 시작하세요. 애플리케이션은 API 키를 기록하지 않습니다.",
     "startTitle": "사용자 정의 API 키"
   },

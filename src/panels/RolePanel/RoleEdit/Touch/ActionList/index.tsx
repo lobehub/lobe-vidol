@@ -6,7 +6,6 @@ import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
 import ListItem from '@/components/ListItem';
-import { TOUCH_AREA_OPTIONS } from '@/constants/touch';
 import { agentSelectors, useAgentStore } from '@/store/agent';
 import { TouchAction, TouchAreaEnum } from '@/types/touch';
 
@@ -33,6 +32,7 @@ const useStyles = createStyles(({ css, token }) => ({
 }));
 
 interface AreaListProps {
+  areaOptions?: { label: string; value: TouchAreaEnum }[];
   className?: string;
   currentTouchArea: TouchAreaEnum;
   style?: React.CSSProperties;
@@ -40,12 +40,12 @@ interface AreaListProps {
 
 const AreaList = (props: AreaListProps) => {
   const { styles } = useStyles();
-  const { currentTouchArea, style, className } = props;
+  const { currentTouchArea, style, className, areaOptions = [] } = props;
   const [currentAgentTouch] = useAgentStore((s) => [agentSelectors.currentAgentTouch(s)]);
   const { t } = useTranslation('panel');
   const data = currentAgentTouch ? (get(currentAgentTouch, currentTouchArea) as TouchAction[]) : [];
 
-  const touchArea = TOUCH_AREA_OPTIONS.find((item) => item.value === currentTouchArea)?.label;
+  const touchArea = areaOptions.find((item) => item.value === currentTouchArea)?.label;
 
   return (
     <Flexbox flex={1} style={style} className={className}>

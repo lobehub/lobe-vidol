@@ -72,7 +72,7 @@ const APIKeyForm = ({ id }: APIKeyFormProps) => {
           style={{ marginTop: 8 }}
           type={'primary'}
         >
-          {t('feature.comfirmRetry')}
+          {t('feature.confirmRetry')}
         </Button>
         <Button
           onClick={() => {

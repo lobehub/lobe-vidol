@@ -3,6 +3,7 @@
     "useVideo": "Alternar para modo de vídeo"
   },
   "agent": {
+    "create": "Criar personagem",
     "female": "Feminino",
     "male": "Masculino",
     "other": "Outro"
@@ -10,7 +11,7 @@
   "feature": {
     "addProxy": "Adicionar endereço de proxy OpenAI (opcional)",
     "closeTip": "Fechar dica",
-    "comfirmRetry": "Confirmar e tentar novamente",
+    "confirmRetry": "Confirmar e tentar novamente",
     "startDesc": "Digite sua chave de API OpenAI para iniciar a sessão. O aplicativo não irá armazenar sua chave de API",
     "startTitle": "Chave de API personalizada"
   },

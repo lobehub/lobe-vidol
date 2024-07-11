@@ -1,4 +1,15 @@
 {
+  "category": {
+    "animal": "Dieren",
+    "anime": "Anime",
+    "book": "Boek",
+    "game": "Spel",
+    "history": "Geschiedenis",
+    "movie": "Film",
+    "realistic": "Realistisch",
+    "vroid": "Vroid",
+    "vtuber": "VTuber"
+  },
   "delRole": "Verwijder rol",
   "delRoleDesc": "Weet je zeker dat je de rol {{name}} en gerelateerde sessieberichten wilt verwijderen? Deze actie kan niet ongedaan worden gemaakt, wees voorzichtig!",
   "header": {
