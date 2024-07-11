@@ -3,6 +3,7 @@
     "useVideo": "Videomodus verwenden"
   },
   "agent": {
+    "create": "Rolle erstellen",
     "female": "Weiblich",
     "male": "Männlich",
     "other": "Andere"
@@ -10,7 +11,7 @@
   "feature": {
     "addProxy": "OpenAI-Proxy hinzufügen (optional)",
     "closeTip": "Tipp schließen",
-    "comfirmRetry": "Bestätigen und erneut versuchen",
+    "confirmRetry": "Bestätigen und erneut versuchen",
     "startDesc": "Geben Sie Ihren OpenAI-API-Schlüssel ein, um das Gespräch zu beginnen. Die App speichert Ihren API-Schlüssel nicht.",
     "startTitle": "Benutzerdefinierter API-Schlüssel"
   },

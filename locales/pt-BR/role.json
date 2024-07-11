@@ -1,4 +1,15 @@
 {
+  "category": {
+    "animal": "Animais",
+    "anime": "Anime",
+    "book": "Livros",
+    "game": "Jogos",
+    "history": "História",
+    "movie": "Filmes",
+    "realistic": "Realista",
+    "vroid": "Vroid",
+    "vtuber": "VTuber"
+  },
   "delRole": "Excluir função",
   "delRoleDesc": "Tem certeza de que deseja excluir a função {{name}} e as mensagens de sessão relacionadas? Esta ação não pode ser desfeita, por favor, proceda com cautela!",
   "header": {

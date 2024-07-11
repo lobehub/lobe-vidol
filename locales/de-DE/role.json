@@ -1,4 +1,15 @@
 {
+  "category": {
+    "animal": "Tiere",
+    "anime": "Anime",
+    "book": "Buch",
+    "game": "Spiel",
+    "history": "Geschichte",
+    "movie": "Film",
+    "realistic": "Realistisch",
+    "vroid": "Vroid",
+    "vtuber": "VTuber"
+  },
   "delRole": "Rolle löschen",
   "delRoleDesc": "Sind Sie sicher, dass Sie die Rolle {{name}} und die zugehörigen Sitzungsnachrichten löschen möchten? Diese Aktion kann nicht rückgängig gemacht werden. Bitte seien Sie vorsichtig!",
   "header": {

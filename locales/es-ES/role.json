@@ -1,4 +1,15 @@
 {
+  "category": {
+    "animal": "Animales",
+    "anime": "Anime",
+    "book": "Libros",
+    "game": "Juegos",
+    "history": "Historia",
+    "movie": "Películas",
+    "realistic": "Realista",
+    "vroid": "Vroid",
+    "vtuber": "VTuber"
+  },
   "delRole": "Eliminar rol",
   "delRoleDesc": "¿Estás seguro de que deseas eliminar el rol {{name}} y los mensajes de sesión relacionados? Esta acción no se puede deshacer, ¡por favor, procede con precaución!",
   "header": {

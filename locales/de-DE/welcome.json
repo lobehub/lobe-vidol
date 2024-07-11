@@ -1,7 +1,5 @@
 {
   "agent": {
-    "description": "{{name}} ist die Standardrolle von Vidol und dein exklusiver persönlicher Assistent.",
-    "greeting": "Hallo, lieber Besitzer! Ich bin dein persönlicher Assistent {{name}}, und ich stehe dir gerne zur Verfügung! Kann ich dir helfen?",
     "hello": "Hallo",
     "meta": {
       "description": "Dies ist eine benutzerdefinierte Rolle",

@@ -1,4 +1,15 @@
 {
+  "category": {
+    "animal": "Animal",
+    "anime": "Anime",
+    "book": "Book",
+    "game": "Game",
+    "history": "History",
+    "movie": "Movie",
+    "realistic": "Realistic",
+    "vroid": "Vroid",
+    "vtuber": "VTuber"
+  },
   "delRole": "Delete Role",
   "delRoleDesc": "Are you sure you want to delete role {{name}} and its associated session messages? This action cannot be undone, so please proceed with caution!",
   "header": {

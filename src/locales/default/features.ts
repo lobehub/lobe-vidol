@@ -1,5 +1,6 @@
 export default {
   support: '社区支持',
+
   token: {
     overload: 'Token 超出',
     remained: 'Token 剩余',
@@ -31,6 +32,7 @@ export default {
     dark: '暗黑模式',
   },
   agent: {
+    create: '创建角色',
     female: '女性',
     male: '男性',
     other: '其他',
@@ -54,7 +56,7 @@ export default {
     startDesc: '输入你的 OpenAI API Key 即可开始会话。应用不会记录你的 API Key',
     startTitle: '自定义 API Key',
     addProxy: '添加 OpenAI 代理地址（可选）',
-    comfirmRetry: '确认并重试',
+    confirmRetry: '确认并重试',
     closeTip: '关闭提示',
   },
   settings: {

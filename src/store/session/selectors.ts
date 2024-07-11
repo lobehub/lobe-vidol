@@ -92,6 +92,7 @@ const currentChatsWithGreetingMessage = (s: SessionStore): ChatMessage[] => {
   const agent = currentAgent(s);
 
   const initTime = Date.now();
+  console.log(t('greet', { ns: 'welcome', name: agent?.meta.name }));
 
   const emptyGuideMessage = {
     content: agent?.greeting || t('greet', { ns: 'welcome', name: agent?.meta.name }),

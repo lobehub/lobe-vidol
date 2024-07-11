@@ -3,6 +3,7 @@
     "useVideo": "Przełącz na tryb wideo"
   },
   "agent": {
+    "create": "Utwórz postać",
     "female": "Kobieta",
     "male": "Mężczyzna",
     "other": "Inne"
@@ -10,7 +11,7 @@
   "feature": {
     "addProxy": "Dodaj adres proxy OpenAI (opcjonalnie)",
     "closeTip": "Zamknij wskazówkę",
-    "comfirmRetry": "Potwierdź i spróbuj ponownie",
+    "confirmRetry": "Potwierdź i spróbuj ponownie",
     "startDesc": "Wprowadź swój klucz API OpenAI, aby rozpocząć rozmowę. Aplikacja nie będzie rejestrować Twojego klucza API",
     "startTitle": "Niestandardowy klucz API"
   },

@@ -1,7 +1,5 @@
 {
   "agent": {
-    "description": "{{name}} jest domyślną postacią Vidola, twoim osobistym asystentem",
-    "greeting": "Cześć, drogi Panie/Pani! Jestem {{name}}, twoim prywatnym asystentem, chętnie służę Tobie! Czy mogę Ci w czymś pomóc?",
     "hello": "Witaj",
     "meta": {
       "description": "To jest niestandardowa postać",

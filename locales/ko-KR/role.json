@@ -1,4 +1,15 @@
 {
+  "category": {
+    "animal": "동물",
+    "anime": "애니메이션",
+    "book": "책",
+    "game": "게임",
+    "history": "역사",
+    "movie": "영화",
+    "realistic": "현실적",
+    "vroid": "Vroid",
+    "vtuber": "VTuber"
+  },
   "delRole": "역할 삭제",
   "delRoleDesc": "{{name}} 및 관련된 대화 메시지를 삭제하시겠습니까? 삭제 후에는 복구할 수 없으므로 신중하게 작업하십시오!",
   "header": {

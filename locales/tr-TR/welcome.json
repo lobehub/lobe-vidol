@@ -1,7 +1,5 @@
 {
   "agent": {
-    "description": "{{name}} Vidol'un varsayılan karakteridir ve size özel bir kişisel asistandır",
-    "greeting": "Merhaba, sevgili sahibim! Ben senin kişisel asistanın {{name}} ve hizmet için buradayım! Size nasıl yardımcı olabilirim?",
     "hello": "Merhaba",
     "meta": {
       "description": "Bu bir özel karakterdir",

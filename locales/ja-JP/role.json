@@ -1,4 +1,15 @@
 {
+  "category": {
+    "animal": "動物",
+    "anime": "アニメ",
+    "book": "書籍",
+    "game": "ゲーム",
+    "history": "歴史",
+    "movie": "映画",
+    "realistic": "現実",
+    "vroid": "Vroid",
+    "vtuber": "VTuber"
+  },
   "delRole": "ロールを削除",
   "delRoleDesc": "{{name}} と関連するセッションメッセージを削除しますか？一度削除すると元に戻せませんので、慎重に操作してください。",
   "header": {

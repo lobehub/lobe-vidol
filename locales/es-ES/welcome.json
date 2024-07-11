@@ -1,7 +1,5 @@
 {
   "agent": {
-    "description": "{{name}} es el personaje predeterminado de Vidol, tu asistente personal exclusivo",
-    "greeting": "¡Hola, querido dueño! Soy tu asistente personal {{name}}, ¡encantado de servirte! ¿En qué puedo ayudarte?",
     "hello": "¡Hola!",
     "meta": {
       "description": "Este es un personaje personalizado",
