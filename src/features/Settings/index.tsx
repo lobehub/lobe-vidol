@@ -5,6 +5,7 @@ import { Flexbox } from 'react-layout-kit';
 
 import CommonConfig from './common';
 import OpenAIConfig from './model/openai';
+import Touch from './touch';
 
 interface ConfigProps {
   className?: string;
@@ -25,6 +26,10 @@ const Config = (props: ConfigProps) => {
       key: 'languageModel',
       label: t('languageModel'),
     },
+    {
+      key: 'touch',
+      label: t('touchSetting'),
+    },
   ];
 
   return (
@@ -41,6 +46,7 @@ const Config = (props: ConfigProps) => {
       <Flexbox flex={1} width={'100%'} height={'100%'}>
         {tab === 'languageModel' ? <OpenAIConfig /> : null}
         {tab === 'common' ? <CommonConfig /> : null}
+        {tab === 'touch' ? <Touch /> : null}
       </Flexbox>
     </Flexbox>
   );

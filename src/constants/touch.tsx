@@ -3,7 +3,7 @@ import { t } from 'i18next';
 
 import { TouchActionConfig, TouchAreaEnum } from '@/types/touch';
 
-export const EMPTY_TTS_CONFIG: TouchActionConfig = {
+export const EMPTY_TOUCH_CONFIG: TouchActionConfig = {
   [TouchAreaEnum.Head]: [],
   [TouchAreaEnum.Arm]: [],
   [TouchAreaEnum.Leg]: [],

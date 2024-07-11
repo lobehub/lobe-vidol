@@ -21,22 +21,29 @@ import { Agent } from '@/types/agent';
 const SubmitAgentModal = memo<ModalProps>(({ open, onCancel }) => {
   const [agentId, setAgentId] = useState('');
   const theme = useTheme();
-  const currentAgent: Agent = useAgentStore((s) => agentSelectors.currentAgentItem(s), isEqual);
-  const { meta } = currentAgent;
+  const currentAgent: Agent | undefined = useAgentStore(
+    (s) => agentSelectors.currentAgentItem(s),
+    isEqual,
+  );
+  const meta = currentAgent?.meta;
   const { t } = useTranslation('features');
 
   const { uploading, uploadAgentData, percent } = useUploadAgent();
 
   const isFormPass = Boolean(
-    currentAgent.greeting &&
-      currentAgent.systemRole &&
-      meta.name &&
-      meta.description &&
-      meta.avatar &&
-      meta.model,
+    currentAgent?.greeting &&
+      currentAgent?.systemRole &&
+      meta?.name &&
+      meta?.description &&
+      meta?.avatar &&
+      meta?.model,
   );
 
   const handleSubmit = async () => {
+    if (!currentAgent || !meta || !agentId) {
+      return;
+    }
+
     const { avatarUrl, coverUrl, modelUrl } = await uploadAgentData(agentId, meta);
 
     const body = [
@@ -124,7 +131,7 @@ const SubmitAgentModal = memo<ModalProps>(({ open, onCancel }) => {
         {!isFormPass && <Alert message={t('submit.submitWarning')} showIcon type={'warning'} />}
         <AgentCard agent={currentAgent} />
         <Divider style={{ margin: '8px 0' }} />
-        <SystemRole systemRole={currentAgent.systemRole} />
+        <SystemRole systemRole={currentAgent?.systemRole} />
         <Divider style={{ margin: '8px 0' }} />
         <strong>
           <span style={{ color: theme.colorError, marginRight: 4 }}>*</span>

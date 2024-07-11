@@ -1,4 +1,5 @@
 import { nanoid } from 'ai';
+import { t } from 'i18next';
 import { produce } from 'immer';
 import { DeepPartial } from 'utility-types';
 import { createJSONStorage, devtools, persist, subscribeWithSelector } from 'zustand/middleware';
@@ -6,18 +7,16 @@ import { shallow } from 'zustand/shallow';
 import { createWithEqualityFn } from 'zustand/traditional';
 import { StateCreator } from 'zustand/vanilla';
 
-import { DEFAULT_AGENT_CONFIG, LOBE_VIDOL_DEFAULT_AGENT_ID } from '@/constants/agent';
-import {
-  DEFAULT_TOUCH_ACTION_CONFIG_FEMALE,
-  DEFAULT_TOUCH_ACTION_CONFIG_MALE,
-} from '@/constants/touch';
+import { LOBE_VIDOL_DEFAULT_AGENT_ID } from '@/constants/agent';
+import { DEFAULT_AGENT_AVATAR_URL } from '@/constants/common';
+import { DEFAULT_LLM_CONFIG } from '@/constants/openai';
 import {
   DEFAULT_TTS_CONFIG_FEMALE,
   DEFAULT_TTS_CONFIG_MALE,
   DEFAULT_TTS_CONFIG_OTHER,
 } from '@/constants/tts';
 import { TouchActionType, touchReducer } from '@/store/agent/reducers/touch';
-import { Agent, AgentMeta, GenderEnum } from '@/types/agent';
+import { Agent, AgentMeta, CategoryEnum, GenderEnum } from '@/types/agent';
 import { TouchAction, TouchAreaEnum } from '@/types/touch';
 import { TTS } from '@/types/tts';
 import { mergeWithUndefined } from '@/utils/common';
@@ -66,7 +65,7 @@ export interface AgentStore {
    */
   defaultAgent: Agent;
   /**
-   * Touch Reducer
+   * touch Reducer
    * @param payload
    */
   dispatchTouchAction: (payload: TouchActionType) => void;
@@ -74,7 +73,7 @@ export interface AgentStore {
    * 根据 ID 获取角色
    * @param id
    */
-  getAgentById: (id: string) => Agent;
+  getAgentById: (id: string) => Agent | undefined;
   /**
    * 本地角色列表
    */
@@ -113,20 +112,6 @@ export interface AgentStore {
   updateTouchAction: (currentTouchArea: TouchAreaEnum, index: number, action: TouchAction) => void;
 }
 
-const getTouchConfigByGender = (gender: GenderEnum) => {
-  switch (gender) {
-    case GenderEnum.FEMALE: {
-      return DEFAULT_TOUCH_ACTION_CONFIG_FEMALE;
-    }
-    case GenderEnum.MALE: {
-      return DEFAULT_TOUCH_ACTION_CONFIG_MALE;
-    }
-    default: {
-      return undefined;
-    }
-  }
-};
-
 const getTTSConfigByGender = (gender: GenderEnum) => {
   switch (gender) {
     case GenderEnum.FEMALE: {
@@ -155,13 +140,13 @@ const createAgentStore: StateCreator<AgentStore, [['zustand/devtools', never]]> 
   deactivateAgent: () => {
     set({ currentIdentifier: undefined });
   },
-  getAgentById: (agentId: string): Agent => {
+  getAgentById: (agentId: string) => {
     const { localAgentList, defaultAgent } = get();
 
     if (agentId === LOBE_VIDOL_DEFAULT_AGENT_ID) return defaultAgent;
 
     const currentAgent = localAgentList.find((item) => item.agentId === agentId);
-    if (!currentAgent) return DEFAULT_AGENT_CONFIG;
+    if (!currentAgent) return undefined;
 
     return currentAgent;
   },
@@ -169,14 +154,21 @@ const createAgentStore: StateCreator<AgentStore, [['zustand/devtools', never]]> 
     const { localAgentList } = get();
 
     const newAgent: Agent = {
-      ...DEFAULT_AGENT_CONFIG,
+      agentId: nanoid(),
+      systemRole: '',
+      greeting: t('agent.hello', { ns: 'welcome' }),
       meta: {
-        ...DEFAULT_AGENT_CONFIG.meta,
+        name: t('agent.meta.name', { ns: 'constants' }),
+        description: t('agent.meta.description', { ns: 'constants' }),
+        avatar: DEFAULT_AGENT_AVATAR_URL,
+        cover: '',
+        category: CategoryEnum.ANIME,
+        readme: '',
         gender,
       },
-      agentId: nanoid(),
-      touch: getTouchConfigByGender(gender),
+      touch: undefined,
       tts: getTTSConfigByGender(gender),
+      ...DEFAULT_LLM_CONFIG,
     };
 
     const newList = produce(localAgentList, (draft) => {

@@ -303,6 +303,8 @@ export const createSessionStore: StateCreator<SessionStore, [['zustand/devtools'
     const agent = sessionSelectors.currentAgent(get());
     const meta = sessionSelectors.currentAgentMeta(get());
 
+    if (!agent || !meta) return;
+
     const defaultMsg: ShareGPTConversation['items'] = [];
     const showSystemRole = withSystemRole && !!agent.systemRole;
     const shareMsgs = produce(defaultMsg, (draft) => {

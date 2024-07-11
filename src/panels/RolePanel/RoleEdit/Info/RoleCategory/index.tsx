@@ -25,14 +25,14 @@ export default memo<Props>((props) => {
       style={style}
       options={[
         { label: t('category.animal'), value: CategoryEnum.ANIMAL },
-        { label: t('agent.anime'), value: CategoryEnum.ANIME },
-        { label: t('agent.book'), value: CategoryEnum.BOOK },
-        { label: t('agent.game'), value: CategoryEnum.GAME },
-        { label: t('agent.history'), value: CategoryEnum.HISTORY },
-        { label: t('agent.movie'), value: CategoryEnum.MOVIE },
-        { label: t('agent.realistic'), value: CategoryEnum.REALISTIC },
-        { label: t('agent.vroid'), value: CategoryEnum.VROID },
-        { label: t('agent.vtuber'), value: CategoryEnum.VTUBER },
+        { label: t('category.anime'), value: CategoryEnum.ANIME },
+        { label: t('category.book'), value: CategoryEnum.BOOK },
+        { label: t('category.game'), value: CategoryEnum.GAME },
+        { label: t('category.history'), value: CategoryEnum.HISTORY },
+        { label: t('category.movie'), value: CategoryEnum.MOVIE },
+        { label: t('category.realistic'), value: CategoryEnum.REALISTIC },
+        { label: t('category.vroid'), value: CategoryEnum.VROID },
+        { label: t('category.vtuber'), value: CategoryEnum.VTUBER },
       ]}
       value={meta?.category}
       defaultActiveFirstOption={true}

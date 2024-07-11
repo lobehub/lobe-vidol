@@ -8,6 +8,7 @@ export default {
   noData: '暂无数据',
   commonSetting: '通用设置',
   languageModel: '语言模型',
+  touchSetting: '触摸设置',
   selectModel: '请选择模型',
   selectInDanceList: '请从舞蹈列表中选取',
   inputStartChat: '请输入内容开始聊天',
