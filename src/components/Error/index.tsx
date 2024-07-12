@@ -8,8 +8,8 @@ import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
 import { MAX_WIDTH } from '@/constants/common';
-import ResetConfig from '@/features/Actions/ClearSession';
-import ClearChat from '@/features/Actions/ResetConfig';
+import ClearChat from '@/features/Actions/ClearSession';
+import ResetConfig from '@/features/Actions/ResetConfig';
 
 interface ErrorCaptureProps {
   error: Error & { digest?: string };
