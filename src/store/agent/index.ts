@@ -15,20 +15,19 @@ import {
   DEFAULT_TTS_CONFIG_MALE,
   DEFAULT_TTS_CONFIG_OTHER,
 } from '@/constants/tts';
-import { TouchActionType, touchReducer } from '@/store/agent/reducers/touch';
+import createTouchStore from '@/store/agent/slices/touch';
 import { Agent, AgentMeta, CategoryEnum, GenderEnum } from '@/types/agent';
-import { TouchAction, TouchAreaEnum } from '@/types/touch';
 import { TTS } from '@/types/tts';
 import { mergeWithUndefined } from '@/utils/common';
 import { getModelPathByAgentId } from '@/utils/file';
 import storage from '@/utils/storage';
 
 import { initialState } from './initialState';
-import { agentSelectors } from './selectors/agent';
+import { TouchStore } from './slices/touch';
 
 export const AGENT_STORAGE_KEY = 'vidol-chat-agent-storage';
 
-export interface AgentStore {
+export interface AgentStore extends TouchStore {
   /**
    * 激活角色
    */
@@ -47,12 +46,6 @@ export interface AgentStore {
    */
   createNewAgent: (gender: GenderEnum) => void;
   /**
-   * 创建触摸配置
-   * @param currentTouchArea
-   * @param action
-   */
-  createTouchAction: (currentTouchArea: TouchAreaEnum, action: TouchAction) => void;
-  /**
    * 当前激活的角色
    */
   currentIdentifier: string;
@@ -64,11 +57,7 @@ export interface AgentStore {
    * 默认角色
    */
   defaultAgent: Agent;
-  /**
-   * touch Reducer
-   * @param payload
-   */
-  dispatchTouchAction: (payload: TouchActionType) => void;
+
   /**
    * 根据 ID 获取角色
    * @param id
@@ -83,10 +72,7 @@ export interface AgentStore {
    * @param agentId
    */
   removeLocalAgent: (agentId: string) => Promise<void>;
-  /**
-   * 删除触摸配置
-   */
-  removeTouchAction: (currentTouchArea: TouchAreaEnum, index: number) => void;
+
   /**
    * 设置角色配置
    */
@@ -103,13 +89,6 @@ export interface AgentStore {
    * 更新角色 TTS
    */
   updateAgentTTS: (tts: DeepPartial<TTS>) => void;
-  /**
-   * 更新触摸配置
-   * @param currentTouchArea
-   * @param index
-   * @param action
-   */
-  updateTouchAction: (currentTouchArea: TouchAreaEnum, index: number, action: TouchAction) => void;
 }
 
 const getTTSConfigByGender = (gender: GenderEnum) => {
@@ -126,8 +105,13 @@ const getTTSConfigByGender = (gender: GenderEnum) => {
   }
 };
 
-const createAgentStore: StateCreator<AgentStore, [['zustand/devtools', never]]> = (set, get) => ({
+const createAgentStore: StateCreator<AgentStore, [['zustand/devtools', never]]> = (
+  set,
+  get,
+  store,
+) => ({
   ...initialState,
+  ...createTouchStore(set, get, store),
   activateAgent: (identifier) => {
     set({ currentIdentifier: identifier });
   },
@@ -216,51 +200,6 @@ const createAgentStore: StateCreator<AgentStore, [['zustand/devtools', never]]> 
     updateAgentConfig({ meta });
   },
 
-  dispatchTouchAction: (payload) => {
-    const { setAgentConfig } = get();
-    const agent = agentSelectors.currentAgentItem(get());
-    const touch = agentSelectors.currentAgentTouch(get());
-
-    if (!touch || !agent) {
-      return;
-    }
-
-    const config = touchReducer(touch, payload);
-
-    setAgentConfig({ ...agent, touch: config });
-  },
-  removeTouchAction: (currentTouchArea, index) => {
-    const { dispatchTouchAction } = get();
-    dispatchTouchAction({
-      type: 'DELETE_TOUCH_ACTION',
-      payload: {
-        touchArea: currentTouchArea,
-        index: index,
-      },
-    });
-  },
-  updateTouchAction: (currentTouchArea, index, action) => {
-    const { dispatchTouchAction } = get();
-    dispatchTouchAction({
-      type: 'UPDATE_TOUCH_ACTION',
-      payload: {
-        touchArea: currentTouchArea,
-        index: index,
-        action,
-      },
-    });
-  },
-  createTouchAction: (currentTouchArea, action) => {
-    const { dispatchTouchAction } = get();
-
-    dispatchTouchAction({
-      type: 'CREATE_TOUCH_ACTION',
-      payload: {
-        touchArea: currentTouchArea,
-        action,
-      },
-    });
-  },
   updateAgentTTS: (tts) => {
     const { updateAgentConfig } = get();
     updateAgentConfig({ tts });

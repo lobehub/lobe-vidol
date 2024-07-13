@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
 import { configSelectors, useSettingStore } from '@/store/setting';
+import { GenderEnum } from '@/types/agent';
 import { TouchAreaEnum } from '@/types/touch';
 
 import Header from '../components/Header';
@@ -19,9 +20,9 @@ interface AreaListProps {
 const AreaList = (props: AreaListProps) => {
   const { currentTouchArea, style, className, areaOptions = [] } = props;
   const [female, male, other] = useSettingStore((s) => [
-    configSelectors.currentFemaleTouchConfig(s, currentTouchArea),
-    configSelectors.currentMaleTouchConfig(s, currentTouchArea),
-    configSelectors.currentOtherTouchConfig(s, currentTouchArea),
+    configSelectors.currentTouchConfig(s, GenderEnum.FEMALE, currentTouchArea),
+    configSelectors.currentTouchConfig(s, GenderEnum.MALE, currentTouchArea),
+    configSelectors.currentTouchConfig(s, GenderEnum.OTHER, currentTouchArea),
   ]);
   const { t } = useTranslation(['panel', 'features']);
 
