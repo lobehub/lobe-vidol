@@ -4,18 +4,19 @@ import { XIcon } from 'lucide-react';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { useAgentStore } from '@/store/agent';
+import { useSettingStore } from '@/store/setting';
+import { GenderEnum } from '@/types/agent';
 import { TouchAreaEnum } from '@/types/touch';
 
 interface Props {
+  gender: GenderEnum;
   index: number;
   touchArea: TouchAreaEnum;
 }
 
-export default memo((props: Props) => {
-  const { touchArea, index } = props;
+const DeleteButton = memo<Props>(({ touchArea, index, gender }) => {
   const { t } = useTranslation('common');
-  const [removeTouchAction] = useAgentStore((s) => [s.removeTouchAction]);
+  const [removeTouchAction] = useSettingStore((s) => [s.removeTouchAction]);
   return (
     <Popconfirm
       title={t('actions.confirmDel')}
@@ -23,10 +24,12 @@ export default memo((props: Props) => {
       okText={t('confirm')}
       cancelText={t('cancel')}
       onConfirm={() => {
-        removeTouchAction(touchArea, index);
+        removeTouchAction(gender, touchArea, index);
       }}
     >
       <ActionIcon icon={XIcon} title={t('actions.del')} />
     </Popconfirm>
   );
 });
+
+export default DeleteButton;

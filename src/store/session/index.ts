@@ -1,7 +1,7 @@
 import { nanoid } from 'ai';
 import dayjs from 'dayjs';
 import { produce } from 'immer';
-import { createJSONStorage, devtools, persist } from 'zustand/middleware';
+import { PersistOptions, createJSONStorage, devtools, persist } from 'zustand/middleware';
 import { shallow } from 'zustand/shallow';
 import { createWithEqualityFn } from 'zustand/traditional';
 import { StateCreator } from 'zustand/vanilla';
@@ -498,17 +498,19 @@ export const createSessionStore: StateCreator<SessionStore, [['zustand/devtools'
   },
 });
 
+const persistOptions: PersistOptions<SessionStore> = {
+  name: SESSION_STORAGE_KEY, // name of the item in the storage (must be unique)
+  storage: createJSONStorage(() => storage),
+  version: 0,
+  skipHydration: true,
+};
+
 export const useSessionStore = createWithEqualityFn<SessionStore>()(
   persist(
     devtools(createSessionStore, {
       name: 'VIDOL_SESSION_STORE',
     }),
-    {
-      name: SESSION_STORAGE_KEY, // name of the item in the storage (must be unique)
-      storage: createJSONStorage(() => storage),
-      version: 0,
-      skipHydration: true,
-    },
+    persistOptions,
   ),
   shallow,
 );

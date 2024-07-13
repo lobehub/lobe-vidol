@@ -1,5 +1,5 @@
 import { StateCreator } from 'zustand';
-import { createJSONStorage, devtools, persist } from 'zustand/middleware';
+import { PersistOptions, createJSONStorage, devtools, persist } from 'zustand/middleware';
 import { shallow } from 'zustand/shallow';
 import { createWithEqualityFn } from 'zustand/traditional';
 
@@ -17,17 +17,19 @@ const createStore: StateCreator<DanceStore, [['zustand/devtools', never]]> = (..
   ...createPlayListStore(...parameters),
 });
 
+const persistOptions: PersistOptions<DanceStore> = {
+  name: DANCE_STORAGE_KEY, // name of the item in the storage (must be unique)
+  storage: createJSONStorage(() => storage),
+  version: 0,
+  skipHydration: true,
+};
+
 export const useDanceStore = createWithEqualityFn<DanceStore>()(
   persist(
     devtools(createStore, {
       name: 'VIDOL_DANCE_STORE',
     }),
-    {
-      name: DANCE_STORAGE_KEY, // name of the item in the storage (must be unique)
-      storage: createJSONStorage(() => storage),
-      version: 0,
-      skipHydration: true,
-    },
+    persistOptions,
   ),
   shallow,
 );

@@ -20,9 +20,9 @@ interface AreaListProps {
 const AreaList = (props: AreaListProps) => {
   const { currentTouchArea, style, className, areaOptions = [] } = props;
   const [female, male, other] = useSettingStore((s) => [
-    configSelectors.currentTouchConfig(s, GenderEnum.FEMALE, currentTouchArea),
-    configSelectors.currentTouchConfig(s, GenderEnum.MALE, currentTouchArea),
-    configSelectors.currentTouchConfig(s, GenderEnum.OTHER, currentTouchArea),
+    configSelectors.getTouchActionsByGenderAndArea(s, GenderEnum.FEMALE, currentTouchArea),
+    configSelectors.getTouchActionsByGenderAndArea(s, GenderEnum.MALE, currentTouchArea),
+    configSelectors.getTouchActionsByGenderAndArea(s, GenderEnum.OTHER, currentTouchArea),
   ]);
   const { t } = useTranslation(['panel', 'features']);
 
@@ -33,30 +33,48 @@ const AreaList = (props: AreaListProps) => {
       <Header title={t('touch.touchActionList', { touchArea })} />
       <Header
         title={t('agent.female', { ns: 'features' })}
-        extra={<AddOrEdit isEdit={false} touchArea={currentTouchArea} />}
+        extra={<AddOrEdit isEdit={false} touchArea={currentTouchArea} gender={GenderEnum.FEMALE} />}
       />
       {female.map((item, index) => {
         return (
-          <ListItem item={item} currentTouchArea={currentTouchArea} index={index} key={index} />
+          <ListItem
+            item={item}
+            currentTouchArea={currentTouchArea}
+            index={index}
+            key={index}
+            gender={GenderEnum.FEMALE}
+          />
         );
       })}
       <Header
         title={t('agent.male', { ns: 'features' })}
-        extra={<AddOrEdit isEdit={false} touchArea={currentTouchArea} />}
+        extra={<AddOrEdit isEdit={false} touchArea={currentTouchArea} gender={GenderEnum.MALE} />}
       />
       {male.map((item, index) => {
         return (
-          <ListItem item={item} currentTouchArea={currentTouchArea} index={index} key={index} />
+          <ListItem
+            item={item}
+            currentTouchArea={currentTouchArea}
+            index={index}
+            key={index}
+            gender={GenderEnum.MALE}
+          />
         );
       })}
 
       <Header
         title={t('agent.other', { ns: 'features' })}
-        extra={<AddOrEdit isEdit={false} touchArea={currentTouchArea} />}
+        extra={<AddOrEdit isEdit={false} touchArea={currentTouchArea} gender={GenderEnum.OTHER} />}
       />
       {other.map((item, index) => {
         return (
-          <ListItem item={item} currentTouchArea={currentTouchArea} index={index} key={index} />
+          <ListItem
+            item={item}
+            currentTouchArea={currentTouchArea}
+            index={index}
+            key={index}
+            gender={GenderEnum.OTHER}
+          />
         );
       })}
     </Flexbox>

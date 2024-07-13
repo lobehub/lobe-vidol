@@ -7,23 +7,24 @@ import { useTranslation } from 'react-i18next';
 
 import { INPUT_WIDTH_M, INPUT_WIDTH_S } from '@/constants/token';
 import { MAX_TOUCH_ACTION_TEXT_LENGTH } from '@/constants/touch';
-import { useAgentStore } from '@/store/agent';
+import { useSettingStore } from '@/store/setting';
+import { GenderEnum } from '@/types/agent';
 import { TouchAction, TouchAreaEnum } from '@/types/touch';
 
-interface Props {
+export interface Props {
+  gender: GenderEnum;
   index?: number;
   isEdit?: boolean;
   touchAction?: TouchAction;
   touchArea: TouchAreaEnum;
 }
 
-export default memo((props: Props) => {
-  const { touchArea, index, touchAction, isEdit = true } = props;
+const AddOrEdit = memo<Props>(({ touchArea, index, touchAction, isEdit = true, gender }) => {
   const [open, setOpen] = useState(false);
   const [form] = Form.useForm();
   const { t } = useTranslation(['common', 'panel', 'constants']);
 
-  const [updateTouchAction, createTouchAction] = useAgentStore((s) => [
+  const [updateTouchAction, createTouchAction] = useSettingStore((s) => [
     s.updateTouchAction,
     s.createTouchAction,
   ]);
@@ -36,9 +37,9 @@ export default memo((props: Props) => {
     form.validateFields().then((values) => {
       setOpen(false);
       if (isEdit) {
-        updateTouchAction(touchArea, index!, values);
+        updateTouchAction(gender, touchArea, index!, values);
       } else {
-        createTouchAction(touchArea, values);
+        createTouchAction(gender, touchArea, values);
       }
     });
   };
@@ -142,3 +143,5 @@ export default memo((props: Props) => {
     </>
   );
 });
+
+export default AddOrEdit;

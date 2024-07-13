@@ -2,7 +2,13 @@ import { nanoid } from 'ai';
 import { t } from 'i18next';
 import { produce } from 'immer';
 import { DeepPartial } from 'utility-types';
-import { createJSONStorage, devtools, persist, subscribeWithSelector } from 'zustand/middleware';
+import {
+  PersistOptions,
+  createJSONStorage,
+  devtools,
+  persist,
+  subscribeWithSelector,
+} from 'zustand/middleware';
 import { shallow } from 'zustand/shallow';
 import { createWithEqualityFn } from 'zustand/traditional';
 import { StateCreator } from 'zustand/vanilla';
@@ -230,18 +236,20 @@ const createAgentStore: StateCreator<AgentStore, [['zustand/devtools', never]]> 
   },
 });
 
+const persistOptions: PersistOptions<AgentStore> = {
+  name: AGENT_STORAGE_KEY, // name of the item in the storage (must be unique)
+  storage: createJSONStorage(() => storage),
+  version: 0,
+  skipHydration: true,
+};
+
 export const useAgentStore = createWithEqualityFn<AgentStore>()(
   subscribeWithSelector(
     persist(
       devtools(createAgentStore, {
         name: 'VIDOL_AGENT_STORE',
       }),
-      {
-        name: AGENT_STORAGE_KEY,
-        storage: createJSONStorage(() => storage),
-        version: 0,
-        skipHydration: true,
-      },
+      persistOptions,
     ),
   ),
   shallow,
