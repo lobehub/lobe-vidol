@@ -154,7 +154,7 @@ const createAgentStore: StateCreator<AgentStore, [['zustand/devtools', never]]> 
         cover: '',
         category: CategoryEnum.ANIME,
         readme: '',
-        gender,
+        gender: gender,
       },
       touch: undefined,
       tts: getTTSConfigByGender(gender),
@@ -240,7 +240,7 @@ const persistOptions: PersistOptions<AgentStore> = {
   name: AGENT_STORAGE_KEY, // name of the item in the storage (must be unique)
   storage: createJSONStorage(() => storage),
   version: 0,
-  skipHydration: true,
+  // skipHydration: true,
 };
 
 export const useAgentStore = createWithEqualityFn<AgentStore>()(

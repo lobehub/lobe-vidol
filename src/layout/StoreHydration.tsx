@@ -3,7 +3,7 @@
 import { useRouter } from 'next/navigation';
 import { memo, useEffect } from 'react';
 
-import { AGENT_STORAGE_KEY, useAgentStore } from '@/store/agent';
+import { AGENT_STORAGE_KEY } from '@/store/agent';
 import { DANCE_STORAGE_KEY } from '@/store/dance';
 import { SESSION_STORAGE_KEY } from '@/store/session';
 import { SETTING_STORAGE_KEY } from '@/store/setting';
@@ -33,7 +33,7 @@ const StoreHydration = () => {
   useEffect(() => {
     // refs: https://github.com/pmndrs/zustand/blob/main/docs/integrations/persisting-store-data.md#hashydrated
     migrate().then(() => {
-      useAgentStore.persist.rehydrate();
+      // useAgentStore.persist.rehydrate();
     });
   }, []);
 

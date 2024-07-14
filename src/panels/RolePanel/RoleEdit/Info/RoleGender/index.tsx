@@ -24,8 +24,8 @@ export default memo<Props>((props) => {
       className={className}
       style={style}
       options={[
-        { label: t('agent.gender.male'), value: GenderEnum.FEMALE },
-        { label: t('agent.gender.female'), value: GenderEnum.MALE },
+        { label: t('agent.gender.male'), value: GenderEnum.MALE },
+        { label: t('agent.gender.female'), value: GenderEnum.FEMALE },
         { label: t('agent.gender.other'), value: GenderEnum.OTHER },
       ]}
       value={meta?.gender}
