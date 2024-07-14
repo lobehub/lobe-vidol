@@ -403,7 +403,7 @@ export const createSessionStore: StateCreator<SessionStore, [['zustand/devtools'
     set({ sessionList: sessions });
 
     if (activeId === id) {
-      set({ activeId: sessions[0]?.agentId });
+      set({ activeId: LOBE_VIDOL_DEFAULT_AGENT_ID });
     }
   },
   sendMessage: async (message: string) => {

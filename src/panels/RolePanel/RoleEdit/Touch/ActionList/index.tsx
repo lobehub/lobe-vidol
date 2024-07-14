@@ -1,3 +1,4 @@
+import { Empty } from 'antd';
 import { createStyles } from 'antd-style';
 import classNames from 'classnames';
 import { get } from 'lodash-es';
@@ -43,7 +44,9 @@ const AreaList = (props: AreaListProps) => {
   const { currentTouchArea, style, className, areaOptions = [] } = props;
   const [currentAgentTouch] = useAgentStore((s) => [agentSelectors.currentAgentTouch(s)]);
   const { t } = useTranslation('panel');
-  const data = currentAgentTouch ? (get(currentAgentTouch, currentTouchArea) as TouchAction[]) : [];
+  const items = currentAgentTouch
+    ? (get(currentAgentTouch, currentTouchArea) as TouchAction[])
+    : [];
 
   const touchArea = areaOptions.find((item) => item.value === currentTouchArea)?.label;
 
@@ -53,7 +56,7 @@ const AreaList = (props: AreaListProps) => {
         title={t('touch.touchActionList', { touchArea })}
         extra={<AddOrEdit isEdit={false} touchArea={currentTouchArea} />}
       />
-      {data.map((item, index) => {
+      {items.map((item, index) => {
         return (
           <ListItem
             key={`${item.text}_${index}`}
@@ -79,6 +82,9 @@ const AreaList = (props: AreaListProps) => {
           />
         );
       })}
+      {items.length === 0 && (
+        <Empty description={t('touch.noTouchActions')} image={Empty.PRESENTED_IMAGE_SIMPLE} />
+      )}
     </Flexbox>
   );
 };

@@ -1,3 +1,4 @@
+import { Empty } from 'antd';
 import { isEqual } from 'lodash-es';
 import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -16,11 +17,11 @@ interface AreaListProps {
 
 const AreaList = memo((props: AreaListProps) => {
   const { currentTouchArea } = props;
-  const touchList = useSettingStore(
+  const items = useSettingStore(
     (s) => configSelectors.getTouchActionsByGenderAndArea(s, GenderEnum.MALE, currentTouchArea),
     isEqual,
   );
-  const { t } = useTranslation('features');
+  const { t } = useTranslation(['features', 'panel']);
 
   return (
     <>
@@ -28,7 +29,7 @@ const AreaList = memo((props: AreaListProps) => {
         title={t('agent.male')}
         extra={<AddOrEdit isEdit={false} touchArea={currentTouchArea} gender={GenderEnum.MALE} />}
       />
-      {touchList.map((item, index) => {
+      {items.map((item, index) => {
         return (
           <ListItem
             item={item}
@@ -39,6 +40,12 @@ const AreaList = memo((props: AreaListProps) => {
           />
         );
       })}
+      {items.length === 0 && (
+        <Empty
+          description={t('touch.noTouchActions', { ns: 'panel' })}
+          image={Empty.PRESENTED_IMAGE_SIMPLE}
+        />
+      )}
     </>
   );
 });

@@ -23,8 +23,9 @@ const UnSubscribe = memo((props: UnSubscribeButtonProps) => {
       cancelText={t('cancel')}
       description={t('delRoleDesc', { name: agent?.meta.name, ns: 'role' })}
       key="delete"
+      overlayStyle={{ width: 416 }}
       okText={t('confirm')}
-      okButtonProps={{ loading: loading }}
+      okButtonProps={{ loading: loading, danger: true }}
       onConfirm={async () => {
         if (!agent) return;
         setLoading(true);
