@@ -4,9 +4,9 @@ import { useRouter } from 'next/navigation';
 import { memo, useEffect } from 'react';
 
 import { AGENT_STORAGE_KEY, useAgentStore } from '@/store/agent';
-import { DANCE_STORAGE_KEY, useDanceStore } from '@/store/dance';
-import { SESSION_STORAGE_KEY, useSessionStore } from '@/store/session';
-import { SETTING_STORAGE_KEY, useSettingStore } from '@/store/setting';
+import { DANCE_STORAGE_KEY } from '@/store/dance';
+import { SESSION_STORAGE_KEY } from '@/store/session';
+import { SETTING_STORAGE_KEY } from '@/store/setting';
 import storage from '@/utils/storage';
 
 const MIGRATION_KEY = 'MIGRATE_TO_INDEXED_DB';
@@ -34,9 +34,6 @@ const StoreHydration = () => {
     // refs: https://github.com/pmndrs/zustand/blob/main/docs/integrations/persisting-store-data.md#hashydrated
     migrate().then(() => {
       useAgentStore.persist.rehydrate();
-      useSessionStore.persist.rehydrate();
-      useSettingStore.persist.rehydrate();
-      useDanceStore.persist.rehydrate();
     });
   }, []);
 

@@ -74,6 +74,7 @@
   "selectModel": "Please select a model",
   "setLocalStorage": "Set Local Storage",
   "startChat": "Start Chat",
+  "touchSetting": "Touch Settings",
   "ttsCombine": "Text-to-Speech Combine",
   "ttsTip": "Speech Recognition (requires VPN)",
   "uploadTip": "Click or drag files here to upload",

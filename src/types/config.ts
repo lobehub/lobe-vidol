@@ -1,7 +1,9 @@
 import { Coordinates } from '@dnd-kit/utilities';
 import { NeutralColors, PrimaryColors } from '@lobehub/ui';
 
+import { GenderEnum } from '@/types/agent';
 import { LocaleMode } from '@/types/locale';
+import { TouchActionConfig } from '@/types/touch';
 
 export type BackgroundEffect = 'glow' | 'none';
 
@@ -34,11 +36,21 @@ export interface LanguageModelConfig {
   openAI: OpenAIConfig;
 }
 
+export interface TouchConfig {
+  [GenderEnum.FEMALE]: TouchActionConfig;
+  [GenderEnum.MALE]: TouchActionConfig;
+  [GenderEnum.OTHER]: TouchActionConfig;
+}
+
 export interface Config extends CommonConfig {
   /**
    * 语言模型配置
    */
   languageModel: LanguageModelConfig;
+  /**
+   * 全局触摸配置
+   */
+  touch: TouchConfig;
 }
 
 export interface CommonConfig {

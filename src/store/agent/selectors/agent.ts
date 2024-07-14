@@ -1,5 +1,5 @@
-import { DEFAULT_AGENT_CONFIG, LOBE_VIDOL_DEFAULT_AGENT_ID } from '@/constants/agent';
-import { EMPTY_TTS_CONFIG } from '@/constants/touch';
+import { LOBE_VIDOL_DEFAULT_AGENT_ID } from '@/constants/agent';
+import { EMPTY_TOUCH_CONFIG } from '@/constants/touch';
 import { Agent, AgentMeta } from '@/types/agent';
 import { TouchActionConfig } from '@/types/touch';
 import { TTS } from '@/types/tts';
@@ -8,12 +8,12 @@ import { AgentStore } from '../index';
 
 const showSideBar = (s: AgentStore) => !!s.currentIdentifier;
 
-const currentAgentItem = (s: AgentStore): Agent => {
+const currentAgentItem = (s: AgentStore): Agent | undefined => {
   const { currentIdentifier, localAgentList, defaultAgent } = s;
   if (currentIdentifier === LOBE_VIDOL_DEFAULT_AGENT_ID) return defaultAgent;
 
   const currentAgent = localAgentList.find((item) => item.agentId === currentIdentifier);
-  if (!currentAgent) return DEFAULT_AGENT_CONFIG;
+  if (!currentAgent) return undefined;
 
   return currentAgent;
 };
@@ -36,7 +36,7 @@ const currentAgentTouch = (s: AgentStore): TouchActionConfig | undefined => {
   const currentAgent = currentAgentItem(s);
   if (!currentAgent) return undefined;
 
-  return currentAgent.touch || EMPTY_TTS_CONFIG;
+  return currentAgent.touch || EMPTY_TOUCH_CONFIG;
 };
 
 const agentListIds = (s: AgentStore): string[] => {

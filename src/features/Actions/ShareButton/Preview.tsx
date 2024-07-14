@@ -13,8 +13,9 @@ import { FieldType } from './type';
 const Preview = memo<FieldType & { title?: string }>(
   ({ title, withSystemRole, withBackground, withFooter }) => {
     const { sessionAgent } = useSessionContext();
-
     const { styles } = useStyles(withBackground);
+
+    if (!sessionAgent) return null;
 
     return (
       <div className={styles.preview}>

@@ -1,35 +1,39 @@
 import { nanoid } from 'ai';
+import { t } from 'i18next';
 import { produce } from 'immer';
 import { DeepPartial } from 'utility-types';
-import { createJSONStorage, devtools, persist, subscribeWithSelector } from 'zustand/middleware';
+import {
+  PersistOptions,
+  createJSONStorage,
+  devtools,
+  persist,
+  subscribeWithSelector,
+} from 'zustand/middleware';
 import { shallow } from 'zustand/shallow';
 import { createWithEqualityFn } from 'zustand/traditional';
 import { StateCreator } from 'zustand/vanilla';
 
-import { DEFAULT_AGENT_CONFIG, LOBE_VIDOL_DEFAULT_AGENT_ID } from '@/constants/agent';
-import {
-  DEFAULT_TOUCH_ACTION_CONFIG_FEMALE,
-  DEFAULT_TOUCH_ACTION_CONFIG_MALE,
-} from '@/constants/touch';
+import { LOBE_VIDOL_DEFAULT_AGENT_ID } from '@/constants/agent';
+import { DEFAULT_AGENT_AVATAR_URL } from '@/constants/common';
+import { DEFAULT_LLM_CONFIG } from '@/constants/openai';
 import {
   DEFAULT_TTS_CONFIG_FEMALE,
   DEFAULT_TTS_CONFIG_MALE,
   DEFAULT_TTS_CONFIG_OTHER,
 } from '@/constants/tts';
-import { TouchActionType, touchReducer } from '@/store/agent/reducers/touch';
-import { Agent, AgentMeta, GenderEnum } from '@/types/agent';
-import { TouchAction, TouchAreaEnum } from '@/types/touch';
+import createTouchStore from '@/store/agent/slices/touch';
+import { Agent, AgentMeta, CategoryEnum, GenderEnum } from '@/types/agent';
 import { TTS } from '@/types/tts';
 import { mergeWithUndefined } from '@/utils/common';
 import { getModelPathByAgentId } from '@/utils/file';
 import storage from '@/utils/storage';
 
 import { initialState } from './initialState';
-import { agentSelectors } from './selectors/agent';
+import { TouchStore } from './slices/touch';
 
 export const AGENT_STORAGE_KEY = 'vidol-chat-agent-storage';
 
-export interface AgentStore {
+export interface AgentStore extends TouchStore {
   /**
    * 激活角色
    */
@@ -48,12 +52,6 @@ export interface AgentStore {
    */
   createNewAgent: (gender: GenderEnum) => void;
   /**
-   * 创建触摸配置
-   * @param currentTouchArea
-   * @param action
-   */
-  createTouchAction: (currentTouchArea: TouchAreaEnum, action: TouchAction) => void;
-  /**
    * 当前激活的角色
    */
   currentIdentifier: string;
@@ -65,16 +63,12 @@ export interface AgentStore {
    * 默认角色
    */
   defaultAgent: Agent;
-  /**
-   * Touch Reducer
-   * @param payload
-   */
-  dispatchTouchAction: (payload: TouchActionType) => void;
+
   /**
    * 根据 ID 获取角色
    * @param id
    */
-  getAgentById: (id: string) => Agent;
+  getAgentById: (id: string) => Agent | undefined;
   /**
    * 本地角色列表
    */
@@ -84,10 +78,7 @@ export interface AgentStore {
    * @param agentId
    */
   removeLocalAgent: (agentId: string) => Promise<void>;
-  /**
-   * 删除触摸配置
-   */
-  removeTouchAction: (currentTouchArea: TouchAreaEnum, index: number) => void;
+
   /**
    * 设置角色配置
    */
@@ -104,28 +95,7 @@ export interface AgentStore {
    * 更新角色 TTS
    */
   updateAgentTTS: (tts: DeepPartial<TTS>) => void;
-  /**
-   * 更新触摸配置
-   * @param currentTouchArea
-   * @param index
-   * @param action
-   */
-  updateTouchAction: (currentTouchArea: TouchAreaEnum, index: number, action: TouchAction) => void;
 }
-
-const getTouchConfigByGender = (gender: GenderEnum) => {
-  switch (gender) {
-    case GenderEnum.FEMALE: {
-      return DEFAULT_TOUCH_ACTION_CONFIG_FEMALE;
-    }
-    case GenderEnum.MALE: {
-      return DEFAULT_TOUCH_ACTION_CONFIG_MALE;
-    }
-    default: {
-      return undefined;
-    }
-  }
-};
 
 const getTTSConfigByGender = (gender: GenderEnum) => {
   switch (gender) {
@@ -141,8 +111,13 @@ const getTTSConfigByGender = (gender: GenderEnum) => {
   }
 };
 
-const createAgentStore: StateCreator<AgentStore, [['zustand/devtools', never]]> = (set, get) => ({
+const createAgentStore: StateCreator<AgentStore, [['zustand/devtools', never]]> = (
+  set,
+  get,
+  store,
+) => ({
   ...initialState,
+  ...createTouchStore(set, get, store),
   activateAgent: (identifier) => {
     set({ currentIdentifier: identifier });
   },
@@ -155,13 +130,13 @@ const createAgentStore: StateCreator<AgentStore, [['zustand/devtools', never]]> 
   deactivateAgent: () => {
     set({ currentIdentifier: undefined });
   },
-  getAgentById: (agentId: string): Agent => {
+  getAgentById: (agentId: string) => {
     const { localAgentList, defaultAgent } = get();
 
     if (agentId === LOBE_VIDOL_DEFAULT_AGENT_ID) return defaultAgent;
 
     const currentAgent = localAgentList.find((item) => item.agentId === agentId);
-    if (!currentAgent) return DEFAULT_AGENT_CONFIG;
+    if (!currentAgent) return undefined;
 
     return currentAgent;
   },
@@ -169,14 +144,21 @@ const createAgentStore: StateCreator<AgentStore, [['zustand/devtools', never]]> 
     const { localAgentList } = get();
 
     const newAgent: Agent = {
-      ...DEFAULT_AGENT_CONFIG,
+      agentId: nanoid(),
+      systemRole: '',
+      greeting: t('agent.hello', { ns: 'welcome' }),
       meta: {
-        ...DEFAULT_AGENT_CONFIG.meta,
+        name: t('agent.meta.name', { ns: 'constants' }),
+        description: t('agent.meta.description', { ns: 'constants' }),
+        avatar: DEFAULT_AGENT_AVATAR_URL,
+        cover: '',
+        category: CategoryEnum.ANIME,
+        readme: '',
         gender,
       },
-      agentId: nanoid(),
-      touch: getTouchConfigByGender(gender),
+      touch: undefined,
       tts: getTTSConfigByGender(gender),
+      ...DEFAULT_LLM_CONFIG,
     };
 
     const newList = produce(localAgentList, (draft) => {
@@ -224,51 +206,6 @@ const createAgentStore: StateCreator<AgentStore, [['zustand/devtools', never]]> 
     updateAgentConfig({ meta });
   },
 
-  dispatchTouchAction: (payload) => {
-    const { setAgentConfig } = get();
-    const agent = agentSelectors.currentAgentItem(get());
-    const touch = agentSelectors.currentAgentTouch(get());
-
-    if (!touch || !agent) {
-      return;
-    }
-
-    const config = touchReducer(touch, payload);
-
-    setAgentConfig({ ...agent, touch: config });
-  },
-  removeTouchAction: (currentTouchArea, index) => {
-    const { dispatchTouchAction } = get();
-    dispatchTouchAction({
-      type: 'DELETE_TOUCH_ACTION',
-      payload: {
-        touchArea: currentTouchArea,
-        index: index,
-      },
-    });
-  },
-  updateTouchAction: (currentTouchArea, index, action) => {
-    const { dispatchTouchAction } = get();
-    dispatchTouchAction({
-      type: 'UPDATE_TOUCH_ACTION',
-      payload: {
-        touchArea: currentTouchArea,
-        index: index,
-        action,
-      },
-    });
-  },
-  createTouchAction: (currentTouchArea, action) => {
-    const { dispatchTouchAction } = get();
-
-    dispatchTouchAction({
-      type: 'CREATE_TOUCH_ACTION',
-      payload: {
-        touchArea: currentTouchArea,
-        action,
-      },
-    });
-  },
   updateAgentTTS: (tts) => {
     const { updateAgentConfig } = get();
     updateAgentConfig({ tts });
@@ -299,18 +236,20 @@ const createAgentStore: StateCreator<AgentStore, [['zustand/devtools', never]]> 
   },
 });
 
+const persistOptions: PersistOptions<AgentStore> = {
+  name: AGENT_STORAGE_KEY, // name of the item in the storage (must be unique)
+  storage: createJSONStorage(() => storage),
+  version: 0,
+  skipHydration: true,
+};
+
 export const useAgentStore = createWithEqualityFn<AgentStore>()(
   subscribeWithSelector(
     persist(
       devtools(createAgentStore, {
         name: 'VIDOL_AGENT_STORE',
       }),
-      {
-        name: AGENT_STORAGE_KEY,
-        storage: createJSONStorage(() => storage),
-        version: 0,
-        skipHydration: true,
-      },
+      persistOptions,
     ),
   ),
   shallow,

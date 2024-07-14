@@ -4,7 +4,6 @@ import { LOBE_VIDOL_DEFAULT_AGENT_ID } from '@/constants/agent';
 import { DEFAULT_USER_AVATAR } from '@/constants/common';
 import { useAgentStore } from '@/store/agent';
 import { useSettingStore } from '@/store/setting';
-import { Agent } from '@/types/agent';
 import { ChatMessage } from '@/types/chat';
 import { Session } from '@/types/session';
 
@@ -49,7 +48,7 @@ const getAgentById = (s: SessionStore) => {
   };
 };
 
-const currentAgent = (s: SessionStore): Agent => {
+const currentAgent = (s: SessionStore) => {
   const { activeId } = s;
   const agentStore = useAgentStore.getState();
   return agentStore.getAgentById(activeId);
@@ -92,7 +91,6 @@ const currentChatsWithGreetingMessage = (s: SessionStore): ChatMessage[] => {
   const agent = currentAgent(s);
 
   const initTime = Date.now();
-  console.log(t('greet', { ns: 'welcome', name: agent?.meta.name }));
 
   const emptyGuideMessage = {
     content: agent?.greeting || t('greet', { ns: 'welcome', name: agent?.meta.name }),

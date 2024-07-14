@@ -10,7 +10,7 @@ import { ImageType } from './type';
 export const useScreenshot = (imageType: ImageType) => {
   const [loading, setLoading] = useState(false);
   const currentAgent = useSessionStore(sessionSelectors.currentAgent);
-  const title = currentAgent.meta.name;
+  const title = currentAgent?.meta?.name;
 
   const handleDownload = useCallback(async () => {
     setLoading(true);

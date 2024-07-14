@@ -1,13 +1,21 @@
 import { NeutralColors, PrimaryColors } from '@lobehub/ui';
 import { produce } from 'immer';
-import { isEqual, merge } from 'lodash-es';
-import { createJSONStorage, devtools, persist, subscribeWithSelector } from 'zustand/middleware';
+import { isEqual } from 'lodash-es';
+import {
+  PersistOptions,
+  createJSONStorage,
+  devtools,
+  persist,
+  subscribeWithSelector,
+} from 'zustand/middleware';
 import { shallow } from 'zustand/shallow';
 import { createWithEqualityFn } from 'zustand/traditional';
 import { StateCreator } from 'zustand/vanilla';
 
+import createTouchStore, { TouchStore } from '@/store/setting/slices/touch';
 import { BackgroundEffect, Config, OpenAIConfig } from '@/types/config';
 import { LocaleMode } from '@/types/locale';
+import { mergeWithUndefined } from '@/utils/common';
 import storage from '@/utils/storage';
 import { switchLang } from '@/utils/switchLang';
 
@@ -15,7 +23,7 @@ import { SettingState, initialState } from './initialState';
 
 export const SETTING_STORAGE_KEY = 'vidol-chat-config-storage';
 
-export interface SettingAction {
+export interface SettingAction extends TouchStore {
   /**
    * Reset config
    */
@@ -66,8 +74,13 @@ export interface SettingAction {
 
 export interface SettingStore extends SettingState, SettingAction {}
 
-const createStore: StateCreator<SettingStore, [['zustand/devtools', never]]> = (set, get) => ({
+const createStore: StateCreator<SettingStore, [['zustand/devtools', never]], [], SettingStore> = (
+  set,
+  get,
+  store,
+) => ({
   ...initialState,
+  ...createTouchStore(set, get, store),
 
   resetConfig: () => {
     localStorage.removeItem(SETTING_STORAGE_KEY);
@@ -95,7 +108,7 @@ const createStore: StateCreator<SettingStore, [['zustand/devtools', never]]> = (
   setConfig: (config) => {
     const prevSetting = get().config;
     const nextSetting = produce(prevSetting, (draftState) => {
-      merge(draftState, config);
+      mergeWithUndefined(draftState, config);
     });
     if (isEqual(prevSetting, nextSetting)) return;
     set({ config: nextSetting });
@@ -106,18 +119,19 @@ const createStore: StateCreator<SettingStore, [['zustand/devtools', never]]> = (
   },
 });
 
+const persistOptions: PersistOptions<SettingStore> = {
+  name: SETTING_STORAGE_KEY, // name of the item in the storage (must be unique)
+  storage: createJSONStorage(() => storage),
+  version: 0,
+};
+
 export const useSettingStore = createWithEqualityFn<SettingStore>()(
   subscribeWithSelector(
     persist(
       devtools(createStore, {
         name: 'VIDOL_CONFIG_STORE',
       }),
-      {
-        name: SETTING_STORAGE_KEY, // name of the item in the storage (must be unique)
-        storage: createJSONStorage(() => storage),
-        version: 0,
-        skipHydration: true,
-      },
+      persistOptions,
     ),
   ),
   shallow,
