@@ -97,7 +97,7 @@ export interface SessionStore {
   /**
    *  移除会话
    */
-  removeSession: (id: string) => void;
+  removeSessionByAgentId: (id: string) => void;
   /**
    * 发送消息
    * @param message 消息内容
@@ -392,7 +392,7 @@ export const createSessionStore: StateCreator<SessionStore, [['zustand/devtools'
 
     fetchAIResponse(contextMessages, assistantId);
   },
-  removeSession: (id) => {
+  removeSessionByAgentId: (id) => {
     const { sessionList, activeId } = get();
 
     const sessions = produce(sessionList, (draft) => {
@@ -403,7 +403,7 @@ export const createSessionStore: StateCreator<SessionStore, [['zustand/devtools'
     set({ sessionList: sessions });
 
     if (activeId === id) {
-      set({ activeId: sessions[0]?.agentId });
+      set({ activeId: LOBE_VIDOL_DEFAULT_AGENT_ID });
     }
   },
   sendMessage: async (message: string) => {

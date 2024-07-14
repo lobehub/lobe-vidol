@@ -1,7 +1,7 @@
 'use client';
 
 import { Alert, Icon, Modal, type ModalProps } from '@lobehub/ui';
-import { Button, Divider, Input, Popover, Progress, Space, Typography } from 'antd';
+import { Button, Divider, Input, Popover, Progress, Space, Typography, message } from 'antd';
 import { useTheme } from 'antd-style';
 import isEqual from 'fast-deep-equal';
 import { kebabCase } from 'lodash-es';
@@ -26,7 +26,7 @@ const SubmitAgentModal = memo<ModalProps>(({ open, onCancel }) => {
     isEqual,
   );
   const meta = currentAgent?.meta;
-  const { t } = useTranslation('features');
+  const { t } = useTranslation(['features', 'error']);
 
   const { uploading, uploadAgentData, percent } = useUploadAgent();
 
@@ -45,6 +45,10 @@ const SubmitAgentModal = memo<ModalProps>(({ open, onCancel }) => {
     }
 
     const { avatarUrl, coverUrl, modelUrl } = await uploadAgentData(agentId, meta);
+    if (!avatarUrl || !coverUrl || !modelUrl) {
+      message.error(t('fileUploadError', { ns: 'error' }));
+      return;
+    }
 
     const body = [
       '### agentId',
