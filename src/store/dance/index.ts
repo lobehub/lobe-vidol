@@ -21,7 +21,6 @@ const persistOptions: PersistOptions<DanceStore> = {
   name: DANCE_STORAGE_KEY, // name of the item in the storage (must be unique)
   storage: createJSONStorage(() => storage),
   version: 0,
-  skipHydration: true,
 };
 
 export const useDanceStore = createWithEqualityFn<DanceStore>()(

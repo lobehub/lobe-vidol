@@ -23,6 +23,7 @@ const useStyles = createStyles(({ css, token }) => ({
   listItem: css`
     position: relative;
 
+    height: 48px;
     margin-block: 2px;
 
     font-size: ${token.fontSize}px;
@@ -38,14 +39,14 @@ const TouchActionListItem = memo<ActionListItemProps>(
 
     return (
       <ListItem
-        key={`${item.text}_${index}`}
+        key={`${gender}_${item.text}_${index}`}
         className={classNames(styles.listItem)}
         showAction={true}
         title={item.text}
         active={false}
         actions={[
           <AddOrEdit
-            key={`${currentTouchArea}_edit_${index}`}
+            key={`${gender}_${currentTouchArea}_edit_${index}`}
             index={index}
             gender={gender}
             touchArea={currentTouchArea}
@@ -53,7 +54,7 @@ const TouchActionListItem = memo<ActionListItemProps>(
             isEdit={true}
           />,
           <Delete
-            key={`${currentTouchArea}_delete_${index}`}
+            key={`${gender}_${currentTouchArea}_delete_${index}`}
             index={index}
             gender={gender}
             touchArea={currentTouchArea}

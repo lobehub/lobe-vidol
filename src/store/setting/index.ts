@@ -1,6 +1,6 @@
 import { NeutralColors, PrimaryColors } from '@lobehub/ui';
 import { produce } from 'immer';
-import { isEqual, merge } from 'lodash-es';
+import { isEqual } from 'lodash-es';
 import {
   PersistOptions,
   createJSONStorage,
@@ -15,6 +15,7 @@ import { StateCreator } from 'zustand/vanilla';
 import createTouchStore, { TouchStore } from '@/store/setting/slices/touch';
 import { BackgroundEffect, Config, OpenAIConfig } from '@/types/config';
 import { LocaleMode } from '@/types/locale';
+import { mergeWithUndefined } from '@/utils/common';
 import storage from '@/utils/storage';
 import { switchLang } from '@/utils/switchLang';
 
@@ -107,7 +108,7 @@ const createStore: StateCreator<SettingStore, [['zustand/devtools', never]], [],
   setConfig: (config) => {
     const prevSetting = get().config;
     const nextSetting = produce(prevSetting, (draftState) => {
-      merge(draftState, config);
+      mergeWithUndefined(draftState, config);
     });
     if (isEqual(prevSetting, nextSetting)) return;
     set({ config: nextSetting });
@@ -122,7 +123,6 @@ const persistOptions: PersistOptions<SettingStore> = {
   name: SETTING_STORAGE_KEY, // name of the item in the storage (must be unique)
   storage: createJSONStorage(() => storage),
   version: 0,
-  skipHydration: true,
 };
 
 export const useSettingStore = createWithEqualityFn<SettingStore>()(

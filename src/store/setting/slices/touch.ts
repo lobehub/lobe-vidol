@@ -1,3 +1,4 @@
+import { isEqual } from 'lodash-es';
 import { StateCreator } from 'zustand/vanilla';
 
 import { SettingStore, configSelectors } from '@/store/setting';
@@ -49,7 +50,6 @@ const createTouchStore: StateCreator<
 > = (set, get) => {
   return {
     dispatchTouchAction: (payload) => {
-      const { setConfig } = get();
       const touch = configSelectors.currentTouchConfig(get());
 
       if (!touch) {
@@ -58,7 +58,14 @@ const createTouchStore: StateCreator<
 
       const config = touchReducer(touch, payload);
 
-      setConfig({ touch: config });
+      if (isEqual(touch, config)) return;
+
+      set((state) => ({
+        config: {
+          ...state.config,
+          touch: config,
+        },
+      }));
     },
     removeTouchAction: (gender, currentTouchArea, index) => {
       const { dispatchTouchAction } = get();

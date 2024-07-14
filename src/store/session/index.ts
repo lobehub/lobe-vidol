@@ -502,7 +502,6 @@ const persistOptions: PersistOptions<SessionStore> = {
   name: SESSION_STORAGE_KEY, // name of the item in the storage (must be unique)
   storage: createJSONStorage(() => storage),
   version: 0,
-  skipHydration: true,
 };
 
 export const useSessionStore = createWithEqualityFn<SessionStore>()(
