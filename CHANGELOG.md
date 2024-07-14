@@ -2,6 +2,40 @@
 
 # Changelog
 
+## [Version&nbsp;0.18.0](https://github.com/lobehub/lobe-vidol/compare/v0.17.1...v0.18.0)
+<sup>Released on **2024-07-14**</sup>
+
+
+#### ✨ Features
+
+- **misc**: Settings 添加触控全局配置, support touch list, 添加 touch setting, 添加 touch setting.
+
+
+<br/>
+
+
+
+<details>
+<summary><kbd>Improvements and Fixes</kbd></summary>
+
+
+
+#### What's improved
+
+* **misc**: Settings 添加触控全局配置 ([4de71db](https://github.com/lobehub/lobe-vidol/commit/4de71db))
+* **misc**: Support touch list ([c33ee7d](https://github.com/lobehub/lobe-vidol/commit/c33ee7d))
+* **misc**: 添加 touch setting ([3b0fe95](https://github.com/lobehub/lobe-vidol/commit/3b0fe95))
+* **misc**: 添加 touch setting ([d196b78](https://github.com/lobehub/lobe-vidol/commit/d196b78))
+
+</details>
+
+
+<div align="right">
+
+[![](https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square)](#readme-top)
+
+</div>
+
 ### [Version&nbsp;0.17.1](https://github.com/lobehub/lobe-vidol/compare/v0.17.0...v0.17.1)
 <sup>Released on **2024-07-11**</sup>
 
