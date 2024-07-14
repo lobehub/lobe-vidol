@@ -74,6 +74,7 @@
   "selectModel": "请选择模型",
   "setLocalStorage": "设置 LocalStorage",
   "startChat": "开始聊天",
+  "touchSetting": "触摸设置",
   "ttsCombine": "语音合成",
   "ttsTip": "语音识别（需科学上网）",
   "uploadTip": "点击或拖拽文件到此区域上传",

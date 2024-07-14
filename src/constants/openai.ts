@@ -147,7 +147,7 @@ export const DEFAULT_LLM_CONFIG: Partial<Agent> = {
   params: {
     frequency_penalty: 0,
     presence_penalty: 0,
-    temperature: 1,
+    temperature: 0.6,
     top_p: 1,
   },
 };
