@@ -18,7 +18,7 @@ export const useUploadAgent = () => {
     setCoverProgress(0);
     setModelProgress(0);
 
-    const avatarPromise = new Promise<string | undefined>((resolve) => {
+    const avatarPromise = new Promise<string | undefined>((resolve, reject) => {
       const avatarUrl = meta.avatar;
       if (meta.avatar.includes('base64')) {
         const file = base64ToFile(meta.avatar, `${agentId}-avatar`);
@@ -28,13 +28,13 @@ export const useUploadAgent = () => {
           },
         })
           .then((url) => resolve(url))
-          .catch(() => resolve(avatarUrl));
+          .catch(() => reject(new Error('Upload failed')));
       } else {
         resolve(avatarUrl);
       }
     });
 
-    const coverPromise = new Promise<string | undefined>((resolve) => {
+    const coverPromise = new Promise<string | undefined>((resolve, reject) => {
       const coverUrl = meta.cover;
       if (meta.cover.includes('base64')) {
         const file = base64ToFile(meta.cover, `${agentId}-cover`);
@@ -44,13 +44,13 @@ export const useUploadAgent = () => {
           },
         })
           .then((url) => resolve(url))
-          .catch(() => resolve(coverUrl));
+          .catch(() => reject(new Error('Upload failed')));
       } else {
         resolve(coverUrl);
       }
     });
 
-    const modelPromise = new Promise<string | undefined>((resolve) => {
+    const modelPromise = new Promise<string | undefined>((resolve, reject) => {
       const modelUrl = meta.model;
       if (modelUrl && isLocalModelPath(modelUrl)) {
         storage
@@ -66,12 +66,12 @@ export const useUploadAgent = () => {
                 },
               )
                 .then((url) => resolve(url))
-                .catch(() => resolve(modelUrl));
+                .catch(() => reject(new Error('Upload failed')));
             } else {
-              resolve(modelUrl);
+              reject(new Error('Local file not existed'));
             }
           })
-          .catch(() => resolve(modelUrl));
+          .catch(() => reject(new Error('Failed to get data from storage')));
       } else {
         resolve(modelUrl);
       }
