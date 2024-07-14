@@ -14,7 +14,7 @@ export default (props: ActionsProps) => {
   const { id, setOpen } = props;
   const { modal } = App.useApp();
   const { t } = useTranslation('common');
-  const [removeSession] = useSessionStore((s) => [s.removeSession]);
+  const [removeSessionByAgentId] = useSessionStore((s) => [s.removeSessionByAgentId]);
 
   const items: MenuProps['items'] = [
     {
@@ -27,8 +27,8 @@ export default (props: ActionsProps) => {
         modal.confirm({
           centered: true,
           okButtonProps: { danger: true },
-          onOk: () => {
-            removeSession(id);
+          async onOk() {
+            removeSessionByAgentId(id);
           },
           okText: t('actions.del'),
           cancelText: t('cancel'),

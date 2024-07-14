@@ -1,4 +1,4 @@
-import { Button, Popover, Progress, Space, message } from 'antd';
+import { Button, Popover, Progress, Space } from 'antd';
 import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
@@ -11,16 +11,11 @@ interface SubscribeButtonProps {
   agent: Agent;
 }
 
-const SubscribeButton = memo((props: SubscribeButtonProps) => {
-  const [removeLocalAgent, subscribed] = useAgentStore((s) => [
-    s.removeLocalAgent,
-    agentSelectors.subscribed(s),
-  ]);
+const Subscribe = memo((props: SubscribeButtonProps) => {
+  const { agent } = props;
+  const subscribed = useAgentStore((s) => agentSelectors.subscribed(s));
 
   const { fetchAgentData, percent, downloading } = useDownloadAgent();
-
-  const { agent } = props;
-
   const isSubscribed = subscribed(agent.agentId);
 
   const { t } = useTranslation('common');
@@ -49,20 +44,14 @@ const SubscribeButton = memo((props: SubscribeButtonProps) => {
         key={'subscribe'}
         disabled={downloading}
         onClick={async () => {
-          if (isSubscribed) {
-            removeLocalAgent(agent.agentId).then(() => {
-              message.success(t('actions.unsubscribeSuccess'));
-            });
-          } else {
-            await fetchAgentData(agent);
-          }
+          await fetchAgentData(agent);
         }}
         type={isSubscribed ? 'default' : 'primary'}
       >
-        {isSubscribed ? t('actions.unsubscribe') : t('actions.downloadSubscribe')}
+        {t('actions.downloadSubscribe')}
       </Button>
     </Popover>
   );
 });
 
-export default SubscribeButton;
+export default Subscribe;

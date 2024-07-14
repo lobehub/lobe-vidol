@@ -50,7 +50,6 @@ const ThemeButton = memo(() => {
       overlayInnerStyle={{
         padding: 0,
       }}
-      trigger={['click']}
     >
       <ActionIcon icon={PlusCircle} title={t('agent.create')} />
     </Popover>

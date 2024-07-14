@@ -1,19 +1,17 @@
 import { DraggablePanel } from '@lobehub/ui';
-import { Button } from 'antd';
 import { createStyles } from 'antd-style';
-import { useRouter } from 'next/navigation';
 import React, { memo, useState } from 'react';
-import { useTranslation } from 'react-i18next';
 
 import Author from '@/components/Author';
 import AgentCard from '@/components/agent/AgentCard';
 import SystemRole from '@/components/agent/SystemRole';
 import { SIDEBAR_MAX_WIDTH, SIDEBAR_WIDTH } from '@/constants/token';
-import SubscribeButton from '@/features/MarketInfo/SubscribeButton';
 import { agentSelectors, useAgentStore } from '@/store/agent';
-import { useGlobalStore } from '@/store/global';
 import { marketStoreSelectors, useMarketStore } from '@/store/market';
-import { useSessionStore } from '@/store/session';
+
+import ChatButton from './actions/ChatButton';
+import Subscribe from './actions/Subscribe';
+import UnSubscribe from './actions/UnSubscribe';
 
 const useStyles = createStyles(({ css, token }) => ({
   content: css`
@@ -29,8 +27,6 @@ const useStyles = createStyles(({ css, token }) => ({
 
 const Header = () => {
   const { styles } = useStyles();
-  const router = useRouter();
-  const { t } = useTranslation('chat');
   const [tempId, setTempId] = useState<string>('');
   const [showAgentSidebar, activateAgent, deactivateAgent, currentAgentItem] = useMarketStore(
     (s) => [
@@ -40,10 +36,7 @@ const Header = () => {
       marketStoreSelectors.currentAgentItem(s),
     ],
   );
-  const [closePanel] = useGlobalStore((s) => [s.closePanel]);
   const [subscribed] = useAgentStore((s) => [agentSelectors.subscribed(s)]);
-
-  const createSession = useSessionStore((s) => s.createSession);
 
   const actions = [];
   if (currentAgentItem) {
@@ -51,23 +44,14 @@ const Header = () => {
 
     if (isSubscribed) {
       actions.push(
-        <Button
-          key="chat"
-          onClick={() => {
-            createSession(currentAgentItem);
-            router.push('/chat');
-            closePanel('market');
-          }}
-          type={'primary'}
-        >
-          {t('chat')}
-        </Button>,
+        <ChatButton key="chat" agent={currentAgentItem} />,
+        <UnSubscribe key="unsubscribe" agent={currentAgentItem} />,
+      );
+    } else {
+      actions.push(
+        <Subscribe agent={currentAgentItem} key={`${currentAgentItem.agentId}-subscribe`} />,
       );
     }
-
-    actions.push(
-      <SubscribeButton agent={currentAgentItem} key={`${currentAgentItem.agentId}-subscribe`} />,
-    );
   }
 
   return (

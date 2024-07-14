@@ -19,7 +19,10 @@ export default (props: ActionsProps) => {
   const { t } = useTranslation('common');
   const [removeLocalAgent] = useAgentStore((s) => [s.removeLocalAgent]);
   const currentAgent = useAgentStore((s) => s.getAgentById(id));
-  const createSession = useSessionStore((s) => s.createSession);
+  const [createSession, removeSessionByAgentId] = useSessionStore((s) => [
+    s.createSession,
+    s.removeSessionByAgentId,
+  ]);
 
   const items: MenuProps['items'] = [
     {
@@ -43,8 +46,9 @@ export default (props: ActionsProps) => {
         modal.confirm({
           centered: true,
           okButtonProps: { danger: true },
-          onOk: () => {
-            removeLocalAgent(id);
+          async onOk() {
+            await removeLocalAgent(id);
+            removeSessionByAgentId(id);
           },
           okText: t('actions.del'),
           cancelText: t('cancel'),
