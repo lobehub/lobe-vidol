@@ -4,13 +4,12 @@ import { MousePointerClick } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
+import Header from '@/components/Header';
 import ListItem from '@/components/ListItem';
 import { TouchAreaEnum } from '@/types/touch';
 
-import Header from '../components/Header';
-
 const useStyles = createStyles(({ css, token }) => ({
-  listItem: css`
+  item: css`
     position: relative;
     width: 180px;
     margin-block: 2px;
@@ -35,7 +34,7 @@ const Index = (props: IndexProps) => {
       {areaOptions.map((item) => (
         <ListItem
           avatar={<MousePointerClick />}
-          className={classNames(styles.listItem)}
+          className={classNames(styles.item)}
           active={item.value === currentTouchArea}
           key={item.value}
           title={item.label}

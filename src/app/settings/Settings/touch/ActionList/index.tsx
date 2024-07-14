@@ -2,11 +2,12 @@ import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
-import FemaleList from '@/features/Settings/touch/ActionList/List/FemaleList';
-import MaleList from '@/features/Settings/touch/ActionList/List/MaleList';
+import Header from '@/components/Header';
 import { TouchAreaEnum } from '@/types/touch';
 
-import Header from '../components/Header';
+import FemaleList from './List/FemaleList';
+import MaleList from './List/MaleList';
+import OtherList from './List/OtherList';
 
 interface AreaListProps {
   areaOptions?: { label: string; value: TouchAreaEnum }[];
@@ -26,6 +27,7 @@ const AreaList = memo((props: AreaListProps) => {
       <Header title={t('touch.touchActionList', { touchArea })} />
       <FemaleList currentTouchArea={currentTouchArea} />
       <MaleList currentTouchArea={currentTouchArea} />
+      <OtherList currentTouchArea={currentTouchArea} />
     </Flexbox>
   );
 });

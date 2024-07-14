@@ -7,13 +7,13 @@ import { useTranslation } from 'react-i18next';
 
 import ClearSession from '@/features/Actions/ClearSession';
 import ResetConfig from '@/features/Actions/ResetConfig';
-import BackgroundEffect from '@/features/Settings/features/BackgroundEffect';
-import LocaleSetting from '@/features/Settings/features/LocaleSetting';
-import NickName from '@/features/Settings/features/NickName';
-import ThemeSwatchesNetural from '@/features/Settings/features/ThemeSwatchesNetural';
-import ThemeSwatchesPrimary from '@/features/Settings/features/ThemeSwatchesPrimary';
 
-import AvatarWithUpload from './features/AvatarWithUpload';
+import AvatarWithUpload from './AvatarWithUpload';
+import BackgroundEffect from './BackgroundEffect';
+import LocaleSetting from './LocaleSetting';
+import NickName from './NickName';
+import ThemeSwatchesNeutral from './ThemeSwatchesNeutral';
+import ThemeSwatchesPrimary from './ThemeSwatchesPrimary';
 
 interface CommonConfigProps {
   className?: string;
@@ -71,7 +71,7 @@ const CommonConfig = (props: CommonConfigProps) => {
             label={t('words.midColor')}
             name={'neutralColor'}
           >
-            <ThemeSwatchesNetural />
+            <ThemeSwatchesNeutral />
           </FormItem>
           <FormItem
             desc={t('words.DIYBackgroundEffect')}

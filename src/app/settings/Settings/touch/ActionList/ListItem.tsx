@@ -3,10 +3,11 @@ import classNames from 'classnames';
 import React, { memo } from 'react';
 
 import ListItem from '@/components/ListItem';
-import AddOrEdit from '@/features/Settings/touch/ActionList/Actions/AddOrEdit';
-import Delete from '@/features/Settings/touch/ActionList/Actions/Delete';
 import { GenderEnum } from '@/types/agent';
 import { TouchAction, TouchAreaEnum } from '@/types/touch';
+
+import AddOrEdit from './Actions/AddOrEdit';
+import Delete from './Actions/Delete';
 
 interface ActionListItemProps {
   currentTouchArea: TouchAreaEnum;

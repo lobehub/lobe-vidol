@@ -2,11 +2,11 @@ import { isEqual } from 'lodash-es';
 import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import Header from '@/components/Header';
 import { configSelectors, useSettingStore } from '@/store/setting';
 import { GenderEnum } from '@/types/agent';
 import { TouchAreaEnum } from '@/types/touch';
 
-import Header from '../../components/Header';
 import AddOrEdit from '../Actions/AddOrEdit';
 import ListItem from '../ListItem';
 
@@ -16,8 +16,8 @@ interface AreaListProps {
 
 const AreaList = memo((props: AreaListProps) => {
   const { currentTouchArea } = props;
-  const touchList = useSettingStore(
-    (s) => configSelectors.getTouchActionsByGenderAndArea(s, GenderEnum.OTHER, currentTouchArea),
+  const female = useSettingStore(
+    (s) => configSelectors.getTouchActionsByGenderAndArea(s, GenderEnum.FEMALE, currentTouchArea),
     isEqual,
   );
   const { t } = useTranslation('features');
@@ -25,17 +25,17 @@ const AreaList = memo((props: AreaListProps) => {
   return (
     <>
       <Header
-        title={t('agent.other')}
-        extra={<AddOrEdit isEdit={false} touchArea={currentTouchArea} gender={GenderEnum.OTHER} />}
+        title={t('agent.female')}
+        extra={<AddOrEdit isEdit={false} touchArea={currentTouchArea} gender={GenderEnum.FEMALE} />}
       />
-      {touchList.map((item, index) => {
+      {female.map((item, index) => {
         return (
           <ListItem
             item={item}
             currentTouchArea={currentTouchArea}
             index={index}
             key={index}
-            gender={GenderEnum.OTHER}
+            gender={GenderEnum.FEMALE}
           />
         );
       })}

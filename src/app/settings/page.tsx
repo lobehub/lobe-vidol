@@ -3,8 +3,7 @@
 import React from 'react';
 import { Flexbox } from 'react-layout-kit';
 
-import Settings from '@/features/Settings';
-
+import Settings from './Settings';
 import { useStyles } from './style';
 
 export default () => {
