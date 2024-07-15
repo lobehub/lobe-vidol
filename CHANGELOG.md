@@ -2,6 +2,50 @@
 
 # Changelog
 
+## [Version&nbsp;0.19.0](https://github.com/lobehub/lobe-vidol/compare/v0.18.0...v0.19.0)
+<sup>Released on **2024-07-15**</sup>
+
+
+#### ✨ Features
+
+- **misc**: 添加角色设定模板, 添加角色设定模板翻译.
+
+
+#### 🐛 Bug Fixes
+
+- **misc**: 修复上传问题和语言切换问题, 修复订阅下载和删除角色时的体验.
+
+
+<br/>
+
+
+
+<details>
+<summary><kbd>Improvements and Fixes</kbd></summary>
+
+
+
+#### What's improved
+
+* **misc**: 添加角色设定模板 ([e097d91](https://github.com/lobehub/lobe-vidol/commit/e097d91))
+* **misc**: 添加角色设定模板翻译 ([bfe5dbe](https://github.com/lobehub/lobe-vidol/commit/bfe5dbe))
+
+
+
+#### What's fixed
+
+* **misc**: 修复上传问题和语言切换问题 ([2259ea2](https://github.com/lobehub/lobe-vidol/commit/2259ea2))
+* **misc**: 修复订阅下载和删除角色时的体验 ([cf9e64e](https://github.com/lobehub/lobe-vidol/commit/cf9e64e))
+
+</details>
+
+
+<div align="right">
+
+[![](https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square)](#readme-top)
+
+</div>
+
 ## [Version&nbsp;0.18.0](https://github.com/lobehub/lobe-vidol/compare/v0.17.1...v0.18.0)
 <sup>Released on **2024-07-14**</sup>
 
