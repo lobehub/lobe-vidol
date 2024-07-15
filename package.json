@@ -74,7 +74,7 @@
     "@lobehub/i18n-cli": "^1.18.1",
     "@lobehub/icons": "^1.24.0",
     "@lobehub/tts": "^1.24.2",
-    "@lobehub/ui": "^1.145.5",
+    "@lobehub/ui": "^1.146.8",
     "@pixiv/three-vrm": "2.1.2",
     "@pixiv/three-vrm-core": "2.1.2",
     "@react-spring/web": "^9.7.3",
