@@ -71,6 +71,7 @@
     "inputActionEmotion": "Geben Sie die Emotion des Charakters bei der Antwort ein",
     "inputActionText": "Geben Sie die Antwortnachricht ein",
     "inputDIYText": "Geben Sie benutzerdefinierten Text ein",
+    "noTouchActions": "Keine benutzerdefinierten Touch-Aktionen vorhanden. Klicken Sie auf die Schaltfläche '+' , um welche hinzuzufügen.",
     "touchActionList": "Reaktionsliste beim Berühren von {{touchArea}}",
     "touchArea": "Berührungszone"
   },

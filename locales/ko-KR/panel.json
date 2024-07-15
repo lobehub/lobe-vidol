@@ -71,6 +71,7 @@
     "inputActionEmotion": "캐릭터 응답 시 사용할 표정을 입력하세요",
     "inputActionText": "응답 문구를 입력하세요",
     "inputDIYText": "사용자 정의 문구를 입력하세요",
+    "noTouchActions": "사용자 정의 터치 액션이 없습니다. '+' 버튼을 클릭하여 추가할 수 있습니다.",
     "touchActionList": "{{touchArea}}을(를) 터치할 때의 반응 목록",
     "touchArea": "터치 영역"
   },

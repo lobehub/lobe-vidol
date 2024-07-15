@@ -8,6 +8,6 @@ export const switchLang = (locale: LocaleMode) => {
   changeLanguage(lang).then(() => {
     document.documentElement.lang = lang;
     // 刷新系统 https://github.com/lobehub/lobe-chat/issues/2724
-    window.location.reload();
+    // window.location.reload();
   });
 };

@@ -71,6 +71,7 @@
     "inputActionEmotion": "Enter the character's expression when responding",
     "inputActionText": "Enter response text",
     "inputDIYText": "Enter custom text",
+    "noTouchActions": "No custom touch actions yet. You can add one by clicking the '+' button.",
     "touchActionList": "Reaction list when touching {{touchArea}}",
     "touchArea": "Touch area"
   },

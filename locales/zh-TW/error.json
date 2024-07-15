@@ -9,6 +9,7 @@
     "problem": "頁面遇到一點問題...",
     "resetSystem": "重置系統設定"
   },
+  "fileUploadError": "檔案上傳失敗，請稍後重試",
   "goBack": "返回首頁",
   "openaiError": "OpenAI API 錯誤，请檢查 OpenAI API Key 和 Endpoint 是否正確",
   "reload": "重新載入",

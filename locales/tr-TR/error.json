@@ -9,6 +9,7 @@
     "problem": "Sayfa bir sorunla karşılaştı...",
     "resetSystem": "Sistemi sıfırla"
   },
+  "fileUploadError": "Dosya yükleme hatası, lütfen daha sonra tekrar deneyin",
   "goBack": "Ana sayfaya dön",
   "openaiError": "OpenAI API hatası, lütfen OpenAI API Key ve Endpoint'i doğru şekilde kontrol edin",
   "reload": "Yeniden yükle",

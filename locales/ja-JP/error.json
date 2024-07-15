@@ -9,6 +9,7 @@
     "problem": "ページに問題が発生しました...",
     "resetSystem": "システム設定をリセットする"
   },
+  "fileUploadError": "ファイルのアップロードに失敗しました。後でもう一度お試しください。",
   "goBack": "ホームに戻る",
   "openaiError": "OpenAI APIエラーです。OpenAI APIキーとエンドポイントが正しいか確認してください。",
   "reload": "再読み込み",

@@ -71,6 +71,7 @@
     "inputActionEmotion": "Digite a emoção do personagem ao responder",
     "inputActionText": "Digite o texto de resposta",
     "inputDIYText": "Digite o texto personalizado",
+    "noTouchActions": "Não há ações de toque personalizadas no momento. Você pode adicionar tocando no botão '+'",
     "touchActionList": "Lista de reações ao tocar {{touchArea}}",
     "touchArea": "Área de toque"
   },

@@ -71,6 +71,7 @@
     "inputActionEmotion": "Proszę wprowadzić wyraz twarzy postaci podczas reakcji",
     "inputActionText": "Proszę wprowadzić treść odpowiedzi",
     "inputDIYText": "Wprowadź niestandardową treść",
+    "noTouchActions": "Brak niestandardowych akcji dotyku, możesz dodać je, klikając przycisk '+'",
     "touchActionList": "Lista reakcji na dotknięcie {{touchArea}}",
     "touchArea": "Obszar dotknięcia"
   },

@@ -9,6 +9,7 @@
     "problem": "Oops...something went wrong with the page.",
     "resetSystem": "Reset System Settings"
   },
+  "fileUploadError": "File upload failed, please try again later",
   "goBack": "Go Back to Homepage",
   "openaiError": "OpenAI API Error, please check if the OpenAI API Key and Endpoint are correct.",
   "reload": "Reload",

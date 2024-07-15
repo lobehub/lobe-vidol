@@ -9,6 +9,7 @@
     "problem": "Se ha producido un problema en la página...",
     "resetSystem": "Restablecer la configuración del sistema"
   },
+  "fileUploadError": "Error al subir el archivo, por favor inténtalo de nuevo más tarde",
   "goBack": "Volver a la página de inicio",
   "openaiError": "Error de la API de OpenAI. Por favor, verifique que la clave de API de OpenAI y el punto final sean correctos.",
   "reload": "Recargar",

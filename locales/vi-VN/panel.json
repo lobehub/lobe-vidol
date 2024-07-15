@@ -71,6 +71,7 @@
     "inputActionEmotion": "Nhập tâm trạng của nhân vật khi phản ứng",
     "inputActionText": "Nhập văn bản phản ứng",
     "inputDIYText": "Nhập văn bản tùy chỉnh",
+    "noTouchActions": "Không có hành động tương tác được xác định, bạn có thể thêm bằng cách nhấn vào nút '+'",
     "touchActionList": "Danh sách phản ứng khi chạm vào {{touchArea}}",
     "touchArea": "Khu vực chạm"
   },

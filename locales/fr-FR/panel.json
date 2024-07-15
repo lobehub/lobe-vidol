@@ -71,6 +71,7 @@
     "inputActionEmotion": "Entrez l'expression du personnage lors de la réponse",
     "inputActionText": "Entrez le texte de réponse",
     "inputDIYText": "Entrez le texte personnalisé",
+    "noTouchActions": "Aucune action personnalisée n'a été définie. Vous pouvez ajouter des actions en cliquant sur le bouton '+'",
     "touchActionList": "Liste de réactions lors du toucher {{touchArea}}",
     "touchArea": "Zone de toucher"
   },

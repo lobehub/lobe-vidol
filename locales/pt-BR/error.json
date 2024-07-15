@@ -9,6 +9,7 @@
     "problem": "A página encontrou um problema...",
     "resetSystem": "Redefinir configurações do sistema"
   },
+  "fileUploadError": "Falha ao enviar o arquivo, por favor, tente novamente mais tarde",
   "goBack": "Voltar",
   "openaiError": "Erro na API OpenAI, por favor verifique se a chave da API OpenAI e o Endpoint estão corretos",
   "reload": "Recarregar",
