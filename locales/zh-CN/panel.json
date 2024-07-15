@@ -72,7 +72,8 @@
     "inputActionText": "请输入响应文案",
     "inputActionEmotion": "请输入角色响应时的表情",
     "touchActionList": "触摸{{touchArea}}时的反应列表",
-    "touchArea": "触摸区域"
+    "touchArea": "触摸区域",
+    "noTouchActions": "暂无自定义响应动作，你可以通过点击 '+' 按钮添加"
   },
   "tts": {
     "transformSuccess": "转换成功",

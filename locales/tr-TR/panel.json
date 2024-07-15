@@ -71,6 +71,7 @@
     "inputActionEmotion": "Karakter tepki verirken kullanılan duygu",
     "inputActionText": "Tepki metnini girin",
     "inputDIYText": "Özel metin girin",
+    "noTouchActions": "Özel dokunma eylemi yok, '+' düğmesine tıklayarak ekleyebilirsiniz",
     "touchActionList": "{{touchArea}} dokunduğunda tepki listesi",
     "touchArea": "Dokunma Alanı"
   },

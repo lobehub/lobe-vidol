@@ -9,6 +9,7 @@
     "problem": "Trang gặp một chút vấn đề...",
     "resetSystem": "Đặt lại cài đặt hệ thống"
   },
+  "fileUploadError": "Tải lên tệp thất bại, vui lòng thử lại sau",
   "goBack": "Quay lại trang chủ",
   "openaiError": "Lỗi API OpenAI, vui lòng kiểm tra Khóa API OpenAI và Điểm cuối có đúng không",
   "reload": "Tải lại",

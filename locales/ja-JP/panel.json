@@ -71,6 +71,7 @@
     "inputActionEmotion": "キャラクターが応答するときの表情を入力してください",
     "inputActionText": "応答文案を入力してください",
     "inputDIYText": "カスタムテキストを入力してください",
+    "noTouchActions": "カスタムタッチアクションはありません。'+' ボタンをクリックして追加できます",
     "touchActionList": "{{touchArea}}をタッチしたときの反応リスト",
     "touchArea": "タッチエリア"
   },

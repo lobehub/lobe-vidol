@@ -9,6 +9,7 @@
     "problem": "Le site a rencontré un problème...",
     "resetSystem": "Réinitialiser les paramètres système"
   },
+  "fileUploadError": "Échec du téléchargement du fichier, veuillez réessayer plus tard",
   "goBack": "Retour à la page d'accueil",
   "openaiError": "Erreur de l'API OpenAI. Veuillez vérifier votre clé API OpenAI et votre point de terminaison.",
   "reload": "Recharger la page",

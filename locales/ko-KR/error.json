@@ -9,6 +9,7 @@
     "problem": "페이지에 문제가 발생했습니다...",
     "resetSystem": "시스템 설정 초기화"
   },
+  "fileUploadError": "파일 업로드 실패, 나중에 다시 시도해주세요",
   "goBack": "홈으로 돌아가기",
   "openaiError": "OpenAI API 오류입니다. OpenAI API 키와 엔드포인트를 확인해주세요.",
   "reload": "다시 불러오기",

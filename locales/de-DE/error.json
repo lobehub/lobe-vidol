@@ -9,6 +9,7 @@
     "problem": "Es gab ein Problem mit der Seite...",
     "resetSystem": "Systemeinstellungen zurücksetzen"
   },
+  "fileUploadError": "Dateiupload fehlgeschlagen. Bitte versuchen Sie es später erneut.",
   "goBack": "Zurück zur Startseite",
   "openaiError": "OpenAI API-Fehler. Bitte überprüfen Sie den OpenAI API-Schlüssel und den Endpunkt.",
   "reload": "Neu laden",

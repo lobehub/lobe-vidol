@@ -9,6 +9,7 @@
     "problem": "Er is een probleem opgetreden op de pagina...",
     "resetSystem": "Systeeminstellingen resetten"
   },
+  "fileUploadError": "Het uploaden van het bestand is mislukt. Probeer het later opnieuw.",
   "goBack": "Terug naar startpagina",
   "openaiError": "OpenAI API-fout, controleer of de OpenAI API Key en Endpoint correct zijn",
   "reload": "Herladen",

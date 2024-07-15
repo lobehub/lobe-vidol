@@ -71,6 +71,7 @@
     "inputActionEmotion": "Voer de uitdrukking in die de rol moet tonen bij reageren",
     "inputActionText": "Voer de responstekst in",
     "inputDIYText": "Voer aangepaste tekst in",
+    "noTouchActions": "Geen aangepaste aanraakacties beschikbaar, je kunt ze toevoegen door op de '+' knop te klikken",
     "touchActionList": "Reactielijst bij het aanraken van {{touchArea}}",
     "touchArea": "Aanraakgebied"
   },

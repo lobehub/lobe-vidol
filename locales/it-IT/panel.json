@@ -71,6 +71,7 @@
     "inputActionEmotion": "Inserisci l'emozione del personaggio durante la risposta",
     "inputActionText": "Inserisci il testo di risposta",
     "inputDIYText": "Inserisci il testo personalizzato",
+    "noTouchActions": "Nessuna azione personalizzata al tocco disponibile, puoi aggiungerne premendo il pulsante '+'",
     "touchActionList": "Elenco di reazioni quando tocchi {{touchArea}}",
     "touchArea": "Area di tocco"
   },
