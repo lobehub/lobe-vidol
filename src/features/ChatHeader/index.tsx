@@ -1,3 +1,5 @@
+'use client';
+
 import { Space } from 'antd';
 import classNames from 'classnames';
 import React from 'react';
@@ -9,6 +11,7 @@ import ToggleChatSideBar from '@/features/Actions/ToggleChatSideBar';
 import ToggleSessionList from '@/features/Actions/ToggleSessionList';
 import { sessionSelectors, useSessionStore } from '@/store/session';
 
+import ChatSetting from '../ChatSetting';
 import { useStyles } from './style';
 
 interface Props {
@@ -33,6 +36,7 @@ export default (props: Props) => {
       <Space>
         <ShareButton key={'share'} />
         <ToggleChatSideBar key={'sidebar'} />
+        <ChatSetting />
       </Space>
     </Flexbox>
   );

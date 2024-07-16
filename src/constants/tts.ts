@@ -1,4 +1,4 @@
-import { TTS } from '@/types/tts';
+import { SessionTTS, TTS } from '@/types/tts';
 
 export const DEFAULT_TTS_PITCH = 1;
 export const DEFAULT_TTS_SPEED = 1;
@@ -16,6 +16,10 @@ export const DEFAULT_TTS_CONFIG_FEMALE: TTS = {
   pitch: DEFAULT_TTS_PITCH,
   speed: DEFAULT_TTS_SPEED,
   voice: 'zh-CN-XiaoxiaoNeural',
+};
+
+export const DEFAULT_SESSION_TTS_CONFIG: SessionTTS = {
+  sttLocale: 'auto',
 };
 
 export const DEFAULT_TTS_CONFIG_MALE: TTS = {
