@@ -5,8 +5,8 @@ export default {
       description: '这是一个自定义角色',
     },
     gender: {
-      male: '男',
-      female: '女',
+      male: '男性',
+      female: '女性',
       other: '其他',
     },
   },
