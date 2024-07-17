@@ -31,7 +31,11 @@ const ChatSettingModal = ({ actionRef }: ChatSettingModalProps) => {
 
   // 拓展 ref
   useImperativeHandle(actionRef, () => ({
-    config: () => setOpen(true),
+    config: () => {
+      setOpen(true);
+
+      form.setFieldsValue(sessionConfig);
+    },
   }));
 
   const chat: ItemGroup = {
@@ -99,13 +103,7 @@ const ChatSettingModal = ({ actionRef }: ChatSettingModalProps) => {
   };
 
   return (
-    <Modal
-      destroyOnClose
-      title={'偏好设置'}
-      open={open}
-      footer={false}
-      onCancel={() => setOpen(false)}
-    >
+    <Modal title={'偏好设置'} open={open} footer={false} onCancel={() => setOpen(false)}>
       <Form
         form={form}
         items={[chat, tts]}
@@ -114,7 +112,6 @@ const ChatSettingModal = ({ actionRef }: ChatSettingModalProps) => {
         variant="pure"
         {...FORM_STYLE}
         itemMinWidth={'max(30%,304px)'}
-        initialValues={sessionConfig}
       />
     </Modal>
   );
