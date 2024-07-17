@@ -16,6 +16,7 @@ export class Viewer {
   private _camera?: THREE.PerspectiveCamera;
   private _cameraControls?: OrbitControls;
   private _gridHelper?: THREE.GridHelper;
+  private _axesHelper?: THREE.AxesHelper;
   private _floor?: THREE.Mesh;
 
   constructor() {
@@ -141,6 +142,16 @@ export class Viewer {
     } else {
       this._gridHelper = new GridHelper(50, 100, 0xAA_AA_AA, 0xAA_AA_AA);
       this._scene.add(this._gridHelper);
+    }
+  }
+
+  public toggleAxes() {
+    if (this._axesHelper) {
+      this._scene.remove(this._axesHelper);
+      this._axesHelper = undefined;
+    } else {
+      this._axesHelper = new THREE.AxesHelper(5);
+      this._scene.add(this._axesHelper);
     }
   }
 

@@ -6,6 +6,7 @@ import { convert } from '@/libs/VMDAnimation/vmd2vrmanim';
 import { bindToVRM, toOffset } from '@/libs/VMDAnimation/vmd2vrmanim.binding';
 import IKHandler from '@/libs/VMDAnimation/vrm-ik-handler';
 import { VRMAnimation } from '@/libs/VRMAnimation/VRMAnimation';
+import { loadMixamoAnimation } from '@/libs/VRMAnimation/loadMixamoAnimation';
 import { loadVRMAnimation } from '@/libs/VRMAnimation/loadVRMAnimation';
 import { VRMLookAtSmootherLoaderPlugin } from '@/libs/VRMLookAtSmootherLoaderPlugin/VRMLookAtSmootherLoaderPlugin';
 import { Screenplay } from '@/types/touch';
@@ -32,10 +33,13 @@ export class Model {
 
   public async loadVRM(url: string): Promise<void> {
     const loader = new GLTFLoader();
+    loader.crossOrigin = 'anonymous';
+
     loader.register(
       (parser) =>
         new VRMLoaderPlugin(parser, {
           lookAtPlugin: new VRMLookAtSmootherLoaderPlugin(parser),
+          autoUpdateHumanBones: true,
         }),
     );
 
@@ -83,6 +87,19 @@ export class Model {
   public async loadIdleAnimation() {
     const vrma = await loadVRMAnimation('/idle_loop.vrma');
     if (vrma) this.loadAnimation(vrma);
+  }
+
+  public async loadFBX(animationUrl: string) {
+    const { vrm, mixer } = this;
+
+    if (vrm && mixer) {
+      mixer.stopAllAction();
+      // Load animation
+      const clip = await loadMixamoAnimation(animationUrl, vrm);
+      // Apply the loaded animation to mixer and play
+      const action = mixer.clipAction(clip);
+      action.play();
+    }
   }
 
   /**

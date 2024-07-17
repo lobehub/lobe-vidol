@@ -49,6 +49,36 @@ function AgentViewer(props: Props) {
             viewer.loadVrm(modelUrl);
           }
         });
+
+        // Drag and DropでVRMを差し替え
+        canvas.addEventListener('dragover', function (event) {
+          event.preventDefault();
+        });
+
+        canvas.addEventListener('drop', function (event) {
+          event.preventDefault();
+
+          const files = event.dataTransfer?.files;
+          if (!files) {
+            return;
+          }
+
+          const file = files[0];
+          if (!file) {
+            return;
+          }
+
+          const file_type = file.name.split('.').pop();
+          if (file_type === 'vrm') {
+            const blob = new Blob([file], { type: 'application/octet-stream' });
+            const url = window.URL.createObjectURL(blob);
+            viewer.loadVrm(url);
+          } else if (file_type === 'fbx') {
+            const blob = new Blob([file], { type: 'application/octet-stream' });
+            const url = window.URL.createObjectURL(blob);
+            viewer.model?.loadFBX(url);
+          }
+        });
       }
     },
     [viewer, agent.agentId],
