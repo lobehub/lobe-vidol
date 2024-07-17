@@ -6,6 +6,7 @@ import { useTranslation } from 'react-i18next';
 
 import { GenderEnum } from '@/types/agent';
 
+import ActionList from './ActionList';
 import SideBar from './SideBar';
 
 const useStyles = createStyles(({ css, token }) => ({
@@ -58,6 +59,11 @@ const Touch = (props: TouchProps) => {
       <SideBar
         currentGender={currentGender}
         setCurrentGender={setCurrentGender}
+        genderOptions={GENDER_OPTIONS}
+      />
+      <ActionList
+        currentGender={currentGender}
+        style={{ marginLeft: 12 }}
         genderOptions={GENDER_OPTIONS}
       />
     </div>

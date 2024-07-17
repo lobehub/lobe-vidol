@@ -13,6 +13,10 @@ const currentTouchConfig = (s: SettingStore): TouchConfig => {
   return s.config.touch;
 };
 
+const getAnimationsByGender = (s: SettingStore, gender: GenderEnum) => {
+  return s.config.animation?.[gender] || [];
+};
+
 const getTouchActionsByGenderAndArea = (
   s: SettingStore,
   gender: GenderEnum,
@@ -25,5 +29,6 @@ const getTouchActionsByGenderAndArea = (
 export const configSelectors = {
   currentOpenAIConfig,
   currentTouchConfig,
+  getAnimationsByGender,
   getTouchActionsByGenderAndArea,
 };

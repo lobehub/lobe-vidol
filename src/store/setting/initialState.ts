@@ -2,11 +2,21 @@ import { VRMExpressionPresetName } from '@pixiv/three-vrm';
 
 import { GenderEnum } from '@/types/agent';
 import { Config } from '@/types/config';
-import { TouchActionConfig, TouchAreaEnum } from '@/types/touch';
+import { MotionAnimation, TouchActionConfig, TouchAreaEnum } from '@/types/touch';
 
 export interface SettingState {
   config: Config;
 }
+
+export const DEFAULT_MOTION_ANIMATION_FEMALE: MotionAnimation[] = [
+  {
+    name: 'Waving',
+    url: 'https://r2.vidol.chat/motions/Waving.fbx',
+  },
+];
+
+export const DEFAULT_MOTION_ANIMATION_MALE: MotionAnimation[] = [];
+export const DEFAULT_MOTION_ANIMATION_OTHER: MotionAnimation[] = [];
 
 export const DEFAULT_TOUCH_ACTION_CONFIG_FEMALE: TouchActionConfig = {
   [TouchAreaEnum.Head]: [
@@ -196,6 +206,11 @@ const initialState: SettingState = {
       [GenderEnum.FEMALE]: DEFAULT_TOUCH_ACTION_CONFIG_FEMALE,
       [GenderEnum.MALE]: DEFAULT_TOUCH_ACTION_CONFIG_MALE,
       [GenderEnum.OTHER]: DEFAULT_TOUCH_ACTION_CONFIG_OTHER,
+    },
+    animation: {
+      [GenderEnum.FEMALE]: DEFAULT_MOTION_ANIMATION_FEMALE,
+      [GenderEnum.MALE]: DEFAULT_MOTION_ANIMATION_MALE,
+      [GenderEnum.OTHER]: DEFAULT_MOTION_ANIMATION_OTHER,
     },
   },
 };

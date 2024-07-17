@@ -18,6 +18,11 @@ export interface TouchAction {
   text: string;
 }
 
+export interface MotionAnimation {
+  name: string;
+  url: string;
+}
+
 export interface TouchActionConfig {
   [TouchAreaEnum.Head]: TouchAction[];
   [TouchAreaEnum.Arm]: TouchAction[];

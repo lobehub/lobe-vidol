@@ -53,7 +53,11 @@ export default {
     inputActionEmotion: '请输入角色响应时的表情',
     touchActionList: '触摸{{touchArea}}时的反应列表',
     touchArea: '触摸区域',
-    noTouchActions: "暂无自定义响应动作，你可以通过点击 '+' 按钮添加",
+    noTouchActions: "暂无自定义响应动作，您可以通过点击 '+' 按钮添加",
+  },
+  animation: {
+    noAnimations: '暂无动作库',
+    animationList: '{{gender}}角色动作列表',
   },
   upload: {
     support: '支持单个文件上传，当前仅支持 .vrm 格式文件',
