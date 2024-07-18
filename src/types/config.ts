@@ -3,7 +3,7 @@ import { NeutralColors, PrimaryColors } from '@lobehub/ui';
 
 import { GenderEnum } from '@/types/agent';
 import { LocaleMode } from '@/types/locale';
-import { MotionAnimation, TouchActionConfig } from '@/types/touch';
+import { TouchActionConfig } from '@/types/touch';
 
 export type BackgroundEffect = 'glow' | 'none';
 
@@ -42,17 +42,7 @@ export interface TouchConfig {
   [GenderEnum.OTHER]: TouchActionConfig;
 }
 
-export interface AnimationConfig {
-  [GenderEnum.FEMALE]: MotionAnimation[];
-  [GenderEnum.MALE]: MotionAnimation[];
-  [GenderEnum.OTHER]: MotionAnimation[];
-}
-
 export interface Config extends CommonConfig {
-  /**
-   * 动画库
-   */
-  animation: AnimationConfig;
   /**
    * 语言模型配置
    */

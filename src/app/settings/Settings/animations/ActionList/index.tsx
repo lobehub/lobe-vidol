@@ -1,12 +1,11 @@
 import { Empty } from 'antd';
-import { isEqual } from 'lodash-es';
 import React, { ReactNode, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
 import ListItem from '@/app/settings/Settings/animations/ActionList/ListItem';
 import Header from '@/components/Header';
-import { configSelectors, useSettingStore } from '@/store/setting';
+import { ANIMATION_CONFIG } from '@/constants/touch';
 import { GenderEnum } from '@/types/agent';
 
 interface AreaListProps {
@@ -19,10 +18,7 @@ interface AreaListProps {
 const AreaList = memo((props: AreaListProps) => {
   const { currentGender, style, className, genderOptions = [] } = props;
   const { t } = useTranslation(['panel', 'features']);
-  const items = useSettingStore(
-    (s) => configSelectors.getAnimationsByGender(s, currentGender),
-    isEqual,
-  );
+  const items = ANIMATION_CONFIG[currentGender] || [];
   const gender = genderOptions.find((item) => item.value === currentGender)?.label;
 
   return (
