@@ -9,7 +9,6 @@ import AgentViewer from '@/features/AgentViewer';
 import MessageInput from '@/features/MessageInput';
 import { sessionSelectors, useSessionStore } from '@/store/session';
 
-import ChatDialog from './ChatDialog';
 import { useStyles } from './style';
 
 export default memo(() => {
@@ -23,7 +22,7 @@ export default memo(() => {
           <AgentViewer height={`calc(100vh - ${HEADER_HEIGHT}px)`} agent={currentAgent} />
         </div>
       ) : null}
-      <ChatDialog className={classNames(styles.dialog, styles.content)} />
+      {/*<ChatDialog className={classNames(styles.dialog, styles.content)} />*/}
       <Flexbox flex={1} className={styles.mask} />
       <Flexbox align={'center'} className={styles.docker}>
         <div className={classNames(styles.input, styles.content)}>

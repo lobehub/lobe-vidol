@@ -13,7 +13,6 @@ import Dance from '@/features/Actions/Dance';
 import History from '@/features/Actions/History';
 import Record from '@/features/Actions/Record';
 import TokenMini from '@/features/Actions/TokenMini';
-import Video from '@/features/Actions/Video';
 import Voice from '@/features/Actions/Voice';
 import useChatInput from '@/hooks/useSendMessage';
 import { useSessionStore } from '@/store/session';
@@ -74,7 +73,7 @@ const InputArea = memo((props: InputAreaProps) => {
       <Flexbox horizontal justify={'space-between'} align={'center'} style={{ marginBottom: 4 }}>
         <Space size={4}>
           <Record />
-          <Video key="video" />
+          {/*<Video key="video" />*/}
           <Dance key={'dance'} />
           <TokenMini />
         </Space>

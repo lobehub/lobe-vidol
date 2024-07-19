@@ -2,13 +2,15 @@
 
 import { DraggablePanel } from '@lobehub/ui';
 import { createStyles } from 'antd-style';
-import React from 'react';
+import React, { useState } from 'react';
 
-import AgentCard from '@/components/agent/AgentCard';
-import { SIDEBAR_MAX_WIDTH, SIDEBAR_WIDTH } from '@/constants/token';
-import MiniPlayer from '@/features/AudioPlayer/MiniPlayer';
+import { CHAT_INFO_MAX_WIDTH, CHAT_INFO_WIDTH } from '@/constants/token';
+import Header from '@/features/ChatInfo/Header';
+import ChatList from '@/features/ChatList';
+import PlayList from '@/features/PlayList';
 import { useGlobalStore } from '@/store/global';
-import { sessionSelectors, useSessionStore } from '@/store/session';
+
+import { Tab } from './type';
 
 const useStyles = createStyles(({ css, token }) => ({
   content: css`
@@ -27,14 +29,15 @@ export default () => {
     s.setChatSidebar,
   ]);
 
+  const [tab, setTab] = useState<Tab>(Tab.History);
+
   const { styles } = useStyles();
-  const [currentAgent] = useSessionStore((s) => [sessionSelectors.currentAgent(s)]);
 
   return (
     <DraggablePanel
       classNames={{ content: styles.content }}
-      minWidth={SIDEBAR_WIDTH}
-      maxWidth={SIDEBAR_MAX_WIDTH}
+      minWidth={CHAT_INFO_WIDTH}
+      maxWidth={CHAT_INFO_MAX_WIDTH}
       mode={'fixed'}
       onExpandChange={(expand) => {
         setChatSidebar(expand);
@@ -42,11 +45,9 @@ export default () => {
       expand={showChatSidebar}
       placement={'right'}
     >
-      <AgentCard
-        agent={currentAgent}
-        extra={<MiniPlayer />}
-        // footer={<Operations />}
-      />
+      <Header tab={tab} setTab={setTab} />
+      {tab === Tab.History && <ChatList />}
+      {tab === Tab.PlayList && <PlayList />}
     </DraggablePanel>
   );
 };

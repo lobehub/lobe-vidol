@@ -65,4 +65,8 @@ export default {
     none: '无背景',
     nickName: '请输入昵称',
   },
+  info: {
+    history: '聊天记录',
+    playlist: '播放列表',
+  },
 };
