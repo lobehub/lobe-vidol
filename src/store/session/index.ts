@@ -9,6 +9,8 @@ import { StateCreator } from 'zustand/vanilla';
 import { LOBE_VIDOL_DEFAULT_AGENT_ID } from '@/constants/agent';
 import { DEFAULT_USER_AVATAR_URL, LOADING_FLAG } from '@/constants/common';
 import { DEFAULT_LLM_CONFIG } from '@/constants/openai';
+import { DEFAULT_SESSION_CONFIG } from '@/constants/session';
+import { DEFAULT_SESSION_TTS_CONFIG } from '@/constants/tts';
 import { chatCompletion, handleSpeakAi } from '@/services/chat';
 import { shareService } from '@/services/share';
 import { Agent } from '@/types/agent';
@@ -140,6 +142,10 @@ export interface SessionStore {
    */
   updateMessage: (id: string, content: string) => void;
   /**
+   * 更新会话配置
+   */
+  updateSessionConfig: (session: Session) => void;
+  /**
    * 更新会话消息
    * @param messages
    */
@@ -180,6 +186,8 @@ export const createSessionStore: StateCreator<SessionStore, [['zustand/devtools'
         draft.push({
           agentId: agent.agentId,
           messages: [],
+          sessionConfig: DEFAULT_SESSION_CONFIG,
+          tts: DEFAULT_SESSION_TTS_CONFIG,
         });
       }
     });
@@ -457,9 +465,11 @@ export const createSessionStore: StateCreator<SessionStore, [['zustand/devtools'
     }
     const targetSession = sessionList.find((session) => session.agentId === agentId);
     if (!targetSession) {
-      const session = {
+      const session: Session = {
         agentId: agentId,
         messages: [],
+        sessionConfig: DEFAULT_SESSION_CONFIG,
+        tts: DEFAULT_SESSION_TTS_CONFIG,
       };
       set({ sessionList: [...sessionList, session] });
     }
@@ -492,6 +502,27 @@ export const createSessionStore: StateCreator<SessionStore, [['zustand/devtools'
         const index = draft.findIndex((session) => session.agentId === activeId);
         if (index === -1) return;
         draft[index].messages = messages;
+      });
+      set({ sessionList: sessions });
+    }
+  },
+  updateSessionConfig: (session: Session) => {
+    const { sessionList, activeId, defaultSession } = get();
+    if (activeId === LOBE_VIDOL_DEFAULT_AGENT_ID) {
+      const mergeSession = produce(defaultSession, (draft) => {
+        Object.entries(session).forEach(([key, value]) => {
+          draft[key as keyof Session] = value;
+        });
+      });
+      set({ defaultSession: mergeSession });
+    } else {
+      const sessions = produce(sessionList, (draft) => {
+        const index = draft.findIndex((session) => session.agentId === activeId);
+        if (index === -1) return;
+
+        Object.entries(session).forEach(([key, value]) => {
+          draft[index][key as keyof Session] = value;
+        });
       });
       set({ sessionList: sessions });
     }

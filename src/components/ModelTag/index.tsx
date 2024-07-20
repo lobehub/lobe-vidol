@@ -9,6 +9,7 @@ import ModelIcon from './ModelIcon';
 interface ModelTagProps {
   model?: string;
 }
+
 const ModelTag = memo<ModelTagProps>(({ model }) => {
   const { t } = useTranslation('common');
   const selectedModel = OPENAI_MODEL_LIST.find(({ id }) => id === model);

@@ -32,9 +32,7 @@ const StoreHydration = () => {
 
   useEffect(() => {
     // refs: https://github.com/pmndrs/zustand/blob/main/docs/integrations/persisting-store-data.md#hashydrated
-    migrate().then(() => {
-      // useAgentStore.persist.rehydrate();
-    });
+    migrate();
   }, []);
 
   useEffect(() => {

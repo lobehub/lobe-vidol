@@ -45,3 +45,7 @@ export interface Voice {
   locale: string;
   localeZH: string;
 }
+
+export interface SessionTTS {
+  sttLocale: string;
+}
