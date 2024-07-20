@@ -2,7 +2,7 @@ import { Icon } from '@lobehub/ui';
 import { Empty, Space } from 'antd';
 import classNames from 'classnames';
 import { Loader2 } from 'lucide-react';
-import React, { memo } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Center } from 'react-layout-kit';
 
@@ -22,9 +22,9 @@ interface GridListProps {
   };
   isActivated?: (id: string) => boolean;
   isChecked?: (id: string) => boolean;
-  items: Item[];
+  items: any[];
   loading?: boolean;
-  onClick?: (id: string) => void;
+  onClick?: (id: string, item: Item) => void;
   style?: React.CSSProperties;
 }
 
@@ -59,7 +59,7 @@ const GridList = (props: GridListProps) => {
             title={name}
             avatar={avatar}
             onClick={() => {
-              if (onClick) onClick(id);
+              if (onClick) onClick(id, item);
             }}
             active={isActivated ? isActivated(id) : false}
             checked={isChecked ? isChecked(id) : false}
@@ -82,4 +82,4 @@ const GridList = (props: GridListProps) => {
   );
 };
 
-export default memo(GridList);
+export default GridList;

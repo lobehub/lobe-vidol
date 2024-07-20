@@ -13,6 +13,7 @@ import { mixamoVRMRigMap } from './mixamoVRMRigMap';
  */
 export function loadMixamoAnimation(url: string, vrm: VRM) {
   const loader = new FBXLoader(); // A loader which loads FBX
+
   return loader.loadAsync(url).then((asset) => {
     const clip = THREE.AnimationClip.findByName(asset.animations, 'mixamo.com'); // extract the AnimationClip
 

@@ -35,6 +35,10 @@ export default (props: Props) => {
             label: t('info.playlist'),
             key: Tab.PlayList,
           },
+          {
+            label: t('info.motions'),
+            key: Tab.Motions,
+          },
         ]}
         onChange={(key) => {
           setTab(key as Tab);

@@ -7,6 +7,7 @@ import React, { useState } from 'react';
 import { CHAT_INFO_MAX_WIDTH, CHAT_INFO_WIDTH } from '@/constants/token';
 import Header from '@/features/ChatInfo/Header';
 import ChatList from '@/features/ChatList';
+import MotionList from '@/features/MotionList';
 import PlayList from '@/features/PlayList';
 import { useGlobalStore } from '@/store/global';
 
@@ -48,6 +49,7 @@ export default () => {
       <Header tab={tab} setTab={setTab} />
       {tab === Tab.History && <ChatList />}
       {tab === Tab.PlayList && <PlayList />}
+      {tab === Tab.Motions && <MotionList />}
     </DraggablePanel>
   );
 };
