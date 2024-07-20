@@ -4,6 +4,7 @@ import { Form, FormProps, SliderWithInput } from '@lobehub/ui';
 import React, { memo, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import { DEFAULT_LLM_CONFIG } from '@/constants/openai';
 import { FORM_STYLE } from '@/constants/token';
 import { agentSelectors, useAgentStore } from '@/store/agent';
 
@@ -19,7 +20,10 @@ const LangModel = memo(() => {
   const agent = agentSelectors.currentAgentItem(useAgentStore());
 
   useEffect(() => {
-    form.setFieldsValue(agent);
+    form.setFieldsValue({
+      ...DEFAULT_LLM_CONFIG,
+      ...agent,
+    });
   }, [agent]);
 
   const model: FormProps['items'] = [

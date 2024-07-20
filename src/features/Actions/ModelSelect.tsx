@@ -36,7 +36,7 @@ const ModelSelect = memo(() => {
 
   const { updateAgentConfig } = useAgentStore();
 
-  const { model, agentId } = useSessionContext()?.sessionAgent || {};
+  const { model = OPENAI_MODEL_LIST[0].id, agentId } = useSessionContext()?.sessionAgent || {};
 
   const items = OPENAI_MODEL_LIST.map((item) => {
     return {
