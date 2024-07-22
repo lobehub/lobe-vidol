@@ -189,14 +189,39 @@ export const MAX_TOUCH_ACTION_TEXT_LENGTH = 100;
 
 export const DEFAULT_MOTION_ANIMATION_FEMALE: MotionAnimation[] = [
   {
-    id: 'Waving',
-    name: 'Waving',
-    url: 'https://r2.vidol.chat/motions/Waving.fbx',
-    avatar: '',
+    id: 'Praying',
+    name: '祈祷',
+    url: 'https://r2.vidol.chat/motions/Praying.fbx',
+    avatar: 'https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/103130903/animated.gif',
+  },
+  {
+    id: 'Hip Hop Dancing',
+    name: 'HipHop 舞蹈',
+    url: 'https://r2.vidol.chat/motions/Hip Hop Dancing.fbx',
+    avatar: 'https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/101960907/animated.gif',
+  },
+  {
+    id: 'Rumba Dancing',
+    name: 'Rumba 舞蹈',
+    url: 'https://r2.vidol.chat/motions/Rumba Dancing.fbx',
+    avatar: 'https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/102970901/animated.gif',
+  },
+  {
+    id: 'Dancing Twerk',
+    name: '扭臀舞',
+    url: 'https://r2.vidol.chat/motions/Dancing Twerk.fbx',
+    avatar: 'https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/128660903/animated.gif',
   },
 ];
 
-export const DEFAULT_MOTION_ANIMATION_MALE: MotionAnimation[] = [];
+export const DEFAULT_MOTION_ANIMATION_MALE: MotionAnimation[] = [
+  {
+    id: 'Silly Dancing',
+    name: 'Silly 舞蹈',
+    url: 'https://r2.vidol.chat/motions/Silly Dancing.fbx',
+    avatar: 'https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/101920902/animated.gif',
+  },
+];
 export const DEFAULT_MOTION_ANIMATION_OTHER: MotionAnimation[] = [];
 
 export const ANIMATION_CONFIG = {
@@ -208,9 +233,15 @@ export const ANIMATION_CONFIG = {
 export const DEFAULT_GESTURE_ANIMATION_FEMALE: MotionAnimation[] = [
   {
     id: 'Standing',
-    name: 'Standing',
+    name: '站立',
     url: 'https://r2.vidol.chat/posture/Female Standing Pose.fbx',
     avatar: 'https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/140700904/animated.gif',
+  },
+  {
+    id: 'Dynamic',
+    name: '动态',
+    url: 'https://r2.vidol.chat/posture/Female Dynamic Pose.fbx',
+    avatar: 'https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/140300903/animated.gif',
   },
 ];
 

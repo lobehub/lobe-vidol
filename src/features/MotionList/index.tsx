@@ -1,8 +1,9 @@
 import React, { memo, useState } from 'react';
 
 import GridList from '@/components/GridList';
-import { MixamoList } from '@/features/MotionList/mixamo';
+import { ANIMATION_CONFIG } from '@/constants/touch';
 import { useGlobalStore } from '@/store/global';
+import { GenderEnum } from '@/types/agent';
 import { fetchWithProgress } from '@/utils/fetch';
 
 interface MotionListProps {
@@ -19,12 +20,14 @@ const MotionList = (props: MotionListProps) => {
     <GridList
       className={className}
       style={style}
-      items={MixamoList.map((item) => ({
-        ...item,
-        avatar: item.thumbnail_animated,
-        id: item.id,
-        name: item.name,
-      }))}
+      items={[...ANIMATION_CONFIG[GenderEnum.FEMALE], ...ANIMATION_CONFIG[GenderEnum.MALE]].map(
+        (item) => ({
+          ...item,
+          avatar: item.avatar,
+          id: item.id,
+          name: item.name,
+        }),
+      )}
       onClick={async (id, item: any) => {
         setCurrentId(id);
         if (item.url) {
