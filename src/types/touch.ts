@@ -19,6 +19,8 @@ export interface TouchAction {
 }
 
 export interface MotionAnimation {
+  avatar: string;
+  id: string;
   name: string;
   url: string;
 }

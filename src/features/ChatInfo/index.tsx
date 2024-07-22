@@ -9,6 +9,7 @@ import Header from '@/features/ChatInfo/Header';
 import ChatList from '@/features/ChatList';
 import MotionList from '@/features/MotionList';
 import PlayList from '@/features/PlayList';
+import PostureList from '@/features/PostureList';
 import { useGlobalStore } from '@/store/global';
 
 import { Tab } from './type';
@@ -50,6 +51,7 @@ export default () => {
       {tab === Tab.History && <ChatList />}
       {tab === Tab.PlayList && <PlayList />}
       {tab === Tab.Motions && <MotionList />}
+      {tab === Tab.Posture && <PostureList />}
     </DraggablePanel>
   );
 };

@@ -39,6 +39,10 @@ export default (props: Props) => {
             label: t('info.motions'),
             key: Tab.Motions,
           },
+          {
+            label: t('info.posture'),
+            key: Tab.Posture,
+          },
         ]}
         onChange={(key) => {
           setTab(key as Tab);

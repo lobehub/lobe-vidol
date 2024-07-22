@@ -189,8 +189,10 @@ export const MAX_TOUCH_ACTION_TEXT_LENGTH = 100;
 
 export const DEFAULT_MOTION_ANIMATION_FEMALE: MotionAnimation[] = [
   {
+    id: 'Waving',
     name: 'Waving',
     url: 'https://r2.vidol.chat/motions/Waving.fbx',
+    avatar: '',
   },
 ];
 
@@ -201,4 +203,22 @@ export const ANIMATION_CONFIG = {
   [GenderEnum.FEMALE]: DEFAULT_MOTION_ANIMATION_FEMALE,
   [GenderEnum.MALE]: DEFAULT_MOTION_ANIMATION_MALE,
   [GenderEnum.OTHER]: DEFAULT_MOTION_ANIMATION_OTHER,
+};
+
+export const DEFAULT_GESTURE_ANIMATION_FEMALE: MotionAnimation[] = [
+  {
+    id: 'Standing',
+    name: 'Standing',
+    url: 'https://r2.vidol.chat/posture/Female Standing Pose.fbx',
+    avatar: 'https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/140700904/animated.gif',
+  },
+];
+
+export const DEFAULT_GESTURE__ANIMATION_MALE: MotionAnimation[] = [];
+export const DEFAULT_GESTURE__ANIMATION_OTHER: MotionAnimation[] = [];
+
+export const POSTURE_CONFIG = {
+  [GenderEnum.FEMALE]: DEFAULT_GESTURE_ANIMATION_FEMALE,
+  [GenderEnum.MALE]: DEFAULT_GESTURE__ANIMATION_MALE,
+  [GenderEnum.OTHER]: DEFAULT_GESTURE__ANIMATION_OTHER,
 };
