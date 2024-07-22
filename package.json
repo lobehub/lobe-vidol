@@ -99,7 +99,7 @@
     "js-tiktoken": "^1.0.12",
     "localforage": "^1.10.0",
     "lodash-es": "^4.17.21",
-    "lucide-react": "^0.395.0",
+    "lucide-react": "^0.414.0",
     "mime": "^4.0.3",
     "mmd-parser": "^1.0.4",
     "modern-screenshot": "^4.4.39",
