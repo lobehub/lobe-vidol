@@ -108,7 +108,7 @@ LobeVidol SessionStore
 │ └── selectors
 │ ├── export.ts
 │ ├── index.ts
-│ └── list.ts
+│ └── index.ts
 └── store.ts
 ```
 
@@ -134,7 +134,7 @@ src/store/session
         ├── initialState.ts
         └── selectors
             ├── export.ts
-            ├── list.ts
+            ├── index.ts
             └── index.ts
 
 ```
