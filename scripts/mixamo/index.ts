@@ -1,3 +1,8 @@
+/**
+ * https://www.mixamo.com/
+ * Mixamo Animations 脚本处理
+ * @author rdmclin2
+ */
 import { readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 
@@ -27,6 +32,7 @@ const formatMixamoList = (list: Motion[]): MotionAnimation[] => {
 const genList = () => {
   const mixamoDirJsonList = readdirSync(srcListDir);
   mixamoDirJsonList.forEach((filePath) => {
+    console.info('processing...', filePath);
     const inputPath = resolve(__dirname, './input', filePath);
     const outputPath = resolve(__dirname, './output', filePath);
     const list = readJSON(inputPath);
