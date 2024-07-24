@@ -3,6 +3,7 @@
 import { DraggablePanel } from '@lobehub/ui';
 import { createStyles } from 'antd-style';
 import React, { useState } from 'react';
+import { Flexbox } from 'react-layout-kit';
 
 import { CHAT_INFO_MAX_WIDTH, CHAT_INFO_WIDTH } from '@/constants/token';
 import Header from '@/features/ChatInfo/Header';
@@ -48,10 +49,12 @@ export default () => {
       placement={'right'}
     >
       <Header tab={tab} setTab={setTab} />
-      {tab === Tab.History && <ChatList />}
-      {tab === Tab.PlayList && <PlayList />}
-      {tab === Tab.Motions && <MotionList />}
-      {tab === Tab.Posture && <PostureList />}
+      <Flexbox height={'calc(100vh - 128px)'}>
+        {tab === Tab.History && <ChatList />}
+        {tab === Tab.PlayList && <PlayList />}
+        {tab === Tab.Motions && <MotionList />}
+        {tab === Tab.Posture && <PostureList />}
+      </Flexbox>
     </DraggablePanel>
   );
 };

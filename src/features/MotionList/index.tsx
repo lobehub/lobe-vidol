@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import React, { memo, useState } from 'react';
 
 import GridList from '@/components/GridList';
@@ -5,6 +6,8 @@ import { ANIMATION_CONFIG } from '@/constants/touch';
 import { useGlobalStore } from '@/store/global';
 import { GenderEnum } from '@/types/agent';
 import { fetchWithProgress } from '@/utils/fetch';
+
+import { useStyles } from './style';
 
 interface MotionListProps {
   className?: string;
@@ -15,10 +18,11 @@ const MotionList = (props: MotionListProps) => {
   const { className, style } = props;
   const [currentId, setCurrentId] = useState<string>('');
   const viewer = useGlobalStore((s) => s.viewer);
+  const { styles } = useStyles();
 
   return (
     <GridList
-      className={className}
+      className={classNames(className, styles.list)}
       style={style}
       items={[...ANIMATION_CONFIG[GenderEnum.FEMALE], ...ANIMATION_CONFIG[GenderEnum.MALE]].map(
         (item) => ({
