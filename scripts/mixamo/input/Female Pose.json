@@ -830,57 +830,5 @@
     "motion_id": "02825b33-a9a3-418e-85e8-df665e2e52eb",
     "motions": null,
     "source": "system"
-  },
-  {
-    "id": "c9c99282-b96c-11e4-a802-0aaa78deedf9",
-    "type": "Motion",
-    "description": "Showing Loser Gesture While Standing",
-    "category": "",
-    "character_type": "human",
-    "name": "Loser",
-    "thumbnail": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/117990901/static.png",
-    "thumbnail_animated": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/117990901/animated.gif",
-    "motion_id": "c9c99282-b96c-11e4-a802-0aaa78deedf9",
-    "motions": null,
-    "source": "system"
-  },
-  {
-    "id": "c9cb8e7b-b96c-11e4-a802-0aaa78deedf9",
-    "type": "Motion",
-    "description": "Sitting In Disbelief With Head Back",
-    "category": "",
-    "character_type": "human",
-    "name": "Sitting Disbelief",
-    "thumbnail": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/116260901/static.png",
-    "thumbnail_animated": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/116260901/animated.gif",
-    "motion_id": "c9cb8e7b-b96c-11e4-a802-0aaa78deedf9",
-    "motions": null,
-    "source": "system"
-  },
-  {
-    "id": "c9cb93af-b96c-11e4-a802-0aaa78deedf9",
-    "type": "Motion",
-    "description": "Sitting In Disbelief With Head Forward",
-    "category": "",
-    "character_type": "human",
-    "name": "Sitting Disbelief",
-    "thumbnail": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/116260903/static.png",
-    "thumbnail_animated": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/116260903/animated.gif",
-    "motion_id": "c9cb93af-b96c-11e4-a802-0aaa78deedf9",
-    "motions": null,
-    "source": "system"
-  },
-  {
-    "id": "c9cd4a64-b96c-11e4-a802-0aaa78deedf9",
-    "type": "Motion",
-    "description": "Doing The Hokey Pokey",
-    "category": "",
-    "character_type": "human",
-    "name": "Hokey Pokey",
-    "thumbnail": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/125690901/static.png",
-    "thumbnail_animated": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/125690901/animated.gif",
-    "motion_id": "c9cd4a64-b96c-11e4-a802-0aaa78deedf9",
-    "motions": null,
-    "source": "system"
   }
 ]

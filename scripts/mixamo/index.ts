@@ -21,12 +21,22 @@ export const writeJSON = (filePath: string, data: any) => {
 export const srcListDir = resolve(__dirname, './input');
 
 const formatMixamoList = (list: Motion[]): MotionAnimation[] => {
-  return list.map((item) => ({
-    id: item.motion_id,
-    name: item.name,
-    url: `https://r2.vidol.chat/motions/${item.name}.fbx`,
-    avatar: item.thumbnail_animated,
-  }));
+  const countMap: Record<string, number> = {};
+  return list.map((item) => {
+    // 用 countMap 对 item.name 进行计数
+    if (countMap[item.name] !== undefined) {
+      countMap[item.name] += 1;
+    } else {
+      countMap[item.name] = 0;
+    }
+    const suffix = countMap[item.name] === 0 ? '' : ` (${countMap[item.name]})`;
+    return {
+      id: item.motion_id,
+      name: item.name,
+      url: `https://r2.vidol.chat/posture/${item.name}${suffix}.fbx`,
+      avatar: item.thumbnail_animated,
+    };
+  });
 };
 
 const genList = () => {
