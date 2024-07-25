@@ -33,7 +33,7 @@ const formatMixamoList = (list: Motion[]): MotionAnimation[] => {
     return {
       id: item.motion_id,
       name: item.name,
-      url: `https://r2.vidol.chat/posture/${item.name}${suffix}.fbx`,
+      url: `https://r2.vidol.chat/motions/${item.name}${suffix}.fbx`,
       avatar: item.thumbnail_animated,
     };
   });
@@ -44,7 +44,7 @@ const genList = () => {
   mixamoDirJsonList.forEach((filePath) => {
     console.info('processing...', filePath);
     const inputPath = resolve(__dirname, './input', filePath);
-    const outputPath = resolve(__dirname, './output', filePath);
+    const outputPath = resolve(__dirname, './motions', filePath);
     const list = readJSON(inputPath);
     const formatList = formatMixamoList(list);
     writeJSON(outputPath, formatList);
