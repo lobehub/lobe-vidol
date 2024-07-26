@@ -69,14 +69,29 @@ function AgentViewer(props: Props) {
           }
 
           const file_type = file.name.split('.').pop();
-          if (file_type === 'vrm') {
-            const blob = new Blob([file], { type: 'application/octet-stream' });
-            const url = window.URL.createObjectURL(blob);
-            viewer.loadVrm(url);
-          } else if (file_type === 'fbx') {
-            const blob = new Blob([file], { type: 'application/octet-stream' });
-            const url = window.URL.createObjectURL(blob);
-            viewer.model?.loadFBX(url);
+          switch (file_type) {
+            case 'vrm': {
+              const blob = new Blob([file], { type: 'application/octet-stream' });
+              const url = window.URL.createObjectURL(blob);
+              viewer.loadVrm(url);
+
+              break;
+            }
+            case 'fbx': {
+              const blob = new Blob([file], { type: 'application/octet-stream' });
+              const url = window.URL.createObjectURL(blob);
+              viewer.model?.loadFBX(url);
+
+              break;
+            }
+            case 'vmd': {
+              file.arrayBuffer().then((data) => {
+                viewer.model?.dance(data);
+              });
+
+              break;
+            }
+            // No default
           }
         });
       }

@@ -1,5 +1,6 @@
 import { VRM, VRMLoaderPlugin, VRMUtils } from '@pixiv/three-vrm';
 import * as THREE from 'three';
+import { AnimationAction, AnimationClip } from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 
 import { convert } from '@/libs/VMDAnimation/vmd2vrmanim';
@@ -25,10 +26,14 @@ export class Model {
 
   private _lookAtTargetParent: THREE.Object3D;
   private _lipSync?: LipSync;
+  private _action: AnimationAction | undefined;
+  private _clip: AnimationClip | undefined;
 
   constructor(lookAtTargetParent: THREE.Object3D) {
     this._lookAtTargetParent = lookAtTargetParent;
     this._lipSync = new LipSync(new AudioContext());
+    this._action = undefined;
+    this._clip = undefined;
   }
 
   public async loadVRM(url: string): Promise<void> {
@@ -78,10 +83,19 @@ export class Model {
       console.error('You have to load VRM first');
       return;
     }
+    if (this._action) this._action.stop();
+    if (this._clip) {
+      mixer.uncacheAction(this._clip);
+      mixer.uncacheClip(this._clip);
+      this._clip = undefined;
+    }
 
     const clip = vrmAnimation.createAnimationClip(vrm);
+
     const action = mixer.clipAction(clip);
     action.play();
+    this._action = action;
+    this._clip = clip;
   }
 
   public async loadIdleAnimation() {
@@ -94,11 +108,19 @@ export class Model {
 
     if (vrm && mixer) {
       mixer.stopAllAction();
+      if (this._action) this._action.stop();
+      if (this._clip) {
+        mixer.uncacheAction(this._clip);
+        mixer.uncacheClip(this._clip);
+        this._clip = undefined;
+      }
       // Load animation
       const clip = await loadMixamoAnimation(animationUrl, vrm);
       // Apply the loaded animation to mixer and play
       const action = mixer.clipAction(clip);
       action.play();
+      this._action = action;
+      this._clip = clip;
     }
   }
 
@@ -110,10 +132,18 @@ export class Model {
     const { vrm, mixer } = this;
     if (vrm && mixer) {
       mixer.stopAllAction();
+      if (this._action) this._action.stop();
+      if (this._clip) {
+        mixer.uncacheAction(this._clip);
+        mixer.uncacheClip(this._clip);
+        this._clip = undefined;
+      }
       const animation = convert(buffer, toOffset(vrm));
       const clip = bindToVRM(animation, vrm);
       const action = mixer.clipAction(clip);
       action.play(); // play animation
+      this._action = action;
+      this._clip = clip;
     }
   }
 
