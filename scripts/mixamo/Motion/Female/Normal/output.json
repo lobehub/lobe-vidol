@@ -1,0 +1,62 @@
+[
+  {
+    "id": "c9c98a38-b96c-11e4-a802-0aaa78deedf9",
+    "name": "Happy",
+    "type": "Motion",
+    "gender": "Female",
+    "category": "Normal",
+    "description": "Standing Happily",
+    "url": "https://r2.vidol.chat/animations/c9c98a38-b96c-11e4-a802-0aaa78deedf9.fbx",
+    "avatar": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/117920901/animated.gif"
+  },
+  {
+    "id": "c9c9941c-b96c-11e4-a802-0aaa78deedf9",
+    "name": "Excited",
+    "type": "Motion",
+    "gender": "Female",
+    "category": "Normal",
+    "description": "Super Excited",
+    "url": "https://r2.vidol.chat/animations/c9c9941c-b96c-11e4-a802-0aaa78deedf9.fbx",
+    "avatar": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/118000901/animated.gif"
+  },
+  {
+    "id": "c9cb8ba0-b96c-11e4-a802-0aaa78deedf9",
+    "name": "Sitting Angry",
+    "type": "Motion",
+    "gender": "Female",
+    "category": "Normal",
+    "description": "Sitting Slightly Aggravated",
+    "url": "https://r2.vidol.chat/animations/c9cb8ba0-b96c-11e4-a802-0aaa78deedf9.fbx",
+    "avatar": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/116250903/animated.gif"
+  },
+  {
+    "id": "c9cb8a3b-b96c-11e4-a802-0aaa78deedf9",
+    "name": "Sitting Angry",
+    "type": "Motion",
+    "gender": "Female",
+    "category": "Normal",
+    "description": "Sitting Highly Aggravated",
+    "url": "https://r2.vidol.chat/animations/c9cb8a3b-b96c-11e4-a802-0aaa78deedf9.fbx",
+    "avatar": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/116250902/animated.gif"
+  },
+  {
+    "id": "c9cb88ed-b96c-11e4-a802-0aaa78deedf9",
+    "name": "Sitting Angry",
+    "type": "Motion",
+    "gender": "Female",
+    "category": "Normal",
+    "description": "Sitting Highly Aggravated",
+    "url": "https://r2.vidol.chat/animations/c9cb88ed-b96c-11e4-a802-0aaa78deedf9.fbx",
+    "avatar": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/116250901/animated.gif"
+  },
+  {
+    "id": "c9c98b02-b96c-11e4-a802-0aaa78deedf9",
+    "name": "Angry",
+    "type": "Motion",
+    "gender": "Female",
+    "category": "Normal",
+    "description": "Standing Angrily",
+    "url": "https://r2.vidol.chat/animations/c9c98b02-b96c-11e4-a802-0aaa78deedf9.fbx",
+    "avatar": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/117940901/animated.gif"
+  }
+]

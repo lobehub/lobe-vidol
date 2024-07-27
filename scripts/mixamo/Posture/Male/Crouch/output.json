@@ -1,0 +1,42 @@
+[
+  {
+    "id": "2f6d96c7-c5a3-4ba4-8ed3-bd9f6b4eb461",
+    "name": "Male Crouch Pose",
+    "type": "Posture",
+    "gender": "Male",
+    "category": "Crouch",
+    "description": "Looking Forward",
+    "url": "https://r2.vidol.chat/animations/2f6d96c7-c5a3-4ba4-8ed3-bd9f6b4eb461.fbx",
+    "avatar": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/150100904/animated.gif"
+  },
+  {
+    "id": "4d1eb9fd-1c87-4782-8324-0c6cac3aa9fb",
+    "name": "Male Crouch Pose",
+    "type": "Posture",
+    "gender": "Male",
+    "category": "Crouch",
+    "description": "Leaning Against Object, Looking Left",
+    "url": "https://r2.vidol.chat/animations/4d1eb9fd-1c87-4782-8324-0c6cac3aa9fb.fbx",
+    "avatar": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/150100903/animated.gif"
+  },
+  {
+    "id": "d525734f-e335-4711-91c6-283811398fb4",
+    "name": "Male Crouch Pose",
+    "type": "Posture",
+    "gender": "Male",
+    "category": "Crouch",
+    "description": "Leaning Forward, Right Hand Supporting",
+    "url": "https://r2.vidol.chat/animations/d525734f-e335-4711-91c6-283811398fb4.fbx",
+    "avatar": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/150100902/animated.gif"
+  },
+  {
+    "id": "ede8954e-5272-46c2-b3c5-c701e5ee887c",
+    "name": "Male Crouch Pose",
+    "type": "Posture",
+    "gender": "Male",
+    "category": "Crouch",
+    "description": "Arms Spread Looking Upwards",
+    "url": "https://r2.vidol.chat/animations/ede8954e-5272-46c2-b3c5-c701e5ee887c.fbx",
+    "avatar": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/150100901/animated.gif"
+  }
+]

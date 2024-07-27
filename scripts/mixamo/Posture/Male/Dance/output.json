@@ -1,0 +1,42 @@
+[
+  {
+    "id": "789c6577-08ca-416d-bbc3-4599d55b01b2",
+    "name": "Male Dance Pose",
+    "type": "Posture",
+    "gender": "Male",
+    "category": "Dance",
+    "description": "On Right Foot, Arms Extended Backwards",
+    "url": "https://r2.vidol.chat/animations/789c6577-08ca-416d-bbc3-4599d55b01b2.fbx",
+    "avatar": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/150200901/animated.gif"
+  },
+  {
+    "id": "9e1d4b43-a847-480f-877d-db3054c5a5ac",
+    "name": "Male Dance Pose",
+    "type": "Posture",
+    "gender": "Male",
+    "category": "Dance",
+    "description": "Legs Spread Leaning Left",
+    "url": "https://r2.vidol.chat/animations/9e1d4b43-a847-480f-877d-db3054c5a5ac.fbx",
+    "avatar": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/150200903/animated.gif"
+  },
+  {
+    "id": "177cf7c1-c4b0-48fb-8ab9-b7e81e7a2331",
+    "name": "Male Dance Pose",
+    "type": "Posture",
+    "gender": "Male",
+    "category": "Dance",
+    "description": "Legs Crossed",
+    "url": "https://r2.vidol.chat/animations/177cf7c1-c4b0-48fb-8ab9-b7e81e7a2331.fbx",
+    "avatar": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/150200902/animated.gif"
+  },
+  {
+    "id": "bf38a13c-91b2-4a7f-9683-56dd57ff6c01",
+    "name": "Male Dance Pose",
+    "type": "Posture",
+    "gender": "Male",
+    "category": "Dance",
+    "description": "Legs Spread Leaning Right",
+    "url": "https://r2.vidol.chat/animations/bf38a13c-91b2-4a7f-9683-56dd57ff6c01.fbx",
+    "avatar": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/150200904/animated.gif"
+  }
+]

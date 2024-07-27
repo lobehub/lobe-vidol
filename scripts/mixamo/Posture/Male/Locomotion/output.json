@@ -1,0 +1,72 @@
+[
+  {
+    "id": "c7d5ec2b-c398-4cbd-8440-352c51488ce6",
+    "name": "Male Locomotion Pose",
+    "type": "Posture",
+    "gender": "Male",
+    "category": "Locomotion",
+    "description": "Running Forward",
+    "url": "https://r2.vidol.chat/animations/c7d5ec2b-c398-4cbd-8440-352c51488ce6.fbx",
+    "avatar": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/150500903/animated.gif"
+  },
+  {
+    "id": "fbd14d0d-6ef3-48d4-933c-f4bdc4ff2e24",
+    "name": "Male Locomotion Pose",
+    "type": "Posture",
+    "gender": "Male",
+    "category": "Locomotion",
+    "description": "Walking Forward",
+    "url": "https://r2.vidol.chat/animations/fbd14d0d-6ef3-48d4-933c-f4bdc4ff2e24.fbx",
+    "avatar": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/150500902/animated.gif"
+  },
+  {
+    "id": "64cb8917-9b8b-4ede-9972-04d728cd7085",
+    "name": "Male Locomotion Pose",
+    "type": "Posture",
+    "gender": "Male",
+    "category": "Locomotion",
+    "description": "Stepping Forward Looking Left",
+    "url": "https://r2.vidol.chat/animations/64cb8917-9b8b-4ede-9972-04d728cd7085.fbx",
+    "avatar": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/150500906/animated.gif"
+  },
+  {
+    "id": "03dffa68-d243-470f-b059-d10f8fcfeabb",
+    "name": "Male Locomotion Pose",
+    "type": "Posture",
+    "gender": "Male",
+    "category": "Locomotion",
+    "description": "Sneaking Forward",
+    "url": "https://r2.vidol.chat/animations/03dffa68-d243-470f-b059-d10f8fcfeabb.fbx",
+    "avatar": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/150500905/animated.gif"
+  },
+  {
+    "id": "ddf86676-b6f0-4290-bbd7-bd6647f84fd4",
+    "name": "Male Locomotion Pose",
+    "type": "Posture",
+    "gender": "Male",
+    "category": "Locomotion",
+    "description": "Walking Forward, Looking Right",
+    "url": "https://r2.vidol.chat/animations/ddf86676-b6f0-4290-bbd7-bd6647f84fd4.fbx",
+    "avatar": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/150500901/animated.gif"
+  },
+  {
+    "id": "b414a4b5-236d-46e3-a2bd-efd45612ec42",
+    "name": "Male Locomotion Pose",
+    "type": "Posture",
+    "gender": "Male",
+    "category": "Locomotion",
+    "description": "Running Forward",
+    "url": "https://r2.vidol.chat/animations/b414a4b5-236d-46e3-a2bd-efd45612ec42.fbx",
+    "avatar": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/150500904/animated.gif"
+  },
+  {
+    "id": "1189d701-e683-4281-a13d-3a48fce4797f",
+    "name": "Male Action Pose",
+    "type": "Posture",
+    "gender": "Male",
+    "category": "Locomotion",
+    "description": "Crawling Forward Reaching With Left Hand",
+    "url": "https://r2.vidol.chat/animations/1189d701-e683-4281-a13d-3a48fce4797f.fbx",
+    "avatar": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/150000903/animated.gif"
+  }
+]

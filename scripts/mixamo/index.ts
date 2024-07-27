@@ -18,43 +18,51 @@ export const writeJSON = (filePath: string, data: any) => {
   writeFileSync(filePath, jsonStr, 'utf8');
 };
 
-export const srcListDir = resolve(__dirname, './input');
+type MotionType = 'Motion' | 'Posture';
+type Gender = 'Male' | 'Female';
 
-type MotionType = 'motions' | 'posture';
-
-const formatMixamoList = (type: MotionType, list: Motion[]): MotionAnimation[] => {
-  const countMap: Record<string, number> = {};
+const formatMixamoList = (
+  type: MotionType,
+  gender: Gender,
+  category: string,
+  list: Motion[],
+): MotionAnimation[] => {
   return list.map((item) => {
-    // 用 countMap 对 item.name 进行计数
-    if (countMap[item.name] !== undefined) {
-      countMap[item.name] += 1;
-    } else {
-      countMap[item.name] = 0;
-    }
-    const suffix = countMap[item.name] === 0 ? '' : ` (${countMap[item.name]})`;
-
     return {
       id: item.motion_id,
       name: item.name,
+      type,
+      gender,
+      category,
       description: item.description,
-      url: `https://r2.vidol.chat/${type}/${item.name}${suffix}.fbx`,
+      url: `https://r2.vidol.chat/animations/${item.motion_id}.fbx`,
       avatar: item.thumbnail_animated,
     };
   });
 };
 
-const genList = (type: MotionType) => {
+const genList = (type: MotionType, gender: Gender) => {
+  const srcListDir = resolve(__dirname, type, gender);
+
   const mixamoDirJsonList = readdirSync(srcListDir);
-  mixamoDirJsonList.forEach((filePath) => {
-    console.info('processing...', filePath);
-    const inputPath = resolve(__dirname, type, './input', filePath);
-    const outputPath = resolve(__dirname, type, './output', filePath);
+  mixamoDirJsonList.forEach((category) => {
+    console.info('processing...', category);
+    const inputPath = resolve(__dirname, type, gender, category, './input.json');
+    const outputPath = resolve(__dirname, type, gender, category, './output.json');
     const list = readJSON(inputPath);
-    const formatList = formatMixamoList(type, list);
+    const formatList = formatMixamoList(type, gender, category, list);
     writeJSON(outputPath, formatList);
   });
 };
 
-genList('posture');
+const start = () => {
+  const motionList: MotionType[] = ['Motion', 'Posture'];
+  const genderList: Gender[] = ['Male', 'Female'];
+  for (let motion of motionList) {
+    for (let gender of genderList) {
+      genList(motion, gender);
+    }
+  }
+};
 
-genList('motions');
+start();

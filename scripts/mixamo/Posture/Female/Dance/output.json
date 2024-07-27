@@ -1,0 +1,62 @@
+[
+  {
+    "id": "31dca3e7-dba8-4536-a70e-34d7d5976fa9",
+    "name": "Female Dance Pose",
+    "type": "Posture",
+    "gender": "Female",
+    "category": "Dance",
+    "description": "On Left Toes, Top Of Right Foot",
+    "url": "https://r2.vidol.chat/animations/31dca3e7-dba8-4536-a70e-34d7d5976fa9.fbx",
+    "avatar": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/140200901/animated.gif"
+  },
+  {
+    "id": "d6f6495f-89d8-4743-9ca3-14c7500cb4ce",
+    "name": "Female Dance Pose",
+    "type": "Posture",
+    "gender": "Female",
+    "category": "Dance",
+    "description": "On Right Toes, Left Leg Raised",
+    "url": "https://r2.vidol.chat/animations/d6f6495f-89d8-4743-9ca3-14c7500cb4ce.fbx",
+    "avatar": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/140200906/animated.gif"
+  },
+  {
+    "id": "be5e14b7-edd1-43cd-8bf8-31b4f8da7f70",
+    "name": "Female Dance Pose",
+    "type": "Posture",
+    "gender": "Female",
+    "category": "Dance",
+    "description": "On Right Toe, Arms Raised",
+    "url": "https://r2.vidol.chat/animations/be5e14b7-edd1-43cd-8bf8-31b4f8da7f70.fbx",
+    "avatar": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/140200903/animated.gif"
+  },
+  {
+    "id": "02825b33-a9a3-418e-85e8-df665e2e52eb",
+    "name": "Female Dance Pose",
+    "type": "Posture",
+    "gender": "Female",
+    "category": "Dance",
+    "description": "On Toes, Back Arched",
+    "url": "https://r2.vidol.chat/animations/02825b33-a9a3-418e-85e8-df665e2e52eb.fbx",
+    "avatar": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/140200902/animated.gif"
+  },
+  {
+    "id": "c831c4aa-d70f-403c-8fc3-e8df720c4cac",
+    "name": "Female Dance Pose",
+    "type": "Posture",
+    "gender": "Female",
+    "category": "Dance",
+    "description": "On Toes, Back Arched",
+    "url": "https://r2.vidol.chat/animations/c831c4aa-d70f-403c-8fc3-e8df720c4cac.fbx",
+    "avatar": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/140200905/animated.gif"
+  },
+  {
+    "id": "da9f9f38-5e04-4a3e-b489-91d4cdd1a90f",
+    "name": "Female Dance Pose",
+    "type": "Posture",
+    "gender": "Female",
+    "category": "Dance",
+    "description": "On Right Toes, Left Leg Raised",
+    "url": "https://r2.vidol.chat/animations/da9f9f38-5e04-4a3e-b489-91d4cdd1a90f.fbx",
+    "avatar": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/140200904/animated.gif"
+  }
+]
