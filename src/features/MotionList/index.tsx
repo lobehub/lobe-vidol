@@ -24,14 +24,12 @@ const MotionList = (props: MotionListProps) => {
     <GridList
       className={classNames(className, styles.list)}
       style={style}
-      items={[...ANIMATION_CONFIG[GenderEnum.FEMALE], ...ANIMATION_CONFIG[GenderEnum.MALE]].map(
-        (item) => ({
-          ...item,
-          avatar: item.avatar,
-          id: item.id,
-          name: item.name,
-        }),
-      )}
+      items={[...ANIMATION_CONFIG[GenderEnum.FEMALE]].map((item) => ({
+        ...item,
+        avatar: item.avatar,
+        id: item.id,
+        name: item.name,
+      }))}
       onClick={async (id, item: any) => {
         setCurrentId(id);
         if (item.url) {

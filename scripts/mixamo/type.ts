@@ -1,5 +1,6 @@
 export interface MotionAnimation {
   avatar: string;
+  description: string;
   id: string;
   name: string;
   url: string;

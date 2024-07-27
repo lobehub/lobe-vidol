@@ -20,7 +20,9 @@ export const writeJSON = (filePath: string, data: any) => {
 
 export const srcListDir = resolve(__dirname, './input');
 
-const formatMixamoList = (list: Motion[]): MotionAnimation[] => {
+type MotionType = 'motions' | 'posture';
+
+const formatMixamoList = (type: MotionType, list: Motion[]): MotionAnimation[] => {
   const countMap: Record<string, number> = {};
   return list.map((item) => {
     // 用 countMap 对 item.name 进行计数
@@ -30,25 +32,29 @@ const formatMixamoList = (list: Motion[]): MotionAnimation[] => {
       countMap[item.name] = 0;
     }
     const suffix = countMap[item.name] === 0 ? '' : ` (${countMap[item.name]})`;
+
     return {
       id: item.motion_id,
       name: item.name,
-      url: `https://r2.vidol.chat/motions/${item.name}${suffix}.fbx`,
+      description: item.description,
+      url: `https://r2.vidol.chat/${type}/${item.name}${suffix}.fbx`,
       avatar: item.thumbnail_animated,
     };
   });
 };
 
-const genList = () => {
+const genList = (type: MotionType) => {
   const mixamoDirJsonList = readdirSync(srcListDir);
   mixamoDirJsonList.forEach((filePath) => {
     console.info('processing...', filePath);
-    const inputPath = resolve(__dirname, './input', filePath);
-    const outputPath = resolve(__dirname, './motions', filePath);
+    const inputPath = resolve(__dirname, type, './input', filePath);
+    const outputPath = resolve(__dirname, type, './output', filePath);
     const list = readJSON(inputPath);
-    const formatList = formatMixamoList(list);
+    const formatList = formatMixamoList(type, list);
     writeJSON(outputPath, formatList);
   });
 };
 
-genList();
+genList('posture');
+
+genList('motions');
