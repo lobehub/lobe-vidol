@@ -1,0 +1,54 @@
+[
+  {
+    "id": "789c6577-08ca-416d-bbc3-4599d55b01b2",
+    "type": "Motion",
+    "description": "On Right Foot, Arms Extended Backwards",
+    "category": "",
+    "character_type": "human",
+    "name": "Male Dance Pose",
+    "thumbnail": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/150200901/static.png",
+    "thumbnail_animated": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/150200901/animated.gif",
+    "motion_id": "789c6577-08ca-416d-bbc3-4599d55b01b2",
+    "motions": null,
+    "source": "system"
+  },
+  {
+    "id": "9e1d4b43-a847-480f-877d-db3054c5a5ac",
+    "type": "Motion",
+    "description": "Legs Spread Leaning Left",
+    "category": "",
+    "character_type": "human",
+    "name": "Male Dance Pose",
+    "thumbnail": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/150200903/static.png",
+    "thumbnail_animated": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/150200903/animated.gif",
+    "motion_id": "9e1d4b43-a847-480f-877d-db3054c5a5ac",
+    "motions": null,
+    "source": "system"
+  },
+  {
+    "id": "177cf7c1-c4b0-48fb-8ab9-b7e81e7a2331",
+    "type": "Motion",
+    "description": "Legs Crossed",
+    "category": "",
+    "character_type": "human",
+    "name": "Male Dance Pose",
+    "thumbnail": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/150200902/static.png",
+    "thumbnail_animated": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/150200902/animated.gif",
+    "motion_id": "177cf7c1-c4b0-48fb-8ab9-b7e81e7a2331",
+    "motions": null,
+    "source": "system"
+  },
+  {
+    "id": "bf38a13c-91b2-4a7f-9683-56dd57ff6c01",
+    "type": "Motion",
+    "description": "Legs Spread Leaning Right",
+    "category": "",
+    "character_type": "human",
+    "name": "Male Dance Pose",
+    "thumbnail": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/150200904/static.png",
+    "thumbnail_animated": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/150200904/animated.gif",
+    "motion_id": "bf38a13c-91b2-4a7f-9683-56dd57ff6c01",
+    "motions": null,
+    "source": "system"
+  }
+]

@@ -1,0 +1,54 @@
+[
+  {
+    "id": "1cd09ee2-ba14-464d-9800-cbbbf16a6a2f",
+    "type": "Motion",
+    "description": "Walking, Arms On Hips",
+    "category": "",
+    "character_type": "human",
+    "name": "Female Locomotion Pose",
+    "thumbnail": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/140500904/static.png",
+    "thumbnail_animated": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/140500904/animated.gif",
+    "motion_id": "1cd09ee2-ba14-464d-9800-cbbbf16a6a2f",
+    "motions": null,
+    "source": "system"
+  },
+  {
+    "id": "8a09b39c-7163-4efe-bb74-baa30451b7bc",
+    "type": "Motion",
+    "description": "Walking, Right Arm On Hip",
+    "category": "",
+    "character_type": "human",
+    "name": "Female Locomotion Pose",
+    "thumbnail": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/140500902/static.png",
+    "thumbnail_animated": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/140500902/animated.gif",
+    "motion_id": "8a09b39c-7163-4efe-bb74-baa30451b7bc",
+    "motions": null,
+    "source": "system"
+  },
+  {
+    "id": "040356e9-129b-454c-ae6b-3a27f83804f8",
+    "type": "Motion",
+    "description": "Sprinting",
+    "category": "",
+    "character_type": "human",
+    "name": "Female Locomotion Pose",
+    "thumbnail": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/140500901/static.png",
+    "thumbnail_animated": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/140500901/animated.gif",
+    "motion_id": "040356e9-129b-454c-ae6b-3a27f83804f8",
+    "motions": null,
+    "source": "system"
+  },
+  {
+    "id": "1ead39af-d8cd-489c-9f38-dd5e30819395",
+    "type": "Motion",
+    "description": "Walking",
+    "category": "",
+    "character_type": "human",
+    "name": "Female Locomotion Pose",
+    "thumbnail": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/140500903/static.png",
+    "thumbnail_animated": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/140500903/animated.gif",
+    "motion_id": "1ead39af-d8cd-489c-9f38-dd5e30819395",
+    "motions": null,
+    "source": "system"
+  }
+]
