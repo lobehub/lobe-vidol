@@ -20,8 +20,12 @@ export interface TouchAction {
 
 export interface MotionAnimation {
   avatar: string;
+  category: string;
+  description: string;
+  gender: string;
   id: string;
   name: string;
+  type: string;
   url: string;
 }
 
@@ -35,5 +39,6 @@ export interface TouchActionConfig {
 
 export type Screenplay = {
   emotion: EmotionType;
+  motion?: string;
   tts: TTS;
 };

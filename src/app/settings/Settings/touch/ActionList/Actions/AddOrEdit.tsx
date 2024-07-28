@@ -142,7 +142,7 @@ const AddOrEdit = memo<Props>(({ touchArea, index, touchAction, isEdit = true, g
               style={{ width: INPUT_WIDTH_S }}
               defaultActiveFirstOption={true}
             />
-          </FormItem>{' '}
+          </FormItem>
           <FormItem
             label={t('info.motionLabel', { ns: 'panel' })}
             desc={t('info.motionDescription', { ns: 'panel' })}

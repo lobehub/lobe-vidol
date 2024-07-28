@@ -3,10 +3,15 @@
  * Mixamo Animations 脚本处理
  * @author rdmclin2
  */
-import { readFileSync, readdirSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 
-import { Motion, MotionAnimation } from './type';
+import { MotionAnimation } from '@/types/touch';
+
+import { Motion } from './type';
+
+export const root = resolve(__dirname, '../..');
+export const srcAnimationsDir = resolve(root, './src/animations');
 
 export const readJSON = (filePath: string) => {
   const data = readFileSync(filePath, 'utf8');
@@ -43,6 +48,7 @@ const formatMixamoList = (
 
 const genList = (type: MotionType, gender: Gender) => {
   const srcListDir = resolve(__dirname, type, gender);
+  const genderList: MotionAnimation[] = [];
 
   const mixamoDirJsonList = readdirSync(srcListDir);
   mixamoDirJsonList.forEach((category) => {
@@ -51,8 +57,13 @@ const genList = (type: MotionType, gender: Gender) => {
     const outputPath = resolve(__dirname, type, gender, category, './output.json');
     const list = readJSON(inputPath);
     const formatList = formatMixamoList(type, gender, category, list);
+    genderList.push(...formatList);
     writeJSON(outputPath, formatList);
   });
+  const motionsDir = resolve(srcAnimationsDir, type);
+  if (!existsSync(motionsDir)) mkdirSync(motionsDir);
+  const genderPath = resolve(srcAnimationsDir, type, `${gender}.json`);
+  writeJSON(genderPath, genderList);
 };
 
 const start = () => {
