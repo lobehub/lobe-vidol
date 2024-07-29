@@ -1,7 +1,6 @@
 import {
   DEFAULT_TOUCH_ACTION_CONFIG_FEMALE,
   DEFAULT_TOUCH_ACTION_CONFIG_MALE,
-  DEFAULT_TOUCH_ACTION_CONFIG_OTHER,
 } from '@/constants/touch';
 import { GenderEnum } from '@/types/agent';
 import { Config } from '@/types/config';
@@ -23,7 +22,6 @@ const initialState: SettingState = {
     touch: {
       [GenderEnum.FEMALE]: DEFAULT_TOUCH_ACTION_CONFIG_FEMALE,
       [GenderEnum.MALE]: DEFAULT_TOUCH_ACTION_CONFIG_MALE,
-      [GenderEnum.OTHER]: DEFAULT_TOUCH_ACTION_CONFIG_OTHER,
     },
   },
 };

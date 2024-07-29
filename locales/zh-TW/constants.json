@@ -2,8 +2,7 @@
   "agent": {
     "gender": {
       "female": "女",
-      "male": "男",
-      "other": "其他"
+      "male": "男"
     },
     "meta": {
       "description": "這是一個自訂角色",

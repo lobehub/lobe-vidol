@@ -20,7 +20,6 @@ export enum CategoryEnum {
 export enum GenderEnum {
   FEMALE = 'Female',
   MALE = 'Male',
-  OTHER = 'Other',
 }
 
 export interface AgentMeta {

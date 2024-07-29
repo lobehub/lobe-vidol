@@ -16,11 +16,7 @@ import { StateCreator } from 'zustand/vanilla';
 import { LOBE_VIDOL_DEFAULT_AGENT_ID } from '@/constants/agent';
 import { DEFAULT_AGENT_AVATAR_URL } from '@/constants/common';
 import { DEFAULT_LLM_CONFIG } from '@/constants/openai';
-import {
-  DEFAULT_TTS_CONFIG_FEMALE,
-  DEFAULT_TTS_CONFIG_MALE,
-  DEFAULT_TTS_CONFIG_OTHER,
-} from '@/constants/tts';
+import { DEFAULT_TTS_CONFIG_FEMALE, DEFAULT_TTS_CONFIG_MALE } from '@/constants/tts';
 import createTouchStore from '@/store/agent/slices/touch';
 import { Agent, AgentMeta, CategoryEnum, GenderEnum } from '@/types/agent';
 import { TTS } from '@/types/tts';
@@ -104,9 +100,6 @@ const getTTSConfigByGender = (gender: GenderEnum) => {
     }
     case GenderEnum.MALE: {
       return DEFAULT_TTS_CONFIG_MALE;
-    }
-    default: {
-      return DEFAULT_TTS_CONFIG_OTHER;
     }
   }
 };

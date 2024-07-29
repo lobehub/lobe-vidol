@@ -1,4 +1,4 @@
-import { ManOutlined, QuestionCircleOutlined, WomanOutlined } from '@ant-design/icons';
+import { ManOutlined, WomanOutlined } from '@ant-design/icons';
 import { createStyles } from 'antd-style';
 import classNames from 'classnames';
 import React, { memo, useState } from 'react';
@@ -46,11 +46,6 @@ const Touch = (props: TouchProps) => {
       label: t('agent.gender.male'),
       value: GenderEnum.MALE,
       icon: <ManOutlined style={{ fontSize: 24 }} />,
-    },
-    {
-      label: t('agent.gender.other'),
-      value: GenderEnum.OTHER,
-      icon: <QuestionCircleOutlined style={{ fontSize: 24 }} />,
     },
   ];
 

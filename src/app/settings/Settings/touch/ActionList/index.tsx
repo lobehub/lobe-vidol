@@ -7,7 +7,6 @@ import { TouchAreaEnum } from '@/types/touch';
 
 import FemaleList from './List/FemaleList';
 import MaleList from './List/MaleList';
-import OtherList from './List/OtherList';
 
 interface AreaListProps {
   areaOptions?: { label: string; value: TouchAreaEnum }[];
@@ -27,7 +26,6 @@ const AreaList = memo((props: AreaListProps) => {
       <Header title={t('touch.touchActionList', { touchArea })} />
       <FemaleList currentTouchArea={currentTouchArea} />
       <MaleList currentTouchArea={currentTouchArea} />
-      <OtherList currentTouchArea={currentTouchArea} />
     </Flexbox>
   );
 });

@@ -9,7 +9,6 @@ import { INPUT_WIDTH_M, INPUT_WIDTH_S } from '@/constants/token';
 import {
   DEFAULT_MOTION_ANIMATION_FEMALE,
   DEFAULT_MOTION_ANIMATION_MALE,
-  DEFAULT_MOTION_ANIMATION_OTHER,
   HAPPY_MOTION_ID,
   MAX_TOUCH_ACTION_TEXT_LENGTH,
 } from '@/constants/touch';
@@ -155,14 +154,12 @@ export default memo((props: Props) => {
             name="motion"
           >
             <Select
-              options={[
-                ...DEFAULT_MOTION_ANIMATION_FEMALE,
-                ...DEFAULT_MOTION_ANIMATION_MALE,
-                ...DEFAULT_MOTION_ANIMATION_OTHER,
-              ].map((item) => ({
-                label: item.name,
-                value: item.id,
-              }))}
+              options={[...DEFAULT_MOTION_ANIMATION_FEMALE, ...DEFAULT_MOTION_ANIMATION_MALE].map(
+                (item) => ({
+                  label: item.name,
+                  value: item.id,
+                }),
+              )}
               style={{ width: INPUT_WIDTH_S }}
               defaultActiveFirstOption={true}
             />

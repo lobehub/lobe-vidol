@@ -33,12 +33,6 @@ const ThemeButton = memo(() => {
         label: t('agent.male'),
         onClick: () => createNewAgent(GenderEnum.MALE),
       },
-      {
-        icon: genderIcons.other,
-        key: 'dark',
-        label: t('agent.other'),
-        onClick: () => createNewAgent(GenderEnum.OTHER),
-      },
     ],
     [],
   );

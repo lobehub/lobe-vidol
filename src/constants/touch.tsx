@@ -198,14 +198,6 @@ export const DEFAULT_TOUCH_ACTION_CONFIG_MALE: TouchActionConfig = {
   ],
 };
 
-export const DEFAULT_TOUCH_ACTION_CONFIG_OTHER: TouchActionConfig = {
-  [TouchAreaEnum.Head]: [],
-  [TouchAreaEnum.Arm]: [],
-  [TouchAreaEnum.Leg]: [],
-  [TouchAreaEnum.Chest]: [],
-  [TouchAreaEnum.Belly]: [],
-};
-
 export const EMPTY_TOUCH_CONFIG: TouchActionConfig = {
   [TouchAreaEnum.Head]: [],
   [TouchAreaEnum.Arm]: [],
@@ -219,21 +211,16 @@ export const MAX_TOUCH_ACTION_TEXT_LENGTH = 100;
 export const DEFAULT_MOTION_ANIMATION_FEMALE: MotionAnimation[] = FemaleMotionsList;
 
 export const DEFAULT_MOTION_ANIMATION_MALE: MotionAnimation[] = MaleMotionsList;
-export const DEFAULT_MOTION_ANIMATION_OTHER: MotionAnimation[] = [];
 
 export const ANIMATION_CONFIG = {
   [GenderEnum.FEMALE]: DEFAULT_MOTION_ANIMATION_FEMALE,
   [GenderEnum.MALE]: DEFAULT_MOTION_ANIMATION_MALE,
-  [GenderEnum.OTHER]: DEFAULT_MOTION_ANIMATION_OTHER,
 };
 
 export const DEFAULT_POSTURE_ANIMATION_FEMALE: MotionAnimation[] = FemalePostureList;
 export const DEFAULT_POSTURE_ANIMATION_MALE: MotionAnimation[] = MalePostureList;
 
-export const DEFAULT_POSTURE_ANIMATION_OTHER: MotionAnimation[] = [];
-
 export const POSTURE_CONFIG = {
   [GenderEnum.FEMALE]: DEFAULT_POSTURE_ANIMATION_FEMALE,
   [GenderEnum.MALE]: DEFAULT_POSTURE_ANIMATION_MALE,
-  [GenderEnum.OTHER]: DEFAULT_POSTURE_ANIMATION_OTHER,
 };
