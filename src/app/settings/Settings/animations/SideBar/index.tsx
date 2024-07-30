@@ -18,9 +18,9 @@ const useStyles = createStyles(({ css, token }) => ({
 }));
 
 interface IndexProps {
-  currentGender: GenderEnum;
-  genderOptions: { icon: ReactNode; label: string; value: GenderEnum }[];
-  setCurrentGender: (area: GenderEnum) => void;
+  currentGender?: GenderEnum;
+  genderOptions: { icon: ReactNode; label: string; value: GenderEnum | undefined }[];
+  setCurrentGender: (gender?: GenderEnum) => void;
 }
 
 const Index = (props: IndexProps) => {

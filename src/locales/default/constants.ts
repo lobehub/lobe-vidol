@@ -7,7 +7,7 @@ export default {
     gender: {
       male: '男性',
       female: '女性',
-      other: '其他',
+      all: '所有',
     },
   },
   touch: {

@@ -57,11 +57,9 @@ const genList = (type: MotionType) => {
     mixamoDirJsonList.forEach((category) => {
       console.info('processing...', category);
       const inputPath = resolve(__dirname, type, gender, category, './input.json');
-      const outputPath = resolve(__dirname, type, gender, category, './output.json');
       const list = readJSON(inputPath);
       const formatList = formatMixamoList(type, gender, category, list);
       motionList.push(...formatList);
-      writeJSON(outputPath, formatList);
     });
   }
   const motionsDir = resolve(srcAnimationsDir, type);

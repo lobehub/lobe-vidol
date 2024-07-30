@@ -17,10 +17,6 @@ interface ActionListItemProps {
 }
 
 const useStyles = createStyles(({ css, token }) => ({
-  list: css`
-    width: 100%;
-  `,
-
   listItem: css`
     position: relative;
 

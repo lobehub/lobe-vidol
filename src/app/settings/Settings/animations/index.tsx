@@ -1,8 +1,10 @@
 import { ManOutlined, WomanOutlined } from '@ant-design/icons';
 import { createStyles } from 'antd-style';
 import classNames from 'classnames';
+import { GalleryVerticalEnd } from 'lucide-react';
 import React, { memo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Flexbox } from 'react-layout-kit';
 
 import { GenderEnum } from '@/types/agent';
 
@@ -11,14 +13,7 @@ import SideBar from './SideBar';
 
 const useStyles = createStyles(({ css, token }) => ({
   container: css`
-    position: relative;
-
-    display: flex;
-
-    width: 100%;
-    min-height: 480px;
     padding: 0 16px;
-
     background-color: rgba(255, 255, 255, 2%);
     border-radius: ${token.borderRadius}px;
   `,
@@ -32,11 +27,16 @@ interface TouchProps {
 const Touch = (props: TouchProps) => {
   const { style, className } = props;
   const { styles } = useStyles();
-  const [currentGender, setCurrentGender] = useState<GenderEnum>(GenderEnum.FEMALE);
+  const [currentGender, setCurrentGender] = useState<GenderEnum | undefined>(undefined);
 
   const { t } = useTranslation(['constants']);
 
   const GENDER_OPTIONS = [
+    {
+      label: t('agent.gender.all'),
+      value: undefined,
+      icon: <GalleryVerticalEnd style={{ fontSize: 24 }} />,
+    },
     {
       label: t('agent.gender.female'),
       value: GenderEnum.FEMALE,
@@ -50,7 +50,7 @@ const Touch = (props: TouchProps) => {
   ];
 
   return (
-    <div className={classNames(className, styles.container)} style={style}>
+    <Flexbox horizontal className={classNames(className, styles.container)} style={style}>
       <SideBar
         currentGender={currentGender}
         setCurrentGender={setCurrentGender}
@@ -61,7 +61,7 @@ const Touch = (props: TouchProps) => {
         style={{ marginLeft: 12 }}
         genderOptions={GENDER_OPTIONS}
       />
-    </div>
+    </Flexbox>
   );
 };
 
