@@ -1,10 +1,7 @@
 import { VRMExpressionPresetName } from '@pixiv/three-vrm';
 
-import FemaleMotionsList from '@/animations/Motion/Female.json';
-import MaleMotionsList from '@/animations/Motion/Male.json';
-import FemalePostureList from '@/animations/Posture/Female.json';
-import MalePostureList from '@/animations/Posture/Male.json';
-import { GenderEnum } from '@/types/agent';
+import motionsList from '@/animations/Motion/index.json';
+import postureList from '@/animations/Posture/index.json';
 import { MotionAnimation, TouchActionConfig, TouchAreaEnum } from '@/types/touch';
 
 export const HAPPY_MOTION_ID = 'c9c98a38-b96c-11e4-a802-0aaa78deedf9';
@@ -208,19 +205,6 @@ export const EMPTY_TOUCH_CONFIG: TouchActionConfig = {
 
 export const MAX_TOUCH_ACTION_TEXT_LENGTH = 100;
 
-export const DEFAULT_MOTION_ANIMATION_FEMALE: MotionAnimation[] = FemaleMotionsList;
+export const DEFAULT_MOTION_ANIMATION: MotionAnimation[] = motionsList;
 
-export const DEFAULT_MOTION_ANIMATION_MALE: MotionAnimation[] = MaleMotionsList;
-
-export const ANIMATION_CONFIG = {
-  [GenderEnum.FEMALE]: DEFAULT_MOTION_ANIMATION_FEMALE,
-  [GenderEnum.MALE]: DEFAULT_MOTION_ANIMATION_MALE,
-};
-
-export const DEFAULT_POSTURE_ANIMATION_FEMALE: MotionAnimation[] = FemalePostureList;
-export const DEFAULT_POSTURE_ANIMATION_MALE: MotionAnimation[] = MalePostureList;
-
-export const POSTURE_CONFIG = {
-  [GenderEnum.FEMALE]: DEFAULT_POSTURE_ANIMATION_FEMALE,
-  [GenderEnum.MALE]: DEFAULT_POSTURE_ANIMATION_MALE,
-};
+export const DEFAULT_POSTURE_ANIMATION: MotionAnimation[] = postureList;

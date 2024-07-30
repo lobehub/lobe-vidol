@@ -46,33 +46,34 @@ const formatMixamoList = (
   });
 };
 
-const genList = (type: MotionType, gender: Gender) => {
-  const srcListDir = resolve(__dirname, type, gender);
-  const genderList: MotionAnimation[] = [];
+const genList = (type: MotionType) => {
+  const genderList: Gender[] = ['Male', 'Female'];
+  const motionList: MotionAnimation[] = [];
 
-  const mixamoDirJsonList = readdirSync(srcListDir);
-  mixamoDirJsonList.forEach((category) => {
-    console.info('processing...', category);
-    const inputPath = resolve(__dirname, type, gender, category, './input.json');
-    const outputPath = resolve(__dirname, type, gender, category, './output.json');
-    const list = readJSON(inputPath);
-    const formatList = formatMixamoList(type, gender, category, list);
-    genderList.push(...formatList);
-    writeJSON(outputPath, formatList);
-  });
+  for (let gender of genderList) {
+    const srcListDir = resolve(__dirname, type, gender);
+
+    const mixamoDirJsonList = readdirSync(srcListDir);
+    mixamoDirJsonList.forEach((category) => {
+      console.info('processing...', category);
+      const inputPath = resolve(__dirname, type, gender, category, './input.json');
+      const outputPath = resolve(__dirname, type, gender, category, './output.json');
+      const list = readJSON(inputPath);
+      const formatList = formatMixamoList(type, gender, category, list);
+      motionList.push(...formatList);
+      writeJSON(outputPath, formatList);
+    });
+  }
   const motionsDir = resolve(srcAnimationsDir, type);
   if (!existsSync(motionsDir)) mkdirSync(motionsDir);
-  const genderPath = resolve(srcAnimationsDir, type, `${gender}.json`);
-  writeJSON(genderPath, genderList);
+  const genderPath = resolve(srcAnimationsDir, type, `index.json`);
+  writeJSON(genderPath, motionList);
 };
 
 const start = () => {
   const motionList: MotionType[] = ['Motion', 'Posture'];
-  const genderList: Gender[] = ['Male', 'Female'];
   for (let motion of motionList) {
-    for (let gender of genderList) {
-      genList(motion, gender);
-    }
+    genList(motion);
   }
 };
 

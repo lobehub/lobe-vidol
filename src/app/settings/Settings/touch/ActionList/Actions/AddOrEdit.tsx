@@ -6,11 +6,7 @@ import React, { memo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { INPUT_WIDTH_M, INPUT_WIDTH_S } from '@/constants/token';
-import {
-  DEFAULT_MOTION_ANIMATION_FEMALE,
-  DEFAULT_MOTION_ANIMATION_MALE,
-  MAX_TOUCH_ACTION_TEXT_LENGTH,
-} from '@/constants/touch';
+import { DEFAULT_MOTION_ANIMATION, MAX_TOUCH_ACTION_TEXT_LENGTH } from '@/constants/touch';
 import { useSettingStore } from '@/store/setting';
 import { GenderEnum } from '@/types/agent';
 import { TouchAction, TouchAreaEnum } from '@/types/touch';
@@ -150,12 +146,10 @@ const AddOrEdit = memo<Props>(({ touchArea, index, touchAction, isEdit = true, g
             name="motion"
           >
             <Select
-              options={[...DEFAULT_MOTION_ANIMATION_FEMALE, ...DEFAULT_MOTION_ANIMATION_MALE].map(
-                (item) => ({
-                  label: item.name,
-                  value: item.id,
-                }),
-              )}
+              options={DEFAULT_MOTION_ANIMATION.map((item) => ({
+                label: item.name,
+                value: item.id,
+              }))}
               style={{ width: INPUT_WIDTH_S }}
               defaultActiveFirstOption={true}
             />

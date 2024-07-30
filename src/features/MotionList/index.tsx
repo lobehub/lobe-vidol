@@ -2,9 +2,8 @@ import classNames from 'classnames';
 import React, { memo, useState } from 'react';
 
 import GridList from '@/components/GridList';
-import { ANIMATION_CONFIG } from '@/constants/touch';
+import { DEFAULT_MOTION_ANIMATION } from '@/constants/touch';
 import { useGlobalStore } from '@/store/global';
-import { GenderEnum } from '@/types/agent';
 import { fetchWithProgress } from '@/utils/fetch';
 
 import { useStyles } from './style';
@@ -24,7 +23,7 @@ const MotionList = (props: MotionListProps) => {
     <GridList
       className={classNames(className, styles.list)}
       style={style}
-      items={[...ANIMATION_CONFIG[GenderEnum.FEMALE]].map((item) => ({
+      items={DEFAULT_MOTION_ANIMATION.map((item) => ({
         ...item,
         avatar: item.avatar,
         id: item.id,
