@@ -117,19 +117,6 @@
     "source": "system"
   },
   {
-    "id": "c9cc3f4a-b96c-11e4-a802-0aaa78deedf9",
-    "type": "Motion",
-    "description": "Start Breakdance Swipes Maneuver",
-    "category": "",
-    "character_type": "human",
-    "name": "Breakdance Swipes",
-    "thumbnail": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/122050901/static.png",
-    "thumbnail_animated": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/122050901/animated.gif",
-    "motion_id": "c9cc3f4a-b96c-11e4-a802-0aaa78deedf9",
-    "motions": null,
-    "source": "system"
-  },
-  {
     "id": "c9c65aac-b96c-11e4-a802-0aaa78deedf9",
     "type": "Motion",
     "description": "Silly Dancing The Twist",
@@ -139,6 +126,19 @@
     "thumbnail": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/101920901/static.png",
     "thumbnail_animated": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/101920901/animated.gif",
     "motion_id": "c9c65aac-b96c-11e4-a802-0aaa78deedf9",
+    "motions": null,
+    "source": "system"
+  },
+  {
+    "id": "c9cc3f4a-b96c-11e4-a802-0aaa78deedf9",
+    "type": "Motion",
+    "description": "Start Breakdance Swipes Maneuver",
+    "category": "",
+    "character_type": "human",
+    "name": "Breakdance Swipes",
+    "thumbnail": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/122050901/static.png",
+    "thumbnail_animated": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/122050901/animated.gif",
+    "motion_id": "c9cc3f4a-b96c-11e4-a802-0aaa78deedf9",
     "motions": null,
     "source": "system"
   },
@@ -598,6 +598,19 @@
     "source": "system"
   },
   {
+    "id": "c9cc45b3-b96c-11e4-a802-0aaa78deedf9",
+    "type": "Motion",
+    "description": "Breakdance Uprock Footwork Var. 2",
+    "category": "",
+    "character_type": "human",
+    "name": "Breakdance Uprock Var 2",
+    "thumbnail": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/122130901/static.png",
+    "thumbnail_animated": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/122130901/animated.gif",
+    "motion_id": "c9cc45b3-b96c-11e4-a802-0aaa78deedf9",
+    "motions": null,
+    "source": "system"
+  },
+  {
     "id": "c9cc38a8-b96c-11e4-a802-0aaa78deedf9",
     "type": "Motion",
     "description": "Breakdance Arch Freeze Var 3",
@@ -624,15 +637,15 @@
     "source": "system"
   },
   {
-    "id": "c9cc45b3-b96c-11e4-a802-0aaa78deedf9",
+    "id": "c9cef4a7-b96c-11e4-a802-0aaa78deedf9",
     "type": "Motion",
-    "description": "Breakdance Uprock Footwork Var. 2",
+    "description": "Dancing The Twerk",
     "category": "",
     "character_type": "human",
-    "name": "Breakdance Uprock Var 2",
-    "thumbnail": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/122130901/static.png",
-    "thumbnail_animated": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/122130901/animated.gif",
-    "motion_id": "c9cc45b3-b96c-11e4-a802-0aaa78deedf9",
+    "name": "Dancing Twerk",
+    "thumbnail": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/128660903/static.png",
+    "thumbnail_animated": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/128660903/animated.gif",
+    "motion_id": "c9cef4a7-b96c-11e4-a802-0aaa78deedf9",
     "motions": null,
     "source": "system"
   },
@@ -646,19 +659,6 @@
     "thumbnail": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/122110901/static.png",
     "thumbnail_animated": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/122110901/animated.gif",
     "motion_id": "c9cc4420-b96c-11e4-a802-0aaa78deedf9",
-    "motions": null,
-    "source": "system"
-  },
-  {
-    "id": "c9cef4a7-b96c-11e4-a802-0aaa78deedf9",
-    "type": "Motion",
-    "description": "Dancing The Twerk",
-    "category": "",
-    "character_type": "human",
-    "name": "Dancing Twerk",
-    "thumbnail": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/128660903/static.png",
-    "thumbnail_animated": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/128660903/animated.gif",
-    "motion_id": "c9cef4a7-b96c-11e4-a802-0aaa78deedf9",
     "motions": null,
     "source": "system"
   },

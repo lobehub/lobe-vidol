@@ -6,7 +6,8 @@
 import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 
-import { MotionAnimation } from '@/types/touch';
+import { GenderEnum } from '@/types/agent';
+import { MotionAnimation, MotionCategoryEnum } from '@/types/touch';
 
 import { Motion } from './type';
 
@@ -24,12 +25,11 @@ export const writeJSON = (filePath: string, data: any) => {
 };
 
 type MotionType = 'Motion' | 'Posture';
-type Gender = 'Male' | 'Female';
 
 const formatMixamoList = (
   type: MotionType,
-  gender: Gender,
-  category: string,
+  gender: GenderEnum,
+  category: MotionCategoryEnum,
   list: Motion[],
 ): MotionAnimation[] => {
   return list.map((item) => {
@@ -47,7 +47,7 @@ const formatMixamoList = (
 };
 
 const genList = (type: MotionType) => {
-  const genderList: Gender[] = ['Male', 'Female'];
+  const genderList: GenderEnum[] = [GenderEnum.MALE, GenderEnum.FEMALE];
   const motionList: MotionAnimation[] = [];
 
   for (let gender of genderList) {
@@ -58,7 +58,7 @@ const genList = (type: MotionType) => {
       console.info('processing...', category);
       const inputPath = resolve(__dirname, type, gender, category, './input.json');
       const list = readJSON(inputPath);
-      const formatList = formatMixamoList(type, gender, category, list);
+      const formatList = formatMixamoList(type, gender, category as MotionCategoryEnum, list);
       motionList.push(...formatList);
     });
   }

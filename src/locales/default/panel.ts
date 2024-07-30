@@ -29,6 +29,7 @@ export default {
     nameDescription: '角色名称，与角色聊天时的称呼',
     genderLabel: '性别',
     genderDescription: '角色性别，影响角色的触摸响应',
+    motionCategoryLabel: '动作类别',
     descLabel: '描述',
     descDescription: '角色描述，用于角色的简单介绍',
     greetLabel: '招呼',
@@ -61,7 +62,7 @@ export default {
   },
   animation: {
     noAnimations: '暂无动作库',
-    animationList: '{{gender}}角色动作列表',
+    animationList: '角色动作列表',
   },
   upload: {
     support: '支持单个文件上传，当前仅支持 .vrm 格式文件',

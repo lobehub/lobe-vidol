@@ -1,5 +1,7 @@
 import { VRMExpressionPresetName } from '@pixiv/three-vrm';
 
+import { GenderEnum } from '@/types/agent';
+
 import { TTS } from './tts';
 
 export type EmotionType = VRMExpressionPresetName;
@@ -18,11 +20,16 @@ export interface TouchAction {
   text: string;
 }
 
+export enum MotionCategoryEnum {
+  DANCE = 'Dance',
+  NORMAL = 'Normal',
+}
+
 export interface MotionAnimation {
   avatar: string;
-  category: string;
+  category: MotionCategoryEnum;
   description: string;
-  gender: string;
+  gender: GenderEnum;
   id: string;
   name: string;
   type: string;

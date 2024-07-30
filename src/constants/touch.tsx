@@ -205,6 +205,6 @@ export const EMPTY_TOUCH_CONFIG: TouchActionConfig = {
 
 export const MAX_TOUCH_ACTION_TEXT_LENGTH = 100;
 
-export const DEFAULT_MOTION_ANIMATION: MotionAnimation[] = motionsList;
+export const DEFAULT_MOTION_ANIMATION: MotionAnimation[] = motionsList as MotionAnimation[];
 
-export const DEFAULT_POSTURE_ANIMATION: MotionAnimation[] = postureList;
+export const DEFAULT_POSTURE_ANIMATION: MotionAnimation[] = postureList as MotionAnimation[];

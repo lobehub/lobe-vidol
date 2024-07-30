@@ -29,6 +29,11 @@ export default {
       blinkLeft: '眨左眼',
       blinkRight: '眨右眼',
     },
+    motion: {
+      normal: '日常',
+      dance: '舞蹈',
+      all: '所有',
+    },
     femaleAction: {
       headAction: {
         happyA: '哇!最喜欢摸摸头!',

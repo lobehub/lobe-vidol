@@ -7,6 +7,7 @@ import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
 import { GenderEnum } from '@/types/agent';
+import { MotionCategoryEnum } from '@/types/touch';
 
 import ActionList from './ActionList';
 import SideBar from './SideBar';
@@ -28,6 +29,7 @@ const Touch = (props: TouchProps) => {
   const { style, className } = props;
   const { styles } = useStyles();
   const [currentGender, setCurrentGender] = useState<GenderEnum | undefined>(undefined);
+  const [currentCategory, setCurrentCategory] = useState<MotionCategoryEnum | undefined>(undefined);
 
   const { t } = useTranslation(['constants']);
 
@@ -49,17 +51,38 @@ const Touch = (props: TouchProps) => {
     },
   ];
 
+  const CATEGORY_OPTIONS = [
+    {
+      label: t('touch.motion.all'),
+      value: undefined,
+      icon: <GalleryVerticalEnd style={{ fontSize: 24 }} />,
+    },
+    {
+      label: t('touch.motion.normal'),
+      value: MotionCategoryEnum.NORMAL,
+      icon: <ManOutlined style={{ fontSize: 24 }} />,
+    },
+    {
+      label: t('touch.motion.dance'),
+      value: MotionCategoryEnum.DANCE,
+      icon: <WomanOutlined style={{ fontSize: 24 }} />,
+    },
+  ];
+
   return (
     <Flexbox horizontal className={classNames(className, styles.container)} style={style}>
       <SideBar
         currentGender={currentGender}
         setCurrentGender={setCurrentGender}
         genderOptions={GENDER_OPTIONS}
+        categoryOptions={CATEGORY_OPTIONS}
+        currentCategory={currentCategory}
+        setCurrentCategory={setCurrentCategory}
       />
       <ActionList
         currentGender={currentGender}
+        currentCategory={currentCategory}
         style={{ marginLeft: 12 }}
-        genderOptions={GENDER_OPTIONS}
       />
     </Flexbox>
   );
