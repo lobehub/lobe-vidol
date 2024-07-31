@@ -2,8 +2,7 @@
   "agent": {
     "gender": {
       "female": "Femmina",
-      "male": "Maschio",
-      "other": "Altro"
+      "male": "Maschio"
     },
     "meta": {
       "description": "Questo è un ruolo personalizzato",

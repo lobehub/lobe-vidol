@@ -1,9 +1,9 @@
 {
   "agent": {
     "gender": {
+      "all": "todos",
       "female": "Feminino",
-      "male": "Masculino",
-      "other": "Outro"
+      "male": "Masculino"
     },
     "meta": {
       "description": "Este é um papel personalizado",
@@ -87,6 +87,11 @@
         "neutralA": "Não tenha medo, minha perna de aço não chuta tolos",
         "neutralB": "Acha que sua vida está mais completa por tocar na minha perna?"
       }
+    },
+    "motion": {
+      "all": "todos",
+      "dance": "dança",
+      "normal": "normal"
     }
   }
 }

@@ -15,6 +15,12 @@
     "startDesc": "輸入你的 OpenAI API Key 即可開始會話。應用不會記錄你的 API Key",
     "startTitle": "自定義 API Key"
   },
+  "info": {
+    "history": "聊天記錄",
+    "motions": "動作",
+    "playlist": "播放清單",
+    "posture": "姿勢"
+  },
   "mode": {
     "chat": "聊天",
     "video": "視訊"
@@ -56,6 +62,7 @@
     "used": "令牌已使用"
   },
   "toolBar": {
+    "axes": "座標軸",
     "cameraControl": "鏡頭控制",
     "cameraHelper": "鏡頭輔助",
     "downloadModel": "模型下載中，請稍後...",

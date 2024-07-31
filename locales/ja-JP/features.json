@@ -15,6 +15,12 @@
     "startDesc": "OpenAI APIキーを入力して会話を開始できます。アプリはAPIキーを記録しません",
     "startTitle": "APIキーをカスタマイズする"
   },
+  "info": {
+    "history": "チャット履歴",
+    "motions": "モーション",
+    "playlist": "プレイリスト",
+    "posture": "ポーズ"
+  },
   "mode": {
     "chat": "チャット",
     "video": "ビデオ"
@@ -56,6 +62,7 @@
     "used": "使用済みトークン"
   },
   "toolBar": {
+    "axes": "軸",
     "cameraControl": "カメラ制御",
     "cameraHelper": "カメラアシスト",
     "downloadModel": "モデルのダウンロード中、しばらくお待ちください...",

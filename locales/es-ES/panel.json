@@ -2,11 +2,25 @@
   "dance": {
     "addPlay": "Agregar a la lista",
     "addPlaySuccess": "Agregado a la lista de reproducción",
+    "animation": {
+      "animationList": "Lista de animaciones del personaje",
+      "noAnimations": "No hay animaciones disponibles",
+      "totalCount": "Total de {{total}} elementos"
+    },
     "cancelAddPlay": "¿Estás seguro de que quieres cancelar la suscripción a la música {{musicName}}?",
     "cancelSubscribed": "Cancelar suscripción",
     "findDance": "Encuentra tu baile favorito",
+    "info": {
+      "motionCategoryLabel": "Etiqueta de categoría de movimiento",
+      "motionDescription": "Selecciona el movimiento que realizará el personaje en respuesta a una acción, afectando su comportamiento",
+      "motionLabel": "Movimiento"
+    },
     "musicAndDance": "Música y baile",
-    "play": "Reproducir"
+    "noPlayList": "No hay listas de reproducción disponibles, puedes suscribirte a tus bailes favoritos en el mercado",
+    "play": "Reproducir",
+    "touch": {
+      "inputActionMotion": "Ingresa el movimiento que realizará el personaje en respuesta a una acción"
+    }
   },
   "info": {
     "avatarDescription": "Avatar personalizado, haz clic en el avatar para cargar una imagen personalizada",

@@ -1,4 +1,9 @@
 {
+  "animation": {
+    "animationList": "Liste der Charakteranimationen",
+    "noAnimations": "Keine Animationen verfügbar",
+    "totalCount": "Insgesamt {{total}} Einträge"
+  },
   "dance": {
     "addPlay": "Zur Wiedergabeliste hinzufügen",
     "addPlaySuccess": "Zur Wiedergabeliste hinzugefügt",
@@ -6,6 +11,7 @@
     "cancelSubscribed": "Abonnement kündigen",
     "findDance": "Finde deinen Lieblingstanz",
     "musicAndDance": "Musik und Tanz",
+    "noPlayList": "Keine Wiedergabeliste verfügbar. Sie können Ihre Lieblingstänze im Markt abonnieren.",
     "play": "Abspielen"
   },
   "info": {
@@ -25,6 +31,9 @@
     "greetLabel": "Begrüßung",
     "modelDescription": "Modellvorschau, ziehen Sie Modelldateien hierher, um sie zu ersetzen",
     "modelLabel": "Modellvorschau",
+    "motionCategoryLabel": "Bewegungskategorie",
+    "motionDescription": "Wählen Sie die Bewegung, die die Handlungen des Charakters beeinflusst, wenn sie reagiert.",
+    "motionLabel": "Bewegung",
     "nameDescription": "Charaktername, Anrede während des Chats mit dem Charakter",
     "nameLabel": "Name",
     "readmeDescription": "Anleitungsdatei des Charakters, zur detaillierten Vorstellung des Charakters auf der Entdeckungsseite",
@@ -69,6 +78,7 @@
     "addAction": "Reaktionsaktion hinzufügen",
     "editAction": "Reaktionsaktion bearbeiten",
     "inputActionEmotion": "Geben Sie die Emotion des Charakters bei der Antwort ein",
+    "inputActionMotion": "Bitte geben Sie die Bewegung ein, die der Charakter ausführt, wenn er reagiert.",
     "inputActionText": "Geben Sie die Antwortnachricht ein",
     "inputDIYText": "Geben Sie benutzerdefinierten Text ein",
     "noTouchActions": "Keine benutzerdefinierten Touch-Aktionen vorhanden. Klicken Sie auf die Schaltfläche '+' , um welche hinzuzufügen.",

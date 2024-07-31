@@ -63,6 +63,7 @@ export default {
   animation: {
     noAnimations: '暂无动作库',
     animationList: '角色动作列表',
+    totalCount: '共 {{total}} 项',
   },
   upload: {
     support: '支持单个文件上传，当前仅支持 .vrm 格式文件',

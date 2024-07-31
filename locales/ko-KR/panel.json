@@ -1,4 +1,9 @@
 {
+  "animation": {
+    "animationList": "캐릭터 애니메이션 목록",
+    "noAnimations": "애니메이션이 없습니다.",
+    "totalCount": "총 {{total}} 항목"
+  },
   "dance": {
     "addPlay": "리스트에 추가",
     "addPlaySuccess": "재생 목록에 추가되었습니다",
@@ -6,6 +11,7 @@
     "cancelSubscribed": "구독 취소",
     "findDance": "좋아하는 춤을 찾아보세요",
     "musicAndDance": "음악과 춤",
+    "noPlayList": "재생 목록이 없습니다. 시장에서 원하는 댄스를 구독할 수 있습니다.",
     "play": "재생"
   },
   "info": {
@@ -25,6 +31,9 @@
     "greetLabel": "인사",
     "modelDescription": "모델 미리보기, 모델 파일을 드래그하여 교체할 수 있습니다",
     "modelLabel": "모델 미리보기",
+    "motionCategoryLabel": "동작 카테고리",
+    "motionDescription": "응답할 때의 동작을 선택하면 캐릭터의 동작 행동에 영향을 줍니다.",
+    "motionLabel": "동작",
     "nameDescription": "캐릭터 이름, 캐릭터와 대화할 때 사용되는 이름",
     "nameLabel": "이름",
     "readmeDescription": "캐릭터 설명서, 발견 페이지에서 캐릭터의 자세한 설명을 표시하는 데 사용됩니다",
@@ -69,6 +78,7 @@
     "addAction": "응답 동작 추가",
     "editAction": "응답 동작 편집",
     "inputActionEmotion": "캐릭터 응답 시 사용할 표정을 입력하세요",
+    "inputActionMotion": "캐릭터 응답 동작을 입력하세요.",
     "inputActionText": "응답 문구를 입력하세요",
     "inputDIYText": "사용자 정의 문구를 입력하세요",
     "noTouchActions": "사용자 정의 터치 액션이 없습니다. '+' 버튼을 클릭하여 추가할 수 있습니다.",

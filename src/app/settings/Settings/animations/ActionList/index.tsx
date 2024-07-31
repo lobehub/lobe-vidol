@@ -42,7 +42,10 @@ const AreaList = memo((props: AreaListProps) => {
 
   return (
     <Flexbox style={style} className={className} flex={1}>
-      <Header title={t('animation.animationList')} extra={`共 ${filteredList.length} 项`} />
+      <Header
+        title={t('animation.animationList')}
+        extra={t('animation.totalCount', { total: filteredList.length })}
+      />
       <Flexbox className={styles.list}>
         {filteredList.map((item) => {
           return <ListItem item={item} key={item.id} />;

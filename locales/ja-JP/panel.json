@@ -1,4 +1,9 @@
 {
+  "animation": {
+    "animationList": "キャラクターのアニメーションリスト",
+    "noAnimations": "アニメーションがありません",
+    "totalCount": "合計 {{total}} 項目"
+  },
   "dance": {
     "addPlay": "リストに追加",
     "addPlaySuccess": "再生リストに追加されました",
@@ -6,6 +11,7 @@
     "cancelSubscribed": "購読をキャンセルする",
     "findDance": "お気に入りのダンスを見つける",
     "musicAndDance": "音楽とダンス",
+    "noPlayList": "再生リストがありません。市場で好きなダンスをサブスクリプションできます。",
     "play": "再生する"
   },
   "info": {
@@ -25,6 +31,9 @@
     "greetLabel": "挨拶",
     "modelDescription": "モデルプレビュー、モデルファイルをドラッグして置き換えることができます",
     "modelLabel": "モデルプレビュー",
+    "motionCategoryLabel": "動作カテゴリ",
+    "motionDescription": "反応時の動作を選択すると、キャラクターの動作に影響します。",
+    "motionLabel": "動作",
     "nameDescription": "キャラクター名、キャラクターとのチャット時の呼び名",
     "nameLabel": "名前",
     "readmeDescription": "キャラクターの説明ファイル、発見ページでキャラクターの詳細な説明を表示するために使用される",
@@ -69,6 +78,7 @@
     "addAction": "応答アクションを追加する",
     "editAction": "応答アクションを編集する",
     "inputActionEmotion": "キャラクターが応答するときの表情を入力してください",
+    "inputActionMotion": "キャラクターの反応時の動作を入力してください。",
     "inputActionText": "応答文案を入力してください",
     "inputDIYText": "カスタムテキストを入力してください",
     "noTouchActions": "カスタムタッチアクションはありません。'+' ボタンをクリックして追加できます",

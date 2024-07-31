@@ -1,9 +1,9 @@
 {
   "agent": {
     "gender": {
+      "all": "tous",
       "female": "femme",
-      "male": "homme",
-      "other": "autre"
+      "male": "homme"
     },
     "meta": {
       "description": "This is a custom role",
@@ -87,6 +87,11 @@
         "neutralA": "N'aie pas peur, ma jambe de fer ne frappe pas les idiots.",
         "neutralB": "Maintenant que tu as touché ma jambe, ta vie est-elle plus complète ?"
       }
+    },
+    "motion": {
+      "all": "tous",
+      "dance": "danse",
+      "normal": "quotidien"
     }
   }
 }

@@ -1,4 +1,9 @@
 {
+  "animation": {
+    "animationList": "Karakter hareket listesi",
+    "noAnimations": "Hareket kütüphanesi bulunamadı",
+    "totalCount": "Toplam {{total}} öğe"
+  },
   "dance": {
     "addPlay": "Listeye Ekle",
     "addPlaySuccess": "Oynatma listesine eklendi",
@@ -6,6 +11,7 @@
     "cancelSubscribed": "Aboneliği iptal et",
     "findDance": "Favori dansını bul",
     "musicAndDance": "Müzik ve Dans",
+    "noPlayList": "Oynatma listesi bulunamadı, beğendiğiniz dansları pazar üzerinden abone olabilirsiniz",
     "play": "Oynat"
   },
   "info": {
@@ -25,6 +31,9 @@
     "greetLabel": "Merhaba",
     "modelDescription": "Model önizleme, model dosyasını sürükleyerek değiştirin",
     "modelLabel": "Model Önizleme",
+    "motionCategoryLabel": "Hareket Kategorisi",
+    "motionDescription": "Tepki sırasında karakterin hareketini seçin, karakterin hareket davranışını etkiler",
+    "motionLabel": "Hareket",
     "nameDescription": "Karakter adı, karakterle konuşurken kullanılan hitap",
     "nameLabel": "İsim",
     "readmeDescription": "Karakterin ayrıntılı açıklamasını keşfetme sayfasında göster",
@@ -69,6 +78,7 @@
     "addAction": "Tepki eylemi ekle",
     "editAction": "Tepki eylemini düzenle",
     "inputActionEmotion": "Karakter tepki verirken kullanılan duygu",
+    "inputActionMotion": "Karakterin tepki verdiği hareketi girin",
     "inputActionText": "Tepki metnini girin",
     "inputDIYText": "Özel metin girin",
     "noTouchActions": "Özel dokunma eylemi yok, '+' düğmesine tıklayarak ekleyebilirsiniz",

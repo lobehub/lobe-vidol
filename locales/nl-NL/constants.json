@@ -2,8 +2,7 @@
   "agent": {
     "gender": {
       "female": "Vrouw",
-      "male": "Man",
-      "other": "Anders"
+      "male": "Man"
     },
     "meta": {
       "description": "Dit is een aangepaste rol",
