@@ -3,7 +3,6 @@ import React, { memo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
-import Animations from './animations';
 import CommonConfig from './common';
 import OpenAIConfig from './model/openai';
 import Touch from './touch';
@@ -36,10 +35,6 @@ const Config = (props: ConfigProps) => {
               key: 'touch',
               label: t('touchSetting'),
             },
-            {
-              key: 'animation',
-              label: t('animationLibrary'),
-            },
           ]}
           onChange={(key) => {
             setTab(key);
@@ -50,7 +45,6 @@ const Config = (props: ConfigProps) => {
         {tab === 'languageModel' ? <OpenAIConfig /> : null}
         {tab === 'common' ? <CommonConfig /> : null}
         {tab === 'touch' ? <Touch /> : null}
-        {tab === 'animation' ? <Animations /> : null}
       </Flexbox>
     </Flexbox>
   );

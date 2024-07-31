@@ -13,7 +13,7 @@ import { MotionCategoryEnum } from '@/types/touch';
 const useStyles = createStyles(({ css, token }) => ({
   item: css`
     position: relative;
-    width: 180px;
+    width: 100px;
     margin-block: 2px;
     border-radius: ${token.borderRadius}px;
   `,

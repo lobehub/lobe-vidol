@@ -29,7 +29,12 @@ const PlayList = () => {
         </Empty>
       )}
     >
-      <List dataSource={playlist} renderItem={(id) => <PlayItem playItemId={id} />} size="small" />
+      <List
+        dataSource={playlist}
+        renderItem={(id) => <PlayItem playItemId={id} />}
+        size="small"
+        style={{ padding: 12 }}
+      />
     </ConfigProvider>
   );
 };

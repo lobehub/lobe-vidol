@@ -3,9 +3,9 @@ import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
-import ListItem from '@/app/settings/Settings/animations/ActionList/ListItem';
 import Header from '@/components/Header';
 import { DEFAULT_MOTION_ANIMATION } from '@/constants/touch';
+import ListItem from '@/features/MotionList/ActionList/ListItem';
 import { GenderEnum } from '@/types/agent';
 import { MotionAnimation, MotionCategoryEnum } from '@/types/touch';
 
@@ -20,7 +20,7 @@ const useStyles = createStyles(({ css }) => ({
   list: css`
     overflow-y: scroll;
     width: 100%;
-    height: 640px;
+    height: 100%;
   `,
 }));
 
@@ -41,7 +41,7 @@ const AreaList = memo((props: AreaListProps) => {
   console.log('filteredList', filteredList);
 
   return (
-    <Flexbox style={style} className={className} flex={1}>
+    <Flexbox style={style} className={className} flex={1} height={'100%'}>
       <Header
         title={t('animation.animationList')}
         extra={t('animation.totalCount', { total: filteredList.length })}
