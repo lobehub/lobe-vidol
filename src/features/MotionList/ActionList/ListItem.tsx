@@ -1,5 +1,5 @@
 import { Avatar } from '@lobehub/ui';
-import { Progress } from 'antd';
+import { Progress, Typography } from 'antd';
 import { createStyles } from 'antd-style';
 import classNames from 'classnames';
 import React, { memo } from 'react';
@@ -30,6 +30,17 @@ const useStyles = createStyles(({ css, token }) => ({
     backdrop-filter: saturate(180%) blur(10px);
     border-radius: 100%;
   `,
+  description: css`
+    overflow: hidden;
+
+    width: 240px;
+
+    font-size: 12px;
+    line-height: 1.2;
+    color: ${token.colorTextDescription};
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  `,
 }));
 
 const TouchActionListItem = memo<ActionListItemProps>(({ item }) => {
@@ -41,7 +52,11 @@ const TouchActionListItem = memo<ActionListItemProps>(({ item }) => {
     <ListItem
       key={item.id}
       className={classNames(styles.listItem)}
-      description={item.description.slice(0, 40)}
+      description={
+        <Typography.Text className={styles.description} ellipsis>
+          {item.description}
+        </Typography.Text>
+      }
       avatar={<Avatar src={item.avatar} shape="square" />}
       actions={[
         downloading ? (

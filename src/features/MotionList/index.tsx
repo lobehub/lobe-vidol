@@ -1,7 +1,7 @@
 import { ManOutlined, WomanOutlined } from '@ant-design/icons';
 import { createStyles } from 'antd-style';
 import classNames from 'classnames';
-import { GalleryVerticalEnd } from 'lucide-react';
+import { Activity, GalleryVerticalEnd, Music2 } from 'lucide-react';
 import React, { memo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
@@ -61,12 +61,12 @@ const MotionList = (props: MotionListProps) => {
     {
       label: t('touch.motion.normal'),
       value: MotionCategoryEnum.NORMAL,
-      icon: <ManOutlined style={{ fontSize: 24 }} />,
+      icon: <Activity style={{ fontSize: 24 }} />,
     },
     {
       label: t('touch.motion.dance'),
       value: MotionCategoryEnum.DANCE,
-      icon: <WomanOutlined style={{ fontSize: 24 }} />,
+      icon: <Music2 style={{ fontSize: 24 }} />,
     },
   ];
 
