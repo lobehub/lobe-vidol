@@ -2,7 +2,12 @@ import { VRMExpressionPresetName } from '@pixiv/three-vrm';
 
 import motionsList from '@/animations/Motion/index.json';
 import postureList from '@/animations/Posture/index.json';
-import { MotionAnimation, TouchActionConfig, TouchAreaEnum } from '@/types/touch';
+import {
+  MotionAnimation,
+  MotionCategoryEnum,
+  TouchActionConfig,
+  TouchAreaEnum,
+} from '@/types/touch';
 
 export const HAPPY_MOTION_ID = 'c9c98a38-b96c-11e4-a802-0aaa78deedf9';
 export const ANGRY_MOTION_ID = 'c9c98b02-b96c-11e4-a802-0aaa78deedf9';
@@ -208,3 +213,7 @@ export const MAX_TOUCH_ACTION_TEXT_LENGTH = 100;
 export const DEFAULT_MOTION_ANIMATION: MotionAnimation[] = motionsList as MotionAnimation[];
 
 export const DEFAULT_POSTURE_ANIMATION: MotionAnimation[] = postureList as MotionAnimation[];
+
+export const TOUCH_MOTION_ANIMATION: MotionAnimation[] = motionsList.filter(
+  (item) => item.category === MotionCategoryEnum.NORMAL,
+) as MotionAnimation[];

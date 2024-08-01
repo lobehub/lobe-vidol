@@ -7,9 +7,9 @@ import { useTranslation } from 'react-i18next';
 
 import { INPUT_WIDTH_M, INPUT_WIDTH_S } from '@/constants/token';
 import {
-  DEFAULT_MOTION_ANIMATION,
   HAPPY_MOTION_ID,
   MAX_TOUCH_ACTION_TEXT_LENGTH,
+  TOUCH_MOTION_ANIMATION,
 } from '@/constants/touch';
 import { useAgentStore } from '@/store/agent';
 import { TouchAction, TouchAreaEnum } from '@/types/touch';
@@ -153,8 +153,8 @@ export default memo((props: Props) => {
             name="motion"
           >
             <Select
-              options={DEFAULT_MOTION_ANIMATION.map((item) => ({
-                label: item.name,
+              options={TOUCH_MOTION_ANIMATION.map((item) => ({
+                label: `${item.gender}/${item.name}`,
                 value: item.id,
               }))}
               style={{ width: INPUT_WIDTH_S }}
