@@ -62,7 +62,7 @@ const initialState = {
    * 主题模式
    */
   themeMode: 'auto' as ThemeMode,
-  showChatSidebar: true,
+  showChatSidebar: false,
   showSessionList: true,
   showChatDialog: true,
   showRoleList: true,

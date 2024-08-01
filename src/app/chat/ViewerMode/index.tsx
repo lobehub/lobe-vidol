@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import React, { memo } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
+import ChatDialog from '@/app/chat/ViewerMode/ChatDialog';
 import { HEADER_HEIGHT } from '@/constants/token';
 import AgentViewer from '@/features/AgentViewer';
 import MessageInput from '@/features/MessageInput';
@@ -22,7 +23,7 @@ export default memo(() => {
           <AgentViewer height={`calc(100vh - ${HEADER_HEIGHT}px)`} agent={currentAgent} />
         </div>
       ) : null}
-      {/*<ChatDialog className={classNames(styles.dialog, styles.content)} />*/}
+      <ChatDialog className={classNames(styles.dialog, styles.content)} />
       <Flexbox flex={1} className={styles.mask} />
       <Flexbox align={'center'} className={styles.docker}>
         <div className={classNames(styles.input, styles.content)}>
