@@ -2,6 +2,68 @@
 
 # Changelog
 
+## [Version&nbsp;0.20.0](https://github.com/lobehub/lobe-vidol/compare/v0.19.0...v0.20.0)
+<sup>Released on **2024-08-01**</sup>
+
+
+#### ✨ Features
+
+- **misc**: Add posture bind, add posturelist, 将动作库设置为固定, 支持 gpt-4o-mini, 支持设置触摸列表, 添加 mixamo animation, 添加 mixamo 脚本处理, 添加不同性别的动作列表, 添加侧边栏模式，去掉 video 切换, 添加动作与舞蹈, 添加动作库, 添加动作库, 添加动作库下载, 添加动作类别筛选, 添加姿势, 添加播放列表空状态, 添加男性动作, 添加男性姿势, 默认关闭侧边栏 & 打开消息栏.
+
+
+#### 🐛 Bug Fixes
+
+- **misc**: Vrm  model bind, vrm  model bind, 动作列表描述 ....
+
+
+<br/>
+
+
+
+<details>
+<summary><kbd>Improvements and Fixes</kbd></summary>
+
+
+
+#### What's improved
+
+* **misc**: Add posture bind ([d0cf78e](https://github.com/lobehub/lobe-vidol/commit/d0cf78e))
+* **misc**: Add posturelist ([0989334](https://github.com/lobehub/lobe-vidol/commit/0989334))
+* **misc**: 将动作库设置为固定 ([87862a9](https://github.com/lobehub/lobe-vidol/commit/87862a9))
+* **misc**: 支持 gpt-4o-mini ([4cfed2f](https://github.com/lobehub/lobe-vidol/commit/4cfed2f))
+* **misc**: 支持设置触摸列表 ([1d83f3b](https://github.com/lobehub/lobe-vidol/commit/1d83f3b))
+* **misc**: 添加 mixamo animation ([13bd91d](https://github.com/lobehub/lobe-vidol/commit/13bd91d))
+* **misc**: 添加 mixamo 脚本处理 ([e434049](https://github.com/lobehub/lobe-vidol/commit/e434049))
+* **misc**: 添加不同性别的动作列表 ([bfed1a8](https://github.com/lobehub/lobe-vidol/commit/bfed1a8))
+* **misc**: 添加侧边栏模式，去掉 video 切换 ([6bd66a2](https://github.com/lobehub/lobe-vidol/commit/6bd66a2))
+* **misc**: 添加动作与舞蹈 ([cd04f30](https://github.com/lobehub/lobe-vidol/commit/cd04f30))
+* **misc**: 添加动作库 ([16ca334](https://github.com/lobehub/lobe-vidol/commit/16ca334))
+* **misc**: 添加动作库 ([e5854e2](https://github.com/lobehub/lobe-vidol/commit/e5854e2))
+* **misc**: 添加动作库下载 ([8c4dc77](https://github.com/lobehub/lobe-vidol/commit/8c4dc77))
+* **misc**: 添加动作类别筛选 ([a4bffcf](https://github.com/lobehub/lobe-vidol/commit/a4bffcf))
+* **misc**: 添加姿势 ([9450400](https://github.com/lobehub/lobe-vidol/commit/9450400))
+* **misc**: 添加播放列表空状态 ([9338025](https://github.com/lobehub/lobe-vidol/commit/9338025))
+* **misc**: 添加男性动作 ([d7cc89b](https://github.com/lobehub/lobe-vidol/commit/d7cc89b))
+* **misc**: 添加男性姿势 ([b0e86c6](https://github.com/lobehub/lobe-vidol/commit/b0e86c6))
+* **misc**: 默认关闭侧边栏 & 打开消息栏 ([ebeb74f](https://github.com/lobehub/lobe-vidol/commit/ebeb74f))
+
+
+
+#### What's fixed
+
+* **misc**: Vrm  model bind ([52a0052](https://github.com/lobehub/lobe-vidol/commit/52a0052))
+* **misc**: Vrm  model bind ([2979b51](https://github.com/lobehub/lobe-vidol/commit/2979b51))
+* **misc**: 动作列表描述 ... ([35cfc04](https://github.com/lobehub/lobe-vidol/commit/35cfc04))
+
+</details>
+
+
+<div align="right">
+
+[![](https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square)](#readme-top)
+
+</div>
+
 ## [Version&nbsp;0.19.0](https://github.com/lobehub/lobe-vidol/compare/v0.18.0...v0.19.0)
 <sup>Released on **2024-07-15**</sup>
 
