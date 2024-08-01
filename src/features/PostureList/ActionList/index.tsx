@@ -4,14 +4,14 @@ import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
 import Header from '@/components/Header';
-import { DEFAULT_MOTION_ANIMATION } from '@/constants/touch';
+import { DEFAULT_POSTURE_ANIMATION } from '@/constants/touch';
 import ListItem from '@/features/MotionList/ActionList/ListItem';
 import { GenderEnum } from '@/types/agent';
-import { MotionAnimation, MotionCategoryEnum } from '@/types/touch';
+import { MotionAnimation, PostureCategoryEnum } from '@/types/touch';
 
 interface AreaListProps {
   className?: string;
-  currentCategory?: MotionCategoryEnum;
+  currentCategory?: PostureCategoryEnum;
   currentGender?: GenderEnum;
   style?: React.CSSProperties;
 }
@@ -34,7 +34,7 @@ const AreaList = memo((props: AreaListProps) => {
   const categoryFilter = (item: MotionAnimation) =>
     currentCategory ? currentCategory === item.category : true;
 
-  const filteredList = DEFAULT_MOTION_ANIMATION.filter(
+  const filteredList = DEFAULT_POSTURE_ANIMATION.filter(
     (item) => genderFilter(item) && categoryFilter(item),
   );
 

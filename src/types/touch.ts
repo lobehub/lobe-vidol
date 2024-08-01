@@ -25,9 +25,19 @@ export enum MotionCategoryEnum {
   NORMAL = 'Normal',
 }
 
+export enum PostureCategoryEnum {
+  ACTION = 'Action',
+  CROUCH = 'Crouch',
+  DANCE = 'Dance',
+  LAYING = 'Laying',
+  LOCOMOTION = 'Locomotion',
+  SITTING = 'Sitting',
+  STANDING = 'Standing',
+}
+
 export interface MotionAnimation {
   avatar: string;
-  category: MotionCategoryEnum;
+  category: MotionCategoryEnum | PostureCategoryEnum;
   description: string;
   gender: GenderEnum;
   id: string;

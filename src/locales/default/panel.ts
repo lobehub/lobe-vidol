@@ -30,6 +30,7 @@ export default {
     genderLabel: '性别',
     genderDescription: '角色性别，影响角色的触摸响应',
     motionCategoryLabel: '动作类别',
+    postureCategoryLabel: '姿势类别',
     descLabel: '描述',
     descDescription: '角色描述，用于角色的简单介绍',
     greetLabel: '招呼',

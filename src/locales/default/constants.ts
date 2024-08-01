@@ -34,6 +34,16 @@ export default {
       dance: '舞蹈',
       all: '所有',
     },
+    posture: {
+      action: '动作',
+      crouch: '蹲下',
+      dance: '舞蹈',
+      all: '所有',
+      laying: '躺下',
+      locomotion: '运动',
+      sitting: '坐下',
+      standing: '站立',
+    },
     femaleAction: {
       headAction: {
         happyA: '哇!最喜欢摸摸头!',
