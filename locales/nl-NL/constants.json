@@ -1,6 +1,7 @@
 {
   "agent": {
     "gender": {
+      "all": "alle",
       "female": "Vrouw",
       "male": "Man"
     },
@@ -86,6 +87,21 @@
         "neutralA": "Wees niet bang, mijn krachtige koppelbeen schiet geen dwazen",
         "neutralB": "Laat je mijn been touchen, voel je niet dat je leven veel compleeter is?"
       }
+    },
+    "motion": {
+      "all": "alle",
+      "dance": "dans",
+      "normal": "normaal"
+    },
+    "posture": {
+      "action": "actie",
+      "all": "alle",
+      "crouch": "gehurkt",
+      "dance": "dans",
+      "laying": "liggend",
+      "locomotion": "beweging",
+      "sitting": "zittend",
+      "standing": "staand"
     }
   }
 }

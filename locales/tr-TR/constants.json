@@ -92,6 +92,16 @@
       "all": "tüm",
       "dance": "dans",
       "normal": "günlük"
+    },
+    "posture": {
+      "action": "Eylem",
+      "all": "Tümü",
+      "crouch": "Çömelmek",
+      "dance": "Dans",
+      "laying": "Yatmak",
+      "locomotion": "Hareket",
+      "sitting": "Oturmak",
+      "standing": "Ayakta durmak"
     }
   }
 }

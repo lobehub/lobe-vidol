@@ -36,6 +36,7 @@
     "motionLabel": "動作",
     "nameDescription": "角色名稱，與角色聊天時的稱呼",
     "nameLabel": "名稱",
+    "postureCategoryLabel": "姿勢類別",
     "readmeDescription": "角色的說明文件，用於發現頁展示角色的詳細說明",
     "readmeLabel": "角色說明",
     "textDescription": "自定義回應文案",

@@ -92,6 +92,16 @@
       "all": "All",
       "dance": "Dance",
       "normal": "Daily"
+    },
+    "posture": {
+      "action": "Action",
+      "all": "All",
+      "crouch": "Crouch",
+      "dance": "Dance",
+      "laying": "Lying down",
+      "locomotion": "Movement",
+      "sitting": "Sitting",
+      "standing": "Standing"
     }
   }
 }

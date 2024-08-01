@@ -92,6 +92,16 @@
       "all": "すべて",
       "dance": "ダンス",
       "normal": "日常"
+    },
+    "posture": {
+      "action": "アクション",
+      "all": "すべて",
+      "crouch": "しゃがむ",
+      "dance": "ダンス",
+      "laying": "横になる",
+      "locomotion": "移動",
+      "sitting": "座る",
+      "standing": "立つ"
     }
   }
 }

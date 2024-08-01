@@ -36,6 +36,7 @@
     "motionLabel": "Bewegung",
     "nameDescription": "Charaktername, Anrede während des Chats mit dem Charakter",
     "nameLabel": "Name",
+    "postureCategoryLabel": "Haltungskategorie",
     "readmeDescription": "Anleitungsdatei des Charakters, zur detaillierten Vorstellung des Charakters auf der Entdeckungsseite",
     "readmeLabel": "Charakteranleitung",
     "textDescription": "Benutzerdefinierter Antworttext",

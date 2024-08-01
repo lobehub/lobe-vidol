@@ -92,6 +92,16 @@
       "all": "todos",
       "dance": "baile",
       "normal": "normal"
+    },
+    "posture": {
+      "action": "Acción",
+      "all": "Todos",
+      "crouch": "Agacharse",
+      "dance": "Bailar",
+      "laying": "Acostarse",
+      "locomotion": "Movimiento",
+      "sitting": "Sentarse",
+      "standing": "Estar de pie"
     }
   }
 }

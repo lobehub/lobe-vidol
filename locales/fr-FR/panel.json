@@ -1,26 +1,18 @@
 {
+  "animation": {
+    "animationList": "Liste des mouvements du personnage",
+    "noAnimations": "Aucune animation disponible",
+    "totalCount": "Total : {{total}} éléments"
+  },
   "dance": {
     "addPlay": "Ajouter à la liste",
     "addPlaySuccess": "Ajouté à la liste de lecture",
-    "animation": {
-      "animationList": "Liste des animations du personnage",
-      "noAnimations": "Aucune animation disponible pour le moment",
-      "totalCount": "Total : {{total}} éléments"
-    },
     "cancelAddPlay": "Voulez-vous vraiment annuler l'abonnement à la musique {{musicName}}?",
     "cancelSubscribed": "Annuler l'abonnement",
     "findDance": "Trouvez votre danse préférée",
-    "info": {
-      "motionCategoryLabel": "Catégorie de mouvement",
-      "motionDescription": "Sélectionnez le mouvement à effectuer en réponse, cela affectera le comportement du personnage en mouvement.",
-      "motionLabel": "Mouvement"
-    },
     "musicAndDance": "Musique et danse",
     "noPlayList": "Aucune liste de lecture n'est disponible pour le moment. Vous pouvez vous abonner aux danses que vous aimez sur le marché.",
-    "play": "Jouer",
-    "touch": {
-      "inputActionMotion": "Veuillez entrer le mouvement du personnage en réponse."
-    }
+    "play": "Jouer"
   },
   "info": {
     "avatarDescription": "Avatar personnalisé, cliquez sur l'avatar pour télécharger",
@@ -39,8 +31,12 @@
     "greetLabel": "Salutation",
     "modelDescription": "Aperçu du modèle, vous pouvez faire glisser le fichier du modèle pour le remplacer",
     "modelLabel": "Aperçu du modèle",
+    "motionCategoryLabel": "Catégorie de mouvement",
+    "motionDescription": "Choisir le mouvement lors de la réponse affectera le comportement du personnage",
+    "motionLabel": "Mouvement",
     "nameDescription": "Nom du personnage, utilisé pour l'appeler lors de la conversation",
     "nameLabel": "Nom",
+    "postureCategoryLabel": "Catégorie de posture",
     "readmeDescription": "Fichier de description du personnage, utilisé pour afficher une description détaillée sur la page de découverte",
     "readmeLabel": "Description du personnage",
     "textDescription": "Réponse personnalisée",
@@ -83,6 +79,7 @@
     "addAction": "Ajouter une action de réponse",
     "editAction": "Modifier l'action de réponse",
     "inputActionEmotion": "Entrez l'expression du personnage lors de la réponse",
+    "inputActionMotion": "Veuillez entrer le mouvement du personnage en réponse",
     "inputActionText": "Entrez le texte de réponse",
     "inputDIYText": "Entrez le texte personnalisé",
     "noTouchActions": "Aucune action personnalisée n'a été définie. Vous pouvez ajouter des actions en cliquant sur le bouton '+'",

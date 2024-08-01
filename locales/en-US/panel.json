@@ -36,6 +36,7 @@
     "motionLabel": "Motion",
     "nameDescription": "Character name, used when chatting with the character",
     "nameLabel": "Name",
+    "postureCategoryLabel": "Posture Category",
     "readmeDescription": "Character's description file, used for detailed introduction on the discovery page",
     "readmeLabel": "Character Description",
     "textDescription": "Custom response text",

@@ -1,26 +1,18 @@
 {
+  "animation": {
+    "animationList": "Lista de Movimientos del Personaje",
+    "noAnimations": "No hay animaciones disponibles",
+    "totalCount": "Total de {{total}} elementos"
+  },
   "dance": {
     "addPlay": "Agregar a la lista",
     "addPlaySuccess": "Agregado a la lista de reproducción",
-    "animation": {
-      "animationList": "Lista de animaciones del personaje",
-      "noAnimations": "No hay animaciones disponibles",
-      "totalCount": "Total de {{total}} elementos"
-    },
     "cancelAddPlay": "¿Estás seguro de que quieres cancelar la suscripción a la música {{musicName}}?",
     "cancelSubscribed": "Cancelar suscripción",
     "findDance": "Encuentra tu baile favorito",
-    "info": {
-      "motionCategoryLabel": "Etiqueta de categoría de movimiento",
-      "motionDescription": "Selecciona el movimiento que realizará el personaje en respuesta a una acción, afectando su comportamiento",
-      "motionLabel": "Movimiento"
-    },
     "musicAndDance": "Música y baile",
     "noPlayList": "No hay listas de reproducción disponibles, puedes suscribirte a tus bailes favoritos en el mercado",
-    "play": "Reproducir",
-    "touch": {
-      "inputActionMotion": "Ingresa el movimiento que realizará el personaje en respuesta a una acción"
-    }
+    "play": "Reproducir"
   },
   "info": {
     "avatarDescription": "Avatar personalizado, haz clic en el avatar para cargar una imagen personalizada",
@@ -39,8 +31,12 @@
     "greetLabel": "Saludo",
     "modelDescription": "Vista previa del modelo, puedes arrastrar un archivo de modelo para reemplazarlo",
     "modelLabel": "Vista previa del modelo",
+    "motionCategoryLabel": "Categoría de Movimiento",
+    "motionDescription": "Selecciona el movimiento para la respuesta, afectará el comportamiento de la acción del personaje",
+    "motionLabel": "Movimiento",
     "nameDescription": "Nombre del personaje, utilizado para dirigirse al personaje en el chat",
     "nameLabel": "Nombre",
+    "postureCategoryLabel": "Categoría de Postura",
     "readmeDescription": "Archivo de instrucciones del personaje, utilizado para mostrar una descripción detallada del personaje en la página de descubrimiento",
     "readmeLabel": "Instrucciones del personaje",
     "textDescription": "Texto de respuesta personalizado",
@@ -83,6 +79,7 @@
     "addAction": "Agregar acción de respuesta",
     "editAction": "Editar acción de respuesta",
     "inputActionEmotion": "Ingresa la emoción del personaje al responder",
+    "inputActionMotion": "Ingresa el movimiento del personaje en respuesta",
     "inputActionText": "Ingresa el texto de respuesta",
     "inputDIYText": "Ingresa un texto personalizado",
     "noTouchActions": "No hay acciones personalizadas de respuesta, puedes agregarlas haciendo clic en el botón '+'",

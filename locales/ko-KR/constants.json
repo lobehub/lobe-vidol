@@ -92,6 +92,16 @@
       "all": "모두",
       "dance": "댄스",
       "normal": "평범한"
+    },
+    "posture": {
+      "action": "동작",
+      "all": "모두",
+      "crouch": "숙이다",
+      "dance": "춤을 추다",
+      "laying": "눕기",
+      "locomotion": "운동",
+      "sitting": "앉기",
+      "standing": "서기"
     }
   }
 }

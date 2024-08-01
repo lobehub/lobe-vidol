@@ -36,6 +36,7 @@
     "motionLabel": "動作",
     "nameDescription": "キャラクター名、キャラクターとのチャット時の呼び名",
     "nameLabel": "名前",
+    "postureCategoryLabel": "ポーズカテゴリ",
     "readmeDescription": "キャラクターの説明ファイル、発見ページでキャラクターの詳細な説明を表示するために使用される",
     "readmeLabel": "キャラクター説明",
     "textDescription": "カスタム応答文案",

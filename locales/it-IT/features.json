@@ -56,11 +56,18 @@
     "used": "Token utilizzati"
   },
   "toolBar": {
+    "axes": "Assi",
     "cameraControl": "Controllo fotocamera",
     "cameraHelper": "Assistente fotocamera",
     "downloadModel": "Download del modello in corso, attendere...",
     "floor": "Cambia pavimento",
     "grid": "Griglia",
+    "info": {
+      "history": "Cronologia della chat",
+      "motions": "Movimenti",
+      "playlist": "Playlist",
+      "posture": "Postura"
+    },
     "resetCamera": "Reimposta fotocamera"
   }
 }

@@ -92,6 +92,16 @@
       "all": "所有",
       "dance": "舞蹈",
       "normal": "日常"
+    },
+    "posture": {
+      "action": "動作",
+      "all": "所有",
+      "crouch": "蹲下",
+      "dance": "舞蹈",
+      "laying": "躺下",
+      "locomotion": "運動",
+      "sitting": "坐下",
+      "standing": "站立"
     }
   }
 }

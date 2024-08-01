@@ -15,6 +15,12 @@
     "startDesc": "Voer je OpenAI API Key in om de sessie te starten. De applicatie zal je API Key niet opslaan",
     "startTitle": "Aangepaste API Key"
   },
+  "info": {
+    "history": "chatgeschiedenis",
+    "motions": "bewegingen",
+    "playlist": "afspeellijst",
+    "posture": "houding"
+  },
   "mode": {
     "chat": "Chat",
     "video": "Video"
@@ -56,6 +62,7 @@
     "used": "Token gebruikt"
   },
   "toolBar": {
+    "axes": "assen",
     "cameraControl": "Camerabediening",
     "cameraHelper": "Camerahulp",
     "downloadModel": "Model downloaden, even geduld aub...",

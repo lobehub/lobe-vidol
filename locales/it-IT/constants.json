@@ -1,6 +1,7 @@
 {
   "agent": {
     "gender": {
+      "all": "tutti",
       "female": "Femmina",
       "male": "Maschio"
     },
@@ -86,6 +87,21 @@
         "neutralA": "Non preoccuparti, la mia gamba di ferro non colpisce gli sciocchi",
         "neutralB": "Sentire la mia gamba, ti fa sentire che la tua vita è più completa?"
       }
+    },
+    "motion": {
+      "all": "tutti",
+      "dance": "danza",
+      "normal": "normale"
+    },
+    "posture": {
+      "action": "azione",
+      "all": "tutti",
+      "crouch": "accovacciarsi",
+      "dance": "danza",
+      "laying": "sdraiarsi",
+      "locomotion": "movimento",
+      "sitting": "seduto",
+      "standing": "in piedi"
     }
   }
 }

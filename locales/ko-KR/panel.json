@@ -36,6 +36,7 @@
     "motionLabel": "동작",
     "nameDescription": "캐릭터 이름, 캐릭터와 대화할 때 사용되는 이름",
     "nameLabel": "이름",
+    "postureCategoryLabel": "자세 카테고리",
     "readmeDescription": "캐릭터 설명서, 발견 페이지에서 캐릭터의 자세한 설명을 표시하는 데 사용됩니다",
     "readmeLabel": "캐릭터 설명서",
     "textDescription": "사용자 정의 응답 문구",

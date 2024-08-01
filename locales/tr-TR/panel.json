@@ -36,6 +36,7 @@
     "motionLabel": "Hareket",
     "nameDescription": "Karakter adı, karakterle konuşurken kullanılan hitap",
     "nameLabel": "İsim",
+    "postureCategoryLabel": "Duruş Kategorisi",
     "readmeDescription": "Karakterin ayrıntılı açıklamasını keşfetme sayfasında göster",
     "readmeLabel": "Karakter Açıklaması",
     "textDescription": "Özel yanıt metni",
