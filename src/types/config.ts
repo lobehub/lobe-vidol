@@ -39,7 +39,6 @@ export interface LanguageModelConfig {
 export interface TouchConfig {
   [GenderEnum.FEMALE]: TouchActionConfig;
   [GenderEnum.MALE]: TouchActionConfig;
-  [GenderEnum.OTHER]: TouchActionConfig;
 }
 
 export interface Config extends CommonConfig {

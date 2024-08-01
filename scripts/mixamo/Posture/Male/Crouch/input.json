@@ -1,0 +1,54 @@
+[
+  {
+    "id": "2f6d96c7-c5a3-4ba4-8ed3-bd9f6b4eb461",
+    "type": "Motion",
+    "description": "Looking Forward",
+    "category": "",
+    "character_type": "human",
+    "name": "Male Crouch Pose",
+    "thumbnail": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/150100904/static.png",
+    "thumbnail_animated": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/150100904/animated.gif",
+    "motion_id": "2f6d96c7-c5a3-4ba4-8ed3-bd9f6b4eb461",
+    "motions": null,
+    "source": "system"
+  },
+  {
+    "id": "4d1eb9fd-1c87-4782-8324-0c6cac3aa9fb",
+    "type": "Motion",
+    "description": "Leaning Against Object, Looking Left",
+    "category": "",
+    "character_type": "human",
+    "name": "Male Crouch Pose",
+    "thumbnail": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/150100903/static.png",
+    "thumbnail_animated": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/150100903/animated.gif",
+    "motion_id": "4d1eb9fd-1c87-4782-8324-0c6cac3aa9fb",
+    "motions": null,
+    "source": "system"
+  },
+  {
+    "id": "d525734f-e335-4711-91c6-283811398fb4",
+    "type": "Motion",
+    "description": "Leaning Forward, Right Hand Supporting",
+    "category": "",
+    "character_type": "human",
+    "name": "Male Crouch Pose",
+    "thumbnail": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/150100902/static.png",
+    "thumbnail_animated": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/150100902/animated.gif",
+    "motion_id": "d525734f-e335-4711-91c6-283811398fb4",
+    "motions": null,
+    "source": "system"
+  },
+  {
+    "id": "ede8954e-5272-46c2-b3c5-c701e5ee887c",
+    "type": "Motion",
+    "description": "Arms Spread Looking Upwards",
+    "category": "",
+    "character_type": "human",
+    "name": "Male Crouch Pose",
+    "thumbnail": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/150100901/static.png",
+    "thumbnail_animated": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/150100901/animated.gif",
+    "motion_id": "ede8954e-5272-46c2-b3c5-c701e5ee887c",
+    "motions": null,
+    "source": "system"
+  }
+]

@@ -1,4 +1,9 @@
 {
+  "animation": {
+    "animationList": "Lijst met personagebewegingen",
+    "noAnimations": "Geen animaties beschikbaar",
+    "totalCount": "Totaal {{total}} items"
+  },
   "dance": {
     "addPlay": "Aan lijst toevoegen",
     "addPlaySuccess": "Is toegevoegd aan de afspeellijst",
@@ -6,6 +11,7 @@
     "cancelSubscribed": "Afmelden",
     "findDance": "Vind je favoriete dans",
     "musicAndDance": "Muziek en Dans",
+    "noPlayList": "Geen afspeellijst beschikbaar, u kunt zich abonneren op dansen die u leuk vindt via de markt.",
     "play": "Afspelen"
   },
   "info": {
@@ -25,8 +31,12 @@
     "greetLabel": "Groet",
     "modelDescription": "Modelvoorbeeld, sleep het modelbestand om te vervangen",
     "modelLabel": "Modelvoorbeeld",
+    "motionCategoryLabel": "Bewegingscategorie",
+    "motionDescription": "Kies de beweging die plaatsvindt wanneer er wordt gereageerd, dit zal van invloed zijn op het gedrag van het personage.",
+    "motionLabel": "Beweging",
     "nameDescription": "Rolnaam, hoe de rol wordt aangesproken tijdens het chatten",
     "nameLabel": "Naam",
+    "postureCategoryLabel": "Houdingscategorie",
     "readmeDescription": "De handleiding van de rol, voor het presenteren van de rol op de ontdek-pagina",
     "readmeLabel": "Rolhandleiding",
     "textDescription": "Aangepaste responstekst",
@@ -69,6 +79,7 @@
     "addAction": "Voeg reagerend gebaar toe",
     "editAction": "Bewerk reagerend gebaar",
     "inputActionEmotion": "Voer de uitdrukking in die de rol moet tonen bij reageren",
+    "inputActionMotion": "Voer de beweging in die het personage maakt wanneer er wordt gereageerd.",
     "inputActionText": "Voer de responstekst in",
     "inputDIYText": "Voer aangepaste tekst in",
     "noTouchActions": "Geen aangepaste aanraakacties beschikbaar, je kunt ze toevoegen door op de '+' knop te klikken",

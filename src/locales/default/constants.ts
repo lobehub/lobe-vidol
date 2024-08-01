@@ -5,9 +5,9 @@ export default {
       description: '这是一个自定义角色',
     },
     gender: {
-      male: '男',
-      female: '女',
-      other: '其他',
+      male: '男性',
+      female: '女性',
+      all: '所有',
     },
   },
   touch: {
@@ -28,6 +28,21 @@ export default {
       blink: '眨眼',
       blinkLeft: '眨左眼',
       blinkRight: '眨右眼',
+    },
+    motion: {
+      normal: '日常',
+      dance: '舞蹈',
+      all: '所有',
+    },
+    posture: {
+      action: '动作',
+      crouch: '蹲下',
+      dance: '舞蹈',
+      all: '所有',
+      laying: '躺下',
+      locomotion: '运动',
+      sitting: '坐下',
+      standing: '站立',
     },
     femaleAction: {
       headAction: {

@@ -15,6 +15,12 @@
     "startDesc": "Sohbete başlamak için OpenAI API Anahtarınızı girin. Uygulama API Anahtarınızı kaydetmez.",
     "startTitle": "Özel API Anahtarı"
   },
+  "info": {
+    "history": "Geçmiş",
+    "motions": "Hareketler",
+    "playlist": "Oynatma Listesi",
+    "posture": "Duruş"
+  },
   "mode": {
     "chat": "Sohbet",
     "video": "Video"
@@ -56,6 +62,7 @@
     "used": "Kullanılan Token"
   },
   "toolBar": {
+    "axes": "Eksenler",
     "cameraControl": "Kamera Kontrolü",
     "cameraHelper": "Kamera Yardımcısı",
     "downloadModel": "Model İndiriliyor, Lütfen Bekleyin...",

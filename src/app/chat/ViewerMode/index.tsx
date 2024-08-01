@@ -4,12 +4,12 @@ import classNames from 'classnames';
 import React, { memo } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
+import ChatDialog from '@/app/chat/ViewerMode/ChatDialog';
 import { HEADER_HEIGHT } from '@/constants/token';
 import AgentViewer from '@/features/AgentViewer';
 import MessageInput from '@/features/MessageInput';
 import { sessionSelectors, useSessionStore } from '@/store/session';
 
-import ChatDialog from './ChatDialog';
 import { useStyles } from './style';
 
 export default memo(() => {

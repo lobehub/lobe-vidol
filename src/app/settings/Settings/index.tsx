@@ -18,7 +18,7 @@ const Config = (props: ConfigProps) => {
   const { t } = useTranslation('common');
 
   return (
-    <Flexbox flex={1} width={'100%'} height={'100%'} className={className} style={style}>
+    <Flexbox flex={1} className={className} style={style}>
       <div style={{ marginBottom: 12 }}>
         <TabsNav
           activeKey={tab}

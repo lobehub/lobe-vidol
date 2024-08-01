@@ -1,9 +1,9 @@
 {
   "agent": {
     "gender": {
+      "all": "모두",
       "female": "여성",
-      "male": "남성",
-      "other": "기타"
+      "male": "남성"
     },
     "meta": {
       "description": "이것은 사용자 정의 캐릭터입니다.",
@@ -87,6 +87,21 @@
         "neutralA": "무서워하지마, 내 강력한 콩쿨 족은 바보한테 때릴 일 없어",
         "neutralB": "내 다리를 만지면 당신의 삶이 훨씬 더 완전해진 것 같아?"
       }
+    },
+    "motion": {
+      "all": "모두",
+      "dance": "댄스",
+      "normal": "평범한"
+    },
+    "posture": {
+      "action": "동작",
+      "all": "모두",
+      "crouch": "숙이다",
+      "dance": "춤을 추다",
+      "laying": "눕기",
+      "locomotion": "운동",
+      "sitting": "앉기",
+      "standing": "서기"
     }
   }
 }

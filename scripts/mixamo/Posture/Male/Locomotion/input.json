@@ -1,0 +1,93 @@
+[
+  {
+    "id": "c7d5ec2b-c398-4cbd-8440-352c51488ce6",
+    "type": "Motion",
+    "description": "Running Forward",
+    "category": "",
+    "character_type": "human",
+    "name": "Male Locomotion Pose",
+    "thumbnail": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/150500903/static.png",
+    "thumbnail_animated": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/150500903/animated.gif",
+    "motion_id": "c7d5ec2b-c398-4cbd-8440-352c51488ce6",
+    "motions": null,
+    "source": "system"
+  },
+  {
+    "id": "fbd14d0d-6ef3-48d4-933c-f4bdc4ff2e24",
+    "type": "Motion",
+    "description": "Walking Forward",
+    "category": "",
+    "character_type": "human",
+    "name": "Male Locomotion Pose",
+    "thumbnail": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/150500902/static.png",
+    "thumbnail_animated": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/150500902/animated.gif",
+    "motion_id": "fbd14d0d-6ef3-48d4-933c-f4bdc4ff2e24",
+    "motions": null,
+    "source": "system"
+  },
+  {
+    "id": "64cb8917-9b8b-4ede-9972-04d728cd7085",
+    "type": "Motion",
+    "description": "Stepping Forward Looking Left",
+    "category": "",
+    "character_type": "human",
+    "name": "Male Locomotion Pose",
+    "thumbnail": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/150500906/static.png",
+    "thumbnail_animated": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/150500906/animated.gif",
+    "motion_id": "64cb8917-9b8b-4ede-9972-04d728cd7085",
+    "motions": null,
+    "source": "system"
+  },
+  {
+    "id": "03dffa68-d243-470f-b059-d10f8fcfeabb",
+    "type": "Motion",
+    "description": "Sneaking Forward",
+    "category": "",
+    "character_type": "human",
+    "name": "Male Locomotion Pose",
+    "thumbnail": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/150500905/static.png",
+    "thumbnail_animated": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/150500905/animated.gif",
+    "motion_id": "03dffa68-d243-470f-b059-d10f8fcfeabb",
+    "motions": null,
+    "source": "system"
+  },
+  {
+    "id": "ddf86676-b6f0-4290-bbd7-bd6647f84fd4",
+    "type": "Motion",
+    "description": "Walking Forward, Looking Right",
+    "category": "",
+    "character_type": "human",
+    "name": "Male Locomotion Pose",
+    "thumbnail": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/150500901/static.png",
+    "thumbnail_animated": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/150500901/animated.gif",
+    "motion_id": "ddf86676-b6f0-4290-bbd7-bd6647f84fd4",
+    "motions": null,
+    "source": "system"
+  },
+  {
+    "id": "b414a4b5-236d-46e3-a2bd-efd45612ec42",
+    "type": "Motion",
+    "description": "Running Forward",
+    "category": "",
+    "character_type": "human",
+    "name": "Male Locomotion Pose",
+    "thumbnail": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/150500904/static.png",
+    "thumbnail_animated": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/150500904/animated.gif",
+    "motion_id": "b414a4b5-236d-46e3-a2bd-efd45612ec42",
+    "motions": null,
+    "source": "system"
+  },
+  {
+    "id": "1189d701-e683-4281-a13d-3a48fce4797f",
+    "type": "Motion",
+    "description": "Crawling Forward Reaching With Left Hand",
+    "category": "",
+    "character_type": "human",
+    "name": "Male Action Pose",
+    "thumbnail": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/150000903/static.png",
+    "thumbnail_animated": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/150000903/animated.gif",
+    "motion_id": "1189d701-e683-4281-a13d-3a48fce4797f",
+    "motions": null,
+    "source": "system"
+  }
+]

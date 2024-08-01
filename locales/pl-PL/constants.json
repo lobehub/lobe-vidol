@@ -2,8 +2,7 @@
   "agent": {
     "gender": {
       "female": "Kobieta",
-      "male": "Mężczyzna",
-      "other": "Inne"
+      "male": "Mężczyzna"
     },
     "meta": {
       "description": "To jest niestandardowa postać",

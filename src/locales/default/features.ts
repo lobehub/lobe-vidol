@@ -50,6 +50,7 @@ export default {
     floor: '切换地板',
     resetCamera: '重置镜头',
     grid: '网格',
+    axes: '坐标轴',
     downloadModel: '模型下载中，请稍后...',
   },
   feature: {
@@ -63,5 +64,11 @@ export default {
     glow: '光辉',
     none: '无背景',
     nickName: '请输入昵称',
+  },
+  info: {
+    history: '聊天记录',
+    playlist: '播放列表',
+    motions: '动作',
+    posture: '姿势',
   },
 };

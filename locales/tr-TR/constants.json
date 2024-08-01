@@ -1,9 +1,9 @@
 {
   "agent": {
     "gender": {
+      "all": "tüm",
       "female": "Kadın",
-      "male": "Erkek",
-      "other": "Diğer"
+      "male": "Erkek"
     },
     "meta": {
       "description": "Bu bir özel rol.",
@@ -87,6 +87,21 @@
         "neutralA": "Korkma, güçlü bacaklarım aptallara tekme atmaz.",
         "neutralB": "Bacaklarıma dokunmak senin hayatını daha mı anlamlı hale getirdi?"
       }
+    },
+    "motion": {
+      "all": "tüm",
+      "dance": "dans",
+      "normal": "günlük"
+    },
+    "posture": {
+      "action": "Eylem",
+      "all": "Tümü",
+      "crouch": "Çömelmek",
+      "dance": "Dans",
+      "laying": "Yatmak",
+      "locomotion": "Hareket",
+      "sitting": "Oturmak",
+      "standing": "Ayakta durmak"
     }
   }
 }

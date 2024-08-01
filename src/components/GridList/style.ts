@@ -5,6 +5,7 @@ import { LIST_GRID_GAP, LIST_GRID_HEIGHT, LIST_GRID_WIDTH } from '@/constants/to
 export const useStyles = createStyles(({ css }) => ({
   grid: css`
     width: 100%;
+    height: 100%;
   `,
   loading: css`
     display: flex;

@@ -6,7 +6,7 @@ import React, { memo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { INPUT_WIDTH_M, INPUT_WIDTH_S } from '@/constants/token';
-import { MAX_TOUCH_ACTION_TEXT_LENGTH } from '@/constants/touch';
+import { MAX_TOUCH_ACTION_TEXT_LENGTH, TOUCH_MOTION_ANIMATION } from '@/constants/touch';
 import { useSettingStore } from '@/store/setting';
 import { GenderEnum } from '@/types/agent';
 import { TouchAction, TouchAreaEnum } from '@/types/touch';
@@ -134,6 +134,22 @@ const AddOrEdit = memo<Props>(({ touchArea, index, touchAction, isEdit = true, g
                   value: VRMExpressionPresetName.BlinkRight,
                 },
               ]}
+              style={{ width: INPUT_WIDTH_S }}
+              defaultActiveFirstOption={true}
+            />
+          </FormItem>
+          <FormItem
+            label={t('info.motionLabel', { ns: 'panel' })}
+            desc={t('info.motionDescription', { ns: 'panel' })}
+            divider
+            rules={[{ required: true, message: t('touch.inputActionEmotion', { ns: 'panel' }) }]}
+            name="motion"
+          >
+            <Select
+              options={TOUCH_MOTION_ANIMATION.map((item) => ({
+                label: `${item.gender}/${item.name}`,
+                value: item.id,
+              }))}
               style={{ width: INPUT_WIDTH_S }}
               defaultActiveFirstOption={true}
             />

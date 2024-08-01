@@ -1,9 +1,9 @@
 {
   "agent": {
     "gender": {
+      "all": "todos",
       "female": "Mujer",
-      "male": "Hombre",
-      "other": "Otro"
+      "male": "Hombre"
     },
     "meta": {
       "description": "Este es un rol personalizado",
@@ -87,6 +87,21 @@
         "neutralA": "No tengas miedo, mi pierna de acero no patea a tontos",
         "neutralB": "¿Sentiste que tu vida se completó al tocar mi pierna?"
       }
+    },
+    "motion": {
+      "all": "todos",
+      "dance": "baile",
+      "normal": "normal"
+    },
+    "posture": {
+      "action": "Acción",
+      "all": "Todos",
+      "crouch": "Agacharse",
+      "dance": "Bailar",
+      "laying": "Acostarse",
+      "locomotion": "Movimiento",
+      "sitting": "Sentarse",
+      "standing": "Estar de pie"
     }
   }
 }

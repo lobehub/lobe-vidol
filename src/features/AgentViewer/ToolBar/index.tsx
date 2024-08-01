@@ -1,5 +1,5 @@
 import { ActionIconGroup } from '@lobehub/ui';
-import { Grid3x3, LandPlot, Orbit, RotateCw, SwitchCamera } from 'lucide-react';
+import { Axis3D, Grid3x3, LandPlot, Orbit, RotateCw, SwitchCamera } from 'lucide-react';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -49,6 +49,11 @@ const ToolBar = (props: ToolBarProps) => {
           key: 'grid',
           label: t('toolBar.grid'),
         },
+        {
+          icon: Axis3D,
+          key: 'axes',
+          label: t('toolBar.axes'),
+        },
       ]}
       onActionClick={(action) => {
         switch (action.key) {
@@ -60,6 +65,10 @@ const ToolBar = (props: ToolBarProps) => {
           case 'grid': {
             viewer.toggleGrid();
 
+            break;
+          }
+          case 'axes': {
+            viewer.toggleAxes();
             break;
           }
           case 'cameraHelper': {

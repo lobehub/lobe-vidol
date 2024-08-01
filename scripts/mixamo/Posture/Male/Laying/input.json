@@ -1,0 +1,80 @@
+[
+  {
+    "id": "cc3de474-7811-47ad-972c-152326c0b59a",
+    "type": "Motion",
+    "description": "On Left Side, Left Arm Supporting Head",
+    "category": "",
+    "character_type": "human",
+    "name": "Male Laying Pose",
+    "thumbnail": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/150400902/static.png",
+    "thumbnail_animated": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/150400902/animated.gif",
+    "motion_id": "cc3de474-7811-47ad-972c-152326c0b59a",
+    "motions": null,
+    "source": "system"
+  },
+  {
+    "id": "f501b173-92d7-40a2-b213-286e3c69173f",
+    "type": "Motion",
+    "description": "On Left Side, Left Arm Supporting",
+    "category": "",
+    "character_type": "human",
+    "name": "Male Laying Pose",
+    "thumbnail": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/150400901/static.png",
+    "thumbnail_animated": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/150400901/animated.gif",
+    "motion_id": "f501b173-92d7-40a2-b213-286e3c69173f",
+    "motions": null,
+    "source": "system"
+  },
+  {
+    "id": "757589a5-d1c8-45bc-a0a0-76cf6adba4e5",
+    "type": "Motion",
+    "description": "On Right Side, Right Arm Supporting",
+    "category": "",
+    "character_type": "human",
+    "name": "Male Laying Pose",
+    "thumbnail": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/150400906/static.png",
+    "thumbnail_animated": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/150400906/animated.gif",
+    "motion_id": "757589a5-d1c8-45bc-a0a0-76cf6adba4e5",
+    "motions": null,
+    "source": "system"
+  },
+  {
+    "id": "304a666d-6d1c-4ddd-9944-8710879c309c",
+    "type": "Motion",
+    "description": "On Back, Legs Crossed, Hands Behind Head",
+    "category": "",
+    "character_type": "human",
+    "name": "Male Laying Pose",
+    "thumbnail": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/150400905/static.png",
+    "thumbnail_animated": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/150400905/animated.gif",
+    "motion_id": "304a666d-6d1c-4ddd-9944-8710879c309c",
+    "motions": null,
+    "source": "system"
+  },
+  {
+    "id": "31027f3c-03cb-41c0-a7ca-c7cc149a6d53",
+    "type": "Motion",
+    "description": "On Back, Left Leg Bent, Hands Behind Head",
+    "category": "",
+    "character_type": "human",
+    "name": "Male Laying Pose",
+    "thumbnail": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/150400904/static.png",
+    "thumbnail_animated": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/150400904/animated.gif",
+    "motion_id": "31027f3c-03cb-41c0-a7ca-c7cc149a6d53",
+    "motions": null,
+    "source": "system"
+  },
+  {
+    "id": "62e92e9c-623b-4754-9cb7-c234973eb982",
+    "type": "Motion",
+    "description": "On Back, Left Leg Bent",
+    "category": "",
+    "character_type": "human",
+    "name": "Male Laying Pose",
+    "thumbnail": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/150400903/static.png",
+    "thumbnail_animated": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/150400903/animated.gif",
+    "motion_id": "62e92e9c-623b-4754-9cb7-c234973eb982",
+    "motions": null,
+    "source": "system"
+  }
+]

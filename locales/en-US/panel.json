@@ -1,4 +1,9 @@
 {
+  "animation": {
+    "animationList": "Character animation list",
+    "noAnimations": "No animations available",
+    "totalCount": "Total {{total}} items"
+  },
   "dance": {
     "addPlay": "Add to playlist",
     "addPlaySuccess": "Added to playlist",
@@ -6,6 +11,7 @@
     "cancelSubscribed": "Unsubscribe",
     "findDance": "Find your favorite dance",
     "musicAndDance": "Music and Dance",
+    "noPlayList": "No playlist available, you can subscribe to your favorite dances through the market",
     "play": "Play"
   },
   "info": {
@@ -25,8 +31,12 @@
     "greetLabel": "Greeting",
     "modelDescription": "Model preview, drag and drop the model file to replace",
     "modelLabel": "Model Preview",
+    "motionCategoryLabel": "Motion Category",
+    "motionDescription": "Select the motion when responding, which will affect the character's actions",
+    "motionLabel": "Motion",
     "nameDescription": "Character name, used when chatting with the character",
     "nameLabel": "Name",
+    "postureCategoryLabel": "Posture Category",
     "readmeDescription": "Character's description file, used for detailed introduction on the discovery page",
     "readmeLabel": "Character Description",
     "textDescription": "Custom response text",
@@ -69,6 +79,7 @@
     "addAction": "Add response action",
     "editAction": "Edit response action",
     "inputActionEmotion": "Enter the character's expression when responding",
+    "inputActionMotion": "Please enter the motion when the character responds",
     "inputActionText": "Enter response text",
     "inputDIYText": "Enter custom text",
     "noTouchActions": "No custom touch actions yet. You can add one by clicking the '+' button.",

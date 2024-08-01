@@ -15,6 +15,12 @@
     "startDesc": "Geben Sie Ihren OpenAI-API-Schlüssel ein, um das Gespräch zu beginnen. Die App speichert Ihren API-Schlüssel nicht.",
     "startTitle": "Benutzerdefinierter API-Schlüssel"
   },
+  "info": {
+    "history": "Verlauf",
+    "motions": "Bewegungen",
+    "playlist": "Wiedergabeliste",
+    "posture": "Haltung"
+  },
   "mode": {
     "chat": "Chat",
     "video": "Video"
@@ -56,6 +62,7 @@
     "used": "Verwendete Token"
   },
   "toolBar": {
+    "axes": "Achsen",
     "cameraControl": "Kamerasteuerung",
     "cameraHelper": "Kamerahilfe",
     "downloadModel": "Modell wird heruntergeladen, bitte warten...",

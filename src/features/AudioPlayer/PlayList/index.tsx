@@ -1,13 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
 import { DeleteOutlined } from '@ant-design/icons';
-import { Button, Drawer, List } from 'antd';
+import { Button, Drawer } from 'antd';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { SIDEBAR_WIDTH } from '@/constants/token';
-import { DanceStore, useDanceStore } from '@/store/dance';
+import PlayList from '@/features/PlayList';
+import { useDanceStore } from '@/store/dance';
 
-import PlayItem from './Item';
 import { useStyles } from './style';
 
 interface PlayListProps {
@@ -15,17 +15,10 @@ interface PlayListProps {
   open: boolean;
 }
 
-const playListSelectors = (s: DanceStore) => {
-  return {
-    clearPlayList: s.clearPlayList,
-    playlist: s.playlist,
-  };
-};
-
-const PlayList = (props: PlayListProps) => {
+const DrawerPlayList = (props: PlayListProps) => {
   const { open = false, onClose } = props;
   const { styles } = useStyles();
-  const { playlist, clearPlayList } = useDanceStore((s) => playListSelectors(s));
+  const clearPlayList = useDanceStore((s) => s.clearPlayList);
   const { t } = useTranslation('common');
 
   return (
@@ -46,9 +39,9 @@ const PlayList = (props: PlayListProps) => {
       width={SIDEBAR_WIDTH}
       getContainer={false}
     >
-      <List dataSource={playlist} renderItem={(id) => <PlayItem playItemId={id} />} size="small" />
+      <PlayList />
     </Drawer>
   );
 };
 
-export default memo(PlayList);
+export default memo(DrawerPlayList);

@@ -2,8 +2,7 @@
   "agent": {
     "gender": {
       "female": "Nữ",
-      "male": "Nam",
-      "other": "Khác"
+      "male": "Nam"
     },
     "meta": {
       "description": "Đây là một Vai trò Tùy chỉnh",

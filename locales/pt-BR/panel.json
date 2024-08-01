@@ -1,4 +1,9 @@
 {
+  "animation": {
+    "animationList": "Lista de Movimentos do Personagem",
+    "noAnimations": "Sem animações disponíveis",
+    "totalCount": "Total de {{total}} itens"
+  },
   "dance": {
     "addPlay": "Adicionar à lista",
     "addPlaySuccess": "Adicionado à lista de reprodução",
@@ -6,6 +11,7 @@
     "cancelSubscribed": "Cancelar inscrição",
     "findDance": "Encontre sua dança favorita",
     "musicAndDance": "Música e Dança",
+    "noPlayList": "Sem lista de reprodução disponível, você pode assinar no mercado as danças que gosta",
     "play": "Reproduzir"
   },
   "info": {
@@ -25,8 +31,12 @@
     "greetLabel": "Saudação",
     "modelDescription": "Visualização do modelo, arraste o arquivo do modelo para substituir",
     "modelLabel": "Visualização do Modelo",
+    "motionCategoryLabel": "Categoria de Movimento",
+    "motionDescription": "Escolher o movimento ao responder afetará o comportamento do personagem",
+    "motionLabel": "Movimento",
     "nameDescription": "Nome do personagem, usado para se referir ao personagem durante o chat",
     "nameLabel": "Nome",
+    "postureCategoryLabel": "Categoria de Postura",
     "readmeDescription": "Arquivo de instruções do personagem, usado para mostrar uma descrição detalhada do personagem na página de descoberta",
     "readmeLabel": "Instruções do personagem",
     "textDescription": "Texto de resposta personalizado",
@@ -69,6 +79,7 @@
     "addAction": "Adicionar ação de resposta",
     "editAction": "Editar ação de resposta",
     "inputActionEmotion": "Digite a emoção do personagem ao responder",
+    "inputActionMotion": "Digite o movimento do personagem ao responder",
     "inputActionText": "Digite o texto de resposta",
     "inputDIYText": "Digite o texto personalizado",
     "noTouchActions": "Não há ações de toque personalizadas no momento. Você pode adicionar tocando no botão '+'",

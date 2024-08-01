@@ -1,4 +1,9 @@
 {
+  "animation": {
+    "animationList": "角色動作列表",
+    "noAnimations": "暫無動作庫",
+    "totalCount": "共 {{total}} 項"
+  },
   "dance": {
     "addPlay": "新增至清單",
     "addPlaySuccess": "已新增至播放清單",
@@ -6,6 +11,7 @@
     "cancelSubscribed": "取消訂閱",
     "findDance": "尋找您最喜愛的舞蹈",
     "musicAndDance": "音樂與舞蹈",
+    "noPlayList": "暫無播放清單，您可以透過市場訂閱您喜歡的舞蹈",
     "play": "播放"
   },
   "info": {
@@ -25,8 +31,12 @@
     "greetLabel": "招呼",
     "modelDescription": "模型預覽，可拖動模型文件以替換",
     "modelLabel": "模型預覽",
+    "motionCategoryLabel": "動作類別",
+    "motionDescription": "選擇響應時的動作，將影響角色的動作行為",
+    "motionLabel": "動作",
     "nameDescription": "角色名稱，與角色聊天時的稱呼",
     "nameLabel": "名稱",
+    "postureCategoryLabel": "姿勢類別",
     "readmeDescription": "角色的說明文件，用於發現頁展示角色的詳細說明",
     "readmeLabel": "角色說明",
     "textDescription": "自定義回應文案",
@@ -69,6 +79,7 @@
     "addAction": "新增回應動作",
     "editAction": "編輯回應動作",
     "inputActionEmotion": "請輸入角色回應時的表情",
+    "inputActionMotion": "請輸入角色響應時的動作",
     "inputActionText": "請輸入回應文案",
     "inputDIYText": "請輸入自定義文案",
     "noTouchActions": "沒有自訂觸控動作，您可以點擊 '+' 按鈕來新增",

@@ -53,6 +53,7 @@ const PlayItem = (props: PlayItemProps) => {
           size="small"
         />
       }
+      className={styles.listItem}
       onDoubleClick={() => {
         if (isCurrentPlay && isPlaying) {
           setIsPlaying(false);

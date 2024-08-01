@@ -15,6 +15,12 @@
     "startDesc": "Entrez votre clé d'API OpenAI pour commencer la session. L'application ne stockera pas votre clé d'API.",
     "startTitle": "Personnaliser la clé d'API"
   },
+  "info": {
+    "history": "Historique de chat",
+    "motions": "Mouvements",
+    "playlist": "Liste de lecture",
+    "posture": "Posture"
+  },
   "mode": {
     "chat": "Discussion",
     "video": "Vidéo"
@@ -56,6 +62,7 @@
     "used": "Tokens utilisés"
   },
   "toolBar": {
+    "axes": "Axes",
     "cameraControl": "Contrôle de la caméra",
     "cameraHelper": "Assistant de caméra",
     "downloadModel": "Téléchargement du modèle en cours, veuillez patienter...",

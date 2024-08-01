@@ -1,4 +1,9 @@
 {
+  "animation": {
+    "noAnimations": "暂无动作库",
+    "animationList": "角色动作列表",
+    "totalCount": "共 {{total}} 项"
+  },
   "dance": {
     "play": "播放",
     "addPlay": "添加到列表",
@@ -6,7 +11,8 @@
     "cancelAddPlay": "确定取消订阅音乐{{musicName}}吗？",
     "cancelSubscribed": "取消订阅",
     "findDance": "找到你最喜欢的舞蹈",
-    "musicAndDance": "音乐与舞蹈"
+    "musicAndDance": "音乐与舞蹈",
+    "noPlayList": "暂无播放列表，您可以通过市场订阅你喜欢的舞蹈"
   },
   "info": {
     "avatarLabel": "头像",
@@ -15,6 +21,8 @@
     "nameDescription": "角色名称，与角色聊天时的称呼",
     "genderLabel": "性别",
     "genderDescription": "角色性别，影响角色的触摸响应",
+    "motionCategoryLabel": "动作类别",
+    "postureCategoryLabel": "姿势类别",
     "descLabel": "描述",
     "descDescription": "角色描述，用于角色的简单介绍",
     "greetLabel": "招呼",
@@ -26,7 +34,9 @@
     "textLabel": "文案",
     "textDescription": "自定义响应文案",
     "emotionLabel": "表情与情绪",
+    "motionLabel": "动作",
     "emotionDescription": "选择响应时的情绪，会影响角色的表情变化",
+    "motionDescription": "选择响应时的动作，会影响角色的动作行为",
     "modelLabel": "模型预览",
     "modelDescription": "模型预览，可拖动模型文件以替换",
     "categoryLabel": "类别",
@@ -71,9 +81,10 @@
     "inputDIYText": "请输入自定义文案",
     "inputActionText": "请输入响应文案",
     "inputActionEmotion": "请输入角色响应时的表情",
+    "inputActionMotion": "请输入角色响应时的动作",
     "touchActionList": "触摸{{touchArea}}时的反应列表",
     "touchArea": "触摸区域",
-    "noTouchActions": "暂无自定义响应动作，你可以通过点击 '+' 按钮添加"
+    "noTouchActions": "暂无自定义响应动作，您可以通过点击 '+' 按钮添加"
   },
   "tts": {
     "transformSuccess": "转换成功",

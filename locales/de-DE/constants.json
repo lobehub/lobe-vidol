@@ -1,9 +1,9 @@
 {
   "agent": {
     "gender": {
+      "all": "alle",
       "female": "女",
-      "male": "男",
-      "other": "其他"
+      "male": "男"
     },
     "meta": {
       "description": "这是一个自定义角色",
@@ -87,6 +87,21 @@
         "neutralA": "别害怕，我的大力金刚腿不踢傻瓜",
         "neutralB": "让你碰到我的腿，是不是觉得你的生活完整了许多？"
       }
+    },
+    "motion": {
+      "all": "alle",
+      "dance": "Tanz",
+      "normal": "Alltag"
+    },
+    "posture": {
+      "action": "Aktion",
+      "all": "Alle",
+      "crouch": "Hocken",
+      "dance": "Tanz",
+      "laying": "Liegen",
+      "locomotion": "Bewegung",
+      "sitting": "Sitzen",
+      "standing": "Stehen"
     }
   }
 }

@@ -158,7 +158,7 @@ export const fetchSEE = async (
 
 export const fetchWithProgress = async (
   url: string,
-  handlers: {
+  handlers?: {
     onProgress?: (loaded: number, total: number) => void;
   },
 ) => {
@@ -194,7 +194,7 @@ export const fetchWithProgress = async (
             }
 
             loaded += value.byteLength;
-            handlers.onProgress?.(loaded, total);
+            handlers?.onProgress?.(loaded, total);
 
             controller.enqueue(value);
             push();

@@ -22,6 +22,12 @@ const useStyles = createStyles(({ css, token }) => ({
     font-size: 24px;
     color: ${token.colorText};
   `,
+  listItem: css`
+    height: 64px;
+    margin-block: 2px;
+    font-size: ${token.fontSize}px;
+    border-radius: ${token.borderRadius}px;
+  `,
 }));
 
 export { useStyles };

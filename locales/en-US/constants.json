@@ -1,9 +1,9 @@
 {
   "agent": {
     "gender": {
+      "all": "All",
       "female": "Female",
-      "male": "Male",
-      "other": "Other"
+      "male": "Male"
     },
     "meta": {
       "description": "This is a custom role",
@@ -87,6 +87,21 @@
         "neutralA": "Don't be afraid, my powerful steel legs don't kick fools.",
         "neutralB": "Do you feel like your life is much more complete after touching my leg?"
       }
+    },
+    "motion": {
+      "all": "All",
+      "dance": "Dance",
+      "normal": "Daily"
+    },
+    "posture": {
+      "action": "Action",
+      "all": "All",
+      "crouch": "Crouch",
+      "dance": "Dance",
+      "laying": "Lying down",
+      "locomotion": "Movement",
+      "sitting": "Sitting",
+      "standing": "Standing"
     }
   }
 }

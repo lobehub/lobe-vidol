@@ -1,5 +1,7 @@
 import { VRMExpressionPresetName } from '@pixiv/three-vrm';
 
+import { GenderEnum } from '@/types/agent';
+
 import { TTS } from './tts';
 
 export type EmotionType = VRMExpressionPresetName;
@@ -18,6 +20,32 @@ export interface TouchAction {
   text: string;
 }
 
+export enum MotionCategoryEnum {
+  DANCE = 'Dance',
+  NORMAL = 'Normal',
+}
+
+export enum PostureCategoryEnum {
+  ACTION = 'Action',
+  CROUCH = 'Crouch',
+  DANCE = 'Dance',
+  LAYING = 'Laying',
+  LOCOMOTION = 'Locomotion',
+  SITTING = 'Sitting',
+  STANDING = 'Standing',
+}
+
+export interface MotionAnimation {
+  avatar: string;
+  category: MotionCategoryEnum | PostureCategoryEnum;
+  description: string;
+  gender: GenderEnum;
+  id: string;
+  name: string;
+  type: string;
+  url: string;
+}
+
 export interface TouchActionConfig {
   [TouchAreaEnum.Head]: TouchAction[];
   [TouchAreaEnum.Arm]: TouchAction[];
@@ -28,5 +56,6 @@ export interface TouchActionConfig {
 
 export type Screenplay = {
   emotion: EmotionType;
+  motion?: string;
   tts: TTS;
 };

@@ -1,0 +1,37 @@
+import { useState } from 'react';
+
+import { fetchWithProgress } from '@/utils/fetch';
+import { getMotionPathByMotionId } from '@/utils/file';
+import storage from '@/utils/storage';
+
+export const useLoadMotion = () => {
+  const [downloading, setDownloading] = useState(false);
+  const [percent, setPercent] = useState(0);
+
+  const fetchMotionUrl = async (motionId: string, motionUrl: string) => {
+    const localMotionPath = getMotionPathByMotionId(motionId);
+    let motionBlob = (await storage.getItem(localMotionPath)) as Blob;
+    try {
+      if (!motionBlob) {
+        setDownloading(true);
+        setPercent(0);
+
+        motionBlob = await fetchWithProgress(motionUrl, {
+          onProgress: (loaded, total) => {
+            setPercent((loaded / total) * 100);
+          },
+        });
+        await storage.setItem(localMotionPath, motionBlob);
+      }
+    } finally {
+      setDownloading(false);
+    }
+    return URL.createObjectURL(motionBlob);
+  };
+
+  return {
+    downloading,
+    percent,
+    fetchMotionUrl,
+  };
+};

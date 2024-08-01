@@ -15,6 +15,12 @@
     "startDesc": "Enter your OpenAI API Key to start the session. The application will not record your API Key.",
     "startTitle": "Customize API Key"
   },
+  "info": {
+    "history": "Chat History",
+    "motions": "Motions",
+    "playlist": "Playlist",
+    "posture": "Posture"
+  },
   "mode": {
     "chat": "Chat",
     "video": "Video"
@@ -56,6 +62,7 @@
     "used": "Tokens used"
   },
   "toolBar": {
+    "axes": "Axes",
     "cameraControl": "Camera control",
     "cameraHelper": "Camera helper",
     "downloadModel": "Model download in progress, please wait...",

@@ -6,7 +6,11 @@ import React, { memo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { INPUT_WIDTH_M, INPUT_WIDTH_S } from '@/constants/token';
-import { MAX_TOUCH_ACTION_TEXT_LENGTH } from '@/constants/touch';
+import {
+  HAPPY_MOTION_ID,
+  MAX_TOUCH_ACTION_TEXT_LENGTH,
+  TOUCH_MOTION_ANIMATION,
+} from '@/constants/touch';
 import { useAgentStore } from '@/store/agent';
 import { TouchAction, TouchAreaEnum } from '@/types/touch';
 
@@ -69,7 +73,11 @@ export default memo((props: Props) => {
         <Form
           layout="horizontal"
           requiredMark
-          initialValues={isEdit ? touchAction : { emotion: VRMExpressionPresetName.Neutral }}
+          initialValues={
+            isEdit
+              ? touchAction
+              : { emotion: VRMExpressionPresetName.Neutral, motion: HAPPY_MOTION_ID }
+          }
           form={form}
           preserve={false}
         >
@@ -133,6 +141,22 @@ export default memo((props: Props) => {
                   value: VRMExpressionPresetName.BlinkRight,
                 },
               ]}
+              style={{ width: INPUT_WIDTH_S }}
+              defaultActiveFirstOption={true}
+            />
+          </FormItem>
+          <FormItem
+            label={t('info.motionLabel', { ns: 'panel' })}
+            desc={t('info.motionDescription', { ns: 'panel' })}
+            divider
+            rules={[{ required: true, message: t('touch.inputActionEmotion', { ns: 'panel' }) }]}
+            name="motion"
+          >
+            <Select
+              options={TOUCH_MOTION_ANIMATION.map((item) => ({
+                label: `${item.gender}/${item.name}`,
+                value: item.id,
+              }))}
               style={{ width: INPUT_WIDTH_S }}
               defaultActiveFirstOption={true}
             />
