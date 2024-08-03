@@ -12,13 +12,26 @@ export interface DanceListStore {
   activateDance: (identifier: string) => void;
   addDanceItem: (dance: Dance) => void;
   currentIdentifier: string;
+  /**
+   * current playing dance.
+   */
+  currentPlayId: string;
   danceList: Dance[];
   danceLoading: boolean;
   deactivateDance: () => void;
   fetchDanceIndex: () => void;
   isPlaying: boolean;
+  /**
+   * Play a dance.
+   * @param dance
+   */
+  playItem: (danceId: string) => void;
   removeDanceItem: (danceId: string) => Promise<void>;
   setIsPlaying: (isPlaying: boolean) => void;
+  /**
+   * Toggle play or pause.
+   */
+  togglePlayPause: () => void;
 }
 
 export const createDanceStore: StateCreator<
@@ -32,10 +45,16 @@ export const createDanceStore: StateCreator<
       set({ currentIdentifier: identifier });
     },
     currentIdentifier: '',
+    currentPlayId: '',
     danceList: [],
+    isPlaying: false,
     danceLoading: false,
     deactivateDance: () => {
       set({ currentIdentifier: undefined });
+    },
+    togglePlayPause: () => {
+      if (!get().currentPlayId) return;
+      set({ isPlaying: !get().isPlaying });
     },
     fetchDanceIndex: async () => {
       set({ danceLoading: true });
@@ -49,7 +68,6 @@ export const createDanceStore: StateCreator<
         set({ danceLoading: false });
       }
     },
-    isPlaying: false,
     setIsPlaying: (isPlaying) => {
       set({ isPlaying });
     },
@@ -64,6 +82,9 @@ export const createDanceStore: StateCreator<
         }
       });
       set({ danceList: newList });
+    },
+    playItem: (danceId) => {
+      set({ currentPlayId: danceId, isPlaying: true });
     },
     removeDanceItem: async (danceId) => {
       const { danceList } = get();
