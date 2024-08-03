@@ -1,5 +1,6 @@
 import { ActionIconGroup } from '@lobehub/ui';
-import { Axis3D, Grid3x3, LandPlot, Orbit, RotateCw, SwitchCamera } from 'lucide-react';
+import dayjs from 'dayjs';
+import { Aperture, Axis3D, Grid3x3, Orbit, RotateCw, SwitchCamera } from 'lucide-react';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -17,6 +18,11 @@ const ToolBar = (props: ToolBarProps) => {
 
   const dropdownMenu = [
     {
+      icon: Axis3D,
+      key: 'axes',
+      label: t('toolBar.axes'),
+    },
+    {
       icon: SwitchCamera,
       key: 'cameraHelper',
       label: t('toolBar.cameraHelper'),
@@ -25,11 +31,6 @@ const ToolBar = (props: ToolBarProps) => {
       icon: Orbit,
       key: 'cameraControl',
       label: t('toolBar.cameraControl'),
-    },
-    {
-      icon: LandPlot,
-      key: 'floor',
-      label: t('toolBar.floor'),
     },
   ];
 
@@ -45,14 +46,14 @@ const ToolBar = (props: ToolBarProps) => {
           label: t('toolBar.resetCamera'),
         },
         {
+          icon: Aperture,
+          key: 'screenShot',
+          label: t('toolBar.screenShot'),
+        },
+        {
           icon: Grid3x3,
           key: 'grid',
           label: t('toolBar.grid'),
-        },
-        {
-          icon: Axis3D,
-          key: 'axes',
-          label: t('toolBar.axes'),
         },
       ]}
       onActionClick={(action) => {
@@ -62,6 +63,17 @@ const ToolBar = (props: ToolBarProps) => {
 
             break;
           }
+          case 'screenShot': {
+            const canvas = document.querySelector('#canvas') as HTMLCanvasElement;
+            const imageType = 'png';
+            const dataUrl = canvas.toDataURL(`image/${imageType}`);
+            const link = document.createElement('a');
+            link.download = `LobeVidol_capture_${dayjs().format('YYYY-MM-DD HH:mm:ss')}.${imageType}`;
+            link.href = dataUrl;
+            link.click();
+            break;
+          }
+
           case 'grid': {
             viewer.toggleGrid();
 

@@ -7,9 +7,9 @@ import { Flexbox } from 'react-layout-kit';
 import { FORM_STYLE } from '@/constants/token';
 import { useSessionStore } from '@/store/session';
 
+import { useScreenshot } from '../../../hooks/useScreenshot';
 import Preview from './Preview';
 import { FieldType, ImageType } from './type';
-import { useScreenshot } from './useScreenshot';
 
 enum Tab {
   Screenshot = 'screenshot',
@@ -51,7 +51,7 @@ const ShareModal = memo<ModalProps>(({ onCancel, open }) => {
     s.shareLoading,
     s.shareToShareGPT,
   ]);
-  const { loading, onDownload, title } = useScreenshot(fieldValue.imageType);
+  const { loading, onDownload, title } = useScreenshot(fieldValue.imageType, '#preview');
 
   const options: SegmentedProps['options'] = useMemo(
     () => [

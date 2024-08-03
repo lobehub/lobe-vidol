@@ -94,6 +94,7 @@ export class Viewer {
     this._renderer = new THREE.WebGLRenderer({
       alpha: true,
       antialias: true,
+      preserveDrawingBuffer: true,
       canvas: canvas,
     });
     this._renderer.setSize(width, height);

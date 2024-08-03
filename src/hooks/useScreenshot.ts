@@ -5,9 +5,9 @@ import { useCallback, useState } from 'react';
 import { useSessionStore } from '@/store/session';
 import { sessionSelectors } from '@/store/session/selectors';
 
-import { ImageType } from './type';
+import { ImageType } from '../features/Actions/ShareButton/type';
 
-export const useScreenshot = (imageType: ImageType) => {
+export const useScreenshot = (imageType: ImageType, selector: string) => {
   const [loading, setLoading] = useState(false);
   const currentAgent = useSessionStore(sessionSelectors.currentAgent);
   const title = currentAgent?.meta?.name;
@@ -35,7 +35,7 @@ export const useScreenshot = (imageType: ImageType) => {
         }
       }
 
-      const dataUrl = await screenshotFn(document.querySelector('#preview') as HTMLDivElement, {
+      const dataUrl = await screenshotFn(document.querySelector(selector) as HTMLDivElement, {
         features: {
           // 不启用移除控制符，否则会导致 safari emoji 报错
           removeControlCharacter: false,

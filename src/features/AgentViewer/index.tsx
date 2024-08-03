@@ -113,7 +113,7 @@ function AgentViewer(props: Props) {
           className={styles.loading}
         />
       ) : null}
-      <canvas ref={canvasRef} className={styles.canvas}></canvas>
+      <canvas ref={canvasRef} className={styles.canvas} id={'canvas'}></canvas>
     </div>
   );
 }
