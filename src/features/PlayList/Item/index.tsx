@@ -24,7 +24,6 @@ const PlayItem = (props: PlayItemProps) => {
 
   const { playItem, removePlayItem, currentPlayId, isPlaying, setIsPlaying, getDanceItemByPlayId } =
     useDanceStore((s) => ({
-      clearPlayList: s.clearPlayList,
       currentPlayId: s.currentPlayId,
       isPlaying: s.isPlaying,
       playItem: s.playItem,

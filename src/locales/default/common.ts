@@ -53,6 +53,8 @@ export default {
     sessionCreate: '创建聊天',
     danceMarket: '舞蹈市场',
     clearAll: '清空',
+    clearPlayList: '清空列表',
+    clearPlayListTip: '确认清除播放列表吗？',
     clearNow: '立即清除',
     clearContext: '清除上下文',
     clearTip: '操作无法撤销，清除后数据将无法恢复，请慎重操作',

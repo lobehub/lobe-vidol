@@ -1,16 +1,16 @@
 /* eslint-disable @next/next/no-img-element */
-import { GradientButton } from '@lobehub/ui';
-import { Empty } from 'antd';
+import { Empty, Space } from 'antd';
 import { createStyles } from 'antd-style';
 import classNames from 'classnames';
-import React, { memo, useMemo } from 'react';
+import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Center, Flexbox } from 'react-layout-kit';
 
 import Header from '@/components/Header';
 import AudioPlayer from '@/features/AudioPlayer';
+import ClearPlayList from '@/features/PlayList/Actions/ClearPlayList';
+import Dance from '@/features/PlayList/Actions/Dance';
 import { useDanceStore } from '@/store/dance';
-import { useGlobalStore } from '@/store/global';
 
 import PlayItem from './Item';
 
@@ -45,35 +45,24 @@ const PlayList = (props: PlayListProps) => {
   const { className, style } = props;
   const { styles } = useStyles();
 
-  const [openPanel] = useGlobalStore((s) => [s.openPanel]);
-
-  const marketButton = useMemo(
-    () => (
-      <GradientButton
-        onClick={() => {
-          openPanel('dance');
-        }}
-        size={'middle'}
-        glow
-      >
-        + {t('dance.musicAndDance')}
-      </GradientButton>
-    ),
-    [],
-  );
-
   return (
     <Flexbox className={classNames(className, styles.container)} style={style}>
       <Flexbox className={styles.list} flex={1}>
-        <Header title={t('info.playlist', { ns: 'features' })} extra={marketButton} />
+        <Header
+          title={t('info.playlist', { ns: 'features' })}
+          extra={
+            <Space>
+              <Dance key={'dance'} />
+              <ClearPlayList key={'clear'} />
+            </Space>
+          }
+        />
 
         {playlist.map((id) => {
           return <PlayItem playItemId={id} key={id} />;
         })}
         {playlist.length === 0 ? (
-          <Empty description={t('dance.noPlayList')} image={Empty.PRESENTED_IMAGE_SIMPLE}>
-            {marketButton}
-          </Empty>
+          <Empty description={t('dance.noPlayList')} image={Empty.PRESENTED_IMAGE_SIMPLE}></Empty>
         ) : null}
       </Flexbox>
       <Center className={styles.player}>

@@ -11,7 +11,7 @@ export default () => {
   return (
     <ActionIcon
       icon={PlusCircle}
-      onClick={() => openPanel('agent')}
+      onClick={() => openPanel('market')}
       title={t('actions.sessionCreate')}
       size={DESKTOP_HEADER_ICON_SIZE}
     />

@@ -9,7 +9,6 @@ import { useTranslation } from 'react-i18next';
 import { Center, Flexbox } from 'react-layout-kit';
 
 import StopLoadingIcon from '@/components/StopLoading';
-import Dance from '@/features/Actions/Dance';
 import History from '@/features/Actions/History';
 import Record from '@/features/Actions/Record';
 import TokenMini from '@/features/Actions/TokenMini';
@@ -73,8 +72,6 @@ const InputArea = memo((props: InputAreaProps) => {
       <Flexbox horizontal justify={'space-between'} align={'center'} style={{ marginBottom: 4 }}>
         <Space size={4}>
           <Record />
-          {/*<Video key="video" />*/}
-          <Dance key={'dance'} />
           <TokenMini />
         </Space>
         <Space size={4}>
