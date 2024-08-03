@@ -162,7 +162,11 @@ export class Model {
    */
   public async speak(buffer: ArrayBuffer, screenplay: Screenplay) {
     this.emoteController?.playEmotion(screenplay.emotion);
-    this._lipSync?.playFromArrayBuffer(buffer);
+    await new Promise((resolve) => {
+      this._lipSync?.playFromArrayBuffer(buffer, () => {
+        resolve(true);
+      });
+    });
   }
 
   /**

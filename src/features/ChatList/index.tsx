@@ -9,6 +9,7 @@ import { Virtuoso, VirtuosoHandle } from 'react-virtuoso';
 import Header from '@/components/Header';
 import Item from '@/features/ChatItem';
 import History from '@/features/ChatList/Actions/History';
+import TokenMini from '@/features/ChatList/Actions/TokenMini';
 import { sessionSelectors, useSessionStore } from '@/store/session';
 
 import AutoScroll from './AutoScroll';
@@ -56,6 +57,7 @@ const VirtualizedList = memo<VirtualizedListProps>(({ mobile, className, style }
         className={styles.header}
         extra={
           <Space>
+            <TokenMini />
             <History key={'history'} />
           </Space>
         }
