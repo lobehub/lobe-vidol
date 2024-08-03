@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
-import Agent from '@/features/Actions/Agent';
+import Agent from '@/features/Actions/AgentCreate';
 
 import { useStyles } from './style';
 

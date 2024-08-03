@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
 import { HEADER_HEIGHT } from '@/constants/token';
-import Agent from '@/features/Actions/Agent';
+import Agent from '@/features/Actions/AgentCreate';
 import Elsa from '@/features/RoleList/List/Elsa';
 
 import List from './List';

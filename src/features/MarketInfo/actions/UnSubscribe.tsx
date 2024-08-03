@@ -36,7 +36,7 @@ const UnSubscribe = memo((props: UnSubscribeButtonProps) => {
       }}
       title={t('actions.unsubscribe') + '?'}
     >
-      <Button>{t('actions.unsubscribe')}</Button>
+      <Button danger>{t('actions.unsubscribe')}</Button>
     </Popconfirm>
   );
 });

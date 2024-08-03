@@ -1,8 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
-import { Button, Empty } from 'antd';
+import { GradientButton } from '@lobehub/ui';
+import { Empty } from 'antd';
 import { createStyles } from 'antd-style';
 import classNames from 'classnames';
-import React, { memo } from 'react';
+import React, { memo, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Center, Flexbox } from 'react-layout-kit';
 
@@ -46,24 +47,32 @@ const PlayList = (props: PlayListProps) => {
 
   const [openPanel] = useGlobalStore((s) => [s.openPanel]);
 
+  const marketButton = useMemo(
+    () => (
+      <GradientButton
+        onClick={() => {
+          openPanel('dance');
+        }}
+        size={'middle'}
+        glow
+      >
+        + {t('dance.musicAndDance')}
+      </GradientButton>
+    ),
+    [],
+  );
+
   return (
     <Flexbox className={classNames(className, styles.container)} style={style}>
       <Flexbox className={styles.list} flex={1}>
-        <Header title={t('info.playlist', { ns: 'features' })} extra={t('animation.totalCount')} />
+        <Header title={t('info.playlist', { ns: 'features' })} extra={marketButton} />
 
         {playlist.map((id) => {
           return <PlayItem playItemId={id} key={id} />;
         })}
         {playlist.length === 0 ? (
           <Empty description={t('dance.noPlayList')} image={Empty.PRESENTED_IMAGE_SIMPLE}>
-            <Button
-              onClick={() => {
-                openPanel('dance');
-              }}
-              type={'primary'}
-            >
-              {t('dance.musicAndDance')}
-            </Button>
+            {marketButton}
           </Empty>
         ) : null}
       </Flexbox>

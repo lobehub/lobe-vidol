@@ -11,8 +11,8 @@ export default () => {
   return (
     <ActionIcon
       icon={PlusCircle}
-      onClick={() => openPanel('market')}
-      title={t('actions.market')}
+      onClick={() => openPanel('dance')}
+      title={t('actions.danceMarket')}
       size={DESKTOP_HEADER_ICON_SIZE}
     />
   );

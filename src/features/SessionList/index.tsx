@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
 import { HEADER_HEIGHT } from '@/constants/token';
-import Market from '@/features/Actions/Market';
+import Market from '@/features/Actions/SessionCreate';
 
 import V from './Elsa';
 import List from './List';

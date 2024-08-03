@@ -15,7 +15,7 @@ const genderIcons = {
   other: <QuestionCircleOutlined />,
 };
 
-const ThemeButton = memo(() => {
+const AgentCreate = memo(() => {
   const createNewAgent = useAgentStore((s) => s.createNewAgent);
   const { t } = useTranslation('features');
 
@@ -50,4 +50,4 @@ const ThemeButton = memo(() => {
   );
 });
 
-export default ThemeButton;
+export default AgentCreate;

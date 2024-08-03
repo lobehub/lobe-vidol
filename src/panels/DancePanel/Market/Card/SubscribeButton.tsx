@@ -38,6 +38,7 @@ const SubscribeButton = (props: SubscribeButtonProps) => {
         }
       }}
       type={isSubscribed ? 'default' : 'primary'}
+      danger={isSubscribed}
     >
       {isSubscribed ? (
         t('actions.unsubscribe')

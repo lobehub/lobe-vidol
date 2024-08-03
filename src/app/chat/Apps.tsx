@@ -1,4 +1,4 @@
-import { DancePanel, MarketPanel } from '@/panels';
+import { AgentPanel, DancePanel } from '@/panels';
 import { useGlobalStore } from '@/store/global';
 import { PanelKey } from '@/types/config';
 
@@ -8,8 +8,8 @@ export const apps = [
     key: 'dance',
   },
   {
-    component: <MarketPanel />,
-    key: 'market',
+    component: <AgentPanel />,
+    key: 'agent',
   },
 ];
 
