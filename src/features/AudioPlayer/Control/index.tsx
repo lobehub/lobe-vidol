@@ -9,7 +9,6 @@ const controlSelectors = (s: DanceStore) => {
     isPlaying: s.isPlaying,
     nextDance: s.nextDance,
     prevDance: s.prevDance,
-    setIsPlaying: s.setIsPlaying,
     togglePlayPause: s.togglePlayPause,
   };
 };

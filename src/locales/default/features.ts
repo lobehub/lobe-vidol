@@ -49,6 +49,7 @@ export default {
     cameraControl: '镜头控制',
     floor: '切换地板',
     resetCamera: '重置镜头',
+    screenShot: '拍照',
     grid: '网格',
     axes: '坐标轴',
     downloadModel: '模型下载中，请稍后...',
@@ -66,8 +67,8 @@ export default {
     nickName: '请输入昵称',
   },
   info: {
-    history: '聊天记录',
-    playlist: '播放列表',
+    chat: '聊天',
+    dance: '舞蹈',
     motions: '动作',
     posture: '姿势',
   },

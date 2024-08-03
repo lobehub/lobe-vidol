@@ -1,6 +1,6 @@
 import { SendOutlined } from '@ant-design/icons';
 import { Icon, TextArea } from '@lobehub/ui';
-import { Button, Space } from 'antd';
+import { Button } from 'antd';
 import { useTheme } from 'antd-style';
 import { InputRef } from 'antd/es/input/Input';
 import { ChevronUp, CornerDownLeft, LucideCommand } from 'lucide-react';
@@ -9,11 +9,7 @@ import { useTranslation } from 'react-i18next';
 import { Center, Flexbox } from 'react-layout-kit';
 
 import StopLoadingIcon from '@/components/StopLoading';
-import Dance from '@/features/Actions/Dance';
-import History from '@/features/Actions/History';
 import Record from '@/features/Actions/Record';
-import TokenMini from '@/features/Actions/TokenMini';
-import Voice from '@/features/Actions/Voice';
 import useChatInput from '@/hooks/useSendMessage';
 import { useSessionStore } from '@/store/session';
 import { isCommandPressed } from '@/utils/keyboard';
@@ -70,18 +66,6 @@ const InputArea = memo((props: InputAreaProps) => {
 
   return (
     <Flexbox className={className} style={style}>
-      <Flexbox horizontal justify={'space-between'} align={'center'} style={{ marginBottom: 4 }}>
-        <Space size={4}>
-          <Record />
-          {/*<Video key="video" />*/}
-          <Dance key={'dance'} />
-          <TokenMini />
-        </Space>
-        <Space size={4}>
-          <Voice key={'voice'} />
-          <History key={'history'} />
-        </Space>
-      </Flexbox>
       <Flexbox width={'100%'} horizontal gap={4}>
         <TextArea
           autoFocus
@@ -125,6 +109,7 @@ const InputArea = memo((props: InputAreaProps) => {
           icon={loading ? <StopLoadingIcon /> : <SendOutlined />}
           type={loading ? undefined : 'primary'}
         />
+        <Record />
       </Flexbox>
       <Flexbox horizontal justify={'space-between'} align={'center'} style={{ marginTop: 4 }}>
         <div className={styles.alert}>{t('aiAlert')}</div>

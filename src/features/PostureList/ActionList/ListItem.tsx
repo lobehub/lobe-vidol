@@ -18,7 +18,6 @@ const useStyles = createStyles(({ css, token }) => ({
   listItem: css`
     position: relative;
 
-    height: 64px;
     margin-block: 2px;
 
     font-size: ${token.fontSize}px;
@@ -54,7 +53,7 @@ const TouchActionListItem = memo<ActionListItemProps>(({ item }) => {
       key={item.id}
       className={classNames(styles.listItem)}
       description={
-        <Typography.Text className={styles.description} ellipsis>
+        <Typography.Text className={styles.description} ellipsis={{ tooltip: true }}>
           {item.description}
         </Typography.Text>
       }

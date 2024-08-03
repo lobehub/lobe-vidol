@@ -1,10 +1,15 @@
+import { Space } from 'antd';
 import classNames from 'classnames';
 import isEqual from 'fast-deep-equal';
 import React, { memo, useEffect, useRef, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 import { Virtuoso, VirtuosoHandle } from 'react-virtuoso';
 
+import Header from '@/components/Header';
 import Item from '@/features/ChatItem';
+import History from '@/features/ChatList/Actions/History';
+import TokenMini from '@/features/ChatList/Actions/TokenMini';
 import { sessionSelectors, useSessionStore } from '@/store/session';
 
 import AutoScroll from './AutoScroll';
@@ -27,6 +32,7 @@ const VirtualizedList = memo<VirtualizedListProps>(({ mobile, className, style }
   const virtuosoRef = useRef<VirtuosoHandle>(null);
   const [atBottom, setAtBottom] = useState(true);
   const { styles } = useStyles();
+  const { t } = useTranslation(['panel', 'common']);
 
   const data = useSessionStore(
     (s) => ['empty', ...sessionSelectors.currentChatIDsWithGreetingMessage(s)],
@@ -43,8 +49,19 @@ const VirtualizedList = memo<VirtualizedListProps>(({ mobile, className, style }
   // overscan should be 1.5 times the height of the window
   const overscan = typeof window !== 'undefined' ? window.innerHeight * 1.5 : 0;
 
+  // @ts-ignore
   return chatLoading && data.length === 2 ? null : (
     <Flexbox style={style} className={classNames(className, styles.list)}>
+      <Header
+        title={t('history', { ns: 'common' })}
+        className={styles.header}
+        extra={
+          <Space>
+            <TokenMini />
+            <History key={'history'} />
+          </Space>
+        }
+      />
       <Virtuoso
         atBottomStateChange={setAtBottom}
         atBottomThreshold={60 * (mobile ? 2 : 1)}

@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
-import Market from '@/features/Actions/Market';
+import Market from '@/features/Actions/SessionCreate';
 
 import { useStyles } from './style';
 

@@ -41,7 +41,7 @@ const AreaList = memo((props: AreaListProps) => {
   return (
     <Flexbox style={style} className={className} flex={1} height={'100%'}>
       <Header
-        title={t('animation.animationList')}
+        title={t('animation.postureList')}
         extra={t('animation.totalCount', { total: filteredList.length })}
       />
       <Flexbox className={styles.list}>

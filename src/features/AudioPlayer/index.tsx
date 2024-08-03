@@ -1,14 +1,12 @@
-import { ActionIcon, Avatar } from '@lobehub/ui';
+import { Avatar } from '@lobehub/ui';
 import { Progress, Typography } from 'antd';
 import classNames from 'classnames';
 import { isEqual } from 'lodash-es';
-import { ListMusic } from 'lucide-react';
 import React, { memo, useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import Control from '@/features/AudioPlayer/Control';
 import Duration from '@/features/AudioPlayer/Duration';
-import PlayList from '@/features/AudioPlayer/PlayList';
 import Volume from '@/features/AudioPlayer/Volume';
 import { useLoadAudio } from '@/hooks/useLoadAudio';
 import { useLoadDance } from '@/hooks/useLoadDance';
@@ -27,7 +25,6 @@ function Player(props: PlayerProps) {
   const { style, className } = props;
   const ref = useRef<HTMLAudioElement>(null);
   const [volume, setVolume] = useState(0.2);
-  const [open, setOpen] = useState(false);
   const [duration, setDuration] = useState(0);
   const [currentProgress, setCurrentProgress] = useState(0);
   const { nextDance, currentPlay, isPlaying } = useDanceStore(
@@ -66,7 +63,6 @@ function Player(props: PlayerProps) {
 
   return (
     <div className={classNames(styles.container, className)} style={style}>
-      <PlayList onClose={() => setOpen(false)} open={open} />
       <audio
         onCanPlay={(e) => {
           e.currentTarget.volume = volume;
@@ -102,7 +98,6 @@ function Player(props: PlayerProps) {
             </Typography.Text>
             <Control />
             <div className={styles.right}>
-              <ActionIcon icon={ListMusic} onClick={() => setOpen(true)} title={t('playlist')} />
               <Volume audioRef={ref} setVolume={setVolume} volume={volume} />
             </div>
           </div>

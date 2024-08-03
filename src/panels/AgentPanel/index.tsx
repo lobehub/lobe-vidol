@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 import PanelContainer from '@/panels/PanelContainer';
 
@@ -13,9 +14,10 @@ interface ControlPanelProps {
 const ControlPanel = (props: ControlPanelProps) => {
   const { style, className } = props;
   const { styles } = useStyles();
+  const { t } = useTranslation('chat');
 
   return (
-    <PanelContainer className={className} panelKey="agent" style={style} title="我的角色">
+    <PanelContainer className={className} panelKey="agent" style={style} title={t('selectRole')}>
       <div className={styles.content}>
         <Agent />
       </div>

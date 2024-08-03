@@ -7,6 +7,7 @@ import AgentMeta from '@/components/agent/AgentMeta';
 import ShareButton from '@/features/Actions/ShareButton';
 import ToggleChatSideBar from '@/features/Actions/ToggleChatSideBar';
 import ToggleSessionList from '@/features/Actions/ToggleSessionList';
+import Voice from '@/features/Actions/Voice';
 import { sessionSelectors, useSessionStore } from '@/store/session';
 
 import { useStyles } from './style';
@@ -31,6 +32,7 @@ export default (props: Props) => {
         <AgentMeta meta={currentAgent?.meta} />
       </Space>
       <Space>
+        <Voice key={'voice'} />
         <ShareButton key={'share'} />
         <ToggleChatSideBar key={'sidebar'} />
       </Space>
