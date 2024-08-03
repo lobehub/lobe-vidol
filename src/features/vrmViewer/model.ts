@@ -3,6 +3,7 @@ import * as THREE from 'three';
 import { AnimationAction, AnimationClip } from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 
+import { AudioPlayer } from '@/features/audioPlayer/audioPlayer';
 import { convert } from '@/libs/VMDAnimation/vmd2vrmanim';
 import { bindToVRM, toOffset } from '@/libs/VMDAnimation/vmd2vrmanim.binding';
 import IKHandler from '@/libs/VMDAnimation/vrm-ik-handler';
@@ -26,14 +27,18 @@ export class Model {
 
   private _lookAtTargetParent: THREE.Object3D;
   private _lipSync?: LipSync;
+  private _audioPlayer?: AudioPlayer;
   private _action: AnimationAction | undefined;
   private _clip: AnimationClip | undefined;
+  private _audio: ArrayBuffer | undefined;
 
   constructor(lookAtTargetParent: THREE.Object3D) {
     this._lookAtTargetParent = lookAtTargetParent;
     this._lipSync = new LipSync(new AudioContext());
+    this._audioPlayer = new AudioPlayer(new AudioContext());
     this._action = undefined;
     this._clip = undefined;
+    this._audio = undefined;
   }
 
   public async loadVRM(url: string): Promise<void> {
@@ -72,6 +77,33 @@ export class Model {
     }
   }
 
+  public disposeAll() {
+    const { vrm, mixer } = this;
+
+    if (!vrm || !mixer) {
+      console.error('You have to load VRM first');
+      return;
+    }
+
+    mixer.stopAllAction();
+    this.ikHandler?.disableAll();
+    if (this._action) {
+      this._action.stop();
+      this._action = undefined;
+    }
+
+    if (this._audio) {
+      this._audioPlayer?.stopPlay();
+      this._audio = undefined;
+    }
+
+    if (this._clip) {
+      mixer.uncacheAction(this._clip);
+      mixer.uncacheClip(this._clip);
+      this._clip = undefined;
+    }
+  }
+
   /**
    * VRMアニメーションを読み込む
    *
@@ -79,23 +111,15 @@ export class Model {
    */
   public async loadAnimation(vrmAnimation: VRMAnimation): Promise<void> {
     const { vrm, mixer } = this;
-    if (!vrm || !mixer) {
-      console.error('You have to load VRM first');
-      return;
-    }
-    if (this._action) this._action.stop();
-    if (this._clip) {
-      mixer.uncacheAction(this._clip);
-      mixer.uncacheClip(this._clip);
-      this._clip = undefined;
-    }
 
-    const clip = vrmAnimation.createAnimationClip(vrm);
-
-    const action = mixer.clipAction(clip);
-    action.play();
-    this._action = action;
-    this._clip = clip;
+    if (vrm && mixer) {
+      this.disposeAll();
+      const clip = vrmAnimation.createAnimationClip(vrm);
+      const action = mixer.clipAction(clip);
+      action.play();
+      this._action = action;
+      this._clip = clip;
+    }
   }
 
   public async loadIdleAnimation() {
@@ -107,13 +131,7 @@ export class Model {
     const { vrm, mixer } = this;
 
     if (vrm && mixer) {
-      mixer.stopAllAction();
-      if (this._action) this._action.stop();
-      if (this._clip) {
-        mixer.uncacheAction(this._clip);
-        mixer.uncacheClip(this._clip);
-        this._clip = undefined;
-      }
+      this.disposeAll();
       // Load animation
       const clip = await loadMixamoAnimation(animationUrl, vrm);
       // Apply the loaded animation to mixer and play
@@ -126,32 +144,32 @@ export class Model {
 
   /**
    * 播放舞蹈
-   * @param buffer ArrayBuffer
+   * @param audio ArrayBuffer
+   * @param dance ArrayBuffer
    */
-  public async dance(buffer: ArrayBuffer) {
+  public async dance(dance: ArrayBuffer, audio?: ArrayBuffer) {
     const { vrm, mixer } = this;
     if (vrm && mixer) {
-      mixer.stopAllAction();
-      if (this._action) this._action.stop();
-      if (this._clip) {
-        mixer.uncacheAction(this._clip);
-        mixer.uncacheClip(this._clip);
-        this._clip = undefined;
-      }
-      const animation = convert(buffer, toOffset(vrm));
+      this.disposeAll();
+      const animation = convert(dance, toOffset(vrm));
       const clip = bindToVRM(animation, vrm);
       const action = mixer.clipAction(clip);
       action.play(); // play animation
+      if (audio) {
+        this._audioPlayer?.playFromArrayBuffer(audio);
+        this._audio = audio;
+      }
+
       this._action = action;
       this._clip = clip;
     }
   }
 
-  public async stopDance() {
+  public async resetToIdle() {
     const { vrm, mixer } = this;
     if (vrm && mixer) {
-      mixer.stopAllAction();
-      this.ikHandler?.disableAll();
+      this.disposeAll();
+
       await this.loadIdleAnimation();
     }
   }
