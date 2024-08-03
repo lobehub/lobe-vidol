@@ -29,7 +29,7 @@ const useStyles = createStyles(({ css, token }) => ({
   list: css`
     overflow-y: scroll;
     width: 100%;
-    padding: 0 ${token.padding}px;
+    padding: 0 ${token.paddingSM}px;
   `,
   player: css`
     width: 100%;
@@ -41,7 +41,7 @@ const useStyles = createStyles(({ css, token }) => ({
 
 const PlayList = (props: PlayListProps) => {
   const playlist = useDanceStore((s) => s.playlist);
-  const { t } = useTranslation(['panel', 'features']);
+  const { t } = useTranslation(['panel', 'common']);
   const { className, style } = props;
   const { styles } = useStyles();
 
@@ -49,7 +49,7 @@ const PlayList = (props: PlayListProps) => {
     <Flexbox className={classNames(className, styles.container)} style={style}>
       <Flexbox className={styles.list} flex={1}>
         <Header
-          title={t('info.playlist', { ns: 'features' })}
+          title={t('playlist', { ns: 'common' })}
           extra={
             <Space>
               <Dance key={'dance'} />

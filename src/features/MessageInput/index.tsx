@@ -9,7 +9,6 @@ import { useTranslation } from 'react-i18next';
 import { Center, Flexbox } from 'react-layout-kit';
 
 import StopLoadingIcon from '@/components/StopLoading';
-import History from '@/features/Actions/History';
 import Record from '@/features/Actions/Record';
 import TokenMini from '@/features/Actions/TokenMini';
 import Voice from '@/features/Actions/Voice';
@@ -76,7 +75,6 @@ const InputArea = memo((props: InputAreaProps) => {
         </Space>
         <Space size={4}>
           <Voice key={'voice'} />
-          <History key={'history'} />
         </Space>
       </Flexbox>
       <Flexbox width={'100%'} horizontal gap={4}>

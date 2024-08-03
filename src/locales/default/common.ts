@@ -14,6 +14,7 @@ export default {
   selectInDanceList: '请从舞蹈列表中选取',
   inputStartChat: '请输入内容开始聊天',
   playlist: '播放列表',
+  history: '聊天记录',
   cancel: '取消',
   confirm: '确定',
   search: '搜索',

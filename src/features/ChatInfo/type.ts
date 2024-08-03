@@ -1,5 +1,5 @@
 export enum Tab {
-  History = 'history',
+  ChatList = 'chats',
   Motions = 'motions',
   PlayList = 'playlist',
   Posture = 'posture',

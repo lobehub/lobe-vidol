@@ -24,7 +24,7 @@ import SideBar from './SideBar';
 const useStyles = createStyles(({ css, token }) => ({
   container: css`
     height: 100%;
-    padding: 0 16px;
+    padding: 0 ${token.paddingSM}px;
     background-color: rgba(255, 255, 255, 2%);
     border-radius: ${token.borderRadius}px;
   `,

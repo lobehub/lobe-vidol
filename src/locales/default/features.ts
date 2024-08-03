@@ -67,7 +67,7 @@ export default {
     nickName: '请输入昵称',
   },
   info: {
-    history: '聊天记录',
+    chat: '聊天',
     dance: '舞蹈',
     motions: '动作',
     posture: '姿势',

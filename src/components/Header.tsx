@@ -1,9 +1,12 @@
 import { createStyles } from 'antd-style';
+import classNames from 'classnames';
 import React from 'react';
 import { Flexbox } from 'react-layout-kit';
 
 interface HeaderProps {
+  className?: string;
   extra?: React.ReactNode;
+  style?: React.CSSProperties;
   title: React.ReactNode;
 }
 
@@ -22,9 +25,14 @@ const useStyles = createStyles(({ css, token }) => ({
 
 export default (props: HeaderProps) => {
   const { styles } = useStyles();
-  const { title, extra } = props;
+  const { title, extra, style, className } = props;
   return (
-    <Flexbox justify="space-between" horizontal className={styles.header}>
+    <Flexbox
+      justify="space-between"
+      horizontal
+      className={classNames(styles.header, className)}
+      style={style}
+    >
       <div className={styles.title}>{title}</div>
       {extra}
     </Flexbox>
