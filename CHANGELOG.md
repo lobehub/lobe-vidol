@@ -2,6 +2,37 @@
 
 # Changelog
 
+## [Version&nbsp;0.22.0](https://github.com/lobehub/lobe-vidol/compare/v0.21.0...v0.22.0)
+<sup>Released on **2024-08-03**</sup>
+
+
+#### ✨ Features
+
+- **misc**: 添加重置舞蹈动作.
+
+
+<br/>
+
+
+
+<details>
+<summary><kbd>Improvements and Fixes</kbd></summary>
+
+
+
+#### What's improved
+
+* **misc**: 添加重置舞蹈动作 ([054d94a](https://github.com/lobehub/lobe-vidol/commit/054d94a))
+
+</details>
+
+
+<div align="right">
+
+[![](https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square)](#readme-top)
+
+</div>
+
 ## [Version&nbsp;0.21.0](https://github.com/lobehub/lobe-vidol/compare/v0.20.0...v0.21.0)
 <sup>Released on **2024-08-03**</sup>
 
