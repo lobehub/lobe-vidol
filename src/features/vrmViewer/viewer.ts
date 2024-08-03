@@ -94,6 +94,7 @@ export class Viewer {
     this._renderer = new THREE.WebGLRenderer({
       alpha: true,
       antialias: true,
+      // for canvas three capture
       preserveDrawingBuffer: true,
       canvas: canvas,
     });

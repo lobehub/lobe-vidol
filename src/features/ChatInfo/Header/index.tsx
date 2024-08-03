@@ -32,7 +32,7 @@ export default (props: Props) => {
             key: Tab.History,
           },
           {
-            label: t('info.playlist'),
+            label: t('info.dance'),
             key: Tab.PlayList,
           },
           {

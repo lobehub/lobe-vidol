@@ -1,8 +1,7 @@
-import { ActionIcon, Avatar } from '@lobehub/ui';
+import { Avatar } from '@lobehub/ui';
 import { Progress, Typography } from 'antd';
 import classNames from 'classnames';
 import { isEqual } from 'lodash-es';
-import { ListMusic } from 'lucide-react';
 import React, { memo, useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -102,7 +101,6 @@ function Player(props: PlayerProps) {
             </Typography.Text>
             <Control />
             <div className={styles.right}>
-              <ActionIcon icon={ListMusic} onClick={() => setOpen(true)} title={t('playlist')} />
               <Volume audioRef={ref} setVolume={setVolume} volume={volume} />
             </div>
           </div>

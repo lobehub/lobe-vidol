@@ -68,7 +68,7 @@ export default {
   },
   info: {
     history: '聊天记录',
-    playlist: '播放列表',
+    dance: '舞蹈',
     motions: '动作',
     posture: '姿势',
   },

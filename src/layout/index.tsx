@@ -1,8 +1,7 @@
 import { PrimaryColors } from '@lobehub/ui';
 import { ThemeAppearance } from 'antd-style';
-import dynamic from 'next/dynamic';
 import { cookies, headers } from 'next/headers';
-import { FC, ReactNode } from 'react';
+import { ReactNode } from 'react';
 import { resolveAcceptLanguage } from 'resolve-accept-language';
 
 import { LOBE_LOCALE_COOKIE } from '@/constants/locale';
@@ -15,11 +14,11 @@ import { getAntdLocale } from '@/utils/locale';
 
 import Locale from './Locale';
 
-let DebugUI: FC = () => null;
-
-if (process.env.NODE_ENV === 'development') {
-  DebugUI = dynamic(() => import('@/features/DebugUI'), { ssr: false }) as FC;
-}
+// let DebugUI: FC = () => null;
+//
+// if (process.env.NODE_ENV === 'development') {
+//   DebugUI = dynamic(() => import('@/features/DebugUI'), { ssr: false }) as FC;
+// }
 
 export interface LayoutProps {
   children?: ReactNode;
@@ -58,7 +57,7 @@ const Layout = async (props: LayoutProps) => {
           defaultNeutralColor={neutralColor?.value as any}
           defaultPrimaryColor={primaryColor?.value as any}
         >
-          <DebugUI />
+          {/*<DebugUI />*/}
           <StoreHydration />
           {children}
         </AppTheme>

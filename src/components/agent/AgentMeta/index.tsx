@@ -27,7 +27,7 @@ export default (props: AgentMetaProps) => {
             {name} <ModelSelect />
           </Space>
         </div>
-        <Typography.Text className={styles.desc} ellipsis>
+        <Typography.Text className={styles.desc} ellipsis={{ tooltip: true }}>
           {description}
         </Typography.Text>
       </div>

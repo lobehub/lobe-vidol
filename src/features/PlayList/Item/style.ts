@@ -23,9 +23,13 @@ const useStyles = createStyles(({ css, token }) => ({
     color: ${token.colorText};
   `,
   listItem: css`
+    position: relative;
+
     height: 64px;
     margin-block: 2px;
+
     font-size: ${token.fontSize}px;
+
     border-radius: ${token.borderRadius}px;
   `,
 }));
