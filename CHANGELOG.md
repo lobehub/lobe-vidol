@@ -2,6 +2,52 @@
 
 # Changelog
 
+## [Version&nbsp;0.21.0](https://github.com/lobehub/lobe-vidol/compare/v0.20.0...v0.21.0)
+<sup>Released on **2024-08-03**</sup>
+
+
+#### ✨ Features
+
+- **misc**: 优化聊天记录页面, 优化舞蹈播放页面, 添加拍照功能, 添加舞蹈播放列表, 调整网站架构.
+
+
+#### 🐛 Bug Fixes
+
+- **misc**: List item height.
+
+
+<br/>
+
+
+
+<details>
+<summary><kbd>Improvements and Fixes</kbd></summary>
+
+
+
+#### What's improved
+
+* **misc**: 优化聊天记录页面 ([b063ad5](https://github.com/lobehub/lobe-vidol/commit/b063ad5))
+* **misc**: 优化舞蹈播放页面 ([71e213c](https://github.com/lobehub/lobe-vidol/commit/71e213c))
+* **misc**: 添加拍照功能 ([6b2b0a7](https://github.com/lobehub/lobe-vidol/commit/6b2b0a7))
+* **misc**: 添加舞蹈播放列表 ([d72c6cd](https://github.com/lobehub/lobe-vidol/commit/d72c6cd))
+* **misc**: 调整网站架构 ([8a78dcc](https://github.com/lobehub/lobe-vidol/commit/8a78dcc))
+
+
+
+#### What's fixed
+
+* **misc**: List item height ([bb1e8e0](https://github.com/lobehub/lobe-vidol/commit/bb1e8e0))
+
+</details>
+
+
+<div align="right">
+
+[![](https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square)](#readme-top)
+
+</div>
+
 ## [Version&nbsp;0.20.0](https://github.com/lobehub/lobe-vidol/compare/v0.19.0...v0.20.0)
 <sup>Released on **2024-08-01**</sup>
 
