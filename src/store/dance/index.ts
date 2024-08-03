@@ -6,15 +6,13 @@ import { createWithEqualityFn } from 'zustand/traditional';
 import storage from '@/utils/storage';
 
 import { DanceListStore, createDanceStore } from './slices/dancelist';
-import { PlayListStore, createPlayListStore } from './slices/playlist';
 
-export type DanceStore = DanceListStore & PlayListStore;
+export type DanceStore = DanceListStore;
 
 export const DANCE_STORAGE_KEY = 'vidol-chat-dance-storage';
 
 const createStore: StateCreator<DanceStore, [['zustand/devtools', never]]> = (...parameters) => ({
   ...createDanceStore(...parameters),
-  ...createPlayListStore(...parameters),
 });
 
 const persistOptions: PersistOptions<DanceStore> = {

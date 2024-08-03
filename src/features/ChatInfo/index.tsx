@@ -8,8 +8,8 @@ import { Flexbox } from 'react-layout-kit';
 
 import { CHAT_HEADER_HEIGHT, CHAT_INFO_MAX_WIDTH, CHAT_INFO_WIDTH } from '@/constants/token';
 import ChatList from '@/features/ChatList';
+import DanceList from '@/features/DanceList';
 import MotionList from '@/features/MotionList';
-import PlayList from '@/features/PlayList';
 import PostureList from '@/features/PostureList';
 import { useGlobalStore } from '@/store/global';
 
@@ -63,7 +63,7 @@ export default () => {
             },
             {
               label: t('info.dance'),
-              key: Tab.PlayList,
+              key: Tab.DanceList,
             },
             {
               label: t('info.motions'),
@@ -81,7 +81,7 @@ export default () => {
       </Flexbox>{' '}
       <Flexbox height={'calc(100vh - 128px)'}>
         {tab === Tab.ChatList && <ChatList />}
-        {tab === Tab.PlayList && <PlayList />}
+        {tab === Tab.DanceList && <DanceList />}
         {tab === Tab.Motions && <MotionList />}
         {tab === Tab.Posture && <PostureList />}
       </Flexbox>

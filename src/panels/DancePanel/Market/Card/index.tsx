@@ -1,13 +1,12 @@
 import { DraggablePanel } from '@lobehub/ui';
-import { Button, message } from 'antd';
 import { createStyles } from 'antd-style';
 import React, { memo, useState } from 'react';
-import { useTranslation } from 'react-i18next';
 
 import Author from '@/components/Author';
 import DanceInfo from '@/components/DanceInfo';
 import { SIDEBAR_MAX_WIDTH, SIDEBAR_WIDTH } from '@/constants/token';
 import SubscribeButton from '@/panels/DancePanel/Market/Card/SubscribeButton';
+import UnSubscribeButton from '@/panels/DancePanel/Market/Card/UnSubscribeButton';
 import { danceListSelectors, useDanceStore } from '@/store/dance';
 import { marketStoreSelectors, useMarketStore } from '@/store/market';
 
@@ -34,45 +33,24 @@ const Header = () => {
     ],
   );
 
-  const [subscribed, addAndPlayItem, addToPlayList] = useDanceStore((s) => [
-    danceListSelectors.subscribed(s),
-    s.addAndPlayItem,
-    s.addToPlayList,
-  ]);
-  const { t } = useTranslation('panel');
+  const [subscribed] = useDanceStore((s) => [danceListSelectors.subscribed(s)]);
 
   const actions = [];
   if (currentDanceItem) {
     const isSubscribed = subscribed(currentDanceItem.danceId);
 
     if (isSubscribed) {
-      actions.push([
-        <Button
-          key="play"
-          onClick={() => {
-            if (currentDanceItem) {
-              addAndPlayItem(currentDanceItem.danceId);
-            }
-          }}
-          type={'primary'}
-        >
-          {t('dance.play')}
-        </Button>,
-        <Button
-          key="add"
-          onClick={() => {
-            if (currentDanceItem) {
-              addToPlayList(currentDanceItem.danceId);
-              message.success(t('dance.addPlaySuccess'));
-            }
-          }}
-        >
-          {t('dance.addPlay')}
-        </Button>,
-      ]);
+      actions.push(
+        <UnSubscribeButton
+          dance={currentDanceItem}
+          key={`${currentDanceItem.danceId}-unsubscribe`}
+        />,
+      );
+    } else {
+      actions.push(
+        <SubscribeButton dance={currentDanceItem} key={`${currentDanceItem.danceId}-subscribe`} />,
+      );
     }
-
-    actions.push(<SubscribeButton dance={currentDanceItem} key={'subscribe'} />);
   }
 
   return (

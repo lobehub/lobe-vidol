@@ -49,6 +49,7 @@ export default {
     cameraControl: '镜头控制',
     floor: '切换地板',
     resetCamera: '重置镜头',
+    resetToIdle: '停止舞蹈动作',
     screenShot: '拍照',
     grid: '网格',
     axes: '坐标轴',

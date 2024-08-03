@@ -1,6 +1,6 @@
 import { ActionIconGroup } from '@lobehub/ui';
 import dayjs from 'dayjs';
-import { Aperture, Axis3D, Grid3x3, Orbit, RotateCw, SwitchCamera } from 'lucide-react';
+import { Aperture, Axis3D, Grid3x3, Orbit, Power, SwitchCamera } from 'lucide-react';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -41,7 +41,12 @@ const ToolBar = (props: ToolBarProps) => {
       dropdownMenu={dropdownMenu}
       items={[
         {
-          icon: RotateCw,
+          icon: Power,
+          key: 'power',
+          label: t('toolBar.resetToIdle'),
+        },
+        {
+          icon: SwitchCamera,
           key: 'resetCamera',
           label: t('toolBar.resetCamera'),
         },
@@ -61,6 +66,10 @@ const ToolBar = (props: ToolBarProps) => {
           case 'resetCamera': {
             viewer.resetCamera();
 
+            break;
+          }
+          case 'power': {
+            viewer.model?.resetToIdle();
             break;
           }
           case 'screenShot': {
@@ -103,6 +112,7 @@ const ToolBar = (props: ToolBarProps) => {
       }}
       style={style}
       type={'block'}
+      size={'normal'}
     />
   );
 };

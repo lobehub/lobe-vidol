@@ -1,3 +1,4 @@
+import { isArrayBuffer } from 'lodash-es';
 import { useState } from 'react';
 
 import { fetchWithProgress } from '@/utils/fetch';
@@ -8,30 +9,34 @@ export const useLoadAudio = () => {
   const [downloading, setDownloading] = useState(false);
   const [percent, setPercent] = useState(0);
 
-  const fetchAudioUrl = async (danceId: string, audioUrl: string) => {
+  const fetchAudioBuffer = async (danceId: string, audioUrl: string) => {
     const localAudioPath = getAudioPathByDanceId(danceId);
-    let audioBlob = (await storage.getItem(localAudioPath)) as Blob;
+    let audioBuffer = (await storage.getItem(localAudioPath)) as ArrayBuffer;
+    // 存量转换
+    if (audioBuffer && !isArrayBuffer(audioBuffer)) {
+      audioBuffer = await (audioBuffer as Blob).arrayBuffer();
+    }
     try {
-      if (!audioBlob) {
+      if (!audioBuffer) {
         setDownloading(true);
         setPercent(0);
 
-        audioBlob = await fetchWithProgress(audioUrl, {
+        audioBuffer = await fetchWithProgress(audioUrl, {
           onProgress: (loaded, total) => {
             setPercent((loaded / total) * 100);
           },
-        });
-        await storage.setItem(localAudioPath, audioBlob);
+        }).then((res) => res.arrayBuffer());
+        await storage.setItem(localAudioPath, audioBuffer);
       }
     } finally {
       setDownloading(false);
     }
-    return URL.createObjectURL(audioBlob);
+    return audioBuffer;
   };
 
   return {
     downloading,
     percent,
-    fetchAudioUrl,
+    fetchAudioBuffer,
   };
 };

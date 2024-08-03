@@ -44,8 +44,8 @@ const Header = () => {
 
     if (isSubscribed) {
       actions.push(
-        <ChatButton key="chat" agent={currentAgentItem} />,
-        <UnSubscribe key="unsubscribe" agent={currentAgentItem} />,
+        <ChatButton key={`${currentAgentItem.agentId}-chat`} agent={currentAgentItem} />,
+        <UnSubscribe key={`${currentAgentItem.agentId}-unsubscribe`} agent={currentAgentItem} />,
       );
     } else {
       actions.push(

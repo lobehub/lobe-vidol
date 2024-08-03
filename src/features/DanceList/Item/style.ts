@@ -13,6 +13,11 @@ const useStyles = createStyles(({ css, token }) => ({
 
     background-color: ${token.colorBgMask};
   `,
+  progress: css`
+    background-color: rgba(${token.colorBgLayout}, 0.8);
+    backdrop-filter: saturate(180%) blur(10px);
+    border-radius: 100%;
+  `,
   playIcon: css`
     position: absolute;
     top: 50%;

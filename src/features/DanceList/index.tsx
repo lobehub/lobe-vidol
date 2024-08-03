@@ -1,18 +1,17 @@
-/* eslint-disable @next/next/no-img-element */
-import { Empty, Space } from 'antd';
+import { ActionIcon } from '@lobehub/ui';
+import { Empty } from 'antd';
 import { createStyles } from 'antd-style';
 import classNames from 'classnames';
+import { PlusCircle } from 'lucide-react';
 import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Center, Flexbox } from 'react-layout-kit';
+import { Flexbox } from 'react-layout-kit';
 
 import Header from '@/components/Header';
-import AudioPlayer from '@/features/AudioPlayer';
-import ClearPlayList from '@/features/PlayList/Actions/ClearPlayList';
-import Dance from '@/features/PlayList/Actions/Dance';
 import { useDanceStore } from '@/store/dance';
+import { useGlobalStore } from '@/store/global';
 
-import PlayItem from './Item';
+import DanceItem from './Item';
 
 interface PlayListProps {
   className?: string;
@@ -39,37 +38,39 @@ const useStyles = createStyles(({ css, token }) => ({
   `,
 }));
 
-const PlayList = (props: PlayListProps) => {
-  const playlist = useDanceStore((s) => s.playlist);
+const DanceList = (props: PlayListProps) => {
+  const danceList = useDanceStore((s) => s.danceList);
+  const [openPanel] = useGlobalStore((s) => [s.openPanel]);
+
   const { t } = useTranslation(['panel', 'common']);
   const { className, style } = props;
   const { styles } = useStyles();
 
   return (
-    <Flexbox className={classNames(className, styles.container)} style={style}>
+    <Flexbox className={classNames(className, styles.container)} style={style} id={'dance-list'}>
       <Flexbox className={styles.list} flex={1}>
         <Header
-          title={t('playlist', { ns: 'common' })}
+          title={t('danceList', { ns: 'common' })}
           extra={
-            <Space>
-              <Dance key={'dance'} />
-              <ClearPlayList key={'clear'} />
-            </Space>
+            <ActionIcon
+              icon={PlusCircle}
+              onClick={() => {
+                openPanel('dance');
+              }}
+              title={t('dance.musicAndDance')}
+            />
           }
         />
 
-        {playlist.map((id) => {
-          return <PlayItem playItemId={id} key={id} />;
+        {danceList.map((item) => {
+          return <DanceItem danceItem={item} key={item.danceId} />;
         })}
-        {playlist.length === 0 ? (
+        {danceList.length === 0 ? (
           <Empty description={t('dance.noPlayList')} image={Empty.PRESENTED_IMAGE_SIMPLE}></Empty>
         ) : null}
       </Flexbox>
-      <Center className={styles.player}>
-        <AudioPlayer />
-      </Center>
     </Flexbox>
   );
 };
 
-export default memo(PlayList);
+export default memo(DanceList);

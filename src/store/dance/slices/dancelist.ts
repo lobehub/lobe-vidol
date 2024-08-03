@@ -12,13 +12,13 @@ export interface DanceListStore {
   activateDance: (identifier: string) => void;
   addDanceItem: (dance: Dance) => void;
   currentIdentifier: string;
+  currentPlayId: string;
   danceList: Dance[];
   danceLoading: boolean;
   deactivateDance: () => void;
   fetchDanceIndex: () => void;
-  isPlaying: boolean;
   removeDanceItem: (danceId: string) => Promise<void>;
-  setIsPlaying: (isPlaying: boolean) => void;
+  setCurrentPlayId: (danceId: string) => void;
 }
 
 export const createDanceStore: StateCreator<
@@ -32,6 +32,7 @@ export const createDanceStore: StateCreator<
       set({ currentIdentifier: identifier });
     },
     currentIdentifier: '',
+    currentPlayId: '',
     danceList: [],
     danceLoading: false,
     deactivateDance: () => {
@@ -49,10 +50,7 @@ export const createDanceStore: StateCreator<
         set({ danceLoading: false });
       }
     },
-    isPlaying: false,
-    setIsPlaying: (isPlaying) => {
-      set({ isPlaying });
-    },
+
     addDanceItem: (dance) => {
       const { danceList } = get();
 
@@ -64,6 +62,10 @@ export const createDanceStore: StateCreator<
         }
       });
       set({ danceList: newList });
+    },
+
+    setCurrentPlayId: (danceId) => {
+      set({ currentPlayId: danceId });
     },
     removeDanceItem: async (danceId) => {
       const { danceList } = get();
