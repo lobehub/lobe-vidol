@@ -5,7 +5,7 @@ import { shallow } from 'zustand/shallow';
 import { createWithEqualityFn } from 'zustand/traditional';
 
 import { INITIAL_COORDINATES } from '@/constants/token';
-import { Viewer } from '@/features/vrmViewer/viewer';
+import { Viewer } from '@/libs/vrmViewer/viewer';
 import { Panel, PanelConfig, PanelKey } from '@/types/config';
 
 export * from './selectors/panel';

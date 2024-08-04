@@ -8,30 +8,34 @@ export const useLoadModel = () => {
   const [downloading, setDownloading] = useState(false);
   const [percent, setPercent] = useState(0);
 
-  const fetchModelBlob = async (agentId: string, modelUrl: string) => {
-    setDownloading(true);
-    setPercent(0);
-    try {
-      const blob = await fetchWithProgress(modelUrl, {
-        onProgress: (loaded, total) => {
-          setPercent(Math.ceil((loaded / total) * 100));
-        },
-      });
-      const modelPath = getModelPathByAgentId(agentId);
-      await storage.setItem(modelPath, blob);
+  const fetchModelUrl = async (agentId: string, remoteModelUrl: string) => {
+    const localModelPath = getModelPathByAgentId(agentId);
+    let modelBlob = await storage.getItem(localModelPath);
 
-      return blob;
+    try {
+      if (!modelBlob) {
+        setDownloading(true);
+        setPercent(0);
+        const blob = await fetchWithProgress(remoteModelUrl, {
+          onProgress: (loaded, total) => {
+            setPercent(Math.ceil((loaded / total) * 100));
+          },
+        });
+        const modelPath = getModelPathByAgentId(agentId);
+        await storage.setItem(modelPath, blob);
+      }
     } catch (e) {
       console.error(e);
       return null;
     } finally {
       setDownloading(false);
     }
+    return URL.createObjectURL(modelBlob);
   };
 
   return {
     downloading,
     percent,
-    fetchModelBlob,
+    fetchModelUrl,
   };
 };

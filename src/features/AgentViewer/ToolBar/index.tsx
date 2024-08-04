@@ -4,7 +4,7 @@ import { Aperture, Axis3D, Grid3x3, Orbit, Power, SwitchCamera } from 'lucide-re
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { Viewer } from '@/features/vrmViewer/viewer';
+import { Viewer } from '@/libs/vrmViewer/viewer';
 
 interface ToolBarProps {
   className?: string;

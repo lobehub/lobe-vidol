@@ -13,10 +13,9 @@ import IKHandler from '@/libs/VMDAnimation/vrm-ik-handler';
 import { VRMAnimation } from '@/libs/VRMAnimation/VRMAnimation';
 import { loadVRMAnimation } from '@/libs/VRMAnimation/loadVRMAnimation';
 import { VRMLookAtSmootherLoaderPlugin } from '@/libs/VRMLookAtSmootherLoaderPlugin/VRMLookAtSmootherLoaderPlugin';
+import { EmoteController } from '@/libs/emoteController/emoteController';
+import { LipSync } from '@/libs/lipSync/lipSync';
 import { Screenplay } from '@/types/touch';
-
-import { EmoteController } from '../emoteController/emoteController';
-import { LipSync } from '../lipSync/lipSync';
 
 /**
  * 3Dキャラクターを管理するクラス
@@ -155,7 +154,7 @@ export class Model {
   }
 
   /**
-   * 播放舞蹈
+   * 播放舞蹈，以音乐文件的播放作为结束标志。
    * @param audio
    * @param dance
    */
