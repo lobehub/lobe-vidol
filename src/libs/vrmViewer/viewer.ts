@@ -27,7 +27,7 @@ export class Viewer {
     this._scene = scene;
 
     // 方向光
-    const directionalLight = new THREE.DirectionalLight(0xFF_FF_FF, Math.PI);
+    const directionalLight = new THREE.DirectionalLight(0xff_ff_ff, Math.PI);
     directionalLight.position.set(1, 1, 1).normalize();
     scene.add(directionalLight);
 
@@ -142,7 +142,7 @@ export class Viewer {
       this._scene.remove(this._gridHelper);
       this._gridHelper = undefined;
     } else {
-      this._gridHelper = new GridHelper(50, 100, 0xAA_AA_AA, 0xAA_AA_AA);
+      this._gridHelper = new GridHelper(50, 100, 0xaa_aa_aa, 0xaa_aa_aa);
       this._scene.add(this._gridHelper);
     }
   }

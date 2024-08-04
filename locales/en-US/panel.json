@@ -2,6 +2,7 @@
   "animation": {
     "animationList": "Character animation list",
     "noAnimations": "No animations available",
+    "postureList": "Posture List",
     "totalCount": "Total {{total}} items"
   },
   "dance": {
@@ -9,6 +10,7 @@
     "addPlaySuccess": "Added to playlist",
     "cancelAddPlay": "Are you sure you want to cancel subscribing to {{musicName}}?",
     "cancelSubscribed": "Unsubscribe",
+    "confirmClearPlayList": "",
     "findDance": "Find your favorite dance",
     "musicAndDance": "Music and Dance",
     "noPlayList": "No playlist available, you can subscribe to your favorite dances through the market",

@@ -1,11 +1,19 @@
 {
+  "animation": {
+    "animationList": "Danh sách hành động",
+    "noAnimations": "Chưa có thư viện hoạt ảnh",
+    "postureList": "Danh sách tư thế",
+    "totalCount": "Tổng cộng {{total}} mục"
+  },
   "dance": {
     "addPlay": "Thêm vào danh sách",
     "addPlaySuccess": "Đã thêm vào danh sách phát",
     "cancelAddPlay": "Bạn có chắc muốn hủy đăng ký âm nhạc {{musicName}} không?",
     "cancelSubscribed": "Hủy đăng ký",
+    "confirmClearPlayList": "",
     "findDance": "Tìm kiếm những bước nhảy bạn yêu thích",
     "musicAndDance": "Âm nhạc và nhảy múa",
+    "noPlayList": "Chưa có danh sách phát nào, bạn có thể đăng ký các bản nhảy yêu thích của mình thông qua thị trường",
     "play": "Phát"
   },
   "info": {
@@ -25,8 +33,12 @@
     "greetLabel": "Chào hỏi",
     "modelDescription": "Xem trước mô hình, kéo thả tệp mô hình để thay thế",
     "modelLabel": "Xem trước mô hình",
+    "motionCategoryLabel": "Danh mục hành động",
+    "motionDescription": "Chọn hành động phản ứng, sẽ ảnh hưởng đến hành vi hành động của nhân vật",
+    "motionLabel": "Hành động",
     "nameDescription": "Tên nhân vật, được gọi khi trò chuyện với nhân vật",
     "nameLabel": "Tên",
+    "postureCategoryLabel": "Danh mục tư thế",
     "readmeDescription": "Tài liệu hướng dẫn về nhân vật, dùng để hiển thị thông tin chi tiết về nhân vật trên trang khám phá",
     "readmeLabel": "Hướng dẫn nhân vật",
     "textDescription": "Tùy chỉnh văn bản phản hồi",
@@ -69,6 +81,7 @@
     "addAction": "Thêm hành động phản ứng",
     "editAction": "Chỉnh sửa hành động phản ứng",
     "inputActionEmotion": "Nhập tâm trạng của nhân vật khi phản ứng",
+    "inputActionMotion": "Vui lòng nhập hành động khi nhân vật phản ứng",
     "inputActionText": "Nhập văn bản phản ứng",
     "inputDIYText": "Nhập văn bản tùy chỉnh",
     "noTouchActions": "Không có hành động tương tác được xác định, bạn có thể thêm bằng cách nhấn vào nút '+'",

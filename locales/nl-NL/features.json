@@ -16,9 +16,9 @@
     "startTitle": "Aangepaste API Key"
   },
   "info": {
-    "history": "chatgeschiedenis",
+    "chat": "Chat",
+    "dance": "Dans",
     "motions": "bewegingen",
-    "playlist": "afspeellijst",
     "posture": "houding"
   },
   "mode": {
@@ -68,6 +68,8 @@
     "downloadModel": "Model downloaden, even geduld aub...",
     "floor": "Verander vloer",
     "grid": "Raster",
-    "resetCamera": "Camera resetten"
+    "resetCamera": "Camera resetten",
+    "resetToIdle": "Stop dansbewegingen",
+    "screenShot": "Screenshot"
   }
 }

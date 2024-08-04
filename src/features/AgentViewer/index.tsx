@@ -7,8 +7,6 @@ import PageLoading from '@/components/PageLoading';
 import { useLoadModel } from '@/hooks/useLoadModel';
 import { useGlobalStore } from '@/store/global';
 import { Agent } from '@/types/agent';
-import { getModelPathByAgentId } from '@/utils/file';
-import storage from '@/utils/storage';
 
 import ToolBar from './ToolBar';
 import { useStyles } from './style';
@@ -28,24 +26,14 @@ function AgentViewer(props: Props) {
   const viewer = useGlobalStore((s) => s.viewer);
   const { t } = useTranslation('features');
 
-  const { downloading, percent, fetchModelBlob } = useLoadModel();
+  const { downloading, percent, fetchModelUrl } = useLoadModel();
 
   const canvasRef = useCallback(
     (canvas: HTMLCanvasElement) => {
       if (canvas) {
         viewer.setup(canvas);
-        const modelPath = getModelPathByAgentId(agent.agentId);
-        storage.getItem(modelPath).then((blob) => {
-          if (!blob) {
-            viewer.unloadVRM();
-            fetchModelBlob(agent.agentId, agent.meta.model!).then((res) => {
-              if (res) {
-                const modelUrl = URL.createObjectURL(res);
-                viewer.loadVrm(modelUrl);
-              }
-            });
-          } else {
-            const modelUrl = URL.createObjectURL(blob as Blob);
+        fetchModelUrl(agent.agentId, agent.meta.model!).then((modelUrl) => {
+          if (modelUrl) {
             viewer.loadVrm(modelUrl);
           }
         });
@@ -85,10 +73,9 @@ function AgentViewer(props: Props) {
               break;
             }
             case 'vmd': {
-              file.arrayBuffer().then((data) => {
-                viewer.model?.dance(data);
-              });
-
+              const blob = new Blob([file], { type: 'application/octet-stream' });
+              const url = window.URL.createObjectURL(blob);
+              viewer.model?.loadVMD(url);
               break;
             }
             // No default

@@ -16,9 +16,9 @@
     "startTitle": "自定義 API Key"
   },
   "info": {
-    "history": "聊天記錄",
+    "chat": "聊天",
+    "dance": "舞蹈",
     "motions": "動作",
-    "playlist": "播放清單",
     "posture": "姿勢"
   },
   "mode": {
@@ -68,6 +68,8 @@
     "downloadModel": "模型下載中，請稍後...",
     "floor": "切換地板",
     "grid": "網格",
-    "resetCamera": "重設鏡頭"
+    "resetCamera": "重設鏡頭",
+    "resetToIdle": "停止舞蹈動作",
+    "screenShot": "截圖"
   }
 }

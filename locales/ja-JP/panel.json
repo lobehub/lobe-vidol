@@ -2,6 +2,7 @@
   "animation": {
     "animationList": "キャラクターのアニメーションリスト",
     "noAnimations": "アニメーションがありません",
+    "postureList": "ポーズリスト",
     "totalCount": "合計 {{total}} 項目"
   },
   "dance": {
@@ -9,6 +10,7 @@
     "addPlaySuccess": "再生リストに追加されました",
     "cancelAddPlay": "音楽{{musicName}}の購読をキャンセルしますか？",
     "cancelSubscribed": "購読をキャンセルする",
+    "confirmClearPlayList": "",
     "findDance": "お気に入りのダンスを見つける",
     "musicAndDance": "音楽とダンス",
     "noPlayList": "再生リストがありません。市場で好きなダンスをサブスクリプションできます。",

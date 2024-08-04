@@ -16,9 +16,9 @@
     "startTitle": "Customize API Key"
   },
   "info": {
-    "history": "Chat History",
+    "chat": "Chat",
+    "dance": "Dance",
     "motions": "Motions",
-    "playlist": "Playlist",
     "posture": "Posture"
   },
   "mode": {
@@ -68,6 +68,8 @@
     "downloadModel": "Model download in progress, please wait...",
     "floor": "Switch floor",
     "grid": "Grid",
-    "resetCamera": "Reset camera"
+    "resetCamera": "Reset camera",
+    "resetToIdle": "Stop Dancing",
+    "screenShot": "Take a Photo"
   }
 }

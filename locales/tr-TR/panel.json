@@ -2,6 +2,7 @@
   "animation": {
     "animationList": "Karakter hareket listesi",
     "noAnimations": "Hareket kütüphanesi bulunamadı",
+    "postureList": "Poz Listesi",
     "totalCount": "Toplam {{total}} öğe"
   },
   "dance": {
@@ -9,6 +10,7 @@
     "addPlaySuccess": "Oynatma listesine eklendi",
     "cancelAddPlay": "{{musicName}} müziğini abonelikten çıkarmak istediğinize emin misiniz?",
     "cancelSubscribed": "Aboneliği iptal et",
+    "confirmClearPlayList": "",
     "findDance": "Favori dansını bul",
     "musicAndDance": "Müzik ve Dans",
     "noPlayList": "Oynatma listesi bulunamadı, beğendiğiniz dansları pazar üzerinden abone olabilirsiniz",

@@ -1,6 +1,7 @@
 {
   "agent": {
     "gender": {
+      "all": "Tất cả",
       "female": "Nữ",
       "male": "Nam"
     },
@@ -86,6 +87,21 @@
         "neutralA": "Đừng sợ, chân sắt đá của tôi không đá người ngốc",
         "neutralB": "Khiến bạn chạm vào chân tôi, có phải bạn cảm thấy cuộc sống của bạn trọn vẹn hơn không?"
       }
+    },
+    "motion": {
+      "all": "Tất cả",
+      "dance": "Nhảy múa",
+      "normal": "Hằng ngày"
+    },
+    "posture": {
+      "action": "Hành động",
+      "all": "Tất cả",
+      "crouch": "Ngồi xổm",
+      "dance": "Nhảy múa",
+      "laying": "Nằm",
+      "locomotion": "Di chuyển",
+      "sitting": "Ngồi",
+      "standing": "Đứng"
     }
   }
 }

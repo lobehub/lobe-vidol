@@ -2,6 +2,7 @@
   "animation": {
     "animationList": "캐릭터 애니메이션 목록",
     "noAnimations": "애니메이션이 없습니다.",
+    "postureList": "자세 목록",
     "totalCount": "총 {{total}} 항목"
   },
   "dance": {
@@ -9,6 +10,7 @@
     "addPlaySuccess": "재생 목록에 추가되었습니다",
     "cancelAddPlay": "{{musicName}} 음악 구독을 취소 하시겠습니까?",
     "cancelSubscribed": "구독 취소",
+    "confirmClearPlayList": "",
     "findDance": "좋아하는 춤을 찾아보세요",
     "musicAndDance": "음악과 춤",
     "noPlayList": "재생 목록이 없습니다. 시장에서 원하는 댄스를 구독할 수 있습니다.",

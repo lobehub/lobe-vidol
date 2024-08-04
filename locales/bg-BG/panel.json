@@ -2,6 +2,7 @@
   "animation": {
     "animationList": "Списък на движенията на героя",
     "noAnimations": "Няма налични анимации",
+    "postureList": "Списък с позиции",
     "totalCount": "Общо {{total}} елемента"
   },
   "dance": {
@@ -9,6 +10,7 @@
     "addPlaySuccess": "Добавено в списъка за възпроизвеждане",
     "cancelAddPlay": "Сигурни ли сте, че искате да отмените абонамента за музиката {{musicName}}?",
     "cancelSubscribed": "Отказ от абонамент",
+    "confirmClearPlayList": "",
     "findDance": "Намери любимия ти танц",
     "musicAndDance": "Музика и танци",
     "noPlayList": "Няма плейлист, можете да се абонирате за танците, които обичате чрез пазара",

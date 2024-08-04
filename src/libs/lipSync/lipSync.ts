@@ -48,7 +48,10 @@ export class LipSync {
   }
 
   public stopPlay() {
-    if (this.bufferSource) this.bufferSource.stop();
+    if (this.bufferSource) {
+      this.bufferSource.stop();
+      this.bufferSource = undefined;
+    }
   }
 
   public async playFromURL(url: string, onEnded?: () => void) {

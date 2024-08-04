@@ -10,7 +10,8 @@ export const useLoadMotion = () => {
 
   const fetchMotionUrl = async (motionId: string, motionUrl: string) => {
     const localMotionPath = getMotionPathByMotionId(motionId);
-    let motionBlob = (await storage.getItem(localMotionPath)) as Blob;
+    let motionBlob = await storage.getItem(localMotionPath);
+
     try {
       if (!motionBlob) {
         setDownloading(true);
@@ -26,6 +27,9 @@ export const useLoadMotion = () => {
     } finally {
       setDownloading(false);
     }
+
+    if (!motionBlob) return null;
+
     return URL.createObjectURL(motionBlob);
   };
 

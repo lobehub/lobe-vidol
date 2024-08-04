@@ -9,34 +9,38 @@ export const useLoadAudio = () => {
   const [downloading, setDownloading] = useState(false);
   const [percent, setPercent] = useState(0);
 
-  const fetchAudioBuffer = async (danceId: string, audioUrl: string) => {
+  const fetchAudioUrl = async (danceId: string, audioUrl: string) => {
     const localAudioPath = getAudioPathByDanceId(danceId);
-    let audioBuffer = (await storage.getItem(localAudioPath)) as ArrayBuffer;
+    let audioBlob = await storage.getItem(localAudioPath);
     // 存量转换
-    if (audioBuffer && !isArrayBuffer(audioBuffer)) {
-      audioBuffer = await (audioBuffer as Blob).arrayBuffer();
+    if (audioBlob && isArrayBuffer(audioBlob)) {
+      // 如果存的是 ArrayBuffer，设置为空重新下载;
+      audioBlob = null;
     }
+
     try {
-      if (!audioBuffer) {
+      if (!audioBlob) {
         setDownloading(true);
         setPercent(0);
 
-        audioBuffer = await fetchWithProgress(audioUrl, {
+        audioBlob = await fetchWithProgress(audioUrl, {
           onProgress: (loaded, total) => {
             setPercent((loaded / total) * 100);
           },
-        }).then((res) => res.arrayBuffer());
-        await storage.setItem(localAudioPath, audioBuffer);
+        });
+        await storage.setItem(localAudioPath, audioBlob);
       }
     } finally {
       setDownloading(false);
     }
-    return audioBuffer;
+    if (!audioBlob) return null;
+
+    return URL.createObjectURL(audioBlob);
   };
 
   return {
     downloading,
     percent,
-    fetchAudioBuffer,
+    fetchAudioUrl,
   };
 };

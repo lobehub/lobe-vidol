@@ -15,6 +15,12 @@
     "startDesc": "Wprowadź swój klucz API OpenAI, aby rozpocząć rozmowę. Aplikacja nie będzie rejestrować Twojego klucza API",
     "startTitle": "Niestandardowy klucz API"
   },
+  "info": {
+    "chat": "Czat",
+    "dance": "Taniec",
+    "motions": "Ruchy",
+    "posture": "Postawa"
+  },
   "mode": {
     "chat": "Czat",
     "video": "Wideo"
@@ -56,11 +62,14 @@
     "used": "Tokenów użytych"
   },
   "toolBar": {
+    "axes": "Osie",
     "cameraControl": "Kontrola kamery",
     "cameraHelper": "Asystent kamery",
     "downloadModel": "Pobieranie modelu, proszę czekać...",
     "floor": "Przełącz podłogę",
     "grid": "Siatka",
-    "resetCamera": "Zresetuj kamerę"
+    "resetCamera": "Zresetuj kamerę",
+    "resetToIdle": "Zatrzymaj ruch taneczny",
+    "screenShot": "Zrzut ekranu"
   }
 }

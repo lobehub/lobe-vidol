@@ -1,3 +1,4 @@
+import { isArrayBuffer } from 'lodash-es';
 import { useState } from 'react';
 
 import { fetchWithProgress } from '@/utils/fetch';
@@ -8,31 +9,40 @@ export const useLoadDance = () => {
   const [downloading, setDownloading] = useState(false);
   const [percent, setPercent] = useState(0);
 
-  const fetchDanceBuffer = async (danceId: string, src: string) => {
+  const fetchDanceUrl = async (danceId: string, src: string) => {
     const localDancePath = getDancePathByDanceId(danceId);
-    let danceBuffer = (await storage.getItem(localDancePath)) as ArrayBuffer;
+    let danceBlob = await storage.getItem(localDancePath);
+
+    // 存量转换
+    if (danceBlob && isArrayBuffer(danceBlob)) {
+      // 如果存的是 ArrayBuffer，设置为空重新下载;
+      danceBlob = null;
+    }
 
     try {
-      if (!danceBuffer) {
+      if (!danceBlob) {
         setDownloading(true);
         setPercent(0);
 
-        danceBuffer = await fetchWithProgress(src, {
+        danceBlob = await fetchWithProgress(src, {
           onProgress: (loaded, total) => {
             setPercent((loaded / total) * 100);
           },
-        }).then((res) => res.arrayBuffer());
-        await storage.setItem(localDancePath, danceBuffer);
+        });
+        await storage.setItem(localDancePath, danceBlob);
       }
     } finally {
       setDownloading(false);
     }
-    return danceBuffer;
+
+    if (!danceBlob) return null;
+
+    return URL.createObjectURL(danceBlob);
   };
 
   return {
     downloading,
     percent,
-    fetchDanceBuffer,
+    fetchDanceUrl,
   };
 };

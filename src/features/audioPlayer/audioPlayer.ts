@@ -7,7 +7,11 @@ export class AudioPlayer {
     this.bufferSource = undefined;
   }
 
-  public async playFromArrayBuffer(buffer: ArrayBuffer, onEnded?: () => void) {
+  public async playFromArrayBuffer(
+    buffer: ArrayBuffer,
+    onEnded?: () => void,
+    onProgress?: () => void,
+  ) {
     const audioBuffer = await this.audio.decodeAudioData(buffer);
 
     this.bufferSource = this.audio.createBufferSource();
@@ -18,10 +22,16 @@ export class AudioPlayer {
     if (onEnded) {
       this.bufferSource.addEventListener('ended', onEnded);
     }
+    if (onProgress) {
+      this.bufferSource.addEventListener('time', onProgress);
+    }
   }
 
   public stopPlay() {
-    if (this.bufferSource) this.bufferSource.stop();
+    if (this.bufferSource) {
+      this.bufferSource.stop();
+      this.bufferSource = undefined;
+    }
   }
 
   public async playFromURL(url: string, onEnded?: () => void) {

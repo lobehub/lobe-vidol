@@ -2,6 +2,7 @@
   "animation": {
     "animationList": "Lijst met personagebewegingen",
     "noAnimations": "Geen animaties beschikbaar",
+    "postureList": "Houdingenlijst",
     "totalCount": "Totaal {{total}} items"
   },
   "dance": {
@@ -9,6 +10,7 @@
     "addPlaySuccess": "Is toegevoegd aan de afspeellijst",
     "cancelAddPlay": "Weet u zeker dat u wilt afmelden voor muziek {{musicName}}?",
     "cancelSubscribed": "Afmelden",
+    "confirmClearPlayList": "",
     "findDance": "Vind je favoriete dans",
     "musicAndDance": "Muziek en Dans",
     "noPlayList": "Geen afspeellijst beschikbaar, u kunt zich abonneren op dansen die u leuk vindt via de markt.",

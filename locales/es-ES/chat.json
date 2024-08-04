@@ -10,5 +10,6 @@
   },
   "helloChat": "Hello, let's chat",
   "helloDance": "Hi, let's dance together",
-  "market": "Discover"
+  "market": "Discover",
+  "selectRole": "Seleccionar rol"
 }
