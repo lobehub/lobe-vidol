@@ -72,8 +72,8 @@ const TouchActionListItem = memo<ActionListItemProps>(({ item }) => {
       showAction={true}
       onClick={async () => {
         if (item.url) {
-          const url = await fetchMotionUrl(item.id, item.url);
-          viewer.model?.loadFBX(url);
+          const motionUrl = await fetchMotionUrl(item.id, item.url);
+          if (motionUrl) viewer.model?.loadFBX(motionUrl);
         }
       }}
       title={item.name}

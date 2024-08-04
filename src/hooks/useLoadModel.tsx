@@ -16,20 +16,20 @@ export const useLoadModel = () => {
       if (!modelBlob) {
         setDownloading(true);
         setPercent(0);
-        const blob = await fetchWithProgress(remoteModelUrl, {
+        modelBlob = await fetchWithProgress(remoteModelUrl, {
           onProgress: (loaded, total) => {
             setPercent(Math.ceil((loaded / total) * 100));
           },
         });
         const modelPath = getModelPathByAgentId(agentId);
-        await storage.setItem(modelPath, blob);
+        await storage.setItem(modelPath, modelBlob);
       }
-    } catch (e) {
-      console.error(e);
-      return null;
     } finally {
       setDownloading(false);
     }
+
+    if (!modelBlob) return null;
+
     return URL.createObjectURL(modelBlob);
   };
 

@@ -33,6 +33,8 @@ export const useLoadAudio = () => {
     } finally {
       setDownloading(false);
     }
+    if (!audioBlob) return null;
+
     return URL.createObjectURL(audioBlob);
   };
 

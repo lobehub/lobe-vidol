@@ -42,22 +42,22 @@ const DanceItem = (props: DanceItemProps) => {
   const { t } = useTranslation('common');
 
   const { downloading: audioDownloading, percent: audioPercent, fetchAudioUrl } = useLoadAudio();
-  const { downloading: danceDownloading, percent: dancePercent, fetchDanceBuffer } = useLoadDance();
+  const { downloading: danceDownloading, percent: dancePercent, fetchDanceUrl } = useLoadDance();
   const viewer = useGlobalStore((s) => s.viewer);
 
   const handlePlayPause = () => {
-    viewer.model?.resetToIdle();
+    viewer.model?.disposeAll();
     if (isPlaying && isCurrentPlay) {
       setIsPlaying(false);
     } else {
       setCurrentPlayId(danceItem.danceId);
       setIsPlaying(true);
       const audioPromise = fetchAudioUrl(danceItem.danceId, danceItem.audio);
-      const dancePromise = fetchDanceBuffer(danceItem.danceId, danceItem.src);
+      const dancePromise = fetchDanceUrl(danceItem.danceId, danceItem.src);
       Promise.all([dancePromise, audioPromise]).then((res) => {
         if (!res) return;
-        const [danceBuffer, audioUrl] = res;
-        viewer.model?.dance(danceBuffer, audioUrl);
+        const [danceUrl, audioUrl] = res;
+        if (danceUrl && audioUrl) viewer.model?.dance(danceUrl, audioUrl);
       });
     }
   };

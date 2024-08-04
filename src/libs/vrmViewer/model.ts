@@ -156,17 +156,15 @@ export class Model {
   /**
    * 播放舞蹈，以音乐文件的播放作为结束标志。
    */
-  public async dance(dance: ArrayBuffer, audioUrl: string, onEnd?: () => void) {
+  public async dance(danceUrl: string, audioUrl: string, onEnd?: () => void) {
     const { vrm, mixer } = this;
     if (vrm && mixer) {
       this.disposeAll();
-      const animation = convert(dance, toOffset(vrm));
-      const clip = bindToVRM(animation, vrm);
+      const clip = await loadVMDAnimation(danceUrl, vrm);
       const action = mixer.clipAction(clip);
       action.setLoop(LoopOnce, 1).play(); // play animation
       if (audioUrl) {
         this._audioPlayer?.playFromURL(audioUrl, () => {
-          this.resetToIdle();
           onEnd?.();
         });
         this._audio = audioUrl;
@@ -178,12 +176,9 @@ export class Model {
   }
 
   public async resetToIdle() {
-    const { vrm, mixer } = this;
-    if (vrm && mixer) {
-      this.disposeAll();
+    this.disposeAll();
 
-      await this.loadIdleAnimation();
-    }
+    await this.loadIdleAnimation();
   }
   /**
    * 语音播放，配合人物表情动作
