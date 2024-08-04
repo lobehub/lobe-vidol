@@ -33,25 +33,25 @@ export const useDownloadDance = () => {
       onProgress: (loaded, total) => {
         setAudioProgress((loaded / total) * 100);
       },
-    }).then((res) => res.arrayBuffer());
+    });
 
     const dancePromise = fetchWithProgress(dance.src, {
       onProgress: (loaded, total) => {
         setDanceProgress(Math.ceil((loaded / total) * 100));
       },
-    }).then((res) => res.arrayBuffer());
+    });
 
     try {
-      const [audioArrayBuffer, coverBase64, danceArrayBuffer] = await Promise.all([
+      const [audioBlob, coverBase64, danceBlob] = await Promise.all([
         audioPromise,
         coverPromise,
         dancePromise,
       ]);
       const danceKey = getDancePathByDanceId(dance.danceId);
-      await setItem(danceKey, danceArrayBuffer);
+      await setItem(danceKey, danceBlob);
 
       const audioKey = getAudioPathByDanceId(dance.danceId);
-      await setItem(audioKey, audioArrayBuffer);
+      await setItem(audioKey, audioBlob);
 
       addDanceItem({ ...dance, cover: coverBase64 });
       message.success(dance.name + t('actions.downloadSuccess'));

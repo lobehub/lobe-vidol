@@ -41,7 +41,7 @@ const DanceItem = (props: DanceItemProps) => {
   const isHovered = useHover(hoverRef);
   const { t } = useTranslation('common');
 
-  const { downloading: audioDownloading, percent: audioPercent, fetchAudioBuffer } = useLoadAudio();
+  const { downloading: audioDownloading, percent: audioPercent, fetchAudioUrl } = useLoadAudio();
   const { downloading: danceDownloading, percent: dancePercent, fetchDanceBuffer } = useLoadDance();
   const viewer = useGlobalStore((s) => s.viewer);
 
@@ -52,12 +52,12 @@ const DanceItem = (props: DanceItemProps) => {
     } else {
       setCurrentPlayId(danceItem.danceId);
       setIsPlaying(true);
-      const audioPromise = fetchAudioBuffer(danceItem.danceId, danceItem.audio);
+      const audioPromise = fetchAudioUrl(danceItem.danceId, danceItem.audio);
       const dancePromise = fetchDanceBuffer(danceItem.danceId, danceItem.src);
       Promise.all([dancePromise, audioPromise]).then((res) => {
         if (!res) return;
-        const [danceBuffer, audioBuffer] = res;
-        viewer.model?.dance(danceBuffer, { data: audioBuffer });
+        const [danceBuffer, audioUrl] = res;
+        viewer.model?.dance(danceBuffer, audioUrl);
       });
     }
   };

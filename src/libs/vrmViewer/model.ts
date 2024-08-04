@@ -31,7 +31,7 @@ export class Model {
   private _audioPlayer?: AudioPlayer;
   private _action: AnimationAction | undefined;
   private _clip: AnimationClip | undefined;
-  private _audio: ArrayBuffer | undefined;
+  private _audio: string | undefined;
 
   constructor(lookAtTargetParent: THREE.Object3D) {
     this._lookAtTargetParent = lookAtTargetParent;
@@ -155,16 +155,8 @@ export class Model {
 
   /**
    * 播放舞蹈，以音乐文件的播放作为结束标志。
-   * @param audio
-   * @param dance
    */
-  public async dance(
-    dance: ArrayBuffer,
-    audio?: {
-      data: ArrayBuffer;
-      onEnd?: () => void;
-    },
-  ) {
+  public async dance(dance: ArrayBuffer, audioUrl: string, onEnd?: () => void) {
     const { vrm, mixer } = this;
     if (vrm && mixer) {
       this.disposeAll();
@@ -172,12 +164,12 @@ export class Model {
       const clip = bindToVRM(animation, vrm);
       const action = mixer.clipAction(clip);
       action.setLoop(LoopOnce, 1).play(); // play animation
-      if (audio) {
-        this._audioPlayer?.playFromArrayBuffer(audio.data, () => {
+      if (audioUrl) {
+        this._audioPlayer?.playFromURL(audioUrl, () => {
           this.resetToIdle();
-          audio.onEnd?.();
+          onEnd?.();
         });
-        this._audio = audio.data;
+        this._audio = audioUrl;
       }
 
       this._action = action;
