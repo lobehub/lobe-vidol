@@ -2,6 +2,7 @@
   "animation": {
     "animationList": "角色動作列表",
     "noAnimations": "暫無動作庫",
+    "postureList": "姿勢清單",
     "totalCount": "共 {{total}} 項"
   },
   "dance": {
@@ -9,6 +10,7 @@
     "addPlaySuccess": "已新增至播放清單",
     "cancelAddPlay": "確定要取消訂閱音樂{{musicName}}嗎？",
     "cancelSubscribed": "取消訂閱",
+    "confirmClearPlayList": "",
     "findDance": "尋找您最喜愛的舞蹈",
     "musicAndDance": "音樂與舞蹈",
     "noPlayList": "暫無播放清單，您可以透過市場訂閱您喜歡的舞蹈",

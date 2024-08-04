@@ -1,11 +1,19 @@
 {
+  "animation": {
+    "animationList": "Lista ruchów",
+    "noAnimations": "Brak biblioteki animacji",
+    "postureList": "Lista postaw",
+    "totalCount": "Razem {{total}} pozycji"
+  },
   "dance": {
     "addPlay": "Dodaj do listy",
     "addPlaySuccess": "Zostało dodane do listy odtwarzania",
     "cancelAddPlay": "Czy na pewno chcesz anulować subskrypcję muzyki {{musicName}}?",
     "cancelSubscribed": "Anuluj subskrypcję",
+    "confirmClearPlayList": "",
     "findDance": "Znajdź swój ulubiony taniec",
     "musicAndDance": "Muzyka i taniec",
+    "noPlayList": "Brak listy odtwarzania, możesz subskrybować ulubione tańce na rynku.",
     "play": "Odtwórz"
   },
   "info": {
@@ -25,8 +33,12 @@
     "greetLabel": "Przywitanie",
     "modelDescription": "Podgląd modelu, możesz przeciągnąć plik modelu, aby zastąpić",
     "modelLabel": "Podgląd modelu",
+    "motionCategoryLabel": "Kategoria ruchu",
+    "motionDescription": "Wybierz ruch podczas reakcji, który wpłynie na zachowanie postaci.",
+    "motionLabel": "Ruch",
     "nameDescription": "Nazwa postaci, nazwa używana podczas rozmowy z postacią",
     "nameLabel": "Nazwa",
+    "postureCategoryLabel": "Kategoria postawy",
     "readmeDescription": "Plik z opisem postaci, używany do prezentacji szczegółowego opisu postaci na stronie odkrywania",
     "readmeLabel": "Opis postaci",
     "textDescription": "Niestandardowe tło odpowiedzi",
@@ -69,6 +81,7 @@
     "addAction": "Dodaj reakcję",
     "editAction": "Edytuj reakcję",
     "inputActionEmotion": "Proszę wprowadzić wyraz twarzy postaci podczas reakcji",
+    "inputActionMotion": "Wprowadź ruch postaci podczas reakcji.",
     "inputActionText": "Proszę wprowadzić treść odpowiedzi",
     "inputDIYText": "Wprowadź niestandardową treść",
     "noTouchActions": "Brak niestandardowych akcji dotyku, możesz dodać je, klikając przycisk '+'",

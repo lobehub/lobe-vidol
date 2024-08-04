@@ -16,9 +16,9 @@
     "startTitle": "Personnaliser la clé d'API"
   },
   "info": {
-    "history": "Historique de chat",
+    "chat": "Discussion",
+    "dance": "Danse",
     "motions": "Mouvements",
-    "playlist": "Liste de lecture",
     "posture": "Posture"
   },
   "mode": {
@@ -68,6 +68,8 @@
     "downloadModel": "Téléchargement du modèle en cours, veuillez patienter...",
     "floor": "Changer de sol",
     "grid": "Grille",
-    "resetCamera": "Réinitialiser la caméra"
+    "resetCamera": "Réinitialiser la caméra",
+    "resetToIdle": "Arrêter les mouvements de danse",
+    "screenShot": "Capture d'écran"
   }
 }

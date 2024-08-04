@@ -16,9 +16,9 @@
     "startTitle": "Özel API Anahtarı"
   },
   "info": {
-    "history": "Geçmiş",
+    "chat": "Sohbet",
+    "dance": "Dans",
     "motions": "Hareketler",
-    "playlist": "Oynatma Listesi",
     "posture": "Duruş"
   },
   "mode": {
@@ -68,6 +68,8 @@
     "downloadModel": "Model İndiriliyor, Lütfen Bekleyin...",
     "floor": "Zemin Değiştir",
     "grid": "Izgara",
-    "resetCamera": "Kamerayı Sıfırla"
+    "resetCamera": "Kamerayı Sıfırla",
+    "resetToIdle": "Dansı Durdur",
+    "screenShot": "Ekran Görüntüsü Al"
   }
 }

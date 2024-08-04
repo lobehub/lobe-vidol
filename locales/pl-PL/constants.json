@@ -1,6 +1,7 @@
 {
   "agent": {
     "gender": {
+      "all": "wszystkie",
       "female": "Kobieta",
       "male": "Mężczyzna"
     },
@@ -86,6 +87,21 @@
         "neutralA": "Nie obawiaj się, moje potężne nogi nie biją głupców",
         "neutralB": "Pozwól mi dotknąć twoich nóg, czy nie czujesz, że twoje życie jest teraz pełne?"
       }
+    },
+    "motion": {
+      "all": "wszystkie",
+      "dance": "taniec",
+      "normal": "normalny"
+    },
+    "posture": {
+      "action": "akcja",
+      "all": "wszystkie",
+      "crouch": "kucanie",
+      "dance": "taniec",
+      "laying": "leżenie",
+      "locomotion": "ruch",
+      "sitting": "siedzenie",
+      "standing": "stanie"
     }
   }
 }

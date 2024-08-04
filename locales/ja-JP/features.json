@@ -16,9 +16,9 @@
     "startTitle": "APIキーをカスタマイズする"
   },
   "info": {
-    "history": "チャット履歴",
+    "chat": "チャット",
+    "dance": "ダンス",
     "motions": "モーション",
-    "playlist": "プレイリスト",
     "posture": "ポーズ"
   },
   "mode": {
@@ -68,6 +68,8 @@
     "downloadModel": "モデルのダウンロード中、しばらくお待ちください...",
     "floor": "床を切り替える",
     "grid": "グリッド",
-    "resetCamera": "カメラをリセットする"
+    "resetCamera": "カメラをリセットする",
+    "resetToIdle": "停止舞踏動作",
+    "screenShot": "スクリーンショット"
   }
 }

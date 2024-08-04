@@ -16,9 +16,9 @@
     "startTitle": "Chave de API personalizada"
   },
   "info": {
-    "history": "Histórico de bate-papo",
+    "chat": "Chat",
+    "dance": "Dança",
     "motions": "Movimentos",
-    "playlist": "Lista de reprodução",
     "posture": "Postura"
   },
   "mode": {
@@ -68,6 +68,8 @@
     "downloadModel": "Modelo sendo baixado, por favor, aguarde...",
     "floor": "Alternar piso",
     "grid": "Grade",
-    "resetCamera": "Redefinir câmera"
+    "resetCamera": "Redefinir câmera",
+    "resetToIdle": "Parar a dança",
+    "screenShot": "Capturar tela"
   }
 }

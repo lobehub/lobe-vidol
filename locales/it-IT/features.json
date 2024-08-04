@@ -15,6 +15,12 @@
     "startDesc": "Inserisci la tua chiave API di OpenAI per iniziare la sessione. L'applicazione non memorizzerà la tua chiave API",
     "startTitle": "Personalizza la chiave API"
   },
+  "info": {
+    "chat": "Chat",
+    "dance": "Danza",
+    "motions": "Movimenti",
+    "posture": "Postura"
+  },
   "mode": {
     "chat": "Chat",
     "video": "Video"
@@ -62,12 +68,8 @@
     "downloadModel": "Download del modello in corso, attendere...",
     "floor": "Cambia pavimento",
     "grid": "Griglia",
-    "info": {
-      "history": "Cronologia della chat",
-      "motions": "Movimenti",
-      "playlist": "Playlist",
-      "posture": "Postura"
-    },
-    "resetCamera": "Reimposta fotocamera"
+    "resetCamera": "Reimposta fotocamera",
+    "resetToIdle": "Ripristina all'immobilità",
+    "screenShot": "Screenshot"
   }
 }

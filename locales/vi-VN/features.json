@@ -15,6 +15,12 @@
     "startDesc": "Nhập OpenAI API Key của bạn để bắt đầu cuộc trò chuyện. Ứng dụng sẽ không ghi lại API Key của bạn",
     "startTitle": "Tùy chỉnh API Key"
   },
+  "info": {
+    "chat": "Trò chuyện",
+    "dance": "Nhảy múa",
+    "motions": "Chuyển động",
+    "posture": "Tư thế"
+  },
   "mode": {
     "chat": "Trò chuyện",
     "video": "Video"
@@ -56,11 +62,14 @@
     "used": "Token đã sử dụng"
   },
   "toolBar": {
+    "axes": "Trục",
     "cameraControl": "Điều khiển camera",
     "cameraHelper": "Trợ lý camera",
     "downloadModel": "Đang tải xuống mô hình, vui lòng đợi...",
     "floor": "Chuyển đổi sàn",
     "grid": "Lưới",
-    "resetCamera": "Đặt lại camera"
+    "resetCamera": "Đặt lại camera",
+    "resetToIdle": "Dừng hoạt động nhảy múa",
+    "screenShot": "Chụp ảnh"
   }
 }

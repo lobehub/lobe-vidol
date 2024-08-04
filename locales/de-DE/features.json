@@ -16,9 +16,9 @@
     "startTitle": "Benutzerdefinierter API-Schlüssel"
   },
   "info": {
-    "history": "Verlauf",
+    "chat": "Chat",
+    "dance": "Tanz",
     "motions": "Bewegungen",
-    "playlist": "Wiedergabeliste",
     "posture": "Haltung"
   },
   "mode": {
@@ -68,6 +68,8 @@
     "downloadModel": "Modell wird heruntergeladen, bitte warten...",
     "floor": "Boden wechseln",
     "grid": "Raster",
-    "resetCamera": "Kamera zurücksetzen"
+    "resetCamera": "Kamera zurücksetzen",
+    "resetToIdle": "Stoppen Sie den Tanz",
+    "screenShot": "Screenshot"
   }
 }

@@ -2,6 +2,7 @@
   "animation": {
     "animationList": "Liste des mouvements du personnage",
     "noAnimations": "Aucune animation disponible",
+    "postureList": "Liste des postures",
     "totalCount": "Total : {{total}} éléments"
   },
   "dance": {
@@ -9,6 +10,7 @@
     "addPlaySuccess": "Ajouté à la liste de lecture",
     "cancelAddPlay": "Voulez-vous vraiment annuler l'abonnement à la musique {{musicName}}?",
     "cancelSubscribed": "Annuler l'abonnement",
+    "confirmClearPlayList": "",
     "findDance": "Trouvez votre danse préférée",
     "musicAndDance": "Musique et danse",
     "noPlayList": "Aucune liste de lecture n'est disponible pour le moment. Vous pouvez vous abonner aux danses que vous aimez sur le marché.",

@@ -16,9 +16,9 @@
     "startTitle": "사용자 정의 API 키"
   },
   "info": {
-    "history": "채팅 기록",
+    "chat": "채팅",
+    "dance": "댄스",
     "motions": "동작",
-    "playlist": "재생 목록",
     "posture": "자세"
   },
   "mode": {
@@ -68,6 +68,8 @@
     "downloadModel": "모델 다운로드 중입니다. 잠시만 기다려주세요...",
     "floor": "바닥 전환",
     "grid": "그리드",
-    "resetCamera": "카메라 재설정"
+    "resetCamera": "카메라 재설정",
+    "resetToIdle": "정지",
+    "screenShot": "스크린샷"
   }
 }
