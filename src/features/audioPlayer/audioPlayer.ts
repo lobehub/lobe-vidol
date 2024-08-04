@@ -7,11 +7,7 @@ export class AudioPlayer {
     this.bufferSource = undefined;
   }
 
-  public async playFromArrayBuffer(
-    buffer: ArrayBuffer,
-    onEnded?: () => void,
-    onProgress?: () => void,
-  ) {
+  public async playFromArrayBuffer(buffer: ArrayBuffer, onEnded?: () => void) {
     const audioBuffer = await this.audio.decodeAudioData(buffer);
 
     this.bufferSource = this.audio.createBufferSource();
@@ -21,9 +17,6 @@ export class AudioPlayer {
     this.bufferSource.start();
     if (onEnded) {
       this.bufferSource.addEventListener('ended', onEnded);
-    }
-    if (onProgress) {
-      this.bufferSource.addEventListener('time', onProgress);
     }
   }
 

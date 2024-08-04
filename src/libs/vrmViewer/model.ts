@@ -163,12 +163,10 @@ export class Model {
       const clip = await loadVMDAnimation(danceUrl, vrm);
       const action = mixer.clipAction(clip);
       action.setLoop(LoopOnce, 1).play(); // play animation
-      if (audioUrl) {
-        this._audioPlayer?.playFromURL(audioUrl, () => {
-          onEnd?.();
-        });
-        this._audio = audioUrl;
-      }
+      this._audioPlayer?.playFromURL(audioUrl, () => {
+        onEnd?.();
+      });
+      this._audio = audioUrl;
 
       this._action = action;
       this._clip = clip;

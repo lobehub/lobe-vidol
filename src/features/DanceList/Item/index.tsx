@@ -49,6 +49,7 @@ const DanceItem = (props: DanceItemProps) => {
     viewer.model?.disposeAll();
     if (isPlaying && isCurrentPlay) {
       setIsPlaying(false);
+      viewer.model?.loadIdleAnimation();
     } else {
       setCurrentPlayId(danceItem.danceId);
       setIsPlaying(true);
