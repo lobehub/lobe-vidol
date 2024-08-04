@@ -2,6 +2,40 @@
 
 # Changelog
 
+## [Version&nbsp;0.23.0](https://github.com/lobehub/lobe-vidol/compare/v0.22.0...v0.23.0)
+<sup>Released on **2024-08-04**</sup>
+
+
+#### ✨ Features
+
+- **misc**: Audio 统一使用 blob url, dance 文件统一使用 blob, model 统一使用 blob url, 添加 loadVMDAnimation.ts.
+
+
+<br/>
+
+
+
+<details>
+<summary><kbd>Improvements and Fixes</kbd></summary>
+
+
+
+#### What's improved
+
+* **misc**: Audio 统一使用 blob url ([7ecc313](https://github.com/lobehub/lobe-vidol/commit/7ecc313))
+* **misc**: Dance 文件统一使用 blob ([11d55af](https://github.com/lobehub/lobe-vidol/commit/11d55af))
+* **misc**: Model 统一使用 blob url ([0b1d0a5](https://github.com/lobehub/lobe-vidol/commit/0b1d0a5))
+* **misc**: 添加 loadVMDAnimation.ts ([b629c6e](https://github.com/lobehub/lobe-vidol/commit/b629c6e))
+
+</details>
+
+
+<div align="right">
+
+[![](https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square)](#readme-top)
+
+</div>
+
 ## [Version&nbsp;0.22.0](https://github.com/lobehub/lobe-vidol/compare/v0.21.0...v0.22.0)
 <sup>Released on **2024-08-03**</sup>
 
