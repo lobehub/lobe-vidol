@@ -23,6 +23,7 @@ export interface GlobalStore {
    * @param key
    */
   focusPanel: (key: PanelKey) => void;
+  isPlaying: boolean;
   /**
    * Open panel
    * @param key
@@ -31,6 +32,7 @@ export interface GlobalStore {
   panel: PanelConfig;
   setChatDialog: (show: boolean) => void;
   setChatSidebar: (show: boolean) => void;
+  setIsPlaying: (isPlaying: boolean) => void;
   /**
    * Set panel config
    * @param panel
@@ -43,7 +45,6 @@ export interface GlobalStore {
   showChatDialog: boolean;
   showChatSidebar: boolean;
   showRoleList: boolean;
-
   showSessionList: boolean;
   /**
    * 主题模式
@@ -62,6 +63,7 @@ const initialState = {
    * 主题模式
    */
   themeMode: 'auto' as ThemeMode,
+  isPlaying: false,
   showChatSidebar: false,
   showSessionList: true,
   showChatDialog: true,
@@ -90,7 +92,9 @@ const initialState = {
 export const useGlobalStore = createWithEqualityFn<GlobalStore>()(
   (set, get) => ({
     ...initialState,
-
+    setIsPlaying: (isPlaying: boolean) => {
+      set({ isPlaying: isPlaying });
+    },
     closePanel: (key: PanelKey) => {
       const { setPanel, focusList } = get();
       setPanel(key, { open: false });

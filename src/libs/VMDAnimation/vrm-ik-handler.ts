@@ -100,6 +100,7 @@ export default class VRMIKHandler {
 
   private targets = new Map<number, Object3D>();
   private iks = new Map<number, IKS>();
+  // private vector = new Vector3();
   private bones: Bone[];
   private root: Object3D;
 
@@ -151,7 +152,7 @@ export default class VRMIKHandler {
       effector: leftToeId,
       target: leftToeId,
       iteration: 3,
-      maxAngle: 1,
+      maxAngle: 4,
       links: [
         {
           enabled: false,
@@ -164,7 +165,7 @@ export default class VRMIKHandler {
       effector: rightToeId,
       target: rightToeId,
       iteration: 3,
-      maxAngle: 1,
+      maxAngle: 4,
       links: [
         {
           enabled: false,
@@ -223,7 +224,17 @@ export default class VRMIKHandler {
           if (ik.maxAngle != null && angle > ik.maxAngle) angle = ik.maxAngle;
           axis.crossVectors(effectorVec, targetVec).normalize();
           link.quaternion.multiply(quaternion.setFromAxisAngle(axis, angle));
+
           clampVector3ByRadian(link.rotation, rotationMin, rotationMax);
+
+          // if (rotationMin) {
+          //   link.rotation.setFromVector3(this.vector.setFromEuler(link.rotation).max(rotationMin));
+          // }
+          //
+          // if (rotationMax) {
+          //   link.rotation.setFromVector3(this.vector.setFromEuler(link.rotation).min(rotationMax));
+          // }
+
           link.updateMatrixWorld(true);
           rotated = true;
         }

@@ -85,10 +85,9 @@ function AgentViewer(props: Props) {
               break;
             }
             case 'vmd': {
-              file.arrayBuffer().then((data) => {
-                viewer.model?.dance(data);
-              });
-
+              const blob = new Blob([file], { type: 'application/octet-stream' });
+              const url = window.URL.createObjectURL(blob);
+              viewer.model?.loadVMD(url);
               break;
             }
             // No default

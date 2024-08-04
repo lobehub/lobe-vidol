@@ -2,13 +2,15 @@ import { VRM, VRMLoaderPlugin, VRMUtils } from '@pixiv/three-vrm';
 import * as THREE from 'three';
 import { AnimationAction, AnimationClip } from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
+import { LoopOnce } from 'three/src/constants';
 
 import { AudioPlayer } from '@/features/audioPlayer/audioPlayer';
+import { loadMixamoAnimation } from '@/libs/FBXAnimation/loadMixamoAnimation';
+import { loadVMDAnimation } from '@/libs/VMDAnimation/loadVMDAnimation';
 import { convert } from '@/libs/VMDAnimation/vmd2vrmanim';
 import { bindToVRM, toOffset } from '@/libs/VMDAnimation/vmd2vrmanim.binding';
 import IKHandler from '@/libs/VMDAnimation/vrm-ik-handler';
 import { VRMAnimation } from '@/libs/VRMAnimation/VRMAnimation';
-import { loadMixamoAnimation } from '@/libs/VRMAnimation/loadMixamoAnimation';
 import { loadVRMAnimation } from '@/libs/VRMAnimation/loadVRMAnimation';
 import { VRMLookAtSmootherLoaderPlugin } from '@/libs/VRMLookAtSmootherLoaderPlugin/VRMLookAtSmootherLoaderPlugin';
 import { Screenplay } from '@/types/touch';
@@ -78,14 +80,17 @@ export class Model {
   }
 
   public disposeAll() {
-    const { vrm, mixer } = this;
+    const { mixer } = this;
 
-    if (!vrm || !mixer) {
-      console.error('You have to load VRM first');
-      return;
+    if (mixer) {
+      mixer.stopAllAction();
+      if (this._clip) {
+        mixer.uncacheAction(this._clip);
+        mixer.uncacheClip(this._clip);
+        this._clip = undefined;
+      }
     }
 
-    mixer.stopAllAction();
     this.ikHandler?.disableAll();
     if (this._action) {
       this._action.stop();
@@ -95,12 +100,6 @@ export class Model {
     if (this._audio) {
       this._audioPlayer?.stopPlay();
       this._audio = undefined;
-    }
-
-    if (this._clip) {
-      mixer.uncacheAction(this._clip);
-      mixer.uncacheClip(this._clip);
-      this._clip = undefined;
     }
   }
 
@@ -124,7 +123,7 @@ export class Model {
 
   public async loadIdleAnimation() {
     const vrma = await loadVRMAnimation('/idle_loop.vrma');
-    if (vrma) this.loadAnimation(vrma);
+    if (vrma) await this.loadAnimation(vrma);
   }
 
   public async loadFBX(animationUrl: string) {
@@ -142,22 +141,44 @@ export class Model {
     }
   }
 
+  public async loadVMD(animationUrl: string) {
+    const { vrm, mixer } = this;
+
+    if (vrm && mixer) {
+      this.disposeAll();
+      const clip = await loadVMDAnimation(animationUrl, vrm);
+      const action = mixer.clipAction(clip);
+      action.play();
+      this._action = action;
+      this._clip = clip;
+    }
+  }
+
   /**
    * 播放舞蹈
-   * @param audio ArrayBuffer
-   * @param dance ArrayBuffer
+   * @param audio
+   * @param dance
    */
-  public async dance(dance: ArrayBuffer, audio?: ArrayBuffer) {
+  public async dance(
+    dance: ArrayBuffer,
+    audio?: {
+      data: ArrayBuffer;
+      onEnd?: () => void;
+    },
+  ) {
     const { vrm, mixer } = this;
     if (vrm && mixer) {
       this.disposeAll();
       const animation = convert(dance, toOffset(vrm));
       const clip = bindToVRM(animation, vrm);
       const action = mixer.clipAction(clip);
-      action.play(); // play animation
+      action.setLoop(LoopOnce, 1).play(); // play animation
       if (audio) {
-        this._audioPlayer?.playFromArrayBuffer(audio);
-        this._audio = audio;
+        this._audioPlayer?.playFromArrayBuffer(audio.data, () => {
+          this.resetToIdle();
+          audio.onEnd?.();
+        });
+        this._audio = audio.data;
       }
 
       this._action = action;

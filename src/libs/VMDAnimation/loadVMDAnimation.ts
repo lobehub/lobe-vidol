@@ -1,8 +1,14 @@
-// export async function loadVMDAnimation(url: string): Promise {
-//   const gltf = await loader.loadAsync(url);
+import { VRM } from '@pixiv/three-vrm';
 
-//   const vrmAnimations: VRMAnimation[] = gltf.userData.vrmAnimations;
-//   const vrmAnimation: VRMAnimation | undefined = vrmAnimations[0];
+import { convert } from '@/libs/VMDAnimation/vmd2vrmanim';
+import { bindToVRM, toOffset } from '@/libs/VMDAnimation/vmd2vrmanim.binding';
 
-//   return vrmAnimation ?? null;
-// }
+export async function loadVMDAnimation(url: string, vrm: VRM) {
+  const res = await fetch(url);
+  const buffer = await res.arrayBuffer();
+
+  const animation = convert(buffer, toOffset(vrm));
+  const clip = bindToVRM(animation, vrm);
+
+  return clip ?? null;
+}
