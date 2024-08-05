@@ -33,7 +33,7 @@ const DanceItem = (props: DanceItemProps) => {
     s.setCurrentPlayId,
   ]);
 
-  const [isPlaying, setIsPlaying] = useGlobalStore((s) => [s.isPlaying, s.setIsPlaying]);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   const isCurrentPlay = currentPlayId ? currentPlayId === danceItem.danceId : false;
   const isSelected = currentIdentifier === danceItem.danceId;
@@ -45,7 +45,7 @@ const DanceItem = (props: DanceItemProps) => {
   const { downloading: danceDownloading, percent: dancePercent, fetchDanceUrl } = useLoadDance();
   const viewer = useGlobalStore((s) => s.viewer);
 
-  const handlePlayPause = () => {
+  const handlePlayPause = async () => {
     viewer.model?.disposeAll();
     if (isPlaying && isCurrentPlay) {
       setIsPlaying(false);
@@ -55,11 +55,11 @@ const DanceItem = (props: DanceItemProps) => {
       setIsPlaying(true);
       const audioPromise = fetchAudioUrl(danceItem.danceId, danceItem.audio);
       const dancePromise = fetchDanceUrl(danceItem.danceId, danceItem.src);
-      Promise.all([dancePromise, audioPromise]).then((res) => {
-        if (!res) return;
-        const [danceUrl, audioUrl] = res;
-        if (danceUrl && audioUrl) viewer.model?.dance(danceUrl, audioUrl);
-      });
+      const [danceUrl, audioUrl] = await Promise.all([dancePromise, audioPromise]);
+      if (danceUrl && audioUrl)
+        viewer.model?.dance(danceUrl, audioUrl, () => {
+          setIsPlaying(false);
+        });
     }
   };
 

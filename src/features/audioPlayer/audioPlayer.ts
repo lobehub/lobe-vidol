@@ -8,6 +8,7 @@ export class AudioPlayer {
   }
 
   public async playFromArrayBuffer(buffer: ArrayBuffer, onEnded?: () => void) {
+    this.stopPlay();
     const audioBuffer = await this.audio.decodeAudioData(buffer);
 
     this.bufferSource = this.audio.createBufferSource();

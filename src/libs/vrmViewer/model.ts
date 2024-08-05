@@ -31,7 +31,6 @@ export class Model {
   private _audioPlayer?: AudioPlayer;
   private _action: AnimationAction | undefined;
   private _clip: AnimationClip | undefined;
-  private _audio: string | undefined;
 
   constructor(lookAtTargetParent: THREE.Object3D) {
     this._lookAtTargetParent = lookAtTargetParent;
@@ -39,7 +38,6 @@ export class Model {
     this._audioPlayer = new AudioPlayer(new AudioContext());
     this._action = undefined;
     this._clip = undefined;
-    this._audio = undefined;
   }
 
   public async loadVRM(url: string): Promise<void> {
@@ -96,10 +94,7 @@ export class Model {
       this._action = undefined;
     }
 
-    if (this._audio) {
-      this._audioPlayer?.stopPlay();
-      this._audio = undefined;
-    }
+    this._audioPlayer?.stopPlay();
   }
 
   /**
@@ -164,9 +159,9 @@ export class Model {
       const action = mixer.clipAction(clip);
       action.setLoop(LoopOnce, 1).play(); // play animation
       this._audioPlayer?.playFromURL(audioUrl, () => {
+        this.disposeAll();
         onEnd?.();
       });
-      this._audio = audioUrl;
 
       this._action = action;
       this._clip = clip;
