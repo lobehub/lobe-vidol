@@ -5,7 +5,7 @@ import { memo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { DEFAULT_MOTION_ANIMATION } from '@/constants/touch';
-import { speakCharacter } from '@/features/messages/speakCharacter';
+import { speakCharacter } from '@/libs/messages/speakCharacter';
 import { agentSelectors, useAgentStore } from '@/store/agent';
 import { useGlobalStore } from '@/store/global';
 import { TouchAction } from '@/types/touch';

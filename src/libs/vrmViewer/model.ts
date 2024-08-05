@@ -4,7 +4,6 @@ import { AnimationAction, AnimationClip } from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { LoopOnce } from 'three/src/constants';
 
-import { AudioPlayer } from '@/features/audioPlayer/audioPlayer';
 import { loadMixamoAnimation } from '@/libs/FBXAnimation/loadMixamoAnimation';
 import { loadVMDAnimation } from '@/libs/VMDAnimation/loadVMDAnimation';
 import { convert } from '@/libs/VMDAnimation/vmd2vrmanim';
@@ -13,6 +12,7 @@ import IKHandler from '@/libs/VMDAnimation/vrm-ik-handler';
 import { VRMAnimation } from '@/libs/VRMAnimation/VRMAnimation';
 import { loadVRMAnimation } from '@/libs/VRMAnimation/loadVRMAnimation';
 import { VRMLookAtSmootherLoaderPlugin } from '@/libs/VRMLookAtSmootherLoaderPlugin/VRMLookAtSmootherLoaderPlugin';
+import { AudioPlayer } from '@/libs/audioPlayer/audioPlayer';
 import { EmoteController } from '@/libs/emoteController/emoteController';
 import { LipSync } from '@/libs/lipSync/lipSync';
 import { Screenplay } from '@/types/touch';
@@ -28,14 +28,13 @@ export class Model {
 
   private _lookAtTargetParent: THREE.Object3D;
   private _lipSync?: LipSync;
-  private _audioPlayer?: AudioPlayer;
+
   private _action: AnimationAction | undefined;
   private _clip: AnimationClip | undefined;
 
   constructor(lookAtTargetParent: THREE.Object3D) {
     this._lookAtTargetParent = lookAtTargetParent;
     this._lipSync = new LipSync(new AudioContext());
-    this._audioPlayer = new AudioPlayer(new AudioContext());
     this._action = undefined;
     this._clip = undefined;
   }
@@ -93,8 +92,6 @@ export class Model {
       this._action.stop();
       this._action = undefined;
     }
-
-    this._audioPlayer?.stopPlay();
   }
 
   /**
@@ -135,34 +132,15 @@ export class Model {
     }
   }
 
-  public async loadVMD(animationUrl: string) {
+  public async loadVMD(animationUrl: string, loop: boolean = true) {
     const { vrm, mixer } = this;
 
     if (vrm && mixer) {
       this.disposeAll();
       const clip = await loadVMDAnimation(animationUrl, vrm);
       const action = mixer.clipAction(clip);
+      if (!loop) action.setLoop(LoopOnce, 1);
       action.play();
-      this._action = action;
-      this._clip = clip;
-    }
-  }
-
-  /**
-   * 播放舞蹈，以音乐文件的播放作为结束标志。
-   */
-  public async dance(danceUrl: string, audioUrl: string, onEnd?: () => void) {
-    const { vrm, mixer } = this;
-    if (vrm && mixer) {
-      this.disposeAll();
-      const clip = await loadVMDAnimation(danceUrl, vrm);
-      const action = mixer.clipAction(clip);
-      action.setLoop(LoopOnce, 1).play(); // play animation
-      this._audioPlayer?.playFromURL(audioUrl, () => {
-        this.disposeAll();
-        onEnd?.();
-      });
-
       this._action = action;
       this._clip = clip;
     }

@@ -46,10 +46,9 @@ const DanceItem = (props: DanceItemProps) => {
   const viewer = useGlobalStore((s) => s.viewer);
 
   const handlePlayPause = async () => {
-    viewer.model?.disposeAll();
     if (isPlaying && isCurrentPlay) {
       setIsPlaying(false);
-      viewer.model?.loadIdleAnimation();
+      viewer?.resetToIdle();
     } else {
       setCurrentPlayId(danceItem.danceId);
       setIsPlaying(true);
@@ -57,7 +56,7 @@ const DanceItem = (props: DanceItemProps) => {
       const dancePromise = fetchDanceUrl(danceItem.danceId, danceItem.src);
       const [danceUrl, audioUrl] = await Promise.all([dancePromise, audioPromise]);
       if (danceUrl && audioUrl)
-        viewer.model?.dance(danceUrl, audioUrl, () => {
+        viewer?.dance(danceUrl, audioUrl, () => {
           setIsPlaying(false);
         });
     }

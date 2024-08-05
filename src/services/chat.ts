@@ -1,5 +1,5 @@
 import { OPENAI_API_KEY, OPENAI_END_POINT } from '@/constants/openai';
-import { speakCharacter } from '@/features/messages/speakCharacter';
+import { speakCharacter } from '@/libs/messages/speakCharacter';
 import { useGlobalStore } from '@/store/global';
 import { sessionSelectors, useSessionStore } from '@/store/session';
 import { configSelectors, useSettingStore } from '@/store/setting';

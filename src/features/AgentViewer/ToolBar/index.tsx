@@ -69,7 +69,7 @@ const ToolBar = (props: ToolBarProps) => {
             break;
           }
           case 'power': {
-            viewer.model?.resetToIdle();
+            viewer.resetToIdle();
             break;
           }
           case 'screenShot': {
