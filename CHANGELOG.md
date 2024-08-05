@@ -2,6 +2,49 @@
 
 # Changelog
 
+## [Version&nbsp;0.24.0](https://github.com/lobehub/lobe-vidol/compare/v0.23.0...v0.24.0)
+<sup>Released on **2024-08-05**</sup>
+
+
+#### ✨ Features
+
+- **misc**: Use viewer dance.
+
+
+#### 🐛 Bug Fixes
+
+- **misc**: Dance player error, play error.
+
+
+<br/>
+
+
+
+<details>
+<summary><kbd>Improvements and Fixes</kbd></summary>
+
+
+
+#### What's improved
+
+* **misc**: Use viewer dance ([0e57daa](https://github.com/lobehub/lobe-vidol/commit/0e57daa))
+
+
+
+#### What's fixed
+
+* **misc**: Dance player error ([fccf0b6](https://github.com/lobehub/lobe-vidol/commit/fccf0b6))
+* **misc**: Play error ([a7646c2](https://github.com/lobehub/lobe-vidol/commit/a7646c2))
+
+</details>
+
+
+<div align="right">
+
+[![](https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square)](#readme-top)
+
+</div>
+
 ## [Version&nbsp;0.23.0](https://github.com/lobehub/lobe-vidol/compare/v0.22.0...v0.23.0)
 <sup>Released on **2024-08-04**</sup>
 
