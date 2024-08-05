@@ -1,7 +1,11 @@
 import { Parser } from 'mmd-parser';
 import * as THREE from 'three';
-import { GridHelper, Mesh, MeshLambertMaterial, PlaneGeometry } from 'three';
+import { Audio, GridHelper, Mesh, MeshLambertMaterial, PlaneGeometry } from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import { LoopOnce } from 'three/src/constants';
+
+import { loadVMDAnimation } from '@/libs/VMDAnimation/loadVMDAnimation';
+import { AudioPlayer } from '@/libs/audioPlayer/audioPlayer';
 
 import { Model } from './model';
 
@@ -12,6 +16,7 @@ export class Viewer {
   private _renderer?: THREE.WebGLRenderer;
   private _clock: THREE.Clock;
   private _scene: THREE.Scene;
+  private _sound?: Audio;
   private _cameraHelper?: THREE.CameraHelper;
   private _camera?: THREE.PerspectiveCamera;
   private _cameraControls?: OrbitControls;
@@ -43,6 +48,36 @@ export class Viewer {
     // animate
     this._clock = new THREE.Clock();
     this._clock.start();
+  }
+
+  /**
+   * 播放舞蹈，以音乐文件的播放作为结束标志。
+   */
+  public async dance(danceUrl: string, audioUrl: string, onEnd?: () => void) {
+    if (!this._sound || !this.model) {
+      console.error('Audio Object or Model Object Not Existed');
+      return null;
+    }
+    this._sound.stop();
+    this.model?.disposeAll();
+    const audioLoader = new THREE.AudioLoader();
+    // 监听音频播放结束事件
+    this._sound.onEnded = () => {
+      onEnd?.();
+      this.model?.loadIdleAnimation();
+    };
+    const buffer = await audioLoader.loadAsync(audioUrl);
+    this._sound.setBuffer(buffer);
+    this._sound.setVolume(0.5);
+    this._sound.play();
+
+    this.model?.loadVMD(danceUrl, false);
+  }
+
+  public resetToIdle() {
+    this._sound?.stop();
+    this.model?.disposeAll();
+    this.model?.loadIdleAnimation();
   }
 
   /**
@@ -110,6 +145,13 @@ export class Viewer {
     this._cameraControls.screenSpacePanning = true;
     this._cameraControls?.target.set(0, 0, 0);
     this._cameraControls.update();
+
+    // Audio 音频播放
+    const listener = new THREE.AudioListener();
+    this._camera.add(listener);
+
+    // 创建一个全局 audio 源
+    this._sound = new THREE.Audio(listener);
 
     const resizeObserver = new ResizeObserver(() => {
       setTimeout(() => this.resize(), 0);
