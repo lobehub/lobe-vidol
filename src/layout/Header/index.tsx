@@ -7,10 +7,11 @@ import { useRouter } from 'next/navigation';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import Discord from '@/features/Actions/Discord';
-import Github from '@/features/Actions/Github';
-import ThemeMode from '@/features/Actions/ThemeMode';
 import { HeaderNavKey } from '@/layout/type';
+
+import Discord from './Actions/Discord';
+import Github from './Actions/Github';
+import ThemeMode from './Actions/ThemeMode';
 
 interface Props {
   headerKey?: HeaderNavKey;

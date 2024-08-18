@@ -4,9 +4,9 @@ import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
 import TopBanner from '@/components/TopBanner';
-import MarketInfo from '@/features/MarketInfo';
 
 import AgentList from './List';
+import MarketInfo from './MarketInfo';
 
 const useStyles = createStyles(({ css }) => ({
   container: css`
