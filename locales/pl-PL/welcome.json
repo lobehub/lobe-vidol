@@ -8,5 +8,5 @@
   },
   "greet": "Witaj, jestem {{name}}, jak mogę Ci pomóc?",
   "loadingTitle": "Inicjalizacja aplikacji, proszę czekać...",
-  "waitting": "Trwa przygotowywanie całego mojego świata dla Ciebie"
+  "waiting": "Trwa przygotowywanie całego mojego świata dla Ciebie"
 }

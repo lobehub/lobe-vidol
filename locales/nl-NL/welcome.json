@@ -8,5 +8,5 @@
   },
   "greet": "Hallo, ik ben {{name}}, is er iets waarmee ik je kan helpen?",
   "loadingTitle": "Applicatie initialisatie, even geduld aub...",
-  "waitting": "Ik ben bezig om je mijn hele wereld voor te bereiden"
+  "waiting": "Ik ben bezig om je mijn hele wereld voor te bereiden"
 }

@@ -8,5 +8,5 @@
   },
   "greet": "Merhaba, ben {{name}}. Size nasıl yardımcı olabilirim?",
   "loadingTitle": "Uygulama başlatılıyor, lütfen bekleyin...",
-  "waitting": "Benim dünyamı hazırlamak için çalışıyor"
+  "waiting": "Benim dünyamı hazırlamak için çalışıyor"
 }
