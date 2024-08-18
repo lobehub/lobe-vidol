@@ -4,9 +4,8 @@ import dynamic from 'next/dynamic';
 import React, { memo } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
-import ChatHeader from '@/features/ChatHeader';
-import ChatInfo from '@/features/ChatInfo';
-
+import ChatHeader from './ChatHeader';
+import ChatInfo from './ChatInfo';
 import SideBar from './SideBar';
 import { useStyles } from './style';
 

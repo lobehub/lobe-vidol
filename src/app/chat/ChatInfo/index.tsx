@@ -7,12 +7,12 @@ import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
 import { CHAT_HEADER_HEIGHT, CHAT_INFO_MAX_WIDTH, CHAT_INFO_WIDTH } from '@/constants/token';
-import ChatList from '@/features/ChatList';
-import DanceList from '@/features/DanceList';
-import MotionList from '@/features/MotionList';
-import PostureList from '@/features/PostureList';
 import { useGlobalStore } from '@/store/global';
 
+import ChatList from './ChatList';
+import DanceList from './DanceList';
+import MotionList from './MotionList';
+import PostureList from './PostureList';
 import { Tab } from './type';
 
 const useStyles = createStyles(({ css, token }) => ({
