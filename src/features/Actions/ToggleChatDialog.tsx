@@ -9,7 +9,7 @@ export default () => {
     s.showChatDialog,
     s.toggleChatDialog,
   ]);
-  const { t } = useTranslation('layout');
+  const { t } = useTranslation('common');
   return (
     <ActionIcon
       icon={showChatDialog ? MessageCircleOff : MessageCircle}

@@ -32,8 +32,6 @@ src/locales
 │   ├── error.ts
 │   ├── index.ts
 │   ├── market.ts
-│   ├── migration.ts
-│   ├── plugin.ts
 │   ├── setting.ts
 │   ├── tool.ts
 │   └── welcome.ts

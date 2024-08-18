@@ -3,7 +3,6 @@ import common from './common';
 import constants from './constants';
 import error from './error';
 import features from './features';
-import layout from './layout';
 import my from './my';
 import panel from './panel';
 import role from './role';
@@ -17,7 +16,6 @@ const resources = {
   role,
   welcome,
   constants,
-  layout,
   panel,
   features,
 } as const;

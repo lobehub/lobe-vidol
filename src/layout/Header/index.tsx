@@ -19,7 +19,7 @@ interface Props {
 const Header = (props: Props) => {
   const { headerKey } = props;
   const router = useRouter();
-  const { t } = useTranslation('layout');
+  const { t } = useTranslation('common');
 
   return (
     <LobeHeader

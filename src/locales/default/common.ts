@@ -1,4 +1,14 @@
 export default {
+  header: {
+    tips: '项目当前正在施工中，不保证数据稳定性，如果遇到问题可以在系统设置中清除会话消息与重置系统设置，造成不便敬请谅解',
+    chat: '聊天',
+    role: '角色',
+    market: '发现',
+    settings: '设置',
+  },
+  dialog: '对话框',
+  sideBar: '侧边栏',
+  sessionList: '会话列表',
   uploadTip: '点击或拖拽文件到此区域上传',
   aiAlert: '请谨记：智能体所说的一切都是由 AI 生成的',
   ttsTip: '语音识别（需科学上网）',

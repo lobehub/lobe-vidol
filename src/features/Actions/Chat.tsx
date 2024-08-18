@@ -13,7 +13,7 @@ export default () => {
 
   const currentAgent = useAgentStore((s) => agentSelectors.currentAgentItem(s));
   const createSession = useSessionStore((s) => s.createSession);
-  const { t } = useTranslation('layout');
+  const { t } = useTranslation('common');
   return (
     <Button
       key="chat"

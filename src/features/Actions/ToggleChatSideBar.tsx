@@ -11,12 +11,12 @@ export default () => {
     s.showChatSidebar,
     s.toggleChatSideBar,
   ]);
-  const { t } = useTranslation('layout');
+  const { t } = useTranslation('common');
   return (
     <ActionIcon
       icon={showChatSidebar ? PanelRightClose : PanelRightOpen}
       onClick={() => toggleChatSideBar()}
-      title={t('siderBar')}
+      title={t('sideBar')}
       size={DESKTOP_HEADER_ICON_SIZE}
     />
   );

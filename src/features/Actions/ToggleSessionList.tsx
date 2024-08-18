@@ -11,7 +11,7 @@ export default () => {
     s.showSessionList,
     s.toggleSessionList,
   ]);
-  const { t } = useTranslation('layout');
+  const { t } = useTranslation('common');
   return (
     <ActionIcon
       icon={showSessionList ? ChevronsLeft : AlignLeft}
