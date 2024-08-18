@@ -1,6 +1,10 @@
-import { DancePanel, MarketPanel } from '@/panels';
+import dynamic from 'next/dynamic';
+
 import { useGlobalStore } from '@/store/global';
 import { PanelKey } from '@/types/config';
+
+const DancePanel = dynamic(() => import('@/panels/DancePanel'));
+const MarketPanel = dynamic(() => import('@/panels/MarketPanel'));
 
 export const apps = [
   {

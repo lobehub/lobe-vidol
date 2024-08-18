@@ -1,4 +1,4 @@
-import { ActionIcon } from '@lobehub/ui';
+import { ActionIcon, GradientButton } from '@lobehub/ui';
 import { Empty } from 'antd';
 import { createStyles } from 'antd-style';
 import classNames from 'classnames';
@@ -66,7 +66,17 @@ const DanceList = (props: PlayListProps) => {
           return <DanceItem danceItem={item} key={item.danceId} />;
         })}
         {danceList.length === 0 ? (
-          <Empty description={t('dance.noPlayList')} image={Empty.PRESENTED_IMAGE_SIMPLE}></Empty>
+          <Empty description={t('dance.noPlayList')} image={Empty.PRESENTED_IMAGE_SIMPLE}>
+            <GradientButton
+              glow
+              size="middle"
+              onClick={() => {
+                openPanel('dance');
+              }}
+            >
+              {t('dance.musicAndDance')}
+            </GradientButton>
+          </Empty>
         ) : null}
       </Flexbox>
     </Flexbox>
