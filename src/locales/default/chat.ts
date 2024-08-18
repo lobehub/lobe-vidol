@@ -6,6 +6,11 @@ export default {
   chatDialog: {
     close: '关闭',
   },
+  animation: {
+    animationList: '动作列表',
+    postureList: '姿势列表',
+    totalCount: '共 {{total}} 项',
+  },
   delSession: '删除会话',
   delSessionAlert: '确认删除对话吗？删除后无法恢复, 请谨慎操作！',
   dance: '跳舞',

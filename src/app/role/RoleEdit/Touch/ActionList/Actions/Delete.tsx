@@ -18,7 +18,7 @@ export default memo((props: Props) => {
   const [removeTouchAction] = useAgentStore((s) => [s.removeTouchAction]);
   return (
     <Popconfirm
-      title={t('actions.confirmDel')}
+      title={t('confirmDel')}
       key="delete"
       okText={t('confirm')}
       cancelText={t('cancel')}
@@ -26,7 +26,7 @@ export default memo((props: Props) => {
         removeTouchAction(touchArea, index);
       }}
     >
-      <ActionIcon icon={XIcon} title={t('actions.del')} />
+      <ActionIcon icon={XIcon} title={t('delete')} />
     </Popconfirm>
   );
 });

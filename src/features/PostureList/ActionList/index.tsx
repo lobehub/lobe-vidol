@@ -26,7 +26,7 @@ const useStyles = createStyles(({ css }) => ({
 
 const AreaList = memo((props: AreaListProps) => {
   const { currentGender, currentCategory, style, className } = props;
-  const { t } = useTranslation(['panel', 'features']);
+  const { t } = useTranslation('chat');
   const { styles } = useStyles();
 
   const genderFilter = (item: MotionAnimation) =>

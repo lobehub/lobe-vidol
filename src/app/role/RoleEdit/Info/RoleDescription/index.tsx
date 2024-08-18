@@ -12,7 +12,7 @@ interface Props {
 
 export default memo<Props>((props) => {
   const { style, className } = props;
-  const { t } = useTranslation('panel');
+  const { t } = useTranslation('role');
   const [meta, updateAgentMeta] = useAgentStore((s) => [
     agentSelectors.currentAgentMeta(s),
     s.updateAgentMeta,

@@ -19,7 +19,7 @@ export default memo((props: Props) => {
   const { touchAction } = props;
   const [loading, setLoading] = useState(false);
   const viewer = useGlobalStore((s) => s.viewer);
-  const { t } = useTranslation('panel');
+  const { t } = useTranslation('role');
 
   const currentAgentTTS = useAgentStore((s) => agentSelectors.currentAgentTTS(s), isEqual);
 

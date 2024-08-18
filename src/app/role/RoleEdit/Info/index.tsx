@@ -14,7 +14,7 @@ import RoleName from './RoleName';
 
 const Info = () => {
   const [form] = Form.useForm();
-  const { t } = useTranslation('panel');
+  const { t } = useTranslation('role');
 
   const basic: FormProps['items'] = [
     {

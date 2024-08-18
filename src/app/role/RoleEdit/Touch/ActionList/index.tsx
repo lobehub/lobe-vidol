@@ -43,7 +43,7 @@ const AreaList = (props: AreaListProps) => {
   const { styles } = useStyles();
   const { currentTouchArea, style, className, areaOptions = [] } = props;
   const [currentAgentTouch] = useAgentStore((s) => [agentSelectors.currentAgentTouch(s)]);
-  const { t } = useTranslation('panel');
+  const { t } = useTranslation('role');
   const items = currentAgentTouch
     ? (get(currentAgentTouch, currentTouchArea) as TouchAction[])
     : [];

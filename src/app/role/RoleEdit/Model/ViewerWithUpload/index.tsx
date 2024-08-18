@@ -16,7 +16,7 @@ interface ViewerWithUploadProps {
 
 const ViewerWithUpload = memo<ViewerWithUploadProps>(({ style }) => {
   const viewer = useGlobalStore((s) => s.viewer);
-  const { t } = useTranslation('panel');
+  const { t } = useTranslation('role');
   const [currentAgent, currentAgentModel, updateAgentConfig] = useAgentStore((s) => [
     agentSelectors.currentAgentItem(s),
     agentSelectors.currentAgentModel(s),

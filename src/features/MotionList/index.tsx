@@ -32,21 +32,21 @@ const MotionList = (props: MotionListProps) => {
   const [currentGender, setCurrentGender] = useState<GenderEnum | undefined>(undefined);
   const [currentCategory, setCurrentCategory] = useState<MotionCategoryEnum | undefined>(undefined);
 
-  const { t } = useTranslation(['constants']);
+  const { t } = useTranslation(['role']);
 
   const GENDER_OPTIONS = [
     {
-      label: t('agent.gender.all'),
+      label: t('gender.all'),
       value: undefined,
       icon: <GalleryVerticalEnd style={{ fontSize: 24 }} />,
     },
     {
-      label: t('agent.gender.female'),
+      label: t('gender.female'),
       value: GenderEnum.FEMALE,
       icon: <WomanOutlined style={{ fontSize: 24 }} />,
     },
     {
-      label: t('agent.gender.male'),
+      label: t('gender.male'),
       value: GenderEnum.MALE,
       icon: <ManOutlined style={{ fontSize: 24 }} />,
     },

@@ -27,7 +27,7 @@ interface IndexProps {
 const Index = (props: IndexProps) => {
   const { styles } = useStyles();
   const { currentTouchArea, setCurrentTouchArea, areaOptions = [] } = props;
-  const { t } = useTranslation(['panel', 'constants']);
+  const { t } = useTranslation('role');
 
   return (
     <Flexbox>

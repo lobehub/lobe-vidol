@@ -1,6 +1,5 @@
 import chat from './chat';
 import common from './common';
-import constants from './constants';
 import error from './error';
 import features from './features';
 import market from './market';
@@ -14,7 +13,6 @@ const resources = {
   error,
   role,
   welcome,
-  constants,
   panel,
   market,
   features,

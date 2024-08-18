@@ -16,7 +16,7 @@ interface Props {
 export default memo<Props>((props) => {
   const { style, className } = props;
   const ref = useRef<HTMLAudioElement>(null);
-  const { t } = useTranslation('panel');
+  const { t } = useTranslation('role');
 
   const tts = useAgentStore((s) => agentSelectors.currentAgentTTS(s));
   const sample = supportedLocales.find((item) => item.value === tts?.locale)?.sample;

@@ -12,7 +12,7 @@ import TTSSpeed from './TTSSpeed';
 import TTSVoice from './TTSVoice';
 
 export default () => {
-  const { t } = useTranslation('panel');
+  const { t } = useTranslation('role');
 
   const voice: FormProps['items'] = [
     {

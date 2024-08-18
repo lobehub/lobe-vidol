@@ -17,15 +17,15 @@ export default memo<Props>((props) => {
     s.updateAgentMeta,
   ]);
 
-  const { t } = useTranslation('constants');
+  const { t } = useTranslation('role');
 
   return (
     <Select
       className={className}
       style={style}
       options={[
-        { label: t('agent.gender.male'), value: GenderEnum.MALE },
-        { label: t('agent.gender.female'), value: GenderEnum.FEMALE },
+        { label: t('gender.male'), value: GenderEnum.MALE },
+        { label: t('gender.female'), value: GenderEnum.FEMALE },
       ]}
       value={meta?.gender}
       defaultActiveFirstOption={true}

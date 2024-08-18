@@ -25,7 +25,7 @@ const RolePanel = (props: RolePanelProps) => {
   const { styles } = useStyles();
   const { className, style } = props;
   const [tab, setTab] = useState('info');
-  const { t } = useTranslation('panel');
+  const { t } = useTranslation('role');
 
   return (
     <div className={classNames(styles.edit, className)} style={style}>

@@ -12,7 +12,7 @@ import ModelSelect from './ModelSelect';
 const LangModel = memo(() => {
   const [form] = Form.useForm();
 
-  const { t } = useTranslation('panel');
+  const { t } = useTranslation('role');
 
   const { updateAgentConfig } = useAgentStore();
 
