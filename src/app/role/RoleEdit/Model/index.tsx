@@ -3,7 +3,7 @@ import { createStyles } from 'antd-style';
 import classNames from 'classnames';
 import React from 'react';
 
-import ViewerWithUpload from '@/panels/RolePanel/RoleEdit/Model/ViewerWithUpload';
+import ViewerWithUpload from './ViewerWithUpload';
 
 interface ModelProps {
   className?: string;

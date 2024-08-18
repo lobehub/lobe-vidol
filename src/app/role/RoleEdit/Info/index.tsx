@@ -3,13 +3,14 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { INPUT_WIDTH_L, INPUT_WIDTH_M } from '@/constants/token';
-import Greeting from '@/panels/RolePanel/RoleEdit/Info/Greeting';
-import PreviewWithUpload from '@/panels/RolePanel/RoleEdit/Info/PreviewWithUpload';
-import ReadMe from '@/panels/RolePanel/RoleEdit/Info/ReadMe';
-import RoleCategory from '@/panels/RolePanel/RoleEdit/Info/RoleCategory';
-import RoleDescription from '@/panels/RolePanel/RoleEdit/Info/RoleDescription';
-import RoleGender from '@/panels/RolePanel/RoleEdit/Info/RoleGender';
-import RoleName from '@/panels/RolePanel/RoleEdit/Info/RoleName';
+
+import Greeting from './Greeting';
+import PreviewWithUpload from './PreviewWithUpload';
+import ReadMe from './ReadMe';
+import RoleCategory from './RoleCategory';
+import RoleDescription from './RoleDescription';
+import RoleGender from './RoleGender';
+import RoleName from './RoleName';
 
 const Info = () => {
   const [form] = Form.useForm();

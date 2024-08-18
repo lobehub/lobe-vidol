@@ -18,7 +18,7 @@
 
 在 的项目中，国际化相关的文件被组织如下：
 
-- `src/locales/default`: 包含默认开发语言（中文）的翻译文件，我们作为中文。
+- `src/locales/default`: 包含默认开发语`言`（中文）的翻译文件，我们作为中文。
 - `locales`: 包含所有支持的语言文件夹，每个语言文件夹中包含相应语言的翻译文件，这些翻译文件通过 lobe-i18n 自动生成。
 
 在 `src/locales` 这个目录结构中，`default` 文件夹包含了原始的翻译文件（中文），其他每个语言文件夹则包含了相应语言的 JSON 翻译文件。每个语言文件夹中的文件对应 `default` 文件夹中的 TypeScript 文件，确保了各语种之间的翻译文件结构一致性。
@@ -27,14 +27,14 @@
 src/locales
 ├── create.ts
 ├── default
-│   ├── chat.ts
-│   ├── common.ts
-│   ├── error.ts
-│   ├── index.ts
-│   ├── market.ts
-│   ├── setting.ts
-│   ├── tool.ts
-│   └── welcome.ts
+│   ├── chat.ts    // 包含聊天页面相关字符
+│   ├── role.ts    // 包含角色页面相关字符
+│   ├── common.ts  // 包含通用字符翻译，如确认，删除等,
+│   ├── error.ts   // 包含错误处理相关字符
+│   ├── index.ts   // 资源索引
+│   ├── market.ts  // 包含发现页面相关字符
+│   ├── setting.ts // 包含设置页面字符
+│   └── welcome.ts // 包含欢迎页面字符
 └── resources.ts
 ```
 

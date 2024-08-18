@@ -3,12 +3,13 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { INPUT_WIDTH_M } from '@/constants/token';
-import TTSEngine from '@/panels/RolePanel/RoleEdit/Voice/TTSEngine';
-import TTSLocale from '@/panels/RolePanel/RoleEdit/Voice/TTSLocale';
-import TTSPitch from '@/panels/RolePanel/RoleEdit/Voice/TTSPitch';
-import TTSPlay from '@/panels/RolePanel/RoleEdit/Voice/TTSPlay';
-import TTSSpeed from '@/panels/RolePanel/RoleEdit/Voice/TTSSpeed';
-import TTSVoice from '@/panels/RolePanel/RoleEdit/Voice/TTSVoice';
+
+import TTSEngine from './TTSEngine';
+import TTSLocale from './TTSLocale';
+import TTSPitch from './TTSPitch';
+import TTSPlay from './TTSPlay';
+import TTSSpeed from './TTSSpeed';
+import TTSVoice from './TTSVoice';
 
 export default () => {
   const { t } = useTranslation('panel');

@@ -5,8 +5,8 @@ import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
 import TopBanner from '@/components/TopBanner';
-import RoleEdit from '@/panels/RolePanel/RoleEdit';
 
+import RoleEdit from './RoleEdit';
 import SideBar from './SideBar';
 import { useStyles } from './style';
 

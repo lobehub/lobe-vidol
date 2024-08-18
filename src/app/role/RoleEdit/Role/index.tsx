@@ -3,7 +3,7 @@ import { createStyles } from 'antd-style';
 import classNames from 'classnames';
 import React from 'react';
 
-import SystemRole from '@/panels/RolePanel/RoleEdit/Role/SystemRole';
+import SystemRole from './SystemRole';
 
 const useStyles = createStyles(({ css }) => ({
   container: css`
