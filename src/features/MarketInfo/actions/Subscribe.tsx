@@ -23,6 +23,7 @@ const Subscribe = memo((props: SubscribeButtonProps) => {
   return (
     <Popover
       open={downloading}
+      getPopupContainer={() => document.querySelector('#subscribe_button')!}
       title={
         <Flexbox>
           <Space>
@@ -43,6 +44,7 @@ const Subscribe = memo((props: SubscribeButtonProps) => {
       <Button
         key={'subscribe'}
         disabled={downloading}
+        id="subscribe_button"
         onClick={async () => {
           await fetchAgentData(agent);
         }}
