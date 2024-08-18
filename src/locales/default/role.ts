@@ -5,7 +5,9 @@ export default {
   },
   roleList: '角色列表',
   topBannerTitle: '角色预览和设置',
+  startChat: '开始聊天',
   delRole: '删除角色',
+  delAlert: '确认删除角色以及相关联的会话消息吗？删除后无法恢复, 请谨慎操作！',
   delRoleDesc: '确定删除角色 {{name}} 以及相关联的会话消息吗？删除后无法恢复, 请谨慎操作！',
   noRole: '暂无角色，可以通过 + 创建自定义角色，也可通过发现页添加角色',
   category: {

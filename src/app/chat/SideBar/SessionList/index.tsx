@@ -1,22 +1,16 @@
-import { Icon, SearchBar } from '@lobehub/ui';
-import { Collapse } from 'antd';
+import { SearchBar } from '@lobehub/ui';
 import { createStyles } from 'antd-style';
-import { ChevronDown } from 'lucide-react';
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
 import { HEADER_HEIGHT } from '@/constants/token';
-import Agent from '@/features/Actions/AgentCreate';
-import Elsa from '@/features/RoleList/List/Elsa';
+import Market from '@/features/Actions/SessionCreate';
 
+import V from './Elsa';
 import List from './List';
 
 const useStyles = createStyles(({ css, token, prefixCls }) => ({
-  role: css`
-    overflow-y: auto;
-    height: 100%;
-  `,
   list: css`
     padding: 8px;
   `,
@@ -49,13 +43,12 @@ const useStyles = createStyles(({ css, token, prefixCls }) => ({
   `,
 }));
 
-const RoleList = () => {
+const SideBar = () => {
   const { styles } = useStyles();
   const [searchName, setSearchName] = useState<string>();
-  const { t } = useTranslation(['common', 'role']);
-
+  const { t } = useTranslation('common');
   return (
-    <div className={styles.role}>
+    <>
       <Flexbox
         justify={'space-between'}
         horizontal
@@ -73,36 +66,14 @@ const RoleList = () => {
           type={'block'}
           value={searchName}
         />
-        <Agent />
+        <Market />
       </Flexbox>
       <div className={styles.list}>
-        <Elsa />
-        <Collapse
-          bordered={false}
-          defaultActiveKey={'default'}
-          className={styles.container}
-          expandIcon={({ isActive }) => (
-            <Icon
-              className={styles.icon}
-              icon={ChevronDown}
-              size={{ fontSize: 16 }}
-              style={isActive ? {} : { rotate: '-90deg' }}
-            />
-          )}
-          expandIconPosition={'end'}
-          ghost
-          size={'small'}
-          items={[
-            {
-              children: <List filter={searchName} />,
-              label: t('roleList', { ns: 'role' }),
-              key: 'default',
-            },
-          ]}
-        />
+        <V />
+        <List filter={searchName} />
       </div>
-    </div>
+    </>
   );
 };
 
-export default RoleList;
+export default SideBar;

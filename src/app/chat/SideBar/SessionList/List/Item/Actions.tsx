@@ -1,10 +1,8 @@
 import { ActionIcon } from '@lobehub/ui';
 import { App, Dropdown, MenuProps } from 'antd';
-import { MessageCircle, MoreVertical, Trash2 } from 'lucide-react';
-import { useRouter } from 'next/navigation';
+import { MoreVertical, Trash2 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
-import { useAgentStore } from '@/store/agent';
 import { useSessionStore } from '@/store/session';
 
 interface ActionsProps {
@@ -15,49 +13,30 @@ interface ActionsProps {
 export default (props: ActionsProps) => {
   const { id, setOpen } = props;
   const { modal } = App.useApp();
-  const router = useRouter();
-  const { t } = useTranslation('common');
-  const [removeLocalAgent] = useAgentStore((s) => [s.removeLocalAgent]);
-  const currentAgent = useAgentStore((s) => s.getAgentById(id));
-  const [createSession, removeSessionByAgentId] = useSessionStore((s) => [
-    s.createSession,
-    s.removeSessionByAgentId,
-  ]);
+  const { t } = useTranslation('chat');
+  const [removeSessionByAgentId] = useSessionStore((s) => [s.removeSessionByAgentId]);
 
   const items: MenuProps['items'] = [
-    {
-      icon: <MessageCircle />,
-      label: t('startChat'),
-      key: 'chat',
-      onClick: ({ domEvent }) => {
-        domEvent.stopPropagation();
-        if (!currentAgent) return;
-        createSession(currentAgent);
-        router.push('/chat');
-      },
-    },
     {
       danger: true,
       icon: <Trash2 />,
       key: 'delete',
-      label: t('delRole'),
+      label: t('delSession'),
       onClick: ({ domEvent }) => {
         domEvent.stopPropagation();
         modal.confirm({
           centered: true,
           okButtonProps: { danger: true },
           async onOk() {
-            await removeLocalAgent(id);
             removeSessionByAgentId(id);
           },
-          okText: t('actions.del'),
-          cancelText: t('cancel'),
-          title: t('delAlert'),
+          okText: t('delete', { ns: 'common' }),
+          cancelText: t('cancel', { ns: 'common' }),
+          title: t('delSessionAlert'),
         });
       },
     },
   ];
-
   return (
     <Dropdown
       menu={{
