@@ -10,9 +10,6 @@ export default {
     musicAndDance: '舞蹈市场',
     noPlayList: '暂无播放列表，您可以通过市场订阅你喜欢的舞蹈',
   },
-  market: {
-    findVidol: '找到你最爱的偶像',
-  },
   role: {
     uploadSize: '支持单个文件上传，推荐尺寸为 {{width}} * {{height}} 的倍数',
     greetTip: '请输入角色与你打招呼时的用语',

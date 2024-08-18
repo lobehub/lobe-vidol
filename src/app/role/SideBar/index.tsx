@@ -33,7 +33,6 @@ const SideBar = () => {
       onExpandChange={(expand) => setRoleList(expand)}
       expand={showRoleList}
     >
-      {/*<Header.tsx />*/}
       <RoleList />
     </DraggablePanel>
   );

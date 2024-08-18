@@ -3,13 +3,12 @@ import common from './common';
 import constants from './constants';
 import error from './error';
 import features from './features';
-import my from './my';
+import market from './market';
 import panel from './panel';
 import role from './role';
 import welcome from './welcome';
 
 const resources = {
-  my,
   chat,
   common,
   error,
@@ -17,6 +16,7 @@ const resources = {
   welcome,
   constants,
   panel,
+  market,
   features,
 } as const;
 

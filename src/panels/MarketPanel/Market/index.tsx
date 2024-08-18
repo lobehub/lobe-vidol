@@ -31,13 +31,13 @@ const useStyles = createStyles(({ css }) => ({
 
 const Agent = () => {
   const { styles } = useStyles();
-  const { t } = useTranslation('panel');
+  const { t } = useTranslation('market');
 
   return (
     <Flexbox flex={1} height={'100%'} width={'100%'} horizontal>
       <div className={styles.container}>
         <div className={styles.content}>
-          <TopBanner title={t('market.findVidol')} />
+          <TopBanner title={t('findVidol')} />
           <AgentList />
         </div>
       </div>
