@@ -9,12 +9,12 @@ import { useTranslation } from 'react-i18next';
 import { Center, Flexbox } from 'react-layout-kit';
 
 import StopLoadingIcon from '@/components/StopLoading';
-import Record from '@/features/Actions/Record';
 import useChatInput from '@/hooks/useSendMessage';
 import { useSessionStore } from '@/store/session';
 import { isCommandPressed } from '@/utils/keyboard';
 import { isMacOS } from '@/utils/platform';
 
+import Record from './actions/Record';
 import { useStyles } from './style';
 
 interface InputAreaProps {

@@ -2,10 +2,10 @@ import { Avatar, ChatHeaderTitle, Logo, Markdown } from '@lobehub/ui';
 import { memo } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
-import pkg from '@/../package.json';
 import ModelTag from '@/components/ModelTag';
 import useSessionContext from '@/hooks/useSessionContext';
 
+import pkg from '../../../../../../package.json';
 import ChatList from './ChatList';
 import { useStyles } from './style';
 import { FieldType } from './type';

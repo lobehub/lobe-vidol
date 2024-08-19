@@ -7,7 +7,7 @@ import { Flexbox } from 'react-layout-kit';
 import { FORM_STYLE } from '@/constants/token';
 import { useSessionStore } from '@/store/session';
 
-import { useScreenshot } from '../../../hooks/useScreenshot';
+import { useScreenshot } from '../../../../../hooks/useScreenshot';
 import Preview from './Preview';
 import { FieldType, ImageType } from './type';
 

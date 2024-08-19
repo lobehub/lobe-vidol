@@ -7,8 +7,8 @@ import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
 import { HEADER_HEIGHT } from '@/constants/token';
-import Agent from '@/features/Actions/AgentCreate';
 
+import AgentCreate from './AgentCreate';
 import List from './List';
 import Elsa from './List/Elsa';
 
@@ -73,7 +73,7 @@ const RoleList = () => {
           type={'block'}
           value={searchName}
         />
-        <Agent />
+        <AgentCreate />
       </Flexbox>
       <div className={styles.list}>
         <Elsa />

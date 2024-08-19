@@ -4,12 +4,12 @@ import React from 'react';
 import { Flexbox } from 'react-layout-kit';
 
 import AgentMeta from '@/components/agent/AgentMeta';
-import ShareButton from '@/features/Actions/ShareButton';
-import ToggleChatSideBar from '@/features/Actions/ToggleChatSideBar';
-import ToggleSessionList from '@/features/Actions/ToggleSessionList';
-import Voice from '@/features/Actions/Voice';
 import { sessionSelectors, useSessionStore } from '@/store/session';
 
+import ShareButton from './actions/ShareButton';
+import ToggleChatSideBar from './actions/ToggleChatSideBar';
+import ToggleSessionList from './actions/ToggleSessionList';
+import Voice from './actions/Voice';
 import { useStyles } from './style';
 
 interface Props {

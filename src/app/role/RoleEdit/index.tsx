@@ -6,14 +6,13 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
-import SubmitAgentButton from '@/features/Actions/SubmitAgentButton';
-
 import Info from './Info';
 import LangModel from './LangModel';
 import Model from './Model';
 import Role from './Role';
 import Touch from './Touch';
 import Voice from './Voice';
+import SubmitAgentButton from './actions/SubmitAgentButton';
 import { useStyles } from './style';
 
 interface RolePanelProps {

@@ -5,10 +5,10 @@ import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
 import { HEADER_HEIGHT } from '@/constants/token';
-import Market from '@/features/Actions/SessionCreate';
 
 import V from './Elsa';
 import List from './List';
+import SessionCreate from './SessionCreate';
 
 const useStyles = createStyles(({ css, token, prefixCls }) => ({
   list: css`
@@ -66,7 +66,7 @@ const SideBar = () => {
           type={'block'}
           value={searchName}
         />
-        <Market />
+        <SessionCreate />
       </Flexbox>
       <div className={styles.list}>
         <V />
