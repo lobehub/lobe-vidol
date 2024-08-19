@@ -32,7 +32,7 @@ const VirtualizedList = memo<VirtualizedListProps>(({ mobile, className, style }
   const virtuosoRef = useRef<VirtuosoHandle>(null);
   const [atBottom, setAtBottom] = useState(true);
   const { styles } = useStyles();
-  const { t } = useTranslation(['panel', 'common']);
+  const { t } = useTranslation('chat');
 
   const data = useSessionStore(
     (s) => ['empty', ...sessionSelectors.currentChatIDsWithGreetingMessage(s)],

@@ -42,7 +42,7 @@ const DanceList = (props: PlayListProps) => {
   const danceList = useDanceStore((s) => s.danceList);
   const [openPanel] = useGlobalStore((s) => [s.openPanel]);
 
-  const { t } = useTranslation(['panel', 'common']);
+  const { t } = useTranslation('chat');
   const { className, style } = props;
   const { styles } = useStyles();
 
@@ -57,7 +57,7 @@ const DanceList = (props: PlayListProps) => {
               onClick={() => {
                 openPanel('dance');
               }}
-              title={t('dance.musicAndDance')}
+              title={t('musicAndDance', { ns: 'dance' })}
             />
           }
         />
@@ -66,7 +66,10 @@ const DanceList = (props: PlayListProps) => {
           return <DanceItem danceItem={item} key={item.danceId} />;
         })}
         {danceList.length === 0 ? (
-          <Empty description={t('dance.noPlayList')} image={Empty.PRESENTED_IMAGE_SIMPLE}>
+          <Empty
+            description={t('noPlayList', { ns: 'dance' })}
+            image={Empty.PRESENTED_IMAGE_SIMPLE}
+          >
             <GradientButton
               glow
               size="middle"
@@ -74,7 +77,7 @@ const DanceList = (props: PlayListProps) => {
                 openPanel('dance');
               }}
             >
-              {t('dance.musicAndDance')}
+              {t('musicAndDance', { ns: 'dance' })}
             </GradientButton>
           </Empty>
         ) : null}

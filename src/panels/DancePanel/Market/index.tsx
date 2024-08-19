@@ -16,11 +16,11 @@ interface DanceProps {
 const Dance = (props: DanceProps) => {
   const { style, className } = props;
   const { styles } = useStyles();
-  const { t } = useTranslation('panel');
+  const { t } = useTranslation('dance');
   return (
     <div className={classNames(className, styles.container)} style={style}>
       <div className={styles.content}>
-        <TopBanner title={t('dance.findDance')} />
+        <TopBanner title={t('findDance')} />
         <DanceList />
       </div>
       <DanceCard />

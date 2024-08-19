@@ -25,7 +25,7 @@ export default memo((props: Props) => {
   const { touchArea, index, touchAction, isEdit = true } = props;
   const [open, setOpen] = useState(false);
   const [form] = Form.useForm();
-  const { t } = useTranslation(['common', 'panel', 'constants']);
+  const { t } = useTranslation('role');
 
   const [updateTouchAction, createTouchAction] = useAgentStore((s) => [
     s.updateTouchAction,
@@ -55,7 +55,7 @@ export default memo((props: Props) => {
     <>
       <ActionIcon
         icon={isEdit ? Edit2Icon : Plus}
-        title={isEdit ? t('actions.edit') : t('actions.add')}
+        title={isEdit ? t('actions.edit', { ns: 'common' }) : t('actions.add', { ns: 'common' })}
         onClick={showModal}
       />
       <Modal
@@ -64,9 +64,7 @@ export default memo((props: Props) => {
         open={open}
         width={800}
         destroyOnClose
-        title={
-          isEdit ? t('touch.editAction', { ns: 'panel' }) : t('touch.addAction', { ns: 'panel' })
-        }
+        title={isEdit ? t('touch.editAction') : t('touch.addAction')}
         okText={t('confirm')}
         cancelText={t('cancel')}
       >
@@ -82,13 +80,13 @@ export default memo((props: Props) => {
           preserve={false}
         >
           <FormItem
-            label={t('info.textLabel', { ns: 'panel' })}
-            desc={t('info.textDescription', { ns: 'panel' })}
+            label={t('info.textLabel')}
+            desc={t('info.textDescription')}
             name={'text'}
-            rules={[{ required: true, message: t('touch.inputDIYText', { ns: 'panel' }) }]}
+            rules={[{ required: true, message: t('touch.inputDIYText') }]}
           >
             <Input.TextArea
-              placeholder={t('touch.inputActionText', { ns: 'panel' })}
+              placeholder={t('touch.inputActionText')}
               maxLength={MAX_TOUCH_ACTION_TEXT_LENGTH}
               showCount
               autoSize
@@ -96,48 +94,48 @@ export default memo((props: Props) => {
             />
           </FormItem>
           <FormItem
-            label={t('info.emotionLabel', { ns: 'panel' })}
-            desc={t('info.emotionDescription', { ns: 'panel' })}
+            label={t('info.emotionLabel')}
+            desc={t('info.emotionDescription')}
             divider
-            rules={[{ required: true, message: t('touch.inputActionEmotion', { ns: 'panel' }) }]}
+            rules={[{ required: true, message: t('touch.inputActionEmotion') }]}
             name="emotion"
           >
             <Select
               options={[
                 {
-                  label: t('touch.emotion.natural', { ns: 'constants' }),
+                  label: t('touch.emotion.natural'),
                   value: VRMExpressionPresetName.Neutral,
                 },
                 {
-                  label: t('touch.emotion.happy', { ns: 'constants' }),
+                  label: t('touch.emotion.happy'),
                   value: VRMExpressionPresetName.Happy,
                 },
                 {
-                  label: t('touch.emotion.angry', { ns: 'constants' }),
+                  label: t('touch.emotion.angry'),
                   value: VRMExpressionPresetName.Angry,
                 },
                 {
-                  label: t('touch.emotion.sad', { ns: 'constants' }),
+                  label: t('touch.emotion.sad'),
                   value: VRMExpressionPresetName.Sad,
                 },
                 {
-                  label: t('touch.emotion.relaxed', { ns: 'constants' }),
+                  label: t('touch.emotion.relaxed'),
                   value: VRMExpressionPresetName.Relaxed,
                 },
                 {
-                  label: t('touch.emotion.surprised', { ns: 'constants' }),
+                  label: t('touch.emotion.surprised'),
                   value: VRMExpressionPresetName.Surprised,
                 },
                 {
-                  label: t('touch.emotion.blink', { ns: 'constants' }),
+                  label: t('touch.emotion.blink'),
                   value: VRMExpressionPresetName.Blink,
                 },
                 {
-                  label: t('touch.emotion.blinkLeft', { ns: 'constants' }),
+                  label: t('touch.emotion.blinkLeft'),
                   value: VRMExpressionPresetName.BlinkLeft,
                 },
                 {
-                  label: t('touch.emotion.blinkRight', { ns: 'constants' }),
+                  label: t('touch.emotion.blinkRight'),
                   value: VRMExpressionPresetName.BlinkRight,
                 },
               ]}
@@ -146,10 +144,10 @@ export default memo((props: Props) => {
             />
           </FormItem>
           <FormItem
-            label={t('info.motionLabel', { ns: 'panel' })}
-            desc={t('info.motionDescription', { ns: 'panel' })}
+            label={t('info.motionLabel')}
+            desc={t('info.motionDescription')}
             divider
-            rules={[{ required: true, message: t('touch.inputActionEmotion', { ns: 'panel' }) }]}
+            rules={[{ required: true, message: t('touch.inputActionEmotion') }]}
             name="motion"
           >
             <Select

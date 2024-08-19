@@ -32,7 +32,7 @@ export default memo((props: Props) => {
       icon={loading ? Loader2 : PlayIcon}
       spin={loading}
       disable={loading}
-      title={t('dance.play')}
+      title={t('actions.play', { ns: 'common' })}
       key="play"
       onClick={() => {
         setLoading(true);

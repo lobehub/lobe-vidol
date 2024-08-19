@@ -14,7 +14,7 @@ interface ActionsProps {
 export default (props: ActionsProps) => {
   const { danceItem, setOpen } = props;
   const { modal } = App.useApp();
-  const { t } = useTranslation(['common', 'panel']);
+  const { t } = useTranslation('dance');
   const [removeDanceItem] = useDanceStore((s) => [s.removeDanceItem]);
 
   const items: MenuProps['items'] = [
@@ -33,7 +33,7 @@ export default (props: ActionsProps) => {
           },
           okText: t('actions.unsubscribe', { ns: 'common' }),
           cancelText: t('cancel'),
-          title: t('dance.cancelAddPlay', { musicName: danceItem?.name, ns: 'panel' }),
+          title: t('cancelAddPlay', { musicName: danceItem?.name }),
         });
       },
     },

@@ -32,7 +32,7 @@ const MotionList = (props: MotionListProps) => {
   const [currentGender, setCurrentGender] = useState<GenderEnum | undefined>(undefined);
   const [currentCategory, setCurrentCategory] = useState<MotionCategoryEnum | undefined>(undefined);
 
-  const { t } = useTranslation(['role']);
+  const { t } = useTranslation('role');
 
   const GENDER_OPTIONS = [
     {

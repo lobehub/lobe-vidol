@@ -14,6 +14,18 @@ export default {
     light: '亮色模式',
     dark: '暗黑模式',
   },
+  share: {
+    screenshot: '截图',
+    shareGPT: '分享GPT',
+    withSystemRole: '包含助手角色设定',
+    withBackground: '包含背景图片',
+    withFooter: '包含页脚',
+    imageType: '图片格式',
+    downloadScreenshot: '下载截图',
+    shareToGPT: '生成 ShareGPT 分享链接',
+    share: '分享',
+    shareToMarket: '分享到助手市场',
+  },
   settings: {
     glow: '光辉',
     none: '无背景',

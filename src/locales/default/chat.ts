@@ -19,18 +19,6 @@ export default {
     confirmRetry: '确认并重试',
     closeTip: '关闭提示',
   },
-  share: {
-    screenshot: '截图',
-    shareGPT: '分享GPT',
-    withSystemRole: '包含助手角色设定',
-    withBackground: '包含背景图片',
-    withFooter: '包含页脚',
-    imageType: '图片格式',
-    downloadScreenshot: '下载截图',
-    shareToGPT: '生成 ShareGPT 分享链接',
-    share: '分享',
-    shareToMarket: '分享到助手市场',
-  },
   chatDialog: {
     close: '关闭',
   },

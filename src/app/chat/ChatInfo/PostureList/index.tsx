@@ -43,7 +43,7 @@ const PostureList = (props: PostureListProps) => {
     undefined,
   );
 
-  const { t } = useTranslation(['role']);
+  const { t } = useTranslation('role');
 
   const GENDER_OPTIONS = [
     {

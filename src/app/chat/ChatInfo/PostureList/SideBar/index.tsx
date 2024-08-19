@@ -38,7 +38,7 @@ const Index = (props: IndexProps) => {
     genderOptions = [],
     categoryOptions = [],
   } = props;
-  const { t } = useTranslation(['panel']);
+  const { t } = useTranslation('role');
 
   return (
     <Flexbox>

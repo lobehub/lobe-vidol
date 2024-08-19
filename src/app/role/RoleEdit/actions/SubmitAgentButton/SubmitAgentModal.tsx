@@ -129,7 +129,7 @@ const SubmitAgentModal = memo<ModalProps>(({ open, onCancel }) => {
       }
       onCancel={onCancel}
       open={open}
-      title={t('share.shareToMarket')}
+      title={t('share.shareToMarket', { ns: 'common' })}
     >
       <Flexbox gap={16}>
         {!isFormPass && <Alert message={t('submit.submitWarning')} showIcon type={'warning'} />}

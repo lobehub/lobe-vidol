@@ -19,7 +19,7 @@ export default memo<Props>((props) => {
     agentSelectors.currentAgentItem(s),
     s.updateAgentConfig,
   ]);
-  const { t } = useTranslation(['panel', 'role']);
+  const { t } = useTranslation('role');
   return (
     <Flexbox>
       <Input.TextArea

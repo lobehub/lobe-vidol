@@ -16,15 +16,15 @@ const UnSubscribe = memo((props: UnSubscribeButtonProps) => {
   const removeSessionByAgentId = useSessionStore((s) => s.removeSessionByAgentId);
   const [loading, setLoading] = useState(false);
 
-  const { t } = useTranslation(['common', 'role']);
+  const { t } = useTranslation('role');
 
   return (
     <Popconfirm
-      cancelText={t('cancel')}
-      description={t('delRoleDesc', { name: agent?.meta.name, ns: 'role' })}
+      cancelText={t('cancel', { ns: 'common' })}
+      description={t('delRoleDesc', { name: agent?.meta.name })}
       key="delete"
       overlayStyle={{ width: 416 }}
-      okText={t('confirm')}
+      okText={t('confirm', { ns: 'common' })}
       okButtonProps={{ loading: loading, danger: true }}
       onConfirm={async () => {
         if (!agent) return;
@@ -32,11 +32,11 @@ const UnSubscribe = memo((props: UnSubscribeButtonProps) => {
         await removeLocalAgent(agent.agentId);
         removeSessionByAgentId(agent.agentId);
         setLoading(false);
-        message.success(t('actions.unsubscribeSuccess'));
+        message.success(t('actions.unsubscribeSuccess', { ns: 'common' }));
       }}
-      title={t('actions.unsubscribe') + '?'}
+      title={t('actions.unsubscribe', { ns: 'common' }) + '?'}
     >
-      <Button danger>{t('actions.unsubscribe')}</Button>
+      <Button danger>{t('actions.unsubscribe', { ns: 'common' })}</Button>
     </Popconfirm>
   );
 });
