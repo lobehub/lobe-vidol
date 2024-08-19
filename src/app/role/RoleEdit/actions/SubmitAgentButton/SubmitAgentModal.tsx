@@ -26,7 +26,7 @@ const SubmitAgentModal = memo<ModalProps>(({ open, onCancel }) => {
     isEqual,
   );
   const meta = currentAgent?.meta;
-  const { t } = useTranslation(['features', 'error']);
+  const { t } = useTranslation('role');
 
   const { uploading, uploadAgentData, percent } = useUploadAgent();
 

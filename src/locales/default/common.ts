@@ -6,6 +6,20 @@ export default {
     market: '发现',
     settings: '设置',
   },
+  locale: {
+    auto: '跟随系统',
+  },
+  theme: {
+    auto: '跟随系统',
+    light: '亮色模式',
+    dark: '暗黑模式',
+  },
+  settings: {
+    glow: '光辉',
+    none: '无背景',
+    nickName: '请输入昵称',
+  },
+  support: '社区支持',
   delete: '删除',
   confirmDel: '确定删除吗？',
   cancel: '取消',
@@ -30,7 +44,6 @@ export default {
   history: '聊天记录',
   confirm: '确定',
   search: '搜索',
-
   setLocalStorage: '设置 LocalStorage',
   actions: {
     copy: '复制',
@@ -64,7 +77,6 @@ export default {
     clearContext: '清除上下文',
     clearTip: '操作无法撤销，清除后数据将无法恢复，请慎重操作',
     clearHistoryTip: '该操作不可逆，请谨慎操作',
-
     clearSuccess: '清除成功',
     clearTitle: '确认清除所有会话消息?',
     clearHistoryTitle: '确定删除历史消息？',

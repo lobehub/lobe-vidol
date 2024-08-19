@@ -17,7 +17,7 @@ const genderIcons = {
 
 const AgentCreate = memo(() => {
   const createNewAgent = useAgentStore((s) => s.createNewAgent);
-  const { t } = useTranslation('features');
+  const { t } = useTranslation('role');
 
   const items: MenuProps['items'] = useMemo(
     () => [

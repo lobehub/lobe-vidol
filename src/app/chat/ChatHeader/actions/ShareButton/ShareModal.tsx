@@ -46,7 +46,7 @@ const DEFAULT_FIELD_VALUE: FieldType = {
 const ShareModal = memo<ModalProps>(({ onCancel, open }) => {
   const [fieldValue, setFieldValue] = useState<FieldType>(DEFAULT_FIELD_VALUE);
   const [tab, setTab] = useState<Tab>(Tab.Screenshot);
-  const { t } = useTranslation('features');
+  const { t } = useTranslation('chat');
   const [shareLoading, shareToShareGPT] = useSessionStore((s) => [
     s.shareLoading,
     s.shareToShareGPT,

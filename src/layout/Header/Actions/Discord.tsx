@@ -22,7 +22,7 @@ const useStyles = createStyles(({ css, token }) => {
 export default () => {
   const { styles } = useStyles();
   const theme = useTheme();
-  const { t } = useTranslation('features');
+  const { t } = useTranslation('common');
   return (
     <ActionIcon
       className={styles.icon}

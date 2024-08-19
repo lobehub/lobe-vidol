@@ -24,7 +24,7 @@ function AgentViewer(props: Props) {
   const { styles } = useStyles();
   const ref = useRef<HTMLDivElement>(null);
   const viewer = useGlobalStore((s) => s.viewer);
-  const { t } = useTranslation('features');
+  const { t } = useTranslation('chat');
 
   const { downloading, percent, fetchModelUrl } = useLoadModel();
 
@@ -95,7 +95,7 @@ function AgentViewer(props: Props) {
       <ToolBar className={styles.toolbar} viewer={viewer} />
       {downloading ? (
         <PageLoading
-          title={t('toolBar.downloadModel')}
+          title={t('toolBar.downloading')}
           description={<Progress percent={percent} size="small" steps={50} />}
           className={styles.loading}
         />

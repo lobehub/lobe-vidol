@@ -17,7 +17,7 @@ const themeIcons = {
 const ThemeButton = memo(() => {
   const theme = useTheme();
   const [themeMode, switchThemeMode] = useGlobalStore((s) => [s.themeMode, s.setThemeMode]);
-  const { t } = useTranslation('features');
+  const { t } = useTranslation('common');
   const items: MenuProps['items'] = useMemo(
     () => [
       {

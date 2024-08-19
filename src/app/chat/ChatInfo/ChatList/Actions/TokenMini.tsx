@@ -9,7 +9,7 @@ const TokenMini = () => {
   const model = useSessionContext()?.sessionAgent?.model;
 
   const usedTokens = useCalculateToken();
-  const { t } = useTranslation('features');
+  const { t } = useTranslation('chat');
   const maxValue = OPENAI_MODEL_LIST.find((item) => item.id === model)?.tokens || 4096;
 
   return (

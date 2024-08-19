@@ -1,7 +1,7 @@
 import chat from './chat';
 import common from './common';
+import dance from './dance';
 import error from './error';
-import features from './features';
 import market from './market';
 import panel from './panel';
 import role from './role';
@@ -11,11 +11,11 @@ const resources = {
   chat,
   common,
   error,
+  dance,
   role,
   welcome,
   panel,
   market,
-  features,
 } as const;
 
 export default resources;

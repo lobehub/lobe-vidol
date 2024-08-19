@@ -12,7 +12,7 @@ interface Props {
 
 export default memo<Props>((props) => {
   const { style } = props;
-  const { t } = useTranslation('features');
+  const { t } = useTranslation('common');
   const [backgroundEffect, setBackgroundEffect] = useSettingStore(
     (s) => [s.config.backgroundEffect, s.setBackgroundEffect],
     isEqual,

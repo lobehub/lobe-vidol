@@ -3,6 +3,18 @@ export default {
     name: '自定义角色',
     description: '这是一个自定义角色',
   },
+  agent: {
+    create: '创建角色',
+    female: '女性',
+    male: '男性',
+    other: '其他',
+  },
+  submit: {
+    submitAssistant: '提交助手',
+    submitWarning: '请补全助手信息后提交，需要包含名称、描述、头像、模型，角色设定和招呼',
+    assistantId: '助手标识符',
+    assistantIdTip: '请输入助手的标识符，需要是唯一的，比如 vidol-agent-klee',
+  },
   gender: {
     male: '男性',
     female: '女性',

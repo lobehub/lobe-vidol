@@ -12,7 +12,7 @@ interface Props {
 
 const NickName = memo<Props>((props) => {
   const { style } = props;
-  const { t } = useTranslation('features');
+  const { t } = useTranslation('common');
 
   const [nickName, setNickName] = useSettingStore(
     (s) => [s.config.nickName, s.setNickName],

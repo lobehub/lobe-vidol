@@ -37,7 +37,7 @@ export default () => {
   ]);
 
   const [tab, setTab] = useState<Tab>(Tab.ChatList);
-  const { t } = useTranslation('features');
+  const { t } = useTranslation('chat');
 
   const { styles } = useStyles();
 

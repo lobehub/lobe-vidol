@@ -16,7 +16,7 @@ interface APIKeyFormProps {
 
 const APIKeyForm = ({ id }: APIKeyFormProps) => {
   const [showProxy, setShow] = useState(false);
-  const { t } = useTranslation('features');
+  const { t } = useTranslation('chat');
 
   const [currentOpenAIConfig, setConfig] = useSettingStore((s) => [
     configSelectors.currentOpenAIConfig(s),
@@ -27,11 +27,7 @@ const APIKeyForm = ({ id }: APIKeyFormProps) => {
 
   return (
     <Center gap={16} style={{ maxWidth: 300 }}>
-      <FormAction
-        avatar={'🔑'}
-        description={t('feature.startDesc')}
-        title={t('feature.startTitle')}
-      >
+      <FormAction avatar={'🔑'} description={t('apiKey.startDesc')} title={t('apiKey.startTitle')}>
         <Input.Password
           autoComplete="new-password"
           onChange={(e) => {
@@ -58,7 +54,7 @@ const APIKeyForm = ({ id }: APIKeyFormProps) => {
             }}
             type={'text'}
           >
-            {t('feature.addProxy')}
+            {t('apiKey.addProxy')}
           </Button>
         )}
       </FormAction>
@@ -72,14 +68,14 @@ const APIKeyForm = ({ id }: APIKeyFormProps) => {
           style={{ marginTop: 8 }}
           type={'primary'}
         >
-          {t('feature.confirmRetry')}
+          {t('apiKey.confirmRetry')}
         </Button>
         <Button
           onClick={() => {
             deleteMessage(id);
           }}
         >
-          {t('feature.closeTip')}
+          {t('apiKey.closeTip')}
         </Button>
       </Flexbox>
     </Center>

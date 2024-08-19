@@ -14,7 +14,7 @@ interface ToolBarProps {
 
 const ToolBar = (props: ToolBarProps) => {
   const { style, className, viewer } = props;
-  const { t } = useTranslation('features');
+  const { t } = useTranslation('chat');
 
   const dropdownMenu = [
     {
