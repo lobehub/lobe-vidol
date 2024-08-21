@@ -9,14 +9,14 @@ import { useChatListActionsBar } from '@/hooks/useChatListActionsBar';
 
 const AssistantActionsBar: RenderAction = ({ onActionClick, id }) => {
   const { copy, regenerate, divider, del, delAndRegenerate, edit } = useChatListActionsBar();
-  const { t } = useTranslation('common');
+  const { t } = useTranslation('chat');
 
   if (id === 'default') return;
 
   const tts = {
     icon: Play,
     key: 'tts',
-    label: t('ttsCombine'),
+    label: t('tts.combine'),
   } as ActionIconGroupItems;
 
   return (

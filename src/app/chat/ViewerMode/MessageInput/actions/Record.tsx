@@ -8,7 +8,7 @@ import { useSessionStore } from '@/store/session';
 
 const Record = () => {
   const [sendMessage, setMessageInput] = useSessionStore((s) => [s.sendMessage, s.setMessageInput]);
-  const { t } = useTranslation('common');
+  const { t } = useTranslation('chat');
   const handleMessageInput = useCallback(
     (result: string, isFinal: boolean) => {
       setMessageInput(result);
@@ -23,7 +23,10 @@ const Record = () => {
   const { isRecording, toggleRecord } = useSpeechRecognition({
     onMessage: handleMessageInput,
   });
-  return <ActionIcon icon={Mic} loading={isRecording} onClick={toggleRecord} title={t('ttsTip')} />;
+
+  return (
+    <ActionIcon icon={Mic} loading={isRecording} onClick={toggleRecord} title={t('tts.record')} />
+  );
 };
 
 export default Record;

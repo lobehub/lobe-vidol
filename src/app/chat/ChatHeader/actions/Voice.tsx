@@ -21,14 +21,14 @@ const useStyles = createStyles(({ token, css }) => ({
 const VoiceSwitch = () => {
   const { styles } = useStyles();
   const [voiceOn] = useSessionStore((s) => [s.voiceOn]);
-  const { t } = useTranslation('common');
+  const { t } = useTranslation('chat');
   return (
     <ActionIcon
       className={classNames(styles.voice, voiceOn && styles.voiceOn)}
       icon={voiceOn ? Volume2 : VolumeXIcon}
       onClick={toggleVoice}
       size={DESKTOP_HEADER_ICON_SIZE}
-      title={t('ttsCombine')}
+      title={t('tts.combine')}
     />
   );
 };

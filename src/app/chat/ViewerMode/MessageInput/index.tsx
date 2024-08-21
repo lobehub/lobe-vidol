@@ -30,7 +30,7 @@ const InputArea = memo((props: InputAreaProps) => {
   const onSend = useChatInput();
   const { styles } = useStyles();
   const theme = useTheme();
-  const { t } = useTranslation('common');
+  const { t } = useTranslation('chat');
 
   const { className, style } = props;
 
@@ -57,10 +57,10 @@ const InputArea = memo((props: InputAreaProps) => {
   const ShortCuts = (
     <Flexbox gap={4} horizontal style={{ color: theme.colorTextDescription, fontSize: 12 }}>
       {enter}
-      <span>{t('actions.send')}</span>
+      <span>{t('input.send')}</span>
       <span>/</span>
       {cmdEnter}
-      <span>{t('actions.warp')}</span>
+      <span>{t('input.warp')}</span>
     </Flexbox>
   );
 
@@ -92,7 +92,7 @@ const InputArea = memo((props: InputAreaProps) => {
             e.preventDefault();
             onSend();
           }}
-          placeholder={t('inputStartChat')}
+          placeholder={t('input.placeholder')}
           ref={ref}
           autoSize={true}
           type={'block'}
@@ -112,7 +112,7 @@ const InputArea = memo((props: InputAreaProps) => {
         <Record />
       </Flexbox>
       <Flexbox horizontal justify={'space-between'} align={'center'} style={{ marginTop: 4 }}>
-        <div className={styles.alert}>{t('aiAlert')}</div>
+        <div className={styles.alert}>{t('input.alert')}</div>
         {ShortCuts}
       </Flexbox>
     </Flexbox>

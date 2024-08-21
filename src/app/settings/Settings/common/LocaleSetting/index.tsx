@@ -12,8 +12,8 @@ interface Props {
 
 export default memo<Props>((props) => {
   const { style } = props;
-  const { t } = useTranslation('common');
-  const options = [{ label: t('locale.auto'), value: 'auto' }, ...localeOptions];
+  const { t } = useTranslation('settings');
+  const options = [{ label: t('common.theme.locale.auto'), value: 'auto' }, ...localeOptions];
 
   const [locale, switchLocale] = useSettingStore((s) => [s.config.locale, s.switchLocale], isEqual);
 

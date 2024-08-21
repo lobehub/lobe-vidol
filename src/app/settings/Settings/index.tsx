@@ -3,8 +3,9 @@ import React, { memo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
+import OpenAIConfig from '@/app/settings/Settings/llm/openai';
+
 import CommonConfig from './common';
-import OpenAIConfig from './model/openai';
 import Touch from './touch';
 
 interface ConfigProps {
@@ -15,7 +16,7 @@ interface ConfigProps {
 const Config = (props: ConfigProps) => {
   const { style, className } = props;
   const [tab, setTab] = useState('common');
-  const { t } = useTranslation('common');
+  const { t } = useTranslation('settings');
 
   return (
     <Flexbox flex={1} className={className} style={style}>
@@ -25,15 +26,15 @@ const Config = (props: ConfigProps) => {
           items={[
             {
               key: 'common',
-              label: t('commonSetting'),
+              label: t('common.title'),
             },
             {
               key: 'languageModel',
-              label: t('languageModel'),
+              label: t('llm.title'),
             },
             {
               key: 'touch',
-              label: t('touchSetting'),
+              label: t('touch.title'),
             },
           ]}
           onChange={(key) => {

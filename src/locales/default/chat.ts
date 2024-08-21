@@ -12,15 +12,35 @@ export default {
     motions: '动作',
     posture: '姿势',
   },
+  input: {
+    send: '发送',
+    warp: '换行',
+    placeholder: '请输入内容开始聊天',
+    alert: '请谨记：智能体所说的一切都是由 AI 生成的',
+  },
+  tts: {
+    record: '语音识别（需科学上网）',
+    combine: '语音合成',
+  },
+  sessionList: '会话列表',
+  share: {
+    screenshot: '截图',
+    shareGPT: '分享GPT',
+    withSystemRole: '包含助手角色设定',
+    withBackground: '包含背景图片',
+    withFooter: '包含页脚',
+    imageType: '图片格式',
+    downloadScreenshot: '下载截图',
+    shareToGPT: '生成 ShareGPT 分享链接',
+    share: '分享',
+    shareToMarket: '分享到助手市场',
+  },
   apiKey: {
     startDesc: '输入你的 OpenAI API Key 即可开始会话。应用不会记录你的 API Key',
     startTitle: '自定义 API Key',
     addProxy: '添加 OpenAI 代理地址（可选）',
     confirmRetry: '确认并重试',
     closeTip: '关闭提示',
-  },
-  chatDialog: {
-    close: '关闭',
   },
   toolBar: {
     cameraHelper: '镜头辅助',
@@ -41,8 +61,5 @@ export default {
   delSession: '删除会话',
   delSessionAlert: '确认删除对话吗？删除后无法恢复, 请谨慎操作！',
   chat: '聊天',
-  selectRole: '选择角色',
-  market: '发现',
-  helloChat: '你好，让我们来聊天吧',
-  helloDance: '嗨，让我们一起跳舞吧',
+  sessionCreate: '创建聊天',
 };

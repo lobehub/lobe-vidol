@@ -29,7 +29,7 @@ const Config = (props: ConfigProps) => {
   const { style, className } = props;
   const { styles } = useStyles();
   const [form] = AForm.useForm();
-  const { t } = useTranslation('common');
+  const { t } = useTranslation('settings');
   const openAIConfig = useSettingStore((s) => configSelectors.currentOpenAIConfig(s), isEqual);
   const setOpenAIConfig = useSettingStore((s) => s.setOpenAIConfig);
 
@@ -41,10 +41,10 @@ const Config = (props: ConfigProps) => {
     manual: true,
     onSuccess: (res) => {
       if (!res.ok) {
-        message.error(t('openai.callError'));
+        message.error(t('llm.check.error'));
         return;
       }
-      message.success(t('openai.checkOk'));
+      message.success(t('llm.check.success'));
     },
   });
 
@@ -55,14 +55,14 @@ const Config = (props: ConfigProps) => {
         onValuesChange={debounce(setOpenAIConfig, 100)}
         style={{ display: 'flex', flexGrow: 1 }}
       >
-        <FormGroup icon={BotIcon} title={t('openai.langModel')}>
-          <FormItem desc={t('openai.useOwnKey')} divider label={'API Key'} name="apikey">
+        <FormGroup icon={BotIcon} title={t('llm.openai.title')}>
+          <FormItem desc={t('llm.openai.apiKey.desc')} divider label={'API Key'} name="apikey">
             <Input.Password placeholder="sk-" style={{ width: 480 }} />
           </FormItem>
-          <FormItem desc={'http(s)://'} divider label={t('openai.proxyUrl')} name="endpoint">
+          <FormItem desc={'http(s)://'} divider label={t('llm.openai.proxy.title')} name="endpoint">
             <Input placeholder="" style={{ width: 360 }} />
           </FormItem>
-          <FormItem desc={t('openai.checkAll')} divider label={t('openai.checkConnect')}>
+          <FormItem desc={t('llm.check.desc')} divider label={t('llm.check.title')}>
             <Button
               loading={loading}
               onClick={() =>
@@ -77,7 +77,7 @@ const Config = (props: ConfigProps) => {
                 })
               }
             >
-              {t('openai.check')}
+              {t('llm.check.action')}
             </Button>
           </FormItem>
         </FormGroup>

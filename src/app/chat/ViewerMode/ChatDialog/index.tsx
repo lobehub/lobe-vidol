@@ -43,7 +43,7 @@ const Dialog = (props: DialogProps) => {
         showTitle={false}
         type="pure"
       />
-      <Tooltip key="close" title={t('chatDialog.close')}>
+      <Tooltip key="close" title={t('close', { ns: 'common' })}>
         <ActionIcon
           icon={XIcon}
           onClick={() => setChatDialog(false)}
