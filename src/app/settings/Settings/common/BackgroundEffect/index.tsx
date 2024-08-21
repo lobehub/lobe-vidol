@@ -12,7 +12,7 @@ interface Props {
 
 export default memo<Props>((props) => {
   const { style } = props;
-  const { t } = useTranslation('common');
+  const { t } = useTranslation('settings');
   const [backgroundEffect, setBackgroundEffect] = useSettingStore(
     (s) => [s.config.backgroundEffect, s.setBackgroundEffect],
     isEqual,
@@ -27,11 +27,11 @@ export default memo<Props>((props) => {
       }}
       options={[
         {
-          label: t('settings.glow'),
+          label: t('common.theme.backgroundEffect.glow'),
           value: 'glow',
         },
         {
-          label: t('settings.none'),
+          label: t('common.theme.backgroundEffect.none'),
           value: 'none',
         },
       ]}

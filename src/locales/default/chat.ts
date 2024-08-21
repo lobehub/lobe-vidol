@@ -33,7 +33,6 @@ export default {
     downloadScreenshot: '下载截图',
     shareToGPT: '生成 ShareGPT 分享链接',
     share: '分享',
-    shareToMarket: '分享到助手市场',
   },
   apiKey: {
     startDesc: '输入你的 OpenAI API Key 即可开始会话。应用不会记录你的 API Key',

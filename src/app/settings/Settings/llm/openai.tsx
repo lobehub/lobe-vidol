@@ -73,7 +73,7 @@ const Config = (props: ConfigProps) => {
                       role: 'user',
                     } as ChatMessage,
                   ],
-                  model: 'gpt-3.5-turbo',
+                  model: 'gpt-4o-mini',
                 })
               }
             >

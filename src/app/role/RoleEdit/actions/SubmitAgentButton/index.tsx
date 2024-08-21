@@ -10,8 +10,8 @@ import SubmitAgentModal from './SubmitAgentModal';
 
 const SubmitAgentButton = memo<{ modal?: boolean }>(({ modal }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const { t } = useTranslation('common');
-  const shareToMarket = t('share.shareToMarket');
+  const { t } = useTranslation('role');
+  const shareToMarket = t('shareToMarket');
   return (
     <>
       {modal ? (

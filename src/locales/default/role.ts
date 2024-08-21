@@ -22,6 +22,7 @@ export default {
   },
   roleList: '角色列表',
   topBannerTitle: '角色预览和设置',
+  shareToMarket: '分享到助手市场',
   startChat: '开始聊天',
   delRole: '删除角色',
   delAlert: '确认删除角色以及相关联的会话消息吗？删除后无法恢复, 请谨慎操作！',
