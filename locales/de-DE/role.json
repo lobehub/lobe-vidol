@@ -12,10 +12,6 @@
   },
   "delRole": "Rolle löschen",
   "delRoleDesc": "Sind Sie sicher, dass Sie die Rolle {{name}} und die zugehörigen Sitzungsnachrichten löschen möchten? Diese Aktion kann nicht rückgängig gemacht werden. Bitte seien Sie vorsichtig!",
-  "header": {
-    "role": "Rolle",
-    "session": "Sitzung"
-  },
   "noRole": "Keine Rolle vorhanden. Sie können eine benutzerdefinierte Rolle erstellen, indem Sie auf + klicken, oder eine Rolle über die Entdeckungsseite hinzufügen.",
   "roleList": "Rollenliste",
   "systemRole": {

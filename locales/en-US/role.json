@@ -12,10 +12,6 @@
   },
   "delRole": "Delete Role",
   "delRoleDesc": "Are you sure you want to delete role {{name}} and its associated session messages? This action cannot be undone, so please proceed with caution!",
-  "header": {
-    "role": "Role",
-    "session": "Session"
-  },
   "noRole": "No roles available. You can create custom roles by clicking on the '+' button, or add roles through the discovery page.",
   "roleList": "Role List",
   "systemRole": {

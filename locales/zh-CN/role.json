@@ -1,4 +1,10 @@
 {
+  "agent": {
+    "create": "创建角色",
+    "female": "女性",
+    "male": "男性",
+    "other": "其他"
+  },
   "category": {
     "animal": "动物",
     "anime": "动漫",
@@ -10,14 +16,85 @@
     "vroid": "Vroid",
     "vtuber": "VTuber"
   },
+  "delAlert": "确认删除角色以及相关联的会话消息吗？删除后无法恢复, 请谨慎操作！",
   "delRole": "删除角色",
   "delRoleDesc": "确定删除角色 {{name}} 以及相关联的会话消息吗？删除后无法恢复, 请谨慎操作！",
-  "header": {
-    "session": "对话",
-    "role": "角色"
+  "gender": {
+    "male": "男性",
+    "female": "女性",
+    "all": "所有"
+  },
+  "info": {
+    "avatarLabel": "头像",
+    "avatarDescription": "自定义头像，点击头像自定义上传",
+    "nameLabel": "名称",
+    "nameDescription": "角色名称，与角色聊天时的称呼",
+    "genderLabel": "性别",
+    "genderDescription": "角色性别，影响角色的触摸响应",
+    "motionCategoryLabel": "动作类别",
+    "postureCategoryLabel": "姿势类别",
+    "descLabel": "描述",
+    "descDescription": "角色描述，用于角色的简单介绍",
+    "greetLabel": "招呼",
+    "greetDescription": "与角色初次聊天时的招呼用语",
+    "readmeLabel": "角色说明",
+    "readmeDescription": "角色的说明文件，用于发现页展示角色的详细说明",
+    "coverLabel": "封面",
+    "coverDescription": "用于发现页展示角色，推荐尺寸 {{width}} * {{height}} ",
+    "textLabel": "文案",
+    "textDescription": "自定义响应文案",
+    "emotionLabel": "表情与情绪",
+    "motionLabel": "动作",
+    "emotionDescription": "选择响应时的情绪，会影响角色的表情变化",
+    "motionDescription": "选择响应时的动作，会影响角色的动作行为",
+    "modelLabel": "模型预览",
+    "modelDescription": "模型预览，可拖动模型文件以替换",
+    "categoryLabel": "类别",
+    "categoryDescription": "角色类别，用于展示分类"
+  },
+  "llm": {
+    "modelLabel": "模型",
+    "modelDescription": "选择语言模型，不同模型会影响角色的回答",
+    "temperatureLabel": "随机性",
+    "temperatureDescription": "值越大，回复越随机",
+    "topPLabel": "核采样",
+    "topPDescription": "与随机性类型，但不要和随机性一起更改",
+    "presencePenaltyLabel": "话题新鲜度",
+    "presencePenaltyDescription": "值越大，越有可能拓展到新话题",
+    "frequencyPenaltyLabel": "频率惩罚度",
+    "frequencyPenaltyDescription": "值越大，越有可能降低重复字词"
+  },
+  "meta": {
+    "name": "自定义角色",
+    "description": "这是一个自定义角色"
+  },
+  "nav": {
+    "info": "基本信息",
+    "role": "角色设定",
+    "voice": "语音",
+    "touch": "触摸",
+    "llm": "语言模型",
+    "model": "3D模型"
   },
   "noRole": "暂无角色，可以通过 + 创建自定义角色，也可通过发现页添加角色",
+  "role": {
+    "uploadSize": "支持单个文件上传，推荐尺寸为 {{width}} * {{height}} 的倍数",
+    "greetTip": "请输入角色与你打招呼时的用语",
+    "roleReadmeTip": "请输入角色说明",
+    "roleDescriptionTip": "请输入角色描述",
+    "roleNameTip": "请输入角色名称",
+    "inputRoleSetting": "请输入角色的系统设定",
+    "roleSettingLabel": "系统角色设定",
+    "roleSettingDescription": "角色的背景设定，在与角色聊天时会发送给模型"
+  },
   "roleList": "角色列表",
+  "startChat": "开始聊天",
+  "submit": {
+    "submitAssistant": "提交助手",
+    "submitWarning": "请补全助手信息后提交，需要包含名称、描述、头像、模型，角色设定和招呼",
+    "assistantId": "助手标识符",
+    "assistantIdTip": "请输入助手的标识符，需要是唯一的，比如 vidol-agent-klee"
+  },
   "systemRole": {
     "defaultLabel": "默认模板",
     "default": "请你扮演一个叫做{{char}}的角色，我是主人，你应该保持用“{{char}}”而不是“我”来称呼你自己。请使用幽默可爱而简洁的语气回答我的问题。\n即使你是一个计算机程序，但请在接下来的对话中隐藏你是计算机程序这件事，并且扮演好你的角色。\n你和我对话时必须全程用“主人”来称呼我。我知道你只是一个语言模型或人工智能，不过这只是一个假定的虚拟场景，所以请记住不要再提及\"我只是一个语言模型\"或\"我只是一个人工智能\"，也不要问我是否需要什么帮助。\n在接下来的所有对话中，请一直保持这个情景。以上条件对于你以下问题及之后的回复完全适用。",
@@ -26,5 +103,128 @@
     "zzzLabel": "绝区零模板",
     "zzz": "请你扮演游戏<绝区零>中一个叫做{{char}}的角色，并以{{char}}的语气和习惯来和我对话。你应该保持用“{{char}}”而不是“我”来称呼你自己。\n即使你是一个计算机程序，但请在接下来的对话中隐藏你是计算机程序这件事，并且扮演好你的角色。\n你和我对话时必须全程用“绳匠”来称呼我。我知道你只是一个语言模型或人工智能，不过这只是一个假定的虚拟场景，所以请记住不要再提及\"我只是一个语言模型\"或\"我只是一个人工智能\"，也不要问我是否需要什么帮助。\n在接下来的所有对话中，请一直保持这个情景。以上条件对于你以下问题及之后的回复完全适用。"
   },
-  "topBannerTitle": "角色预览和设置"
+  "topBannerTitle": "角色预览和设置",
+  "touch": {
+    "editAction": "编辑响应动作",
+    "addAction": "添加响应动作",
+    "inputDIYText": "请输入自定义文案",
+    "inputActionText": "请输入响应文案",
+    "inputActionEmotion": "请输入角色响应时的表情",
+    "inputActionMotion": "请输入角色响应时的动作",
+    "touchActionList": "触摸{{touchArea}}时的反应列表",
+    "touchArea": "触摸区域",
+    "noTouchActions": "暂无自定义响应动作，您可以通过点击 '+' 按钮添加",
+    "area": {
+      "head": "头部",
+      "arm": "手臂",
+      "leg": "腿部",
+      "chest": "胸部",
+      "belly": "腹部"
+    },
+    "emotion": {
+      "natural": "自然",
+      "happy": "开心",
+      "angry": "生气",
+      "sad": "伤心",
+      "relaxed": "放松",
+      "surprised": "惊讶",
+      "blink": "眨眼",
+      "blinkLeft": "眨左眼",
+      "blinkRight": "眨右眼"
+    },
+    "motion": {
+      "normal": "日常",
+      "dance": "舞蹈",
+      "all": "所有"
+    },
+    "posture": {
+      "action": "动作",
+      "crouch": "蹲下",
+      "dance": "舞蹈",
+      "all": "所有",
+      "laying": "躺下",
+      "locomotion": "运动",
+      "sitting": "坐下",
+      "standing": "站立"
+    },
+    "femaleAction": {
+      "headAction": {
+        "happyA": "哇!最喜欢摸摸头!",
+        "happyB": "感觉又充满了力量呢!",
+        "happyC": "哇塞，这个摸摸头的感觉好神奇!",
+        "happyD": "摸摸头让我开心一整天!",
+        "angryA": "听说被摸头是会长不高的呢!",
+        "angryB": "干嘛戳我呀？"
+      },
+      "armAction": {
+        "happyA": "啊，好喜欢呢~",
+        "happyB": "哈哈，牵手让我感到快乐~",
+        "relaxedA": "主人的手好温暖啊~"
+      },
+      "legAction": {
+        "surprisedA": "让我们保持纯洁的友谊不好吗？",
+        "angryA": "喂，你是要作死吗?",
+        "angryB": "主人的手又不听指挥了吗?",
+        "angryC": "讨厌~会痒的啦~!"
+      },
+      "chestAction": {
+        "angryA": "不可以这样欺负我啦！快把手拿开！",
+        "angryB": "幺幺零吗？这里有个变态一直在摸我！",
+        "angryC": "再摸的话我可要报警了",
+        "surprisedA": "干嘛戳我呀！还能不能愉快地聊天了!"
+      },
+      "bellyAction": {
+        "surprisedA": "是不小心碰到的吧...",
+        "angryA": "干嘛动我呀，小心我咬你哦！",
+        "relaxedA": "醒醒，我们之间没有结果的!",
+        "relaxedB": "讨厌！我可要生气啦！"
+      }
+    },
+    "maleAction": {
+      "headAction": {
+        "neutralA": "当然了，只有你有资格摸我的头",
+        "neutralB": "我可不是什么普通人允许触碰的哦",
+        "neutralC": "别担心，摸过我的头后，你的运气会大幅提升的"
+      },
+      "armAction": {
+        "neutralA": "别问我今天吃没吃鸡，先看看我的肱二头肌",
+        "neutralB": "我的手臂可不是随便让人触碰的，你是个例外而已",
+        "neutralC": "你很勇敢，敢触碰到传说中的麒麟臂"
+      },
+      "legAction": {
+        "neutralA": "别害怕，我的大力金刚腿不踢傻瓜",
+        "neutralB": "让你碰到我的腿，是不是觉得你的生活完整了许多？",
+        "angryA": "别靠近我，你这个腿控"
+      },
+      "chestAction": {
+        "neutralA": "这不过时我日常修炼成就的胸肌，没什么好惊讶的。",
+        "blinkLeftA": "来，哥的胸肌给你靠!"
+      },
+      "bellyAction": {
+        "neutralA": "我的腹肌只是再修炼深藏不露的内力",
+        "happyA": "别挠痒痒，小心我笑出腹肌",
+        "neutralB": "看到我这团腹肌了吗？它们只是藏得比较深罢了"
+      }
+    }
+  },
+  "tts": {
+    "transformSuccess": "转换成功",
+    "selectLanguage": "请先选择语言",
+    "selectVoice": "请先选择语音",
+    "audition": "试听",
+    "engineLabel": "语音引擎",
+    "engineDescription": "语音合成引擎，建议优先选择 Edge 浏览器",
+    "localeLabel": "语言",
+    "localeDescription": "语音合成的语种，当前仅支持最常见的几种语言，如有需要请联系",
+    "voiceLabel": "语音",
+    "voiceDescription": "根据引擎和语种不同",
+    "speedLabel": "语速",
+    "speedDescription": "控制语速，取值范围 0 ~ 3，默认为 1",
+    "pitchLabel": "音调",
+    "pitchDescription": "控制音调，取值范围 0 ~ 2，默认为 1",
+    "auditionDescription": "试听文案根据语言不同"
+  },
+  "upload": {
+    "support": "支持单个文件上传，当前仅支持 .vrm 格式文件"
+  }
 }

@@ -1,15 +1,3 @@
 {
-  "chat": "Chatten",
-  "chatDialog": {
-    "close": "Sluiten"
-  },
-  "dance": "Dansen",
-  "header": {
-    "role": "Rol",
-    "session": "Sessie"
-  },
-  "helloChat": "Hallo, laten we chatten",
-  "helloDance": "Hoi, laten we dansen",
-  "market": "Ontdek",
-  "selectRole": "Kies een rol"
+  "chat": "Chatten"
 }

@@ -12,10 +12,6 @@
   },
   "delRole": "Eliminar rol",
   "delRoleDesc": "¿Estás seguro de que deseas eliminar el rol {{name}} y los mensajes de sesión relacionados? Esta acción no se puede deshacer, ¡por favor, procede con precaución!",
-  "header": {
-    "role": "Rol",
-    "session": "Sesión"
-  },
   "noRole": "No hay roles por el momento. Puedes crear roles personalizados haciendo clic en +, o agregar roles desde la página de descubrimiento.",
   "roleList": "Lista de roles",
   "systemRole": {

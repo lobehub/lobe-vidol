@@ -12,10 +12,6 @@
   },
   "delRole": "Elimina ruolo",
   "delRoleDesc": "Sei sicuro di voler eliminare il ruolo {{name}} e i messaggi di sessione correlati? L'eliminazione non può essere annullata, procedi con cautela!",
-  "header": {
-    "role": "Ruolo",
-    "session": "Sessione"
-  },
   "noRole": "Nessun ruolo al momento, puoi creare un ruolo personalizzato con +, oppure aggiungere un ruolo dalla pagina di scoperta",
   "roleList": "Elenco ruoli",
   "systemRole": {

@@ -12,10 +12,6 @@
   },
   "delRole": "Xóa vai trò",
   "delRoleDesc": "Bạn có chắc chắn muốn xóa vai trò {{name}} và các tin nhắn liên quan không? Hành động này không thể hoàn tác, hãy cẩn thận!",
-  "header": {
-    "role": "Vai trò",
-    "session": "Cuộc trò chuyện"
-  },
   "noRole": "Hiện chưa có vai trò nào, bạn có thể tạo vai trò tùy chỉnh bằng cách nhấn +, hoặc thêm vai trò từ trang khám phá",
   "roleList": "Danh sách vai trò",
   "systemRole": {

@@ -1,15 +1,3 @@
 {
-  "chat": "Chat",
-  "chatDialog": {
-    "close": "Close"
-  },
-  "dance": "Dance",
-  "header": {
-    "role": "Role",
-    "session": "Session"
-  },
-  "helloChat": "Hello, let's chat",
-  "helloDance": "Hi, let's dance together",
-  "market": "Discover",
-  "selectRole": "Select Role"
+  "chat": "Chat"
 }

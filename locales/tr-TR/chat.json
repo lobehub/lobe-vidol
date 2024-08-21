@@ -1,15 +1,3 @@
 {
-  "chat": "sohbet",
-  "chatDialog": {
-    "close": "kapat"
-  },
-  "dance": "dans",
-  "header": {
-    "role": "rol",
-    "session": "oturum"
-  },
-  "helloChat": "Merhaba, sohbet edelim",
-  "helloDance": "Merhaba, birlikte dans edelim",
-  "market": "keşfet",
-  "selectRole": "Rol Seç"
+  "chat": "sohbet"
 }

@@ -12,10 +12,6 @@
   },
   "delRole": "Rolü Sil",
   "delRoleDesc": " {{name}} adlı rolü ve ilgili oturum mesajlarını silmek istediğinizden emin misiniz? Silindikten sonra geri alınamaz, lütfen dikkatli olun!",
-  "header": {
-    "role": "Rol",
-    "session": "Oturum"
-  },
   "noRole": "Şu anda hiçbir rol yok, özel rol oluşturabilirsiniz veya keşfetme sayfasından rol ekleyebilirsiniz",
   "roleList": "Rol Listesi",
   "systemRole": {

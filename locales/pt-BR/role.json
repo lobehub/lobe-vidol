@@ -12,10 +12,6 @@
   },
   "delRole": "Excluir função",
   "delRoleDesc": "Tem certeza de que deseja excluir a função {{name}} e as mensagens de sessão relacionadas? Esta ação não pode ser desfeita, por favor, proceda com cautela!",
-  "header": {
-    "role": "Função",
-    "session": "Sessão"
-  },
   "noRole": "Nenhuma função encontrada. Você pode criar uma função personalizada usando o botão +, ou adicionar funções na página de descoberta.",
   "roleList": "Lista de funções",
   "systemRole": {
