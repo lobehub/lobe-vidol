@@ -1,1 +1,84 @@
-{}
+{
+  "common": {
+    "chat": {
+      "avatar": {
+        "desc": "Pas je profielfoto aan",
+        "title": "Profielfoto"
+      },
+      "nickName": {
+        "desc": "Pas je bijnaam aan",
+        "placeholder": "Voer je bijnaam in",
+        "title": "Bijnaam"
+      },
+      "title": "Chatinstellingen"
+    },
+    "system": {
+      "clear": {
+        "action": "Verwijder nu",
+        "alert": "Bevestig dat je alle gespreksberichten wilt verwijderen?",
+        "desc": "Dit verwijdert alle gespreks- en rolgegevens, inclusief gesprekslijst, rollenlijst, gespreksberichten, enz.",
+        "success": "Verwijderen geslaagd",
+        "tip": "Deze actie kan niet ongedaan gemaakt worden. Na verwijdering kunnen de gegevens niet worden hersteld, wees voorzichtig.",
+        "title": "Verwijder alle gespreksberichten"
+      },
+      "reset": {
+        "action": "Reset nu",
+        "alert": "Bevestig dat je alle systeeminstellingen wilt resetten?",
+        "desc": "Dit reset alle systeeminstellingen, inclusief thema-instellingen, chatinstellingen, taalmodelinstellingen, enz.",
+        "success": "Reset geslaagd",
+        "tip": "Deze actie kan niet ongedaan gemaakt worden. Na resetten kunnen de gegevens niet worden hersteld, wees voorzichtig.",
+        "title": "Reset systeeminstellingen"
+      },
+      "title": "Systeeminstellingen"
+    },
+    "theme": {
+      "backgroundEffect": {
+        "desc": "Pas het achtergrond effect aan",
+        "glow": "Gloed",
+        "none": "Geen achtergrond",
+        "title": "Achtergrond effect"
+      },
+      "locale": {
+        "auto": "Volg systeem",
+        "desc": "Pas de systeemtaal aan",
+        "title": "Taal"
+      },
+      "neutralColor": {
+        "desc": "Pas de grijstinten aan met verschillende kleurvoorkeuren",
+        "title": "Neutrale kleur"
+      },
+      "primaryColor": {
+        "desc": "Pas de themakleur aan",
+        "title": "Thema kleur"
+      },
+      "title": "Thema-instellingen"
+    },
+    "title": "Algemene instellingen"
+  },
+  "llm": {
+    "check": {
+      "action": "Controleren",
+      "desc": "Controleer of de API-sleutel en het proxyadres correct zijn ingesteld",
+      "error": "Fout bij het aanroepen van de interface, controleer of de API-sleutel en het proxyadres correct zijn ingesteld",
+      "success": "Controle geslaagd",
+      "title": "Connectiviteitstest"
+    },
+    "openai": {
+      "apiKey": {
+        "desc": "Gebruik uw eigen OpenAI-sleutel",
+        "title": "API-sleutel"
+      },
+      "callError": "Fout bij het aanroepen van de interface, controleer of de API-sleutel en het proxyadres correct zijn ingesteld",
+      "checkOk": "Controle geslaagd",
+      "proxy": {
+        "desc": "http(s)://",
+        "title": "Proxyadres"
+      },
+      "title": "OpenAI Taalmodel"
+    },
+    "title": "Grote Taalmodellen"
+  },
+  "touch": {
+    "title": "Aanraakinstellingen"
+  }
+}

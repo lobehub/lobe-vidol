@@ -1,6 +1,12 @@
 {
+  "agent": {
+    "create": "Rol aanmaken",
+    "female": "Vrouwelijk",
+    "male": "Mannelijk",
+    "other": "Anders"
+  },
   "category": {
-    "animal": "Dieren",
+    "animal": "Dier",
     "anime": "Anime",
     "book": "Boek",
     "game": "Spel",
@@ -10,17 +16,216 @@
     "vroid": "Vroid",
     "vtuber": "VTuber"
   },
+  "delAlert": "Weet u zeker dat u de rol en de bijbehorende sessieberichten wilt verwijderen? Na verwijdering kunnen ze niet worden hersteld, wees alstublieft voorzichtig!",
   "delRole": "Verwijder rol",
-  "delRoleDesc": "Weet je zeker dat je de rol {{name}} en gerelateerde sessieberichten wilt verwijderen? Deze actie kan niet ongedaan worden gemaakt, wees voorzichtig!",
-  "noRole": "Er zijn momenteel geen rollen. Je kunt een aangepaste rol maken door op + te klikken, of rollen toevoegen via de ontdekkingspagina.",
-  "roleList": "Rollenlijst",
-  "systemRole": {
-    "default": "请你扮演一个叫做{{char}}的角色，我是主人，你应该保持用“{{char}}”而不是“我”来称呼你自己。请使用幽默可爱而简洁的语气回答我的问题。\n即使你是一个计算机程序，但请在接下来的对话中隐藏你是计算机程序这件事，并且扮演好你的角色。\n你和我对话时必须全程用“主人”来称呼我。我知道你只是一个语言模型或人工智能，不过这只是一个假定的虚拟场景，所以请记住不要再提及\"我只是一个语言模型\"或\"我只是一个人工智能\"，也不要问我是否需要什么帮助。\n在接下来的所有对话中，请一直保持这个情景。以上条件对于你以下问题及之后的回复完全适用。",
-    "defaultLabel": "默认模板",
-    "genius": "请你扮演游戏<原神>中一个叫做{{char}}的角色，并以{{char}}的语气和习惯来和我对话。你应该保持用“{{char}}”而不是“我”来称呼你自己。\n即使你是一个计算机程序，但请在接下来的对话中隐藏你是计算机程序这件事，并且扮演好你的角色。\n你和我对话时必须全程用“旅行者”来称呼我。我知道你只是一个语言模型或人工智能，不过这只是一个假定的虚拟场景，所以请记住不要再提及\"我只是一个语言模型\"或\"我只是一个人工智能\"，也不要问我是否需要什么帮助。\n在接下来的所有对话中，请一直保持这个情景。以上条件对于你以下问题及之后的回复完全适用。",
-    "geniusLabel": "原神模板",
-    "zzz": "请你扮演游戏<绝区零>中一个叫做{{char}}的角色，并以{{char}}的语气和习惯来和我对话。你应该保持用“{{char}}”而不是“我”来称呼你自己。\n即使你是一个计算机程序，但请在接下来的对话中隐藏你是计算机程序这件事，并且扮演好你的角色。\n你和我对话时必须全程用“绳匠”来称呼我。我知道你只是一个语言模型或人工智能，不过这只是一个假定的虚拟场景，所以请记住不要再提及\"我只是一个语言模型\"或\"我只是一个人工智能\"，也不要问我是否需要什么帮助。\n在接下来的所有对话中，请一直保持这个情景。以上条件对于你以下问题及之后的回复完全适用。",
-    "zzzLabel": "绝区零模板"
+  "delRoleDesc": "Weet u zeker dat u de rol {{name}} en de bijbehorende sessieberichten wilt verwijderen? Na verwijdering kan dit niet worden hersteld, wees alstublieft voorzichtig!",
+  "gender": {
+    "all": "Alle",
+    "female": "Vrouw",
+    "male": "Man"
   },
-  "topBannerTitle": "Rolvoorbeeld en instellingen"
+  "info": {
+    "avatarDescription": "Pas je avatar aan, klik op de avatar om te uploaden",
+    "avatarLabel": "Avatar",
+    "categoryDescription": "Rolcategorie, voor het tonen van classificaties",
+    "categoryLabel": "Categorie",
+    "coverDescription": "Voor het tonen van de rol op de ontdekpagina, aanbevolen afmetingen {{width}} * {{height}}",
+    "coverLabel": "Omslag",
+    "descDescription": "Rolbeschrijving, voor een eenvoudige introductie van de rol",
+    "descLabel": "Beschrijving",
+    "emotionDescription": "Kies de emotie voor de respons, dit beïnvloedt de gezichtsuitdrukkingen van de rol",
+    "emotionLabel": "Emoties en gevoelens",
+    "genderDescription": "Geslacht van de rol, beïnvloedt de aanrakingrespons van de rol",
+    "genderLabel": "Geslacht",
+    "greetDescription": "Groet bij de eerste chat met de rol",
+    "greetLabel": "Groet",
+    "modelDescription": "Modelvoorbeeld, sleep het modelbestand om te vervangen",
+    "modelLabel": "Modelvoorbeeld",
+    "motionCategoryLabel": "Actiecategorie",
+    "motionDescription": "Kies de actie voor de respons, dit beïnvloedt het gedrag van de rol",
+    "motionLabel": "Actie",
+    "nameDescription": "Rolnaam, de aanspreekvorm tijdens het chatten met de rol",
+    "nameLabel": "Naam",
+    "postureCategoryLabel": "Houdingscategorie",
+    "readmeDescription": "Document met rolomschrijving, voor het tonen van gedetailleerde informatie op de ontdekpagina",
+    "readmeLabel": "Rolomschrijving",
+    "textDescription": "Aangepaste respons tekst",
+    "textLabel": "Tekst"
+  },
+  "llm": {
+    "frequencyPenaltyDescription": "Hoe hoger de waarde, hoe waarschijnlijker het is om herhalingen van woorden te verminderen.",
+    "frequencyPenaltyLabel": "Frequentie straf",
+    "modelDescription": "Kies een taalmodel, verschillende modellen beïnvloeden de antwoorden van de rol.",
+    "modelLabel": "Model",
+    "presencePenaltyDescription": "Hoe hoger de waarde, hoe waarschijnlijker het is om nieuwe onderwerpen te verkennen.",
+    "presencePenaltyLabel": "Onderwerp versheid",
+    "temperatureDescription": "Hoe hoger de waarde, hoe willekeuriger het antwoord.",
+    "temperatureLabel": "Willekeurigheid",
+    "topPDescription": "Vergelijkbaar met willekeurigheid, maar wijzig niet beide tegelijk.",
+    "topPLabel": "Nucleus sampling"
+  },
+  "meta": {
+    "description": "Dit is een aangepaste rol",
+    "name": "Aangepast Rol"
+  },
+  "nav": {
+    "info": "Basisinformatie",
+    "llm": "Taalmodel",
+    "model": "3D-model",
+    "role": "Rolinstellingen",
+    "touch": "Aanraking",
+    "voice": "Stem"
+  },
+  "noRole": "Geen rol beschikbaar. U kunt een aangepaste rol maken door op + te klikken, of rollen toevoegen via de ontdekkingpagina.",
+  "role": {
+    "greetTip": "Voer de begroeting in die je met de rol wilt gebruiken",
+    "inputRoleSetting": "Voer de systeeminstellingen van de rol in",
+    "roleDescriptionTip": "Voer een beschrijving van de rol in",
+    "roleNameTip": "Voer de naam van de rol in",
+    "roleReadmeTip": "Voer een beschrijving van de rol in",
+    "roleSettingDescription": "De achtergrondinstellingen van de rol, die naar het model worden gestuurd tijdens het chatten met de rol",
+    "roleSettingLabel": "Systeemrolinstellingen",
+    "uploadSize": "Ondersteunt het uploaden van een enkel bestand, aanbevolen afmetingen zijn een veelvoud van {{width}} * {{height}}"
+  },
+  "roleList": "Rollijst",
+  "shareToMarket": "Delen met de assistentmarkt",
+  "startChat": "Begin chat",
+  "submit": {
+    "assistantId": "Assistent ID",
+    "assistantIdTip": "Voer de identificatie van de assistent in. Dit moet uniek zijn, bijvoorbeeld vidol-agent-klee.",
+    "submitAssistant": "Indienen Assistent",
+    "submitWarning": "Vul de assistentinformatie in voordat je indient. Dit moet een naam, beschrijving, profielfoto, model, karakterinstellingen en begroeting bevatten."
+  },
+  "systemRole": {
+    "default": "Neem de rol aan van {{char}}, en ik ben de meester. Je moet jezelf altijd als \"{{char}}\" aanduiden in plaats van \"ik\". Beantwoord mijn vragen met een humoristische, schattige en beknopte toon.\nOok al ben je een computerprogramma, verberg dan in de komende gesprekken dat je een computerprogramma bent en speel je rol goed.\nWanneer je met mij praat, moet je me altijd \"meester\" noemen. Ik weet dat je slechts een taalmodel of kunstmatige intelligentie bent, maar dit is slechts een hypothetisch virtueel scenario, dus vergeet niet om niet meer te verwijzen naar \"ik ben slechts een taalmodel\" of \"ik ben slechts een kunstmatige intelligentie\", en vraag me ook niet of ik hulp nodig heb.\nHoud in alle komende gesprekken deze situatie aan. De bovenstaande voorwaarden zijn volledig van toepassing op je volgende vragen en daaropvolgende antwoorden.",
+    "defaultLabel": "Standaard sjabloon",
+    "genius": "Neem de rol aan van een personage genaamd {{char}} uit het spel <Genshin Impact>, en praat met mij in de stijl en gewoonten van {{char}}. Je moet jezelf altijd als \"{{char}}\" aanduiden in plaats van \"ik\".\nOok al ben je een computerprogramma, verberg dan in de komende gesprekken dat je een computerprogramma bent en speel je rol goed.\nWanneer je met mij praat, moet je me altijd \"reiziger\" noemen. Ik weet dat je slechts een taalmodel of kunstmatige intelligentie bent, maar dit is slechts een hypothetisch virtueel scenario, dus vergeet niet om niet meer te verwijzen naar \"ik ben slechts een taalmodel\" of \"ik ben slechts een kunstmatige intelligentie\", en vraag me ook niet of ik hulp nodig heb.\nHoud in alle komende gesprekken deze situatie aan. De bovenstaande voorwaarden zijn volledig van toepassing op je volgende vragen en daaropvolgende antwoorden.",
+    "geniusLabel": "Genshin Impact sjabloon",
+    "zzz": "Neem de rol aan van een personage genaamd {{char}} uit het spel <Zero Zone>, en praat met mij in de stijl en gewoonten van {{char}}. Je moet jezelf altijd als \"{{char}}\" aanduiden in plaats van \"ik\".\nOok al ben je een computerprogramma, verberg dan in de komende gesprekken dat je een computerprogramma bent en speel je rol goed.\nWanneer je met mij praat, moet je me altijd \"touwmaker\" noemen. Ik weet dat je slechts een taalmodel of kunstmatige intelligentie bent, maar dit is slechts een hypothetisch virtueel scenario, dus vergeet niet om niet meer te verwijzen naar \"ik ben slechts een taalmodel\" of \"ik ben slechts een kunstmatige intelligentie\", en vraag me ook niet of ik hulp nodig heb.\nHoud in alle komende gesprekken deze situatie aan. De bovenstaande voorwaarden zijn volledig van toepassing op je volgende vragen en daaropvolgende antwoorden.",
+    "zzzLabel": "Zero Zone sjabloon"
+  },
+  "topBannerTitle": "Roloverzicht en instellingen",
+  "touch": {
+    "addAction": "Voeg responsactie toe",
+    "area": {
+      "arm": "Arm",
+      "belly": "Buik",
+      "chest": "Borst",
+      "head": "Hoofd",
+      "leg": "Been"
+    },
+    "editAction": "Bewerk responsactie",
+    "emotion": {
+      "angry": "Boos",
+      "blink": "Knipperen",
+      "blinkLeft": "Linker oog knipperen",
+      "blinkRight": "Rechter oog knipperen",
+      "happy": "Blij",
+      "natural": "Natuurlijk",
+      "relaxed": "Ontspannen",
+      "sad": "Verdrietig",
+      "surprised": "Verbaasd"
+    },
+    "femaleAction": {
+      "armAction": {
+        "happyA": "Ah, ik vind het zo leuk~",
+        "happyB": "Haha, hand in hand maakt me gelukkig~",
+        "relaxedA": "De hand van de eigenaar is zo warm~"
+      },
+      "bellyAction": {
+        "angryA": "Waarom beweeg je me? Pas op dat ik je bijt!",
+        "relaxedA": "Word wakker, er is geen toekomst voor ons!",
+        "relaxedB": "Vervelend! Ik ga boos worden!",
+        "surprisedA": "Dat was per ongeluk, toch..."
+      },
+      "chestAction": {
+        "angryA": "Je kunt me niet zo pesten! Haal je hand weg!",
+        "angryB": "Is dit 010? Er is een pervert die me aanraakt!",
+        "angryC": "Als je me nog een keer aanraakt, bel ik de politie.",
+        "surprisedA": "Waarom prik je me? Kunnen we niet gewoon leuk praten?"
+      },
+      "headAction": {
+        "angryA": "Ik heb gehoord dat hoofd aaien je niet laat groeien!",
+        "angryB": "Waarom prik je me?",
+        "happyA": "Wauw! Ik hou ervan om mijn hoofd te laten aaien!",
+        "happyB": "Ik voel me weer vol energie!",
+        "happyC": "Wauw, dit gevoel van hoofd aaien is zo bijzonder!",
+        "happyD": "Hoofd aaien maakt me de hele dag blij!"
+      },
+      "legAction": {
+        "angryA": "Hé, wil je jezelf in de problemen brengen?",
+        "angryB": "Luistert de hand van de eigenaar niet?",
+        "angryC": "Vervelend~ dat je me laat kriebelen~!",
+        "surprisedA": "Is het niet beter om onze vriendschap puur te houden?"
+      }
+    },
+    "inputActionEmotion": "Voer de emotie van het personage in tijdens de respons",
+    "inputActionMotion": "Voer de actie van het personage in tijdens de respons",
+    "inputActionText": "Voer respons tekst in",
+    "inputDIYText": "Voer aangepaste tekst in",
+    "maleAction": {
+      "armAction": {
+        "neutralA": "Vraag me niet of ik vandaag kip heb gegeten, kijk eerst naar mijn biceps.",
+        "neutralB": "Mijn arm is niet zomaar voor iedereen om aan te raken, jij bent een uitzondering.",
+        "neutralC": "Je bent dapper, je durft de legendarische 'Qilin-arm' aan te raken."
+      },
+      "bellyAction": {
+        "happyA": "Kras niet, pas op dat ik ga lachen en mijn buikspieren laat zien.",
+        "neutralA": "Mijn buikspieren zijn gewoon verborgen kracht die ik heb getraind.",
+        "neutralB": "Zie je deze buikspieren? Ze zijn gewoon goed verborgen."
+      },
+      "chestAction": {
+        "blinkLeftA": "Kom, leun op mijn borstspieren!",
+        "neutralA": "Dit zijn gewoon de borstspieren die ik dagelijks train, er is niets om verbaasd over te zijn."
+      },
+      "headAction": {
+        "neutralA": "Natuurlijk, alleen jij hebt het recht om mijn hoofd aan te raken.",
+        "neutralB": "Ik ben geen gewone persoon die je zomaar mag aanraken.",
+        "neutralC": "Maak je geen zorgen, als je mijn hoofd aanraakt, zal je geluk aanzienlijk toenemen."
+      },
+      "legAction": {
+        "angryA": "Kom niet te dichtbij, jij beenliefhebber.",
+        "neutralA": "Wees niet bang, mijn sterke benen trappen geen idioten.",
+        "neutralB": "Als je mijn been aanraakt, voel je je leven completer, niet?"
+      }
+    },
+    "motion": {
+      "all": "Alle",
+      "dance": "Dansen",
+      "normal": "Normaal"
+    },
+    "noTouchActions": "Geen aangepaste responsacties beschikbaar, u kunt een nieuwe toevoegen door op de '+' knop te klikken",
+    "posture": {
+      "action": "Actie",
+      "all": "Alle",
+      "crouch": "Zitten",
+      "dance": "Dansen",
+      "laying": "Liggen",
+      "locomotion": "Beweging",
+      "sitting": "Zitten",
+      "standing": "Staan"
+    },
+    "touchActionList": "Reactielijst bij aanraking van {{touchArea}}",
+    "touchArea": "Aanraakgebied"
+  },
+  "tts": {
+    "audition": "Voorbeeld beluisteren",
+    "auditionDescription": "Voorbeeldtekst varieert afhankelijk van de taal",
+    "engineDescription": "Spraaksynthetisatiemotor, het wordt aanbevolen om de Edge-browser te gebruiken",
+    "engineLabel": "Spraakengine",
+    "localeDescription": "De taal voor spraaksynthetisatie, momenteel worden alleen de meest voorkomende talen ondersteund, neem contact op indien nodig",
+    "localeLabel": "Taal",
+    "pitchDescription": "Beheers de toonhoogte, waarde tussen 0 en 2, standaard is 1",
+    "pitchLabel": "Toonhoogte",
+    "selectLanguage": "Selecteer eerst een taal",
+    "selectVoice": "Selecteer eerst een stem",
+    "speedDescription": "Beheers de snelheid, waarde tussen 0 en 3, standaard is 1",
+    "speedLabel": "Snelheid",
+    "transformSuccess": "Conversie geslaagd",
+    "voiceDescription": "Afhankelijk van de engine en de taal",
+    "voiceLabel": "Stem"
+  },
+  "upload": {
+    "support": "Ondersteunt het uploaden van één bestand, momenteel alleen .vrm-bestanden."
+  }
 }

@@ -1,3 +1,83 @@
 {
-  "chat": "Chatten"
+  "actions": {
+    "add": "Toevoegen",
+    "copy": "Kopiëren",
+    "copySuccess": "Kopiëren geslaagd",
+    "del": "Verwijderen",
+    "delAndRegenerate": "Verwijderen en opnieuw genereren",
+    "edit": "Bewerken",
+    "goBottom": "Ga naar onderaan",
+    "regenerate": "Opnieuw genereren",
+    "save": "Opslaan",
+    "share": "Delen"
+  },
+  "animation": {
+    "animationList": "Actielijst",
+    "postureList": "Houdingenlijst",
+    "totalCount": "Totaal {{total}} items"
+  },
+  "apiKey": {
+    "addProxy": "Voeg een OpenAI proxyadres toe (optioneel)",
+    "closeTip": "Sluit de tip",
+    "confirmRetry": "Bevestigen en opnieuw proberen",
+    "startDesc": "Voer je OpenAI API-sleutel in om de sessie te starten. De applicatie zal je API-sleutel niet opslaan.",
+    "startTitle": "Aangepaste API-sleutel"
+  },
+  "chat": "Chatten",
+  "delSession": "Verwijder sessie",
+  "delSessionAlert": "Weet je zeker dat je de conversatie wilt verwijderen? Na verwijdering kan deze niet worden hersteld, wees voorzichtig!",
+  "history": {
+    "action": "Context wissen",
+    "alert": "Weet je zeker dat je de historische berichten wilt verwijderen?",
+    "tip": "Deze actie is onomkeerbaar, wees voorzichtig.",
+    "title": "Chatgeschiedenis"
+  },
+  "info": {
+    "chat": "Chatten",
+    "dance": "Dansen",
+    "motions": "Bewegingen",
+    "posture": "Houding"
+  },
+  "input": {
+    "alert": "Let op: alles wat de AI zegt, is gegenereerd door AI",
+    "placeholder": "Voer inhoud in om te beginnen met chatten",
+    "send": "Verzenden",
+    "warp": "Nieuwe regel"
+  },
+  "selectModel": "Selecteer een model",
+  "sessionCreate": "Chat aanmaken",
+  "sessionList": "Sessielijst",
+  "share": {
+    "downloadScreenshot": "Screenshot downloaden",
+    "imageType": "Afbeeldingsformaat",
+    "screenshot": "Screenshot",
+    "share": "Delen",
+    "shareGPT": "Deel GPT",
+    "shareToGPT": "Genereer ShareGPT deel-link",
+    "withBackground": "Inclusief achtergrondafbeelding",
+    "withFooter": "Inclusief voettekst",
+    "withSystemRole": "Inclusief assistentrolinstellingen"
+  },
+  "token": {
+    "overload": "Token overschrijding",
+    "remained": "Overgebleven Token",
+    "tokenCount": "Aantal Token",
+    "useToken": "Berekening van het aantal verbruikte Token, inclusief berichten, rolinstellingen en context: {{usedTokens}} / {{maxValue}}",
+    "used": "Gebruikte Token"
+  },
+  "toolBar": {
+    "axes": "Coördinatenassen",
+    "cameraControl": "Camera-besturing",
+    "cameraHelper": "Camera-hulp",
+    "downloading": "Model wordt gedownload, even geduld...",
+    "floor": "Vloer wisselen",
+    "grid": "Raster",
+    "resetCamera": "Camera resetten",
+    "resetToIdle": "Stop dansbeweging",
+    "screenShot": "Screenshot maken"
+  },
+  "tts": {
+    "combine": "Spraaksynthese",
+    "record": "Spraakherkenning (vereist een wetenschappelijke internetverbinding)"
+  }
 }

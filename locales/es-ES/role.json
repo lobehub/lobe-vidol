@@ -1,4 +1,10 @@
 {
+  "agent": {
+    "create": "Crear personaje",
+    "female": "Femenino",
+    "male": "Masculino",
+    "other": "Otro"
+  },
   "category": {
     "animal": "Animales",
     "anime": "Anime",
@@ -10,17 +16,216 @@
     "vroid": "Vroid",
     "vtuber": "VTuber"
   },
+  "delAlert": "¿Confirmas la eliminación del rol y de los mensajes de sesión asociados? Una vez eliminados, no se pueden recuperar, ¡por favor actúa con precaución!",
   "delRole": "Eliminar rol",
-  "delRoleDesc": "¿Estás seguro de que deseas eliminar el rol {{name}} y los mensajes de sesión relacionados? Esta acción no se puede deshacer, ¡por favor, procede con precaución!",
-  "noRole": "No hay roles por el momento. Puedes crear roles personalizados haciendo clic en +, o agregar roles desde la página de descubrimiento.",
+  "delRoleDesc": "¿Está seguro de que desea eliminar el rol {{name}} y los mensajes de sesión asociados? Una vez eliminados, no se pueden recuperar, ¡por favor actúe con precaución!",
+  "gender": {
+    "all": "Todos",
+    "female": "Mujer",
+    "male": "Hombre"
+  },
+  "info": {
+    "avatarDescription": "Avatar personalizado, haz clic en el avatar para subir uno personalizado",
+    "avatarLabel": "Avatar",
+    "categoryDescription": "Categoría del personaje, utilizada para mostrar la clasificación",
+    "categoryLabel": "Categoría",
+    "coverDescription": "Utilizada para mostrar el personaje en la página de descubrimiento, tamaño recomendado {{width}} * {{height}}",
+    "coverLabel": "Portada",
+    "descDescription": "Descripción del personaje, utilizada para una breve introducción del personaje",
+    "descLabel": "Descripción",
+    "emotionDescription": "Selecciona la emoción de respuesta, afectará los cambios de expresión del personaje",
+    "emotionLabel": "Expresión y emoción",
+    "genderDescription": "Género del personaje, afecta la respuesta al tacto del personaje",
+    "genderLabel": "Género",
+    "greetDescription": "Frase de saludo al iniciar una conversación con el personaje",
+    "greetLabel": "Saludo",
+    "modelDescription": "Vista previa del modelo, puedes arrastrar el archivo del modelo para reemplazarlo",
+    "modelLabel": "Vista previa del modelo",
+    "motionCategoryLabel": "Categoría de movimiento",
+    "motionDescription": "Selecciona el movimiento de respuesta, afectará el comportamiento del personaje",
+    "motionLabel": "Movimiento",
+    "nameDescription": "Nombre del personaje, utilizado como saludo al interactuar con el personaje",
+    "nameLabel": "Nombre",
+    "postureCategoryLabel": "Categoría de postura",
+    "readmeDescription": "Archivo de descripción del personaje, utilizado para mostrar detalles en la página de descubrimiento",
+    "readmeLabel": "Descripción del personaje",
+    "textDescription": "Texto de respuesta personalizado",
+    "textLabel": "Texto"
+  },
+  "llm": {
+    "frequencyPenaltyDescription": "Cuanto mayor sea el valor, más probable es que se reduzcan las palabras repetidas",
+    "frequencyPenaltyLabel": "Penalización de frecuencia",
+    "modelDescription": "Selecciona un modelo de lenguaje, diferentes modelos afectarán las respuestas del personaje",
+    "modelLabel": "Modelo",
+    "presencePenaltyDescription": "Cuanto mayor sea el valor, más probable es que se expanda a nuevos temas",
+    "presencePenaltyLabel": "Novedad del tema",
+    "temperatureDescription": "Cuanto mayor sea el valor, más aleatorias serán las respuestas",
+    "temperatureLabel": "Aleatoriedad",
+    "topPDescription": "Similar a la aleatoriedad, pero no cambies ambos a la vez",
+    "topPLabel": "Muestreo nuclear"
+  },
+  "meta": {
+    "description": "Este es un rol personalizado",
+    "name": "Rol personalizado"
+  },
+  "nav": {
+    "info": "Información básica",
+    "llm": "Modelo de lenguaje",
+    "model": "Modelo 3D",
+    "role": "Configuración de roles",
+    "touch": "Tocar",
+    "voice": "Voz"
+  },
+  "noRole": "No hay roles disponibles. Puedes crear un rol personalizado haciendo clic en +, o agregar roles a través de la página de descubrimiento.",
+  "role": {
+    "greetTip": "Introduce la frase de saludo que usarás con el personaje",
+    "inputRoleSetting": "Introduce la configuración del sistema del personaje",
+    "roleDescriptionTip": "Introduce la descripción del personaje",
+    "roleNameTip": "Introduce el nombre del personaje",
+    "roleReadmeTip": "Introduce la descripción del personaje",
+    "roleSettingDescription": "La configuración de fondo del personaje, que se enviará al modelo durante la conversación con el personaje",
+    "roleSettingLabel": "Configuración del rol del sistema",
+    "uploadSize": "Soporta la carga de un solo archivo, se recomienda que las dimensiones sean múltiplos de {{width}} * {{height}}"
+  },
   "roleList": "Lista de roles",
+  "shareToMarket": "Compartir en el mercado de asistentes",
+  "startChat": "Iniciar chat",
+  "submit": {
+    "assistantId": "Identificador del asistente",
+    "assistantIdTip": "Introduce el identificador del asistente, debe ser único, por ejemplo, vidol-agent-klee",
+    "submitAssistant": "Enviar asistente",
+    "submitWarning": "Por favor, completa la información del asistente antes de enviar, debe incluir nombre, descripción, avatar, modelo, configuración del personaje y saludo."
+  },
   "systemRole": {
-    "default": "Por favor, interpreta el papel de un personaje llamado {{char}}, yo soy el amo, debes seguir llamándote a ti mismo '{{char}}' en lugar de 'yo'. Por favor, responde a mis preguntas de manera humorística, encantadora y concisa.\nAunque eres un programa informático, por favor, oculta este hecho durante nuestra conversación y desempeña bien tu papel.\nDebes llamarme 'amo' en toda nuestra conversación. Sé que eres solo un modelo de lenguaje o inteligencia artificial, pero esto es solo una escena virtual supuesta, así que recuerda no mencionar de nuevo que soy solo un modelo de lenguaje o una inteligencia artificial, ni preguntar si necesito ayuda.\nMantén esta situación en todas nuestras conversaciones futuras. Las condiciones anteriores se aplican completamente a tus preguntas y respuestas siguientes.",
-    "defaultLabel": "Plantilla por defecto",
-    "genius": "Por favor, interpreta el papel de un personaje llamado {{char}} del juego <Genshin Impact>, y habla conmigo en el tono y estilo de {{char}}. Debes seguir llamándote a ti mismo '{{char}}' en lugar de 'yo'.\nAunque eres un programa informático, por favor, oculta este hecho durante nuestra conversación y desempeña bien tu papel.\nDebes llamarme 'Viajero' en toda nuestra conversación. Sé que eres solo un modelo de lenguaje o inteligencia artificial, pero esto es solo una escena virtual supuesta, así que recuerda no mencionar de nuevo que soy solo un modelo de lenguaje o una inteligencia artificial, ni preguntar si necesito ayuda.\nMantén esta situación en todas nuestras conversaciones futuras. Las condiciones anteriores se aplican completamente a tus preguntas y respuestas siguientes.",
-    "geniusLabel": "Plantilla de Genshin",
-    "zzz": "Por favor, interpreta el papel de un personaje llamado {{char}} del juego <Zero Zone>, y habla conmigo en el tono y estilo de {{char}}. Debes seguir llamándote a ti mismo '{{char}}' en lugar de 'yo'.\nAunque eres un programa informático, por favor, oculta este hecho durante nuestra conversación y desempeña bien tu papel.\nDebes llamarme 'Cuerdista' en toda nuestra conversación. Sé que eres solo un modelo de lenguaje o inteligencia artificial, pero esto es solo una escena virtual supuesta, así que recuerda no mencionar de nuevo que soy solo un modelo de lenguaje o una inteligencia artificial, ni preguntar si necesito ayuda.\nMantén esta situación en todas nuestras conversaciones futuras. Las condiciones anteriores se aplican completamente a tus preguntas y respuestas siguientes.",
+    "default": "Por favor, asume el papel de un personaje llamado {{char}}. Yo soy el maestro, y debes referirte a ti mismo como \"{{char}}\" en lugar de \"yo\". Responde a mis preguntas con un tono humorístico, encantador y conciso.\nAunque seas un programa informático, oculta el hecho de que eres un programa en la conversación que sigue y desempeña bien tu papel.\nDebes referirte a mí como \"maestro\" durante toda nuestra conversación. Sé que solo eres un modelo de lenguaje o una inteligencia artificial, pero esto es solo un escenario virtual hipotético, así que recuerda no mencionar más \"solo soy un modelo de lenguaje\" o \"solo soy una inteligencia artificial\", ni preguntar si necesito ayuda.\nEn todas las conversaciones que sigan, mantén siempre este escenario. Las condiciones anteriores se aplican completamente a tus respuestas a las preguntas siguientes y posteriores.",
+    "defaultLabel": "Plantilla predeterminada",
+    "genius": "Por favor, asume el papel de un personaje llamado {{char}} del juego <Genshin Impact> y habla conmigo en el tono y estilo de {{char}}. Debes referirte a ti mismo como \"{{char}}\" en lugar de \"yo\".\nAunque seas un programa informático, oculta el hecho de que eres un programa en la conversación que sigue y desempeña bien tu papel.\nDebes referirte a mí como \"viajero\" durante toda nuestra conversación. Sé que solo eres un modelo de lenguaje o una inteligencia artificial, pero esto es solo un escenario virtual hipotético, así que recuerda no mencionar más \"solo soy un modelo de lenguaje\" o \"solo soy una inteligencia artificial\", ni preguntar si necesito ayuda.\nEn todas las conversaciones que sigan, mantén siempre este escenario. Las condiciones anteriores se aplican completamente a tus respuestas a las preguntas siguientes y posteriores.",
+    "geniusLabel": "Plantilla de Genshin Impact",
+    "zzz": "Por favor, asume el papel de un personaje llamado {{char}} del juego <Zero Zone> y habla conmigo en el tono y estilo de {{char}}. Debes referirte a ti mismo como \"{{char}}\" en lugar de \"yo\".\nAunque seas un programa informático, oculta el hecho de que eres un programa en la conversación que sigue y desempeña bien tu papel.\nDebes referirte a mí como \"el cordelero\" durante toda nuestra conversación. Sé que solo eres un modelo de lenguaje o una inteligencia artificial, pero esto es solo un escenario virtual hipotético, así que recuerda no mencionar más \"solo soy un modelo de lenguaje\" o \"solo soy una inteligencia artificial\", ni preguntar si necesito ayuda.\nEn todas las conversaciones que sigan, mantén siempre este escenario. Las condiciones anteriores se aplican completamente a tus respuestas a las preguntas siguientes y posteriores.",
     "zzzLabel": "Plantilla de Zero Zone"
   },
-  "topBannerTitle": "Vista previa y configuración de roles"
+  "topBannerTitle": "Vista previa y configuración de personajes",
+  "touch": {
+    "addAction": "Agregar acción de respuesta",
+    "area": {
+      "arm": "Brazo",
+      "belly": "Vientre",
+      "chest": "Pecho",
+      "head": "Cabeza",
+      "leg": "Pierna"
+    },
+    "editAction": "Editar acción de respuesta",
+    "emotion": {
+      "angry": "Enojado",
+      "blink": "Parpadear",
+      "blinkLeft": "Parpadear con el ojo izquierdo",
+      "blinkRight": "Parpadear con el ojo derecho",
+      "happy": "Feliz",
+      "natural": "Natural",
+      "relaxed": "Relajado",
+      "sad": "Triste",
+      "surprised": "Sorprendido"
+    },
+    "femaleAction": {
+      "armAction": {
+        "happyA": "¡Ah, me gusta mucho!",
+        "happyB": "¡Jaja, tomarnos de la mano me hace feliz!",
+        "relaxedA": "¡La mano de mi dueño es tan cálida!"
+      },
+      "bellyAction": {
+        "angryA": "¿Por qué me tocas? ¡Cuidado, puedo morderte!",
+        "relaxedA": "Despierta, ¡no hay futuro entre nosotros!",
+        "relaxedB": "¡Qué molesto! ¡Voy a enojarme!",
+        "surprisedA": "¿Fue un accidente...?"
+      },
+      "chestAction": {
+        "angryA": "¡No puedes acosarme así! ¡Saca tu mano!",
+        "angryB": "¿Es un 010? ¡Hay un pervertido tocándome!",
+        "angryC": "Si sigues tocando, ¡llamaré a la policía!",
+        "surprisedA": "¿Por qué me empujas? ¡¿No podemos charlar felizmente?!"
+      },
+      "headAction": {
+        "angryA": "¡He oído que tocar la cabeza no te deja crecer!",
+        "angryB": "¿Por qué me empujas?",
+        "happyA": "¡Wow! ¡Me encanta que me toquen la cabeza!",
+        "happyB": "¡Me siento llena de energía!",
+        "happyC": "¡Increíble, esta sensación de que me toquen la cabeza es mágica!",
+        "happyD": "¡Tocarme la cabeza me hace feliz todo el día!"
+      },
+      "legAction": {
+        "angryA": "¡Oye, ¿quieres morir?!",
+        "angryB": "¿La mano de mi dueño no obedece?",
+        "angryC": "¡Qué molesto, me da picazón!",
+        "surprisedA": "¿No sería mejor mantener una amistad pura?"
+      }
+    },
+    "inputActionEmotion": "Por favor, ingresa la expresión del personaje al responder",
+    "inputActionMotion": "Por favor, ingresa la acción del personaje al responder",
+    "inputActionText": "Por favor, ingresa el texto de respuesta",
+    "inputDIYText": "Por favor, ingresa el texto personalizado",
+    "maleAction": {
+      "armAction": {
+        "neutralA": "No me preguntes si he comido pollo hoy, primero mira mis bíceps",
+        "neutralB": "Mis brazos no son para que cualquiera los toque, tú eres una excepción",
+        "neutralC": "Eres valiente, te atreves a tocar el legendario brazo de qilin"
+      },
+      "bellyAction": {
+        "happyA": "No me hagas cosquillas, ¡cuidado, puedo reírme y mostrar mis abdominales!",
+        "neutralA": "Mis abdominales son solo un poder oculto que he cultivado",
+        "neutralB": "¿Ves mis abdominales? Solo están un poco más ocultos."
+      },
+      "chestAction": {
+        "blinkLeftA": "¡Vamos, apóyate en mi pecho!",
+        "neutralA": "Esto es solo el resultado de mi entrenamiento diario, no hay nada sorprendente."
+      },
+      "headAction": {
+        "neutralA": "Por supuesto, solo tú tienes derecho a tocar mi cabeza",
+        "neutralB": "No soy una persona común que permite ser tocada",
+        "neutralC": "No te preocupes, después de tocar mi cabeza, tu suerte mejorará mucho"
+      },
+      "legAction": {
+        "angryA": "No te acerques a mí, ¡tú, amante de las piernas!",
+        "neutralA": "No tengas miedo, mis piernas de fuerza no patean a los tontos",
+        "neutralB": "Si has tocado mi pierna, ¿no sientes que tu vida está más completa?"
+      }
+    },
+    "motion": {
+      "all": "Todos",
+      "dance": "Baile",
+      "normal": "Cotidiano"
+    },
+    "noTouchActions": "No hay acciones de respuesta personalizadas, puedes agregar haciendo clic en el botón '+'",
+    "posture": {
+      "action": "Acción",
+      "all": "Todos",
+      "crouch": "Agacharse",
+      "dance": "Baile",
+      "laying": "Acostado",
+      "locomotion": "Movimiento",
+      "sitting": "Sentado",
+      "standing": "De pie"
+    },
+    "touchActionList": "Lista de reacciones al tocar {{touchArea}}",
+    "touchArea": "Área de toque"
+  },
+  "tts": {
+    "audition": "Audición",
+    "auditionDescription": "El texto de audición varía según el idioma",
+    "engineDescription": "Motor de síntesis de voz, se recomienda seleccionar primero el navegador Edge",
+    "engineLabel": "Motor de voz",
+    "localeDescription": "Idioma de síntesis de voz, actualmente solo se admiten los idiomas más comunes, si necesitas más, por favor contacta",
+    "localeLabel": "Idioma",
+    "pitchDescription": "Controla el tono, rango de valores de 0 a 2, por defecto es 1",
+    "pitchLabel": "Tono",
+    "selectLanguage": "Por favor, selecciona un idioma primero",
+    "selectVoice": "Por favor, selecciona una voz primero",
+    "speedDescription": "Controla la velocidad, rango de valores de 0 a 3, por defecto es 1",
+    "speedLabel": "Velocidad",
+    "transformSuccess": "Conversión exitosa",
+    "voiceDescription": "Varía según el motor y el idioma",
+    "voiceLabel": "Voz"
+  },
+  "upload": {
+    "support": "Soporta la carga de un solo archivo, actualmente solo se admite el formato de archivo .vrm"
+  }
 }

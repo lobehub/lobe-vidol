@@ -1,1 +1,17 @@
-{}
+{
+  "actions": {
+    "pause": "Pause",
+    "play": "Abspielen"
+  },
+  "addPlay": "Zur Liste hinzufügen",
+  "addPlaySuccess": "Erfolgreich zur Wiedergabeliste hinzugefügt",
+  "cancelAddPlay": "Möchten Sie das Abonnement für die Musik {{musicName}} wirklich kündigen?",
+  "cancelSubscribed": "Abonnement kündigen",
+  "confirmClearPlayList": "Möchten Sie die Wiedergabeliste wirklich löschen?",
+  "dance": "Tanzen",
+  "danceList": "Tanzliste",
+  "findDance": "Finde deinen Lieblings-Tanz",
+  "musicAndDance": "Tanzmarkt",
+  "noPlayList": "Keine Wiedergabeliste vorhanden. Sie können im Markt abonnieren, um Ihre Lieblings-Tänze zu erhalten.",
+  "play": "Abspielen"
+}

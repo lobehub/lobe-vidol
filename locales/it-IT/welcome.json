@@ -1,12 +1,12 @@
 {
   "agent": {
-    "hello": "Ciao",
+    "hello": "Ciao!",
     "meta": {
       "description": "Questo è un ruolo personalizzato",
       "name": "Ruolo personalizzato"
     }
   },
-  "greet": "Ciao, sono {{name}}, in che modo posso aiutarti?",
-  "loadingTitle": "Inizializzazione dell'app in corso, attendere...",
+  "greet": "Ciao, sono {{name}}, come posso aiutarti?",
+  "loadingTitle": "Inizializzazione dell'applicazione, attendere prego...",
   "waiting": "Sto preparando il mio intero mondo per te"
 }

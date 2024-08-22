@@ -2,11 +2,11 @@
   "agent": {
     "hello": "Merhaba",
     "meta": {
-      "description": "Bu bir özel karakterdir",
-      "name": "Özel karakter"
+      "description": "Bu bir özelleştirilmiş roldür",
+      "name": "Özelleştirilmiş Rol"
     }
   },
   "greet": "Merhaba, ben {{name}}. Size nasıl yardımcı olabilirim?",
   "loadingTitle": "Uygulama başlatılıyor, lütfen bekleyin...",
-  "waiting": "Benim dünyamı hazırlamak için çalışıyor"
+  "waiting": "Senin için bütün dünyamı hazırlıyorum"
 }

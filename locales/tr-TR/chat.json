@@ -1,3 +1,83 @@
 {
-  "chat": "sohbet"
+  "actions": {
+    "add": "Ekle",
+    "copy": "Kopyala",
+    "copySuccess": "Başarıyla Kopyalandı",
+    "del": "Sil",
+    "delAndRegenerate": "Sil ve Yeniden Oluştur",
+    "edit": "Düzenle",
+    "goBottom": "Aşağı Git",
+    "regenerate": "Yeniden Oluştur",
+    "save": "Kaydet",
+    "share": "Paylaş"
+  },
+  "animation": {
+    "animationList": "Animasyon Listesi",
+    "postureList": "Poz Listesi",
+    "totalCount": "Toplam {{total}} öğe"
+  },
+  "apiKey": {
+    "addProxy": "OpenAI proxy adresi ekleyin (isteğe bağlı)",
+    "closeTip": "İpucu'nu kapat",
+    "confirmRetry": "Onayla ve yeniden dene",
+    "startDesc": "OpenAI API Anahtarınızı girerek sohbete başlayabilirsiniz. Uygulama API Anahtarınızı kaydetmeyecek.",
+    "startTitle": "Özel API Anahtarı"
+  },
+  "chat": "sohbet",
+  "delSession": "Oturumu Sil",
+  "delSessionAlert": "Bu sohbeti silmek istediğinize emin misiniz? Silindikten sonra geri alınamaz, lütfen dikkatli olun!",
+  "history": {
+    "action": "Bağlamı Temizle",
+    "alert": "Geçmiş mesajları silmek istediğinize emin misiniz?",
+    "tip": "Bu işlem geri alınamaz, lütfen dikkatli olun.",
+    "title": "Sohbet Geçmişi"
+  },
+  "info": {
+    "chat": "sohbet",
+    "dance": "dans",
+    "motions": "hareketler",
+    "posture": "duruş"
+  },
+  "input": {
+    "alert": "Lütfen unutmayın: Akıllı varlığın söylediği her şey AI tarafından üretilmiştir",
+    "placeholder": "Lütfen sohbet etmeye başlamak için bir şeyler yazın",
+    "send": "Gönder",
+    "warp": "Satır Sonu"
+  },
+  "selectModel": "Lütfen bir model seçin",
+  "sessionCreate": "Sohbet Oluştur",
+  "sessionList": "Oturum Listesi",
+  "share": {
+    "downloadScreenshot": "Ekran görüntüsünü indir",
+    "imageType": "Görüntü formatı",
+    "screenshot": "Ekran görüntüsü",
+    "share": "Paylaş",
+    "shareGPT": "GPT'yi paylaş",
+    "shareToGPT": "ShareGPT paylaşım bağlantısını oluştur",
+    "withBackground": "Arka plan resmi ile birlikte",
+    "withFooter": "Alt bilgi ile birlikte",
+    "withSystemRole": "Asistan rolü ile birlikte"
+  },
+  "token": {
+    "overload": "Token aşımı",
+    "remained": "Kalan Token",
+    "tokenCount": "Token sayısı",
+    "useToken": "Token tüketim miktarı hesaplaması, mesajlar, karakter ayarları ve bağlam dahil: {{usedTokens}} / {{maxValue}}",
+    "used": "Kullanılan Token"
+  },
+  "toolBar": {
+    "axes": "Eksenler",
+    "cameraControl": "Kamera Kontrolü",
+    "cameraHelper": "Kamera Yardımcısı",
+    "downloading": "Model indiriliyor, lütfen bekleyin...",
+    "floor": "Zemin Değiştir",
+    "grid": "Izgara",
+    "resetCamera": "Kamerayı Sıfırla",
+    "resetToIdle": "Dans Hareketini Durdur",
+    "screenShot": "Ekran Görüntüsü Al"
+  },
+  "tts": {
+    "combine": "Ses Sentezi",
+    "record": "Ses Tanıma (bilimsel bir ağ bağlantısı gerektirir)"
+  }
 }

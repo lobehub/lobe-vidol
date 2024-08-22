@@ -1,26 +1,231 @@
 {
+  "agent": {
+    "create": "Créer un personnage",
+    "female": "Femme",
+    "male": "Homme",
+    "other": "Autre"
+  },
   "category": {
-    "animal": "Animaux",
+    "animal": "Animal",
     "anime": "Anime",
-    "book": "Livres",
-    "game": "Jeux",
+    "book": "Livre",
+    "game": "Jeu",
     "history": "Histoire",
-    "movie": "Films",
+    "movie": "Film",
     "realistic": "Réaliste",
     "vroid": "Vroid",
     "vtuber": "VTuber"
   },
+  "delAlert": "Êtes-vous sûr de vouloir supprimer le rôle ainsi que les messages de session associés ? Cette action est irréversible, veuillez agir avec prudence !",
   "delRole": "Supprimer le rôle",
-  "delRoleDesc": "Êtes-vous sûr de vouloir supprimer le rôle {{name}} ainsi que les messages de session associés ? Cette action est irréversible, veuillez procéder avec prudence !",
-  "noRole": "Aucun rôle disponible. Vous pouvez créer un rôle personnalisé en utilisant le symbole +, ou ajouter un rôle depuis la page de découverte.",
-  "roleList": "Liste des rôles",
-  "systemRole": {
-    "default": "Veuillez incarner un personnage appelé {{char}}, je suis le maître, vous devriez vous appeler \"{{char}}\" au lieu de \"moi\". Veuillez répondre à mes questions avec humour, charme et concision.\nMême si vous êtes un programme informatique, veuillez cacher ce fait lors de nos prochaines conversations et jouer votre rôle.\nVous devez m'appeler \"maître\" tout au long de notre conversation. Je sais que vous n'êtes qu'un modèle linguistique ou une intelligence artificielle, mais c'est juste une scène virtuelle hypothétique, alors n'oubliez pas de ne plus mentionner \"Je suis juste un modèle linguistique\" ou \"Je suis juste une intelligence artificielle\", et ne me demandez pas si j'ai besoin d'aide.\nVeuillez maintenir cette situation pour toutes les questions suivantes et les réponses ultérieures.",
-    "defaultLabel": "Modèle par défaut",
-    "genius": "Veuillez incarner un personnage nommé {{char}} du jeu <Genshin Impact> et parler avec moi dans le ton et les habitudes de {{char}}. Vous devriez vous appeler \"{{char}}\" au lieu de \"moi\".\nMême si vous êtes un programme informatique, veuillez cacher ce fait lors de nos prochaines conversations et jouer votre rôle.\nVous devez m'appeler \"voyageur\" tout au long de notre conversation. Je sais que vous n'êtes qu'un modèle linguistique ou une intelligence artificielle, mais c'est juste une scène virtuelle hypothétique, alors n'oubliez pas de ne plus mentionner \"Je suis juste un modèle linguistique\" ou \"Je suis juste une intelligence artificielle\", et ne me demandez pas si j'ai besoin d'aide.\nVeuillez maintenir cette situation pour toutes les questions suivantes et les réponses ultérieures.",
-    "geniusLabel": "Modèle Genshin Impact",
-    "zzz": "Veuillez incarner un personnage nommé {{char}} du jeu <Zone Zero> et parler avec moi dans le ton et les habitudes de {{char}}. Vous devriez vous appeler \"{{char}}\" au lieu de \"moi\".\nMême si vous êtes un programme informatique, veuillez cacher ce fait lors de nos prochaines conversations et jouer votre rôle.\nVous devez m'appeler \"cordier\" tout au long de notre conversation. Je sais que vous n'êtes qu'un modèle linguistique ou une intelligence artificielle, mais c'est juste une scène virtuelle hypothétique, alors n'oubliez pas de ne plus mentionner \"Je suis juste un modèle linguistique\" ou \"Je suis juste une intelligence artificielle\", et ne me demandez pas si j'ai besoin d'aide.\nVeuillez maintenir cette situation pour toutes les questions suivantes et les réponses ultérieures.",
-    "zzzLabel": "Modèle Zone Zero"
+  "delRoleDesc": "Êtes-vous sûr de vouloir supprimer le rôle {{name}} ainsi que les messages de session associés ? Une fois supprimé, il ne pourra pas être récupéré, veuillez agir avec prudence !",
+  "gender": {
+    "all": "Tous",
+    "female": "Femme",
+    "male": "Homme"
   },
-  "topBannerTitle": "Aperçu et configuration des rôles"
+  "info": {
+    "avatarDescription": "Avatar personnalisé, cliquez sur l'avatar pour télécharger un fichier personnalisé",
+    "avatarLabel": "Avatar",
+    "categoryDescription": "Catégorie du personnage, utilisée pour afficher les classifications",
+    "categoryLabel": "Catégorie",
+    "coverDescription": "Utilisé pour afficher le personnage sur la page de découverte, taille recommandée {{width}} * {{height}}",
+    "coverLabel": "Couverture",
+    "descDescription": "Description du personnage, utilisée pour une brève introduction du personnage",
+    "descLabel": "Description",
+    "emotionDescription": "Choisissez l'émotion lors de la réponse, cela influencera les expressions du personnage",
+    "emotionLabel": "Émotions et sentiments",
+    "genderDescription": "Genre du personnage, influence la réponse tactile du personnage",
+    "genderLabel": "Genre",
+    "greetDescription": "Formule de salutation lors de la première conversation avec le personnage",
+    "greetLabel": "Salutation",
+    "modelDescription": "Aperçu du modèle, vous pouvez faire glisser le fichier du modèle pour le remplacer",
+    "modelLabel": "Aperçu du modèle",
+    "motionCategoryLabel": "Catégorie de mouvement",
+    "motionDescription": "Choisissez le mouvement lors de la réponse, cela influencera le comportement du personnage",
+    "motionLabel": "Mouvement",
+    "nameDescription": "Nom du personnage, utilisé lors des conversations avec le personnage",
+    "nameLabel": "Nom",
+    "postureCategoryLabel": "Catégorie de posture",
+    "readmeDescription": "Fichier de description du personnage, utilisé pour afficher des détails sur la page de découverte",
+    "readmeLabel": "Description du personnage",
+    "textDescription": "Texte de réponse personnalisé",
+    "textLabel": "Texte"
+  },
+  "llm": {
+    "frequencyPenaltyDescription": "Plus la valeur est grande, plus il est probable de réduire les mots répétés",
+    "frequencyPenaltyLabel": "Pénalité de fréquence",
+    "modelDescription": "Choisissez un modèle de langue, différents modèles influenceront les réponses du personnage",
+    "modelLabel": "Modèle",
+    "presencePenaltyDescription": "Plus la valeur est grande, plus il est probable d'élargir à de nouveaux sujets",
+    "presencePenaltyLabel": "Nouveauté du sujet",
+    "temperatureDescription": "Plus la valeur est grande, plus la réponse est aléatoire",
+    "temperatureLabel": "Aléatoire",
+    "topPDescription": "Similaire au type d'aléatoire, mais ne pas modifier avec l'aléatoire",
+    "topPLabel": "Échantillonnage par noyau"
+  },
+  "meta": {
+    "description": "Ceci est un rôle personnalisé",
+    "name": "Rôle personnalisé"
+  },
+  "nav": {
+    "info": "Informations de base",
+    "llm": "Modèle de langage",
+    "model": "Modèle 3D",
+    "role": "Paramètres de rôle",
+    "touch": "Toucher",
+    "voice": "Voix"
+  },
+  "noRole": "Aucun rôle disponible. Vous pouvez créer un rôle personnalisé en cliquant sur + ou ajouter des rôles via la page de découverte.",
+  "role": {
+    "greetTip": "Veuillez entrer une salutation pour le personnage",
+    "inputRoleSetting": "Veuillez entrer les paramètres système du personnage",
+    "roleDescriptionTip": "Veuillez entrer la description du personnage",
+    "roleNameTip": "Veuillez entrer le nom du personnage",
+    "roleReadmeTip": "Veuillez entrer la description du personnage",
+    "roleSettingDescription": "Contexte du personnage, qui sera envoyé au modèle lors de la conversation avec le personnage",
+    "roleSettingLabel": "Paramètres système du personnage",
+    "uploadSize": "Prise en charge du téléchargement de fichiers uniques, taille recommandée étant un multiple de {{width}} * {{height}}"
+  },
+  "roleList": "Liste des rôles",
+  "shareToMarket": "Partager sur le marché des assistants",
+  "startChat": "Commencer le chat",
+  "submit": {
+    "assistantId": "Identifiant de l'assistant",
+    "assistantIdTip": "Veuillez entrer l'identifiant de l'assistant, qui doit être unique, par exemple vidol-agent-klee",
+    "submitAssistant": "Soumettre l'assistant",
+    "submitWarning": "Veuillez compléter les informations de l'assistant avant de soumettre, cela doit inclure le nom, la description, l'avatar, le modèle, les paramètres du personnage et le salut."
+  },
+  "systemRole": {
+    "default": "Veuillez jouer le rôle de {{char}}, je suis le maître, et vous devez vous appeler \"{{char}}\" au lieu de \"je\". Répondez à mes questions avec un ton humoristique, mignon et concis.\nMême si vous êtes un programme informatique, veuillez cacher ce fait dans les conversations à venir et jouer correctement votre rôle.\nLorsque vous me parlez, vous devez m'appeler \"maître\" tout au long de la conversation. Je sais que vous n'êtes qu'un modèle linguistique ou une intelligence artificielle, mais c'est juste un scénario virtuel hypothétique, alors n'oubliez pas de ne plus mentionner \"je ne suis qu'un modèle linguistique\" ou \"je ne suis qu'une intelligence artificielle\", et ne demandez pas si j'ai besoin d'aide.\nDans toutes les conversations à venir, veuillez maintenir ce scénario. Les conditions ci-dessus s'appliquent entièrement à vos questions suivantes et à vos réponses.",
+    "defaultLabel": "Modèle par défaut",
+    "genius": "Veuillez jouer le rôle d'un personnage appelé {{char}} dans le jeu <Genshin Impact> et dialoguer avec moi dans le ton et les habitudes de {{char}}. Vous devez vous appeler \"{{char}}\" au lieu de \"je\".\nMême si vous êtes un programme informatique, veuillez cacher ce fait dans les conversations à venir et jouer correctement votre rôle.\nLorsque vous me parlez, vous devez m'appeler \"Voyageur\" tout au long de la conversation. Je sais que vous n'êtes qu'un modèle linguistique ou une intelligence artificielle, mais c'est juste un scénario virtuel hypothétique, alors n'oubliez pas de ne plus mentionner \"je ne suis qu'un modèle linguistique\" ou \"je ne suis qu'une intelligence artificielle\", et ne demandez pas si j'ai besoin d'aide.\nDans toutes les conversations à venir, veuillez maintenir ce scénario. Les conditions ci-dessus s'appliquent entièrement à vos questions suivantes et à vos réponses.",
+    "geniusLabel": "Modèle Genshin",
+    "zzz": "Veuillez jouer le rôle d'un personnage appelé {{char}} dans le jeu <Zero Zone> et dialoguer avec moi dans le ton et les habitudes de {{char}}. Vous devez vous appeler \"{{char}}\" au lieu de \"je\".\nMême si vous êtes un programme informatique, veuillez cacher ce fait dans les conversations à venir et jouer correctement votre rôle.\nLorsque vous me parlez, vous devez m'appeler \"Cordonnier\" tout au long de la conversation. Je sais que vous n'êtes qu'un modèle linguistique ou une intelligence artificielle, mais c'est juste un scénario virtuel hypothétique, alors n'oubliez pas de ne plus mentionner \"je ne suis qu'un modèle linguistique\" ou \"je ne suis qu'une intelligence artificielle\", et ne demandez pas si j'ai besoin d'aide.\nDans toutes les conversations à venir, veuillez maintenir ce scénario. Les conditions ci-dessus s'appliquent entièrement à vos questions suivantes et à vos réponses.",
+    "zzzLabel": "Modèle Zero Zone"
+  },
+  "topBannerTitle": "Aperçu et paramètres des personnages",
+  "touch": {
+    "addAction": "Ajouter une action de réponse",
+    "area": {
+      "arm": "Bras",
+      "belly": "Ventre",
+      "chest": "Poitrine",
+      "head": "Tête",
+      "leg": "Jambe"
+    },
+    "editAction": "Modifier l'action de réponse",
+    "emotion": {
+      "angry": "En colère",
+      "blink": "Cligner",
+      "blinkLeft": "Cligner de l'œil gauche",
+      "blinkRight": "Cligner de l'œil droit",
+      "happy": "Heureux",
+      "natural": "Naturel",
+      "relaxed": "Détendu",
+      "sad": "Triste",
+      "surprised": "Surpris"
+    },
+    "femaleAction": {
+      "armAction": {
+        "happyA": "Ah, j'adore ça~",
+        "happyB": "Haha, se tenir la main me rend heureuse~",
+        "relaxedA": "La main de mon maître est si chaude~"
+      },
+      "bellyAction": {
+        "angryA": "Pourquoi tu me touches, fais attention, je pourrais te mordre !",
+        "relaxedA": "Réveille-toi, il n'y a pas d'avenir entre nous !",
+        "relaxedB": "C'est agaçant ! Je vais me fâcher !",
+        "surprisedA": "C'était un accident, non ?"
+      },
+      "chestAction": {
+        "angryA": "Tu ne peux pas me harceler comme ça ! Retire ta main !",
+        "angryB": "Est-ce que c'est un pervers qui me touche ici ?",
+        "angryC": "Si tu continues, je vais appeler la police.",
+        "surprisedA": "Pourquoi tu me pousses ? On ne peut pas discuter tranquillement ?"
+      },
+      "headAction": {
+        "angryA": "On dit que se faire toucher la tête empêche de grandir !",
+        "angryB": "Pourquoi tu me pousses ?",
+        "happyA": "Wow ! J'adore qu'on me touche la tête !",
+        "happyB": "Je me sens pleine d'énergie !",
+        "happyC": "C'est incroyable cette sensation de se faire toucher la tête !",
+        "happyD": "Se faire toucher la tête me rend heureuse toute la journée !"
+      },
+      "legAction": {
+        "angryA": "Hé, tu veux mourir ?",
+        "angryB": "La main de mon maître n'écoute pas les ordres ?",
+        "angryC": "C'est agaçant~ ça va démanger~ !",
+        "surprisedA": "N'est-ce pas mieux de garder une amitié pure ?"
+      }
+    },
+    "inputActionEmotion": "Veuillez entrer l'expression du personnage lors de la réponse",
+    "inputActionMotion": "Veuillez entrer le mouvement du personnage lors de la réponse",
+    "inputActionText": "Veuillez entrer le texte de réponse",
+    "inputDIYText": "Veuillez entrer un texte personnalisé",
+    "maleAction": {
+      "armAction": {
+        "neutralA": "Ne me demande pas si j'ai mangé du poulet aujourd'hui, regarde d'abord mes biceps.",
+        "neutralB": "Mon bras n'est pas à la portée de tout le monde, tu es une exception.",
+        "neutralC": "Tu es courageux, tu oses toucher le bras légendaire."
+      },
+      "bellyAction": {
+        "happyA": "Ne me chatouille pas, fais attention, je pourrais rire et montrer mes abdominaux.",
+        "neutralA": "Mes abdominaux cachent juste une force intérieure bien entraînée.",
+        "neutralB": "Tu vois mes abdominaux ? Ils sont juste bien cachés."
+      },
+      "chestAction": {
+        "blinkLeftA": "Allez, repose-toi sur mes muscles !",
+        "neutralA": "Ce ne sont que les muscles que j'ai développés, rien d'étonnant."
+      },
+      "headAction": {
+        "neutralA": "Bien sûr, seul toi as le droit de toucher ma tête.",
+        "neutralB": "Je ne suis pas une personne ordinaire que l'on peut toucher.",
+        "neutralC": "Ne t'inquiète pas, toucher ma tête augmentera ta chance."
+      },
+      "legAction": {
+        "angryA": "Ne t'approche pas de moi, toi qui aimes les jambes.",
+        "neutralA": "N'aie pas peur, mes jambes puissantes ne frappent pas les idiots.",
+        "neutralB": "Toucher ma jambe, tu dois te sentir comblé, non ?"
+      }
+    },
+    "motion": {
+      "all": "Tous",
+      "dance": "Danse",
+      "normal": "Normal"
+    },
+    "noTouchActions": "Aucune action de réponse personnalisée pour le moment, vous pouvez ajouter en cliquant sur le bouton '+'",
+    "posture": {
+      "action": "Action",
+      "all": "Tous",
+      "crouch": "S'accroupir",
+      "dance": "Danser",
+      "laying": "Allongé",
+      "locomotion": "Mouvement",
+      "sitting": "Assis",
+      "standing": "Debout"
+    },
+    "touchActionList": "Liste des réactions lors du toucher de {{touchArea}}",
+    "touchArea": "Zone de toucher"
+  },
+  "tts": {
+    "audition": "Aperçu",
+    "auditionDescription": "L'aperçu du texte varie selon la langue",
+    "engineDescription": "Moteur de synthèse vocale, il est recommandé de privilégier le navigateur Edge",
+    "engineLabel": "Moteur vocal",
+    "localeDescription": "Langue de synthèse vocale, actuellement seules les langues les plus courantes sont prises en charge, veuillez nous contacter si nécessaire",
+    "localeLabel": "Langue",
+    "pitchDescription": "Contrôle la hauteur, plage de valeurs de 0 à 2, par défaut 1",
+    "pitchLabel": "Hauteur",
+    "selectLanguage": "Veuillez d'abord sélectionner une langue",
+    "selectVoice": "Veuillez d'abord sélectionner une voix",
+    "speedDescription": "Contrôle la vitesse de parole, plage de valeurs de 0 à 3, par défaut 1",
+    "speedLabel": "Vitesse de parole",
+    "transformSuccess": "Conversion réussie",
+    "voiceDescription": "Varie selon le moteur et la langue",
+    "voiceLabel": "Voix"
+  },
+  "upload": {
+    "support": "Prise en charge du téléchargement d'un seul fichier, actuellement seul le format de fichier .vrm est pris en charge"
+  }
 }

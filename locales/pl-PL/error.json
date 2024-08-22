@@ -1,20 +1,20 @@
 {
-  "apiKeyMiss": "OpenAI API Key jest pusty. Proszę dodać niestandardowy klucz API OpenAI.",
+  "apiKeyMiss": "Klucz API OpenAI jest pusty, proszę dodać własny klucz API OpenAI",
   "error": "Błąd",
   "errorTip": {
-    "clearSession": "Wyczyść sesję",
-    "description": "Projekt jest obecnie w trakcie budowy, nie gwarantuje stabilności danych. W razie problemów można spróbować",
-    "forgive": ", przepraszamy za wszelkie niedogodności",
+    "clearSession": "Wyczyść wiadomości sesji",
+    "description": "Projekt jest obecnie w trakcie budowy, nie gwarantujemy stabilności danych. Jeśli napotkasz problemy, możesz spróbować",
+    "forgive": "przepraszamy za wszelkie niedogodności",
     "or": "lub",
     "problem": "Strona napotkała pewien problem...",
-    "resetSystem": "Zresetuj ustawienia systemu"
+    "resetSystem": "Zresetuj ustawienia systemowe"
   },
-  "fileUploadError": "Wystąpił błąd podczas przesyłania pliku. Proszę spróbować ponownie później",
-  "goBack": "Powrót do strony głównej",
-  "openaiError": "Błąd OpenAI API. Proszę sprawdź, czy klucz API OpenAI i Endpoint są poprawne.",
+  "fileUploadError": "Wystąpił błąd podczas przesyłania pliku, spróbuj ponownie później",
+  "goBack": "Wróć do strony głównej",
+  "openaiError": "Błąd API OpenAI, proszę sprawdzić, czy klucz API OpenAI i punkt końcowy są poprawne",
   "reload": "Przeładuj",
-  "s3envError": "Błąd środowiska S3. Sprawdź, czy Twoje zmienne środowiskowe są ustawione poprawnie.",
-  "serverError": "Błąd serwera. Skontaktuj się z administratorem.",
+  "s3envError": "Zmienne środowiskowe S3 nie są w pełni skonfigurowane, proszę sprawdzić swoje zmienne środowiskowe",
+  "serverError": "Błąd serwera, proszę skontaktować się z administratorem",
   "triggerError": "Wystąpił błąd",
   "unknownError": "Nieznany błąd"
 }

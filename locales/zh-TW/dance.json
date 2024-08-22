@@ -1,1 +1,17 @@
-{}
+{
+  "actions": {
+    "pause": "暫停",
+    "play": "播放"
+  },
+  "addPlay": "加入清單",
+  "addPlaySuccess": "已添加至播放清單",
+  "cancelAddPlay": "確定取消訂閱音樂{{musicName}}嗎？",
+  "cancelSubscribed": "取消訂閱",
+  "confirmClearPlayList": "您確定要清空播放列表嗎？",
+  "dance": "跳舞",
+  "danceList": "舞蹈清單",
+  "findDance": "找到你最喜愛的舞蹈",
+  "musicAndDance": "舞蹈市場",
+  "noPlayList": "目前沒有播放列表，您可以透過市場訂閱您喜愛的舞蹈",
+  "play": "播放"
+}

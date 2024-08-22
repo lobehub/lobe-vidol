@@ -1,3 +1,83 @@
 {
-  "chat": "チャット"
+  "actions": {
+    "add": "追加",
+    "copy": "コピー",
+    "copySuccess": "コピー成功",
+    "del": "削除",
+    "delAndRegenerate": "削除して再生成",
+    "edit": "編集",
+    "goBottom": "最下部に移動",
+    "regenerate": "再生成",
+    "save": "保存",
+    "share": "共有"
+  },
+  "animation": {
+    "animationList": "アニメーションリスト",
+    "postureList": "ポーズリスト",
+    "totalCount": "合計 {{total}} 件"
+  },
+  "apiKey": {
+    "addProxy": "OpenAI プロキシアドレスを追加（オプション）",
+    "closeTip": "ヒントを閉じる",
+    "confirmRetry": "確認して再試行",
+    "startDesc": "あなたの OpenAI API キーを入力して会話を開始してください。アプリはあなたの API キーを記録しません。",
+    "startTitle": "カスタム API キー"
+  },
+  "chat": "チャット",
+  "delSession": "セッションを削除",
+  "delSessionAlert": "会話を削除してもよろしいですか？削除後は復元できませんので、慎重に操作してください！",
+  "history": {
+    "action": "コンテキストをクリア",
+    "alert": "履歴メッセージを削除してもよろしいですか？",
+    "tip": "この操作は元に戻せませんので、慎重に行ってください",
+    "title": "チャット履歴"
+  },
+  "info": {
+    "chat": "チャット",
+    "dance": "ダンス",
+    "motions": "動作",
+    "posture": "姿勢"
+  },
+  "input": {
+    "alert": "ご注意ください：エージェントが言うことはすべてAIによって生成されています",
+    "placeholder": "内容を入力してチャットを開始してください",
+    "send": "送信",
+    "warp": "改行"
+  },
+  "selectModel": "モデルを選択してください",
+  "sessionCreate": "チャットを作成",
+  "sessionList": "セッションリスト",
+  "share": {
+    "downloadScreenshot": "スクリーンショットをダウンロード",
+    "imageType": "画像形式",
+    "screenshot": "スクリーンショット",
+    "share": "共有",
+    "shareGPT": "ShareGPTを共有",
+    "shareToGPT": "ShareGPT共有リンクを生成",
+    "withBackground": "背景画像を含む",
+    "withFooter": "フッターを含む",
+    "withSystemRole": "アシスタントの役割設定を含む"
+  },
+  "token": {
+    "overload": "トークンが超過しました",
+    "remained": "残りのトークン",
+    "tokenCount": "トークンの数",
+    "useToken": "トークン消費量の計算（メッセージ、キャラクター設定、コンテキストを含む）：{{usedTokens}} / {{maxValue}}",
+    "used": "使用済みトークン"
+  },
+  "toolBar": {
+    "axes": "座標軸",
+    "cameraControl": "カメラコントロール",
+    "cameraHelper": "カメラヘルパー",
+    "downloading": "モデルをダウンロード中です。しばらくお待ちください...",
+    "floor": "フロア切替",
+    "grid": "グリッド",
+    "resetCamera": "カメラリセット",
+    "resetToIdle": "ダンス動作を停止",
+    "screenShot": "スクリーンショット"
+  },
+  "tts": {
+    "combine": "音声合成",
+    "record": "音声認識（科学的なインターネット接続が必要）"
+  }
 }

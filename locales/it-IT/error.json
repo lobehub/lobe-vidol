@@ -1,20 +1,20 @@
 {
-  "apiKeyMiss": "La chiave API di OpenAI è vuota, si prega di aggiungere una chiave API personalizzata di OpenAI",
+  "apiKeyMiss": "La chiave API di OpenAI è vuota, si prega di aggiungere una chiave API di OpenAI personalizzata",
   "error": "Errore",
   "errorTip": {
-    "clearSession": "Cancella messaggio di sessione",
-    "description": "Il progetto è attualmente in fase di costruzione, non possiamo garantire la stabilità dei dati. Se riscontri problemi, puoi provare",
-    "forgive": ", ci scusiamo per l'inconveniente causato",
+    "clearSession": "Cancella i messaggi di sessione",
+    "description": "Il progetto è attualmente in fase di sviluppo, non garantiamo la stabilità dei dati. Se riscontri problemi, puoi provare",
+    "forgive": "ci scusiamo per l'inconveniente",
     "or": "o",
-    "problem": "La pagina ha riscontrato un problema...",
+    "problem": "Si è verificato un piccolo problema con la pagina...",
     "resetSystem": "Ripristina le impostazioni di sistema"
   },
-  "fileUploadError": "Caricamento del file fallito, riprova più tardi",
-  "goBack": "Torna alla homepage",
-  "openaiError": "Errore nell'API di OpenAI, si prega di controllare che la chiave API di OpenAI e l'Endpoint siano corretti",
+  "fileUploadError": "Caricamento del file non riuscito, riprova più tardi",
+  "goBack": "Torna alla home",
+  "openaiError": "Erro API OpenAI, si prega di controllare se la chiave API OpenAI e l'endpoint sono corretti",
   "reload": "Ricarica",
-  "s3envError": "Variabile di ambiente S3 non completamente impostata, si prega di controllare le variabili di ambiente",
-  "serverError": "Errore del server, si prega di contattare l'amministratore",
+  "s3envError": "Le variabili d'ambiente S3 non sono completamente impostate, si prega di controllare le proprie variabili d'ambiente",
+  "serverError": "Erro del server, contattare l'amministratore",
   "triggerError": "Errore di attivazione",
-  "unknownError": "Errore sconosciuto"
+  "unknownError": "Erro sconosciuto"
 }

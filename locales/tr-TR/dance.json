@@ -1,1 +1,17 @@
-{}
+{
+  "actions": {
+    "pause": "Duraklat",
+    "play": "Oynat"
+  },
+  "addPlay": "Listeye Ekle",
+  "addPlaySuccess": "Oynatma listesine eklendi",
+  "cancelAddPlay": "{{musicName}} müziğini aboneliğinizi iptal etmek istediğinize emin misiniz?",
+  "cancelSubscribed": "Aboneliği İptal Et",
+  "confirmClearPlayList": "Çalma listesini temizlemek istediğinize emin misiniz?",
+  "dance": "dans",
+  "danceList": "Dans Listesi",
+  "findDance": "En sevdiğin dansı bul",
+  "musicAndDance": "Dans Pazarı",
+  "noPlayList": "Henüz bir çalma listesi yok, sevdiğiniz dansları pazardan abone olabilirsiniz.",
+  "play": "Oynat"
+}

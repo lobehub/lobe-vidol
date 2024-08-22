@@ -1,20 +1,20 @@
 {
-  "apiKeyMiss": "Khóa API OpenAI trống, vui lòng thêm Khóa API OpenAI tùy chỉnh",
+  "apiKeyMiss": "Khóa API OpenAI không được để trống, vui lòng thêm Khóa API OpenAI tùy chỉnh",
   "error": "Lỗi",
   "errorTip": {
-    "clearSession": "Xóa thông báo phiên",
-    "description": "Dự án hiện đang trong quá trình xây dựng, không đảm bảo tính ổn định của dữ liệu, nếu gặp vấn đề bạn có thể thử",
-    "forgive": ", xin lỗi vì sự bất tiện",
+    "clearSession": "Xóa tin nhắn phiên",
+    "description": "Dự án hiện đang trong quá trình thi công, không đảm bảo tính ổn định của dữ liệu, nếu gặp vấn đề có thể thử",
+    "forgive": "，gây ra sự bất tiện xin hãy thông cảm",
     "or": "hoặc",
     "problem": "Trang gặp một chút vấn đề...",
     "resetSystem": "Đặt lại cài đặt hệ thống"
   },
   "fileUploadError": "Tải lên tệp thất bại, vui lòng thử lại sau",
   "goBack": "Quay lại trang chủ",
-  "openaiError": "Lỗi API OpenAI, vui lòng kiểm tra Khóa API OpenAI và Điểm cuối có đúng không",
+  "openaiError": "Lỗi API OpenAI, vui lòng kiểm tra xem Khóa API OpenAI và Điểm cuối có chính xác không",
   "reload": "Tải lại",
   "s3envError": "Biến môi trường S3 chưa được thiết lập đầy đủ, vui lòng kiểm tra biến môi trường của bạn",
-  "serverError": "Lỗi máy chủ, vui lòng liên hệ quản trị viên",
+  "serverError": "Lỗi máy chủ, vui lòng liên hệ với quản trị viên",
   "triggerError": "Kích hoạt lỗi",
   "unknownError": "Lỗi không xác định"
 }

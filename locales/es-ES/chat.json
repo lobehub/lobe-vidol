@@ -1,3 +1,83 @@
 {
-  "chat": "Chat"
+  "actions": {
+    "add": "Añadir",
+    "copy": "Copiar",
+    "copySuccess": "Copia exitosa",
+    "del": "Eliminar",
+    "delAndRegenerate": "Eliminar y regenerar",
+    "edit": "Editar",
+    "goBottom": "Ir al final",
+    "regenerate": "Regenerar",
+    "save": "Guardar",
+    "share": "Compartir"
+  },
+  "animation": {
+    "animationList": "Lista de acciones",
+    "postureList": "Lista de posturas",
+    "totalCount": "Total {{total}} elementos"
+  },
+  "apiKey": {
+    "addProxy": "Añadir dirección del proxy de OpenAI (opcional)",
+    "closeTip": "Cerrar aviso",
+    "confirmRetry": "Confirmar y reintentar",
+    "startDesc": "Introduce tu clave API de OpenAI para comenzar la conversación. La aplicación no registrará tu clave API.",
+    "startTitle": "Clave API personalizada"
+  },
+  "chat": "charlar",
+  "delSession": "Eliminar sesión",
+  "delSessionAlert": "¿Confirmas la eliminación de la conversación? Una vez eliminada, no se puede recuperar, ¡por favor actúa con precaución!",
+  "history": {
+    "action": "Borrar contexto",
+    "alert": "¿Estás seguro de que deseas eliminar los mensajes históricos?",
+    "tip": "Esta acción es irreversible, por favor actúa con precaución",
+    "title": "Registro de chat"
+  },
+  "info": {
+    "chat": "charlar",
+    "dance": "bailar",
+    "motions": "movimientos",
+    "posture": "postura"
+  },
+  "input": {
+    "alert": "Ten en cuenta: todo lo que dice el agente es generado por IA",
+    "placeholder": "Introduce el contenido para comenzar a chatear",
+    "send": "Enviar",
+    "warp": "Saltar línea"
+  },
+  "selectModel": "Por favor, seleccione un modelo",
+  "sessionCreate": "Crear chat",
+  "sessionList": "Lista de sesiones",
+  "share": {
+    "downloadScreenshot": "Descargar captura de pantalla",
+    "imageType": "Formato de imagen",
+    "screenshot": "Captura de pantalla",
+    "share": "Compartir",
+    "shareGPT": "Compartir GPT",
+    "shareToGPT": "Generar enlace de compartición de ShareGPT",
+    "withBackground": "Incluir imagen de fondo",
+    "withFooter": "Incluir pie de página",
+    "withSystemRole": "Incluir configuración del asistente"
+  },
+  "token": {
+    "overload": "Token excedido",
+    "remained": "Token restantes",
+    "tokenCount": "Cantidad de Token",
+    "useToken": "Cálculo de la cantidad de Token consumidos, incluyendo mensajes, configuración de personajes y contexto: {{usedTokens}} / {{maxValue}}",
+    "used": "Token utilizados"
+  },
+  "toolBar": {
+    "axes": "Ejes",
+    "cameraControl": "Control de cámara",
+    "cameraHelper": "Ayuda de cámara",
+    "downloading": "Descargando modelo, por favor espere...",
+    "floor": "Cambiar piso",
+    "grid": "Rejilla",
+    "resetCamera": "Restablecer cámara",
+    "resetToIdle": "Detener acción de baile",
+    "screenShot": "Tomar foto"
+  },
+  "tts": {
+    "combine": "Síntesis de voz",
+    "record": "Reconocimiento de voz (se requiere acceso a internet científico)"
+  }
 }

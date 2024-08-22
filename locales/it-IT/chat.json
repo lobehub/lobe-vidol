@@ -1,3 +1,83 @@
 {
-  "chat": "Chat"
+  "actions": {
+    "add": "Aggiungi",
+    "copy": "Copia",
+    "copySuccess": "Copia riuscita",
+    "del": "Elimina",
+    "delAndRegenerate": "Elimina e rigenera",
+    "edit": "Modifica",
+    "goBottom": "Torna in fondo",
+    "regenerate": "Rigenera",
+    "save": "Salva",
+    "share": "Condividi"
+  },
+  "animation": {
+    "animationList": "Elenco delle azioni",
+    "postureList": "Elenco delle posture",
+    "totalCount": "Totale {{total}} elementi"
+  },
+  "apiKey": {
+    "addProxy": "Aggiungi indirizzo proxy OpenAI (opzionale)",
+    "closeTip": "Chiudi il suggerimento",
+    "confirmRetry": "Conferma e riprova",
+    "startDesc": "Inserisci la tua chiave API OpenAI per iniziare la conversazione. L'app non registrerà la tua chiave API.",
+    "startTitle": "Chiave API personalizzata"
+  },
+  "chat": "Chat",
+  "delSession": "Elimina la sessione",
+  "delSessionAlert": "Sei sicuro di voler eliminare la conversazione? Una volta eliminata, non potrà essere recuperata, si prega di procedere con cautela!",
+  "history": {
+    "action": "Cancella contesto",
+    "alert": "Sei sicuro di voler eliminare i messaggi storici?",
+    "tip": "Questa operazione è irreversibile, procedi con cautela",
+    "title": "Cronologia chat"
+  },
+  "info": {
+    "chat": "chat",
+    "dance": "danza",
+    "motions": "movimenti",
+    "posture": "posizione"
+  },
+  "input": {
+    "alert": "Si prega di notare: tutto ciò che dice l'agente è generato dall'AI",
+    "placeholder": "Inserisci il contenuto per iniziare a chattare",
+    "send": "Invia",
+    "warp": "A capo"
+  },
+  "selectModel": "Seleziona un modello",
+  "sessionCreate": "Crea chat",
+  "sessionList": "Elenco delle sessioni",
+  "share": {
+    "downloadScreenshot": "Scarica screenshot",
+    "imageType": "Formato immagine",
+    "screenshot": "Screenshot",
+    "share": "Condividi",
+    "shareGPT": "Condividi GPT",
+    "shareToGPT": "Genera link di condivisione ShareGPT",
+    "withBackground": "Includi immagine di sfondo",
+    "withFooter": "Includi piè di pagina",
+    "withSystemRole": "Includi impostazioni del ruolo dell'assistente"
+  },
+  "token": {
+    "overload": "Token sovraccarico",
+    "remained": "Token rimanenti",
+    "tokenCount": "Numero di Token",
+    "useToken": "Calcolo della quantità di Token consumati, inclusi messaggi, impostazioni del personaggio e contesto: {{usedTokens}} / {{maxValue}}",
+    "used": "Token utilizzati"
+  },
+  "toolBar": {
+    "axes": "Assi",
+    "cameraControl": "Controllo della fotocamera",
+    "cameraHelper": "Aiuto alla fotocamera",
+    "downloading": "Download del modello in corso, attendere prego...",
+    "floor": "Cambia pavimento",
+    "grid": "Griglia",
+    "resetCamera": "Ripristina fotocamera",
+    "resetToIdle": "Ferma l'azione di danza",
+    "screenShot": "Scatta foto"
+  },
+  "tts": {
+    "combine": "Sintesi vocale",
+    "record": "Riconoscimento vocale (richiede una connessione VPN)"
+  }
 }

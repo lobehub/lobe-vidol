@@ -2,11 +2,11 @@
   "agent": {
     "hello": "Hello there",
     "meta": {
-      "description": "This is a custom character",
-      "name": "Custom Character"
+      "description": "This is a custom role",
+      "name": "Custom Role"
     }
   },
-  "greet": "Hello, I'm {{name}}, how can I assist you?",
-  "loadingTitle": "Application initializing, please wait...",
-  "waiting": "Preparing my entire world for you"
+  "greet": "Hello, I am {{name}}. How can I assist you today?",
+  "loadingTitle": "Initializing application, please wait...",
+  "waiting": "I am preparing my whole world for you"
 }

@@ -1,1 +1,84 @@
-{}
+{
+  "common": {
+    "chat": {
+      "avatar": {
+        "desc": "Personalizar avatar",
+        "title": "Avatar"
+      },
+      "nickName": {
+        "desc": "Personalizar apelido",
+        "placeholder": "Digite o apelido",
+        "title": "Apelido"
+      },
+      "title": "Configurações de Chat"
+    },
+    "system": {
+      "clear": {
+        "action": "Limpar agora",
+        "alert": "Confirmar limpeza de todas as mensagens de conversa?",
+        "desc": "Isso irá limpar todos os dados de conversa e personagem, incluindo lista de conversas, lista de personagens, mensagens de conversa, etc.",
+        "success": "Limpeza bem-sucedida",
+        "tip": "A operação não pode ser desfeita, após a limpeza os dados não poderão ser recuperados, por favor, proceda com cautela",
+        "title": "Limpar todas as mensagens de conversa"
+      },
+      "reset": {
+        "action": "Redefinir agora",
+        "alert": "Confirmar redefinição de todas as configurações do sistema?",
+        "desc": "Isso irá redefinir todas as configurações do sistema, incluindo configurações de tema, configurações de chat, configurações de modelo de linguagem, etc.",
+        "success": "Redefinição bem-sucedida",
+        "tip": "A operação não pode ser desfeita, após a redefinição os dados não poderão ser recuperados, por favor, proceda com cautela",
+        "title": "Redefinir configurações do sistema"
+      },
+      "title": "Configurações do Sistema"
+    },
+    "theme": {
+      "backgroundEffect": {
+        "desc": "Personalizar efeito de fundo",
+        "glow": "Brilho",
+        "none": "Sem fundo",
+        "title": "Efeito de Fundo"
+      },
+      "locale": {
+        "auto": "Seguir sistema",
+        "desc": "Personalizar idioma do sistema",
+        "title": "Idioma"
+      },
+      "neutralColor": {
+        "desc": "Personalizar escala de cinzas com diferentes inclinações de cor",
+        "title": "Cor Neutra"
+      },
+      "primaryColor": {
+        "desc": "Personalizar cor do tema",
+        "title": "Cor do Tema"
+      },
+      "title": "Configurações de Tema"
+    },
+    "title": "Configurações Gerais"
+  },
+  "llm": {
+    "check": {
+      "action": "Verificar",
+      "desc": "Verifique se a APIKey e o endereço do proxy estão configurados corretamente",
+      "error": "Falha ao chamar a interface, verifique se a APIKey e o endereço do proxy estão configurados corretamente",
+      "success": "Verificação concluída com sucesso",
+      "title": "Verificação de Conectividade"
+    },
+    "openai": {
+      "apiKey": {
+        "desc": "Por favor, use sua própria chave OpenAI",
+        "title": "Chave da API"
+      },
+      "callError": "Falha ao chamar a interface, verifique se a APIKey e o endereço do proxy estão configurados corretamente",
+      "checkOk": "Verificação concluída com sucesso",
+      "proxy": {
+        "desc": "http(s)://",
+        "title": "Endereço do Proxy da Interface"
+      },
+      "title": "Modelo de Linguagem OpenAI"
+    },
+    "title": "Modelo de Linguagem Grande"
+  },
+  "touch": {
+    "title": "Configurações de Toque"
+  }
+}

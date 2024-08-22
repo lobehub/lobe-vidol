@@ -1,1 +1,84 @@
-{}
+{
+  "common": {
+    "chat": {
+      "avatar": {
+        "desc": "自訂頭像",
+        "title": "頭像"
+      },
+      "nickName": {
+        "desc": "自訂暱稱",
+        "placeholder": "請輸入暱稱",
+        "title": "暱稱"
+      },
+      "title": "聊天設定"
+    },
+    "system": {
+      "clear": {
+        "action": "立即清除",
+        "alert": "確認清除所有會話消息?",
+        "desc": "將會清除所有會話與角色數據，包括會話列表、角色列表、會話消息等",
+        "success": "清除成功",
+        "tip": "操作無法撤銷，清除後數據將無法恢復，請慎重操作",
+        "title": "清除所有會話消息"
+      },
+      "reset": {
+        "action": "立即重置",
+        "alert": "確認重置所有系統設定?",
+        "desc": "將會重置所有系統設定，包括主題設定、聊天設定、語言模型設定等",
+        "success": "重置成功",
+        "tip": "操作無法撤銷，重置後數據將無法恢復，請慎重操作",
+        "title": "重置系統設定"
+      },
+      "title": "系統設定"
+    },
+    "theme": {
+      "backgroundEffect": {
+        "desc": "自訂背景效果",
+        "glow": "光輝",
+        "none": "無背景",
+        "title": "背景效果"
+      },
+      "locale": {
+        "auto": "跟隨系統",
+        "desc": "自訂系統語言",
+        "title": "語言"
+      },
+      "neutralColor": {
+        "desc": "不同色彩傾向的灰階自訂",
+        "title": "中性色"
+      },
+      "primaryColor": {
+        "desc": "自訂主題色",
+        "title": "主題色"
+      },
+      "title": "主題設定"
+    },
+    "title": "通用設定"
+  },
+  "llm": {
+    "check": {
+      "action": "檢查",
+      "desc": "檢查 APIKey 和介面代理地址是否設置正確",
+      "error": "呼叫介面失敗，請檢查 APIKey 和介面代理地址是否設置正確",
+      "success": "檢查通過",
+      "title": "連通性檢查"
+    },
+    "openai": {
+      "apiKey": {
+        "desc": "請使用您自己的 OpenAI 金鑰",
+        "title": "API 金鑰"
+      },
+      "callError": "呼叫介面失敗，請檢查 APIKey 和介面代理地址是否設置正確",
+      "checkOk": "檢查通過",
+      "proxy": {
+        "desc": "http(s)://",
+        "title": "介面代理地址"
+      },
+      "title": "OpenAI 語言模型"
+    },
+    "title": "大型語言模型"
+  },
+  "touch": {
+    "title": "觸摸設定"
+  }
+}

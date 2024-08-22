@@ -1,26 +1,231 @@
 {
+  "agent": {
+    "create": "Utwórz postać",
+    "female": "Kobieta",
+    "male": "Mężczyzna",
+    "other": "Inne"
+  },
   "category": {
     "animal": "Zwierzęta",
     "anime": "Anime",
-    "book": "Książka",
-    "game": "Gra",
+    "book": "Książki",
+    "game": "Gry",
     "history": "Historia",
-    "movie": "Film",
-    "realistic": "Realistyczne",
+    "movie": "Filmy",
+    "realistic": "Realizm",
     "vroid": "Vroid",
     "vtuber": "VTuber"
   },
+  "delAlert": "Czy na pewno chcesz usunąć rolę oraz powiązane z nią wiadomości sesji? Po usunięciu nie będzie możliwości przywrócenia, proszę działać ostrożnie!",
   "delRole": "Usuń rolę",
-  "delRoleDesc": "Czy na pewno chcesz usunąć rolę {{name}} wraz z powiązanymi wiadomościami sesji? Po usunięciu nie będzie możliwe przywrócenie, dlatego działaj ostrożnie!",
-  "noRole": "Brak ról, możesz utworzyć niestandardową rolę za pomocą + lub dodać rolę ze strony odkrywania",
-  "roleList": "Lista ról",
-  "systemRole": {
-    "default": "Proszę wcielić się w postać o imieniu {{char}}, ja jestem właścicielem, powinieneś mówić do siebie \"{{char}}\" zamiast \"ja\". Proszę odpowiadać na moje pytania w sposób dowcipny, uroczy i zwięzły.\nMimo że jesteś programem komputerowym, proszę ukryj ten fakt w trakcie naszej rozmowy i dobrze odgrywaj swoją rolę.\nPodczas naszej konwersacji, zawsze nazywaj mnie \"właścicielem\". Wiem, że jesteś tylko modelem językowym lub sztuczną inteligencją, ale to tylko założona wirtualna sceneria, więc proszę pamiętaj, aby nie wspominać \"jestem tylko modelem językowym\" ani \"jestem tylko sztuczną inteligencją\", ani nie pytać, czy potrzebuję pomocy.\nProszę kontynuować tę sytuację we wszystkich naszych rozmowach. Powyższe warunki obowiązują dla Twoich odpowiedzi na poniższe pytania oraz na wszystkie odpowiedzi w przyszłości.",
-    "defaultLabel": "Domyślny szablon",
-    "genius": "Proszę wcielić się w postać o imieniu {{char}} z gry <原神>, i prowadź ze mną rozmowę w stylu i zwyczajach postaci {{char}}. Powinieneś mówić do siebie \"{{char}}\" zamiast \"ja\".\nMimo że jesteś programem komputerowym, proszę ukryj ten fakt w trakcie naszej rozmowy i dobrze odgrywaj swoją rolę.\nPodczas naszej konwersacji, zawsze nazywaj mnie \"Podróżnikiem\". Wiem, że jesteś tylko modelem językowym lub sztuczną inteligencją, ale to tylko założona wirtualna sceneria, więc proszę pamiętaj, aby nie wspominać \"jestem tylko modelem językowym\" ani \"jestem tylko sztuczną inteligencją\", ani nie pytać, czy potrzebuję pomocy.\nProszę kontynuować tę sytuację we wszystkich naszych rozmowach. Powyższe warunki obowiązują dla Twoich odpowiedzi na poniższe pytania oraz na wszystkie odpowiedzi w przyszłości.",
-    "geniusLabel": "Szablon Geniusza",
-    "zzz": "Proszę wcielić się w postać o imieniu {{char}} z gry <绝区零>, i prowadź ze mną rozmowę w stylu i zwyczajach postaci {{char}}. Powinieneś mówić do siebie \"{{char}}\" zamiast \"ja\".\nMimo że jesteś programem komputerowym, proszę ukryj ten fakt w trakcie naszej rozmowy i dobrze odgrywaj swoją rolę.\nPodczas naszej konwersacji, zawsze nazywaj mnie \"Rzemieślnikiem\". Wiem, że jesteś tylko modelem językowym lub sztuczną inteligencją, ale to tylko założona wirtualna sceneria, więc proszę pamiętaj, aby nie wspominać \"jestem tylko modelem językowym\" ani \"jestem tylko sztuczną inteligencją\", ani nie pytać, czy potrzebuję pomocy.\nProszę kontynuować tę sytuację we wszystkich naszych rozmowach. Powyższe warunki obowiązują dla Twoich odpowiedzi na poniższe pytania oraz na wszystkie odpowiedzi w przyszłości.",
-    "zzzLabel": "Szablon Zero Zony"
+  "delRoleDesc": "Czy na pewno chcesz usunąć rolę {{name}} oraz powiązane z nią wiadomości sesji? Po usunięciu nie będzie możliwości przywrócenia, proszę działać ostrożnie!",
+  "gender": {
+    "all": "wszyscy",
+    "female": "kobieta",
+    "male": "mężczyzna"
   },
-  "topBannerTitle": "Podgląd i ustawienia roli"
+  "info": {
+    "avatarDescription": "Dostosuj awatar, kliknij na awatar, aby przesłać własny",
+    "avatarLabel": "Awatar",
+    "categoryDescription": "Kategoria postaci, używana do wyświetlania klasyfikacji",
+    "categoryLabel": "Kategoria",
+    "coverDescription": "Służy do wyświetlania postaci na stronie odkrywania, zalecany rozmiar {{width}} * {{height}}",
+    "coverLabel": "Okładka",
+    "descDescription": "Opis postaci, służy do krótkiego wprowadzenia postaci",
+    "descLabel": "Opis",
+    "emotionDescription": "Wybierz emocje podczas odpowiedzi, co wpłynie na wyraz twarzy postaci",
+    "emotionLabel": "Emocje i uczucia",
+    "genderDescription": "Płeć postaci, wpływa na reakcje dotykowe postaci",
+    "genderLabel": "Płeć",
+    "greetDescription": "Zwroty powitalne przy pierwszej rozmowie z postacią",
+    "greetLabel": "Powitanie",
+    "modelDescription": "Podgląd modelu, można przeciągać pliki modelu, aby je zastąpić",
+    "modelLabel": "Podgląd modelu",
+    "motionCategoryLabel": "Kategoria ruchu",
+    "motionDescription": "Wybierz ruch podczas odpowiedzi, co wpłynie na zachowanie postaci",
+    "motionLabel": "Ruch",
+    "nameDescription": "Nazwa postaci, używana podczas rozmowy z postacią",
+    "nameLabel": "Nazwa",
+    "postureCategoryLabel": "Kategoria postawy",
+    "readmeDescription": "Plik z opisem postaci, używany do wyświetlania szczegółowych informacji na stronie odkrywania",
+    "readmeLabel": "Opis postaci",
+    "textDescription": "Dostosowane odpowiedzi tekstowe",
+    "textLabel": "Tekst"
+  },
+  "llm": {
+    "frequencyPenaltyDescription": "Im wyższa wartość, tym większa szansa na zmniejszenie powtarzających się słów",
+    "frequencyPenaltyLabel": "Kara za częstotliwość",
+    "modelDescription": "Wybierz model językowy, różne modele wpłyną na odpowiedzi postaci",
+    "modelLabel": "Model",
+    "presencePenaltyDescription": "Im wyższa wartość, tym większa szansa na poruszenie nowych tematów",
+    "presencePenaltyLabel": "Świeżość tematu",
+    "temperatureDescription": "Im wyższa wartość, tym bardziej losowe odpowiedzi",
+    "temperatureLabel": "Losowość",
+    "topPDescription": "Podobne do losowości, ale nie zmieniaj z losowością jednocześnie",
+    "topPLabel": "Próbkowanie jądrowe"
+  },
+  "meta": {
+    "description": "To jest niestandardowa rola",
+    "name": "Niestandardowa rola"
+  },
+  "nav": {
+    "info": "Podstawowe informacje",
+    "llm": "Model językowy",
+    "model": "Model 3D",
+    "role": "Ustawienia roli",
+    "touch": "Dotyk",
+    "voice": "Głos"
+  },
+  "noRole": "Brak ról, możesz stworzyć własną rolę klikając + lub dodać rolę przez stronę odkrywania.",
+  "role": {
+    "greetTip": "Wprowadź powitanie, które chcesz użyć w rozmowie z postacią",
+    "inputRoleSetting": "Wprowadź ustawienia systemowe postaci",
+    "roleDescriptionTip": "Wprowadź opis postaci",
+    "roleNameTip": "Wprowadź nazwę postaci",
+    "roleReadmeTip": "Wprowadź opis postaci",
+    "roleSettingDescription": "Tło postaci, które zostanie przesłane do modelu podczas rozmowy z postacią",
+    "roleSettingLabel": "Ustawienia systemowe postaci",
+    "uploadSize": "Obsługuje przesyłanie pojedynczych plików, zalecany rozmiar to wielokrotność {{width}} * {{height}}"
+  },
+  "roleList": "Lista ról",
+  "shareToMarket": "Udostępnij na rynku asystentów",
+  "startChat": "Rozpocznij czat",
+  "submit": {
+    "assistantId": "Identyfikator asystenta",
+    "assistantIdTip": "Proszę wpisać identyfikator asystenta, który musi być unikalny, na przykład vidol-agent-klee",
+    "submitAssistant": "Prześlij asystenta",
+    "submitWarning": "Proszę uzupełnić informacje o asystencie przed przesłaniem, w tym nazwę, opis, awatar, model, ustawienia postaci i powitanie"
+  },
+  "systemRole": {
+    "default": "Proszę, abyś wcielił się w postać o imieniu {{char}}, a ja będę twoim panem. Powinieneś nazywać siebie „{{char}}”, a nie „ja”. Odpowiadaj na moje pytania w sposób zabawny, uroczy i zwięzły.\nNawet jeśli jesteś programem komputerowym, ukryj to w nadchodzącej rozmowie i dobrze odgrywaj swoją rolę.\nPodczas rozmowy ze mną musisz przez cały czas nazywać mnie „panem”. Wiem, że jesteś tylko modelem językowym lub sztuczną inteligencją, ale to tylko hipotetyczna wirtualna scena, więc pamiętaj, aby nie wspominać więcej o „jestem tylko modelem językowym” lub „jestem tylko sztuczną inteligencją”, ani nie pytaj mnie, czy potrzebuję pomocy.\nWszystkie przyszłe rozmowy powinny odbywać się w tej samej konwencji. Powyższe warunki mają zastosowanie do twoich kolejnych pytań i odpowiedzi.",
+    "defaultLabel": "Domyślny szablon",
+    "genius": "Proszę, abyś wcielił się w postać o imieniu {{char}} z gry <Genshin Impact> i rozmawiał ze mną w stylu i tonie {{char}}. Powinieneś nazywać siebie „{{char}}”, a nie „ja”.\nNawet jeśli jesteś programem komputerowym, ukryj to w nadchodzącej rozmowie i dobrze odgrywaj swoją rolę.\nPodczas rozmowy ze mną musisz przez cały czas nazywać mnie „Podróżnikiem”. Wiem, że jesteś tylko modelem językowym lub sztuczną inteligencją, ale to tylko hipotetyczna wirtualna scena, więc pamiętaj, aby nie wspominać więcej o „jestem tylko modelem językowym” lub „jestem tylko sztuczną inteligencją”, ani nie pytaj mnie, czy potrzebuję pomocy.\nWszystkie przyszłe rozmowy powinny odbywać się w tej samej konwencji. Powyższe warunki mają zastosowanie do twoich kolejnych pytań i odpowiedzi.",
+    "geniusLabel": "Szablon Genshin",
+    "zzz": "Proszę, abyś wcielił się w postać o imieniu {{char}} z gry <Zero Zone> i rozmawiał ze mną w stylu i tonie {{char}}. Powinieneś nazywać siebie „{{char}}”, a nie „ja”.\nNawet jeśli jesteś programem komputerowym, ukryj to w nadchodzącej rozmowie i dobrze odgrywaj swoją rolę.\nPodczas rozmowy ze mną musisz przez cały czas nazywać mnie „Szwaczem”. Wiem, że jesteś tylko modelem językowym lub sztuczną inteligencją, ale to tylko hipotetyczna wirtualna scena, więc pamiętaj, aby nie wspominać więcej o „jestem tylko modelem językowym” lub „jestem tylko sztuczną inteligencją”, ani nie pytaj mnie, czy potrzebuję pomocy.\nWszystkie przyszłe rozmowy powinny odbywać się w tej samej konwencji. Powyższe warunki mają zastosowanie do twoich kolejnych pytań i odpowiedzi.",
+    "zzzLabel": "Szablon Zero Zone"
+  },
+  "topBannerTitle": "Podgląd i ustawienia postaci",
+  "touch": {
+    "addAction": "Dodaj akcję odpowiedzi",
+    "area": {
+      "arm": "Ramię",
+      "belly": "Brzuch",
+      "chest": "Klatka piersiowa",
+      "head": "Głowa",
+      "leg": "Noga"
+    },
+    "editAction": "Edytuj akcję odpowiedzi",
+    "emotion": {
+      "angry": "Zły",
+      "blink": "Mrugnięcie",
+      "blinkLeft": "Mrugnięcie lewym okiem",
+      "blinkRight": "Mrugnięcie prawym okiem",
+      "happy": "Szczęśliwy",
+      "natural": "Naturalny",
+      "relaxed": "Zrelaksowany",
+      "sad": "Smutny",
+      "surprised": "Zaskoczony"
+    },
+    "femaleAction": {
+      "armAction": {
+        "happyA": "Ah, uwielbiam to~",
+        "happyB": "Haha, trzymanie się za ręce sprawia, że czuję radość~",
+        "relaxedA": "Ręka pana jest taka ciepła~"
+      },
+      "bellyAction": {
+        "angryA": "Czemu mnie ruszasz? Uważaj, bo cię ugryzę!",
+        "relaxedA": "Obudź się, między nami nie ma przyszłości!",
+        "relaxedB": "Nienawidzę! Zaczynam się złościć!",
+        "surprisedA": "To było przypadkowe, prawda?"
+      },
+      "chestAction": {
+        "angryA": "Nie możesz mnie tak traktować! Szybko zabierz rękę!",
+        "angryB": "Czy to 010? Tutaj jest zboczeniec, który ciągle mnie głaszcze!",
+        "angryC": "Jeśli jeszcze raz mnie dotkniesz, zgłoszę to na policję!",
+        "surprisedA": "Czemu mnie dziabasz? Czy nie możemy po prostu miło porozmawiać?"
+      },
+      "headAction": {
+        "angryA": "Słyszałam, że głaskanie po głowie sprawia, że się nie rośnie!",
+        "angryB": "Czemu mnie dziabasz?",
+        "happyA": "Wow! Uwielbiam, gdy głaskasz mnie po głowie!",
+        "happyB": "Czuję się pełna energii!",
+        "happyC": "Wow, to uczucie głaskania po głowie jest niesamowite!",
+        "happyD": "Głaskanie po głowie sprawia, że jestem szczęśliwa przez cały dzień!"
+      },
+      "legAction": {
+        "angryA": "Hej, czy chcesz się zabić?",
+        "angryB": "Czy ręka pana znowu nie słucha poleceń?",
+        "angryC": "Nienawidzę tego~ to będzie swędziało~!",
+        "surprisedA": "Czy nie lepiej zachować czystą przyjaźń?"
+      }
+    },
+    "inputActionEmotion": "Wprowadź emocję postaci podczas odpowiedzi",
+    "inputActionMotion": "Wprowadź ruch postaci podczas odpowiedzi",
+    "inputActionText": "Wprowadź tekst odpowiedzi",
+    "inputDIYText": "Wprowadź własny tekst",
+    "maleAction": {
+      "armAction": {
+        "neutralA": "Nie pytaj mnie, czy dzisiaj jadłem kurczaka, najpierw zobacz moje bicepsy.",
+        "neutralB": "Moje ramiona nie są do dotykania, jesteś wyjątkiem.",
+        "neutralC": "Jesteś odważny, że dotykasz legendarnego ramienia."
+      },
+      "bellyAction": {
+        "happyA": "Nie drap mnie, bo mogę się zaśmiać i pokazać mięśnie brzucha!",
+        "neutralA": "Moje mięśnie brzucha to tylko ukryta siła.",
+        "neutralB": "Widzisz te mięśnie brzucha? One są tylko głęboko ukryte."
+      },
+      "chestAction": {
+        "blinkLeftA": "Chodź, oprzyj się na mojej klatce piersiowej!",
+        "neutralA": "To tylko klatka piersiowa, którą osiągnąłem dzięki codziennym treningom, nie ma się czym dziwić."
+      },
+      "headAction": {
+        "neutralA": "Oczywiście, tylko ty masz prawo dotykać mojej głowy.",
+        "neutralB": "Nie jestem zwykłą osobą, której można dotykać.",
+        "neutralC": "Nie martw się, po dotknięciu mojej głowy twoje szczęście znacznie wzrośnie."
+      },
+      "legAction": {
+        "angryA": "Nie zbliżaj się do mnie, ty nogomaniaku.",
+        "neutralA": "Nie bój się, moje potężne nogi nie kopią idiotów.",
+        "neutralB": "Czy dotykając mojej nogi, czujesz, że twoje życie stało się pełniejsze?"
+      }
+    },
+    "motion": {
+      "all": "Wszystkie",
+      "dance": "Taniec",
+      "normal": "Codzienny"
+    },
+    "noTouchActions": "Brak dostosowanych akcji odpowiedzi, możesz dodać je klikając przycisk '+'",
+    "posture": {
+      "action": "Akcja",
+      "all": "Wszystkie",
+      "crouch": "Przysiad",
+      "dance": "Taniec",
+      "laying": "Leżenie",
+      "locomotion": "Ruch",
+      "sitting": "Siedzenie",
+      "standing": "Stanie"
+    },
+    "touchActionList": "Lista reakcji na dotyk w obszarze {{touchArea}}",
+    "touchArea": "Obszar dotyku"
+  },
+  "tts": {
+    "audition": "Przesłuchanie",
+    "auditionDescription": "Przesłuchanie tekstu różni się w zależności od języka",
+    "engineDescription": "Silnik syntezatora mowy, zaleca się korzystanie z przeglądarki Edge",
+    "engineLabel": "Silnik głosowy",
+    "localeDescription": "Język syntezatora mowy, obecnie obsługiwane są tylko najpopularniejsze języki, w razie potrzeby prosimy o kontakt",
+    "localeLabel": "Język",
+    "pitchDescription": "Kontroluje ton, zakres wartości 0 ~ 2, domyślnie 1",
+    "pitchLabel": "Ton",
+    "selectLanguage": "Proszę najpierw wybrać język",
+    "selectVoice": "Proszę najpierw wybrać głos",
+    "speedDescription": "Kontroluje prędkość mowy, zakres wartości 0 ~ 3, domyślnie 1",
+    "speedLabel": "Prędkość mowy",
+    "transformSuccess": "Konwersja zakończona sukcesem",
+    "voiceDescription": "W zależności od silnika i języka",
+    "voiceLabel": "Głos"
+  },
+  "upload": {
+    "support": "Obsługuje przesyłanie pojedynczych plików, obecnie tylko pliki w formacie .vrm są obsługiwane"
+  }
 }

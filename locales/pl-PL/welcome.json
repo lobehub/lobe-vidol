@@ -1,12 +1,12 @@
 {
   "agent": {
-    "hello": "Witaj",
+    "hello": "Cześć!",
     "meta": {
       "description": "To jest niestandardowa postać",
       "name": "Niestandardowa postać"
     }
   },
-  "greet": "Witaj, jestem {{name}}, jak mogę Ci pomóc?",
-  "loadingTitle": "Inicjalizacja aplikacji, proszę czekać...",
-  "waiting": "Trwa przygotowywanie całego mojego świata dla Ciebie"
+  "greet": "Cześć, jestem {{name}}, w czym mogę Ci pomóc?",
+  "loadingTitle": "Aplikacja jest w trakcie inicjalizacji, proszę czekać...",
+  "waiting": "Przygotowuję dla Ciebie cały mój świat"
 }

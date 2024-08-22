@@ -1,12 +1,12 @@
 {
   "agent": {
-    "hello": "Xin chào",
+    "hello": "Chào bạn",
     "meta": {
       "description": "Đây là một nhân vật tùy chỉnh",
       "name": "Nhân vật tùy chỉnh"
     }
   },
-  "greet": "Xin chào, tôi là {{name}}, có thứ gì tôi có thể giúp bạn không?",
-  "loadingTitle": "Ứng dụng đang khởi tạo, vui lòng đợi...",
-  "waiting": "Đang chuẩn bị thế giới của tôi cho bạn"
+  "greet": "Xin chào, tôi là {{name}}, có gì tôi có thể giúp bạn không?",
+  "loadingTitle": "Đang khởi tạo ứng dụng, vui lòng chờ...",
+  "waiting": "Đang chuẩn bị cả thế giới của tôi cho bạn"
 }

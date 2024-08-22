@@ -1,3 +1,83 @@
 {
-  "chat": "聊天"
+  "actions": {
+    "add": "新增",
+    "copy": "複製",
+    "copySuccess": "複製成功",
+    "del": "刪除",
+    "delAndRegenerate": "刪除並重新生成",
+    "edit": "編輯",
+    "goBottom": "返回底部",
+    "regenerate": "重新生成",
+    "save": "儲存",
+    "share": "分享"
+  },
+  "animation": {
+    "animationList": "動作列表",
+    "postureList": "姿勢列表",
+    "totalCount": "共 {{total}} 項"
+  },
+  "apiKey": {
+    "addProxy": "添加 OpenAI 代理地址（可選）",
+    "closeTip": "關閉提示",
+    "confirmRetry": "確認並重試",
+    "startDesc": "輸入你的 OpenAI API Key 即可開始會話。應用不會記錄你的 API Key",
+    "startTitle": "自訂 API Key"
+  },
+  "chat": "聊天",
+  "delSession": "刪除會話",
+  "delSessionAlert": "確認刪除對話嗎？刪除後無法恢復，請謹慎操作！",
+  "history": {
+    "action": "清除上下文",
+    "alert": "確定刪除歷史消息？",
+    "tip": "該操作不可逆，請謹慎操作",
+    "title": "聊天紀錄"
+  },
+  "info": {
+    "chat": "聊天",
+    "dance": "舞蹈",
+    "motions": "動作",
+    "posture": "姿勢"
+  },
+  "input": {
+    "alert": "請謹記：智能體所說的一切都是由 AI 生成的",
+    "placeholder": "請輸入內容開始聊天",
+    "send": "發送",
+    "warp": "換行"
+  },
+  "selectModel": "請選擇模型",
+  "sessionCreate": "建立聊天",
+  "sessionList": "會話列表",
+  "share": {
+    "downloadScreenshot": "下載截圖",
+    "imageType": "圖片格式",
+    "screenshot": "截圖",
+    "share": "分享",
+    "shareGPT": "分享GPT",
+    "shareToGPT": "生成 ShareGPT 分享連結",
+    "withBackground": "包含背景圖片",
+    "withFooter": "包含頁腳",
+    "withSystemRole": "包含助手角色設定"
+  },
+  "token": {
+    "overload": "Token 超出",
+    "remained": "Token 剩餘",
+    "tokenCount": "Token 數量",
+    "useToken": "消耗 Token 數量計算，包括消息、角色設定與上下文：{{usedTokens}} / {{maxValue}}",
+    "used": "Token 已使用"
+  },
+  "toolBar": {
+    "axes": "坐標軸",
+    "cameraControl": "鏡頭控制",
+    "cameraHelper": "鏡頭輔助",
+    "downloading": "模型下載中，請稍候...",
+    "floor": "切換地板",
+    "grid": "網格",
+    "resetCamera": "重置鏡頭",
+    "resetToIdle": "停止舞蹈動作",
+    "screenShot": "拍照"
+  },
+  "tts": {
+    "combine": "語音合成",
+    "record": "語音識別（需科學上網）"
+  }
 }

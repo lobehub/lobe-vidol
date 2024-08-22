@@ -1,1 +1,84 @@
-{}
+{
+  "common": {
+    "chat": {
+      "avatar": {
+        "desc": "Avatar personalizzato",
+        "title": "Avatar"
+      },
+      "nickName": {
+        "desc": "Soprannome personalizzato",
+        "placeholder": "Inserisci il soprannome",
+        "title": "Soprannome"
+      },
+      "title": "Impostazioni chat"
+    },
+    "system": {
+      "clear": {
+        "action": "Cancella immediatamente",
+        "alert": "Confermi di voler cancellare tutti i messaggi di conversazione?",
+        "desc": "Questo cancellerà tutti i dati delle conversazioni e dei personaggi, inclusi l'elenco delle conversazioni, l'elenco dei personaggi, i messaggi delle conversazioni, ecc.",
+        "success": "Cancellazione riuscita",
+        "tip": "L'operazione non può essere annullata, dopo la cancellazione i dati non possono essere recuperati, si prega di procedere con cautela",
+        "title": "Cancella tutti i messaggi di conversazione"
+      },
+      "reset": {
+        "action": "Ripristina immediatamente",
+        "alert": "Confermi di voler ripristinare tutte le impostazioni di sistema?",
+        "desc": "Questo ripristinerà tutte le impostazioni di sistema, comprese le impostazioni del tema, le impostazioni della chat, le impostazioni del modello linguistico, ecc.",
+        "success": "Ripristino riuscito",
+        "tip": "L'operazione non può essere annullata, dopo il ripristino i dati non possono essere recuperati, si prega di procedere con cautela",
+        "title": "Ripristina impostazioni di sistema"
+      },
+      "title": "Impostazioni di sistema"
+    },
+    "theme": {
+      "backgroundEffect": {
+        "desc": "Effetto di sfondo personalizzato",
+        "glow": "Bagliore",
+        "none": "Nessuno sfondo",
+        "title": "Effetto di sfondo"
+      },
+      "locale": {
+        "auto": "Segui il sistema",
+        "desc": "Lingua di sistema personalizzata",
+        "title": "Lingua"
+      },
+      "neutralColor": {
+        "desc": "Grigi personalizzati con diverse inclinazioni di colore",
+        "title": "Colore neutro"
+      },
+      "primaryColor": {
+        "desc": "Colore del tema personalizzato",
+        "title": "Colore principale"
+      },
+      "title": "Impostazioni tema"
+    },
+    "title": "Impostazioni generali"
+  },
+  "llm": {
+    "check": {
+      "action": "Controlla",
+      "desc": "Controlla se l'API Key e l'indirizzo del proxy sono impostati correttamente",
+      "error": "Chiamata all'interfaccia fallita, controlla se l'API Key e l'indirizzo del proxy sono impostati correttamente",
+      "success": "Controllo superato",
+      "title": "Controllo di Connettività"
+    },
+    "openai": {
+      "apiKey": {
+        "desc": "Si prega di utilizzare la propria OpenAI Key",
+        "title": "API Key"
+      },
+      "callError": "Chiamata all'interfaccia fallita, controlla se l'API Key e l'indirizzo del proxy sono impostati correttamente",
+      "checkOk": "Controllo superato",
+      "proxy": {
+        "desc": "http(s)://",
+        "title": "Indirizzo del Proxy"
+      },
+      "title": "Modello di Linguaggio OpenAI"
+    },
+    "title": "Modello di Linguaggio di Grandi Dimensioni"
+  },
+  "touch": {
+    "title": "Impostazioni di tocco"
+  }
+}

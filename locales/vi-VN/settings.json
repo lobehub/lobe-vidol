@@ -1,1 +1,84 @@
-{}
+{
+  "common": {
+    "chat": {
+      "avatar": {
+        "desc": "Tùy chỉnh ảnh đại diện",
+        "title": "Ảnh đại diện"
+      },
+      "nickName": {
+        "desc": "Tùy chỉnh biệt danh",
+        "placeholder": "Vui lòng nhập biệt danh",
+        "title": "Biệt danh"
+      },
+      "title": "Cài đặt trò chuyện"
+    },
+    "system": {
+      "clear": {
+        "action": "Xóa ngay",
+        "alert": "Xác nhận xóa tất cả tin nhắn cuộc trò chuyện?",
+        "desc": "Sẽ xóa tất cả dữ liệu cuộc trò chuyện và nhân vật, bao gồm danh sách cuộc trò chuyện, danh sách nhân vật, tin nhắn cuộc trò chuyện, v.v.",
+        "success": "Xóa thành công",
+        "tip": "Hành động không thể hoàn tác, sau khi xóa dữ liệu sẽ không thể khôi phục, vui lòng cẩn thận khi thực hiện",
+        "title": "Xóa tất cả tin nhắn cuộc trò chuyện"
+      },
+      "reset": {
+        "action": "Đặt lại ngay",
+        "alert": "Xác nhận đặt lại tất cả cài đặt hệ thống?",
+        "desc": "Sẽ đặt lại tất cả cài đặt hệ thống, bao gồm cài đặt chủ đề, cài đặt trò chuyện, cài đặt mô hình ngôn ngữ, v.v.",
+        "success": "Đặt lại thành công",
+        "tip": "Hành động không thể hoàn tác, sau khi đặt lại dữ liệu sẽ không thể khôi phục, vui lòng cẩn thận khi thực hiện",
+        "title": "Đặt lại cài đặt hệ thống"
+      },
+      "title": "Cài đặt hệ thống"
+    },
+    "theme": {
+      "backgroundEffect": {
+        "desc": "Tùy chỉnh hiệu ứng nền",
+        "glow": "Phát sáng",
+        "none": "Không có nền",
+        "title": "Hiệu ứng nền"
+      },
+      "locale": {
+        "auto": "Theo hệ thống",
+        "desc": "Tùy chỉnh ngôn ngữ hệ thống",
+        "title": "Ngôn ngữ"
+      },
+      "neutralColor": {
+        "desc": "Tùy chỉnh sắc thái xám theo các xu hướng màu sắc khác nhau",
+        "title": "Màu trung tính"
+      },
+      "primaryColor": {
+        "desc": "Tùy chỉnh màu chủ đề",
+        "title": "Màu chủ đề"
+      },
+      "title": "Cài đặt chủ đề"
+    },
+    "title": "Cài đặt chung"
+  },
+  "llm": {
+    "check": {
+      "action": "Kiểm tra",
+      "desc": "Kiểm tra xem API Key và địa chỉ proxy đã được thiết lập đúng chưa",
+      "error": "Gọi API thất bại, vui lòng kiểm tra xem API Key và địa chỉ proxy đã được thiết lập đúng chưa",
+      "success": "Kiểm tra thành công",
+      "title": "Kiểm tra kết nối"
+    },
+    "openai": {
+      "apiKey": {
+        "desc": "Vui lòng sử dụng API Key của riêng bạn",
+        "title": "API Key"
+      },
+      "callError": "Gọi API thất bại, vui lòng kiểm tra xem API Key và địa chỉ proxy đã được thiết lập đúng chưa",
+      "checkOk": "Kiểm tra thành công",
+      "proxy": {
+        "desc": "http(s)://",
+        "title": "Địa chỉ proxy API"
+      },
+      "title": "Mô hình ngôn ngữ OpenAI"
+    },
+    "title": "Mô hình ngôn ngữ lớn"
+  },
+  "touch": {
+    "title": "Cài đặt chạm"
+  }
+}

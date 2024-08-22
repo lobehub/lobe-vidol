@@ -1,3 +1,83 @@
 {
-  "chat": "Chat"
+  "actions": {
+    "add": "Adicionar",
+    "copy": "Copiar",
+    "copySuccess": "Cópia bem-sucedida",
+    "del": "Excluir",
+    "delAndRegenerate": "Excluir e regenerar",
+    "edit": "Editar",
+    "goBottom": "Ir para o final",
+    "regenerate": "Regenerar",
+    "save": "Salvar",
+    "share": "Compartilhar"
+  },
+  "animation": {
+    "animationList": "Lista de Ações",
+    "postureList": "Lista de Posturas",
+    "totalCount": "Total de {{total}} itens"
+  },
+  "apiKey": {
+    "addProxy": "Adicionar endereço de proxy OpenAI (opcional)",
+    "closeTip": "Fechar dica",
+    "confirmRetry": "Confirmar e tentar novamente",
+    "startDesc": "Insira sua chave de API OpenAI para iniciar a conversa. O aplicativo não registrará sua chave de API.",
+    "startTitle": "Chave de API personalizada"
+  },
+  "chat": "Bate-papo",
+  "delSession": "Excluir sessão",
+  "delSessionAlert": "Você tem certeza de que deseja excluir a conversa? Após a exclusão, não será possível recuperar. Por favor, proceda com cautela!",
+  "history": {
+    "action": "Limpar Contexto",
+    "alert": "Tem certeza de que deseja excluir as mensagens do histórico?",
+    "tip": "Esta ação é irreversível, por favor, proceda com cautela.",
+    "title": "Histórico de Conversa"
+  },
+  "info": {
+    "chat": "bate-papo",
+    "dance": "dança",
+    "motions": "movimentos",
+    "posture": "postura"
+  },
+  "input": {
+    "alert": "Por favor, lembre-se: tudo o que o agente diz é gerado por IA",
+    "placeholder": "Digite o conteúdo para começar a conversar",
+    "send": "Enviar",
+    "warp": "Quebrar linha"
+  },
+  "selectModel": "Por favor, selecione um modelo",
+  "sessionCreate": "Criar chat",
+  "sessionList": "Lista de Sessões",
+  "share": {
+    "downloadScreenshot": "Baixar captura de tela",
+    "imageType": "Formato da imagem",
+    "screenshot": "Captura de tela",
+    "share": "Compartilhar",
+    "shareGPT": "Compartilhar GPT",
+    "shareToGPT": "Gerar link de compartilhamento ShareGPT",
+    "withBackground": "Incluir imagem de fundo",
+    "withFooter": "Incluir rodapé",
+    "withSystemRole": "Incluir configuração de papel do assistente"
+  },
+  "token": {
+    "overload": "Token excedido",
+    "remained": "Token restante",
+    "tokenCount": "Quantidade de Token",
+    "useToken": "Cálculo da quantidade de Token consumida, incluindo mensagens, configurações de personagem e contexto: {{usedTokens}} / {{maxValue}}",
+    "used": "Token utilizado"
+  },
+  "toolBar": {
+    "axes": "Eixos",
+    "cameraControl": "Controle da Câmera",
+    "cameraHelper": "Ajuda da Câmera",
+    "downloading": "Baixando modelo, por favor aguarde...",
+    "floor": "Alternar Piso",
+    "grid": "Grade",
+    "resetCamera": "Redefinir Câmera",
+    "resetToIdle": "Parar Ação de Dança",
+    "screenShot": "Captura de Tela"
+  },
+  "tts": {
+    "combine": "Síntese de voz",
+    "record": "Reconhecimento de voz (necessita de acesso à internet com VPN)"
+  }
 }

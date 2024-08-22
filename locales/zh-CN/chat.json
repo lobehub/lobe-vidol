@@ -1,4 +1,16 @@
 {
+  "actions": {
+    "copy": "复制",
+    "add": "添加",
+    "delAndRegenerate": "删除并重新生成",
+    "copySuccess": "复制成功",
+    "edit": "编辑",
+    "del": "删除",
+    "save": "保存",
+    "share": "分享",
+    "goBottom": "返回底部",
+    "regenerate": "重新生成"
+  },
   "animation": {
     "animationList": "动作列表",
     "postureList": "姿势列表",
@@ -14,6 +26,12 @@
   "chat": "聊天",
   "delSession": "删除会话",
   "delSessionAlert": "确认删除对话吗？删除后无法恢复, 请谨慎操作！",
+  "history": {
+    "title": "聊天记录",
+    "alert": "确定删除历史消息？",
+    "action": "清除上下文",
+    "tip": "该操作不可逆，请谨慎操作"
+  },
   "info": {
     "chat": "聊天",
     "dance": "舞蹈",
@@ -26,6 +44,7 @@
     "placeholder": "请输入内容开始聊天",
     "alert": "请谨记：智能体所说的一切都是由 AI 生成的"
   },
+  "selectModel": "请选择模型",
   "sessionCreate": "创建聊天",
   "sessionList": "会话列表",
   "share": {
@@ -37,8 +56,7 @@
     "imageType": "图片格式",
     "downloadScreenshot": "下载截图",
     "shareToGPT": "生成 ShareGPT 分享链接",
-    "share": "分享",
-    "shareToMarket": "分享到助手市场"
+    "share": "分享"
   },
   "token": {
     "overload": "Token 超出",

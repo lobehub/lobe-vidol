@@ -1,1 +1,84 @@
-{}
+{
+  "common": {
+    "chat": {
+      "avatar": {
+        "desc": "Dostosuj awatar",
+        "title": "Awatar"
+      },
+      "nickName": {
+        "desc": "Dostosuj pseudonim",
+        "placeholder": "Wprowadź pseudonim",
+        "title": "Pseudonim"
+      },
+      "title": "Ustawienia czatu"
+    },
+    "system": {
+      "clear": {
+        "action": "Natychmiast wyczyść",
+        "alert": "Czy na pewno chcesz wyczyścić wszystkie wiadomości sesji?",
+        "desc": "Usunie wszystkie dane sesji i postaci, w tym listę sesji, listę postaci, wiadomości sesji itp.",
+        "success": "Pomyślnie wyczyszczono",
+        "tip": "Operacja nieodwracalna, po usunięciu dane nie będą mogły zostać przywrócone, proszę działać ostrożnie",
+        "title": "Wyczyść wszystkie wiadomości sesji"
+      },
+      "reset": {
+        "action": "Natychmiast zresetuj",
+        "alert": "Czy na pewno chcesz zresetować wszystkie ustawienia systemowe?",
+        "desc": "Zresetuje wszystkie ustawienia systemowe, w tym ustawienia motywu, ustawienia czatu, ustawienia modelu językowego itp.",
+        "success": "Pomyślnie zresetowano",
+        "tip": "Operacja nieodwracalna, po resecie dane nie będą mogły zostać przywrócone, proszę działać ostrożnie",
+        "title": "Resetuj ustawienia systemowe"
+      },
+      "title": "Ustawienia systemowe"
+    },
+    "theme": {
+      "backgroundEffect": {
+        "desc": "Dostosuj efekt tła",
+        "glow": "Blask",
+        "none": "Brak tła",
+        "title": "Efekt tła"
+      },
+      "locale": {
+        "auto": "Podążaj za systemem",
+        "desc": "Dostosuj język systemu",
+        "title": "Język"
+      },
+      "neutralColor": {
+        "desc": "Dostosuj odcienie szarości w zależności od preferencji kolorystycznych",
+        "title": "Kolor neutralny"
+      },
+      "primaryColor": {
+        "desc": "Dostosuj kolor motywu",
+        "title": "Kolor motywu"
+      },
+      "title": "Ustawienia motywu"
+    },
+    "title": "Ustawienia ogólne"
+  },
+  "llm": {
+    "check": {
+      "action": "Sprawdź",
+      "desc": "Sprawdź, czy APIKey i adres proxy są poprawnie ustawione",
+      "error": "Nie udało się wywołać interfejsu, sprawdź, czy APIKey i adres proxy są poprawnie ustawione",
+      "success": "Sprawdzenie zakończone pomyślnie",
+      "title": "Sprawdzanie łączności"
+    },
+    "openai": {
+      "apiKey": {
+        "desc": "Proszę użyć własnego klucza OpenAI",
+        "title": "Klucz API"
+      },
+      "callError": "Nie udało się wywołać interfejsu, sprawdź, czy APIKey i adres proxy są poprawnie ustawione",
+      "checkOk": "Sprawdzenie zakończone pomyślnie",
+      "proxy": {
+        "desc": "http(s)://",
+        "title": "Adres proxy interfejsu"
+      },
+      "title": "Model językowy OpenAI"
+    },
+    "title": "Duży model językowy"
+  },
+  "touch": {
+    "title": "Ustawienia dotykowe"
+  }
+}

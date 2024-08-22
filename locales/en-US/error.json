@@ -1,20 +1,20 @@
 {
-  "apiKeyMiss": "OpenAI API Key is missing, please add a custom OpenAI API Key",
+  "apiKeyMiss": "The OpenAI API Key is missing. Please add your custom OpenAI API Key.",
   "error": "Error",
   "errorTip": {
-    "clearSession": "Clear Session Messages",
-    "description": "The project is currently under construction and data stability is not guaranteed. If you encounter any issues, please try",
-    "forgive": "",
+    "clearSession": "Clear session messages",
+    "description": "The project is currently under construction, and data stability is not guaranteed. If you encounter any issues, you may try",
+    "forgive": "We apologize for any inconvenience caused.",
     "or": "or",
-    "problem": "Oops...something went wrong with the page.",
-    "resetSystem": "Reset System Settings"
+    "problem": "There was a slight issue with the page...",
+    "resetSystem": "Reset system settings"
   },
-  "fileUploadError": "File upload failed, please try again later",
-  "goBack": "Go Back to Homepage",
-  "openaiError": "OpenAI API Error, please check if the OpenAI API Key and Endpoint are correct.",
+  "fileUploadError": "File upload failed, please try again later.",
+  "goBack": "Return to Homepage",
+  "openaiError": "OpenAI API error, please check if the OpenAI API Key and Endpoint are correct.",
   "reload": "Reload",
-  "s3envError": "S3 environment variables are not fully set, please check your environment variables.",
-  "serverError": "Server Error, please contact the administrator.",
+  "s3envError": "The S3 environment variables are not fully set. Please check your environment variables.",
+  "serverError": "Server error, please contact the administrator.",
   "triggerError": "Trigger Error",
-  "unknownError": "Unknown Error"
+  "unknownError": "Unknown error"
 }

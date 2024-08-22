@@ -1,1 +1,84 @@
-{}
+{
+  "common": {
+    "chat": {
+      "avatar": {
+        "desc": "Özel profil resmi",
+        "title": "Profil Resmi"
+      },
+      "nickName": {
+        "desc": "Özel takma ad",
+        "placeholder": "Lütfen takma adınızı girin",
+        "title": "Takma Ad"
+      },
+      "title": "Sohbet Ayarları"
+    },
+    "system": {
+      "clear": {
+        "action": "Hemen Temizle",
+        "alert": "Tüm sohbet mesajlarını temizlemek istediğinize emin misiniz?",
+        "desc": "Tüm sohbet ve karakter verilerini, sohbet listesini, karakter listesini, sohbet mesajlarını vb. temizleyecektir.",
+        "success": "Başarıyla temizlendi",
+        "tip": "İşlem geri alınamaz, temizledikten sonra veriler geri getirilemez, lütfen dikkatli olun.",
+        "title": "Tüm Sohbet Mesajlarını Temizle"
+      },
+      "reset": {
+        "action": "Hemen Sıfırla",
+        "alert": "Tüm sistem ayarlarını sıfırlamak istediğinize emin misiniz?",
+        "desc": "Tüm sistem ayarlarını, tema ayarlarını, sohbet ayarlarını, dil modeli ayarlarını vb. sıfırlayacaktır.",
+        "success": "Başarıyla sıfırlandı",
+        "tip": "İşlem geri alınamaz, sıfırladıktan sonra veriler geri getirilemez, lütfen dikkatli olun.",
+        "title": "Sistem Ayarlarını Sıfırla"
+      },
+      "title": "Sistem Ayarları"
+    },
+    "theme": {
+      "backgroundEffect": {
+        "desc": "Arka plan efektini özelleştir",
+        "glow": "Parıltı",
+        "none": "Arka plan yok",
+        "title": "Arka Plan Efekti"
+      },
+      "locale": {
+        "auto": "Sistemi takip et",
+        "desc": "Sistem dilini özelleştir",
+        "title": "Dil"
+      },
+      "neutralColor": {
+        "desc": "Farklı renk eğilimlerine göre gri tonlarını özelleştir",
+        "title": "Nötr Renk"
+      },
+      "primaryColor": {
+        "desc": "Tema rengini özelleştir",
+        "title": "Tema Rengi"
+      },
+      "title": "Tema Ayarları"
+    },
+    "title": "Genel Ayarlar"
+  },
+  "llm": {
+    "check": {
+      "action": "Kontrol Et",
+      "desc": "API Anahtarınızın ve arayüz proxy adresinizin doğru ayarlandığını kontrol edin",
+      "error": "API çağrısı başarısız oldu, lütfen API Anahtarınızı ve arayüz proxy adresinizi doğru ayarladığınızdan emin olun",
+      "success": "Kontrol başarılı",
+      "title": "Bağlantı Kontrolü"
+    },
+    "openai": {
+      "apiKey": {
+        "desc": "Lütfen kendi OpenAI Anahtarınızı kullanın",
+        "title": "API Anahtarı"
+      },
+      "callError": "API çağrısı başarısız oldu, lütfen API Anahtarınızı ve arayüz proxy adresinizi doğru ayarladığınızdan emin olun",
+      "checkOk": "Kontrol başarılı",
+      "proxy": {
+        "desc": "http(s)://",
+        "title": "Arayüz Proxy Adresi"
+      },
+      "title": "OpenAI Dil Modeli"
+    },
+    "title": "Büyük Dil Modeli"
+  },
+  "touch": {
+    "title": "Dokunma Ayarları"
+  }
+}

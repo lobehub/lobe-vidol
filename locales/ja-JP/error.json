@@ -1,20 +1,20 @@
 {
-  "apiKeyMiss": "OpenAI APIキーが空です。カスタムのOpenAI APIキーを追加してください。",
+  "apiKeyMiss": "OpenAI API キーが空です。カスタム OpenAI API キーを追加してください。",
   "error": "エラー",
   "errorTip": {
-    "clearSession": "セッションメッセージをクリアする",
-    "description": "現在、プロジェクトは作業中です。データの安定性は保証されません。問題が発生した場合は、次のことを試してみてください",
+    "clearSession": "セッションメッセージをクリア",
+    "description": "現在、プロジェクトは工事中であり、データの安定性は保証されていません。問題が発生した場合は、試してみてください",
     "forgive": "ご不便をおかけして申し訳ありません",
     "or": "または",
-    "problem": "ページに問題が発生しました...",
-    "resetSystem": "システム設定をリセットする"
+    "problem": "ページに少し問題が発生しました...",
+    "resetSystem": "システム設定をリセット"
   },
   "fileUploadError": "ファイルのアップロードに失敗しました。後でもう一度お試しください。",
   "goBack": "ホームに戻る",
-  "openaiError": "OpenAI APIエラーです。OpenAI APIキーとエンドポイントが正しいか確認してください。",
+  "openaiError": "OpenAI API エラーです。OpenAI API キーとエンドポイントが正しいかどうかを確認してください。",
   "reload": "再読み込み",
-  "s3envError": "S3環境変数が完全に設定されていません。環境変数を確認してください。",
-  "serverError": "サーバーエラーです。管理者に連絡してください。",
-  "triggerError": "エラーが発生しました",
-  "unknownError": "不明なエラーです"
+  "s3envError": "S3 環境変数が完全に設定されていません。環境変数を確認してください。",
+  "serverError": "サーバーエラーが発生しました。管理者にお問い合わせください",
+  "triggerError": "エラーをトリガーする",
+  "unknownError": "不明なエラー"
 }

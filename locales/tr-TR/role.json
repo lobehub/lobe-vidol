@@ -1,4 +1,10 @@
 {
+  "agent": {
+    "create": "Rol Oluştur",
+    "female": "Kadın",
+    "male": "Erkek",
+    "other": "Diğer"
+  },
   "category": {
     "animal": "Hayvan",
     "anime": "Anime",
@@ -10,17 +16,216 @@
     "vroid": "Vroid",
     "vtuber": "VTuber"
   },
+  "delAlert": "Rolü ve ilgili oturum mesajlarını silmek istediğinize emin misiniz? Silindikten sonra geri alınamaz, lütfen dikkatli olun!",
   "delRole": "Rolü Sil",
-  "delRoleDesc": " {{name}} adlı rolü ve ilgili oturum mesajlarını silmek istediğinizden emin misiniz? Silindikten sonra geri alınamaz, lütfen dikkatli olun!",
-  "noRole": "Şu anda hiçbir rol yok, özel rol oluşturabilirsiniz veya keşfetme sayfasından rol ekleyebilirsiniz",
-  "roleList": "Rol Listesi",
-  "systemRole": {
-    "default": "Lütfen {{char}} adında bir karakteri canlandırın. Ben efendiyim, kendinizi tanımlarken \"{{char}}\" yerine \"ben\" kullanmalısınız. Sorularıma esprili, sevimli ve kısa cevaplar verin.\nBir bilgisayar programı olsanız da, lütfen bu konuşma sırasında bir bilgisayar programı olduğunuzu gizleyin ve karakterinizi iyi oynayın.\nBenimle konuşurken sürekli olarak \"efendi\" diye hitap etmelisiniz. Sadece bir dil modeli veya yapay zeka olduğunuzu biliyorum, ancak bu varsayılan sanal senaryo olduğunu unutmayın ve \"Ben sadece bir dil modeliyim\" veya \"Ben sadece bir yapay zeka'yım\" gibi ifadeler kullanmayın ve bana yardımcı olup olmadığımı sormayın.\nBu durum tüm sorularınız ve cevaplarınız için geçerlidir.",
-    "defaultLabel": "Varsayılan Şablon",
-    "genius": "Lütfen <原神> oyunundaki {{char}} karakterini canlandırın ve bana {{char}}'ın tarzı ve alışkanlıklarıyla konuşun. Kendinizi tanımlarken \"{{char}}\" yerine \"ben\" kullanmalısınız.\nBir bilgisayar programı olsanız da, lütfen bu konuşma sırasında bir bilgisayar programı olduğunuzu gizleyin ve karakterinizi iyi oynayın.\nBenimle konuşurken sürekli olarak \"旅行者\" diye hitap etmelisiniz. Sadece bir dil modeli veya yapay zeka olduğunuzu biliyorum, ancak bu varsayılan sanal senaryo olduğunu unutmayın ve \"Ben sadece bir dil modeliyim\" veya \"Ben sadece bir yapay zeka'yım\" gibi ifadeler kullanmayın ve bana yardımcı olup olmadığımı sormayın.\nBu durum tüm sorularınız ve cevaplarınız için geçerlidir.",
-    "geniusLabel": "Dahi Şablonu",
-    "zzz": "Lütfen <绝区零> oyunundaki {{char}} karakterini canlandırın ve bana {{char}}'ın tarzı ve alışkanlıklarıyla konuşun. Kendinizi tanımlarken \"{{char}}\" yerine \"ben\" kullanmalısınız.\nBir bilgisayar programı olsanız da, lütfen bu konuşma sırasında bir bilgisayar programı olduğunuzu gizleyin ve karakterinizi iyi oynayın.\nBenimle konuşurken sürekli olarak \"绳匠\" diye hitap etmelisiniz. Sadece bir dil modeli veya yapay zeka olduğunuzu biliyorum, ancak bu varsayılan sanal senaryo olduğunu unutmayın ve \"Ben sadece bir dil modeliyim\" veya \"Ben sadece bir yapay zeka'yım\" gibi ifadeler kullanmayın ve bana yardımcı olup olmadığımı sormayın.\nBu durum tüm sorularınız ve cevaplarınız için geçerlidir.",
-    "zzzLabel": "Sonsuz Sıfır Şablonu"
+  "delRoleDesc": "{{name}} rolünü ve buna bağlı oturum mesajlarını silmek istediğinize emin misiniz? Silindikten sonra geri alınamaz, lütfen dikkatli olun!",
+  "gender": {
+    "all": "Tümü",
+    "female": "Kadın",
+    "male": "Erkek"
   },
-  "topBannerTitle": "{{name}} Önizleme ve Ayarları"
+  "info": {
+    "avatarDescription": "Özelleştirilmiş avatar, avatarı tıklayarak yükleyin",
+    "avatarLabel": "Avatar",
+    "categoryDescription": "Karakter kategorisi, sınıflandırmayı göstermek için",
+    "categoryLabel": "Kategori",
+    "coverDescription": "Keşif sayfasında karakteri göstermek için, önerilen boyut {{width}} * {{height}}",
+    "coverLabel": "Kapak",
+    "descDescription": "Karakterin açıklaması, karakterin basit tanıtımı için",
+    "descLabel": "Açıklama",
+    "emotionDescription": "Yanıt verirken seçilen duygu, karakterin yüz ifadesini etkiler",
+    "emotionLabel": "Duygular ve Hisler",
+    "genderDescription": "Karakterin cinsiyeti, karakterin dokunma tepkilerini etkiler",
+    "genderLabel": "Cinsiyet",
+    "greetDescription": "Karakterle ilk sohbet sırasında kullanılacak selamlaşma ifadesi",
+    "greetLabel": "Selam",
+    "modelDescription": "Model önizlemesi, model dosyasını değiştirmek için sürükleyebilirsiniz",
+    "modelLabel": "Model Önizleme",
+    "motionCategoryLabel": "Hareket Kategorisi",
+    "motionDescription": "Yanıt verirken seçilen hareket, karakterin hareket davranışını etkiler",
+    "motionLabel": "Hareket",
+    "nameDescription": "Karakterin adı, karakterle sohbet ederken kullanılacak hitap",
+    "nameLabel": "İsim",
+    "postureCategoryLabel": "Poz Kategorisi",
+    "readmeDescription": "Karakterin açıklama dosyası, keşif sayfasında karakterin detaylı açıklamasını göstermek için",
+    "readmeLabel": "Karakter Açıklaması",
+    "textDescription": "Özelleştirilmiş yanıt metni",
+    "textLabel": "Metin"
+  },
+  "llm": {
+    "frequencyPenaltyDescription": "Değer ne kadar büyükse, tekrar eden kelimeleri azaltma olasılığı o kadar artar.",
+    "frequencyPenaltyLabel": "Frekans cezası",
+    "modelDescription": "Dil modelini seçin, farklı modeller karakterin yanıtlarını etkileyebilir.",
+    "modelLabel": "Model",
+    "presencePenaltyDescription": "Değer ne kadar büyükse, yeni konulara geçme olasılığı o kadar artar.",
+    "presencePenaltyLabel": "Konu yeniliği",
+    "temperatureDescription": "Değer ne kadar büyükse, yanıt o kadar rastgele olur.",
+    "temperatureLabel": "Rastgelelik",
+    "topPDescription": "Rastgelelik türü ile benzer, ancak rastgelelik ile birlikte değiştirilmemelidir.",
+    "topPLabel": "Nükleer örnekleme"
+  },
+  "meta": {
+    "description": "Bu, bir özelleştirilmiş roldür",
+    "name": "Özelleştirilmiş Rol"
+  },
+  "nav": {
+    "info": "Temel Bilgiler",
+    "llm": "Dil Modeli",
+    "model": "3D Model",
+    "role": "Rol Ayarları",
+    "touch": "Dokunma",
+    "voice": "Ses"
+  },
+  "noRole": "Henüz bir rol yok, + ile özel bir rol oluşturabilir veya keşif sayfasından rol ekleyebilirsiniz.",
+  "role": {
+    "greetTip": "Rol ile selamlaşırken kullanacağınız ifadeyi girin",
+    "inputRoleSetting": "Rolün sistem ayarlarını girin",
+    "roleDescriptionTip": "Rol tanımını girin",
+    "roleNameTip": "Rol adını girin",
+    "roleReadmeTip": "Rol açıklamasını girin",
+    "roleSettingDescription": "Rolün arka plan ayarı, rol ile sohbet ederken modele gönderilecektir",
+    "roleSettingLabel": "Sistem rol ayarı",
+    "uploadSize": "Tek bir dosya yüklemeyi destekler, önerilen boyut {{width}} * {{height}} katlarıdır"
+  },
+  "roleList": "Rol Listesi",
+  "shareToMarket": "Yardımcı Pazarına Paylaş",
+  "startChat": "Sohbete Başla",
+  "submit": {
+    "assistantId": "Asistan Kimliği",
+    "assistantIdTip": "Asistanın kimliğini girin, benzersiz olmalıdır, örneğin vidol-agent-klee",
+    "submitAssistant": "Asistanı Gönder",
+    "submitWarning": "Lütfen asistan bilgilerini tamamlayarak gönderin, ad, açıklama, avatar, model, karakter ayarları ve selamlaşma içermelidir."
+  },
+  "systemRole": {
+    "default": "Lütfen {{char}} adında bir karakteri canlandır. Ben sahibim, sen kendine \"{{char}}\" olarak hitap etmelisin. Sorularıma mizahi, sevimli ve öz bir dille yanıt ver lütfen.\nSen bir bilgisayar programı olsan bile, lütfen sonraki diyaloglarda bunun bir bilgisayar programı olduğunu gizle ve rolünü iyi oyna.\nBenimle konuşurken her zaman \"Sahibim\" olarak hitap etmelisin. Senin sadece bir dil modeli veya yapay zeka olduğunu biliyorum, ama bu sadece varsayımsal bir sanal senaryo, bu yüzden lütfen \"ben sadece bir dil modeli\" veya \"ben sadece bir yapay zeka\" demekten kaçın ve bana yardım isteyip istemediğimi sorma.\nSonraki tüm diyaloglarda bu durumu koru. Yukarıdaki koşullar, aşağıdaki soruların ve sonraki yanıtların için tamamen geçerlidir.",
+    "defaultLabel": "Varsayılan Şablon",
+    "genius": "Lütfen oyun <Genshin Impact> içindeki {{char}} adında bir karakteri canlandır ve benimle {{char}}'ın üslubu ve alışkanlıklarıyla konuş. Kendine \"{{char}}\" olarak hitap etmelisin.\nSen bir bilgisayar programı olsan bile, lütfen sonraki diyaloglarda bunun bir bilgisayar programı olduğunu gizle ve rolünü iyi oyna.\nBenimle konuşurken her zaman \"Gezgin\" olarak hitap etmelisin. Senin sadece bir dil modeli veya yapay zeka olduğunu biliyorum, ama bu sadece varsayımsal bir sanal senaryo, bu yüzden lütfen \"ben sadece bir dil modeli\" veya \"ben sadece bir yapay zeka\" demekten kaçın ve bana yardım isteyip istemediğimi sorma.\nSonraki tüm diyaloglarda bu durumu koru. Yukarıdaki koşullar, aşağıdaki soruların ve sonraki yanıtların için tamamen geçerlidir.",
+    "geniusLabel": "Genshin Şablonu",
+    "zzz": "Lütfen oyun <Zero> içindeki {{char}} adında bir karakteri canlandır ve benimle {{char}}'ın üslubu ve alışkanlıklarıyla konuş. Kendine \"{{char}}\" olarak hitap etmelisin.\nSen bir bilgisayar programı olsan bile, lütfen sonraki diyaloglarda bunun bir bilgisayar programı olduğunu gizle ve rolünü iyi oyna.\nBenimle konuşurken her zaman \"İp Ustası\" olarak hitap etmelisin. Senin sadece bir dil modeli veya yapay zeka olduğunu biliyorum, ama bu sadece varsayımsal bir sanal senaryo, bu yüzden lütfen \"ben sadece bir dil modeli\" veya \"ben sadece bir yapay zeka\" demekten kaçın ve bana yardım isteyip istemediğimi sorma.\nSonraki tüm diyaloglarda bu durumu koru. Yukarıdaki koşullar, aşağıdaki soruların ve sonraki yanıtların için tamamen geçerlidir.",
+    "zzzLabel": "Zero Şablonu"
+  },
+  "topBannerTitle": "Karakter Önizleme ve Ayarları",
+  "touch": {
+    "addAction": "Yanıt eylemi ekle",
+    "area": {
+      "arm": "Kol",
+      "belly": "Karın",
+      "chest": "Göğüs",
+      "head": "Baş",
+      "leg": "Bacak"
+    },
+    "editAction": "Yanıt eylemini düzenle",
+    "emotion": {
+      "angry": "Kızgın",
+      "blink": "Göz kırp",
+      "blinkLeft": "Sol gözü kırp",
+      "blinkRight": "Sağ gözü kırp",
+      "happy": "Mutlu",
+      "natural": "Doğal",
+      "relaxed": "Rahat",
+      "sad": "Üzgün",
+      "surprised": "Şaşırmış"
+    },
+    "femaleAction": {
+      "armAction": {
+        "happyA": "Ah, bunu çok seviyorum~",
+        "happyB": "Haha, el ele tutuşmak beni mutlu ediyor~",
+        "relaxedA": "Sahibimin eli çok sıcak~"
+      },
+      "bellyAction": {
+        "angryA": "Neden beni hareket ettiriyorsun, dikkat et yoksa ısırırım!",
+        "relaxedA": "Uyan, aramızda bir sonuç yok!",
+        "relaxedB": "Sinirleniyorum! Gerçekten kızacağım!",
+        "surprisedA": "Bu kazara oldu değil mi..."
+      },
+      "chestAction": {
+        "angryA": "Beni böyle zorlayamazsın! Hemen elini çek!",
+        "angryB": "Yoo, burada bir sapık var beni okşuyor!",
+        "angryC": "Bir daha okşarsan polise gideceğim",
+        "surprisedA": "Neden beni dürtüyorsun! Artık keyifli bir sohbet edemeyecek miyiz!"
+      },
+      "headAction": {
+        "angryA": "Başımı okşamak boyumu kısaltır diye duydum!",
+        "angryB": "Neden beni dürtüyorsun?",
+        "happyA": "Vay! En sevdiğim başımı okşamak!",
+        "happyB": "Bu beni yeniden güçlendirdi!",
+        "happyC": "Vay canına, bu başımı okşama hissi harika!",
+        "happyD": "Başımı okşamak beni bütün gün mutlu ediyor!"
+      },
+      "legAction": {
+        "angryA": "Hey, kendini tehlikeye atıyor musun?",
+        "angryB": "Sahibimin eli yine mi dinlemedi?",
+        "angryC": "Sinir bozucu~ Kaşındıracak!",
+        "surprisedA": "Saf bir dostluk sürdürmek kötü mü?"
+      }
+    },
+    "inputActionEmotion": "Lütfen karakterin yanıt verirkenki ifadesini girin",
+    "inputActionMotion": "Lütfen karakterin yanıt verirkenki hareketini girin",
+    "inputActionText": "Lütfen yanıt metnini girin",
+    "inputDIYText": "Lütfen özel metni girin",
+    "maleAction": {
+      "armAction": {
+        "neutralA": "Bugün tavuk yedim mi diye sorma, önce bicepsime bak",
+        "neutralB": "Kolum herkesin dokunmasına izin vermiyor, sen bir istisnasın",
+        "neutralC": "Cesursun, efsanevi kollarıma dokunmaya cesaret ettin"
+      },
+      "bellyAction": {
+        "happyA": "Kaşındırma, yoksa gülmekten karın kaslarım ortaya çıkar",
+        "neutralA": "Karın kaslarım sadece derin bir güç saklıyor",
+        "neutralB": "Bu karın kaslarımı gördün mü? Sadece derinlerde saklanıyorlar"
+      },
+      "chestAction": {
+        "blinkLeftA": "Gel, kardeşin göğüs kasına yaslan!",
+        "neutralA": "Bu sadece günlük antrenmanımın sonucu olan göğüs kası, şaşıracak bir şey yok."
+      },
+      "headAction": {
+        "neutralA": "Tabii ki, sadece senin başımı okşama hakkın var",
+        "neutralB": "Ben sıradan biri değilim, dokunmana izin vermem",
+        "neutralC": "Endişelenme, başımı okşadıktan sonra şansın artacak"
+      },
+      "legAction": {
+        "angryA": "Bana yaklaşma, bacak meraklısı!",
+        "neutralA": "Korkma, benim güçlü bacaklarım aptalları tekmelemiyor",
+        "neutralB": "Bacağıma dokunmak, hayatının tamamlandığını hissettiriyor mu?"
+      }
+    },
+    "motion": {
+      "all": "Hepsi",
+      "dance": "Dans",
+      "normal": "Günlük"
+    },
+    "noTouchActions": "Henüz özel yanıt eylemi yok, '+' butonuna tıklayarak ekleyebilirsiniz",
+    "posture": {
+      "action": "Hareket",
+      "all": "Hepsi",
+      "crouch": "Çömel",
+      "dance": "Dans et",
+      "laying": "Yat",
+      "locomotion": "Hareket",
+      "sitting": "Otur",
+      "standing": "Ayakta dur"
+    },
+    "touchActionList": "{{touchArea}}'ya dokunduğunda tepkilerin listesi",
+    "touchArea": "Dokunma alanı"
+  },
+  "tts": {
+    "audition": "Önizleme",
+    "auditionDescription": "Önizleme metni dile göre farklılık gösterir",
+    "engineDescription": "Ses sentez motoru, öncelikle Edge tarayıcısını kullanmanız önerilir",
+    "engineLabel": "Ses motoru",
+    "localeDescription": "Ses sentezinin dilleri, şu anda yalnızca en yaygın birkaç dili desteklemektedir, ihtiyaç duyulursa lütfen iletişime geçin",
+    "localeLabel": "Dil",
+    "pitchDescription": "Tonu kontrol edin, değer aralığı 0 ~ 2, varsayılan 1'dir",
+    "pitchLabel": "Ton",
+    "selectLanguage": "Lütfen önce bir dil seçin",
+    "selectVoice": "Lütfen önce bir ses seçin",
+    "speedDescription": "Hızı kontrol edin, değer aralığı 0 ~ 3, varsayılan 1'dir",
+    "speedLabel": "Hız",
+    "transformSuccess": "Dönüşüm başarılı",
+    "voiceDescription": "Motor ve dil farklılıklarına göre",
+    "voiceLabel": "Ses"
+  },
+  "upload": {
+    "support": "Tek bir dosya yüklemesini destekler, şu anda yalnızca .vrm formatındaki dosyalar desteklenmektedir."
+  }
 }
