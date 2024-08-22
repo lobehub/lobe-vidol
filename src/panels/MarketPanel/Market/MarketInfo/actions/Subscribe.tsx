@@ -28,15 +28,15 @@ const Subscribe = memo((props: SubscribeButtonProps) => {
         <Flexbox>
           <Space>
             <Progress steps={30} percent={percent.cover} size="small" />
-            <span>{t('actions.downloadCover')}</span>
+            <span>{t('download.cover')}</span>
           </Space>
           <Space>
             <Progress steps={30} percent={percent.avatar} size="small" />
-            <span>{t('actions.downloadAvatar')}</span>
+            <span>{t('download.avatar')}</span>
           </Space>
           <Space>
             <Progress steps={30} percent={percent.model} size="small" />
-            <span>{t('actions.downloadModel')}</span>
+            <span>{t('download.model')}</span>
           </Space>
         </Flexbox>
       }
@@ -50,7 +50,7 @@ const Subscribe = memo((props: SubscribeButtonProps) => {
         }}
         type={isSubscribed ? 'default' : 'primary'}
       >
-        {t('actions.downloadSubscribe')}
+        {t('download.subscribe')}
       </Button>
     </Popover>
   );

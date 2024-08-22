@@ -32,11 +32,11 @@ const UnSubscribe = memo((props: UnSubscribeButtonProps) => {
         await removeLocalAgent(agent.agentId);
         removeSessionByAgentId(agent.agentId);
         setLoading(false);
-        message.success(t('actions.unsubscribeSuccess', { ns: 'common' }));
+        message.success(t('subscribe.success', { ns: 'common' }));
       }}
-      title={t('actions.unsubscribe', { ns: 'common' }) + '?'}
+      title={t('subscribe.undo', { ns: 'common' }) + '?'}
     >
-      <Button danger>{t('actions.unsubscribe', { ns: 'common' })}</Button>
+      <Button danger>{t('subscribe.undo', { ns: 'common' })}</Button>
     </Popconfirm>
   );
 });

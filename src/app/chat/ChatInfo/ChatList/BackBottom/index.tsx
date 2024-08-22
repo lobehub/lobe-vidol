@@ -13,7 +13,7 @@ export interface BackBottomProps {
 
 const BackBottom = memo<BackBottomProps>(({ visible, onScrollToBottom }) => {
   const { styles, cx } = useStyles();
-  const { t } = useTranslation('common');
+  const { t } = useTranslation('chat');
 
   return (
     <Button

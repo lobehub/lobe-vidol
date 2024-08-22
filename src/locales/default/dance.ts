@@ -1,6 +1,10 @@
 export default {
   dance: '跳舞',
   danceList: '舞蹈列表',
+  actions: {
+    play: '播放',
+    pause: '暂停',
+  },
   play: '播放',
   addPlay: '添加到列表',
   addPlaySuccess: '已添加到播放列表',

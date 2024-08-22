@@ -39,7 +39,7 @@ const DanceItem = (props: DanceItemProps) => {
   const isSelected = currentIdentifier === danceItem.danceId;
   const hoverRef = useRef(null);
   const isHovered = useHover(hoverRef);
-  const { t } = useTranslation('common');
+  const { t } = useTranslation('dance');
 
   const { downloading: audioDownloading, percent: audioPercent, fetchAudioUrl } = useLoadAudio();
   const { downloading: danceDownloading, percent: dancePercent, fetchDanceUrl } = useLoadDance();

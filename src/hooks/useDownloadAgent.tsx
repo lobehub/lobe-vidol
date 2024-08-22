@@ -49,10 +49,10 @@ export const useDownloadAgent = () => {
       await setItem(modelKey, model);
 
       addLocalAgent({ ...agent, meta: { ...agent.meta, avatar, cover } });
-      message.success(agent.meta.name + t('actions.downloadSuccess'));
+      message.success(agent.meta.name + t('download.success'));
     } catch (e) {
       console.error(e);
-      message.error(agent.meta.name + t('actions.downloadFailed'));
+      message.error(agent.meta.name + t('download.failed'));
     } finally {
       setDownloading(false);
     }

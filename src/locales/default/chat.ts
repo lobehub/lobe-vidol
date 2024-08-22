@@ -6,6 +6,18 @@ export default {
     useToken: '消耗 Token 数量计算，包括消息，角色设定与上下文：{{usedTokens}} / {{maxValue}}',
     tokenCount: 'Token 数量',
   },
+  actions: {
+    copy: '复制',
+    add: '添加',
+    delAndRegenerate: '删除并重新生成',
+    copySuccess: '复制成功',
+    edit: '编辑',
+    del: '删除',
+    save: '保存',
+    share: '分享',
+    goBottom: '返回底部',
+    regenerate: '重新生成',
+  },
   info: {
     chat: '聊天',
     dance: '舞蹈',
