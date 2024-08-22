@@ -53,7 +53,7 @@ const VirtualizedList = memo<VirtualizedListProps>(({ mobile, className, style }
   return chatLoading && data.length === 2 ? null : (
     <Flexbox style={style} className={classNames(className, styles.list)}>
       <Header
-        title={t('history', { ns: 'common' })}
+        title={t('history.title')}
         className={styles.header}
         extra={
           <Space>

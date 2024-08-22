@@ -10,25 +10,25 @@ interface Props {
   type?: ButtonType;
 }
 export default (props: Props) => {
-  const { t } = useTranslation('common');
-  const { text = t('actions.resetNow'), type = 'primary' } = props;
+  const { t } = useTranslation('settings');
+  const { text = t('common.system.reset.action'), type = 'primary' } = props;
   const resetConfig = useSettingStore((s) => s.resetConfig);
   const { message, modal } = App.useApp();
 
   const handleReset = () => {
     modal.confirm({
-      cancelText: t('cancel'),
+      cancelText: t('cancel', { ns: 'common' }),
       centered: true,
-      content: t('actions.resetTip'),
+      content: t('common.system.reset.tip'),
       okButtonProps: {
         danger: true,
       },
-      okText: t('confirm'),
+      okText: t('confirm', { ns: 'common' }),
       onOk: () => {
         resetConfig();
-        message.success(t('actions.resetSuccess'));
+        message.success(t('common.system.reset.success'));
       },
-      title: t('actions.resetTitle'),
+      title: t('common.system.reset.alert'),
     });
   };
 

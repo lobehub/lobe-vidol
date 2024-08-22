@@ -11,28 +11,28 @@ interface Props {
   type?: ButtonType;
 }
 export default (props: Props) => {
-  const { t } = useTranslation('common');
-  const { text = t('actions.clearNow'), type = 'primary' } = props;
+  const { t } = useTranslation('settings');
+  const { text = t('common.system.clear.action'), type = 'primary' } = props;
   const clearAgentStorage = useAgentStore((s) => s.clearAgentStorage);
   const clearSessionStorage = useSessionStore((s) => s.clearSessionStorage);
   const { message, modal } = App.useApp();
 
   const handleClear = () => {
     modal.confirm({
-      cancelText: t('cancel'),
+      cancelText: t('cancel', { ns: 'common' }),
       centered: true,
-      content: t('actions.clearTip'),
+      content: t('common.system.clear.tip'),
       okButtonProps: {
         danger: true,
       },
-      okText: t('confirm'),
+      okText: t('confirm', { ns: 'common' }),
       onOk: () => {
         clearSessionStorage();
         clearAgentStorage().then(() => {
-          message.success(t('actions.clearSuccess'));
+          message.success(t('common.system.clear.success'));
         });
       },
-      title: t('actions.clearTitle'),
+      title: t('common.system.clear.alert'),
     });
   };
 

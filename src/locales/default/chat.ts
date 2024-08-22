@@ -12,6 +12,12 @@ export default {
     motions: '动作',
     posture: '姿势',
   },
+  history: {
+    title: '聊天记录',
+    alert: '确定删除历史消息？',
+    action: '清除上下文',
+    tip: '该操作不可逆，请谨慎操作',
+  },
   input: {
     send: '发送',
     warp: '换行',
@@ -23,6 +29,7 @@ export default {
     combine: '语音合成',
   },
   sessionList: '会话列表',
+  selectModel: '请选择模型',
   share: {
     screenshot: '截图',
     shareGPT: '分享GPT',

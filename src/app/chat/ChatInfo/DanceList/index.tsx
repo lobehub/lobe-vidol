@@ -50,7 +50,7 @@ const DanceList = (props: PlayListProps) => {
     <Flexbox className={classNames(className, styles.container)} style={style} id={'dance-list'}>
       <Flexbox className={styles.list} flex={1}>
         <Header
-          title={t('danceList', { ns: 'common' })}
+          title={t('danceList', { ns: 'dance' })}
           extra={
             <ActionIcon
               icon={PlusCircle}

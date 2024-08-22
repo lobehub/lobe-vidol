@@ -10,7 +10,7 @@ interface ModelTagProps {
   model?: string;
 }
 const ModelTag = memo<ModelTagProps>(({ model }) => {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation('chat');
   const selectedModel = OPENAI_MODEL_LIST.find(({ id }) => id === model);
 
   return (

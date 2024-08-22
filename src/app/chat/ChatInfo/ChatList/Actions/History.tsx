@@ -7,16 +7,16 @@ import { useSessionStore } from '@/store/session';
 
 const History = () => {
   const [clearHistory] = useSessionStore((s) => [s.clearHistory]);
-  const { t } = useTranslation('common');
+  const { t } = useTranslation('chat');
   return (
     <Popconfirm
-      cancelText={t('cancel')}
-      description={t('actions.clearHistoryTip')}
-      okText={t('confirm')}
+      cancelText={t('cancel', { ns: 'common' })}
+      description={t('history.tip')}
+      okText={t('confirm', { ns: 'common' })}
       onConfirm={clearHistory}
-      title={t('actions.clearHistoryTitle')}
+      title={t('history.alert')}
     >
-      <ActionIcon icon={Eraser} title={t('actions.clearContext')} />
+      <ActionIcon icon={Eraser} title={t('history.action')} />
     </Popconfirm>
   );
 };
