@@ -2,6 +2,48 @@
 
 # Changelog
 
+## [Version&nbsp;0.25.0](https://github.com/lobehub/lobe-vidol/compare/v0.24.0...v0.25.0)
+<sup>Released on **2024-08-24**</sup>
+
+
+#### ✨ Features
+
+- **misc**: 添加舞蹈市场按钮 & 优化 dynamic 引入 panel.
+
+
+#### 🐛 Bug Fixes
+
+- **misc**: 修复订阅按钮位移问题.
+
+
+<br/>
+
+
+
+<details>
+<summary><kbd>Improvements and Fixes</kbd></summary>
+
+
+
+#### What's improved
+
+* **misc**: 添加舞蹈市场按钮 & 优化 dynamic 引入 panel ([5d0672b](https://github.com/lobehub/lobe-vidol/commit/5d0672b))
+
+
+
+#### What's fixed
+
+* **misc**: 修复订阅按钮位移问题 ([5a2178c](https://github.com/lobehub/lobe-vidol/commit/5a2178c))
+
+</details>
+
+
+<div align="right">
+
+[![](https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square)](#readme-top)
+
+</div>
+
 ## [Version&nbsp;0.24.0](https://github.com/lobehub/lobe-vidol/compare/v0.23.0...v0.24.0)
 <sup>Released on **2024-08-05**</sup>
 
