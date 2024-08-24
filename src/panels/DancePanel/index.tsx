@@ -14,15 +14,10 @@ interface DancePanelProps {
 
 const DancePanel = (props: DancePanelProps) => {
   const { style, className } = props;
-  const { t } = useTranslation(['common', 'panel']);
+  const { t } = useTranslation('dance');
 
   return (
-    <PanelContainer
-      className={className}
-      panelKey="dance"
-      style={style}
-      title={t('dance.musicAndDance', { ns: 'panel' })}
-    >
+    <PanelContainer className={className} panelKey="dance" style={style} title={t('musicAndDance')}>
       <Market />
     </PanelContainer>
   );

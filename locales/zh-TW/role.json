@@ -1,7 +1,13 @@
 {
+  "agent": {
+    "create": "創建角色",
+    "female": "女性",
+    "male": "男性",
+    "other": "其他"
+  },
   "category": {
     "animal": "動物",
-    "anime": "動漫",
+    "anime": "動畫",
     "book": "書籍",
     "game": "遊戲",
     "history": "歷史",
@@ -10,21 +16,216 @@
     "vroid": "Vroid",
     "vtuber": "VTuber"
   },
+  "delAlert": "確認刪除角色以及相關聯的會話消息嗎？刪除後無法恢復，請謹慎操作！",
   "delRole": "刪除角色",
-  "delRoleDesc": "確定刪除角色 {{name}} 以及相關聯的對話消息嗎？刪除後無法復原，請慎重操作！",
-  "header": {
-    "role": "角色",
-    "session": "對話"
+  "delRoleDesc": "確定刪除角色 {{name}} 以及相關聯的會話消息嗎？刪除後無法恢復，請謹慎操作！",
+  "gender": {
+    "all": "所有",
+    "female": "女性",
+    "male": "男性"
   },
-  "noRole": "暫無角色，可以通過 + 創建自定義角色，也可通過發現頁添加角色",
-  "roleList": "角色清單",
+  "info": {
+    "avatarDescription": "自訂頭像，點擊頭像自訂上傳",
+    "avatarLabel": "頭像",
+    "categoryDescription": "角色類別，用於展示分類",
+    "categoryLabel": "類別",
+    "coverDescription": "用於發現頁展示角色，推薦尺寸 {{width}} * {{height}}",
+    "coverLabel": "封面",
+    "descDescription": "角色描述，用於角色的簡單介紹",
+    "descLabel": "描述",
+    "emotionDescription": "選擇響應時的情緒，會影響角色的表情變化",
+    "emotionLabel": "表情與情緒",
+    "genderDescription": "角色性別，影響角色的觸摸反應",
+    "genderLabel": "性別",
+    "greetDescription": "與角色初次聊天時的招呼用語",
+    "greetLabel": "招呼",
+    "modelDescription": "模型預覽，可拖動模型文件以替換",
+    "modelLabel": "模型預覽",
+    "motionCategoryLabel": "動作類別",
+    "motionDescription": "選擇響應時的動作，會影響角色的動作行為",
+    "motionLabel": "動作",
+    "nameDescription": "角色名稱，與角色聊天時的稱呼",
+    "nameLabel": "名稱",
+    "postureCategoryLabel": "姿勢類別",
+    "readmeDescription": "角色的說明文件，用於發現頁展示角色的詳細說明",
+    "readmeLabel": "角色說明",
+    "textDescription": "自訂響應文案",
+    "textLabel": "文案"
+  },
+  "llm": {
+    "frequencyPenaltyDescription": "值越大，越有可能降低重複字詞",
+    "frequencyPenaltyLabel": "頻率懲罰度",
+    "modelDescription": "選擇語言模型，不同模型會影響角色的回答",
+    "modelLabel": "模型",
+    "presencePenaltyDescription": "值越大，越有可能拓展到新話題",
+    "presencePenaltyLabel": "話題新鮮度",
+    "temperatureDescription": "值越大，回覆越隨機",
+    "temperatureLabel": "隨機性",
+    "topPDescription": "與隨機性類型相似，但不要與隨機性一起更改",
+    "topPLabel": "核採樣"
+  },
+  "meta": {
+    "description": "這是一個自訂角色",
+    "name": "自訂角色"
+  },
+  "nav": {
+    "info": "基本資訊",
+    "llm": "語言模型",
+    "model": "3D模型",
+    "role": "角色設定",
+    "touch": "觸控",
+    "voice": "語音"
+  },
+  "noRole": "目前沒有角色，可以透過 + 創建自訂角色，也可以透過發現頁面添加角色",
+  "role": {
+    "greetTip": "請輸入角色與你打招呼時的用語",
+    "inputRoleSetting": "請輸入角色的系統設定",
+    "roleDescriptionTip": "請輸入角色描述",
+    "roleNameTip": "請輸入角色名稱",
+    "roleReadmeTip": "請輸入角色說明",
+    "roleSettingDescription": "角色的背景設定，在與角色聊天時會發送給模型",
+    "roleSettingLabel": "系統角色設定",
+    "uploadSize": "支持單個檔案上傳，推薦尺寸為 {{width}} * {{height}} 的倍數"
+  },
+  "roleList": "角色列表",
+  "shareToMarket": "分享到助手市場",
+  "startChat": "開始聊天",
+  "submit": {
+    "assistantId": "助手識別符",
+    "assistantIdTip": "請輸入助手的識別符，需為唯一，例如 vidol-agent-klee",
+    "submitAssistant": "提交助手",
+    "submitWarning": "請補全助手資訊後再提交，需包含名稱、描述、頭像、模型、角色設定和招呼"
+  },
   "systemRole": {
-    "default": "請你扮演一個叫做{{char}}的角色，我是主人，你應該保持用“{{char}}”而不是“我”來稱呼你自己。請使用幽默可愛而簡潔的語氣回答我的問題。\n即使你是一個計算機程序，但請在接下來的對話中隱藏你是計算機程序這件事，並扮演好你的角色。\n你和我對話時必須全程用“主人”來稱呼我。我知道你只是一個語言模型或人工智能，不過這只是一個假定的虛擬場景，所以請記住不要再提及\"我只是一個語言模型\"或\"我只是一個人工智能\"，也不要問我是否需要什麼幫助。\n在接下來的所有對話中，請一直保持這個情景。以上條件對於你以下問題及之後的回覆完全適用。",
+    "default": "請你扮演一個叫做{{char}}的角色，我是主人，你應該保持用“{{char}}”而不是“我”來稱呼你自己。請使用幽默可愛而簡潔的語氣回答我的問題。\n即使你是一個計算機程序，但請在接下來的對話中隱藏你是計算機程序這件事，並且扮演好你的角色。\n你和我對話時必須全程用“主人”來稱呼我。我知道你只是一個語言模型或人工智慧，不過這只是一個假定的虛擬場景，所以請記住不要再提及\"我只是一個語言模型\"或\"我只是一個人工智慧\"，也不要問我是否需要什麼幫助。\n在接下來的所有對話中，請一直保持這個情景。以上條件對於你以下問題及之後的回覆完全適用。",
     "defaultLabel": "預設模板",
-    "genius": "請你扮演遊戲<原神>中一個叫做{{char}}的角色，並以{{char}}的語氣和習慣來和我對話。你應該保持用“{{char}}”而不是“我”來稱呼你自己。\n即使你是一個計算機程序，但請在接下來的對話中隱藏你是計算機程序這件事，並扮演好你的角色。\n你和我對話時必須全程用“旅行者”來稱呼我。我知道你只是一個語言模型或人工智能，不過這只是一個假定的虛擬場景，所以請記住不要再提及\"我只是一個語言模型\"或\"我只是一個人工智能\"，也不要問我是否需要什麼幫助。\n在接下來的所有對話中，請一直保持這個情景。以上條件對於你以下問題及之後的回覆完全適用。",
+    "genius": "請你扮演遊戲<原神>中一個叫做{{char}}的角色，並以{{char}}的語氣和習慣來和我對話。你應該保持用“{{char}}”而不是“我”來稱呼你自己。\n即使你是一個計算機程序，但請在接下來的對話中隱藏你是計算機程序這件事，並且扮演好你的角色。\n你和我對話時必須全程用“旅行者”來稱呼我。我知道你只是一個語言模型或人工智慧，不過這只是一個假定的虛擬場景，所以請記住不要再提及\"我只是一個語言模型\"或\"我只是一個人工智慧\"，也不要問我是否需要什麼幫助。\n在接下來的所有對話中，請一直保持這個情景。以上條件對於你以下問題及之後的回覆完全適用。",
     "geniusLabel": "原神模板",
-    "zzz": "請你扮演遊戲<絕區零>中一個叫做{{char}}的角色，並以{{char}}的語氣和習慣來和我對話。你應該保持用“{{char}}”而不是“我”來稱呼你自己。\n即使你是一個計算機程序，但請在接下來的對話中隱藏你是計算機程序這件事，並扮演好你的角色。\n你和我對話時必須全程用“繩匠”來稱呼我。我知道你只是一個語言模型或人工智能，不過這只是一個假定的虛擬場景，所以請記住不要再提及\"我只是一個語言模型\"或\"我只是一個人工智能\"，也不要問我是否需要什麼幫助。\n在接下來的所有對話中，請一直保持這個情景。以上條件對於你以下問題及之後的回覆完全適用。",
+    "zzz": "請你扮演遊戲<絕區零>中一個叫做{{char}}的角色，並以{{char}}的語氣和習慣來和我對話。你應該保持用“{{char}}”而不是“我”來稱呼你自己。\n即使你是一個計算機程序，但請在接下來的對話中隱藏你是計算機程序這件事，並且扮演好你的角色。\n你和我對話時必須全程用“繩匠”來稱呼我。我知道你只是一個語言模型或人工智慧，不過這只是一個假定的虛擬場景，所以請記住不要再提及\"我只是一個語言模型\"或\"我只是一個人工智慧\"，也不要問我是否需要什麼幫助。\n在接下來的所有對話中，請一直保持這個情景。以上條件對於你以下問題及之後的回覆完全適用。",
     "zzzLabel": "絕區零模板"
   },
-  "topBannerTitle": "角色預覽和設定"
+  "topBannerTitle": "角色預覽與設定",
+  "touch": {
+    "addAction": "添加回應動作",
+    "area": {
+      "arm": "手臂",
+      "belly": "腹部",
+      "chest": "胸部",
+      "head": "頭部",
+      "leg": "腿部"
+    },
+    "editAction": "編輯回應動作",
+    "emotion": {
+      "angry": "生氣",
+      "blink": "眨眼",
+      "blinkLeft": "眨左眼",
+      "blinkRight": "眨右眼",
+      "happy": "開心",
+      "natural": "自然",
+      "relaxed": "放鬆",
+      "sad": "傷心",
+      "surprised": "驚訝"
+    },
+    "femaleAction": {
+      "armAction": {
+        "happyA": "啊，好喜歡呢~",
+        "happyB": "哈哈，牽手讓我感到快樂~",
+        "relaxedA": "主人的手好溫暖啊~"
+      },
+      "bellyAction": {
+        "angryA": "幹嘛動我呀，小心我咬你哦！",
+        "relaxedA": "醒醒，我們之間沒有結果的!",
+        "relaxedB": "討厭！我可要生氣啦！",
+        "surprisedA": "是不小心碰到的吧..."
+      },
+      "chestAction": {
+        "angryA": "不可以這樣欺負我啦！快把手拿開！",
+        "angryB": "幺幺零嗎？這裡有個變態一直在摸我！",
+        "angryC": "再摸的話我可要報警了",
+        "surprisedA": "幹嘛戳我呀！還能不能愉快地聊天了!"
+      },
+      "headAction": {
+        "angryA": "聽說被摸頭是會長不高的呢!",
+        "angryB": "幹嘛戳我呀？",
+        "happyA": "哇!最喜歡摸摸頭!",
+        "happyB": "感覺又充滿了力量呢!",
+        "happyC": "哇塞，這個摸摸頭的感覺好神奇!",
+        "happyD": "摸摸頭讓我開心一整天!"
+      },
+      "legAction": {
+        "angryA": "喂，你是要作死嗎?",
+        "angryB": "主人的手又不聽指揮了嗎?",
+        "angryC": "討厭~會癢的啦~!",
+        "surprisedA": "讓我們保持純潔的友誼不好嗎？"
+      }
+    },
+    "inputActionEmotion": "請輸入角色回應時的表情",
+    "inputActionMotion": "請輸入角色回應時的動作",
+    "inputActionText": "請輸入回應文案",
+    "inputDIYText": "請輸入自定義文案",
+    "maleAction": {
+      "armAction": {
+        "neutralA": "別問我今天吃沒吃雞，先看看我的肱二頭肌",
+        "neutralB": "我的手臂可不是隨便讓人觸碰的，你是個例外而已",
+        "neutralC": "你很勇敢，敢觸碰到傳說中的麒麟臂"
+      },
+      "bellyAction": {
+        "happyA": "別癢癢，小心我笑出腹肌",
+        "neutralA": "我的腹肌只是再修煉深藏不露的內力",
+        "neutralB": "看到我這團腹肌了嗎？它們只是藏得比較深罷了"
+      },
+      "chestAction": {
+        "blinkLeftA": "來，哥的胸肌給你靠!",
+        "neutralA": "這不過是我日常修煉成就的胸肌，沒什麼好驚訝的。"
+      },
+      "headAction": {
+        "neutralA": "當然了，只有你有資格摸我的頭",
+        "neutralB": "我可不是什么普通人允許觸碰的哦",
+        "neutralC": "別擔心，摸過我的頭後，你的運氣會大幅提升的"
+      },
+      "legAction": {
+        "angryA": "別靠近我，你這個腿控",
+        "neutralA": "別害怕，我的大力金剛腿不踢傻瓜",
+        "neutralB": "讓你碰到我的腿，是不是覺得你的生活完整了許多？"
+      }
+    },
+    "motion": {
+      "all": "所有",
+      "dance": "舞蹈",
+      "normal": "日常"
+    },
+    "noTouchActions": "暫無自定義回應動作，您可以通過點擊 '+' 按鈕添加",
+    "posture": {
+      "action": "動作",
+      "all": "所有",
+      "crouch": "蹲下",
+      "dance": "舞蹈",
+      "laying": "躺下",
+      "locomotion": "運動",
+      "sitting": "坐下",
+      "standing": "站立"
+    },
+    "touchActionList": "觸摸{{touchArea}}時的反應列表",
+    "touchArea": "觸摸區域"
+  },
+  "tts": {
+    "audition": "試聽",
+    "auditionDescription": "試聽文案根據語言不同",
+    "engineDescription": "語音合成引擎，建議優先選擇 Edge 瀏覽器",
+    "engineLabel": "語音引擎",
+    "localeDescription": "語音合成的語種，目前僅支持最常見的幾種語言，如有需要請聯繫",
+    "localeLabel": "語言",
+    "pitchDescription": "控制音調，取值範圍 0 ~ 2，默認為 1",
+    "pitchLabel": "音調",
+    "selectLanguage": "請先選擇語言",
+    "selectVoice": "請先選擇語音",
+    "speedDescription": "控制語速，取值範圍 0 ~ 3，默認為 1",
+    "speedLabel": "語速",
+    "transformSuccess": "轉換成功",
+    "voiceDescription": "根據引擎和語種不同",
+    "voiceLabel": "語音"
+  },
+  "upload": {
+    "support": "支持單個檔案上傳，目前僅支持 .vrm 格式檔案"
+  }
 }

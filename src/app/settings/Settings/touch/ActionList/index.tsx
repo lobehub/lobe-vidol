@@ -17,7 +17,7 @@ interface AreaListProps {
 
 const AreaList = memo((props: AreaListProps) => {
   const { currentTouchArea, style, className, areaOptions = [] } = props;
-  const { t } = useTranslation(['panel', 'features']);
+  const { t } = useTranslation('role');
 
   const touchArea = areaOptions.find((item) => item.value === currentTouchArea)?.label;
 

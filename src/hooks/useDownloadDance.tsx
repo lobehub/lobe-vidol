@@ -54,10 +54,10 @@ export const useDownloadDance = () => {
       await setItem(audioKey, audioBlob);
 
       addDanceItem({ ...dance, cover: coverBase64 });
-      message.success(dance.name + t('actions.downloadSuccess'));
+      message.success(dance.name + t('download.success'));
     } catch (e) {
       console.error(e);
-      message.error(dance.name + t('actions.downloadFailed'));
+      message.error(dance.name + t('download.failed'));
     } finally {
       setDownloading(false);
     }

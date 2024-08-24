@@ -1,20 +1,20 @@
 {
-  "apiKeyMiss": "La clave de API de OpenAI está vacía. Por favor, agregue su clave de API personalizada de OpenAI.",
+  "apiKeyMiss": "La clave de API de OpenAI está vacía, por favor añade una clave de API de OpenAI personalizada",
   "error": "Error",
   "errorTip": {
-    "clearSession": "Limpiar mensajes de sesión",
-    "description": "El proyecto está actualmente en construcción y no se garantiza la estabilidad de los datos. Si encuentra algún problema, puede intentar",
-    "forgive": ", le pedimos disculpas por las molestias causadas",
+    "clearSession": "Eliminar mensajes de sesión",
+    "description": "El proyecto está actualmente en construcción, no se garantiza la estabilidad de los datos. Si encuentras un problema, puedes intentar",
+    "forgive": "te pedimos disculpas por los inconvenientes causados",
     "or": "o",
-    "problem": "Se ha producido un problema en la página...",
+    "problem": "La página ha encontrado un pequeño problema...",
     "resetSystem": "Restablecer la configuración del sistema"
   },
-  "fileUploadError": "Error al subir el archivo, por favor inténtalo de nuevo más tarde",
+  "fileUploadError": "Error al subir el archivo, por favor inténtelo de nuevo más tarde",
   "goBack": "Volver a la página de inicio",
-  "openaiError": "Error de la API de OpenAI. Por favor, verifique que la clave de API de OpenAI y el punto final sean correctos.",
+  "openaiError": "Error de la API de OpenAI, por favor verifica si la clave de API de OpenAI y el endpoint son correctos",
   "reload": "Recargar",
-  "s3envError": "Error en la configuración de la variable de entorno S3. Por favor, verifique sus variables de entorno.",
-  "serverError": "Error del servidor. Por favor, contacte al administrador.",
+  "s3envError": "Las variables de entorno de S3 no están completamente configuradas, por favor revise sus variables de entorno",
+  "serverError": "Error del servidor, por favor contacte al administrador",
   "triggerError": "Error desencadenado",
   "unknownError": "Error desconocido"
 }

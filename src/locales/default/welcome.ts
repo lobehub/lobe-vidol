@@ -1,6 +1,6 @@
 export default {
   loadingTitle: '应用初始化中，请稍后...',
-  waitting: '正在为你准备我的整个世界',
+  waiting: '正在为你准备我的整个世界',
   agent: {
     hello: '你好呀',
     meta: {

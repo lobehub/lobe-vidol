@@ -4,9 +4,9 @@ import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
 import TopBanner from '@/components/TopBanner';
-import MarketInfo from '@/features/MarketInfo';
 
 import AgentList from './List';
+import MarketInfo from './MarketInfo';
 
 const useStyles = createStyles(({ css }) => ({
   container: css`
@@ -31,13 +31,13 @@ const useStyles = createStyles(({ css }) => ({
 
 const Agent = () => {
   const { styles } = useStyles();
-  const { t } = useTranslation('panel');
+  const { t } = useTranslation('market');
 
   return (
     <Flexbox flex={1} height={'100%'} width={'100%'} horizontal>
       <div className={styles.container}>
         <div className={styles.content}>
-          <TopBanner title={t('market.findVidol')} />
+          <TopBanner title={t('findVidol')} />
           <AgentList />
         </div>
       </div>

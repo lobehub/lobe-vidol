@@ -1,15 +1,83 @@
 {
-  "chat": "Rozmowa",
-  "chatDialog": {
-    "close": "Zamknij"
+  "actions": {
+    "add": "Dodaj",
+    "copy": "Kopiuj",
+    "copySuccess": "Kopiowanie zakończone sukcesem",
+    "del": "Usuń",
+    "delAndRegenerate": "Usuń i regeneruj",
+    "edit": "Edytuj",
+    "goBottom": "Przejdź na dół",
+    "regenerate": "Regeneruj",
+    "save": "Zapisz",
+    "share": "Udostępnij"
   },
-  "dance": "Taniec",
-  "header": {
-    "role": "Rola",
-    "session": "Sesja"
+  "animation": {
+    "animationList": "Lista animacji",
+    "postureList": "Lista postaw",
+    "totalCount": "Łącznie {{total}} pozycji"
   },
-  "helloChat": "Cześć, porozmawiajmy",
-  "helloDance": "Cześć, zatańczmy razem",
-  "market": "Odkrywaj",
-  "selectRole": "Wybierz rolę"
+  "apiKey": {
+    "addProxy": "Dodaj adres proxy OpenAI (opcjonalnie)",
+    "closeTip": "Zamknij wskazówkę",
+    "confirmRetry": "Potwierdź i spróbuj ponownie",
+    "startDesc": "Wprowadź swój klucz API OpenAI, aby rozpocząć rozmowę. Aplikacja nie będzie rejestrować twojego klucza API.",
+    "startTitle": "Dostosuj klucz API"
+  },
+  "chat": "Czat",
+  "delSession": "Usuń sesję",
+  "delSessionAlert": "Czy na pewno chcesz usunąć rozmowę? Po usunięciu nie będzie można jej przywrócić, proszę działać ostrożnie!",
+  "history": {
+    "action": "Wyczyść kontekst",
+    "alert": "Czy na pewno chcesz usunąć historię wiadomości?",
+    "tip": "Ta operacja jest nieodwracalna, proszę działać ostrożnie",
+    "title": "Historia czatu"
+  },
+  "info": {
+    "chat": "czat",
+    "dance": "taniec",
+    "motions": "ruchy",
+    "posture": "postawa"
+  },
+  "input": {
+    "alert": "Pamiętaj: wszystko, co mówi inteligentny agent, jest generowane przez AI",
+    "placeholder": "Wprowadź treść, aby rozpocząć czat",
+    "send": "Wyślij",
+    "warp": "Złamanie linii"
+  },
+  "selectModel": "Wybierz model",
+  "sessionCreate": "Utwórz czat",
+  "sessionList": "Lista sesji",
+  "share": {
+    "downloadScreenshot": "Pobierz zrzut ekranu",
+    "imageType": "Format obrazu",
+    "screenshot": "Zrzut ekranu",
+    "share": "Udostępnij",
+    "shareGPT": "Udostępnij GPT",
+    "shareToGPT": "Generuj link do udostępnienia ShareGPT",
+    "withBackground": "Zawiera tło",
+    "withFooter": "Zawiera stopkę",
+    "withSystemRole": "Zawiera ustawienia roli asystenta"
+  },
+  "token": {
+    "overload": "Token przekroczony",
+    "remained": "Pozostałe Tokeny",
+    "tokenCount": "Liczba Tokenów",
+    "useToken": "Obliczanie zużycia Tokenów, w tym wiadomości, ustawienia postaci i kontekstu: {{usedTokens}} / {{maxValue}}",
+    "used": "Tokeny użyte"
+  },
+  "toolBar": {
+    "axes": "Osie",
+    "cameraControl": "Kontrola kamery",
+    "cameraHelper": "Pomocnik kamery",
+    "downloading": "Pobieranie modelu, proszę czekać...",
+    "floor": "Przełącz podłogę",
+    "grid": "Siatka",
+    "resetCamera": "Zresetuj kamerę",
+    "resetToIdle": "Zatrzymaj ruch taneczny",
+    "screenShot": "Zrób zdjęcie"
+  },
+  "tts": {
+    "combine": "Syntezator mowy",
+    "record": "Rozpoznawanie mowy (wymaga dostępu do internetu przez VPN)"
+  }
 }

@@ -1,0 +1,17 @@
+{
+  "actions": {
+    "pause": "Pause",
+    "play": "Play"
+  },
+  "addPlay": "Add to List",
+  "addPlaySuccess": "Added to the playlist",
+  "cancelAddPlay": "Are you sure you want to cancel the subscription for the music {{musicName}}?",
+  "cancelSubscribed": "Cancel Subscription",
+  "confirmClearPlayList": "Are you sure you want to clear the playlist?",
+  "dance": "dance",
+  "danceList": "Dance List",
+  "findDance": "Find Your Favorite Dance",
+  "musicAndDance": "Dance Market",
+  "noPlayList": "No playlist available. You can subscribe to your favorite dances through the marketplace.",
+  "play": "Play"
+}

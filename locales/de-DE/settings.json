@@ -1,0 +1,84 @@
+{
+  "common": {
+    "chat": {
+      "avatar": {
+        "desc": "Benutzerdefinierter Avatar",
+        "title": "Avatar"
+      },
+      "nickName": {
+        "desc": "Benutzerdefinierter Spitzname",
+        "placeholder": "Bitte Spitznamen eingeben",
+        "title": "Spitzname"
+      },
+      "title": "Chat-Einstellungen"
+    },
+    "system": {
+      "clear": {
+        "action": "Jetzt löschen",
+        "alert": "Bestätigen Sie das Löschen aller Sitzungsnachrichten?",
+        "desc": "Es werden alle Sitzungen und Rollendaten gelöscht, einschließlich Sitzungslisten, Rollendaten, Sitzungsnachrichten usw.",
+        "success": "Löschung erfolgreich",
+        "tip": "Die Aktion kann nicht rückgängig gemacht werden. Nach dem Löschen sind die Daten nicht wiederherstellbar. Bitte vorsichtig handeln.",
+        "title": "Alle Sitzungsnachrichten löschen"
+      },
+      "reset": {
+        "action": "Jetzt zurücksetzen",
+        "alert": "Bestätigen Sie das Zurücksetzen aller Systemeinstellungen?",
+        "desc": "Es werden alle Systemeinstellungen zurückgesetzt, einschließlich Themen-, Chat- und Sprachmodell-Einstellungen.",
+        "success": "Zurücksetzung erfolgreich",
+        "tip": "Die Aktion kann nicht rückgängig gemacht werden. Nach dem Zurücksetzen sind die Daten nicht wiederherstellbar. Bitte vorsichtig handeln.",
+        "title": "Systemeinstellungen zurücksetzen"
+      },
+      "title": "Systemeinstellungen"
+    },
+    "theme": {
+      "backgroundEffect": {
+        "desc": "Benutzerdefinierter Hintergrundeffekt",
+        "glow": "Leuchten",
+        "none": "Kein Hintergrund",
+        "title": "Hintergrundeffekt"
+      },
+      "locale": {
+        "auto": "System folgen",
+        "desc": "Benutzerdefinierte Systemsprache",
+        "title": "Sprache"
+      },
+      "neutralColor": {
+        "desc": "Benutzerdefinierte Graustufen mit unterschiedlichen Farbneigungen",
+        "title": "Neutrale Farbe"
+      },
+      "primaryColor": {
+        "desc": "Benutzerdefinierte Themenfarbe",
+        "title": "Themenfarbe"
+      },
+      "title": "Themen-Einstellungen"
+    },
+    "title": "Allgemeine Einstellungen"
+  },
+  "llm": {
+    "check": {
+      "action": "Überprüfen",
+      "desc": "Überprüfen Sie, ob der API-Schlüssel und die Schnittstellen-Proxy-Adresse korrekt eingestellt sind.",
+      "error": "Fehler beim Aufruf der Schnittstelle. Bitte überprüfen Sie, ob der API-Schlüssel und die Schnittstellen-Proxy-Adresse korrekt eingestellt sind.",
+      "success": "Überprüfung erfolgreich",
+      "title": "Verbindungsprüfung"
+    },
+    "openai": {
+      "apiKey": {
+        "desc": "Bitte verwenden Sie Ihren eigenen OpenAI-Schlüssel",
+        "title": "API-Schlüssel"
+      },
+      "callError": "Fehler beim Aufruf der Schnittstelle. Bitte überprüfen Sie, ob der API-Schlüssel und die Schnittstellen-Proxy-Adresse korrekt eingestellt sind.",
+      "checkOk": "Überprüfung erfolgreich",
+      "proxy": {
+        "desc": "http(s)://",
+        "title": "Schnittstellen-Proxy-Adresse"
+      },
+      "title": "OpenAI Sprachmodell"
+    },
+    "title": "Großes Sprachmodell"
+  },
+  "touch": {
+    "title": "Berührungseinstellungen"
+  }
+}

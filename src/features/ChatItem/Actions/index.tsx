@@ -24,7 +24,7 @@ export const useActionsClick = (): OnActionsClick => {
     s.regenerateMessage,
   ]);
   const { message } = App.useApp();
-  const { t } = useTranslation('common');
+  const { t } = useTranslation('chat');
 
   return useCallback<OnActionsClick>(async (action, { id, content, error }) => {
     switch (action.key) {

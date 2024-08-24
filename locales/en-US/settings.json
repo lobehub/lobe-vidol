@@ -1,0 +1,84 @@
+{
+  "common": {
+    "chat": {
+      "avatar": {
+        "desc": "Customize your avatar",
+        "title": "Avatar"
+      },
+      "nickName": {
+        "desc": "Customize your nickname",
+        "placeholder": "Please enter your nickname",
+        "title": "Nickname"
+      },
+      "title": "Chat Settings"
+    },
+    "system": {
+      "clear": {
+        "action": "Clear Now",
+        "alert": "Are you sure you want to clear all session messages?",
+        "desc": "This will clear all session and character data, including session list, character list, session messages, etc.",
+        "success": "Clear Successful",
+        "tip": "This action cannot be undone. Once cleared, the data cannot be recovered. Please proceed with caution.",
+        "title": "Clear All Session Messages"
+      },
+      "reset": {
+        "action": "Reset Now",
+        "alert": "Are you sure you want to reset all system settings?",
+        "desc": "This will reset all system settings, including theme settings, chat settings, language model settings, etc.",
+        "success": "Reset Successful",
+        "tip": "This action cannot be undone. Once reset, the data cannot be recovered. Please proceed with caution.",
+        "title": "Reset System Settings"
+      },
+      "title": "System Settings"
+    },
+    "theme": {
+      "backgroundEffect": {
+        "desc": "Customize background effects",
+        "glow": "Glow",
+        "none": "No Background",
+        "title": "Background Effect"
+      },
+      "locale": {
+        "auto": "Follow system",
+        "desc": "Customize system language",
+        "title": "Language"
+      },
+      "neutralColor": {
+        "desc": "Customize grayscale for different color tendencies",
+        "title": "Neutral Color"
+      },
+      "primaryColor": {
+        "desc": "Customize the primary theme color",
+        "title": "Primary Color"
+      },
+      "title": "Theme Settings"
+    },
+    "title": "General Settings"
+  },
+  "llm": {
+    "check": {
+      "action": "Check",
+      "desc": "Verify if the API Key and proxy address are set correctly",
+      "error": "Failed to call the API. Please check if the API Key and proxy address are set correctly.",
+      "success": "Check passed",
+      "title": "Connectivity Check"
+    },
+    "openai": {
+      "apiKey": {
+        "desc": "Please use your own OpenAI Key",
+        "title": "API Key"
+      },
+      "callError": "Failed to call the API. Please check if the API Key and proxy address are set correctly.",
+      "checkOk": "Check passed",
+      "proxy": {
+        "desc": "http(s)://",
+        "title": "Proxy Address"
+      },
+      "title": "OpenAI Language Model"
+    },
+    "title": "Large Language Model"
+  },
+  "touch": {
+    "title": "Touch Settings"
+  }
+}

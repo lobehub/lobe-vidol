@@ -1,0 +1,17 @@
+{
+  "actions": {
+    "pause": "Tạm dừng",
+    "play": "Phát"
+  },
+  "addPlay": "Thêm vào danh sách",
+  "addPlaySuccess": "Đã thêm vào danh sách phát",
+  "cancelAddPlay": "Bạn có chắc chắn muốn hủy đăng ký nhạc {{musicName}} không?",
+  "cancelSubscribed": "Hủy đăng ký",
+  "confirmClearPlayList": "Bạn có chắc chắn muốn xóa danh sách phát?",
+  "dance": "Khiêu vũ",
+  "danceList": "Danh sách vũ điệu",
+  "findDance": "Tìm điệu nhảy yêu thích của bạn",
+  "musicAndDance": "Thị trường khiêu vũ",
+  "noPlayList": "Chưa có danh sách phát nào, bạn có thể đăng ký những điệu nhảy bạn thích qua thị trường",
+  "play": "Phát"
+}

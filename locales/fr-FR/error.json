@@ -1,20 +1,20 @@
 {
-  "apiKeyMiss": "La clé API OpenAI est manquante. Veuillez ajouter une clé API OpenAI personnalisée.",
+  "apiKeyMiss": "La clé API OpenAI est vide, veuillez ajouter une clé API OpenAI personnalisée.",
   "error": "Erreur",
   "errorTip": {
     "clearSession": "Effacer les messages de session",
-    "description": "Le projet est actuellement en cours de construction et la stabilité des données n'est pas garantie. Si vous rencontrez un problème, vous pouvez essayer",
-    "forgive": "",
+    "description": "Le projet est actuellement en cours de construction, la stabilité des données n'est pas garantie. Si vous rencontrez un problème, vous pouvez essayer",
+    "forgive": "Nous vous prions de bien vouloir nous excuser pour le désagrément causé.",
     "or": "ou",
-    "problem": "Le site a rencontré un problème...",
-    "resetSystem": "Réinitialiser les paramètres système"
+    "problem": "La page a rencontré un petit problème...",
+    "resetSystem": "Réinitialiser les paramètres du système"
   },
   "fileUploadError": "Échec du téléchargement du fichier, veuillez réessayer plus tard",
   "goBack": "Retour à la page d'accueil",
-  "openaiError": "Erreur de l'API OpenAI. Veuillez vérifier votre clé API OpenAI et votre point de terminaison.",
-  "reload": "Recharger la page",
-  "s3envError": "Les variables d'environnement S3 ne sont pas entièrement configurées. Veuillez vérifier vos variables d'environnement.",
-  "serverError": "Erreur serveur. Veuillez contacter l'administrateur.",
+  "openaiError": "Erreur de l'API OpenAI, veuillez vérifier si la clé API OpenAI et l'endpoint sont corrects",
+  "reload": "Recharger",
+  "s3envError": "Les variables d'environnement S3 ne sont pas complètement configurées, veuillez vérifier vos variables d'environnement.",
+  "serverError": "Erreur du serveur, veuillez contacter l'administrateur",
   "triggerError": "Erreur déclenchée",
   "unknownError": "Erreur inconnue"
 }

@@ -1,0 +1,17 @@
+{
+  "actions": {
+    "pause": "Pausar",
+    "play": "Reproducir"
+  },
+  "addPlay": "Añadir a la lista",
+  "addPlaySuccess": "Añadido a la lista de reproducción",
+  "cancelAddPlay": "¿Está seguro de que desea cancelar la suscripción a la música {{musicName}}?",
+  "cancelSubscribed": "Cancelar suscripción",
+  "confirmClearPlayList": "¿Estás seguro de que deseas borrar la lista de reproducción?",
+  "dance": "bailar",
+  "danceList": "Lista de danzas",
+  "findDance": "Encuentra tu baile favorito",
+  "musicAndDance": "Mercado de Danza",
+  "noPlayList": "No hay listas de reproducción disponibles. Puedes suscribirte a tus danzas favoritas en el mercado.",
+  "play": "Reproducir"
+}

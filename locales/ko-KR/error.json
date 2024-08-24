@@ -1,20 +1,20 @@
 {
-  "apiKeyMiss": "OpenAI API 키가 비어 있습니다. 사용자 지정 OpenAI API 키를 추가하세요.",
-  "error": "에러",
+  "apiKeyMiss": "OpenAI API 키가 비어 있습니다. 사용자 정의 OpenAI API 키를 추가해 주세요.",
+  "error": "오류",
   "errorTip": {
     "clearSession": "세션 메시지 지우기",
-    "description": "프로젝트는 현재 작업 중이므로 데이터의 안정성을 보장할 수 없으며 문제가 발생하면 다음을 시도해 볼 수 있습니다.",
-    "forgive": ", 불편을 드려 죄송합니다.",
+    "description": "현재 프로젝트가 진행 중이며 데이터의 안정성을 보장할 수 없습니다. 문제가 발생하면 시도해 보시기 바랍니다.",
+    "forgive": "불편을 드려 죄송합니다.",
     "or": "또는",
     "problem": "페이지에 문제가 발생했습니다...",
     "resetSystem": "시스템 설정 초기화"
   },
-  "fileUploadError": "파일 업로드 실패, 나중에 다시 시도해주세요",
+  "fileUploadError": "파일 업로드에 실패했습니다. 잠시 후 다시 시도해 주세요.",
   "goBack": "홈으로 돌아가기",
-  "openaiError": "OpenAI API 오류입니다. OpenAI API 키와 엔드포인트를 확인해주세요.",
-  "reload": "다시 불러오기",
-  "s3envError": "S3 환경 변수가 완전하게 설정되지 않았습니다. 환경 변수를 확인해주세요.",
-  "serverError": "서버 오류입니다. 관리자에게 문의하세요.",
-  "triggerError": "오류 생성",
+  "openaiError": "OpenAI API 오류입니다. OpenAI API 키와 엔드포인트가 올바른지 확인하세요.",
+  "reload": "다시 로드",
+  "s3envError": "S3 환경 변수가 완전히 설정되지 않았습니다. 환경 변수를 확인해 주세요.",
+  "serverError": "서버 오류가 발생했습니다. 관리자에게 문의하세요.",
+  "triggerError": "오류 발생",
   "unknownError": "알 수 없는 오류"
 }

@@ -21,7 +21,7 @@ const AreaList = memo((props: AreaListProps) => {
     (s) => configSelectors.getTouchActionsByGenderAndArea(s, GenderEnum.MALE, currentTouchArea),
     isEqual,
   );
-  const { t } = useTranslation(['features', 'panel']);
+  const { t } = useTranslation('role');
 
   return (
     <>
@@ -41,10 +41,7 @@ const AreaList = memo((props: AreaListProps) => {
         );
       })}
       {items.length === 0 && (
-        <Empty
-          description={t('touch.noTouchActions', { ns: 'panel' })}
-          image={Empty.PRESENTED_IMAGE_SIMPLE}
-        />
+        <Empty description={t('touch.noTouchActions')} image={Empty.PRESENTED_IMAGE_SIMPLE} />
       )}
     </>
   );

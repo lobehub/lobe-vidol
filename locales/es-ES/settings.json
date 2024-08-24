@@ -1,0 +1,84 @@
+{
+  "common": {
+    "chat": {
+      "avatar": {
+        "desc": "Personalizar avatar",
+        "title": "Avatar"
+      },
+      "nickName": {
+        "desc": "Personalizar apodo",
+        "placeholder": "Por favor, introduce un apodo",
+        "title": "Apodo"
+      },
+      "title": "Configuración de Chat"
+    },
+    "system": {
+      "clear": {
+        "action": "Eliminar ahora",
+        "alert": "¿Confirmar eliminación de todos los mensajes de conversación?",
+        "desc": "Esto eliminará todos los datos de conversación y de personajes, incluyendo la lista de conversaciones, la lista de personajes, mensajes de conversación, etc.",
+        "success": "Eliminación exitosa",
+        "tip": "La acción no se puede deshacer, una vez eliminados los datos no se podrán recuperar, por favor actúa con precaución",
+        "title": "Eliminar todos los mensajes de conversación"
+      },
+      "reset": {
+        "action": "Restablecer ahora",
+        "alert": "¿Confirmar restablecimiento de todas las configuraciones del sistema?",
+        "desc": "Esto restablecerá todas las configuraciones del sistema, incluyendo configuraciones de tema, configuraciones de chat, configuraciones de modelo de lenguaje, etc.",
+        "success": "Restablecimiento exitoso",
+        "tip": "La acción no se puede deshacer, una vez restablecidos los datos no se podrán recuperar, por favor actúa con precaución",
+        "title": "Restablecer configuración del sistema"
+      },
+      "title": "Configuración del Sistema"
+    },
+    "theme": {
+      "backgroundEffect": {
+        "desc": "Personalizar efecto de fondo",
+        "glow": "Brillo",
+        "none": "Sin fondo",
+        "title": "Efecto de Fondo"
+      },
+      "locale": {
+        "auto": "Seguir sistema",
+        "desc": "Personalizar idioma del sistema",
+        "title": "Idioma"
+      },
+      "neutralColor": {
+        "desc": "Personalizar escala de grises con diferentes inclinaciones de color",
+        "title": "Color Neutro"
+      },
+      "primaryColor": {
+        "desc": "Personalizar color del tema",
+        "title": "Color Principal"
+      },
+      "title": "Configuración de Tema"
+    },
+    "title": "Configuración General"
+  },
+  "llm": {
+    "check": {
+      "action": "Verificar",
+      "desc": "Verifica que la APIKey y la dirección del proxy estén configuradas correctamente",
+      "error": "Error al llamar a la interfaz, por favor verifica que la APIKey y la dirección del proxy estén configuradas correctamente",
+      "success": "Verificación exitosa",
+      "title": "Verificación de Conectividad"
+    },
+    "openai": {
+      "apiKey": {
+        "desc": "Por favor utiliza tu propia clave de OpenAI",
+        "title": "API Key"
+      },
+      "callError": "Error al llamar a la interfaz, por favor verifica que la APIKey y la dirección del proxy estén configuradas correctamente",
+      "checkOk": "Verificación exitosa",
+      "proxy": {
+        "desc": "http(s)://",
+        "title": "Dirección del Proxy de la Interfaz"
+      },
+      "title": "Modelo de Lenguaje de OpenAI"
+    },
+    "title": "Modelo de Lenguaje Grande"
+  },
+  "touch": {
+    "title": "Configuración de toque"
+  }
+}

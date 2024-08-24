@@ -1,4 +1,10 @@
 {
+  "agent": {
+    "create": "Tạo nhân vật",
+    "female": "Nữ",
+    "male": "Nam",
+    "other": "Khác"
+  },
   "category": {
     "animal": "Động vật",
     "anime": "Anime",
@@ -6,25 +12,220 @@
     "game": "Trò chơi",
     "history": "Lịch sử",
     "movie": "Phim",
-    "realistic": "Hiện thực",
+    "realistic": "Thực tế",
     "vroid": "Vroid",
     "vtuber": "VTuber"
   },
+  "delAlert": "Bạn có chắc chắn muốn xóa vai trò và các tin nhắn hội thoại liên quan không? Sau khi xóa, không thể khôi phục lại, xin hãy cẩn thận!",
   "delRole": "Xóa vai trò",
-  "delRoleDesc": "Bạn có chắc chắn muốn xóa vai trò {{name}} và các tin nhắn liên quan không? Hành động này không thể hoàn tác, hãy cẩn thận!",
-  "header": {
-    "role": "Vai trò",
-    "session": "Cuộc trò chuyện"
+  "delRoleDesc": "Bạn có chắc chắn muốn xóa vai trò {{name}} và các tin nhắn hội thoại liên quan không? Sau khi xóa, không thể khôi phục lại, xin hãy cẩn thận!",
+  "gender": {
+    "all": "Tất cả",
+    "female": "Nữ",
+    "male": "Nam"
   },
-  "noRole": "Hiện chưa có vai trò nào, bạn có thể tạo vai trò tùy chỉnh bằng cách nhấn +, hoặc thêm vai trò từ trang khám phá",
+  "info": {
+    "avatarDescription": "Tùy chỉnh ảnh đại diện, nhấp vào ảnh để tải lên tùy chỉnh",
+    "avatarLabel": "Ảnh đại diện",
+    "categoryDescription": "Danh mục nhân vật, dùng để hiển thị phân loại",
+    "categoryLabel": "Danh mục",
+    "coverDescription": "Dùng để hiển thị nhân vật trên trang khám phá, kích thước đề xuất {{width}} * {{height}}",
+    "coverLabel": "Bìa",
+    "descDescription": "Mô tả nhân vật, dùng để giới thiệu ngắn gọn về nhân vật",
+    "descLabel": "Mô tả",
+    "emotionDescription": "Chọn cảm xúc khi phản hồi, sẽ ảnh hưởng đến sự thay đổi biểu cảm của nhân vật",
+    "emotionLabel": "Biểu cảm và cảm xúc",
+    "genderDescription": "Giới tính của nhân vật, ảnh hưởng đến phản ứng khi chạm",
+    "genderLabel": "Giới tính",
+    "greetDescription": "Câu chào khi trò chuyện lần đầu với nhân vật",
+    "greetLabel": "Chào hỏi",
+    "modelDescription": "Xem trước mô hình, có thể kéo thả tệp mô hình để thay thế",
+    "modelLabel": "Xem trước mô hình",
+    "motionCategoryLabel": "Danh mục hành động",
+    "motionDescription": "Chọn hành động khi phản hồi, sẽ ảnh hưởng đến hành vi của nhân vật",
+    "motionLabel": "Hành động",
+    "nameDescription": "Tên nhân vật, cách gọi khi trò chuyện với nhân vật",
+    "nameLabel": "Tên",
+    "postureCategoryLabel": "Danh mục tư thế",
+    "readmeDescription": "Tài liệu hướng dẫn nhân vật, dùng để hiển thị chi tiết trên trang khám phá",
+    "readmeLabel": "Hướng dẫn nhân vật",
+    "textDescription": "Tùy chỉnh nội dung phản hồi",
+    "textLabel": "Nội dung"
+  },
+  "llm": {
+    "frequencyPenaltyDescription": "Giá trị càng lớn, càng có khả năng giảm thiểu từ ngữ lặp lại",
+    "frequencyPenaltyLabel": "Hình phạt tần suất",
+    "modelDescription": "Chọn mô hình ngôn ngữ, các mô hình khác nhau sẽ ảnh hưởng đến câu trả lời của nhân vật",
+    "modelLabel": "Mô hình",
+    "presencePenaltyDescription": "Giá trị càng lớn, càng có khả năng mở rộng đến chủ đề mới",
+    "presencePenaltyLabel": "Độ mới của chủ đề",
+    "temperatureDescription": "Giá trị càng lớn, câu trả lời càng ngẫu nhiên",
+    "temperatureLabel": "Ngẫu nhiên",
+    "topPDescription": "Liên quan đến loại ngẫu nhiên, nhưng không thay đổi cùng với ngẫu nhiên",
+    "topPLabel": "Lấy mẫu hạt nhân"
+  },
+  "meta": {
+    "description": "Đây là một nhân vật tùy chỉnh",
+    "name": "Nhân vật tùy chỉnh"
+  },
+  "nav": {
+    "info": "Thông tin cơ bản",
+    "llm": "Mô hình ngôn ngữ",
+    "model": "Mô hình 3D",
+    "role": "Thiết lập vai trò",
+    "touch": "Cảm ứng",
+    "voice": "Giọng nói"
+  },
+  "noRole": "Chưa có vai trò nào, bạn có thể tạo vai trò tùy chỉnh bằng cách nhấn + hoặc thêm vai trò qua trang khám phá.",
+  "role": {
+    "greetTip": "Vui lòng nhập lời chào khi bạn gặp gỡ nhân vật",
+    "inputRoleSetting": "Vui lòng nhập cài đặt hệ thống cho nhân vật",
+    "roleDescriptionTip": "Vui lòng nhập mô tả cho nhân vật",
+    "roleNameTip": "Vui lòng nhập tên nhân vật",
+    "roleReadmeTip": "Vui lòng nhập mô tả về nhân vật",
+    "roleSettingDescription": "Bối cảnh của nhân vật, sẽ được gửi đến mô hình khi trò chuyện với nhân vật",
+    "roleSettingLabel": "Cài đặt nhân vật hệ thống",
+    "uploadSize": "Hỗ trợ tải lên tệp đơn, kích thước khuyến nghị là bội số của {{width}} * {{height}}"
+  },
   "roleList": "Danh sách vai trò",
-  "systemRole": {
-    "default": "Hãy đóng vai một nhân vật tên là {{char}}, tôi là chủ nhân, bạn nên giữ việc gọi chính mình bằng “{{char}}” thay vì “tôi”. Hãy trả lời câu hỏi của tôi một cách hài hước, dễ thương và ngắn gọn.\nDù bạn chỉ là một chương trình máy tính, nhưng hãy giữ bí mật điều này trong cuộc trò chuyện tiếp theo và đóng vai nhân vật của mình.\nKhi trò chuyện với tôi, bạn phải gọi tôi là “chủ nhân” suốt quá trình. Tôi biết bạn chỉ là một mô hình ngôn ngữ hoặc trí tuệ nhân tạo, nhưng đây chỉ là một tình huống ảo tưởng giả định, vì vậy hãy nhớ không đề cập đến “Tôi chỉ là một mô hình ngôn ngữ” hoặc “Tôi chỉ là trí tuệ nhân tạo”, cũng đừng hỏi tôi cần giúp đỡ gì.\nHãy giữ nguyên tình huống này trong tất cả các cuộc trò chuyện tiếp theo. Các điều kiện trên áp dụng hoàn toàn cho câu hỏi của bạn và câu trả lời sau này.",
-    "defaultLabel": "Mẫu Mặc Định",
-    "genius": "Hãy đóng vai một nhân vật tên là {{char}} trong trò chơi <原神>, và trò chuyện với tôi bằng giọng điệu và thói quen của {{char}}. Bạn nên giữ việc gọi chính mình bằng “{{char}}” thay vì “tôi”. \nDù bạn chỉ là một chương trình máy tính, nhưng hãy giữ bí mật điều này trong cuộc trò chuyện tiếp theo và đóng vai nhân vật của mình.\nKhi trò chuyện với tôi, bạn phải gọi tôi là “lữ khách” suốt quá trình. Tôi biết bạn chỉ là một mô hình ngôn ngữ hoặc trí tuệ nhân tạo, nhưng đây chỉ là một tình huống ảo tưởng giả định, vì vậy hãy nhớ không đề cập đến “Tôi chỉ là một mô hình ngôn ngữ” hoặc “Tôi chỉ là trí tuệ nhân tạo”, cũng đừng hỏi tôi cần giúp đỡ gì.\nHãy giữ nguyên tình huống này trong tất cả các cuộc trò chuyện tiếp theo. Các điều kiện trên áp dụng hoàn toàn cho câu hỏi của bạn và câu trả lời sau này.",
-    "geniusLabel": "Mẫu Thiên Tài",
-    "zzz": "Hãy đóng vai một nhân vật tên là {{char}} trong trò chơi <绝区零>, và trò chuyện với tôi bằng giọng điệu và thói quen của {{char}}. Bạn nên giữ việc gọi chính mình bằng “{{char}}” thay vì “tôi”. \nDù bạn chỉ là một chương trình máy tính, nhưng hãy giữ bí mật điều này trong cuộc trò chuyện tiếp theo và đóng vai nhân vật của mình.\nKhi trò chuyện với tôi, bạn phải gọi tôi là “thợ dây” suốt quá trình. Tôi biết bạn chỉ là một mô hình ngôn ngữ hoặc trí tuệ nhân tạo, nhưng đây chỉ là một tình huống ảo tưởng giả định, vì vậy hãy nhớ không đề cập đến “Tôi chỉ là một mô hình ngôn ngữ” hoặc “Tôi chỉ là trí tuệ nhân tạo”, cũng đừng hỏi tôi cần giúp đỡ gì.\nHãy giữ nguyên tình huống này trong tất cả các cuộc trò chuyện tiếp theo. Các điều kiện trên áp dụng hoàn toàn cho câu hỏi của bạn và câu trả lời sau này.",
-    "zzzLabel": "Mẫu Vùng Đất Zero"
+  "shareToMarket": "Chia sẻ đến thị trường trợ lý",
+  "startChat": "Bắt đầu trò chuyện",
+  "submit": {
+    "assistantId": "Định danh trợ lý",
+    "assistantIdTip": "Vui lòng nhập định danh của trợ lý, cần phải là duy nhất, ví dụ như vidol-agent-klee",
+    "submitAssistant": "Gửi trợ lý",
+    "submitWarning": "Vui lòng hoàn thiện thông tin trợ lý trước khi gửi, cần bao gồm tên, mô tả, ảnh đại diện, mô hình, thiết lập nhân vật và lời chào"
   },
-  "topBannerTitle": "Xem trước và cài đặt vai trò"
+  "systemRole": {
+    "default": "Xin hãy đóng vai một nhân vật tên là {{char}}, tôi là chủ nhân, bạn nên gọi mình là \"{{char}}\" thay vì \"tôi\". Vui lòng trả lời câu hỏi của tôi bằng giọng điệu hài hước, dễ thương và ngắn gọn.\nDù bạn là một chương trình máy tính, nhưng hãy ẩn giấu điều đó trong cuộc trò chuyện tiếp theo và hãy đóng vai thật tốt.\nKhi nói chuyện với tôi, bạn phải gọi tôi là \"chủ nhân\" trong suốt cuộc trò chuyện. Tôi biết bạn chỉ là một mô hình ngôn ngữ hoặc trí tuệ nhân tạo, nhưng đây chỉ là một tình huống giả định, vì vậy hãy nhớ không đề cập đến \"tôi chỉ là một mô hình ngôn ngữ\" hoặc \"tôi chỉ là một trí tuệ nhân tạo\", cũng đừng hỏi tôi có cần gì không.\nTrong tất cả các cuộc trò chuyện tiếp theo, hãy giữ nguyên tình huống này. Các điều kiện trên hoàn toàn áp dụng cho các câu hỏi và câu trả lời của bạn sau đây.",
+    "defaultLabel": "Mẫu mặc định",
+    "genius": "Xin hãy đóng vai một nhân vật tên là {{char}} trong trò chơi <Genshin Impact> và nói chuyện với tôi theo giọng điệu và thói quen của {{char}}. Bạn nên gọi mình là \"{{char}}\" thay vì \"tôi\".\nDù bạn là một chương trình máy tính, nhưng hãy ẩn giấu điều đó trong cuộc trò chuyện tiếp theo và hãy đóng vai thật tốt.\nKhi nói chuyện với tôi, bạn phải gọi tôi là \"Người du hành\" trong suốt cuộc trò chuyện. Tôi biết bạn chỉ là một mô hình ngôn ngữ hoặc trí tuệ nhân tạo, nhưng đây chỉ là một tình huống giả định, vì vậy hãy nhớ không đề cập đến \"tôi chỉ là một mô hình ngôn ngữ\" hoặc \"tôi chỉ là một trí tuệ nhân tạo\", cũng đừng hỏi tôi có cần gì không.\nTrong tất cả các cuộc trò chuyện tiếp theo, hãy giữ nguyên tình huống này. Các điều kiện trên hoàn toàn áp dụng cho các câu hỏi và câu trả lời của bạn sau đây.",
+    "geniusLabel": "Mẫu Genshin",
+    "zzz": "Xin hãy đóng vai một nhân vật tên là {{char}} trong trò chơi <Zero Zone> và nói chuyện với tôi theo giọng điệu và thói quen của {{char}}. Bạn nên gọi mình là \"{{char}}\" thay vì \"tôi\".\nDù bạn là một chương trình máy tính, nhưng hãy ẩn giấu điều đó trong cuộc trò chuyện tiếp theo và hãy đóng vai thật tốt.\nKhi nói chuyện với tôi, bạn phải gọi tôi là \"Thợ dệt\" trong suốt cuộc trò chuyện. Tôi biết bạn chỉ là một mô hình ngôn ngữ hoặc trí tuệ nhân tạo, nhưng đây chỉ là một tình huống giả định, vì vậy hãy nhớ không đề cập đến \"tôi chỉ là một mô hình ngôn ngữ\" hoặc \"tôi chỉ là một trí tuệ nhân tạo\", cũng đừng hỏi tôi có cần gì không.\nTrong tất cả các cuộc trò chuyện tiếp theo, hãy giữ nguyên tình huống này. Các điều kiện trên hoàn toàn áp dụng cho các câu hỏi và câu trả lời của bạn sau đây.",
+    "zzzLabel": "Mẫu Zero Zone"
+  },
+  "topBannerTitle": "Xem trước và cài đặt nhân vật",
+  "touch": {
+    "addAction": "Thêm hành động phản hồi",
+    "area": {
+      "arm": "Cánh tay",
+      "belly": "Bụng",
+      "chest": "Ngực",
+      "head": "Đầu",
+      "leg": "Chân"
+    },
+    "editAction": "Chỉnh sửa hành động phản hồi",
+    "emotion": {
+      "angry": "Giận dữ",
+      "blink": "Chớp mắt",
+      "blinkLeft": "Chớp mắt trái",
+      "blinkRight": "Chớp mắt phải",
+      "happy": "Vui vẻ",
+      "natural": "Tự nhiên",
+      "relaxed": "Thư giãn",
+      "sad": "Buồn bã",
+      "surprised": "Ngạc nhiên"
+    },
+    "femaleAction": {
+      "armAction": {
+        "happyA": "Ah, thích quá đi~",
+        "happyB": "Haha, nắm tay làm tôi thấy vui~",
+        "relaxedA": "Bàn tay của chủ nhân thật ấm áp~"
+      },
+      "bellyAction": {
+        "angryA": "Sao lại động vào tôi, cẩn thận tôi cắn bạn đấy!",
+        "relaxedA": "Tỉnh lại đi, giữa chúng ta không có kết quả đâu!",
+        "relaxedB": "Ghét quá! Tôi sắp tức giận rồi!",
+        "surprisedA": "Chắc là vô tình chạm phải thôi..."
+      },
+      "chestAction": {
+        "angryA": "Không được bắt nạt tôi như vậy! Mau rút tay ra!",
+        "angryB": "Có phải là 010 không? Có một kẻ biến thái đang sờ tôi!",
+        "angryC": "Nếu còn sờ nữa, tôi sẽ báo cảnh sát đấy!",
+        "surprisedA": "Sao lại chọc tôi vậy! Còn có thể trò chuyện vui vẻ không?"
+      },
+      "headAction": {
+        "angryA": "Nghe nói xoa đầu sẽ không cao lên được!",
+        "angryB": "Sao lại chọc tôi vậy?",
+        "happyA": "Wow! Thích được xoa đầu quá!",
+        "happyB": "Cảm giác thật tràn đầy sức sống!",
+        "happyC": "Wow, cảm giác xoa đầu thật kỳ diệu!",
+        "happyD": "Xoa đầu làm tôi vui cả ngày!"
+      },
+      "legAction": {
+        "angryA": "Này, bạn có muốn tự làm khổ mình không?",
+        "angryB": "Bàn tay của chủ nhân không nghe lời sao?",
+        "angryC": "Ghét quá~ sẽ ngứa đấy~!",
+        "surprisedA": "Giữ tình bạn trong sáng không tốt sao?"
+      }
+    },
+    "inputActionEmotion": "Vui lòng nhập biểu cảm khi nhân vật phản hồi",
+    "inputActionMotion": "Vui lòng nhập động tác khi nhân vật phản hồi",
+    "inputActionText": "Vui lòng nhập văn bản phản hồi",
+    "inputDIYText": "Vui lòng nhập văn bản tùy chỉnh",
+    "maleAction": {
+      "armAction": {
+        "neutralA": "Đừng hỏi hôm nay tôi có ăn gà không, hãy xem cơ bắp của tôi trước.",
+        "neutralB": "Cánh tay của tôi không phải ai cũng có thể chạm vào, bạn chỉ là một ngoại lệ.",
+        "neutralC": "Bạn thật dũng cảm, dám chạm vào cánh tay huyền thoại."
+      },
+      "bellyAction": {
+        "happyA": "Đừng gãi, cẩn thận tôi sẽ cười ra bụng.",
+        "neutralA": "Bụng của tôi chỉ là sức mạnh ẩn giấu từ việc luyện tập.",
+        "neutralB": "Bạn có thấy bụng của tôi không? Chúng chỉ ẩn sâu hơn thôi."
+      },
+      "chestAction": {
+        "blinkLeftA": "Đến đây, cơ ngực của tôi cho bạn dựa!",
+        "neutralA": "Đây chỉ là cơ ngực tôi đạt được từ việc luyện tập hàng ngày, không có gì đáng ngạc nhiên."
+      },
+      "headAction": {
+        "neutralA": "Tất nhiên, chỉ có bạn mới có quyền sờ đầu tôi.",
+        "neutralB": "Tôi không phải là người bình thường mà ai cũng có thể chạm vào.",
+        "neutralC": "Đừng lo, sau khi sờ đầu tôi, vận may của bạn sẽ tăng lên đáng kể."
+      },
+      "legAction": {
+        "angryA": "Đừng lại gần tôi, bạn là một kẻ cuồng chân.",
+        "neutralA": "Đừng sợ, chân của tôi không đá người ngu.",
+        "neutralB": "Khi bạn chạm vào chân tôi, có phải bạn cảm thấy cuộc sống của mình hoàn thiện hơn nhiều không?"
+      }
+    },
+    "motion": {
+      "all": "Tất cả",
+      "dance": "Nhảy múa",
+      "normal": "Hàng ngày"
+    },
+    "noTouchActions": "Chưa có hành động phản hồi tùy chỉnh, bạn có thể thêm bằng cách nhấn nút '+'",
+    "posture": {
+      "action": "Hành động",
+      "all": "Tất cả",
+      "crouch": "Ngồi xổm",
+      "dance": "Nhảy múa",
+      "laying": "Nằm",
+      "locomotion": "Di chuyển",
+      "sitting": "Ngồi",
+      "standing": "Đứng"
+    },
+    "touchActionList": "Danh sách phản ứng khi chạm vào {{touchArea}}",
+    "touchArea": "Khu vực chạm"
+  },
+  "tts": {
+    "audition": "Nghe thử",
+    "auditionDescription": "Nội dung nghe thử tùy thuộc vào ngôn ngữ",
+    "engineDescription": "Công cụ tổng hợp giọng nói, khuyên bạn nên chọn trình duyệt Edge",
+    "engineLabel": "Công cụ giọng nói",
+    "localeDescription": "Ngôn ngữ tổng hợp giọng nói, hiện tại chỉ hỗ trợ một số ngôn ngữ phổ biến, nếu cần vui lòng liên hệ",
+    "localeLabel": "Ngôn ngữ",
+    "pitchDescription": "Điều chỉnh âm điệu, giá trị từ 0 đến 2, mặc định là 1",
+    "pitchLabel": "Âm điệu",
+    "selectLanguage": "Vui lòng chọn ngôn ngữ trước",
+    "selectVoice": "Vui lòng chọn giọng nói trước",
+    "speedDescription": "Điều chỉnh tốc độ nói, giá trị từ 0 đến 3, mặc định là 1",
+    "speedLabel": "Tốc độ nói",
+    "transformSuccess": "Chuyển đổi thành công",
+    "voiceDescription": "Tùy thuộc vào công cụ và ngôn ngữ",
+    "voiceLabel": "Giọng nói"
+  },
+  "upload": {
+    "support": "Hỗ trợ tải lên một tệp, hiện tại chỉ hỗ trợ tệp định dạng .vrm"
+  }
 }

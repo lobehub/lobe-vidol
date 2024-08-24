@@ -42,7 +42,7 @@ const Container = (props: PropsWithChildren<ContainerProps>) => {
     footer,
   } = props;
   const { styles } = useStyles();
-  const { t } = useTranslation('chat');
+  const { t } = useTranslation('common');
 
   const { attributes, listeners, transform, setNodeRef, setActivatorNodeRef } = useDraggable({
     id: 'draggable',

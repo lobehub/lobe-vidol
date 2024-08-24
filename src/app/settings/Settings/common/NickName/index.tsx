@@ -12,7 +12,7 @@ interface Props {
 
 const NickName = memo<Props>((props) => {
   const { style } = props;
-  const { t } = useTranslation('features');
+  const { t } = useTranslation('settings');
 
   const [nickName, setNickName] = useSettingStore(
     (s) => [s.config.nickName, s.setNickName],
@@ -23,7 +23,7 @@ const NickName = memo<Props>((props) => {
     <Input
       style={style}
       value={nickName}
-      placeholder={t('settings.nickName')}
+      placeholder={t('common.chat.nickName.placeholder')}
       maxLength={MAX_NAME_LENGTH}
       showCount
       onChange={(e) => {

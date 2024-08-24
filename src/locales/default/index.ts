@@ -1,25 +1,21 @@
 import chat from './chat';
 import common from './common';
-import constants from './constants';
+import dance from './dance';
 import error from './error';
-import features from './features';
-import layout from './layout';
-import my from './my';
-import panel from './panel';
+import market from './market';
 import role from './role';
+import settings from './settings';
 import welcome from './welcome';
 
 const resources = {
-  my,
   chat,
   common,
   error,
+  dance,
   role,
   welcome,
-  constants,
-  layout,
-  panel,
-  features,
+  market,
+  settings,
 } as const;
 
 export default resources;

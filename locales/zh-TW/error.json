@@ -1,17 +1,17 @@
 {
-  "apiKeyMiss": "OpenAI API Key 空缺，請添加自訂 OpenAI API Key",
+  "apiKeyMiss": "OpenAI API Key 為空，請添加自訂的 OpenAI API Key",
   "error": "錯誤",
   "errorTip": {
-    "clearSession": "清除會話訊息",
-    "description": "項目目前正在施工中，不保證數據穩定性，如果遇到問題可以嘗試",
-    "forgive": "，造成不便敬請諒解",
+    "clearSession": "清除會話消息",
+    "description": "專案目前正在施工中，不保證數據穩定性，如果遇到問題可以嘗試",
+    "forgive": "，造成不便敬請見諒",
     "or": "或",
     "problem": "頁面遇到一點問題...",
-    "resetSystem": "重置系統設定"
+    "resetSystem": "重置系統設置"
   },
-  "fileUploadError": "檔案上傳失敗，請稍後重試",
+  "fileUploadError": "檔案上傳失敗，請稍後再試",
   "goBack": "返回首頁",
-  "openaiError": "OpenAI API 錯誤，请檢查 OpenAI API Key 和 Endpoint 是否正確",
+  "openaiError": "OpenAI API 錯誤，請檢查 OpenAI API 金鑰和端點是否正確",
   "reload": "重新載入",
   "s3envError": "S3 環境變數未完全設定，請檢查您的環境變數",
   "serverError": "伺服器錯誤，請聯絡管理員",

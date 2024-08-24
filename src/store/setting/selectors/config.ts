@@ -19,7 +19,7 @@ const getTouchActionsByGenderAndArea = (
   touchArea: TouchAreaEnum,
 ): TouchAction[] => {
   const items = s.config.touch?.[gender]?.[touchArea] || [];
-  return items.map((item) => ({ ...item, text: t(item.text, { ns: 'constants' }) || item.text }));
+  return items.map((item) => ({ ...item, text: t(item.text, { ns: 'role' }) || item.text }));
 };
 
 export const configSelectors = {

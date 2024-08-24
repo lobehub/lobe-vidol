@@ -1,15 +1,83 @@
 {
+  "actions": {
+    "add": "Hinzufügen",
+    "copy": "Kopieren",
+    "copySuccess": "Erfolgreich kopiert",
+    "del": "Löschen",
+    "delAndRegenerate": "Löschen und neu generieren",
+    "edit": "Bearbeiten",
+    "goBottom": "Zum Ende gehen",
+    "regenerate": "Neu generieren",
+    "save": "Speichern",
+    "share": "Teilen"
+  },
+  "animation": {
+    "animationList": "Animationsliste",
+    "postureList": "Haltungsliste",
+    "totalCount": "Insgesamt {{total}} Elemente"
+  },
+  "apiKey": {
+    "addProxy": "Fügen Sie die OpenAI-Proxy-Adresse hinzu (optional)",
+    "closeTip": "Hinweis schließen",
+    "confirmRetry": "Bestätigen und erneut versuchen",
+    "startDesc": "Geben Sie Ihren OpenAI API-Schlüssel ein, um das Gespräch zu beginnen. Die Anwendung wird Ihren API-Schlüssel nicht speichern.",
+    "startTitle": "Benutzerdefinierter API-Schlüssel"
+  },
   "chat": "Chat",
-  "chatDialog": {
-    "close": "Close"
+  "delSession": "Sitzung löschen",
+  "delSessionAlert": "Möchten Sie den Chat wirklich löschen? Nach dem Löschen kann er nicht wiederhergestellt werden, bitte seien Sie vorsichtig!",
+  "history": {
+    "action": "Kontext löschen",
+    "alert": "Möchten Sie die historischen Nachrichten wirklich löschen?",
+    "tip": "Diese Aktion ist nicht umkehrbar, bitte vorsichtig handeln.",
+    "title": "Chatverlauf"
   },
-  "dance": "Tanz",
-  "header": {
-    "role": "Rolle",
-    "session": "Sitzung"
+  "info": {
+    "chat": "Chat",
+    "dance": "Tanz",
+    "motions": "Bewegungen",
+    "posture": "Haltung"
   },
-  "helloChat": "Hallo, lass uns chatten",
-  "helloDance": "Hallo, lass uns tanzen",
-  "market": "Entdecken",
-  "selectRole": "Wähle eine Rolle"
+  "input": {
+    "alert": "Bitte beachten Sie: Alles, was der Agent sagt, wird von KI generiert",
+    "placeholder": "Bitte geben Sie Ihren Inhalt ein, um zu chatten",
+    "send": "Senden",
+    "warp": "Umbruch"
+  },
+  "selectModel": "Bitte wählen Sie ein Modell aus",
+  "sessionCreate": "Chat erstellen",
+  "sessionList": "Sitzungsliste",
+  "share": {
+    "downloadScreenshot": "Screenshot herunterladen",
+    "imageType": "Bildformat",
+    "screenshot": "Screenshot",
+    "share": "Teilen",
+    "shareGPT": "ShareGPT teilen",
+    "shareToGPT": "ShareGPT-Link generieren",
+    "withBackground": "Mit Hintergrundbild",
+    "withFooter": "Mit Fußzeile",
+    "withSystemRole": "Mit Assistentenrollen-Einstellungen"
+  },
+  "token": {
+    "overload": "Token überlastet",
+    "remained": "Verbleibende Token",
+    "tokenCount": "Anzahl der Token",
+    "useToken": "Berechnung der verbrauchten Token-Anzahl, einschließlich Nachrichten, Rolleneinstellungen und Kontext: {{usedTokens}} / {{maxValue}}",
+    "used": "Verwendete Token"
+  },
+  "toolBar": {
+    "axes": "Achsen",
+    "cameraControl": "Kamerasteuerung",
+    "cameraHelper": "Kamerahilfe",
+    "downloading": "Modell wird heruntergeladen, bitte warten...",
+    "floor": "Boden wechseln",
+    "grid": "Raster",
+    "resetCamera": "Kamera zurücksetzen",
+    "resetToIdle": "Tanzbewegungen stoppen",
+    "screenShot": "Foto aufnehmen"
+  },
+  "tts": {
+    "combine": "Sprachsynthese",
+    "record": "Spracherkennung (benötigt wissenschaftliches Surfen)"
+  }
 }

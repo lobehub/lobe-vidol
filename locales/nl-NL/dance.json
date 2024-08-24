@@ -1,0 +1,17 @@
+{
+  "actions": {
+    "pause": "Pauzeren",
+    "play": "Afspelen"
+  },
+  "addPlay": "Toevoegen aan lijst",
+  "addPlaySuccess": "Toegevoegd aan afspeellijst",
+  "cancelAddPlay": "Weet je zeker dat je de muziek {{musicName}} wilt annuleren?",
+  "cancelSubscribed": "Abonnement annuleren",
+  "confirmClearPlayList": "Weet je zeker dat je de afspeellijst wilt wissen?",
+  "dance": "dansen",
+  "danceList": "Danslijst",
+  "findDance": "Vind je favoriete dans",
+  "musicAndDance": "Dansmarkt",
+  "noPlayList": "Er is momenteel geen afspeellijst. U kunt zich abonneren op uw favoriete dansen via de markt.",
+  "play": "Afspelen"
+}

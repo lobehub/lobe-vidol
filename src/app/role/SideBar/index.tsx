@@ -2,8 +2,9 @@ import { DraggablePanel } from '@lobehub/ui';
 import { createStyles } from 'antd-style';
 
 import { HEADER_HEIGHT, SIDEBAR_MAX_WIDTH, SIDEBAR_WIDTH } from '@/constants/token';
-import RoleList from '@/features/RoleList';
 import { useGlobalStore } from '@/store/global';
+
+import RoleList from './RoleList';
 
 const useStyles = createStyles(({ css }) => ({
   content: css`
@@ -33,7 +34,6 @@ const SideBar = () => {
       onExpandChange={(expand) => setRoleList(expand)}
       expand={showRoleList}
     >
-      {/*<Header.tsx />*/}
       <RoleList />
     </DraggablePanel>
   );

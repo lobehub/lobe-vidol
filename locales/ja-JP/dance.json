@@ -1,0 +1,17 @@
+{
+  "actions": {
+    "pause": "一時停止",
+    "play": "再生"
+  },
+  "addPlay": "リストに追加",
+  "addPlaySuccess": "プレイリストに追加されました",
+  "cancelAddPlay": "音楽{{musicName}}の購読をキャンセルしてもよろしいですか？",
+  "cancelSubscribed": "購読をキャンセル",
+  "confirmClearPlayList": "プレイリストをクリアしてもよろしいですか？",
+  "dance": "ダンス",
+  "danceList": "ダンスリスト",
+  "findDance": "お気に入りのダンスを見つけてください",
+  "musicAndDance": "ダンス市場",
+  "noPlayList": "再生リストはありません。お気に入りのダンスを市場で購読できます。",
+  "play": "再生"
+}

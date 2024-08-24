@@ -1,20 +1,20 @@
 {
-  "apiKeyMiss": "OpenAI API-Schlüssel fehlt. Bitte fügen Sie Ihren benutzerdefinierten OpenAI API-Schlüssel hinzu.",
+  "apiKeyMiss": "Der OpenAI API-Schlüssel ist leer. Bitte fügen Sie einen benutzerdefinierten OpenAI API-Schlüssel hinzu.",
   "error": "Fehler",
   "errorTip": {
-    "clearSession": "Sitzung löschen",
-    "description": "Das Projekt befindet sich derzeit im Aufbau. Die Datenstabilität kann nicht garantiert werden. Wenn Probleme auftreten, können Sie es versuchen",
-    "forgive": ", wir bitten um Ihr Verständnis für eventuelle Unannehmlichkeiten",
+    "clearSession": "Sitzungsnachrichten löschen",
+    "description": "Das Projekt befindet sich derzeit in der Entwicklung, die Stabilität der Daten kann nicht garantiert werden. Wenn Sie auf Probleme stoßen, können Sie versuchen",
+    "forgive": "Wir bitten um Entschuldigung für die Unannehmlichkeiten.",
     "or": "oder",
-    "problem": "Es gab ein Problem mit der Seite...",
+    "problem": "Es gab ein kleines Problem mit der Seite...",
     "resetSystem": "Systemeinstellungen zurücksetzen"
   },
-  "fileUploadError": "Dateiupload fehlgeschlagen. Bitte versuchen Sie es später erneut.",
-  "goBack": "Zurück zur Startseite",
-  "openaiError": "OpenAI API-Fehler. Bitte überprüfen Sie den OpenAI API-Schlüssel und den Endpunkt.",
+  "fileUploadError": "Datei-Upload fehlgeschlagen, bitte versuchen Sie es später erneut.",
+  "goBack": "Zur Startseite zurück",
+  "openaiError": "OpenAI API-Fehler, bitte überprüfen Sie, ob der OpenAI API-Schlüssel und der Endpunkt korrekt sind.",
   "reload": "Neu laden",
-  "s3envError": "S3-Umgebungsvariablen sind nicht vollständig konfiguriert. Bitte überprüfen Sie Ihre Umgebungsvariablen.",
-  "serverError": "Serverfehler. Bitte kontaktieren Sie den Administrator.",
+  "s3envError": "Die S3-Umgebungsvariablen sind nicht vollständig gesetzt. Bitte überprüfen Sie Ihre Umgebungsvariablen.",
+  "serverError": "Serverfehler, bitte kontaktieren Sie den Administrator",
   "triggerError": "Fehler auslösen",
   "unknownError": "Unbekannter Fehler"
 }

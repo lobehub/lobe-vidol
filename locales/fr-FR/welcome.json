@@ -2,11 +2,11 @@
   "agent": {
     "hello": "Bonjour !",
     "meta": {
-      "description": "Ceci est un personnage personnalisé.",
-      "name": "Personnage personnalisé"
+      "description": "Ceci est un rôle personnalisé",
+      "name": "Rôle personnalisé"
     }
   },
   "greet": "Bonjour, je suis {{name}}, comment puis-je vous aider ?",
-  "loadingTitle": "Initialisation de l'application en cours, veuillez patienter...",
-  "waitting": "Je prépare tout mon monde pour toi"
+  "loadingTitle": "Initialisation de l'application, veuillez patienter...",
+  "waiting": "Je prépare tout mon monde pour toi"
 }

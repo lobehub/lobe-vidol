@@ -6,7 +6,7 @@
       "name": "Personagem Personalizado"
     }
   },
-  "greet": "Olá, eu sou {{name}}, como posso te ajudar?",
-  "loadingTitle": "Inicializando o aplicativo, por favor aguarde...",
-  "waitting": "Preparando todo o meu mundo para você"
+  "greet": "Olá, eu sou {{name}}, como posso ajudá-lo?",
+  "loadingTitle": "Aplicação em inicialização, por favor aguarde...",
+  "waiting": "Estou preparando todo o meu mundo para você"
 }

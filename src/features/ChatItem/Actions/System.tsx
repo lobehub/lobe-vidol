@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import type { RenderAction } from '@/features/ChatItem/type';
 
 const SystemActionsBar: RenderAction = ({ onActionClick }) => {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation('chat');
   const { del } = useChatListActionsBar({
     delete: t('actions.del'),
   });

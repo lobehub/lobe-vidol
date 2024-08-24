@@ -1,20 +1,20 @@
 {
-  "apiKeyMiss": "OpenAI API Key está vazio, por favor adicione sua chave de API personalizada OpenAI",
+  "apiKeyMiss": "A chave da API OpenAI está vazia. Por favor, adicione uma chave da API OpenAI personalizada.",
   "error": "Erro",
   "errorTip": {
     "clearSession": "Limpar mensagens da sessão",
-    "description": "O projeto está em andamento e a estabilidade dos dados não é garantida. Se encontrar problemas, pode tentar",
-    "forgive": ", pedimos desculpas pelo inconveniente causado",
+    "description": "O projeto está atualmente em construção, não garantimos a estabilidade dos dados. Se você encontrar problemas, pode tentar",
+    "forgive": " , pedimos desculpas pelo inconveniente",
     "or": "ou",
-    "problem": "A página encontrou um problema...",
+    "problem": "A página encontrou um pequeno problema...",
     "resetSystem": "Redefinir configurações do sistema"
   },
-  "fileUploadError": "Falha ao enviar o arquivo, por favor, tente novamente mais tarde",
-  "goBack": "Voltar",
-  "openaiError": "Erro na API OpenAI, por favor verifique se a chave da API OpenAI e o Endpoint estão corretos",
+  "fileUploadError": "Falha ao enviar o arquivo, por favor tente novamente mais tarde",
+  "goBack": "Voltar para a página inicial",
+  "openaiError": "Erro da API OpenAI, por favor verifique se a chave da API OpenAI e o endpoint estão corretos",
   "reload": "Recarregar",
-  "s3envError": "Variáveis de ambiente S3 não estão totalmente configuradas, por favor verifique suas variáveis de ambiente",
-  "serverError": "Erro do servidor, por favor entre em contato com o administrador",
+  "s3envError": "As variáveis de ambiente S3 não estão completamente configuradas, por favor verifique suas variáveis de ambiente",
+  "serverError": "Erro no servidor, por favor entre em contato com o administrador",
   "triggerError": "Erro acionado",
   "unknownError": "Erro desconhecido"
 }

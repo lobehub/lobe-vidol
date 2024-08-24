@@ -35,65 +35,74 @@ const useStyles = createStyles(({ css }) => ({
 const CommonConfig = (props: CommonConfigProps) => {
   const { style, className } = props;
   const { styles } = useStyles();
-  const { t } = useTranslation('common');
-  t('words.');
+  const { t } = useTranslation('settings');
   return (
     <div className={classNames(styles.config, className)} style={style}>
       <Form style={{ display: 'flex', flexGrow: 1 }}>
-        <FormGroup icon={User2Icon} title={t('words.chatSetting')}>
-          <FormItem desc={t('words.DIYAvatar')} divider label={t('words.avatar')} name={'avatar'}>
+        <FormGroup icon={User2Icon} title={t('common.chat.title')}>
+          <FormItem
+            desc={t('common.chat.avatar.desc')}
+            divider
+            label={t('common.chat.avatar.title')}
+            name={'avatar'}
+          >
             <AvatarWithUpload />
           </FormItem>
           <FormItem
-            desc={t('words.DIYNickname')}
+            desc={t('common.chat.nickName.desc')}
             divider
-            label={t('words.nickname')}
+            label={t('common.chat.nickName.desc')}
             name={'nickName'}
           >
             <NickName />
           </FormItem>
         </FormGroup>
-        <FormGroup icon={Settings2} title={t('words.topicSetting')}>
-          <FormItem divider label={t('words.localeSetting')} name={'localeSetting'}>
+        <FormGroup icon={Settings2} title={t('common.theme.title')}>
+          <FormItem
+            divider
+            label={t('common.theme.locale.title')}
+            desc={t('common.theme.locale.desc')}
+            name={'localeSetting'}
+          >
             <LocaleSetting style={{ width: '200px' }} />
           </FormItem>
           <FormItem
-            desc={t('words.DIYTopicColor')}
+            desc={t('common.theme.primaryColor.desc')}
             divider
-            label={t('words.topicColor')}
+            label={t('common.theme.primaryColor.title')}
             name={'primaryColor'}
           >
             <ThemeSwatchesPrimary />
           </FormItem>
           <FormItem
-            desc={t('words.DIYColor')}
+            desc={t('common.theme.neutralColor.desc')}
             divider
-            label={t('words.midColor')}
+            label={t('common.theme.neutralColor.title')}
             name={'neutralColor'}
           >
             <ThemeSwatchesNeutral />
           </FormItem>
           <FormItem
-            desc={t('words.DIYBackgroundEffect')}
+            desc={t('common.theme.backgroundEffect.desc')}
             divider
-            label={t('words.backgroundEffect')}
+            label={t('common.theme.backgroundEffect.title')}
             name={'backgroundEffect'}
           >
             <BackgroundEffect />
           </FormItem>
         </FormGroup>
-        <FormGroup icon={Monitor} title={t('words.systemSetting')}>
+        <FormGroup icon={Monitor} title={t('common.system.title')}>
           <FormItem
-            desc={t('words.clearAllSessionDesc')}
+            desc={t('common.system.clear.desc')}
             divider
-            label={t('words.clearAllSession')}
+            label={t('common.system.clear.title')}
           >
             <ClearSession />
           </FormItem>
           <FormItem
-            desc={t('words.resetSystemSettingDesc')}
+            desc={t('common.system.reset.desc')}
             divider
-            label={t('words.resetSystemSetting')}
+            label={t('common.system.reset.title')}
           >
             <ResetConfig />
           </FormItem>

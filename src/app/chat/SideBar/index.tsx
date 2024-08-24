@@ -2,8 +2,9 @@ import { DraggablePanel } from '@lobehub/ui';
 import { createStyles } from 'antd-style';
 
 import { SIDEBAR_MAX_WIDTH, SIDEBAR_WIDTH } from '@/constants/token';
-import SessionList from '@/features/SessionList';
 import { useGlobalStore } from '@/store/global';
+
+import SessionList from './SessionList';
 
 const useStyles = createStyles(({ css }) => ({
   sidebar: css`
@@ -29,7 +30,6 @@ const SideBar = () => {
       onExpandChange={(expand) => setSessionList(expand)}
       expand={showSessionList}
     >
-      {/*<Header.tsx />*/}
       <SessionList />
     </DraggablePanel>
   );

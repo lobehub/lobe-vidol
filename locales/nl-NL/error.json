@@ -1,19 +1,19 @@
 {
-  "apiKeyMiss": "OpenAI API Key ontbreekt, voeg alstublieft uw aangepaste OpenAI API Key toe",
+  "apiKeyMiss": "OpenAI API-sleutel is leeg, voeg een aangepaste OpenAI API-sleutel toe",
   "error": "Fout",
   "errorTip": {
     "clearSession": "Sessieberichten wissen",
-    "description": "Het project is momenteel in aanbouw en de gegevensstabiliteit kan niet worden gegarandeerd. Als u problemen ondervindt, kunt u proberen",
-    "forgive": ", excuses voor het ongemak",
+    "description": "Het project is momenteel in aanbouw, de stabiliteit van de gegevens kan niet worden gegarandeerd. Als u problemen ondervindt, kunt u proberen",
+    "forgive": "Onze excuses voor het ongemak.",
     "or": "of",
-    "problem": "Er is een probleem opgetreden op de pagina...",
+    "problem": "Er is een klein probleem met de pagina...",
     "resetSystem": "Systeeminstellingen resetten"
   },
-  "fileUploadError": "Het uploaden van het bestand is mislukt. Probeer het later opnieuw.",
-  "goBack": "Terug naar startpagina",
-  "openaiError": "OpenAI API-fout, controleer of de OpenAI API Key en Endpoint correct zijn",
-  "reload": "Herladen",
-  "s3envError": "S3-omgevingsvariabelen zijn niet volledig ingesteld, controleer uw omgevingsvariabelen",
+  "fileUploadError": "Bestand uploaden mislukt, probeer het later opnieuw",
+  "goBack": "Terug naar de startpagina",
+  "openaiError": "OpenAI API-fout, controleer of de OpenAI API-sleutel en het eindpunt correct zijn",
+  "reload": "Opnieuw laden",
+  "s3envError": "S3-omgeving variabelen zijn niet volledig ingesteld, controleer uw omgevingsvariabelen",
   "serverError": "Serverfout, neem contact op met de beheerder",
   "triggerError": "Fout activeren",
   "unknownError": "Onbekende fout"

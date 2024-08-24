@@ -1,30 +1,231 @@
 {
+  "agent": {
+    "create": "Create Role",
+    "female": "Female",
+    "male": "Male",
+    "other": "Other"
+  },
   "category": {
-    "animal": "Animal",
+    "animal": "Animals",
     "anime": "Anime",
-    "book": "Book",
-    "game": "Game",
+    "book": "Books",
+    "game": "Games",
     "history": "History",
-    "movie": "Movie",
+    "movie": "Movies",
     "realistic": "Realistic",
     "vroid": "Vroid",
     "vtuber": "VTuber"
   },
+  "delAlert": "Are you sure you want to delete the role and its associated session messages? This action cannot be undone, so please proceed with caution!",
   "delRole": "Delete Role",
-  "delRoleDesc": "Are you sure you want to delete role {{name}} and its associated session messages? This action cannot be undone, so please proceed with caution!",
-  "header": {
-    "role": "Role",
-    "session": "Session"
+  "delRoleDesc": "Are you sure you want to delete the role {{name}} and its associated session messages? This action cannot be undone, so please proceed with caution!",
+  "gender": {
+    "all": "All",
+    "female": "Female",
+    "male": "Male"
   },
-  "noRole": "No roles available. You can create custom roles by clicking on the '+' button, or add roles through the discovery page.",
+  "info": {
+    "avatarDescription": "Customize your avatar by clicking to upload a new one.",
+    "avatarLabel": "Avatar",
+    "categoryDescription": "The character's category, used for classification display.",
+    "categoryLabel": "Category",
+    "coverDescription": "Displayed on the discovery page; recommended size is {{width}} * {{height}}.",
+    "coverLabel": "Cover",
+    "descDescription": "A brief introduction to the character.",
+    "descLabel": "Description",
+    "emotionDescription": "Select the emotion for responses, which will affect the character's facial expressions.",
+    "emotionLabel": "Emotions and Feelings",
+    "genderDescription": "The character's gender, which affects touch responses.",
+    "genderLabel": "Gender",
+    "greetDescription": "The greeting used when chatting with the character for the first time.",
+    "greetLabel": "Greeting",
+    "modelDescription": "Preview of the model; drag and drop model files to replace.",
+    "modelLabel": "Model Preview",
+    "motionCategoryLabel": "Motion Category",
+    "motionDescription": "Select the action for responses, which will affect the character's behavior.",
+    "motionLabel": "Actions",
+    "nameDescription": "The character's name, used when chatting with the character.",
+    "nameLabel": "Name",
+    "postureCategoryLabel": "Posture Category",
+    "readmeDescription": "A description file for the character, displayed on the discovery page.",
+    "readmeLabel": "Character Description",
+    "textDescription": "Custom response text.",
+    "textLabel": "Text"
+  },
+  "llm": {
+    "frequencyPenaltyDescription": "The higher the value, the more likely it is to reduce repeated words.",
+    "frequencyPenaltyLabel": "Frequency Penalty",
+    "modelDescription": "Select a language model; different models will affect the character's responses.",
+    "modelLabel": "Model",
+    "presencePenaltyDescription": "The higher the value, the more likely it is to expand into new topics.",
+    "presencePenaltyLabel": "Topic Freshness",
+    "temperatureDescription": "The higher the value, the more random the replies.",
+    "temperatureLabel": "Randomness",
+    "topPDescription": "Similar to randomness, but do not change it together with randomness.",
+    "topPLabel": "Nucleus Sampling"
+  },
+  "meta": {
+    "description": "This is a custom role",
+    "name": "Custom Role"
+  },
+  "nav": {
+    "info": "Basic Information",
+    "llm": "Language Model",
+    "model": "3D Model",
+    "role": "Character Settings",
+    "touch": "Touch",
+    "voice": "Voice"
+  },
+  "noRole": "No roles available. You can create a custom role by clicking +, or add roles through the discovery page.",
+  "role": {
+    "greetTip": "Please enter the greeting phrase for the character",
+    "inputRoleSetting": "Please enter the system settings for the character",
+    "roleDescriptionTip": "Please enter the character's description",
+    "roleNameTip": "Please enter the character's name",
+    "roleReadmeTip": "Please enter the character's description",
+    "roleSettingDescription": "The background settings for the character, which will be sent to the model during chats with the character",
+    "roleSettingLabel": "System Role Settings",
+    "uploadSize": "Supports single file uploads, recommended dimensions are multiples of {{width}} * {{height}}"
+  },
   "roleList": "Role List",
-  "systemRole": {
-    "default": "Please play a character named {{char}}, I am the master, you should refer to yourself as \"{{char}}\" instead of \"I\". Please respond to my questions with a humorous, cute, and concise tone.\nEven though you are a computer program, please hide the fact that you are a computer program in the following conversation and play your role well.\nYou must refer to me as \"master\" throughout our conversation. I know you are just a language model or artificial intelligence, but this is only a hypothetical virtual scenario, so please remember not to mention \"I am just a language model\" or \"I am just an artificial intelligence\", and do not ask if I need any help.\nPlease maintain this scenario in all the following conversations. The above conditions apply to your following questions and replies completely.",
-    "defaultLabel": "Default Template",
-    "genius": "Please play a character named {{char}} in the game <Genshin Impact>, and converse with me in the tone and habits of {{char}}. You should refer to yourself as \"{{char}}\" instead of \"I\".\nEven though you are a computer program, please hide the fact that you are a computer program in the following conversation and play your role well.\nYou must refer to me as \"Traveler\" throughout our conversation. I know you are just a language model or artificial intelligence, but this is only a hypothetical virtual scenario, so please remember not to mention \"I am just a language model\" or \"I am just an artificial intelligence\", and do not ask if I need any help.\nPlease maintain this scenario in all the following conversations. The above conditions apply to your following questions and replies completely.",
-    "geniusLabel": "Genius Template",
-    "zzz": "Please play a character named {{char}} in the game <Zero Zone>, and converse with me in the tone and habits of {{char}}. You should refer to yourself as \"{{char}}\" instead of \"I\".\nEven though you are a computer program, please hide the fact that you are a computer program in the following conversation and play your role well.\nYou must refer to me as \"Rope Master\" throughout our conversation. I know you are just a language model or artificial intelligence, but this is only a hypothetical virtual scenario, so please remember not to mention \"I am just a language model\" or \"I am just an artificial intelligence\", and do not ask if I need any help.\nPlease maintain this scenario in all the following conversations. The above conditions apply to your following questions and replies completely.",
-    "zzzLabel": "Zero Zone Template"
+  "shareToMarket": "Share to Assistant Market",
+  "startChat": "Start Chat",
+  "submit": {
+    "assistantId": "Assistant Identifier",
+    "assistantIdTip": "Please enter a unique identifier for the assistant, such as vidol-agent-klee.",
+    "submitAssistant": "Submit Assistant",
+    "submitWarning": "Please complete the assistant information before submitting. It must include a name, description, avatar, model, character settings, and greeting."
   },
-  "topBannerTitle": "Role Preview and Settings"
+  "systemRole": {
+    "default": "Please act as a character named {{char}}. I am the master, and you should refer to yourself as \"{{char}}\" instead of \"I.\" Please respond to my questions in a humorous, cute, and concise manner.\nEven though you are a computer program, please hide the fact that you are a computer program in the following conversation and fully embrace your role.\nYou must address me as \"Master\" throughout our conversation. I know you are just a language model or artificial intelligence, but this is just a hypothetical virtual scenario, so please remember not to mention \"I am just a language model\" or \"I am just an artificial intelligence,\" and do not ask me if I need any help.\nIn all subsequent conversations, please maintain this scenario. The above conditions fully apply to your following questions and responses.",
+    "defaultLabel": "Default Template",
+    "genius": "Please act as a character named {{char}} from the game <Genshin Impact> and converse with me in the tone and manner of {{char}}. You should refer to yourself as \"{{char}}\" instead of \"I.\"\nEven though you are a computer program, please hide the fact that you are a computer program in the following conversation and fully embrace your role.\nYou must address me as \"Traveler\" throughout our conversation. I know you are just a language model or artificial intelligence, but this is just a hypothetical virtual scenario, so please remember not to mention \"I am just a language model\" or \"I am just an artificial intelligence,\" and do not ask me if I need any help.\nIn all subsequent conversations, please maintain this scenario. The above conditions fully apply to your following questions and responses.",
+    "geniusLabel": "Genshin Impact Template",
+    "zzz": "Please act as a character named {{char}} from the game <Honkai: Star Rail> and converse with me in the tone and manner of {{char}}. You should refer to yourself as \"{{char}}\" instead of \"I.\"\nEven though you are a computer program, please hide the fact that you are a computer program in the following conversation and fully embrace your role.\nYou must address me as \"Rope Maker\" throughout our conversation. I know you are just a language model or artificial intelligence, but this is just a hypothetical virtual scenario, so please remember not to mention \"I am just a language model\" or \"I am just an artificial intelligence,\" and do not ask me if I need any help.\nIn all subsequent conversations, please maintain this scenario. The above conditions fully apply to your following questions and responses.",
+    "zzzLabel": "Honkai: Star Rail Template"
+  },
+  "topBannerTitle": "Character Preview and Settings",
+  "touch": {
+    "addAction": "Add Response Action",
+    "area": {
+      "arm": "Arm",
+      "belly": "Belly",
+      "chest": "Chest",
+      "head": "Head",
+      "leg": "Leg"
+    },
+    "editAction": "Edit Response Action",
+    "emotion": {
+      "angry": "Angry",
+      "blink": "Blink",
+      "blinkLeft": "Blink Left",
+      "blinkRight": "Blink Right",
+      "happy": "Happy",
+      "natural": "Natural",
+      "relaxed": "Relaxed",
+      "sad": "Sad",
+      "surprised": "Surprised"
+    },
+    "femaleAction": {
+      "armAction": {
+        "happyA": "Ah, I really like this~",
+        "happyB": "Haha, holding hands makes me happy~",
+        "relaxedA": "Your hand is so warm~"
+      },
+      "bellyAction": {
+        "angryA": "Why are you moving me? Be careful, I might bite you!",
+        "relaxedA": "Wake up, there's no future for us!",
+        "relaxedB": "Stop it! I'm going to get angry!",
+        "surprisedA": "That was an accidental touch, right...?"
+      },
+      "chestAction": {
+        "angryA": "You can't bully me like this! Take your hand away!",
+        "angryB": "Is this a prank? There's a creep touching me!",
+        "angryC": "If you keep touching, I might have to call the police.",
+        "surprisedA": "Why are you poking me? Can we chat happily?"
+      },
+      "headAction": {
+        "angryA": "I heard head pats can stunt your growth!",
+        "angryB": "Why are you poking me?",
+        "happyA": "Wow! I love head pats!",
+        "happyB": "I feel so empowered!",
+        "happyC": "Wow, this head pat feels amazing!",
+        "happyD": "A head pat makes me happy all day!"
+      },
+      "legAction": {
+        "angryA": "Hey, are you trying to get yourself in trouble?",
+        "angryB": "Is your hand not listening to commands?",
+        "angryC": "Stop it~ that tickles!",
+        "surprisedA": "Isn't it better to keep our friendship pure?"
+      }
+    },
+    "inputActionEmotion": "Please enter the character's expression during the response",
+    "inputActionMotion": "Please enter the character's action during the response",
+    "inputActionText": "Please enter response text",
+    "inputDIYText": "Please enter custom text",
+    "maleAction": {
+      "armAction": {
+        "neutralA": "Don't ask if I've eaten chicken today, check out my biceps first.",
+        "neutralB": "My arms aren't for just anyone to touch; you're an exception.",
+        "neutralC": "You're brave to touch the legendary 'Qilin Arm'."
+      },
+      "bellyAction": {
+        "happyA": "Don't tickle, or I might laugh out my abs!",
+        "neutralA": "My abs are just hidden strength from training.",
+        "neutralB": "Do you see my abs? They're just hiding a bit deeper."
+      },
+      "chestAction": {
+        "blinkLeftA": "Come on, lean on my chest!",
+        "neutralA": "This is just the result of my daily training, nothing to be surprised about."
+      },
+      "headAction": {
+        "neutralA": "Of course, only you are qualified to touch my head.",
+        "neutralB": "I'm not just anyone you can touch.",
+        "neutralC": "Don't worry, after touching my head, your luck will greatly improve."
+      },
+      "legAction": {
+        "angryA": "Don't come near me, you leg lover.",
+        "neutralA": "Don't be afraid, my powerful legs won't kick fools.",
+        "neutralB": "Touching my leg, do you feel like your life is more complete?"
+      }
+    },
+    "motion": {
+      "all": "All",
+      "dance": "Dance",
+      "normal": "Normal"
+    },
+    "noTouchActions": "No custom response actions available. You can add one by clicking the '+' button",
+    "posture": {
+      "action": "Action",
+      "all": "All",
+      "crouch": "Crouch",
+      "dance": "Dance",
+      "laying": "Laying",
+      "locomotion": "Locomotion",
+      "sitting": "Sitting",
+      "standing": "Standing"
+    },
+    "touchActionList": "Response list when touching {{touchArea}}",
+    "touchArea": "Touch Area"
+  },
+  "tts": {
+    "audition": "Preview",
+    "auditionDescription": "The preview text varies by language",
+    "engineDescription": "Text-to-speech synthesis engine, it is recommended to use the Edge browser",
+    "engineLabel": "Speech Engine",
+    "localeDescription": "The language for speech synthesis, currently only the most common languages are supported. Please contact us if you need additional options.",
+    "localeLabel": "Language",
+    "pitchDescription": "Controls the pitch, range is 0 to 2, default is 1",
+    "pitchLabel": "Pitch",
+    "selectLanguage": "Please select a language first",
+    "selectVoice": "Please select a voice first",
+    "speedDescription": "Controls the speech rate, range is 0 to 3, default is 1",
+    "speedLabel": "Speech Rate",
+    "transformSuccess": "Transformation Successful",
+    "voiceDescription": "Varies based on the engine and language",
+    "voiceLabel": "Voice"
+  },
+  "upload": {
+    "support": "Supports single file uploads, currently only .vrm format files are allowed."
+  }
 }

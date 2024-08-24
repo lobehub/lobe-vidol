@@ -1,0 +1,17 @@
+{
+  "actions": {
+    "pause": "Pause",
+    "play": "Jouer"
+  },
+  "addPlay": "Ajouter à la liste",
+  "addPlaySuccess": "Ajouté à la liste de lecture",
+  "cancelAddPlay": "Êtes-vous sûr de vouloir annuler l'abonnement à la musique {{musicName}} ?",
+  "cancelSubscribed": "Annuler l'abonnement",
+  "confirmClearPlayList": "Êtes-vous sûr de vouloir vider la liste de lecture ?",
+  "dance": "danser",
+  "danceList": "Liste de danses",
+  "findDance": "Trouvez votre danse préférée",
+  "musicAndDance": "Marché de la danse",
+  "noPlayList": "Aucune liste de lecture disponible. Vous pouvez vous abonner à vos danses préférées sur le marché.",
+  "play": "Jouer"
+}

@@ -1,0 +1,84 @@
+{
+  "common": {
+    "chat": {
+      "avatar": {
+        "desc": "Avatar personnalisé",
+        "title": "Avatar"
+      },
+      "nickName": {
+        "desc": "Surnom personnalisé",
+        "placeholder": "Veuillez entrer un surnom",
+        "title": "Surnom"
+      },
+      "title": "Paramètres de chat"
+    },
+    "system": {
+      "clear": {
+        "action": "Effacer immédiatement",
+        "alert": "Confirmer l'effacement de tous les messages de conversation ?",
+        "desc": "Cela effacera toutes les données de conversation et de personnage, y compris la liste des conversations, la liste des personnages, les messages de conversation, etc.",
+        "success": "Effacement réussi",
+        "tip": "Cette action ne peut pas être annulée, les données ne pourront pas être récupérées après l'effacement, veuillez agir avec prudence",
+        "title": "Effacer tous les messages de conversation"
+      },
+      "reset": {
+        "action": "Réinitialiser immédiatement",
+        "alert": "Confirmer la réinitialisation de tous les paramètres système ?",
+        "desc": "Cela réinitialisera tous les paramètres système, y compris les paramètres de thème, les paramètres de chat, les paramètres de modèle linguistique, etc.",
+        "success": "Réinitialisation réussie",
+        "tip": "Cette action ne peut pas être annulée, les données ne pourront pas être récupérées après la réinitialisation, veuillez agir avec prudence",
+        "title": "Réinitialiser les paramètres système"
+      },
+      "title": "Paramètres système"
+    },
+    "theme": {
+      "backgroundEffect": {
+        "desc": "Personnalisation de l'effet de fond",
+        "glow": "Lueur",
+        "none": "Pas de fond",
+        "title": "Effet de fond"
+      },
+      "locale": {
+        "auto": "Suivre le système",
+        "desc": "Langue du système personnalisée",
+        "title": "Langue"
+      },
+      "neutralColor": {
+        "desc": "Personnalisation des nuances de gris selon les inclinaisons de couleur",
+        "title": "Couleur neutre"
+      },
+      "primaryColor": {
+        "desc": "Couleur de thème personnalisée",
+        "title": "Couleur principale"
+      },
+      "title": "Paramètres de thème"
+    },
+    "title": "Paramètres généraux"
+  },
+  "llm": {
+    "check": {
+      "action": "Vérifier",
+      "desc": "Vérifiez si la clé API et l'adresse du proxy sont correctement configurées",
+      "error": "Échec de l'appel de l'API, veuillez vérifier si la clé API et l'adresse du proxy sont correctement configurées",
+      "success": "Vérification réussie",
+      "title": "Vérification de la connectivité"
+    },
+    "openai": {
+      "apiKey": {
+        "desc": "Veuillez utiliser votre propre clé OpenAI",
+        "title": "Clé API"
+      },
+      "callError": "Échec de l'appel de l'API, veuillez vérifier si la clé API et l'adresse du proxy sont correctement configurées",
+      "checkOk": "Vérification réussie",
+      "proxy": {
+        "desc": "http(s)://",
+        "title": "Adresse du proxy API"
+      },
+      "title": "Modèle de langage OpenAI"
+    },
+    "title": "Modèle de langage étendu"
+  },
+  "touch": {
+    "title": "Paramètres de toucher"
+  }
+}

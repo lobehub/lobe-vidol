@@ -1,0 +1,17 @@
+{
+  "actions": {
+    "pause": "Pausa",
+    "play": "Riproduci"
+  },
+  "addPlay": "Aggiungi alla lista",
+  "addPlaySuccess": "Aggiunto alla playlist",
+  "cancelAddPlay": "Sei sicuro di voler annullare l'abbonamento alla musica {{musicName}}?",
+  "cancelSubscribed": "Annulla iscrizione",
+  "confirmClearPlayList": "Sei sicuro di voler svuotare la playlist?",
+  "dance": "ballare",
+  "danceList": "Elenco di danze",
+  "findDance": "Trova la tua danza preferita",
+  "musicAndDance": "Mercato della danza",
+  "noPlayList": "Nessuna playlist disponibile, puoi iscriverti ai tuoi balli preferiti tramite il mercato",
+  "play": "Riproduci"
+}

@@ -33,27 +33,27 @@ const Touch = (props: TouchProps) => {
   const { styles } = useStyles();
   const [currentTouchArea, setCurrentTouchArea] = useState<TouchAreaEnum>(TouchAreaEnum.Head);
 
-  const { t } = useTranslation(['panel', 'constants']);
+  const { t } = useTranslation('role');
 
   const TOUCH_AREA_OPTIONS = [
     {
-      label: t('touch.area.head', { ns: 'constants' }),
+      label: t('touch.area.head', { ns: 'role' }),
       value: TouchAreaEnum.Head,
     },
     {
-      label: t('touch.area.arm', { ns: 'constants' }),
+      label: t('touch.area.arm', { ns: 'role' }),
       value: TouchAreaEnum.Arm,
     },
     {
-      label: t('touch.area.leg', { ns: 'constants' }),
+      label: t('touch.area.leg', { ns: 'role' }),
       value: TouchAreaEnum.Leg,
     },
     {
-      label: t('touch.area.chest', { ns: 'constants' }),
+      label: t('touch.area.chest', { ns: 'role' }),
       value: TouchAreaEnum.Chest,
     },
     {
-      label: t('touch.area.belly', { ns: 'constants' }),
+      label: t('touch.area.belly', { ns: 'role' }),
       value: TouchAreaEnum.Belly,
     },
   ];

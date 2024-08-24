@@ -1,15 +1,83 @@
 {
-  "chat": "대화",
-  "chatDialog": {
-    "close": "닫기"
+  "actions": {
+    "add": "추가",
+    "copy": "복사",
+    "copySuccess": "복사 성공",
+    "del": "삭제",
+    "delAndRegenerate": "삭제 후 재생성",
+    "edit": "편집",
+    "goBottom": "맨 아래로 가기",
+    "regenerate": "재생성",
+    "save": "저장",
+    "share": "공유"
   },
-  "dance": "춤을 추다",
-  "header": {
-    "role": "역할",
-    "session": "세션"
+  "animation": {
+    "animationList": "애니메이션 목록",
+    "postureList": "자세 목록",
+    "totalCount": "총 {{total}} 항목"
   },
-  "helloChat": "안녕하세요, 대화를 나눠보세요",
-  "helloDance": "'안녕, 함께 춤을 추자'",
-  "market": "시장",
-  "selectRole": "역할 선택"
+  "apiKey": {
+    "addProxy": "OpenAI 프록시 주소 추가(선택 사항)",
+    "closeTip": "팁 닫기",
+    "confirmRetry": "확인 후 재시도",
+    "startDesc": "당신의 OpenAI API 키를 입력하면 대화를 시작할 수 있습니다. 애플리케이션은 당신의 API 키를 기록하지 않습니다.",
+    "startTitle": "사용자 정의 API 키"
+  },
+  "chat": "채팅",
+  "delSession": "세션 삭제",
+  "delSessionAlert": "대화를 삭제하시겠습니까? 삭제 후에는 복구할 수 없으니 신중하게 결정해 주세요!",
+  "history": {
+    "action": "문맥 지우기",
+    "alert": "역사 메시지를 삭제하시겠습니까?",
+    "tip": "이 작업은 되돌릴 수 없으니 신중하게 진행하세요.",
+    "title": "채팅 기록"
+  },
+  "info": {
+    "chat": "채팅",
+    "dance": "춤",
+    "motions": "동작",
+    "posture": "자세"
+  },
+  "input": {
+    "alert": "주의: 인공지능이 말하는 모든 것은 AI에 의해 생성된 것입니다.",
+    "placeholder": "내용을 입력하여 채팅을 시작하세요",
+    "send": "전송",
+    "warp": "줄 바꿈"
+  },
+  "selectModel": "모델을 선택하세요",
+  "sessionCreate": "채팅 생성",
+  "sessionList": "세션 목록",
+  "share": {
+    "downloadScreenshot": "스크린샷 다운로드",
+    "imageType": "이미지 형식",
+    "screenshot": "스크린샷",
+    "share": "공유",
+    "shareGPT": "ShareGPT 공유",
+    "shareToGPT": "ShareGPT 공유 링크 생성",
+    "withBackground": "배경 이미지 포함",
+    "withFooter": "바닥글 포함",
+    "withSystemRole": "도우미 역할 설정 포함"
+  },
+  "token": {
+    "overload": "토큰 초과",
+    "remained": "남은 토큰",
+    "tokenCount": "토큰 수",
+    "useToken": "소모된 토큰 수 계산, 메시지, 캐릭터 설정 및 맥락 포함: {{usedTokens}} / {{maxValue}}",
+    "used": "사용된 토큰"
+  },
+  "toolBar": {
+    "axes": "좌표축",
+    "cameraControl": "카메라 제어",
+    "cameraHelper": "카메라 도우미",
+    "downloading": "모델 다운로드 중입니다. 잠시만 기다려 주세요...",
+    "floor": "바닥 전환",
+    "grid": "격자",
+    "resetCamera": "카메라 초기화",
+    "resetToIdle": "춤 동작 중지",
+    "screenShot": "사진 찍기"
+  },
+  "tts": {
+    "combine": "음성 합성",
+    "record": "음성 인식(과학적 인터넷 필요)"
+  }
 }

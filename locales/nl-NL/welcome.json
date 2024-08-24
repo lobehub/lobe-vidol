@@ -1,12 +1,12 @@
 {
   "agent": {
-    "hello": "Hallo",
+    "hello": "Hallo daar",
     "meta": {
       "description": "Dit is een aangepaste rol",
-      "name": "Aangepaste rol"
+      "name": "Aangepast rol"
     }
   },
-  "greet": "Hallo, ik ben {{name}}, is er iets waarmee ik je kan helpen?",
-  "loadingTitle": "Applicatie initialisatie, even geduld aub...",
-  "waitting": "Ik ben bezig om je mijn hele wereld voor te bereiden"
+  "greet": "Hallo, ik ben {{name}}, hoe kan ik je helpen?",
+  "loadingTitle": "Applicatie wordt geïnitialiseerd, even geduld...",
+  "waiting": "Ik ben mijn hele wereld voor je aan het voorbereiden"
 }

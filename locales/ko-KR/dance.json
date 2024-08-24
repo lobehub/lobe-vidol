@@ -1,0 +1,17 @@
+{
+  "actions": {
+    "pause": "일시 정지",
+    "play": "재생"
+  },
+  "addPlay": "목록에 추가",
+  "addPlaySuccess": "재생 목록에 추가되었습니다.",
+  "cancelAddPlay": "{{musicName}} 음악 구독을 정말 취소하시겠습니까?",
+  "cancelSubscribed": "구독 취소",
+  "confirmClearPlayList": "재생 목록을 지우시겠습니까?",
+  "dance": "춤추기",
+  "danceList": "댄스 목록",
+  "findDance": "가장 좋아하는 춤을 찾아보세요",
+  "musicAndDance": "무용 시장",
+  "noPlayList": "재생 목록이 없습니다. 좋아하는 춤을 시장에서 구독할 수 있습니다.",
+  "play": "재생"
+}
