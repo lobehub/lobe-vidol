@@ -36,7 +36,7 @@ export default {
     placeholder: '请输入内容开始聊天',
     alert: '请谨记：智能体所说的一切都是由 AI 生成的',
   },
-  market: '发现',
+  agentMarket: '角色市场',
   tts: {
     record: '语音识别（需科学上网）',
     combine: '语音合成',

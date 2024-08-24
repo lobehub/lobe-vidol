@@ -3,15 +3,18 @@ import { Empty } from 'antd';
 import { createStyles } from 'antd-style';
 import classNames from 'classnames';
 import { PlusCircle } from 'lucide-react';
-import React, { memo } from 'react';
+import dynamic from 'next/dynamic';
+import React, { memo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
 import Header from '@/components/Header';
 import { useDanceStore } from '@/store/dance';
-import { useGlobalStore } from '@/store/global';
 
 import DanceItem from './Item';
+
+// eslint-disable-next-line @typescript-eslint/no-use-before-define
+const DanceMarketModal = dynamic(() => import('./DanceMarketModal'));
 
 interface PlayListProps {
   className?: string;
@@ -40,7 +43,7 @@ const useStyles = createStyles(({ css, token }) => ({
 
 const DanceList = (props: PlayListProps) => {
   const danceList = useDanceStore((s) => s.danceList);
-  const [openPanel] = useGlobalStore((s) => [s.openPanel]);
+  const [open, setOpen] = useState(false);
 
   const { t } = useTranslation('chat');
   const { className, style } = props;
@@ -49,13 +52,14 @@ const DanceList = (props: PlayListProps) => {
   return (
     <Flexbox className={classNames(className, styles.container)} style={style} id={'dance-list'}>
       <Flexbox className={styles.list} flex={1}>
+        <DanceMarketModal open={open} setOpen={setOpen} />
         <Header
           title={t('danceList', { ns: 'dance' })}
           extra={
             <ActionIcon
               icon={PlusCircle}
               onClick={() => {
-                openPanel('dance');
+                setOpen(true);
               }}
               title={t('musicAndDance', { ns: 'dance' })}
             />
@@ -74,7 +78,7 @@ const DanceList = (props: PlayListProps) => {
               glow
               size="middle"
               onClick={() => {
-                openPanel('dance');
+                setOpen(true);
               }}
             >
               {t('musicAndDance', { ns: 'dance' })}
