@@ -1,5 +1,6 @@
 import { SearchBar } from '@lobehub/ui';
 import { createStyles } from 'antd-style';
+import dynamic from 'next/dynamic';
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
@@ -8,7 +9,8 @@ import { HEADER_HEIGHT } from '@/constants/token';
 
 import V from './Elsa';
 import List from './List';
-import SessionCreateModal from './SessionCreateModal';
+
+const SessionCreateModal = dynamic(() => import('./SessionCreateModal'));
 
 const useStyles = createStyles(({ css, token, prefixCls }) => ({
   list: css`

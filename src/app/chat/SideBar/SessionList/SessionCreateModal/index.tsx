@@ -30,7 +30,7 @@ export default () => {
         }}
         onCancel={() => setIsModalOpen(false)}
         open={isModalOpen}
-        title={t('market')}
+        title={t('agentMarket')}
       >
         <Market />
       </Modal>

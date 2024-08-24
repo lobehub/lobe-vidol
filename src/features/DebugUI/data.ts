@@ -561,16 +561,6 @@ const settings = {
         },
       },
     },
-    focusList: [],
-    panel: {
-      agent: { coordinates: { x: 516, y: 154 }, open: false },
-      chat: { coordinates: { x: 745, y: 224 }, open: false },
-      config: { coordinates: { x: 360, y: 360 }, open: false },
-      dance: { coordinates: { x: 535, y: 197 }, open: false },
-      live: { coordinates: { x: 360, y: 360 }, open: false },
-      market: { coordinates: { x: 404, y: 195 }, open: false },
-      role: { coordinates: { x: 561, y: 264 }, open: false },
-    },
   },
   version: 0,
 };

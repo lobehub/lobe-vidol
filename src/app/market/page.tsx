@@ -2,7 +2,7 @@
 
 import { Flexbox } from 'react-layout-kit';
 
-import AgentMarket from '@/panels/MarketPanel/Market';
+import AgentMarket from './Market';
 
 const Index = () => {
   return (
