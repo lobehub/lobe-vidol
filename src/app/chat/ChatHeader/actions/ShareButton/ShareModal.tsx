@@ -5,9 +5,9 @@ import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
 import { FORM_STYLE } from '@/constants/token';
+import { useScreenshot } from '@/hooks/useScreenshot';
 import { useSessionStore } from '@/store/session';
 
-import { useScreenshot } from '../../../../../hooks/useScreenshot';
 import Preview from './Preview';
 import { FieldType, ImageType } from './type';
 

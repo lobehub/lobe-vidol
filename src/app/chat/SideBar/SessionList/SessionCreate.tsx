@@ -7,12 +7,12 @@ import { useGlobalStore } from '@/store/global';
 
 export default () => {
   const openPanel = useGlobalStore((s) => s.openPanel);
-  const { t } = useTranslation('common');
+  const { t } = useTranslation('chat');
   return (
     <ActionIcon
       icon={PlusCircle}
       onClick={() => openPanel('market')}
-      title={t('actions.sessionCreate')}
+      title={t('sessionCreate')}
       size={DESKTOP_HEADER_ICON_SIZE}
     />
   );
