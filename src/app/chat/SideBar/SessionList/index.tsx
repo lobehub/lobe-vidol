@@ -8,7 +8,7 @@ import { HEADER_HEIGHT } from '@/constants/token';
 
 import V from './Elsa';
 import List from './List';
-import SessionCreate from './SessionCreate';
+import SessionCreateModal from './SessionCreateModal';
 
 const useStyles = createStyles(({ css, token, prefixCls }) => ({
   list: css`
@@ -43,7 +43,7 @@ const useStyles = createStyles(({ css, token, prefixCls }) => ({
   `,
 }));
 
-const SideBar = () => {
+const SessionList = () => {
   const { styles } = useStyles();
   const [searchName, setSearchName] = useState<string>();
   const { t } = useTranslation('common');
@@ -66,7 +66,7 @@ const SideBar = () => {
           type={'block'}
           value={searchName}
         />
-        <SessionCreate />
+        <SessionCreateModal />
       </Flexbox>
       <div className={styles.list}>
         <V />
@@ -76,4 +76,4 @@ const SideBar = () => {
   );
 };
 
-export default SideBar;
+export default SessionList;
