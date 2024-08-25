@@ -11,6 +11,7 @@
     "save": "Enregistrer",
     "share": "Partager"
   },
+  "agentMarket": "Marché des personnages",
   "animation": {
     "animationList": "Liste des animations",
     "postureList": "Liste des postures",
@@ -24,6 +25,8 @@
     "startTitle": "Clé API personnalisée"
   },
   "chat": "Discussion",
+  "danceList": "Liste des danses",
+  "danceMarket": "Marché de la danse",
   "delSession": "Supprimer la session",
   "delSessionAlert": "Êtes-vous sûr de vouloir supprimer la conversation ? Une fois supprimée, elle ne pourra pas être récupérée, veuillez agir avec prudence !",
   "history": {
@@ -44,6 +47,7 @@
     "send": "Envoyer",
     "warp": "Sauter à la ligne"
   },
+  "noDanceList": "Aucune liste de lecture disponible pour le moment, vous pouvez vous abonner à vos danses préférées sur le marché",
   "selectModel": "Veuillez sélectionner un modèle",
   "sessionCreate": "Créer une conversation",
   "sessionList": "Liste des sessions",

@@ -11,6 +11,7 @@
     "save": "저장",
     "share": "공유"
   },
+  "agentMarket": "캐릭터 마켓",
   "animation": {
     "animationList": "애니메이션 목록",
     "postureList": "자세 목록",
@@ -24,6 +25,8 @@
     "startTitle": "사용자 정의 API 키"
   },
   "chat": "채팅",
+  "danceList": "댄스 목록",
+  "danceMarket": "댄스 마켓",
   "delSession": "세션 삭제",
   "delSessionAlert": "대화를 삭제하시겠습니까? 삭제 후에는 복구할 수 없으니 신중하게 결정해 주세요!",
   "history": {
@@ -44,6 +47,7 @@
     "send": "전송",
     "warp": "줄 바꿈"
   },
+  "noDanceList": "재생 목록이 없습니다. 좋아하는 댄스를 마켓에서 구독할 수 있습니다.",
   "selectModel": "모델을 선택하세요",
   "sessionCreate": "채팅 생성",
   "sessionList": "세션 목록",

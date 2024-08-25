@@ -11,6 +11,7 @@
     "save": "Zapisz",
     "share": "Udostępnij"
   },
+  "agentMarket": "Rynek postaci",
   "animation": {
     "animationList": "Lista animacji",
     "postureList": "Lista postaw",
@@ -24,6 +25,8 @@
     "startTitle": "Dostosuj klucz API"
   },
   "chat": "Czat",
+  "danceList": "Lista tańców",
+  "danceMarket": "Rynek tańca",
   "delSession": "Usuń sesję",
   "delSessionAlert": "Czy na pewno chcesz usunąć rozmowę? Po usunięciu nie będzie można jej przywrócić, proszę działać ostrożnie!",
   "history": {
@@ -44,6 +47,7 @@
     "send": "Wyślij",
     "warp": "Złamanie linii"
   },
+  "noDanceList": "Brak dostępnych list odtwarzania. Możesz subskrybować ulubione tańce na rynku.",
   "selectModel": "Wybierz model",
   "sessionCreate": "Utwórz czat",
   "sessionList": "Lista sesji",

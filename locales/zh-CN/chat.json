@@ -11,6 +11,7 @@
     "goBottom": "返回底部",
     "regenerate": "重新生成"
   },
+  "agentMarket": "角色市场",
   "animation": {
     "animationList": "动作列表",
     "postureList": "姿势列表",
@@ -24,6 +25,8 @@
     "closeTip": "关闭提示"
   },
   "chat": "聊天",
+  "danceList": "舞蹈列表",
+  "danceMarket": "舞蹈市场",
   "delSession": "删除会话",
   "delSessionAlert": "确认删除对话吗？删除后无法恢复, 请谨慎操作！",
   "history": {
@@ -44,6 +47,7 @@
     "placeholder": "请输入内容开始聊天",
     "alert": "请谨记：智能体所说的一切都是由 AI 生成的"
   },
+  "noDanceList": "暂无播放列表，您可以通过市场订阅你喜欢的舞蹈",
   "selectModel": "请选择模型",
   "sessionCreate": "创建聊天",
   "sessionList": "会话列表",

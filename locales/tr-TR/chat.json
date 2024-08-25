@@ -11,6 +11,7 @@
     "save": "Kaydet",
     "share": "Paylaş"
   },
+  "agentMarket": "Karakter Pazarı",
   "animation": {
     "animationList": "Animasyon Listesi",
     "postureList": "Poz Listesi",
@@ -24,6 +25,8 @@
     "startTitle": "Özel API Anahtarı"
   },
   "chat": "sohbet",
+  "danceList": "Dans Listesi",
+  "danceMarket": "Dans Pazarı",
   "delSession": "Oturumu Sil",
   "delSessionAlert": "Bu sohbeti silmek istediğinize emin misiniz? Silindikten sonra geri alınamaz, lütfen dikkatli olun!",
   "history": {
@@ -44,6 +47,7 @@
     "send": "Gönder",
     "warp": "Satır Sonu"
   },
+  "noDanceList": "Henüz bir çalma listesi yok, sevdiğiniz dansları pazardan abone olabilirsiniz",
   "selectModel": "Lütfen bir model seçin",
   "sessionCreate": "Sohbet Oluştur",
   "sessionList": "Oturum Listesi",

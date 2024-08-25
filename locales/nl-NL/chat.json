@@ -11,6 +11,7 @@
     "save": "Opslaan",
     "share": "Delen"
   },
+  "agentMarket": "Rolmarkt",
   "animation": {
     "animationList": "Actielijst",
     "postureList": "Houdingenlijst",
@@ -24,6 +25,8 @@
     "startTitle": "Aangepaste API-sleutel"
   },
   "chat": "Chatten",
+  "danceList": "Danslijst",
+  "danceMarket": "Dansmarkt",
   "delSession": "Verwijder sessie",
   "delSessionAlert": "Weet je zeker dat je de conversatie wilt verwijderen? Na verwijdering kan deze niet worden hersteld, wees voorzichtig!",
   "history": {
@@ -44,6 +47,7 @@
     "send": "Verzenden",
     "warp": "Nieuwe regel"
   },
+  "noDanceList": "Geen afspeellijst beschikbaar. U kunt zich abonneren op uw favoriete dansen via de markt.",
   "selectModel": "Selecteer een model",
   "sessionCreate": "Chat aanmaken",
   "sessionList": "Sessielijst",
