@@ -16,7 +16,6 @@ export default memo(() => {
   const { styles } = useStyles();
   const currentAgent = useSessionStore((s) => sessionSelectors.currentAgent(s));
 
-  console.log('currentAgent', currentAgent);
   return (
     <Flexbox flex={1} style={{ position: 'relative' }}>
       {currentAgent ? (

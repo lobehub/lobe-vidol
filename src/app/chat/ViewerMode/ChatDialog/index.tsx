@@ -2,6 +2,7 @@ import { ActionIcon } from '@lobehub/ui';
 import { useHover } from 'ahooks';
 import { Tooltip } from 'antd';
 import classNames from 'classnames';
+import { isEqual } from 'lodash-es';
 import { XIcon } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -19,10 +20,10 @@ interface DialogProps {
 
 const Dialog = (props: DialogProps) => {
   const { className, style } = props;
-  const [currentChats, chatLoading] = useSessionStore((s) => [
-    sessionSelectors.currentChatsWithGreetingMessage(s),
-    !!s.chatLoadingId,
-  ]);
+  const [currentChats, chatLoading] = useSessionStore(
+    (s) => [sessionSelectors.currentChatsWithGreetingMessage(s), !!s.chatLoadingId],
+    isEqual,
+  );
   const lastAgentChatIndex = currentChats.findLastIndex((item) => item.role === 'assistant');
   const ref = React.useRef<HTMLDivElement>(null);
   const isHovered = useHover(ref);
