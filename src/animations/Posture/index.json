@@ -280,16 +280,6 @@
     "avatar": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/150500904/animated.gif"
   },
   {
-    "id": "1189d701-e683-4281-a13d-3a48fce4797f",
-    "name": "Male Action Pose",
-    "type": "Posture",
-    "gender": "Male",
-    "category": "Locomotion",
-    "description": "Crawling Forward Reaching With Left Hand",
-    "url": "https://r2.vidol.chat/animations/1189d701-e683-4281-a13d-3a48fce4797f.fbx",
-    "avatar": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/150000903/animated.gif"
-  },
-  {
     "id": "fec5edc4-5789-4583-8ae7-605f01ffe227",
     "name": "Male Sitting Pose",
     "type": "Posture",
@@ -648,16 +638,6 @@
     "description": "Attacking",
     "url": "https://r2.vidol.chat/animations/27fe7228-487a-4951-af65-30cef1a9183d.fbx",
     "avatar": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/140000905/animated.gif"
-  },
-  {
-    "id": "8c95cac8-2068-410f-9564-d0a2a04ea0a5",
-    "name": "Female Action Pose",
-    "type": "Posture",
-    "gender": "Female",
-    "category": "Action",
-    "description": "Sliding",
-    "url": "https://r2.vidol.chat/animations/8c95cac8-2068-410f-9564-d0a2a04ea0a5.fbx",
-    "avatar": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/140000902/animated.gif"
   },
   {
     "id": "eaf51ff4-0fb7-4759-aadf-edb8fd3ae6a0",

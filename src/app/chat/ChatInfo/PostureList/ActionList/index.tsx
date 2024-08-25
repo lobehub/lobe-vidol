@@ -1,7 +1,8 @@
 import { createStyles } from 'antd-style';
-import React, { memo } from 'react';
+import React, { memo, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
+import { Virtuoso } from 'react-virtuoso';
 
 import Header from '@/components/Header';
 import { DEFAULT_POSTURE_ANIMATION } from '@/constants/touch';
@@ -35,8 +36,9 @@ const AreaList = memo((props: AreaListProps) => {
   const categoryFilter = (item: MotionAnimation) =>
     currentCategory ? currentCategory === item.category : true;
 
-  const filteredList = DEFAULT_POSTURE_ANIMATION.filter(
-    (item) => genderFilter(item) && categoryFilter(item),
+  const filteredList = useMemo(
+    () => DEFAULT_POSTURE_ANIMATION.filter((item) => genderFilter(item) && categoryFilter(item)),
+    [currentGender, currentCategory],
   );
 
   return (
@@ -46,9 +48,12 @@ const AreaList = memo((props: AreaListProps) => {
         extra={t('animation.totalCount', { total: filteredList.length })}
       />
       <Flexbox className={styles.list}>
-        {filteredList.map((item) => {
-          return <ListItem item={item} key={item.id} />;
-        })}
+        <Virtuoso
+          computeItemKey={(_, item) => item.id}
+          data={filteredList}
+          followOutput={false}
+          itemContent={(index, item) => <ListItem item={item} key={item.id} />}
+        />
       </Flexbox>
     </Flexbox>
   );

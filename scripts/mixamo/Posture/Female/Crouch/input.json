@@ -76,18 +76,5 @@
     "motion_id": "e3543986-d43d-4ec1-bac8-5cf7f5ec003b",
     "motions": null,
     "source": "system"
-  },
-  {
-    "id": "8c95cac8-2068-410f-9564-d0a2a04ea0a5",
-    "type": "Motion",
-    "description": "Sliding",
-    "category": "",
-    "character_type": "human",
-    "name": "Female Action Pose",
-    "thumbnail": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/140000902/static.png",
-    "thumbnail_animated": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/140000902/animated.gif",
-    "motion_id": "8c95cac8-2068-410f-9564-d0a2a04ea0a5",
-    "motions": null,
-    "source": "system"
   }
 ]

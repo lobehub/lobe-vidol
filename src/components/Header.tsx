@@ -1,6 +1,6 @@
 import { createStyles } from 'antd-style';
 import classNames from 'classnames';
-import React from 'react';
+import React, { memo } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
 interface HeaderProps {
@@ -23,7 +23,7 @@ const useStyles = createStyles(({ css, token }) => ({
   `,
 }));
 
-export default (props: HeaderProps) => {
+export default memo((props: HeaderProps) => {
   const { styles } = useStyles();
   const { title, extra, style, className } = props;
   return (
@@ -37,4 +37,4 @@ export default (props: HeaderProps) => {
       {extra}
     </Flexbox>
   );
-};
+});

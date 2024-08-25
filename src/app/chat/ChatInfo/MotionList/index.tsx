@@ -26,7 +26,7 @@ interface MotionListProps {
   style?: React.CSSProperties;
 }
 
-const MotionList = (props: MotionListProps) => {
+const MotionList = memo((props: MotionListProps) => {
   const { style, className } = props;
   const { styles } = useStyles();
   const [currentGender, setCurrentGender] = useState<GenderEnum | undefined>(undefined);
@@ -87,6 +87,6 @@ const MotionList = (props: MotionListProps) => {
       />
     </Flexbox>
   );
-};
+});
 
-export default memo(MotionList);
+export default MotionList;

@@ -13,7 +13,6 @@ import { useDanceStore } from '@/store/dance';
 
 import DanceItem from './Item';
 
-// eslint-disable-next-line @typescript-eslint/no-use-before-define
 const DanceMarketModal = dynamic(() => import('./DanceMarketModal'));
 
 interface PlayListProps {
@@ -41,7 +40,7 @@ const useStyles = createStyles(({ css, token }) => ({
   `,
 }));
 
-const DanceList = (props: PlayListProps) => {
+const DanceList = memo((props: PlayListProps) => {
   const danceList = useDanceStore((s) => s.danceList);
   const [open, setOpen] = useState(false);
 
@@ -88,6 +87,6 @@ const DanceList = (props: PlayListProps) => {
       </Flexbox>
     </Flexbox>
   );
-};
+});
 
-export default memo(DanceList);
+export default DanceList;
