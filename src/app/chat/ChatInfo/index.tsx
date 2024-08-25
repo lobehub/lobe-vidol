@@ -78,7 +78,7 @@ export default () => {
             setTab(key as Tab);
           }}
         />
-      </Flexbox>{' '}
+      </Flexbox>
       <Flexbox height={'calc(100vh - 128px)'}>
         {tab === Tab.ChatList && <ChatList />}
         {tab === Tab.DanceList && <DanceList />}

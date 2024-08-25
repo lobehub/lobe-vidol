@@ -5,7 +5,11 @@ import { ReactNode } from 'react';
 import { resolveAcceptLanguage } from 'resolve-accept-language';
 
 import { LOBE_LOCALE_COOKIE } from '@/constants/locale';
-import { VIDOL_THEME_NEUTRAL_COLOR, VIDOL_THEME_PRIMARY_COLOR } from '@/constants/theme';
+import {
+  VIDOL_THEME_APPEARANCE,
+  VIDOL_THEME_NEUTRAL_COLOR,
+  VIDOL_THEME_PRIMARY_COLOR,
+} from '@/constants/theme';
 import AppTheme from '@/layout/AppTheme';
 import StoreHydration from '@/layout/StoreHydration';
 import StyleRegistry from '@/layout/StyleRegistry';
@@ -40,6 +44,8 @@ const Layout = async (props: LayoutProps) => {
   const { children } = props;
 
   const cookieStore = cookies();
+  const appearance = cookieStore.get(VIDOL_THEME_APPEARANCE);
+
   const primaryColor = cookieStore.get(VIDOL_THEME_PRIMARY_COLOR);
   const neutralColor = cookieStore.get(VIDOL_THEME_NEUTRAL_COLOR);
 
@@ -54,6 +60,7 @@ const Layout = async (props: LayoutProps) => {
     <StyleRegistry>
       <Locale antdLocale={antdLocale} defaultLang={userLocale}>
         <AppTheme
+          defaultAppearance={appearance?.value}
           defaultNeutralColor={neutralColor?.value as any}
           defaultPrimaryColor={primaryColor?.value as any}
         >

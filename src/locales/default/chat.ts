@@ -36,6 +36,10 @@ export default {
     placeholder: '请输入内容开始聊天',
     alert: '请谨记：智能体所说的一切都是由 AI 生成的',
   },
+  agentMarket: '角色市场',
+  danceMarket: '舞蹈市场',
+  danceList: '舞蹈列表',
+  noDanceList: '暂无播放列表，您可以通过市场订阅你喜欢的舞蹈',
   tts: {
     record: '语音识别（需科学上网）',
     combine: '语音合成',

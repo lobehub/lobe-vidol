@@ -5,10 +5,11 @@ import React, { memo, useState } from 'react';
 import Author from '@/components/Author';
 import DanceInfo from '@/components/DanceInfo';
 import { SIDEBAR_MAX_WIDTH, SIDEBAR_WIDTH } from '@/constants/token';
-import SubscribeButton from '@/panels/DancePanel/Market/Card/SubscribeButton';
-import UnSubscribeButton from '@/panels/DancePanel/Market/Card/UnSubscribeButton';
 import { danceListSelectors, useDanceStore } from '@/store/dance';
 import { marketStoreSelectors, useMarketStore } from '@/store/market';
+
+import SubscribeButton from './SubscribeButton';
+import UnSubscribeButton from './UnSubscribeButton';
 
 const useStyles = createStyles(({ css, token }) => ({
   content: css`

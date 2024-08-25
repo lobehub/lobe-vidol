@@ -81,6 +81,8 @@ const currentChats = (s: SessionStore): ChatMessage[] => {
   });
 };
 
+const initTime = Date.now();
+
 const currentChatsWithGreetingMessage = (s: SessionStore): ChatMessage[] => {
   const data = currentChats(s);
 
@@ -89,8 +91,6 @@ const currentChatsWithGreetingMessage = (s: SessionStore): ChatMessage[] => {
   if (!isBrandNewChat) return data;
 
   const agent = currentAgent(s);
-
-  const initTime = Date.now();
 
   const emptyGuideMessage = {
     content: agent?.greeting || t('greet', { ns: 'welcome', name: agent?.meta.name }),

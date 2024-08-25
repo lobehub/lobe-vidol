@@ -76,18 +76,5 @@
     "motion_id": "b414a4b5-236d-46e3-a2bd-efd45612ec42",
     "motions": null,
     "source": "system"
-  },
-  {
-    "id": "1189d701-e683-4281-a13d-3a48fce4797f",
-    "type": "Motion",
-    "description": "Crawling Forward Reaching With Left Hand",
-    "category": "",
-    "character_type": "human",
-    "name": "Male Action Pose",
-    "thumbnail": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/150000903/static.png",
-    "thumbnail_animated": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/150000903/animated.gif",
-    "motion_id": "1189d701-e683-4281-a13d-3a48fce4797f",
-    "motions": null,
-    "source": "system"
   }
 ]

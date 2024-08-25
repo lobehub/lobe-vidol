@@ -2,7 +2,6 @@
 
 import { ReactNode, memo } from 'react';
 
-import Apps from '@/app/chat/Apps';
 import AppLayout from '@/layout/AppLayout';
 import { HeaderNavKey } from '@/layout/type';
 
@@ -13,11 +12,7 @@ export interface LayoutProps {
 const LayoutDesktop = (props: LayoutProps) => {
   const { children } = props;
 
-  return (
-    <AppLayout headerKey={HeaderNavKey.Chat}>
-      {children} <Apps />
-    </AppLayout>
-  );
+  return <AppLayout headerKey={HeaderNavKey.Chat}>{children}</AppLayout>;
 };
 
 export default memo(LayoutDesktop);

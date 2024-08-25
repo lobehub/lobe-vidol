@@ -13,5 +13,4 @@ export default {
   cancelSubscribed: '取消订阅',
   findDance: '找到你最喜欢的舞蹈',
   musicAndDance: '舞蹈市场',
-  noPlayList: '暂无播放列表，您可以通过市场订阅你喜欢的舞蹈',
 };

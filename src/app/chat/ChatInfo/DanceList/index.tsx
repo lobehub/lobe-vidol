@@ -3,15 +3,18 @@ import { Empty } from 'antd';
 import { createStyles } from 'antd-style';
 import classNames from 'classnames';
 import { PlusCircle } from 'lucide-react';
-import React, { memo } from 'react';
+import dynamic from 'next/dynamic';
+import React, { memo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
+import { Virtuoso } from 'react-virtuoso';
 
 import Header from '@/components/Header';
 import { useDanceStore } from '@/store/dance';
-import { useGlobalStore } from '@/store/global';
 
 import DanceItem from './Item';
+
+const DanceMarketModal = dynamic(() => import('./DanceMarketModal'));
 
 interface PlayListProps {
   className?: string;
@@ -38,9 +41,9 @@ const useStyles = createStyles(({ css, token }) => ({
   `,
 }));
 
-const DanceList = (props: PlayListProps) => {
+const DanceList = memo((props: PlayListProps) => {
   const danceList = useDanceStore((s) => s.danceList);
-  const [openPanel] = useGlobalStore((s) => [s.openPanel]);
+  const [open, setOpen] = useState(false);
 
   const { t } = useTranslation('chat');
   const { className, style } = props;
@@ -49,41 +52,43 @@ const DanceList = (props: PlayListProps) => {
   return (
     <Flexbox className={classNames(className, styles.container)} style={style} id={'dance-list'}>
       <Flexbox className={styles.list} flex={1}>
+        <DanceMarketModal open={open} setOpen={setOpen} />
         <Header
-          title={t('danceList', { ns: 'dance' })}
+          title={t('danceList')}
           extra={
             <ActionIcon
               icon={PlusCircle}
               onClick={() => {
-                openPanel('dance');
+                setOpen(true);
               }}
-              title={t('musicAndDance', { ns: 'dance' })}
+              title={t('danceMarket')}
             />
           }
         />
 
-        {danceList.map((item) => {
-          return <DanceItem danceItem={item} key={item.danceId} />;
-        })}
+        <Virtuoso
+          computeItemKey={(_, item) => item.danceId}
+          data={danceList}
+          followOutput={false}
+          itemContent={(index, item) => <DanceItem danceItem={item} key={item.danceId} />}
+        />
+
         {danceList.length === 0 ? (
-          <Empty
-            description={t('noPlayList', { ns: 'dance' })}
-            image={Empty.PRESENTED_IMAGE_SIMPLE}
-          >
+          <Empty description={t('noDanceList')} image={Empty.PRESENTED_IMAGE_SIMPLE}>
             <GradientButton
               glow
               size="middle"
               onClick={() => {
-                openPanel('dance');
+                setOpen(true);
               }}
             >
-              {t('musicAndDance', { ns: 'dance' })}
+              {t('danceMarket')}
             </GradientButton>
           </Empty>
         ) : null}
       </Flexbox>
     </Flexbox>
   );
-};
+});
 
-export default memo(DanceList);
+export default DanceList;

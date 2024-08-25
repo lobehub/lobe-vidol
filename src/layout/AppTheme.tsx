@@ -1,10 +1,14 @@
 'use client';
 
 import { NeutralColors, PrimaryColors, ThemeProvider } from '@lobehub/ui';
-import { createStyles } from 'antd-style';
+import { ThemeAppearance, createStyles } from 'antd-style';
 import { ReactNode, memo, useEffect } from 'react';
 
-import { VIDOL_THEME_NEUTRAL_COLOR, VIDOL_THEME_PRIMARY_COLOR } from '@/constants/theme';
+import {
+  VIDOL_THEME_APPEARANCE,
+  VIDOL_THEME_NEUTRAL_COLOR,
+  VIDOL_THEME_PRIMARY_COLOR,
+} from '@/constants/theme';
 import { useGlobalStore } from '@/store/global';
 import { useSettingStore } from '@/store/setting';
 import { GlobalStyle } from '@/styles';
@@ -12,6 +16,7 @@ import { setCookie } from '@/utils/cookie';
 
 export interface AppThemeProps {
   children?: ReactNode;
+  defaultAppearance?: ThemeAppearance;
   defaultNeutralColor?: NeutralColors;
   defaultPrimaryColor?: PrimaryColors;
 }
@@ -28,7 +33,7 @@ const useStyles = createStyles(({ css }) => ({
 }));
 
 const AppTheme = memo((props: AppThemeProps) => {
-  const { children, defaultNeutralColor, defaultPrimaryColor } = props;
+  const { children, defaultNeutralColor, defaultAppearance, defaultPrimaryColor } = props;
   const [primaryColor, neutralColor] = useSettingStore((s) => [
     s.config.primaryColor,
     s.config.neutralColor,
@@ -51,6 +56,10 @@ const AppTheme = memo((props: AppThemeProps) => {
       customTheme={{
         primaryColor: primaryColor ?? defaultPrimaryColor,
         neutralColor: neutralColor ?? defaultNeutralColor,
+      }}
+      defaultAppearance={defaultAppearance}
+      onAppearanceChange={(appearance) => {
+        setCookie(VIDOL_THEME_APPEARANCE, appearance);
       }}
       themeMode={themeMode}
     >

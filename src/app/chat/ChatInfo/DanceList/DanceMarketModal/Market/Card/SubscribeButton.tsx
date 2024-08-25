@@ -26,7 +26,7 @@ const SubscribeButton = (props: SubscribeButtonProps) => {
       type={'primary'}
     >
       <Flexbox align={'center'} horizontal gap={8}>
-        {t('actions.downloadSubscribe')}
+        {t('download.subscribe')}
         {downloading ? (
           <Progress
             type="circle"

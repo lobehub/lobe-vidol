@@ -1,5 +1,3 @@
-'use client';
-
 import dynamic from 'next/dynamic';
 import React, { memo } from 'react';
 import { Flexbox } from 'react-layout-kit';
@@ -7,18 +5,22 @@ import { Flexbox } from 'react-layout-kit';
 import ChatHeader from './ChatHeader';
 import ChatInfo from './ChatInfo';
 import SideBar from './SideBar';
-import { useStyles } from './style';
 
 const ViewerMode = dynamic(() => import('./ViewerMode'), { ssr: false });
 
 const Chat = () => {
-  const { styles } = useStyles();
-
   return (
     <Flexbox flex={1} height={'100%'} width={'100%'} horizontal>
       <SideBar />
       <Flexbox flex={1} style={{ position: 'relative' }} height={'100%'} width={'100%'}>
-        <ChatHeader className={styles.header} />
+        <ChatHeader
+          style={{
+            position: 'absolute',
+            zIndex: 1,
+            top: 0,
+            left: 0,
+          }}
+        />
         <ViewerMode />
       </Flexbox>
       <ChatInfo />

@@ -444,7 +444,7 @@ export const createSessionStore: StateCreator<SessionStore, [['zustand/devtools'
   },
 
   setMessageInput: (messageInput) => {
-    set({ messageInput });
+    set({ messageInput }, false, 'session/setMessageInput');
   },
   setViewerMode: (mode) => {
     set({ viewerMode: mode });

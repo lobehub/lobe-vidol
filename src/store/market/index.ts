@@ -7,16 +7,14 @@ import { agentSelectors } from './selectors/agent';
 import { danceSelectors } from './selectors/dance';
 import { AgentStore, createAgentStore } from './slices/agent';
 import { DanceStore, createDanceStore } from './slices/dance';
-import { PanelStore, createPanelStore } from './slices/panel';
 
-export type MarketStore = PanelStore & AgentStore & DanceStore;
+export type MarketStore = AgentStore & DanceStore;
 
 const MARKET_STORAGE_KEY = 'vidol-chat-market-storage';
 
 const createStore: StateCreator<MarketStore, [['zustand/devtools', never]]> = (...parameters) => ({
   ...createAgentStore(...parameters),
   ...createDanceStore(...parameters),
-  ...createPanelStore(...parameters),
 });
 
 export const useMarketStore = createWithEqualityFn<MarketStore>()(
