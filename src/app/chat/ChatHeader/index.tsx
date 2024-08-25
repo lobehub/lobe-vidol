@@ -1,6 +1,8 @@
-import { Space } from 'antd';
+'use client';
+
+import { Skeleton, Space } from 'antd';
 import classNames from 'classnames';
-import React from 'react';
+import React, { Suspense } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
 import AgentMeta from '@/components/agent/AgentMeta';
@@ -14,9 +16,10 @@ import { useStyles } from './style';
 
 interface Props {
   className?: string;
+  style?: React.CSSProperties;
 }
 export default (props: Props) => {
-  const { className } = props;
+  const { className, style } = props;
   const { styles } = useStyles();
   const [currentAgent] = useSessionStore((s) => [sessionSelectors.currentAgent(s)]);
 
@@ -25,12 +28,24 @@ export default (props: Props) => {
       justify={'space-between'}
       horizontal
       align={'center'}
+      style={style}
       className={classNames(styles.header, className)}
     >
-      <Space>
-        <ToggleSessionList />
-        <AgentMeta meta={currentAgent?.meta} />
-      </Space>
+      <Suspense
+        fallback={
+          <Skeleton
+            active
+            avatar={{ shape: 'circle', size: 'default' }}
+            paragraph={false}
+            title={{ style: { margin: 0, marginTop: 8 }, width: 200 }}
+          />
+        }
+      >
+        <Space>
+          <ToggleSessionList />
+          <AgentMeta meta={currentAgent?.meta} />
+        </Space>
+      </Suspense>
       <Space>
         <Voice key={'voice'} />
         <ShareButton key={'share'} />

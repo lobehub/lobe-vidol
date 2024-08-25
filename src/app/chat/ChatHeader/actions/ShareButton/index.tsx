@@ -9,7 +9,7 @@ import { useTranslation } from 'react-i18next';
 import { DESKTOP_HEADER_ICON_SIZE } from '@/constants/token';
 import { useSessionStore } from '@/store/session';
 
-const ShareModal = dynamic(() => import('./ShareModal'));
+const ShareModal = dynamic(() => import('./ShareModal'), { ssr: false });
 interface ShareButtonProps {
   className?: string;
   // open?: boolean;

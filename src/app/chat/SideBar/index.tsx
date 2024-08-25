@@ -1,3 +1,5 @@
+'use client';
+
 import { DraggablePanel } from '@lobehub/ui';
 import { createStyles } from 'antd-style';
 import { Suspense } from 'react';

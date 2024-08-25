@@ -1,5 +1,3 @@
-'use client';
-
 import { Flexbox } from 'react-layout-kit';
 
 import AgentMarket from './Market';
