@@ -7,6 +7,7 @@ import dynamic from 'next/dynamic';
 import React, { memo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
+import { Virtuoso } from 'react-virtuoso';
 
 import Header from '@/components/Header';
 import { useDanceStore } from '@/store/dance';
@@ -53,26 +54,27 @@ const DanceList = memo((props: PlayListProps) => {
       <Flexbox className={styles.list} flex={1}>
         <DanceMarketModal open={open} setOpen={setOpen} />
         <Header
-          title={t('danceList', { ns: 'dance' })}
+          title={t('danceList')}
           extra={
             <ActionIcon
               icon={PlusCircle}
               onClick={() => {
                 setOpen(true);
               }}
-              title={t('musicAndDance', { ns: 'dance' })}
+              title={t('danceMarket')}
             />
           }
         />
 
-        {danceList.map((item) => {
-          return <DanceItem danceItem={item} key={item.danceId} />;
-        })}
+        <Virtuoso
+          computeItemKey={(_, item) => item.danceId}
+          data={danceList}
+          followOutput={false}
+          itemContent={(index, item) => <DanceItem danceItem={item} key={item.danceId} />}
+        />
+
         {danceList.length === 0 ? (
-          <Empty
-            description={t('noPlayList', { ns: 'dance' })}
-            image={Empty.PRESENTED_IMAGE_SIMPLE}
-          >
+          <Empty description={t('noDanceList')} image={Empty.PRESENTED_IMAGE_SIMPLE}>
             <GradientButton
               glow
               size="middle"
@@ -80,7 +82,7 @@ const DanceList = memo((props: PlayListProps) => {
                 setOpen(true);
               }}
             >
-              {t('musicAndDance', { ns: 'dance' })}
+              {t('danceMarket')}
             </GradientButton>
           </Empty>
         ) : null}
