@@ -1,19 +1,18 @@
 import { SendOutlined } from '@ant-design/icons';
-import { Icon, TextArea } from '@lobehub/ui';
+import { Icon } from '@lobehub/ui';
 import { Button } from 'antd';
 import { useTheme } from 'antd-style';
-import { InputRef } from 'antd/es/input/Input';
 import { ChevronUp, CornerDownLeft, LucideCommand } from 'lucide-react';
-import React, { memo, useRef } from 'react';
+import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Center, Flexbox } from 'react-layout-kit';
 
 import StopLoadingIcon from '@/components/StopLoading';
 import useChatInput from '@/hooks/useSendMessage';
 import { useSessionStore } from '@/store/session';
-import { isCommandPressed } from '@/utils/keyboard';
 import { isMacOS } from '@/utils/platform';
 
+import TextArea from './TextArea';
 import Record from './actions/Record';
 import { useStyles } from './style';
 
@@ -25,8 +24,6 @@ interface InputAreaProps {
 const isMac = isMacOS();
 
 const InputArea = memo((props: InputAreaProps) => {
-  const ref = useRef<InputRef>(null);
-  const isChineseInput = useRef(false);
   const onSend = useChatInput();
   const { styles } = useStyles();
   const theme = useTheme();
@@ -34,10 +31,8 @@ const InputArea = memo((props: InputAreaProps) => {
 
   const { className, style } = props;
 
-  const [loading, messageInput, setMessageInput, stopGenerateMessage] = useSessionStore((s) => [
+  const [loading, stopGenerateMessage] = useSessionStore((s) => [
     !!s.chatLoadingId,
-    s.messageInput,
-    s.setMessageInput,
     s.stopGenerateMessage,
   ]);
 
@@ -67,37 +62,7 @@ const InputArea = memo((props: InputAreaProps) => {
   return (
     <Flexbox className={className} style={style}>
       <Flexbox width={'100%'} horizontal gap={4}>
-        <TextArea
-          autoFocus
-          onBlur={(e) => {
-            setMessageInput?.(e.target.value);
-          }}
-          onChange={(e) => {
-            setMessageInput?.(e.target.value);
-          }}
-          onCompositionEnd={() => {
-            isChineseInput.current = false;
-          }}
-          onCompositionStart={() => {
-            isChineseInput.current = true;
-          }}
-          onPressEnter={(e) => {
-            if (loading || e.shiftKey || isChineseInput.current) return;
-
-            if (isCommandPressed(e)) {
-              setMessageInput?.((e.target as any).value + '\n');
-              return;
-            }
-
-            e.preventDefault();
-            onSend();
-          }}
-          placeholder={t('input.placeholder')}
-          ref={ref}
-          autoSize={true}
-          type={'block'}
-          value={messageInput}
-        />
+        <TextArea />
         <Button
           onClick={() => {
             if (loading) {
