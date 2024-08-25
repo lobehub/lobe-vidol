@@ -2,6 +2,37 @@
 
 # Changelog
 
+### [Version&nbsp;0.25.1](https://github.com/lobehub/lobe-vidol/compare/v0.25.0...v0.25.1)
+<sup>Released on **2024-08-25**</sup>
+
+
+#### 🐛 Bug Fixes
+
+- **misc**: 默认注入主题.
+
+
+<br/>
+
+
+
+<details>
+<summary><kbd>Improvements and Fixes</kbd></summary>
+
+
+
+#### What's fixed
+
+* **misc**: 默认注入主题 ([402f4c6](https://github.com/lobehub/lobe-vidol/commit/402f4c6))
+
+</details>
+
+
+<div align="right">
+
+[![](https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square)](#readme-top)
+
+</div>
+
 ## [Version&nbsp;0.25.0](https://github.com/lobehub/lobe-vidol/compare/v0.24.0...v0.25.0)
 <sup>Released on **2024-08-24**</sup>
 
