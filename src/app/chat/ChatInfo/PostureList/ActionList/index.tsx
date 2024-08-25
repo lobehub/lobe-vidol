@@ -6,10 +6,9 @@ import { Virtuoso } from 'react-virtuoso';
 
 import Header from '@/components/Header';
 import { DEFAULT_POSTURE_ANIMATION } from '@/constants/touch';
+import MotionActionItem from '@/features/MotionActionItem';
 import { GenderEnum } from '@/types/agent';
 import { MotionAnimation, PostureCategoryEnum } from '@/types/touch';
-
-import ListItem from './ListItem';
 
 interface AreaListProps {
   className?: string;
@@ -52,7 +51,7 @@ const AreaList = memo((props: AreaListProps) => {
           computeItemKey={(_, item) => item.id}
           data={filteredList}
           followOutput={false}
-          itemContent={(index, item) => <ListItem item={item} key={item.id} />}
+          itemContent={(index, item) => <MotionActionItem item={item} key={item.id} />}
         />
       </Flexbox>
     </Flexbox>
