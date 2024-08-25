@@ -11,6 +11,7 @@
     "save": "Speichern",
     "share": "Teilen"
   },
+  "agentMarket": "Charaktermarkt",
   "animation": {
     "animationList": "Animationsliste",
     "postureList": "Haltungsliste",
@@ -24,6 +25,8 @@
     "startTitle": "Benutzerdefinierter API-Schlüssel"
   },
   "chat": "Chat",
+  "danceList": "Tanzliste",
+  "danceMarket": "Tanzmarkt",
   "delSession": "Sitzung löschen",
   "delSessionAlert": "Möchten Sie den Chat wirklich löschen? Nach dem Löschen kann er nicht wiederhergestellt werden, bitte seien Sie vorsichtig!",
   "history": {
@@ -44,6 +47,7 @@
     "send": "Senden",
     "warp": "Umbruch"
   },
+  "noDanceList": "Derzeit keine Wiedergabeliste verfügbar. Sie können im Markt die Tänze abonnieren, die Ihnen gefallen.",
   "selectModel": "Bitte wählen Sie ein Modell aus",
   "sessionCreate": "Chat erstellen",
   "sessionList": "Sitzungsliste",

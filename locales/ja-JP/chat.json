@@ -11,6 +11,7 @@
     "save": "保存",
     "share": "共有"
   },
+  "agentMarket": "キャラクターマーケット",
   "animation": {
     "animationList": "アニメーションリスト",
     "postureList": "ポーズリスト",
@@ -24,6 +25,8 @@
     "startTitle": "カスタム API キー"
   },
   "chat": "チャット",
+  "danceList": "ダンスリスト",
+  "danceMarket": "ダンスマーケット",
   "delSession": "セッションを削除",
   "delSessionAlert": "会話を削除してもよろしいですか？削除後は復元できませんので、慎重に操作してください！",
   "history": {
@@ -44,6 +47,7 @@
     "send": "送信",
     "warp": "改行"
   },
+  "noDanceList": "現在再生リストはありません。お気に入りのダンスをマーケットで購読できます。",
   "selectModel": "モデルを選択してください",
   "sessionCreate": "チャットを作成",
   "sessionList": "セッションリスト",

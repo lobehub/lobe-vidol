@@ -11,6 +11,7 @@
     "save": "儲存",
     "share": "分享"
   },
+  "agentMarket": "角色市場",
   "animation": {
     "animationList": "動作列表",
     "postureList": "姿勢列表",
@@ -24,6 +25,8 @@
     "startTitle": "自訂 API Key"
   },
   "chat": "聊天",
+  "danceList": "舞蹈列表",
+  "danceMarket": "舞蹈市場",
   "delSession": "刪除會話",
   "delSessionAlert": "確認刪除對話嗎？刪除後無法恢復，請謹慎操作！",
   "history": {
@@ -44,6 +47,7 @@
     "send": "發送",
     "warp": "換行"
   },
+  "noDanceList": "暫無播放列表，您可以透過市場訂閱您喜歡的舞蹈",
   "selectModel": "請選擇模型",
   "sessionCreate": "建立聊天",
   "sessionList": "會話列表",

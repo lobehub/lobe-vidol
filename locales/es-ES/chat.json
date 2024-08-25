@@ -11,6 +11,7 @@
     "save": "Guardar",
     "share": "Compartir"
   },
+  "agentMarket": "Mercado de personajes",
   "animation": {
     "animationList": "Lista de acciones",
     "postureList": "Lista de posturas",
@@ -24,6 +25,8 @@
     "startTitle": "Clave API personalizada"
   },
   "chat": "charlar",
+  "danceList": "Lista de danzas",
+  "danceMarket": "Mercado de danzas",
   "delSession": "Eliminar sesión",
   "delSessionAlert": "¿Confirmas la eliminación de la conversación? Una vez eliminada, no se puede recuperar, ¡por favor actúa con precaución!",
   "history": {
@@ -44,6 +47,7 @@
     "send": "Enviar",
     "warp": "Saltar línea"
   },
+  "noDanceList": "No hay listas de reproducción disponibles. Puedes suscribirte a tus danzas favoritas a través del mercado.",
   "selectModel": "Por favor, seleccione un modelo",
   "sessionCreate": "Crear chat",
   "sessionList": "Lista de sesiones",
