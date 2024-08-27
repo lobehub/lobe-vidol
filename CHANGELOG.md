@@ -2,6 +2,37 @@
 
 # Changelog
 
+## [Version&nbsp;0.26.0](https://github.com/lobehub/lobe-vidol/compare/v0.25.1...v0.26.0)
+<sup>Released on **2024-08-27**</sup>
+
+
+#### ✨ Features
+
+- **misc**: Add vrm loading dom.
+
+
+<br/>
+
+
+
+<details>
+<summary><kbd>Improvements and Fixes</kbd></summary>
+
+
+
+#### What's improved
+
+* **misc**: Add vrm loading dom ([7d1f049](https://github.com/lobehub/lobe-vidol/commit/7d1f049))
+
+</details>
+
+
+<div align="right">
+
+[![](https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square)](#readme-top)
+
+</div>
+
 ### [Version&nbsp;0.25.1](https://github.com/lobehub/lobe-vidol/compare/v0.25.0...v0.25.1)
 <sup>Released on **2024-08-25**</sup>
 
