@@ -32,9 +32,25 @@ function AgentViewer(props: Props) {
     (canvas: HTMLCanvasElement) => {
       if (canvas) {
         viewer.setup(canvas);
-        fetchModelUrl(agent.agentId, agent.meta.model!).then((modelUrl) => {
+        fetchModelUrl(agent.agentId, agent.meta.model!).then(async (modelUrl) => {
           if (modelUrl) {
-            viewer.loadVrm(modelUrl);
+            // add loading dom
+            const agentViewer = document.querySelector('#agent-viewer')!;
+            const loadingScreen = document.createElement('div');
+            loadingScreen.setAttribute('id', 'loading-screen');
+            const loader = document.createElement('div');
+            loader.setAttribute('id', 'loader');
+            loadingScreen.append(loader);
+            agentViewer.append(loadingScreen);
+
+            // load
+            await viewer.loadVrm(modelUrl);
+
+            // remove loading dom
+            loadingScreen.classList.add('fade-out');
+            loadingScreen.addEventListener('transitionend', () => {
+              loadingScreen.remove();
+            });
           }
         });
 
@@ -90,6 +106,7 @@ function AgentViewer(props: Props) {
     <div
       ref={ref}
       className={classNames(styles.viewer, className)}
+      id="agent-viewer"
       style={{ height, width, ...style }}
     >
       <ToolBar className={styles.toolbar} viewer={viewer} />
