@@ -1,6 +1,6 @@
 import { VRM, VRMLoaderPlugin, VRMUtils } from '@pixiv/three-vrm';
 import * as THREE from 'three';
-import { AnimationAction, AnimationClip } from 'three';
+import { AnimationAction, AnimationClip, LoadingManager } from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { LoopOnce } from 'three/src/constants';
 
@@ -50,7 +50,6 @@ export class Model {
           autoUpdateHumanBones: true,
         }),
     );
-
     const gltf = await loader.loadAsync(url);
 
     // 提升性能
