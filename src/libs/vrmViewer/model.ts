@@ -116,7 +116,7 @@ export class Model {
     if (vrma) await this.loadAnimation(vrma);
   }
 
-  public async loadFBX(animationUrl: string) {
+  public async loadFBX(animationUrl: string, loop: boolean = true) {
     const { vrm, mixer } = this;
 
     if (vrm && mixer) {
@@ -125,6 +125,8 @@ export class Model {
       const clip = await loadMixamoAnimation(animationUrl, vrm);
       // Apply the loaded animation to mixer and play
       const action = mixer.clipAction(clip);
+      if (!loop) action.setLoop(LoopOnce, 1);
+
       action.play();
       this._action = action;
       this._clip = clip;
@@ -157,6 +159,7 @@ export class Model {
    */
   public async speak(buffer: ArrayBuffer, screenplay: Screenplay) {
     this.emoteController?.playEmotion(screenplay.emotion);
+    if (screenplay.motion) this.loadFBX(screenplay.motion);
     await new Promise((resolve) => {
       this._lipSync?.playFromArrayBuffer(buffer, () => {
         resolve(true);

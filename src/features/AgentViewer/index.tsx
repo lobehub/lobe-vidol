@@ -1,12 +1,16 @@
+import { VRMExpressionPresetName } from '@pixiv/three-vrm';
 import { Progress } from 'antd';
 import classNames from 'classnames';
 import React, { memo, useCallback, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import PageLoading from '@/components/PageLoading';
+import { DEFAULT_MOTION_ANIMATION, GREETING_MOTION_ID } from '@/constants/touch';
 import { useLoadModel } from '@/hooks/useLoadModel';
+import { speakCharacter } from '@/libs/messages/speakCharacter';
 import { useGlobalStore } from '@/store/global';
 import { Agent } from '@/types/agent';
+import { fetchWithProgress } from '@/utils/fetch';
 
 import ToolBar from './ToolBar';
 import { useStyles } from './style';
@@ -43,14 +47,38 @@ function AgentViewer(props: Props) {
             loadingScreen.append(loader);
             agentViewer.append(loadingScreen);
 
-            // load
+            // load vrm
             await viewer.loadVrm(modelUrl);
 
-            // remove loading dom
-            loadingScreen.classList.add('fade-out');
-            loadingScreen.addEventListener('transitionend', () => {
-              loadingScreen.remove();
-            });
+            // load motion
+            let motionUrl = undefined;
+            const item = DEFAULT_MOTION_ANIMATION.find((item) => item.id === GREETING_MOTION_ID);
+            if (item) {
+              const blob = await fetchWithProgress(item.url);
+              motionUrl = window.URL.createObjectURL(blob);
+            }
+
+            speakCharacter(
+              {
+                emotion: VRMExpressionPresetName.Neutral,
+                tts: {
+                  ...agent.tts,
+                  message: agent.greeting,
+                },
+                motion: motionUrl,
+              },
+              viewer,
+              () => {
+                // remove loading dom
+                loadingScreen.classList.add('fade-out');
+                loadingScreen.addEventListener('transitionend', () => {
+                  loadingScreen.remove();
+                });
+              },
+              () => {
+                viewer.model?.loadIdleAnimation();
+              },
+            );
           }
         });
 

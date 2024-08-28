@@ -54,7 +54,6 @@ export default memo((props: Props) => {
               ...currentAgentTTS,
               message: touchAction.text,
             },
-            motion: touchAction.motion,
           },
           viewer,
           () => {},

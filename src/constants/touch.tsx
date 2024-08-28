@@ -12,6 +12,7 @@ import {
 export const HAPPY_MOTION_ID = 'c9c98a38-b96c-11e4-a802-0aaa78deedf9';
 export const ANGRY_MOTION_ID = 'c9c98b02-b96c-11e4-a802-0aaa78deedf9';
 export const RELAX_MOTION_ID = 'c9c98361-b96c-11e4-a802-0aaa78deedf9';
+export const GREETING_MOTION_ID = 'c9c7996a-b96c-11e4-a802-0aaa78deedf9';
 
 export const DEFAULT_TOUCH_ACTION_CONFIG_FEMALE: TouchActionConfig = {
   [TouchAreaEnum.Head]: [
