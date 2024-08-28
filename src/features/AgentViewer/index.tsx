@@ -71,8 +71,8 @@ function AgentViewer(props: Props) {
               () => {
                 // remove loading dom
                 loadingScreen.classList.add('fade-out');
-                loadingScreen.addEventListener('transitionend', () => {
-                  loadingScreen.remove();
+                loadingScreen.addEventListener('transitionend', (event) => {
+                  (event.target as HTMLDivElement)!.remove();
                 });
               },
               () => {
