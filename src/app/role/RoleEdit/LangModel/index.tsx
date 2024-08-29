@@ -1,26 +1,18 @@
 'use client';
 
-import { Form, FormProps, SliderWithInput } from '@lobehub/ui';
-import React, { memo, useEffect } from 'react';
+import { Form, FormProps } from '@lobehub/ui';
+import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import FrequencyPenalty from '@/app/role/RoleEdit/LangModel/FrequencyPenalty';
+import ModelSelect from '@/app/role/RoleEdit/LangModel/ModelSelect';
+import PresencePenalty from '@/app/role/RoleEdit/LangModel/PresencePenalty';
+import Temperature from '@/app/role/RoleEdit/LangModel/Temperature';
+import TopP from '@/app/role/RoleEdit/LangModel/TopP';
 import { FORM_STYLE } from '@/constants/token';
-import { agentSelectors, useAgentStore } from '@/store/agent';
-
-import ModelSelect from './ModelSelect';
 
 const LangModel = memo(() => {
-  const [form] = Form.useForm();
-
   const { t } = useTranslation('role');
-
-  const { updateAgentConfig } = useAgentStore();
-
-  const agent = agentSelectors.currentAgentItem(useAgentStore());
-
-  useEffect(() => {
-    form.setFieldsValue(agent);
-  }, [agent]);
 
   const model: FormProps['items'] = [
     {
@@ -31,28 +23,28 @@ const LangModel = memo(() => {
       tag: 'model',
     },
     {
-      children: <SliderWithInput max={1} min={0} step={0.1} />,
+      children: <Temperature />,
       desc: t('llm.temperatureDescription'),
       label: t('llm.temperatureLabel'),
       name: ['params', 'temperature'],
       tag: 'temperature',
     },
     {
-      children: <SliderWithInput max={1} min={0} step={0.1} />,
+      children: <TopP />,
       desc: t('llm.topPDescription'),
       label: t('llm.topPLabel'),
       name: ['params', 'top_p'],
       tag: 'top_p',
     },
     {
-      children: <SliderWithInput max={2} min={-2} step={0.1} />,
+      children: <PresencePenalty />,
       desc: t('llm.presencePenaltyDescription'),
       label: t('llm.presencePenaltyLabel'),
       name: ['params', 'presence_penalty'],
       tag: 'presence_penalty',
     },
     {
-      children: <SliderWithInput max={2} min={-2} step={0.1} />,
+      children: <FrequencyPenalty />,
       desc: t('llm.frequencyPenaltyDescription'),
       label: t('llm.frequencyPenaltyLabel'),
       name: ['params', 'frequency_penalty'],
@@ -60,16 +52,7 @@ const LangModel = memo(() => {
     },
   ];
 
-  return (
-    <Form
-      form={form}
-      onValuesChange={(_, values) => updateAgentConfig(values)}
-      items={model}
-      itemsType={'flat'}
-      variant={'block'}
-      {...FORM_STYLE}
-    />
-  );
+  return <Form items={model} itemsType={'flat'} variant={'block'} {...FORM_STYLE} />;
 });
 
 export default LangModel;

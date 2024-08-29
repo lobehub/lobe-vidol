@@ -45,7 +45,12 @@ const ViewerWithUpload = memo<ViewerWithUploadProps>(({ style }) => {
       openFileDialogOnClick={!currentAgentModel}
     >
       {currentAgentModel && currentAgent ? (
-        <AgentViewer height={ROLE_VIEWER_HEIGHT} agent={currentAgent} width={ROLE_VIEWER_WIDTH} />
+        <AgentViewer
+          height={ROLE_VIEWER_HEIGHT}
+          agent={currentAgent}
+          width={ROLE_VIEWER_WIDTH}
+          greeting={false}
+        />
       ) : (
         <EmptyGuide
           size={{ height: ROLE_VIEWER_HEIGHT, width: ROLE_VIEWER_WIDTH }}

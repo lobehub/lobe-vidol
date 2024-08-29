@@ -4,6 +4,7 @@ import { memo } from 'react';
 
 import { ModelItemRender } from '@/components/ModelSelect';
 import { OPENAI_MODEL_LIST } from '@/constants/openai';
+import { agentSelectors, useAgentStore } from '@/store/agent';
 
 const useStyles = createStyles(({ css, prefixCls }) => ({
   select: css`
@@ -13,13 +14,12 @@ const useStyles = createStyles(({ css, prefixCls }) => ({
   `,
 }));
 
-interface ModelSelectProps {
-  onChange?: (modelId: string) => void;
-  value?: string;
-}
-
-const ModelSelect = memo<ModelSelectProps>(({ value, onChange }) => {
+const ModelSelect = memo(() => {
   const { styles } = useStyles();
+  const [agent, updateAgentConfig] = useAgentStore((s) => [
+    agentSelectors.currentAgentItem(s),
+    s.updateAgentConfig,
+  ]);
 
   return (
     <Select
@@ -28,8 +28,8 @@ const ModelSelect = memo<ModelSelectProps>(({ value, onChange }) => {
         value: model.id,
       }))}
       popupClassName={styles.select}
-      value={value}
-      onChange={onChange}
+      value={agent?.model}
+      onChange={(value) => updateAgentConfig({ model: value })}
       placeholder="请选择"
     />
   );

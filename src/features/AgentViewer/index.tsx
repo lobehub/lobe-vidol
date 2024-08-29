@@ -18,13 +18,17 @@ import { useStyles } from './style';
 interface Props {
   agent: Agent;
   className?: string;
+  /**
+   * 是否播放招呼动画
+   */
+  greeting?: boolean;
   height?: number | string;
   style?: React.CSSProperties;
   width?: number | string;
 }
 
 function AgentViewer(props: Props) {
-  const { className, style, height, agent, width } = props;
+  const { className, style, height, agent, width, greeting = true } = props;
   const { styles } = useStyles();
   const ref = useRef<HTMLDivElement>(null);
   const viewer = useGlobalStore((s) => s.viewer);
@@ -50,35 +54,42 @@ function AgentViewer(props: Props) {
             // load vrm
             await viewer.loadVrm(modelUrl);
 
-            // load motion
-            let motionUrl = undefined;
-            const item = DEFAULT_MOTION_ANIMATION.find((item) => item.id === GREETING_MOTION_ID);
-            if (item) {
-              const blob = await fetchWithProgress(item.url);
-              motionUrl = window.URL.createObjectURL(blob);
-            }
+            if (greeting) {
+              // load motion
+              let motionUrl = undefined;
+              const item = DEFAULT_MOTION_ANIMATION.find((item) => item.id === GREETING_MOTION_ID);
+              if (item) {
+                const blob = await fetchWithProgress(item.url);
+                motionUrl = window.URL.createObjectURL(blob);
+              }
 
-            speakCharacter(
-              {
-                emotion: VRMExpressionPresetName.Neutral,
-                tts: {
-                  ...agent.tts,
-                  message: agent.greeting,
+              speakCharacter(
+                {
+                  emotion: VRMExpressionPresetName.Neutral,
+                  tts: {
+                    ...agent.tts,
+                    message: agent.greeting,
+                  },
+                  motion: motionUrl,
                 },
-                motion: motionUrl,
-              },
-              viewer,
-              () => {
-                // remove loading dom
-                loadingScreen.classList.add('fade-out');
-                loadingScreen.addEventListener('transitionend', (event) => {
-                  (event.target as HTMLDivElement)!.remove();
-                });
-              },
-              () => {
-                viewer.model?.loadIdleAnimation();
-              },
-            );
+                viewer,
+                () => {
+                  // remove loading dom
+                  loadingScreen.classList.add('fade-out');
+                  loadingScreen.addEventListener('transitionend', (event) => {
+                    (event.target as HTMLDivElement)!.remove();
+                  });
+                },
+                () => {
+                  viewer.model?.loadIdleAnimation();
+                },
+              );
+            } else {
+              loadingScreen.classList.add('fade-out');
+              loadingScreen.addEventListener('transitionend', (event) => {
+                (event.target as HTMLDivElement)!.remove();
+              });
+            }
           }
         });
 
