@@ -1,5 +1,6 @@
 import { Empty } from 'antd';
 import { createStyles } from 'antd-style';
+import { isEqual } from 'lodash-es';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import LazyLoad from 'react-lazy-load';
@@ -19,11 +20,14 @@ interface SessionListProps {
 }
 
 const SessionList = memo<SessionListProps>(({ filter }) => {
-  const [filterAgentListIds, activateAgent, agentListIds] = useAgentStore((s) => [
-    agentSelectors.filterAgentListIds(s, filter),
-    s.activateAgent,
-    agentSelectors.agentListIds(s),
-  ]);
+  const [filterAgentListIds, activateAgent, agentListIds] = useAgentStore(
+    (s) => [
+      agentSelectors.filterAgentListIds(s, filter),
+      s.activateAgent,
+      agentSelectors.agentListIds(s),
+    ],
+    isEqual,
+  );
   const { styles } = useStyles();
   const { t } = useTranslation('role');
 

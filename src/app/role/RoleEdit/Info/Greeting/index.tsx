@@ -13,8 +13,8 @@ interface Props {
 export default memo<Props>((props) => {
   const { style, className } = props;
   const { t } = useTranslation('role');
-  const [agent, updateAgentConfig] = useAgentStore((s) => [
-    agentSelectors.currentAgentItem(s),
+  const [greeting, updateAgentConfig] = useAgentStore((s) => [
+    agentSelectors.currentAgentGreeting(s),
     s.updateAgentConfig,
   ]);
 
@@ -22,7 +22,7 @@ export default memo<Props>((props) => {
     <Input.TextArea
       className={className}
       style={style}
-      value={agent?.greeting}
+      value={greeting}
       autoSize={{ minRows: 2, maxRows: 4 }}
       placeholder={t('role.greetTip')}
       showCount

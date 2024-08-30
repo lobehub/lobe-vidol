@@ -1,8 +1,9 @@
-import { LOBE_VIDOL_DEFAULT_AGENT_ID } from '@/constants/agent';
+import { DEFAULT_AGENT_CONFIG, LOBE_VIDOL_DEFAULT_AGENT_ID } from '@/constants/agent';
 import { EMPTY_TOUCH_CONFIG } from '@/constants/touch';
 import { Agent, AgentMeta } from '@/types/agent';
 import { TouchActionConfig } from '@/types/touch';
 import { TTS } from '@/types/tts';
+import { merge } from '@/utils/merge';
 
 import { AgentStore } from '../index';
 
@@ -15,7 +16,7 @@ const currentAgentItem = (s: AgentStore): Agent | undefined => {
   const currentAgent = localAgentList.find((item) => item.agentId === currentIdentifier);
   if (!currentAgent) return undefined;
 
-  return currentAgent;
+  return merge(DEFAULT_AGENT_CONFIG, currentAgent);
 };
 
 const currentAgentMeta = (s: AgentStore): AgentMeta | undefined => {
@@ -23,6 +24,13 @@ const currentAgentMeta = (s: AgentStore): AgentMeta | undefined => {
   if (!currentAgent) return undefined;
 
   return currentAgent.meta;
+};
+
+const currentAgentGreeting = (s: AgentStore): string | undefined => {
+  const currentAgent = currentAgentItem(s);
+  if (!currentAgent) return undefined;
+
+  return currentAgent.greeting;
 };
 
 const currentAgentTTS = (s: AgentStore): TTS | undefined => {
@@ -95,6 +103,7 @@ export const agentSelectors = {
   currentAgentMeta,
   currentAgentTTS,
   currentAgentTouch,
+  currentAgentGreeting,
   filterAgentListIds,
   getAgentModelById,
   agentListIds,

@@ -1,6 +1,7 @@
-import { Skeleton } from 'antd';
 import classNames from 'classnames';
 import React from 'react';
+
+import SkeletonList from '@/components/SkeletonList';
 
 import ListItem from './ListItem';
 import { useStyles } from './style';
@@ -20,17 +21,6 @@ interface GridListProps {
   onClick?: (id: string, item: Item) => void;
   style?: React.CSSProperties;
 }
-
-const SkeletonList = () => {
-  const total = 18;
-  return (
-    <>
-      {Array.from({ length: total }).map((_, i) => (
-        <Skeleton.Image active={true} key={i} />
-      ))}
-    </>
-  );
-};
 
 const GridList = (props: GridListProps) => {
   const { items, className, style, onClick, isActivated, isChecked, loading = false } = props;
@@ -58,7 +48,13 @@ const GridList = (props: GridListProps) => {
 
   return (
     <div className={classNames(className, styles.grid)} style={style}>
-      <div className={styles.list}>{loading ? <SkeletonList /> : <List />}</div>
+      {loading ? (
+        <SkeletonList />
+      ) : (
+        <div className={styles.list}>
+          <List />
+        </div>
+      )}
     </div>
   );
 };

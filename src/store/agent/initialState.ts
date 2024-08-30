@@ -1,5 +1,4 @@
-import { LOBE_VIDOL_DEFAULT_AGENT_ID } from '@/constants/agent';
-import { DEFAULT_LLM_CONFIG } from '@/constants/openai';
+import { DEFAULT_LLM_CONFIG, LOBE_VIDOL_DEFAULT_AGENT_ID } from '@/constants/agent';
 import { DEFAULT_TTS_CONFIG_FEMALE } from '@/constants/tts';
 import { CategoryEnum, GenderEnum } from '@/types/agent';
 

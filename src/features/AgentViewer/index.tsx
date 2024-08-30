@@ -40,6 +40,7 @@ function AgentViewer(props: Props) {
     (canvas: HTMLCanvasElement) => {
       if (canvas) {
         viewer.setup(canvas);
+        // 这里根据 agentId 获取 agent 配置.
         fetchModelUrl(agent.agentId, agent.meta.model!).then(async (modelUrl) => {
           if (modelUrl) {
             // add loading dom
