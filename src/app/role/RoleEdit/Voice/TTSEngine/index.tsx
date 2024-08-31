@@ -11,8 +11,8 @@ interface Props {
 
 export default memo<Props>((props) => {
   const { style, className } = props;
-  const [tts, updateAgentTTS] = useAgentStore((s) => [
-    agentSelectors.currentAgentTTS(s),
+  const [engine, updateAgentTTS] = useAgentStore((s) => [
+    agentSelectors.currentAgentTTS(s)?.engine,
     s.updateAgentTTS,
   ]);
 
@@ -20,7 +20,7 @@ export default memo<Props>((props) => {
     <Select
       className={className}
       style={style}
-      value={tts?.engine}
+      value={engine}
       options={[
         {
           label: 'Edge',

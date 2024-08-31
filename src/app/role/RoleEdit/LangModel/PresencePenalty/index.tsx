@@ -4,8 +4,8 @@ import React, { memo } from 'react';
 import { agentSelectors, useAgentStore } from '@/store/agent';
 
 const PresencePenalty = memo(() => {
-  const [agent, updateAgentConfig] = useAgentStore((s) => [
-    agentSelectors.currentAgentItem(s),
+  const [presence_penalty, updateAgentConfig] = useAgentStore((s) => [
+    agentSelectors.currentAgentParams(s)?.presence_penalty,
     s.updateAgentConfig,
   ]);
 
@@ -14,7 +14,7 @@ const PresencePenalty = memo(() => {
       max={2}
       min={-2}
       step={0.1}
-      value={agent?.params?.presence_penalty}
+      value={presence_penalty}
       onChange={(value) => updateAgentConfig({ params: { presence_penalty: value } })}
     />
   );

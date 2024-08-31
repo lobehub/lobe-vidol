@@ -4,8 +4,8 @@ import React, { memo } from 'react';
 import { agentSelectors, useAgentStore } from '@/store/agent';
 
 const FrequencyPenalty = memo(() => {
-  const [agent, updateAgentConfig] = useAgentStore((s) => [
-    agentSelectors.currentAgentItem(s),
+  const [frequency_penalty, updateAgentConfig] = useAgentStore((s) => [
+    agentSelectors.currentAgentParams(s)?.frequency_penalty,
     s.updateAgentConfig,
   ]);
 
@@ -14,7 +14,7 @@ const FrequencyPenalty = memo(() => {
       max={2}
       min={-2}
       step={0.1}
-      value={agent?.params?.frequency_penalty}
+      value={frequency_penalty}
       onChange={(value) => updateAgentConfig({ params: { frequency_penalty: value } })}
     />
   );

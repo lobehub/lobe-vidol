@@ -12,15 +12,15 @@ interface Props {
 
 export default memo<Props>((props) => {
   const { style, className } = props;
-  const [tts, updateAgentTTS] = useAgentStore((s) => [
-    agentSelectors.currentAgentTTS(s),
+  const [pitch, updateAgentTTS] = useAgentStore((s) => [
+    agentSelectors.currentAgentTTS(s)?.pitch,
     s.updateAgentTTS,
   ]);
 
   return (
     <Flexbox className={className} style={style} flex={1} horizontal gap={8}>
       <Slider
-        value={tts?.pitch}
+        value={pitch}
         max={MAX_TTS_PITCH}
         style={{ flex: 1 }}
         min={MIN_TTS_PITCH}
@@ -34,7 +34,7 @@ export default memo<Props>((props) => {
         max={MAX_TTS_PITCH}
         step={TTS_PITCH_STEP}
         style={{ width: 80 }}
-        value={tts?.pitch}
+        value={pitch}
         onChange={(value) => {
           updateAgentTTS({ pitch: value === null ? undefined : value });
         }}

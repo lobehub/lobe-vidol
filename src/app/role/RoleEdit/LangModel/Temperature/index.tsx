@@ -4,8 +4,8 @@ import React, { memo } from 'react';
 import { agentSelectors, useAgentStore } from '@/store/agent';
 
 const Temperature = memo(() => {
-  const [agent, updateAgentConfig] = useAgentStore((s) => [
-    agentSelectors.currentAgentItem(s),
+  const [temperature, updateAgentConfig] = useAgentStore((s) => [
+    agentSelectors.currentAgentParams(s)?.temperature,
     s.updateAgentConfig,
   ]);
 
@@ -14,7 +14,7 @@ const Temperature = memo(() => {
       max={1}
       min={0}
       step={0.1}
-      value={agent?.params?.temperature}
+      value={temperature}
       onChange={(value) => updateAgentConfig({ params: { temperature: value } })}
     />
   );

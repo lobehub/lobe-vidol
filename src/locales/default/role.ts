@@ -195,7 +195,7 @@ export default {
     temperatureLabel: '随机性',
     temperatureDescription: '值越大，回复越随机',
     topPLabel: '核采样',
-    topPDescription: '与随机性类型，但不要和随机性一起更改',
+    topPDescription: '与随机性类似，但不要和随机性一起更改',
     presencePenaltyLabel: '话题新鲜度',
     presencePenaltyDescription: '值越大，越有可能拓展到新话题',
     frequencyPenaltyLabel: '频率惩罚度',

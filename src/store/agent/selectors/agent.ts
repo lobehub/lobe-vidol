@@ -1,6 +1,7 @@
 import { DEFAULT_AGENT_CONFIG, LOBE_VIDOL_DEFAULT_AGENT_ID } from '@/constants/agent';
 import { EMPTY_TOUCH_CONFIG } from '@/constants/touch';
 import { Agent, AgentMeta } from '@/types/agent';
+import { LLMParams } from '@/types/llm';
 import { TouchActionConfig } from '@/types/touch';
 import { TTS } from '@/types/tts';
 import { merge } from '@/utils/merge';
@@ -69,6 +70,13 @@ const currentAgentModel = (s: AgentStore): string | undefined => {
   return currentAgent.meta.model;
 };
 
+const currentAgentParams = (s: AgentStore): LLMParams | undefined => {
+  const currentAgent = currentAgentItem(s);
+  if (!currentAgent) return undefined;
+
+  return currentAgent.params;
+};
+
 const currentAgentId = (s: AgentStore): string | undefined => {
   const currentAgent = currentAgentItem(s);
   if (!currentAgent) return undefined;
@@ -103,6 +111,7 @@ export const agentSelectors = {
   currentAgentMeta,
   currentAgentTTS,
   currentAgentTouch,
+  currentAgentParams,
   currentAgentGreeting,
   filterAgentListIds,
   getAgentModelById,

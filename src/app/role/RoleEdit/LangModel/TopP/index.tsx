@@ -4,8 +4,8 @@ import React, { memo } from 'react';
 import { agentSelectors, useAgentStore } from '@/store/agent';
 
 const TopP = memo(() => {
-  const [agent, updateAgentConfig] = useAgentStore((s) => [
-    agentSelectors.currentAgentItem(s),
+  const [top_p, updateAgentConfig] = useAgentStore((s) => [
+    agentSelectors.currentAgentParams(s)?.top_p,
     s.updateAgentConfig,
   ]);
 
@@ -14,7 +14,7 @@ const TopP = memo(() => {
       max={1}
       min={0}
       step={0.1}
-      value={agent?.params?.top_p}
+      value={top_p}
       onChange={(value) => updateAgentConfig({ params: { top_p: value } })}
     />
   );

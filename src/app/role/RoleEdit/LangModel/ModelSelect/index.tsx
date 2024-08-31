@@ -16,8 +16,8 @@ const useStyles = createStyles(({ css, prefixCls }) => ({
 
 const ModelSelect = memo(() => {
   const { styles } = useStyles();
-  const [agent, updateAgentConfig] = useAgentStore((s) => [
-    agentSelectors.currentAgentItem(s),
+  const [model, updateAgentConfig] = useAgentStore((s) => [
+    agentSelectors.currentAgentItem(s)?.model,
     s.updateAgentConfig,
   ]);
 
@@ -28,7 +28,7 @@ const ModelSelect = memo(() => {
         value: model.id,
       }))}
       popupClassName={styles.select}
-      value={agent?.model}
+      value={model}
       onChange={(value) => updateAgentConfig({ model: value })}
       placeholder="请选择"
     />

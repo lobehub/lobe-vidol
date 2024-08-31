@@ -1,9 +1,9 @@
-import { Form } from '@lobehub/ui';
 import { createStyles } from 'antd-style';
 import classNames from 'classnames';
 import React from 'react';
 
 import SystemRole from './SystemRole';
+import Templates from './Templates';
 
 const useStyles = createStyles(({ css }) => ({
   container: css`
@@ -18,9 +18,8 @@ const Info = () => {
 
   return (
     <div className={classNames(styles.container)}>
-      <Form>
-        <SystemRole />
-      </Form>
+      <SystemRole />
+      <Templates />
     </div>
   );
 };

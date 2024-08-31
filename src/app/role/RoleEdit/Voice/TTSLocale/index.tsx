@@ -11,8 +11,8 @@ interface Props {
 
 export default memo<Props>((props) => {
   const { style, className } = props;
-  const [tts, updateAgentTTS] = useAgentStore((s) => [
-    agentSelectors.currentAgentTTS(s),
+  const [locale, updateAgentTTS] = useAgentStore((s) => [
+    agentSelectors.currentAgentTTS(s)?.locale,
     s.updateAgentTTS,
   ]);
 
@@ -20,7 +20,7 @@ export default memo<Props>((props) => {
     <Select
       className={className}
       style={style}
-      value={tts?.locale}
+      value={locale}
       options={supportedLocales}
       onChange={(value) => {
         updateAgentTTS({ locale: value });
