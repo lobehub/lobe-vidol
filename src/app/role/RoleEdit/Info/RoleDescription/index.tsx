@@ -13,8 +13,8 @@ interface Props {
 export default memo<Props>((props) => {
   const { style, className } = props;
   const { t } = useTranslation('role');
-  const [meta, updateAgentMeta] = useAgentStore((s) => [
-    agentSelectors.currentAgentMeta(s),
+  const [description, updateAgentMeta] = useAgentStore((s) => [
+    agentSelectors.currentAgentMeta(s)?.description,
     s.updateAgentMeta,
   ]);
 
@@ -22,7 +22,7 @@ export default memo<Props>((props) => {
     <Input
       className={className}
       style={style}
-      value={meta?.description}
+      value={description}
       placeholder={t('role.roleDescriptionTip')}
       maxLength={MAX_DESCRIPTION_LENGTH}
       showCount

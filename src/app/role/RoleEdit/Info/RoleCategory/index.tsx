@@ -12,8 +12,8 @@ interface Props {
 
 export default memo<Props>((props) => {
   const { style, className } = props;
-  const [meta, updateAgentMeta] = useAgentStore((s) => [
-    agentSelectors.currentAgentMeta(s),
+  const [category, updateAgentMeta] = useAgentStore((s) => [
+    agentSelectors.currentAgentMeta(s)?.category,
     s.updateAgentMeta,
   ]);
 
@@ -34,7 +34,7 @@ export default memo<Props>((props) => {
         { label: t('category.vroid'), value: CategoryEnum.VROID },
         { label: t('category.vtuber'), value: CategoryEnum.VTUBER },
       ]}
-      value={meta?.category}
+      value={category}
       defaultActiveFirstOption={true}
       onChange={(value) => {
         updateAgentMeta({ category: value });

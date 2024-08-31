@@ -12,8 +12,8 @@ interface Props {
 
 export default memo<Props>((props) => {
   const { style, className } = props;
-  const [meta, updateAgentMeta] = useAgentStore((s) => [
-    agentSelectors.currentAgentMeta(s),
+  const [gender, updateAgentMeta] = useAgentStore((s) => [
+    agentSelectors.currentAgentMeta(s)?.gender,
     s.updateAgentMeta,
   ]);
 
@@ -27,7 +27,7 @@ export default memo<Props>((props) => {
         { label: t('gender.male'), value: GenderEnum.MALE },
         { label: t('gender.female'), value: GenderEnum.FEMALE },
       ]}
-      value={meta?.gender}
+      value={gender}
       defaultActiveFirstOption={true}
       onChange={(value) => {
         updateAgentMeta({ gender: value });

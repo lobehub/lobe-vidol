@@ -13,8 +13,8 @@ interface Props {
 export default memo<Props>((props) => {
   const { style, className } = props;
   const { t } = useTranslation('role');
-  const [meta, updateAgentMeta] = useAgentStore((s) => [
-    agentSelectors.currentAgentMeta(s),
+  const [readme, updateAgentMeta] = useAgentStore((s) => [
+    agentSelectors.currentAgentMeta(s)?.readme,
     s.updateAgentMeta,
   ]);
 
@@ -22,7 +22,7 @@ export default memo<Props>((props) => {
     <Input.TextArea
       className={className}
       style={style}
-      value={meta?.readme}
+      value={readme}
       autoSize={{ minRows: 10, maxRows: 10 }}
       placeholder={t('role.roleReadmeTip')}
       showCount
