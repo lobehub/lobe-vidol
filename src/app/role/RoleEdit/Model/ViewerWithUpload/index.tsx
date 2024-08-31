@@ -17,16 +17,16 @@ interface ViewerWithUploadProps {
 const ViewerWithUpload = memo<ViewerWithUploadProps>(({ style }) => {
   const viewer = useGlobalStore((s) => s.viewer);
   const { t } = useTranslation('role');
-  const [currentAgent, currentAgentModel, updateAgentConfig] = useAgentStore((s) => [
-    agentSelectors.currentAgentItem(s),
+  const [currentAgentId, currentAgentModel, updateAgentConfig] = useAgentStore((s) => [
+    agentSelectors.currentAgentId(s),
     agentSelectors.currentAgentModel(s),
     s.updateAgentConfig,
   ]);
 
   const handleUploadAvatar = (file: any) => {
-    if (!currentAgent) return;
+    if (!currentAgentId) return;
     const blob = new Blob([file], { type: 'application/octet-stream' });
-    const modelKey = getModelPathByAgentId(currentAgent.agentId!);
+    const modelKey = getModelPathByAgentId(currentAgentId!);
 
     storage.setItem(modelKey, blob).then(() => {
       updateAgentConfig({ meta: { model: modelKey } });
@@ -44,10 +44,10 @@ const ViewerWithUpload = memo<ViewerWithUploadProps>(({ style }) => {
       style={style}
       openFileDialogOnClick={!currentAgentModel}
     >
-      {currentAgentModel && currentAgent ? (
+      {currentAgentModel && currentAgentId ? (
         <AgentViewer
           height={ROLE_VIEWER_HEIGHT}
-          agent={currentAgent}
+          agentId={currentAgentId}
           width={ROLE_VIEWER_WIDTH}
           greeting={false}
         />

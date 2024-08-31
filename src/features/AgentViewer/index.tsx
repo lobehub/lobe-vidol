@@ -8,15 +8,18 @@ import PageLoading from '@/components/PageLoading';
 import { DEFAULT_MOTION_ANIMATION, GREETING_MOTION_ID } from '@/constants/touch';
 import { useLoadModel } from '@/hooks/useLoadModel';
 import { speakCharacter } from '@/libs/messages/speakCharacter';
+import { useAgentStore } from '@/store/agent';
 import { useGlobalStore } from '@/store/global';
-import { Agent } from '@/types/agent';
 import { fetchWithProgress } from '@/utils/fetch';
 
 import ToolBar from './ToolBar';
 import { useStyles } from './style';
 
 interface Props {
-  agent: Agent;
+  /**
+   * agent id
+   */
+  agentId: string;
   className?: string;
   /**
    * 是否播放招呼动画
@@ -28,7 +31,7 @@ interface Props {
 }
 
 function AgentViewer(props: Props) {
-  const { className, style, height, agent, width, greeting = true } = props;
+  const { className, style, height, agentId, width, greeting = true } = props;
   const { styles } = useStyles();
   const ref = useRef<HTMLDivElement>(null);
   const viewer = useGlobalStore((s) => s.viewer);
@@ -40,6 +43,8 @@ function AgentViewer(props: Props) {
     (canvas: HTMLCanvasElement) => {
       if (canvas) {
         viewer.setup(canvas);
+        const agent = useAgentStore.getState().getAgentById(agentId);
+        if (!agent) return;
         // 这里根据 agentId 获取 agent 配置.
         fetchModelUrl(agent.agentId, agent.meta.model!).then(async (modelUrl) => {
           if (modelUrl) {
@@ -139,7 +144,7 @@ function AgentViewer(props: Props) {
         });
       }
     },
-    [viewer, agent.agentId],
+    [viewer, agentId],
   );
 
   return (
