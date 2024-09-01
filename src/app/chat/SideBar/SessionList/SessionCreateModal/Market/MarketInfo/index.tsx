@@ -27,8 +27,13 @@ const useStyles = createStyles(({ css, token }) => ({
   `,
 }));
 
-const Header = () => {
+interface MarketInfoProps {
+  setIsModalOpen: (isOpen: boolean) => void;
+}
+
+const MarketInfo = (props: MarketInfoProps) => {
   const { styles } = useStyles();
+  const { setIsModalOpen } = props;
   const [tempId, setTempId] = useState<string>('');
   const [showAgentSidebar, activateAgent, deactivateAgent, currentAgentItem] = useMarketStore(
     (s) => [
@@ -46,7 +51,13 @@ const Header = () => {
 
     if (isSubscribed) {
       actions.push(
-        <ChatButton key={`${currentAgentItem.agentId}-chat`} agent={currentAgentItem} />,
+        <ChatButton
+          key={`${currentAgentItem.agentId}-chat`}
+          agent={currentAgentItem}
+          onClick={() => {
+            setIsModalOpen(false);
+          }}
+        />,
         <UnSubscribe key={`${currentAgentItem.agentId}-unsubscribe`} agent={currentAgentItem} />,
       );
     } else {
@@ -90,4 +101,4 @@ const Header = () => {
   );
 };
 
-export default memo(Header);
+export default memo(MarketInfo);

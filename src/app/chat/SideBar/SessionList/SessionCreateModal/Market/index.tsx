@@ -29,8 +29,13 @@ const useStyles = createStyles(({ css }) => ({
   `,
 }));
 
-const Agent = () => {
+interface AgentProps {
+  setIsModalOpen: (isOpen: boolean) => void;
+}
+
+const Agent = (props: AgentProps) => {
   const { styles } = useStyles();
+  const { setIsModalOpen } = props;
   const { t } = useTranslation('market');
 
   return (
@@ -41,7 +46,7 @@ const Agent = () => {
           <AgentList />
         </div>
       </div>
-      <MarketInfo />
+      <MarketInfo setIsModalOpen={setIsModalOpen} />
     </Flexbox>
   );
 };

@@ -32,7 +32,7 @@ export default () => {
         open={isModalOpen}
         title={t('agentMarket')}
       >
-        <Market />
+        <Market setIsModalOpen={setIsModalOpen} />
       </Modal>
     </>
   );
