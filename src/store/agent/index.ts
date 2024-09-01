@@ -13,7 +13,11 @@ import { shallow } from 'zustand/shallow';
 import { createWithEqualityFn } from 'zustand/traditional';
 import { StateCreator } from 'zustand/vanilla';
 
-import { DEFAULT_LLM_CONFIG, LOBE_VIDOL_DEFAULT_AGENT_ID } from '@/constants/agent';
+import {
+  DEFAULT_AGENT_CONFIG,
+  DEFAULT_LLM_CONFIG,
+  LOBE_VIDOL_DEFAULT_AGENT_ID,
+} from '@/constants/agent';
 import { DEFAULT_AGENT_AVATAR_URL } from '@/constants/common';
 import { DEFAULT_TTS_CONFIG_FEMALE, DEFAULT_TTS_CONFIG_MALE } from '@/constants/tts';
 import createTouchStore from '@/store/agent/slices/touch';
@@ -21,6 +25,7 @@ import { Agent, AgentMeta, CategoryEnum, GenderEnum } from '@/types/agent';
 import { TTS } from '@/types/tts';
 import { mergeWithUndefined } from '@/utils/common';
 import { getModelPathByAgentId } from '@/utils/file';
+import { merge } from '@/utils/merge';
 import storage from '@/utils/storage';
 
 import { initialState } from './initialState';
@@ -130,7 +135,7 @@ const createAgentStore: StateCreator<AgentStore, [['zustand/devtools', never]]> 
     const currentAgent = localAgentList.find((item) => item.agentId === agentId);
     if (!currentAgent) return undefined;
 
-    return currentAgent;
+    return merge(DEFAULT_AGENT_CONFIG, currentAgent);
   },
   createNewAgent: (gender) => {
     const { localAgentList } = get();
