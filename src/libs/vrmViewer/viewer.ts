@@ -1,11 +1,8 @@
+import { VRMHumanBoneName } from '@pixiv/three-vrm';
 import { Parser } from 'mmd-parser';
 import * as THREE from 'three';
 import { Audio, GridHelper, Mesh, MeshLambertMaterial, PlaneGeometry } from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-import { LoopOnce } from 'three/src/constants';
-
-import { loadVMDAnimation } from '@/libs/VMDAnimation/loadVMDAnimation';
-import { AudioPlayer } from '@/libs/audioPlayer/audioPlayer';
 
 import { Model } from './model';
 
@@ -158,6 +155,49 @@ export class Viewer {
     });
 
     resizeObserver.observe(parentElement!);
+
+    // 假设你已经有一个场景和 VRM 模型
+    const raycaster = new THREE.Raycaster();
+    const mouse = new THREE.Vector2();
+
+    // 添加触摸事件
+    canvas.addEventListener(
+      'click',
+      (event) => {
+        if (!this.model) {
+          return;
+        }
+        const rect = canvas.getBoundingClientRect();
+        const canvasWidth = rect.width;
+        const canvasHeight = rect.height;
+
+        // 将鼠标坐标转换到[-1, 1]范围
+        mouse.x = ((event.clientX - rect.left) / canvasWidth) * 2 - 1; // 水平坐标
+        mouse.y = -((event.clientY - rect.top) / canvasHeight) * 2 + 1; // 垂直坐标
+
+        // 更新射线
+        raycaster.setFromCamera(mouse, this._camera!);
+
+        // 检测与 VRM 模型的交互
+        const intersects = raycaster.intersectObjects(this._scene.children, true);
+        if (intersects.length > 0) {
+          // 触摸到模型，执行反馈效果
+          const touchedObject = intersects[0].object;
+          const vrmNodeName = this.model.vrm?.humanoid?.getNormalizedBoneNode(
+            VRMHumanBoneName.Chest,
+          )?.name; // 'Normalized_J_Bip_C_Chest'
+
+          // TODO: 如何对应
+
+          // console.log(touchedObject, vrmNodeName);
+          // console.log(intersects);
+          // console.log(this.model.vrm?.scene.children);
+          // touchedObject.material.color.set(0xff0000); // 改变颜色为红色
+          // 你可以在这里添加更多的反馈效果
+        }
+      },
+      false,
+    );
 
     this.isReady = true;
     this.update();
