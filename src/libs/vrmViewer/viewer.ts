@@ -183,11 +183,19 @@ export class Viewer {
         if (intersects.length > 0) {
           // 触摸到模型，执行反馈效果
           const touchedObject = intersects[0].object;
-          const vrmNodeName = this.model.vrm?.humanoid?.getNormalizedBoneNode(
+          const vrmNodeName = this.model.vrm?.humanoid?.getRawBoneNode(
             VRMHumanBoneName.Chest,
           )?.name; // 'Normalized_J_Bip_C_Chest'
 
-          // TODO: 如何对应
+          console.log(vrmNodeName);
+          for (const obj of intersects) {
+            console.log(obj.object.name);
+            if (obj.object.name === vrmNodeName) {
+              console.log('touched chest!');
+            }
+          }
+
+          // TODO: 如何对应? raycaster 只能拿到最近的一个 object
 
           // console.log(touchedObject, vrmNodeName);
           // console.log(intersects);
