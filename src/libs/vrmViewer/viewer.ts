@@ -22,6 +22,8 @@ export class Viewer {
   private _floor?: THREE.Mesh;
   private _raycaster: THREE.Raycaster;
   private _mouse: THREE.Vector2;
+  private _canvas?: HTMLCanvasElement;
+  private _boundHandleClick: (event: MouseEvent) => void;
 
   constructor() {
     this.isReady = false;
@@ -50,6 +52,9 @@ export class Viewer {
 
     this._raycaster = new THREE.Raycaster();
     this._mouse = new THREE.Vector2();
+
+    // 在构造函数中绑定 handleClick 方法
+    this._boundHandleClick = this.handleClick.bind(this);
   }
 
   /**
@@ -83,7 +88,7 @@ export class Viewer {
   }
 
   /**
-   * 加舞台
+   * 加台
    * @param buffer
    */
   public async loadStage(buffer: ArrayBuffer) {
@@ -92,9 +97,8 @@ export class Viewer {
   }
 
   public async loadVrm(url: string) {
-    if (this.model?.vrm) {
-      this.unloadVRM();
-    }
+    // 在加载新模型之前，先卸载旧模型和事件监听器
+    this.unload();
 
     // gltf and vrm
     this.model = new Model(this._camera || new THREE.Object3D());
@@ -118,6 +122,11 @@ export class Viewer {
     requestAnimationFrame(() => {
       this.resetCamera();
     });
+
+    // 重新设置事件监听器
+    if (this._canvas) {
+      this._canvas.addEventListener('click', this._boundHandleClick, false);
+    }
   }
 
   public unloadVRM(): void {
@@ -128,6 +137,7 @@ export class Viewer {
   }
 
   public setup(canvas: HTMLCanvasElement) {
+    this._canvas = canvas;
     const parentElement = canvas.parentElement;
     const width = parentElement?.clientWidth || canvas.width;
     const height = parentElement?.clientHeight || canvas.height;
@@ -165,11 +175,21 @@ export class Viewer {
 
     resizeObserver.observe(parentElement!);
 
-    // 添加点击事件监听器
-    canvas.addEventListener('click', this.handleClick.bind(this), false);
+    // 使用存储的绑定函数添加事件监听器
+    this._canvas.addEventListener('click', this._boundHandleClick, false);
 
     this.isReady = true;
     this.update();
+  }
+
+  public unload() {
+    // 使用存储的绑定函数移除事件监听器
+    if (this._canvas) {
+      this._canvas.removeEventListener('click', this._boundHandleClick, false);
+    }
+
+    // 卸载模型
+    this.unloadVRM();
   }
 
   public toggleCameraHelper() {
@@ -285,23 +305,19 @@ export class Viewer {
       const closestBone = this.findClosestBone(intersectedPoint);
 
       if (closestBone) {
-        const boneName = Object.entries(this.model.vrm.humanoid.humanBones).find(
-          ([_, boneData]) => boneData && boneData.node === closestBone,
-        )?.[0];
-        if (boneName) {
-          this.handleBodyPartClick(boneName);
-        }
+        const [boneName, _] = closestBone;
+        this.handleBodyPartClick(boneName as VRMHumanBoneName);
       }
     }
   }
 
-  private findClosestBone(point: THREE.Vector3): THREE.Bone | null {
+  private findClosestBone(point: THREE.Vector3): [string, THREE.Bone] | null {
     if (!this.model?.vrm) return null;
 
-    let closestBone: THREE.Bone | null = null;
+    let closestBone: [string, THREE.Bone] | null = null;
     let closestDistance = Infinity;
 
-    Object.entries(this.model.vrm.humanoid.humanBones).forEach(([_, boneData]) => {
+    Object.entries(this.model.vrm.humanoid.humanBones).forEach(([boneName, boneData]) => {
       if (boneData && boneData.node instanceof THREE.Bone) {
         const boneWorldPosition = new THREE.Vector3();
         boneData.node.getWorldPosition(boneWorldPosition);
@@ -309,7 +325,7 @@ export class Viewer {
 
         if (distance < closestDistance) {
           closestDistance = distance;
-          closestBone = boneData.node;
+          closestBone = [boneName, boneData.node];
         }
       }
     });
@@ -317,27 +333,88 @@ export class Viewer {
     return closestBone;
   }
 
-  private handleBodyPartClick(boneName: string) {
+  private handleBodyPartClick(boneName: VRMHumanBoneName) {
     console.log(`点击了骨骼: ${boneName}`);
-    // 在这里可以根据骨骼名称来判断身体部位
-    if (boneName.toLowerCase().includes('head')) {
-      console.log('点击了头部');
-    } else if (
-      boneName.toLowerCase().includes('spine') ||
-      boneName.toLowerCase().includes('chest')
-    ) {
-      console.log('点击了身体');
-    } else if (
-      boneName.toLowerCase().includes('arm') ||
-      boneName.toLowerCase().includes('hand') ||
-      boneName.toLowerCase().includes('shoulder')
-    ) {
-      console.log('点击了手臂');
-    } else if (boneName.toLowerCase().includes('leg') || boneName.toLowerCase().includes('foot')) {
-      console.log('点击了腿部');
-    } else {
-      console.log('点击了其他部位');
+
+    switch (boneName) {
+      case VRMHumanBoneName.Head:
+      case VRMHumanBoneName.Neck:
+      case VRMHumanBoneName.LeftEye:
+      case VRMHumanBoneName.RightEye:
+      case VRMHumanBoneName.Jaw:
+        console.log('点击了头部');
+        break;
+
+      case VRMHumanBoneName.LeftShoulder:
+      case VRMHumanBoneName.LeftUpperArm:
+      case VRMHumanBoneName.LeftLowerArm:
+      case VRMHumanBoneName.LeftHand:
+      case VRMHumanBoneName.RightShoulder:
+      case VRMHumanBoneName.RightUpperArm:
+      case VRMHumanBoneName.RightLowerArm:
+      case VRMHumanBoneName.RightHand:
+      case VRMHumanBoneName.LeftThumbMetacarpal:
+      case VRMHumanBoneName.LeftThumbProximal:
+      case VRMHumanBoneName.LeftThumbDistal:
+      case VRMHumanBoneName.LeftIndexProximal:
+      case VRMHumanBoneName.LeftIndexIntermediate:
+      case VRMHumanBoneName.LeftIndexDistal:
+      case VRMHumanBoneName.LeftMiddleProximal:
+      case VRMHumanBoneName.LeftMiddleIntermediate:
+      case VRMHumanBoneName.LeftMiddleDistal:
+      case VRMHumanBoneName.LeftRingProximal:
+      case VRMHumanBoneName.LeftRingIntermediate:
+      case VRMHumanBoneName.LeftRingDistal:
+      case VRMHumanBoneName.LeftLittleProximal:
+      case VRMHumanBoneName.LeftLittleIntermediate:
+      case VRMHumanBoneName.LeftLittleDistal:
+      case VRMHumanBoneName.RightThumbMetacarpal:
+      case VRMHumanBoneName.RightThumbProximal:
+      case VRMHumanBoneName.RightThumbDistal:
+      case VRMHumanBoneName.RightIndexProximal:
+      case VRMHumanBoneName.RightIndexIntermediate:
+      case VRMHumanBoneName.RightIndexDistal:
+      case VRMHumanBoneName.RightMiddleProximal:
+      case VRMHumanBoneName.RightMiddleIntermediate:
+      case VRMHumanBoneName.RightMiddleDistal:
+      case VRMHumanBoneName.RightRingProximal:
+      case VRMHumanBoneName.RightRingIntermediate:
+      case VRMHumanBoneName.RightRingDistal:
+      case VRMHumanBoneName.RightLittleProximal:
+      case VRMHumanBoneName.RightLittleIntermediate:
+      case VRMHumanBoneName.RightLittleDistal:
+        console.log('点击了手臂');
+        break;
+
+      case VRMHumanBoneName.LeftUpperLeg:
+      case VRMHumanBoneName.LeftLowerLeg:
+      case VRMHumanBoneName.LeftFoot:
+      case VRMHumanBoneName.LeftToes:
+      case VRMHumanBoneName.RightUpperLeg:
+      case VRMHumanBoneName.RightLowerLeg:
+      case VRMHumanBoneName.RightFoot:
+      case VRMHumanBoneName.RightToes:
+        console.log('点击了腿部');
+        break;
+
+      case VRMHumanBoneName.Chest:
+      case VRMHumanBoneName.UpperChest:
+        console.log('点击了胸部');
+        break;
+
+      case VRMHumanBoneName.Spine:
+        console.log('点击了腹部');
+        break;
+
+      case VRMHumanBoneName.Hips:
+        console.log('点击了臀部');
+        break;
+
+      default:
+        console.log('点击了其他部位');
+        break;
     }
+
     // 在这里添加相应的处理逻辑
   }
 }
