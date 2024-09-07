@@ -305,16 +305,15 @@ export class Viewer {
       const closestBone = this.findClosestBone(intersectedPoint);
 
       if (closestBone) {
-        const [boneName, _] = closestBone;
-        this.handleBodyPartClick(boneName as VRMHumanBoneName);
+        this.handleBodyPartClick(closestBone);
       }
     }
   }
 
-  private findClosestBone(point: THREE.Vector3): [VRMHumanBoneName, THREE.Bone] | null {
+  private findClosestBone(point: THREE.Vector3): VRMHumanBoneName | null {
     if (!this.model?.vrm) return null;
 
-    let closestBone: [VRMHumanBoneName, THREE.Bone] | null = null;
+    let closestBone: VRMHumanBoneName | null = null;
     let closestWeightedDistance = Infinity;
 
     const mainBones: VRMHumanBoneName[] = [
@@ -364,7 +363,7 @@ export class Viewer {
 
         if (weightedDistance < closestWeightedDistance) {
           closestWeightedDistance = weightedDistance;
-          closestBone = [boneName, boneData];
+          closestBone = boneName;
         }
       }
     });
