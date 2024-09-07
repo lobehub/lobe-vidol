@@ -10,6 +10,7 @@ import { useLoadModel } from '@/hooks/useLoadModel';
 import { speakCharacter } from '@/libs/messages/speakCharacter';
 import { useAgentStore } from '@/store/agent';
 import { useGlobalStore } from '@/store/global';
+import { TouchAreaEnum } from '@/types/touch';
 import { fetchWithProgress } from '@/utils/fetch';
 
 import ToolBar from './ToolBar';
@@ -42,7 +43,35 @@ function AgentViewer(props: Props) {
   const canvasRef = useCallback(
     (canvas: HTMLCanvasElement) => {
       if (canvas) {
-        viewer.setup(canvas);
+        viewer.setup(canvas, (area: TouchAreaEnum) => {
+          switch (area) {
+            case TouchAreaEnum.Head: {
+              console.log('用户触摸了头部');
+              // 执行头部相关的操作
+              break;
+            }
+            case TouchAreaEnum.Chest: {
+              console.log('用户触摸了胸部');
+              // 执行胸部相关的操作
+              break;
+            }
+            case TouchAreaEnum.Arm: {
+              console.log('用户触摸了手臂');
+              // 执行手臂相关的操作
+              break;
+            }
+            case TouchAreaEnum.Belly: {
+              console.log('用户触摸了腹部');
+              // 执行腹部相关的操作
+              break;
+            }
+            case TouchAreaEnum.Leg: {
+              console.log('用户触摸了腿部');
+              // 执行腿部相关的操作
+              break;
+            }
+          }
+        });
         const agent = useAgentStore.getState().getAgentById(agentId);
         if (!agent) return;
         // 这里根据 agentId 获取 agent 配置.

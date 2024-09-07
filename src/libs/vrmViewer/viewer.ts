@@ -4,6 +4,8 @@ import * as THREE from 'three';
 import { Audio, GridHelper, Mesh, MeshLambertMaterial, PlaneGeometry } from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
+import { TouchAreaEnum } from '@/types/touch';
+
 import { Model } from './model';
 
 export class Viewer {
@@ -24,6 +26,7 @@ export class Viewer {
   private _mouse: THREE.Vector2;
   private _canvas?: HTMLCanvasElement;
   private _boundHandleClick: (event: MouseEvent) => void;
+  private _onBodyTouch?: (area: TouchAreaEnum) => void;
 
   constructor() {
     this.isReady = false;
@@ -136,8 +139,9 @@ export class Viewer {
     }
   }
 
-  public setup(canvas: HTMLCanvasElement) {
+  public setup(canvas: HTMLCanvasElement, onBodyTouch?: (area: TouchAreaEnum) => void) {
     this._canvas = canvas;
+    this._onBodyTouch = onBodyTouch;
     const parentElement = canvas.parentElement;
     const width = parentElement?.clientWidth || canvas.width;
     const height = parentElement?.clientHeight || canvas.height;
@@ -372,13 +376,20 @@ export class Viewer {
   }
 
   private handleBodyPartClick(boneName: VRMHumanBoneName) {
-    console.log(`点击了骨骼: ${boneName}`);
+    const touchArea = this.mapBoneNameToTouchArea(boneName);
+    console.log(`触摸了区域: ${touchArea}`);
 
+    // 调用回调函数
+    if (this._onBodyTouch && touchArea) {
+      this._onBodyTouch(touchArea);
+    }
+  }
+
+  private mapBoneNameToTouchArea(boneName: VRMHumanBoneName): TouchAreaEnum | null {
     switch (boneName) {
       case VRMHumanBoneName.Head:
       case VRMHumanBoneName.Neck:
-        console.log('点击了头部');
-        break;
+        return TouchAreaEnum.Head;
 
       case VRMHumanBoneName.LeftUpperArm:
       case VRMHumanBoneName.LeftLowerArm:
@@ -386,35 +397,29 @@ export class Viewer {
       case VRMHumanBoneName.RightUpperArm:
       case VRMHumanBoneName.RightLowerArm:
       case VRMHumanBoneName.RightHand:
-        console.log('点击了手臂');
-        break;
+        return TouchAreaEnum.Arm;
 
       case VRMHumanBoneName.LeftUpperLeg:
-      case VRMHumanBoneName.LeftLowerLeg:
-      case VRMHumanBoneName.LeftFoot:
       case VRMHumanBoneName.RightUpperLeg:
+      case VRMHumanBoneName.LeftLowerLeg:
       case VRMHumanBoneName.RightLowerLeg:
+      case VRMHumanBoneName.LeftFoot:
       case VRMHumanBoneName.RightFoot:
-        console.log('点击了腿部');
-        break;
+        return TouchAreaEnum.Leg;
 
       case VRMHumanBoneName.Chest:
-        console.log('点击了胸部');
-        break;
+        return TouchAreaEnum.Chest;
 
       case VRMHumanBoneName.Spine:
-        console.log('点击了腹部');
-        break;
+        return TouchAreaEnum.Belly;
 
       case VRMHumanBoneName.Hips:
-        console.log('点击了臀部');
-        break;
+        // 注意: TouchAreaEnum 中没有对应的"臀部"枚举值,
+        // 所以这里暂时返回 null 或者您可以选择最接近的区域
+        return null;
 
       default:
-        console.log('点击了其他部位');
-        break;
+        return null;
     }
-
-    // 在这里添加相应的处理逻辑
   }
 }
