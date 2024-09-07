@@ -311,21 +311,60 @@ export class Viewer {
     }
   }
 
-  private findClosestBone(point: THREE.Vector3): [string, THREE.Bone] | null {
+  private findClosestBone(point: THREE.Vector3): [VRMHumanBoneName, THREE.Bone] | null {
     if (!this.model?.vrm) return null;
 
-    let closestBone: [string, THREE.Bone] | null = null;
-    let closestDistance = Infinity;
+    let closestBone: [VRMHumanBoneName, THREE.Bone] | null = null;
+    let closestWeightedDistance = Infinity;
 
-    Object.entries(this.model.vrm.humanoid.humanBones).forEach(([boneName, boneData]) => {
-      if (boneData && boneData.node instanceof THREE.Bone) {
+    const mainBones: VRMHumanBoneName[] = [
+      VRMHumanBoneName.Head,
+      VRMHumanBoneName.Neck,
+      VRMHumanBoneName.Chest,
+      VRMHumanBoneName.Spine,
+      VRMHumanBoneName.Hips,
+      VRMHumanBoneName.LeftUpperArm,
+      VRMHumanBoneName.LeftLowerArm,
+      VRMHumanBoneName.LeftHand,
+      VRMHumanBoneName.RightUpperArm,
+      VRMHumanBoneName.RightLowerArm,
+      VRMHumanBoneName.RightHand,
+      VRMHumanBoneName.LeftUpperLeg,
+      VRMHumanBoneName.LeftLowerLeg,
+      VRMHumanBoneName.LeftFoot,
+      VRMHumanBoneName.RightUpperLeg,
+      VRMHumanBoneName.RightLowerLeg,
+      VRMHumanBoneName.RightFoot,
+    ];
+
+    const getBoneWeight = (boneName: VRMHumanBoneName): number => {
+      switch (boneName) {
+        case VRMHumanBoneName.Head:
+        case VRMHumanBoneName.Chest:
+        case VRMHumanBoneName.Spine:
+        case VRMHumanBoneName.Hips:
+          return 1.5;
+        case VRMHumanBoneName.LeftUpperLeg:
+        case VRMHumanBoneName.RightUpperLeg:
+        case VRMHumanBoneName.LeftUpperArm:
+        case VRMHumanBoneName.RightUpperArm:
+          return 1.2;
+        default:
+          return 1;
+      }
+    };
+
+    mainBones.forEach((boneName) => {
+      const boneData = this.model!.vrm!.humanoid.getNormalizedBoneNode(boneName);
+      if (boneData) {
         const boneWorldPosition = new THREE.Vector3();
-        boneData.node.getWorldPosition(boneWorldPosition);
+        boneData.getWorldPosition(boneWorldPosition);
         const distance = point.distanceTo(boneWorldPosition);
+        const weightedDistance = distance / getBoneWeight(boneName);
 
-        if (distance < closestDistance) {
-          closestDistance = distance;
-          closestBone = [boneName, boneData.node];
+        if (weightedDistance < closestWeightedDistance) {
+          closestWeightedDistance = weightedDistance;
+          closestBone = [boneName, boneData];
         }
       }
     });
@@ -339,66 +378,28 @@ export class Viewer {
     switch (boneName) {
       case VRMHumanBoneName.Head:
       case VRMHumanBoneName.Neck:
-      case VRMHumanBoneName.LeftEye:
-      case VRMHumanBoneName.RightEye:
-      case VRMHumanBoneName.Jaw:
         console.log('点击了头部');
         break;
 
-      case VRMHumanBoneName.LeftShoulder:
       case VRMHumanBoneName.LeftUpperArm:
       case VRMHumanBoneName.LeftLowerArm:
       case VRMHumanBoneName.LeftHand:
-      case VRMHumanBoneName.RightShoulder:
       case VRMHumanBoneName.RightUpperArm:
       case VRMHumanBoneName.RightLowerArm:
       case VRMHumanBoneName.RightHand:
-      case VRMHumanBoneName.LeftThumbMetacarpal:
-      case VRMHumanBoneName.LeftThumbProximal:
-      case VRMHumanBoneName.LeftThumbDistal:
-      case VRMHumanBoneName.LeftIndexProximal:
-      case VRMHumanBoneName.LeftIndexIntermediate:
-      case VRMHumanBoneName.LeftIndexDistal:
-      case VRMHumanBoneName.LeftMiddleProximal:
-      case VRMHumanBoneName.LeftMiddleIntermediate:
-      case VRMHumanBoneName.LeftMiddleDistal:
-      case VRMHumanBoneName.LeftRingProximal:
-      case VRMHumanBoneName.LeftRingIntermediate:
-      case VRMHumanBoneName.LeftRingDistal:
-      case VRMHumanBoneName.LeftLittleProximal:
-      case VRMHumanBoneName.LeftLittleIntermediate:
-      case VRMHumanBoneName.LeftLittleDistal:
-      case VRMHumanBoneName.RightThumbMetacarpal:
-      case VRMHumanBoneName.RightThumbProximal:
-      case VRMHumanBoneName.RightThumbDistal:
-      case VRMHumanBoneName.RightIndexProximal:
-      case VRMHumanBoneName.RightIndexIntermediate:
-      case VRMHumanBoneName.RightIndexDistal:
-      case VRMHumanBoneName.RightMiddleProximal:
-      case VRMHumanBoneName.RightMiddleIntermediate:
-      case VRMHumanBoneName.RightMiddleDistal:
-      case VRMHumanBoneName.RightRingProximal:
-      case VRMHumanBoneName.RightRingIntermediate:
-      case VRMHumanBoneName.RightRingDistal:
-      case VRMHumanBoneName.RightLittleProximal:
-      case VRMHumanBoneName.RightLittleIntermediate:
-      case VRMHumanBoneName.RightLittleDistal:
         console.log('点击了手臂');
         break;
 
       case VRMHumanBoneName.LeftUpperLeg:
       case VRMHumanBoneName.LeftLowerLeg:
       case VRMHumanBoneName.LeftFoot:
-      case VRMHumanBoneName.LeftToes:
       case VRMHumanBoneName.RightUpperLeg:
       case VRMHumanBoneName.RightLowerLeg:
       case VRMHumanBoneName.RightFoot:
-      case VRMHumanBoneName.RightToes:
         console.log('点击了腿部');
         break;
 
       case VRMHumanBoneName.Chest:
-      case VRMHumanBoneName.UpperChest:
         console.log('点击了胸部');
         break;
 
