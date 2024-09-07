@@ -20,6 +20,8 @@ export class Viewer {
   private _gridHelper?: THREE.GridHelper;
   private _axesHelper?: THREE.AxesHelper;
   private _floor?: THREE.Mesh;
+  private _raycaster: THREE.Raycaster;
+  private _mouse: THREE.Vector2;
 
   constructor() {
     this.isReady = false;
@@ -33,7 +35,7 @@ export class Viewer {
     directionalLight.position.set(1, 1, 1).normalize();
     scene.add(directionalLight);
 
-    // 环境光
+    // 环光
     // const ambientLight = new THREE.AmbientLight(0xffffff, 0.4);
     // scene.add(ambientLight);
 
@@ -45,6 +47,9 @@ export class Viewer {
     // animate
     this._clock = new THREE.Clock();
     this._clock.start();
+
+    this._raycaster = new THREE.Raycaster();
+    this._mouse = new THREE.Vector2();
   }
 
   /**
@@ -78,7 +83,7 @@ export class Viewer {
   }
 
   /**
-   * 加载舞台
+   * 加舞台
    * @param buffer
    */
   public async loadStage(buffer: ArrayBuffer) {
@@ -95,7 +100,11 @@ export class Viewer {
     this.model = new Model(this._camera || new THREE.Object3D());
     await this.model.loadVRM(url);
 
-    if (!this.model?.vrm) return;
+    if (!this.model?.vrm) {
+      console.log('VRM 模型加载失败');
+      return;
+    }
+    console.log('VRM 模型加载成功');
 
     // Disable frustum culling
     this.model.vrm.scene.traverse((obj) => {
@@ -105,7 +114,7 @@ export class Viewer {
     this._scene.add(this.model.vrm.scene);
     await this.model.loadIdleAnimation();
 
-    // HACK: アニメーションの原点がずれているので再生後にカメラ位置を調整する
+    // HACK: アニメーションの原点がずれているの再生後にカメラ位置を調整する
     requestAnimationFrame(() => {
       this.resetCamera();
     });
@@ -156,56 +165,8 @@ export class Viewer {
 
     resizeObserver.observe(parentElement!);
 
-    // 假设你已经有一个场景和 VRM 模型
-    const raycaster = new THREE.Raycaster();
-    const mouse = new THREE.Vector2();
-
-    // 添加触摸事件
-    canvas.addEventListener(
-      'click',
-      (event) => {
-        if (!this.model) {
-          return;
-        }
-        const rect = canvas.getBoundingClientRect();
-        const canvasWidth = rect.width;
-        const canvasHeight = rect.height;
-
-        // 将鼠标坐标转换到[-1, 1]范围
-        mouse.x = ((event.clientX - rect.left) / canvasWidth) * 2 - 1; // 水平坐标
-        mouse.y = -((event.clientY - rect.top) / canvasHeight) * 2 + 1; // 垂直坐标
-
-        // 更新射线
-        raycaster.setFromCamera(mouse, this._camera!);
-
-        // 检测与 VRM 模型的交互
-        const intersects = raycaster.intersectObjects(this._scene.children, true);
-        if (intersects.length > 0) {
-          // 触摸到模型，执行反馈效果
-          const touchedObject = intersects[0].object;
-          const vrmNodeName = this.model.vrm?.humanoid?.getRawBoneNode(
-            VRMHumanBoneName.Chest,
-          )?.name; // 'Normalized_J_Bip_C_Chest'
-
-          console.log(vrmNodeName);
-          for (const obj of intersects) {
-            console.log(obj.object.name);
-            if (obj.object.name === vrmNodeName) {
-              console.log('touched chest!');
-            }
-          }
-
-          // TODO: 如何对应? raycaster 只能拿到最近的一个 object
-
-          // console.log(touchedObject, vrmNodeName);
-          // console.log(intersects);
-          // console.log(this.model.vrm?.scene.children);
-          // touchedObject.material.color.set(0xff0000); // 改变颜色为红色
-          // 你可以在这里添加更多的反馈效果
-        }
-      },
-      false,
-    );
+    // 添加点击事件监听器
+    canvas.addEventListener('click', this.handleClick.bind(this), false);
 
     this.isReady = true;
     this.update();
@@ -305,4 +266,78 @@ export class Viewer {
       this._renderer.render(this._scene, this._camera);
     }
   };
+
+  private handleClick(event: MouseEvent) {
+    if (!this.model?.vrm || !this._camera) {
+      return;
+    }
+
+    const rect = this._renderer!.domElement.getBoundingClientRect();
+    this._mouse.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+    this._mouse.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
+
+    this._raycaster.setFromCamera(this._mouse, this._camera);
+
+    const intersects = this._raycaster.intersectObjects(this._scene.children, true);
+
+    if (intersects.length > 0) {
+      const intersectedPoint = intersects[0].point;
+      const closestBone = this.findClosestBone(intersectedPoint);
+
+      if (closestBone) {
+        const boneName = Object.entries(this.model.vrm.humanoid.humanBones).find(
+          ([_, boneData]) => boneData && boneData.node === closestBone,
+        )?.[0];
+        if (boneName) {
+          this.handleBodyPartClick(boneName);
+        }
+      }
+    }
+  }
+
+  private findClosestBone(point: THREE.Vector3): THREE.Bone | null {
+    if (!this.model?.vrm) return null;
+
+    let closestBone: THREE.Bone | null = null;
+    let closestDistance = Infinity;
+
+    Object.entries(this.model.vrm.humanoid.humanBones).forEach(([_, boneData]) => {
+      if (boneData && boneData.node instanceof THREE.Bone) {
+        const boneWorldPosition = new THREE.Vector3();
+        boneData.node.getWorldPosition(boneWorldPosition);
+        const distance = point.distanceTo(boneWorldPosition);
+
+        if (distance < closestDistance) {
+          closestDistance = distance;
+          closestBone = boneData.node;
+        }
+      }
+    });
+
+    return closestBone;
+  }
+
+  private handleBodyPartClick(boneName: string) {
+    console.log(`点击了骨骼: ${boneName}`);
+    // 在这里可以根据骨骼名称来判断身体部位
+    if (boneName.toLowerCase().includes('head')) {
+      console.log('点击了头部');
+    } else if (
+      boneName.toLowerCase().includes('spine') ||
+      boneName.toLowerCase().includes('chest')
+    ) {
+      console.log('点击了身体');
+    } else if (
+      boneName.toLowerCase().includes('arm') ||
+      boneName.toLowerCase().includes('hand') ||
+      boneName.toLowerCase().includes('shoulder')
+    ) {
+      console.log('点击了手臂');
+    } else if (boneName.toLowerCase().includes('leg') || boneName.toLowerCase().includes('foot')) {
+      console.log('点击了腿部');
+    } else {
+      console.log('点击了其他部位');
+    }
+    // 在这里添加相应的处理逻辑
+  }
 }
