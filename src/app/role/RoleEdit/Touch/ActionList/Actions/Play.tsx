@@ -49,7 +49,7 @@ export default memo((props: Props) => {
 
         speakCharacter(
           {
-            emotion: touchAction.emotion,
+            expression: touchAction.expression,
             tts: {
               ...currentAgentTTS,
               message: touchAction.text,

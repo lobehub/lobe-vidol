@@ -1,6 +1,10 @@
+import { DEFAULT_MOTION_ANIMATION } from '@/constants/touch';
 import { Viewer } from '@/libs/vrmViewer/viewer';
 import { speechApi } from '@/services/tts';
 import { Screenplay } from '@/types/touch';
+import { fetchWithProgress } from '@/utils/fetch';
+import { getMotionPathByMotionId } from '@/utils/file';
+import storage from '@/utils/storage';
 import { wait } from '@/utils/wait';
 
 const createSpeakCharacter = () => {
@@ -21,6 +25,16 @@ const createSpeakCharacter = () => {
       }
 
       const buffer = await speechApi(screenplay.tts).catch(() => null);
+      if (screenplay.motion) {
+        const item = DEFAULT_MOTION_ANIMATION.find((item) => item.id === screenplay.motion)!;
+
+        const localMotionPath = getMotionPathByMotionId(item.id);
+        let motionBlob = await storage.getItem(localMotionPath);
+        if (!motionBlob) {
+          motionBlob = await fetchWithProgress(item.url);
+        }
+        screenplay.motion = window.URL.createObjectURL(motionBlob);
+      }
       lastTime = Date.now();
       return buffer;
     });

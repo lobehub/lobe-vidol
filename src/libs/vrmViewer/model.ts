@@ -155,7 +155,7 @@ export class Model {
    * @param screenplay
    */
   public async speak(buffer: ArrayBuffer, screenplay: Screenplay) {
-    this.emoteController?.playEmotion(screenplay.emotion);
+    this.emoteController?.playEmotion(screenplay.expression);
     if (screenplay.motion) this.loadFBX(screenplay.motion);
     await new Promise((resolve) => {
       this._lipSync?.playFromArrayBuffer(buffer, () => {

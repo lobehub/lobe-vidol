@@ -5,13 +5,12 @@ import React, { memo, useCallback, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import PageLoading from '@/components/PageLoading';
-import { DEFAULT_MOTION_ANIMATION, GREETING_MOTION_ID } from '@/constants/touch';
+import { GREETING_MOTION_ID } from '@/constants/touch';
 import { useLoadModel } from '@/hooks/useLoadModel';
 import { speakCharacter } from '@/libs/messages/speakCharacter';
-import { useAgentStore } from '@/store/agent';
+import { agentSelectors, useAgentStore } from '@/store/agent';
 import { useGlobalStore } from '@/store/global';
 import { TouchAreaEnum } from '@/types/touch';
-import { fetchWithProgress } from '@/utils/fetch';
 
 import ToolBar from './ToolBar';
 import { useStyles } from './style';
@@ -22,17 +21,17 @@ interface Props {
    */
   agentId: string;
   className?: string;
-  /**
-   * 是否播放招呼动画
-   */
-  greeting?: boolean;
   height?: number | string;
+  /**
+   * 是否可交互
+   */
+  interactive?: boolean;
   style?: React.CSSProperties;
   width?: number | string;
 }
 
 function AgentViewer(props: Props) {
-  const { className, style, height, agentId, width, greeting = true } = props;
+  const { className, style, height, agentId, width, interactive = true } = props;
   const { styles } = useStyles();
   const ref = useRef<HTMLDivElement>(null);
   const viewer = useGlobalStore((s) => s.viewer);
@@ -43,39 +42,40 @@ function AgentViewer(props: Props) {
   const canvasRef = useCallback(
     (canvas: HTMLCanvasElement) => {
       if (canvas) {
+        const agent = useAgentStore.getState().getAgentById(agentId);
+        const touch = agentSelectors.currentAgentTouch(useAgentStore.getState());
+
         viewer.setup(canvas, (area: TouchAreaEnum) => {
-          switch (area) {
-            case TouchAreaEnum.Head: {
-              console.log('用户触摸了头部');
-              // 执行头部相关的操作
-              break;
-            }
-            case TouchAreaEnum.Chest: {
-              console.log('用户触摸了胸部');
-              // 执行胸部相关的操作
-              break;
-            }
-            case TouchAreaEnum.Arm: {
-              console.log('用户触摸了手臂');
-              // 执行手臂相关的操作
-              break;
-            }
-            case TouchAreaEnum.Belly: {
-              console.log('用户触摸了腹部');
-              // 执行腹部相关的操作
-              break;
-            }
-            case TouchAreaEnum.Leg: {
-              console.log('用户触摸了腿部');
-              // 执行腿部相关的操作
-              break;
+          if (!interactive) {
+            return;
+          }
+
+          if (area && touch?.[area]) {
+            // 随机挑选一个
+            const touchAction =
+              touch?.[area][Math.floor(Math.random() * (touch?.[area].length || 1))];
+            if (touchAction) {
+              speakCharacter(
+                {
+                  expression: touchAction.expression,
+                  tts: {
+                    ...agent?.tts,
+                    message: touchAction.text,
+                  },
+                  motion: touchAction.motion,
+                },
+                viewer,
+                () => {},
+                () => {
+                  viewer.model?.loadIdleAnimation();
+                },
+              );
             }
           }
         });
-        const agent = useAgentStore.getState().getAgentById(agentId);
-        if (!agent) return;
+
         // 这里根据 agentId 获取 agent 配置.
-        fetchModelUrl(agent.agentId, agent.meta.model!).then(async (modelUrl) => {
+        fetchModelUrl(agent!.agentId, agent!.meta.model!).then(async (modelUrl) => {
           if (modelUrl) {
             // add loading dom
             const agentViewer = document.querySelector('#agent-viewer')!;
@@ -89,23 +89,16 @@ function AgentViewer(props: Props) {
             // load vrm
             await viewer.loadVrm(modelUrl);
 
-            if (greeting) {
+            if (interactive) {
               // load motion
-              let motionUrl = undefined;
-              const item = DEFAULT_MOTION_ANIMATION.find((item) => item.id === GREETING_MOTION_ID);
-              if (item) {
-                const blob = await fetchWithProgress(item.url);
-                motionUrl = window.URL.createObjectURL(blob);
-              }
-
               speakCharacter(
                 {
-                  emotion: VRMExpressionPresetName.Neutral,
+                  expression: VRMExpressionPresetName.Neutral,
                   tts: {
-                    ...agent.tts,
-                    message: agent.greeting,
+                    ...agent?.tts,
+                    message: agent?.greeting,
                   },
-                  motion: motionUrl,
+                  motion: GREETING_MOTION_ID,
                 },
                 viewer,
                 () => {

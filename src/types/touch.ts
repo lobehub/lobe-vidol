@@ -4,7 +4,7 @@ import { GenderEnum } from '@/types/agent';
 
 import { TTS } from './tts';
 
-export type EmotionType = VRMExpressionPresetName;
+export type ExpressionType = VRMExpressionPresetName;
 
 export enum TouchAreaEnum {
   Arm = 'arm',
@@ -15,7 +15,7 @@ export enum TouchAreaEnum {
 }
 
 export interface TouchAction {
-  emotion: EmotionType;
+  expression: ExpressionType;
   motion?: string;
   text: string;
 }
@@ -55,7 +55,7 @@ export interface TouchActionConfig {
 }
 
 export type Screenplay = {
-  emotion: EmotionType;
+  expression: ExpressionType;
   motion?: string;
   tts: TTS;
 };

@@ -49,7 +49,7 @@ export const handleSpeakAi = async (message: string) => {
 
   speakCharacter(
     {
-      emotion: 'aa',
+      expression: 'aa',
       tts: {
         ...currentAgent?.tts,
         message: message,
