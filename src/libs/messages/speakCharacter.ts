@@ -1,5 +1,6 @@
 import { DEFAULT_MOTION_ANIMATION } from '@/constants/touch';
 import { Viewer } from '@/libs/vrmViewer/viewer';
+import { getMotionBlobUrl } from '@/services/motion';
 import { speechApi } from '@/services/tts';
 import { Screenplay } from '@/types/touch';
 import { fetchWithProgress } from '@/utils/fetch';
@@ -24,16 +25,12 @@ const createSpeakCharacter = () => {
         await wait(1000 - (now - lastTime));
       }
 
-      const buffer = await speechApi(screenplay.tts).catch(() => null);
-      if (screenplay.motion) {
-        const item = DEFAULT_MOTION_ANIMATION.find((item) => item.id === screenplay.motion)!;
-
-        const localMotionPath = getMotionPathByMotionId(item.id);
-        let motionBlob = await storage.getItem(localMotionPath);
-        if (!motionBlob) {
-          motionBlob = await fetchWithProgress(item.url);
-        }
-        screenplay.motion = window.URL.createObjectURL(motionBlob);
+      const [buffer, motionUrl] = await Promise.all([
+        speechApi(screenplay.tts).catch(() => null),
+        screenplay.motion ? getMotionBlobUrl(screenplay.motion) : Promise.resolve(null),
+      ]);
+      if (motionUrl) {
+        screenplay.motion = motionUrl;
       }
       lastTime = Date.now();
       return buffer;
