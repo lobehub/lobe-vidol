@@ -78,15 +78,10 @@ export class Model {
   }
 
   public disposeAll() {
-    const { mixer } = this;
-
-    if (mixer) {
-      mixer.stopAllAction();
-      if (this._clip) {
-        mixer.uncacheAction(this._clip);
-        mixer.uncacheClip(this._clip);
-        this._clip = undefined;
-      }
+    if (this._clip && this.mixer) {
+      this.mixer.uncacheAction(this._clip);
+      this.mixer.uncacheClip(this._clip);
+      this._clip = undefined;
     }
 
     this.ikHandler?.disableAll();
