@@ -33,6 +33,7 @@ interface Props {
 function AgentViewer(props: Props) {
   const { className, style, height, agentId, width, interactive = true } = props;
   const { styles } = useStyles();
+  const playingRef = useRef(false);
   const ref = useRef<HTMLDivElement>(null);
   const viewer = useGlobalStore((s) => s.viewer);
   const { t } = useTranslation('chat');
@@ -54,7 +55,8 @@ function AgentViewer(props: Props) {
             // 随机挑选一个
             const touchAction =
               touch?.[area][Math.floor(Math.random() * (touch?.[area].length || 1))];
-            if (touchAction) {
+            if (touchAction && !playingRef.current) {
+              playingRef.current = true;
               speakCharacter(
                 {
                   expression: touchAction.expression,
@@ -68,6 +70,7 @@ function AgentViewer(props: Props) {
                 () => {},
                 () => {
                   viewer.model?.loadIdleAnimation();
+                  playingRef.current = false;
                 },
               );
             }

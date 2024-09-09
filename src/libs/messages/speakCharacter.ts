@@ -1,11 +1,7 @@
-import { DEFAULT_MOTION_ANIMATION } from '@/constants/touch';
 import { Viewer } from '@/libs/vrmViewer/viewer';
 import { getMotionBlobUrl } from '@/services/motion';
 import { speechApi } from '@/services/tts';
 import { Screenplay } from '@/types/touch';
-import { fetchWithProgress } from '@/utils/fetch';
-import { getMotionPathByMotionId } from '@/utils/file';
-import storage from '@/utils/storage';
 import { wait } from '@/utils/wait';
 
 const createSpeakCharacter = () => {
