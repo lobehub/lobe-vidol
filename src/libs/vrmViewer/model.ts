@@ -1,4 +1,10 @@
-import { VRM, VRMLoaderPlugin, VRMUtils } from '@pixiv/three-vrm';
+import {
+  VRM,
+  VRMExpression,
+  VRMExpressionPresetName,
+  VRMLoaderPlugin,
+  VRMUtils,
+} from '@pixiv/three-vrm';
 import * as THREE from 'three';
 import { AnimationAction, AnimationClip, LoadingManager } from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
@@ -109,6 +115,7 @@ export class Model {
   }
 
   public async loadIdleAnimation() {
+    this.emoteController?.playEmotion(VRMExpressionPresetName.Neutral);
     const vrma = await loadVRMAnimation('/idle_loop.vrma');
     if (vrma) await this.loadAnimation(vrma);
   }

@@ -101,7 +101,7 @@ function AgentViewer(props: Props) {
               // load motion
               speakCharacter(
                 {
-                  expression: VRMExpressionPresetName.Neutral,
+                  expression: VRMExpressionPresetName.Happy,
                   tts: {
                     ...agent?.tts,
                     message: agent?.greeting,
