@@ -8,7 +8,7 @@ import PageLoading from '@/components/PageLoading';
 import { GREETING_MOTION_ID } from '@/constants/touch';
 import { useLoadModel } from '@/hooks/useLoadModel';
 import { speakCharacter } from '@/libs/messages/speakCharacter';
-import { agentSelectors, useAgentStore } from '@/store/agent';
+import { useAgentStore } from '@/store/agent';
 import { useGlobalStore } from '@/store/global';
 import { TouchAreaEnum } from '@/types/touch';
 
@@ -39,43 +39,43 @@ function AgentViewer(props: Props) {
   const { t } = useTranslation('chat');
 
   const { downloading, percent, fetchModelUrl } = useLoadModel();
+  const agent = useAgentStore((s) => s.getAgentById(agentId));
+
+  const handleTouchArea = (area: TouchAreaEnum) => {
+    if (!interactive) {
+      return;
+    }
+
+    if (area && agent?.touch?.[area]) {
+      // 随机挑选一个
+      const touchAction =
+        agent?.touch?.[area][Math.floor(Math.random() * (agent?.touch?.[area].length || 1))];
+      if (touchAction && !playingRef.current) {
+        playingRef.current = true;
+        speakCharacter(
+          {
+            expression: touchAction.expression,
+            tts: {
+              ...agent?.tts,
+              message: touchAction.text,
+            },
+            motion: touchAction.motion,
+          },
+          viewer,
+          () => {},
+          () => {
+            viewer.model?.loadIdleAnimation();
+            playingRef.current = false;
+          },
+        );
+      }
+    }
+  };
 
   const canvasRef = useCallback(
     (canvas: HTMLCanvasElement) => {
       if (canvas) {
-        const agent = useAgentStore.getState().getAgentById(agentId);
-        const touch = agentSelectors.currentAgentTouch(useAgentStore.getState());
-
-        viewer.setup(canvas, (area: TouchAreaEnum) => {
-          if (!interactive) {
-            return;
-          }
-
-          if (area && touch?.[area]) {
-            // 随机挑选一个
-            const touchAction =
-              touch?.[area][Math.floor(Math.random() * (touch?.[area].length || 1))];
-            if (touchAction && !playingRef.current) {
-              playingRef.current = true;
-              speakCharacter(
-                {
-                  expression: touchAction.expression,
-                  tts: {
-                    ...agent?.tts,
-                    message: touchAction.text,
-                  },
-                  motion: touchAction.motion,
-                },
-                viewer,
-                () => {},
-                () => {
-                  viewer.model?.loadIdleAnimation();
-                  playingRef.current = false;
-                },
-              );
-            }
-          }
-        });
+        viewer.setup(canvas, handleTouchArea);
 
         // 这里根据 agentId 获取 agent 配置.
         fetchModelUrl(agent!.agentId, agent!.meta.model!).then(async (modelUrl) => {
@@ -91,6 +91,11 @@ function AgentViewer(props: Props) {
 
             // load vrm
             await viewer.loadVrm(modelUrl);
+            // remove loading dom
+            loadingScreen.classList.add('fade-out');
+            loadingScreen.addEventListener('transitionend', (event) => {
+              (event.target as HTMLDivElement)!.remove();
+            });
 
             if (interactive) {
               // load motion
@@ -104,22 +109,11 @@ function AgentViewer(props: Props) {
                   motion: GREETING_MOTION_ID,
                 },
                 viewer,
-                () => {
-                  // remove loading dom
-                  loadingScreen.classList.add('fade-out');
-                  loadingScreen.addEventListener('transitionend', (event) => {
-                    (event.target as HTMLDivElement)!.remove();
-                  });
-                },
+                () => {},
                 () => {
                   viewer.model?.loadIdleAnimation();
                 },
               );
-            } else {
-              loadingScreen.classList.add('fade-out');
-              loadingScreen.addEventListener('transitionend', (event) => {
-                (event.target as HTMLDivElement)!.remove();
-              });
             }
           }
         });
@@ -169,7 +163,7 @@ function AgentViewer(props: Props) {
         });
       }
     },
-    [viewer, agentId],
+    [viewer, agentId, interactive],
   );
 
   return (
