@@ -6,8 +6,17 @@ import { LLMRoleType } from './llm';
  * 聊天消息错误对象
  */
 export interface ChatMessageError {
+  /**
+   * 错误的具体内容
+   */
   body?: any;
+  /**
+   * 错误信息
+   */
   message: string;
+  /**
+   * 错误类型
+   */
   type: ErrorTypeEnum;
 }
 
@@ -20,7 +29,7 @@ export interface MetaData {
    */
   avatar?: string;
   /**
-   *  背景色
+   * 背景色
    */
   backgroundColor?: string;
   /**
