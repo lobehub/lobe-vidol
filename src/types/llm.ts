@@ -1,49 +1,62 @@
 export type LLMRoleType = 'user' | 'assistant' | 'system';
 
+/**
+ * 聊天模型卡片接口
+ */
 export interface ChatModelCard {
   /**
-   * only used in azure
+   * 仅用于 Azure
    */
   deploymentName?: string;
+  /**
+   * 模型描述
+   */
   description?: string;
   /**
-   * the name show for end user
+   * 展示给终端用户的名称
    */
   displayName?: string;
-
   /**
-   * whether model is enabled by default
+   * 模型是否默认启用
    */
   enabled?: boolean;
   /**
-   * whether model supports file upload
+   * 模型是否支持文件上传
    */
   files?: boolean;
   /**
-   * whether model supports function call
+   * 模型是否支持函数调用
    */
   functionCall?: boolean;
+  /**
+   * 模型 ID
+   */
   id: string;
   /**
-   * whether model is custom
+   * 模型是否为自定义
    */
   isCustom?: boolean;
   /**
-   * whether model is legacy (deprecated but not removed yet)
+   * 模型是否为旧版（已弃用但未移除）
    */
   legacy?: boolean;
+  /**
+   * 最大输出长度
+   */
   maxOutput?: number;
   /**
-   * the context window (or input + output tokens limit)
+   * 上下文窗口（或输入 + 输出 token 限制）
    */
   tokens?: number;
   /**
-   *  whether model supports vision
+   * 模型是否支持视觉
    */
   vision?: boolean;
 }
 
-// 语言模型的设置参数
+/**
+ * 语言模型的设置参数
+ */
 export interface LLMParams {
   /**
    * 控制生成文本中的惩罚系数，用于减少重复性
