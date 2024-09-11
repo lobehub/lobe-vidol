@@ -8,7 +8,7 @@ import PageLoading from '@/components/PageLoading';
 import { GREETING_MOTION_ID } from '@/constants/touch';
 import { useLoadModel } from '@/hooks/useLoadModel';
 import { speakCharacter } from '@/libs/messages/speakCharacter';
-import { useAgentStore } from '@/store/agent';
+import { agentSelectors, useAgentStore } from '@/store/agent';
 import { useGlobalStore } from '@/store/global';
 import { TouchAreaEnum } from '@/types/touch';
 
@@ -40,16 +40,19 @@ function AgentViewer(props: Props) {
 
   const { downloading, percent, fetchModelUrl } = useLoadModel();
   const agent = useAgentStore((s) => s.getAgentById(agentId));
+  const getAgentTouchActionsByIdAndArea = useAgentStore((s) =>
+    agentSelectors.getAgentTouchActionsByIdAndArea(s),
+  );
 
   const handleTouchArea = (area: TouchAreaEnum) => {
     if (!interactive) {
       return;
     }
+    const currentTouch = getAgentTouchActionsByIdAndArea(agentId, area);
 
-    if (area && agent?.touch?.[area]) {
+    if (currentTouch) {
       // 随机挑选一个
-      const touchAction =
-        agent?.touch?.[area][Math.floor(Math.random() * (agent?.touch?.[area].length || 1))];
+      const touchAction = currentTouch[Math.floor(Math.random() * (currentTouch.length || 1))];
       if (touchAction && !playingRef.current) {
         playingRef.current = true;
         speakCharacter(

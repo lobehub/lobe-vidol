@@ -101,6 +101,7 @@ export interface MotionAnimation {
  * 触摸动作配置接口
  */
 export interface TouchActionConfig {
+  enable?: boolean;
   [TouchAreaEnum.Head]: TouchAction[];
   [TouchAreaEnum.Arm]: TouchAction[];
   [TouchAreaEnum.Leg]: TouchAction[];

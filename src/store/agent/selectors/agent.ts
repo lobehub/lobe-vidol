@@ -1,8 +1,9 @@
 import { DEFAULT_AGENT_CONFIG, LOBE_VIDOL_DEFAULT_AGENT_ID } from '@/constants/agent';
 import { EMPTY_TOUCH_CONFIG } from '@/constants/touch';
-import { Agent, AgentMeta } from '@/types/agent';
+import { configSelectors, useSettingStore } from '@/store/setting';
+import { Agent, AgentMeta, GenderEnum } from '@/types/agent';
 import { LLMParams } from '@/types/llm';
-import { TouchActionConfig } from '@/types/touch';
+import { TouchAction, TouchActionConfig, TouchAreaEnum } from '@/types/touch';
 import { TTS } from '@/types/tts';
 import { merge } from '@/utils/merge';
 
@@ -91,6 +92,20 @@ const getAgentModelById = (s: AgentStore) => {
   };
 };
 
+const getAgentTouchActionsByIdAndArea = (s: AgentStore) => {
+  return (id: string, area: TouchAreaEnum): TouchAction[] => {
+    if (!area) return [];
+    const agent = s.getAgentById(id);
+    const gender = agent?.meta.gender || GenderEnum.FEMALE;
+    const commonTouchConfig = configSelectors.getTouchActionsByGenderAndArea(
+      useSettingStore.getState(),
+      gender,
+      area,
+    );
+    return agent?.touch?.enable ? agent?.touch[area] : commonTouchConfig || [];
+  };
+};
+
 const isDefaultAgent = (s: AgentStore) => {
   return (id: string): boolean => {
     const agent = s.getAgentById(id);
@@ -108,6 +123,7 @@ const subscribed = (s: AgentStore) => (agentId: string | undefined) => {
 
 export const agentSelectors = {
   currentAgentItem,
+  getAgentTouchActionsByIdAndArea,
   currentAgentMeta,
   currentAgentTTS,
   currentAgentTouch,
