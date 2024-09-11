@@ -1,9 +1,11 @@
 import { createStyles } from 'antd-style';
 import classNames from 'classnames';
 import { MousePointerClick } from 'lucide-react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
+import Enabled from '@/app/role/RoleEdit/Touch/ActionList/Actions/Enabled';
 import ListItem from '@/components/ListItem';
 import { TouchAreaEnum } from '@/types/touch';
 
@@ -31,7 +33,7 @@ const Index = (props: IndexProps) => {
 
   return (
     <Flexbox>
-      <Header title={t('touch.touchArea')} />
+      <Header title={t('touch.customEnable')} extra={<Enabled />} />
       {areaOptions.map((item) => (
         <ListItem
           avatar={<MousePointerClick />}

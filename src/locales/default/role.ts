@@ -48,6 +48,7 @@ export default {
     touchActionList: '触摸{{touchArea}}时的反应列表',
     touchArea: '触摸区域',
     noTouchActions: "暂无自定义响应动作，您可以通过点击 '+' 按钮添加",
+    customEnable: '启用自定义触摸',
     area: {
       head: '头部',
       arm: '手臂',
