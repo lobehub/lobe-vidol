@@ -26,6 +26,7 @@ export class Viewer {
   private _mouse: THREE.Vector2;
   private _canvas?: HTMLCanvasElement;
   private _boundHandleClick: (event: MouseEvent) => void;
+  private _boundHandleMouseMove: (event: MouseEvent) => void;
   private _onBodyTouch?: (area: TouchAreaEnum) => void;
 
   constructor() {
@@ -58,6 +59,8 @@ export class Viewer {
 
     // 在构造函数中绑定 handleClick 方法
     this._boundHandleClick = this.handleClick.bind(this);
+    // 在构造函数中绑定 handleMouseMove 方法
+    this._boundHandleMouseMove = this.handleMouseMove.bind(this);
   }
 
   /**
@@ -129,6 +132,7 @@ export class Viewer {
     // 重新设置事件监听器
     if (this._canvas) {
       this._canvas.addEventListener('click', this._boundHandleClick, false);
+      this._canvas.addEventListener('mousemove', this._boundHandleMouseMove, false);
     }
   }
 
@@ -181,6 +185,7 @@ export class Viewer {
 
     // 使用存储的绑定函数添加事件监听器
     this._canvas.addEventListener('click', this._boundHandleClick, false);
+    this._canvas.addEventListener('mousemove', this._boundHandleMouseMove, false);
 
     this.isReady = true;
     this.update();
@@ -190,6 +195,7 @@ export class Viewer {
     // 使用存储的绑定函数移除事件监听器
     if (this._canvas) {
       this._canvas.removeEventListener('click', this._boundHandleClick, false);
+      this._canvas.removeEventListener('mousemove', this._boundHandleMouseMove, false);
     }
 
     // 卸载模型
@@ -291,26 +297,37 @@ export class Viewer {
     }
   };
 
-  private handleClick(event: MouseEvent) {
-    if (!this.model?.vrm || !this._camera) {
-      return;
+  private handleRaycasterIntersection(event: MouseEvent): THREE.Intersection[] | null {
+    if (!this.model?.vrm || !this._camera || !this._renderer) {
+      return null;
     }
 
-    const rect = this._renderer!.domElement.getBoundingClientRect();
+    const rect = this._renderer.domElement.getBoundingClientRect();
     this._mouse.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
     this._mouse.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
 
     this._raycaster.setFromCamera(this._mouse, this._camera);
 
-    const intersects = this._raycaster.intersectObjects(this._scene.children, true);
+    return this._raycaster.intersectObjects(this._scene.children, true);
+  }
 
-    if (intersects.length > 0) {
-      const intersectedPoint = intersects[0].point;
-      const closestBone = this.findClosestBone(intersectedPoint);
+  private handleClick(event: MouseEvent) {
+    const intersects = this.handleRaycasterIntersection(event);
+    if (!intersects || intersects.length === 0) return;
 
-      if (closestBone) {
-        this.handleBodyPartClick(closestBone);
-      }
+    const intersectedPoint = intersects[0].point;
+    const closestBone = this.findClosestBone(intersectedPoint);
+
+    if (closestBone) {
+      this.handleBodyPartClick(closestBone);
+    }
+  }
+
+  private handleMouseMove(event: MouseEvent) {
+    const intersects = this.handleRaycasterIntersection(event);
+
+    if (this._canvas) {
+      this._canvas.style.cursor = intersects && intersects.length > 0 ? 'pointer' : 'default';
     }
   }
 
