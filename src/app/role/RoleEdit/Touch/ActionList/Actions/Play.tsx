@@ -5,6 +5,7 @@ import { memo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { DEFAULT_MOTION_ANIMATION } from '@/constants/touch';
+import { MotionFileType } from '@/libs/emoteController/type';
 import { speakCharacter } from '@/libs/messages/speakCharacter';
 import { agentSelectors, useAgentStore } from '@/store/agent';
 import { useGlobalStore } from '@/store/global';
@@ -42,7 +43,7 @@ export default memo((props: Props) => {
           if (item) {
             fetchWithProgress(item.url).then((blob) => {
               const url = window.URL.createObjectURL(blob);
-              viewer.model?.loadFBX(url);
+              viewer.model?.playMotionUrl(MotionFileType.FBX, url);
             });
           }
         }

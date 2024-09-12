@@ -5,8 +5,9 @@ import React, { memo, useCallback, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import PageLoading from '@/components/PageLoading';
-import { GREETING_MOTION_ID } from '@/constants/touch';
 import { useLoadModel } from '@/hooks/useLoadModel';
+import { MotionPresetName } from '@/libs/emoteController/MotionPresetName';
+import { MotionFileType } from '@/libs/emoteController/type';
 import { speakCharacter } from '@/libs/messages/speakCharacter';
 import { agentSelectors, useAgentStore } from '@/store/agent';
 import { useGlobalStore } from '@/store/global';
@@ -109,7 +110,7 @@ function AgentViewer(props: Props) {
                     ...agent?.tts,
                     message: agent?.greeting,
                   },
-                  motion: GREETING_MOTION_ID,
+                  motion: MotionPresetName.Greeting,
                 },
                 viewer,
                 () => {},
@@ -151,14 +152,21 @@ function AgentViewer(props: Props) {
             case 'fbx': {
               const blob = new Blob([file], { type: 'application/octet-stream' });
               const url = window.URL.createObjectURL(blob);
-              viewer.model?.loadFBX(url);
+              viewer.model?.playMotionUrl(MotionFileType.FBX, url);
 
               break;
             }
             case 'vmd': {
               const blob = new Blob([file], { type: 'application/octet-stream' });
               const url = window.URL.createObjectURL(blob);
-              viewer.model?.loadVMD(url);
+              viewer.model?.playMotionUrl(MotionFileType.VMD, url);
+
+              break;
+            }
+            case 'vrma': {
+              const blob = new Blob([file], { type: 'application/octet-stream' });
+              const url = window.URL.createObjectURL(blob);
+              viewer.model?.playMotionUrl(MotionFileType.VRMA, url);
               break;
             }
             // No default

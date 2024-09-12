@@ -2,6 +2,7 @@ import { VRMExpressionPresetName } from '@pixiv/three-vrm';
 
 import motionsList from '@/animations/Motion/index.json';
 import postureList from '@/animations/Posture/index.json';
+import { MotionPresetName } from '@/libs/emoteController/MotionPresetName';
 import {
   MotionAnimation,
   MotionCategoryEnum,
@@ -9,125 +10,120 @@ import {
   TouchAreaEnum,
 } from '@/types/touch';
 
-export const HAPPY_MOTION_ID = 'c9c98a38-b96c-11e4-a802-0aaa78deedf9';
-export const ANGRY_MOTION_ID = 'c9c98b02-b96c-11e4-a802-0aaa78deedf9';
-export const RELAX_MOTION_ID = 'c9c7996a-b96c-11e4-a802-0aaa78deedf9';
-export const GREETING_MOTION_ID = 'c9c7996a-b96c-11e4-a802-0aaa78deedf9';
-
 export const DEFAULT_TOUCH_ACTION_CONFIG_FEMALE: TouchActionConfig = {
   [TouchAreaEnum.Head]: [
     {
       expression: VRMExpressionPresetName.Happy,
       text: 'touch.femaleAction.headAction.happyA',
-      motion: HAPPY_MOTION_ID,
+      motion: MotionPresetName.Happy,
     },
     {
       expression: VRMExpressionPresetName.Happy,
       text: 'touch.femaleAction.headAction.happyB',
-      motion: HAPPY_MOTION_ID,
+      motion: MotionPresetName.Happy,
     },
     {
       expression: VRMExpressionPresetName.Happy,
       text: 'touch.femaleAction.headAction.happyC',
-      motion: HAPPY_MOTION_ID,
+      motion: MotionPresetName.Happy,
     },
     {
       expression: VRMExpressionPresetName.Happy,
       text: 'touch.femaleAction.headAction.happyD',
-      motion: HAPPY_MOTION_ID,
+      motion: MotionPresetName.Happy,
     },
     {
       expression: VRMExpressionPresetName.Angry,
       text: 'touch.femaleAction.headAction.angryA',
-      motion: ANGRY_MOTION_ID,
+      motion: MotionPresetName.Angry,
     },
     {
       expression: VRMExpressionPresetName.Angry,
       text: 'touch.femaleAction.headAction.angryB',
-      motion: ANGRY_MOTION_ID,
+      motion: MotionPresetName.Angry,
     },
   ],
   [TouchAreaEnum.Arm]: [
     {
       expression: VRMExpressionPresetName.Happy,
       text: 'touch.femaleAction.armAction.happyA',
-      motion: HAPPY_MOTION_ID,
+      motion: MotionPresetName.Happy,
     },
     {
       expression: VRMExpressionPresetName.Relaxed,
       text: 'touch.femaleAction.armAction.relaxedA',
-      motion: RELAX_MOTION_ID,
+      motion: MotionPresetName.HappyHandGesture,
     },
     {
       expression: VRMExpressionPresetName.Happy,
       text: 'touch.femaleAction.armAction.happyB',
-      motion: HAPPY_MOTION_ID,
+      motion: MotionPresetName.Happy,
     },
   ],
   [TouchAreaEnum.Leg]: [
     {
       expression: VRMExpressionPresetName.Surprised,
       text: 'touch.femaleAction.legAction.surprisedA',
-      motion: ANGRY_MOTION_ID,
+      motion: MotionPresetName.Angry,
     },
     {
       expression: VRMExpressionPresetName.Angry,
       text: 'touch.femaleAction.legAction.angryA',
-      motion: ANGRY_MOTION_ID,
+      motion: MotionPresetName.Angry,
     },
     {
       expression: VRMExpressionPresetName.Angry,
       text: 'touch.femaleAction.legAction.angryB',
-      motion: ANGRY_MOTION_ID,
+      motion: MotionPresetName.Angry,
     },
     {
       expression: VRMExpressionPresetName.Angry,
       text: 'touch.femaleAction.legAction.angryC',
-      motion: ANGRY_MOTION_ID,
+      motion: MotionPresetName.Angry,
     },
   ],
   [TouchAreaEnum.Chest]: [
     {
       expression: VRMExpressionPresetName.Angry,
       text: 'touch.femaleAction.chestAction.angryA',
-      motion: ANGRY_MOTION_ID,
+      motion: MotionPresetName.Angry,
     },
     {
       expression: VRMExpressionPresetName.Angry,
       text: 'touch.femaleAction.chestAction.angryB',
-      motion: ANGRY_MOTION_ID,
+      motion: MotionPresetName.Angry,
     },
     {
       expression: VRMExpressionPresetName.Angry,
       text: 'touch.femaleAction.chestAction.angryC',
-      motion: ANGRY_MOTION_ID,
+      motion: MotionPresetName.Angry,
     },
     {
       expression: VRMExpressionPresetName.Surprised,
       text: 'touch.femaleAction.chestAction.surprisedA',
-      motion: ANGRY_MOTION_ID,
+      motion: MotionPresetName.Angry,
     },
   ],
   [TouchAreaEnum.Belly]: [
     {
       expression: VRMExpressionPresetName.Surprised,
       text: 'touch.femaleAction.bellyAction.surprisedA',
-      motion: ANGRY_MOTION_ID,
+      motion: MotionPresetName.Angry,
     },
     {
       expression: VRMExpressionPresetName.Angry,
       text: 'touch.femaleAction.bellyAction.angryA',
-      motion: ANGRY_MOTION_ID,
+      motion: MotionPresetName.Angry,
     },
     {
       expression: VRMExpressionPresetName.Relaxed,
       text: 'touch.femaleAction.bellyAction.relaxedA',
-      motion: RELAX_MOTION_ID,
+      motion: MotionPresetName.HappyHandGesture,
     },
     {
       expression: VRMExpressionPresetName.Relaxed,
       text: 'touch.femaleAction.bellyAction.relaxedB',
-      motion: RELAX_MOTION_ID,
+      motion: MotionPresetName.HappyHandGesture,
     },
   ],
 };

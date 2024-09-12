@@ -4,6 +4,7 @@ import * as THREE from 'three';
 import { Audio, GridHelper, Mesh, MeshLambertMaterial, PlaneGeometry } from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
+import { MotionFileType } from '@/libs/emoteController/type';
 import { TouchAreaEnum } from '@/types/touch';
 
 import { Model } from './model';
@@ -72,7 +73,6 @@ export class Viewer {
       return null;
     }
     this._sound.stop();
-    this.model?.disposeAll();
     const audioLoader = new THREE.AudioLoader();
     // 监听音频播放结束事件
     this._sound.onEnded = () => {
@@ -84,12 +84,11 @@ export class Viewer {
     this._sound.setVolume(0.5);
     this._sound.play();
 
-    this.model?.loadVMD(danceUrl, false);
+    this.model?.playMotionUrl(MotionFileType.VMD, danceUrl, false);
   }
 
   public resetToIdle() {
     this._sound?.stop();
-    this.model?.disposeAll();
     this.model?.loadIdleAnimation();
   }
 

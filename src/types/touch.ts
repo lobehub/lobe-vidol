@@ -1,5 +1,6 @@
 import { VRMExpressionPresetName } from '@pixiv/three-vrm';
 
+import { MotionPresetName } from '@/libs/emoteController/MotionPresetName';
 import { GenderEnum } from '@/types/agent';
 
 import { TTS } from './tts';
@@ -31,7 +32,7 @@ export interface TouchAction {
   /**
    * 动作（可选）
    */
-  motion?: string;
+  motion?: MotionPresetName;
   /**
    * 文本
    */
@@ -120,7 +121,7 @@ export type Screenplay = {
   /**
    * 动作（可选）
    */
-  motion?: string;
+  motion?: MotionPresetName;
   /**
    * 语音合成
    */

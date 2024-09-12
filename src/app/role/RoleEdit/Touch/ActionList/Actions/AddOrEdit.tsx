@@ -6,11 +6,8 @@ import React, { memo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { INPUT_WIDTH_M, INPUT_WIDTH_S } from '@/constants/token';
-import {
-  HAPPY_MOTION_ID,
-  MAX_TOUCH_ACTION_TEXT_LENGTH,
-  TOUCH_MOTION_ANIMATION,
-} from '@/constants/touch';
+import { MAX_TOUCH_ACTION_TEXT_LENGTH, TOUCH_MOTION_ANIMATION } from '@/constants/touch';
+import { MotionPresetName } from '@/libs/emoteController/MotionPresetName';
 import { useAgentStore } from '@/store/agent';
 import { TouchAction, TouchAreaEnum } from '@/types/touch';
 
@@ -74,7 +71,7 @@ export default memo((props: Props) => {
           initialValues={
             isEdit
               ? touchAction
-              : { emotion: VRMExpressionPresetName.Neutral, motion: HAPPY_MOTION_ID }
+              : { emotion: VRMExpressionPresetName.Neutral, motion: MotionPresetName.Happy }
           }
           form={form}
           preserve={false}
