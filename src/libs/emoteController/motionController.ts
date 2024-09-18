@@ -1,8 +1,7 @@
 import { VRM } from '@pixiv/three-vrm';
 
-import { MotionPresetName } from './MotionPresetName';
 import { MotionManager } from './motionManager';
-import { motionPresetMap } from './motionPresetMap';
+import { MotionPresetName, motionPresetMap } from './motionPresetMap';
 import { MotionFileType } from './type';
 
 export class MotionController {
@@ -20,12 +19,10 @@ export class MotionController {
     this._motionManager.disposeCurrentMotion(); // 停止当前动作
 
     // 这里将motion转换为url
-    const url = motionPresetMap[motion];
+    const preset = motionPresetMap[motion];
 
-    if (url) {
-      // Idle 状态 loop 设置为 true
-      const loop = motion === MotionPresetName.Idle;
-      this._motionManager.loadMotionUrl(MotionFileType.FBX, url, loop); // 播放新动作
+    if (preset) {
+      this._motionManager.loadMotionUrl(preset.type, preset.url, true); // 播放新动作
     }
   }
 

@@ -48,6 +48,8 @@ const AreaList = (props: AreaListProps) => {
     ? (get(currentAgentTouch, currentTouchArea) as TouchAction[])
     : [];
 
+  console.log('items', items);
+
   const touchArea = areaOptions.find((item) => item.value === currentTouchArea)?.label;
 
   return (

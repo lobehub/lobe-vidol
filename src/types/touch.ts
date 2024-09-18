@@ -1,6 +1,6 @@
 import { VRMExpressionPresetName } from '@pixiv/three-vrm';
 
-import { MotionPresetName } from '@/libs/emoteController/MotionPresetName';
+import { MotionPresetName } from '@/libs/emoteController/motionPresetMap';
 import { GenderEnum } from '@/types/agent';
 
 import { TTS } from './tts';

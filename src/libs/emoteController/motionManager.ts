@@ -3,6 +3,8 @@ import { AnimationAction, AnimationClip, AnimationMixer, LoopOnce } from 'three'
 
 import { loadMixamoAnimation } from '@/libs/FBXAnimation/loadMixamoAnimation';
 import { loadVMDAnimation } from '@/libs/VMDAnimation/loadVMDAnimation';
+import IKHandler from '@/libs/VMDAnimation/vrm-ik-handler';
+import VRMIKHandler from '@/libs/VMDAnimation/vrm-ik-handler';
 import { loadVRMAnimation } from '@/libs/VRMAnimation/loadVRMAnimation';
 
 import { MotionFileType } from './type';
@@ -12,10 +14,12 @@ export class MotionManager {
   private mixer: AnimationMixer;
   private currentAction?: AnimationAction;
   private currentClip?: AnimationClip;
+  private ikHandler: VRMIKHandler;
 
   constructor(vrm: VRM) {
     this.vrm = vrm;
     this.mixer = new AnimationMixer(vrm.scene);
+    this.ikHandler = IKHandler.get(vrm);
   }
 
   public async loadMotionUrl(
@@ -74,6 +78,7 @@ export class MotionManager {
     if (this.currentAction) {
       this.currentAction.stop();
     }
+    this.ikHandler.disableAll();
 
     this.currentAction = undefined;
     this.currentClip = undefined;
@@ -81,5 +86,6 @@ export class MotionManager {
 
   public update(delta: number): void {
     this.mixer.update(delta);
+    this.ikHandler.update();
   }
 }

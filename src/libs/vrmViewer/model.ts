@@ -1,12 +1,9 @@
 import { VRM, VRMExpressionPresetName, VRMLoaderPlugin, VRMUtils } from '@pixiv/three-vrm';
 import * as THREE from 'three';
-import { AnimationAction, AnimationClip } from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 
-import IKHandler from '@/libs/VMDAnimation/vrm-ik-handler';
 import { VRMLookAtSmootherLoaderPlugin } from '@/libs/VRMLookAtSmootherLoaderPlugin/VRMLookAtSmootherLoaderPlugin';
 import { EmoteController } from '@/libs/emoteController/emoteController';
-import { MotionManager } from '@/libs/emoteController/motionManager';
 import { LipSync } from '@/libs/lipSync/lipSync';
 import { Screenplay } from '@/types/touch';
 
@@ -17,22 +14,14 @@ import { MotionFileType } from '../emoteController/type';
  */
 export class Model {
   public vrm?: VRM | null;
-  public mixer?: THREE.AnimationMixer;
-  public ikHandler?: IKHandler;
   public emoteController?: EmoteController;
-  public motionManager?: MotionManager;
 
   private _lookAtTargetParent: THREE.Object3D;
   private _lipSync?: LipSync;
 
-  private _action: AnimationAction | undefined;
-  private _clip: AnimationClip | undefined;
-
   constructor(lookAtTargetParent: THREE.Object3D) {
     this._lookAtTargetParent = lookAtTargetParent;
     this._lipSync = new LipSync(new AudioContext());
-    this._action = undefined;
-    this._clip = undefined;
   }
 
   public async loadVRM(url: string): Promise<void> {
@@ -57,8 +46,6 @@ export class Model {
 
     VRMUtils.rotateVRM0(vrm);
 
-    this.ikHandler = IKHandler.get(vrm);
-
     this.emoteController = new EmoteController(vrm, this._lookAtTargetParent);
   }
 
@@ -78,9 +65,6 @@ export class Model {
     this.emoteController?.playMotionUrl(MotionFileType.VRMA, './idle_loop.vrma', true);
   }
 
-  public async resetToIdle() {
-    await this.loadIdleAnimation();
-  }
   /**
    * 语音播放，配合人物表情动作
    * @param buffer
@@ -111,9 +95,6 @@ export class Model {
     }
 
     this.emoteController?.update(delta);
-    this.mixer?.update(delta);
     this.vrm?.update(delta);
-    this.ikHandler?.update();
-    this.motionManager?.update(delta);
   }
 }

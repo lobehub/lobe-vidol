@@ -56,7 +56,7 @@ export default {
       chest: '胸部',
       belly: '腹部',
     },
-    emotion: {
+    expression: {
       natural: '自然',
       happy: '开心',
       angry: '生气',

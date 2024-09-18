@@ -1,9 +1,9 @@
 import { VRM, VRMExpressionPresetName } from '@pixiv/three-vrm';
 import * as THREE from 'three';
 
-import { MotionPresetName } from './MotionPresetName';
 import { ExpressionController } from './expressionController';
 import { MotionController } from './motionController';
+import { MotionPresetName } from './motionPresetMap';
 import { MotionFileType } from './type';
 
 /**

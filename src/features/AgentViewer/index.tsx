@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 
 import PageLoading from '@/components/PageLoading';
 import { useLoadModel } from '@/hooks/useLoadModel';
-import { MotionPresetName } from '@/libs/emoteController/MotionPresetName';
+import { MotionPresetName } from '@/libs/emoteController/motionPresetMap';
 import { MotionFileType } from '@/libs/emoteController/type';
 import { speakCharacter } from '@/libs/messages/speakCharacter';
 import { agentSelectors, useAgentStore } from '@/store/agent';
@@ -110,7 +110,7 @@ function AgentViewer(props: Props) {
                     ...agent?.tts,
                     message: agent?.greeting,
                   },
-                  motion: MotionPresetName.Greeting,
+                  motion: MotionPresetName.FemaleGreeting,
                 },
                 viewer,
                 () => {},
