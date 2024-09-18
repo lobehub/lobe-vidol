@@ -1,8 +1,11 @@
-import { LOBE_VIDOL_DEFAULT_AGENT_ID } from '@/constants/agent';
+import { DEFAULT_AGENT_CONFIG, LOBE_VIDOL_DEFAULT_AGENT_ID } from '@/constants/agent';
 import { EMPTY_TOUCH_CONFIG } from '@/constants/touch';
-import { Agent, AgentMeta } from '@/types/agent';
-import { TouchActionConfig } from '@/types/touch';
+import { configSelectors, useSettingStore } from '@/store/setting';
+import { Agent, AgentMeta, GenderEnum } from '@/types/agent';
+import { LLMParams } from '@/types/llm';
+import { TouchAction, TouchActionConfig, TouchAreaEnum } from '@/types/touch';
 import { TTS } from '@/types/tts';
+import { merge } from '@/utils/merge';
 
 import { AgentStore } from '../index';
 
@@ -15,7 +18,7 @@ const currentAgentItem = (s: AgentStore): Agent | undefined => {
   const currentAgent = localAgentList.find((item) => item.agentId === currentIdentifier);
   if (!currentAgent) return undefined;
 
-  return currentAgent;
+  return merge(DEFAULT_AGENT_CONFIG, currentAgent);
 };
 
 const currentAgentMeta = (s: AgentStore): AgentMeta | undefined => {
@@ -23,6 +26,13 @@ const currentAgentMeta = (s: AgentStore): AgentMeta | undefined => {
   if (!currentAgent) return undefined;
 
   return currentAgent.meta;
+};
+
+const currentAgentGreeting = (s: AgentStore): string | undefined => {
+  const currentAgent = currentAgentItem(s);
+  if (!currentAgent) return undefined;
+
+  return currentAgent.greeting;
 };
 
 const currentAgentTTS = (s: AgentStore): TTS | undefined => {
@@ -61,6 +71,13 @@ const currentAgentModel = (s: AgentStore): string | undefined => {
   return currentAgent.meta.model;
 };
 
+const currentAgentParams = (s: AgentStore): LLMParams | undefined => {
+  const currentAgent = currentAgentItem(s);
+  if (!currentAgent) return undefined;
+
+  return currentAgent.params;
+};
+
 const currentAgentId = (s: AgentStore): string | undefined => {
   const currentAgent = currentAgentItem(s);
   if (!currentAgent) return undefined;
@@ -72,6 +89,20 @@ const getAgentModelById = (s: AgentStore) => {
   return (id: string): string | undefined => {
     const agent = s.getAgentById(id);
     return agent?.meta.model;
+  };
+};
+
+const getAgentTouchActionsByIdAndArea = (s: AgentStore) => {
+  return (id: string, area: TouchAreaEnum): TouchAction[] => {
+    if (!area) return [];
+    const agent = s.getAgentById(id);
+    const gender = agent?.meta.gender || GenderEnum.FEMALE;
+    const commonTouchConfig = configSelectors.getTouchActionsByGenderAndArea(
+      useSettingStore.getState(),
+      gender,
+      area,
+    );
+    return agent?.touch?.enable ? agent?.touch[area] : commonTouchConfig || [];
   };
 };
 
@@ -92,9 +123,12 @@ const subscribed = (s: AgentStore) => (agentId: string | undefined) => {
 
 export const agentSelectors = {
   currentAgentItem,
+  getAgentTouchActionsByIdAndArea,
   currentAgentMeta,
   currentAgentTTS,
   currentAgentTouch,
+  currentAgentParams,
+  currentAgentGreeting,
   filterAgentListIds,
   getAgentModelById,
   agentListIds,

@@ -6,11 +6,8 @@ import React, { memo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { INPUT_WIDTH_M, INPUT_WIDTH_S } from '@/constants/token';
-import {
-  HAPPY_MOTION_ID,
-  MAX_TOUCH_ACTION_TEXT_LENGTH,
-  TOUCH_MOTION_ANIMATION,
-} from '@/constants/touch';
+import { MAX_TOUCH_ACTION_TEXT_LENGTH } from '@/constants/touch';
+import { MotionPresetName, motionPresetMap } from '@/libs/emoteController/motionPresetMap';
 import { useAgentStore } from '@/store/agent';
 import { TouchAction, TouchAreaEnum } from '@/types/touch';
 
@@ -74,7 +71,10 @@ export default memo((props: Props) => {
           initialValues={
             isEdit
               ? touchAction
-              : { emotion: VRMExpressionPresetName.Neutral, motion: HAPPY_MOTION_ID }
+              : {
+                  expression: VRMExpressionPresetName.Neutral,
+                  motion: MotionPresetName.FemaleHappy,
+                }
           }
           form={form}
           preserve={false}
@@ -98,44 +98,44 @@ export default memo((props: Props) => {
             desc={t('info.emotionDescription')}
             divider
             rules={[{ required: true, message: t('touch.inputActionEmotion') }]}
-            name="emotion"
+            name="expression"
           >
             <Select
               options={[
                 {
-                  label: t('touch.emotion.natural'),
+                  label: t('touch.expression.natural'),
                   value: VRMExpressionPresetName.Neutral,
                 },
                 {
-                  label: t('touch.emotion.happy'),
+                  label: t('touch.expression.happy'),
                   value: VRMExpressionPresetName.Happy,
                 },
                 {
-                  label: t('touch.emotion.angry'),
+                  label: t('touch.expression.angry'),
                   value: VRMExpressionPresetName.Angry,
                 },
                 {
-                  label: t('touch.emotion.sad'),
+                  label: t('touch.expression.sad'),
                   value: VRMExpressionPresetName.Sad,
                 },
                 {
-                  label: t('touch.emotion.relaxed'),
+                  label: t('touch.expression.relaxed'),
                   value: VRMExpressionPresetName.Relaxed,
                 },
                 {
-                  label: t('touch.emotion.surprised'),
+                  label: t('touch.expression.surprised'),
                   value: VRMExpressionPresetName.Surprised,
                 },
                 {
-                  label: t('touch.emotion.blink'),
+                  label: t('touch.expression.blink'),
                   value: VRMExpressionPresetName.Blink,
                 },
                 {
-                  label: t('touch.emotion.blinkLeft'),
+                  label: t('touch.expression.blinkLeft'),
                   value: VRMExpressionPresetName.BlinkLeft,
                 },
                 {
-                  label: t('touch.emotion.blinkRight'),
+                  label: t('touch.expression.blinkRight'),
                   value: VRMExpressionPresetName.BlinkRight,
                 },
               ]}
@@ -151,9 +151,9 @@ export default memo((props: Props) => {
             name="motion"
           >
             <Select
-              options={TOUCH_MOTION_ANIMATION.map((item) => ({
-                label: `${item.gender}/${item.name}`,
-                value: item.id,
+              options={Object.entries(motionPresetMap).map(([key, value]) => ({
+                label: t(`${value.name}`),
+                value: key,
               }))}
               style={{ width: INPUT_WIDTH_S }}
               defaultActiveFirstOption={true}

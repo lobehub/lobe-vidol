@@ -33,7 +33,7 @@
     "coverLabel": "Cover",
     "descDescription": "A brief introduction to the character.",
     "descLabel": "Description",
-    "emotionDescription": "Select the emotion for responses, which will affect the character's facial expressions.",
+    "emotionDescription": "Select the expression for responses, which will affect the character's facial expressions.",
     "emotionLabel": "Emotions and Feelings",
     "genderDescription": "The character's gender, which affects touch responses.",
     "genderLabel": "Gender",
@@ -115,7 +115,7 @@
       "leg": "Leg"
     },
     "editAction": "Edit Response Action",
-    "emotion": {
+    "expression": {
       "angry": "Angry",
       "blink": "Blink",
       "blinkLeft": "Blink Left",

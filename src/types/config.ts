@@ -7,16 +7,31 @@ import { TouchActionConfig } from '@/types/touch';
 export type BackgroundEffect = 'glow' | 'none';
 
 export interface OpenAIConfig {
+  /**
+   * OpenAI API 密钥
+   */
   apikey?: string;
+  /**
+   * OpenAI API 端点
+   */
   endpoint?: string;
 }
 
 export interface LanguageModelConfig {
+  /**
+   * OpenAI 配置
+   */
   openAI: OpenAIConfig;
 }
 
 export interface TouchConfig {
+  /**
+   * 女性触摸配置
+   */
   [GenderEnum.FEMALE]: TouchActionConfig;
+  /**
+   * 男性触摸配置
+   */
   [GenderEnum.MALE]: TouchActionConfig;
 }
 

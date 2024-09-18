@@ -6,7 +6,8 @@ import React, { memo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { INPUT_WIDTH_M, INPUT_WIDTH_S } from '@/constants/token';
-import { MAX_TOUCH_ACTION_TEXT_LENGTH, TOUCH_MOTION_ANIMATION } from '@/constants/touch';
+import { MAX_TOUCH_ACTION_TEXT_LENGTH } from '@/constants/touch';
+import { motionPresetMap } from '@/libs/emoteController/motionPresetMap';
 import { useSettingStore } from '@/store/setting';
 import { GenderEnum } from '@/types/agent';
 import { TouchAction, TouchAreaEnum } from '@/types/touch';
@@ -22,7 +23,7 @@ export interface Props {
 const AddOrEdit = memo<Props>(({ touchArea, index, touchAction, isEdit = true, gender }) => {
   const [open, setOpen] = useState(false);
   const [form] = Form.useForm();
-  const { t } = useTranslation('common');
+  const { t } = useTranslation(['common', 'role']);
 
   const [updateTouchAction, createTouchAction] = useSettingStore((s) => [
     s.updateTouchAction,
@@ -70,7 +71,7 @@ const AddOrEdit = memo<Props>(({ touchArea, index, touchAction, isEdit = true, g
         <Form
           layout="horizontal"
           requiredMark
-          initialValues={isEdit ? touchAction : { emotion: VRMExpressionPresetName.Neutral }}
+          initialValues={isEdit ? touchAction : { expression: VRMExpressionPresetName.Neutral }}
           form={form}
           preserve={false}
         >
@@ -93,44 +94,44 @@ const AddOrEdit = memo<Props>(({ touchArea, index, touchAction, isEdit = true, g
             desc={t('info.emotionDescription', { ns: 'role' })}
             divider
             rules={[{ required: true, message: t('touch.inputActionEmotion', { ns: 'role' }) }]}
-            name="emotion"
+            name="expression"
           >
             <Select
               options={[
                 {
-                  label: t('touch.emotion.natural', { ns: 'role' }),
+                  label: t('touch.expression.natural', { ns: 'role' }),
                   value: VRMExpressionPresetName.Neutral,
                 },
                 {
-                  label: t('touch.emotion.happy', { ns: 'role' }),
+                  label: t('touch.expression.happy', { ns: 'role' }),
                   value: VRMExpressionPresetName.Happy,
                 },
                 {
-                  label: t('touch.emotion.angry', { ns: 'role' }),
+                  label: t('touch.expression.angry', { ns: 'role' }),
                   value: VRMExpressionPresetName.Angry,
                 },
                 {
-                  label: t('touch.emotion.sad', { ns: 'role' }),
+                  label: t('touch.expression.sad', { ns: 'role' }),
                   value: VRMExpressionPresetName.Sad,
                 },
                 {
-                  label: t('touch.emotion.relaxed', { ns: 'role' }),
+                  label: t('touch.expression.relaxed', { ns: 'role' }),
                   value: VRMExpressionPresetName.Relaxed,
                 },
                 {
-                  label: t('touch.emotion.surprised', { ns: 'role' }),
+                  label: t('touch.expression.surprised', { ns: 'role' }),
                   value: VRMExpressionPresetName.Surprised,
                 },
                 {
-                  label: t('touch.emotion.blink', { ns: 'role' }),
+                  label: t('touch.expression.blink', { ns: 'role' }),
                   value: VRMExpressionPresetName.Blink,
                 },
                 {
-                  label: t('touch.emotion.blinkLeft', { ns: 'role' }),
+                  label: t('touch.expression.blinkLeft', { ns: 'role' }),
                   value: VRMExpressionPresetName.BlinkLeft,
                 },
                 {
-                  label: t('touch.emotion.blinkRight', { ns: 'role' }),
+                  label: t('touch.expression.blinkRight', { ns: 'role' }),
                   value: VRMExpressionPresetName.BlinkRight,
                 },
               ]}
@@ -142,13 +143,13 @@ const AddOrEdit = memo<Props>(({ touchArea, index, touchAction, isEdit = true, g
             label={t('info.motionLabel', { ns: 'role' })}
             desc={t('info.motionDescription', { ns: 'role' })}
             divider
-            rules={[{ required: true, message: t('touch.inputActionEmotion', { ns: 'role' }) }]}
+            rules={[{ required: true, message: t('touch.inputActionMotion', { ns: 'role' }) }]}
             name="motion"
           >
             <Select
-              options={TOUCH_MOTION_ANIMATION.map((item) => ({
-                label: `${item.gender}/${item.name}`,
-                value: item.id,
+              options={Object.entries(motionPresetMap).map(([key, value]) => ({
+                label: t(`${value.name}`),
+                value: key,
               }))}
               style={{ width: INPUT_WIDTH_S }}
               defaultActiveFirstOption={true}

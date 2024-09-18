@@ -1,4 +1,3 @@
-import { Agent } from '@/types/agent';
 import { ChatModelCard } from '@/types/llm';
 
 export const OPENAI_API_KEY = 'x-openai-apikey';
@@ -141,16 +140,3 @@ export const OPENAI_MODEL_LIST: ChatModelCard[] = [
     tokens: 4096,
   },
 ];
-
-/**
- * 默认使用的 ChatGPT 聊天模型配置
- */
-export const DEFAULT_LLM_CONFIG: Partial<Agent> = {
-  model: OPENAI_MODEL_LIST[0].id,
-  params: {
-    frequency_penalty: 0,
-    presence_penalty: 0,
-    temperature: 0.6,
-    top_p: 1,
-  },
-};

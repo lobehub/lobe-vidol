@@ -25,6 +25,10 @@ export const useStyles = createStyles(({ css, token }) => ({
       opacity: 0;
     }
 
+    #loading-screen.fade-in {
+      opacity: 0;
+    }
+
     #loader {
       position: relative;
       top: 50%;
@@ -39,8 +43,6 @@ export const useStyles = createStyles(({ css, token }) => ({
       border: 3px solid transparent;
       border-top-color: #9370db;
       border-radius: 50%;
-
-      animation: spin 2s linear infinite;
       animation: spin 2s linear infinite;
     }
 
@@ -53,8 +55,6 @@ export const useStyles = createStyles(({ css, token }) => ({
       border: 3px solid transparent;
       border-top-color: #ba55d3;
       border-radius: 50%;
-
-      animation: spin 3s linear infinite;
       animation: spin 3s linear infinite;
     }
 
@@ -67,21 +67,15 @@ export const useStyles = createStyles(({ css, token }) => ({
       border: 3px solid transparent;
       border-top-color: #f0f;
       border-radius: 50%;
-
-      animation: spin 1.5s linear infinite;
       animation: spin 1.5s linear infinite;
     }
 
     @keyframes spin {
       0% {
         transform: rotate(0deg);
-        transform: rotate(0deg);
-        transform: rotate(0deg);
       }
 
       100% {
-        transform: rotate(360deg);
-        transform: rotate(360deg);
         transform: rotate(360deg);
       }
     }
@@ -89,13 +83,9 @@ export const useStyles = createStyles(({ css, token }) => ({
     @keyframes spin {
       0% {
         transform: rotate(0deg);
-        transform: rotate(0deg);
-        transform: rotate(0deg);
       }
 
       100% {
-        transform: rotate(360deg);
-        transform: rotate(360deg);
         transform: rotate(360deg);
       }
     }

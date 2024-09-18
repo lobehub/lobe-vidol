@@ -37,11 +37,32 @@ export type TTS = {
 };
 
 export interface Voice {
+  /**
+   * 显示名称
+   */
   DisplayName: string;
+  /**
+   * 显示语音名称
+   */
   DisplayVoiceName: string;
+  /**
+   * 本地名称
+   */
   LocalName: string;
+  /**
+   * 预览句子
+   */
   PreviewSentence: string;
+  /**
+   * 简短名称
+   */
   ShortName: string;
+  /**
+   * 语言标识
+   */
   locale: string;
+  /**
+   * 中文语言标识
+   */
   localeZH: string;
 }

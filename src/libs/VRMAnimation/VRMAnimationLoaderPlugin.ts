@@ -87,8 +87,8 @@ export class VRMAnimationLoaderPlugin implements GLTFLoaderPlugin {
     const preset = defExtension.expressions?.preset;
 
     if (preset) {
-      Object.entries(preset).forEach(([name, emotion]) => {
-        const { node } = emotion;
+      Object.entries(preset).forEach(([name, expression]) => {
+        const { node } = expression;
         expressionsIndexToName.set(node, name as string);
       });
     }
@@ -96,8 +96,8 @@ export class VRMAnimationLoaderPlugin implements GLTFLoaderPlugin {
     const custom = defExtension.expressions?.custom;
 
     if (custom) {
-      Object.entries(custom).forEach(([name, emotion]) => {
-        const { node } = emotion;
+      Object.entries(custom).forEach(([name, expression]) => {
+        const { node } = expression;
         expressionsIndexToName.set(node, name as string);
       });
     }

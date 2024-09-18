@@ -640,6 +640,16 @@
     "avatar": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/140000905/animated.gif"
   },
   {
+    "id": "8c95cac8-2068-410f-9564-d0a2a04ea0a5",
+    "name": "Female Action Pose",
+    "type": "Posture",
+    "gender": "Female",
+    "category": "Action",
+    "description": "Sliding",
+    "url": "https://r2.vidol.chat/animations/8c95cac8-2068-410f-9564-d0a2a04ea0a5.fbx",
+    "avatar": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/140000902/animated.gif"
+  },
+  {
     "id": "eaf51ff4-0fb7-4759-aadf-edb8fd3ae6a0",
     "name": "Female Action Pose",
     "type": "Posture",
@@ -718,16 +728,6 @@
     "description": "Sneaking",
     "url": "https://r2.vidol.chat/animations/e3543986-d43d-4ec1-bac8-5cf7f5ec003b.fbx",
     "avatar": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/140100902/animated.gif"
-  },
-  {
-    "id": "8c95cac8-2068-410f-9564-d0a2a04ea0a5",
-    "name": "Female Action Pose",
-    "type": "Posture",
-    "gender": "Female",
-    "category": "Crouch",
-    "description": "Sliding",
-    "url": "https://r2.vidol.chat/animations/8c95cac8-2068-410f-9564-d0a2a04ea0a5.fbx",
-    "avatar": "https://d99n9xvb9513w.cloudfront.net/thumbnails/motions/140000902/animated.gif"
   },
   {
     "id": "31dca3e7-dba8-4536-a70e-34d7d5976fa9",

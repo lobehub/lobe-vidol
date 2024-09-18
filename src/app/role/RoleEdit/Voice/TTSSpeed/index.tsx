@@ -12,15 +12,15 @@ interface Props {
 
 export default memo<Props>((props) => {
   const { style, className } = props;
-  const [tts, updateAgentTTS] = useAgentStore((s) => [
-    agentSelectors.currentAgentTTS(s),
+  const [speed, updateAgentTTS] = useAgentStore((s) => [
+    agentSelectors.currentAgentTTS(s)?.speed,
     s.updateAgentTTS,
   ]);
 
   return (
     <Flexbox className={className} style={style} flex={1} horizontal gap={8}>
       <Slider
-        value={tts?.speed}
+        value={speed}
         style={{ flex: 1 }}
         min={MIN_TTS_SPEED}
         max={MAX_TTS_SPEED}
@@ -34,7 +34,7 @@ export default memo<Props>((props) => {
         max={MAX_TTS_SPEED}
         step={TTS_SPEED_STEP}
         style={{ width: 80 }}
-        value={tts?.speed}
+        value={speed}
         onChange={(value) => {
           updateAgentTTS({ speed: value === null ? undefined : value });
         }}

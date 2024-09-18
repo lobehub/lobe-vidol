@@ -6,9 +6,8 @@ import { shallow } from 'zustand/shallow';
 import { createWithEqualityFn } from 'zustand/traditional';
 import { StateCreator } from 'zustand/vanilla';
 
-import { LOBE_VIDOL_DEFAULT_AGENT_ID } from '@/constants/agent';
+import { DEFAULT_LLM_CONFIG, LOBE_VIDOL_DEFAULT_AGENT_ID } from '@/constants/agent';
 import { DEFAULT_USER_AVATAR_URL, LOADING_FLAG } from '@/constants/common';
-import { DEFAULT_LLM_CONFIG } from '@/constants/openai';
 import { chatCompletion, handleSpeakAi } from '@/services/chat';
 import { shareService } from '@/services/share';
 import { Agent } from '@/types/agent';

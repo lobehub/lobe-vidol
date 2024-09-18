@@ -1,11 +1,18 @@
 import { VRMExpressionPresetName } from '@pixiv/three-vrm';
 
+import { MotionPresetName } from '@/libs/emoteController/motionPresetMap';
 import { GenderEnum } from '@/types/agent';
 
 import { TTS } from './tts';
 
-export type EmotionType = VRMExpressionPresetName;
+/**
+ * 表情类型
+ */
+export type ExpressionType = VRMExpressionPresetName;
 
+/**
+ * 触摸区域枚举
+ */
 export enum TouchAreaEnum {
   Arm = 'arm',
   Belly = 'belly',
@@ -14,17 +21,35 @@ export enum TouchAreaEnum {
   Leg = 'leg',
 }
 
+/**
+ * 触摸动作接口
+ */
 export interface TouchAction {
-  emotion: EmotionType;
-  motion?: string;
+  /**
+   * 表情
+   */
+  expression: ExpressionType;
+  /**
+   * 动作（可选）
+   */
+  motion?: MotionPresetName;
+  /**
+   * 文本
+   */
   text: string;
 }
 
+/**
+ * 动作类别枚举
+ */
 export enum MotionCategoryEnum {
   DANCE = 'Dance',
   NORMAL = 'Normal',
 }
 
+/**
+ * 姿势类别枚举
+ */
 export enum PostureCategoryEnum {
   ACTION = 'Action',
   CROUCH = 'Crouch',
@@ -35,18 +60,49 @@ export enum PostureCategoryEnum {
   STANDING = 'Standing',
 }
 
+/**
+ * 动作动画接口
+ */
 export interface MotionAnimation {
+  /**
+   * 头像
+   */
   avatar: string;
+  /**
+   * 类别
+   */
   category: MotionCategoryEnum | PostureCategoryEnum;
+  /**
+   * 描述
+   */
   description: string;
+  /**
+   * 性别
+   */
   gender: GenderEnum;
+  /**
+   * ID
+   */
   id: string;
+  /**
+   * 名称
+   */
   name: string;
+  /**
+   * 类型
+   */
   type: string;
+  /**
+   * URL
+   */
   url: string;
 }
 
+/**
+ * 触摸动作配置接口
+ */
 export interface TouchActionConfig {
+  enable?: boolean;
   [TouchAreaEnum.Head]: TouchAction[];
   [TouchAreaEnum.Arm]: TouchAction[];
   [TouchAreaEnum.Leg]: TouchAction[];
@@ -54,8 +110,20 @@ export interface TouchActionConfig {
   [TouchAreaEnum.Belly]: TouchAction[];
 }
 
+/**
+ * 剧本类型
+ */
 export type Screenplay = {
-  emotion: EmotionType;
-  motion?: string;
+  /**
+   * 表情
+   */
+  expression: ExpressionType;
+  /**
+   * 动作（可选）
+   */
+  motion?: MotionPresetName;
+  /**
+   * 语音合成
+   */
   tts: TTS;
 };

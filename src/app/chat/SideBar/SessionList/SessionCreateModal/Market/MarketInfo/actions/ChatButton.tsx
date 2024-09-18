@@ -1,5 +1,4 @@
 import { Button } from 'antd';
-import { useRouter } from 'next/navigation';
 import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -8,10 +7,10 @@ import { Agent } from '@/types/agent';
 
 interface ChatButtonProps {
   agent: Agent;
+  onClick?: () => void;
 }
 
-const ChatButton = memo<ChatButtonProps>(({ agent }) => {
-  const router = useRouter();
+const ChatButton = memo<ChatButtonProps>(({ agent, onClick }) => {
   const { t } = useTranslation('chat');
   const createSession = useSessionStore((s) => s.createSession);
 
@@ -20,7 +19,7 @@ const ChatButton = memo<ChatButtonProps>(({ agent }) => {
       key="chat"
       onClick={() => {
         createSession(agent);
-        router.push('/chat');
+        onClick?.();
       }}
       type={'primary'}
     >

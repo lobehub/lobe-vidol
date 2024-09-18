@@ -7,6 +7,7 @@ import React, { memo } from 'react';
 
 import ListItem from '@/components/ListItem';
 import { useLoadMotion } from '@/hooks/useLoadMotion';
+import { MotionFileType } from '@/libs/emoteController/type';
 import { useGlobalStore } from '@/store/global';
 import { MotionAnimation } from '@/types/touch';
 
@@ -73,7 +74,7 @@ const TouchActionListItem = memo<ActionListItemProps>(({ item }) => {
       onClick={async () => {
         if (item.url) {
           const motionUrl = await fetchMotionUrl(item.id, item.url);
-          if (motionUrl) viewer.model?.loadFBX(motionUrl);
+          if (motionUrl) viewer.model?.playMotionUrl(MotionFileType.FBX, motionUrl);
         }
       }}
       title={item.name}

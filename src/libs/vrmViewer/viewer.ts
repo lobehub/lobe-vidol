@@ -1,11 +1,11 @@
+import { VRMHumanBoneName } from '@pixiv/three-vrm';
 import { Parser } from 'mmd-parser';
 import * as THREE from 'three';
 import { Audio, GridHelper, Mesh, MeshLambertMaterial, PlaneGeometry } from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-import { LoopOnce } from 'three/src/constants';
 
-import { loadVMDAnimation } from '@/libs/VMDAnimation/loadVMDAnimation';
-import { AudioPlayer } from '@/libs/audioPlayer/audioPlayer';
+import { MotionFileType } from '@/libs/emoteController/type';
+import { TouchAreaEnum } from '@/types/touch';
 
 import { Model } from './model';
 
@@ -23,6 +23,12 @@ export class Viewer {
   private _gridHelper?: THREE.GridHelper;
   private _axesHelper?: THREE.AxesHelper;
   private _floor?: THREE.Mesh;
+  private _raycaster: THREE.Raycaster;
+  private _mouse: THREE.Vector2;
+  private _canvas?: HTMLCanvasElement;
+  private _boundHandleClick: (event: MouseEvent) => void;
+  private _boundHandleMouseMove: (event: MouseEvent) => void;
+  private _onBodyTouch?: (area: TouchAreaEnum) => void;
 
   constructor() {
     this.isReady = false;
@@ -36,7 +42,7 @@ export class Viewer {
     directionalLight.position.set(1, 1, 1).normalize();
     scene.add(directionalLight);
 
-    // 环境光
+    // 环光
     // const ambientLight = new THREE.AmbientLight(0xffffff, 0.4);
     // scene.add(ambientLight);
 
@@ -48,6 +54,14 @@ export class Viewer {
     // animate
     this._clock = new THREE.Clock();
     this._clock.start();
+
+    this._raycaster = new THREE.Raycaster();
+    this._mouse = new THREE.Vector2();
+
+    // 在构造函数中绑定 handleClick 方法
+    this._boundHandleClick = this.handleClick.bind(this);
+    // 在构造函数中绑定 handleMouseMove 方法
+    this._boundHandleMouseMove = this.handleMouseMove.bind(this);
   }
 
   /**
@@ -59,7 +73,6 @@ export class Viewer {
       return null;
     }
     this._sound.stop();
-    this.model?.disposeAll();
     const audioLoader = new THREE.AudioLoader();
     // 监听音频播放结束事件
     this._sound.onEnded = () => {
@@ -71,17 +84,16 @@ export class Viewer {
     this._sound.setVolume(0.5);
     this._sound.play();
 
-    this.model?.loadVMD(danceUrl, false);
+    this.model?.playMotionUrl(MotionFileType.VMD, danceUrl, false);
   }
 
   public resetToIdle() {
     this._sound?.stop();
-    this.model?.disposeAll();
     this.model?.loadIdleAnimation();
   }
 
   /**
-   * 加载舞台
+   * 加台
    * @param buffer
    */
   public async loadStage(buffer: ArrayBuffer) {
@@ -90,15 +102,18 @@ export class Viewer {
   }
 
   public async loadVrm(url: string) {
-    if (this.model?.vrm) {
-      this.unloadVRM();
-    }
+    // 在加载新模型之前，先卸载旧模型和事件监听器
+    this.unload();
 
     // gltf and vrm
     this.model = new Model(this._camera || new THREE.Object3D());
     await this.model.loadVRM(url);
 
-    if (!this.model?.vrm) return;
+    if (!this.model?.vrm) {
+      console.log('VRM 模型加载失败');
+      return;
+    }
+    console.log('VRM 模型加载成功');
 
     // Disable frustum culling
     this.model.vrm.scene.traverse((obj) => {
@@ -108,10 +123,16 @@ export class Viewer {
     this._scene.add(this.model.vrm.scene);
     await this.model.loadIdleAnimation();
 
-    // HACK: アニメーションの原点がずれているので再生後にカメラ位置を調整する
+    // HACK: アニメーションの原点がずれているの再生後にカメラ位置を調整する
     requestAnimationFrame(() => {
       this.resetCamera();
     });
+
+    // 重新设置事件监听器
+    if (this._canvas) {
+      this._canvas.addEventListener('click', this._boundHandleClick, false);
+      this._canvas.addEventListener('mousemove', this._boundHandleMouseMove, false);
+    }
   }
 
   public unloadVRM(): void {
@@ -121,7 +142,9 @@ export class Viewer {
     }
   }
 
-  public setup(canvas: HTMLCanvasElement) {
+  public setup(canvas: HTMLCanvasElement, onBodyTouch?: (area: TouchAreaEnum) => void) {
+    this._canvas = canvas;
+    this._onBodyTouch = onBodyTouch;
     const parentElement = canvas.parentElement;
     const width = parentElement?.clientWidth || canvas.width;
     const height = parentElement?.clientHeight || canvas.height;
@@ -159,8 +182,23 @@ export class Viewer {
 
     resizeObserver.observe(parentElement!);
 
+    // 使用存储的绑定函数添加事件监听器
+    this._canvas.addEventListener('click', this._boundHandleClick, false);
+    this._canvas.addEventListener('mousemove', this._boundHandleMouseMove, false);
+
     this.isReady = true;
     this.update();
+  }
+
+  public unload() {
+    // 使用存储的绑定函数移除事件监听器
+    if (this._canvas) {
+      this._canvas.removeEventListener('click', this._boundHandleClick, false);
+      this._canvas.removeEventListener('mousemove', this._boundHandleMouseMove, false);
+    }
+
+    // 卸载模型
+    this.unloadVRM();
   }
 
   public toggleCameraHelper() {
@@ -257,4 +295,147 @@ export class Viewer {
       this._renderer.render(this._scene, this._camera);
     }
   };
+
+  private handleRaycasterIntersection(event: MouseEvent): THREE.Intersection[] | null {
+    if (!this.model?.vrm || !this._camera || !this._renderer) {
+      return null;
+    }
+
+    const rect = this._renderer.domElement.getBoundingClientRect();
+    this._mouse.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+    this._mouse.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
+
+    this._raycaster.setFromCamera(this._mouse, this._camera);
+
+    return this._raycaster.intersectObjects(this._scene.children, true);
+  }
+
+  private handleClick(event: MouseEvent) {
+    const intersects = this.handleRaycasterIntersection(event);
+    if (!intersects || intersects.length === 0) return;
+
+    const intersectedPoint = intersects[0].point;
+    const closestBone = this.findClosestBone(intersectedPoint);
+
+    if (closestBone) {
+      this.handleBodyPartClick(closestBone);
+    }
+  }
+
+  private handleMouseMove(event: MouseEvent) {
+    const intersects = this.handleRaycasterIntersection(event);
+
+    if (this._canvas) {
+      this._canvas.style.cursor = intersects && intersects.length > 0 ? 'pointer' : 'default';
+    }
+  }
+
+  private findClosestBone(point: THREE.Vector3): VRMHumanBoneName | null {
+    if (!this.model?.vrm) return null;
+
+    let closestBone: VRMHumanBoneName | null = null;
+    let closestWeightedDistance = Infinity;
+
+    const mainBones: VRMHumanBoneName[] = [
+      VRMHumanBoneName.Head,
+      VRMHumanBoneName.Neck,
+      VRMHumanBoneName.Chest,
+      VRMHumanBoneName.Spine,
+      VRMHumanBoneName.Hips,
+      VRMHumanBoneName.LeftUpperArm,
+      VRMHumanBoneName.LeftLowerArm,
+      VRMHumanBoneName.LeftHand,
+      VRMHumanBoneName.RightUpperArm,
+      VRMHumanBoneName.RightLowerArm,
+      VRMHumanBoneName.RightHand,
+      VRMHumanBoneName.LeftUpperLeg,
+      VRMHumanBoneName.LeftLowerLeg,
+      VRMHumanBoneName.LeftFoot,
+      VRMHumanBoneName.RightUpperLeg,
+      VRMHumanBoneName.RightLowerLeg,
+      VRMHumanBoneName.RightFoot,
+    ];
+
+    const getBoneWeight = (boneName: VRMHumanBoneName): number => {
+      switch (boneName) {
+        case VRMHumanBoneName.Head:
+        case VRMHumanBoneName.Chest:
+        case VRMHumanBoneName.Spine:
+        case VRMHumanBoneName.Hips:
+          return 1.5;
+        case VRMHumanBoneName.LeftUpperLeg:
+        case VRMHumanBoneName.RightUpperLeg:
+        case VRMHumanBoneName.LeftUpperArm:
+        case VRMHumanBoneName.RightUpperArm:
+          return 1.2;
+        default:
+          return 1;
+      }
+    };
+
+    mainBones.forEach((boneName) => {
+      const boneData = this.model!.vrm!.humanoid.getNormalizedBoneNode(boneName);
+      if (boneData) {
+        const boneWorldPosition = new THREE.Vector3();
+        boneData.getWorldPosition(boneWorldPosition);
+        const distance = point.distanceTo(boneWorldPosition);
+        const weightedDistance = distance / getBoneWeight(boneName);
+
+        if (weightedDistance < closestWeightedDistance) {
+          closestWeightedDistance = weightedDistance;
+          closestBone = boneName;
+        }
+      }
+    });
+
+    return closestBone;
+  }
+
+  private handleBodyPartClick(boneName: VRMHumanBoneName) {
+    const touchArea = this.mapBoneNameToTouchArea(boneName);
+    console.log(`触摸了区域: ${touchArea}`);
+
+    // 调用回调函数
+    if (this._onBodyTouch && touchArea) {
+      this._onBodyTouch(touchArea);
+    }
+  }
+
+  private mapBoneNameToTouchArea(boneName: VRMHumanBoneName): TouchAreaEnum | null {
+    switch (boneName) {
+      case VRMHumanBoneName.Head:
+      case VRMHumanBoneName.Neck:
+        return TouchAreaEnum.Head;
+
+      case VRMHumanBoneName.LeftUpperArm:
+      case VRMHumanBoneName.LeftLowerArm:
+      case VRMHumanBoneName.LeftHand:
+      case VRMHumanBoneName.RightUpperArm:
+      case VRMHumanBoneName.RightLowerArm:
+      case VRMHumanBoneName.RightHand:
+        return TouchAreaEnum.Arm;
+
+      case VRMHumanBoneName.LeftUpperLeg:
+      case VRMHumanBoneName.RightUpperLeg:
+      case VRMHumanBoneName.LeftLowerLeg:
+      case VRMHumanBoneName.RightLowerLeg:
+      case VRMHumanBoneName.LeftFoot:
+      case VRMHumanBoneName.RightFoot:
+        return TouchAreaEnum.Leg;
+
+      case VRMHumanBoneName.Chest:
+        return TouchAreaEnum.Chest;
+
+      case VRMHumanBoneName.Spine:
+        return TouchAreaEnum.Belly;
+
+      case VRMHumanBoneName.Hips:
+        // 注意: TouchAreaEnum 中没有对应的"臀部"枚举值,
+        // 所以这里暂时返回 null 或者您可以选择最接近的区域
+        return null;
+
+      default:
+        return null;
+    }
+  }
 }

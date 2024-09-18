@@ -40,8 +40,8 @@ interface AvatarWithUploadProps {
 
 export default memo<AvatarWithUploadProps>(({ size = AVATAR_IMAGE_SIZE, style, id }) => {
   const { styles } = useStyle();
-  const [meta, updateAgentMeta] = useAgentStore((s) => [
-    agentSelectors.currentAgentMeta(s),
+  const [avatar, updateAgentMeta] = useAgentStore((s) => [
+    agentSelectors.currentAgentMeta(s)?.avatar,
     s.updateAgentMeta,
   ]);
 
@@ -66,9 +66,9 @@ export default memo<AvatarWithUploadProps>(({ size = AVATAR_IMAGE_SIZE, style, i
     >
       <Upload beforeUpload={handleUploadAvatar} itemRender={() => void 0} maxCount={1}>
         <NextImage
-          alt={meta?.avatar ? 'userAvatar' : 'LobeVidol'}
+          alt={avatar ? 'userAvatar' : 'LobeVidol'}
           height={size}
-          src={!!meta?.avatar ? meta?.avatar : DEFAULT_AGENT_AVATAR_URL}
+          src={!!avatar ? avatar : DEFAULT_AGENT_AVATAR_URL}
           unoptimized
           width={size}
         />

@@ -1,6 +1,6 @@
 /**
  * https://www.mixamo.com/
- * Mixamo Animations 脚本处理
+ * Mixamo Animations 脚本处理, `bun index.ts`
  * @author rdmclin2
  */
 import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';

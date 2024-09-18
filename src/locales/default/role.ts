@@ -48,6 +48,7 @@ export default {
     touchActionList: '触摸{{touchArea}}时的反应列表',
     touchArea: '触摸区域',
     noTouchActions: "暂无自定义响应动作，您可以通过点击 '+' 按钮添加",
+    customEnable: '启用自定义触摸',
     area: {
       head: '头部',
       arm: '手臂',
@@ -55,7 +56,7 @@ export default {
       chest: '胸部',
       belly: '腹部',
     },
-    emotion: {
+    expression: {
       natural: '自然',
       happy: '开心',
       angry: '生气',
@@ -195,7 +196,7 @@ export default {
     temperatureLabel: '随机性',
     temperatureDescription: '值越大，回复越随机',
     topPLabel: '核采样',
-    topPDescription: '与随机性类型，但不要和随机性一起更改',
+    topPDescription: '与随机性类似，但不要和随机性一起更改',
     presencePenaltyLabel: '话题新鲜度',
     presencePenaltyDescription: '值越大，越有可能拓展到新话题',
     frequencyPenaltyLabel: '频率惩罚度',

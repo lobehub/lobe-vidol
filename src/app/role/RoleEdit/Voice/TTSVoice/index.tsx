@@ -16,45 +16,50 @@ export default memo<Props>((props) => {
   const { style, className } = props;
   const [voices, setVoices] = useState<Voice[]>([]);
 
-  const [tts, updateAgentTTS] = useAgentStore(
-    (s) => [agentSelectors.currentAgentTTS(s), s.updateAgentTTS],
+  const [voice, engine, locale, updateAgentTTS] = useAgentStore(
+    (s) => [
+      agentSelectors.currentAgentTTS(s)?.voice,
+      agentSelectors.currentAgentTTS(s)?.engine,
+      agentSelectors.currentAgentTTS(s)?.locale,
+      s.updateAgentTTS,
+    ],
     isEqual,
   );
 
   const { loading: voiceLoading } = useRequest(
     () => {
-      if (!tts?.engine) {
+      if (!engine) {
         return Promise.resolve({ data: [] });
       }
-      return voiceListApi(tts?.engine);
+      return voiceListApi(engine);
     },
     {
       onSuccess: (res) => {
         setVoices(res.data);
       },
-      refreshDeps: [tts?.engine],
+      refreshDeps: [engine],
     },
   );
 
   useEffect(() => {
-    if (!tts?.locale) {
+    if (!locale) {
       return;
     }
-    const voice = voices.find((voice) => voice.locale === tts.locale);
+    const voice = voices.find((voice) => voice.locale === locale);
     if (voice) {
       updateAgentTTS({ voice: voice.ShortName });
     }
-  }, [tts?.locale, tts?.engine]);
+  }, [locale, engine]);
 
   return (
     <Select
       className={className}
       style={style}
-      value={tts?.voice}
+      value={voice}
       disabled={voiceLoading}
       loading={voiceLoading}
       options={voices
-        .filter((voice) => voice.locale === tts?.locale)
+        .filter((voice) => voice.locale === locale)
         .map((item) => ({
           label: `${item.DisplayName}-${item.LocalName}`,
           value: item.ShortName,
