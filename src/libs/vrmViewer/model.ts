@@ -93,8 +93,9 @@ export class Model {
       const { volume } = this._lipSync.update();
       this.emoteController?.lipSync('aa', volume);
     }
-
-    this.emoteController?.update(delta);
+    // vrm 先更新
     this.vrm?.update(delta);
+    // 后更新表情动作
+    this.emoteController?.update(delta);
   }
 }

@@ -65,14 +65,6 @@ const DanceList = memo((props: PlayListProps) => {
             />
           }
         />
-
-        <Virtuoso
-          computeItemKey={(_, item) => item.danceId}
-          data={danceList}
-          followOutput={false}
-          itemContent={(index, item) => <DanceItem danceItem={item} key={item.danceId} />}
-        />
-
         {danceList.length === 0 ? (
           <Empty description={t('noDanceList')} image={Empty.PRESENTED_IMAGE_SIMPLE}>
             <GradientButton
@@ -85,7 +77,14 @@ const DanceList = memo((props: PlayListProps) => {
               {t('danceMarket')}
             </GradientButton>
           </Empty>
-        ) : null}
+        ) : (
+          <Virtuoso
+            computeItemKey={(_, item) => item.danceId}
+            data={danceList}
+            followOutput={false}
+            itemContent={(index, item) => <DanceItem danceItem={item} key={item.danceId} />}
+          />
+        )}
       </Flexbox>
     </Flexbox>
   );

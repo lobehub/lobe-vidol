@@ -20,6 +20,8 @@ export class MotionManager {
     this.vrm = vrm;
     this.mixer = new AnimationMixer(vrm.scene);
     this.ikHandler = IKHandler.get(vrm);
+    this.currentAction = undefined;
+    this.currentClip = undefined;
   }
 
   public async loadMotionUrl(
@@ -70,18 +72,19 @@ export class MotionManager {
   }
 
   public disposeCurrentMotion(): void {
-    if (this.currentClip && this.mixer) {
+    this.mixer.stopAllAction();
+    if (this.currentClip) {
       this.mixer.uncacheAction(this.currentClip);
       this.mixer.uncacheClip(this.currentClip);
+      this.currentAction = undefined;
     }
+
+    this.ikHandler.disableAll();
 
     if (this.currentAction) {
       this.currentAction.stop();
+      this.currentClip = undefined;
     }
-    this.ikHandler.disableAll();
-
-    this.currentAction = undefined;
-    this.currentClip = undefined;
   }
 
   public update(delta: number): void {
