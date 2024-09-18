@@ -2,6 +2,49 @@
 
 # Changelog
 
+## [Version&nbsp;0.27.0](https://github.com/lobehub/lobe-vidol/compare/v0.26.0...v0.27.0)
+<sup>Released on **2024-09-18**</sup>
+
+
+#### ✨ Features
+
+- **misc**: Add model playing, 支持触摸响应.
+
+
+#### 🐛 Bug Fixes
+
+- **misc**: Chat info error.
+
+
+<br/>
+
+
+
+<details>
+<summary><kbd>Improvements and Fixes</kbd></summary>
+
+
+
+#### What's improved
+
+* **misc**: Add model playing ([4f66c31](https://github.com/lobehub/lobe-vidol/commit/4f66c31))
+* **misc**: 支持触摸响应 ([f5c8400](https://github.com/lobehub/lobe-vidol/commit/f5c8400))
+
+
+
+#### What's fixed
+
+* **misc**: Chat info error ([6b9f20f](https://github.com/lobehub/lobe-vidol/commit/6b9f20f))
+
+</details>
+
+
+<div align="right">
+
+[![](https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square)](#readme-top)
+
+</div>
+
 ## [Version&nbsp;0.26.0](https://github.com/lobehub/lobe-vidol/compare/v0.25.1...v0.26.0)
 <sup>Released on **2024-08-27**</sup>
 
