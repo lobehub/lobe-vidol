@@ -13,6 +13,8 @@ export class MotionManager {
   private vrm: VRM;
   private mixer: AnimationMixer;
   private currentAction?: AnimationAction;
+  private nextAction?: AnimationAction;
+  private mixDuration: number = 0.5; // 混合持续时间
   private currentClip?: AnimationClip;
   private ikHandler: VRMIKHandler;
   private preloadedMotions = new Map<string, AnimationClip>();
@@ -53,11 +55,25 @@ export class MotionManager {
       return;
     }
 
-    const action = this.mixer.clipAction(clip);
-    if (!loop) action.setLoop(LoopOnce, 1);
-    action.play();
+    const nextAction = this.mixer.clipAction(clip);
+    if (!loop) nextAction.setLoop(LoopOnce, 1);
 
-    this.currentAction = action;
+    if (this.currentAction) {
+      // 设置下一个动作
+      this.nextAction = nextAction;
+      // 开始混合
+      this.currentAction.crossFadeTo(this.nextAction, this.mixDuration, true);
+      setTimeout(() => {
+        this.currentAction?.stop();
+        this.currentAction = this.nextAction;
+        this.nextAction = undefined;
+      }, this.mixDuration * 1000);
+    } else {
+      // 如果是第一个动作,直接播放
+      this.currentAction = nextAction;
+      this.currentAction.play();
+    }
+
     this.currentClip = clip;
   }
 
