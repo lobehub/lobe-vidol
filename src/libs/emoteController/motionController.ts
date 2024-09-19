@@ -11,6 +11,17 @@ export class MotionController {
     this._motionManager = new MotionManager(vrm);
   }
 
+  public async preloadMotion(motion: MotionPresetName) {
+    const preset = motionPresetMap[motion];
+    if (preset) {
+      await this._motionManager.preloadMotion(preset.type, preset.url);
+    }
+  }
+
+  public async preloadMotionUrl(fileType: MotionFileType, url: string) {
+    await this._motionManager.preloadMotion(fileType, url);
+  }
+
   /**
    * 目前都是 Mixamo 的 FBX 文件
    * @param motion

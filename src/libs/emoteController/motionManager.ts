@@ -15,6 +15,7 @@ export class MotionManager {
   private currentAction?: AnimationAction;
   private currentClip?: AnimationClip;
   private ikHandler: VRMIKHandler;
+  private preloadedMotions = new Map<string, AnimationClip>();
 
   constructor(vrm: VRM) {
     this.vrm = vrm;
@@ -22,6 +23,15 @@ export class MotionManager {
     this.ikHandler = IKHandler.get(vrm);
     this.currentAction = undefined;
     this.currentClip = undefined;
+  }
+
+  public async preloadMotion(fileType: MotionFileType, url: string): Promise<void> {
+    if (!this.preloadedMotions.has(url)) {
+      const clip = await this.loadMotionClip(fileType, url);
+      if (clip) {
+        this.preloadedMotions.set(url, clip);
+      }
+    }
   }
 
   public async loadMotionUrl(
@@ -33,18 +43,10 @@ export class MotionManager {
 
     let clip: AnimationClip | undefined;
 
-    switch (fileType) {
-      case 'vmd':
-        clip = await this.loadVMD(url);
-        break;
-      case 'fbx':
-        clip = await this.loadFBX(url);
-        break;
-      case 'vrma':
-        clip = await this.loadVRMA(url);
-        break;
-      default:
-        throw new Error('不支持的文件格式');
+    if (this.preloadedMotions.has(url)) {
+      clip = this.preloadedMotions.get(url);
+    } else {
+      clip = await this.loadMotionClip(fileType, url);
     }
 
     if (!clip) {
@@ -57,6 +59,22 @@ export class MotionManager {
 
     this.currentAction = action;
     this.currentClip = clip;
+  }
+
+  private async loadMotionClip(
+    fileType: MotionFileType,
+    url: string,
+  ): Promise<AnimationClip | undefined> {
+    switch (fileType) {
+      case 'vmd':
+        return await this.loadVMD(url);
+      case 'fbx':
+        return await this.loadFBX(url);
+      case 'vrma':
+        return await this.loadVRMA(url);
+      default:
+        throw new Error('不支持的文件格式');
+    }
   }
 
   private async loadVMD(url: string): Promise<AnimationClip | undefined> {

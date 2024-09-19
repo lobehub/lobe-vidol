@@ -7,6 +7,7 @@ import { EmoteController } from '@/libs/emoteController/emoteController';
 import { LipSync } from '@/libs/lipSync/lipSync';
 import { Screenplay } from '@/types/touch';
 
+import { MotionPresetName } from '../emoteController/motionPresetMap';
 import { MotionFileType } from '../emoteController/type';
 
 /**
@@ -97,5 +98,13 @@ export class Model {
     this.vrm?.update(delta);
     // 后更新表情动作
     this.emoteController?.update(delta);
+  }
+
+  public async preloadMotion(motion: MotionPresetName) {
+    await this.emoteController?.preloadMotion(motion);
+  }
+
+  public async preloadMotionUrl(fileType: MotionFileType, url: string) {
+    await this.emoteController?.preloadMotionUrl(fileType, url);
   }
 }
