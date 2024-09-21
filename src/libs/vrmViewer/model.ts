@@ -72,8 +72,11 @@ export class Model {
    * @param screenplay
    */
   public async speak(buffer: ArrayBuffer, screenplay: Screenplay) {
+    // 播放人物表情
     this.emoteController?.playEmotion(screenplay.expression);
+    // 播放人物动作
     if (screenplay.motion) this.emoteController?.playMotion(screenplay.motion);
+    // 唇形同步
     await new Promise((resolve) => {
       this._lipSync?.playFromArrayBuffer(buffer, () => {
         resolve(true);
@@ -94,9 +97,7 @@ export class Model {
       const { volume } = this._lipSync.update();
       this.emoteController?.lipSync('aa', volume);
     }
-    // vrm 先更新
-    this.vrm?.update(delta);
-    // 后更新表情动作
+    // 更新表情动作
     this.emoteController?.update(delta);
   }
 

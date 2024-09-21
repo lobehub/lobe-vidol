@@ -5,21 +5,19 @@ import { MotionPresetName, motionPresetMap } from './motionPresetMap';
 import { MotionFileType } from './type';
 
 export class MotionController {
-  private _motionManager: MotionManager; // 假设有一个动作管理器
+  private motionManager: MotionManager;
 
   constructor(vrm: VRM) {
-    this._motionManager = new MotionManager(vrm);
+    this.motionManager = new MotionManager(vrm);
   }
 
   public async preloadMotion(motion: MotionPresetName) {
-    const preset = motionPresetMap[motion];
-    if (preset) {
-      await this._motionManager.preloadMotion(preset.type, preset.url);
-    }
+    const { type, url } = this.getMotionInfo(motion);
+    await this.motionManager.preloadMotion(type, url);
   }
 
   public async preloadMotionUrl(fileType: MotionFileType, url: string) {
-    await this._motionManager.preloadMotion(fileType, url);
+    await this.motionManager.preloadMotion(fileType, url);
   }
 
   /**
@@ -27,27 +25,23 @@ export class MotionController {
    * @param motion
    */
   public playMotion(motion: MotionPresetName) {
-    this._motionManager.disposeCurrentMotion(); // 停止当前动作
-
-    // 这里将motion转换为url
-    const preset = motionPresetMap[motion];
-
-    if (preset) {
-      this._motionManager.loadMotionUrl(preset.type, preset.url, true); // 播放新动作
-    }
+    const { type, url } = this.getMotionInfo(motion);
+    this.motionManager.loadMotionUrl(type, url);
   }
 
   public playMotionUrl(fileType: MotionFileType, url: string, loop: boolean = true) {
-    this._motionManager.disposeCurrentMotion(); // 停止当前动作
+    this.motionManager.loadMotionUrl(fileType, url, loop);
+  }
 
-    this._motionManager.loadMotionUrl(fileType, url, loop); // 播放新动作
+  public getMotionInfo(motion: MotionPresetName) {
+    return motionPresetMap[motion];
   }
 
   public stopMotion() {
-    this._motionManager.disposeCurrentMotion();
+    this.motionManager.disposeCurrentMotion();
   }
 
   public update(delta: number) {
-    this._motionManager.update(delta);
+    this.motionManager.update(delta);
   }
 }

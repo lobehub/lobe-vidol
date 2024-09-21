@@ -19,7 +19,8 @@ export class EmoteController {
   }
 
   public async preloadMotion(motion: MotionPresetName) {
-    await this._motionController.preloadMotion(motion);
+    const { type, url } = this._motionController.getMotionInfo(motion);
+    await this._motionController.preloadMotionUrl(type, url);
   }
 
   public async preloadMotionUrl(fileType: MotionFileType, url: string) {

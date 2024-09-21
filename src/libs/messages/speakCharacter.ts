@@ -34,7 +34,6 @@ const createSpeakCharacter = () => {
       if (!audioBuffer) {
         return;
       }
-      console.log('screenplay', screenplay);
       return viewer.model?.speak(audioBuffer, screenplay);
     });
     prevSpeakPromise.then(() => {

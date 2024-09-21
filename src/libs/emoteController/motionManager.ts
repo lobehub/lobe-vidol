@@ -123,6 +123,7 @@ export class MotionManager {
 
   public update(delta: number): void {
     this.mixer.update(delta);
+    this.vrm.update(delta);
     this.ikHandler.update();
   }
 }
