@@ -124,6 +124,7 @@ function AgentViewer(props: Props) {
         viewer.setup(canvas, handleTouchArea);
         preloadAgentResources().then(() => {
           if (interactive) {
+            playingRef.current = true;
             // load motion
             speakCharacter(
               {
@@ -138,6 +139,7 @@ function AgentViewer(props: Props) {
               () => {},
               () => {
                 viewer.model?.loadIdleAnimation();
+                playingRef.current = false;
               },
             );
           }
