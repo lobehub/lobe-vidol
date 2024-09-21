@@ -1,7 +1,7 @@
 import { Viewer } from '@/libs/vrmViewer/viewer';
 import { speechApi } from '@/services/tts';
 import { Screenplay } from '@/types/touch';
-import { getPreloadedAudio } from '@/utils/audio';
+import { getPreloadedVoice } from '@/utils/voice';
 import { wait } from '@/utils/wait';
 
 const createSpeakCharacter = () => {
@@ -22,7 +22,7 @@ const createSpeakCharacter = () => {
       }
 
       const buffer =
-        (await getPreloadedAudio(screenplay.tts)) ||
+        (await getPreloadedVoice(screenplay.tts)) ||
         (await speechApi(screenplay.tts).catch(() => null));
       lastTime = Date.now();
       return buffer;

@@ -12,7 +12,7 @@ import { speakCharacter } from '@/libs/messages/speakCharacter';
 import { agentSelectors, useAgentStore } from '@/store/agent';
 import { useGlobalStore } from '@/store/global';
 import { TouchAreaEnum } from '@/types/touch';
-import { preloadAudio } from '@/utils/audio';
+import { preloadVoice } from '@/utils/voice';
 
 import ToolBar from './ToolBar';
 import { useStyles } from './style';
@@ -105,7 +105,7 @@ function AgentViewer(props: Props) {
             }
             // 预加载语音
             if (agent?.greeting) {
-              await preloadAudio({
+              await preloadVoice({
                 ...agent.tts,
                 message: agent.greeting,
               });
