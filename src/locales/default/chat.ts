@@ -73,7 +73,7 @@ export default {
     screenShot: '拍照',
     grid: '网格',
     axes: '坐标轴',
-    downloading: '模型下载中，请稍后...',
+    downloading: '正在为你准备我的整个世界...',
   },
   animation: {
     animationList: '动作列表',

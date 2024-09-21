@@ -82,22 +82,25 @@ function AgentViewer(props: Props) {
   const preloadAgentResources = async () => {
     setLoading(true);
     try {
+      // 加载模型
       const modelUrl = await fetchModelUrl(agent!.agentId, agent!.meta.model!);
       if (!modelUrl) return;
       await viewer.loadVrm(modelUrl);
 
+      // 预加载动作，目前预加载的动作都是通用的
       if (viewer?.model) {
-        await viewer.model.preloadMotion(MotionPresetName.FemaleGreeting);
-        await viewer.model.preloadMotion(MotionPresetName.Idle);
+        await viewer.model.preloadAllMotions();
       }
 
+      // 预加载语音，根据角色的语音配置不同，需要每次重新判断预加载
+      // 这个是角色招呼语音
       if (agent?.greeting) {
         await preloadVoice({
           ...agent.tts,
           message: agent.greeting,
         });
       }
-
+      // 这个是角色的触摸动画语音
       const touchAreas = Object.values(TouchAreaEnum);
       for (const area of touchAreas) {
         const touchActions = getAgentTouchActionsByIdAndArea(agentId, area);

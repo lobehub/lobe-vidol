@@ -103,6 +103,12 @@ export class Model {
   public async preloadMotion(motion: MotionPresetName) {
     await this.emoteController?.preloadMotion(motion);
   }
+  public async preloadAllMotions() {
+    const motions = Object.values(MotionPresetName);
+    for (const motion of motions) {
+      await this.preloadMotion(motion);
+    }
+  }
 
   public async preloadMotionUrl(fileType: MotionFileType, url: string) {
     await this.emoteController?.preloadMotionUrl(fileType, url);
