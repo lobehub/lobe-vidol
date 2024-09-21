@@ -110,6 +110,19 @@ function AgentViewer(props: Props) {
                 message: agent.greeting,
               });
             }
+            // 预加载触摸语音
+            const touchAreas = Object.values(TouchAreaEnum);
+            for (const area of touchAreas) {
+              const touchActions = getAgentTouchActionsByIdAndArea(agentId, area);
+              if (touchActions) {
+                for (const action of touchActions) {
+                  await preloadVoice({
+                    ...agent!.tts,
+                    message: action.text,
+                  });
+                }
+              }
+            }
             // remove loading dom
             loadingScreen.classList.add('fade-out');
             loadingScreen.addEventListener('transitionend', (event) => {
