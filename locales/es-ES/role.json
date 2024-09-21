@@ -114,6 +114,7 @@
       "head": "Cabeza",
       "leg": "Pierna"
     },
+    "customEnable": "Habilitar toque personalizado",
     "editAction": "Editar acción de respuesta",
     "expression": {
       "angry": "Enojado",

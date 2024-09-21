@@ -114,6 +114,7 @@
       "head": "Đầu",
       "leg": "Chân"
     },
+    "customEnable": "Bật tùy chỉnh chạm",
     "editAction": "Chỉnh sửa hành động phản hồi",
     "expression": {
       "angry": "Giận dữ",

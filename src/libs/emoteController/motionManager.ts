@@ -13,8 +13,11 @@ export class MotionManager {
   private vrm: VRM;
   private mixer: AnimationMixer;
   private currentAction?: AnimationAction;
+  private nextAction?: AnimationAction;
+  private mixDuration: number = 0.5; // 混合持续时间
   private currentClip?: AnimationClip;
   private ikHandler: VRMIKHandler;
+  private preloadedMotions = new Map<string, AnimationClip>();
 
   constructor(vrm: VRM) {
     this.vrm = vrm;
@@ -22,6 +25,15 @@ export class MotionManager {
     this.ikHandler = IKHandler.get(vrm);
     this.currentAction = undefined;
     this.currentClip = undefined;
+  }
+
+  public async preloadMotion(fileType: MotionFileType, url: string): Promise<void> {
+    if (!this.preloadedMotions.has(url)) {
+      const clip = await this.loadMotionClip(fileType, url);
+      if (clip) {
+        this.preloadedMotions.set(url, clip);
+      }
+    }
   }
 
   public async loadMotionUrl(
@@ -33,30 +45,52 @@ export class MotionManager {
 
     let clip: AnimationClip | undefined;
 
-    switch (fileType) {
-      case 'vmd':
-        clip = await this.loadVMD(url);
-        break;
-      case 'fbx':
-        clip = await this.loadFBX(url);
-        break;
-      case 'vrma':
-        clip = await this.loadVRMA(url);
-        break;
-      default:
-        throw new Error('不支持的文件格式');
+    if (this.preloadedMotions.has(url)) {
+      clip = this.preloadedMotions.get(url);
+    } else {
+      clip = await this.loadMotionClip(fileType, url);
     }
 
     if (!clip) {
       return;
     }
 
-    const action = this.mixer.clipAction(clip);
-    if (!loop) action.setLoop(LoopOnce, 1);
-    action.play();
+    const nextAction = this.mixer.clipAction(clip);
+    if (!loop) nextAction.setLoop(LoopOnce, 1);
 
-    this.currentAction = action;
+    if (this.currentAction) {
+      // 设置下一个动作
+      this.nextAction = nextAction;
+      // 开始混合
+      this.currentAction.crossFadeTo(this.nextAction, this.mixDuration, true);
+      setTimeout(() => {
+        this.currentAction?.stop();
+        this.currentAction = this.nextAction;
+        this.nextAction = undefined;
+      }, this.mixDuration * 1000);
+    } else {
+      // 如果是第一个动作,直接播放
+      this.currentAction = nextAction;
+      this.currentAction.play();
+    }
+
     this.currentClip = clip;
+  }
+
+  private async loadMotionClip(
+    fileType: MotionFileType,
+    url: string,
+  ): Promise<AnimationClip | undefined> {
+    switch (fileType) {
+      case 'vmd':
+        return await this.loadVMD(url);
+      case 'fbx':
+        return await this.loadFBX(url);
+      case 'vrma':
+        return await this.loadVRMA(url);
+      default:
+        throw new Error('不支持的文件格式');
+    }
   }
 
   private async loadVMD(url: string): Promise<AnimationClip | undefined> {
@@ -89,6 +123,7 @@ export class MotionManager {
 
   public update(delta: number): void {
     this.mixer.update(delta);
+    this.vrm.update(delta);
     this.ikHandler.update();
   }
 }

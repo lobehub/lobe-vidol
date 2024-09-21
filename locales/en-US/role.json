@@ -114,6 +114,7 @@
       "head": "Head",
       "leg": "Leg"
     },
+    "customEnable": "Enable Custom Touch",
     "editAction": "Edit Response Action",
     "expression": {
       "angry": "Angry",

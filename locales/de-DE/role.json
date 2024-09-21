@@ -114,6 +114,7 @@
       "head": "Kopf",
       "leg": "Bein"
     },
+    "customEnable": "Benutzerdefiniertes Touch aktivieren",
     "editAction": "Bearbeiten der Reaktionsaktion",
     "expression": {
       "angry": "Wütend",

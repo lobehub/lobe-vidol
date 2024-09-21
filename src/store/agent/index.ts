@@ -145,8 +145,8 @@ const createAgentStore: StateCreator<AgentStore, [['zustand/devtools', never]]> 
       systemRole: '',
       greeting: t('agent.hello', { ns: 'welcome' }),
       meta: {
-        name: t('agent.meta.name'),
-        description: t('agent.meta.description'),
+        name: t('agent.meta.name', { ns: 'welcome' }),
+        description: t('agent.meta.description', { ns: 'welcome' }),
         avatar: DEFAULT_AGENT_AVATAR_URL,
         cover: '',
         category: CategoryEnum.ANIME,

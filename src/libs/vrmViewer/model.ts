@@ -7,6 +7,7 @@ import { EmoteController } from '@/libs/emoteController/emoteController';
 import { LipSync } from '@/libs/lipSync/lipSync';
 import { Screenplay } from '@/types/touch';
 
+import { MotionPresetName } from '../emoteController/motionPresetMap';
 import { MotionFileType } from '../emoteController/type';
 
 /**
@@ -62,7 +63,7 @@ export class Model {
 
   public async loadIdleAnimation() {
     this.emoteController?.playEmotion(VRMExpressionPresetName.Neutral);
-    this.emoteController?.playMotionUrl(MotionFileType.VRMA, './idle_loop.vrma', true);
+    this.emoteController?.playMotion(MotionPresetName.Idle);
   }
 
   /**
@@ -71,8 +72,11 @@ export class Model {
    * @param screenplay
    */
   public async speak(buffer: ArrayBuffer, screenplay: Screenplay) {
+    // 播放人物表情
     this.emoteController?.playEmotion(screenplay.expression);
+    // 播放人物动作
     if (screenplay.motion) this.emoteController?.playMotion(screenplay.motion);
+    // 唇形同步
     await new Promise((resolve) => {
       this._lipSync?.playFromArrayBuffer(buffer, () => {
         resolve(true);
@@ -93,9 +97,25 @@ export class Model {
       const { volume } = this._lipSync.update();
       this.emoteController?.lipSync('aa', volume);
     }
-    // vrm 先更新
-    this.vrm?.update(delta);
-    // 后更新表情动作
+    // 更新表情动作
     this.emoteController?.update(delta);
+  }
+
+  public async preloadMotion(motion: MotionPresetName) {
+    await this.emoteController?.preloadMotion(motion);
+  }
+  public async preloadAllMotions(onLoad?: (loaded: number, total: number) => void) {
+    const motions = Object.values(MotionPresetName);
+    let loaded = 0;
+    const total = motions.length;
+    for (const motion of motions) {
+      await this.preloadMotion(motion);
+      loaded++;
+      onLoad?.(loaded, total);
+    }
+  }
+
+  public async preloadMotionUrl(fileType: MotionFileType, url: string) {
+    await this.emoteController?.preloadMotionUrl(fileType, url);
   }
 }

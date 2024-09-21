@@ -114,6 +114,7 @@
       "head": "Testa",
       "leg": "Gamba"
     },
+    "customEnable": "Abilita tocco personalizzato",
     "editAction": "Modifica azione di risposta",
     "expression": {
       "angry": "Arrabbiato",

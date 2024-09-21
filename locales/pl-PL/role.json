@@ -114,6 +114,7 @@
       "head": "Głowa",
       "leg": "Noga"
     },
+    "customEnable": "Włącz niestandardowy dotyk",
     "editAction": "Edytuj akcję odpowiedzi",
     "expression": {
       "angry": "Zły",

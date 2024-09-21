@@ -18,6 +18,15 @@ export class EmoteController {
     this._motionController = new MotionController(vrm);
   }
 
+  public async preloadMotion(motion: MotionPresetName) {
+    const { type, url } = this._motionController.getMotionInfo(motion);
+    await this._motionController.preloadMotionUrl(type, url);
+  }
+
+  public async preloadMotionUrl(fileType: MotionFileType, url: string) {
+    await this._motionController.preloadMotionUrl(fileType, url);
+  }
+
   public playEmotion(preset: VRMExpressionPresetName) {
     this._expressionController.playEmotion(preset);
   }
