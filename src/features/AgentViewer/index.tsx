@@ -1,7 +1,6 @@
 import { VRMExpressionPresetName } from '@pixiv/three-vrm';
-import { Progress } from 'antd';
 import classNames from 'classnames';
-import React, { memo, useCallback, useRef } from 'react';
+import React, { memo, useCallback, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import PageLoading from '@/components/PageLoading';
@@ -42,7 +41,8 @@ function AgentViewer(props: Props) {
   const viewer = useGlobalStore((s) => s.viewer);
   const { t } = useTranslation('chat');
 
-  const { downloading, percent, fetchModelUrl } = useLoadModel();
+  const { fetchModelUrl } = useLoadModel();
+  const [loading, setLoading] = useState(false);
   const agent = useAgentStore((s) => s.getAgentById(agentId));
   const getAgentTouchActionsByIdAndArea = useAgentStore((s) =>
     agentSelectors.getAgentTouchActionsByIdAndArea(s),
@@ -79,74 +79,64 @@ function AgentViewer(props: Props) {
     }
   };
 
+  const preloadAgentResources = async () => {
+    setLoading(true);
+    try {
+      const modelUrl = await fetchModelUrl(agent!.agentId, agent!.meta.model!);
+      if (!modelUrl) return;
+      await viewer.loadVrm(modelUrl);
+
+      if (viewer?.model) {
+        await viewer.model.preloadMotion(MotionPresetName.FemaleGreeting);
+        await viewer.model.preloadMotion(MotionPresetName.Idle);
+      }
+
+      if (agent?.greeting) {
+        await preloadVoice({
+          ...agent.tts,
+          message: agent.greeting,
+        });
+      }
+
+      const touchAreas = Object.values(TouchAreaEnum);
+      for (const area of touchAreas) {
+        const touchActions = getAgentTouchActionsByIdAndArea(agentId, area);
+        if (touchActions) {
+          for (const action of touchActions) {
+            await preloadVoice({
+              ...agent!.tts,
+              message: action.text,
+            });
+          }
+        }
+      }
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const canvasRef = useCallback(
     (canvas: HTMLCanvasElement) => {
       if (canvas) {
         viewer.setup(canvas, handleTouchArea);
-
-        // 这里根据 agentId 获取 agent 配置.
-        fetchModelUrl(agent!.agentId, agent!.meta.model!).then(async (modelUrl) => {
-          if (modelUrl) {
-            // add loading dom
-            const agentViewer = document.querySelector('#agent-viewer')!;
-            const loadingScreen = document.createElement('div');
-            loadingScreen.setAttribute('id', 'loading-screen');
-            const loader = document.createElement('div');
-            loader.setAttribute('id', 'loader');
-            loadingScreen.append(loader);
-            agentViewer.append(loadingScreen);
-
-            // load vrm
-            await viewer.loadVrm(modelUrl);
-            // 预加载动画
-            if (viewer?.model) {
-              await viewer.model.preloadMotion(MotionPresetName.FemaleGreeting);
-              await viewer.model.preloadMotion(MotionPresetName.Idle);
-            }
-            // 预加载语音
-            if (agent?.greeting) {
-              await preloadVoice({
-                ...agent.tts,
-                message: agent.greeting,
-              });
-            }
-            // 预加载触摸语音
-            const touchAreas = Object.values(TouchAreaEnum);
-            for (const area of touchAreas) {
-              const touchActions = getAgentTouchActionsByIdAndArea(agentId, area);
-              if (touchActions) {
-                for (const action of touchActions) {
-                  await preloadVoice({
-                    ...agent!.tts,
-                    message: action.text,
-                  });
-                }
-              }
-            }
-            // remove loading dom
-            loadingScreen.classList.add('fade-out');
-            loadingScreen.addEventListener('transitionend', (event) => {
-              (event.target as HTMLDivElement)!.remove();
-            });
-
-            if (interactive) {
-              // load motion
-              speakCharacter(
-                {
-                  expression: VRMExpressionPresetName.Happy,
-                  tts: {
-                    ...agent?.tts,
-                    message: agent?.greeting,
-                  },
-                  motion: MotionPresetName.FemaleGreeting,
+        preloadAgentResources().then(() => {
+          if (interactive) {
+            // load motion
+            speakCharacter(
+              {
+                expression: VRMExpressionPresetName.Happy,
+                tts: {
+                  ...agent?.tts,
+                  message: agent?.greeting,
                 },
-                viewer,
-                () => {},
-                () => {
-                  viewer.model?.loadIdleAnimation();
-                },
-              );
-            }
+                motion: MotionPresetName.FemaleGreeting,
+              },
+              viewer,
+              () => {},
+              () => {
+                viewer.model?.loadIdleAnimation();
+              },
+            );
           }
         });
 
@@ -213,13 +203,7 @@ function AgentViewer(props: Props) {
       style={{ height, width, ...style }}
     >
       <ToolBar className={styles.toolbar} viewer={viewer} />
-      {downloading ? (
-        <PageLoading
-          title={t('toolBar.downloading')}
-          description={<Progress percent={percent} size="small" steps={50} />}
-          className={styles.loading}
-        />
-      ) : null}
+      {loading ? <PageLoading title={t('toolBar.downloading')} className={styles.loading} /> : null}
       <canvas ref={canvasRef} className={styles.canvas} id={'canvas'}></canvas>
     </div>
   );
