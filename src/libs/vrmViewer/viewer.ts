@@ -27,7 +27,6 @@ export class Viewer {
   private _mouse: THREE.Vector2;
   private _canvas?: HTMLCanvasElement;
   private _boundHandleClick: (event: MouseEvent) => void;
-  private _boundHandleMouseMove: (event: MouseEvent) => void;
   private _onBodyTouch?: (area: TouchAreaEnum) => void;
 
   constructor() {
@@ -60,8 +59,6 @@ export class Viewer {
 
     // 在构造函数中绑定 handleClick 方法
     this._boundHandleClick = this.handleClick.bind(this);
-    // 在构造函数中绑定 handleMouseMove 方法
-    this._boundHandleMouseMove = this.handleMouseMove.bind(this);
   }
 
   /**
@@ -131,7 +128,6 @@ export class Viewer {
     // 重新设置事件监听器
     if (this._canvas) {
       this._canvas.addEventListener('click', this._boundHandleClick, false);
-      this._canvas.addEventListener('mousemove', this._boundHandleMouseMove, false);
     }
   }
 
@@ -184,7 +180,6 @@ export class Viewer {
 
     // 使用存储的绑定函数添加事件监听器
     this._canvas.addEventListener('click', this._boundHandleClick, false);
-    this._canvas.addEventListener('mousemove', this._boundHandleMouseMove, false);
 
     this.isReady = true;
     this.update();
@@ -194,7 +189,6 @@ export class Viewer {
     // 使用存储的绑定函数移除事件监听器
     if (this._canvas) {
       this._canvas.removeEventListener('click', this._boundHandleClick, false);
-      this._canvas.removeEventListener('mousemove', this._boundHandleMouseMove, false);
     }
 
     // 卸载模型

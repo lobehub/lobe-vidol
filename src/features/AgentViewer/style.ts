@@ -2,7 +2,10 @@ import { createStyles } from 'antd-style';
 
 export const useStyles = createStyles(({ css, token }) => ({
   viewer: css`
+    cursor: pointer;
+
     position: relative;
+
     width: 100%;
     height: 100%;
     min-height: 0;
@@ -43,6 +46,7 @@ export const useStyles = createStyles(({ css, token }) => ({
       border: 3px solid transparent;
       border-top-color: #9370db;
       border-radius: 50%;
+
       animation: spin 2s linear infinite;
     }
 
@@ -55,6 +59,7 @@ export const useStyles = createStyles(({ css, token }) => ({
       border: 3px solid transparent;
       border-top-color: #ba55d3;
       border-radius: 50%;
+
       animation: spin 3s linear infinite;
     }
 
@@ -67,6 +72,7 @@ export const useStyles = createStyles(({ css, token }) => ({
       border: 3px solid transparent;
       border-top-color: #f0f;
       border-radius: 50%;
+
       animation: spin 1.5s linear infinite;
     }
 
