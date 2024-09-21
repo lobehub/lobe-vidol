@@ -104,10 +104,14 @@ export class Model {
   public async preloadMotion(motion: MotionPresetName) {
     await this.emoteController?.preloadMotion(motion);
   }
-  public async preloadAllMotions() {
+  public async preloadAllMotions(onLoad?: (loaded: number, total: number) => void) {
     const motions = Object.values(MotionPresetName);
+    let loaded = 0;
+    const total = motions.length;
     for (const motion of motions) {
       await this.preloadMotion(motion);
+      loaded++;
+      onLoad?.(loaded, total);
     }
   }
 

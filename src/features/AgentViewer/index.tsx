@@ -39,10 +39,13 @@ function AgentViewer(props: Props) {
   const playingRef = useRef(false);
   const ref = useRef<HTMLDivElement>(null);
   const viewer = useGlobalStore((s) => s.viewer);
-  const { t } = useTranslation('chat');
+  const { t } = useTranslation('welcome');
 
-  const { fetchModelUrl } = useLoadModel();
+  const { fetchModelUrl, percent: modelPercent } = useLoadModel();
   const [loading, setLoading] = useState(false);
+  const [loadingStep, setLoadingStep] = useState(0);
+  const [voiceLoadingProgress, setVoiceLoadingProgress] = useState(0);
+  const [motionLoadingProgress, setMotionLoadingProgress] = useState(0);
   const agent = useAgentStore((s) => s.getAgentById(agentId));
   const getAgentTouchActionsByIdAndArea = useAgentStore((s) =>
     agentSelectors.getAgentTouchActionsByIdAndArea(s),
@@ -81,15 +84,36 @@ function AgentViewer(props: Props) {
 
   const preloadAgentResources = async () => {
     setLoading(true);
+    setLoadingStep(1);
     try {
-      // 加载模型
+      // 加载步骤一： 加载模型
       const modelUrl = await fetchModelUrl(agent!.agentId, agent!.meta.model!);
       if (!modelUrl) return;
       await viewer.loadVrm(modelUrl);
 
-      // 预加载动作，目前预加载的动作都是通用的
+      setLoadingStep(2);
+      // 加载步骤二: 预加载动作，目前预加载的动作都是通用的
       if (viewer?.model) {
-        await viewer.model.preloadAllMotions();
+        await viewer.model.preloadAllMotions((loaded, total) => {
+          setMotionLoadingProgress((loaded / total) * 100);
+        });
+      }
+
+      setLoadingStep(3);
+      // 加载步骤三：加载语音
+      let voiceCount = 0;
+      let totalVoices = 0;
+
+      // 计算总语音数量
+      if (agent?.greeting) {
+        totalVoices++;
+      }
+      const touchAreas = Object.values(TouchAreaEnum);
+      for (const area of touchAreas) {
+        const touchActions = getAgentTouchActionsByIdAndArea(agentId, area);
+        if (touchActions) {
+          totalVoices += touchActions.length;
+        }
       }
 
       // 预加载语音，根据角色的语音配置不同，需要每次重新判断预加载
@@ -99,9 +123,10 @@ function AgentViewer(props: Props) {
           ...agent.tts,
           message: agent.greeting,
         });
+        voiceCount++;
+        setVoiceLoadingProgress((voiceCount / totalVoices) * 100);
       }
       // 这个是角色的触摸动画语音
-      const touchAreas = Object.values(TouchAreaEnum);
       for (const area of touchAreas) {
         const touchActions = getAgentTouchActionsByIdAndArea(agentId, area);
         if (touchActions) {
@@ -110,11 +135,16 @@ function AgentViewer(props: Props) {
               ...agent!.tts,
               message: action.text,
             });
+            voiceCount++;
+            setVoiceLoadingProgress((voiceCount / totalVoices) * 100);
           }
         }
       }
     } finally {
       setLoading(false);
+      setLoadingStep(0);
+      setVoiceLoadingProgress(0);
+      setMotionLoadingProgress(0);
     }
   };
 
@@ -209,7 +239,19 @@ function AgentViewer(props: Props) {
     >
       <ToolBar className={styles.toolbar} viewer={viewer} />
       {loading ? (
-        <ScreenLoading title={t('toolBar.downloading')} className={styles.loading} />
+        <ScreenLoading
+          title={t('loading.waiting')}
+          className={styles.loading}
+          description={
+            loadingStep === 1
+              ? `${t('loading.model')} ${modelPercent}%`
+              : loadingStep === 2
+                ? `${t('loading.motions')} ${Math.round(motionLoadingProgress)}%`
+                : loadingStep === 3
+                  ? `${t('loading.voices')} ${Math.round(voiceLoadingProgress)}%`
+                  : undefined
+          }
+        />
       ) : null}
       <canvas ref={canvasRef} className={styles.canvas} id={'canvas'}></canvas>
     </div>
