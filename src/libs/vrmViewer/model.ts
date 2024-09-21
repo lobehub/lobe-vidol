@@ -63,7 +63,7 @@ export class Model {
 
   public async loadIdleAnimation() {
     this.emoteController?.playEmotion(VRMExpressionPresetName.Neutral);
-    this.emoteController?.playMotionUrl(MotionFileType.VRMA, './idle_loop.vrma', true);
+    this.emoteController?.playMotion(MotionPresetName.Idle);
   }
 
   /**

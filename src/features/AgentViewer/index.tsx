@@ -98,7 +98,7 @@ function AgentViewer(props: Props) {
             // 预加载动画
             if (viewer?.model) {
               await viewer.model.preloadMotion(MotionPresetName.FemaleGreeting);
-              await viewer.model.preloadMotionUrl(MotionFileType.VRMA, './idle_loop.vrma');
+              await viewer.model.preloadMotion(MotionPresetName.Idle);
             }
             // remove loading dom
             loadingScreen.classList.add('fade-out');
