@@ -44,11 +44,9 @@ const AreaList = (props: AreaListProps) => {
   const { currentTouchArea, style, className, areaOptions = [] } = props;
   const [currentAgentTouch] = useAgentStore((s) => [agentSelectors.currentAgentTouch(s)]);
   const { t } = useTranslation('role');
-  const items = currentAgentTouch
+  const items = get(currentAgentTouch, currentTouchArea)
     ? (get(currentAgentTouch, currentTouchArea) as TouchAction[])
     : [];
-
-  console.log('items', items);
 
   const touchArea = areaOptions.find((item) => item.value === currentTouchArea)?.label;
 

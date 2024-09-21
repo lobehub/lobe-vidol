@@ -91,6 +91,9 @@ function AgentViewer(props: Props) {
       if (!modelUrl) return;
       await viewer.loadVrm(modelUrl);
 
+      // 如果不是交互模式，加载到这里就结束了
+      if (!interactive) return;
+
       setLoadingStep(2);
       // 加载步骤二: 预加载动作，目前预加载的动作都是通用的
       if (viewer?.model) {

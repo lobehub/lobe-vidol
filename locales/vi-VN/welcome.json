@@ -7,6 +7,11 @@
     }
   },
   "greet": "Xin chào, tôi là {{name}}, có gì tôi có thể giúp bạn không?",
-  "loadingTitle": "Đang khởi tạo ứng dụng, vui lòng chờ...",
-  "waiting": "Đang chuẩn bị cả thế giới của tôi cho bạn"
+  "loading": {
+    "model": "Đang tải mô hình...",
+    "motions": "Đang tải các tệp hành động...",
+    "voices": "Đang tạo tệp âm thanh...",
+    "waiting": "Đang chuẩn bị toàn bộ thế giới của tôi cho bạn..."
+  },
+  "loadingTitle": "Đang khởi tạo ứng dụng, vui lòng chờ..."
 }

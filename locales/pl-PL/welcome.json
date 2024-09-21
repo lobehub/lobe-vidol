@@ -7,6 +7,11 @@
     }
   },
   "greet": "Cześć, jestem {{name}}, w czym mogę Ci pomóc?",
-  "loadingTitle": "Aplikacja jest w trakcie inicjalizacji, proszę czekać...",
-  "waiting": "Przygotowuję dla Ciebie cały mój świat"
+  "loading": {
+    "model": "Ładowanie modelu...",
+    "motions": "Wstępne ładowanie plików z ruchami...",
+    "voices": "Generowanie plików dźwiękowych...",
+    "waiting": "Przygotowuję dla Ciebie cały mój świat..."
+  },
+  "loadingTitle": "Aplikacja jest w trakcie inicjalizacji, proszę czekać..."
 }

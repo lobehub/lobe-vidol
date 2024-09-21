@@ -7,6 +7,11 @@
     }
   },
   "greet": "Hello, I am {{name}}. How can I assist you today?",
-  "loadingTitle": "Initializing application, please wait...",
-  "waiting": "I am preparing my whole world for you"
+  "loading": {
+    "model": "Loading model...",
+    "motions": "Preloading motion files...",
+    "voices": "Generating voice files...",
+    "waiting": "Preparing my entire world for you..."
+  },
+  "loadingTitle": "Initializing application, please wait..."
 }

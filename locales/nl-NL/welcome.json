@@ -7,6 +7,11 @@
     }
   },
   "greet": "Hallo, ik ben {{name}}, hoe kan ik je helpen?",
-  "loadingTitle": "Applicatie wordt geïnitialiseerd, even geduld...",
-  "waiting": "Ik ben mijn hele wereld voor je aan het voorbereiden"
+  "loading": {
+    "model": "Model aan het laden...",
+    "motions": "Actiebestanden aan het voorladen...",
+    "voices": "Stembestanden aan het genereren...",
+    "waiting": "We zijn bezig met het voorbereiden van mijn hele wereld..."
+  },
+  "loadingTitle": "Applicatie wordt geïnitialiseerd, even geduld..."
 }
