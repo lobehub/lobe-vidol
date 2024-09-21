@@ -12,9 +12,12 @@ import { speakCharacter } from '@/libs/messages/speakCharacter';
 import { agentSelectors, useAgentStore } from '@/store/agent';
 import { useGlobalStore } from '@/store/global';
 import { TouchAreaEnum } from '@/types/touch';
+import { preloadAudio } from '@/utils/audio';
 
 import ToolBar from './ToolBar';
 import { useStyles } from './style';
+
+// 假设我们有这个工具函数
 
 interface Props {
   /**
@@ -99,6 +102,13 @@ function AgentViewer(props: Props) {
             if (viewer?.model) {
               await viewer.model.preloadMotion(MotionPresetName.FemaleGreeting);
               await viewer.model.preloadMotion(MotionPresetName.Idle);
+            }
+            // 预加载语音
+            if (agent?.greeting) {
+              await preloadAudio({
+                ...agent.tts,
+                message: agent.greeting,
+              });
             }
             // remove loading dom
             loadingScreen.classList.add('fade-out');

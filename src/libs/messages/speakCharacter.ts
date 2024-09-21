@@ -1,7 +1,7 @@
 import { Viewer } from '@/libs/vrmViewer/viewer';
-import { getMotionBlobUrl } from '@/services/motion';
 import { speechApi } from '@/services/tts';
 import { Screenplay } from '@/types/touch';
+import { getPreloadedAudio } from '@/utils/audio';
 import { wait } from '@/utils/wait';
 
 const createSpeakCharacter = () => {
@@ -21,7 +21,9 @@ const createSpeakCharacter = () => {
         await wait(1000 - (now - lastTime));
       }
 
-      const [buffer] = await Promise.all([speechApi(screenplay.tts).catch(() => null)]);
+      const buffer =
+        (await getPreloadedAudio(screenplay.tts)) ||
+        (await speechApi(screenplay.tts).catch(() => null));
       lastTime = Date.now();
       return buffer;
     });
