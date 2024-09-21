@@ -114,6 +114,7 @@
       "head": "머리",
       "leg": "다리"
     },
+    "customEnable": "사용자 정의 터치 활성화",
     "editAction": "응답 동작 편집",
     "expression": {
       "angry": "화남",

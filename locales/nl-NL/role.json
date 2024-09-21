@@ -114,6 +114,7 @@
       "head": "Hoofd",
       "leg": "Been"
     },
+    "customEnable": "Schakel aangepaste aanraking in",
     "editAction": "Bewerk responsactie",
     "expression": {
       "angry": "Boos",

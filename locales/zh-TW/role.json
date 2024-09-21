@@ -114,6 +114,7 @@
       "head": "頭部",
       "leg": "腿部"
     },
+    "customEnable": "啟用自訂觸控",
     "editAction": "編輯回應動作",
     "expression": {
       "angry": "生氣",

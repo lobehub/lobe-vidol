@@ -114,6 +114,7 @@
       "head": "Tête",
       "leg": "Jambe"
     },
+    "customEnable": "Activer le toucher personnalisé",
     "editAction": "Modifier l'action de réponse",
     "expression": {
       "angry": "En colère",

@@ -114,6 +114,7 @@
       "head": "頭部",
       "leg": "脚"
     },
+    "customEnable": "カスタムタッチを有効にする",
     "editAction": "応答アクションを編集",
     "expression": {
       "angry": "怒っている",

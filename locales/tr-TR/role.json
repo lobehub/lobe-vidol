@@ -114,6 +114,7 @@
       "head": "Baş",
       "leg": "Bacak"
     },
+    "customEnable": "Özel dokunmayı etkinleştir",
     "editAction": "Yanıt eylemini düzenle",
     "expression": {
       "angry": "Kızgın",
