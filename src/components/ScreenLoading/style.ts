@@ -3,18 +3,14 @@ import { createStyles } from 'antd-style';
 export const useStyles = createStyles(({ css }) => ({
   container: css`
     position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
 
     #loading-screen {
-      position: absolute;
-      top: 0;
-      left: 0;
-
-      width: 100%;
-      height: 100%;
-
+      width: 150px;
+      height: 150px;
       opacity: 1;
-      background-color: #000;
-
       transition: 1s opacity;
     }
 
@@ -23,7 +19,7 @@ export const useStyles = createStyles(({ css }) => ({
     }
 
     #loading-screen.fade-in {
-      opacity: 0;
+      opacity: 1;
     }
 
     #loader {

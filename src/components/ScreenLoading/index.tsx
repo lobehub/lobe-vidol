@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import React, { memo } from 'react';
+import React, { memo, useRef } from 'react';
 import { Center, Flexbox } from 'react-layout-kit';
 
 import { useStyles } from './style';
@@ -14,6 +14,7 @@ interface ScreenLoadingProps {
 const ScreenLoading = (props: ScreenLoadingProps) => {
   const { title, className, style, description } = props;
   const { styles } = useStyles();
+  const loadingScreenRef = useRef<HTMLDivElement>(null);
 
   return (
     <Flexbox
@@ -23,10 +24,10 @@ const ScreenLoading = (props: ScreenLoadingProps) => {
       style={style}
     >
       <Center flex={1} gap={12} width={'100%'}>
+        <div id="loading-screen" ref={loadingScreenRef}>
+          <div id="loader"></div>
+        </div>
         <Center gap={8} horizontal>
-          <div id="loading-screen">
-            <div id="loader"></div>
-          </div>
           {title}
         </Center>
         {description && <Center>{description}</Center>}

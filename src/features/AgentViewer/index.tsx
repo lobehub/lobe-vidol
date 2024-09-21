@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import React, { memo, useCallback, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import PageLoading from '@/components/PageLoading';
+import ScreenLoading from '@/components/ScreenLoading';
 import { useLoadModel } from '@/hooks/useLoadModel';
 import { MotionPresetName } from '@/libs/emoteController/motionPresetMap';
 import { MotionFileType } from '@/libs/emoteController/type';
@@ -203,7 +203,9 @@ function AgentViewer(props: Props) {
       style={{ height, width, ...style }}
     >
       <ToolBar className={styles.toolbar} viewer={viewer} />
-      {loading ? <PageLoading title={t('toolBar.downloading')} className={styles.loading} /> : null}
+      {loading ? (
+        <ScreenLoading title={t('toolBar.downloading')} className={styles.loading} />
+      ) : null}
       <canvas ref={canvasRef} className={styles.canvas} id={'canvas'}></canvas>
     </div>
   );
