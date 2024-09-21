@@ -120,7 +120,6 @@ const createAgentStore: StateCreator<AgentStore, [['zustand/devtools', never]]> 
   },
   clearAgentStorage: async () => {
     localStorage.removeItem(AGENT_STORAGE_KEY);
-    await storage.clear();
     set({ ...initialState });
   },
 
