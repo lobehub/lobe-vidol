@@ -39,7 +39,7 @@ export class MotionManager {
   public async loadMotionUrl(
     fileType: MotionFileType,
     url: string,
-    loop: boolean = false, // 默认只播放一次
+    loop: boolean = true, // 默认循环播放
   ): Promise<void> {
     this.disposeCurrentMotion();
 
