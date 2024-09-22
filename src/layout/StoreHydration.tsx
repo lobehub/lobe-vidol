@@ -7,14 +7,14 @@ import { AGENT_STORAGE_KEY, useAgentStore } from '@/store/agent';
 import { DANCE_STORAGE_KEY } from '@/store/dance';
 import { SESSION_STORAGE_KEY } from '@/store/session';
 import { SETTING_STORAGE_KEY } from '@/store/setting';
-import storage from '@/utils/storage';
+import { vidolStorage } from '@/utils/storage';
 
 const MIGRATION_KEY = 'MIGRATE_TO_INDEXED_DB';
 
 const migrateLocalStorageToIndexedDB = async (storageKey: string) => {
   const localStorageData = localStorage.getItem(storageKey);
   if (localStorageData) {
-    await storage.setItem(storageKey, localStorageData);
+    await vidolStorage.setItem(storageKey, localStorageData);
     localStorage.removeItem(storageKey);
   }
 };

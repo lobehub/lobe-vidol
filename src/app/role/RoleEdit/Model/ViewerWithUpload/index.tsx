@@ -8,7 +8,7 @@ import AgentViewer from '@/features/AgentViewer';
 import { agentSelectors, useAgentStore } from '@/store/agent';
 import { useGlobalStore } from '@/store/global';
 import { getModelPathByAgentId } from '@/utils/file';
-import storage from '@/utils/storage';
+import { cacheStorage } from '@/utils/storage';
 
 interface ViewerWithUploadProps {
   style?: CSSProperties;
@@ -28,7 +28,7 @@ const ViewerWithUpload = memo<ViewerWithUploadProps>(({ style }) => {
     const blob = new Blob([file], { type: 'application/octet-stream' });
     const modelKey = getModelPathByAgentId(currentAgentId!);
 
-    storage.setItem(modelKey, blob).then(() => {
+    cacheStorage.setItem(modelKey, blob).then(() => {
       updateAgentConfig({ meta: { model: modelKey } });
       const vrmUrl = window.URL.createObjectURL(blob as Blob);
       viewer.loadVrm(vrmUrl);

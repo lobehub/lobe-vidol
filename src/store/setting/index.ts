@@ -16,7 +16,7 @@ import createTouchStore, { TouchStore } from '@/store/setting/slices/touch';
 import { BackgroundEffect, Config, OpenAIConfig } from '@/types/config';
 import { LocaleMode } from '@/types/locale';
 import { mergeWithUndefined } from '@/utils/common';
-import storage from '@/utils/storage';
+import { vidolStorage } from '@/utils/storage';
 import { switchLang } from '@/utils/switchLang';
 
 import { SettingState, initialState } from './initialState';
@@ -121,7 +121,7 @@ const createStore: StateCreator<SettingStore, [['zustand/devtools', never]], [],
 
 const persistOptions: PersistOptions<SettingStore> = {
   name: SETTING_STORAGE_KEY, // name of the item in the storage (must be unique)
-  storage: createJSONStorage(() => storage),
+  storage: createJSONStorage(() => vidolStorage),
   version: 0,
 };
 

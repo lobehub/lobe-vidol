@@ -4,6 +4,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { useAgentStore } from '@/store/agent';
+import { useDanceStore } from '@/store/dance';
 import { useSessionStore } from '@/store/session';
 
 interface Props {
@@ -15,6 +16,7 @@ export default (props: Props) => {
   const { text = t('common.system.clear.action'), type = 'primary' } = props;
   const clearAgentStorage = useAgentStore((s) => s.clearAgentStorage);
   const clearSessionStorage = useSessionStore((s) => s.clearSessionStorage);
+  const clearDanceStorage = useDanceStore((s) => s.clearDanceStorage);
   const { message, modal } = App.useApp();
 
   const handleClear = () => {
@@ -26,11 +28,11 @@ export default (props: Props) => {
         danger: true,
       },
       okText: t('confirm', { ns: 'common' }),
-      onOk: () => {
-        clearSessionStorage();
-        clearAgentStorage().then(() => {
-          message.success(t('common.system.clear.success'));
-        });
+      onOk: async () => {
+        await clearSessionStorage();
+        await clearAgentStorage();
+        await clearDanceStorage();
+        message.success(t('common.system.clear.success'));
       },
       title: t('common.system.clear.alert'),
     });

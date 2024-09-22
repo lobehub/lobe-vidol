@@ -7,7 +7,7 @@ import { Agent } from '@/types/agent';
 import { fetchWithProgress } from '@/utils/fetch';
 import { getModelPathByAgentId } from '@/utils/file';
 import { blobToDataURI } from '@/utils/imageToBase64';
-import { setItem } from '@/utils/storage';
+import { cacheStorage } from '@/utils/storage';
 
 export const useDownloadAgent = () => {
   const [downloading, setDownloading] = useState(false);
@@ -46,7 +46,7 @@ export const useDownloadAgent = () => {
     try {
       const [avatar, cover, model] = await Promise.all([avatarPromise, coverPromise, modelPromise]);
       const modelKey = getModelPathByAgentId(agent.agentId);
-      await setItem(modelKey, model);
+      await cacheStorage.setItem(modelKey, model);
 
       addLocalAgent({ ...agent, meta: { ...agent.meta, avatar, cover } });
       message.success(agent.meta.name + t('download.success'));

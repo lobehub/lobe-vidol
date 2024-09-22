@@ -1,28 +1,29 @@
 import localforage from 'localforage';
 
-localforage.config({
-  name: 'LobeVidol',
-});
+const createStorage = (name: string) => {
+  const instance = localforage.createInstance({
+    name: name,
+  });
 
-export const getItem = async (key: string): Promise<any> => {
-  return await localforage.getItem(key);
+  return {
+    getItem: async (key: string): Promise<any> => {
+      return await instance.getItem(key);
+    },
+    setItem: async (key: string, value: any) => {
+      return await instance.setItem(key, value);
+    },
+    removeItem: async (key: string) => {
+      return await instance.removeItem(key);
+    },
+    clear: async () => {
+      return await instance.clear();
+    },
+  };
 };
 
-export const setItem = async (key: string, value: any) => {
-  return await localforage.setItem(key, value);
-};
+export const vidolStorage = createStorage('LobeVidol');
+export const cacheStorage = createStorage('Cache');
 
-export const removeItem = async (key: string) => {
-  return await localforage.removeItem(key);
-};
-
-export const clear = async () => {
-  return await localforage.clear();
-};
-
-export default {
-  getItem,
-  setItem,
-  clear,
-  removeItem,
-};
+// 使用
+// defaultStorage.getItem('key');
+// anotherStorage.setItem('key', 'value');

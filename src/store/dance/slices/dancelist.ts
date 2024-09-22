@@ -6,15 +6,11 @@ import { getDanceIndex } from '@/services/dance';
 import { DanceStore } from '@/store/dance';
 import { Dance } from '@/types/dance';
 import { getAudioPathByDanceId, getDancePathByDanceId } from '@/utils/file';
-import storage from '@/utils/storage';
+import { cacheStorage } from '@/utils/storage';
 
 export interface DanceListStore {
   activateDance: (identifier: string) => void;
   addDanceItem: (dance: Dance) => void;
-  currentIdentifier: string;
-  currentPlayId: string;
-  danceList: Dance[];
-  danceLoading: boolean;
   deactivateDance: () => void;
   fetchDanceIndex: () => void;
   removeDanceItem: (danceId: string) => Promise<void>;
@@ -31,10 +27,6 @@ export const createDanceStore: StateCreator<
     activateDance: (identifier) => {
       set({ currentIdentifier: identifier });
     },
-    currentIdentifier: '',
-    currentPlayId: '',
-    danceList: [],
-    danceLoading: false,
     deactivateDance: () => {
       set({ currentIdentifier: undefined });
     },
@@ -76,8 +68,8 @@ export const createDanceStore: StateCreator<
           draft.splice(index, 1);
         }
       });
-      await storage.removeItem(getDancePathByDanceId(danceId));
-      await storage.removeItem(getAudioPathByDanceId(danceId));
+      await cacheStorage.removeItem(getDancePathByDanceId(danceId));
+      await cacheStorage.removeItem(getAudioPathByDanceId(danceId));
       set({ currentIdentifier: newList[0]?.danceId, danceList: newList });
     },
   };

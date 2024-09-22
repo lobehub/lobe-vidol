@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 import { fetchWithProgress } from '@/utils/fetch';
 import { getDancePathByDanceId } from '@/utils/file';
-import storage from '@/utils/storage';
+import { cacheStorage } from '@/utils/storage';
 
 export const useLoadDance = () => {
   const [downloading, setDownloading] = useState(false);
@@ -11,7 +11,7 @@ export const useLoadDance = () => {
 
   const fetchDanceUrl = async (danceId: string, src: string) => {
     const localDancePath = getDancePathByDanceId(danceId);
-    let danceBlob = await storage.getItem(localDancePath);
+    let danceBlob = await cacheStorage.getItem(localDancePath);
 
     // 存量转换
     if (danceBlob && isArrayBuffer(danceBlob)) {
@@ -29,7 +29,7 @@ export const useLoadDance = () => {
             setPercent((loaded / total) * 100);
           },
         });
-        await storage.setItem(localDancePath, danceBlob);
+        await cacheStorage.setItem(localDancePath, danceBlob);
       }
     } finally {
       setDownloading(false);

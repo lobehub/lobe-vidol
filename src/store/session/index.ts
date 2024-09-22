@@ -15,7 +15,7 @@ import { ChatMessage } from '@/types/chat';
 import { Session } from '@/types/session';
 import { ShareGPTConversation } from '@/types/share';
 import { fetchSEE } from '@/utils/fetch';
-import storage from '@/utils/storage';
+import { vidolStorage } from '@/utils/storage';
 
 import { initialState } from './initialState';
 import { MessageActionType, messageReducer } from './reducers/message';
@@ -57,7 +57,7 @@ export interface SessionStore {
   /**
    *  清空会话
    */
-  clearSessionStorage: () => void;
+  clearSessionStorage: () => Promise<void>;
   /**
    * 创建会话
    * @param agent
@@ -162,8 +162,8 @@ export const createSessionStore: StateCreator<SessionStore, [['zustand/devtools'
     const { updateSessionMessages } = get();
     updateSessionMessages([]);
   },
-  clearSessionStorage: () => {
-    localStorage.removeItem(SESSION_STORAGE_KEY);
+  clearSessionStorage: async () => {
+    await vidolStorage.removeItem(SESSION_STORAGE_KEY);
     set({ ...initialState });
   },
   createSession: (agent: Agent) => {
@@ -499,7 +499,7 @@ export const createSessionStore: StateCreator<SessionStore, [['zustand/devtools'
 
 const persistOptions: PersistOptions<SessionStore> = {
   name: SESSION_STORAGE_KEY, // name of the item in the storage (must be unique)
-  storage: createJSONStorage(() => storage),
+  storage: createJSONStorage(() => vidolStorage),
   version: 0,
 };
 

@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { fetchWithProgress } from '@/utils/fetch';
 import { getMotionPathByMotionId } from '@/utils/file';
-import storage from '@/utils/storage';
+import { cacheStorage } from '@/utils/storage';
 
 export const useLoadMotion = () => {
   const [downloading, setDownloading] = useState(false);
@@ -10,7 +10,7 @@ export const useLoadMotion = () => {
 
   const fetchMotionUrl = async (motionId: string, motionUrl: string) => {
     const localMotionPath = getMotionPathByMotionId(motionId);
-    let motionBlob = await storage.getItem(localMotionPath);
+    let motionBlob = await cacheStorage.getItem(localMotionPath);
 
     try {
       if (!motionBlob) {
@@ -22,7 +22,7 @@ export const useLoadMotion = () => {
             setPercent((loaded / total) * 100);
           },
         });
-        await storage.setItem(localMotionPath, motionBlob);
+        await cacheStorage.setItem(localMotionPath, motionBlob);
       }
     } finally {
       setDownloading(false);
