@@ -2,6 +2,37 @@
 
 # Changelog
 
+## [Version&nbsp;0.28.0](https://github.com/lobehub/lobe-vidol/compare/v0.27.0...v0.28.0)
+<sup>Released on **2024-09-22**</sup>
+
+
+#### ✨ Features
+
+- **misc**: 支持 openai o1.
+
+
+<br/>
+
+
+
+<details>
+<summary><kbd>Improvements and Fixes</kbd></summary>
+
+
+
+#### What's improved
+
+* **misc**: 支持 openai o1 ([7d16ade](https://github.com/lobehub/lobe-vidol/commit/7d16ade))
+
+</details>
+
+
+<div align="right">
+
+[![](https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square)](#readme-top)
+
+</div>
+
 ## [Version&nbsp;0.27.0](https://github.com/lobehub/lobe-vidol/compare/v0.26.0...v0.27.0)
 <sup>Released on **2024-09-18**</sup>
 
