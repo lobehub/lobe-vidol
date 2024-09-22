@@ -21,6 +21,15 @@
         "tip": "Operacja nieodwracalna, po usunięciu dane nie będą mogły zostać przywrócone, proszę działać ostrożnie",
         "title": "Wyczyść wszystkie wiadomości sesji"
       },
+      "clearCache": {
+        "action": "Wyczyść teraz",
+        "alert": "Czy na pewno chcesz wyczyścić całą pamięć podręczną?",
+        "calculating": "Obliczanie rozmiaru pamięci podręcznej...",
+        "desc": "To spowoduje usunięcie pamięci podręcznej danych pobranych przez aplikację, w tym danych modeli postaci, danych głosowych, danych modeli tańca, danych audio itp.",
+        "success": "Pomyślnie wyczyszczono",
+        "tip": "Operacja jest nieodwracalna, po usunięciu dane będą musiały zostać ponownie pobrane, proszę działać ostrożnie",
+        "title": "Wyczyść pamięć podręczną danych"
+      },
       "reset": {
         "action": "Natychmiast zresetuj",
         "alert": "Czy na pewno chcesz zresetować wszystkie ustawienia systemowe?",

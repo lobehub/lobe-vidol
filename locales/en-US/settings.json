@@ -21,6 +21,15 @@
         "tip": "This action cannot be undone. Once cleared, the data cannot be recovered. Please proceed with caution.",
         "title": "Clear All Session Messages"
       },
+      "clearCache": {
+        "action": "Clear Now",
+        "alert": "Are you sure you want to clear all caches?",
+        "calculating": "Calculating cache size...",
+        "desc": "This will clear the application's downloaded data cache, including character model data, voice data, dance model data, audio data, and more.",
+        "success": "Clear Successful",
+        "tip": "This action cannot be undone. After clearing, data will need to be re-downloaded. Please proceed with caution.",
+        "title": "Clear Data Cache"
+      },
       "reset": {
         "action": "Reset Now",
         "alert": "Are you sure you want to reset all system settings?",

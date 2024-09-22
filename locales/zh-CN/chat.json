@@ -47,6 +47,7 @@
     "placeholder": "请输入内容开始聊天",
     "alert": "请谨记：智能体所说的一切都是由 AI 生成的"
   },
+  "interactive": "可交互",
   "noDanceList": "暂无播放列表，您可以通过市场订阅你喜欢的舞蹈",
   "selectModel": "请选择模型",
   "sessionCreate": "创建聊天",

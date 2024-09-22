@@ -47,6 +47,7 @@
     "send": "Wyślij",
     "warp": "Złamanie linii"
   },
+  "interactive": "Interaktywny",
   "noDanceList": "Brak dostępnych list odtwarzania. Możesz subskrybować ulubione tańce na rynku.",
   "selectModel": "Wybierz model",
   "sessionCreate": "Utwórz czat",

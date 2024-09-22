@@ -21,6 +21,15 @@
         "tip": "La acción no se puede deshacer, una vez eliminados los datos no se podrán recuperar, por favor actúa con precaución",
         "title": "Eliminar todos los mensajes de conversación"
       },
+      "clearCache": {
+        "action": "Borrar ahora",
+        "alert": "¿Confirmar la eliminación de toda la caché?",
+        "calculating": "Calculando el tamaño de la caché...",
+        "desc": "Se eliminará la caché de datos descargados de la aplicación, incluidos los datos del modelo de los personajes, datos de voz, datos del modelo de baile, datos de audio, etc.",
+        "success": "Borrado exitoso",
+        "tip": "La operación no se puede deshacer, después de borrar, los datos deberán descargarse nuevamente, por favor actúe con precaución",
+        "title": "Borrar caché de datos"
+      },
       "reset": {
         "action": "Restablecer ahora",
         "alert": "¿Confirmar restablecimiento de todas las configuraciones del sistema?",

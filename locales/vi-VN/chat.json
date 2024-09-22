@@ -47,6 +47,7 @@
     "send": "Gửi",
     "warp": "Xuống dòng"
   },
+  "interactive": "Có thể tương tác",
   "noDanceList": "Chưa có danh sách phát, bạn có thể đăng ký những điệu nhảy yêu thích của mình qua thị trường",
   "selectModel": "Vui lòng chọn mô hình",
   "sessionCreate": "Tạo cuộc trò chuyện",

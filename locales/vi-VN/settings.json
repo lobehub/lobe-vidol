@@ -21,6 +21,15 @@
         "tip": "Hành động không thể hoàn tác, sau khi xóa dữ liệu sẽ không thể khôi phục, vui lòng cẩn thận khi thực hiện",
         "title": "Xóa tất cả tin nhắn cuộc trò chuyện"
       },
+      "clearCache": {
+        "action": "Xóa ngay",
+        "alert": "Xác nhận xóa tất cả bộ nhớ cache?",
+        "calculating": "Đang tính kích thước bộ nhớ cache...",
+        "desc": "Sẽ xóa bộ nhớ cache dữ liệu tải về của ứng dụng, bao gồm dữ liệu mô hình nhân vật, dữ liệu giọng nói, dữ liệu mô hình vũ đạo, dữ liệu âm thanh, v.v.",
+        "success": "Xóa thành công",
+        "tip": "Hành động này không thể hoàn tác, sau khi xóa dữ liệu sẽ cần tải về lại, xin hãy cẩn thận khi thực hiện",
+        "title": "Xóa bộ nhớ cache dữ liệu"
+      },
       "reset": {
         "action": "Đặt lại ngay",
         "alert": "Xác nhận đặt lại tất cả cài đặt hệ thống?",

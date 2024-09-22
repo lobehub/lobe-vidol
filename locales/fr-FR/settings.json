@@ -21,6 +21,15 @@
         "tip": "Cette action ne peut pas être annulée, les données ne pourront pas être récupérées après l'effacement, veuillez agir avec prudence",
         "title": "Effacer tous les messages de conversation"
       },
+      "clearCache": {
+        "action": "Effacer maintenant",
+        "alert": "Confirmer l'effacement de tout le cache ?",
+        "calculating": "Calcul de la taille du cache en cours...",
+        "desc": "Cela effacera le cache des données téléchargées par l'application, y compris les données des modèles de personnages, les données vocales, les données des modèles de danse, les données audio, etc.",
+        "success": "Effacement réussi",
+        "tip": "Cette action ne peut pas être annulée. Après l'effacement, les données devront être téléchargées à nouveau. Veuillez agir avec prudence.",
+        "title": "Effacer le cache des données"
+      },
       "reset": {
         "action": "Réinitialiser immédiatement",
         "alert": "Confirmer la réinitialisation de tous les paramètres système ?",

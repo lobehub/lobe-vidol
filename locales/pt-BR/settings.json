@@ -21,6 +21,15 @@
         "tip": "A operação não pode ser desfeita, após a limpeza os dados não poderão ser recuperados, por favor, proceda com cautela",
         "title": "Limpar todas as mensagens de conversa"
       },
+      "clearCache": {
+        "action": "Limpar Agora",
+        "alert": "Confirmar a limpeza de todo o cache?",
+        "calculating": "Calculando o tamanho do cache...",
+        "desc": "Isso irá limpar o cache de dados baixados do aplicativo, incluindo dados de modelos de personagens, dados de voz, dados de modelos de dança, dados de áudio, entre outros.",
+        "success": "Limpeza bem-sucedida",
+        "tip": "A operação não pode ser desfeita. Após a limpeza, os dados precisarão ser baixados novamente. Por favor, proceda com cautela.",
+        "title": "Limpar Cache de Dados"
+      },
       "reset": {
         "action": "Redefinir agora",
         "alert": "Confirmar redefinição de todas as configurações do sistema?",

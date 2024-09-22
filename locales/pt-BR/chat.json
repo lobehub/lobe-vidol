@@ -47,6 +47,7 @@
     "send": "Enviar",
     "warp": "Quebrar linha"
   },
+  "interactive": "Interativo",
   "noDanceList": "Nenhuma lista de reprodução disponível no momento. Você pode assinar suas danças favoritas no mercado.",
   "selectModel": "Por favor, selecione um modelo",
   "sessionCreate": "Criar chat",
