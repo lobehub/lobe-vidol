@@ -24,12 +24,12 @@ export class MotionController {
    * 目前都是 Mixamo 的 FBX 文件
    * @param motion
    */
-  public playMotion(motion: MotionPresetName) {
+  public playMotion(motion: MotionPresetName, loop: boolean) {
     const { type, url } = this.getMotionInfo(motion);
-    this.motionManager.loadMotionUrl(type, url);
+    this.motionManager.loadMotionUrl(type, url, loop);
   }
 
-  public playMotionUrl(fileType: MotionFileType, url: string, loop: boolean = true) {
+  public playMotionUrl(fileType: MotionFileType, url: string, loop: boolean) {
     this.motionManager.loadMotionUrl(fileType, url, loop);
   }
 

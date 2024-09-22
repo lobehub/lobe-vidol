@@ -47,6 +47,7 @@
     "send": "Envoyer",
     "warp": "Sauter à la ligne"
   },
+  "interactive": "Interactif",
   "noDanceList": "Aucune liste de lecture disponible pour le moment, vous pouvez vous abonner à vos danses préférées sur le marché",
   "selectModel": "Veuillez sélectionner un modèle",
   "sessionCreate": "Créer une conversation",

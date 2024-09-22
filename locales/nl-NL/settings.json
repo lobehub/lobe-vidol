@@ -21,6 +21,15 @@
         "tip": "Deze actie kan niet ongedaan gemaakt worden. Na verwijdering kunnen de gegevens niet worden hersteld, wees voorzichtig.",
         "title": "Verwijder alle gespreksberichten"
       },
+      "clearCache": {
+        "action": "Direct Wissen",
+        "alert": "Bevestig dat u alle cache wilt wissen?",
+        "calculating": "Cachegrootte aan het berekenen...",
+        "desc": "Dit zal de gedownloade gegevenscache van de applicatie wissen, inclusief modelgegevens van personages, spraakgegevens, modelgegevens van dansen, audiogegevens, enz.",
+        "success": "Wissen Succesvol",
+        "tip": "Deze actie kan niet ongedaan gemaakt worden. Na het wissen moeten de gegevens opnieuw gedownload worden, wees voorzichtig met deze actie.",
+        "title": "Cache Gegevens Wissen"
+      },
       "reset": {
         "action": "Reset nu",
         "alert": "Bevestig dat je alle systeeminstellingen wilt resetten?",

@@ -21,6 +21,15 @@
         "tip": "İşlem geri alınamaz, temizledikten sonra veriler geri getirilemez, lütfen dikkatli olun.",
         "title": "Tüm Sohbet Mesajlarını Temizle"
       },
+      "clearCache": {
+        "action": "Hemen temizle",
+        "alert": "Tüm önbelleği temizlemek istediğinize emin misiniz?",
+        "calculating": "Önbellek boyutu hesaplanıyor...",
+        "desc": "Uygulama tarafından indirilen veri önbelleğini temizleyecektir, bu, karakter model verileri, ses verileri, dans model verileri, ses dosyaları vb. dahil olmak üzere",
+        "success": "Temizleme başarılı",
+        "tip": "İşlem geri alınamaz, temizledikten sonra verilerin yeniden indirilmesi gerekecektir, lütfen dikkatli olun",
+        "title": "Veri önbelleğini temizle"
+      },
       "reset": {
         "action": "Hemen Sıfırla",
         "alert": "Tüm sistem ayarlarını sıfırlamak istediğinize emin misiniz?",

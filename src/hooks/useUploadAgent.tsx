@@ -4,7 +4,7 @@ import { upload } from '@/services/upload';
 import { AgentMeta } from '@/types/agent';
 import { isLocalModelPath } from '@/utils/file';
 import { base64ToFile } from '@/utils/imageToBase64';
-import storage from '@/utils/storage';
+import { cacheStorage } from '@/utils/storage';
 
 export const useUploadAgent = () => {
   const [uploading, setUploading] = useState(false);
@@ -53,7 +53,7 @@ export const useUploadAgent = () => {
     const modelPromise = new Promise<string | undefined>((resolve, reject) => {
       const modelUrl = meta.model;
       if (modelUrl && isLocalModelPath(modelUrl)) {
-        storage
+        cacheStorage
           .getItem(modelUrl)
           .then((modelBlob) => {
             if (modelBlob) {

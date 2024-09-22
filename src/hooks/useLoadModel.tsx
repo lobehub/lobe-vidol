@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { fetchWithProgress } from '@/utils/fetch';
 import { getModelPathByAgentId } from '@/utils/file';
-import storage from '@/utils/storage';
+import { cacheStorage } from '@/utils/storage';
 
 export const useLoadModel = () => {
   const [downloading, setDownloading] = useState(false);
@@ -10,7 +10,7 @@ export const useLoadModel = () => {
 
   const fetchModelUrl = async (agentId: string, remoteModelUrl: string) => {
     const localModelPath = getModelPathByAgentId(agentId);
-    let modelBlob = await storage.getItem(localModelPath);
+    let modelBlob = await cacheStorage.getItem(localModelPath);
 
     try {
       if (!modelBlob) {
@@ -22,7 +22,7 @@ export const useLoadModel = () => {
           },
         });
         const modelPath = getModelPathByAgentId(agentId);
-        await storage.setItem(modelPath, modelBlob);
+        await cacheStorage.setItem(modelPath, modelBlob);
       }
     } finally {
       setDownloading(false);

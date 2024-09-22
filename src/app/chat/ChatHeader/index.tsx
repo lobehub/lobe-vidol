@@ -8,6 +8,7 @@ import { Flexbox } from 'react-layout-kit';
 import AgentMeta from '@/components/agent/AgentMeta';
 import { sessionSelectors, useSessionStore } from '@/store/session';
 
+import Interactive from './actions/Interactive';
 import ShareButton from './actions/ShareButton';
 import ToggleChatSideBar from './actions/ToggleChatSideBar';
 import ToggleSessionList from './actions/ToggleSessionList';
@@ -47,6 +48,7 @@ export default (props: Props) => {
         </Space>
       </Suspense>
       <Space>
+        <Interactive key="interactive" />
         <Voice key={'voice'} />
         <ShareButton key={'share'} />
         <ToggleChatSideBar key={'sidebar'} />

@@ -15,6 +15,7 @@ const initialState = {
   defaultSession: defaultSession,
   viewerMode: false,
   voiceOn: true,
+  interactive: true,
 };
 
 export { initialState };

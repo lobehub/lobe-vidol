@@ -47,6 +47,7 @@
     "send": "送信",
     "warp": "改行"
   },
+  "interactive": "インタラクティブ",
   "noDanceList": "現在再生リストはありません。お気に入りのダンスをマーケットで購読できます。",
   "selectModel": "モデルを選択してください",
   "sessionCreate": "チャットを作成",

@@ -47,6 +47,7 @@
     "send": "發送",
     "warp": "換行"
   },
+  "interactive": "可互動",
   "noDanceList": "暫無播放列表，您可以透過市場訂閱您喜歡的舞蹈",
   "selectModel": "請選擇模型",
   "sessionCreate": "建立聊天",

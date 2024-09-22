@@ -47,6 +47,7 @@
     "send": "Enviar",
     "warp": "Saltar línea"
   },
+  "interactive": "Interactivo",
   "noDanceList": "No hay listas de reproducción disponibles. Puedes suscribirte a tus danzas favoritas a través del mercado.",
   "selectModel": "Por favor, seleccione un modelo",
   "sessionCreate": "Crear chat",

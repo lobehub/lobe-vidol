@@ -26,7 +26,7 @@ import { TTS } from '@/types/tts';
 import { mergeWithUndefined } from '@/utils/common';
 import { getModelPathByAgentId } from '@/utils/file';
 import { merge } from '@/utils/merge';
-import storage from '@/utils/storage';
+import { cacheStorage, vidolStorage } from '@/utils/storage';
 
 import { initialState } from './initialState';
 import { TouchStore } from './slices/touch';
@@ -119,8 +119,7 @@ const createAgentStore: StateCreator<AgentStore, [['zustand/devtools', never]]> 
     set({ currentIdentifier: identifier });
   },
   clearAgentStorage: async () => {
-    localStorage.removeItem(AGENT_STORAGE_KEY);
-    await storage.clear();
+    await vidolStorage.removeItem(AGENT_STORAGE_KEY);
     set({ ...initialState });
   },
 
@@ -228,14 +227,14 @@ const createAgentStore: StateCreator<AgentStore, [['zustand/devtools', never]]> 
         draft.splice(index, 1);
       }
     });
-    await storage.removeItem(getModelPathByAgentId(agentId));
+    await cacheStorage.removeItem(getModelPathByAgentId(agentId));
     set({ currentIdentifier: LOBE_VIDOL_DEFAULT_AGENT_ID, localAgentList: newList });
   },
 });
 
 const persistOptions: PersistOptions<AgentStore> = {
   name: AGENT_STORAGE_KEY, // name of the item in the storage (must be unique)
-  storage: createJSONStorage(() => storage),
+  storage: createJSONStorage(() => vidolStorage),
   version: 0,
   // skipHydration: true,
 };

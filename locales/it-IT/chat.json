@@ -47,6 +47,7 @@
     "send": "Invia",
     "warp": "A capo"
   },
+  "interactive": "Interattivo",
   "noDanceList": "Nessuna playlist disponibile, puoi iscriverti alle danze che ti piacciono tramite il mercato",
   "selectModel": "Seleziona un modello",
   "sessionCreate": "Crea chat",

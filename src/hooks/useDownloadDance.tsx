@@ -7,7 +7,7 @@ import { Dance } from '@/types/dance';
 import { fetchWithProgress } from '@/utils/fetch';
 import { getAudioPathByDanceId, getDancePathByDanceId } from '@/utils/file';
 import { blobToDataURI } from '@/utils/imageToBase64';
-import { setItem } from '@/utils/storage';
+import { cacheStorage } from '@/utils/storage';
 
 export const useDownloadDance = () => {
   const [downloading, setDownloading] = useState(false);
@@ -48,10 +48,10 @@ export const useDownloadDance = () => {
         dancePromise,
       ]);
       const danceKey = getDancePathByDanceId(dance.danceId);
-      await setItem(danceKey, danceBlob);
+      await cacheStorage.setItem(danceKey, danceBlob);
 
       const audioKey = getAudioPathByDanceId(dance.danceId);
-      await setItem(audioKey, audioBlob);
+      await cacheStorage.setItem(audioKey, audioBlob);
 
       addDanceItem({ ...dance, cover: coverBase64 });
       message.success(dance.name + t('download.success'));

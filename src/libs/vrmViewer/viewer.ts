@@ -28,6 +28,7 @@ export class Viewer {
   private _canvas?: HTMLCanvasElement;
   private _boundHandleClick: (event: MouseEvent) => void;
   private _onBodyTouch?: (area: TouchAreaEnum) => void;
+  private _isDancing: boolean = false;
 
   constructor() {
     this.isReady = false;
@@ -69,12 +70,14 @@ export class Viewer {
       console.error('Audio Object or Model Object Not Existed');
       return null;
     }
+    this._isDancing = true;
     this._sound.stop();
     const audioLoader = new THREE.AudioLoader();
     // 监听音频播放结束事件
     this._sound.onEnded = () => {
       onEnd?.();
       this.model?.loadIdleAnimation();
+      this._isDancing = false;
     };
     const buffer = await audioLoader.loadAsync(audioUrl);
     this._sound.setBuffer(buffer);
@@ -87,6 +90,7 @@ export class Viewer {
   public resetToIdle() {
     this._sound?.stop();
     this.model?.loadIdleAnimation();
+    this._isDancing = false;
   }
 
   /**
@@ -107,10 +111,8 @@ export class Viewer {
     await this.model.loadVRM(url);
 
     if (!this.model?.vrm) {
-      console.log('VRM 模型加载失败');
       return;
     }
-    console.log('VRM 模型加载成功');
 
     // Disable frustum culling
     this.model.vrm.scene.traverse((obj) => {
@@ -304,7 +306,9 @@ export class Viewer {
     return this._raycaster.intersectObjects(this._scene.children, true);
   }
 
-  private handleClick(event: MouseEvent) {
+  private handleClick = (event: MouseEvent) => {
+    if (this._isDancing) return; // 如果正在跳舞，不处理点击事件
+
     const intersects = this.handleRaycasterIntersection(event);
     if (!intersects || intersects.length === 0) return;
 
@@ -314,7 +318,7 @@ export class Viewer {
     if (closestBone) {
       this.handleBodyPartClick(closestBone);
     }
-  }
+  };
 
   private handleMouseMove(event: MouseEvent) {
     const intersects = this.handleRaycasterIntersection(event);
@@ -387,7 +391,6 @@ export class Viewer {
 
   private handleBodyPartClick(boneName: VRMHumanBoneName) {
     const touchArea = this.mapBoneNameToTouchArea(boneName);
-    console.log(`触摸了区域: ${touchArea}`);
 
     // 调用回调函数
     if (this._onBodyTouch && touchArea) {

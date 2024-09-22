@@ -21,6 +21,15 @@
         "tip": "Die Aktion kann nicht rückgängig gemacht werden. Nach dem Löschen sind die Daten nicht wiederherstellbar. Bitte vorsichtig handeln.",
         "title": "Alle Sitzungsnachrichten löschen"
       },
+      "clearCache": {
+        "action": "Jetzt löschen",
+        "alert": "Sind Sie sicher, dass Sie alle Caches löschen möchten?",
+        "calculating": "Berechne Cache-Größe...",
+        "desc": "Dies löscht den heruntergeladenen Daten-Cache der Anwendung, einschließlich der Modellaudiodaten, Sprachdaten, Tanzmodellaudiodaten und anderer Mediendaten.",
+        "success": "Löschung erfolgreich",
+        "tip": "Diese Aktion kann nicht rückgängig gemacht werden. Nach dem Löschen müssen die Daten erneut heruntergeladen werden. Bitte vorsichtig handeln.",
+        "title": "Daten-Cache löschen"
+      },
       "reset": {
         "action": "Jetzt zurücksetzen",
         "alert": "Bestätigen Sie das Zurücksetzen aller Systemeinstellungen?",

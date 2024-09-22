@@ -21,6 +21,15 @@
         "tip": "L'operazione non può essere annullata, dopo la cancellazione i dati non possono essere recuperati, si prega di procedere con cautela",
         "title": "Cancella tutti i messaggi di conversazione"
       },
+      "clearCache": {
+        "action": "Cancella subito",
+        "alert": "Sei sicuro di voler cancellare tutta la cache?",
+        "calculating": "Calcolo della dimensione della cache in corso...",
+        "desc": "Questo cancellerà la cache dei dati scaricati dall'app, inclusi i dati dei modelli dei personaggi, i dati vocali, i dati dei modelli delle danze, i dati audio, ecc.",
+        "success": "Cancellazione avvenuta con successo",
+        "tip": "L'operazione non può essere annullata, dopo la cancellazione i dati dovranno essere riscaricati, si prega di procedere con cautela",
+        "title": "Cancella la cache dei dati"
+      },
       "reset": {
         "action": "Ripristina immediatamente",
         "alert": "Confermi di voler ripristinare tutte le impostazioni di sistema?",

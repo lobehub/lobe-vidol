@@ -20,7 +20,7 @@ interface ShareButtonProps {
 const ShareButton = memo<ShareButtonProps>(({ className, style }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [shareLoading] = useSessionStore((s) => [s.shareLoading]);
-  const { t } = useTranslation('common');
+  const { t } = useTranslation('chat');
   return (
     <>
       <ActionIcon

@@ -5,6 +5,7 @@ import { Monitor, Settings2, User2Icon } from 'lucide-react';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
+import ClearCache from '@/features/Actions/ClearCache';
 import ClearSession from '@/features/Actions/ClearSession';
 import ResetConfig from '@/features/Actions/ResetConfig';
 
@@ -36,6 +37,7 @@ const CommonConfig = (props: CommonConfigProps) => {
   const { style, className } = props;
   const { styles } = useStyles();
   const { t } = useTranslation('settings');
+
   return (
     <div className={classNames(styles.config, className)} style={style}>
       <Form style={{ display: 'flex', flexGrow: 1 }}>
@@ -105,6 +107,13 @@ const CommonConfig = (props: CommonConfigProps) => {
             label={t('common.system.reset.title')}
           >
             <ResetConfig />
+          </FormItem>
+          <FormItem
+            desc={t('common.system.clearCache.desc')}
+            divider
+            label={t('common.system.clearCache.title')}
+          >
+            <ClearCache />
           </FormItem>
         </FormGroup>
       </Form>

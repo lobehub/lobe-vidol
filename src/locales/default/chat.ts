@@ -44,6 +44,7 @@ export default {
     record: '语音识别（需科学上网）',
     combine: '语音合成',
   },
+  interactive: '可交互',
   sessionList: '会话列表',
   selectModel: '请选择模型',
   share: {

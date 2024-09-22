@@ -15,7 +15,7 @@ import { ChatMessage } from '@/types/chat';
 import { Session } from '@/types/session';
 import { ShareGPTConversation } from '@/types/share';
 import { fetchSEE } from '@/utils/fetch';
-import storage from '@/utils/storage';
+import { vidolStorage } from '@/utils/storage';
 
 import { initialState } from './initialState';
 import { MessageActionType, messageReducer } from './reducers/message';
@@ -57,7 +57,7 @@ export interface SessionStore {
   /**
    *  清空会话
    */
-  clearSessionStorage: () => void;
+  clearSessionStorage: () => Promise<void>;
   /**
    * 创建会话
    * @param agent
@@ -84,15 +84,19 @@ export interface SessionStore {
    */
   fetchAIResponse: (messages: ChatMessage[], assistantId: string) => void;
   /**
+   * 触摸响应开关
+   */
+  interactive: boolean;
+  /**
    * 当前消息输入
    */
   messageInput: string;
+
   /**
    * 重新生成消息
    * @returns
    */
   regenerateMessage: (id: string) => void;
-
   /**
    *  移除会话
    */
@@ -129,10 +133,13 @@ export interface SessionStore {
    */
   switchSession: (agentId: string) => void;
   /**
+   * 触摸响应开关
+   */
+  toggleInteractive: () => void;
+  /**
    * 触发语音开关
    */
   toggleVoice: () => void;
-
   /**
    * 更新消息
    * @returns
@@ -162,8 +169,8 @@ export const createSessionStore: StateCreator<SessionStore, [['zustand/devtools'
     const { updateSessionMessages } = get();
     updateSessionMessages([]);
   },
-  clearSessionStorage: () => {
-    localStorage.removeItem(SESSION_STORAGE_KEY);
+  clearSessionStorage: async () => {
+    await vidolStorage.removeItem(SESSION_STORAGE_KEY);
     set({ ...initialState });
   },
   createSession: (agent: Agent) => {
@@ -468,6 +475,10 @@ export const createSessionStore: StateCreator<SessionStore, [['zustand/devtools'
     const { voiceOn } = get();
     set({ voiceOn: !voiceOn });
   },
+  toggleInteractive: () => {
+    const { interactive: touchOn } = get();
+    set({ interactive: !touchOn });
+  },
   updateMessage: (id, content) => {
     const { dispatchMessage } = get();
     dispatchMessage({
@@ -499,7 +510,7 @@ export const createSessionStore: StateCreator<SessionStore, [['zustand/devtools'
 
 const persistOptions: PersistOptions<SessionStore> = {
   name: SESSION_STORAGE_KEY, // name of the item in the storage (must be unique)
-  storage: createJSONStorage(() => storage),
+  storage: createJSONStorage(() => vidolStorage),
   version: 0,
 };
 

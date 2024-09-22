@@ -31,11 +31,11 @@ export class EmoteController {
     this._expressionController.playEmotion(preset);
   }
 
-  public playMotion(preset: MotionPresetName) {
-    this._motionController.playMotion(preset);
+  public playMotion(preset: MotionPresetName, loop: boolean) {
+    this._motionController.playMotion(preset, loop);
   }
 
-  public playMotionUrl(fileType: MotionFileType, url: string, loop: boolean = true) {
+  public playMotionUrl(fileType: MotionFileType, url: string, loop: boolean) {
     this._motionController.playMotionUrl(fileType, url, loop);
   }
 

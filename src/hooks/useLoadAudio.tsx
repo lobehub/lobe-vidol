@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 import { fetchWithProgress } from '@/utils/fetch';
 import { getAudioPathByDanceId } from '@/utils/file';
-import storage from '@/utils/storage';
+import { cacheStorage } from '@/utils/storage';
 
 export const useLoadAudio = () => {
   const [downloading, setDownloading] = useState(false);
@@ -11,7 +11,7 @@ export const useLoadAudio = () => {
 
   const fetchAudioUrl = async (danceId: string, audioUrl: string) => {
     const localAudioPath = getAudioPathByDanceId(danceId);
-    let audioBlob = await storage.getItem(localAudioPath);
+    let audioBlob = await cacheStorage.getItem(localAudioPath);
     // 存量转换
     if (audioBlob && isArrayBuffer(audioBlob)) {
       // 如果存的是 ArrayBuffer，设置为空重新下载;
@@ -28,7 +28,7 @@ export const useLoadAudio = () => {
             setPercent((loaded / total) * 100);
           },
         });
-        await storage.setItem(localAudioPath, audioBlob);
+        await cacheStorage.setItem(localAudioPath, audioBlob);
       }
     } finally {
       setDownloading(false);

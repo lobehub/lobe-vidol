@@ -47,6 +47,7 @@
     "send": "Gönder",
     "warp": "Satır Sonu"
   },
+  "interactive": "Etkileşimli",
   "noDanceList": "Henüz bir çalma listesi yok, sevdiğiniz dansları pazardan abone olabilirsiniz",
   "selectModel": "Lütfen bir model seçin",
   "sessionCreate": "Sohbet Oluştur",

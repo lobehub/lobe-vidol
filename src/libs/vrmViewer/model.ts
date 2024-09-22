@@ -63,7 +63,7 @@ export class Model {
 
   public async loadIdleAnimation() {
     this.emoteController?.playEmotion(VRMExpressionPresetName.Neutral);
-    this.emoteController?.playMotion(MotionPresetName.Idle);
+    this.emoteController?.playMotion(MotionPresetName.Idle, true);
   }
 
   /**
@@ -75,7 +75,7 @@ export class Model {
     // 播放人物表情
     this.emoteController?.playEmotion(screenplay.expression);
     // 播放人物动作
-    if (screenplay.motion) this.emoteController?.playMotion(screenplay.motion);
+    if (screenplay.motion) this.emoteController?.playMotion(screenplay.motion, true);
     // 唇形同步
     await new Promise((resolve) => {
       this._lipSync?.playFromArrayBuffer(buffer, () => {
