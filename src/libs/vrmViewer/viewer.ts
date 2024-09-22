@@ -111,10 +111,8 @@ export class Viewer {
     await this.model.loadVRM(url);
 
     if (!this.model?.vrm) {
-      console.log('VRM 模型加载失败');
       return;
     }
-    console.log('VRM 模型加载成功');
 
     // Disable frustum culling
     this.model.vrm.scene.traverse((obj) => {

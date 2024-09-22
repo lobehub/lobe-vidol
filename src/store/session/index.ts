@@ -84,15 +84,19 @@ export interface SessionStore {
    */
   fetchAIResponse: (messages: ChatMessage[], assistantId: string) => void;
   /**
+   * 触摸响应开关
+   */
+  interactive: boolean;
+  /**
    * 当前消息输入
    */
   messageInput: string;
+
   /**
    * 重新生成消息
    * @returns
    */
   regenerateMessage: (id: string) => void;
-
   /**
    *  移除会话
    */
@@ -129,10 +133,13 @@ export interface SessionStore {
    */
   switchSession: (agentId: string) => void;
   /**
+   * 触摸响应开关
+   */
+  toggleInteractive: () => void;
+  /**
    * 触发语音开关
    */
   toggleVoice: () => void;
-
   /**
    * 更新消息
    * @returns
@@ -467,6 +474,10 @@ export const createSessionStore: StateCreator<SessionStore, [['zustand/devtools'
   toggleVoice: () => {
     const { voiceOn } = get();
     set({ voiceOn: !voiceOn });
+  },
+  toggleInteractive: () => {
+    const { interactive: touchOn } = get();
+    set({ interactive: !touchOn });
   },
   updateMessage: (id, content) => {
     const { dispatchMessage } = get();

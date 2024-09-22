@@ -14,13 +14,20 @@ import { useStyles } from './style';
 
 export default memo(() => {
   const { styles } = useStyles();
-  const currentAgent = useSessionStore((s) => sessionSelectors.currentAgent(s));
+  const [currentAgent, interactive] = useSessionStore((s) => [
+    sessionSelectors.currentAgent(s),
+    s.interactive,
+  ]);
 
   return (
     <Flexbox flex={1} style={{ position: 'relative' }}>
       {currentAgent ? (
         <div className={styles.viewer}>
-          <AgentViewer height={`calc(100vh - ${HEADER_HEIGHT}px)`} agentId={currentAgent.agentId} />
+          <AgentViewer
+            height={`calc(100vh - ${HEADER_HEIGHT}px)`}
+            agentId={currentAgent.agentId}
+            interactive={interactive}
+          />
         </div>
       ) : null}
       <ChatDialog className={classNames(styles.dialog, styles.content)} />
