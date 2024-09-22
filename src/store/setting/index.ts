@@ -81,7 +81,6 @@ const createStore: StateCreator<SettingStore, [['zustand/devtools', never]], [],
 ) => ({
   ...initialState,
   ...createTouchStore(set, get, store),
-
   resetConfig: () => {
     localStorage.removeItem(SETTING_STORAGE_KEY);
     set({ ...initialState });
