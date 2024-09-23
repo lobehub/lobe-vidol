@@ -9,6 +9,7 @@ import { Flexbox } from 'react-layout-kit';
 import { CHAT_HEADER_HEIGHT, CHAT_INFO_MAX_WIDTH, CHAT_INFO_WIDTH } from '@/constants/token';
 import { useGlobalStore } from '@/store/global';
 
+import BackGround from './BackGround';
 import ChatList from './ChatList';
 import DanceList from './DanceList';
 import MotionList from './MotionList';
@@ -73,6 +74,10 @@ export default () => {
               label: t('info.posture'),
               key: Tab.Posture,
             },
+            {
+              label: t('info.background'),
+              key: Tab.Background,
+            },
           ]}
           onChange={(key) => {
             setTab(key as Tab);
@@ -84,6 +89,7 @@ export default () => {
         {tab === Tab.DanceList && <DanceList />}
         {tab === Tab.Motions && <MotionList />}
         {tab === Tab.Posture && <PostureList />}
+        {tab === Tab.Background && <BackGround />}
       </Flexbox>
     </DraggablePanel>
   );

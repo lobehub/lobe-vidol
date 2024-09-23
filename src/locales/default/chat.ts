@@ -23,6 +23,7 @@ export default {
     dance: '舞蹈',
     motions: '动作',
     posture: '姿势',
+    background: '背景',
   },
   history: {
     title: '聊天记录',
