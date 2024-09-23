@@ -7,7 +7,9 @@ import { Viewer } from '@/libs/vrmViewer/viewer';
 const viewer = new Viewer();
 
 export interface GlobalStore {
+  backgroundImageUrl: string | null;
   isPlaying: boolean;
+  setBackgroundImageUrl: (url: string | null) => void;
   setChatDialog: (show: boolean) => void;
   setChatSidebar: (show: boolean) => void;
   setIsPlaying: (isPlaying: boolean) => void;
@@ -34,13 +36,16 @@ const initialState = {
   showSessionList: true,
   showChatDialog: true,
   showRoleList: true,
+  backgroundImageUrl: null,
 };
-
 export const useGlobalStore = createWithEqualityFn<GlobalStore>()(
   (set) => ({
     ...initialState,
     setIsPlaying: (isPlaying: boolean) => {
       set({ isPlaying: isPlaying });
+    },
+    setBackgroundImageUrl: (url: string | null) => {
+      set({ backgroundImageUrl: url });
     },
     setThemeMode: (themeMode) => {
       set({ themeMode });
@@ -63,7 +68,6 @@ export const useGlobalStore = createWithEqualityFn<GlobalStore>()(
     toggleSessionList: () => {
       set((state) => ({ showSessionList: !state.showSessionList }));
     },
-
     setChatDialog: (show) => {
       set({ showChatDialog: show });
     },
