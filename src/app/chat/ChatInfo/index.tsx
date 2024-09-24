@@ -2,6 +2,7 @@
 
 import { DraggablePanel, TabsNav } from '@lobehub/ui';
 import { createStyles } from 'antd-style';
+import { rgba } from 'polished';
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
@@ -21,6 +22,7 @@ const useStyles = createStyles(({ css, token }) => ({
     position: relative;
     display: flex;
     flex-direction: column;
+    background-color: ${rgba(token.colorBgLayout, 0.4)};
   `,
   header: css`
     height: ${CHAT_HEADER_HEIGHT}px;

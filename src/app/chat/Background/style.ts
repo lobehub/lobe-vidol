@@ -6,7 +6,7 @@ export const useStyles = createStyles(({ css, token }) => ({
     will-change: transform;
 
     position: absolute;
-    top: -250px;
+    top: 250px;
     left: 50%;
     transform: translateX(-50%) scale(1.5);
 

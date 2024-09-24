@@ -9,7 +9,6 @@ const Background = () => {
   const backgroundEffect = useSettingStore((s) => s.config.backgroundEffect);
 
   if (backgroundImageUrl) {
-    console.log('backgroundImageUrl', backgroundImageUrl);
     return (
       <div
         style={{
@@ -22,6 +21,7 @@ const Background = () => {
           width: '100%',
           height: '100%',
           zIndex: -1,
+          transition: 'background-image 0.5s ease-in-out',
         }}
       ></div>
     );
