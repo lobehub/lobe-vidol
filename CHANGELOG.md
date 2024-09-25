@@ -2,6 +2,37 @@
 
 # Changelog
 
+## [Version&nbsp;0.29.0](https://github.com/lobehub/lobe-vidol/compare/v0.28.0...v0.29.0)
+<sup>Released on **2024-09-25**</sup>
+
+
+#### ✨ Features
+
+- **misc**: 添加背景色.
+
+
+<br/>
+
+
+
+<details>
+<summary><kbd>Improvements and Fixes</kbd></summary>
+
+
+
+#### What's improved
+
+* **misc**: 添加背景色 ([25c20cb](https://github.com/lobehub/lobe-vidol/commit/25c20cb))
+
+</details>
+
+
+<div align="right">
+
+[![](https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square)](#readme-top)
+
+</div>
+
 ## [Version&nbsp;0.28.0](https://github.com/lobehub/lobe-vidol/compare/v0.27.0...v0.28.0)
 <sup>Released on **2024-09-22**</sup>
 
