@@ -8,7 +8,15 @@ interface BackgroundOption {
   url: string; // 添加 thumbnail 参数
 }
 
+const TRANSPARENT_ID = 'transparent';
+
 const backgroundOptions: BackgroundOption[] = [
+  {
+    id: TRANSPARENT_ID,
+    name: 'transparent',
+    url: '1920x1080/transparent.jpg',
+    thumbnail: '160x90/transparent.jpg',
+  },
   {
     id: 'bedroom-clean',
     name: 'bedroom clean',
@@ -137,7 +145,14 @@ const Background = () => {
         url: option.url,
       }))}
       onClick={(_, item: BackgroundOption) => {
-        setBackgroundImageUrl(`https://r2.vidol.chat/backgrounds/${encodeURIComponent(item.url)}`);
+        if (item.id === TRANSPARENT_ID) {
+          // 透明背景清空背景色
+          setBackgroundImageUrl(null);
+        } else {
+          setBackgroundImageUrl(
+            `https://r2.vidol.chat/backgrounds/${encodeURIComponent(item.url)}`,
+          );
+        }
       }}
     />
   );
