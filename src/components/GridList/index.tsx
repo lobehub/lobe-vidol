@@ -6,19 +6,13 @@ import SkeletonList from '@/components/SkeletonList';
 import ListItem from './ListItem';
 import { useStyles } from './style';
 
-interface Item {
-  avatar: string;
-  id: string;
-  name: string;
-}
-
 interface GridListProps {
   className?: string;
   isActivated?: (id: string) => boolean;
   isChecked?: (id: string) => boolean;
   items: any[];
   loading?: boolean;
-  onClick?: (id: string, item: Item) => void;
+  onClick?: (id: string, item: any) => void;
   style?: React.CSSProperties;
 }
 

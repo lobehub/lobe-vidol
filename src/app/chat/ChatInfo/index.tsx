@@ -2,6 +2,7 @@
 
 import { DraggablePanel, TabsNav } from '@lobehub/ui';
 import { createStyles } from 'antd-style';
+import { rgba } from 'polished';
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
@@ -9,6 +10,7 @@ import { Flexbox } from 'react-layout-kit';
 import { CHAT_HEADER_HEIGHT, CHAT_INFO_MAX_WIDTH, CHAT_INFO_WIDTH } from '@/constants/token';
 import { useGlobalStore } from '@/store/global';
 
+import BackGround from './BackGround';
 import ChatList from './ChatList';
 import DanceList from './DanceList';
 import MotionList from './MotionList';
@@ -20,6 +22,7 @@ const useStyles = createStyles(({ css, token }) => ({
     position: relative;
     display: flex;
     flex-direction: column;
+    background-color: ${rgba(token.colorBgLayout, 0.4)};
   `,
   header: css`
     height: ${CHAT_HEADER_HEIGHT}px;
@@ -73,6 +76,10 @@ export default () => {
               label: t('info.posture'),
               key: Tab.Posture,
             },
+            {
+              label: t('info.background'),
+              key: Tab.Background,
+            },
           ]}
           onChange={(key) => {
             setTab(key as Tab);
@@ -84,6 +91,7 @@ export default () => {
         {tab === Tab.DanceList && <DanceList />}
         {tab === Tab.Motions && <MotionList />}
         {tab === Tab.Posture && <PostureList />}
+        {tab === Tab.Background && <BackGround />}
       </Flexbox>
     </DraggablePanel>
   );
