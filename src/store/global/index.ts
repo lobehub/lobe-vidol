@@ -2,14 +2,15 @@ import type { ThemeMode } from 'antd-style';
 import { shallow } from 'zustand/shallow';
 import { createWithEqualityFn } from 'zustand/traditional';
 
+import { TRANSPARENT_ID } from '@/constants/background';
 import { Viewer } from '@/libs/vrmViewer/viewer';
 
 const viewer = new Viewer();
 
 export interface GlobalStore {
-  backgroundImageUrl: string | null;
+  backgroundId: string;
   isPlaying: boolean;
-  setBackgroundImageUrl: (url: string | null) => void;
+  setBackgroundId: (id: string) => void;
   setChatDialog: (show: boolean) => void;
   setChatSidebar: (show: boolean) => void;
   setIsPlaying: (isPlaying: boolean) => void;
@@ -36,7 +37,7 @@ const initialState = {
   showSessionList: true,
   showChatDialog: true,
   showRoleList: true,
-  backgroundImageUrl: null,
+  backgroundId: TRANSPARENT_ID,
 };
 export const useGlobalStore = createWithEqualityFn<GlobalStore>()(
   (set) => ({
@@ -44,8 +45,8 @@ export const useGlobalStore = createWithEqualityFn<GlobalStore>()(
     setIsPlaying: (isPlaying: boolean) => {
       set({ isPlaying: isPlaying });
     },
-    setBackgroundImageUrl: (url: string | null) => {
-      set({ backgroundImageUrl: url });
+    setBackgroundId: (id: string) => {
+      set({ backgroundId: id });
     },
     setThemeMode: (themeMode) => {
       set({ themeMode });
