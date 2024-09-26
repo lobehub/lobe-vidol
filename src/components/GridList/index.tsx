@@ -23,12 +23,13 @@ const GridList = (props: GridListProps) => {
   const List = () => (
     <>
       {items.map((item) => {
-        const { avatar, name, id } = item;
+        const { avatar, name, id, spin } = item;
         return (
           <ListItem
             key={id}
             title={name}
             avatar={avatar}
+            spin={spin}
             onClick={() => {
               if (onClick) onClick(id, item);
             }}
