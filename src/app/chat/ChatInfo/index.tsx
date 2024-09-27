@@ -10,7 +10,7 @@ import { Flexbox } from 'react-layout-kit';
 import { CHAT_HEADER_HEIGHT, CHAT_INFO_MAX_WIDTH, CHAT_INFO_WIDTH } from '@/constants/token';
 import { useGlobalStore } from '@/store/global';
 
-import BackGround from './BackGround';
+import BackGround from './BackGroundList';
 import ChatList from './ChatList';
 import DanceList from './DanceList';
 import MotionList from './MotionList';

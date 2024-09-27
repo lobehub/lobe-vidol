@@ -15,7 +15,7 @@ interface ActionListItemProps {
   item: MotionAnimation;
 }
 
-const useStyles = createStyles(({ css, token }) => ({
+const useStyles = createStyles(({ css, token, isDarkMode }) => ({
   listItem: css`
     position: relative;
 
@@ -23,8 +23,10 @@ const useStyles = createStyles(({ css, token }) => ({
 
     font-size: ${token.fontSize}px;
 
-    background-color: ${token.colorBgContainer};
+    background-color: ${isDarkMode ? token.colorFill : token.colorBgElevated};
     border-radius: ${token.borderRadius}px;
+
+    transition: background-color 100ms ${token.motionEaseOut};
   `,
   progress: css`
     background-color: rgba(${token.colorBgLayout}, 0.8);
