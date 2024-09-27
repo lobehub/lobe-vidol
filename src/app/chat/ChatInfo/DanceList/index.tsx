@@ -2,7 +2,7 @@ import { ActionIcon, GradientButton } from '@lobehub/ui';
 import { Empty } from 'antd';
 import { createStyles } from 'antd-style';
 import classNames from 'classnames';
-import { PlusCircle } from 'lucide-react';
+import { Store } from 'lucide-react';
 import dynamic from 'next/dynamic';
 import React, { memo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -57,7 +57,7 @@ const DanceList = memo((props: PlayListProps) => {
           title={t('danceList')}
           extra={
             <ActionIcon
-              icon={PlusCircle}
+              icon={Store}
               onClick={() => {
                 setOpen(true);
               }}

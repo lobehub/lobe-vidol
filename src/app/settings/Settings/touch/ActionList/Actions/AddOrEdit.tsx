@@ -23,7 +23,7 @@ export interface Props {
 const AddOrEdit = memo<Props>(({ touchArea, index, touchAction, isEdit = true, gender }) => {
   const [open, setOpen] = useState(false);
   const [form] = Form.useForm();
-  const { t } = useTranslation(['common', 'role']);
+  const { t } = useTranslation('role');
 
   const [updateTouchAction, createTouchAction] = useSettingStore((s) => [
     s.updateTouchAction,
@@ -53,7 +53,7 @@ const AddOrEdit = memo<Props>(({ touchArea, index, touchAction, isEdit = true, g
     <>
       <ActionIcon
         icon={isEdit ? Edit2Icon : Plus}
-        title={isEdit ? t('actions.edit') : t('actions.add')}
+        title={isEdit ? t('actions.edit', { ns: 'chat' }) : t('actions.add', { ns: 'chat' })}
         onClick={showModal}
       />
       <Modal
@@ -65,8 +65,8 @@ const AddOrEdit = memo<Props>(({ touchArea, index, touchAction, isEdit = true, g
         title={
           isEdit ? t('touch.editAction', { ns: 'role' }) : t('touch.addAction', { ns: 'role' })
         }
-        okText={t('confirm')}
-        cancelText={t('cancel')}
+        okText={t('confirm', { ns: 'common' })}
+        cancelText={t('cancel', { ns: 'common' })}
       >
         <Form
           layout="horizontal"

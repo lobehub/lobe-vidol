@@ -52,7 +52,7 @@ export default memo((props: Props) => {
     <>
       <ActionIcon
         icon={isEdit ? Edit2Icon : Plus}
-        title={isEdit ? t('actions.edit', { ns: 'common' }) : t('actions.add', { ns: 'common' })}
+        title={isEdit ? t('actions.edit', { ns: 'chat' }) : t('actions.add', { ns: 'chat' })}
         onClick={showModal}
       />
       <Modal
@@ -62,8 +62,8 @@ export default memo((props: Props) => {
         width={800}
         destroyOnClose
         title={isEdit ? t('touch.editAction') : t('touch.addAction')}
-        okText={t('confirm')}
-        cancelText={t('cancel')}
+        okText={t('confirm', { ns: 'common' })}
+        cancelText={t('cancel', { ns: 'common' })}
       >
         <Form
           layout="horizontal"
