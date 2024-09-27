@@ -10,7 +10,7 @@ import { Flexbox } from 'react-layout-kit';
 import { CHAT_HEADER_HEIGHT, CHAT_INFO_MAX_WIDTH, CHAT_INFO_WIDTH } from '@/constants/token';
 import { useGlobalStore } from '@/store/global';
 
-import BackGround from './BackGround';
+import BackGround from './BackGroundList';
 import ChatList from './ChatList';
 import DanceList from './DanceList';
 import MotionList from './MotionList';
@@ -20,9 +20,12 @@ import { Tab } from './type';
 const useStyles = createStyles(({ css, token }) => ({
   content: css`
     position: relative;
+
     display: flex;
     flex-direction: column;
-    background-color: ${rgba(token.colorBgLayout, 0.4)};
+
+    background-color: ${rgba(token.colorBgLayout, 0.2)};
+    backdrop-filter: saturate(180%) blur(8px);
   `,
   header: css`
     height: ${CHAT_HEADER_HEIGHT}px;

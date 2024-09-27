@@ -15,7 +15,8 @@ const useStyles = createStyles(({ css, token }) => ({
   sidebar: css`
     display: flex;
     flex-direction: column;
-    background-color: ${rgba(token.colorBgLayout, 0.4)};
+    background-color: ${rgba(token.colorBgLayout, 0.2)};
+    backdrop-filter: saturate(180%) blur(8px);
   `,
 }));
 

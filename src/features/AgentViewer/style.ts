@@ -27,8 +27,8 @@ export const useStyles = createStyles(({ css, token }) => ({
     height: 100%;
     max-height: 100%;
 
-    background-color: ${rgba(token.colorBgContainer, 0.8)};
-    backdrop-filter: saturate(180%) blur(4px);
+    background-color: ${rgba(token.colorBgLayout, 0.2)};
+    backdrop-filter: saturate(180%) blur(8px);
   `,
   canvas: css`
     display: block;

@@ -1,5 +1,4 @@
-import GridList from '@/components/GridList';
-import { useGlobalStore } from '@/store/global';
+export const TRANSPARENT_ID = 'transparent';
 
 interface BackgroundOption {
   id: string;
@@ -8,9 +7,7 @@ interface BackgroundOption {
   url: string; // 添加 thumbnail 参数
 }
 
-const TRANSPARENT_ID = 'transparent';
-
-const backgroundOptions: BackgroundOption[] = [
+export const backgroundOptions: BackgroundOption[] = [
   {
     id: TRANSPARENT_ID,
     name: 'transparent',
@@ -133,29 +130,3 @@ const backgroundOptions: BackgroundOption[] = [
     thumbnail: '160x90/tavern day.jpg',
   },
 ];
-
-const Background = () => {
-  const setBackgroundImageUrl = useGlobalStore((s) => s.setBackgroundImageUrl);
-  return (
-    <GridList
-      items={backgroundOptions.map((option) => ({
-        avatar: `https://r2.vidol.chat/backgrounds/${encodeURIComponent(option.thumbnail)}`,
-        id: option.id,
-        name: option.name,
-        url: option.url,
-      }))}
-      onClick={(_, item: BackgroundOption) => {
-        if (item.id === TRANSPARENT_ID) {
-          // 透明背景清空背景色
-          setBackgroundImageUrl(null);
-        } else {
-          setBackgroundImageUrl(
-            `https://r2.vidol.chat/backgrounds/${encodeURIComponent(item.url)}`,
-          );
-        }
-      }}
-    />
-  );
-};
-
-export default Background;
