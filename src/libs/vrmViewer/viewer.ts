@@ -427,9 +427,7 @@ export class Viewer {
         return TouchAreaEnum.Belly;
 
       case VRMHumanBoneName.Hips:
-        // 注意: TouchAreaEnum 中没有对应的"臀部"枚举值,
-        // 所以这里暂时返回 null 或者您可以选择最接近的区域
-        return null;
+        return TouchAreaEnum.Buttocks;
 
       default:
         return null;

@@ -16,6 +16,7 @@ export type ExpressionType = VRMExpressionPresetName;
 export enum TouchAreaEnum {
   Arm = 'arm',
   Belly = 'belly',
+  Buttocks = 'buttocks',
   Chest = 'chest',
   Head = 'head',
   Leg = 'leg',
@@ -108,6 +109,7 @@ export interface TouchActionConfig {
   [TouchAreaEnum.Leg]: TouchAction[];
   [TouchAreaEnum.Chest]: TouchAction[];
   [TouchAreaEnum.Belly]: TouchAction[];
+  [TouchAreaEnum.Buttocks]: TouchAction[];
 }
 
 /**

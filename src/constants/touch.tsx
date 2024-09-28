@@ -126,6 +126,23 @@ export const DEFAULT_TOUCH_ACTION_CONFIG_FEMALE: TouchActionConfig = {
       motion: MotionPresetName.FemaleGreeting,
     },
   ],
+  [TouchAreaEnum.Buttocks]: [
+    {
+      expression: VRMExpressionPresetName.Surprised,
+      text: 'touch.femaleAction.buttocksAction.surprisedA',
+      motion: MotionPresetName.FemaleCoverUndies,
+    },
+    {
+      expression: VRMExpressionPresetName.Angry,
+      text: 'touch.femaleAction.buttocksAction.angryA',
+      motion: MotionPresetName.FemaleCoverUndies,
+    },
+    {
+      expression: VRMExpressionPresetName.Surprised,
+      text: 'touch.femaleAction.buttocksAction.embarrassedA',
+      motion: MotionPresetName.FemaleCoverUndies,
+    },
+  ],
 };
 
 export const DEFAULT_TOUCH_ACTION_CONFIG_MALE: TouchActionConfig = {
@@ -195,6 +212,16 @@ export const DEFAULT_TOUCH_ACTION_CONFIG_MALE: TouchActionConfig = {
       text: 'touch.maleAction.bellyAction.neutralB',
     },
   ],
+  [TouchAreaEnum.Buttocks]: [
+    {
+      expression: VRMExpressionPresetName.Surprised,
+      text: 'touch.maleAction.buttocksAction.surprisedA',
+    },
+    {
+      expression: VRMExpressionPresetName.Angry,
+      text: 'touch.maleAction.buttocksAction.angryA',
+    },
+  ],
 };
 
 export const EMPTY_TOUCH_CONFIG: TouchActionConfig = {
@@ -203,6 +230,7 @@ export const EMPTY_TOUCH_CONFIG: TouchActionConfig = {
   [TouchAreaEnum.Leg]: [],
   [TouchAreaEnum.Chest]: [],
   [TouchAreaEnum.Belly]: [],
+  [TouchAreaEnum.Buttocks]: [],
 };
 
 export const MAX_TOUCH_ACTION_TEXT_LENGTH = 100;
