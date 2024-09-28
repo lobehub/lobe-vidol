@@ -1,5 +1,5 @@
 import { VRM } from '@pixiv/three-vrm';
-import { AnimationAction, AnimationClip, AnimationMixer, LoopOnce } from 'three';
+import { AnimationAction, AnimationClip, AnimationMixer, LoopOnce, LoopRepeat } from 'three';
 
 import { loadMixamoAnimation } from '@/libs/FBXAnimation/loadMixamoAnimation';
 import { loadVMDAnimation } from '@/libs/VMDAnimation/loadVMDAnimation';
@@ -52,21 +52,28 @@ export class MotionManager {
     }
 
     if (!clip) {
+      console.error(`无法加载动作: ${url}`);
       return;
     }
 
     const nextAction = this.mixer.clipAction(clip);
-    if (!loop) nextAction.setLoop(LoopOnce, 1);
+    nextAction.setLoop(loop ? LoopRepeat : LoopOnce, loop ? Infinity : 1);
 
     if (this.currentAction) {
       // 设置下一个动作
       this.nextAction = nextAction;
       // 开始混合
       this.currentAction.crossFadeTo(this.nextAction, this.mixDuration, true);
+
+      this.nextAction.play().reset();
+
+      // 如果 finished 属性不存在，回退到使用 setTimeout
       setTimeout(() => {
-        this.currentAction?.stop();
-        this.currentAction = this.nextAction;
-        this.nextAction = undefined;
+        if (this.currentAction) {
+          this.currentAction.stop();
+          this.currentAction = this.nextAction;
+          this.nextAction = undefined;
+        }
       }, this.mixDuration * 1000);
     } else {
       // 如果是第一个动作,直接播放
