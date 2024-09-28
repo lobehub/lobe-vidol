@@ -96,12 +96,12 @@ export const DEFAULT_TOUCH_ACTION_CONFIG_FEMALE: TouchActionConfig = {
     {
       expression: VRMExpressionPresetName.Angry,
       text: 'touch.femaleAction.chestAction.angryC',
-      motion: MotionPresetName.FemaleAngry,
+      motion: MotionPresetName.FemaleCoverChest,
     },
     {
       expression: VRMExpressionPresetName.Surprised,
       text: 'touch.femaleAction.chestAction.surprisedA',
-      motion: MotionPresetName.FemaleAngry,
+      motion: MotionPresetName.FemaleCoverChest,
     },
   ],
   [TouchAreaEnum.Belly]: [
