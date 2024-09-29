@@ -6,11 +6,12 @@ import { useMarketStore } from '@/store/market';
 
 interface DanceListProps {
   className?: string;
-  style?: React.CSSProperties;
+  filter?: string;
+  style?: React.CSSProperties; // 添加 filter 属性
 }
 
 const Index = (props: DanceListProps) => {
-  const { className, style } = props;
+  const { className, style, filter } = props;
   const [activateDance, danceList, danceLoading, currentDanceId, fetchDanceIndex] = useMarketStore(
     (s) => [s.activateDance, s.danceList, s.danceLoading, s.currentDanceId, s.fetchDanceIndex],
   );
@@ -25,11 +26,13 @@ const Index = (props: DanceListProps) => {
       className={className}
       style={style}
       loading={danceLoading}
-      items={danceList.map((item) => ({
-        avatar: item.cover,
-        id: item.danceId,
-        name: item.name,
-      }))}
+      items={danceList
+        .filter((item) => !filter || item.name.toLowerCase().includes(filter.toLowerCase()))
+        .map((item) => ({
+          avatar: item.cover,
+          id: item.danceId,
+          name: item.name,
+        }))}
       onClick={(id) => {
         activateDance(id);
       }}
