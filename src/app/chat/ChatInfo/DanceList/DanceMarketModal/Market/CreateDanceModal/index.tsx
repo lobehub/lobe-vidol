@@ -1,11 +1,14 @@
 import { Form, Modal } from '@lobehub/ui';
-import { Button, Input, Space, Upload, message } from 'antd';
+import { Button, Input, Upload, message } from 'antd';
 import { PlusCircle } from 'lucide-react';
+import qs from 'query-string';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { useUploadDance } from '@/hooks/useUploadDance';
 import { Dance } from '@/types/dance';
+
+const DANCES_INDEX_GITHUB_ISSUE = 'https://github.com/your-repo/issues/new';
 
 interface FormValues {
   audio: File;
@@ -23,76 +26,130 @@ const CreateDanceModal = () => {
 
   const handleSubmit = async (values: FormValues) => {
     try {
+      const danceId = `dance-${Date.now()}`;
       const dance: Partial<Dance> = {
         name: values.name,
         author: values.author,
-        danceId: `dance-${Date.now()}`,
+        danceId: danceId,
         createAt: new Date().toISOString(),
       };
 
-      const { audioUrl, srcUrl, coverUrl } = await uploadDanceData(dance.danceId!, {
+      const { audioUrl, srcUrl, coverUrl } = await uploadDanceData(danceId, {
         audio: values.audio,
         src: values.src,
         cover: values.cover,
       });
 
+      if (!audioUrl || !srcUrl || !coverUrl) {
+        message.error(t('create.messages.fileUploadError'));
+        return;
+      }
+
       dance.audio = audioUrl;
       dance.src = srcUrl;
       dance.cover = coverUrl;
 
-      // 这里可以添加将舞蹈数据保存到后端或状态管理的逻辑
-      console.log('Dance uploaded:', dance);
+      const body = [
+        '### danceId',
+        danceId,
+        '### name',
+        dance.name,
+        '### author',
+        dance.author,
+        '### audio',
+        dance.audio,
+        '### src',
+        dance.src,
+        '### cover',
+        dance.cover,
+        '### createAt',
+        dance.createAt,
+      ].join('\n\n');
 
-      message.success(t('uploadSuccess'));
+      const url = qs.stringifyUrl({
+        query: { body, labels: '💃 Dance PR', title: `[Dance] ${dance.name}` },
+        url: DANCES_INDEX_GITHUB_ISSUE,
+      });
+
+      window.open(url, '_blank');
+
+      message.success(t('create.messages.uploadSuccess'));
       setOpen(false);
       form.resetFields();
     } catch (error) {
       console.error('Upload failed:', error);
-      message.error(t('uploadFailed'));
+      message.error(t('create.messages.uploadFailed'));
     }
   };
+
+  const basic = [
+    {
+      name: 'name',
+      label: t('create.name.title'),
+      required: true,
+      desc: t('create.name.desc'),
+      children: <Input />,
+    },
+    {
+      name: 'author',
+      label: t('create.author.title'),
+      required: true,
+      desc: t('create.author.desc'),
+      children: <Input />,
+    },
+    {
+      name: 'audio',
+      label: t('create.audio.title'),
+      required: true,
+      desc: t('create.audio.desc'),
+      children: (
+        <Upload accept=".mp3,.wav" beforeUpload={() => false}>
+          <Button icon={<PlusCircle />}>{t('create.audio.upload')}</Button>
+        </Upload>
+      ),
+    },
+    {
+      name: 'src',
+      label: t('create.dance.title'),
+      required: true,
+      desc: t('create.dance.desc'),
+      children: (
+        <Upload accept=".vmd" beforeUpload={() => false}>
+          <Button icon={<PlusCircle />}>{t('create.dance.upload')}</Button>
+        </Upload>
+      ),
+    },
+    {
+      name: 'cover',
+      label: t('create.cover.title'),
+      required: true,
+      desc: t('create.cover.desc'),
+      children: (
+        <Upload accept="image/*" beforeUpload={() => false}>
+          <Button icon={<PlusCircle />}>{t('create.cover.upload')}</Button>
+        </Upload>
+      ),
+    },
+    {
+      name: 'actions',
+      children: (
+        <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '8px' }}>
+          <Button onClick={() => setOpen(false)}>{t('cancel', { ns: 'common' })}</Button>
+          <Button type="primary" htmlType="submit" loading={uploading}>
+            {t('submit', { ns: 'common' })}
+          </Button>
+        </div>
+      ),
+    },
+  ];
 
   return (
     <>
       <Button icon={<PlusCircle />} onClick={() => setOpen(true)}>
-        {t('createDance')}
+        {t('create.title')}
       </Button>
-      <Modal
-        open={open}
-        title={t('createDance')}
-        onCancel={() => setOpen(false)}
-        footer={
-          <Space>
-            <Button onClick={() => setOpen(false)}>{t('cancel')}</Button>
-            <Button type="primary" htmlType="submit" loading={uploading}>
-              {t('submit')}
-            </Button>
-          </Space>
-        }
-      >
-        <Form form={form} onFinish={handleSubmit}>
-          <Form.Item name="name" label={t('danceName')} rules={[{ required: true }]}>
-            <Input />
-          </Form.Item>
-          <Form.Item name="author" label={t('author')} rules={[{ required: true }]}>
-            <Input />
-          </Form.Item>
-          <Form.Item name="audio" label={t('audioFile')} rules={[{ required: true }]}>
-            <Upload accept=".mp3,.wav" beforeUpload={() => false}>
-              <Button icon={<PlusCircle />}>{t('uploadAudio')}</Button>
-            </Upload>
-          </Form.Item>
-          <Form.Item name="src" label={t('danceFile')} rules={[{ required: true }]}>
-            <Upload accept=".vmd" beforeUpload={() => false}>
-              <Button icon={<PlusCircle />}>{t('uploadDance')}</Button>
-            </Upload>
-          </Form.Item>
-          <Form.Item name="cover" label={t('coverImage')} rules={[{ required: true }]}>
-            <Upload accept="image/*" beforeUpload={() => false}>
-              <Button icon={<PlusCircle />}>{t('uploadCover')}</Button>
-            </Upload>
-          </Form.Item>
-        </Form>
+      <Modal open={open} title={t('create.title')} onCancel={() => setOpen(false)} footer={null}>
+        <Form form={form} onFinish={handleSubmit} variant="block" items={basic} itemsType="flat" />
       </Modal>
     </>
   );

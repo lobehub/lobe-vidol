@@ -14,6 +14,7 @@ export default {
   close: '关闭',
   support: '社区支持',
   delete: '删除',
+  submit: '提交',
   confirmDel: '确定删除吗？',
   cancel: '取消',
   sideBar: '侧边栏',
