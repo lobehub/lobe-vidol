@@ -1,69 +1,55 @@
 import { Form, Modal } from '@lobehub/ui';
-import { Button, Input, Upload, message } from 'antd';
+import { Button, message } from 'antd';
 import { PlusCircle } from 'lucide-react';
 import qs from 'query-string';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { useUploadDance } from '@/hooks/useUploadDance';
+import TopBanner from '@/components/TopBanner';
+import { INPUT_WIDTH_M } from '@/constants/token';
 import { Dance } from '@/types/dance';
+
+import AudioUpload from './AudioUpload';
+import CoverImageUpload from './CoverImageUpload';
+import DanceName from './DanceName';
+import DanceUpload from './DanceUpload';
 
 const DANCES_INDEX_GITHUB_ISSUE = 'https://github.com/your-repo/issues/new';
 
 interface FormValues {
-  audio: File;
-  author: string;
-  cover: File;
+  audio: string;
+  cover: string;
   name: string;
-  src: File;
+  src: string;
 }
 
 const CreateDanceModal = () => {
   const [open, setOpen] = useState(false);
   const { t } = useTranslation('dance');
   const [form] = Form.useForm<FormValues>();
-  const { uploading, uploadDanceData } = useUploadDance();
 
   const handleSubmit = async (values: FormValues) => {
     try {
       const danceId = `dance-${Date.now()}`;
       const dance: Partial<Dance> = {
         name: values.name,
-        author: values.author,
         danceId: danceId,
-        createAt: new Date().toISOString(),
-      };
-
-      const { audioUrl, srcUrl, coverUrl } = await uploadDanceData(danceId, {
         audio: values.audio,
-        src: values.src,
         cover: values.cover,
-      });
-
-      if (!audioUrl || !srcUrl || !coverUrl) {
-        message.error(t('create.messages.fileUploadError'));
-        return;
-      }
-
-      dance.audio = audioUrl;
-      dance.src = srcUrl;
-      dance.cover = coverUrl;
+        src: values.src,
+      };
 
       const body = [
         '### danceId',
         danceId,
         '### name',
         dance.name,
-        '### author',
-        dance.author,
         '### audio',
         dance.audio,
         '### src',
         dance.src,
         '### cover',
         dance.cover,
-        '### createAt',
-        dance.createAt,
       ].join('\n\n');
 
       const url = qs.stringifyUrl({
@@ -88,54 +74,35 @@ const CreateDanceModal = () => {
       label: t('create.name.title'),
       required: true,
       desc: t('create.name.desc'),
-      children: <Input />,
-    },
-    {
-      name: 'author',
-      label: t('create.author.title'),
-      required: true,
-      desc: t('create.author.desc'),
-      children: <Input />,
+      children: <DanceName style={{ width: INPUT_WIDTH_M }} />,
     },
     {
       name: 'audio',
       label: t('create.audio.title'),
       required: true,
       desc: t('create.audio.desc'),
-      children: (
-        <Upload accept=".mp3,.wav" beforeUpload={() => false}>
-          <Button icon={<PlusCircle />}>{t('create.audio.upload')}</Button>
-        </Upload>
-      ),
+      children: <AudioUpload />,
     },
     {
       name: 'src',
       label: t('create.dance.title'),
       required: true,
       desc: t('create.dance.desc'),
-      children: (
-        <Upload accept=".vmd" beforeUpload={() => false}>
-          <Button icon={<PlusCircle />}>{t('create.dance.upload')}</Button>
-        </Upload>
-      ),
+      children: <DanceUpload />,
     },
     {
       name: 'cover',
       label: t('create.cover.title'),
       required: true,
       desc: t('create.cover.desc'),
-      children: (
-        <Upload accept="image/*" beforeUpload={() => false}>
-          <Button icon={<PlusCircle />}>{t('create.cover.upload')}</Button>
-        </Upload>
-      ),
+      children: <CoverImageUpload />,
     },
     {
       name: 'actions',
       children: (
         <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '8px' }}>
           <Button onClick={() => setOpen(false)}>{t('cancel', { ns: 'common' })}</Button>
-          <Button type="primary" htmlType="submit" loading={uploading}>
+          <Button type="primary" htmlType="submit">
             {t('submit', { ns: 'common' })}
           </Button>
         </div>
@@ -149,7 +116,8 @@ const CreateDanceModal = () => {
         {t('create.title')}
       </Button>
       <Modal open={open} title={t('create.title')} onCancel={() => setOpen(false)} footer={null}>
-        <Form form={form} onFinish={handleSubmit} variant="block" items={basic} itemsType="flat" />
+        <TopBanner title={t('createDance')} />
+        <Form form={form} onFinish={handleSubmit} variant="pure" items={basic} itemsType="flat" />
       </Modal>
     </>
   );

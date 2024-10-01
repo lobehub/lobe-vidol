@@ -5,7 +5,6 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
-import TopBanner from '@/components/TopBanner';
 import { HEADER_HEIGHT } from '@/constants/token';
 
 import DanceCard from './Card';
@@ -28,8 +27,6 @@ const Dance = (props: DanceProps) => {
   return (
     <div className={classNames(className, styles.container)} style={style}>
       <div className={styles.content}>
-        <TopBanner title={t('findDance')} />
-
         <Flexbox
           justify={'space-between'}
           horizontal

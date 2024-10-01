@@ -12,6 +12,7 @@ export default {
   confirmClearPlayList: '',
   cancelSubscribed: '取消订阅',
   findDance: '找到你最喜欢的舞蹈',
+  createDance: '创建你最爱的舞蹈',
   musicAndDance: '舞蹈市场',
 
   // 创建舞蹈相关
@@ -20,10 +21,6 @@ export default {
     name: {
       title: '舞蹈名称',
       desc: '输入舞蹈的名称',
-    },
-    author: {
-      title: '作者',
-      desc: '输入舞蹈作者的名字',
     },
     audio: {
       title: '音频文件',
