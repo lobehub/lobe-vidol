@@ -5,7 +5,8 @@ import React, { memo, useCallback } from 'react';
 
 import {
   COVER_COMPRESS_SIZE,
-  DANCE_COVER_IMAGE_SIZE,
+  DANCE_COMPRESS_SIZE,
+  DANCE_IMAGE_SIZE,
   DEFAULT_AGENT_AVATAR_URL,
 } from '@/constants/common';
 import { createUploadImageHandler } from '@/utils/common';
@@ -31,13 +32,13 @@ const useStyles = createStyles(
 );
 
 interface CoverImageUploadProps {
-  onChange?: (value: string) => void;
+  onChange?: (values: { cover: string; thumb: string }) => void;
   size?: number;
   value?: string;
 }
 
 const CoverImageUpload = memo<CoverImageUploadProps>(
-  ({ value, onChange, size = DANCE_COVER_IMAGE_SIZE }) => {
+  ({ value, onChange, size = DANCE_IMAGE_SIZE }) => {
     const { styles } = useStyles();
 
     const handleUploadCover = useCallback(
@@ -45,8 +46,10 @@ const CoverImageUpload = memo<CoverImageUploadProps>(
         const img = new Image();
         img.src = avatar;
         img.addEventListener('load', () => {
+          // 统一转成压缩过的 base64 图像文件。
           const cover = imageToBase64({ img, size: COVER_COMPRESS_SIZE });
-          onChange?.(cover);
+          const thumb = imageToBase64({ img, size: DANCE_COMPRESS_SIZE });
+          onChange?.({ thumb, cover });
         });
       }),
       [onChange],
