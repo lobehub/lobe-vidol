@@ -22,8 +22,8 @@ const DANCES_INDEX_GITHUB_ISSUE = 'https://github.com/your-repo/issues/new';
 
 interface FormValues {
   audio: File;
-  cover: { thumb: string; value: string };
   danceId: string;
+  image: { cover: string; thumb: string };
   name: string;
   readme: string;
   src: File;
@@ -43,16 +43,16 @@ const CreateDanceModal = () => {
       try {
         const { coverUrl, audioUrl, danceUrl } = await uploadDanceData(data.danceId, {
           audio: data.audio,
-          cover: data.cover.value,
+          cover: data.image.cover,
           src: data.src,
-          thumb: data.cover.thumb,
+          thumb: data.image.thumb,
         });
 
         const dance: Partial<Dance> = {
           name: data.name,
           danceId: data.danceId,
           cover: coverUrl,
-          thumb: data.cover.thumb,
+          thumb: data.image.thumb,
           audio: audioUrl,
           src: danceUrl,
           readme: data.readme,
@@ -110,10 +110,10 @@ const CreateDanceModal = () => {
       children: <DanceName style={{ width: INPUT_WIDTH_MD }} />,
     },
     {
-      name: 'cover',
-      label: t('create.cover.title'),
-      rules: [{ required: true, message: t('create.cover.required') }],
-      desc: t('create.cover.desc'),
+      name: 'image',
+      label: t('create.image.title'),
+      rules: [{ required: true, message: t('create.image.required') }],
+      desc: t('create.image.desc'),
       children: <CoverImageUpload />,
     },
     {

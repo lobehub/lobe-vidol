@@ -65,6 +65,7 @@ const CoverImageUpload = memo<CoverImageUploadProps>(
         beforeUpload={handleUploadCover}
         itemRender={() => void 0}
         maxCount={1}
+        accept="image/*"
         className={className}
         style={style}
       >
@@ -78,7 +79,7 @@ const CoverImageUpload = memo<CoverImageUploadProps>(
             className={styles}
           />
         ) : (
-          <Button icon={<PlusCircle />}>{t('create.audio.upload')}</Button>
+          <Button icon={<PlusCircle />}>{t('create.image.upload')}</Button>
         )}
       </Upload>
     );

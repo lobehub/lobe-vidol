@@ -35,19 +35,19 @@ export default {
       title: '音频文件',
       desc: '选择舞蹈的音频文件',
       upload: '选择音频文件',
-      required: '请上传音频文件',
+      required: '请选择音频文件',
     },
     dance: {
       title: '舞蹈文件',
       desc: '选择舞蹈文件（当前仅支持 VMD 格式）',
       upload: '选择舞蹈文件',
-      required: '请上传舞蹈文件',
+      required: '请选择舞蹈文件',
     },
-    cover: {
+    image: {
       title: '封面图片',
       desc: '选择舞蹈的封面图片',
-      upload: '选择封面',
-      required: '请上传封面图片',
+      upload: '选择封面图片',
+      required: '请选择封面图片',
     },
     readme: {
       title: '舞蹈说明',
