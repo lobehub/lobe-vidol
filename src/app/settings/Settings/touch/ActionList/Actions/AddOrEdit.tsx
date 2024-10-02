@@ -5,7 +5,7 @@ import { Edit2Icon, Plus } from 'lucide-react';
 import React, { memo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { INPUT_WIDTH_M, INPUT_WIDTH_S } from '@/constants/token';
+import { INPUT_WIDTH_MD, INPUT_WIDTH_SM } from '@/constants/token';
 import { MAX_TOUCH_ACTION_TEXT_LENGTH } from '@/constants/touch';
 import { motionPresetMap } from '@/libs/emoteController/motionPresetMap';
 import { useSettingStore } from '@/store/setting';
@@ -86,7 +86,7 @@ const AddOrEdit = memo<Props>(({ touchArea, index, touchAction, isEdit = true, g
               maxLength={MAX_TOUCH_ACTION_TEXT_LENGTH}
               showCount
               autoSize
-              style={{ width: INPUT_WIDTH_M }}
+              style={{ width: INPUT_WIDTH_MD }}
             />
           </FormItem>
           <FormItem
@@ -135,7 +135,7 @@ const AddOrEdit = memo<Props>(({ touchArea, index, touchAction, isEdit = true, g
                   value: VRMExpressionPresetName.BlinkRight,
                 },
               ]}
-              style={{ width: INPUT_WIDTH_S }}
+              style={{ width: INPUT_WIDTH_SM }}
               defaultActiveFirstOption={true}
             />
           </FormItem>
@@ -151,7 +151,7 @@ const AddOrEdit = memo<Props>(({ touchArea, index, touchAction, isEdit = true, g
                 label: t(`${value.name}`),
                 value: key,
               }))}
-              style={{ width: INPUT_WIDTH_S }}
+              style={{ width: INPUT_WIDTH_SM }}
               defaultActiveFirstOption={true}
             />
           </FormItem>

@@ -32,7 +32,7 @@ const useStyles = createStyles(
 );
 
 interface CoverImageUploadProps {
-  onChange?: (values: { cover: string; thumb: string }) => void;
+  onChange?: (cover: { thumb: string; value: string }) => void;
   size?: number;
   value?: string;
 }
@@ -47,9 +47,9 @@ const CoverImageUpload = memo<CoverImageUploadProps>(
         img.src = avatar;
         img.addEventListener('load', () => {
           // 统一转成压缩过的 base64 图像文件。
-          const cover = imageToBase64({ img, size: COVER_COMPRESS_SIZE });
+          const value = imageToBase64({ img, size: COVER_COMPRESS_SIZE });
           const thumb = imageToBase64({ img, size: DANCE_COMPRESS_SIZE });
-          onChange?.({ thumb, cover });
+          onChange?.({ thumb, value });
         });
       }),
       [onChange],

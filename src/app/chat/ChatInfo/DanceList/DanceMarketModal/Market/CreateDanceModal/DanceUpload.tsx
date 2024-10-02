@@ -18,6 +18,7 @@ export default memo<Props>(({ value, onChange, className, style }) => {
       className={className}
       style={style}
       accept=".vmd"
+      maxCount={1}
       beforeUpload={() => false}
       fileList={value ? [{ uid: '-1', name: value.name, status: 'done' }] : []}
       onChange={(info) => {

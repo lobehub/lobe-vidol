@@ -22,7 +22,7 @@ export const MAX_SYSTEM_ROLE_LENGTH = 9999;
 export const AVATAR_IMAGE_SIZE = 48;
 export const AVATAR_COMPRESS_SIZE = 256;
 
-export const DANCE_IMAGE_SIZE = 108;
+export const DANCE_IMAGE_SIZE = 48;
 export const DANCE_COMPRESS_SIZE = 256;
 
 export const COVER_IMAGE_SIZE = 320;

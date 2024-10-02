@@ -19,6 +19,7 @@ export default memo<Props>(({ value, onChange, className, style }) => {
       style={style}
       accept=".mp3,.wav"
       beforeUpload={() => false}
+      maxCount={1}
       fileList={value ? [{ uid: '-1', name: value.name, status: 'done' }] : []}
       onChange={(info) => {
         if (info.fileList.length > 0) {

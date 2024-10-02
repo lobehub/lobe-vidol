@@ -25,7 +25,8 @@ export const LIST_GRID_WIDTH = 108;
 export const LIST_GRID_GAP = 4;
 export const LIST_GRID_HEIGHT = 108;
 
-export const INPUT_WIDTH_S = 240;
-export const INPUT_WIDTH_M = 320;
-export const INPUT_WIDTH_L = 480;
-export const INPUT_WIDTH_XL = 640;
+export const INPUT_WIDTH_XS = 104;
+export const INPUT_WIDTH_SM = 216;
+export const INPUT_WIDTH_MD = 328;
+export const INPUT_WIDTH_LG = 440;
+export const INPUT_WIDTH_XL = 552;

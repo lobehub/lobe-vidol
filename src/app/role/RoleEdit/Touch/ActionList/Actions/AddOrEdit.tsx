@@ -5,7 +5,7 @@ import { Edit2Icon, Plus } from 'lucide-react';
 import React, { memo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { INPUT_WIDTH_M, INPUT_WIDTH_S } from '@/constants/token';
+import { INPUT_WIDTH_MD, INPUT_WIDTH_SM } from '@/constants/token';
 import { MAX_TOUCH_ACTION_TEXT_LENGTH } from '@/constants/touch';
 import { MotionPresetName, motionPresetMap } from '@/libs/emoteController/motionPresetMap';
 import { useAgentStore } from '@/store/agent';
@@ -90,7 +90,7 @@ export default memo((props: Props) => {
               maxLength={MAX_TOUCH_ACTION_TEXT_LENGTH}
               showCount
               autoSize
-              style={{ width: INPUT_WIDTH_M }}
+              style={{ width: INPUT_WIDTH_MD }}
             />
           </FormItem>
           <FormItem
@@ -139,7 +139,7 @@ export default memo((props: Props) => {
                   value: VRMExpressionPresetName.BlinkRight,
                 },
               ]}
-              style={{ width: INPUT_WIDTH_S }}
+              style={{ width: INPUT_WIDTH_SM }}
               defaultActiveFirstOption={true}
             />
           </FormItem>
@@ -155,7 +155,7 @@ export default memo((props: Props) => {
                 label: t(`${value.name}`),
                 value: key,
               }))}
-              style={{ width: INPUT_WIDTH_S }}
+              style={{ width: INPUT_WIDTH_SM }}
               defaultActiveFirstOption={true}
             />
           </FormItem>

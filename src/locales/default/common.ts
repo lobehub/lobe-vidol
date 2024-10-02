@@ -13,6 +13,7 @@ export default {
   },
   close: '关闭',
   support: '社区支持',
+  random: '随机',
   delete: '删除',
   submit: '提交',
   confirmDel: '确定删除吗？',

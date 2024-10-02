@@ -6,19 +6,21 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import TopBanner from '@/components/TopBanner';
-import { INPUT_WIDTH_M } from '@/constants/token';
+import { INPUT_WIDTH_LG, INPUT_WIDTH_MD } from '@/constants/token';
 import { Dance } from '@/types/dance';
 
 import AudioUpload from './AudioUpload';
 import CoverImageUpload from './CoverImageUpload';
+import DanceIdInput from './DanceIdInput';
 import DanceName from './DanceName';
 import DanceUpload from './DanceUpload';
+import ReadMe from './ReadMe';
 
 const DANCES_INDEX_GITHUB_ISSUE = 'https://github.com/your-repo/issues/new';
 
 interface FormValues {
   audio: string;
-  cover: string;
+  cover: { thumb: string; value: string };
   name: string;
   src: string;
 }
@@ -28,15 +30,16 @@ const CreateDanceModal = () => {
   const { t } = useTranslation('dance');
   const [form] = Form.useForm<FormValues>();
 
-  const handleSubmit = async (values: FormValues) => {
+  const handleSubmit = async (data: FormValues) => {
     try {
       const danceId = `dance-${Date.now()}`;
       const dance: Partial<Dance> = {
-        name: values.name,
+        name: data.name,
         danceId: danceId,
-        audio: values.audio,
-        cover: values.cover,
-        src: values.src,
+        audio: data.audio,
+        cover: data.cover.value,
+        thumb: data.cover.thumb,
+        src: data.src,
       };
 
       const body = [
@@ -70,11 +73,25 @@ const CreateDanceModal = () => {
 
   const basic = [
     {
+      name: 'danceId',
+      label: t('create.danceId.title'),
+      required: true,
+      desc: t('create.danceId.desc'),
+      children: <DanceIdInput style={{ width: INPUT_WIDTH_MD }} />,
+    },
+    {
       name: 'name',
       label: t('create.name.title'),
       required: true,
       desc: t('create.name.desc'),
-      children: <DanceName style={{ width: INPUT_WIDTH_M }} />,
+      children: <DanceName style={{ width: INPUT_WIDTH_MD }} />,
+    },
+    {
+      name: 'cover',
+      label: t('create.cover.title'),
+      required: true,
+      desc: t('create.cover.desc'),
+      children: <CoverImageUpload />,
     },
     {
       name: 'audio',
@@ -91,21 +108,19 @@ const CreateDanceModal = () => {
       children: <DanceUpload />,
     },
     {
-      name: 'cover',
-      label: t('create.cover.title'),
-      required: true,
-      desc: t('create.cover.desc'),
-      children: <CoverImageUpload />,
+      name: 'readme',
+      label: t('create.readme.title'),
+      required: false,
+      desc: t('create.readme.desc'),
+      children: <ReadMe style={{ width: INPUT_WIDTH_LG }} />,
     },
+
     {
       name: 'actions',
       children: (
-        <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '8px' }}>
-          <Button onClick={() => setOpen(false)}>{t('cancel', { ns: 'common' })}</Button>
-          <Button type="primary" htmlType="submit">
-            {t('submit', { ns: 'common' })}
-          </Button>
-        </div>
+        <Button type="primary" htmlType="submit" block>
+          {t('create.submit')}
+        </Button>
       ),
     },
   ];
@@ -115,7 +130,13 @@ const CreateDanceModal = () => {
       <Button icon={<PlusCircle />} onClick={() => setOpen(true)}>
         {t('create.title')}
       </Button>
-      <Modal open={open} title={t('create.title')} onCancel={() => setOpen(false)} footer={null}>
+      <Modal
+        open={open}
+        title={t('create.title')}
+        onCancel={() => setOpen(false)}
+        footer={null}
+        width={800}
+      >
         <TopBanner title={t('createDance')} />
         <Form form={form} onFinish={handleSubmit} variant="pure" items={basic} itemsType="flat" />
       </Modal>
