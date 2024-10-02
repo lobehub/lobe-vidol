@@ -24,25 +24,30 @@ export default {
       desc: '输入舞蹈的唯一标识符',
       placeholder: '请输入舞蹈的标识符，需要是唯一的，比如 vidol-dance-gokuraku',
       random: '随机生成ID',
+      required: '请输入舞蹈ID',
     },
     name: {
       title: '舞蹈名称',
       desc: '输入舞蹈的名称',
+      required: '请输入舞蹈名称',
     },
     audio: {
       title: '音频文件',
       desc: '选择舞蹈的音频文件',
       upload: '选择音频文件',
+      required: '请上传音频文件',
     },
     dance: {
       title: '舞蹈文件',
       desc: '选择舞蹈文件（当前仅支持 VMD 格式）',
       upload: '选择舞蹈文件',
+      required: '请上传舞蹈文件',
     },
     cover: {
       title: '封面图片',
       desc: '选择舞蹈的封面图片',
       upload: '选择封面',
+      required: '请上传封面图片',
     },
     readme: {
       title: '舞蹈说明',
