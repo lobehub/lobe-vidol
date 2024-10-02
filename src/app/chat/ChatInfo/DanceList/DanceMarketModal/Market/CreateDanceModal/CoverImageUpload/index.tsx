@@ -1,14 +1,11 @@
-import { Upload } from 'antd';
+import { Button, Upload } from 'antd';
 import { createStyles } from 'antd-style';
+import { PlusCircle } from 'lucide-react';
 import NextImage from 'next/image';
-import React, { memo, useCallback } from 'react';
+import React, { CSSProperties, memo, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
 
-import {
-  COVER_COMPRESS_SIZE,
-  DANCE_COMPRESS_SIZE,
-  DANCE_IMAGE_SIZE,
-  DEFAULT_AGENT_AVATAR_URL,
-} from '@/constants/common';
+import { COVER_COMPRESS_SIZE, DANCE_COMPRESS_SIZE, DANCE_IMAGE_SIZE } from '@/constants/common';
 import { createUploadImageHandler } from '@/utils/common';
 import { imageToBase64 } from '@/utils/imageToBase64';
 
@@ -31,14 +28,22 @@ const useStyles = createStyles(
   `,
 );
 
+interface CoverValue {
+  cover: string;
+  thumb: string;
+}
+
 interface CoverImageUploadProps {
-  onChange?: (cover: { thumb: string; value: string }) => void;
+  className?: string;
+  onChange?: (value: CoverValue) => void;
   size?: number;
-  value?: string;
+  style?: CSSProperties;
+  value?: CoverValue;
 }
 
 const CoverImageUpload = memo<CoverImageUploadProps>(
-  ({ value, onChange, size = DANCE_IMAGE_SIZE }) => {
+  ({ value, onChange, size = DANCE_IMAGE_SIZE, className, style }) => {
+    const { t } = useTranslation('dance');
     const { styles } = useStyles();
 
     const handleUploadCover = useCallback(
@@ -47,26 +52,35 @@ const CoverImageUpload = memo<CoverImageUploadProps>(
         img.src = avatar;
         img.addEventListener('load', () => {
           // 统一转成压缩过的 base64 图像文件。
-          const value = imageToBase64({ img, size: COVER_COMPRESS_SIZE });
+          const cover = imageToBase64({ img, size: COVER_COMPRESS_SIZE });
           const thumb = imageToBase64({ img, size: DANCE_COMPRESS_SIZE });
-          onChange?.({ thumb, value });
+          onChange?.({ thumb, cover });
         });
       }),
       [onChange],
     );
 
     return (
-      <div className={styles} style={{ width: size, height: size }}>
-        <Upload beforeUpload={handleUploadCover} itemRender={() => void 0} maxCount={1}>
+      <Upload
+        beforeUpload={handleUploadCover}
+        itemRender={() => void 0}
+        maxCount={1}
+        className={className}
+        style={style}
+      >
+        {value?.cover ? (
           <NextImage
             alt="Cover Image"
             height={size}
-            src={value || DEFAULT_AGENT_AVATAR_URL}
+            src={value.cover}
             unoptimized
             width={size}
+            className={styles}
           />
-        </Upload>
-      </div>
+        ) : (
+          <Button icon={<PlusCircle />}>{t('create.audio.upload')}</Button>
+        )}
+      </Upload>
     );
   },
 );
