@@ -40,18 +40,18 @@ export const useUploadDance = () => {
       }
     });
     const thumbPromise = new Promise<string | undefined>((resolve, reject) => {
-      const coverUrl = meta.thumb;
+      const thumbUrl = meta.thumb;
       if (meta.thumb.includes('base64')) {
         const file = base64ToFile(meta.thumb, `${danceId}-thumb`);
         upload(file, {
           onProgress: (progress: number) => {
-            setCoverProgress(progress);
+            setThumbProgress(progress);
           },
         })
           .then((url) => resolve(url))
           .catch(() => reject(new Error('Upload failed')));
       } else {
-        resolve(coverUrl);
+        resolve(thumbUrl);
       }
     });
 
@@ -93,7 +93,7 @@ export const useUploadDance = () => {
       return { coverUrl, thumbUrl, audioUrl, srcUrl };
     } catch (e) {
       console.error(e);
-      return { coverUrl: '', thumbUrl: '', audioUrl: '', danceUrl: '' };
+      return { coverUrl: '', thumbUrl: '', audioUrl: '', srcUrl: '' };
     } finally {
       setUploading(false);
     }

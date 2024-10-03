@@ -8,6 +8,7 @@ import { Flexbox } from 'react-layout-kit';
 
 import TopBanner from '@/components/TopBanner';
 import { INPUT_WIDTH_LG, INPUT_WIDTH_MD } from '@/constants/token';
+import { AGENTS_INDEX_GITHUB_ISSUE } from '@/constants/url';
 import { useUploadDance } from '@/hooks/useUploadDance';
 import { Dance } from '@/types/dance';
 
@@ -17,8 +18,6 @@ import DanceIdInput from './DanceIdInput';
 import DanceName from './DanceName';
 import DanceUpload from './DanceUpload';
 import ReadMe from './ReadMe';
-
-const DANCES_INDEX_GITHUB_ISSUE = 'https://github.com/your-repo/issues/new';
 
 interface FormValues {
   audio: File;
@@ -41,20 +40,25 @@ const CreateDanceModal = () => {
       const data = await form.validateFields();
 
       try {
-        const { coverUrl, audioUrl, danceUrl } = await uploadDanceData(data.danceId, {
+        const { coverUrl, thumbUrl, audioUrl, srcUrl } = await uploadDanceData(data.danceId, {
           audio: data.audio,
           cover: data.image.cover,
           src: data.src,
           thumb: data.image.thumb,
         });
 
+        if (!thumbUrl || !coverUrl || !audioUrl || !srcUrl) {
+          message.error(t('fileUploadError', { ns: 'error' }));
+          return;
+        }
+
         const dance: Partial<Dance> = {
           name: data.name,
           danceId: data.danceId,
           cover: coverUrl,
-          thumb: data.image.thumb,
+          thumb: thumbUrl,
           audio: audioUrl,
-          src: danceUrl,
+          src: srcUrl,
           readme: data.readme,
         };
 
@@ -77,14 +81,12 @@ const CreateDanceModal = () => {
 
         const url = qs.stringifyUrl({
           query: { body, labels: '💃 Dance PR', title: `[Dance] ${dance.name}` },
-          url: DANCES_INDEX_GITHUB_ISSUE,
+          url: AGENTS_INDEX_GITHUB_ISSUE,
         });
 
         window.open(url, '_blank');
 
         message.success(t('create.messages.uploadSuccess'));
-        setOpen(false);
-        form.resetFields();
       } catch (error) {
         console.error('Upload failed:', error);
         message.error(t('create.messages.uploadFailed'));
@@ -148,6 +150,7 @@ const CreateDanceModal = () => {
         open={open}
         title={t('create.title')}
         onCancel={() => setOpen(false)}
+        destroyOnClose
         footer={
           <Popover
             open={uploading}
