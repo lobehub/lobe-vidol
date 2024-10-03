@@ -59,6 +59,7 @@ export default {
       leg: '腿部',
       chest: '胸部',
       belly: '腹部',
+      buttocks: '臀部',
     },
     expression: {
       natural: '自然',
