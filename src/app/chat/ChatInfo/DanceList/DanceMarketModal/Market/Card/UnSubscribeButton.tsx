@@ -18,7 +18,7 @@ const UnSubscribe = memo((props: UnSubscribeButtonProps) => {
   return (
     <Popconfirm
       cancelText={t('cancel', { ns: 'common' })}
-      description={t('cancelAddPlay', { musicName: dance?.name, ns: 'role' })}
+      description={t('cancelAddPlay', { musicName: dance?.name, ns: 'dance' })}
       key="delete"
       okText={t('confirm', { ns: 'common' })}
       okButtonProps={{ loading: loading, danger: true }}

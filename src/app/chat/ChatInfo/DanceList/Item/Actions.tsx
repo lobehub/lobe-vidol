@@ -22,7 +22,7 @@ export default (props: ActionsProps) => {
       danger: true,
       icon: <Trash2 />,
       key: 'delete',
-      label: t('actions.unsubscribe', { ns: 'common' }),
+      label: t('cancelSubscribed'),
       onClick: ({ domEvent }) => {
         domEvent.stopPropagation();
         modal.confirm({
@@ -31,8 +31,8 @@ export default (props: ActionsProps) => {
           async onOk() {
             removeDanceItem(danceItem.danceId);
           },
-          okText: t('actions.unsubscribe', { ns: 'common' }),
-          cancelText: t('cancel'),
+          okText: t('cancelSubscribed'),
+          cancelText: t('cancel', { ns: 'common' }),
           title: t('cancelAddPlay', { musicName: danceItem?.name }),
         });
       },
