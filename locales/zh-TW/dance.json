@@ -8,6 +8,56 @@
   "cancelAddPlay": "確定取消訂閱音樂{{musicName}}嗎？",
   "cancelSubscribed": "取消訂閱",
   "confirmClearPlayList": "您確定要清空播放列表嗎？",
+  "create": {
+    "audio": {
+      "desc": "舞蹈的音頻文件",
+      "required": "請上傳音頻文件",
+      "title": "音頻文件",
+      "upload": "選擇音頻文件"
+    },
+    "dance": {
+      "desc": "舞蹈的動作文件",
+      "required": "請上傳舞蹈文件",
+      "title": "舞蹈文件",
+      "upload": "選擇舞蹈文件"
+    },
+    "danceId": {
+      "desc": "舞蹈的唯一標識符",
+      "placeholder": "請輸入舞蹈的標識符，需要是唯一的，比如 vidol-dance-gokuraku",
+      "random": "隨機生成ID",
+      "required": "請輸入舞蹈ID",
+      "title": "舞蹈ID"
+    },
+    "image": {
+      "desc": "舞蹈的封面圖片",
+      "required": "請上傳封面圖片",
+      "title": "封面圖片",
+      "upload": "選擇封面圖片"
+    },
+    "messages": {
+      "fileUploadError": "文件上傳錯誤",
+      "uploadFailed": "上傳失敗",
+      "uploadSuccess": "上傳成功"
+    },
+    "name": {
+      "desc": "舞蹈的顯示名稱",
+      "required": "請輸入舞蹈名稱",
+      "title": "舞蹈名稱"
+    },
+    "readme": {
+      "desc": "舞蹈的說明文檔（可選）",
+      "placeholder": "請輸入舞蹈的詳細說明",
+      "title": "說明文檔"
+    },
+    "submit": "提交",
+    "title": "創建舞蹈",
+    "uploading": "上傳處理中，請勿關閉頁面...",
+    "uploadingAudio": "上傳音樂文件",
+    "uploadingCover": "上傳封面",
+    "uploadingDance": "上傳舞蹈文件",
+    "uploadingThumb": "上傳縮略圖"
+  },
+  "createDance": "創建你最愛的舞蹈",
   "dance": "跳舞",
   "danceList": "舞蹈清單",
   "findDance": "找到你最喜愛的舞蹈",

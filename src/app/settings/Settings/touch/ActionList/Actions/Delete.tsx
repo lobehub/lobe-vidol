@@ -27,7 +27,7 @@ const DeleteButton = memo<Props>(({ touchArea, index, gender }) => {
         removeTouchAction(gender, touchArea, index);
       }}
     >
-      <ActionIcon icon={XIcon} title={t('actions.del')} />
+      <ActionIcon icon={XIcon} title={t('actions.del', { ns: 'chat' })} />
     </Popconfirm>
   );
 });

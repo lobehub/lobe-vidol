@@ -23,8 +23,10 @@
   "loading": "Đang tải...",
   "noData": "Chưa có dữ liệu",
   "play": "Phát",
+  "random": "Ngẫu nhiên",
   "search": "Tìm kiếm",
   "sideBar": "Thanh bên",
+  "submit": "Gửi",
   "subscribe": {
     "success": "Đã hủy đăng ký",
     "undo": "Hủy đăng ký"

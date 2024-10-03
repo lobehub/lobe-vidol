@@ -52,19 +52,35 @@ const Header = (props: Props) => {
           items={[
             {
               key: HeaderNavKey.Chat,
-              label: t('header.chat'),
+              label: (
+                <Link href={`/chat`} style={{ color: 'initial' }}>
+                  {t('header.chat')}
+                </Link>
+              ),
             },
             {
               key: HeaderNavKey.Role,
-              label: t('header.role'),
+              label: (
+                <Link href={`/role`} style={{ color: 'initial' }}>
+                  {t('header.role')}
+                </Link>
+              ),
             },
             {
               key: HeaderNavKey.Market,
-              label: t('header.market'),
+              label: (
+                <Link href={`/market`} style={{ color: 'initial' }}>
+                  {t('header.market')}
+                </Link>
+              ),
             },
             {
               key: HeaderNavKey.Settings,
-              label: t('header.settings'),
+              label: (
+                <Link href={`/settings`} style={{ color: 'initial' }}>
+                  {t('header.settings')}
+                </Link>
+              ),
             },
           ]}
           onChange={(key) => {

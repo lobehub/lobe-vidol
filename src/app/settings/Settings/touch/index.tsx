@@ -56,6 +56,10 @@ const Touch = (props: TouchProps) => {
       label: t('touch.area.belly', { ns: 'role' }),
       value: TouchAreaEnum.Belly,
     },
+    {
+      label: t('touch.area.buttocks', { ns: 'role' }),
+      value: TouchAreaEnum.Buttocks,
+    },
   ];
 
   return (

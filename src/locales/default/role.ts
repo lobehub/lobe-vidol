@@ -14,6 +14,10 @@ export default {
     submitWarning: '请补全助手信息后提交，需要包含名称、描述、头像、模型，角色设定和招呼',
     assistantId: '助手标识符',
     assistantIdTip: '请输入助手的标识符，需要是唯一的，比如 vidol-agent-klee',
+    uploadingTip: '上传处理中，请勿关闭页面...',
+    uploadingCover: '上传封面',
+    uploadingAvatar: '上传头像',
+    uploadingModel: '上传模型',
   },
   gender: {
     male: '男性',

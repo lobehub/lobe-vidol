@@ -24,6 +24,10 @@
     "startDesc": "あなたの OpenAI API キーを入力して会話を開始してください。アプリはあなたの API キーを記録しません。",
     "startTitle": "カスタム API キー"
   },
+  "background": {
+    "backgroundList": "背景リスト",
+    "totalCount": "合計 {{total}} 件"
+  },
   "chat": "チャット",
   "danceList": "ダンスリスト",
   "danceMarket": "ダンスマーケット",
@@ -36,6 +40,7 @@
     "title": "チャット履歴"
   },
   "info": {
+    "background": "背景",
     "chat": "チャット",
     "dance": "ダンス",
     "motions": "動作",

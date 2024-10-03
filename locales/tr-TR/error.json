@@ -10,6 +10,7 @@
     "resetSystem": "Sistem ayarlarını sıfırla"
   },
   "fileUploadError": "Dosya yükleme hatası, lütfen daha sonra tekrar deneyin.",
+  "formValidationFailed": "Form doğrulaması başarısız oldu:",
   "goBack": "Ana sayfaya dön",
   "openaiError": "OpenAI API hatası, lütfen OpenAI API Anahtarını ve Uç Noktayı kontrol edin.",
   "reload": "Yeniden Yükle",

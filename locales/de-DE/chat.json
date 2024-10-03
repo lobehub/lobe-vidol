@@ -24,6 +24,10 @@
     "startDesc": "Geben Sie Ihren OpenAI API-Schlüssel ein, um das Gespräch zu beginnen. Die Anwendung wird Ihren API-Schlüssel nicht speichern.",
     "startTitle": "Benutzerdefinierter API-Schlüssel"
   },
+  "background": {
+    "backgroundList": "Hintergrundliste",
+    "totalCount": "Insgesamt {{total}} Elemente"
+  },
   "chat": "Chat",
   "danceList": "Tanzliste",
   "danceMarket": "Tanzmarkt",
@@ -36,6 +40,7 @@
     "title": "Chatverlauf"
   },
   "info": {
+    "background": "Hintergrund",
     "chat": "Chat",
     "dance": "Tanz",
     "motions": "Bewegungen",

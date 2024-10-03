@@ -23,8 +23,10 @@
   "loading": "Laden...",
   "noData": "Geen gegevens beschikbaar",
   "play": "Afspelen",
+  "random": "Willekeurig",
   "search": "Zoeken",
   "sideBar": "Zijbalk",
+  "submit": "Indienen",
   "subscribe": {
     "success": "Afmelden is gelukt",
     "undo": "Afmelden"

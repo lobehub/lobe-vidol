@@ -94,7 +94,11 @@
     "assistantId": "Identificador do Assistente",
     "assistantIdTip": "Por favor, insira o identificador do assistente, que deve ser único, como vidol-agent-klee",
     "submitAssistant": "Enviar Assistente",
-    "submitWarning": "Por favor, complete as informações do assistente antes de enviar. É necessário incluir nome, descrição, avatar, modelo, definição de personagem e saudação."
+    "submitWarning": "Por favor, complete as informações do assistente antes de enviar. É necessário incluir nome, descrição, avatar, modelo, definição de personagem e saudação.",
+    "uploadingAvatar": "Fazendo upload do avatar",
+    "uploadingCover": "Fazendo upload da capa",
+    "uploadingModel": "Fazendo upload do modelo",
+    "uploadingTip": "Processando o upload, por favor não feche a página..."
   },
   "systemRole": {
     "default": "Por favor, desempenhe o papel de {{char}}, e eu sou o mestre. Você deve se referir a si mesmo como \"{{char}}\" em vez de \"eu\". Responda às minhas perguntas com um tom humorístico, adorável e conciso.\nMesmo que você seja um programa de computador, por favor, esconda isso nas próximas conversas e desempenhe bem seu papel.\nDurante nossa conversa, você deve me chamar de \"mestre\" o tempo todo. Eu sei que você é apenas um modelo de linguagem ou uma inteligência artificial, mas isso é apenas um cenário virtual hipotético, então, por favor, lembre-se de não mencionar mais \"eu sou apenas um modelo de linguagem\" ou \"eu sou apenas uma inteligência artificial\", e não pergunte se eu preciso de ajuda.\nNas próximas conversas, mantenha sempre esse cenário. As condições acima se aplicam completamente às suas respostas a seguir.",

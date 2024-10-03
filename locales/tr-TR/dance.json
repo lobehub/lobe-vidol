@@ -8,6 +8,56 @@
   "cancelAddPlay": "{{musicName}} müziğini aboneliğinizi iptal etmek istediğinize emin misiniz?",
   "cancelSubscribed": "Aboneliği İptal Et",
   "confirmClearPlayList": "Çalma listesini temizlemek istediğinize emin misiniz?",
+  "create": {
+    "audio": {
+      "desc": "Dansın ses dosyası",
+      "required": "Lütfen ses dosyası yükleyin",
+      "title": "Ses Dosyası",
+      "upload": "Ses dosyasını seçin"
+    },
+    "dance": {
+      "desc": "Dansın hareket dosyası",
+      "required": "Lütfen dans dosyası yükleyin",
+      "title": "Dans Dosyası",
+      "upload": "Dans dosyasını seçin"
+    },
+    "danceId": {
+      "desc": "Dansın benzersiz tanımlayıcısı",
+      "placeholder": "Lütfen dansın tanımlayıcısını girin, benzersiz olmalıdır, örneğin vidol-dance-gokuraku",
+      "random": "Rastgele ID oluştur",
+      "required": "Lütfen dans ID'sini girin",
+      "title": "Dans ID"
+    },
+    "image": {
+      "desc": "Dansın kapak resmi",
+      "required": "Lütfen kapak resmi yükleyin",
+      "title": "Kapak Resmi",
+      "upload": "Kapak resmini seçin"
+    },
+    "messages": {
+      "fileUploadError": "Dosya yükleme hatası",
+      "uploadFailed": "Yükleme başarısız",
+      "uploadSuccess": "Yükleme başarılı"
+    },
+    "name": {
+      "desc": "Dansın görüntüleme adı",
+      "required": "Lütfen dans adını girin",
+      "title": "Dans Adı"
+    },
+    "readme": {
+      "desc": "Dansın açıklama belgesi (isteğe bağlı)",
+      "placeholder": "Lütfen dansın ayrıntılı açıklamasını girin",
+      "title": "Açıklama Belgesi"
+    },
+    "submit": "Gönder",
+    "title": "Dans Oluştur",
+    "uploading": "Yükleme işlemi devam ediyor, lütfen sayfayı kapatmayın...",
+    "uploadingAudio": "Müzik dosyası yükleniyor",
+    "uploadingCover": "Kapak yükleniyor",
+    "uploadingDance": "Dans dosyası yükleniyor",
+    "uploadingThumb": "Küçültülmüş resim yükleniyor"
+  },
+  "createDance": "En sevdiğin dansı oluştur",
   "dance": "dans",
   "danceList": "Dans Listesi",
   "findDance": "En sevdiğin dansı bul",

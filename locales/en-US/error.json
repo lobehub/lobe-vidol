@@ -10,6 +10,7 @@
     "resetSystem": "Reset system settings"
   },
   "fileUploadError": "File upload failed, please try again later.",
+  "formValidationFailed": "Form validation failed:",
   "goBack": "Return to Homepage",
   "openaiError": "OpenAI API error, please check if the OpenAI API Key and Endpoint are correct.",
   "reload": "Reload",

@@ -5,7 +5,7 @@ import { Edit2Icon, Plus } from 'lucide-react';
 import React, { memo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { INPUT_WIDTH_M, INPUT_WIDTH_S } from '@/constants/token';
+import { INPUT_WIDTH_MD, INPUT_WIDTH_SM } from '@/constants/token';
 import { MAX_TOUCH_ACTION_TEXT_LENGTH } from '@/constants/touch';
 import { motionPresetMap } from '@/libs/emoteController/motionPresetMap';
 import { useSettingStore } from '@/store/setting';
@@ -23,7 +23,7 @@ export interface Props {
 const AddOrEdit = memo<Props>(({ touchArea, index, touchAction, isEdit = true, gender }) => {
   const [open, setOpen] = useState(false);
   const [form] = Form.useForm();
-  const { t } = useTranslation(['common', 'role']);
+  const { t } = useTranslation('role');
 
   const [updateTouchAction, createTouchAction] = useSettingStore((s) => [
     s.updateTouchAction,
@@ -53,7 +53,7 @@ const AddOrEdit = memo<Props>(({ touchArea, index, touchAction, isEdit = true, g
     <>
       <ActionIcon
         icon={isEdit ? Edit2Icon : Plus}
-        title={isEdit ? t('actions.edit') : t('actions.add')}
+        title={isEdit ? t('actions.edit', { ns: 'chat' }) : t('actions.add', { ns: 'chat' })}
         onClick={showModal}
       />
       <Modal
@@ -65,8 +65,8 @@ const AddOrEdit = memo<Props>(({ touchArea, index, touchAction, isEdit = true, g
         title={
           isEdit ? t('touch.editAction', { ns: 'role' }) : t('touch.addAction', { ns: 'role' })
         }
-        okText={t('confirm')}
-        cancelText={t('cancel')}
+        okText={t('confirm', { ns: 'common' })}
+        cancelText={t('cancel', { ns: 'common' })}
       >
         <Form
           layout="horizontal"
@@ -86,7 +86,7 @@ const AddOrEdit = memo<Props>(({ touchArea, index, touchAction, isEdit = true, g
               maxLength={MAX_TOUCH_ACTION_TEXT_LENGTH}
               showCount
               autoSize
-              style={{ width: INPUT_WIDTH_M }}
+              style={{ width: INPUT_WIDTH_MD }}
             />
           </FormItem>
           <FormItem
@@ -135,7 +135,7 @@ const AddOrEdit = memo<Props>(({ touchArea, index, touchAction, isEdit = true, g
                   value: VRMExpressionPresetName.BlinkRight,
                 },
               ]}
-              style={{ width: INPUT_WIDTH_S }}
+              style={{ width: INPUT_WIDTH_SM }}
               defaultActiveFirstOption={true}
             />
           </FormItem>
@@ -151,7 +151,7 @@ const AddOrEdit = memo<Props>(({ touchArea, index, touchAction, isEdit = true, g
                 label: t(`${value.name}`),
                 value: key,
               }))}
-              style={{ width: INPUT_WIDTH_S }}
+              style={{ width: INPUT_WIDTH_SM }}
               defaultActiveFirstOption={true}
             />
           </FormItem>

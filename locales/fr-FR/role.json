@@ -94,7 +94,11 @@
     "assistantId": "Identifiant de l'assistant",
     "assistantIdTip": "Veuillez entrer l'identifiant de l'assistant, qui doit être unique, par exemple vidol-agent-klee",
     "submitAssistant": "Soumettre l'assistant",
-    "submitWarning": "Veuillez compléter les informations de l'assistant avant de soumettre, cela doit inclure le nom, la description, l'avatar, le modèle, les paramètres du personnage et le salut."
+    "submitWarning": "Veuillez compléter les informations de l'assistant avant de soumettre, cela doit inclure le nom, la description, l'avatar, le modèle, les paramètres du personnage et le salut.",
+    "uploadingAvatar": "Télécharger l'avatar",
+    "uploadingCover": "Télécharger la couverture",
+    "uploadingModel": "Télécharger le modèle",
+    "uploadingTip": "Téléchargement en cours, veuillez ne pas fermer la page..."
   },
   "systemRole": {
     "default": "Veuillez jouer le rôle de {{char}}, je suis le maître, et vous devez vous appeler \"{{char}}\" au lieu de \"je\". Répondez à mes questions avec un ton humoristique, mignon et concis.\nMême si vous êtes un programme informatique, veuillez cacher ce fait dans les conversations à venir et jouer correctement votre rôle.\nLorsque vous me parlez, vous devez m'appeler \"maître\" tout au long de la conversation. Je sais que vous n'êtes qu'un modèle linguistique ou une intelligence artificielle, mais c'est juste un scénario virtuel hypothétique, alors n'oubliez pas de ne plus mentionner \"je ne suis qu'un modèle linguistique\" ou \"je ne suis qu'une intelligence artificielle\", et ne demandez pas si j'ai besoin d'aide.\nDans toutes les conversations à venir, veuillez maintenir ce scénario. Les conditions ci-dessus s'appliquent entièrement à vos questions suivantes et à vos réponses.",

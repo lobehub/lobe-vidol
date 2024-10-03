@@ -10,6 +10,7 @@
     "resetSystem": "Zresetuj ustawienia systemowe"
   },
   "fileUploadError": "Wystąpił błąd podczas przesyłania pliku, spróbuj ponownie później",
+  "formValidationFailed": "Walidacja formularza nie powiodła się:",
   "goBack": "Wróć do strony głównej",
   "openaiError": "Błąd API OpenAI, proszę sprawdzić, czy klucz API OpenAI i punkt końcowy są poprawne",
   "reload": "Przeładuj",

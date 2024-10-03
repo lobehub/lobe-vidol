@@ -24,6 +24,10 @@
     "startDesc": "Введите ваш OpenAI API Key, чтобы начать разговор. Приложение не будет записывать ваш API Key.",
     "startTitle": "Настроить API Key"
   },
+  "background": {
+    "backgroundList": "Список фонов",
+    "totalCount": "Всего {{total}} элементов"
+  },
   "chat": "Чат",
   "danceList": "Список танцев",
   "danceMarket": "Рынок танцев",
@@ -36,6 +40,7 @@
     "title": "История чата"
   },
   "info": {
+    "background": "Фон",
     "chat": "Чат",
     "dance": "Танец",
     "motions": "Движения",

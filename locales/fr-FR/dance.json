@@ -8,6 +8,56 @@
   "cancelAddPlay": "Êtes-vous sûr de vouloir annuler l'abonnement à la musique {{musicName}} ?",
   "cancelSubscribed": "Annuler l'abonnement",
   "confirmClearPlayList": "Êtes-vous sûr de vouloir vider la liste de lecture ?",
+  "create": {
+    "audio": {
+      "desc": "Fichier audio de la danse",
+      "required": "Veuillez télécharger un fichier audio",
+      "title": "Fichier audio",
+      "upload": "Choisir un fichier audio"
+    },
+    "dance": {
+      "desc": "Fichier des mouvements de danse",
+      "required": "Veuillez télécharger un fichier de danse",
+      "title": "Fichier de danse",
+      "upload": "Choisir un fichier de danse"
+    },
+    "danceId": {
+      "desc": "Identifiant unique de la danse",
+      "placeholder": "Veuillez entrer l'identifiant de la danse, qui doit être unique, par exemple vidol-dance-gokuraku",
+      "random": "Générer un ID aléatoire",
+      "required": "Veuillez entrer l'ID de la danse",
+      "title": "ID de la danse"
+    },
+    "image": {
+      "desc": "Image de couverture de la danse",
+      "required": "Veuillez télécharger une image de couverture",
+      "title": "Image de couverture",
+      "upload": "Choisir une image de couverture"
+    },
+    "messages": {
+      "fileUploadError": "Erreur de téléchargement de fichier",
+      "uploadFailed": "Échec du téléchargement",
+      "uploadSuccess": "Téléchargement réussi"
+    },
+    "name": {
+      "desc": "Nom affiché de la danse",
+      "required": "Veuillez entrer le nom de la danse",
+      "title": "Nom de la danse"
+    },
+    "readme": {
+      "desc": "Document d'instructions pour la danse (optionnel)",
+      "placeholder": "Veuillez entrer une description détaillée de la danse",
+      "title": "Document d'instructions"
+    },
+    "submit": "Soumettre",
+    "title": "Créer une danse",
+    "uploading": "Téléchargement en cours, veuillez ne pas fermer la page...",
+    "uploadingAudio": "Téléchargement du fichier audio",
+    "uploadingCover": "Téléchargement de la couverture",
+    "uploadingDance": "Téléchargement du fichier de danse",
+    "uploadingThumb": "Téléchargement de la miniature"
+  },
+  "createDance": "Créez votre danse préférée",
   "dance": "danser",
   "danceList": "Liste de danses",
   "findDance": "Trouvez votre danse préférée",

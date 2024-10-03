@@ -24,6 +24,10 @@
     "startDesc": "Entrez votre clé API OpenAI pour commencer la conversation. L'application ne conservera pas votre clé API.",
     "startTitle": "Clé API personnalisée"
   },
+  "background": {
+    "backgroundList": "Liste des contextes",
+    "totalCount": "Total de {{total}} éléments"
+  },
   "chat": "Discussion",
   "danceList": "Liste des danses",
   "danceMarket": "Marché de la danse",
@@ -36,6 +40,7 @@
     "title": "Historique des discussions"
   },
   "info": {
+    "background": "Contexte",
     "chat": "discussion",
     "dance": "danse",
     "motions": "mouvements",

@@ -24,6 +24,10 @@
     "startDesc": "Inserisci la tua chiave API OpenAI per iniziare la conversazione. L'app non registrerà la tua chiave API.",
     "startTitle": "Chiave API personalizzata"
   },
+  "background": {
+    "backgroundList": "Elenco sfondi",
+    "totalCount": "Totale {{total}} elementi"
+  },
   "chat": "Chat",
   "danceList": "Elenco delle danze",
   "danceMarket": "Mercato delle danze",
@@ -36,6 +40,7 @@
     "title": "Cronologia chat"
   },
   "info": {
+    "background": "Sfondo",
     "chat": "chat",
     "dance": "danza",
     "motions": "movimenti",

@@ -24,6 +24,10 @@
     "startDesc": "Voer je OpenAI API-sleutel in om de sessie te starten. De applicatie zal je API-sleutel niet opslaan.",
     "startTitle": "Aangepaste API-sleutel"
   },
+  "background": {
+    "backgroundList": "Achtergrondlijst",
+    "totalCount": "Totaal {{total}} items"
+  },
   "chat": "Chatten",
   "danceList": "Danslijst",
   "danceMarket": "Dansmarkt",
@@ -36,6 +40,7 @@
     "title": "Chatgeschiedenis"
   },
   "info": {
+    "background": "Achtergrond",
     "chat": "Chatten",
     "dance": "Dansen",
     "motions": "Bewegingen",

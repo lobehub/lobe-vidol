@@ -24,6 +24,10 @@
     "startDesc": "당신의 OpenAI API 키를 입력하면 대화를 시작할 수 있습니다. 애플리케이션은 당신의 API 키를 기록하지 않습니다.",
     "startTitle": "사용자 정의 API 키"
   },
+  "background": {
+    "backgroundList": "배경 목록",
+    "totalCount": "총 {{total}} 항목"
+  },
   "chat": "채팅",
   "danceList": "댄스 목록",
   "danceMarket": "댄스 마켓",
@@ -36,6 +40,7 @@
     "title": "채팅 기록"
   },
   "info": {
+    "background": "배경",
     "chat": "채팅",
     "dance": "춤",
     "motions": "동작",

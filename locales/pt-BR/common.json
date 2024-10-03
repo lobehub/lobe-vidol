@@ -23,8 +23,10 @@
   "loading": "Carregando...",
   "noData": "Nenhum dado disponível",
   "play": "Reproduzir",
+  "random": "Aleatório",
   "search": "Pesquisar",
   "sideBar": "Barra Lateral",
+  "submit": "Enviar",
   "subscribe": {
     "success": "Inscrição cancelada com sucesso",
     "undo": "Cancelar inscrição"

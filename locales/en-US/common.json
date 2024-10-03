@@ -23,8 +23,10 @@
   "loading": "Loading...",
   "noData": "No data available",
   "play": "Play",
+  "random": "Random",
   "search": "Search",
   "sideBar": "Sidebar",
+  "submit": "Submit",
   "subscribe": {
     "success": "Successfully unsubscribed",
     "undo": "Unsubscribe"

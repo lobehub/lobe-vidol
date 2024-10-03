@@ -24,6 +24,10 @@
     "startDesc": "輸入你的 OpenAI API Key 即可開始會話。應用不會記錄你的 API Key",
     "startTitle": "自訂 API Key"
   },
+  "background": {
+    "backgroundList": "背景列表",
+    "totalCount": "共 {{total}} 項"
+  },
   "chat": "聊天",
   "danceList": "舞蹈列表",
   "danceMarket": "舞蹈市場",
@@ -36,6 +40,7 @@
     "title": "聊天紀錄"
   },
   "info": {
+    "background": "背景",
     "chat": "聊天",
     "dance": "舞蹈",
     "motions": "動作",

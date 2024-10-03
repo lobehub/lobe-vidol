@@ -23,8 +23,10 @@
   "loading": "Yükleniyor...",
   "noData": "Veri yok",
   "play": "Oynat",
+  "random": "Rastgele",
   "search": "Ara",
   "sideBar": "Yan Menü",
+  "submit": "Gönder",
   "subscribe": {
     "success": "Abonelik iptal edildi",
     "undo": "Aboneliği iptal et"

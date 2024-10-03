@@ -8,6 +8,56 @@
   "cancelAddPlay": "Czy na pewno chcesz anulować subskrypcję muzyki {{musicName}}?",
   "cancelSubscribed": "Anuluj subskrypcję",
   "confirmClearPlayList": "Czy na pewno chcesz wyczyścić listę odtwarzania?",
+  "create": {
+    "audio": {
+      "desc": "Plik audio tańca",
+      "required": "Proszę przesłać plik audio",
+      "title": "Plik audio",
+      "upload": "Wybierz plik audio"
+    },
+    "dance": {
+      "desc": "Plik z ruchami tańca",
+      "required": "Proszę przesłać plik tańca",
+      "title": "Plik tańca",
+      "upload": "Wybierz plik tańca"
+    },
+    "danceId": {
+      "desc": "Unikalny identyfikator tańca",
+      "placeholder": "Wprowadź identyfikator tańca, musi być unikalny, na przykład vidol-dance-gokuraku",
+      "random": "Losowo wygeneruj ID",
+      "required": "Proszę wprowadzić ID tańca",
+      "title": "ID tańca"
+    },
+    "image": {
+      "desc": "Obrazek okładki tańca",
+      "required": "Proszę przesłać obrazek okładki",
+      "title": "Obrazek okładki",
+      "upload": "Wybierz obrazek okładki"
+    },
+    "messages": {
+      "fileUploadError": "Błąd przesyłania pliku",
+      "uploadFailed": "Przesyłanie nie powiodło się",
+      "uploadSuccess": "Przesyłanie zakończone sukcesem"
+    },
+    "name": {
+      "desc": "Nazwa wyświetlana tańca",
+      "required": "Proszę wprowadzić nazwę tańca",
+      "title": "Nazwa tańca"
+    },
+    "readme": {
+      "desc": "Dokumentacja tańca (opcjonalnie)",
+      "placeholder": "Wprowadź szczegółowy opis tańca",
+      "title": "Dokumentacja"
+    },
+    "submit": "Prześlij",
+    "title": "Stwórz taniec",
+    "uploading": "Przesyłanie w toku, proszę nie zamykać strony...",
+    "uploadingAudio": "Przesyłanie pliku muzycznego",
+    "uploadingCover": "Przesyłanie okładki",
+    "uploadingDance": "Przesyłanie pliku tańca",
+    "uploadingThumb": "Przesyłanie miniatury"
+  },
+  "createDance": "Stwórz swój ulubiony taniec",
   "dance": "tańczyć",
   "danceList": "Lista tańców",
   "findDance": "Znajdź swój ulubiony taniec",

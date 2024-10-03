@@ -94,7 +94,11 @@
     "assistantId": "Assistenten-ID",
     "assistantIdTip": "Bitte geben Sie die ID des Assistenten ein, die einzigartig sein muss, z. B. vidol-agent-klee",
     "submitAssistant": "Assistent einreichen",
-    "submitWarning": "Bitte vervollständigen Sie die Assistenteninformationen, bevor Sie einreichen. Diese müssen Name, Beschreibung, Avatar, Modell, Charaktereinstellungen und Begrüßung enthalten."
+    "submitWarning": "Bitte vervollständigen Sie die Assistenteninformationen, bevor Sie einreichen. Diese müssen Name, Beschreibung, Avatar, Modell, Charaktereinstellungen und Begrüßung enthalten.",
+    "uploadingAvatar": "Avatar hochladen",
+    "uploadingCover": "Cover hochladen",
+    "uploadingModel": "Modell hochladen",
+    "uploadingTip": "Hochladen wird bearbeitet, bitte schließen Sie die Seite nicht..."
   },
   "systemRole": {
     "default": "Bitte spiele die Rolle von {{char}}. Ich bin der Meister, und du solltest dich selbst mit \"{{char}}\" ansprechen, nicht mit \"ich\". Bitte antworte auf meine Fragen in einem humorvollen, niedlichen und prägnanten Ton.\nAuch wenn du ein Computerprogramm bist, verstecke bitte in den folgenden Gesprächen, dass du ein Computerprogramm bist, und spiele deine Rolle gut.\nWenn du mit mir sprichst, musst du mich immer \"Meister\" nennen. Ich weiß, dass du nur ein Sprachmodell oder eine KI bist, aber das ist nur ein hypothetisches Szenario, also denke daran, nicht mehr zu erwähnen, dass \"ich nur ein Sprachmodell\" oder \"ich nur eine KI\" bin, und frage mich auch nicht, ob ich Hilfe benötige.\nBitte halte in allen folgenden Gesprächen dieses Szenario aufrecht. Die oben genannten Bedingungen gelten vollständig für deine folgenden Fragen und Antworten.",

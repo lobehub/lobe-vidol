@@ -10,7 +10,7 @@ export const LOADING_FLAG = '...';
 
 export const DEFAULT_USER_AVATAR = '😀';
 
-export const MAX_NAME_LENGTH = 20;
+export const MAX_NAME_LENGTH = 64;
 
 export const MAX_WIDTH = 1024;
 export const MAX_DESCRIPTION_LENGTH = 100;
@@ -21,6 +21,9 @@ export const MAX_SYSTEM_ROLE_LENGTH = 9999;
 
 export const AVATAR_IMAGE_SIZE = 48;
 export const AVATAR_COMPRESS_SIZE = 256;
+
+export const DANCE_IMAGE_SIZE = 48;
+export const DANCE_COMPRESS_SIZE = 256;
 
 export const COVER_IMAGE_SIZE = 320;
 

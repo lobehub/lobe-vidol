@@ -10,6 +10,7 @@
     "resetSystem": "システム設定をリセット"
   },
   "fileUploadError": "ファイルのアップロードに失敗しました。後でもう一度お試しください。",
+  "formValidationFailed": "フォームの検証に失敗しました:",
   "goBack": "ホームに戻る",
   "openaiError": "OpenAI API エラーです。OpenAI API キーとエンドポイントが正しいかどうかを確認してください。",
   "reload": "再読み込み",

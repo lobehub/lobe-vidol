@@ -23,8 +23,10 @@
   "loading": "Chargement en cours...",
   "noData": "Aucune donnée disponible",
   "play": "Jouer",
+  "random": "Aléatoire",
   "search": "Recherche",
   "sideBar": "Barre latérale",
+  "submit": "Soumettre",
   "subscribe": {
     "success": "Abonnement annulé",
     "undo": "Annuler l'abonnement"
