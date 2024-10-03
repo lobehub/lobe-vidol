@@ -12,22 +12,27 @@
     "audio": {
       "desc": "The audio file for the dance",
       "required": "Please upload an audio file",
-      "title": "Audio File"
+      "title": "Audio File",
+      "upload": "Select audio file"
     },
     "dance": {
       "desc": "The motion file for the dance",
       "required": "Please upload a dance file",
-      "title": "Dance File"
+      "title": "Dance File",
+      "upload": "Select dance file"
     },
     "danceId": {
       "desc": "The unique identifier for the dance",
+      "placeholder": "Please enter a unique identifier for the dance, such as vidol-dance-gokuraku",
+      "random": "Generate ID randomly",
       "required": "Please enter the Dance ID",
       "title": "Dance ID"
     },
     "image": {
       "desc": "The cover image for the dance",
       "required": "Please upload a cover image",
-      "title": "Cover Image"
+      "title": "Cover Image",
+      "upload": "Select cover image"
     },
     "messages": {
       "fileUploadError": "File upload error",
@@ -41,6 +46,7 @@
     },
     "readme": {
       "desc": "Documentation for the dance (optional)",
+      "placeholder": "Please enter a detailed description of the dance",
       "title": "Documentation"
     },
     "submit": "Submit",

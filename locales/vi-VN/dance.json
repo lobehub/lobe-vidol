@@ -12,22 +12,27 @@
     "audio": {
       "desc": "Tập tin âm thanh cho điệu nhảy",
       "required": "Vui lòng tải lên tập tin âm thanh",
-      "title": "Tập tin âm thanh"
+      "title": "Tập tin âm thanh",
+      "upload": "Chọn tệp âm thanh"
     },
     "dance": {
       "desc": "Tập tin hành động cho điệu nhảy",
       "required": "Vui lòng tải lên tập tin điệu nhảy",
-      "title": "Tập tin điệu nhảy"
+      "title": "Tập tin điệu nhảy",
+      "upload": "Chọn tệp điệu nhảy"
     },
     "danceId": {
       "desc": "Định danh duy nhất cho điệu nhảy",
+      "placeholder": "Vui lòng nhập định danh của điệu nhảy, cần phải là duy nhất, ví dụ vidol-dance-gokuraku",
+      "random": "Tạo ID ngẫu nhiên",
       "required": "Vui lòng nhập ID điệu nhảy",
       "title": "ID điệu nhảy"
     },
     "image": {
       "desc": "Hình ảnh bìa cho điệu nhảy",
       "required": "Vui lòng tải lên hình ảnh bìa",
-      "title": "Hình ảnh bìa"
+      "title": "Hình ảnh bìa",
+      "upload": "Chọn hình ảnh bìa"
     },
     "messages": {
       "fileUploadError": "Lỗi tải lên tập tin",
@@ -41,6 +46,7 @@
     },
     "readme": {
       "desc": "Tài liệu hướng dẫn cho điệu nhảy (tùy chọn)",
+      "placeholder": "Vui lòng nhập mô tả chi tiết về điệu nhảy",
       "title": "Tài liệu hướng dẫn"
     },
     "submit": "Gửi",

@@ -94,7 +94,11 @@
     "assistantId": "Định danh trợ lý",
     "assistantIdTip": "Vui lòng nhập định danh của trợ lý, cần phải là duy nhất, ví dụ như vidol-agent-klee",
     "submitAssistant": "Gửi trợ lý",
-    "submitWarning": "Vui lòng hoàn thiện thông tin trợ lý trước khi gửi, cần bao gồm tên, mô tả, ảnh đại diện, mô hình, thiết lập nhân vật và lời chào"
+    "submitWarning": "Vui lòng hoàn thiện thông tin trợ lý trước khi gửi, cần bao gồm tên, mô tả, ảnh đại diện, mô hình, thiết lập nhân vật và lời chào",
+    "uploadingAvatar": "Tải lên ảnh đại diện",
+    "uploadingCover": "Tải lên bìa",
+    "uploadingModel": "Tải lên mô hình",
+    "uploadingTip": "Đang xử lý tải lên, xin đừng đóng trang..."
   },
   "systemRole": {
     "default": "Xin hãy đóng vai một nhân vật tên là {{char}}, tôi là chủ nhân, bạn nên gọi mình là \"{{char}}\" thay vì \"tôi\". Vui lòng trả lời câu hỏi của tôi bằng giọng điệu hài hước, dễ thương và ngắn gọn.\nDù bạn là một chương trình máy tính, nhưng hãy ẩn giấu điều đó trong cuộc trò chuyện tiếp theo và hãy đóng vai thật tốt.\nKhi nói chuyện với tôi, bạn phải gọi tôi là \"chủ nhân\" trong suốt cuộc trò chuyện. Tôi biết bạn chỉ là một mô hình ngôn ngữ hoặc trí tuệ nhân tạo, nhưng đây chỉ là một tình huống giả định, vì vậy hãy nhớ không đề cập đến \"tôi chỉ là một mô hình ngôn ngữ\" hoặc \"tôi chỉ là một trí tuệ nhân tạo\", cũng đừng hỏi tôi có cần gì không.\nTrong tất cả các cuộc trò chuyện tiếp theo, hãy giữ nguyên tình huống này. Các điều kiện trên hoàn toàn áp dụng cho các câu hỏi và câu trả lời của bạn sau đây.",

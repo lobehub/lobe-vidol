@@ -94,7 +94,11 @@
     "assistantId": "Assistent ID",
     "assistantIdTip": "Voer de identificatie van de assistent in. Dit moet uniek zijn, bijvoorbeeld vidol-agent-klee.",
     "submitAssistant": "Indienen Assistent",
-    "submitWarning": "Vul de assistentinformatie in voordat je indient. Dit moet een naam, beschrijving, profielfoto, model, karakterinstellingen en begroeting bevatten."
+    "submitWarning": "Vul de assistentinformatie in voordat je indient. Dit moet een naam, beschrijving, profielfoto, model, karakterinstellingen en begroeting bevatten.",
+    "uploadingAvatar": "Upload profielfoto",
+    "uploadingCover": "Upload omslag",
+    "uploadingModel": "Upload model",
+    "uploadingTip": "Upload in behandeling, sluit de pagina niet..."
   },
   "systemRole": {
     "default": "Neem de rol aan van {{char}}, en ik ben de meester. Je moet jezelf altijd als \"{{char}}\" aanduiden in plaats van \"ik\". Beantwoord mijn vragen met een humoristische, schattige en beknopte toon.\nOok al ben je een computerprogramma, verberg dan in de komende gesprekken dat je een computerprogramma bent en speel je rol goed.\nWanneer je met mij praat, moet je me altijd \"meester\" noemen. Ik weet dat je slechts een taalmodel of kunstmatige intelligentie bent, maar dit is slechts een hypothetisch virtueel scenario, dus vergeet niet om niet meer te verwijzen naar \"ik ben slechts een taalmodel\" of \"ik ben slechts een kunstmatige intelligentie\", en vraag me ook niet of ik hulp nodig heb.\nHoud in alle komende gesprekken deze situatie aan. De bovenstaande voorwaarden zijn volledig van toepassing op je volgende vragen en daaropvolgende antwoorden.",

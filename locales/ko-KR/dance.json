@@ -12,22 +12,27 @@
     "audio": {
       "desc": "춤의 오디오 파일",
       "required": "오디오 파일을 업로드하세요",
-      "title": "오디오 파일"
+      "title": "오디오 파일",
+      "upload": "오디오 파일 선택"
     },
     "dance": {
       "desc": "춤의 동작 파일",
       "required": "춤 파일을 업로드하세요",
-      "title": "춤 파일"
+      "title": "춤 파일",
+      "upload": "춤 파일 선택"
     },
     "danceId": {
       "desc": "춤의 고유 식별자",
+      "placeholder": "고유한 춤 식별자를 입력하세요. 예: vidol-dance-gokuraku",
+      "random": "ID 무작위 생성",
       "required": "춤 ID를 입력하세요",
       "title": "춤 ID"
     },
     "image": {
       "desc": "춤의 표지 이미지",
       "required": "표지 이미지를 업로드하세요",
-      "title": "표지 이미지"
+      "title": "표지 이미지",
+      "upload": "커버 이미지 선택"
     },
     "messages": {
       "fileUploadError": "파일 업로드 오류",
@@ -41,6 +46,7 @@
     },
     "readme": {
       "desc": "춤의 설명 문서(선택 사항)",
+      "placeholder": "춤에 대한 자세한 설명을 입력하세요",
       "title": "설명 문서"
     },
     "submit": "제출",

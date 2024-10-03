@@ -12,22 +12,27 @@
     "audio": {
       "desc": "Dansın ses dosyası",
       "required": "Lütfen ses dosyası yükleyin",
-      "title": "Ses Dosyası"
+      "title": "Ses Dosyası",
+      "upload": "Ses dosyasını seçin"
     },
     "dance": {
       "desc": "Dansın hareket dosyası",
       "required": "Lütfen dans dosyası yükleyin",
-      "title": "Dans Dosyası"
+      "title": "Dans Dosyası",
+      "upload": "Dans dosyasını seçin"
     },
     "danceId": {
       "desc": "Dansın benzersiz tanımlayıcısı",
+      "placeholder": "Lütfen dansın tanımlayıcısını girin, benzersiz olmalıdır, örneğin vidol-dance-gokuraku",
+      "random": "Rastgele ID oluştur",
       "required": "Lütfen dans ID'sini girin",
       "title": "Dans ID"
     },
     "image": {
       "desc": "Dansın kapak resmi",
       "required": "Lütfen kapak resmi yükleyin",
-      "title": "Kapak Resmi"
+      "title": "Kapak Resmi",
+      "upload": "Kapak resmini seçin"
     },
     "messages": {
       "fileUploadError": "Dosya yükleme hatası",
@@ -41,6 +46,7 @@
     },
     "readme": {
       "desc": "Dansın açıklama belgesi (isteğe bağlı)",
+      "placeholder": "Lütfen dansın ayrıntılı açıklamasını girin",
       "title": "Açıklama Belgesi"
     },
     "submit": "Gönder",

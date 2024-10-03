@@ -12,22 +12,27 @@
     "audio": {
       "desc": "ダンスの音声ファイル",
       "required": "音声ファイルをアップロードしてください",
-      "title": "音声ファイル"
+      "title": "音声ファイル",
+      "upload": "音声ファイルを選択"
     },
     "dance": {
       "desc": "ダンスの動作ファイル",
       "required": "ダンスファイルをアップロードしてください",
-      "title": "ダンスファイル"
+      "title": "ダンスファイル",
+      "upload": "ダンスファイルを選択"
     },
     "danceId": {
       "desc": "ダンスの一意の識別子",
+      "placeholder": "ダンスの識別子を入力してください。ユニークである必要があります。例えば、vidol-dance-gokuraku",
+      "random": "IDをランダム生成",
       "required": "ダンスIDを入力してください",
       "title": "ダンスID"
     },
     "image": {
       "desc": "ダンスのカバー画像",
       "required": "カバー画像をアップロードしてください",
-      "title": "カバー画像"
+      "title": "カバー画像",
+      "upload": "カバー画像を選択"
     },
     "messages": {
       "fileUploadError": "ファイルアップロードエラー",
@@ -41,6 +46,7 @@
     },
     "readme": {
       "desc": "ダンスの説明文書（任意）",
+      "placeholder": "ダンスの詳細説明を入力してください",
       "title": "説明文書"
     },
     "submit": "送信",

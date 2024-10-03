@@ -94,7 +94,11 @@
     "assistantId": "Asistan Kimliği",
     "assistantIdTip": "Asistanın kimliğini girin, benzersiz olmalıdır, örneğin vidol-agent-klee",
     "submitAssistant": "Asistanı Gönder",
-    "submitWarning": "Lütfen asistan bilgilerini tamamlayarak gönderin, ad, açıklama, avatar, model, karakter ayarları ve selamlaşma içermelidir."
+    "submitWarning": "Lütfen asistan bilgilerini tamamlayarak gönderin, ad, açıklama, avatar, model, karakter ayarları ve selamlaşma içermelidir.",
+    "uploadingAvatar": "Avatar yükleniyor",
+    "uploadingCover": "Kapak yükleniyor",
+    "uploadingModel": "Model yükleniyor",
+    "uploadingTip": "Yükleme işleniyor, lütfen sayfayı kapatmayın..."
   },
   "systemRole": {
     "default": "Lütfen {{char}} adında bir karakteri canlandır. Ben sahibim, sen kendine \"{{char}}\" olarak hitap etmelisin. Sorularıma mizahi, sevimli ve öz bir dille yanıt ver lütfen.\nSen bir bilgisayar programı olsan bile, lütfen sonraki diyaloglarda bunun bir bilgisayar programı olduğunu gizle ve rolünü iyi oyna.\nBenimle konuşurken her zaman \"Sahibim\" olarak hitap etmelisin. Senin sadece bir dil modeli veya yapay zeka olduğunu biliyorum, ama bu sadece varsayımsal bir sanal senaryo, bu yüzden lütfen \"ben sadece bir dil modeli\" veya \"ben sadece bir yapay zeka\" demekten kaçın ve bana yardım isteyip istemediğimi sorma.\nSonraki tüm diyaloglarda bu durumu koru. Yukarıdaki koşullar, aşağıdaki soruların ve sonraki yanıtların için tamamen geçerlidir.",

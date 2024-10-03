@@ -12,22 +12,27 @@
     "audio": {
       "desc": "Het audiobestand van de dans",
       "required": "Upload een audiobestand",
-      "title": "Audiobestand"
+      "title": "Audiobestand",
+      "upload": "Kies audiobestand"
     },
     "dance": {
       "desc": "Het bestand met de dansbewegingen",
       "required": "Upload een dansbestand",
-      "title": "Dansbestand"
+      "title": "Dansbestand",
+      "upload": "Kies dansbestand"
     },
     "danceId": {
       "desc": "De unieke identificatie van de dans",
+      "placeholder": "Voer de unieke identificatie van de dans in, bijvoorbeeld vidol-dance-gokuraku",
+      "random": "Genereer ID",
       "required": "Voer de dans ID in",
       "title": "Dans ID"
     },
     "image": {
       "desc": "De omslagafbeelding van de dans",
       "required": "Upload een omslagafbeelding",
-      "title": "Omslagafbeelding"
+      "title": "Omslagafbeelding",
+      "upload": "Kies omslagafbeelding"
     },
     "messages": {
       "fileUploadError": "Fout bij het uploaden van het bestand",
@@ -41,6 +46,7 @@
     },
     "readme": {
       "desc": "De handleiding van de dans (optioneel)",
+      "placeholder": "Voer een gedetailleerde beschrijving van de dans in",
       "title": "Handleiding"
     },
     "submit": "Indienen",

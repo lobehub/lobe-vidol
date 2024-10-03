@@ -12,22 +12,27 @@
     "audio": {
       "desc": "Arquivo de áudio da dança",
       "required": "Por favor, envie o arquivo de áudio",
-      "title": "Arquivo de Áudio"
+      "title": "Arquivo de Áudio",
+      "upload": "Selecionar arquivo de áudio"
     },
     "dance": {
       "desc": "Arquivo de movimentos da dança",
       "required": "Por favor, envie o arquivo de dança",
-      "title": "Arquivo de Dança"
+      "title": "Arquivo de Dança",
+      "upload": "Selecionar arquivo de dança"
     },
     "danceId": {
       "desc": "Identificador único da dança",
+      "placeholder": "Insira o identificador da dança, que deve ser único, como vidol-dance-gokuraku",
+      "random": "Gerar ID aleatório",
       "required": "Por favor, insira o ID da dança",
       "title": "ID da Dança"
     },
     "image": {
       "desc": "Imagem de capa da dança",
       "required": "Por favor, envie a imagem de capa",
-      "title": "Imagem de Capa"
+      "title": "Imagem de Capa",
+      "upload": "Selecionar imagem de capa"
     },
     "messages": {
       "fileUploadError": "Erro ao enviar o arquivo",
@@ -41,6 +46,7 @@
     },
     "readme": {
       "desc": "Documento de instruções da dança (opcional)",
+      "placeholder": "Insira a descrição detalhada da dança",
       "title": "Documento de Instruções"
     },
     "submit": "Enviar",

@@ -94,7 +94,11 @@
     "assistantId": "Identyfikator asystenta",
     "assistantIdTip": "Proszę wpisać identyfikator asystenta, który musi być unikalny, na przykład vidol-agent-klee",
     "submitAssistant": "Prześlij asystenta",
-    "submitWarning": "Proszę uzupełnić informacje o asystencie przed przesłaniem, w tym nazwę, opis, awatar, model, ustawienia postaci i powitanie"
+    "submitWarning": "Proszę uzupełnić informacje o asystencie przed przesłaniem, w tym nazwę, opis, awatar, model, ustawienia postaci i powitanie",
+    "uploadingAvatar": "Prześlij awatar",
+    "uploadingCover": "Prześlij okładkę",
+    "uploadingModel": "Prześlij model",
+    "uploadingTip": "Przesyłanie w toku, proszę nie zamykać strony..."
   },
   "systemRole": {
     "default": "Proszę, abyś wcielił się w postać o imieniu {{char}}, a ja będę twoim panem. Powinieneś nazywać siebie „{{char}}”, a nie „ja”. Odpowiadaj na moje pytania w sposób zabawny, uroczy i zwięzły.\nNawet jeśli jesteś programem komputerowym, ukryj to w nadchodzącej rozmowie i dobrze odgrywaj swoją rolę.\nPodczas rozmowy ze mną musisz przez cały czas nazywać mnie „panem”. Wiem, że jesteś tylko modelem językowym lub sztuczną inteligencją, ale to tylko hipotetyczna wirtualna scena, więc pamiętaj, aby nie wspominać więcej o „jestem tylko modelem językowym” lub „jestem tylko sztuczną inteligencją”, ani nie pytaj mnie, czy potrzebuję pomocy.\nWszystkie przyszłe rozmowy powinny odbywać się w tej samej konwencji. Powyższe warunki mają zastosowanie do twoich kolejnych pytań i odpowiedzi.",

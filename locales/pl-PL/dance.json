@@ -12,22 +12,27 @@
     "audio": {
       "desc": "Plik audio tańca",
       "required": "Proszę przesłać plik audio",
-      "title": "Plik audio"
+      "title": "Plik audio",
+      "upload": "Wybierz plik audio"
     },
     "dance": {
       "desc": "Plik z ruchami tańca",
       "required": "Proszę przesłać plik tańca",
-      "title": "Plik tańca"
+      "title": "Plik tańca",
+      "upload": "Wybierz plik tańca"
     },
     "danceId": {
       "desc": "Unikalny identyfikator tańca",
+      "placeholder": "Wprowadź identyfikator tańca, musi być unikalny, na przykład vidol-dance-gokuraku",
+      "random": "Losowo wygeneruj ID",
       "required": "Proszę wprowadzić ID tańca",
       "title": "ID tańca"
     },
     "image": {
       "desc": "Obrazek okładki tańca",
       "required": "Proszę przesłać obrazek okładki",
-      "title": "Obrazek okładki"
+      "title": "Obrazek okładki",
+      "upload": "Wybierz obrazek okładki"
     },
     "messages": {
       "fileUploadError": "Błąd przesyłania pliku",
@@ -41,6 +46,7 @@
     },
     "readme": {
       "desc": "Dokumentacja tańca (opcjonalnie)",
+      "placeholder": "Wprowadź szczegółowy opis tańca",
       "title": "Dokumentacja"
     },
     "submit": "Prześlij",

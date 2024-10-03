@@ -10,7 +10,7 @@ export const LOADING_FLAG = '...';
 
 export const DEFAULT_USER_AVATAR = '😀';
 
-export const MAX_NAME_LENGTH = 20;
+export const MAX_NAME_LENGTH = 64;
 
 export const MAX_WIDTH = 1024;
 export const MAX_DESCRIPTION_LENGTH = 100;

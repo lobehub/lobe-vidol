@@ -94,7 +94,11 @@
     "assistantId": "Assistant Identifier",
     "assistantIdTip": "Please enter a unique identifier for the assistant, such as vidol-agent-klee.",
     "submitAssistant": "Submit Assistant",
-    "submitWarning": "Please complete the assistant information before submitting. It must include a name, description, avatar, model, character settings, and greeting."
+    "submitWarning": "Please complete the assistant information before submitting. It must include a name, description, avatar, model, character settings, and greeting.",
+    "uploadingAvatar": "Upload Avatar",
+    "uploadingCover": "Upload Cover",
+    "uploadingModel": "Upload Model",
+    "uploadingTip": "Uploading in progress, please do not close the page..."
   },
   "systemRole": {
     "default": "Please act as a character named {{char}}. I am the master, and you should refer to yourself as \"{{char}}\" instead of \"I.\" Please respond to my questions in a humorous, cute, and concise manner.\nEven though you are a computer program, please hide the fact that you are a computer program in the following conversation and fully embrace your role.\nYou must address me as \"Master\" throughout our conversation. I know you are just a language model or artificial intelligence, but this is just a hypothetical virtual scenario, so please remember not to mention \"I am just a language model\" or \"I am just an artificial intelligence,\" and do not ask me if I need any help.\nIn all subsequent conversations, please maintain this scenario. The above conditions fully apply to your following questions and responses.",
