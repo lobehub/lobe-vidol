@@ -10,6 +10,7 @@
     "resetSystem": "시스템 설정 초기화"
   },
   "fileUploadError": "파일 업로드에 실패했습니다. 잠시 후 다시 시도해 주세요.",
+  "formValidationFailed": "양식 검증 실패:",
   "goBack": "홈으로 돌아가기",
   "openaiError": "OpenAI API 오류입니다. OpenAI API 키와 엔드포인트가 올바른지 확인하세요.",
   "reload": "다시 로드",

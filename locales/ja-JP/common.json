@@ -23,8 +23,10 @@
   "loading": "読み込み中...",
   "noData": "データがありません",
   "play": "再生",
+  "random": "ランダム",
   "search": "検索",
   "sideBar": "サイドバー",
+  "submit": "送信",
   "subscribe": {
     "success": "購読が解除されました",
     "undo": "購読を解除"

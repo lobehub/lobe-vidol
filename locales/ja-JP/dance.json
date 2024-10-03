@@ -8,6 +8,50 @@
   "cancelAddPlay": "音楽{{musicName}}の購読をキャンセルしてもよろしいですか？",
   "cancelSubscribed": "購読をキャンセル",
   "confirmClearPlayList": "プレイリストをクリアしてもよろしいですか？",
+  "create": {
+    "audio": {
+      "desc": "ダンスの音声ファイル",
+      "required": "音声ファイルをアップロードしてください",
+      "title": "音声ファイル"
+    },
+    "dance": {
+      "desc": "ダンスの動作ファイル",
+      "required": "ダンスファイルをアップロードしてください",
+      "title": "ダンスファイル"
+    },
+    "danceId": {
+      "desc": "ダンスの一意の識別子",
+      "required": "ダンスIDを入力してください",
+      "title": "ダンスID"
+    },
+    "image": {
+      "desc": "ダンスのカバー画像",
+      "required": "カバー画像をアップロードしてください",
+      "title": "カバー画像"
+    },
+    "messages": {
+      "fileUploadError": "ファイルアップロードエラー",
+      "uploadFailed": "アップロード失敗",
+      "uploadSuccess": "アップロード成功"
+    },
+    "name": {
+      "desc": "ダンスの表示名",
+      "required": "ダンス名を入力してください",
+      "title": "ダンス名"
+    },
+    "readme": {
+      "desc": "ダンスの説明文書（任意）",
+      "title": "説明文書"
+    },
+    "submit": "送信",
+    "title": "ダンスを作成",
+    "uploading": "アップロード処理中です。ページを閉じないでください...",
+    "uploadingAudio": "音楽ファイルをアップロード中",
+    "uploadingCover": "カバーをアップロード中",
+    "uploadingDance": "ダンスファイルをアップロード中",
+    "uploadingThumb": "サムネイルをアップロード中"
+  },
+  "createDance": "お気に入りのダンスを作成",
   "dance": "ダンス",
   "danceList": "ダンスリスト",
   "findDance": "お気に入りのダンスを見つけてください",

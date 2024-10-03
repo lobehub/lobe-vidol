@@ -10,6 +10,7 @@
     "resetSystem": "Redefinir configurações do sistema"
   },
   "fileUploadError": "Falha ao enviar o arquivo, por favor tente novamente mais tarde",
+  "formValidationFailed": "Falha na validação do formulário:",
   "goBack": "Voltar para a página inicial",
   "openaiError": "Erro da API OpenAI, por favor verifique se a chave da API OpenAI e o endpoint estão corretos",
   "reload": "Recarregar",

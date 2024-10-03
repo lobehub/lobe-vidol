@@ -23,8 +23,10 @@
   "loading": "加载中...",
   "noData": "暂无数据",
   "play": "播放",
+  "random": "随机",
   "search": "搜索",
   "sideBar": "侧边栏",
+  "submit": "提交",
   "subscribe": {
     "undo": "取消订阅",
     "success": "已取消订阅"

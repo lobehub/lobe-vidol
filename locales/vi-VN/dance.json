@@ -8,6 +8,50 @@
   "cancelAddPlay": "Bạn có chắc chắn muốn hủy đăng ký nhạc {{musicName}} không?",
   "cancelSubscribed": "Hủy đăng ký",
   "confirmClearPlayList": "Bạn có chắc chắn muốn xóa danh sách phát?",
+  "create": {
+    "audio": {
+      "desc": "Tập tin âm thanh cho điệu nhảy",
+      "required": "Vui lòng tải lên tập tin âm thanh",
+      "title": "Tập tin âm thanh"
+    },
+    "dance": {
+      "desc": "Tập tin hành động cho điệu nhảy",
+      "required": "Vui lòng tải lên tập tin điệu nhảy",
+      "title": "Tập tin điệu nhảy"
+    },
+    "danceId": {
+      "desc": "Định danh duy nhất cho điệu nhảy",
+      "required": "Vui lòng nhập ID điệu nhảy",
+      "title": "ID điệu nhảy"
+    },
+    "image": {
+      "desc": "Hình ảnh bìa cho điệu nhảy",
+      "required": "Vui lòng tải lên hình ảnh bìa",
+      "title": "Hình ảnh bìa"
+    },
+    "messages": {
+      "fileUploadError": "Lỗi tải lên tập tin",
+      "uploadFailed": "Tải lên thất bại",
+      "uploadSuccess": "Tải lên thành công"
+    },
+    "name": {
+      "desc": "Tên hiển thị cho điệu nhảy",
+      "required": "Vui lòng nhập tên điệu nhảy",
+      "title": "Tên điệu nhảy"
+    },
+    "readme": {
+      "desc": "Tài liệu hướng dẫn cho điệu nhảy (tùy chọn)",
+      "title": "Tài liệu hướng dẫn"
+    },
+    "submit": "Gửi",
+    "title": "Tạo điệu nhảy",
+    "uploading": "Đang xử lý tải lên, vui lòng không đóng trang...",
+    "uploadingAudio": "Đang tải lên tập tin nhạc",
+    "uploadingCover": "Đang tải lên bìa",
+    "uploadingDance": "Đang tải lên tập tin điệu nhảy",
+    "uploadingThumb": "Đang tải lên hình thu nhỏ"
+  },
+  "createDance": "Tạo điệu nhảy yêu thích của bạn",
   "dance": "Khiêu vũ",
   "danceList": "Danh sách vũ điệu",
   "findDance": "Tìm điệu nhảy yêu thích của bạn",

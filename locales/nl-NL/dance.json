@@ -8,6 +8,50 @@
   "cancelAddPlay": "Weet je zeker dat je de muziek {{musicName}} wilt annuleren?",
   "cancelSubscribed": "Abonnement annuleren",
   "confirmClearPlayList": "Weet je zeker dat je de afspeellijst wilt wissen?",
+  "create": {
+    "audio": {
+      "desc": "Het audiobestand van de dans",
+      "required": "Upload een audiobestand",
+      "title": "Audiobestand"
+    },
+    "dance": {
+      "desc": "Het bestand met de dansbewegingen",
+      "required": "Upload een dansbestand",
+      "title": "Dansbestand"
+    },
+    "danceId": {
+      "desc": "De unieke identificatie van de dans",
+      "required": "Voer de dans ID in",
+      "title": "Dans ID"
+    },
+    "image": {
+      "desc": "De omslagafbeelding van de dans",
+      "required": "Upload een omslagafbeelding",
+      "title": "Omslagafbeelding"
+    },
+    "messages": {
+      "fileUploadError": "Fout bij het uploaden van het bestand",
+      "uploadFailed": "Upload mislukt",
+      "uploadSuccess": "Upload succesvol"
+    },
+    "name": {
+      "desc": "De weergavenaam van de dans",
+      "required": "Voer de dansnaam in",
+      "title": "Dansnaam"
+    },
+    "readme": {
+      "desc": "De handleiding van de dans (optioneel)",
+      "title": "Handleiding"
+    },
+    "submit": "Indienen",
+    "title": "Dans creëren",
+    "uploading": "Upload in behandeling, sluit de pagina niet...",
+    "uploadingAudio": "Muziekbestand aan het uploaden",
+    "uploadingCover": "Omslag aan het uploaden",
+    "uploadingDance": "Dansbestand aan het uploaden",
+    "uploadingThumb": "Miniatuur aan het uploaden"
+  },
+  "createDance": "Creëer je favoriete dans",
   "dance": "dansen",
   "danceList": "Danslijst",
   "findDance": "Vind je favoriete dans",

@@ -8,6 +8,50 @@
   "cancelAddPlay": "Sei sicuro di voler annullare l'abbonamento alla musica {{musicName}}?",
   "cancelSubscribed": "Annulla iscrizione",
   "confirmClearPlayList": "Sei sicuro di voler svuotare la playlist?",
+  "create": {
+    "audio": {
+      "desc": "File audio della danza",
+      "required": "Carica il file audio",
+      "title": "File audio"
+    },
+    "dance": {
+      "desc": "File delle azioni della danza",
+      "required": "Carica il file della danza",
+      "title": "File danza"
+    },
+    "danceId": {
+      "desc": "Identificatore unico della danza",
+      "required": "Inserisci l'ID della danza",
+      "title": "ID danza"
+    },
+    "image": {
+      "desc": "Immagine di copertura della danza",
+      "required": "Carica l'immagine di copertura",
+      "title": "Immagine di copertura"
+    },
+    "messages": {
+      "fileUploadError": "Errore nel caricamento del file",
+      "uploadFailed": "Caricamento fallito",
+      "uploadSuccess": "Caricamento riuscito"
+    },
+    "name": {
+      "desc": "Nome visualizzato della danza",
+      "required": "Inserisci il nome della danza",
+      "title": "Nome della danza"
+    },
+    "readme": {
+      "desc": "Documento di istruzioni per la danza (opzionale)",
+      "title": "Documento di istruzioni"
+    },
+    "submit": "Invia",
+    "title": "Crea danza",
+    "uploading": "Caricamento in corso, non chiudere la pagina...",
+    "uploadingAudio": "Caricamento file musicale",
+    "uploadingCover": "Caricamento copertura",
+    "uploadingDance": "Caricamento file danza",
+    "uploadingThumb": "Caricamento miniatura"
+  },
+  "createDance": "Crea la tua danza preferita",
   "dance": "ballare",
   "danceList": "Elenco di danze",
   "findDance": "Trova la tua danza preferita",

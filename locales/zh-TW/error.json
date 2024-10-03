@@ -10,6 +10,7 @@
     "resetSystem": "重置系統設置"
   },
   "fileUploadError": "檔案上傳失敗，請稍後再試",
+  "formValidationFailed": "表單驗證失敗:",
   "goBack": "返回首頁",
   "openaiError": "OpenAI API 錯誤，請檢查 OpenAI API 金鑰和端點是否正確",
   "reload": "重新載入",

@@ -24,6 +24,10 @@
     "startDesc": "Introduce tu clave API de OpenAI para comenzar la conversación. La aplicación no registrará tu clave API.",
     "startTitle": "Clave API personalizada"
   },
+  "background": {
+    "backgroundList": "Lista de fondos",
+    "totalCount": "Total {{total}} elementos"
+  },
   "chat": "charlar",
   "danceList": "Lista de danzas",
   "danceMarket": "Mercado de danzas",
@@ -36,6 +40,7 @@
     "title": "Registro de chat"
   },
   "info": {
+    "background": "Fondo",
     "chat": "charlar",
     "dance": "bailar",
     "motions": "movimientos",

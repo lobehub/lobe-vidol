@@ -8,6 +8,50 @@
   "cancelAddPlay": "¿Está seguro de que desea cancelar la suscripción a la música {{musicName}}?",
   "cancelSubscribed": "Cancelar suscripción",
   "confirmClearPlayList": "¿Estás seguro de que deseas borrar la lista de reproducción?",
+  "create": {
+    "audio": {
+      "desc": "Archivo de audio del baile",
+      "required": "Por favor, sube un archivo de audio",
+      "title": "Archivo de audio"
+    },
+    "dance": {
+      "desc": "Archivo de movimientos del baile",
+      "required": "Por favor, sube un archivo de baile",
+      "title": "Archivo de baile"
+    },
+    "danceId": {
+      "desc": "Identificador único del baile",
+      "required": "Por favor, introduce el ID del baile",
+      "title": "ID del baile"
+    },
+    "image": {
+      "desc": "Imagen de portada del baile",
+      "required": "Por favor, sube una imagen de portada",
+      "title": "Imagen de portada"
+    },
+    "messages": {
+      "fileUploadError": "Error en la carga del archivo",
+      "uploadFailed": "Carga fallida",
+      "uploadSuccess": "Carga exitosa"
+    },
+    "name": {
+      "desc": "Nombre que se mostrará del baile",
+      "required": "Por favor, introduce el nombre del baile",
+      "title": "Nombre del baile"
+    },
+    "readme": {
+      "desc": "Documento de instrucciones del baile (opcional)",
+      "title": "Documento de instrucciones"
+    },
+    "submit": "Enviar",
+    "title": "Crear baile",
+    "uploading": "Cargando, por favor no cierres la página...",
+    "uploadingAudio": "Cargando archivo de música",
+    "uploadingCover": "Cargando portada",
+    "uploadingDance": "Cargando archivo de baile",
+    "uploadingThumb": "Cargando miniatura"
+  },
+  "createDance": "Crea tu baile favorito",
   "dance": "bailar",
   "danceList": "Lista de danzas",
   "findDance": "Encuentra tu baile favorito",

@@ -24,6 +24,10 @@
     "startDesc": "Въведете вашия OpenAI API ключ, за да започнете сесия. Приложението няма да записва вашия API ключ.",
     "startTitle": "Персонализиран API ключ"
   },
+  "background": {
+    "backgroundList": "Списък с фонове",
+    "totalCount": "Общо {{total}} елемента"
+  },
   "chat": "Чат",
   "danceList": "Списък с танци",
   "danceMarket": "Пазар на танци",
@@ -36,6 +40,7 @@
     "title": "История на чата"
   },
   "info": {
+    "background": "Фон",
     "chat": "Чат",
     "dance": "Танц",
     "motions": "Движения",

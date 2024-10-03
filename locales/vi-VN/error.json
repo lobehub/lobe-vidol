@@ -10,6 +10,7 @@
     "resetSystem": "Đặt lại cài đặt hệ thống"
   },
   "fileUploadError": "Tải lên tệp thất bại, vui lòng thử lại sau",
+  "formValidationFailed": "Xác thực biểu mẫu không thành công:",
   "goBack": "Quay lại trang chủ",
   "openaiError": "Lỗi API OpenAI, vui lòng kiểm tra xem Khóa API OpenAI và Điểm cuối có chính xác không",
   "reload": "Tải lại",

@@ -23,8 +23,10 @@
   "loading": "로딩 중...",
   "noData": "데이터가 없습니다",
   "play": "재생",
+  "random": "무작위",
   "search": "검색",
   "sideBar": "사이드바",
+  "submit": "제출",
   "subscribe": {
     "success": "구독이 취소되었습니다",
     "undo": "구독 취소"

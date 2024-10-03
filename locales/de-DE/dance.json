@@ -8,6 +8,50 @@
   "cancelAddPlay": "Möchten Sie das Abonnement für die Musik {{musicName}} wirklich kündigen?",
   "cancelSubscribed": "Abonnement kündigen",
   "confirmClearPlayList": "Möchten Sie die Wiedergabeliste wirklich löschen?",
+  "create": {
+    "audio": {
+      "desc": "Audio-Datei des Tanzes",
+      "required": "Bitte Audio-Datei hochladen",
+      "title": "Audio-Datei"
+    },
+    "dance": {
+      "desc": "Bewegungsdatei des Tanzes",
+      "required": "Bitte Tanz-Datei hochladen",
+      "title": "Tanz-Datei"
+    },
+    "danceId": {
+      "desc": "Eindeutiger Identifikator für den Tanz",
+      "required": "Bitte Tanz-ID eingeben",
+      "title": "Tanz-ID"
+    },
+    "image": {
+      "desc": "Titelbild des Tanzes",
+      "required": "Bitte Titelbild hochladen",
+      "title": "Titelbild"
+    },
+    "messages": {
+      "fileUploadError": "Fehler beim Hochladen der Datei",
+      "uploadFailed": "Hochladen fehlgeschlagen",
+      "uploadSuccess": "Hochladen erfolgreich"
+    },
+    "name": {
+      "desc": "Anzeigename des Tanzes",
+      "required": "Bitte Tanzname eingeben",
+      "title": "Tanzname"
+    },
+    "readme": {
+      "desc": "Dokumentation des Tanzes (optional)",
+      "title": "Dokumentation"
+    },
+    "submit": "Einreichen",
+    "title": "Tanz erstellen",
+    "uploading": "Hochladen wird bearbeitet, bitte schließen Sie die Seite nicht...",
+    "uploadingAudio": "Musikdatei wird hochgeladen",
+    "uploadingCover": "Titelbild wird hochgeladen",
+    "uploadingDance": "Tanz-Datei wird hochgeladen",
+    "uploadingThumb": "Vorschaubild wird hochgeladen"
+  },
+  "createDance": "Erstelle deinen Lieblings-Tanz",
   "dance": "Tanzen",
   "danceList": "Tanzliste",
   "findDance": "Finde deinen Lieblings-Tanz",

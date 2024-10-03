@@ -10,6 +10,7 @@
     "resetSystem": "Réinitialiser les paramètres du système"
   },
   "fileUploadError": "Échec du téléchargement du fichier, veuillez réessayer plus tard",
+  "formValidationFailed": "Échec de la validation du formulaire :",
   "goBack": "Retour à la page d'accueil",
   "openaiError": "Erreur de l'API OpenAI, veuillez vérifier si la clé API OpenAI et l'endpoint sont corrects",
   "reload": "Recharger",

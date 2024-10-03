@@ -10,6 +10,7 @@
     "resetSystem": "Systemeinstellungen zurücksetzen"
   },
   "fileUploadError": "Datei-Upload fehlgeschlagen, bitte versuchen Sie es später erneut.",
+  "formValidationFailed": "Die Formularüberprüfung ist fehlgeschlagen:",
   "goBack": "Zur Startseite zurück",
   "openaiError": "OpenAI API-Fehler, bitte überprüfen Sie, ob der OpenAI API-Schlüssel und der Endpunkt korrekt sind.",
   "reload": "Neu laden",

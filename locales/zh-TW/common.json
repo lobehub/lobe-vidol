@@ -23,8 +23,10 @@
   "loading": "載入中...",
   "noData": "目前沒有資料",
   "play": "播放",
+  "random": "隨機",
   "search": "搜尋",
   "sideBar": "側邊欄",
+  "submit": "提交",
   "subscribe": {
     "success": "已取消訂閱",
     "undo": "取消訂閱"

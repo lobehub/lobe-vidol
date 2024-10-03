@@ -8,6 +8,50 @@
   "cancelAddPlay": "{{musicName}} 음악 구독을 정말 취소하시겠습니까?",
   "cancelSubscribed": "구독 취소",
   "confirmClearPlayList": "재생 목록을 지우시겠습니까?",
+  "create": {
+    "audio": {
+      "desc": "춤의 오디오 파일",
+      "required": "오디오 파일을 업로드하세요",
+      "title": "오디오 파일"
+    },
+    "dance": {
+      "desc": "춤의 동작 파일",
+      "required": "춤 파일을 업로드하세요",
+      "title": "춤 파일"
+    },
+    "danceId": {
+      "desc": "춤의 고유 식별자",
+      "required": "춤 ID를 입력하세요",
+      "title": "춤 ID"
+    },
+    "image": {
+      "desc": "춤의 표지 이미지",
+      "required": "표지 이미지를 업로드하세요",
+      "title": "표지 이미지"
+    },
+    "messages": {
+      "fileUploadError": "파일 업로드 오류",
+      "uploadFailed": "업로드 실패",
+      "uploadSuccess": "업로드 성공"
+    },
+    "name": {
+      "desc": "춤의 표시 이름",
+      "required": "춤 이름을 입력하세요",
+      "title": "춤 이름"
+    },
+    "readme": {
+      "desc": "춤의 설명 문서(선택 사항)",
+      "title": "설명 문서"
+    },
+    "submit": "제출",
+    "title": "춤 만들기",
+    "uploading": "업로드 처리 중입니다. 페이지를 닫지 마세요...",
+    "uploadingAudio": "음악 파일 업로드 중",
+    "uploadingCover": "표지 업로드 중",
+    "uploadingDance": "춤 파일 업로드 중",
+    "uploadingThumb": "썸네일 업로드 중"
+  },
+  "createDance": "가장 좋아하는 춤을 만들기",
   "dance": "춤추기",
   "danceList": "댄스 목록",
   "findDance": "가장 좋아하는 춤을 찾아보세요",

@@ -24,6 +24,10 @@
     "startDesc": "Enter your OpenAI API Key to start the conversation. The application will not record your API Key.",
     "startTitle": "Custom API Key"
   },
+  "background": {
+    "backgroundList": "Background List",
+    "totalCount": "Total {{total}} items"
+  },
   "chat": "Chat",
   "danceList": "Dance List",
   "danceMarket": "Dance Market",
@@ -36,6 +40,7 @@
     "title": "Chat History"
   },
   "info": {
+    "background": "Background",
     "chat": "Chat",
     "dance": "Dance",
     "motions": "Motions",

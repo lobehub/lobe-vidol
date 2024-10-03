@@ -10,6 +10,7 @@
     "resetSystem": "Systeeminstellingen resetten"
   },
   "fileUploadError": "Bestand uploaden mislukt, probeer het later opnieuw",
+  "formValidationFailed": "Formuliervalidatie is mislukt:",
   "goBack": "Terug naar de startpagina",
   "openaiError": "OpenAI API-fout, controleer of de OpenAI API-sleutel en het eindpunt correct zijn",
   "reload": "Opnieuw laden",

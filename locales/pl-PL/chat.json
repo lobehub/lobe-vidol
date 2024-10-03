@@ -24,6 +24,10 @@
     "startDesc": "Wprowadź swój klucz API OpenAI, aby rozpocząć rozmowę. Aplikacja nie będzie rejestrować twojego klucza API.",
     "startTitle": "Dostosuj klucz API"
   },
+  "background": {
+    "backgroundList": "Lista tła",
+    "totalCount": "Łącznie {{total}} pozycji"
+  },
   "chat": "Czat",
   "danceList": "Lista tańców",
   "danceMarket": "Rynek tańca",
@@ -36,6 +40,7 @@
     "title": "Historia czatu"
   },
   "info": {
+    "background": "Tło",
     "chat": "czat",
     "dance": "taniec",
     "motions": "ruchy",

@@ -23,8 +23,10 @@
   "loading": "Wird geladen...",
   "noData": "Keine Daten verfügbar",
   "play": "Abspielen",
+  "random": "Zufällig",
   "search": "Suche",
   "sideBar": "Seitenleiste",
+  "submit": "Einreichen",
   "subscribe": {
     "success": "Abonnement wurde gekündigt",
     "undo": "Abonnement kündigen"

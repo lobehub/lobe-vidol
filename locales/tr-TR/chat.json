@@ -24,6 +24,10 @@
     "startDesc": "OpenAI API Anahtarınızı girerek sohbete başlayabilirsiniz. Uygulama API Anahtarınızı kaydetmeyecek.",
     "startTitle": "Özel API Anahtarı"
   },
+  "background": {
+    "backgroundList": "Arka Plan Listesi",
+    "totalCount": "Toplam {{total}} Öğe"
+  },
   "chat": "sohbet",
   "danceList": "Dans Listesi",
   "danceMarket": "Dans Pazarı",
@@ -36,6 +40,7 @@
     "title": "Sohbet Geçmişi"
   },
   "info": {
+    "background": "Arka Plan",
     "chat": "sohbet",
     "dance": "dans",
     "motions": "hareketler",

@@ -10,6 +10,7 @@
     "resetSystem": "Ripristina le impostazioni di sistema"
   },
   "fileUploadError": "Caricamento del file non riuscito, riprova più tardi",
+  "formValidationFailed": "La convalida del modulo è fallita:",
   "goBack": "Torna alla home",
   "openaiError": "Erro API OpenAI, si prega di controllare se la chiave API OpenAI e l'endpoint sono corretti",
   "reload": "Ricarica",

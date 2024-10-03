@@ -24,6 +24,10 @@
     "confirmRetry": "确认并重试",
     "closeTip": "关闭提示"
   },
+  "background": {
+    "backgroundList": "背景列表",
+    "totalCount": "共 {{total}} 项"
+  },
   "chat": "聊天",
   "danceList": "舞蹈列表",
   "danceMarket": "舞蹈市场",
@@ -39,7 +43,8 @@
     "chat": "聊天",
     "dance": "舞蹈",
     "motions": "动作",
-    "posture": "姿势"
+    "posture": "姿势",
+    "background": "背景"
   },
   "input": {
     "send": "发送",

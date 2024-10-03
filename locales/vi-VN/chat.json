@@ -24,6 +24,10 @@
     "startDesc": "Nhập API Key OpenAI của bạn để bắt đầu cuộc trò chuyện. Ứng dụng sẽ không ghi lại API Key của bạn.",
     "startTitle": "Tùy chỉnh API Key"
   },
+  "background": {
+    "backgroundList": "Danh sách nền",
+    "totalCount": "Tổng cộng {{total}} mục"
+  },
   "chat": "Trò chuyện",
   "danceList": "Danh sách khiêu vũ",
   "danceMarket": "Thị trường khiêu vũ",
@@ -36,6 +40,7 @@
     "title": "Lịch sử trò chuyện"
   },
   "info": {
+    "background": "Nền",
     "chat": "trò chuyện",
     "dance": "nhảy múa",
     "motions": "cử động",
