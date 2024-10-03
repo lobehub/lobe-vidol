@@ -17,4 +17,5 @@ export default {
   openaiError: 'OpenAI API 错误，请检查 OpenAI API Key 和 Endpoint 是否正确',
   unknownError: '未知错误',
   s3envError: 'S3 环境变量未完全设置，请检查您的环境变量',
+  formValidationFailed: '表单验证失败:',
 };

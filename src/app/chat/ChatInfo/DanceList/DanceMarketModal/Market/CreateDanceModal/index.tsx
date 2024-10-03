@@ -30,7 +30,7 @@ interface FormValues {
 
 const CreateDanceModal = () => {
   const [open, setOpen] = useState(false);
-  const { t } = useTranslation('dance');
+  const { t } = useTranslation(['dance', 'error', 'common']); // 添加 'error' 和 'common' 命名空间
   const [form] = Form.useForm<FormValues>();
 
   const { uploading, uploadDanceData, percent } = useUploadDance();
@@ -86,13 +86,13 @@ const CreateDanceModal = () => {
 
         window.open(url, '_blank');
 
-        message.success(t('create.messages.uploadSuccess'));
+        message.success(t('create.messages.uploadSuccess', { ns: 'dance' }));
       } catch (error) {
         console.error('Upload failed:', error);
-        message.error(t('create.messages.uploadFailed'));
+        message.error(t('create.messages.uploadFailed', { ns: 'dance' }));
       }
     } catch (error) {
-      console.error('表单验证失败:', error);
+      console.error(t('formValidationFailed', { ns: 'error' }), error);
     }
   };
 
@@ -144,11 +144,11 @@ const CreateDanceModal = () => {
   return (
     <>
       <Button icon={<PlusCircle />} onClick={() => setOpen(true)}>
-        {t('create.title')}
+        {t('create.title', { ns: 'dance' })}
       </Button>
       <Modal
         open={open}
-        title={t('create.title')}
+        title={t('create.title', { ns: 'dance' })}
         onCancel={() => setOpen(false)}
         destroyOnClose
         footer={
@@ -156,22 +156,32 @@ const CreateDanceModal = () => {
             open={uploading}
             title={
               <Flexbox>
-                <Typography.Text type={'secondary'}>上传处理中，请勿关闭页面...</Typography.Text>
+                <Typography.Text type={'secondary'}>
+                  {t('create.uploading', { ns: 'dance' })}
+                </Typography.Text>
                 <Space>
                   <Progress steps={30} percent={percent.cover} size="small" />
-                  <Typography.Text style={{ fontSize: 12 }}>上传封面</Typography.Text>
+                  <Typography.Text style={{ fontSize: 12 }}>
+                    {t('create.uploadingCover', { ns: 'dance' })}
+                  </Typography.Text>
                 </Space>
                 <Space>
                   <Progress steps={30} percent={percent.thumb} size="small" />
-                  <Typography.Text style={{ fontSize: 12 }}>上传缩略图</Typography.Text>
+                  <Typography.Text style={{ fontSize: 12 }}>
+                    {t('create.uploadingThumb', { ns: 'dance' })}
+                  </Typography.Text>
                 </Space>
                 <Space>
                   <Progress steps={30} percent={percent.audio} size="small" />
-                  <Typography.Text style={{ fontSize: 12 }}>上传音乐文件</Typography.Text>
+                  <Typography.Text style={{ fontSize: 12 }}>
+                    {t('create.uploadingAudio', { ns: 'dance' })}
+                  </Typography.Text>
                 </Space>
                 <Space>
                   <Progress steps={30} percent={percent.src} size="small" />
-                  <Typography.Text style={{ fontSize: 12 }}>上传舞蹈文件</Typography.Text>
+                  <Typography.Text style={{ fontSize: 12 }}>
+                    {t('create.uploadingDance', { ns: 'dance' })}
+                  </Typography.Text>
                 </Space>
               </Flexbox>
             }
@@ -183,13 +193,13 @@ const CreateDanceModal = () => {
               type={'primary'}
               loading={uploading}
             >
-              {t('create.submit')}
+              {t('create.submit', { ns: 'dance' })}
             </Button>
           </Popover>
         }
         width={800}
       >
-        <TopBanner title={t('createDance')} />
+        <TopBanner title={t('createDance', { ns: 'dance' })} />
         <Form form={form} onFinish={handleSubmit} variant="pure" items={basic} itemsType="flat" />
       </Modal>
     </>

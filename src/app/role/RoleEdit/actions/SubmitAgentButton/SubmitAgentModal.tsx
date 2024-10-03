@@ -26,7 +26,7 @@ const SubmitAgentModal = memo<ModalProps>(({ open, onCancel }) => {
     isEqual,
   );
   const meta = currentAgent?.meta;
-  const { t } = useTranslation('role');
+  const { t } = useTranslation(['role', 'common', 'error']);
 
   const { uploading, uploadAgentData, percent } = useUploadAgent();
 
@@ -99,18 +99,24 @@ const SubmitAgentModal = memo<ModalProps>(({ open, onCancel }) => {
           open={uploading}
           title={
             <Flexbox>
-              <Typography.Text type={'secondary'}>上传处理中，请勿关闭页面...</Typography.Text>
+              <Typography.Text type={'secondary'}>{t('submit.uploadingTip')}</Typography.Text>
               <Space>
                 <Progress steps={30} percent={percent.cover} size="small" />
-                <Typography.Text style={{ fontSize: 12 }}>上传封面</Typography.Text>
+                <Typography.Text style={{ fontSize: 12 }}>
+                  {t('submit.uploadingCover')}
+                </Typography.Text>
               </Space>
               <Space>
                 <Progress steps={30} percent={percent.avatar} size="small" />
-                <Typography.Text style={{ fontSize: 12 }}>上传头像</Typography.Text>
+                <Typography.Text style={{ fontSize: 12 }}>
+                  {t('submit.uploadingAvatar')}
+                </Typography.Text>
               </Space>
               <Space>
                 <Progress steps={30} percent={percent.model} size="small" />
-                <Typography.Text style={{ fontSize: 12 }}>上传模型</Typography.Text>
+                <Typography.Text style={{ fontSize: 12 }}>
+                  {t('submit.uploadingModel')}
+                </Typography.Text>
               </Space>
             </Flexbox>
           }
@@ -129,7 +135,7 @@ const SubmitAgentModal = memo<ModalProps>(({ open, onCancel }) => {
       }
       onCancel={onCancel}
       open={open}
-      title={t('shareToMarket', { ns: 'role' })}
+      title={t('shareToMarket')}
     >
       <Flexbox gap={16}>
         {!isFormPass && <Alert message={t('submit.submitWarning')} showIcon type={'warning'} />}
@@ -150,6 +156,7 @@ const SubmitAgentModal = memo<ModalProps>(({ open, onCancel }) => {
           <Button
             type="primary"
             icon={<Icon icon={Dices} />}
+            title={t('random', { ns: 'common' })}
             onClick={() => {
               const randomId = Math.random().toString(36).slice(7);
               setAgentId(kebabCase(randomId));
