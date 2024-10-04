@@ -150,76 +150,92 @@ export const DEFAULT_TOUCH_ACTION_CONFIG_MALE: TouchActionConfig = {
     {
       expression: VRMExpressionPresetName.Neutral,
       text: 'touch.maleAction.headAction.neutralA',
+      motion: MotionPresetName.MaleHappy,
     },
     {
       expression: VRMExpressionPresetName.Neutral,
       text: 'touch.maleAction.headAction.neutralB',
+      motion: MotionPresetName.MaleHappy,
     },
     {
       expression: VRMExpressionPresetName.Neutral,
       text: 'touch.maleAction.headAction.neutralC',
+      motion: MotionPresetName.MaleHappy,
     },
   ],
   [TouchAreaEnum.Arm]: [
     {
       expression: VRMExpressionPresetName.Neutral,
       text: 'touch.maleAction.armAction.neutralA',
+      motion: MotionPresetName.MaleHappy,
     },
     {
       expression: VRMExpressionPresetName.Neutral,
       text: 'touch.maleAction.armAction.neutralB',
+      motion: MotionPresetName.MaleHappy,
     },
     {
       expression: VRMExpressionPresetName.Neutral,
       text: 'touch.maleAction.armAction.neutralC',
+      motion: MotionPresetName.MaleHappy,
     },
   ],
   [TouchAreaEnum.Leg]: [
     {
       expression: VRMExpressionPresetName.Neutral,
       text: 'touch.maleAction.legAction.neutralA',
+      motion: MotionPresetName.MaleHappy,
     },
     {
       expression: VRMExpressionPresetName.Neutral,
       text: 'touch.maleAction.legAction.neutralB',
+      motion: MotionPresetName.MaleHappy,
     },
     {
       expression: VRMExpressionPresetName.Angry,
       text: 'touch.maleAction.legAction.angryA',
+      motion: MotionPresetName.MaleAngry,
     },
   ],
   [TouchAreaEnum.Chest]: [
     {
       expression: VRMExpressionPresetName.Neutral,
       text: 'touch.maleAction.chestAction.neutralA',
+      motion: MotionPresetName.MaleHappy,
     },
     {
       expression: VRMExpressionPresetName.BlinkLeft,
       text: 'touch.maleAction.chestAction.blinkLeftA',
+      motion: MotionPresetName.MaleHappy,
     },
   ],
   [TouchAreaEnum.Belly]: [
     {
       expression: VRMExpressionPresetName.Neutral,
       text: 'touch.maleAction.bellyAction.neutralA',
+      motion: MotionPresetName.MaleHappy,
     },
     {
       expression: VRMExpressionPresetName.Happy,
       text: 'touch.maleAction.bellyAction.happyA',
+      motion: MotionPresetName.MaleHappy,
     },
     {
       expression: VRMExpressionPresetName.Neutral,
       text: 'touch.maleAction.bellyAction.neutralB',
+      motion: MotionPresetName.MaleHappy,
     },
   ],
   [TouchAreaEnum.Buttocks]: [
     {
       expression: VRMExpressionPresetName.Surprised,
       text: 'touch.maleAction.buttocksAction.surprisedA',
+      motion: MotionPresetName.MaleAngry,
     },
     {
       expression: VRMExpressionPresetName.Angry,
       text: 'touch.maleAction.buttocksAction.angryA',
+      motion: MotionPresetName.MaleAngry,
     },
   ],
 };
