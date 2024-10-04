@@ -488,13 +488,18 @@ export class Viewer {
       this._headHitboxSize.y,
       this._headHitboxSize.z,
     );
-    const material = new MeshBasicMaterial({ visible: false });
+    const material = new MeshBasicMaterial({
+      color: 0x00ff00, // 绿色
+      transparent: true,
+      opacity: 0.5,
+      visible: true,
+    });
     this._headHitbox = new Mesh(geometry, material);
 
     headBone.add(this._headHitbox);
 
-    // 调整 hitbox 的位置，使其位于头部中心
-    this._headHitbox.position.set(0, this._headHitboxSize.y / 2, 0);
+    // 调整 hitbox 的位置，使其位于头部中心偏下的位置
+    this._headHitbox.position.set(0, this._headHitboxSize.y * 0.3, 0);
   }
 
   private updateHeadHitbox() {
