@@ -1,7 +1,17 @@
 import { VRMHumanBoneName } from '@pixiv/three-vrm';
 import { Parser } from 'mmd-parser';
 import * as THREE from 'three';
-import { Audio, GridHelper, Mesh, MeshLambertMaterial, PlaneGeometry } from 'three';
+import {
+  Audio,
+  Box3,
+  BoxGeometry,
+  GridHelper,
+  Mesh,
+  MeshBasicMaterial,
+  MeshLambertMaterial,
+  PlaneGeometry,
+  Vector3,
+} from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
 import { MotionFileType } from '@/libs/emoteController/type';
@@ -29,6 +39,8 @@ export class Viewer {
   private _boundHandleClick: (event: MouseEvent) => void;
   private _onBodyTouch?: (area: TouchAreaEnum) => void;
   private _isDancing: boolean = false;
+  private _headHitbox?: THREE.Mesh;
+  private _headHitboxSize: Vector3 = new Vector3(0.2, 0.25, 0.2);
 
   constructor() {
     this.isReady = false;
@@ -127,6 +139,10 @@ export class Viewer {
       this.resetCamera();
     });
 
+    if (this.model?.vrm) {
+      this.createHeadHitbox();
+    }
+
     // 重新设置事件监听器
     if (this._canvas) {
       this._canvas.addEventListener('click', this._boundHandleClick, false);
@@ -135,6 +151,12 @@ export class Viewer {
 
   public unloadVRM(): void {
     if (this.model?.vrm) {
+      if (this._headHitbox) {
+        this._headHitbox.parent?.remove(this._headHitbox);
+        this._headHitbox.geometry.dispose();
+        (this._headHitbox.material as MeshBasicMaterial).dispose();
+        this._headHitbox = undefined;
+      }
       this._scene.remove(this.model.vrm.scene);
       this.model?.unLoadVrm();
     }
@@ -287,6 +309,10 @@ export class Viewer {
       this._cameraHelper.update();
     }
 
+    if (this.model?.vrm && this._headHitbox) {
+      this.updateHeadHitbox();
+    }
+
     if (this._renderer && this._camera) {
       this._renderer.render(this._scene, this._camera);
     }
@@ -307,25 +333,38 @@ export class Viewer {
   }
 
   private handleClick = (event: MouseEvent) => {
-    if (this._isDancing) return; // 如果正在跳舞，不处理点击事件
+    if (this._isDancing) return;
 
     const intersects = this.handleRaycasterIntersection(event);
     if (!intersects || intersects.length === 0) return;
 
+    // 检查是否点击了头部 hitbox
+    const headHitboxIntersect = intersects.find(
+      (intersect) => intersect.object === this._headHitbox,
+    );
+    if (headHitboxIntersect) {
+      this.handleBodyPartClick(VRMHumanBoneName.Head);
+      return;
+    }
+
     const intersectedPoint = intersects[0].point;
     const closestBone = this.findClosestBone(intersectedPoint);
+
+    console.log('closestBone', closestBone, intersects);
 
     if (closestBone) {
       this.handleBodyPartClick(closestBone);
     }
   };
 
-  private handleMouseMove(event: MouseEvent) {
-    const intersects = this.handleRaycasterIntersection(event);
-
-    if (this._canvas) {
-      this._canvas.style.cursor = intersects && intersects.length > 0 ? 'pointer' : 'default';
-    }
+  private getHeadBones(): VRMHumanBoneName[] {
+    return [
+      VRMHumanBoneName.Head,
+      VRMHumanBoneName.Neck,
+      VRMHumanBoneName.LeftEye,
+      VRMHumanBoneName.RightEye,
+      VRMHumanBoneName.Jaw,
+    ];
   }
 
   private findClosestBone(point: THREE.Vector3): VRMHumanBoneName | null {
@@ -335,8 +374,7 @@ export class Viewer {
     let closestWeightedDistance = Infinity;
 
     const mainBones: VRMHumanBoneName[] = [
-      VRMHumanBoneName.Head,
-      VRMHumanBoneName.Neck,
+      ...this.getHeadBones(),
       VRMHumanBoneName.Chest,
       VRMHumanBoneName.Spine,
       VRMHumanBoneName.Hips,
@@ -357,6 +395,10 @@ export class Viewer {
     const getBoneWeight = (boneName: VRMHumanBoneName): number => {
       switch (boneName) {
         case VRMHumanBoneName.Head:
+        case VRMHumanBoneName.LeftEye:
+        case VRMHumanBoneName.RightEye:
+        case VRMHumanBoneName.Jaw:
+          return 2; // 增加头部相关骨骼的权重
         case VRMHumanBoneName.Chest:
         case VRMHumanBoneName.Spine:
         case VRMHumanBoneName.Hips:
@@ -399,11 +441,12 @@ export class Viewer {
   }
 
   private mapBoneNameToTouchArea(boneName: VRMHumanBoneName): TouchAreaEnum | null {
-    switch (boneName) {
-      case VRMHumanBoneName.Head:
-      case VRMHumanBoneName.Neck:
-        return TouchAreaEnum.Head;
+    const headBones = this.getHeadBones();
+    if (headBones.includes(boneName)) {
+      return TouchAreaEnum.Head;
+    }
 
+    switch (boneName) {
       case VRMHumanBoneName.LeftUpperArm:
       case VRMHumanBoneName.LeftLowerArm:
       case VRMHumanBoneName.LeftHand:
@@ -432,5 +475,37 @@ export class Viewer {
       default:
         return null;
     }
+  }
+
+  private createHeadHitbox() {
+    if (!this.model?.vrm) return;
+
+    const headBone = this.model.vrm.humanoid.getNormalizedBoneNode('head');
+    if (!headBone) return;
+
+    const geometry = new BoxGeometry(
+      this._headHitboxSize.x,
+      this._headHitboxSize.y,
+      this._headHitboxSize.z,
+    );
+    const material = new MeshBasicMaterial({ visible: false });
+    this._headHitbox = new Mesh(geometry, material);
+
+    headBone.add(this._headHitbox);
+
+    // 调整 hitbox 的位置，使其位于头部中心
+    this._headHitbox.position.set(0, this._headHitboxSize.y / 2, 0);
+  }
+
+  private updateHeadHitbox() {
+    if (!this.model?.vrm || !this._headHitbox) return;
+
+    const headBone = this.model.vrm.humanoid.getNormalizedBoneNode('head');
+    if (!headBone) return;
+
+    // 更新 hitbox 的缩放以匹配模型的缩放
+    const scale = new Vector3();
+    headBone.getWorldScale(scale);
+    this._headHitbox.scale.copy(scale);
   }
 }
