@@ -114,6 +114,7 @@
     "area": {
       "arm": "팔",
       "belly": "배",
+      "buttocks": "엉덩이",
       "chest": "가슴",
       "head": "머리",
       "leg": "다리"
@@ -142,6 +143,11 @@
         "relaxedA": "깨워, 우리 사이에 결과는 없어!",
         "relaxedB": "싫어! 나 화낼 거야!",
         "surprisedA": "우연히 닿은 거겠지..."
+      },
+      "buttocksAction": {
+        "angryA": "너 미친 거 아니야! 나한테서 떨어져!",
+        "embarrassedA": "으... 그렇게 하지 마...",
+        "surprisedA": "아! 어디 만지고 있는 거야?!"
       },
       "chestAction": {
         "angryA": "이렇게 나를 괴롭히면 안 돼! 손을 치워!",
@@ -178,6 +184,10 @@
         "happyA": "간지럽히지 마, 웃으면 복근이 나올 거야",
         "neutralA": "내 복근은 단련된 내력을 숨기고 있을 뿐이야",
         "neutralB": "내 복근 보이니? 그건 단지 깊이 숨겨져 있을 뿐이야"
+      },
+      "buttocksAction": {
+        "angryA": "다시 만지면 너한테 맞을 거야!",
+        "surprisedA": "이봐! 손 조심해!"
       },
       "chestAction": {
         "blinkLeftA": "자, 형의 가슴에 기대!",

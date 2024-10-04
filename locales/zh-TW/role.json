@@ -114,6 +114,7 @@
     "area": {
       "arm": "手臂",
       "belly": "腹部",
+      "buttocks": "臀部",
       "chest": "胸部",
       "head": "頭部",
       "leg": "腿部"
@@ -142,6 +143,11 @@
         "relaxedA": "醒醒，我們之間沒有結果的!",
         "relaxedB": "討厭！我可要生氣啦！",
         "surprisedA": "是不小心碰到的吧..."
+      },
+      "buttocksAction": {
+        "angryA": "你這個變態!離我遠點!",
+        "embarrassedA": "呜...不要這樣...",
+        "surprisedA": "啊!你在摸哪裡?!"
       },
       "chestAction": {
         "angryA": "不可以這樣欺負我啦！快把手拿開！",
@@ -178,6 +184,10 @@
         "happyA": "別癢癢，小心我笑出腹肌",
         "neutralA": "我的腹肌只是再修煉深藏不露的內力",
         "neutralB": "看到我這團腹肌了嗎？它們只是藏得比較深罷了"
+      },
+      "buttocksAction": {
+        "angryA": "再碰我就揍你了!",
+        "surprisedA": "嘿!注意你的手!"
       },
       "chestAction": {
         "blinkLeftA": "來，哥的胸肌給你靠!",

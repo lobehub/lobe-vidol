@@ -1,6 +1,7 @@
 {
   "cancel": "取消",
   "close": "关闭",
+  "community": "社区支持",
   "confirm": "确定",
   "confirmDel": "确定删除吗？",
   "defaultAssistant": "默认助手",
@@ -31,7 +32,12 @@
     "undo": "取消订阅",
     "success": "已取消订阅"
   },
-  "support": "社区支持",
+  "support": {
+    "title": "支持我们",
+    "tooltip": "请我喝杯咖啡",
+    "wechatQRCode": "微信赞赏",
+    "kofiSupport": "通过 Ko-fi 支持我们"
+  },
   "theme": {
     "auto": "跟随系统",
     "light": "亮色模式",

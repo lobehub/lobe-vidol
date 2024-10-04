@@ -114,6 +114,7 @@
     "area": {
       "arm": "腕",
       "belly": "腹部",
+      "buttocks": "お尻",
       "chest": "胸部",
       "head": "頭部",
       "leg": "脚"
@@ -142,6 +143,11 @@
         "relaxedA": "目を覚まして、私たちには結果がない！",
         "relaxedB": "嫌だ！怒るよ！",
         "surprisedA": "偶然触れたのかな…"
+      },
+      "buttocksAction": {
+        "angryA": "あなたは変態ね! 離れて!",
+        "embarrassedA": "うぅ...そんなことしないで...",
+        "surprisedA": "あっ! どこを触ってるの?!"
       },
       "chestAction": {
         "angryA": "そんな風に私をいじめないで！手を離して！",
@@ -178,6 +184,10 @@
         "happyA": "くすぐらないで、笑ったら腹筋が見えるよ",
         "neutralA": "私の腹筋はただ隠された内力を修行しているだけ",
         "neutralB": "私のこの腹筋見える？ただ深く隠れているだけだよ"
+      },
+      "buttocksAction": {
+        "angryA": "もう一度触ったら殴るぞ!",
+        "surprisedA": "おい! 手に気をつけろ!"
       },
       "chestAction": {
         "blinkLeftA": "さあ、兄の胸筋に寄りかかって！",

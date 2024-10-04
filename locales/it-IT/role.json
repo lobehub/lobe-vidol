@@ -114,6 +114,7 @@
     "area": {
       "arm": "Braccio",
       "belly": "Pancia",
+      "buttocks": "natiche",
       "chest": "Petto",
       "head": "Testa",
       "leg": "Gamba"
@@ -142,6 +143,11 @@
         "relaxedA": "Svegliati, tra di noi non c'è futuro!",
         "relaxedB": "Che fastidio! Sto per arrabbiarmi!",
         "surprisedA": "È stato un contatto accidentale, vero..."
+      },
+      "buttocksAction": {
+        "angryA": "Sei un pervertito! Stai lontano da me!",
+        "embarrassedA": "Uff... non fare così...",
+        "surprisedA": "Ah! Dove stai toccando?!"
       },
       "chestAction": {
         "angryA": "Non puoi bullizzarmi così! Togliti la mano!",
@@ -178,6 +184,10 @@
         "happyA": "Non grattarmi, attento che potrei ridere e mostrare gli addominali!",
         "neutralA": "I miei addominali sono solo il risultato di un allenamento profondo",
         "neutralB": "Vedi i miei addominali? Sono solo ben nascosti!"
+      },
+      "buttocksAction": {
+        "angryA": "Se mi tocchi di nuovo, ti picchio!",
+        "surprisedA": "Ehi! Fai attenzione con le mani!"
       },
       "chestAction": {
         "blinkLeftA": "Dai, appoggiati ai miei muscoli!",

@@ -114,6 +114,7 @@
     "area": {
       "arm": "Arm",
       "belly": "Belly",
+      "buttocks": "buttocks",
       "chest": "Chest",
       "head": "Head",
       "leg": "Leg"
@@ -142,6 +143,11 @@
         "relaxedA": "Wake up, there's no future for us!",
         "relaxedB": "Stop it! I'm going to get angry!",
         "surprisedA": "That was an accidental touch, right...?"
+      },
+      "buttocksAction": {
+        "angryA": "You pervert! Stay away from me!",
+        "embarrassedA": "Ugh... don't do that...",
+        "surprisedA": "Ah! Where are you touching?!"
       },
       "chestAction": {
         "angryA": "You can't bully me like this! Take your hand away!",
@@ -178,6 +184,10 @@
         "happyA": "Don't tickle, or I might laugh out my abs!",
         "neutralA": "My abs are just hidden strength from training.",
         "neutralB": "Do you see my abs? They're just hiding a bit deeper."
+      },
+      "buttocksAction": {
+        "angryA": "If you touch me again, I'll hit you!",
+        "surprisedA": "Hey! Watch your hands!"
       },
       "chestAction": {
         "blinkLeftA": "Come on, lean on my chest!",
