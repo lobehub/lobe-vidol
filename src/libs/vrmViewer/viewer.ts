@@ -492,7 +492,7 @@ export class Viewer {
       color: 0x00ff00, // 绿色
       transparent: true,
       opacity: 0.5,
-      visible: true,
+      visible: false,
     });
     this._headHitbox = new Mesh(geometry, material);
 
