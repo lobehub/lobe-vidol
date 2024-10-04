@@ -49,13 +49,13 @@ const Support: React.FC = () => {
         src="https://r2.vidol.chat/common/wechat.jpg"
         alt={t('support.wechatQRCode')}
       />
-      <a
-        className={styles.kofiLink}
-        href="https://ko-fi.com/your-kofi-link"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        ♥️ {`${t('support.kofiSupport')}`}
+      <a href="https://ko-fi.com/Q5Q214AGLQ" target="_blank" rel="noreferrer">
+        <img
+          height="36"
+          style={{ border: '0px', height: '36px' }}
+          src="https://storage.ko-fi.com/cdn/kofi5.png?v=3"
+          alt="Buy Me a Coffee at ko-fi.com"
+        />
       </a>
     </div>
   );
