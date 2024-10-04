@@ -104,6 +104,7 @@
     "nanoid": "^5.0.7",
     "next": "^14.2.13",
     "next-pwa": "^5.6.0",
+    "nextjs-toploader": "^3.6.15",
     "numeral": "^2.0.6",
     "openai": "^4.63.0",
     "pino": "^9.4.0",
