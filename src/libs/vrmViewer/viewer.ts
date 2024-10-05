@@ -77,7 +77,7 @@ export class Viewer {
   /**
    * 播放舞蹈，以音乐文件的播放作为结束标志。
    */
-  public async dance(danceUrl: string, audioUrl: string, onEnd?: () => void) {
+  public async dance(srcUrl: string, audioUrl: string, onEnd?: () => void) {
     if (!this._sound || !this.model) {
       console.error('Audio Object or Model Object Not Existed');
       return null;
@@ -96,7 +96,7 @@ export class Viewer {
     this._sound.setVolume(0.5);
     this._sound.play();
 
-    this.model?.playMotionUrl(MotionFileType.VMD, danceUrl, false);
+    this.model?.playMotionUrl(MotionFileType.VMD, srcUrl, false);
   }
 
   public resetToIdle() {

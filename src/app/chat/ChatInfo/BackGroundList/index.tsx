@@ -1,12 +1,14 @@
+import { message } from 'antd';
 import { createStyles } from 'antd-style';
 import classNames from 'classnames';
-import React from 'react';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
 import GridList from '@/components/GridList';
 import Header from '@/components/Header';
-import { backgroundOptions } from '@/constants/background';
+import { TRANSPARENT_ID, backgroundOptions } from '@/constants/background';
+import { useLoadBackground } from '@/hooks/useLoadBackground';
 import { useGlobalStore } from '@/store/global';
 
 const useStyles = createStyles(({ css, token }) => ({
@@ -26,13 +28,26 @@ interface BackgroundListProps {
 }
 
 const BackgroundList = ({ className, style }: BackgroundListProps) => {
-  const [backgroundId, setBackgroundId] = useGlobalStore((s) => [
-    s.backgroundId,
-    s.setBackgroundId,
-  ]);
+  const [setBackgroundUrl] = useGlobalStore((s) => [s.setBackgroundUrl]);
+  const [backgroundId, setBackgroundId] = useState<string | undefined>(undefined);
   const { t } = useTranslation('chat');
-
   const { styles } = useStyles();
+  const { downloading, fetchBackgroundUrl, getBackgroundThumbById } = useLoadBackground();
+
+  const handleItemClick = async (id: string) => {
+    setBackgroundId(id);
+    if (id === TRANSPARENT_ID) {
+      setBackgroundUrl(undefined);
+      return;
+    }
+    try {
+      const url = await fetchBackgroundUrl(id);
+      setBackgroundUrl(url);
+    } catch {
+      message.error('背景图片下载失败');
+    }
+  };
+
   return (
     <Flexbox className={classNames(className, styles.container)} style={style}>
       <Header
@@ -41,13 +56,13 @@ const BackgroundList = ({ className, style }: BackgroundListProps) => {
       />
       <GridList
         items={backgroundOptions.map((option) => ({
-          avatar: `https://r2.vidol.chat/backgrounds/${encodeURIComponent(option.thumbnail)}`,
+          avatar: `${getBackgroundThumbById(option.id)}`,
           id: option.id,
           name: option.name,
           url: option.url,
+          spin: downloading && backgroundId === option.id,
         }))}
-        onClick={(id) => setBackgroundId(id)}
-        isActivated={(id) => id === backgroundId}
+        onClick={handleItemClick}
       />
     </Flexbox>
   );

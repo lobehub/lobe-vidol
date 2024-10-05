@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next';
 
 import ListItem from '@/components/ListItem';
 import { useLoadAudio } from '@/hooks/useLoadAudio';
-import { useLoadDance } from '@/hooks/useLoadDance';
+import { useLoadSrc } from '@/hooks/useLoadSrc';
 import { useDanceStore } from '@/store/dance';
 import { useGlobalStore } from '@/store/global';
 import { Dance } from '@/types/dance';
@@ -42,7 +42,7 @@ const DanceItem = (props: DanceItemProps) => {
   const { t } = useTranslation('dance');
 
   const { downloading: audioDownloading, percent: audioPercent, fetchAudioUrl } = useLoadAudio();
-  const { downloading: danceDownloading, percent: dancePercent, fetchDanceUrl } = useLoadDance();
+  const { downloading: srcDownloading, percent: srcPercent, fetchSrcUrl } = useLoadSrc();
   const viewer = useGlobalStore((s) => s.viewer);
 
   const handlePlayPause = async () => {
@@ -53,10 +53,10 @@ const DanceItem = (props: DanceItemProps) => {
       setCurrentPlayId(danceItem.danceId);
       setIsPlaying(true);
       const audioPromise = fetchAudioUrl(danceItem.danceId, danceItem.audio);
-      const dancePromise = fetchDanceUrl(danceItem.danceId, danceItem.src);
-      const [danceUrl, audioUrl] = await Promise.all([dancePromise, audioPromise]);
-      if (danceUrl && audioUrl)
-        viewer?.dance(danceUrl, audioUrl, () => {
+      const srcPromise = fetchSrcUrl(danceItem.danceId, danceItem.src);
+      const [srcUrl, audioUrl] = await Promise.all([srcPromise, audioPromise]);
+      if (srcUrl && audioUrl)
+        viewer?.dance(srcUrl, audioUrl, () => {
           setIsPlaying(false);
         });
     }
@@ -65,14 +65,14 @@ const DanceItem = (props: DanceItemProps) => {
   return (
     <ListItem
       ref={hoverRef}
-      showAction={isHovered || open || audioDownloading || danceDownloading}
+      showAction={isHovered || open || audioDownloading || srcDownloading}
       actions={[
-        audioDownloading || danceDownloading ? (
+        audioDownloading || srcDownloading ? (
           <Progress
             key={`progress-${danceItem.danceId}`}
             type="circle"
             className={styles.progress}
-            percent={Math.ceil((dancePercent + audioPercent) / 2)}
+            percent={Math.ceil((srcPercent + audioPercent) / 2)}
             size={[32, 32]}
           />
         ) : null,

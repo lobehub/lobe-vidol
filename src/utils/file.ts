@@ -1,6 +1,7 @@
 const MODEL_SCHEMA = 'model';
 const AUDIO_SCHEMA = 'audio';
-const Dance_SCHEMA = 'dance';
+const DANCE_SCHEMA = 'dance';
+const BACKGROUND_SCHEMA = 'background';
 const MOTION_SCHEMA = 'motion';
 
 export const getModelPathByAgentId = (agentId: string) => {
@@ -20,5 +21,9 @@ export const getMotionPathByMotionId = (motionId: string) => {
 };
 
 export const getDancePathByDanceId = (danceId: string) => {
-  return `${Dance_SCHEMA}://${danceId}`;
+  return `${DANCE_SCHEMA}://${danceId}`;
+};
+
+export const getBackgroundPathById = (backgroundId: string) => {
+  return `${BACKGROUND_SCHEMA}://${backgroundId}`;
 };
