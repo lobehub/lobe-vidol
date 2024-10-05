@@ -2,6 +2,38 @@
 
 # Changelog
 
+## [Version&nbsp;0.30.0](https://github.com/lobehub/lobe-vidol/compare/v0.29.0...v0.30.0)
+<sup>Released on **2024-10-05**</sup>
+
+
+#### ✨ Features
+
+- **misc**: Page top loading, 添加男性角色的 motion 预设.
+
+
+<br/>
+
+
+
+<details>
+<summary><kbd>Improvements and Fixes</kbd></summary>
+
+
+
+#### What's improved
+
+* **misc**: Page top loading ([778075e](https://github.com/lobehub/lobe-vidol/commit/778075e))
+* **misc**: 添加男性角色的 motion 预设 ([6cc02e9](https://github.com/lobehub/lobe-vidol/commit/6cc02e9))
+
+</details>
+
+
+<div align="right">
+
+[![](https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square)](#readme-top)
+
+</div>
+
 ## [Version&nbsp;0.29.0](https://github.com/lobehub/lobe-vidol/compare/v0.28.0...v0.29.0)
 <sup>Released on **2024-09-25**</sup>
 
