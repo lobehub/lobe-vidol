@@ -114,6 +114,7 @@
     "area": {
       "arm": "Bras",
       "belly": "Ventre",
+      "buttocks": "fesses",
       "chest": "Poitrine",
       "head": "Tête",
       "leg": "Jambe"
@@ -142,6 +143,11 @@
         "relaxedA": "Réveille-toi, il n'y a pas d'avenir entre nous !",
         "relaxedB": "C'est agaçant ! Je vais me fâcher !",
         "surprisedA": "C'était un accident, non ?"
+      },
+      "buttocksAction": {
+        "angryA": "Tu es un pervers! Éloigne-toi de moi!",
+        "embarrassedA": "Euh... ne fais pas ça...",
+        "surprisedA": "Ah! Tu touches où?!"
       },
       "chestAction": {
         "angryA": "Tu ne peux pas me harceler comme ça ! Retire ta main !",
@@ -178,6 +184,10 @@
         "happyA": "Ne me chatouille pas, fais attention, je pourrais rire et montrer mes abdominaux.",
         "neutralA": "Mes abdominaux cachent juste une force intérieure bien entraînée.",
         "neutralB": "Tu vois mes abdominaux ? Ils sont juste bien cachés."
+      },
+      "buttocksAction": {
+        "angryA": "Si tu me touches encore, je te frappe!",
+        "surprisedA": "Hé! Fais attention à tes mains!"
       },
       "chestAction": {
         "blinkLeftA": "Allez, repose-toi sur mes muscles !",

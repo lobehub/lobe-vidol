@@ -28,7 +28,7 @@ export default () => {
       className={styles.icon}
       icon={SiDiscord}
       key="discord"
-      title={t('support')}
+      title={t('community')}
       onClick={() => window.open('https://discord.gg/AYFPHvv2jT', '_blank')}
       style={{ border: `1px solid ${theme.colorFillSecondary}` }}
     />

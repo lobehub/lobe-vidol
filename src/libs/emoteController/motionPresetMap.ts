@@ -16,6 +16,8 @@ export enum MotionPresetName {
   FemaleCoverChest = 'female_cover_chest',
   FemaleStand = 'female_stand',
   FemaleStandMix = 'female_stand_mix',
+  MaleHappy = 'male_happy',
+  MaleAngry = 'male_angry',
 }
 
 export const motionPresetMap: Record<
@@ -36,10 +38,20 @@ export const motionPresetMap: Record<
     type: MotionFileType.FBX,
     name: 'Female/Happy',
   },
+  male_happy: {
+    url: 'https://r2.vidol.chat/animations/c9ccf37e-b96c-11e4-a802-0aaa78deedf9.fbx',
+    type: MotionFileType.FBX,
+    name: 'Male/Happy',
+  },
   female_angry: {
     url: 'https://r2.vidol.chat/animations/c9c98b02-b96c-11e4-a802-0aaa78deedf9.fbx',
     type: MotionFileType.FBX,
     name: 'Female/Angry',
+  },
+  male_angry: {
+    url: 'https://r2.vidol.chat/animations/c9c916ce-b96c-11e4-a802-0aaa78deedf9.fbx',
+    type: MotionFileType.FBX,
+    name: 'Male/Angry',
   },
   female_greeting: {
     url: 'https://r2.vidol.chat/animations/c9c7996a-b96c-11e4-a802-0aaa78deedf9.fbx',

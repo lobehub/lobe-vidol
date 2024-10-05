@@ -114,6 +114,7 @@
     "area": {
       "arm": "Braço",
       "belly": "Barriga",
+      "buttocks": "nádegas",
       "chest": "Peito",
       "head": "Cabeça",
       "leg": "Perna"
@@ -142,6 +143,11 @@
         "relaxedA": "Acorda, não temos futuro!",
         "relaxedB": "Que chato! Estou começando a ficar brava!",
         "surprisedA": "Foi sem querer, certo..."
+      },
+      "buttocksAction": {
+        "angryA": "Você é um pervertido! Fique longe de mim!",
+        "embarrassedA": "Ugh... não faça isso...",
+        "surprisedA": "Ah! Onde você está tocando?!"
       },
       "chestAction": {
         "angryA": "Não pode me tratar assim! Tire a mão!",
@@ -178,6 +184,10 @@
         "happyA": "Não me faça cócegas, cuidado para eu não rir e mostrar meu abdômen",
         "neutralA": "Meu abdômen é apenas um poder oculto em treinamento",
         "neutralB": "Viu meu abdômen? Ele só está escondido mais fundo."
+      },
+      "buttocksAction": {
+        "angryA": "Se você me tocar de novo, eu vou te bater!",
+        "surprisedA": "Ei! Cuidado com suas mãos!"
       },
       "chestAction": {
         "blinkLeftA": "Vem, encosta no meu peito!",

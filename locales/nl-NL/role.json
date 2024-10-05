@@ -114,6 +114,7 @@
     "area": {
       "arm": "Arm",
       "belly": "Buik",
+      "buttocks": "billen",
       "chest": "Borst",
       "head": "Hoofd",
       "leg": "Been"
@@ -142,6 +143,11 @@
         "relaxedA": "Word wakker, er is geen toekomst voor ons!",
         "relaxedB": "Vervelend! Ik ga boos worden!",
         "surprisedA": "Dat was per ongeluk, toch..."
+      },
+      "buttocksAction": {
+        "angryA": "Wat een pervert! Blijf van me af!",
+        "embarrassedA": "O... doe dat niet...",
+        "surprisedA": "Ah! Waar ben je aan het voelen?!"
       },
       "chestAction": {
         "angryA": "Je kunt me niet zo pesten! Haal je hand weg!",
@@ -178,6 +184,10 @@
         "happyA": "Kras niet, pas op dat ik ga lachen en mijn buikspieren laat zien.",
         "neutralA": "Mijn buikspieren zijn gewoon verborgen kracht die ik heb getraind.",
         "neutralB": "Zie je deze buikspieren? Ze zijn gewoon goed verborgen."
+      },
+      "buttocksAction": {
+        "angryA": "Als je me nog een keer aanraakt, krijg je klappen!",
+        "surprisedA": "Hé! Let op je handen!"
       },
       "chestAction": {
         "blinkLeftA": "Kom, leun op mijn borstspieren!",

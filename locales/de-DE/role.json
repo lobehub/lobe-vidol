@@ -114,6 +114,7 @@
     "area": {
       "arm": "Arm",
       "belly": "Bauch",
+      "buttocks": "Gesäß",
       "chest": "Brust",
       "head": "Kopf",
       "leg": "Bein"
@@ -142,6 +143,11 @@
         "relaxedA": "Wach auf, zwischen uns gibt es kein Ergebnis!",
         "relaxedB": "Das nervt! Ich werde wütend!",
         "surprisedA": "Das war doch ein Versehen..."
+      },
+      "buttocksAction": {
+        "angryA": "Du Perverse! Halt Abstand von mir!",
+        "embarrassedA": "Ähm... mach das nicht...",
+        "surprisedA": "Ah! Wo fasst du hin?!"
       },
       "chestAction": {
         "angryA": "Du kannst mich nicht so ärgern! Nimm deine Hand weg!",
@@ -178,6 +184,10 @@
         "happyA": "Kratze nicht, pass auf, dass ich lache und meine Bauchmuskeln zeige.",
         "neutralA": "Meine Bauchmuskeln sind nur tief versteckte innere Kraft.",
         "neutralB": "Siehst du meine Bauchmuskeln? Sie sind nur etwas tiefer versteckt."
+      },
+      "buttocksAction": {
+        "angryA": "Wenn du mich nochmal anfasst, kriegst du Ärger!",
+        "surprisedA": "Hey! Pass auf, wo du hinfasst!"
       },
       "chestAction": {
         "blinkLeftA": "Komm, lehn dich an meine Brustmuskeln!",

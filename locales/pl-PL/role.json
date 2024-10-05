@@ -114,6 +114,7 @@
     "area": {
       "arm": "Ramię",
       "belly": "Brzuch",
+      "buttocks": "pośladki",
       "chest": "Klatka piersiowa",
       "head": "Głowa",
       "leg": "Noga"
@@ -142,6 +143,11 @@
         "relaxedA": "Obudź się, między nami nie ma przyszłości!",
         "relaxedB": "Nienawidzę! Zaczynam się złościć!",
         "surprisedA": "To było przypadkowe, prawda?"
+      },
+      "buttocksAction": {
+        "angryA": "Ty zboczeńcu! Trzymaj się z daleka!",
+        "embarrassedA": "E... nie rób tak...",
+        "surprisedA": "A! Gdzie ty dotykasz?!"
       },
       "chestAction": {
         "angryA": "Nie możesz mnie tak traktować! Szybko zabierz rękę!",
@@ -178,6 +184,10 @@
         "happyA": "Nie drap mnie, bo mogę się zaśmiać i pokazać mięśnie brzucha!",
         "neutralA": "Moje mięśnie brzucha to tylko ukryta siła.",
         "neutralB": "Widzisz te mięśnie brzucha? One są tylko głęboko ukryte."
+      },
+      "buttocksAction": {
+        "angryA": "Jeszcze raz mnie dotkniesz, to cię uderzę!",
+        "surprisedA": "Hej! Uważaj na ręce!"
       },
       "chestAction": {
         "blinkLeftA": "Chodź, oprzyj się na mojej klatce piersiowej!",

@@ -5,11 +5,11 @@ import { fetchWithProgress } from '@/utils/fetch';
 import { getDancePathByDanceId } from '@/utils/file';
 import { cacheStorage } from '@/utils/storage';
 
-export const useLoadDance = () => {
+export const useLoadSrc = () => {
   const [downloading, setDownloading] = useState(false);
   const [percent, setPercent] = useState(0);
 
-  const fetchDanceUrl = async (danceId: string, src: string) => {
+  const fetchSrcUrl = async (danceId: string, src: string) => {
     const localDancePath = getDancePathByDanceId(danceId);
     let danceBlob = await cacheStorage.getItem(localDancePath);
 
@@ -43,6 +43,6 @@ export const useLoadDance = () => {
   return {
     downloading,
     percent,
-    fetchDanceUrl,
+    fetchSrcUrl: fetchSrcUrl,
   };
 };

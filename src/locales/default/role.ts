@@ -59,6 +59,7 @@ export default {
       leg: '腿部',
       chest: '胸部',
       belly: '腹部',
+      buttocks: '臀部',
     },
     expression: {
       natural: '自然',
@@ -118,6 +119,11 @@ export default {
         relaxedA: '醒醒，我们之间没有结果的!',
         relaxedB: '讨厌！我可要生气啦！',
       },
+      buttocksAction: {
+        surprisedA: '啊!你在摸哪里?!',
+        angryA: '你这个变态!离我远点!',
+        embarrassedA: '呜...不要这样...',
+      },
     },
     maleAction: {
       headAction: {
@@ -143,6 +149,10 @@ export default {
         neutralA: '我的腹肌只是再修炼深藏不露的内力',
         happyA: '别挠痒痒，小心我笑出腹肌',
         neutralB: '看到我这团腹肌了吗？它们只是藏得比较深罢了',
+      },
+      buttocksAction: {
+        surprisedA: '嘿!注意你的手!',
+        angryA: '再碰我就揍你了!',
       },
     },
   },

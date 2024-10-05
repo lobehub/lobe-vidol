@@ -114,6 +114,7 @@
     "area": {
       "arm": "Kol",
       "belly": "Karın",
+      "buttocks": "kalça",
       "chest": "Göğüs",
       "head": "Baş",
       "leg": "Bacak"
@@ -142,6 +143,11 @@
         "relaxedA": "Uyan, aramızda bir sonuç yok!",
         "relaxedB": "Sinirleniyorum! Gerçekten kızacağım!",
         "surprisedA": "Bu kazara oldu değil mi..."
+      },
+      "buttocksAction": {
+        "angryA": "Sen bir sapıksın! Benden uzak dur!",
+        "embarrassedA": "Of... böyle yapma...",
+        "surprisedA": "Ah! Nereye dokunuyorsun?!"
       },
       "chestAction": {
         "angryA": "Beni böyle zorlayamazsın! Hemen elini çek!",
@@ -178,6 +184,10 @@
         "happyA": "Kaşındırma, yoksa gülmekten karın kaslarım ortaya çıkar",
         "neutralA": "Karın kaslarım sadece derin bir güç saklıyor",
         "neutralB": "Bu karın kaslarımı gördün mü? Sadece derinlerde saklanıyorlar"
+      },
+      "buttocksAction": {
+        "angryA": "Bir daha dokunursan seni döverim!",
+        "surprisedA": "Hey! Elini dikkat et!"
       },
       "chestAction": {
         "blinkLeftA": "Gel, kardeşin göğüs kasına yaslan!",

@@ -1,6 +1,7 @@
 import { Analytics } from '@vercel/analytics/react';
 import { PropsWithChildren } from 'react';
 
+import NProgress from '@/components/NProgress';
 import Layout from '@/layout';
 
 import StyleRegistry from './StyleRegistry';
@@ -12,7 +13,10 @@ const RootLayout = ({ children }: PropsWithChildren) => {
     <html lang="cn" suppressHydrationWarning>
       <body>
         <StyleRegistry>
-          <Layout>{children}</Layout>
+          <Layout>
+            <NProgress />
+            {children}
+          </Layout>
         </StyleRegistry>
         <Analytics />
       </body>

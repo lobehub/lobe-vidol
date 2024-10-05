@@ -25,8 +25,9 @@ export class MotionController {
    * @param motion
    */
   public playMotion(motion: MotionPresetName, loop: boolean) {
+    console.log('motion', motion);
     const { type, url } = this.getMotionInfo(motion);
-    this.motionManager.loadMotionUrl(type, url, loop);
+    if (type && url) this.motionManager.loadMotionUrl(type, url, loop);
   }
 
   public playMotionUrl(fileType: MotionFileType, url: string, loop: boolean) {
@@ -34,7 +35,7 @@ export class MotionController {
   }
 
   public getMotionInfo(motion: MotionPresetName) {
-    return motionPresetMap[motion];
+    return motionPresetMap[motion] || motionPresetMap.idle;
   }
 
   public stopMotion() {

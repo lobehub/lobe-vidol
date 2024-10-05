@@ -10,6 +10,9 @@ export const useStyles = createStyles(({ css, token }) => ({
     width: 100%;
     height: 100%;
     min-height: 0;
+
+    background-color: ${rgba(token.colorBgLayout, 0.2)};
+    backdrop-filter: saturate(180%) blur(2px);
   `,
   toolbar: css`
     position: absolute;
@@ -26,9 +29,6 @@ export const useStyles = createStyles(({ css, token }) => ({
     max-width: 100%;
     height: 100%;
     max-height: 100%;
-
-    background-color: ${rgba(token.colorBgLayout, 0.2)};
-    backdrop-filter: saturate(180%) blur(8px);
   `,
   canvas: css`
     display: block;

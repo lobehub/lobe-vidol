@@ -114,6 +114,7 @@
     "area": {
       "arm": "Cánh tay",
       "belly": "Bụng",
+      "buttocks": "mông",
       "chest": "Ngực",
       "head": "Đầu",
       "leg": "Chân"
@@ -142,6 +143,11 @@
         "relaxedA": "Tỉnh lại đi, giữa chúng ta không có kết quả đâu!",
         "relaxedB": "Ghét quá! Tôi sắp tức giận rồi!",
         "surprisedA": "Chắc là vô tình chạm phải thôi..."
+      },
+      "buttocksAction": {
+        "angryA": "Bạn thật biến thái! Tránh xa tôi ra!",
+        "embarrassedA": "Ôi... đừng như vậy...",
+        "surprisedA": "À! Bạn đang sờ đâu vậy?!"
       },
       "chestAction": {
         "angryA": "Không được bắt nạt tôi như vậy! Mau rút tay ra!",
@@ -178,6 +184,10 @@
         "happyA": "Đừng gãi, cẩn thận tôi sẽ cười ra bụng.",
         "neutralA": "Bụng của tôi chỉ là sức mạnh ẩn giấu từ việc luyện tập.",
         "neutralB": "Bạn có thấy bụng của tôi không? Chúng chỉ ẩn sâu hơn thôi."
+      },
+      "buttocksAction": {
+        "angryA": "Nếu còn chạm vào tôi nữa, tôi sẽ đánh bạn!",
+        "surprisedA": "Này! Chú ý tay của bạn!"
       },
       "chestAction": {
         "blinkLeftA": "Đến đây, cơ ngực của tôi cho bạn dựa!",

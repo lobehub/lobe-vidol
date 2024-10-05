@@ -11,6 +11,7 @@ import { HeaderNavKey } from '@/layout/type';
 
 import Discord from './Actions/Discord';
 import Github from './Actions/Github';
+import Support from './Actions/Support';
 import ThemeMode from './Actions/ThemeMode';
 
 interface Props {
@@ -35,6 +36,7 @@ const Header = (props: Props) => {
         <ThemeMode key={'theme'} />,
         <Discord key={'discord'} />,
         // <UserAvatar key="user" />,
+        <Support key={'support'} />,
       ]}
       logo={
         <Space>
