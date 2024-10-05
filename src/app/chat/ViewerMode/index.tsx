@@ -1,6 +1,7 @@
 'use client';
 
 import classNames from 'classnames';
+import { isEqual } from 'lodash-es';
 import React, { memo } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
@@ -14,10 +15,10 @@ import { useStyles } from './style';
 
 export default memo(() => {
   const { styles } = useStyles();
-  const [currentAgent, interactive] = useSessionStore((s) => [
-    sessionSelectors.currentAgent(s),
-    s.interactive,
-  ]);
+  const [currentAgent, interactive] = useSessionStore(
+    (s) => [sessionSelectors.currentAgent(s), s.interactive],
+    isEqual,
+  );
 
   return (
     <Flexbox flex={1} style={{ position: 'relative' }}>

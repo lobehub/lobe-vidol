@@ -2,6 +2,7 @@
 
 import { Skeleton, Space } from 'antd';
 import classNames from 'classnames';
+import { isEqual } from 'lodash-es';
 import React, { Suspense } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
@@ -22,7 +23,7 @@ interface Props {
 export default (props: Props) => {
   const { className, style } = props;
   const { styles } = useStyles();
-  const [currentAgent] = useSessionStore((s) => [sessionSelectors.currentAgent(s)]);
+  const [currentAgent] = useSessionStore((s) => [sessionSelectors.currentAgent(s)], isEqual);
 
   return (
     <Flexbox
