@@ -7,7 +7,7 @@ import { Flexbox } from 'react-layout-kit';
 
 import { HEADER_HEIGHT } from '@/constants/token';
 
-import V from './Elsa';
+import V from './DefaultAgent';
 import List from './List';
 
 const SessionCreateModal = dynamic(() => import('./SessionCreateModal'));

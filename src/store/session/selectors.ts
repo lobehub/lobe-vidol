@@ -1,6 +1,6 @@
 import { t } from 'i18next';
 
-import { LOBE_VIDOL_DEFAULT_AGENT_ID } from '@/constants/agent';
+import { LOBE_VIDOL_DEFAULT_AGENT, LOBE_VIDOL_DEFAULT_AGENT_ID } from '@/constants/agent';
 import { DEFAULT_USER_AVATAR } from '@/constants/common';
 import { useAgentStore } from '@/store/agent';
 import { useSettingStore } from '@/store/setting';
@@ -39,7 +39,7 @@ const getAgentById = (s: SessionStore) => {
   const agentStore = useAgentStore.getState();
   return (id: string) => {
     if (id === LOBE_VIDOL_DEFAULT_AGENT_ID) {
-      return agentStore.defaultAgent;
+      return LOBE_VIDOL_DEFAULT_AGENT;
     }
 
     const agentId = sessionList.find((item) => item.agentId === id)?.agentId;

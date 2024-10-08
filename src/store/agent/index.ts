@@ -1,4 +1,5 @@
 import { nanoid } from 'ai';
+import { message } from 'antd';
 import { t } from 'i18next';
 import { produce } from 'immer';
 import { DeepPartial } from 'utility-types';
@@ -16,6 +17,7 @@ import { StateCreator } from 'zustand/vanilla';
 import {
   DEFAULT_AGENT_CONFIG,
   DEFAULT_LLM_CONFIG,
+  LOBE_VIDOL_DEFAULT_AGENT,
   LOBE_VIDOL_DEFAULT_AGENT_ID,
 } from '@/constants/agent';
 import { DEFAULT_AGENT_AVATAR_URL } from '@/constants/common';
@@ -59,10 +61,6 @@ export interface AgentStore extends TouchStore {
    * 关闭角色
    */
   deactivateAgent: () => void;
-  /**
-   * 默认角色
-   */
-  defaultAgent: Agent;
 
   /**
    * 根据 ID 获取角色
@@ -127,9 +125,9 @@ const createAgentStore: StateCreator<AgentStore, [['zustand/devtools', never]]> 
     set({ currentIdentifier: undefined });
   },
   getAgentById: (agentId: string) => {
-    const { localAgentList, defaultAgent } = get();
+    const { localAgentList } = get();
 
-    if (agentId === LOBE_VIDOL_DEFAULT_AGENT_ID) return defaultAgent;
+    if (agentId === LOBE_VIDOL_DEFAULT_AGENT_ID) return LOBE_VIDOL_DEFAULT_AGENT;
 
     const currentAgent = localAgentList.find((item) => item.agentId === agentId);
     if (!currentAgent) return undefined;
@@ -164,15 +162,12 @@ const createAgentStore: StateCreator<AgentStore, [['zustand/devtools', never]]> 
     set({ currentIdentifier: newAgent.agentId, localAgentList: newList });
   },
   updateAgentConfig: (agent, updateAgentId) => {
-    const { localAgentList, currentIdentifier, defaultAgent } = get();
+    const { localAgentList, currentIdentifier } = get();
 
     const updateIdentifier = updateAgentId || currentIdentifier;
 
     if (updateIdentifier === LOBE_VIDOL_DEFAULT_AGENT_ID) {
-      const mergeAgent = produce(defaultAgent, (draft) => {
-        mergeWithUndefined(draft, agent);
-      });
-      set({ defaultAgent: mergeAgent });
+      message.info('默认助手不支持修改配置');
       return;
     }
 
@@ -186,7 +181,7 @@ const createAgentStore: StateCreator<AgentStore, [['zustand/devtools', never]]> 
   setAgentConfig: (agent) => {
     const { localAgentList, currentIdentifier } = get();
     if (currentIdentifier === LOBE_VIDOL_DEFAULT_AGENT_ID) {
-      set({ defaultAgent: agent });
+      message.info('默认助手不支持修改配置');
       return;
     }
 

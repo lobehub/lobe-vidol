@@ -10,7 +10,7 @@ import { HEADER_HEIGHT } from '@/constants/token';
 
 import AgentCreate from './AgentCreate';
 import List from './List';
-import Elsa from './List/Elsa';
+import Elsa from './List/DefaultAgent';
 
 const useStyles = createStyles(({ css, token, prefixCls }) => ({
   role: css`

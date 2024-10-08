@@ -1,4 +1,8 @@
-import { DEFAULT_AGENT_CONFIG, LOBE_VIDOL_DEFAULT_AGENT_ID } from '@/constants/agent';
+import {
+  DEFAULT_AGENT_CONFIG,
+  LOBE_VIDOL_DEFAULT_AGENT,
+  LOBE_VIDOL_DEFAULT_AGENT_ID,
+} from '@/constants/agent';
 import { EMPTY_TOUCH_CONFIG } from '@/constants/touch';
 import { configSelectors, useSettingStore } from '@/store/setting';
 import { Agent, AgentMeta, GenderEnum } from '@/types/agent';
@@ -12,8 +16,8 @@ import { AgentStore } from '../index';
 const showSideBar = (s: AgentStore) => !!s.currentIdentifier;
 
 const currentAgentItem = (s: AgentStore): Agent | undefined => {
-  const { currentIdentifier, localAgentList, defaultAgent } = s;
-  if (currentIdentifier === LOBE_VIDOL_DEFAULT_AGENT_ID) return defaultAgent;
+  const { currentIdentifier, localAgentList } = s;
+  if (currentIdentifier === LOBE_VIDOL_DEFAULT_AGENT_ID) return LOBE_VIDOL_DEFAULT_AGENT;
 
   const currentAgent = localAgentList.find((item) => item.agentId === currentIdentifier);
   if (!currentAgent) return undefined;
