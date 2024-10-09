@@ -1,12 +1,13 @@
 'use client';
 
-import { Header as LobeHeader, Logo, TabsNav } from '@lobehub/ui';
+import { Header as LobeHeader, TabsNav } from '@lobehub/ui';
 import { Space, Tag, Tooltip } from 'antd';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import Logo from '@/components/Logo';
 import { HeaderNavKey } from '@/layout/type';
 
 import Discord from './Actions/Discord';
