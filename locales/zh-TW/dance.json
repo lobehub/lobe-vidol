@@ -15,11 +15,17 @@
       "title": "音頻文件",
       "upload": "選擇音頻文件"
     },
-    "dance": {
+    "src": {
       "desc": "舞蹈的動作文件",
       "required": "請上傳舞蹈文件",
       "title": "舞蹈文件",
       "upload": "選擇舞蹈文件"
+    },
+    "camera": {
+      "title": "镜头文件",
+      "desc": "选择镜头文件（当前仅支持 VMD 格式）",
+      "upload": "选择镜头文件",
+      "required": "请选择镜头文件"
     },
     "danceId": {
       "desc": "舞蹈的唯一標識符",
@@ -55,7 +61,8 @@
     "uploadingAudio": "上傳音樂文件",
     "uploadingCover": "上傳封面",
     "uploadingDance": "上傳舞蹈文件",
-    "uploadingThumb": "上傳縮略圖"
+    "uploadingThumb": "上傳縮略圖",
+    "uploadingCamera": "上传镜头文件"
   },
   "createDance": "創建你最愛的舞蹈",
   "dance": "跳舞",

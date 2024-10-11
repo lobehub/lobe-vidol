@@ -13,14 +13,16 @@ import { useUploadDance } from '@/hooks/useUploadDance';
 import { Dance } from '@/types/dance';
 
 import AudioUpload from './AudioUpload';
+import CameraUpload from './CameraUpload';
 import CoverImageUpload from './CoverImageUpload';
 import DanceIdInput from './DanceIdInput';
 import DanceName from './DanceName';
-import DanceUpload from './DanceUpload';
 import ReadMe from './ReadMe';
+import SrcUpload from './SrcUpload';
 
 interface FormValues {
   audio: File;
+  camera?: File;
   danceId: string;
   image: { cover: string; thumb: string };
   name: string;
@@ -40,12 +42,16 @@ const CreateDanceModal = () => {
       const data = await form.validateFields();
 
       try {
-        const { coverUrl, thumbUrl, audioUrl, srcUrl } = await uploadDanceData(data.danceId, {
-          audio: data.audio,
-          cover: data.image.cover,
-          src: data.src,
-          thumb: data.image.thumb,
-        });
+        const { coverUrl, thumbUrl, audioUrl, srcUrl, cameraUrl } = await uploadDanceData(
+          data.danceId,
+          {
+            audio: data.audio,
+            cover: data.image.cover,
+            src: data.src,
+            thumb: data.image.thumb,
+            camera: data.camera,
+          },
+        );
 
         if (!thumbUrl || !coverUrl || !audioUrl || !srcUrl) {
           message.error(t('fileUploadError', { ns: 'error' }));
@@ -60,6 +66,7 @@ const CreateDanceModal = () => {
           audio: audioUrl,
           src: srcUrl,
           readme: data.readme,
+          camera: cameraUrl,
         };
 
         const body = [
@@ -77,6 +84,8 @@ const CreateDanceModal = () => {
           dance.thumb,
           '### readme',
           dance.readme,
+          '### camera',
+          dance.camera,
         ].join('\n\n');
 
         const url = qs.stringifyUrl({
@@ -127,10 +136,16 @@ const CreateDanceModal = () => {
     },
     {
       name: 'src',
-      label: t('create.dance.title'),
-      rules: [{ required: true, message: t('create.dance.required') }],
-      desc: t('create.dance.desc'),
-      children: <DanceUpload />,
+      label: t('create.src.title'),
+      rules: [{ required: true, message: t('create.src.required') }],
+      desc: t('create.src.desc'),
+      children: <SrcUpload />,
+    },
+    {
+      name: 'cameraFile',
+      label: t('create.camera.title'),
+      desc: t('create.camera.desc'),
+      children: <CameraUpload />,
     },
     {
       name: 'readme',

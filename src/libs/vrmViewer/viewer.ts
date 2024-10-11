@@ -14,6 +14,7 @@ import {
 } from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
+import { loadVMDCamera } from '@/libs/VMDAnimation/loadVMDCamera';
 import { MotionFileType } from '@/libs/emoteController/type';
 import { TouchAreaEnum } from '@/types/touch';
 
@@ -41,6 +42,8 @@ export class Viewer {
   private _isDancing: boolean = false;
   private _headHitbox?: THREE.Mesh;
   private _headHitboxSize: Vector3 = new Vector3(0.2, 0.25, 0.2);
+  private _cameraMixer?: THREE.AnimationMixer;
+  private _cameraAction?: THREE.AnimationAction;
 
   constructor() {
     this.isReady = false;
@@ -90,6 +93,8 @@ export class Viewer {
       onEnd?.();
       this.model?.loadIdleAnimation();
       this._isDancing = false;
+      // 重置相机位置
+      this.resetCamera();
     };
     const buffer = await audioLoader.loadAsync(audioUrl);
     this._sound.setBuffer(buffer);
@@ -97,12 +102,21 @@ export class Viewer {
     this._sound.play();
 
     this.model?.playMotionUrl(MotionFileType.VMD, srcUrl, false);
+
+    // 加载并播放镜头动画
+    if (cameraUrl) {
+      await this.loadCameraAnimation(cameraUrl);
+      this.playCameraAnimation();
+    }
   }
 
   public resetToIdle() {
     this._sound?.stop();
     this.model?.loadIdleAnimation();
     this._isDancing = false;
+    // 停止并重置镜头动画
+    this.stopCameraAnimation();
+    this.resetCamera();
   }
 
   /**
@@ -304,6 +318,10 @@ export class Viewer {
     // update vrm components
     if (this.model) {
       this.model.update(delta);
+    }
+    // 更新镜头动画
+    if (this._isDancing && this._cameraMixer) {
+      this._cameraMixer.update(delta);
     }
     if (this._cameraHelper) {
       this._cameraHelper.update();
@@ -512,5 +530,30 @@ export class Viewer {
     const scale = new Vector3();
     headBone.getWorldScale(scale);
     this._headHitbox.scale.copy(scale);
+  }
+
+  public async loadCameraAnimation(url: string): Promise<void> {
+    if (!this._camera) return;
+
+    const cameraAnimation = await loadVMDCamera(url);
+    if (cameraAnimation) {
+      this._cameraMixer = new THREE.AnimationMixer(this._camera);
+      this._cameraAction = this._cameraMixer.clipAction(cameraAnimation);
+    }
+  }
+
+  public playCameraAnimation(): void {
+    if (this._cameraAction) {
+      this._cameraAction.play();
+    }
+  }
+
+  public stopCameraAnimation(): void {
+    if (this._cameraAction) {
+      this._cameraAction.stop();
+    }
+    if (this._cameraMixer) {
+      this._cameraMixer.stopAllAction();
+    }
   }
 }

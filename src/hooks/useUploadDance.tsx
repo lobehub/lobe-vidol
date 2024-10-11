@@ -5,6 +5,7 @@ import { base64ToFile } from '@/utils/imageToBase64';
 
 interface DanceMeta {
   audio: File;
+  camera?: File; // 添加可选的camera属性
   cover: string;
   src: File;
   thumb: string;
@@ -16,6 +17,7 @@ export const useUploadDance = () => {
   const [thumbProgress, setThumbProgress] = useState(0);
   const [audioProgress, setAudioProgress] = useState(0);
   const [srcProgress, setSrcProgress] = useState(0);
+  const [cameraProgress, setCameraProgress] = useState(0); // 添加camera上传进度状态
 
   const uploadDanceData = async (danceId: string, meta: DanceMeta) => {
     setUploading(true);
@@ -23,6 +25,7 @@ export const useUploadDance = () => {
     setThumbProgress(0);
     setAudioProgress(0);
     setSrcProgress(0);
+    setCameraProgress(0); // 重置camera上传进度
 
     const coverPromise = new Promise<string | undefined>((resolve, reject) => {
       const coverUrl = meta.cover;
@@ -83,17 +86,32 @@ export const useUploadDance = () => {
       }
     });
 
+    const cameraPromise = new Promise<string | undefined>((resolve, reject) => {
+      if (meta.camera instanceof File) {
+        upload(meta.camera, {
+          onProgress: (progress) => {
+            setCameraProgress(progress);
+          },
+        })
+          .then((url) => resolve(url))
+          .catch(() => reject(new Error('相机文件上传失败')));
+      } else {
+        resolve(undefined);
+      }
+    });
+
     try {
-      const [coverUrl, thumbUrl, audioUrl, srcUrl] = await Promise.all([
+      const [coverUrl, thumbUrl, audioUrl, srcUrl, cameraUrl] = await Promise.all([
         coverPromise,
         thumbPromise,
         audioPromise,
         srcPromise,
+        cameraPromise,
       ]);
-      return { coverUrl, thumbUrl, audioUrl, srcUrl };
+      return { coverUrl, thumbUrl, audioUrl, srcUrl, cameraUrl };
     } catch (e) {
       console.error(e);
-      return { coverUrl: '', thumbUrl: '', audioUrl: '', srcUrl: '' };
+      return { coverUrl: '', thumbUrl: '', audioUrl: '', srcUrl: '', cameraUrl: '' };
     } finally {
       setUploading(false);
     }
@@ -106,6 +124,7 @@ export const useUploadDance = () => {
       thumb: thumbProgress,
       audio: audioProgress,
       src: srcProgress,
+      camera: cameraProgress, // 添加camera上传进度
     },
     uploadDanceData,
   };

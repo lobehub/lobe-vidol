@@ -29,7 +29,7 @@ export default memo<Props>(({ value, onChange, className, style }) => {
         }
       }}
     >
-      <Button icon={<PlusCircle />}>{t('create.dance.upload')}</Button>
+      <Button icon={<PlusCircle />}>{t('create.camera.upload')}</Button>
     </Upload>
   );
 });
