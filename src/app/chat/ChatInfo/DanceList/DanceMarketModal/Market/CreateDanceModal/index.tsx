@@ -74,18 +74,18 @@ const CreateDanceModal = () => {
           dance.danceId,
           '### name',
           dance.name,
-          '### audio',
-          dance.audio,
-          '### src',
-          dance.src,
           '### cover',
           dance.cover,
           '### thumb',
           dance.thumb,
-          '### readme',
-          dance.readme,
+          '### audio',
+          dance.audio,
+          '### src',
+          dance.src,
           '### camera',
           dance.camera,
+          '### readme',
+          dance.readme,
         ].join('\n\n');
 
         const url = qs.stringifyUrl({
@@ -142,7 +142,7 @@ const CreateDanceModal = () => {
       children: <SrcUpload />,
     },
     {
-      name: 'cameraFile',
+      name: 'camera',
       label: t('create.camera.title'),
       desc: t('create.camera.desc'),
       children: <CameraUpload />,
@@ -196,6 +196,12 @@ const CreateDanceModal = () => {
                   <Progress steps={30} percent={percent.src} size="small" />
                   <Typography.Text style={{ fontSize: 12 }}>
                     {t('create.uploadingDance', { ns: 'dance' })}
+                  </Typography.Text>
+                </Space>
+                <Space>
+                  <Progress steps={30} percent={percent.camera} size="small" />
+                  <Typography.Text style={{ fontSize: 12 }}>
+                    {t('create.uploadingCamera', { ns: 'dance' })}
                   </Typography.Text>
                 </Space>
               </Flexbox>
