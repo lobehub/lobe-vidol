@@ -1,37 +1,43 @@
-import * as THREE from 'three';
+import { Parser } from 'mmd-parser';
+import {
+  AnimationClip,
+  Euler,
+  Quaternion,
+  QuaternionKeyframeTrack,
+  Vector3,
+  VectorKeyframeTrack,
+} from 'three';
 
-import { convert } from '@/libs/VMDAnimation/vmd2vrmanim';
+export async function loadVMDCamera(url: string): Promise<AnimationClip | null> {
+  const parser = new Parser();
+  const arrayBuffer = await fetch(url).then((res) => res.arrayBuffer());
+  const vmd = parser.parseVmd(arrayBuffer);
 
-export async function loadVMDCamera(url: string): Promise<THREE.AnimationClip | null> {
-  const res = await fetch(url);
-  const buffer = await res.arrayBuffer();
-
-  const animation = convert(buffer);
-  return bindToCamera(animation);
-}
-
-function bindToCamera(animation: any): THREE.AnimationClip {
-  const tracks: THREE.KeyframeTrack[] = [];
-
-  if (animation.position) {
-    tracks.push(
-      new THREE.VectorKeyframeTrack(
-        '.position',
-        animation.position.times,
-        animation.position.values,
-      ),
-    );
+  if (!vmd.cameras || vmd.cameras.length === 0) {
+    console.warn('No camera animation found in VMD file');
+    return null;
   }
 
-  if (animation.rotation) {
-    tracks.push(
-      new THREE.QuaternionKeyframeTrack(
-        '.quaternion',
-        animation.rotation.times,
-        animation.rotation.values,
-      ),
-    );
-  }
+  const cameraPositions: number[] = [];
+  const cameraQuaternions: number[] = [];
+  const cameraTimes: number[] = [];
 
-  return new THREE.AnimationClip('camera', -1, tracks);
+  vmd.cameras.forEach((camera) => {
+    const time = camera.frameNum / 30; // 假设 30fps
+    cameraTimes.push(time);
+
+    // 直接使用 VMD 中的位置数据，不进行转换
+    const position = new Vector3(camera.position[0], camera.position[1], camera.position[2]);
+    cameraPositions.push(position.x, position.y, position.z);
+
+    // 将 VMD 的欧拉角转换为四元数
+    const rotation = new Euler(camera.rotation[0], camera.rotation[1], camera.rotation[2], 'ZYX');
+    const quaternion = new Quaternion().setFromEuler(rotation);
+    cameraQuaternions.push(quaternion.x, quaternion.y, quaternion.z, quaternion.w);
+  });
+
+  const positionTrack = new VectorKeyframeTrack('.position', cameraTimes, cameraPositions);
+  const rotationTrack = new QuaternionKeyframeTrack('.quaternion', cameraTimes, cameraQuaternions);
+
+  return new AnimationClip('camera', -1, [positionTrack, rotationTrack]);
 }

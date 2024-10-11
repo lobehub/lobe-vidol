@@ -107,6 +107,10 @@ export class Viewer {
     if (cameraUrl) {
       await this.loadCameraAnimation(cameraUrl);
       this.playCameraAnimation();
+      // 禁用 OrbitControls
+      if (this._cameraControls) {
+        this._cameraControls.enabled = false;
+      }
     }
   }
 
@@ -322,6 +326,8 @@ export class Viewer {
     // 更新镜头动画
     if (this._isDancing && this._cameraMixer) {
       this._cameraMixer.update(delta);
+      // 确保相机的世界矩阵被更新
+      this._camera?.updateMatrixWorld(true);
     }
     if (this._cameraHelper) {
       this._cameraHelper.update();
@@ -544,7 +550,10 @@ export class Viewer {
 
   public playCameraAnimation(): void {
     if (this._cameraAction) {
-      this._cameraAction.play();
+      this._cameraAction.reset().play();
+      // 确保动画循环播放
+      this._cameraAction.loop = THREE.LoopRepeat;
+      this._cameraAction.clampWhenFinished = false;
     }
   }
 
@@ -554,6 +563,10 @@ export class Viewer {
     }
     if (this._cameraMixer) {
       this._cameraMixer.stopAllAction();
+    }
+    // 重新启用 OrbitControls
+    if (this._cameraControls) {
+      this._cameraControls.enabled = true;
     }
   }
 }
