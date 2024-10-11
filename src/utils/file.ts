@@ -1,6 +1,7 @@
 const MODEL_SCHEMA = 'model';
 const AUDIO_SCHEMA = 'audio';
 const DANCE_SCHEMA = 'dance';
+const CAMERA_SCHEMA = 'camera';
 const BACKGROUND_SCHEMA = 'background';
 const MOTION_SCHEMA = 'motion';
 
@@ -22,6 +23,10 @@ export const getMotionPathByMotionId = (motionId: string) => {
 
 export const getDancePathByDanceId = (danceId: string) => {
   return `${DANCE_SCHEMA}://${danceId}`;
+};
+
+export const getCameraPathByDanceId = (danceId: string) => {
+  return `${CAMERA_SCHEMA}://${danceId}`;
 };
 
 export const getBackgroundPathById = (backgroundId: string) => {

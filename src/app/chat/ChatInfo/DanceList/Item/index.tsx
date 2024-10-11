@@ -4,9 +4,11 @@ import { Progress, Typography } from 'antd';
 import { Pause, Play } from 'lucide-react';
 import React, { memo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Flexbox } from 'react-layout-kit';
 
 import ListItem from '@/components/ListItem';
 import { useLoadAudio } from '@/hooks/useLoadAudio';
+import { useLoadCamera } from '@/hooks/useLoadCamera';
 import { useLoadSrc } from '@/hooks/useLoadSrc';
 import { useDanceStore } from '@/store/dance';
 import { useGlobalStore } from '@/store/global';
@@ -43,6 +45,11 @@ const DanceItem = (props: DanceItemProps) => {
 
   const { downloading: audioDownloading, percent: audioPercent, fetchAudioUrl } = useLoadAudio();
   const { downloading: srcDownloading, percent: srcPercent, fetchSrcUrl } = useLoadSrc();
+  const {
+    downloading: cameraDownloading,
+    percent: cameraPercent,
+    fetchCameraUrl,
+  } = useLoadCamera();
   const viewer = useGlobalStore((s) => s.viewer);
 
   const handlePlayPause = async () => {
@@ -54,9 +61,16 @@ const DanceItem = (props: DanceItemProps) => {
       setIsPlaying(true);
       const audioPromise = fetchAudioUrl(danceItem.danceId, danceItem.audio);
       const srcPromise = fetchSrcUrl(danceItem.danceId, danceItem.src);
-      const [srcUrl, audioUrl] = await Promise.all([srcPromise, audioPromise]);
+      const cameraPromise = danceItem.camera
+        ? fetchCameraUrl(danceItem.danceId, danceItem.camera)
+        : undefined;
+      const [srcUrl, audioUrl, cameraUrl] = await Promise.all([
+        srcPromise,
+        audioPromise,
+        cameraPromise,
+      ]);
       if (srcUrl && audioUrl)
-        viewer?.dance(srcUrl, audioUrl, () => {
+        viewer?.dance(srcUrl, audioUrl, cameraUrl, () => {
           setIsPlaying(false);
         });
     }
@@ -65,16 +79,43 @@ const DanceItem = (props: DanceItemProps) => {
   return (
     <ListItem
       ref={hoverRef}
-      showAction={isHovered || open || audioDownloading || srcDownloading}
+      showAction={isHovered || open || audioDownloading || srcDownloading || cameraDownloading}
       actions={[
-        audioDownloading || srcDownloading ? (
-          <Progress
-            key={`progress-${danceItem.danceId}`}
-            type="circle"
-            className={styles.progress}
-            percent={Math.ceil((srcPercent + audioPercent) / 2)}
-            size={[32, 32]}
-          />
+        audioDownloading ? (
+          <Flexbox align="center" gap={8} direction="horizontal">
+            <Progress
+              key={`progress-${danceItem.danceId}`}
+              type="circle"
+              className={styles.progress}
+              percent={Math.ceil(audioPercent)}
+              size={[32, 32]}
+            />
+            <span>音频</span>
+          </Flexbox>
+        ) : null,
+        srcDownloading ? (
+          <Flexbox align="center" gap={8} direction="horizontal">
+            <Progress
+              key={`progress-${danceItem.danceId}`}
+              type="circle"
+              className={styles.progress}
+              percent={Math.ceil(srcPercent)}
+              size={[32, 32]}
+            />
+            <span>动作</span>
+          </Flexbox>
+        ) : null,
+        cameraDownloading ? (
+          <Flexbox align="center" gap={8} direction="horizontal">
+            <Progress
+              key={`progress-${danceItem.danceId}`}
+              type="circle"
+              className={styles.progress}
+              percent={Math.ceil(cameraPercent)}
+              size={[32, 32]}
+            />
+            <span>摄像头</span>
+          </Flexbox>
         ) : null,
         <Actions danceItem={danceItem} setOpen={setOpen} key={`actions-${danceItem.danceId}`} />,
       ]}
