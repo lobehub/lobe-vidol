@@ -83,7 +83,6 @@ export class Viewer {
 
     // 1. 关闭当前舞蹈, 设置环境
     // 将 canvas 全屏加载
-    // this.resetCamera();
     this._sound.stop();
     this._isDancing = true;
 
@@ -98,13 +97,11 @@ export class Viewer {
         // 监听音频播放结束事件
         this._sound.onEnded = () => {
           onEnd?.();
-          this.resetToIdle();
+          this.resetCamera();
+          this._isDancing = false;
         };
       }
     });
-
-    // 预加载动画文件
-    const motionPromise = this.model?.preloadMotionUrl(MotionFileType.VMD, srcUrl);
 
     // 加载摄像机动画
     let cameraPromise = null;
@@ -118,10 +115,12 @@ export class Viewer {
     }
 
     // 并行加载
-    await Promise.all([audioPromise, motionPromise, cameraPromise]);
+    await Promise.all([audioPromise, cameraPromise]);
 
-    // 3. 播放舞蹈
-    this.model?.playMotionUrl(MotionFileType.VMD, srcUrl, false);
+    // 3. 加载舞蹈
+    await this.model?.playMotionUrl(MotionFileType.VMD, srcUrl, false);
+
+    // 开始播放
     this._sound.play();
     if (cameraUrl) this.playCameraAnimation();
   }

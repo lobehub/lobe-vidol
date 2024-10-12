@@ -12,20 +12,15 @@ import { MotionFileType } from './type';
 
 export class MotionController {
   private vrm: VRM;
-  private mixer: AnimationMixer;
+  private mixer?: AnimationMixer;
   private currentAction?: AnimationAction;
-  private nextAction?: AnimationAction;
-  private mixDuration: number = 0.5; // 混合持续时间
   private currentClip?: AnimationClip;
   private ikHandler: VRMIKHandler;
   private preloadedMotions = new Map<string, AnimationClip>();
 
   constructor(vrm: VRM) {
     this.vrm = vrm;
-    this.mixer = new AnimationMixer(vrm.scene);
     this.ikHandler = IKHandler.get(vrm);
-    this.currentAction = undefined;
-    this.currentClip = undefined;
   }
 
   public async preloadMotion(motion: MotionPresetName) {
@@ -42,10 +37,6 @@ export class MotionController {
     }
   }
 
-  /**
-   * 目前都是 Mixamo 的 FBX 文件
-   * @param motion
-   */
   public playMotion(motion: MotionPresetName, loop: boolean) {
     const { type, url } = this.getMotionInfo(motion);
     if (type && url) this.playMotionUrl(type, url, loop);
@@ -58,7 +49,7 @@ export class MotionController {
   public async playMotionUrl(
     fileType: MotionFileType,
     url: string,
-    loop: boolean = true, // 默认循环播放
+    loop: boolean = true,
   ): Promise<void> {
     this.stopMotion();
 
@@ -75,30 +66,12 @@ export class MotionController {
       return;
     }
 
-    const nextAction = this.mixer.clipAction(clip);
-    nextAction.setLoop(loop ? LoopRepeat : LoopOnce, loop ? Infinity : 1);
+    // 创建新的 mixer
+    this.mixer = new AnimationMixer(this.vrm.scene);
 
-    if (this.currentAction) {
-      // 设置下一个动作
-      this.nextAction = nextAction;
-      // 开始混合
-      this.currentAction.crossFadeTo(this.nextAction, this.mixDuration, true);
-
-      this.nextAction.play().reset();
-
-      // 如果 finished 属性不存在，回退到使用 setTimeout
-      setTimeout(() => {
-        if (this.currentAction) {
-          this.currentAction.stop();
-          this.currentAction = this.nextAction;
-          this.nextAction = undefined;
-        }
-      }, this.mixDuration * 1000);
-    } else {
-      // 如果是第一个动作,直接播放
-      this.currentAction = nextAction;
-      this.currentAction.play();
-    }
+    this.currentAction = this.mixer.clipAction(clip);
+    this.currentAction.setLoop(loop ? LoopRepeat : LoopOnce, loop ? Infinity : 1);
+    this.currentAction.play();
 
     this.currentClip = clip;
   }
@@ -132,23 +105,26 @@ export class MotionController {
   }
 
   public stopMotion(): void {
-    this.mixer.stopAllAction();
-    if (this.currentClip) {
-      this.mixer.uncacheAction(this.currentClip);
-      this.mixer.uncacheClip(this.currentClip);
-      this.currentAction = undefined;
+    if (this.mixer) {
+      this.mixer.stopAllAction();
+      this.mixer.uncacheRoot(this.vrm.scene);
     }
 
     this.ikHandler.disableAll();
 
     if (this.currentAction) {
       this.currentAction.stop();
-      this.currentClip = undefined;
     }
+
+    this.currentAction = undefined;
+    this.currentClip = undefined;
+    this.mixer = undefined;
   }
 
   public update(delta: number): void {
-    this.mixer.update(delta);
+    if (this.mixer) {
+      this.mixer.update(delta);
+    }
     this.vrm.update(delta);
     this.ikHandler.update();
   }
