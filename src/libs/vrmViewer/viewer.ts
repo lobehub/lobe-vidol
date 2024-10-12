@@ -33,8 +33,6 @@ export class Viewer {
   private _cameraControls?: OrbitControls;
   private _gridHelper?: THREE.GridHelper;
   private _axesHelper?: THREE.AxesHelper;
-  private _floor?: THREE.Mesh;
-  private _raycaster: THREE.Raycaster;
   private _mouse: THREE.Vector2;
   private _canvas?: HTMLCanvasElement;
   private _boundHandleClick: (event: MouseEvent) => void;
@@ -68,7 +66,6 @@ export class Viewer {
     this._clock = new THREE.Clock();
     this._clock.start();
 
-    this._raycaster = new THREE.Raycaster();
     this._mouse = new THREE.Vector2();
 
     // 在构造函数中绑定 handleClick 方法
@@ -179,13 +176,14 @@ export class Viewer {
       antialias: true,
       // for canvas three capture
       preserveDrawingBuffer: true,
+      powerPreference: 'high-performance',
       canvas: canvas,
     });
     this._renderer.setSize(width, height);
     this._renderer.setPixelRatio(window.devicePixelRatio);
 
     // 相机初始化
-    this._camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 1000);
+    this._camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 2000);
     this._camera.position.set(0, 1.5, 2);
 
     // camera 控制
@@ -273,24 +271,6 @@ export class Viewer {
         sprite.scale.set(0.2, 0.2, 0.2); // 缩小标记尺寸，使其更适合靠近原点的位置
         this._axesHelper?.add(sprite);
       });
-    }
-  }
-
-  public toggleFloor() {
-    if (this._floor) {
-      this._scene.remove(this._floor);
-      this._floor = undefined;
-    } else {
-      this._floor = new Mesh(
-        new PlaneGeometry(100, 100),
-        new MeshLambertMaterial({
-          color: 0x99_99_99,
-          depthWrite: true,
-        }),
-      );
-      this._floor.position.y = -0.5;
-      this._floor.rotation.x = -Math.PI / 2;
-      this._scene.add(this._floor);
     }
   }
 

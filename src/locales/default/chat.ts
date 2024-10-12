@@ -69,7 +69,6 @@ export default {
   toolBar: {
     cameraHelper: '镜头辅助',
     cameraControl: '镜头控制',
-    floor: '切换地板',
     resetCamera: '重置镜头',
     resetToIdle: '停止舞蹈动作',
     screenShot: '拍照',

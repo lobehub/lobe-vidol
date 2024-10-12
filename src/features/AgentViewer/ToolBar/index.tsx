@@ -102,12 +102,6 @@ const ToolBar = (props: ToolBarProps) => {
 
             break;
           }
-          case 'floor': {
-            viewer.toggleFloor();
-
-            break;
-          }
-          // No default
         }
       }}
       style={style}
