@@ -180,9 +180,9 @@ export class Viewer {
     this._renderer.setSize(width, height);
     this._renderer.setPixelRatio(window.devicePixelRatio);
 
-    // camera 全身
-    this._camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 20);
-    this._camera.position.set(0.4, 1.3, 1.5);
+    // 相机初始化
+    this._camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 1000);
+    this._camera.position.set(0, 1.5, 2);
 
     // camera 控制
     this._cameraControls = new OrbitControls(this._camera, this._renderer.domElement);
@@ -253,6 +253,22 @@ export class Viewer {
     } else {
       this._axesHelper = new THREE.AxesHelper(5);
       this._scene.add(this._axesHelper);
+
+      // 添加 xyz 标识
+      const axisLabels = ['X', 'Y', 'Z'];
+      const colors = [0xff0000, 0x00ff00, 0x0000ff];
+
+      axisLabels.forEach((label, index) => {
+        const sprite = new THREE.Sprite(
+          new THREE.SpriteMaterial({
+            map: this.createTextTexture(label),
+            color: colors[index],
+          }),
+        );
+        sprite.position.setComponent(index, 0.5); // 将位置设置为0.5，使标记更靠近原点
+        sprite.scale.set(0.2, 0.2, 0.2); // 缩小标记尺寸，使其更适合靠近原点的位置
+        this._axesHelper?.add(sprite);
+      });
     }
   }
 
@@ -354,6 +370,9 @@ export class Viewer {
   public async playCameraUrl(cameraUrl: string): Promise<void> {
     if (!cameraUrl || !this._camera) return;
 
+    // 在播放动画之前重置相机位置，让相机位置靠近角色
+    this.resetCamera();
+
     const cameraAnimation = await loadVMDCamera(cameraUrl, this._camera);
     if (cameraAnimation) {
       this._cameraMixer = new THREE.AnimationMixer(this._camera);
@@ -365,5 +384,16 @@ export class Viewer {
         this._cameraControls.enabled = false;
       }
     }
+  }
+
+  private createTextTexture(label: string): THREE.Texture {
+    const canvas = document.createElement('canvas');
+    const context = canvas.getContext('2d');
+    if (context) {
+      context.font = '24px Arial';
+      context.fillStyle = 'white';
+      context.fillText(label, 0, 24);
+    }
+    return new THREE.CanvasTexture(canvas);
   }
 }
