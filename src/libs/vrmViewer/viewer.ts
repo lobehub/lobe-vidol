@@ -80,7 +80,7 @@ export class Viewer {
    */
   public async dance(srcUrl: string, audioUrl: string, cameraUrl?: string, onEnd?: () => void) {
     if (!this._sound || !this.model) {
-      console.error('Audio Object or Model Object Not Existed');
+      console.error('音频对象或模型对象不存在');
       return null;
     }
     this._isDancing = true;
@@ -101,14 +101,9 @@ export class Viewer {
 
     this.model?.playMotionUrl(MotionFileType.VMD, srcUrl, false);
 
-    // 加载并播放镜头动画
+    // 使用新的 playCameraUrl 方法
     if (cameraUrl) {
-      await this.loadCameraAnimation(cameraUrl);
-      this.playCameraAnimation();
-      // 禁用 OrbitControls
-      if (this._cameraControls) {
-        this._cameraControls.enabled = false;
-      }
+      await this.playCameraUrl(cameraUrl);
     }
   }
 
@@ -343,25 +338,6 @@ export class Viewer {
     }
   };
 
-  public async loadCameraAnimation(url: string): Promise<void> {
-    if (!this._camera) return;
-
-    const cameraAnimation = await loadVMDCamera(url);
-    if (cameraAnimation) {
-      this._cameraMixer = new THREE.AnimationMixer(this._camera);
-      this._cameraAction = this._cameraMixer.clipAction(cameraAnimation);
-    }
-  }
-
-  public playCameraAnimation(): void {
-    if (this._cameraAction) {
-      this._cameraAction.reset().play();
-      // 确保动画循环播放
-      this._cameraAction.loop = THREE.LoopRepeat;
-      this._cameraAction.clampWhenFinished = false;
-    }
-  }
-
   public stopCameraAnimation(): void {
     if (this._cameraAction) {
       this._cameraAction.stop();
@@ -372,6 +348,22 @@ export class Viewer {
     // 重新启用 OrbitControls
     if (this._cameraControls) {
       this._cameraControls.enabled = true;
+    }
+  }
+
+  public async playCameraUrl(cameraUrl: string): Promise<void> {
+    if (!cameraUrl || !this._camera) return;
+
+    const cameraAnimation = await loadVMDCamera(cameraUrl, this._camera);
+    if (cameraAnimation) {
+      this._cameraMixer = new THREE.AnimationMixer(this._camera);
+      this._cameraAction = this._cameraMixer.clipAction(cameraAnimation);
+      this._cameraAction.play();
+      this._cameraAction.clampWhenFinished = false;
+      // 禁用 OrbitControls
+      if (this._cameraControls) {
+        this._cameraControls.enabled = false;
+      }
     }
   }
 }

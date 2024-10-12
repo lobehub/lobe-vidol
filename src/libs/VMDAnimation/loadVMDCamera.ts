@@ -1,43 +1,37 @@
-import { Parser } from 'mmd-parser';
-import {
-  AnimationClip,
-  Euler,
-  Quaternion,
-  QuaternionKeyframeTrack,
-  Vector3,
-  VectorKeyframeTrack,
-} from 'three';
+import { AnimationClip, Camera } from 'three';
+import { MMDAnimationHelper } from 'three/examples/jsm/animation/MMDAnimationHelper';
+import { MMDLoader } from 'three/examples/jsm/loaders/MMDLoader';
 
-export async function loadVMDCamera(url: string): Promise<AnimationClip | null> {
-  const parser = new Parser();
-  const arrayBuffer = await fetch(url).then((res) => res.arrayBuffer());
-  const vmd = parser.parseVmd(arrayBuffer);
+export async function loadVMDCamera(
+  url: string,
+  camera: Camera,
+): Promise<AnimationClip | undefined> {
+  const loader = new MMDLoader();
 
-  if (!vmd.cameras || vmd.cameras.length === 0) {
-    console.warn('No camera animation found in VMD file');
-    return null;
-  }
+  return new Promise((resolve, reject) => {
+    loader.loadAnimation(
+      url,
+      camera,
+      (animation) => {
+        if (!animation) {
+          console.warn('无法加载 VMD 相机动画');
+          resolve(undefined);
+          return;
+        }
 
-  const cameraPositions: number[] = [];
-  const cameraQuaternions: number[] = [];
-  const cameraTimes: number[] = [];
+        if (!(animation instanceof AnimationClip)) {
+          console.warn('加载的动画不是 AnimationClip 类型');
+          resolve(undefined);
+          return;
+        }
 
-  vmd.cameras.forEach((camera) => {
-    const time = camera.frameNum / 30; // 假设 30fps
-    cameraTimes.push(time);
+        console.log('VMD相机动画加载成功:', animation);
 
-    // 直接使用 VMD 中的位置数据，不进行转换
-    const position = new Vector3(camera.position[0], camera.position[1], camera.position[2]);
-    cameraPositions.push(position.x, position.y, position.z);
-
-    // 将 VMD 的欧拉角转换为四元数
-    const rotation = new Euler(camera.rotation[0], camera.rotation[1], camera.rotation[2], 'ZYX');
-    const quaternion = new Quaternion().setFromEuler(rotation);
-    cameraQuaternions.push(quaternion.x, quaternion.y, quaternion.z, quaternion.w);
+        // 暂时不应用动画，只返回它
+        resolve(animation);
+      },
+      undefined,
+      reject,
+    );
   });
-
-  const positionTrack = new VectorKeyframeTrack('.position', cameraTimes, cameraPositions);
-  const rotationTrack = new QuaternionKeyframeTrack('.quaternion', cameraTimes, cameraQuaternions);
-
-  return new AnimationClip('camera', -1, [positionTrack, rotationTrack]);
 }
