@@ -83,6 +83,10 @@ export class Viewer {
       console.error('音频对象或模型对象不存在');
       return null;
     }
+
+    // 在播放动画之前重置相机位置，让相机位置靠近角色
+    this.resetCamera();
+
     this._isDancing = true;
     this._sound.stop();
     const audioLoader = new THREE.AudioLoader();
@@ -370,10 +374,8 @@ export class Viewer {
   public async playCameraUrl(cameraUrl: string): Promise<void> {
     if (!cameraUrl || !this._camera) return;
 
-    // 在播放动画之前重置相机位置，让相机位置靠近角色
-    this.resetCamera();
-
     const cameraAnimation = await loadVMDCamera(cameraUrl, this._camera);
+
     if (cameraAnimation) {
       this._cameraMixer = new THREE.AnimationMixer(this._camera);
       this._cameraAction = this._cameraMixer.clipAction(cameraAnimation);
