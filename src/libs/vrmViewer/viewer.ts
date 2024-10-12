@@ -12,7 +12,9 @@ import {
   PlaneGeometry,
   Vector3,
 } from 'three';
+import { MMDAnimationHelper } from 'three/examples/jsm/animation/MMDAnimationHelper';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import { MMDLoader } from 'three/examples/jsm/loaders/MMDLoader';
 
 import { loadVMDCamera } from '@/libs/VMDAnimation/loadVMDCamera';
 import { MotionFileType } from '@/libs/emoteController/type';
@@ -43,7 +45,6 @@ export class Viewer {
 
   constructor() {
     this.isReady = false;
-
     // scene
     const scene = new THREE.Scene();
     this._scene = scene;
@@ -65,7 +66,6 @@ export class Viewer {
     // animate
     this._clock = new THREE.Clock();
     this._clock.start();
-
     this._mouse = new THREE.Vector2();
 
     // 在构造函数中绑定 handleClick 方法
@@ -81,39 +81,58 @@ export class Viewer {
       return null;
     }
 
-    // 在播放动画之前重置相机位置，让相机位置靠近角色
-    this.resetCamera();
-
-    this._isDancing = true;
+    // 1. 关闭当前舞蹈, 设置环境
+    // 将 canvas 全屏加载
+    // this.resetCamera();
     this._sound.stop();
+    this._isDancing = true;
+
+    // 2. 加载文件
+
+    // 加载音乐文件
     const audioLoader = new THREE.AudioLoader();
-    // 监听音频播放结束事件
-    this._sound.onEnded = () => {
-      onEnd?.();
-      this.model?.loadIdleAnimation();
-      this._isDancing = false;
-      // 重置相机位置
-      this.resetCamera();
-    };
-    const buffer = await audioLoader.loadAsync(audioUrl);
-    this._sound.setBuffer(buffer);
-    this._sound.setVolume(0.5);
-    this._sound.play();
+    const audioPromise = audioLoader.loadAsync(audioUrl).then((buffer) => {
+      if (this._sound) {
+        this._sound.setBuffer(buffer);
+        this._sound.setVolume(0.5);
+        // 监听音频播放结束事件
+        this._sound.onEnded = () => {
+          onEnd?.();
+          this.resetToIdle();
+        };
+      }
+    });
 
-    this.model?.playMotionUrl(MotionFileType.VMD, srcUrl, false);
+    // 预加载动画文件
+    const motionPromise = this.model?.preloadMotionUrl(MotionFileType.VMD, srcUrl);
 
-    // 使用新的 playCameraUrl 方法
-    if (cameraUrl) {
-      await this.playCameraUrl(cameraUrl);
+    // 加载摄像机动画
+    let cameraPromise = null;
+    if (cameraUrl && this._camera) {
+      cameraPromise = loadVMDCamera(cameraUrl, this._camera).then((cameraAnimation) => {
+        if (this._camera && cameraAnimation) {
+          this._cameraMixer = new THREE.AnimationMixer(this._camera);
+          this._cameraAction = this._cameraMixer.clipAction(cameraAnimation);
+        }
+      });
     }
+
+    // 并行加载
+    await Promise.all([audioPromise, motionPromise, cameraPromise]);
+
+    // 3. 播放舞蹈
+    this.model?.playMotionUrl(MotionFileType.VMD, srcUrl, false);
+    this._sound.play();
+    if (cameraUrl) this.playCameraAnimation();
   }
 
   public resetToIdle() {
     this._sound?.stop();
-    this.model?.loadIdleAnimation();
     this._isDancing = false;
-    // 停止并重置镜头动画
+    this.model?.loadIdleAnimation();
+    // 停止镜头动画
     this.stopCameraAnimation();
+    // 重置设想头
     this.resetCamera();
   }
 
@@ -194,6 +213,7 @@ export class Viewer {
 
     // Audio 音频播放
     const listener = new THREE.AudioListener();
+    // 将播放器挂载到摄像机上
     this._camera.add(listener);
 
     // 创建一个全局 audio 源
@@ -341,6 +361,7 @@ export class Viewer {
   public stopCameraAnimation(): void {
     if (this._cameraAction) {
       this._cameraAction.stop();
+      this._cameraAction = undefined;
     }
     if (this._cameraMixer) {
       this._cameraMixer.stopAllAction();
@@ -351,14 +372,8 @@ export class Viewer {
     }
   }
 
-  public async playCameraUrl(cameraUrl: string): Promise<void> {
-    if (!cameraUrl || !this._camera) return;
-
-    const cameraAnimation = await loadVMDCamera(cameraUrl, this._camera);
-
-    if (cameraAnimation) {
-      this._cameraMixer = new THREE.AnimationMixer(this._camera);
-      this._cameraAction = this._cameraMixer.clipAction(cameraAnimation);
+  public playCameraAnimation(): void {
+    if (this._cameraAction) {
       this._cameraAction.play();
       this._cameraAction.clampWhenFinished = false;
       // 禁用 OrbitControls
