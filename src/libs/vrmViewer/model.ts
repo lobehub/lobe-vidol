@@ -112,6 +112,8 @@ export class Model {
     }
     // 更新表情动作
     this.emoteController?.update(delta);
+    // 更新头部点击区域
+    this.updateHeadHitbox();
   }
 
   public async preloadMotion(motion: MotionPresetName) {

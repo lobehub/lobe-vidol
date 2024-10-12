@@ -321,10 +321,6 @@ export class Viewer {
       this._cameraHelper.update();
     }
 
-    if (this.model?.vrm) {
-      this.model.updateHeadHitbox();
-    }
-
     if (this._renderer && this._camera) {
       this._renderer.render(this._scene, this._camera);
     }
