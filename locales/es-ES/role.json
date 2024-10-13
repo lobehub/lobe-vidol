@@ -140,8 +140,8 @@
       },
       "bellyAction": {
         "angryA": "¿Por qué me tocas? ¡Cuidado, puedo morderte!",
+        "angryB": "¡Qué molesto! ¡Voy a enojarme!",
         "relaxedA": "Despierta, ¡no hay futuro entre nosotros!",
-        "relaxedB": "¡Qué molesto! ¡Voy a enojarme!",
         "surprisedA": "¿Fue un accidente...?"
       },
       "buttocksAction": {

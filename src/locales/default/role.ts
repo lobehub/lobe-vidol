@@ -117,7 +117,7 @@ export default {
         surprisedA: '是不小心碰到的吧...',
         angryA: '干嘛动我呀，小心我咬你哦！',
         relaxedA: '醒醒，我们之间没有结果的!',
-        relaxedB: '讨厌！我可要生气啦！',
+        angryB: '讨厌！我可要生气啦！',
       },
       buttocksAction: {
         surprisedA: '啊!你在摸哪里?!',

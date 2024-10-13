@@ -140,8 +140,8 @@
       },
       "bellyAction": {
         "angryA": "Neden beni hareket ettiriyorsun, dikkat et yoksa ısırırım!",
+        "angryB": "Nefret ediyorum! Artık sinirleniyorum!",
         "relaxedA": "Uyan, aramızda bir sonuç yok!",
-        "relaxedB": "Sinirleniyorum! Gerçekten kızacağım!",
         "surprisedA": "Bu kazara oldu değil mi..."
       },
       "buttocksAction": {

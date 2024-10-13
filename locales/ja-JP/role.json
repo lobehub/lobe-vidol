@@ -140,8 +140,8 @@
       },
       "bellyAction": {
         "angryA": "なんで動かすの？噛むよ！",
+        "angryB": "嫌だ！私は怒るよ！",
         "relaxedA": "目を覚まして、私たちには結果がない！",
-        "relaxedB": "嫌だ！怒るよ！",
         "surprisedA": "偶然触れたのかな…"
       },
       "buttocksAction": {

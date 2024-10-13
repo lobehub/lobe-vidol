@@ -140,8 +140,8 @@
       },
       "bellyAction": {
         "angryA": "Warum bewegst du mich? Pass auf, dass ich dich beiße!",
+        "angryB": "Das ist ärgerlich! Ich werde wirklich wütend!",
         "relaxedA": "Wach auf, zwischen uns gibt es kein Ergebnis!",
-        "relaxedB": "Das nervt! Ich werde wütend!",
         "surprisedA": "Das war doch ein Versehen..."
       },
       "buttocksAction": {

@@ -140,8 +140,8 @@
       },
       "bellyAction": {
         "angryA": "Sao lại động vào tôi, cẩn thận tôi cắn bạn đấy!",
+        "angryB": "Ghét quá! Mình sắp tức giận rồi đấy!",
         "relaxedA": "Tỉnh lại đi, giữa chúng ta không có kết quả đâu!",
-        "relaxedB": "Ghét quá! Tôi sắp tức giận rồi!",
         "surprisedA": "Chắc là vô tình chạm phải thôi..."
       },
       "buttocksAction": {

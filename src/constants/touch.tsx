@@ -121,9 +121,9 @@ export const DEFAULT_TOUCH_ACTION_CONFIG_FEMALE: TouchActionConfig = {
       motion: MotionPresetName.FemaleGreeting,
     },
     {
-      expression: VRMExpressionPresetName.Relaxed,
-      text: 'touch.femaleAction.bellyAction.relaxedB',
-      motion: MotionPresetName.FemaleGreeting,
+      expression: VRMExpressionPresetName.Angry,
+      text: 'touch.femaleAction.bellyAction.angryB',
+      motion: MotionPresetName.FemaleAngry,
     },
   ],
   [TouchAreaEnum.Buttocks]: [

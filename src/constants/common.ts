@@ -15,7 +15,7 @@ export const MAX_NAME_LENGTH = 64;
 export const MAX_WIDTH = 1024;
 export const MAX_DESCRIPTION_LENGTH = 100;
 export const MAX_GREETING_LENGTH = 200;
-export const MAX_README_LENGTH = 999;
+export const MAX_README_LENGTH = 9999;
 
 export const MAX_SYSTEM_ROLE_LENGTH = 9999;
 
