@@ -15,11 +15,11 @@
       "title": "Audio-Datei",
       "upload": "Audio-Datei auswählen"
     },
-    "dance": {
-      "desc": "Bewegungsdatei des Tanzes",
-      "required": "Bitte Tanz-Datei hochladen",
-      "title": "Tanz-Datei",
-      "upload": "Tanzdatei auswählen"
+    "camera": {
+      "desc": "Wählen Sie eine Kameradatei (.vmd)",
+      "required": "Bitte wählen Sie eine Kameradatei aus",
+      "title": "Kameradatei",
+      "upload": "Kameradatei auswählen"
     },
     "danceId": {
       "desc": "Eindeutiger Identifikator für den Tanz",
@@ -49,10 +49,17 @@
       "placeholder": "Bitte geben Sie eine detaillierte Beschreibung des Tanzes ein",
       "title": "Dokumentation"
     },
+    "src": {
+      "desc": "Wählen Sie eine Tanzdatei (.vmd)",
+      "required": "Bitte wählen Sie eine Tanzdatei aus",
+      "title": "Tanzdatei",
+      "upload": "Tanzdatei auswählen"
+    },
     "submit": "Einreichen",
     "title": "Tanz erstellen",
     "uploading": "Hochladen wird bearbeitet, bitte schließen Sie die Seite nicht...",
     "uploadingAudio": "Musikdatei wird hochgeladen",
+    "uploadingCamera": "Kameradatei wird hochgeladen",
     "uploadingCover": "Titelbild wird hochgeladen",
     "uploadingDance": "Tanz-Datei wird hochgeladen",
     "uploadingThumb": "Vorschaubild wird hochgeladen"

@@ -25,15 +25,21 @@
     },
     "audio": {
       "title": "音频文件",
-      "desc": "选择舞蹈的音频文件",
+      "desc": "选择舞蹈的音频文件(.mp3,.wav)",
       "upload": "选择音频文件",
       "required": "请选择音频文件"
     },
-    "dance": {
+    "src": {
       "title": "舞蹈文件",
-      "desc": "选择舞蹈文件（当前仅支持 VMD 格式）",
+      "desc": "选择舞蹈文件(.vmd)",
       "upload": "选择舞蹈文件",
       "required": "请选择舞蹈文件"
+    },
+    "camera": {
+      "title": "镜头文件",
+      "desc": "选择镜头文件(.vmd)",
+      "upload": "选择镜头文件",
+      "required": "请选择镜头文件"
     },
     "image": {
       "title": "封面图片",
@@ -55,7 +61,8 @@
     "uploadingCover": "上传封面",
     "uploadingThumb": "上传缩略图",
     "uploadingAudio": "上传音乐文件",
-    "uploadingDance": "上传舞蹈文件"
+    "uploadingDance": "上传舞蹈文件",
+    "uploadingCamera": "上传镜头文件"
   },
   "createDance": "创建你最爱的舞蹈",
   "dance": "跳舞",

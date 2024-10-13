@@ -7,8 +7,11 @@
   "defaultAssistant": "Assistente Padrão",
   "delete": "Excluir",
   "download": {
+    "audio": "Baixar Áudio",
     "avatar": "Baixar avatar",
+    "camera": "Baixar Câmera",
     "cover": "Baixar capa",
+    "dance": "Baixar Dança",
     "failed": "Falha no download",
     "model": "Baixar modelo",
     "subscribe": "Baixar assinatura",

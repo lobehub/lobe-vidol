@@ -7,8 +7,11 @@
   "defaultAssistant": "Trợ lý mặc định",
   "delete": "Xóa",
   "download": {
+    "audio": "Tải xuống âm thanh",
     "avatar": "Tải về ảnh đại diện",
+    "camera": "Tải xuống ống kính",
     "cover": "Tải về bìa",
+    "dance": "Tải xuống động tác",
     "failed": "Tải về thất bại",
     "model": "Tải về mô hình",
     "subscribe": "Tải về đăng ký",

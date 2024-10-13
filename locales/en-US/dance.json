@@ -15,11 +15,11 @@
       "title": "Audio File",
       "upload": "Select audio file"
     },
-    "dance": {
-      "desc": "The motion file for the dance",
-      "required": "Please upload a dance file",
-      "title": "Dance File",
-      "upload": "Select dance file"
+    "camera": {
+      "desc": "Select a camera file (.vmd)",
+      "required": "Please select a camera file",
+      "title": "Camera File",
+      "upload": "Choose Camera File"
     },
     "danceId": {
       "desc": "The unique identifier for the dance",
@@ -49,10 +49,17 @@
       "placeholder": "Please enter a detailed description of the dance",
       "title": "Documentation"
     },
+    "src": {
+      "desc": "Select a dance file (.vmd)",
+      "required": "Please select a dance file",
+      "title": "Dance File",
+      "upload": "Choose Dance File"
+    },
     "submit": "Submit",
     "title": "Create Dance",
     "uploading": "Uploading, please do not close the page...",
     "uploadingAudio": "Uploading audio file",
+    "uploadingCamera": "Uploading camera file",
     "uploadingCover": "Uploading cover",
     "uploadingDance": "Uploading dance file",
     "uploadingThumb": "Uploading thumbnail"

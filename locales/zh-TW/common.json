@@ -7,8 +7,11 @@
   "defaultAssistant": "預設助手",
   "delete": "刪除",
   "download": {
+    "audio": "下載音頻",
     "avatar": "下載頭像",
+    "camera": "下載鏡頭",
     "cover": "下載封面",
+    "dance": "下載動作",
     "failed": "下載失敗",
     "model": "下載模型",
     "subscribe": "下載訂閱",

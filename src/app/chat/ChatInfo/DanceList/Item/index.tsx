@@ -1,7 +1,7 @@
 import { Avatar, Icon } from '@lobehub/ui';
 import { useHover } from 'ahooks';
 import { Progress, Typography } from 'antd';
-import { Pause, Play } from 'lucide-react';
+import { Play } from 'lucide-react';
 import React, { memo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
@@ -28,16 +28,12 @@ const DanceItem = (props: DanceItemProps) => {
   const [open, setOpen] = useState(false);
 
   const { styles } = useStyles();
-  const [currentPlayId, currentIdentifier, activateDance, setCurrentPlayId] = useDanceStore((s) => [
-    s.currentPlayId,
+  const [currentIdentifier, activateDance, setCurrentPlayId] = useDanceStore((s) => [
     s.currentIdentifier,
     s.activateDance,
     s.setCurrentPlayId,
   ]);
 
-  const [isPlaying, setIsPlaying] = useState(false);
-
-  const isCurrentPlay = currentPlayId ? currentPlayId === danceItem.danceId : false;
   const isSelected = currentIdentifier === danceItem.danceId;
   const hoverRef = useRef(null);
   const isHovered = useHover(hoverRef);
@@ -53,27 +49,18 @@ const DanceItem = (props: DanceItemProps) => {
   const viewer = useGlobalStore((s) => s.viewer);
 
   const handlePlayPause = async () => {
-    if (isPlaying && isCurrentPlay) {
-      setIsPlaying(false);
-      viewer?.resetToIdle();
-    } else {
-      setCurrentPlayId(danceItem.danceId);
-      setIsPlaying(true);
-      const audioPromise = fetchAudioUrl(danceItem.danceId, danceItem.audio);
-      const srcPromise = fetchSrcUrl(danceItem.danceId, danceItem.src);
-      const cameraPromise = danceItem.camera
-        ? fetchCameraUrl(danceItem.danceId, danceItem.camera)
-        : undefined;
-      const [srcUrl, audioUrl, cameraUrl] = await Promise.all([
-        srcPromise,
-        audioPromise,
-        cameraPromise,
-      ]);
-      if (srcUrl && audioUrl)
-        viewer?.dance(srcUrl, audioUrl, cameraUrl, () => {
-          setIsPlaying(false);
-        });
-    }
+    setCurrentPlayId(danceItem.danceId);
+    const audioPromise = fetchAudioUrl(danceItem.danceId, danceItem.audio);
+    const srcPromise = fetchSrcUrl(danceItem.danceId, danceItem.src);
+    const cameraPromise = danceItem.camera
+      ? fetchCameraUrl(danceItem.danceId, danceItem.camera)
+      : undefined;
+    const [srcUrl, audioUrl, cameraUrl] = await Promise.all([
+      srcPromise,
+      audioPromise,
+      cameraPromise,
+    ]);
+    if (srcUrl && audioUrl) viewer?.dance(srcUrl, audioUrl, cameraUrl);
   };
 
   return (
@@ -127,13 +114,9 @@ const DanceItem = (props: DanceItemProps) => {
       avatar={
         <div style={{ position: 'relative' }}>
           <Avatar src={danceItem?.thumb} shape={'square'} size={48} />
-          {isHovered || isCurrentPlay ? (
+          {isHovered ? (
             <div className={styles.mask} onClick={handlePlayPause}>
-              <Icon
-                icon={isCurrentPlay && isPlaying ? Pause : Play}
-                title={isCurrentPlay && isPlaying ? t('actions.pause') : t('actions.play')}
-                className={styles.playIcon}
-              />
+              <Icon icon={Play} title={t('actions.play')} className={styles.playIcon} />
             </div>
           ) : null}
         </div>

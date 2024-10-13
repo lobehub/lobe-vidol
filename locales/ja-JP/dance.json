@@ -15,11 +15,11 @@
       "title": "音声ファイル",
       "upload": "音声ファイルを選択"
     },
-    "dance": {
-      "desc": "ダンスの動作ファイル",
-      "required": "ダンスファイルをアップロードしてください",
-      "title": "ダンスファイル",
-      "upload": "ダンスファイルを選択"
+    "camera": {
+      "desc": "カメラファイル(.vmd)を選択",
+      "required": "カメラファイルを選択してください",
+      "title": "カメラファイル",
+      "upload": "カメラファイルを選択"
     },
     "danceId": {
       "desc": "ダンスの一意の識別子",
@@ -49,10 +49,17 @@
       "placeholder": "ダンスの詳細説明を入力してください",
       "title": "説明文書"
     },
+    "src": {
+      "desc": "ダンスファイル(.vmd)を選択",
+      "required": "ダンスファイルを選択してください",
+      "title": "ダンスファイル",
+      "upload": "ダンスファイルを選択"
+    },
     "submit": "送信",
     "title": "ダンスを作成",
     "uploading": "アップロード処理中です。ページを閉じないでください...",
     "uploadingAudio": "音楽ファイルをアップロード中",
+    "uploadingCamera": "カメラファイルをアップロード中",
     "uploadingCover": "カバーをアップロード中",
     "uploadingDance": "ダンスファイルをアップロード中",
     "uploadingThumb": "サムネイルをアップロード中"

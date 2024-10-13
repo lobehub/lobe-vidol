@@ -7,8 +7,11 @@
   "defaultAssistant": "Varsayılan Asistan",
   "delete": "Sil",
   "download": {
+    "audio": "İndir ses",
     "avatar": "Profil Resmini İndir",
+    "camera": "İndir kamera",
     "cover": "Kapak Resmini İndir",
+    "dance": "İndir dans",
     "failed": "İndirme Başarısız",
     "model": "Modeli İndir",
     "subscribe": "Abone Ol ve İndir",

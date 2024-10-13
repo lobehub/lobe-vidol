@@ -7,8 +7,11 @@
   "defaultAssistant": "Standaardassistent",
   "delete": "Verwijderen",
   "download": {
+    "audio": "Download audio",
     "avatar": "Download profielfoto",
+    "camera": "Download camera",
     "cover": "Download omslag",
+    "dance": "Download dans",
     "failed": "Download mislukt",
     "model": "Download model",
     "subscribe": "Abonneren op download",

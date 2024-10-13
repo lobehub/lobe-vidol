@@ -15,11 +15,11 @@
       "title": "Archivo de audio",
       "upload": "Seleccionar archivo de audio"
     },
-    "dance": {
-      "desc": "Archivo de movimientos del baile",
-      "required": "Por favor, sube un archivo de baile",
-      "title": "Archivo de baile",
-      "upload": "Seleccionar archivo de baile"
+    "camera": {
+      "desc": "Selecciona el archivo de cámara (.vmd)",
+      "required": "Por favor, selecciona un archivo de cámara",
+      "title": "Archivo de cámara",
+      "upload": "Seleccionar archivo de cámara"
     },
     "danceId": {
       "desc": "Identificador único del baile",
@@ -49,10 +49,17 @@
       "placeholder": "Introduce la descripción detallada del baile",
       "title": "Documento de instrucciones"
     },
+    "src": {
+      "desc": "Selecciona el archivo de danza (.vmd)",
+      "required": "Por favor, selecciona un archivo de danza",
+      "title": "Archivo de danza",
+      "upload": "Seleccionar archivo de danza"
+    },
     "submit": "Enviar",
     "title": "Crear baile",
     "uploading": "Cargando, por favor no cierres la página...",
     "uploadingAudio": "Cargando archivo de música",
+    "uploadingCamera": "Subiendo archivo de cámara",
     "uploadingCover": "Cargando portada",
     "uploadingDance": "Cargando archivo de baile",
     "uploadingThumb": "Cargando miniatura"

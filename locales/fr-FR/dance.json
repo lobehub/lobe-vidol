@@ -15,11 +15,11 @@
       "title": "Fichier audio",
       "upload": "Choisir un fichier audio"
     },
-    "dance": {
-      "desc": "Fichier des mouvements de danse",
-      "required": "Veuillez télécharger un fichier de danse",
-      "title": "Fichier de danse",
-      "upload": "Choisir un fichier de danse"
+    "camera": {
+      "desc": "Sélectionnez le fichier de caméra (.vmd)",
+      "required": "Veuillez sélectionner un fichier de caméra",
+      "title": "Fichier de caméra",
+      "upload": "Choisir le fichier de caméra"
     },
     "danceId": {
       "desc": "Identifiant unique de la danse",
@@ -49,10 +49,17 @@
       "placeholder": "Veuillez entrer une description détaillée de la danse",
       "title": "Document d'instructions"
     },
+    "src": {
+      "desc": "Sélectionnez le fichier de danse (.vmd)",
+      "required": "Veuillez sélectionner un fichier de danse",
+      "title": "Fichier de danse",
+      "upload": "Choisir le fichier de danse"
+    },
     "submit": "Soumettre",
     "title": "Créer une danse",
     "uploading": "Téléchargement en cours, veuillez ne pas fermer la page...",
     "uploadingAudio": "Téléchargement du fichier audio",
+    "uploadingCamera": "Téléchargement du fichier de caméra",
     "uploadingCover": "Téléchargement de la couverture",
     "uploadingDance": "Téléchargement du fichier de danse",
     "uploadingThumb": "Téléchargement de la miniature"
