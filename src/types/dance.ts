@@ -8,6 +8,10 @@ export interface Dance {
    */
   author: string;
   /**
+   * 镜头文件，非必须
+   */
+  camera?: string;
+  /**
    * 封面图片
    */
   cover: string;

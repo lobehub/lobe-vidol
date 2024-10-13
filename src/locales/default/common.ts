@@ -39,6 +39,9 @@ export default {
     cover: '下载封面',
     avatar: '下载头像',
     model: '下载模型',
+    dance: '下载动作',
+    audio: '下载音频',
+    camera: '下载镜头',
   },
   subscribe: {
     undo: '取消订阅',

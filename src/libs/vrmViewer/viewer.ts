@@ -12,8 +12,11 @@ import {
   PlaneGeometry,
   Vector3,
 } from 'three';
+import { MMDAnimationHelper } from 'three/examples/jsm/animation/MMDAnimationHelper';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import { MMDLoader } from 'three/examples/jsm/loaders/MMDLoader';
 
+import { loadVMDCamera } from '@/libs/VMDAnimation/loadVMDCamera';
 import { MotionFileType } from '@/libs/emoteController/type';
 import { TouchAreaEnum } from '@/types/touch';
 
@@ -32,19 +35,16 @@ export class Viewer {
   private _cameraControls?: OrbitControls;
   private _gridHelper?: THREE.GridHelper;
   private _axesHelper?: THREE.AxesHelper;
-  private _floor?: THREE.Mesh;
-  private _raycaster: THREE.Raycaster;
   private _mouse: THREE.Vector2;
   private _canvas?: HTMLCanvasElement;
   private _boundHandleClick: (event: MouseEvent) => void;
   private _onBodyTouch?: (area: TouchAreaEnum) => void;
   private _isDancing: boolean = false;
-  private _headHitbox?: THREE.Mesh;
-  private _headHitboxSize: Vector3 = new Vector3(0.2, 0.25, 0.2);
+  private _cameraMixer?: THREE.AnimationMixer;
+  private _cameraAction?: THREE.AnimationAction;
 
   constructor() {
     this.isReady = false;
-
     // scene
     const scene = new THREE.Scene();
     this._scene = scene;
@@ -66,8 +66,6 @@ export class Viewer {
     // animate
     this._clock = new THREE.Clock();
     this._clock.start();
-
-    this._raycaster = new THREE.Raycaster();
     this._mouse = new THREE.Vector2();
 
     // 在构造函数中绑定 handleClick 方法
@@ -77,32 +75,68 @@ export class Viewer {
   /**
    * 播放舞蹈，以音乐文件的播放作为结束标志。
    */
-  public async dance(srcUrl: string, audioUrl: string, onEnd?: () => void) {
+  public async dance(srcUrl: string, audioUrl: string, cameraUrl?: string, onEnd?: () => void) {
     if (!this._sound || !this.model) {
-      console.error('Audio Object or Model Object Not Existed');
+      console.error('音频对象或模型对象不存在');
       return null;
     }
-    this._isDancing = true;
-    this._sound.stop();
-    const audioLoader = new THREE.AudioLoader();
-    // 监听音频播放结束事件
-    this._sound.onEnded = () => {
-      onEnd?.();
-      this.model?.loadIdleAnimation();
-      this._isDancing = false;
-    };
-    const buffer = await audioLoader.loadAsync(audioUrl);
-    this._sound.setBuffer(buffer);
-    this._sound.setVolume(0.5);
-    this._sound.play();
 
-    this.model?.playMotionUrl(MotionFileType.VMD, srcUrl, false);
+    // 1. 关闭当前舞蹈, 设置环境
+    this._sound.stop();
+    this._isDancing = true;
+
+    // 2. 加载文件
+
+    // 加载音乐文件
+    const audioLoader = new THREE.AudioLoader();
+    const audioPromise = audioLoader.loadAsync(audioUrl).then((buffer) => {
+      if (this._sound) {
+        this._sound.setBuffer(buffer);
+        this._sound.setVolume(0.5);
+        // 监听音频播放结束事件
+        this._sound.onEnded = () => {
+          onEnd?.();
+          this.resetToIdle();
+          // 使用 setTimeout 来延迟退出全屏，给浏览器一些时间来处理音频结束事件
+          setTimeout(() => {
+            this.exitFullScreen();
+          }, 100);
+        };
+      }
+    });
+
+    // 加载摄像机动画
+    let cameraPromise = null;
+    if (cameraUrl && this._camera) {
+      cameraPromise = loadVMDCamera(cameraUrl, this._camera).then((cameraAnimation) => {
+        if (this._camera && cameraAnimation) {
+          this._cameraMixer = new THREE.AnimationMixer(this._camera);
+          this._cameraAction = this._cameraMixer.clipAction(cameraAnimation);
+        }
+      });
+    }
+
+    // 并行加载
+    await Promise.all([audioPromise, cameraPromise]);
+
+    // 3. 加载舞蹈
+    await this.model?.playMotionUrl(MotionFileType.VMD, srcUrl, false);
+
+    // 开始播放
+    this._sound.play();
+    if (cameraUrl) this.playCameraAnimation();
+    // 将 canvas 全屏加载
+    this.requestFullScreen();
   }
 
   public resetToIdle() {
     this._sound?.stop();
-    this.model?.loadIdleAnimation();
     this._isDancing = false;
+    this.model?.loadIdleAnimation();
+    // 停止镜头动画
+    this.stopCameraAnimation();
+    // 重置镜头
+    this.resetCamera();
   }
 
   /**
@@ -139,10 +173,6 @@ export class Viewer {
       this.resetCamera();
     });
 
-    if (this.model?.vrm) {
-      this.createHeadHitbox();
-    }
-
     // 重新设置事件监听器
     if (this._canvas) {
       this._canvas.addEventListener('click', this._boundHandleClick, false);
@@ -151,12 +181,6 @@ export class Viewer {
 
   public unloadVRM(): void {
     if (this.model?.vrm) {
-      if (this._headHitbox) {
-        this._headHitbox.parent?.remove(this._headHitbox);
-        this._headHitbox.geometry.dispose();
-        (this._headHitbox.material as MeshBasicMaterial).dispose();
-        this._headHitbox = undefined;
-      }
       this._scene.remove(this.model.vrm.scene);
       this.model?.unLoadVrm();
     }
@@ -174,14 +198,15 @@ export class Viewer {
       antialias: true,
       // for canvas three capture
       preserveDrawingBuffer: true,
+      powerPreference: 'high-performance',
       canvas: canvas,
     });
     this._renderer.setSize(width, height);
     this._renderer.setPixelRatio(window.devicePixelRatio);
 
-    // camera 全身
-    this._camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 20);
-    this._camera.position.set(0.4, 1.3, 1.5);
+    // 相机初始化
+    this._camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 2000);
+    this._camera.position.set(0, 1.5, 2);
 
     // camera 控制
     this._cameraControls = new OrbitControls(this._camera, this._renderer.domElement);
@@ -191,6 +216,7 @@ export class Viewer {
 
     // Audio 音频播放
     const listener = new THREE.AudioListener();
+    // 将播放器挂载到摄像机上
     this._camera.add(listener);
 
     // 创建一个全局 audio 源
@@ -204,6 +230,9 @@ export class Viewer {
 
     // 使用存储的绑定函数添加事件监听器
     this._canvas.addEventListener('click', this._boundHandleClick, false);
+
+    // 默认开启网格
+    this.toggleGrid();
 
     this.isReady = true;
     this.update();
@@ -245,6 +274,33 @@ export class Viewer {
     }
   }
 
+  public requestFullScreen() {
+    // 将 canvas 全屏加载
+    if (this._canvas) {
+      this._canvas.requestFullscreen();
+      // 添加全屏变化事件监听器
+      document.addEventListener('fullscreenchange', this.handleFullscreenChange);
+    }
+  }
+
+  public exitFullScreen() {
+    if (document.fullscreenElement && document.exitFullscreen) {
+      document.exitFullscreen().catch((err) => {
+        console.warn('退出全屏失败:', err);
+      });
+    }
+    // 无论是否成功退出全屏，都移除事件监听器
+    document.removeEventListener('fullscreenchange', this.handleFullscreenChange);
+  }
+
+  public toggleFullScreen() {
+    if (document.fullscreenElement) {
+      this.exitFullScreen();
+    } else {
+      this.requestFullScreen();
+    }
+  }
+
   public toggleAxes() {
     if (this._axesHelper) {
       this._scene.remove(this._axesHelper);
@@ -252,39 +308,36 @@ export class Viewer {
     } else {
       this._axesHelper = new THREE.AxesHelper(5);
       this._scene.add(this._axesHelper);
-    }
-  }
 
-  public toggleFloor() {
-    if (this._floor) {
-      this._scene.remove(this._floor);
-      this._floor = undefined;
-    } else {
-      this._floor = new Mesh(
-        new PlaneGeometry(100, 100),
-        new MeshLambertMaterial({
-          color: 0x99_99_99,
-          depthWrite: true,
-        }),
-      );
-      this._floor.position.y = -0.5;
-      this._floor.rotation.x = -Math.PI / 2;
-      this._scene.add(this._floor);
+      // 添加 xyz 标识
+      const axisLabels = ['X', 'Y', 'Z'];
+      const colors = [0xff0000, 0x00ff00, 0x0000ff];
+
+      axisLabels.forEach((label, index) => {
+        const sprite = new THREE.Sprite(
+          new THREE.SpriteMaterial({
+            map: this.createTextTexture(label),
+            color: colors[index],
+          }),
+        );
+        sprite.position.setComponent(index, 0.5); // 将位置设置为0.5，使标记更靠近原点
+        sprite.scale.set(0.2, 0.2, 0.2); // 缩小标记尺寸，使其更适合靠近原点的位置
+        this._axesHelper?.add(sprite);
+      });
     }
   }
 
   public resize() {
-    if (!this._renderer) return;
+    if (!this._renderer || !this._camera) return;
 
     const parentElement = this._renderer.domElement.parentElement;
     if (!parentElement) return;
 
-    this._renderer.setPixelRatio(window.devicePixelRatio);
-    this._renderer.setSize(parentElement.clientWidth, parentElement.clientHeight);
+    const width = document.fullscreenElement ? window.innerWidth : parentElement.clientWidth;
+    const height = document.fullscreenElement ? window.innerHeight : parentElement.clientHeight;
 
-    if (!this._camera) return;
-    this._camera.aspect = parentElement.clientWidth / parentElement.clientHeight;
-    this._camera.updateProjectionMatrix();
+    this._renderer.setPixelRatio(window.devicePixelRatio);
+    this.resizeRenderer(width, height);
   }
 
   public resetCamera() {
@@ -305,12 +358,14 @@ export class Viewer {
     if (this.model) {
       this.model.update(delta);
     }
+    // 更新镜头动画
+    if (this._isDancing && this._cameraMixer) {
+      this._cameraMixer.update(delta);
+      // 确保相机的世界矩阵被更新
+      this._camera?.updateMatrixWorld(true);
+    }
     if (this._cameraHelper) {
       this._cameraHelper.update();
-    }
-
-    if (this.model?.vrm && this._headHitbox) {
-      this.updateHeadHitbox();
     }
 
     if (this._renderer && this._camera) {
@@ -318,199 +373,90 @@ export class Viewer {
     }
   };
 
-  private handleRaycasterIntersection(event: MouseEvent): THREE.Intersection[] | null {
-    if (!this.model?.vrm || !this._camera || !this._renderer) {
-      return null;
-    }
+  private handleClick = (event: MouseEvent) => {
+    if (this._isDancing || !this.model || !this._camera || !this._renderer) return;
 
     const rect = this._renderer.domElement.getBoundingClientRect();
     this._mouse.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
     this._mouse.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
 
-    this._raycaster.setFromCamera(this._mouse, this._camera);
+    const intersects = this.model.handleRaycasterIntersection(this._mouse, this._camera);
+    if (!intersects) return;
 
-    return this._raycaster.intersectObjects(this._scene.children, true);
-  }
+    const touchArea = this.model.handleClick(intersects);
 
-  private handleClick = (event: MouseEvent) => {
-    if (this._isDancing) return;
-
-    const intersects = this.handleRaycasterIntersection(event);
-    if (!intersects || intersects.length === 0) return;
-
-    // 检查是否点击了头部 hitbox
-    const headHitboxIntersect = intersects.find(
-      (intersect) => intersect.object === this._headHitbox,
-    );
-    if (headHitboxIntersect) {
-      this.handleBodyPartClick(VRMHumanBoneName.Head);
-      return;
-    }
-
-    const intersectedPoint = intersects[0].point;
-    const closestBone = this.findClosestBone(intersectedPoint);
-
-    console.log('closestBone', closestBone, intersects);
-
-    if (closestBone) {
-      this.handleBodyPartClick(closestBone);
+    if (touchArea && this._onBodyTouch) {
+      this._onBodyTouch(touchArea);
     }
   };
 
-  private getHeadBones(): VRMHumanBoneName[] {
-    return [
-      VRMHumanBoneName.Head,
-      VRMHumanBoneName.Neck,
-      VRMHumanBoneName.LeftEye,
-      VRMHumanBoneName.RightEye,
-      VRMHumanBoneName.Jaw,
-    ];
+  public stopCameraAnimation(): void {
+    if (this._cameraAction) {
+      this._cameraAction.stop();
+      this._cameraAction = undefined;
+    }
+    if (this._cameraMixer) {
+      this._cameraMixer.stopAllAction();
+    }
+    // 重新启用 OrbitControls
+    if (this._cameraControls) {
+      this._cameraControls.enabled = true;
+    }
   }
 
-  private findClosestBone(point: THREE.Vector3): VRMHumanBoneName | null {
-    if (!this.model?.vrm) return null;
-
-    let closestBone: VRMHumanBoneName | null = null;
-    let closestWeightedDistance = Infinity;
-
-    const mainBones: VRMHumanBoneName[] = [
-      ...this.getHeadBones(),
-      VRMHumanBoneName.Chest,
-      VRMHumanBoneName.Spine,
-      VRMHumanBoneName.Hips,
-      VRMHumanBoneName.LeftUpperArm,
-      VRMHumanBoneName.LeftLowerArm,
-      VRMHumanBoneName.LeftHand,
-      VRMHumanBoneName.RightUpperArm,
-      VRMHumanBoneName.RightLowerArm,
-      VRMHumanBoneName.RightHand,
-      VRMHumanBoneName.LeftUpperLeg,
-      VRMHumanBoneName.LeftLowerLeg,
-      VRMHumanBoneName.LeftFoot,
-      VRMHumanBoneName.RightUpperLeg,
-      VRMHumanBoneName.RightLowerLeg,
-      VRMHumanBoneName.RightFoot,
-    ];
-
-    const getBoneWeight = (boneName: VRMHumanBoneName): number => {
-      switch (boneName) {
-        case VRMHumanBoneName.Head:
-        case VRMHumanBoneName.LeftEye:
-        case VRMHumanBoneName.RightEye:
-        case VRMHumanBoneName.Jaw:
-          return 2; // 增加头部相关骨骼的权重
-        case VRMHumanBoneName.Chest:
-        case VRMHumanBoneName.Spine:
-        case VRMHumanBoneName.Hips:
-          return 1.5;
-        case VRMHumanBoneName.LeftUpperLeg:
-        case VRMHumanBoneName.RightUpperLeg:
-        case VRMHumanBoneName.LeftUpperArm:
-        case VRMHumanBoneName.RightUpperArm:
-          return 1.2;
-        default:
-          return 1;
+  public playCameraAnimation(): void {
+    if (this._cameraAction) {
+      this._cameraAction.play();
+      this._cameraAction.clampWhenFinished = false;
+      // 禁用 OrbitControls
+      if (this._cameraControls) {
+        this._cameraControls.enabled = false;
       }
-    };
+    }
+  }
 
-    mainBones.forEach((boneName) => {
-      const boneData = this.model!.vrm!.humanoid.getNormalizedBoneNode(boneName);
-      if (boneData) {
-        const boneWorldPosition = new THREE.Vector3();
-        boneData.getWorldPosition(boneWorldPosition);
-        const distance = point.distanceTo(boneWorldPosition);
-        const weightedDistance = distance / getBoneWeight(boneName);
+  private createTextTexture(label: string): THREE.Texture {
+    const canvas = document.createElement('canvas');
+    const context = canvas.getContext('2d');
+    if (context) {
+      context.font = '24px Arial';
+      context.fillStyle = 'white';
+      context.fillText(label, 0, 24);
+    }
+    return new THREE.CanvasTexture(canvas);
+  }
 
-        if (weightedDistance < closestWeightedDistance) {
-          closestWeightedDistance = weightedDistance;
-          closestBone = boneName;
-        }
+  // 在 Viewer 类中添加一个新的方法
+  private handleFullscreenChange = () => {
+    if (document.fullscreenElement) {
+      // 进入全屏模式
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+      this.resizeRenderer(width, height);
+    } else {
+      // 退出全屏模式
+      const parentElement = this._canvas?.parentElement;
+      if (parentElement) {
+        const width = parentElement.clientWidth;
+        const height = parentElement.clientHeight;
+        this.resizeRenderer(width, height);
       }
-    });
+      // 在这里处理退出全屏后的其他逻辑
+      this._isDancing = false;
+    }
+  };
 
-    return closestBone;
-  }
-
-  private handleBodyPartClick(boneName: VRMHumanBoneName) {
-    const touchArea = this.mapBoneNameToTouchArea(boneName);
-
-    // 调用回调函数
-    if (this._onBodyTouch && touchArea) {
-      this._onBodyTouch(touchArea);
+  // 添加一个新的方法来调整渲染器大小
+  private resizeRenderer(width: number, height: number) {
+    if (this._renderer && this._camera) {
+      this._renderer.setSize(width, height);
+      this._camera.aspect = width / height;
+      this._camera.updateProjectionMatrix();
     }
   }
 
-  private mapBoneNameToTouchArea(boneName: VRMHumanBoneName): TouchAreaEnum | null {
-    const headBones = this.getHeadBones();
-    if (headBones.includes(boneName)) {
-      return TouchAreaEnum.Head;
-    }
-
-    switch (boneName) {
-      case VRMHumanBoneName.LeftUpperArm:
-      case VRMHumanBoneName.LeftLowerArm:
-      case VRMHumanBoneName.LeftHand:
-      case VRMHumanBoneName.RightUpperArm:
-      case VRMHumanBoneName.RightLowerArm:
-      case VRMHumanBoneName.RightHand:
-        return TouchAreaEnum.Arm;
-
-      case VRMHumanBoneName.LeftUpperLeg:
-      case VRMHumanBoneName.RightUpperLeg:
-      case VRMHumanBoneName.LeftLowerLeg:
-      case VRMHumanBoneName.RightLowerLeg:
-      case VRMHumanBoneName.LeftFoot:
-      case VRMHumanBoneName.RightFoot:
-        return TouchAreaEnum.Leg;
-
-      case VRMHumanBoneName.Chest:
-        return TouchAreaEnum.Chest;
-
-      case VRMHumanBoneName.Spine:
-        return TouchAreaEnum.Belly;
-
-      case VRMHumanBoneName.Hips:
-        return TouchAreaEnum.Buttocks;
-
-      default:
-        return null;
-    }
-  }
-
-  private createHeadHitbox() {
-    if (!this.model?.vrm) return;
-
-    const headBone = this.model.vrm.humanoid.getNormalizedBoneNode('head');
-    if (!headBone) return;
-
-    const geometry = new BoxGeometry(
-      this._headHitboxSize.x,
-      this._headHitboxSize.y,
-      this._headHitboxSize.z,
-    );
-    const material = new MeshBasicMaterial({
-      color: 0x00ff00, // 绿色
-      transparent: true,
-      opacity: 0.5,
-      visible: false,
-    });
-    this._headHitbox = new Mesh(geometry, material);
-
-    headBone.add(this._headHitbox);
-
-    // 调整 hitbox 的位置，使其位于头部中心偏下的位置
-    this._headHitbox.position.set(0, this._headHitboxSize.y * 0.3, 0);
-  }
-
-  private updateHeadHitbox() {
-    if (!this.model?.vrm || !this._headHitbox) return;
-
-    const headBone = this.model.vrm.humanoid.getNormalizedBoneNode('head');
-    if (!headBone) return;
-
-    // 更新 hitbox 的缩放以匹配模型的缩放
-    const scale = new Vector3();
-    headBone.getWorldScale(scale);
-    this._headHitbox.scale.copy(scale);
+  // 添加一个新的方法来检查是否可以退出全屏
+  private canExitFullscreen(): boolean {
+    return !!(document.fullscreenElement && document.exitFullscreen);
   }
 }

@@ -13,14 +13,16 @@ import { useUploadDance } from '@/hooks/useUploadDance';
 import { Dance } from '@/types/dance';
 
 import AudioUpload from './AudioUpload';
+import CameraUpload from './CameraUpload';
 import CoverImageUpload from './CoverImageUpload';
 import DanceIdInput from './DanceIdInput';
 import DanceName from './DanceName';
-import DanceUpload from './DanceUpload';
 import ReadMe from './ReadMe';
+import SrcUpload from './SrcUpload';
 
 interface FormValues {
   audio: File;
+  camera?: File;
   danceId: string;
   image: { cover: string; thumb: string };
   name: string;
@@ -40,12 +42,16 @@ const CreateDanceModal = () => {
       const data = await form.validateFields();
 
       try {
-        const { coverUrl, thumbUrl, audioUrl, srcUrl } = await uploadDanceData(data.danceId, {
-          audio: data.audio,
-          cover: data.image.cover,
-          src: data.src,
-          thumb: data.image.thumb,
-        });
+        const { coverUrl, thumbUrl, audioUrl, srcUrl, cameraUrl } = await uploadDanceData(
+          data.danceId,
+          {
+            audio: data.audio,
+            cover: data.image.cover,
+            src: data.src,
+            thumb: data.image.thumb,
+            camera: data.camera,
+          },
+        );
 
         if (!thumbUrl || !coverUrl || !audioUrl || !srcUrl) {
           message.error(t('fileUploadError', { ns: 'error' }));
@@ -60,6 +66,7 @@ const CreateDanceModal = () => {
           audio: audioUrl,
           src: srcUrl,
           readme: data.readme,
+          camera: cameraUrl,
         };
 
         const body = [
@@ -67,14 +74,16 @@ const CreateDanceModal = () => {
           dance.danceId,
           '### name',
           dance.name,
-          '### audio',
-          dance.audio,
-          '### src',
-          dance.src,
           '### cover',
           dance.cover,
           '### thumb',
           dance.thumb,
+          '### audio',
+          dance.audio,
+          '### src',
+          dance.src,
+          '### camera',
+          dance.camera,
           '### readme',
           dance.readme,
         ].join('\n\n');
@@ -127,10 +136,16 @@ const CreateDanceModal = () => {
     },
     {
       name: 'src',
-      label: t('create.dance.title'),
-      rules: [{ required: true, message: t('create.dance.required') }],
-      desc: t('create.dance.desc'),
-      children: <DanceUpload />,
+      label: t('create.src.title'),
+      rules: [{ required: true, message: t('create.src.required') }],
+      desc: t('create.src.desc'),
+      children: <SrcUpload />,
+    },
+    {
+      name: 'camera',
+      label: t('create.camera.title'),
+      desc: t('create.camera.desc'),
+      children: <CameraUpload />,
     },
     {
       name: 'readme',
@@ -183,6 +198,12 @@ const CreateDanceModal = () => {
                     {t('create.uploadingDance', { ns: 'dance' })}
                   </Typography.Text>
                 </Space>
+                <Space>
+                  <Progress steps={30} percent={percent.camera} size="small" />
+                  <Typography.Text style={{ fontSize: 12 }}>
+                    {t('create.uploadingCamera', { ns: 'dance' })}
+                  </Typography.Text>
+                </Space>
               </Flexbox>
             }
           >
@@ -200,7 +221,14 @@ const CreateDanceModal = () => {
         width={800}
       >
         <TopBanner title={t('createDance', { ns: 'dance' })} />
-        <Form form={form} onFinish={handleSubmit} variant="pure" items={basic} itemsType="flat" />
+        <Form
+          form={form}
+          onFinish={handleSubmit}
+          variant="pure"
+          items={basic}
+          itemsType="flat"
+          preserve={false}
+        />
       </Modal>
     </>
   );
