@@ -86,6 +86,10 @@ export default {
     backgroundList: '背景列表',
     totalCount: '共 {{total}} 项',
   },
+  stage: {
+    stageList: '舞台列表',
+    totalCount: '共 {{total}} 项',
+  },
   delSession: '删除会话',
   delSessionAlert: '确认删除对话吗？删除后无法恢复, 请谨慎操作！',
   chat: '聊天',

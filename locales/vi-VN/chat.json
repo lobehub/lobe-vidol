@@ -68,6 +68,10 @@
     "withFooter": "Bao gồm chân trang",
     "withSystemRole": "Bao gồm vai trò trợ lý"
   },
+  "stage": {
+    "stageList": "Danh sách sân khấu",
+    "totalCount": "Tổng cộng {{total}} mục"
+  },
   "token": {
     "overload": "Token vượt quá",
     "remained": "Token còn lại",

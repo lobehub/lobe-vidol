@@ -68,6 +68,10 @@
     "withFooter": "Inclusief voettekst",
     "withSystemRole": "Inclusief assistentrolinstellingen"
   },
+  "stage": {
+    "stageList": "Lijst van podia",
+    "totalCount": "Totaal {{total}} items"
+  },
   "token": {
     "overload": "Token overschrijding",
     "remained": "Overgebleven Token",

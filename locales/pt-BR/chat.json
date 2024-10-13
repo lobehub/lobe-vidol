@@ -68,6 +68,10 @@
     "withFooter": "Incluir rodapé",
     "withSystemRole": "Incluir configuração de papel do assistente"
   },
+  "stage": {
+    "stageList": "Lista de Palcos",
+    "totalCount": "Total de {{total}} itens"
+  },
   "token": {
     "overload": "Token excedido",
     "remained": "Token restante",

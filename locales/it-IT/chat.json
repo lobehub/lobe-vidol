@@ -68,6 +68,10 @@
     "withFooter": "Includi piè di pagina",
     "withSystemRole": "Includi impostazioni del ruolo dell'assistente"
   },
+  "stage": {
+    "stageList": "Elenco dei palchi",
+    "totalCount": "Totale {{total}} elementi"
+  },
   "token": {
     "overload": "Token sovraccarico",
     "remained": "Token rimanenti",

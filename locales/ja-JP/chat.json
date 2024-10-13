@@ -68,6 +68,10 @@
     "withFooter": "フッターを含む",
     "withSystemRole": "アシスタントの役割設定を含む"
   },
+  "stage": {
+    "stageList": "ステージリスト",
+    "totalCount": "合計 {{total}} 件"
+  },
   "token": {
     "overload": "トークンが超過しました",
     "remained": "残りのトークン",

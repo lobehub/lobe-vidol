@@ -68,6 +68,10 @@
     "withFooter": "Incluir pie de página",
     "withSystemRole": "Incluir configuración del asistente"
   },
+  "stage": {
+    "stageList": "Lista de escenarios",
+    "totalCount": "Total {{total}} elementos"
+  },
   "token": {
     "overload": "Token excedido",
     "remained": "Token restantes",

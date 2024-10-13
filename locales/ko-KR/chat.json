@@ -68,6 +68,10 @@
     "withFooter": "바닥글 포함",
     "withSystemRole": "도우미 역할 설정 포함"
   },
+  "stage": {
+    "stageList": "무대 목록",
+    "totalCount": "총 {{total}} 항목"
+  },
   "token": {
     "overload": "토큰 초과",
     "remained": "남은 토큰",

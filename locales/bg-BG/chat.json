@@ -68,6 +68,10 @@
     "withFooter": "С включен футер",
     "withSystemRole": "Включва роля на асистента"
   },
+  "stage": {
+    "stageList": "Списък на сцените",
+    "totalCount": "Общо {{total}} елемента"
+  },
   "token": {
     "overload": "Токенът е изчерпан",
     "remained": "Остатъчни токени",

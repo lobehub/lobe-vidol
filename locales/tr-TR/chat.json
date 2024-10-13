@@ -68,6 +68,10 @@
     "withFooter": "Alt bilgi ile birlikte",
     "withSystemRole": "Asistan rolü ile birlikte"
   },
+  "stage": {
+    "stageList": "Sahne Listesi",
+    "totalCount": "Toplam {{total}} öğe"
+  },
   "token": {
     "overload": "Token aşımı",
     "remained": "Kalan Token",

@@ -68,6 +68,10 @@
     "withFooter": "Include Footer",
     "withSystemRole": "Include Assistant Role Settings"
   },
+  "stage": {
+    "stageList": "Stage List",
+    "totalCount": "Total {{total}} items"
+  },
   "token": {
     "overload": "Token Overload",
     "remained": "Remaining Tokens",

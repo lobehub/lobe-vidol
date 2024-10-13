@@ -68,6 +68,10 @@
     "withFooter": "Mit Fußzeile",
     "withSystemRole": "Mit Assistentenrollen-Einstellungen"
   },
+  "stage": {
+    "stageList": "Bühnenliste",
+    "totalCount": "Insgesamt {{total}} Einträge"
+  },
   "token": {
     "overload": "Token überlastet",
     "remained": "Verbleibende Token",

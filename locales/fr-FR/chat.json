@@ -68,6 +68,10 @@
     "withFooter": "Inclure un pied de page",
     "withSystemRole": "Inclure le rôle de l'assistant"
   },
+  "stage": {
+    "stageList": "Liste des scènes",
+    "totalCount": "Total de {{total}} éléments"
+  },
   "token": {
     "overload": "Dépassement de Token",
     "remained": "Token restant",

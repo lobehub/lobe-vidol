@@ -68,6 +68,10 @@
     "withFooter": "Включить нижний колонтитул",
     "withSystemRole": "Включить роль помощника"
   },
+  "stage": {
+    "stageList": "Список сцен",
+    "totalCount": "Всего {{total}} элементов"
+  },
   "token": {
     "overload": "Токен превышен",
     "remained": "Осталось токенов",

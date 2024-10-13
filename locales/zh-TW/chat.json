@@ -68,6 +68,10 @@
     "withFooter": "包含頁腳",
     "withSystemRole": "包含助手角色設定"
   },
+  "stage": {
+    "stageList": "舞台列表",
+    "totalCount": "共 {{total}} 項"
+  },
   "token": {
     "overload": "Token 超出",
     "remained": "Token 剩餘",

@@ -68,6 +68,10 @@
     "shareToGPT": "生成 ShareGPT 分享链接",
     "share": "分享"
   },
+  "stage": {
+    "stageList": "舞台列表",
+    "totalCount": "共 {{total}} 项"
+  },
   "token": {
     "overload": "Token 超出",
     "remained": "Token 剩余",

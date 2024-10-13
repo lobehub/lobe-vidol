@@ -68,6 +68,10 @@
     "withFooter": "Zawiera stopkę",
     "withSystemRole": "Zawiera ustawienia roli asystenta"
   },
+  "stage": {
+    "stageList": "Lista scen",
+    "totalCount": "Łącznie {{total}} pozycji"
+  },
   "token": {
     "overload": "Token przekroczony",
     "remained": "Pozostałe Tokeny",
