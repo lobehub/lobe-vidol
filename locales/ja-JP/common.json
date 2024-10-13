@@ -7,8 +7,11 @@
   "defaultAssistant": "デフォルトアシスタント",
   "delete": "削除",
   "download": {
+    "audio": "オーディオをダウンロード",
     "avatar": "アバターをダウンロード",
+    "camera": "カメラをダウンロード",
     "cover": "カバーをダウンロード",
+    "dance": "ダンスをダウンロード",
     "failed": "ダウンロード失敗",
     "model": "モデルをダウンロード",
     "subscribe": "ダウンロード購読",

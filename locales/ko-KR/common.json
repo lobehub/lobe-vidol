@@ -7,8 +7,11 @@
   "defaultAssistant": "기본 도우미",
   "delete": "삭제",
   "download": {
+    "audio": "오디오 다운로드",
     "avatar": "아바타 다운로드",
+    "camera": "카메라 다운로드",
     "cover": "커버 다운로드",
+    "dance": "다운로드 동작",
     "failed": "다운로드 실패",
     "model": "모델 다운로드",
     "subscribe": "구독 다운로드",

@@ -15,11 +15,11 @@
       "title": "Tập tin âm thanh",
       "upload": "Chọn tệp âm thanh"
     },
-    "dance": {
-      "desc": "Tập tin hành động cho điệu nhảy",
-      "required": "Vui lòng tải lên tập tin điệu nhảy",
-      "title": "Tập tin điệu nhảy",
-      "upload": "Chọn tệp điệu nhảy"
+    "camera": {
+      "desc": "Chọn tệp camera (.vmd)",
+      "required": "Vui lòng chọn tệp camera",
+      "title": "Tệp camera",
+      "upload": "Chọn tệp camera"
     },
     "danceId": {
       "desc": "Định danh duy nhất cho điệu nhảy",
@@ -49,10 +49,17 @@
       "placeholder": "Vui lòng nhập mô tả chi tiết về điệu nhảy",
       "title": "Tài liệu hướng dẫn"
     },
+    "src": {
+      "desc": "Chọn tệp nhảy múa (.vmd)",
+      "required": "Vui lòng chọn tệp nhảy múa",
+      "title": "Tệp nhảy múa",
+      "upload": "Chọn tệp nhảy múa"
+    },
     "submit": "Gửi",
     "title": "Tạo điệu nhảy",
     "uploading": "Đang xử lý tải lên, vui lòng không đóng trang...",
     "uploadingAudio": "Đang tải lên tập tin nhạc",
+    "uploadingCamera": "Đang tải tệp camera lên",
     "uploadingCover": "Đang tải lên bìa",
     "uploadingDance": "Đang tải lên tập tin điệu nhảy",
     "uploadingThumb": "Đang tải lên hình thu nhỏ"

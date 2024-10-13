@@ -7,8 +7,11 @@
   "defaultAssistant": "Assistant par défaut",
   "delete": "Supprimer",
   "download": {
+    "audio": "Télécharger l'audio",
     "avatar": "Télécharger l'avatar",
+    "camera": "Télécharger la caméra",
     "cover": "Télécharger la couverture",
+    "dance": "Télécharger l'action",
     "failed": "Échec du téléchargement",
     "model": "Télécharger le modèle",
     "subscribe": "Télécharger l'abonnement",

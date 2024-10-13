@@ -15,11 +15,11 @@
       "title": "Plik audio",
       "upload": "Wybierz plik audio"
     },
-    "dance": {
-      "desc": "Plik z ruchami tańca",
-      "required": "Proszę przesłać plik tańca",
-      "title": "Plik tańca",
-      "upload": "Wybierz plik tańca"
+    "camera": {
+      "desc": "Wybierz plik kamery (.vmd)",
+      "required": "Proszę wybrać plik kamery",
+      "title": "Plik kamery",
+      "upload": "Wybierz plik kamery"
     },
     "danceId": {
       "desc": "Unikalny identyfikator tańca",
@@ -49,10 +49,17 @@
       "placeholder": "Wprowadź szczegółowy opis tańca",
       "title": "Dokumentacja"
     },
+    "src": {
+      "desc": "Wybierz plik tańca (.vmd)",
+      "required": "Proszę wybrać plik tańca",
+      "title": "Plik tańca",
+      "upload": "Wybierz plik tańca"
+    },
     "submit": "Prześlij",
     "title": "Stwórz taniec",
     "uploading": "Przesyłanie w toku, proszę nie zamykać strony...",
     "uploadingAudio": "Przesyłanie pliku muzycznego",
+    "uploadingCamera": "Przesyłanie pliku kamery",
     "uploadingCover": "Przesyłanie okładki",
     "uploadingDance": "Przesyłanie pliku tańca",
     "uploadingThumb": "Przesyłanie miniatury"

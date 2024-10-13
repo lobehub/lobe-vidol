@@ -7,8 +7,11 @@
   "defaultAssistant": "Domyślny asystent",
   "delete": "Usuń",
   "download": {
+    "audio": "Pobierz dźwięk",
     "avatar": "Pobierz awatar",
+    "camera": "Pobierz kamerę",
     "cover": "Pobierz okładkę",
+    "dance": "Pobierz taniec",
     "failed": "Pobieranie nie powiodło się",
     "model": "Pobierz model",
     "subscribe": "Pobierz subskrypcję",

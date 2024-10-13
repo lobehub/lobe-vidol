@@ -15,11 +15,11 @@
       "title": "Audiobestand",
       "upload": "Kies audiobestand"
     },
-    "dance": {
-      "desc": "Het bestand met de dansbewegingen",
-      "required": "Upload een dansbestand",
-      "title": "Dansbestand",
-      "upload": "Kies dansbestand"
+    "camera": {
+      "desc": "Kies een camerabestand (.vmd)",
+      "required": "Selecteer een camerabestand",
+      "title": "Camera bestand",
+      "upload": "Kies camerabestand"
     },
     "danceId": {
       "desc": "De unieke identificatie van de dans",
@@ -49,10 +49,17 @@
       "placeholder": "Voer een gedetailleerde beschrijving van de dans in",
       "title": "Handleiding"
     },
+    "src": {
+      "desc": "Kies een dansbestand (.vmd)",
+      "required": "Selecteer een dansbestand",
+      "title": "Dansbestand",
+      "upload": "Kies dansbestand"
+    },
     "submit": "Indienen",
     "title": "Dans creëren",
     "uploading": "Upload in behandeling, sluit de pagina niet...",
     "uploadingAudio": "Muziekbestand aan het uploaden",
+    "uploadingCamera": "Camerabestand aan het uploaden",
     "uploadingCover": "Omslag aan het uploaden",
     "uploadingDance": "Dansbestand aan het uploaden",
     "uploadingThumb": "Miniatuur aan het uploaden"

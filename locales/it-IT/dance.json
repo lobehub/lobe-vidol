@@ -15,11 +15,11 @@
       "title": "File audio",
       "upload": "Seleziona il file audio"
     },
-    "dance": {
-      "desc": "File delle azioni della danza",
-      "required": "Carica il file della danza",
-      "title": "File danza",
-      "upload": "Seleziona il file di danza"
+    "camera": {
+      "desc": "Seleziona il file della telecamera (.vmd)",
+      "required": "Per favore seleziona un file della telecamera",
+      "title": "File della telecamera",
+      "upload": "Seleziona il file della telecamera"
     },
     "danceId": {
       "desc": "Identificatore unico della danza",
@@ -49,10 +49,17 @@
       "placeholder": "Inserisci una descrizione dettagliata del ballo",
       "title": "Documento di istruzioni"
     },
+    "src": {
+      "desc": "Seleziona il file di danza (.vmd)",
+      "required": "Per favore seleziona un file di danza",
+      "title": "File di danza",
+      "upload": "Seleziona il file di danza"
+    },
     "submit": "Invia",
     "title": "Crea danza",
     "uploading": "Caricamento in corso, non chiudere la pagina...",
     "uploadingAudio": "Caricamento file musicale",
+    "uploadingCamera": "Caricamento del file della telecamera",
     "uploadingCover": "Caricamento copertura",
     "uploadingDance": "Caricamento file danza",
     "uploadingThumb": "Caricamento miniatura"

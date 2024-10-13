@@ -15,11 +15,11 @@
       "title": "Ses Dosyası",
       "upload": "Ses dosyasını seçin"
     },
-    "dance": {
-      "desc": "Dansın hareket dosyası",
-      "required": "Lütfen dans dosyası yükleyin",
-      "title": "Dans Dosyası",
-      "upload": "Dans dosyasını seçin"
+    "camera": {
+      "desc": "Kamera dosyasını seçin (.vmd)",
+      "required": "Lütfen bir kamera dosyası seçin",
+      "title": "Kamera Dosyası",
+      "upload": "Kamera dosyasını seçin"
     },
     "danceId": {
       "desc": "Dansın benzersiz tanımlayıcısı",
@@ -49,10 +49,17 @@
       "placeholder": "Lütfen dansın ayrıntılı açıklamasını girin",
       "title": "Açıklama Belgesi"
     },
+    "src": {
+      "desc": "Dans dosyasını seçin (.vmd)",
+      "required": "Lütfen bir dans dosyası seçin",
+      "title": "Dans Dosyası",
+      "upload": "Dans dosyasını seçin"
+    },
     "submit": "Gönder",
     "title": "Dans Oluştur",
     "uploading": "Yükleme işlemi devam ediyor, lütfen sayfayı kapatmayın...",
     "uploadingAudio": "Müzik dosyası yükleniyor",
+    "uploadingCamera": "Kamera dosyası yükleniyor",
     "uploadingCover": "Kapak yükleniyor",
     "uploadingDance": "Dans dosyası yükleniyor",
     "uploadingThumb": "Küçültülmüş resim yükleniyor"

@@ -7,8 +7,11 @@
   "defaultAssistant": "Default Assistant",
   "delete": "Delete",
   "download": {
+    "audio": "Download Audio",
     "avatar": "Download Avatar",
+    "camera": "Download Camera",
     "cover": "Download Cover",
+    "dance": "Download Dance",
     "failed": "Download Failed",
     "model": "Download Model",
     "subscribe": "Download Subscription",

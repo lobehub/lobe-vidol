@@ -15,11 +15,11 @@
       "title": "오디오 파일",
       "upload": "오디오 파일 선택"
     },
-    "dance": {
-      "desc": "춤의 동작 파일",
-      "required": "춤 파일을 업로드하세요",
-      "title": "춤 파일",
-      "upload": "춤 파일 선택"
+    "camera": {
+      "desc": "카메라 파일(.vmd) 선택",
+      "required": "카메라 파일을 선택해 주세요",
+      "title": "카메라 파일",
+      "upload": "카메라 파일 선택"
     },
     "danceId": {
       "desc": "춤의 고유 식별자",
@@ -49,10 +49,17 @@
       "placeholder": "춤에 대한 자세한 설명을 입력하세요",
       "title": "설명 문서"
     },
+    "src": {
+      "desc": "댄스 파일(.vmd) 선택",
+      "required": "댄스 파일을 선택해 주세요",
+      "title": "댄스 파일",
+      "upload": "댄스 파일 선택"
+    },
     "submit": "제출",
     "title": "춤 만들기",
     "uploading": "업로드 처리 중입니다. 페이지를 닫지 마세요...",
     "uploadingAudio": "음악 파일 업로드 중",
+    "uploadingCamera": "카메라 파일 업로드 중",
     "uploadingCover": "표지 업로드 중",
     "uploadingDance": "춤 파일 업로드 중",
     "uploadingThumb": "썸네일 업로드 중"
