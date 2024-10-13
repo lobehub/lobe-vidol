@@ -98,6 +98,7 @@ export class Viewer {
         this._sound.onEnded = () => {
           onEnd?.();
           this.resetCamera();
+          this.stopCameraAnimation();
           this._isDancing = false;
         };
       }
@@ -226,6 +227,9 @@ export class Viewer {
 
     // 使用存储的绑定函数添加事件监听器
     this._canvas.addEventListener('click', this._boundHandleClick, false);
+
+    // 默认开启网格
+    this.toggleGrid();
 
     this.isReady = true;
     this.update();

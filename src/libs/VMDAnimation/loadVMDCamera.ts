@@ -5,7 +5,7 @@ import { MMDLoader } from 'three/examples/jsm/loaders/MMDLoader';
 export async function loadVMDCamera(
   url: string,
   camera: PerspectiveCamera,
-  scale: number = 0.1, // 添加缩放参数，默认为 0.1
+  scale: number = 0.085, // 添加缩放参数，默认为 0.1
 ): Promise<AnimationClip | null> {
   const loader = new MMDLoader();
   const helper = new MMDAnimationHelper({ afterglow: 2.0 });

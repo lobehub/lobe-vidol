@@ -221,7 +221,14 @@ const CreateDanceModal = () => {
         width={800}
       >
         <TopBanner title={t('createDance', { ns: 'dance' })} />
-        <Form form={form} onFinish={handleSubmit} variant="pure" items={basic} itemsType="flat" />
+        <Form
+          form={form}
+          onFinish={handleSubmit}
+          variant="pure"
+          items={basic}
+          itemsType="flat"
+          preserve={false}
+        />
       </Modal>
     </>
   );
