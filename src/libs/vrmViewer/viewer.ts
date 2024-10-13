@@ -82,7 +82,6 @@ export class Viewer {
     }
 
     // 1. 关闭当前舞蹈, 设置环境
-    // 将 canvas 全屏加载
     this._sound.stop();
     this._isDancing = true;
 
@@ -97,9 +96,11 @@ export class Viewer {
         // 监听音频播放结束事件
         this._sound.onEnded = () => {
           onEnd?.();
-          this.resetCamera();
-          this.stopCameraAnimation();
-          this._isDancing = false;
+          this.resetToIdle();
+          // 使用 setTimeout 来延迟退出全屏，给浏览器一些时间来处理音频结束事件
+          setTimeout(() => {
+            this.exitFullScreen();
+          }, 100);
         };
       }
     });
@@ -124,6 +125,8 @@ export class Viewer {
     // 开始播放
     this._sound.play();
     if (cameraUrl) this.playCameraAnimation();
+    // 将 canvas 全屏加载
+    this.requestFullScreen();
   }
 
   public resetToIdle() {
@@ -132,7 +135,7 @@ export class Viewer {
     this.model?.loadIdleAnimation();
     // 停止镜头动画
     this.stopCameraAnimation();
-    // 重置设想头
+    // 重置镜头
     this.resetCamera();
   }
 
@@ -271,6 +274,33 @@ export class Viewer {
     }
   }
 
+  public requestFullScreen() {
+    // 将 canvas 全屏加载
+    if (this._canvas) {
+      this._canvas.requestFullscreen();
+      // 添加全屏变化事件监听器
+      document.addEventListener('fullscreenchange', this.handleFullscreenChange);
+    }
+  }
+
+  public exitFullScreen() {
+    if (document.fullscreenElement && document.exitFullscreen) {
+      document.exitFullscreen().catch((err) => {
+        console.warn('退出全屏失败:', err);
+      });
+    }
+    // 无论是否成功退出全屏，都移除事件监听器
+    document.removeEventListener('fullscreenchange', this.handleFullscreenChange);
+  }
+
+  public toggleFullScreen() {
+    if (document.fullscreenElement) {
+      this.exitFullScreen();
+    } else {
+      this.requestFullScreen();
+    }
+  }
+
   public toggleAxes() {
     if (this._axesHelper) {
       this._scene.remove(this._axesHelper);
@@ -298,17 +328,16 @@ export class Viewer {
   }
 
   public resize() {
-    if (!this._renderer) return;
+    if (!this._renderer || !this._camera) return;
 
     const parentElement = this._renderer.domElement.parentElement;
     if (!parentElement) return;
 
-    this._renderer.setPixelRatio(window.devicePixelRatio);
-    this._renderer.setSize(parentElement.clientWidth, parentElement.clientHeight);
+    const width = document.fullscreenElement ? window.innerWidth : parentElement.clientWidth;
+    const height = document.fullscreenElement ? window.innerHeight : parentElement.clientHeight;
 
-    if (!this._camera) return;
-    this._camera.aspect = parentElement.clientWidth / parentElement.clientHeight;
-    this._camera.updateProjectionMatrix();
+    this._renderer.setPixelRatio(window.devicePixelRatio);
+    this.resizeRenderer(width, height);
   }
 
   public resetCamera() {
@@ -395,5 +424,39 @@ export class Viewer {
       context.fillText(label, 0, 24);
     }
     return new THREE.CanvasTexture(canvas);
+  }
+
+  // 在 Viewer 类中添加一个新的方法
+  private handleFullscreenChange = () => {
+    if (document.fullscreenElement) {
+      // 进入全屏模式
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+      this.resizeRenderer(width, height);
+    } else {
+      // 退出全屏模式
+      const parentElement = this._canvas?.parentElement;
+      if (parentElement) {
+        const width = parentElement.clientWidth;
+        const height = parentElement.clientHeight;
+        this.resizeRenderer(width, height);
+      }
+      // 在这里处理退出全屏后的其他逻辑
+      this._isDancing = false;
+    }
+  };
+
+  // 添加一个新的方法来调整渲染器大小
+  private resizeRenderer(width: number, height: number) {
+    if (this._renderer && this._camera) {
+      this._renderer.setSize(width, height);
+      this._camera.aspect = width / height;
+      this._camera.updateProjectionMatrix();
+    }
+  }
+
+  // 添加一个新的方法来检查是否可以退出全屏
+  private canExitFullscreen(): boolean {
+    return !!(document.fullscreenElement && document.exitFullscreen);
   }
 }

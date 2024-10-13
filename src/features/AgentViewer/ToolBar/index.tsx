@@ -1,6 +1,6 @@
 import { ActionIconGroup } from '@lobehub/ui';
 import dayjs from 'dayjs';
-import { Aperture, Axis3D, Grid3x3, Orbit, Power, SwitchCamera } from 'lucide-react';
+import { Aperture, Axis3D, Fullscreen, Grid3x3, Orbit, Power, SwitchCamera } from 'lucide-react';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -46,6 +46,11 @@ const ToolBar = (props: ToolBarProps) => {
           label: t('toolBar.resetToIdle'),
         },
         {
+          icon: Fullscreen,
+          key: 'fullscreen',
+          label: t('toolBar.fullScreen'),
+        },
+        {
           icon: SwitchCamera,
           key: 'resetCamera',
           label: t('toolBar.resetCamera'),
@@ -88,6 +93,12 @@ const ToolBar = (props: ToolBarProps) => {
 
             break;
           }
+
+          case 'fullscreen': {
+            viewer.toggleFullScreen();
+            break;
+          }
+
           case 'axes': {
             viewer.toggleAxes();
             break;

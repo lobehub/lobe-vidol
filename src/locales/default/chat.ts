@@ -69,6 +69,7 @@ export default {
   toolBar: {
     cameraHelper: '镜头辅助',
     cameraControl: '镜头控制',
+    fullScreen: '切换全屏',
     resetCamera: '重置镜头',
     resetToIdle: '停止舞蹈动作',
     screenShot: '拍照',
