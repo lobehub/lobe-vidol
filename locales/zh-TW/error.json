@@ -1,5 +1,6 @@
 {
   "apiKeyMiss": "OpenAI API Key 為空，請添加自訂的 OpenAI API Key",
+  "dancePlayError": "舞蹈檔案播放失敗，請稍後重試",
   "error": "錯誤",
   "errorTip": {
     "clearSession": "清除會話消息",

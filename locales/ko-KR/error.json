@@ -1,5 +1,6 @@
 {
   "apiKeyMiss": "OpenAI API 키가 비어 있습니다. 사용자 정의 OpenAI API 키를 추가해 주세요.",
+  "dancePlayError": "댄스 파일 재생에 실패했습니다. 잠시 후 다시 시도해 주세요.",
   "error": "오류",
   "errorTip": {
     "clearSession": "세션 메시지 지우기",

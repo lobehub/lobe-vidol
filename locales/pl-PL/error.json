@@ -1,5 +1,6 @@
 {
   "apiKeyMiss": "Klucz API OpenAI jest pusty, proszę dodać własny klucz API OpenAI",
+  "dancePlayError": "Błąd odtwarzania pliku tańca, spróbuj ponownie później",
   "error": "Błąd",
   "errorTip": {
     "clearSession": "Wyczyść wiadomości sesji",

@@ -1,5 +1,6 @@
 {
   "apiKeyMiss": "OpenAI API Anahtarı boş, lütfen özel OpenAI API Anahtarınızı ekleyin",
+  "dancePlayError": "Dans dosyası oynatılamadı, lütfen daha sonra tekrar deneyin.",
   "error": "Hata",
   "errorTip": {
     "clearSession": "Oturum mesajını temizle",

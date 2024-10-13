@@ -1,10 +1,9 @@
 import { Avatar, Icon } from '@lobehub/ui';
 import { useHover } from 'ahooks';
-import { Progress, Typography } from 'antd';
-import { Play } from 'lucide-react';
+import { Progress, Tooltip, Typography, message } from 'antd';
+import { LoaderCircle, Play } from 'lucide-react';
 import React, { memo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Flexbox } from 'react-layout-kit';
 
 import ListItem from '@/components/ListItem';
 import { useLoadAudio } from '@/hooks/useLoadAudio';
@@ -38,6 +37,7 @@ const DanceItem = (props: DanceItemProps) => {
   const hoverRef = useRef(null);
   const isHovered = useHover(hoverRef);
   const { t } = useTranslation('dance');
+  const [danceLoading, setDanceLoading] = useState(false);
 
   const { downloading: audioDownloading, percent: audioPercent, fetchAudioUrl } = useLoadAudio();
   const { downloading: srcDownloading, percent: srcPercent, fetchSrcUrl } = useLoadSrc();
@@ -48,7 +48,7 @@ const DanceItem = (props: DanceItemProps) => {
   } = useLoadCamera();
   const viewer = useGlobalStore((s) => s.viewer);
 
-  const handlePlayPause = async () => {
+  const handlePlayDance = async () => {
     setCurrentPlayId(danceItem.danceId);
     const audioPromise = fetchAudioUrl(danceItem.danceId, danceItem.audio);
     const srcPromise = fetchSrcUrl(danceItem.danceId, danceItem.src);
@@ -60,7 +60,17 @@ const DanceItem = (props: DanceItemProps) => {
       audioPromise,
       cameraPromise,
     ]);
-    if (srcUrl && audioUrl) viewer?.dance(srcUrl, audioUrl, cameraUrl);
+    if (srcUrl && audioUrl) {
+      setDanceLoading(true);
+      try {
+        await viewer?.dance(srcUrl, audioUrl, cameraUrl);
+      } catch (error) {
+        message.error(t('dancePlayError', { ns: 'error' }));
+        console.error('error', error);
+      } finally {
+        setDanceLoading(false);
+      }
+    }
   };
 
   return (
@@ -69,7 +79,7 @@ const DanceItem = (props: DanceItemProps) => {
       showAction={isHovered || open || audioDownloading || srcDownloading || cameraDownloading}
       actions={[
         audioDownloading ? (
-          <Flexbox align="center" gap={8} direction="horizontal">
+          <Tooltip title={t('download.audio')}>
             <Progress
               key={`progress-${danceItem.danceId}`}
               type="circle"
@@ -77,11 +87,10 @@ const DanceItem = (props: DanceItemProps) => {
               percent={Math.ceil(audioPercent)}
               size={[32, 32]}
             />
-            <span>音频</span>
-          </Flexbox>
+          </Tooltip>
         ) : null,
         srcDownloading ? (
-          <Flexbox align="center" gap={8} direction="horizontal">
+          <Tooltip title={t('download.src')}>
             <Progress
               key={`progress-${danceItem.danceId}`}
               type="circle"
@@ -89,11 +98,10 @@ const DanceItem = (props: DanceItemProps) => {
               percent={Math.ceil(srcPercent)}
               size={[32, 32]}
             />
-            <span>动作</span>
-          </Flexbox>
+          </Tooltip>
         ) : null,
         cameraDownloading ? (
-          <Flexbox align="center" gap={8} direction="horizontal">
+          <Tooltip title={t('download.camera')}>
             <Progress
               key={`progress-${danceItem.danceId}`}
               type="circle"
@@ -101,22 +109,26 @@ const DanceItem = (props: DanceItemProps) => {
               percent={Math.ceil(cameraPercent)}
               size={[32, 32]}
             />
-            <span>摄像头</span>
-          </Flexbox>
+          </Tooltip>
         ) : null,
         <Actions danceItem={danceItem} setOpen={setOpen} key={`actions-${danceItem.danceId}`} />,
       ]}
       onClick={() => {
         activateDance(danceItem.danceId);
       }}
-      onDoubleClick={handlePlayPause}
+      onDoubleClick={handlePlayDance}
       className={styles.listItem}
       avatar={
         <div style={{ position: 'relative' }}>
           <Avatar src={danceItem?.thumb} shape={'square'} size={48} />
-          {isHovered ? (
-            <div className={styles.mask} onClick={handlePlayPause}>
-              <Icon icon={Play} title={t('actions.play')} className={styles.playIcon} />
+          {isHovered || danceLoading ? (
+            <div className={styles.mask} onClick={handlePlayDance}>
+              <Icon
+                icon={danceLoading ? LoaderCircle : Play}
+                title={t('actions.play')}
+                className={styles.playIcon}
+                spin={danceLoading}
+              />
             </div>
           ) : null}
         </div>

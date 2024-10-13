@@ -57,16 +57,23 @@
     },
     "submit": "Indienen",
     "title": "Dans creëren",
-    "uploading": "Upload in behandeling, sluit de pagina niet...",
-    "uploadingAudio": "Muziekbestand aan het uploaden",
-    "uploadingCamera": "Camerabestand aan het uploaden",
-    "uploadingCover": "Omslag aan het uploaden",
-    "uploadingDance": "Dansbestand aan het uploaden",
-    "uploadingThumb": "Miniatuur aan het uploaden"
+    "upload": {
+      "audio": "Upload muziekbestand",
+      "camera": "Upload camerabestand",
+      "cover": "Upload omslag",
+      "dance": "Upload dansbestand",
+      "loading": "Upload in behandeling, sluit de pagina niet...",
+      "thumb": "Upload miniatuur"
+    }
   },
   "createDance": "Creëer je favoriete dans",
   "dance": "dansen",
   "danceList": "Danslijst",
+  "download": {
+    "audio": "Download muziek",
+    "camera": "Download camerabewegingen",
+    "src": "Download dansbewegingen"
+  },
   "findDance": "Vind je favoriete dans",
   "musicAndDance": "Dansmarkt",
   "play": "Afspelen"

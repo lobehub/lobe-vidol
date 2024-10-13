@@ -29,6 +29,14 @@ export const COVER_IMAGE_SIZE = 320;
 
 export const COVER_COMPRESS_SIZE = COVER_IMAGE_SIZE * 2;
 
+/**
+ * VRM 模型和 MMD 的模型比例大致为 0.085 ~ 0.1，仅是估算值.
+ * 1. VRM模型通常以米为单位，1个单位 = 1米, 标准VRM模型身高通常在1.5到1.8米之间
+ * 2. MMD模型的1个单位 ≈ 1厘米，标准MMD模型身高 ≈ 20单位 ≈ 20厘米
+ * 3. 所以 MMD 的 VMD 文件比例尺是不一样的。
+ */
+export const VRM_TO_MMD_SCALE = 0.085;
+
 export const DEFAULT_USER_AVATAR_URL =
   'https://registry.npmmirror.com/@lobehub/assets-logo/1.2.0/files/assets/logo-3d.webp';
 

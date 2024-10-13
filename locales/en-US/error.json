@@ -1,5 +1,6 @@
 {
   "apiKeyMiss": "The OpenAI API Key is missing. Please add your custom OpenAI API Key.",
+  "dancePlayError": "Failed to play the dance file, please try again later.",
   "error": "Error",
   "errorTip": {
     "clearSession": "Clear session messages",

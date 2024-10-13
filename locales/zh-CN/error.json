@@ -1,5 +1,6 @@
 {
   "apiKeyMiss": "OpenAI API Key 为空，请添加自定义 OpenAI API Key",
+  "dancePlayError": "舞蹈文件播放失败, 请稍后重试",
   "error": "错误",
   "errorTip": {
     "problem": "页面遇到一点问题...",

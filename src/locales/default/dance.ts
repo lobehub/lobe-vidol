@@ -14,7 +14,11 @@ export default {
   findDance: '找到你最喜欢的舞蹈',
   createDance: '创建你最爱的舞蹈',
   musicAndDance: '舞蹈市场',
-
+  download: {
+    audio: '下载音乐',
+    src: '下载舞蹈动作',
+    camera: '下载镜头动作',
+  },
   // 创建舞蹈相关
   create: {
     title: '创建舞蹈',
@@ -65,11 +69,14 @@ export default {
       uploadSuccess: '舞蹈上传成功',
       uploadFailed: '舞蹈上传失败',
     },
-    uploading: '上传处理中，请勿关闭页面...',
-    uploadingCover: '上传封面',
-    uploadingThumb: '上传缩略图',
-    uploadingAudio: '上传音乐文件',
-    uploadingDance: '上传舞蹈文件',
-    uploadingCamera: '上传镜头文件',
+
+    upload: {
+      loading: '上传处理中，请勿关闭页面...',
+      cover: '上传封面',
+      thumb: '上传缩略图',
+      audio: '上传音乐文件',
+      dance: '上传舞蹈文件',
+      camera: '上传镜头文件',
+    },
   },
 };

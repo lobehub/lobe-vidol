@@ -20,6 +20,7 @@ import { loadVMDCamera } from '@/libs/VMDAnimation/loadVMDCamera';
 import { MotionFileType } from '@/libs/emoteController/type';
 import { TouchAreaEnum } from '@/types/touch';
 
+import { loadPMXStage } from '../PMXAssets/loadPMXStage';
 import { Model } from './model';
 
 export class Viewer {
@@ -137,12 +138,11 @@ export class Viewer {
   }
 
   /**
-   * 加台
-   * @param buffer
+   * 加载舞台
    */
-  public async loadStage(buffer: ArrayBuffer) {
-    const pmx = new Parser().parsePmx(buffer);
-    this._scene.add(pmx);
+  public async loadStage(stageUrl: string) {
+    const pmx = await loadPMXStage(stageUrl);
+    if (pmx) this._scene.add(pmx);
   }
 
   public async loadVrm(url: string) {

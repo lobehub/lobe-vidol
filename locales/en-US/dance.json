@@ -57,16 +57,23 @@
     },
     "submit": "Submit",
     "title": "Create Dance",
-    "uploading": "Uploading, please do not close the page...",
-    "uploadingAudio": "Uploading audio file",
-    "uploadingCamera": "Uploading camera file",
-    "uploadingCover": "Uploading cover",
-    "uploadingDance": "Uploading dance file",
-    "uploadingThumb": "Uploading thumbnail"
+    "upload": {
+      "audio": "Upload Music File",
+      "camera": "Upload Camera File",
+      "cover": "Upload Cover",
+      "dance": "Upload Dance File",
+      "loading": "Uploading, please do not close the page...",
+      "thumb": "Upload Thumbnail"
+    }
   },
   "createDance": "Create Your Favorite Dance",
   "dance": "dance",
   "danceList": "Dance List",
+  "download": {
+    "audio": "Download Music",
+    "camera": "Download Camera Actions",
+    "src": "Download Dance Moves"
+  },
   "findDance": "Find Your Favorite Dance",
   "musicAndDance": "Dance Market",
   "play": "Play"

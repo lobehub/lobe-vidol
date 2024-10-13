@@ -57,16 +57,23 @@
     },
     "submit": "Gönder",
     "title": "Dans Oluştur",
-    "uploading": "Yükleme işlemi devam ediyor, lütfen sayfayı kapatmayın...",
-    "uploadingAudio": "Müzik dosyası yükleniyor",
-    "uploadingCamera": "Kamera dosyası yükleniyor",
-    "uploadingCover": "Kapak yükleniyor",
-    "uploadingDance": "Dans dosyası yükleniyor",
-    "uploadingThumb": "Küçültülmüş resim yükleniyor"
+    "upload": {
+      "audio": "Müzik Dosyası Yükle",
+      "camera": "Kamera Dosyası Yükle",
+      "cover": "Kapak Yükle",
+      "dance": "Dans Dosyası Yükle",
+      "loading": "Yükleniyor, lütfen sayfayı kapatmayın...",
+      "thumb": "Küçük Resim Yükle"
+    }
   },
   "createDance": "En sevdiğin dansı oluştur",
   "dance": "dans",
   "danceList": "Dans Listesi",
+  "download": {
+    "audio": "Müzik İndir",
+    "camera": "Kamera Hareketlerini İndir",
+    "src": "Dans Hareketlerini İndir"
+  },
   "findDance": "En sevdiğin dansı bul",
   "musicAndDance": "Dans Pazarı",
   "play": "Oynat"

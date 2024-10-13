@@ -57,16 +57,23 @@
     },
     "submit": "Invia",
     "title": "Crea danza",
-    "uploading": "Caricamento in corso, non chiudere la pagina...",
-    "uploadingAudio": "Caricamento file musicale",
-    "uploadingCamera": "Caricamento del file della telecamera",
-    "uploadingCover": "Caricamento copertura",
-    "uploadingDance": "Caricamento file danza",
-    "uploadingThumb": "Caricamento miniatura"
+    "upload": {
+      "audio": "Carica file audio",
+      "camera": "Carica file della telecamera",
+      "cover": "Carica copertina",
+      "dance": "Carica file di danza",
+      "loading": "Caricamento in corso, non chiudere la pagina...",
+      "thumb": "Carica miniatura"
+    }
   },
   "createDance": "Crea la tua danza preferita",
   "dance": "ballare",
   "danceList": "Elenco di danze",
+  "download": {
+    "audio": "Scarica musica",
+    "camera": "Scarica movimenti della telecamera",
+    "src": "Scarica movimenti di danza"
+  },
   "findDance": "Trova la tua danza preferita",
   "musicAndDance": "Mercato della danza",
   "play": "Riproduci"

@@ -1,5 +1,6 @@
 {
   "apiKeyMiss": "OpenAI API-sleutel is leeg, voeg een aangepaste OpenAI API-sleutel toe",
+  "dancePlayError": "Het afspelen van het dansbestand is mislukt, probeer het later opnieuw.",
   "error": "Fout",
   "errorTip": {
     "clearSession": "Sessieberichten wissen",

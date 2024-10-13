@@ -2,10 +2,12 @@ import { AnimationClip, PerspectiveCamera } from 'three';
 import { MMDAnimationHelper } from 'three/examples/jsm/animation/MMDAnimationHelper';
 import { MMDLoader } from 'three/examples/jsm/loaders/MMDLoader';
 
+import { VRM_TO_MMD_SCALE } from '@/constants/common';
+
 export async function loadVMDCamera(
   url: string,
   camera: PerspectiveCamera,
-  scale: number = 0.085, // 添加缩放参数，默认为 0.1
+  scale: number = VRM_TO_MMD_SCALE,
 ): Promise<AnimationClip | null> {
   const loader = new MMDLoader();
   const helper = new MMDAnimationHelper({ afterglow: 2.0 });

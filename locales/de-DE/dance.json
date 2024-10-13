@@ -57,16 +57,23 @@
     },
     "submit": "Einreichen",
     "title": "Tanz erstellen",
-    "uploading": "Hochladen wird bearbeitet, bitte schließen Sie die Seite nicht...",
-    "uploadingAudio": "Musikdatei wird hochgeladen",
-    "uploadingCamera": "Kameradatei wird hochgeladen",
-    "uploadingCover": "Titelbild wird hochgeladen",
-    "uploadingDance": "Tanz-Datei wird hochgeladen",
-    "uploadingThumb": "Vorschaubild wird hochgeladen"
+    "upload": {
+      "audio": "Musikdatei hochladen",
+      "camera": "Kameradatei hochladen",
+      "cover": "Cover hochladen",
+      "dance": "Tanzdatei hochladen",
+      "loading": "Hochladen wird verarbeitet, bitte schließen Sie die Seite nicht...",
+      "thumb": "Vorschaubild hochladen"
+    }
   },
   "createDance": "Erstelle deinen Lieblings-Tanz",
   "dance": "Tanzen",
   "danceList": "Tanzliste",
+  "download": {
+    "audio": "Musik herunterladen",
+    "camera": "Kamerabewegungen herunterladen",
+    "src": "Tanzbewegungen herunterladen"
+  },
   "findDance": "Finde deinen Lieblings-Tanz",
   "musicAndDance": "Tanzmarkt",
   "play": "Abspielen"

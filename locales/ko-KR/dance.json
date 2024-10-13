@@ -57,16 +57,23 @@
     },
     "submit": "제출",
     "title": "춤 만들기",
-    "uploading": "업로드 처리 중입니다. 페이지를 닫지 마세요...",
-    "uploadingAudio": "음악 파일 업로드 중",
-    "uploadingCamera": "카메라 파일 업로드 중",
-    "uploadingCover": "표지 업로드 중",
-    "uploadingDance": "춤 파일 업로드 중",
-    "uploadingThumb": "썸네일 업로드 중"
+    "upload": {
+      "audio": "음악 파일 업로드",
+      "camera": "카메라 파일 업로드",
+      "cover": "커버 업로드",
+      "dance": "댄스 파일 업로드",
+      "loading": "업로드 중입니다. 페이지를 닫지 마세요...",
+      "thumb": "썸네일 업로드"
+    }
   },
   "createDance": "가장 좋아하는 춤을 만들기",
   "dance": "춤추기",
   "danceList": "댄스 목록",
+  "download": {
+    "audio": "음악 다운로드",
+    "camera": "카메라 동작 다운로드",
+    "src": "댄스 동작 다운로드"
+  },
   "findDance": "가장 좋아하는 춤을 찾아보세요",
   "musicAndDance": "무용 시장",
   "play": "재생"
