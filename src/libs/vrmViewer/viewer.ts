@@ -75,7 +75,7 @@ export class Viewer {
   /**
    * 播放舞蹈，以音乐文件的播放作为结束标志。
    */
-  public async dance(srcUrl: string, audioUrl: string, cameraUrl?: string, onEnd?: () => void) {
+  public async dance(srcUrl: string, audioUrl: string, cameraUrl?: string) {
     if (!this._sound || !this.model) {
       console.error('音频对象或模型对象不存在');
       return null;
@@ -95,12 +95,7 @@ export class Viewer {
         this._sound.setVolume(0.5);
         // 监听音频播放结束事件
         this._sound.onEnded = () => {
-          onEnd?.();
-          this.resetToIdle();
-          // 使用 setTimeout 来延迟退出全屏，给浏览器一些时间来处理音频结束事件
-          setTimeout(() => {
-            this.exitFullScreen();
-          }, 100);
+          this.handleDanceEnd();
         };
       }
     });
@@ -127,6 +122,8 @@ export class Viewer {
     if (cameraUrl) this.playCameraAnimation();
     // 将 canvas 全屏加载
     this.requestFullScreen();
+    // 默认开启网格
+    this.enableGrid();
   }
 
   public resetToIdle() {
@@ -231,9 +228,6 @@ export class Viewer {
     // 使用存储的绑定函数添加事件监听器
     this._canvas.addEventListener('click', this._boundHandleClick, false);
 
-    // 默认开启网格
-    this.toggleGrid();
-
     this.isReady = true;
     this.update();
   }
@@ -266,11 +260,23 @@ export class Viewer {
 
   public toggleGrid() {
     if (this._gridHelper) {
-      this._scene.remove(this._gridHelper);
-      this._gridHelper = undefined;
+      this.disableGrid();
     } else {
+      this.enableGrid();
+    }
+  }
+
+  public enableGrid() {
+    if (!this._gridHelper) {
       this._gridHelper = new GridHelper(50, 100, 0xaa_aa_aa, 0xaa_aa_aa);
       this._scene.add(this._gridHelper);
+    }
+  }
+
+  public disableGrid() {
+    if (this._gridHelper) {
+      this._scene.remove(this._gridHelper);
+      this._gridHelper = undefined;
     }
   }
 
@@ -441,8 +447,19 @@ export class Viewer {
         const height = parentElement.clientHeight;
         this.resizeRenderer(width, height);
       }
-      // 在这里处理退出全屏后的其他逻辑
+      // 手动触发结束逻辑
+      this.handleDanceEnd();
+    }
+  };
+
+  // 新增方法,处理舞蹈结束逻辑
+  private handleDanceEnd = () => {
+    if (this._isDancing) {
+      this._sound?.stop();
       this._isDancing = false;
+      this.resetToIdle();
+      // 关闭网格
+      this.disableGrid();
     }
   };
 
