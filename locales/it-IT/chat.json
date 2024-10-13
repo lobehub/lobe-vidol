@@ -44,7 +44,8 @@
     "chat": "chat",
     "dance": "danza",
     "motions": "movimenti",
-    "posture": "posizione"
+    "posture": "posizione",
+    "stage": "Palcoscenico"
   },
   "input": {
     "alert": "Si prega di notare: tutto ciò che dice l'agente è generato dall'AI",

@@ -44,7 +44,8 @@
     "chat": "discussion",
     "dance": "danse",
     "motions": "mouvements",
-    "posture": "posture"
+    "posture": "posture",
+    "stage": "Scène"
   },
   "input": {
     "alert": "Veuillez noter : tout ce que dit l'agent est généré par l'IA",

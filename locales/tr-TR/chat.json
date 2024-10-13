@@ -44,7 +44,8 @@
     "chat": "sohbet",
     "dance": "dans",
     "motions": "hareketler",
-    "posture": "duruş"
+    "posture": "duruş",
+    "stage": "Sahne"
   },
   "input": {
     "alert": "Lütfen unutmayın: Akıllı varlığın söylediği her şey AI tarafından üretilmiştir",

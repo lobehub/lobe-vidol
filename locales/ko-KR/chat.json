@@ -44,7 +44,8 @@
     "chat": "채팅",
     "dance": "춤",
     "motions": "동작",
-    "posture": "자세"
+    "posture": "자세",
+    "stage": "무대"
   },
   "input": {
     "alert": "주의: 인공지능이 말하는 모든 것은 AI에 의해 생성된 것입니다.",

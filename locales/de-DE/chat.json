@@ -44,7 +44,8 @@
     "chat": "Chat",
     "dance": "Tanz",
     "motions": "Bewegungen",
-    "posture": "Haltung"
+    "posture": "Haltung",
+    "stage": "Bühne"
   },
   "input": {
     "alert": "Bitte beachten Sie: Alles, was der Agent sagt, wird von KI generiert",

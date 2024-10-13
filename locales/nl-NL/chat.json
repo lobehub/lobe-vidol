@@ -44,7 +44,8 @@
     "chat": "Chatten",
     "dance": "Dansen",
     "motions": "Bewegingen",
-    "posture": "Houding"
+    "posture": "Houding",
+    "stage": "Podium"
   },
   "input": {
     "alert": "Let op: alles wat de AI zegt, is gegenereerd door AI",

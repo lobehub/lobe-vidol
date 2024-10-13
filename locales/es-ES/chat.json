@@ -44,7 +44,8 @@
     "chat": "charlar",
     "dance": "bailar",
     "motions": "movimientos",
-    "posture": "postura"
+    "posture": "postura",
+    "stage": "escenario"
   },
   "input": {
     "alert": "Ten en cuenta: todo lo que dice el agente es generado por IA",

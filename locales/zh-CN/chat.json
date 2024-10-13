@@ -44,7 +44,8 @@
     "dance": "舞蹈",
     "motions": "动作",
     "posture": "姿势",
-    "background": "背景"
+    "background": "背景",
+    "stage": "舞台"
   },
   "input": {
     "send": "发送",
