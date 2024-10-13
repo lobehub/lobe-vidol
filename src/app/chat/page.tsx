@@ -3,10 +3,10 @@ import React, { memo } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
 import ChatHeader from './ChatHeader';
-import ChatInfo from './ChatInfo';
 import SideBar from './SideBar';
 
 const ViewerMode = dynamic(() => import('./ViewerMode'), { ssr: false });
+const ChatInfo = dynamic(() => import('./ChatInfo'), { ssr: false });
 
 const Chat = () => {
   return (

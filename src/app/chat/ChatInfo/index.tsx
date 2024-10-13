@@ -15,6 +15,7 @@ import ChatList from './ChatList';
 import DanceList from './DanceList';
 import MotionList from './MotionList';
 import PostureList from './PostureList';
+import StageList from './StageList';
 import { Tab } from './type';
 
 const useStyles = createStyles(({ css, token }) => ({
@@ -83,6 +84,10 @@ export default () => {
               label: t('info.background'),
               key: Tab.Background,
             },
+            {
+              label: t('info.stage'),
+              key: Tab.Stage,
+            },
           ]}
           onChange={(key) => {
             setTab(key as Tab);
@@ -95,6 +100,7 @@ export default () => {
         {tab === Tab.Motions && <MotionList />}
         {tab === Tab.Posture && <PostureList />}
         {tab === Tab.Background && <BackGround />}
+        {tab === Tab.Stage && <StageList />}
       </Flexbox>
     </DraggablePanel>
   );

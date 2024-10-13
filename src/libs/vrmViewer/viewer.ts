@@ -43,6 +43,7 @@ export class Viewer {
   private _isDancing: boolean = false;
   private _cameraMixer?: THREE.AnimationMixer;
   private _cameraAction?: THREE.AnimationAction;
+  private _currentStage?: THREE.Group;
 
   constructor() {
     this.isReady = false;
@@ -123,8 +124,8 @@ export class Viewer {
     if (cameraUrl) this.playCameraAnimation();
     // 将 canvas 全屏加载
     this.requestFullScreen();
-    // 默认开启网格
-    this.enableGrid();
+    // 如果没有加载舞台，那么开启网格
+    if (!this._currentStage) this.enableGrid();
   }
 
   public resetToIdle() {
@@ -141,8 +142,28 @@ export class Viewer {
    * 加载舞台
    */
   public async loadStage(stageUrl: string) {
-    const pmx = await loadPMXStage(stageUrl);
-    if (pmx) this._scene.add(pmx);
+    // 卸载当前舞台
+    if (this._currentStage) {
+      this._scene.remove(this._currentStage);
+      this._currentStage.traverse((object) => {
+        if (object instanceof THREE.Mesh) {
+          object.geometry.dispose();
+          if (object.material instanceof THREE.Material) {
+            object.material.dispose();
+          } else if (Array.isArray(object.material)) {
+            object.material.forEach((material) => material.dispose());
+          }
+        }
+      });
+      this._currentStage = undefined;
+    }
+
+    // 加载新舞台
+    const stageGroup = await loadPMXStage(stageUrl);
+    if (stageGroup) {
+      this._currentStage = stageGroup;
+      this._scene.add(this._currentStage);
+    }
   }
 
   public async loadVrm(url: string) {
