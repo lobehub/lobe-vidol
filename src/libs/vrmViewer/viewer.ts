@@ -138,10 +138,7 @@ export class Viewer {
     this.resetCamera();
   }
 
-  /**
-   * 加载舞台
-   */
-  public async loadStage(stageUrl: string) {
+  public removeStage() {
     // 卸载当前舞台
     if (this._currentStage) {
       this._scene.remove(this._currentStage);
@@ -157,7 +154,14 @@ export class Viewer {
       });
       this._currentStage = undefined;
     }
+  }
 
+  /**
+   * 加载舞台
+   */
+  public async loadStage(stageUrl: string) {
+    if (!stageUrl) return;
+    this.removeStage();
     // 加载新舞台
     const stageGroup = await loadPMXStage(stageUrl);
     if (stageGroup) {
@@ -477,6 +481,7 @@ export class Viewer {
   private handleDanceEnd = () => {
     if (this._isDancing) {
       this._sound?.stop();
+      this.exitFullScreen();
       this._isDancing = false;
       this.resetToIdle();
       // 关闭网格
@@ -491,10 +496,5 @@ export class Viewer {
       this._camera.aspect = width / height;
       this._camera.updateProjectionMatrix();
     }
-  }
-
-  // 添加一个新的方法来检查是否可以退出全屏
-  private canExitFullscreen(): boolean {
-    return !!(document.fullscreenElement && document.exitFullscreen);
   }
 }

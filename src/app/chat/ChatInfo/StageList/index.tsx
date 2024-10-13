@@ -7,7 +7,7 @@ import { Flexbox } from 'react-layout-kit';
 
 import GridList from '@/components/GridList';
 import Header from '@/components/Header';
-import { StageOption, stageList } from '@/constants/stage';
+import { EMPTY_ID, StageOption, stageList } from '@/constants/stage';
 import { useGlobalStore } from '@/store/global';
 
 const useStyles = createStyles(({ css, token }) => ({
@@ -28,16 +28,24 @@ interface StageListProps {
 
 const StageList = ({ className, style }: StageListProps) => {
   const [stageId, setStageId] = useState<string | undefined>(undefined);
+  const [loading, setLoading] = useState(false); // 添加 loading 状态
   const { t } = useTranslation('chat');
   const { styles } = useStyles();
   const viewer = useGlobalStore((s) => s.viewer);
 
   const handleItemClick = async (id: string, item: StageOption) => {
     setStageId(id);
+    if (id === EMPTY_ID) {
+      viewer.removeStage();
+      return;
+    }
+    setLoading(true); // 开始加载时设置 loading 为 true
     try {
-      viewer.loadStage(item.url);
+      if (item.url) await viewer.loadStage(item.url);
     } catch {
       message.error('舞台模型加载失败');
+    } finally {
+      setLoading(false); // 无论成功或失败,都设置 loading 为 false
     }
   };
 
@@ -53,6 +61,7 @@ const StageList = ({ className, style }: StageListProps) => {
           id: option.id,
           name: option.name,
           url: option.url,
+          spin: loading && stageId === option.id,
         }))}
         onClick={handleItemClick}
         isActivated={(id) => stageId === id}

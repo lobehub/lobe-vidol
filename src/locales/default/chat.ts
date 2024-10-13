@@ -24,6 +24,7 @@ export default {
     motions: '动作',
     posture: '姿势',
     background: '背景',
+    stage: '舞台',
   },
   history: {
     title: '聊天记录',
