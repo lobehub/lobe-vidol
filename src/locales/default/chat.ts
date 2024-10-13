@@ -24,6 +24,7 @@ export default {
     motions: '动作',
     posture: '姿势',
     background: '背景',
+    stage: '舞台',
   },
   history: {
     title: '聊天记录',
@@ -84,6 +85,10 @@ export default {
   },
   background: {
     backgroundList: '背景列表',
+    totalCount: '共 {{total}} 项',
+  },
+  stage: {
+    stageList: '舞台列表',
     totalCount: '共 {{total}} 项',
   },
   delSession: '删除会话',

@@ -44,7 +44,8 @@
     "chat": "Chatten",
     "dance": "Dansen",
     "motions": "Bewegingen",
-    "posture": "Houding"
+    "posture": "Houding",
+    "stage": "Podium"
   },
   "input": {
     "alert": "Let op: alles wat de AI zegt, is gegenereerd door AI",
@@ -67,6 +68,10 @@
     "withBackground": "Inclusief achtergrondafbeelding",
     "withFooter": "Inclusief voettekst",
     "withSystemRole": "Inclusief assistentrolinstellingen"
+  },
+  "stage": {
+    "stageList": "Lijst van podia",
+    "totalCount": "Totaal {{total}} items"
   },
   "token": {
     "overload": "Token overschrijding",

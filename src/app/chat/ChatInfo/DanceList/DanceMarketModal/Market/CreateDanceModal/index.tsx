@@ -172,36 +172,36 @@ const CreateDanceModal = () => {
             title={
               <Flexbox>
                 <Typography.Text type={'secondary'}>
-                  {t('create.uploading', { ns: 'dance' })}
+                  {t('create.upload.loading', { ns: 'dance' })}
                 </Typography.Text>
                 <Space>
                   <Progress steps={30} percent={percent.cover} size="small" />
                   <Typography.Text style={{ fontSize: 12 }}>
-                    {t('create.uploadingCover', { ns: 'dance' })}
+                    {t('create.upload.cover', { ns: 'dance' })}
                   </Typography.Text>
                 </Space>
                 <Space>
                   <Progress steps={30} percent={percent.thumb} size="small" />
                   <Typography.Text style={{ fontSize: 12 }}>
-                    {t('create.uploadingThumb', { ns: 'dance' })}
+                    {t('create.upload.thumb', { ns: 'dance' })}
                   </Typography.Text>
                 </Space>
                 <Space>
                   <Progress steps={30} percent={percent.audio} size="small" />
                   <Typography.Text style={{ fontSize: 12 }}>
-                    {t('create.uploadingAudio', { ns: 'dance' })}
+                    {t('create.upload.audio', { ns: 'dance' })}
                   </Typography.Text>
                 </Space>
                 <Space>
                   <Progress steps={30} percent={percent.src} size="small" />
                   <Typography.Text style={{ fontSize: 12 }}>
-                    {t('create.uploadingDance', { ns: 'dance' })}
+                    {t('create.upload.dance', { ns: 'dance' })}
                   </Typography.Text>
                 </Space>
                 <Space>
                   <Progress steps={30} percent={percent.camera} size="small" />
                   <Typography.Text style={{ fontSize: 12 }}>
-                    {t('create.uploadingCamera', { ns: 'dance' })}
+                    {t('create.upload.camera', { ns: 'dance' })}
                   </Typography.Text>
                 </Space>
               </Flexbox>

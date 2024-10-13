@@ -44,7 +44,8 @@
     "chat": "Chat",
     "dance": "Tanz",
     "motions": "Bewegungen",
-    "posture": "Haltung"
+    "posture": "Haltung",
+    "stage": "Bühne"
   },
   "input": {
     "alert": "Bitte beachten Sie: Alles, was der Agent sagt, wird von KI generiert",
@@ -67,6 +68,10 @@
     "withBackground": "Mit Hintergrundbild",
     "withFooter": "Mit Fußzeile",
     "withSystemRole": "Mit Assistentenrollen-Einstellungen"
+  },
+  "stage": {
+    "stageList": "Bühnenliste",
+    "totalCount": "Insgesamt {{total}} Einträge"
   },
   "token": {
     "overload": "Token überlastet",

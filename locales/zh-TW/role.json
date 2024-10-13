@@ -140,8 +140,8 @@
       },
       "bellyAction": {
         "angryA": "幹嘛動我呀，小心我咬你哦！",
+        "angryB": "討厭！我可要生氣了！",
         "relaxedA": "醒醒，我們之間沒有結果的!",
-        "relaxedB": "討厭！我可要生氣啦！",
         "surprisedA": "是不小心碰到的吧..."
       },
       "buttocksAction": {

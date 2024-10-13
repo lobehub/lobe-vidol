@@ -44,7 +44,8 @@
     "chat": "sohbet",
     "dance": "dans",
     "motions": "hareketler",
-    "posture": "duruş"
+    "posture": "duruş",
+    "stage": "Sahne"
   },
   "input": {
     "alert": "Lütfen unutmayın: Akıllı varlığın söylediği her şey AI tarafından üretilmiştir",
@@ -67,6 +68,10 @@
     "withBackground": "Arka plan resmi ile birlikte",
     "withFooter": "Alt bilgi ile birlikte",
     "withSystemRole": "Asistan rolü ile birlikte"
+  },
+  "stage": {
+    "stageList": "Sahne Listesi",
+    "totalCount": "Toplam {{total}} öğe"
   },
   "token": {
     "overload": "Token aşımı",

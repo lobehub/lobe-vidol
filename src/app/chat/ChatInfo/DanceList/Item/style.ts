@@ -8,6 +8,10 @@ const useStyles = createStyles(({ css, token }) => ({
     top: 0;
     left: 0;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     width: 100%;
     height: 100%;
 
@@ -19,11 +23,6 @@ const useStyles = createStyles(({ css, token }) => ({
     border-radius: 100%;
   `,
   playIcon: css`
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
     font-size: 24px;
     color: ${token.colorText};
   `,

@@ -57,16 +57,23 @@
     },
     "submit": "Prześlij",
     "title": "Stwórz taniec",
-    "uploading": "Przesyłanie w toku, proszę nie zamykać strony...",
-    "uploadingAudio": "Przesyłanie pliku muzycznego",
-    "uploadingCamera": "Przesyłanie pliku kamery",
-    "uploadingCover": "Przesyłanie okładki",
-    "uploadingDance": "Przesyłanie pliku tańca",
-    "uploadingThumb": "Przesyłanie miniatury"
+    "upload": {
+      "audio": "Prześlij plik muzyczny",
+      "camera": "Prześlij plik kamery",
+      "cover": "Prześlij okładkę",
+      "dance": "Prześlij plik taneczny",
+      "loading": "Trwa przesyłanie, proszę nie zamykać strony...",
+      "thumb": "Prześlij miniaturę"
+    }
   },
   "createDance": "Stwórz swój ulubiony taniec",
   "dance": "tańczyć",
   "danceList": "Lista tańców",
+  "download": {
+    "audio": "Pobierz muzykę",
+    "camera": "Pobierz ruchy kamery",
+    "src": "Pobierz ruchy taneczne"
+  },
   "findDance": "Znajdź swój ulubiony taniec",
   "musicAndDance": "Rynek tańca",
   "play": "Odtwarzaj"

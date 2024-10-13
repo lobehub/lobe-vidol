@@ -140,8 +140,8 @@
       },
       "bellyAction": {
         "angryA": "Pourquoi tu me touches, fais attention, je pourrais te mordre !",
+        "angryB": "Je n'aime pas ça ! Je vais me fâcher !",
         "relaxedA": "Réveille-toi, il n'y a pas d'avenir entre nous !",
-        "relaxedB": "C'est agaçant ! Je vais me fâcher !",
         "surprisedA": "C'était un accident, non ?"
       },
       "buttocksAction": {

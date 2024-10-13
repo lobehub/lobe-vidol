@@ -44,7 +44,8 @@
     "chat": "chat",
     "dance": "danza",
     "motions": "movimenti",
-    "posture": "posizione"
+    "posture": "posizione",
+    "stage": "Palcoscenico"
   },
   "input": {
     "alert": "Si prega di notare: tutto ciò che dice l'agente è generato dall'AI",
@@ -67,6 +68,10 @@
     "withBackground": "Includi immagine di sfondo",
     "withFooter": "Includi piè di pagina",
     "withSystemRole": "Includi impostazioni del ruolo dell'assistente"
+  },
+  "stage": {
+    "stageList": "Elenco dei palchi",
+    "totalCount": "Totale {{total}} elementi"
   },
   "token": {
     "overload": "Token sovraccarico",

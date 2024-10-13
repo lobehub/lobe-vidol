@@ -140,8 +140,8 @@
       },
       "bellyAction": {
         "angryA": "왜 나를 만지는 거야, 조심해, 물어버릴 거야!",
+        "angryB": "싫어! 나 화낼 거야!",
         "relaxedA": "깨워, 우리 사이에 결과는 없어!",
-        "relaxedB": "싫어! 나 화낼 거야!",
         "surprisedA": "우연히 닿은 거겠지..."
       },
       "buttocksAction": {

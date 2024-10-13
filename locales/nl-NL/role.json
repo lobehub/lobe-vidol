@@ -140,8 +140,8 @@
       },
       "bellyAction": {
         "angryA": "Waarom beweeg je me? Pas op dat ik je bijt!",
+        "angryB": "Vervelend! Ik word echt boos!",
         "relaxedA": "Word wakker, er is geen toekomst voor ons!",
-        "relaxedB": "Vervelend! Ik ga boos worden!",
         "surprisedA": "Dat was per ongeluk, toch..."
       },
       "buttocksAction": {

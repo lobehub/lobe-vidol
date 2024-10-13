@@ -20,6 +20,7 @@ import { loadVMDCamera } from '@/libs/VMDAnimation/loadVMDCamera';
 import { MotionFileType } from '@/libs/emoteController/type';
 import { TouchAreaEnum } from '@/types/touch';
 
+import { loadPMXStage } from '../PMXAssets/loadPMXStage';
 import { Model } from './model';
 
 export class Viewer {
@@ -42,6 +43,7 @@ export class Viewer {
   private _isDancing: boolean = false;
   private _cameraMixer?: THREE.AnimationMixer;
   private _cameraAction?: THREE.AnimationAction;
+  private _currentStage?: THREE.Group;
 
   constructor() {
     this.isReady = false;
@@ -122,8 +124,8 @@ export class Viewer {
     if (cameraUrl) this.playCameraAnimation();
     // 将 canvas 全屏加载
     this.requestFullScreen();
-    // 默认开启网格
-    this.enableGrid();
+    // 如果没有加载舞台，那么开启网格
+    if (!this._currentStage) this.enableGrid();
   }
 
   public resetToIdle() {
@@ -136,13 +138,36 @@ export class Viewer {
     this.resetCamera();
   }
 
+  public removeStage() {
+    // 卸载当前舞台
+    if (this._currentStage) {
+      this._scene.remove(this._currentStage);
+      this._currentStage.traverse((object) => {
+        if (object instanceof THREE.Mesh) {
+          object.geometry.dispose();
+          if (object.material instanceof THREE.Material) {
+            object.material.dispose();
+          } else if (Array.isArray(object.material)) {
+            object.material.forEach((material) => material.dispose());
+          }
+        }
+      });
+      this._currentStage = undefined;
+    }
+  }
+
   /**
-   * 加台
-   * @param buffer
+   * 加载舞台
    */
-  public async loadStage(buffer: ArrayBuffer) {
-    const pmx = new Parser().parsePmx(buffer);
-    this._scene.add(pmx);
+  public async loadStage(stageUrl: string) {
+    if (!stageUrl) return;
+    this.removeStage();
+    // 加载新舞台
+    const stageGroup = await loadPMXStage(stageUrl);
+    if (stageGroup) {
+      this._currentStage = stageGroup;
+      this._scene.add(this._currentStage);
+    }
   }
 
   public async loadVrm(url: string) {
@@ -456,6 +481,7 @@ export class Viewer {
   private handleDanceEnd = () => {
     if (this._isDancing) {
       this._sound?.stop();
+      this.exitFullScreen();
       this._isDancing = false;
       this.resetToIdle();
       // 关闭网格
@@ -470,10 +496,5 @@ export class Viewer {
       this._camera.aspect = width / height;
       this._camera.updateProjectionMatrix();
     }
-  }
-
-  // 添加一个新的方法来检查是否可以退出全屏
-  private canExitFullscreen(): boolean {
-    return !!(document.fullscreenElement && document.exitFullscreen);
   }
 }

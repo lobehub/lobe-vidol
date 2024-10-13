@@ -44,7 +44,8 @@
     "dance": "舞蹈",
     "motions": "动作",
     "posture": "姿势",
-    "background": "背景"
+    "background": "背景",
+    "stage": "舞台"
   },
   "input": {
     "send": "发送",
@@ -67,6 +68,10 @@
     "downloadScreenshot": "下载截图",
     "shareToGPT": "生成 ShareGPT 分享链接",
     "share": "分享"
+  },
+  "stage": {
+    "stageList": "舞台列表",
+    "totalCount": "共 {{total}} 项"
   },
   "token": {
     "overload": "Token 超出",

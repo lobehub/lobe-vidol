@@ -1,5 +1,6 @@
 {
   "apiKeyMiss": "OpenAI API キーが空です。カスタム OpenAI API キーを追加してください。",
+  "dancePlayError": "ダンスファイルの再生に失敗しました。しばらくしてから再試行してください。",
   "error": "エラー",
   "errorTip": {
     "clearSession": "セッションメッセージをクリア",

@@ -44,7 +44,8 @@
     "chat": "チャット",
     "dance": "ダンス",
     "motions": "動作",
-    "posture": "姿勢"
+    "posture": "姿勢",
+    "stage": "ステージ"
   },
   "input": {
     "alert": "ご注意ください：エージェントが言うことはすべてAIによって生成されています",
@@ -67,6 +68,10 @@
     "withBackground": "背景画像を含む",
     "withFooter": "フッターを含む",
     "withSystemRole": "アシスタントの役割設定を含む"
+  },
+  "stage": {
+    "stageList": "ステージリスト",
+    "totalCount": "合計 {{total}} 件"
   },
   "token": {
     "overload": "トークンが超過しました",

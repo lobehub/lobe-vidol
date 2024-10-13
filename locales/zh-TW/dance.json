@@ -57,16 +57,23 @@
     },
     "submit": "提交",
     "title": "創建舞蹈",
-    "uploading": "上傳處理中，請勿關閉頁面...",
-    "uploadingAudio": "上傳音樂文件",
-    "uploadingCamera": "上传镜头文件",
-    "uploadingCover": "上傳封面",
-    "uploadingDance": "上傳舞蹈文件",
-    "uploadingThumb": "上傳縮略圖"
+    "upload": {
+      "audio": "上傳音樂檔案",
+      "camera": "上傳鏡頭檔案",
+      "cover": "上傳封面",
+      "dance": "上傳舞蹈檔案",
+      "loading": "上傳處理中，請勿關閉頁面...",
+      "thumb": "上傳縮略圖"
+    }
   },
   "createDance": "創建你最愛的舞蹈",
   "dance": "跳舞",
   "danceList": "舞蹈清單",
+  "download": {
+    "audio": "下載音樂",
+    "camera": "下載鏡頭動作",
+    "src": "下載舞蹈動作"
+  },
   "findDance": "找到你最喜愛的舞蹈",
   "musicAndDance": "舞蹈市場",
   "play": "播放"

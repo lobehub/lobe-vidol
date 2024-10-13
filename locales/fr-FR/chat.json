@@ -44,7 +44,8 @@
     "chat": "discussion",
     "dance": "danse",
     "motions": "mouvements",
-    "posture": "posture"
+    "posture": "posture",
+    "stage": "Scène"
   },
   "input": {
     "alert": "Veuillez noter : tout ce que dit l'agent est généré par l'IA",
@@ -67,6 +68,10 @@
     "withBackground": "Inclure une image de fond",
     "withFooter": "Inclure un pied de page",
     "withSystemRole": "Inclure le rôle de l'assistant"
+  },
+  "stage": {
+    "stageList": "Liste des scènes",
+    "totalCount": "Total de {{total}} éléments"
   },
   "token": {
     "overload": "Dépassement de Token",

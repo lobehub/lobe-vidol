@@ -1,5 +1,6 @@
 {
   "apiKeyMiss": "La chiave API di OpenAI è vuota, si prega di aggiungere una chiave API di OpenAI personalizzata",
+  "dancePlayError": "Impossibile riprodurre il file di danza, riprova più tardi",
   "error": "Errore",
   "errorTip": {
     "clearSession": "Cancella i messaggi di sessione",

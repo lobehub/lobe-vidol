@@ -57,16 +57,23 @@
     },
     "submit": "送信",
     "title": "ダンスを作成",
-    "uploading": "アップロード処理中です。ページを閉じないでください...",
-    "uploadingAudio": "音楽ファイルをアップロード中",
-    "uploadingCamera": "カメラファイルをアップロード中",
-    "uploadingCover": "カバーをアップロード中",
-    "uploadingDance": "ダンスファイルをアップロード中",
-    "uploadingThumb": "サムネイルをアップロード中"
+    "upload": {
+      "audio": "音楽ファイルをアップロード",
+      "camera": "カメラファイルをアップロード",
+      "cover": "カバーをアップロード",
+      "dance": "ダンスファイルをアップロード",
+      "loading": "アップロード中です。ページを閉じないでください...",
+      "thumb": "サムネイルをアップロード"
+    }
   },
   "createDance": "お気に入りのダンスを作成",
   "dance": "ダンス",
   "danceList": "ダンスリスト",
+  "download": {
+    "audio": "音楽をダウンロード",
+    "camera": "カメラアクションをダウンロード",
+    "src": "ダンスアクションをダウンロード"
+  },
   "findDance": "お気に入りのダンスを見つけてください",
   "musicAndDance": "ダンス市場",
   "play": "再生"

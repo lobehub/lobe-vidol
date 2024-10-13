@@ -44,7 +44,8 @@
     "chat": "聊天",
     "dance": "舞蹈",
     "motions": "動作",
-    "posture": "姿勢"
+    "posture": "姿勢",
+    "stage": "舞台"
   },
   "input": {
     "alert": "請謹記：智能體所說的一切都是由 AI 生成的",
@@ -67,6 +68,10 @@
     "withBackground": "包含背景圖片",
     "withFooter": "包含頁腳",
     "withSystemRole": "包含助手角色設定"
+  },
+  "stage": {
+    "stageList": "舞台列表",
+    "totalCount": "共 {{total}} 項"
   },
   "token": {
     "overload": "Token 超出",

@@ -44,7 +44,8 @@
     "chat": "charlar",
     "dance": "bailar",
     "motions": "movimientos",
-    "posture": "postura"
+    "posture": "postura",
+    "stage": "escenario"
   },
   "input": {
     "alert": "Ten en cuenta: todo lo que dice el agente es generado por IA",
@@ -67,6 +68,10 @@
     "withBackground": "Incluir imagen de fondo",
     "withFooter": "Incluir pie de página",
     "withSystemRole": "Incluir configuración del asistente"
+  },
+  "stage": {
+    "stageList": "Lista de escenarios",
+    "totalCount": "Total {{total}} elementos"
   },
   "token": {
     "overload": "Token excedido",

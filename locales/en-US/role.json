@@ -140,8 +140,8 @@
       },
       "bellyAction": {
         "angryA": "Why are you moving me? Be careful, I might bite you!",
+        "angryB": "Ugh! I'm getting really angry!",
         "relaxedA": "Wake up, there's no future for us!",
-        "relaxedB": "Stop it! I'm going to get angry!",
         "surprisedA": "That was an accidental touch, right...?"
       },
       "buttocksAction": {

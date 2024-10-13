@@ -140,8 +140,8 @@
       },
       "bellyAction": {
         "angryA": "Por que você está me tocando? Cuidado, posso te morder!",
+        "angryB": "Que chato! Estou ficando brava!",
         "relaxedA": "Acorda, não temos futuro!",
-        "relaxedB": "Que chato! Estou começando a ficar brava!",
         "surprisedA": "Foi sem querer, certo..."
       },
       "buttocksAction": {

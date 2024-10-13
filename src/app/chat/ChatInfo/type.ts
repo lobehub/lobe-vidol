@@ -4,4 +4,5 @@ export enum Tab {
   DanceList = 'dances',
   Motions = 'motions',
   Posture = 'posture',
+  Stage = 'stage',
 }

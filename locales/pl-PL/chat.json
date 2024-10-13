@@ -44,7 +44,8 @@
     "chat": "czat",
     "dance": "taniec",
     "motions": "ruchy",
-    "posture": "postawa"
+    "posture": "postawa",
+    "stage": "Scena"
   },
   "input": {
     "alert": "Pamiętaj: wszystko, co mówi inteligentny agent, jest generowane przez AI",
@@ -67,6 +68,10 @@
     "withBackground": "Zawiera tło",
     "withFooter": "Zawiera stopkę",
     "withSystemRole": "Zawiera ustawienia roli asystenta"
+  },
+  "stage": {
+    "stageList": "Lista scen",
+    "totalCount": "Łącznie {{total}} pozycji"
   },
   "token": {
     "overload": "Token przekroczony",

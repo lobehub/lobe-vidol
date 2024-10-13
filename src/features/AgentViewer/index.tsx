@@ -212,6 +212,12 @@ function AgentViewer(props: Props) {
 
               break;
             }
+            case 'pmx': {
+              const blob = new Blob([file], { type: 'application/octet-stream' });
+              const url = window.URL.createObjectURL(blob);
+              viewer.loadStage(url);
+              break;
+            }
             case 'vmd': {
               const blob = new Blob([file], { type: 'application/octet-stream' });
               const url = window.URL.createObjectURL(blob);

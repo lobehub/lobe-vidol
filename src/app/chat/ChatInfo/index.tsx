@@ -2,6 +2,7 @@
 
 import { DraggablePanel, TabsNav } from '@lobehub/ui';
 import { createStyles } from 'antd-style';
+import dynamic from 'next/dynamic';
 import { rgba } from 'polished';
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -11,11 +12,14 @@ import { CHAT_HEADER_HEIGHT, CHAT_INFO_MAX_WIDTH, CHAT_INFO_WIDTH } from '@/cons
 import { useGlobalStore } from '@/store/global';
 
 import BackGround from './BackGroundList';
-import ChatList from './ChatList';
+// import ChatList from './ChatList';
 import DanceList from './DanceList';
 import MotionList from './MotionList';
 import PostureList from './PostureList';
+import StageList from './StageList';
 import { Tab } from './type';
+
+const ChatList = dynamic(() => import('./ChatList'), { ssr: false });
 
 const useStyles = createStyles(({ css, token }) => ({
   content: css`
@@ -83,6 +87,10 @@ export default () => {
               label: t('info.background'),
               key: Tab.Background,
             },
+            {
+              label: t('info.stage'),
+              key: Tab.Stage,
+            },
           ]}
           onChange={(key) => {
             setTab(key as Tab);
@@ -95,6 +103,7 @@ export default () => {
         {tab === Tab.Motions && <MotionList />}
         {tab === Tab.Posture && <PostureList />}
         {tab === Tab.Background && <BackGround />}
+        {tab === Tab.Stage && <StageList />}
       </Flexbox>
     </DraggablePanel>
   );

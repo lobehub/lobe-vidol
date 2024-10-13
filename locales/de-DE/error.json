@@ -1,5 +1,6 @@
 {
   "apiKeyMiss": "Der OpenAI API-Schlüssel ist leer. Bitte fügen Sie einen benutzerdefinierten OpenAI API-Schlüssel hinzu.",
+  "dancePlayError": "Fehler beim Abspielen der Tanzdatei, bitte versuchen Sie es später erneut.",
   "error": "Fehler",
   "errorTip": {
     "clearSession": "Sitzungsnachrichten löschen",

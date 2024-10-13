@@ -1,5 +1,6 @@
 {
   "apiKeyMiss": "Khóa API OpenAI không được để trống, vui lòng thêm Khóa API OpenAI tùy chỉnh",
+  "dancePlayError": "Lỗi phát tệp nhảy, vui lòng thử lại sau",
   "error": "Lỗi",
   "errorTip": {
     "clearSession": "Xóa tin nhắn phiên",

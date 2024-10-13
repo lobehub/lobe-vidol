@@ -140,8 +140,8 @@
       },
       "bellyAction": {
         "angryA": "Czemu mnie ruszasz? Uważaj, bo cię ugryzę!",
+        "angryB": "Nie podoba mi się! Zaczynam się złościć!",
         "relaxedA": "Obudź się, między nami nie ma przyszłości!",
-        "relaxedB": "Nienawidzę! Zaczynam się złościć!",
         "surprisedA": "To było przypadkowe, prawda?"
       },
       "buttocksAction": {

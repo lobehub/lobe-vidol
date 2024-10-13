@@ -57,16 +57,23 @@
     },
     "submit": "Gửi",
     "title": "Tạo điệu nhảy",
-    "uploading": "Đang xử lý tải lên, vui lòng không đóng trang...",
-    "uploadingAudio": "Đang tải lên tập tin nhạc",
-    "uploadingCamera": "Đang tải tệp camera lên",
-    "uploadingCover": "Đang tải lên bìa",
-    "uploadingDance": "Đang tải lên tập tin điệu nhảy",
-    "uploadingThumb": "Đang tải lên hình thu nhỏ"
+    "upload": {
+      "audio": "Tải lên tệp nhạc",
+      "camera": "Tải lên tệp camera",
+      "cover": "Tải lên bìa",
+      "dance": "Tải lên tệp nhảy",
+      "loading": "Đang tải lên, vui lòng không đóng trang...",
+      "thumb": "Tải lên hình thu nhỏ"
+    }
   },
   "createDance": "Tạo điệu nhảy yêu thích của bạn",
   "dance": "Khiêu vũ",
   "danceList": "Danh sách vũ điệu",
+  "download": {
+    "audio": "Tải nhạc",
+    "camera": "Tải động tác camera",
+    "src": "Tải động tác nhảy"
+  },
   "findDance": "Tìm điệu nhảy yêu thích của bạn",
   "musicAndDance": "Thị trường khiêu vũ",
   "play": "Phát"

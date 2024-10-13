@@ -44,7 +44,8 @@
     "chat": "trò chuyện",
     "dance": "nhảy múa",
     "motions": "cử động",
-    "posture": "tư thế"
+    "posture": "tư thế",
+    "stage": "Sân khấu"
   },
   "input": {
     "alert": "Xin lưu ý: Mọi điều mà trí tuệ nhân tạo nói đều được tạo ra bởi AI",
@@ -67,6 +68,10 @@
     "withBackground": "Bao gồm hình nền",
     "withFooter": "Bao gồm chân trang",
     "withSystemRole": "Bao gồm vai trò trợ lý"
+  },
+  "stage": {
+    "stageList": "Danh sách sân khấu",
+    "totalCount": "Tổng cộng {{total}} mục"
   },
   "token": {
     "overload": "Token vượt quá",
