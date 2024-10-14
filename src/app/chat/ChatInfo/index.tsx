@@ -11,15 +11,14 @@ import { Flexbox } from 'react-layout-kit';
 import { CHAT_HEADER_HEIGHT, CHAT_INFO_MAX_WIDTH, CHAT_INFO_WIDTH } from '@/constants/token';
 import { useGlobalStore } from '@/store/global';
 
-import BackGround from './BackGroundList';
-// import ChatList from './ChatList';
-import DanceList from './DanceList';
-import MotionList from './MotionList';
-import PostureList from './PostureList';
-import StageList from './StageList';
 import { Tab } from './type';
 
+const BackGround = dynamic(() => import('./BackGroundList'), { ssr: false });
+const DanceList = dynamic(() => import('./DanceList'), { ssr: false });
+const MotionList = dynamic(() => import('./MotionList'), { ssr: false });
 const ChatList = dynamic(() => import('./ChatList'), { ssr: false });
+const PostureList = dynamic(() => import('./PostureList'), { ssr: false });
+const StageList = dynamic(() => import('./StageList'), { ssr: false });
 
 const useStyles = createStyles(({ css, token }) => ({
   content: css`

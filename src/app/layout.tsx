@@ -1,6 +1,6 @@
-import { Analytics } from '@vercel/analytics/react';
 import { PropsWithChildren } from 'react';
 
+import Analytics from '@/components/Analytics';
 import NProgress from '@/components/NProgress';
 import Layout from '@/layout';
 
