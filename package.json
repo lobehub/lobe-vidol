@@ -73,6 +73,7 @@
     "@lobehub/icons": "^1.34.0",
     "@lobehub/tts": "^1.25.1",
     "@lobehub/ui": "^1.151.0",
+    "@next/third-parties": "^14.2.15",
     "@pixiv/three-vrm": "2.1.2",
     "@pixiv/three-vrm-core": "2.1.2",
     "@react-spring/web": "^9.7.4",
