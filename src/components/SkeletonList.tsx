@@ -2,7 +2,7 @@
 
 import { Skeleton, SkeletonProps } from 'antd';
 import { createStyles } from 'antd-style';
-import { memo } from 'react';
+import React, { memo } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
 const useStyles = createStyles(({ css }) => ({
@@ -27,15 +27,16 @@ const useStyles = createStyles(({ css }) => ({
 interface SkeletonListProps {
   avatar?: SkeletonProps['avatar'];
   count?: number;
+  style?: React.CSSProperties;
 }
 
-const SkeletonList = memo<SkeletonListProps>(({ count = 4, avatar = true }) => {
+const SkeletonList = memo<SkeletonListProps>(({ count = 4, avatar = true, style }) => {
   const { styles } = useStyles();
 
   const list = Array.from({ length: count }).fill('');
 
   return (
-    <Flexbox gap={8} paddingInline={16} flex={1}>
+    <Flexbox gap={8} paddingInline={8} flex={1} style={style}>
       {list.map((_, index) => (
         <Skeleton
           active

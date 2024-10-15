@@ -5,12 +5,19 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
+import SkeletonList from '@/components/SkeletonList';
 import { HEADER_HEIGHT } from '@/constants/token';
 
 import V from './Elsa';
-import List from './List';
 
-const SessionCreateModal = dynamic(() => import('./SessionCreateModal'));
+const List = dynamic(() => import('./List'), {
+  ssr: false,
+  loading: () => <SkeletonList style={{ marginTop: 8 }} />,
+});
+
+const SessionCreateModal = dynamic(() => import('./SessionCreateModal'), {
+  ssr: false,
+});
 
 const useStyles = createStyles(({ css, token, prefixCls }) => ({
   list: css`

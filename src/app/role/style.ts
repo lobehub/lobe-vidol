@@ -10,6 +10,7 @@ export const useStyles = createStyles(({ css, cx }) => ({
   ),
   container: css`
     width: 80rem;
+    height: 100%;
     margin: 0 auto;
   `,
   edit: css`

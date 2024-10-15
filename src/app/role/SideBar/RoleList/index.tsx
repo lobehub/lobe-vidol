@@ -2,15 +2,21 @@ import { Icon, SearchBar } from '@lobehub/ui';
 import { Collapse } from 'antd';
 import { createStyles } from 'antd-style';
 import { ChevronDown } from 'lucide-react';
+import dynamic from 'next/dynamic';
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
+import SkeletonList from '@/components/SkeletonList';
 import { HEADER_HEIGHT } from '@/constants/token';
 
 import AgentCreate from './AgentCreate';
-import List from './List';
 import Elsa from './List/Elsa';
+
+const List = dynamic(() => import('./List'), {
+  ssr: false,
+  loading: () => <SkeletonList style={{ marginTop: 8 }} />,
+});
 
 const useStyles = createStyles(({ css, token, prefixCls }) => ({
   role: css`

@@ -1,12 +1,20 @@
+import { Spin } from 'antd';
 import dynamic from 'next/dynamic';
 import React, { memo } from 'react';
-import { Flexbox } from 'react-layout-kit';
+import { Center, Flexbox } from 'react-layout-kit';
 
 import ChatHeader from './ChatHeader';
 import ChatInfo from './ChatInfo';
 import SideBar from './SideBar';
 
-const ViewerMode = dynamic(() => import('./ViewerMode'), { ssr: false });
+const ViewerMode = dynamic(() => import('./ViewerMode'), {
+  ssr: false,
+  loading: () => (
+    <Center style={{ height: '100%', width: '100%' }}>
+      <Spin />
+    </Center>
+  ),
+});
 
 const Chat = () => {
   return (

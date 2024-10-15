@@ -1,14 +1,24 @@
 'use client';
 
+import { Spin } from 'antd';
+import dynamic from 'next/dynamic';
 import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Flexbox } from 'react-layout-kit';
+import { Center, Flexbox } from 'react-layout-kit';
 
 import TopBanner from '@/components/TopBanner';
 
-import RoleEdit from './RoleEdit';
 import SideBar from './SideBar';
 import { useStyles } from './style';
+
+const RoleEdit = dynamic(() => import('./RoleEdit'), {
+  ssr: false,
+  loading: () => (
+    <Center style={{ height: '100%', width: '100%' }}>
+      <Spin />
+    </Center>
+  ),
+});
 
 const Role = () => {
   const { styles } = useStyles();

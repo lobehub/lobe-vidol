@@ -3,10 +3,10 @@
 import { Skeleton, Space } from 'antd';
 import classNames from 'classnames';
 import { isEqual } from 'lodash-es';
-import React, { Suspense } from 'react';
+import dynamic from 'next/dynamic';
+import React from 'react';
 import { Flexbox } from 'react-layout-kit';
 
-import AgentMeta from '@/components/agent/AgentMeta';
 import { sessionSelectors, useSessionStore } from '@/store/session';
 
 import Interactive from './actions/Interactive';
@@ -15,6 +15,18 @@ import ToggleChatSideBar from './actions/ToggleChatSideBar';
 import ToggleSessionList from './actions/ToggleSessionList';
 import Voice from './actions/Voice';
 import { useStyles } from './style';
+
+const AgentMeta = dynamic(() => import('@/components/agent/AgentMeta'), {
+  ssr: false,
+  loading: () => (
+    <Skeleton
+      active
+      avatar={{ shape: 'circle', size: 'default' }}
+      paragraph={false}
+      title={{ style: { margin: 0, marginTop: 8 }, width: 200 }}
+    />
+  ),
+});
 
 interface Props {
   className?: string;
@@ -33,21 +45,10 @@ export default (props: Props) => {
       style={style}
       className={classNames(styles.header, className)}
     >
-      <Suspense
-        fallback={
-          <Skeleton
-            active
-            avatar={{ shape: 'circle', size: 'default' }}
-            paragraph={false}
-            title={{ style: { margin: 0, marginTop: 8 }, width: 200 }}
-          />
-        }
-      >
-        <Space>
-          <ToggleSessionList />
-          <AgentMeta meta={currentAgent?.meta} />
-        </Space>
-      </Suspense>
+      <Space>
+        <ToggleSessionList />
+        <AgentMeta meta={currentAgent?.meta} />
+      </Space>
       <Space>
         <Interactive key="interactive" />
         <Voice key={'voice'} />
