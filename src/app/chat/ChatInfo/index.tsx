@@ -8,17 +8,46 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
+import SkeletonList from '@/components/SkeletonList';
 import { CHAT_HEADER_HEIGHT, CHAT_INFO_MAX_WIDTH, CHAT_INFO_WIDTH } from '@/constants/token';
 import { useGlobalStore } from '@/store/global';
 
 import { Tab } from './type';
 
-const BackGround = dynamic(() => import('./BackGroundList'), { ssr: false });
-const DanceList = dynamic(() => import('./DanceList'), { ssr: false });
-const MotionList = dynamic(() => import('./MotionList'), { ssr: false });
-const ChatList = dynamic(() => import('./ChatList'), { ssr: false });
-const PostureList = dynamic(() => import('./PostureList'), { ssr: false });
-const StageList = dynamic(() => import('./StageList'), { ssr: false });
+const Loading = () => (
+  <div style={{ padding: '16px 0' }}>
+    <SkeletonList avatar count={8} />
+  </div>
+);
+
+const ChatList = dynamic(() => import('./ChatList'), {
+  ssr: false,
+  loading: Loading,
+});
+
+const BackGround = dynamic(() => import('./BackGroundList'), {
+  ssr: false,
+  loading: Loading,
+});
+
+const DanceList = dynamic(() => import('./DanceList'), {
+  ssr: false,
+  loading: Loading,
+});
+
+const MotionList = dynamic(() => import('./MotionList'), {
+  ssr: false,
+  loading: Loading,
+});
+
+const PostureList = dynamic(() => import('./PostureList'), {
+  ssr: false,
+  loading: Loading,
+});
+const StageList = dynamic(() => import('./StageList'), {
+  ssr: false,
+  loading: Loading,
+});
 
 const useStyles = createStyles(({ css, token }) => ({
   content: css`

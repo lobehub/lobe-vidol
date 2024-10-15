@@ -1,9 +1,6 @@
-import { Suspense, lazy } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
-import SkeletonList from './SkeletonList';
-
-const ChatList = lazy(() => import('./VirtualizedList'));
+import ChatList from './VirtualizedList';
 
 interface ConversationProps {
   mobile?: boolean;
@@ -20,9 +17,7 @@ const Conversation = ({ mobile }: ConversationProps) => {
       }}
       width={'100%'}
     >
-      <Suspense fallback={<SkeletonList mobile={mobile} />}>
-        <ChatList mobile={mobile} />
-      </Suspense>
+      <ChatList mobile={mobile} />
     </Flexbox>
   );
 };

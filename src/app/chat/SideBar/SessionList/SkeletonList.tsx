@@ -34,7 +34,7 @@ const SkeletonList = memo<SkeletonListProps>(({ count = 4 }) => {
   const list = Array.from({ length: count }).fill('');
 
   return (
-    <Flexbox gap={8} paddingInline={16}>
+    <Flexbox gap={8} paddingInline={8} style={{ marginTop: 12 }}>
       {list.map((_, index) => (
         <Skeleton
           active

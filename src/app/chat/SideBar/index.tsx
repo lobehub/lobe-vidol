@@ -3,13 +3,11 @@
 import { DraggablePanel } from '@lobehub/ui';
 import { createStyles } from 'antd-style';
 import { rgba } from 'polished';
-import { Suspense } from 'react';
 
 import { SIDEBAR_MAX_WIDTH, SIDEBAR_WIDTH } from '@/constants/token';
 import { useGlobalStore } from '@/store/global';
 
 import SessionList from './SessionList';
-import SkeletonList from './SkeletonList';
 
 const useStyles = createStyles(({ css, token }) => ({
   sidebar: css`
@@ -37,9 +35,7 @@ const SideBar = () => {
       onExpandChange={(expand) => setSessionList(expand)}
       expand={showSessionList}
     >
-      <Suspense fallback={<SkeletonList />}>
-        <SessionList />
-      </Suspense>
+      <SessionList />
     </DraggablePanel>
   );
 };
