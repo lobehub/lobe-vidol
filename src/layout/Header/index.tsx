@@ -13,6 +13,7 @@ import { HeaderNavKey } from '@/layout/type';
 
 import Discord from './Actions/Discord';
 import Github from './Actions/Github';
+import LocaleSwitch from './Actions/LocaleSwitch';
 import Support from './Actions/Support';
 import ThemeMode from './Actions/ThemeMode';
 
@@ -92,7 +93,7 @@ const Header = (props: Props) => {
 
   return (
     <LobeHeader
-      actions={[<ThemeMode key="theme" />, actionsDropdown]}
+      actions={[<ThemeMode key="theme" />, <LocaleSwitch key="locale" />, actionsDropdown]}
       logo={
         <Space>
           <Link href="/" style={{ color: 'inherit' }}>
