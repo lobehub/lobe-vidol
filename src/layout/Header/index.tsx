@@ -1,10 +1,11 @@
 'use client';
 
+import { MenuOutlined } from '@ant-design/icons';
 import { Header as LobeHeader, TabsNav } from '@lobehub/ui';
-import { Space, Tag, Tooltip } from 'antd';
+import { Button, Dropdown, Space } from 'antd';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { memo } from 'react';
+import { memo, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import Logo from '@/components/Logo';
@@ -23,73 +24,99 @@ const Header = (props: Props) => {
   const { headerKey } = props;
   const router = useRouter();
   const { t } = useTranslation('common');
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    checkIsMobile();
+    window.addEventListener('resize', checkIsMobile);
+
+    return () => {
+      window.removeEventListener('resize', checkIsMobile);
+    };
+  }, []);
+
+  const navigationItems = [
+    {
+      key: HeaderNavKey.Chat,
+      component: t('header.chat'),
+      title: t('header.chat'),
+    },
+    {
+      key: HeaderNavKey.Role,
+      component: t('header.role'),
+      title: t('header.role'),
+    },
+    {
+      key: HeaderNavKey.Market,
+      component: t('header.market'),
+      title: t('header.market'),
+    },
+    {
+      key: HeaderNavKey.Settings,
+      component: t('header.settings'),
+      title: t('header.settings'),
+    },
+  ];
+
+  const actionItems = [
+    { key: 'github', component: <Github />, title: t('menu.github') },
+    { key: 'discord', component: <Discord />, title: t('menu.discord') },
+    { key: 'support', component: <Support />, title: t('menu.support') },
+  ];
+
+  const dropdownItems = isMobile ? [...navigationItems, ...actionItems] : actionItems;
+
+  const actionsDropdown = (
+    <Dropdown
+      menu={{
+        items: dropdownItems.map((item) => ({
+          key: item.key,
+          label: (
+            <Space>
+              {item.component}
+              <span>{item.title}</span>
+            </Space>
+          ),
+        })),
+      }}
+      trigger={['click']}
+      overlayStyle={{ minWidth: '200px' }}
+    >
+      <Button icon={<MenuOutlined />} />
+    </Dropdown>
+  );
 
   return (
     <LobeHeader
-      actions={[
-        // <Alert
-        //   message="近期由于 OSS 服务商限制，部分资源可能无法加载，可以从发现页重新订阅角色与舞蹈，造成的不便敬请谅解"
-        //   key={'alert'}
-        //   banner
-        //   closable
-        // />,
-        <Github key="github" />,
-        <ThemeMode key={'theme'} />,
-        <Discord key={'discord'} />,
-        // <UserAvatar key="user" />,
-        <Support key={'support'} />,
-      ]}
+      actions={[<ThemeMode key="theme" />, actionsDropdown]}
       logo={
         <Space>
           <Link href="/" style={{ color: 'inherit' }}>
             <Logo extra={'Lobe Vidol'} size={36} />
           </Link>
-          <Tooltip title={t('header.tips')}>
-            <Tag color="yellow">WIP</Tag>
-          </Tooltip>
         </Space>
       }
       nav={
-        <TabsNav
-          activeKey={headerKey}
-          items={[
-            {
-              key: HeaderNavKey.Chat,
+        isMobile ? null : (
+          <TabsNav
+            activeKey={headerKey}
+            items={navigationItems.map((item) => ({
+              key: item.key as HeaderNavKey,
               label: (
-                <Link href={`/chat`} style={{ color: 'initial' }}>
-                  {t('header.chat')}
+                <Link href={`/${item.key}`} style={{ color: 'inherit' }}>
+                  {item.component}
                 </Link>
               ),
-            },
-            {
-              key: HeaderNavKey.Role,
-              label: (
-                <Link href={`/role`} style={{ color: 'initial' }}>
-                  {t('header.role')}
-                </Link>
-              ),
-            },
-            {
-              key: HeaderNavKey.Market,
-              label: (
-                <Link href={`/market`} style={{ color: 'initial' }}>
-                  {t('header.market')}
-                </Link>
-              ),
-            },
-            {
-              key: HeaderNavKey.Settings,
-              label: (
-                <Link href={`/settings`} style={{ color: 'initial' }}>
-                  {t('header.settings')}
-                </Link>
-              ),
-            },
-          ]}
-          onChange={(key) => {
-            router.push(`/${key}`);
-          }}
-        />
+            }))}
+            onChange={(key) => {
+              router.push(`/${key}`);
+            }}
+          />
+        )
       }
     />
   );

@@ -6,6 +6,11 @@ export default {
     market: '发现',
     settings: '设置',
   },
+  menu: {
+    github: 'Github',
+    discord: '社区支持',
+    support: '支持作者',
+  },
   theme: {
     auto: '跟随系统',
     light: '亮色模式',
