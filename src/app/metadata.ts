@@ -10,6 +10,10 @@ const metadata: Metadata = {
     statusBarStyle: 'black-translucent',
     title,
   },
+  // 添加 canonical
+  alternates: {
+    canonical: 'https://vidol.lobehub.com',
+  },
   description,
   icons: {
     apple:
