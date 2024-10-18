@@ -12,6 +12,7 @@ import Logo from '@/components/Logo';
 import { HeaderNavKey } from '@/layout/type';
 
 import Discord from './Actions/Discord';
+import Documentation from './Actions/Documentation';
 import Github from './Actions/Github';
 import LocaleSwitch from './Actions/LocaleSwitch';
 import Support from './Actions/Support';
@@ -64,7 +65,6 @@ const Header = (props: Props) => {
   ];
 
   const actionItems = [
-    { key: 'github', component: <Github />, title: t('menu.github') },
     { key: 'discord', component: <Discord />, title: t('menu.discord') },
     { key: 'support', component: <Support />, title: t('menu.support') },
   ];
@@ -93,7 +93,13 @@ const Header = (props: Props) => {
 
   return (
     <LobeHeader
-      actions={[<ThemeMode key="theme" />, <LocaleSwitch key="locale" />, actionsDropdown]}
+      actions={[
+        <ThemeMode key="theme" />,
+        <LocaleSwitch key="locale" />,
+        <Documentation key="doc" />,
+        <Github key="github" />,
+        actionsDropdown,
+      ]}
       logo={
         <Space>
           <Link href="/" style={{ color: 'inherit' }}>

@@ -40,7 +40,7 @@ const LocaleSwitch = memo(() => {
       }}
       trigger={['click', 'hover']}
     >
-      <ActionIcon icon={Languages} style={{ border: `1px solid ${theme.colorBorder}` }} />
+      <ActionIcon icon={Languages} style={{ border: `1px solid ${theme.colorFillSecondary}` }} />
     </Popover>
   );
 });
