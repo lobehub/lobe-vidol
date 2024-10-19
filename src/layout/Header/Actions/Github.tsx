@@ -27,7 +27,7 @@ export default () => {
       className={styles.icon}
       icon={SiGithub}
       key="github"
-      title={'✨ Star'}
+      title={'✨ Github'}
       onClick={() => window.open('https://github.com/lobehub/lobe-vidol', '_blank')}
       style={{ border: `1px solid ${theme.colorFillSecondary}` }}
     />

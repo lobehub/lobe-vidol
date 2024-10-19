@@ -12,7 +12,7 @@ export const Documentation = () => {
     <ActionIcon
       icon={Book}
       key="documentation"
-      title={t('documentation')}
+      title={t('userPanel.docs')}
       onClick={() => window.open(DOCUMENTS_REFER_URL, '_blank')}
       style={{ border: `1px solid ${theme.colorFillSecondary}` }}
     />
