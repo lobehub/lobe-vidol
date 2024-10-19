@@ -32,7 +32,13 @@ const SideBar = () => {
     if (mobile && showSessionList) {
       setSessionList(false);
     }
-  }, [mobile, showSessionList, setSessionList]);
+  }, [mobile]);
+
+  const handleExpandChange = (expand: boolean) => {
+    if (!mobile) {
+      setSessionList(expand);
+    }
+  };
 
   return (
     <DraggablePanel
@@ -41,7 +47,7 @@ const SideBar = () => {
       minWidth={SIDEBAR_WIDTH}
       mode={'fixed'}
       placement={'left'}
-      onExpandChange={(expand) => setSessionList(expand)}
+      onExpandChange={handleExpandChange}
       expand={showSessionList}
     >
       <SessionList />
