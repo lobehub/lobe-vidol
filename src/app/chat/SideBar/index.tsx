@@ -1,8 +1,9 @@
 'use client';
 
 import { DraggablePanel } from '@lobehub/ui';
-import { createStyles } from 'antd-style';
+import { createStyles, useResponsive } from 'antd-style';
 import { rgba } from 'polished';
+import { useEffect } from 'react';
 
 import { SIDEBAR_MAX_WIDTH, SIDEBAR_WIDTH } from '@/constants/token';
 import { useGlobalStore } from '@/store/global';
@@ -25,6 +26,20 @@ const SideBar = () => {
     s.setSessionList,
   ]);
 
+  const { mobile } = useResponsive();
+
+  useEffect(() => {
+    if (mobile && showSessionList) {
+      setSessionList(false);
+    }
+  }, [mobile]);
+
+  const handleExpandChange = (expand: boolean) => {
+    if (!mobile) {
+      setSessionList(expand);
+    }
+  };
+
   return (
     <DraggablePanel
       className={styles.sidebar}
@@ -32,7 +47,7 @@ const SideBar = () => {
       minWidth={SIDEBAR_WIDTH}
       mode={'fixed'}
       placement={'left'}
-      onExpandChange={(expand) => setSessionList(expand)}
+      onExpandChange={handleExpandChange}
       expand={showSessionList}
     >
       <SessionList />

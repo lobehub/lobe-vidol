@@ -1,5 +1,5 @@
 import { ActionIcon } from '@lobehub/ui';
-import { AlignLeft, ChevronsLeft } from 'lucide-react';
+import { ChevronsLeft, Sidebar } from 'lucide-react';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -14,7 +14,7 @@ export default () => {
   const { t } = useTranslation('chat');
   return (
     <ActionIcon
-      icon={showSessionList ? ChevronsLeft : AlignLeft}
+      icon={showSessionList ? ChevronsLeft : Sidebar}
       onClick={() => toggleSessionList()}
       title={t('sessionList')}
       size={DESKTOP_HEADER_ICON_SIZE}

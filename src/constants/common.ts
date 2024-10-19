@@ -44,3 +44,5 @@ export const DEFAULT_AGENT_AVATAR_URL =
   'https://registry.npmmirror.com/@lobehub/assets-logo/1.2.0/files/assets/logo-3d.webp';
 export const ROLE_VIEWER_HEIGHT = 800;
 export const ROLE_VIEWER_WIDTH = 400;
+
+export const PWA_INSTALL_ID = 'pwa-install';

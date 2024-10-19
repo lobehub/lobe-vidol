@@ -30,11 +30,15 @@ interface Props {
    */
   interactive?: boolean;
   style?: React.CSSProperties;
+  /**
+   * 是否显示工具栏
+   */
+  toolbar?: boolean;
   width?: number | string;
 }
 
 function AgentViewer(props: Props) {
-  const { className, style, height, agentId, width, interactive = true } = props;
+  const { className, style, height, agentId, width, interactive = true, toolbar = true } = props;
   const { styles } = useStyles();
   const playingRef = useRef(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -171,7 +175,8 @@ function AgentViewer(props: Props) {
               viewer,
               () => {},
               () => {
-                viewer.model?.loadIdleAnimation();
+                //
+                viewer.resetToIdle();
                 playingRef.current = false;
               },
             );
@@ -246,7 +251,7 @@ function AgentViewer(props: Props) {
       id="agent-viewer"
       style={{ height, width, ...style }}
     >
-      <ToolBar className={styles.toolbar} viewer={viewer} />
+      {toolbar && <ToolBar className={styles.toolbar} viewer={viewer} />}
       {loading ? (
         <ScreenLoading
           title={t('loading.waiting')}

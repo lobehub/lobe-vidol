@@ -1,5 +1,4 @@
 import { ActionIcon } from '@lobehub/ui';
-import { useHover } from 'ahooks';
 import { Tooltip } from 'antd';
 import classNames from 'classnames';
 import { isEqual } from 'lodash-es';
@@ -26,7 +25,6 @@ const Dialog = (props: DialogProps) => {
   );
   const lastAgentChatIndex = currentChats.findLastIndex((item) => item.role === 'assistant');
   const ref = React.useRef<HTMLDivElement>(null);
-  const isHovered = useHover(ref);
   const { t } = useTranslation('chat');
   const { styles } = useStyles();
 
@@ -41,15 +39,11 @@ const Dialog = (props: DialogProps) => {
       <ChatItem
         id={currentChats[lastAgentChatIndex].id}
         index={lastAgentChatIndex}
-        showTitle={false}
+        showTitle={true}
         type="pure"
       />
       <Tooltip key="close" title={t('close', { ns: 'common' })}>
-        <ActionIcon
-          icon={XIcon}
-          onClick={() => setChatDialog(false)}
-          style={{ opacity: isHovered ? 1 : 0 }}
-        />
+        <ActionIcon icon={XIcon} onClick={() => setChatDialog(false)} className={styles.close} />
       </Tooltip>
     </Flexbox>
   ) : null;
