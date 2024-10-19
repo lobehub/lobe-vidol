@@ -3,6 +3,8 @@ import { ActionIcon } from '@lobehub/ui';
 import { createStyles, useTheme } from 'antd-style';
 import { useTranslation } from 'react-i18next';
 
+import { DISCORD } from '@/constants/url';
+
 const useStyles = createStyles(({ css, token }) => {
   return {
     icon: css`
@@ -29,7 +31,7 @@ export default () => {
       icon={SiDiscord}
       key="discord"
       title={t('community')}
-      onClick={() => window.open('https://discord.gg/AYFPHvv2jT', '_blank')}
+      onClick={() => window.open(DISCORD, '_blank')}
       style={{ border: `1px solid ${theme.colorFillSecondary}` }}
     />
   );

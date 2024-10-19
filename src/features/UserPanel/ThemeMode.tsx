@@ -49,6 +49,7 @@ const ThemeButton = memo(() => {
       overlayInnerStyle={{
         padding: 0,
       }}
+      placement={'bottom'}
       trigger={['click', 'hover']}
     >
       <ActionIcon
