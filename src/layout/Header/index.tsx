@@ -93,7 +93,7 @@ const Header = (props: Props) => {
             <ActionIcon icon={X} onClick={() => setDrawerVisible(false)} />
           </Flexbox>
         }
-        placement="right"
+        placement="left"
         onClose={() => setDrawerVisible(false)}
         open={drawerVisible}
         width={300}
@@ -159,16 +159,10 @@ const Header = (props: Props) => {
     <LobeHeader
       actions={[
         <Flexbox key="actions" gap={8} direction="horizontal">
-          {mobile ? (
-            <Avatar key="avatar" />
-          ) : (
-            <>
-              <Documentation key="doc" />
-              <Github key="github" />
-              <Support key="support" />
-              <Avatar key="avatar" />
-            </>
-          )}
+          <Documentation key="doc" />
+          <Github key="github" />
+          <Support key="support" />
+          <Avatar key="avatar" />
         </Flexbox>,
       ]}
       logo={

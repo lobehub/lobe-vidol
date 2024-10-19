@@ -39,7 +39,7 @@ const Dialog = (props: DialogProps) => {
       <ChatItem
         id={currentChats[lastAgentChatIndex].id}
         index={lastAgentChatIndex}
-        showTitle={false}
+        showTitle={true}
         type="pure"
       />
       <Tooltip key="close" title={t('close', { ns: 'common' })}>
