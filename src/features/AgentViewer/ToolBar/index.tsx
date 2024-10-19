@@ -1,10 +1,21 @@
 import { ActionIconGroup } from '@lobehub/ui';
 import dayjs from 'dayjs';
-import { Aperture, Axis3D, Fullscreen, Grid3x3, Orbit, Power, SwitchCamera } from 'lucide-react';
+import {
+  Aperture,
+  Axis3D,
+  Fullscreen,
+  Grid3x3,
+  Orbit,
+  Pointer,
+  PointerOff,
+  Power,
+  SwitchCamera,
+} from 'lucide-react';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { Viewer } from '@/libs/vrmViewer/viewer';
+import { useSessionStore } from '@/store/session';
 
 interface ToolBarProps {
   className?: string;
@@ -16,11 +27,21 @@ const ToolBar = (props: ToolBarProps) => {
   const { style, className, viewer } = props;
   const { t } = useTranslation('chat');
 
+  const [interactive, toggleInteractive] = useSessionStore((s) => [
+    s.interactive,
+    s.toggleInteractive,
+  ]);
+
   const dropdownMenu = [
     {
       icon: Axis3D,
       key: 'axes',
       label: t('toolBar.axes'),
+    },
+    {
+      icon: SwitchCamera,
+      key: 'resetCamera',
+      label: t('toolBar.resetCamera'),
     },
     {
       icon: SwitchCamera,
@@ -50,10 +71,11 @@ const ToolBar = (props: ToolBarProps) => {
           key: 'fullscreen',
           label: t('toolBar.fullScreen'),
         },
+
         {
-          icon: SwitchCamera,
-          key: 'resetCamera',
-          label: t('toolBar.resetCamera'),
+          icon: interactive ? PointerOff : Pointer,
+          key: 'interactive',
+          label: interactive ? t('toolBar.interactiveOff') : t('toolBar.interactiveOn'),
         },
         {
           icon: Aperture,
@@ -91,6 +113,11 @@ const ToolBar = (props: ToolBarProps) => {
           case 'grid': {
             viewer.toggleGrid();
 
+            break;
+          }
+
+          case 'interactive': {
+            toggleInteractive();
             break;
           }
 

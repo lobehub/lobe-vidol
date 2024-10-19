@@ -9,7 +9,6 @@ import { Flexbox } from 'react-layout-kit';
 
 import { sessionSelectors, useSessionStore } from '@/store/session';
 
-import Interactive from './actions/Interactive';
 import ShareButton from './actions/ShareButton';
 import ToggleChatSideBar from './actions/ToggleChatSideBar';
 import ToggleSessionList from './actions/ToggleSessionList';
@@ -32,6 +31,7 @@ interface Props {
   className?: string;
   style?: React.CSSProperties;
 }
+
 export default (props: Props) => {
   const { className, style } = props;
   const { styles } = useStyles();
@@ -45,12 +45,13 @@ export default (props: Props) => {
       style={style}
       className={classNames(styles.header, className)}
     >
-      <Space>
+      <Flexbox horizontal align={'center'} className={styles.leftSection}>
         <ToggleSessionList />
-        <AgentMeta meta={currentAgent?.meta} />
-      </Space>
-      <Space>
-        <Interactive key="interactive" />
+        <div className={styles.agentMetaWrapper}>
+          <AgentMeta meta={currentAgent?.meta} />
+        </div>
+      </Flexbox>
+      <Space className={styles.actions}>
         <Voice key={'voice'} />
         <ShareButton key={'share'} />
         <ToggleChatSideBar key={'sidebar'} />

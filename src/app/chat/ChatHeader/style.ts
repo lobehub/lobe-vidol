@@ -1,15 +1,31 @@
 import { createStyles } from 'antd-style';
 
-import { CHAT_HEADER_HEIGHT } from '@/constants/token';
-
-const useStyles = createStyles(({ token, css }) => ({
+export const useStyles = createStyles(({ css, token, responsive }) => ({
   header: css`
-    height: ${CHAT_HEADER_HEIGHT}px;
-    padding: ${token.paddingSM}px;
+    /* border-bottom: 1px solid ${token.colorBorder}; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 12px;
   `,
-  player: css`
-    min-width: 480px;
+  leftSection: css`
+    flex: 1;
+    min-width: 0;
+    margin-right: 16px;
+  `,
+  agentMetaWrapper: css`
+    overflow: hidden;
+    flex: 1;
+    min-width: 0;
+  `,
+  actions: css`
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+
+    ${responsive.mobile} {
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
   `,
 }));
-
-export { useStyles };

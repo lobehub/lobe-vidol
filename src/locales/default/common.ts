@@ -36,10 +36,10 @@ export default {
   },
   close: '关闭',
   support: {
-    title: '支持我们',
-    tooltip: '请我喝杯咖啡',
+    title: '支持作者',
+    tooltip: '支持作者',
     wechatQRCode: '微信赞赏',
-    kofiSupport: '通过 Ko-fi 支持我们',
+    kofiSupport: '通过 Ko-fi 支持作者',
   },
   community: '社区支持',
   random: '随机',

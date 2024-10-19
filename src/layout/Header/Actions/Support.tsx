@@ -6,24 +6,13 @@ import { Coffee } from 'lucide-react';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-const useStyles = createStyles(({ token, css }) => ({
+const useStyles = createStyles(({ token }) => ({
   supportContent: {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
     gap: '10px',
   },
-  icon: css`
-    svg {
-      fill: ${token.colorTextDescription};
-    }
-
-    &:hover {
-      svg {
-        fill: ${token.colorText};
-      }
-    }
-  `,
   qrCode: {
     width: '200px',
     height: '200px',
@@ -64,7 +53,6 @@ const Support: React.FC = () => {
     <Popover content={content} title={t('support.title')} trigger="hover" placement="bottom">
       <ActionIcon
         icon={Coffee}
-        className={styles.icon}
         key="coffee"
         title={`♥️ ${t('support.tooltip')}`}
         style={{ border: `1px solid ${theme.colorFillSecondary}` }}
