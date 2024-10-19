@@ -50,6 +50,7 @@ const ViewerWithUpload = memo<ViewerWithUploadProps>(({ style }) => {
           agentId={currentAgentId}
           width={ROLE_VIEWER_WIDTH}
           interactive={false}
+          toolbar={false}
         />
       ) : (
         <EmptyGuide

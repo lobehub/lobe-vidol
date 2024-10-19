@@ -14,8 +14,9 @@ export const useStyles = createStyles(({ css, token }) => ({
   content: css`
     min-width: 480px;
     max-width: 100vw;
+    padding: 0 12px;
 
-    @media (max-width: 1024px) {
+    @media (max-width: 768px) {
       width: 100%;
     }
   `,

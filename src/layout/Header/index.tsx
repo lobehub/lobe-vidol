@@ -1,7 +1,7 @@
 'use client';
 
 import { ActionIcon, Header as LobeHeader, TabsNav } from '@lobehub/ui';
-import { ConfigProvider, Drawer, Menu, theme } from 'antd';
+import { ConfigProvider, Drawer, Menu, Space, theme } from 'antd';
 import { useResponsive } from 'antd-style';
 import { Menu as MenuIcon, MessageSquare, Settings, ShoppingBag, User, X } from 'lucide-react';
 import Link from 'next/link';
@@ -96,7 +96,7 @@ const Header = (props: Props) => {
         placement="right"
         onClose={() => setDrawerVisible(false)}
         open={drawerVisible}
-        width={280}
+        width={300}
         closeIcon={null}
         styles={{
           body: {
@@ -151,11 +151,6 @@ const Header = (props: Props) => {
             }}
           />
         </ConfigProvider>
-        <Flexbox padding={16} gap={8} direction="horizontal" justify="center">
-          <Documentation />
-          <Github />
-          <Avatar />
-        </Flexbox>
       </Drawer>
     </>
   );
@@ -165,7 +160,7 @@ const Header = (props: Props) => {
       actions={[
         <Flexbox key="actions" gap={8} direction="horizontal">
           {mobile ? (
-            renderMobileNav()
+            <Avatar key="avatar" />
           ) : (
             <>
               <Documentation key="doc" />
@@ -177,9 +172,12 @@ const Header = (props: Props) => {
         </Flexbox>,
       ]}
       logo={
-        <Link href="/" style={{ color: 'inherit' }}>
-          <Logo extra={'Lobe Vidol'} size={36} />
-        </Link>
+        <Space>
+          {mobile ? renderMobileNav() : null}
+          <Link href="/" style={{ color: 'inherit' }}>
+            <Logo extra={'Lobe Vidol'} size={36} />
+          </Link>
+        </Space>
       }
       nav={mobile ? null : renderDesktopNav()}
     />
