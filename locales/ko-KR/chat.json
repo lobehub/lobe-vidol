@@ -87,6 +87,8 @@
     "downloading": "모델 다운로드 중입니다. 잠시만 기다려 주세요...",
     "fullScreen": "전체 화면 전환",
     "grid": "격자",
+    "interactiveOff": "터치 상호작용 끄기",
+    "interactiveOn": "터치 상호작용 켜기",
     "resetCamera": "카메라 초기화",
     "resetToIdle": "춤 동작 중지",
     "screenShot": "사진 찍기"

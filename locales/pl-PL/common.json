@@ -25,6 +25,11 @@
     "tips": "Projekt jest obecnie w trakcie budowy, nie gwarantujemy stabilności danych. W przypadku problemów można w ustawieniach systemu wyczyścić wiadomości sesji i zresetować ustawienia systemowe. Przepraszamy za wszelkie niedogodności."
   },
   "loading": "Ładowanie...",
+  "menu": {
+    "discord": "Wsparcie społeczności",
+    "github": "Github",
+    "support": "Wsparcie dla autora"
+  },
   "noData": "Brak danych",
   "play": "Odtwarzaj",
   "random": "Losowy",
@@ -41,5 +46,23 @@
     "dark": "Ciemny tryb",
     "light": "Jasny tryb"
   },
-  "uploadTip": "Kliknij lub przeciągnij plik do tego obszaru, aby go przesłać"
+  "uploadTip": "Kliknij lub przeciągnij plik do tego obszaru, aby go przesłać",
+  "userPanel": {
+    "anonymousNickName": "Użytkownik anonimowy",
+    "billing": "Zarządzanie fakturami",
+    "cloud": "Wypróbuj {{name}}",
+    "data": "Przechowywanie danych",
+    "defaultNickname": "Użytkownik wersji społecznościowej",
+    "discord": "Wsparcie społeczności",
+    "docs": "Dokumentacja użytkowania",
+    "email": "Wsparcie mailowe",
+    "feedback": "Opinie i sugestie",
+    "help": "Centrum pomocy",
+    "moveGuide": "Przycisk ustawień przeniesiony tutaj",
+    "plans": "Plany subskrypcyjne",
+    "preview": "Wersja podglądowa",
+    "profile": "Zarządzanie kontem",
+    "setting": "Ustawienia aplikacji",
+    "usages": "Statystyki użycia"
+  }
 }

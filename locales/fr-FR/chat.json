@@ -87,6 +87,8 @@
     "downloading": "Téléchargement du modèle en cours, veuillez patienter...",
     "fullScreen": "Basculer en plein écran",
     "grid": "Grille",
+    "interactiveOff": "Désactiver l'interaction tactile",
+    "interactiveOn": "Activer l'interaction tactile",
     "resetCamera": "Réinitialiser la caméra",
     "resetToIdle": "Arrêter l'action de danse",
     "screenShot": "Prendre une photo"

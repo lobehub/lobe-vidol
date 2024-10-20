@@ -87,6 +87,8 @@
     "downloading": "Model wordt gedownload, even geduld...",
     "fullScreen": "Schakel naar volledig scherm",
     "grid": "Raster",
+    "interactiveOff": "Schakel aanraking interactie uit",
+    "interactiveOn": "Schakel aanraking interactie in",
     "resetCamera": "Camera resetten",
     "resetToIdle": "Stop dansbeweging",
     "screenShot": "Screenshot maken"

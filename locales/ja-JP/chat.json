@@ -87,6 +87,8 @@
     "downloading": "モデルをダウンロード中です。しばらくお待ちください...",
     "fullScreen": "全画面表示に切り替え",
     "grid": "グリッド",
+    "interactiveOff": "タッチインタラクションを無効にする",
+    "interactiveOn": "タッチインタラクションを有効にする",
     "resetCamera": "カメラリセット",
     "resetToIdle": "ダンス動作を停止",
     "screenShot": "スクリーンショット"

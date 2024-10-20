@@ -87,6 +87,8 @@
     "downloading": "Download del modello in corso, attendere prego...",
     "fullScreen": "Attiva/disattiva la modalità a schermo intero",
     "grid": "Griglia",
+    "interactiveOff": "Disattiva interazione touch",
+    "interactiveOn": "Attiva interazione touch",
     "resetCamera": "Ripristina fotocamera",
     "resetToIdle": "Ferma l'azione di danza",
     "screenShot": "Scatta foto"

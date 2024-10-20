@@ -87,6 +87,8 @@
     "downloading": "Modell wird heruntergeladen, bitte warten...",
     "fullScreen": "Vollbild umschalten",
     "grid": "Raster",
+    "interactiveOff": "Berührungseingabe deaktivieren",
+    "interactiveOn": "Berührungseingabe aktivieren",
     "resetCamera": "Kamera zurücksetzen",
     "resetToIdle": "Tanzbewegungen stoppen",
     "screenShot": "Foto aufnehmen"

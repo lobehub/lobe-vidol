@@ -87,6 +87,8 @@
     "downloading": "Pobieranie modelu, proszę czekać...",
     "fullScreen": "Przełącz na pełny ekran",
     "grid": "Siatka",
+    "interactiveOff": "Wyłącz interakcję dotykową",
+    "interactiveOn": "Włącz interakcję dotykową",
     "resetCamera": "Zresetuj kamerę",
     "resetToIdle": "Zatrzymaj ruch taneczny",
     "screenShot": "Zrób zdjęcie"
