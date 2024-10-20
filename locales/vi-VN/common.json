@@ -25,6 +25,11 @@
     "tips": "Dự án hiện đang trong quá trình thi công, không đảm bảo tính ổn định của dữ liệu. Nếu gặp vấn đề, bạn có thể xóa tin nhắn phiên và đặt lại cài đặt hệ thống trong cài đặt hệ thống. Xin lỗi vì sự bất tiện này."
   },
   "loading": "Đang tải...",
+  "menu": {
+    "discord": "Hỗ trợ cộng đồng",
+    "github": "Github",
+    "support": "Hỗ trợ tác giả"
+  },
   "noData": "Chưa có dữ liệu",
   "play": "Phát",
   "random": "Ngẫu nhiên",
@@ -41,5 +46,23 @@
     "dark": "Chế độ tối",
     "light": "Chế độ sáng"
   },
-  "uploadTip": "Nhấp hoặc kéo thả tệp vào khu vực này để tải lên"
+  "uploadTip": "Nhấp hoặc kéo thả tệp vào khu vực này để tải lên",
+  "userPanel": {
+    "anonymousNickName": "Người dùng ẩn danh",
+    "billing": "Quản lý hóa đơn",
+    "cloud": "Trải nghiệm {{name}}",
+    "data": "Lưu trữ dữ liệu",
+    "defaultNickname": "Người dùng phiên bản cộng đồng",
+    "discord": "Hỗ trợ cộng đồng",
+    "docs": "Tài liệu hướng dẫn",
+    "email": "Hỗ trợ qua email",
+    "feedback": "Phản hồi và gợi ý",
+    "help": "Trung tâm trợ giúp",
+    "moveGuide": "Nút cài đặt đã được di chuyển đến đây",
+    "plans": "Gói đăng ký",
+    "preview": "Phiên bản xem trước",
+    "profile": "Quản lý tài khoản",
+    "setting": "Cài đặt ứng dụng",
+    "usages": "Thống kê sử dụng"
+  }
 }

@@ -87,6 +87,8 @@
     "downloading": "Baixando modelo, por favor aguarde...",
     "fullScreen": "Alternar para tela cheia",
     "grid": "Grade",
+    "interactiveOff": "Desativar interação por toque",
+    "interactiveOn": "Ativar interação por toque",
     "resetCamera": "Redefinir Câmera",
     "resetToIdle": "Parar Ação de Dança",
     "screenShot": "Captura de Tela"

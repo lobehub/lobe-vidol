@@ -11,7 +11,7 @@ export const useStyles = createStyles(({ css, cx }) => ({
   close: css`
     position: absolute;
     z-index: 1;
-    top: -12px;
-    right: 24px;
+    top: -16px;
+    right: 12px;
   `,
 }));

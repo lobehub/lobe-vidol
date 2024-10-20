@@ -25,6 +25,11 @@
     "tips": "Het project is momenteel in uitvoering, waardoor de stabiliteit van de gegevens niet gegarandeerd kan worden. Als u problemen ondervindt, kunt u in de systeeminstellingen de sessieberichten wissen en de systeeminstellingen resetten. Onze excuses voor het ongemak."
   },
   "loading": "Laden...",
+  "menu": {
+    "discord": "Gemeenschapssteun",
+    "github": "Github",
+    "support": "Steun de auteur"
+  },
   "noData": "Geen gegevens beschikbaar",
   "play": "Afspelen",
   "random": "Willekeurig",
@@ -41,5 +46,23 @@
     "dark": "Donkere modus",
     "light": "Lichte modus"
   },
-  "uploadTip": "Klik of sleep bestanden naar dit gebied om te uploaden"
+  "uploadTip": "Klik of sleep bestanden naar dit gebied om te uploaden",
+  "userPanel": {
+    "anonymousNickName": "Anonieme gebruiker",
+    "billing": "Factuurbeheer",
+    "cloud": "Ervaar {{name}}",
+    "data": "Gegevensopslag",
+    "defaultNickname": "Gemeenschapsversie gebruiker",
+    "discord": "Gemeenschapssteun",
+    "docs": "Gebruikersdocumentatie",
+    "email": "E-mail ondersteuning",
+    "feedback": "Feedback en suggesties",
+    "help": "Helpcentrum",
+    "moveGuide": "De instellingenknop is hierheen verplaatst",
+    "plans": "Abonnementsplannen",
+    "preview": "Voorvertoning",
+    "profile": "Accountbeheer",
+    "setting": "App-instellingen",
+    "usages": "Gebruikstatistieken"
+  }
 }

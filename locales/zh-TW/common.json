@@ -25,6 +25,11 @@
     "tips": "專案目前正在施工中，不保證數據穩定性，如果遇到問題可以在系統設定中清除會話消息與重置系統設定，造成不便敬請見諒"
   },
   "loading": "載入中...",
+  "menu": {
+    "discord": "社群支援",
+    "github": "Github",
+    "support": "支持作者"
+  },
   "noData": "目前沒有資料",
   "play": "播放",
   "random": "隨機",
@@ -41,5 +46,23 @@
     "dark": "暗黑模式",
     "light": "亮色模式"
   },
-  "uploadTip": "點擊或拖曳檔案到此區域上傳"
+  "uploadTip": "點擊或拖曳檔案到此區域上傳",
+  "userPanel": {
+    "anonymousNickName": "匿名使用者",
+    "billing": "帳單管理",
+    "cloud": "體驗 {{name}}",
+    "data": "資料儲存",
+    "defaultNickname": "社群版使用者",
+    "discord": "社群支援",
+    "docs": "使用文件",
+    "email": "郵件支援",
+    "feedback": "回饋與建議",
+    "help": "幫助中心",
+    "moveGuide": "設定按鈕搬到這裡啦",
+    "plans": "訂閱方案",
+    "preview": "預覽版",
+    "profile": "帳戶管理",
+    "setting": "應用設定",
+    "usages": "用量統計"
+  }
 }

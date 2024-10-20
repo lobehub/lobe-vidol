@@ -25,6 +25,11 @@
     "tips": "Proje şu anda inşaat aşamasındadır, veri kararlılığı garanti edilmemektedir. Sorunlarla karşılaşırsanız, sistem ayarlarından oturum mesajlarını temizleyebilir ve sistem ayarlarını sıfırlayabilirsiniz. Verdiğimiz rahatsızlıktan dolayı özür dileriz."
   },
   "loading": "Yükleniyor...",
+  "menu": {
+    "discord": "Topluluk Desteği",
+    "github": "Github",
+    "support": "Yazarı Destekle"
+  },
   "noData": "Veri yok",
   "play": "Oynat",
   "random": "Rastgele",
@@ -41,5 +46,23 @@
     "dark": "Karanlık Mod",
     "light": "Aydınlık Mod"
   },
-  "uploadTip": "Bu alana dosyaları tıklayarak veya sürükleyerek yükleyin"
+  "uploadTip": "Bu alana dosyaları tıklayarak veya sürükleyerek yükleyin",
+  "userPanel": {
+    "anonymousNickName": "Anonim Kullanıcı",
+    "billing": "Fatura Yönetimi",
+    "cloud": "{{name}}'i Deneyimle",
+    "data": "Veri Depolama",
+    "defaultNickname": "Topluluk Sürümü Kullanıcısı",
+    "discord": "Topluluk Desteği",
+    "docs": "Kullanım Belgeleri",
+    "email": "E-posta Desteği",
+    "feedback": "Geri Bildirim ve Öneriler",
+    "help": "Yardım Merkezi",
+    "moveGuide": "Ayarlar butonu buraya taşındı",
+    "plans": "Abonelik Planları",
+    "preview": "Önizleme Sürümü",
+    "profile": "Hesap Yönetimi",
+    "setting": "Uygulama Ayarları",
+    "usages": "Kullanım İstatistikleri"
+  }
 }

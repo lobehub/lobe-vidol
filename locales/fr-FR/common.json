@@ -25,6 +25,11 @@
     "tips": "Le projet est actuellement en cours de construction, ce qui ne garantit pas la stabilité des données. Si vous rencontrez des problèmes, vous pouvez effacer les messages de session et réinitialiser les paramètres du système dans les paramètres. Nous vous prions de bien vouloir nous excuser pour les désagréments causés."
   },
   "loading": "Chargement en cours...",
+  "menu": {
+    "discord": "Support communautaire",
+    "github": "Github",
+    "support": "Soutenir l'auteur"
+  },
   "noData": "Aucune donnée disponible",
   "play": "Jouer",
   "random": "Aléatoire",
@@ -41,5 +46,23 @@
     "dark": "Mode sombre",
     "light": "Mode clair"
   },
-  "uploadTip": "Cliquez ou faites glisser des fichiers dans cette zone pour les télécharger"
+  "uploadTip": "Cliquez ou faites glisser des fichiers dans cette zone pour les télécharger",
+  "userPanel": {
+    "anonymousNickName": "Utilisateur anonyme",
+    "billing": "Gestion des factures",
+    "cloud": "Essayer {{name}}",
+    "data": "Stockage des données",
+    "defaultNickname": "Utilisateur de la version communautaire",
+    "discord": "Support communautaire",
+    "docs": "Documentation d'utilisation",
+    "email": "Support par e-mail",
+    "feedback": "Retours et suggestions",
+    "help": "Centre d'aide",
+    "moveGuide": "Le bouton de configuration a été déplacé ici",
+    "plans": "Plans d'abonnement",
+    "preview": "Version d'aperçu",
+    "profile": "Gestion du compte",
+    "setting": "Paramètres de l'application",
+    "usages": "Statistiques d'utilisation"
+  }
 }

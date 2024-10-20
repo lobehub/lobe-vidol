@@ -86,6 +86,8 @@
     "fullScreen": "切换全屏",
     "resetCamera": "重置镜头",
     "resetToIdle": "停止舞蹈动作",
+    "interactiveOff": "关闭触摸交互",
+    "interactiveOn": "开启触摸交互",
     "screenShot": "拍照",
     "grid": "网格",
     "axes": "坐标轴",

@@ -87,6 +87,8 @@
     "downloading": "Đang tải mô hình, vui lòng chờ...",
     "fullScreen": "Chuyển đổi chế độ toàn màn hình",
     "grid": "Lưới",
+    "interactiveOff": "Tắt tương tác cảm ứng",
+    "interactiveOn": "Bật tương tác cảm ứng",
     "resetCamera": "Đặt lại ống kính",
     "resetToIdle": "Dừng hành động nhảy múa",
     "screenShot": "Chụp ảnh"

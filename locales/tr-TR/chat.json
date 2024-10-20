@@ -87,6 +87,8 @@
     "downloading": "Model indiriliyor, lütfen bekleyin...",
     "fullScreen": "Tam ekran moduna geç",
     "grid": "Izgara",
+    "interactiveOff": "Dokunmatik etkileşimi kapat",
+    "interactiveOn": "Dokunmatik etkileşimi aç",
     "resetCamera": "Kamerayı Sıfırla",
     "resetToIdle": "Dans Hareketini Durdur",
     "screenShot": "Ekran Görüntüsü Al"

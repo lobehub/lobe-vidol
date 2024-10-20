@@ -25,6 +25,11 @@
     "tips": "The project is currently under construction, and data stability is not guaranteed. If you encounter any issues, you can clear session messages and reset system settings in the system settings. We apologize for any inconvenience this may cause."
   },
   "loading": "Loading...",
+  "menu": {
+    "discord": "Community Support",
+    "github": "Github",
+    "support": "Support the Author"
+  },
   "noData": "No data available",
   "play": "Play",
   "random": "Random",
@@ -41,5 +46,23 @@
     "dark": "Dark Mode",
     "light": "Light Mode"
   },
-  "uploadTip": "Click or drag files to this area to upload"
+  "uploadTip": "Click or drag files to this area to upload",
+  "userPanel": {
+    "anonymousNickName": "Anonymous User",
+    "billing": "Billing Management",
+    "cloud": "Experience {{name}}",
+    "data": "Data Storage",
+    "defaultNickname": "Community Edition User",
+    "discord": "Community Support",
+    "docs": "User Documentation",
+    "email": "Email Support",
+    "feedback": "Feedback and Suggestions",
+    "help": "Help Center",
+    "moveGuide": "The settings button has moved here",
+    "plans": "Subscription Plans",
+    "preview": "Preview Version",
+    "profile": "Account Management",
+    "setting": "App Settings",
+    "usages": "Usage Statistics"
+  }
 }

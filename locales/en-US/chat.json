@@ -87,6 +87,8 @@
     "downloading": "Downloading model, please wait...",
     "fullScreen": "Toggle Full Screen",
     "grid": "Grid",
+    "interactiveOff": "Disable Touch Interaction",
+    "interactiveOn": "Enable Touch Interaction",
     "resetCamera": "Reset Camera",
     "resetToIdle": "Stop Dance Action",
     "screenShot": "Take Photo"
