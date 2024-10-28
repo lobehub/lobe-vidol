@@ -19,12 +19,13 @@ import { useSessionStore } from '@/store/session';
 
 interface ToolBarProps {
   className?: string;
+  onFullscreen: () => void;
   style?: React.CSSProperties;
   viewer: Viewer;
 }
 
 const ToolBar = (props: ToolBarProps) => {
-  const { style, className, viewer } = props;
+  const { style, className, viewer, onFullscreen } = props;
   const { t } = useTranslation('chat');
 
   const [interactive, toggleInteractive] = useSessionStore((s) => [
@@ -122,7 +123,7 @@ const ToolBar = (props: ToolBarProps) => {
           }
 
           case 'fullscreen': {
-            viewer.toggleFullScreen();
+            onFullscreen();
             break;
           }
 

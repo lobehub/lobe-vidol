@@ -13,6 +13,7 @@ import { useGlobalStore } from '@/store/global';
 import { TouchAreaEnum } from '@/types/touch';
 import { preloadVoice } from '@/utils/voice';
 
+import Background from './Background';
 import ToolBar from './ToolBar';
 import { useStyles } from './style';
 
@@ -244,6 +245,20 @@ function AgentViewer(props: Props) {
     [viewer, agentId, interactive],
   );
 
+  const handleFullscreen = useCallback(() => {
+    if (!ref.current) return;
+
+    if (!document.fullscreenElement) {
+      ref.current.requestFullscreen().catch((err) => {
+        console.error(`全屏错误: ${err.message}`);
+      });
+    } else {
+      document.exitFullscreen().catch((err) => {
+        console.error(`退出全屏错误: ${err.message}`);
+      });
+    }
+  }, []);
+
   return (
     <div
       ref={ref}
@@ -251,7 +266,9 @@ function AgentViewer(props: Props) {
       id="agent-viewer"
       style={{ height, width, ...style }}
     >
-      {toolbar && <ToolBar className={styles.toolbar} viewer={viewer} />}
+      {toolbar && (
+        <ToolBar className={styles.toolbar} viewer={viewer} onFullscreen={handleFullscreen} />
+      )}
       {loading ? (
         <ScreenLoading
           title={t('loading.waiting')}
@@ -268,6 +285,7 @@ function AgentViewer(props: Props) {
         />
       ) : null}
       <canvas ref={canvasRef} className={styles.canvas} id={'canvas'}></canvas>
+      <Background />
     </div>
   );
 }

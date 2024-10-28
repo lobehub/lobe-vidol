@@ -308,6 +308,8 @@ export class Viewer {
   public requestFullScreen() {
     // 将 canvas 全屏加载
     if (this._canvas) {
+      // 将 canvas 背景设置为黑色
+      this._canvas.style.backgroundColor = 'black';
       this._canvas.requestFullscreen();
       // 添加全屏变化事件监听器
       document.addEventListener('fullscreenchange', this.handleFullscreenChange);
@@ -315,6 +317,10 @@ export class Viewer {
   }
 
   public exitFullScreen() {
+    if (this._canvas) {
+      // 将 canvas 背景设置为透明
+      this._canvas.style.backgroundColor = 'transparent';
+    }
     if (document.fullscreenElement && document.exitFullscreen) {
       document.exitFullscreen().catch((err) => {
         console.warn('退出全屏失败:', err);

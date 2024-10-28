@@ -35,7 +35,5 @@ export const useStyles = createStyles(({ css, token }) => ({
     max-width: 100%;
     height: 100%;
     max-height: 100%;
-
-    background-color: ${token.colorBgLayout};
   `,
 }));
