@@ -87,6 +87,7 @@
     "roleSettingLabel": "Impostazioni del ruolo di sistema",
     "uploadSize": "Supporta il caricamento di un singolo file, si consiglia una dimensione che sia un multiplo di {{width}} * {{height}}"
   },
+  "roleBook": "Libro dei Ruoli",
   "roleList": "Elenco dei ruoli",
   "shareToMarket": "Condividi nel mercato degli assistenti",
   "startChat": "Inizia chat",

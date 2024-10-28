@@ -87,6 +87,7 @@
     "roleSettingLabel": "Systeemrolinstellingen",
     "uploadSize": "Ondersteunt het uploaden van een enkel bestand, aanbevolen afmetingen zijn een veelvoud van {{width}} * {{height}}"
   },
+  "roleBook": "Rolboek",
   "roleList": "Rollijst",
   "shareToMarket": "Delen met de assistentmarkt",
   "startChat": "Begin chat",

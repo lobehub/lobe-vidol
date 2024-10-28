@@ -87,6 +87,7 @@
     "roleSettingLabel": "System Role Settings",
     "uploadSize": "Supports single file uploads, recommended dimensions are multiples of {{width}} * {{height}}"
   },
+  "roleBook": "Character Book",
   "roleList": "Role List",
   "shareToMarket": "Share to Assistant Market",
   "startChat": "Start Chat",

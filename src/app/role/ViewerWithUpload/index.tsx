@@ -1,14 +1,17 @@
+import { InboxOutlined } from '@ant-design/icons';
 import { Upload } from 'antd';
 import React, { CSSProperties, memo } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Flexbox } from 'react-layout-kit';
 
-import EmptyGuide from '@/components/EmptyGuide';
-import { ROLE_VIEWER_HEIGHT, ROLE_VIEWER_WIDTH } from '@/constants/common';
+import { HEADER_HEIGHT } from '@/constants/token';
 import AgentViewer from '@/features/AgentViewer';
 import { agentSelectors, useAgentStore } from '@/store/agent';
 import { useGlobalStore } from '@/store/global';
 import { getModelPathByAgentId } from '@/utils/file';
 import { cacheStorage } from '@/utils/storage';
+
+import { useStyles } from './style';
 
 interface ViewerWithUploadProps {
   style?: CSSProperties;
@@ -17,6 +20,8 @@ interface ViewerWithUploadProps {
 const ViewerWithUpload = memo<ViewerWithUploadProps>(({ style }) => {
   const viewer = useGlobalStore((s) => s.viewer);
   const { t } = useTranslation('role');
+  const { styles } = useStyles();
+
   const [currentAgentId, currentAgentModel, updateAgentConfig] = useAgentStore((s) => [
     agentSelectors.currentAgentId(s),
     agentSelectors.currentAgentModel(s),
@@ -35,7 +40,14 @@ const ViewerWithUpload = memo<ViewerWithUploadProps>(({ style }) => {
     });
   };
 
-  return (
+  return currentAgentModel && currentAgentId ? (
+    <AgentViewer
+      height={`calc(100vh - ${HEADER_HEIGHT}px)`}
+      agentId={currentAgentId}
+      interactive={false}
+      toolbar={false}
+    />
+  ) : (
     <Upload
       beforeUpload={handleUploadAvatar}
       itemRender={() => void 0}
@@ -44,20 +56,11 @@ const ViewerWithUpload = memo<ViewerWithUploadProps>(({ style }) => {
       style={style}
       openFileDialogOnClick={!currentAgentModel}
     >
-      {currentAgentModel && currentAgentId ? (
-        <AgentViewer
-          height={ROLE_VIEWER_HEIGHT}
-          agentId={currentAgentId}
-          width={ROLE_VIEWER_WIDTH}
-          interactive={false}
-          toolbar={false}
-        />
-      ) : (
-        <EmptyGuide
-          size={{ height: ROLE_VIEWER_HEIGHT, width: ROLE_VIEWER_WIDTH }}
-          extra={t('upload.support')}
-        />
-      )}
+      <Flexbox className={styles.guide} align="center" justify={'center'} width={'100%'}>
+        <InboxOutlined className={styles.icon} />
+        <p className={styles.info}>{t('uploadTip', { ns: 'common' })}</p>
+        <p className={styles.extra}>{t('upload.support')}</p>
+      </Flexbox>
     </Upload>
   );
 });

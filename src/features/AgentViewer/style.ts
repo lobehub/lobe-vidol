@@ -1,5 +1,4 @@
 import { createStyles } from 'antd-style';
-import { rgba } from 'polished';
 
 export const useStyles = createStyles(({ css, token }) => ({
   viewer: css`
@@ -10,14 +9,13 @@ export const useStyles = createStyles(({ css, token }) => ({
     width: 100%;
     height: 100%;
     min-height: 0;
-
-    background-color: ${rgba(token.colorBgLayout, 0.2)};
-    backdrop-filter: saturate(180%) blur(2px);
   `,
   toolbar: css`
     position: absolute;
+    z-index: 1;
     right: ${token.paddingMD}px;
     bottom: 50%;
+
     display: flex;
   `,
   loading: css`

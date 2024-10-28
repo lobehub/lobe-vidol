@@ -19,6 +19,7 @@ export default {
     uploadingAvatar: '上传头像',
     uploadingModel: '上传模型',
   },
+  roleBook: '角色书',
   gender: {
     male: '男性',
     female: '女性',

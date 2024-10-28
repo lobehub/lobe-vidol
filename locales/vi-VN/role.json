@@ -87,6 +87,7 @@
     "roleSettingLabel": "Cài đặt nhân vật hệ thống",
     "uploadSize": "Hỗ trợ tải lên tệp đơn, kích thước khuyến nghị là bội số của {{width}} * {{height}}"
   },
+  "roleBook": "Sách vai trò",
   "roleList": "Danh sách vai trò",
   "shareToMarket": "Chia sẻ đến thị trường trợ lý",
   "startChat": "Bắt đầu trò chuyện",

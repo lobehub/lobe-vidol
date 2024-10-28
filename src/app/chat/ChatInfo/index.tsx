@@ -1,8 +1,7 @@
 'use client';
 
-import { ActionIcon, DraggablePanel, TabsNav } from '@lobehub/ui';
+import { DraggablePanel, TabsNav } from '@lobehub/ui';
 import { createStyles } from 'antd-style';
-import { X } from 'lucide-react';
 import dynamic from 'next/dynamic';
 import { rgba } from 'polished';
 import React, { useState } from 'react';
@@ -85,7 +84,7 @@ export default () => {
       classNames={{ content: styles.content }}
       minWidth={CHAT_INFO_WIDTH}
       maxWidth={CHAT_INFO_MAX_WIDTH}
-      mode={'float'}
+      mode={'fixed'}
       onExpandChange={(expand) => {
         setChatSidebar(expand);
       }}
@@ -125,9 +124,8 @@ export default () => {
             setTab(key as Tab);
           }}
         />
-        <ActionIcon icon={X} onClick={() => setChatSidebar(false)} style={{ marginRight: 16 }} />
       </Flexbox>
-      <Flexbox height={'100vh'}>
+      <Flexbox height={'calc(100vh - 128px)'}>
         {tab === Tab.ChatList && <ChatList />}
         {tab === Tab.DanceList && <DanceList />}
         {tab === Tab.Motions && <MotionList />}

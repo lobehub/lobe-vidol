@@ -87,6 +87,7 @@
     "roleSettingLabel": "Systemeinstellungen des Charakters",
     "uploadSize": "Unterstützt den Upload von Einzeldateien, empfohlen wird eine Größe, die ein Vielfaches von {{width}} * {{height}} ist"
   },
+  "roleBook": "Charakterbuch",
   "roleList": "Rollenliste",
   "shareToMarket": "In den Assistentenmarkt teilen",
   "startChat": "Chat starten",

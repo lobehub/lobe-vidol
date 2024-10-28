@@ -87,6 +87,7 @@
     "roleSettingLabel": "시스템 캐릭터 설정",
     "uploadSize": "단일 파일 업로드를 지원하며, 추천 크기는 {{width}} * {{height}}의 배수입니다."
   },
+  "roleBook": "역할 책",
   "roleList": "역할 목록",
   "shareToMarket": "도우미 마켓에 공유하기",
   "startChat": "채팅 시작",
