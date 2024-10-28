@@ -8,7 +8,6 @@ import { Flexbox } from 'react-layout-kit';
 
 import Info from './Info';
 import LangModel from './LangModel';
-import Model from './Model';
 import Role from './Role';
 import Touch from './Touch';
 import Voice from './Voice';
@@ -68,9 +67,6 @@ const RolePanel = (props: RolePanelProps) => {
             {tab === 'touch' ? <Touch /> : null}
             {tab === 'llm' ? <LangModel /> : null}
           </div>
-        </Flexbox>
-        <Flexbox flex={1}>
-          <Model />
         </Flexbox>
       </Flexbox>
     </div>

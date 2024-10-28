@@ -1,5 +1,7 @@
 import { createStyles } from 'antd-style';
 
+import { ROLE_VIEWER_WIDTH } from '@/constants/common';
+
 export const useStyles = createStyles(({ css, cx }) => ({
   preview: cx(
     'role-preview',
@@ -9,12 +11,13 @@ export const useStyles = createStyles(({ css, cx }) => ({
     `,
   ),
   container: css`
-    width: 80rem;
+    width: 1024px;
     height: 100%;
     margin: 0 auto;
-  `,
-  edit: css`
     padding: 0 24px;
   `,
-  model: css``,
+  model: css`
+    width: ${ROLE_VIEWER_WIDTH}px;
+    height: 100%;
+  `,
 }));

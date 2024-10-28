@@ -1,16 +1,14 @@
 import { createStyles } from 'antd-style';
 
+import { ROLE_VIEWER_WIDTH } from '@/constants/common';
+import { HEADER_HEIGHT } from '@/constants/token';
+
 export const useStyles = createStyles(({ css, token }) => ({
   guide: css`
     cursor: pointer;
-
-    display: flex;
-
-    width: 100%;
-    height: 100%;
-
-    border: 1px dashed ${token.colorBorder};
-    border-radius: ${token.borderRadius}px;
+    width: ${ROLE_VIEWER_WIDTH}px;
+    height: calc(100vh - ${HEADER_HEIGHT}px);
+    border: 1px dashed ${token.colorBorderSecondary};
   `,
   icon: css`
     font-size: 48px;

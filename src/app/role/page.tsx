@@ -3,12 +3,10 @@
 import { Spin } from 'antd';
 import dynamic from 'next/dynamic';
 import React, { memo } from 'react';
-import { useTranslation } from 'react-i18next';
 import { Center, Flexbox } from 'react-layout-kit';
 
-import TopBanner from '@/components/TopBanner';
-
 import SideBar from './SideBar';
+import ViewerWithUpload from './ViewerWithUpload';
 import { useStyles } from './style';
 
 const RoleEdit = dynamic(() => import('./RoleEdit'), {
@@ -22,17 +20,17 @@ const RoleEdit = dynamic(() => import('./RoleEdit'), {
 
 const Role = () => {
   const { styles } = useStyles();
-  const { t } = useTranslation('role');
   return (
     <Flexbox flex={1} height={'100%'} width={'100%'} horizontal>
       <SideBar />
-      <Flexbox className={styles.preview}>
+      <Flexbox className={styles.preview} horizontal>
         <Flexbox className={styles.container}>
-          <TopBanner title={t('topBannerTitle')} style={{ height: 180 }} />
           <RoleEdit />
         </Flexbox>
+        <Flexbox className={styles.model}>
+          <ViewerWithUpload />
+        </Flexbox>
       </Flexbox>
-      {/*<RoleInfo />*/}
     </Flexbox>
   );
 };
