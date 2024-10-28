@@ -87,6 +87,7 @@
     "roleSettingLabel": "Ustawienia systemowe postaci",
     "uploadSize": "Obsługuje przesyłanie pojedynczych plików, zalecany rozmiar to wielokrotność {{width}} * {{height}}"
   },
+  "roleBook": "Księga postaci",
   "roleList": "Lista ról",
   "shareToMarket": "Udostępnij na rynku asystentów",
   "startChat": "Rozpocznij czat",

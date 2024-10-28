@@ -87,6 +87,7 @@
     "roleSettingLabel": "Sistem rol ayarı",
     "uploadSize": "Tek bir dosya yüklemeyi destekler, önerilen boyut {{width}} * {{height}} katlarıdır"
   },
+  "roleBook": "Karakter Kitabı",
   "roleList": "Rol Listesi",
   "shareToMarket": "Yardımcı Pazarına Paylaş",
   "startChat": "Sohbete Başla",

@@ -87,6 +87,7 @@
     "roleSettingLabel": "システムキャラクター設定",
     "uploadSize": "単一ファイルのアップロードをサポートしています。推奨サイズは {{width}} * {{height}} の倍数です。"
   },
+  "roleBook": "キャラクターシート",
   "roleList": "ロールリスト",
   "shareToMarket": "アシスタントマーケットに共有",
   "startChat": "チャットを開始",

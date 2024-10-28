@@ -87,6 +87,7 @@
     "roleSettingLabel": "系統角色設定",
     "uploadSize": "支持單個檔案上傳，推薦尺寸為 {{width}} * {{height}} 的倍數"
   },
+  "roleBook": "角色書",
   "roleList": "角色列表",
   "shareToMarket": "分享到助手市場",
   "startChat": "開始聊天",

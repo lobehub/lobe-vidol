@@ -87,6 +87,7 @@
     "roleSettingLabel": "Paramètres système du personnage",
     "uploadSize": "Prise en charge du téléchargement de fichiers uniques, taille recommandée étant un multiple de {{width}} * {{height}}"
   },
+  "roleBook": "Livre de rôle",
   "roleList": "Liste des rôles",
   "shareToMarket": "Partager sur le marché des assistants",
   "startChat": "Commencer le chat",

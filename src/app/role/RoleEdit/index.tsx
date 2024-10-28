@@ -1,6 +1,8 @@
 'use client';
 
+import { BookOutlined } from '@ant-design/icons';
 import { TabsNav } from '@lobehub/ui';
+import { Button } from 'antd';
 import classNames from 'classnames';
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -18,6 +20,10 @@ interface RolePanelProps {
   className?: string;
   style?: React.CSSProperties;
 }
+
+const handleOpenDocs = () => {
+  window.open('https://docs.vidol.chat/role-manual/quickstart/introduction', '_blank');
+};
 
 const RolePanel = (props: RolePanelProps) => {
   const { styles } = useStyles();
@@ -54,7 +60,14 @@ const RolePanel = (props: RolePanelProps) => {
                   label: t('nav.llm'),
                 },
               ]}
-              tabBarExtraContent={<SubmitAgentButton modal />}
+              tabBarExtraContent={
+                <Flexbox horizontal gap={8}>
+                  <Button icon={<BookOutlined />} onClick={handleOpenDocs}>
+                    {t('roleBook')} {/* 需要在翻译文件中添加对应的翻译 */}
+                  </Button>
+                  <SubmitAgentButton modal />
+                </Flexbox>
+              }
               onChange={(key) => {
                 setTab(key);
               }}
