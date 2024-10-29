@@ -43,3 +43,7 @@ declare module 'mmd-parser' {
     }[];
   }
 }
+declare module '*.glsl' {
+  const value: string;
+  export default value;
+}
