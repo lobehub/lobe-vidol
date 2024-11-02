@@ -17,6 +17,13 @@ export interface OpenAIConfig {
   endpoint?: string;
 }
 
+export interface TTSConfig {
+  /**
+   * 是否客户端调用
+   */
+  clientCall: boolean;
+}
+
 export interface LanguageModelConfig {
   /**
    * OpenAI 配置
@@ -44,6 +51,10 @@ export interface Config extends CommonConfig {
    * 全局触摸配置
    */
   touch: TouchConfig;
+  /**
+   * 语音设置
+   */
+  tts: TTSConfig;
 }
 
 export interface CommonConfig {

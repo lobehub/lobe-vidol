@@ -2,7 +2,7 @@ import { t } from 'i18next';
 
 import { SettingStore } from '@/store/setting';
 import { GenderEnum } from '@/types/agent';
-import { OpenAIConfig, TouchConfig } from '@/types/config';
+import { OpenAIConfig, TTSConfig, TouchConfig } from '@/types/config';
 import { TouchAction, TouchAreaEnum } from '@/types/touch';
 
 const currentOpenAIConfig = (s: SettingStore): OpenAIConfig => {
@@ -11,6 +11,10 @@ const currentOpenAIConfig = (s: SettingStore): OpenAIConfig => {
 
 const currentTouchConfig = (s: SettingStore): TouchConfig => {
   return s.config.touch;
+};
+
+const currentTTSConfig = (s: SettingStore): TTSConfig => {
+  return s.config.tts;
 };
 
 const getTouchActionsByGenderAndArea = (
@@ -25,5 +29,6 @@ const getTouchActionsByGenderAndArea = (
 export const configSelectors = {
   currentOpenAIConfig,
   currentTouchConfig,
+  currentTTSConfig,
   getTouchActionsByGenderAndArea,
 };

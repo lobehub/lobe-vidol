@@ -7,6 +7,7 @@ import OpenAIConfig from '@/app/settings/Settings/llm/openai';
 
 import CommonConfig from './common';
 import Touch from './touch';
+import TTSConfig from './tts';
 
 interface ConfigProps {
   className?: string;
@@ -36,6 +37,10 @@ const Config = (props: ConfigProps) => {
               key: 'touch',
               label: t('touch.title'),
             },
+            {
+              key: 'tts',
+              label: t('tts.title'),
+            },
           ]}
           onChange={(key) => {
             setTab(key);
@@ -46,6 +51,7 @@ const Config = (props: ConfigProps) => {
         {tab === 'languageModel' ? <OpenAIConfig /> : null}
         {tab === 'common' ? <CommonConfig /> : null}
         {tab === 'touch' ? <Touch /> : null}
+        {tab === 'tts' ? <TTSConfig /> : null}
       </Flexbox>
     </Flexbox>
   );
