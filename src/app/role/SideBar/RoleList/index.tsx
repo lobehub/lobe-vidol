@@ -8,9 +8,7 @@ import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
 import SkeletonList from '@/components/SkeletonList';
-import { HEADER_HEIGHT } from '@/constants/token';
 
-import AgentCreate from './AgentCreate';
 import Elsa from './List/Elsa';
 
 const List = dynamic(() => import('./List'), {
@@ -62,12 +60,7 @@ const RoleList = () => {
 
   return (
     <div className={styles.role}>
-      <Flexbox
-        justify={'space-between'}
-        horizontal
-        align={'center'}
-        style={{ height: HEADER_HEIGHT, padding: '8px 8px 0' }}
-      >
+      <Flexbox style={{ padding: '16px 8px 0' }}>
         <SearchBar
           enableShortKey
           onChange={(e) => {
@@ -79,7 +72,6 @@ const RoleList = () => {
           type={'block'}
           value={searchName}
         />
-        <AgentCreate />
       </Flexbox>
       <div className={styles.list}>
         <Elsa />

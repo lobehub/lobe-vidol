@@ -1,13 +1,15 @@
 import { DraggablePanel } from '@lobehub/ui';
+import { Skeleton } from 'antd';
 import { createStyles } from 'antd-style';
 import React, { memo, useState } from 'react';
+import useSWR from 'swr';
 
 import Author from '@/components/Author';
 import AgentCard from '@/components/agent/AgentCard';
 import SystemRole from '@/components/agent/SystemRole';
 import { SIDEBAR_MAX_WIDTH, SIDEBAR_WIDTH } from '@/constants/token';
+import { getAgentDetail } from '@/services/agent';
 import { agentSelectors, useAgentStore } from '@/store/agent';
-import { marketStoreSelectors, useMarketStore } from '@/store/market';
 
 import ChatButton from './actions/ChatButton';
 import Subscribe from './actions/Subscribe';
@@ -25,22 +27,29 @@ const useStyles = createStyles(({ css, token }) => ({
   `,
 }));
 
-const Header = () => {
+interface RoleInfoProps {
+  activateAgent: (agentId: string) => void;
+  currentAgentId: string;
+  deactivateAgent: () => void;
+}
+
+const RoleInfo = (props: RoleInfoProps) => {
+  const { activateAgent, currentAgentId, deactivateAgent } = props;
   const { styles } = useStyles();
   const [tempId, setTempId] = useState<string>('');
-  const [showAgentSidebar, activateAgent, deactivateAgent, currentAgentItem] = useMarketStore(
-    (s) => [
-      marketStoreSelectors.showAgentSideBar(s),
-      s.activateAgent,
-      s.deactivateAgent,
-      marketStoreSelectors.currentAgentItem(s),
-    ],
+
+  const { data: currentAgentItem, isLoading } = useSWR(
+    currentAgentId ? `/api/agent/${currentAgentId}` : null,
+    () => (currentAgentId ? getAgentDetail(currentAgentId) : null),
   );
+
+  const showAgentSideBar = !!currentAgentId;
+
   const [subscribed] = useAgentStore((s) => [agentSelectors.subscribed(s)]);
 
   const actions = [];
-  if (currentAgentItem) {
-    const isSubscribed = subscribed(currentAgentItem.agentId);
+  if (currentAgentId && currentAgentItem) {
+    const isSubscribed = subscribed(currentAgentId);
 
     if (isSubscribed) {
       actions.push(
@@ -58,13 +67,13 @@ const Header = () => {
     <DraggablePanel
       classNames={{ content: styles.content }}
       defaultSize={{ width: SIDEBAR_WIDTH }}
-      expand={showAgentSidebar}
+      expand={showAgentSideBar}
       minWidth={SIDEBAR_WIDTH}
       maxWidth={SIDEBAR_MAX_WIDTH}
       mode={'fixed'}
       onExpandChange={(show) => {
         if (!show) {
-          setTempId(useMarketStore.getState().currentAgentId);
+          setTempId(currentAgentId);
           deactivateAgent();
         } else if (tempId) {
           activateAgent(tempId);
@@ -72,20 +81,30 @@ const Header = () => {
       }}
       placement={'right'}
     >
-      <AgentCard
-        actions={actions}
-        agent={currentAgentItem}
-        extra={
-          <Author
-            author={currentAgentItem?.author}
-            homepage={currentAgentItem?.homepage}
-            createAt={currentAgentItem?.createAt}
+      {isLoading ? (
+        <div style={{ padding: 24 }}>
+          <Skeleton active avatar paragraph={{ rows: 4 }} />
+        </div>
+      ) : (
+        currentAgentItem && (
+          <AgentCard
+            actions={actions}
+            agent={currentAgentItem}
+            extra={
+              <Author
+                author={currentAgentItem.author}
+                homepage={currentAgentItem.homepage}
+                createAt={currentAgentItem.createAt}
+              />
+            }
+            footer={
+              <SystemRole systemRole={currentAgentItem.meta.readme} style={{ marginTop: 16 }} />
+            }
           />
-        }
-        footer={<SystemRole systemRole={currentAgentItem?.meta.readme} style={{ marginTop: 16 }} />}
-      />
+        )
+      )}
     </DraggablePanel>
   );
 };
 
-export default memo(Header);
+export default memo(RoleInfo);

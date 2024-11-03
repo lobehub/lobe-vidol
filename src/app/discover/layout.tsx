@@ -11,7 +11,7 @@ export interface LayoutProps {
 const Layout = (props: LayoutProps) => {
   const { children } = props;
   return (
-    <AppLayout headerKey={HeaderNavKey.Market}>
+    <AppLayout headerKey={HeaderNavKey.Discover}>
       <Flexbox flex={1} height={'100%'} width={'100%'} style={{ position: 'relative' }} horizontal>
         <Flexbox align={'center'} flex={1} style={{ overflow: 'scroll' }}>
           {children}

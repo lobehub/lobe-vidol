@@ -1,10 +1,16 @@
-import { AGENT_INDEX_URL } from '@/constants/common';
+import { AGENT_MARKET_URL } from '@/constants/common';
 
 /**
  * 请求线上 Agent index
  */
-export const getAgentIndex = async (url: string = AGENT_INDEX_URL) => {
+export const getAgentIndex = async (url: string = `${AGENT_MARKET_URL}/index.json`) => {
   const res = await fetch(url);
+
+  return res.json();
+};
+
+export const getAgentDetail = async (id: string) => {
+  const res = await fetch(`${AGENT_MARKET_URL}/${id}.json`);
 
   return res.json();
 };

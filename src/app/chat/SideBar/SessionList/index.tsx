@@ -1,22 +1,19 @@
-import { SearchBar } from '@lobehub/ui';
+import { Icon, SearchBar } from '@lobehub/ui';
+import { Collapse } from 'antd';
 import { createStyles } from 'antd-style';
+import { ChevronDown } from 'lucide-react';
 import dynamic from 'next/dynamic';
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
 import SkeletonList from '@/components/SkeletonList';
-import { HEADER_HEIGHT } from '@/constants/token';
 
 import V from './Elsa';
 
 const List = dynamic(() => import('./List'), {
   ssr: false,
   loading: () => <SkeletonList style={{ marginTop: 8 }} />,
-});
-
-const SessionCreateModal = dynamic(() => import('./SessionCreateModal'), {
-  ssr: false,
 });
 
 const useStyles = createStyles(({ css, token, prefixCls }) => ({
@@ -55,31 +52,47 @@ const useStyles = createStyles(({ css, token, prefixCls }) => ({
 const SessionList = () => {
   const { styles } = useStyles();
   const [searchName, setSearchName] = useState<string>();
-  const { t } = useTranslation('common');
+  const { t } = useTranslation('chat');
   return (
     <>
-      <Flexbox
-        justify={'space-between'}
-        horizontal
-        align={'center'}
-        style={{ height: HEADER_HEIGHT, padding: '8px 8px 0' }}
-      >
+      <Flexbox style={{ padding: '16px 8px 0' }}>
         <SearchBar
           enableShortKey
           onChange={(e) => {
             setSearchName(e.target.value);
           }}
-          placeholder={t('search')}
+          placeholder={t('search', { ns: 'common' })}
           shortKey="f"
           spotlight
           type={'block'}
           value={searchName}
         />
-        <SessionCreateModal />
       </Flexbox>
       <div className={styles.list}>
         <V />
-        <List filter={searchName} />
+        <Collapse
+          bordered={false}
+          defaultActiveKey={'default'}
+          className={styles.container}
+          expandIcon={({ isActive }) => (
+            <Icon
+              className={styles.icon}
+              icon={ChevronDown}
+              size={{ fontSize: 16 }}
+              style={isActive ? {} : { rotate: '-90deg' }}
+            />
+          )}
+          expandIconPosition={'end'}
+          ghost
+          size={'small'}
+          items={[
+            {
+              children: <List filter={searchName} />,
+              label: t('chatList'),
+              key: 'default',
+            },
+          ]}
+        />
       </div>
     </>
   );

@@ -3,13 +3,12 @@ import { Empty } from 'antd';
 import { createStyles } from 'antd-style';
 import classNames from 'classnames';
 import { t } from 'i18next';
-import React, { memo, useEffect } from 'react';
+import React, { memo } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
-import { useMarketStore } from '@/store/market';
-
-import AgentItem from './Item';
-import SkeletonList from './SkeletonList';
+import RoleCard from '@/components/RoleCard';
+import SkeletonList from '@/components/SkeletonList';
+import { Agent } from '@/types/agent';
 
 const useStyles = createStyles(({ css, token }) => ({
   container: css`
@@ -27,38 +26,34 @@ const useStyles = createStyles(({ css, token }) => ({
 }));
 
 interface AgentListProps {
+  activateAgent: (agentId: string) => void;
+  agents: Agent[];
   className?: string;
+  loading: boolean;
   style?: React.CSSProperties;
 }
 
 const AgentList = (props: AgentListProps) => {
-  const [agentList, agentLoading, fetchAgentIndex] = useMarketStore((s) => [
-    s.agentList,
-    s.agentLoading,
-    s.fetchAgentIndex,
-  ]);
-
-  const { className, style } = props;
-
+  const { activateAgent, className, style, agents = [], loading } = props;
   const { styles } = useStyles();
 
-  useEffect(() => {
-    fetchAgentIndex();
-  }, [fetchAgentIndex]);
-
-  if (agentLoading) {
-    return <SkeletonList />;
+  if (loading) {
+    return <SkeletonList count={6} />;
   }
 
   return (
     <Flexbox className={classNames(className, styles.container)} style={style}>
       <Flexbox className={styles.list} flex={1}>
-        {agentList.length === 0 ? (
+        {agents.length === 0 ? (
           <Empty description={t('noDanceList')} image={Empty.PRESENTED_IMAGE_SIMPLE}></Empty>
         ) : (
           <Grid maxItemWidth={240} gap={16}>
-            {agentList.map((agent) => (
-              <AgentItem agentItem={agent} key={agent.agentId} />
+            {agents.map((agent) => (
+              <RoleCard
+                key={agent.agentId}
+                agent={agent}
+                onClick={() => activateAgent(agent.agentId)}
+              />
             ))}
           </Grid>
         )}

@@ -53,10 +53,10 @@ const Header = (props: Props) => {
       title: t('header.role'),
     },
     {
-      key: HeaderNavKey.Market,
+      key: HeaderNavKey.Discover,
       icon: <ShoppingBag size={18} />,
-      component: t('header.market'),
-      title: t('header.market'),
+      component: t('header.discover'),
+      title: t('header.discover'),
     },
     {
       key: HeaderNavKey.Settings,
