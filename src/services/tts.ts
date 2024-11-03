@@ -1,4 +1,5 @@
 import { EdgeSpeechTTS } from '@lobehub/tts';
+import { t } from 'i18next';
 
 import { configSelectors, useSettingStore } from '@/store/setting';
 import { TTS, TTS_ENGINE, Voice } from '@/types/tts';
@@ -20,20 +21,28 @@ export const speechApi = async (tts: TTS) => {
       },
     };
     let res;
-    if (clientCall) {
-      const instance = new EdgeSpeechTTS({ locale });
-      res = await instance.create(payload);
-    } else {
-      res = await fetch(`/api/voice/${engine}`, {
-        body: JSON.stringify(payload),
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        method: 'POST',
-      });
+    try {
+      if (clientCall) {
+        const instance = new EdgeSpeechTTS({ locale });
+        res = await instance.create(payload);
+      } else {
+        res = await fetch(`/api/voice/${engine}`, {
+          body: JSON.stringify(payload),
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          method: 'POST',
+        });
+        if (res.status !== 200) {
+          throw new Error(res.statusText);
+        }
+      }
+      const buffer = await res.arrayBuffer();
+      return buffer;
+    } catch (error) {
+      console.error('TTS error', error);
+      throw new Error(t('ttsTransformFailed', { ns: 'error' }));
     }
-    const buffer = await res.arrayBuffer();
-    return buffer;
   } else {
     throw new Error('TTS engine not supported');
   }
