@@ -226,6 +226,7 @@ export default {
     model: '3D模型',
   },
   category: {
+    all: '所有',
     animal: '动物',
     anime: '动漫',
     book: '书籍',

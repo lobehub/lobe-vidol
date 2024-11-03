@@ -2,11 +2,9 @@
 
 import { createStyles } from 'antd-style';
 import React, { useState } from 'react';
-import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 import useSWR from 'swr';
 
-import TopBanner from '@/components/TopBanner';
 import { HEADER_HEIGHT } from '@/constants/token';
 import { getAgentIndex } from '@/services/agent';
 import { Agent } from '@/types/agent';
@@ -43,7 +41,6 @@ const useStyles = createStyles(({ css }) => ({
 
 const Index = () => {
   const { styles } = useStyles();
-  const { t } = useTranslation('market');
 
   const { data, isLoading } = useSWR<Agent[]>(FETCH_AGENT_INDEX_KEY, async () => {
     const { agents = [] } = await getAgentIndex();
@@ -65,7 +62,6 @@ const Index = () => {
       <Flexbox flex={1} height={'100%'} width={'100%'} horizontal>
         <div className={styles.container}>
           <div className={styles.content}>
-            <TopBanner title={t('findVidol')} />
             <DiscoverList agents={data || []} loading={isLoading} activateAgent={activateAgent} />
           </div>
         </div>

@@ -43,6 +43,7 @@ export default {
   danceList: '舞蹈列表',
   chatList: '聊天列表',
   noDanceList: '暂无播放列表，您可以通过市场订阅你喜欢的舞蹈',
+  noRoleList: '暂无角色列表',
   tts: {
     record: '语音识别（需科学上网）',
     combine: '语音合成',
