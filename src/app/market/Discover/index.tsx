@@ -7,7 +7,7 @@ import { Flexbox } from 'react-layout-kit';
 
 import TopBanner from '@/components/TopBanner';
 
-import AgentList from './AgentList';
+import DiscoverList from './List';
 import MarketInfo from './MarketInfo';
 
 const useStyles = createStyles(({ css }) => ({
@@ -17,10 +17,14 @@ const useStyles = createStyles(({ css }) => ({
     width: 100%;
     height: 100%;
     min-height: 500px;
-    padding: 0 24px;
+    padding: 0 32px;
+
+    @media screen and (max-width: 768px) {
+      padding: 0 16px;
+    }
   `,
   content: css`
-    max-width: 1024px;
+    max-width: 1280px;
     margin: 0 auto;
   `,
   title: css`
@@ -40,7 +44,7 @@ const Agent = () => {
       <div className={styles.container}>
         <div className={styles.content}>
           <TopBanner title={t('findVidol')} />
-          <AgentList />
+          <DiscoverList />
         </div>
       </div>
       <MarketInfo />
