@@ -70,10 +70,6 @@ const AgentList = (props: AgentListProps) => {
     return matchCategory && matchSearch;
   });
 
-  if (loading) {
-    return <SkeletonList count={6} />;
-  }
-
   return (
     <Flexbox className={classNames(className, styles.container)} style={style}>
       <Flexbox
@@ -95,24 +91,29 @@ const AgentList = (props: AgentListProps) => {
           allowClear
         />
       </Flexbox>
-      <Flexbox className={styles.list} flex={1}>
-        {filteredAgents.length === 0 ? (
-          <Empty
-            description={t('noRoleList', { ns: 'chat' })}
-            image={Empty.PRESENTED_IMAGE_SIMPLE}
-          />
-        ) : (
-          <Grid maxItemWidth={240} gap={16}>
-            {filteredAgents.map((agent) => (
-              <RoleCard
-                key={agent.agentId}
-                agent={agent}
-                onClick={() => activateAgent(agent.agentId)}
-              />
-            ))}
-          </Grid>
-        )}
-      </Flexbox>
+
+      {loading ? (
+        <SkeletonList count={6} />
+      ) : (
+        <Flexbox className={styles.list} flex={1}>
+          {filteredAgents.length === 0 ? (
+            <Empty
+              description={t('noRoleList', { ns: 'chat' })}
+              image={Empty.PRESENTED_IMAGE_SIMPLE}
+            />
+          ) : (
+            <Grid maxItemWidth={240} gap={16}>
+              {filteredAgents.map((agent) => (
+                <RoleCard
+                  key={agent.agentId}
+                  agent={agent}
+                  onClick={() => activateAgent(agent.agentId)}
+                />
+              ))}
+            </Grid>
+          )}
+        </Flexbox>
+      )}
     </Flexbox>
   );
 };
