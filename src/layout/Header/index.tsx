@@ -14,6 +14,7 @@ import Logo from '@/components/Logo';
 import { HeaderNavKey } from '@/layout/type';
 
 import Avatar from './Actions/Avatar';
+import CreateRole from './Actions/CreateRole';
 import Documentation from './Actions/Documentation';
 import Github from './Actions/Github';
 import Support from './Actions/Support';
@@ -159,6 +160,7 @@ const Header = (props: Props) => {
     <LobeHeader
       actions={[
         <Flexbox key="actions" gap={8} direction="horizontal">
+          <CreateRole key="create" />
           <Documentation key="doc" />
           <Github key="github" />
           <Support key="support" />
