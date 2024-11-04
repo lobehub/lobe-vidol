@@ -70,12 +70,12 @@ export default function CreateRole() {
     {
       key: GenderEnum.MALE,
       label: t('agent.male'),
-      icon: 'https://img.rdmclin2.com/rdmclin2/2024/11/9ab94970db81338b70882505106f5129.png',
+      icon: 'https://r2.vidol.chat/common/Anime%20boy.png',
     },
     {
       key: GenderEnum.FEMALE,
       label: t('agent.female'),
-      icon: 'https://img.rdmclin2.com/rdmclin2/2024/11/a9be0e8874c7e4ac6efe13cc9879659c.png',
+      icon: 'https://r2.vidol.chat/common/Anime%20girl.png',
     },
   ];
 
