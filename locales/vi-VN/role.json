@@ -6,6 +6,7 @@
     "other": "Khác"
   },
   "category": {
+    "all": "Tất cả",
     "animal": "Động vật",
     "anime": "Anime",
     "book": "Sách",
@@ -78,6 +79,8 @@
   },
   "noRole": "Chưa có vai trò nào, bạn có thể tạo vai trò tùy chỉnh bằng cách nhấn + hoặc thêm vai trò qua trang khám phá.",
   "role": {
+    "create": "Tạo nhân vật",
+    "createRoleFailed": "Tạo nhân vật thất bại",
     "greetTip": "Vui lòng nhập lời chào khi bạn gặp gỡ nhân vật",
     "inputRoleSetting": "Vui lòng nhập cài đặt hệ thống cho nhân vật",
     "roleDescriptionTip": "Vui lòng nhập mô tả cho nhân vật",
@@ -85,6 +88,7 @@
     "roleReadmeTip": "Vui lòng nhập mô tả về nhân vật",
     "roleSettingDescription": "Bối cảnh của nhân vật, sẽ được gửi đến mô hình khi trò chuyện với nhân vật",
     "roleSettingLabel": "Cài đặt nhân vật hệ thống",
+    "selectGender": "Chọn giới tính nhân vật",
     "uploadSize": "Hỗ trợ tải lên tệp đơn, kích thước khuyến nghị là bội số của {{width}} * {{height}}"
   },
   "roleBook": "Sách vai trò",

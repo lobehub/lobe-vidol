@@ -20,7 +20,14 @@ const nextConfig = {
   compress: isProd,
   pageExtensions: ['tsx', 'ts'],
   experimental: {
-    optimizePackageImports: ['@lobehub/ui', '@lobehub/icons', 'chroma-js', 'shiki', '@icons-pack/react-simple-icons','gpt-tokenizer'],
+    optimizePackageImports: [
+      '@lobehub/ui',
+      '@lobehub/icons',
+      'chroma-js',
+      'shiki',
+      '@icons-pack/react-simple-icons',
+      'gpt-tokenizer',
+    ],
   },
   reactStrictMode: true,
   webpack(config) {
@@ -31,13 +38,19 @@ const nextConfig = {
 
     // to fix shikiji compile error
     // refs: https://github.com/antfu/shikiji/issues/23
-    config.module.rules.push({
-      test: /\.m?js$/,
-      type: 'javascript/auto',
-      resolve: {
-        fullySpecified: false,
+    config.module.rules.push(
+      {
+        test: /\.m?js$/,
+        type: 'javascript/auto',
+        resolve: {
+          fullySpecified: false,
+        },
       },
-    });
+      {
+        test: /\.(glsl|vs|fs|vert|frag)$/,
+        type: 'asset/source',
+      },
+    );
 
     return config;
   },

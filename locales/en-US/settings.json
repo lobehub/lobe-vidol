@@ -89,5 +89,12 @@
   },
   "touch": {
     "title": "Touch Settings"
+  },
+  "tts": {
+    "clientCall": {
+      "desc": "When enabled, the voice synthesis service will be called from the client, resulting in faster voice synthesis, but it requires a VPN or the ability to access the internet.",
+      "title": "Client Call"
+    },
+    "title": "Voice Settings"
   }
 }

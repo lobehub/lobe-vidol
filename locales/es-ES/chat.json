@@ -29,6 +29,7 @@
     "totalCount": "Total {{total}} elementos"
   },
   "chat": "charlar",
+  "chatList": "Lista de chat",
   "danceList": "Lista de danzas",
   "danceMarket": "Mercado de danzas",
   "delSession": "Eliminar sesión",
@@ -55,6 +56,7 @@
   },
   "interactive": "Interactivo",
   "noDanceList": "No hay listas de reproducción disponibles. Puedes suscribirte a tus danzas favoritas a través del mercado.",
+  "noRoleList": "No hay lista de roles disponible",
   "selectModel": "Por favor, seleccione un modelo",
   "sessionCreate": "Crear chat",
   "sessionList": "Lista de sesiones",

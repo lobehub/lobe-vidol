@@ -90,4 +90,11 @@ export default {
   touch: {
     title: '触摸设定',
   },
+  tts: {
+    title: '语音设置',
+    clientCall: {
+      title: '客户端调用',
+      desc: '启用后，将使用客户端调用语音合成服务，语音合成速度更快，但需要科学上网或具备访问外网的能力',
+    },
+  },
 };

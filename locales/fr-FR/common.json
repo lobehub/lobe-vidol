@@ -19,7 +19,7 @@
   },
   "header": {
     "chat": "Discuter",
-    "market": "Découvrir",
+    "discover": "Découvrir",
     "role": "Rôle",
     "settings": "Paramètres",
     "tips": "Le projet est actuellement en cours de construction, ce qui ne garantit pas la stabilité des données. Si vous rencontrez des problèmes, vous pouvez effacer les messages de session et réinitialiser les paramètres du système dans les paramètres. Nous vous prions de bien vouloir nous excuser pour les désagréments causés."

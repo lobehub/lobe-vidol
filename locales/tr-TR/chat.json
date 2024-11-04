@@ -29,6 +29,7 @@
     "totalCount": "Toplam {{total}} Öğe"
   },
   "chat": "sohbet",
+  "chatList": "Sohbet Listesi",
   "danceList": "Dans Listesi",
   "danceMarket": "Dans Pazarı",
   "delSession": "Oturumu Sil",
@@ -55,6 +56,7 @@
   },
   "interactive": "Etkileşimli",
   "noDanceList": "Henüz bir çalma listesi yok, sevdiğiniz dansları pazardan abone olabilirsiniz",
+  "noRoleList": "Rol Listesi Yok",
   "selectModel": "Lütfen bir model seçin",
   "sessionCreate": "Sohbet Oluştur",
   "sessionList": "Oturum Listesi",

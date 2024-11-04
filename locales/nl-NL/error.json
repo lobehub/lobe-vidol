@@ -18,5 +18,6 @@
   "s3envError": "S3-omgeving variabelen zijn niet volledig ingesteld, controleer uw omgevingsvariabelen",
   "serverError": "Serverfout, neem contact op met de beheerder",
   "triggerError": "Fout activeren",
+  "ttsTransformFailed": "Spraakconversie mislukt, controleer het netwerk of probeer het opnieuw nadat u de clientaanroep in de instellingen hebt ingeschakeld.",
   "unknownError": "Onbekende fout"
 }

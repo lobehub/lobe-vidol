@@ -19,7 +19,7 @@
   },
   "header": {
     "chat": "Chat",
-    "market": "Descubrir",
+    "discover": "Descubrir",
     "role": "Rol",
     "settings": "Configuración",
     "tips": "El proyecto está actualmente en construcción, no se garantiza la estabilidad de los datos. Si encuentra problemas, puede borrar los mensajes de sesión y restablecer la configuración del sistema en la configuración del sistema. Disculpe las molestias."

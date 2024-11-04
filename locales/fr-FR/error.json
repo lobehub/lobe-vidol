@@ -18,5 +18,6 @@
   "s3envError": "Les variables d'environnement S3 ne sont pas complètement configurées, veuillez vérifier vos variables d'environnement.",
   "serverError": "Erreur du serveur, veuillez contacter l'administrateur",
   "triggerError": "Erreur déclenchée",
+  "ttsTransformFailed": "Échec de la conversion vocale, veuillez vérifier votre connexion réseau ou essayer d'activer l'appel client dans les paramètres.",
   "unknownError": "Erreur inconnue"
 }

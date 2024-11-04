@@ -1,4 +1,4 @@
-export const AGENT_INDEX_URL = 'https://vidol-market.lobehub.com/agents/index.json';
+export const AGENT_MARKET_URL = 'https://vidol-market.lobehub.com/agents';
 
 export const DANCE_INDEX_URL = 'https://vidol-market.lobehub.com/dances/index.json';
 

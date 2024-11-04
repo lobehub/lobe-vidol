@@ -89,5 +89,12 @@
   },
   "touch": {
     "title": "Dokunma Ayarları"
+  },
+  "tts": {
+    "clientCall": {
+      "desc": "Etkinleştirildiğinde, istemci ses sentez hizmetini çağıracak, ses sentez hızı daha hızlı olacak, ancak bilimsel bir şekilde internete erişim veya dış ağa erişim yeteneği gerektirir.",
+      "title": "İstemci Çağrısı"
+    },
+    "title": "Ses Ayarları"
   }
 }

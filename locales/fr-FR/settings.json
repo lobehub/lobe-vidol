@@ -89,5 +89,12 @@
   },
   "touch": {
     "title": "Paramètres de toucher"
+  },
+  "tts": {
+    "clientCall": {
+      "desc": "Une fois activé, le service de synthèse vocale sera appelé par le client, ce qui permet une vitesse de synthèse vocale plus rapide, mais nécessite un accès à Internet ou la capacité d'accéder à des réseaux externes.",
+      "title": "Appel client"
+    },
+    "title": "Paramètres de synthèse vocale"
   }
 }

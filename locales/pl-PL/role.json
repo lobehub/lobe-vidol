@@ -6,6 +6,7 @@
     "other": "Inne"
   },
   "category": {
+    "all": "Wszystko",
     "animal": "Zwierzęta",
     "anime": "Anime",
     "book": "Książki",
@@ -78,6 +79,8 @@
   },
   "noRole": "Brak ról, możesz stworzyć własną rolę klikając + lub dodać rolę przez stronę odkrywania.",
   "role": {
+    "create": "Utwórz postać",
+    "createRoleFailed": "Nie udało się utworzyć postaci",
     "greetTip": "Wprowadź powitanie, które chcesz użyć w rozmowie z postacią",
     "inputRoleSetting": "Wprowadź ustawienia systemowe postaci",
     "roleDescriptionTip": "Wprowadź opis postaci",
@@ -85,6 +88,7 @@
     "roleReadmeTip": "Wprowadź opis postaci",
     "roleSettingDescription": "Tło postaci, które zostanie przesłane do modelu podczas rozmowy z postacią",
     "roleSettingLabel": "Ustawienia systemowe postaci",
+    "selectGender": "Wybierz płeć postaci",
     "uploadSize": "Obsługuje przesyłanie pojedynczych plików, zalecany rozmiar to wielokrotność {{width}} * {{height}}"
   },
   "roleBook": "Księga postaci",

@@ -18,5 +18,6 @@
   "s3envError": "Zmienne środowiskowe S3 nie są w pełni skonfigurowane, proszę sprawdzić swoje zmienne środowiskowe",
   "serverError": "Błąd serwera, proszę skontaktować się z administratorem",
   "triggerError": "Wystąpił błąd",
+  "ttsTransformFailed": "Nie udało się przetworzyć mowy, sprawdź połączenie sieciowe lub spróbuj ponownie po włączeniu wywołania klienta w ustawieniach.",
   "unknownError": "Nieznany błąd"
 }

@@ -3,17 +3,14 @@ import { shallow } from 'zustand/shallow';
 import { createWithEqualityFn } from 'zustand/traditional';
 import { StateCreator } from 'zustand/vanilla';
 
-import { agentSelectors } from './selectors/agent';
 import { danceSelectors } from './selectors/dance';
-import { AgentStore, createAgentStore } from './slices/agent';
 import { DanceStore, createDanceStore } from './slices/dance';
 
-export type MarketStore = AgentStore & DanceStore;
+export type MarketStore = DanceStore;
 
 const MARKET_STORAGE_KEY = 'vidol-chat-market-storage';
 
 const createStore: StateCreator<MarketStore, [['zustand/devtools', never]]> = (...parameters) => ({
-  ...createAgentStore(...parameters),
   ...createDanceStore(...parameters),
 });
 
@@ -30,6 +27,5 @@ export const useMarketStore = createWithEqualityFn<MarketStore>()(
 );
 
 export const marketStoreSelectors = {
-  ...agentSelectors,
   ...danceSelectors,
 };

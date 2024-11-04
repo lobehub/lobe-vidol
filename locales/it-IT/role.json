@@ -6,6 +6,7 @@
     "other": "Altro"
   },
   "category": {
+    "all": "Tutti",
     "animal": "Animale",
     "anime": "Anime",
     "book": "Libri",
@@ -78,6 +79,8 @@
   },
   "noRole": "Nessun ruolo disponibile. Puoi creare un ruolo personalizzato cliccando su + oppure aggiungere ruoli dalla pagina di scoperta.",
   "role": {
+    "create": "Crea ruolo",
+    "createRoleFailed": "Creazione del ruolo fallita",
     "greetTip": "Inserisci il saluto che utilizzerai per interagire con il ruolo",
     "inputRoleSetting": "Inserisci le impostazioni del sistema per il ruolo",
     "roleDescriptionTip": "Inserisci la descrizione del ruolo",
@@ -85,6 +88,7 @@
     "roleReadmeTip": "Inserisci la descrizione del ruolo",
     "roleSettingDescription": "Impostazione del background del ruolo, verrà inviata al modello durante la chat con il ruolo",
     "roleSettingLabel": "Impostazioni del ruolo di sistema",
+    "selectGender": "Seleziona genere del ruolo",
     "uploadSize": "Supporta il caricamento di un singolo file, si consiglia una dimensione che sia un multiplo di {{width}} * {{height}}"
   },
   "roleBook": "Libro dei Ruoli",

@@ -29,6 +29,7 @@
     "totalCount": "共 {{total}} 項"
   },
   "chat": "聊天",
+  "chatList": "聊天列表",
   "danceList": "舞蹈列表",
   "danceMarket": "舞蹈市場",
   "delSession": "刪除會話",
@@ -55,6 +56,7 @@
   },
   "interactive": "可互動",
   "noDanceList": "暫無播放列表，您可以透過市場訂閱您喜歡的舞蹈",
+  "noRoleList": "目前沒有角色列表",
   "selectModel": "請選擇模型",
   "sessionCreate": "建立聊天",
   "sessionList": "會話列表",

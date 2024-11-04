@@ -89,5 +89,12 @@
   },
   "touch": {
     "title": "Berührungseinstellungen"
+  },
+  "tts": {
+    "clientCall": {
+      "desc": "Wenn aktiviert, wird der Client den Sprachsynthesedienst aufrufen, was die Sprachsynthese schneller macht, jedoch eine wissenschaftliche Internetverbindung oder die Fähigkeit erfordert, auf das externe Internet zuzugreifen.",
+      "title": "Client Aufruf"
+    },
+    "title": "Sprach Einstellungen"
   }
 }

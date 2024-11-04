@@ -1,4 +1,5 @@
 import { VRMExpressionPresetName } from '@pixiv/three-vrm';
+import { message } from 'antd';
 import classNames from 'classnames';
 import React, { memo, useCallback, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -148,6 +149,8 @@ function AgentViewer(props: Props) {
           }
         }
       }
+    } catch (err) {
+      message.error((err as Error).message);
     } finally {
       setLoading(false);
       setLoadingStep(0);

@@ -19,4 +19,5 @@ export default {
   s3envError: 'S3 环境变量未完全设置，请检查您的环境变量',
   formValidationFailed: '表单验证失败:',
   dancePlayError: '舞蹈文件播放失败, 请稍后重试',
+  ttsTransformFailed: '语音转换失败, 请检查网络或在设置中打开客户端调用后尝试',
 };

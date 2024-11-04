@@ -1,3 +1,5 @@
+import { message } from 'antd';
+
 import { Viewer } from '@/libs/vrmViewer/viewer';
 import { speechApi } from '@/services/tts';
 import { Screenplay } from '@/types/touch';
@@ -23,7 +25,9 @@ const createSpeakCharacter = () => {
 
       const buffer =
         (await getPreloadedVoice(screenplay.tts)) ||
-        (await speechApi(screenplay.tts).catch(() => null));
+        (await speechApi(screenplay.tts).catch((err) => {
+          message.error((err as Error).message);
+        }));
       lastTime = Date.now();
       return buffer;
     });

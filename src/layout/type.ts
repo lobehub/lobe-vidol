@@ -1,7 +1,6 @@
 export enum HeaderNavKey {
   Chat = 'chat',
-  Market = 'market',
-  My = 'my',
+  Discover = 'discover',
   Role = 'role',
   Settings = 'settings',
 }

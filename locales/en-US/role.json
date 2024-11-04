@@ -6,6 +6,7 @@
     "other": "Other"
   },
   "category": {
+    "all": "All",
     "animal": "Animals",
     "anime": "Anime",
     "book": "Books",
@@ -78,6 +79,8 @@
   },
   "noRole": "No roles available. You can create a custom role by clicking +, or add roles through the discovery page.",
   "role": {
+    "create": "Create Role",
+    "createRoleFailed": "Role Creation Failed",
     "greetTip": "Please enter the greeting phrase for the character",
     "inputRoleSetting": "Please enter the system settings for the character",
     "roleDescriptionTip": "Please enter the character's description",
@@ -85,6 +88,7 @@
     "roleReadmeTip": "Please enter the character's description",
     "roleSettingDescription": "The background settings for the character, which will be sent to the model during chats with the character",
     "roleSettingLabel": "System Role Settings",
+    "selectGender": "Select Character Gender",
     "uploadSize": "Supports single file uploads, recommended dimensions are multiples of {{width}} * {{height}}"
   },
   "roleBook": "Character Book",

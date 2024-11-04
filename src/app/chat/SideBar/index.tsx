@@ -5,15 +5,23 @@ import { createStyles, useResponsive } from 'antd-style';
 import { rgba } from 'polished';
 import { useEffect } from 'react';
 
-import { SIDEBAR_MAX_WIDTH, SIDEBAR_WIDTH } from '@/constants/token';
+import { HEADER_HEIGHT, SIDEBAR_MAX_WIDTH, SIDEBAR_WIDTH } from '@/constants/token';
 import { useGlobalStore } from '@/store/global';
 
 import SessionList from './SessionList';
 
 const useStyles = createStyles(({ css, token }) => ({
+  content: css`
+    display: flex;
+    flex-direction: column;
+    height: 100% !important;
+  `,
   sidebar: css`
     display: flex;
     flex-direction: column;
+
+    height: calc(100vh - ${HEADER_HEIGHT}px);
+
     background-color: ${rgba(token.colorBgLayout, 0.2)};
     backdrop-filter: saturate(180%) blur(8px);
   `,
@@ -43,6 +51,7 @@ const SideBar = () => {
   return (
     <DraggablePanel
       className={styles.sidebar}
+      classNames={{ content: styles.content }}
       maxWidth={SIDEBAR_MAX_WIDTH}
       minWidth={SIDEBAR_WIDTH}
       mode={'fixed'}

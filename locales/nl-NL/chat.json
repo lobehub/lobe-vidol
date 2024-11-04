@@ -29,6 +29,7 @@
     "totalCount": "Totaal {{total}} items"
   },
   "chat": "Chatten",
+  "chatList": "Chatlijst",
   "danceList": "Danslijst",
   "danceMarket": "Dansmarkt",
   "delSession": "Verwijder sessie",
@@ -55,6 +56,7 @@
   },
   "interactive": "Interactief",
   "noDanceList": "Geen afspeellijst beschikbaar. U kunt zich abonneren op uw favoriete dansen via de markt.",
+  "noRoleList": "Geen rol lijst beschikbaar",
   "selectModel": "Selecteer een model",
   "sessionCreate": "Chat aanmaken",
   "sessionList": "Sessielijst",

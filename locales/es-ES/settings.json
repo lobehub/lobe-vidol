@@ -89,5 +89,12 @@
   },
   "touch": {
     "title": "Configuración de toque"
+  },
+  "tts": {
+    "clientCall": {
+      "desc": "Al habilitar esta opción, se utilizará el servicio de síntesis de voz mediante llamada del cliente, lo que permitirá una velocidad de síntesis de voz más rápida, pero requerirá acceso a internet o la capacidad de acceder a redes externas.",
+      "title": "Llamada del cliente"
+    },
+    "title": "Configuración de voz"
   }
 }

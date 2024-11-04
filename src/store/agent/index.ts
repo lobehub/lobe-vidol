@@ -50,7 +50,7 @@ export interface AgentStore extends TouchStore {
   /**
    * 创建新角色
    */
-  createNewAgent: (gender: GenderEnum) => void;
+  createNewAgent: (gender: GenderEnum) => Agent;
   /**
    * 当前激活的角色
    */
@@ -162,6 +162,8 @@ const createAgentStore: StateCreator<AgentStore, [['zustand/devtools', never]]> 
     });
 
     set({ currentIdentifier: newAgent.agentId, localAgentList: newList });
+
+    return newAgent;
   },
   updateAgentConfig: (agent, updateAgentId) => {
     const { localAgentList, currentIdentifier, defaultAgent } = get();

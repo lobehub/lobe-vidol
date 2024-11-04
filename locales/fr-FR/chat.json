@@ -29,6 +29,7 @@
     "totalCount": "Total de {{total}} éléments"
   },
   "chat": "Discussion",
+  "chatList": "Liste de discussion",
   "danceList": "Liste des danses",
   "danceMarket": "Marché de la danse",
   "delSession": "Supprimer la session",
@@ -55,6 +56,7 @@
   },
   "interactive": "Interactif",
   "noDanceList": "Aucune liste de lecture disponible pour le moment, vous pouvez vous abonner à vos danses préférées sur le marché",
+  "noRoleList": "Aucune liste de rôles disponible",
   "selectModel": "Veuillez sélectionner un modèle",
   "sessionCreate": "Créer une conversation",
   "sessionList": "Liste des sessions",
