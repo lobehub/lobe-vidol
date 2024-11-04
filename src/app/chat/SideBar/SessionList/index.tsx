@@ -17,6 +17,10 @@ const List = dynamic(() => import('./List'), {
 });
 
 const useStyles = createStyles(({ css, token, prefixCls }) => ({
+  session: css`
+    overflow-y: auto;
+    height: 100%;
+  `,
   list: css`
     padding: 8px;
   `,
@@ -54,7 +58,7 @@ const SessionList = () => {
   const [searchName, setSearchName] = useState<string>();
   const { t } = useTranslation('chat');
   return (
-    <>
+    <div className={styles.session}>
       <Flexbox style={{ padding: '16px 8px 0' }}>
         <SearchBar
           enableShortKey
@@ -94,7 +98,7 @@ const SessionList = () => {
           ]}
         />
       </div>
-    </>
+    </div>
   );
 };
 
