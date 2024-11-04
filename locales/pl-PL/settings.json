@@ -89,5 +89,12 @@
   },
   "touch": {
     "title": "Ustawienia dotykowe"
+  },
+  "tts": {
+    "clientCall": {
+      "desc": "Po włączeniu, usługa syntezatora mowy będzie wywoływana przez klienta, co przyspieszy proces syntezowania mowy, ale wymaga dostępu do internetu lub możliwości korzystania z sieci zewnętrznej.",
+      "title": "Wywołanie klienta"
+    },
+    "title": "Ustawienia głosowe"
   }
 }

@@ -89,5 +89,12 @@
   },
   "touch": {
     "title": "Configurações de Toque"
+  },
+  "tts": {
+    "clientCall": {
+      "desc": "Quando ativado, o serviço de síntese de voz será chamado pelo cliente, resultando em uma velocidade de síntese de voz mais rápida, mas requer acesso à internet ou a capacidade de contornar restrições de rede.",
+      "title": "Chamada do Cliente"
+    },
+    "title": "Configurações de Voz"
   }
 }

@@ -6,6 +6,7 @@
     "other": "其他"
   },
   "category": {
+    "all": "所有",
     "animal": "动物",
     "anime": "动漫",
     "book": "书籍",
@@ -78,6 +79,8 @@
   },
   "noRole": "暂无角色，可以通过 + 创建自定义角色，也可通过发现页添加角色",
   "role": {
+    "create": "创建角色",
+    "selectGender": "选择角色性别",
     "uploadSize": "支持单个文件上传，推荐尺寸为 {{width}} * {{height}} 的倍数",
     "greetTip": "请输入角色与你打招呼时的用语",
     "roleReadmeTip": "请输入角色说明",
@@ -85,6 +88,7 @@
     "roleNameTip": "请输入角色名称",
     "inputRoleSetting": "请输入角色的系统设定",
     "roleSettingLabel": "系统角色设定",
+    "createRoleFailed": "角色创建失败",
     "roleSettingDescription": "角色的背景设定，在与角色聊天时会发送给模型"
   },
   "roleBook": "角色书",

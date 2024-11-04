@@ -89,5 +89,12 @@
   },
   "touch": {
     "title": "Cài đặt chạm"
+  },
+  "tts": {
+    "clientCall": {
+      "desc": "Khi được kích hoạt, dịch vụ tổng hợp giọng nói sẽ được gọi từ khách hàng, tốc độ tổng hợp giọng nói nhanh hơn, nhưng cần có khả năng truy cập internet hoặc sử dụng mạng riêng ảo.",
+      "title": "Gọi từ khách hàng"
+    },
+    "title": "Cài đặt giọng nói"
   }
 }

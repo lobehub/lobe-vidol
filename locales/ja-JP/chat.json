@@ -29,6 +29,7 @@
     "totalCount": "合計 {{total}} 件"
   },
   "chat": "チャット",
+  "chatList": "チャットリスト",
   "danceList": "ダンスリスト",
   "danceMarket": "ダンスマーケット",
   "delSession": "セッションを削除",
@@ -55,6 +56,7 @@
   },
   "interactive": "インタラクティブ",
   "noDanceList": "現在再生リストはありません。お気に入りのダンスをマーケットで購読できます。",
+  "noRoleList": "ロールリストはありません",
   "selectModel": "モデルを選択してください",
   "sessionCreate": "チャットを作成",
   "sessionList": "セッションリスト",

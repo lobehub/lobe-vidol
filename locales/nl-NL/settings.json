@@ -89,5 +89,12 @@
   },
   "touch": {
     "title": "Aanraakinstellingen"
+  },
+  "tts": {
+    "clientCall": {
+      "desc": "Wanneer ingeschakeld, wordt de spraaksynthetiseringsdienst via de cliënt aangeroepen, wat de spraaksynthetisesnelheid verhoogt, maar vereist dat je toegang hebt tot het internet of in staat bent om het externe netwerk te bereiken.",
+      "title": "Cliëntaanroep"
+    },
+    "title": "Spraakinstellingen"
   }
 }

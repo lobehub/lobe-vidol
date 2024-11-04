@@ -18,5 +18,6 @@
   "s3envError": "S3 ortam değişkenleri tam olarak ayarlanmamış, lütfen ortam değişkenlerinizi kontrol edin",
   "serverError": "Sunucu hatası, lütfen yönetici ile iletişime geçin",
   "triggerError": "Hata tetiklendi",
+  "ttsTransformFailed": "Ses dönüştürme başarısız oldu, lütfen ağı kontrol edin veya ayarlardan istemci çağrısını açmayı deneyin.",
   "unknownError": "Bilinmeyen hata"
 }

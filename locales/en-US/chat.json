@@ -29,6 +29,7 @@
     "totalCount": "Total {{total}} items"
   },
   "chat": "Chat",
+  "chatList": "Chat List",
   "danceList": "Dance List",
   "danceMarket": "Dance Market",
   "delSession": "Delete Session",
@@ -55,6 +56,7 @@
   },
   "interactive": "Interactive",
   "noDanceList": "No playlist available. You can subscribe to your favorite dances through the market.",
+  "noRoleList": "No Role List Available",
   "selectModel": "Please select a model",
   "sessionCreate": "Create Chat",
   "sessionList": "Session List",

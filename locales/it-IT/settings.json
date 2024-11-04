@@ -89,5 +89,12 @@
   },
   "touch": {
     "title": "Impostazioni di tocco"
+  },
+  "tts": {
+    "clientCall": {
+      "desc": "Se abilitato, verrà utilizzato il servizio di sintesi vocale tramite chiamata client, la sintesi vocale sarà più veloce, ma è necessario avere accesso a Internet o la capacità di accedere a reti esterne.",
+      "title": "Chiamata client"
+    },
+    "title": "Impostazioni vocali"
   }
 }

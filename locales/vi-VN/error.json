@@ -18,5 +18,6 @@
   "s3envError": "Biến môi trường S3 chưa được thiết lập đầy đủ, vui lòng kiểm tra biến môi trường của bạn",
   "serverError": "Lỗi máy chủ, vui lòng liên hệ với quản trị viên",
   "triggerError": "Kích hoạt lỗi",
+  "ttsTransformFailed": "Chuyển đổi giọng nói thất bại, vui lòng kiểm tra kết nối mạng hoặc mở gọi ứng dụng trong cài đặt và thử lại",
   "unknownError": "Lỗi không xác định"
 }

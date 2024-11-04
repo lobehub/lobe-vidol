@@ -18,5 +18,6 @@
   "s3envError": "S3 環境變數未完全設定，請檢查您的環境變數",
   "serverError": "伺服器錯誤，請聯絡管理員",
   "triggerError": "觸發錯誤",
+  "ttsTransformFailed": "語音轉換失敗，請檢查網路或在設定中開啟客戶端調用後再試",
   "unknownError": "未知錯誤"
 }

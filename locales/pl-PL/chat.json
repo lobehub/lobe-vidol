@@ -29,6 +29,7 @@
     "totalCount": "Łącznie {{total}} pozycji"
   },
   "chat": "Czat",
+  "chatList": "Lista czatów",
   "danceList": "Lista tańców",
   "danceMarket": "Rynek tańca",
   "delSession": "Usuń sesję",
@@ -55,6 +56,7 @@
   },
   "interactive": "Interaktywny",
   "noDanceList": "Brak dostępnych list odtwarzania. Możesz subskrybować ulubione tańce na rynku.",
+  "noRoleList": "Brak dostępnych ról",
   "selectModel": "Wybierz model",
   "sessionCreate": "Utwórz czat",
   "sessionList": "Lista sesji",

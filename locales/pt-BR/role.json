@@ -6,6 +6,7 @@
     "other": "Outro"
   },
   "category": {
+    "all": "Todos",
     "animal": "Animais",
     "anime": "Anime",
     "book": "Livros",
@@ -78,6 +79,8 @@
   },
   "noRole": "Nenhum papel disponível. Você pode criar um papel personalizado clicando em + ou adicionar papéis pela página de descoberta.",
   "role": {
+    "create": "Criar papel",
+    "createRoleFailed": "Falha ao criar papel",
     "greetTip": "Digite a saudação que você usaria ao cumprimentar o personagem",
     "inputRoleSetting": "Digite as configurações do sistema do personagem",
     "roleDescriptionTip": "Digite a descrição do personagem",
@@ -85,6 +88,7 @@
     "roleReadmeTip": "Digite a descrição do personagem",
     "roleSettingDescription": "Configuração de fundo do personagem, que será enviada ao modelo durante a conversa com o personagem",
     "roleSettingLabel": "Configurações do personagem do sistema",
+    "selectGender": "Selecionar gênero do papel",
     "uploadSize": "Suporta o upload de um único arquivo, recomendado em múltiplos de {{width}} * {{height}}"
   },
   "roleBook": "Livro de Personagens",

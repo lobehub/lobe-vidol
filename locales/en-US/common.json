@@ -19,7 +19,7 @@
   },
   "header": {
     "chat": "Chat",
-    "market": "Discover",
+    "discover": "Discover",
     "role": "Role",
     "settings": "Settings",
     "tips": "The project is currently under construction, and data stability is not guaranteed. If you encounter any issues, you can clear session messages and reset system settings in the system settings. We apologize for any inconvenience this may cause."

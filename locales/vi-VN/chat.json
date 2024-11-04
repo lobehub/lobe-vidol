@@ -29,6 +29,7 @@
     "totalCount": "Tổng cộng {{total}} mục"
   },
   "chat": "Trò chuyện",
+  "chatList": "Danh sách trò chuyện",
   "danceList": "Danh sách khiêu vũ",
   "danceMarket": "Thị trường khiêu vũ",
   "delSession": "Xóa cuộc trò chuyện",
@@ -55,6 +56,7 @@
   },
   "interactive": "Có thể tương tác",
   "noDanceList": "Chưa có danh sách phát, bạn có thể đăng ký những điệu nhảy yêu thích của mình qua thị trường",
+  "noRoleList": "Chưa có danh sách vai trò",
   "selectModel": "Vui lòng chọn mô hình",
   "sessionCreate": "Tạo cuộc trò chuyện",
   "sessionList": "Danh sách phiên",

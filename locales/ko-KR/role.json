@@ -6,6 +6,7 @@
     "other": "기타"
   },
   "category": {
+    "all": "모두",
     "animal": "동물",
     "anime": "애니메이션",
     "book": "책",
@@ -78,6 +79,8 @@
   },
   "noRole": "역할이 없습니다. +를 클릭하여 사용자 정의 역할을 생성하거나 발견 페이지에서 역할을 추가할 수 있습니다.",
   "role": {
+    "create": "역할 생성",
+    "createRoleFailed": "역할 생성 실패",
     "greetTip": "캐릭터와 인사할 때 사용할 문구를 입력하세요.",
     "inputRoleSetting": "캐릭터의 시스템 설정을 입력하세요.",
     "roleDescriptionTip": "캐릭터의 설명을 입력하세요.",
@@ -85,6 +88,7 @@
     "roleReadmeTip": "캐릭터 설명을 입력하세요.",
     "roleSettingDescription": "캐릭터의 배경 설정으로, 캐릭터와 대화할 때 모델에 전송됩니다.",
     "roleSettingLabel": "시스템 캐릭터 설정",
+    "selectGender": "역할 성별 선택",
     "uploadSize": "단일 파일 업로드를 지원하며, 추천 크기는 {{width}} * {{height}}의 배수입니다."
   },
   "roleBook": "역할 책",

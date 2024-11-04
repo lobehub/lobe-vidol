@@ -6,6 +6,7 @@
     "other": "その他"
   },
   "category": {
+    "all": "すべて",
     "animal": "動物",
     "anime": "アニメ",
     "book": "書籍",
@@ -78,6 +79,8 @@
   },
   "noRole": "ロールがありません。+ をクリックしてカスタムロールを作成するか、発見ページからロールを追加できます。",
   "role": {
+    "create": "ロールを作成",
+    "createRoleFailed": "ロールの作成に失敗しました",
     "greetTip": "キャラクターに挨拶する際の言葉を入力してください。",
     "inputRoleSetting": "キャラクターのシステム設定を入力してください。",
     "roleDescriptionTip": "キャラクターの詳細を入力してください。",
@@ -85,6 +88,7 @@
     "roleReadmeTip": "キャラクターの説明を入力してください。",
     "roleSettingDescription": "キャラクターの背景設定で、キャラクターとのチャット時にモデルに送信されます。",
     "roleSettingLabel": "システムキャラクター設定",
+    "selectGender": "ロールの性別を選択",
     "uploadSize": "単一ファイルのアップロードをサポートしています。推奨サイズは {{width}} * {{height}} の倍数です。"
   },
   "roleBook": "キャラクターシート",

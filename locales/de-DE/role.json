@@ -6,6 +6,7 @@
     "other": "Andere"
   },
   "category": {
+    "all": "Alle",
     "animal": "Tiere",
     "anime": "Anime",
     "book": "Bücher",
@@ -78,6 +79,8 @@
   },
   "noRole": "Keine Rolle vorhanden. Sie können eine benutzerdefinierte Rolle durch Klicken auf + erstellen oder Rollen über die Entdeckungsseite hinzufügen.",
   "role": {
+    "create": "Rolle erstellen",
+    "createRoleFailed": "Rolle konnte nicht erstellt werden",
     "greetTip": "Bitte geben Sie die Begrüßungsformel für den Charakter ein",
     "inputRoleSetting": "Bitte geben Sie die Systemeinstellungen des Charakters ein",
     "roleDescriptionTip": "Bitte geben Sie die Charakterbeschreibung ein",
@@ -85,6 +88,7 @@
     "roleReadmeTip": "Bitte geben Sie die Beschreibung des Charakters ein",
     "roleSettingDescription": "Hintergrundinformationen des Charakters, die beim Chatten mit dem Charakter an das Modell gesendet werden",
     "roleSettingLabel": "Systemeinstellungen des Charakters",
+    "selectGender": "Geschlecht der Rolle auswählen",
     "uploadSize": "Unterstützt den Upload von Einzeldateien, empfohlen wird eine Größe, die ein Vielfaches von {{width}} * {{height}} ist"
   },
   "roleBook": "Charakterbuch",

@@ -29,6 +29,7 @@
     "totalCount": "Total de {{total}} itens"
   },
   "chat": "Bate-papo",
+  "chatList": "Lista de Chats",
   "danceList": "Lista de Danças",
   "danceMarket": "Mercado de Danças",
   "delSession": "Excluir sessão",
@@ -55,6 +56,7 @@
   },
   "interactive": "Interativo",
   "noDanceList": "Nenhuma lista de reprodução disponível no momento. Você pode assinar suas danças favoritas no mercado.",
+  "noRoleList": "Nenhuma lista de papéis disponível",
   "selectModel": "Por favor, selecione um modelo",
   "sessionCreate": "Criar chat",
   "sessionList": "Lista de Sessões",

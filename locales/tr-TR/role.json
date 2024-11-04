@@ -6,6 +6,7 @@
     "other": "Diğer"
   },
   "category": {
+    "all": "Tümü",
     "animal": "Hayvan",
     "anime": "Anime",
     "book": "Kitap",
@@ -78,6 +79,8 @@
   },
   "noRole": "Henüz bir rol yok, + ile özel bir rol oluşturabilir veya keşif sayfasından rol ekleyebilirsiniz.",
   "role": {
+    "create": "Rol oluştur",
+    "createRoleFailed": "Rol oluşturma başarısız oldu",
     "greetTip": "Rol ile selamlaşırken kullanacağınız ifadeyi girin",
     "inputRoleSetting": "Rolün sistem ayarlarını girin",
     "roleDescriptionTip": "Rol tanımını girin",
@@ -85,6 +88,7 @@
     "roleReadmeTip": "Rol açıklamasını girin",
     "roleSettingDescription": "Rolün arka plan ayarı, rol ile sohbet ederken modele gönderilecektir",
     "roleSettingLabel": "Sistem rol ayarı",
+    "selectGender": "Rol cinsiyetini seç",
     "uploadSize": "Tek bir dosya yüklemeyi destekler, önerilen boyut {{width}} * {{height}} katlarıdır"
   },
   "roleBook": "Karakter Kitabı",
