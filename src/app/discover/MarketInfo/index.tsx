@@ -1,7 +1,8 @@
 import { DraggablePanel } from '@lobehub/ui';
-import { Skeleton } from 'antd';
+import { Skeleton, Space } from 'antd';
 import { createStyles } from 'antd-style';
 import React, { memo, useState } from 'react';
+import { Flexbox } from 'react-layout-kit';
 import useSWR from 'swr';
 
 import Author from '@/components/Author';
@@ -82,9 +83,16 @@ const RoleInfo = (props: RoleInfoProps) => {
       placement={'right'}
     >
       {isLoading ? (
-        <div style={{ padding: 24 }}>
-          <Skeleton active avatar paragraph={{ rows: 4 }} />
-        </div>
+        <Flexbox style={{ padding: 12 }} gap={16} align={'center'} justify={'center'}>
+          <Skeleton.Avatar active shape="circle" size={96} />
+          <Skeleton.Input active size="small" />
+          <Skeleton active paragraph={{ rows: 2, width: '100%' }} title={false} />
+          <Space>
+            <Skeleton.Button active />
+            <Skeleton.Button active />
+          </Space>
+          <Skeleton active paragraph={{ rows: 3, width: '100%' }} title={false} />
+        </Flexbox>
       ) : (
         currentAgentItem && (
           <AgentCard
