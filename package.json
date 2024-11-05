@@ -27,11 +27,12 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev",
-    "docs:i18n": "lobe-i18n md && npm run lint:mdx",
+    "docs:i18n": "lobe-i18n md && npm run lint:md",
     "i18n": "npm run workflow:i18n && lobe-i18n",
     "lint": "npm run lint:ts && npm run lint:style && npm run type-check",
     "lint:circular": "dpdm src/**/*.ts  --warning false  --tree false  --exit-code circular:1  -T true --skip-dynamic-imports circular",
     "lint:md": "remark . --quiet --frail --output",
+    "lint:mdx": "npm run workflow:mdx-with-lint && prettier -c --write \"{src,docs}/**/*.mdx\" && npm run workflow:mdx-with-lint",
     "lint:style": "stylelint \"{src,tests}/**/*.{js,jsx,ts,tsx}\" --fix",
     "lint:ts": "eslint \"{src,tests}/**/*.{js,jsx,ts,tsx}\" --fix",
     "prepare": "husky",
@@ -42,7 +43,9 @@
     "test:coverage": "vitest run --coverage",
     "test:update": "vitest -u",
     "type-check": "tsc --noEmit",
-    "workflow:i18n": "tsx scripts/i18nWorkflow/index.ts"
+    "workflow:i18n": "tsx scripts/i18nWorkflow/index.ts",
+    "workflow:mdx": "tsx scripts/mdxWorkflow/index.ts",
+    "workflow:mdx-with-lint": "tsx scripts/mdxWorkflow/index.ts && eslint \"docs/**/*.mdx\" --quiet --fix"
   },
   "lint-staged": {
     "*.mdx": [
@@ -156,11 +159,14 @@
     "dpdm": "^3.14.0",
     "eslint": "^8.57.1",
     "glob": "^10.4.5",
+    "gray-matter": "^4.0.3",
     "husky": "^9.1.6",
     "jsdom": "^24.1.3",
     "just-diff": "^6.0.2",
     "lint-staged": "^15.2.10",
     "prettier": "^3.3.3",
+    "remark-cli": "^11.0.0",
+    "remark-parse": "^10.0.2",
     "semantic-release": "^21.1.2",
     "stylelint": "^15.11.0",
     "tsx": "^4.19.1",

@@ -39,6 +39,10 @@ Experience the magic of virtual idol creation with Lobe Vidol, enjoy the eleganc
 
 - [👋🏻 Getting Started & Join Our Community](#-getting-started--join-our-community)
 - [✨ Features](#-features)
+  - [1.🗣️ **Smooth Conversation Experience**](#1️-smooth-conversation-experience)
+  - [2. 💎 **Exquisite UI Design**](#2--exquisite-ui-design)
+  - [3. 💨 **Vroid Model Preview**](#3--vroid-model-preview)
+  - [4. 🎇 **MMD Dance Support**](#4--mmd-dance-support)
 - [📦 Ecosystem](#-ecosystem)
 - [⌨️ Local Development](#️-local-development)
 - [🤝 Contributing](#-contributing)
@@ -79,26 +83,28 @@ Please be aware that LobeVidol is currently under active development, and feedba
 ## ✨ Features
 
 ### 1.🗣️ **Smooth Conversation Experience**
+
 Fluid responses ensure a smooth conversation experience. It fully supports Markdown rendering, including code highlighting, LaTex formulas and more.
 
 <img width="1503" alt="Snipaste_2024-04-23_23-47-02" src="https://github.com/lobehub/lobe-vidol/assets/4705237/51942769-332d-4829-8732-b901dc290b8d">
 
-
 ### 2. 💎 **Exquisite UI Design**
+
 With a carefully designed interface, it offers an elegant appearance and smooth interaction. It supports light and dark themes. PWA support provides a more native-like experience;
 
 <img width="1503" alt="Snipaste_2024-04-23_23-48-56" src="https://github.com/lobehub/lobe-vidol/assets/4705237/3e30f842-dc01-426c-9683-06b00357bc8d">
 
 ### 3. 💨 **Vroid Model Preview**
+
 Using the Vroid Editor, you can create and upload your own virtual idol to the website, play with them;
 
 ![324259872-113e4882-6710-4d81-a04f-a407989f947d](https://github.com/lobehub/lobe-vidol/assets/4705237/c3cf87c3-f8c0-49ef-b966-e451e2fbf583)
 
 ### 4. 🎇 **MMD Dance Support**
+
 With the support of mmd-parser, you can play vmd files with your favarite idol; Just Dance!
 
 <img width="1455" alt="Snipaste_2024-04-23_23-43-21" src="https://github.com/lobehub/lobe-vidol/assets/4705237/8d1107c7-bec9-4f20-a8ac-1413d3682587">
-
 
 <div align="right">
 
@@ -282,7 +288,7 @@ This project is [MIT](./LICENSE) licensed.
 [pr-welcome-link]: https://github.com/lobehub/lobe-vidol/pulls
 [pr-welcome-shield]: https://img.shields.io/badge/%F0%9F%A4%AF%20PR%20WELCOME-%E2%86%92-ffcb47?labelColor=black&style=for-the-badge
 [profile-link]: https://github.com/lobehub
-[sponsor-link]: https://opencollective.com/lobehub 'Become 🩷 LobeHub Sponsor'
+[sponsor-link]: https://opencollective.com/lobehub "Become 🩷 LobeHub Sponsor"
 [sponsor-shield]: https://img.shields.io/badge/-Sponsor%20LobeHub-f04f88?logo=opencollective&logoColor=white&style=flat-square
 [vercel-link]: https://vidol.lobehub.com
 [vercel-shield]: https://img.shields.io/website?down_message=offline&label=vercel&labelColor=black&logo=vercel&style=flat-square&up_message=online&url=https%3A%2F%2Fvidol.lobehub.com
