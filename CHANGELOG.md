@@ -2,31 +2,25 @@
 
 # Changelog
 
-## [Version&nbsp;0.30.0](https://github.com/lobehub/lobe-vidol/compare/v0.29.0...v0.30.0)
-<sup>Released on **2024-10-05**</sup>
+## [Version 0.30.0](https://github.com/lobehub/lobe-vidol/compare/v0.29.0...v0.30.0)
 
+<sup>Released on **2024-10-05**</sup>
 
 #### ✨ Features
 
 - **misc**: Page top loading, 添加男性角色的 motion 预设.
 
-
 <br/>
-
-
 
 <details>
 <summary><kbd>Improvements and Fixes</kbd></summary>
 
-
-
 #### What's improved
 
-* **misc**: Page top loading ([778075e](https://github.com/lobehub/lobe-vidol/commit/778075e))
-* **misc**: 添加男性角色的 motion 预设 ([6cc02e9](https://github.com/lobehub/lobe-vidol/commit/6cc02e9))
+- **misc**: Page top loading ([778075e](https://github.com/lobehub/lobe-vidol/commit/778075e))
+- **misc**: 添加男性角色的 motion 预设 ([6cc02e9](https://github.com/lobehub/lobe-vidol/commit/6cc02e9))
 
 </details>
-
 
 <div align="right">
 
@@ -34,30 +28,24 @@
 
 </div>
 
-## [Version&nbsp;0.29.0](https://github.com/lobehub/lobe-vidol/compare/v0.28.0...v0.29.0)
-<sup>Released on **2024-09-25**</sup>
+## [Version 0.29.0](https://github.com/lobehub/lobe-vidol/compare/v0.28.0...v0.29.0)
 
+<sup>Released on **2024-09-25**</sup>
 
 #### ✨ Features
 
 - **misc**: 添加背景色.
 
-
 <br/>
-
-
 
 <details>
 <summary><kbd>Improvements and Fixes</kbd></summary>
 
-
-
 #### What's improved
 
-* **misc**: 添加背景色 ([25c20cb](https://github.com/lobehub/lobe-vidol/commit/25c20cb))
+- **misc**: 添加背景色 ([25c20cb](https://github.com/lobehub/lobe-vidol/commit/25c20cb))
 
 </details>
-
 
 <div align="right">
 
@@ -65,30 +53,24 @@
 
 </div>
 
-## [Version&nbsp;0.28.0](https://github.com/lobehub/lobe-vidol/compare/v0.27.0...v0.28.0)
-<sup>Released on **2024-09-22**</sup>
+## [Version 0.28.0](https://github.com/lobehub/lobe-vidol/compare/v0.27.0...v0.28.0)
 
+<sup>Released on **2024-09-22**</sup>
 
 #### ✨ Features
 
 - **misc**: 支持 openai o1.
 
-
 <br/>
-
-
 
 <details>
 <summary><kbd>Improvements and Fixes</kbd></summary>
 
-
-
 #### What's improved
 
-* **misc**: 支持 openai o1 ([7d16ade](https://github.com/lobehub/lobe-vidol/commit/7d16ade))
+- **misc**: 支持 openai o1 ([7d16ade](https://github.com/lobehub/lobe-vidol/commit/7d16ade))
 
 </details>
-
 
 <div align="right">
 
@@ -96,42 +78,33 @@
 
 </div>
 
-## [Version&nbsp;0.27.0](https://github.com/lobehub/lobe-vidol/compare/v0.26.0...v0.27.0)
-<sup>Released on **2024-09-18**</sup>
+## [Version 0.27.0](https://github.com/lobehub/lobe-vidol/compare/v0.26.0...v0.27.0)
 
+<sup>Released on **2024-09-18**</sup>
 
 #### ✨ Features
 
 - **misc**: Add model playing, 支持触摸响应.
 
-
 #### 🐛 Bug Fixes
 
 - **misc**: Chat info error.
 
-
 <br/>
-
-
 
 <details>
 <summary><kbd>Improvements and Fixes</kbd></summary>
 
-
-
 #### What's improved
 
-* **misc**: Add model playing ([4f66c31](https://github.com/lobehub/lobe-vidol/commit/4f66c31))
-* **misc**: 支持触摸响应 ([f5c8400](https://github.com/lobehub/lobe-vidol/commit/f5c8400))
-
-
+- **misc**: Add model playing ([4f66c31](https://github.com/lobehub/lobe-vidol/commit/4f66c31))
+- **misc**: 支持触摸响应 ([f5c8400](https://github.com/lobehub/lobe-vidol/commit/f5c8400))
 
 #### What's fixed
 
-* **misc**: Chat info error ([6b9f20f](https://github.com/lobehub/lobe-vidol/commit/6b9f20f))
+- **misc**: Chat info error ([6b9f20f](https://github.com/lobehub/lobe-vidol/commit/6b9f20f))
 
 </details>
-
 
 <div align="right">
 
@@ -139,30 +112,24 @@
 
 </div>
 
-## [Version&nbsp;0.26.0](https://github.com/lobehub/lobe-vidol/compare/v0.25.1...v0.26.0)
-<sup>Released on **2024-08-27**</sup>
+## [Version 0.26.0](https://github.com/lobehub/lobe-vidol/compare/v0.25.1...v0.26.0)
 
+<sup>Released on **2024-08-27**</sup>
 
 #### ✨ Features
 
 - **misc**: Add vrm loading dom.
 
-
 <br/>
-
-
 
 <details>
 <summary><kbd>Improvements and Fixes</kbd></summary>
 
-
-
 #### What's improved
 
-* **misc**: Add vrm loading dom ([7d1f049](https://github.com/lobehub/lobe-vidol/commit/7d1f049))
+- **misc**: Add vrm loading dom ([7d1f049](https://github.com/lobehub/lobe-vidol/commit/7d1f049))
 
 </details>
-
 
 <div align="right">
 
@@ -170,30 +137,24 @@
 
 </div>
 
-### [Version&nbsp;0.25.1](https://github.com/lobehub/lobe-vidol/compare/v0.25.0...v0.25.1)
-<sup>Released on **2024-08-25**</sup>
+### [Version 0.25.1](https://github.com/lobehub/lobe-vidol/compare/v0.25.0...v0.25.1)
 
+<sup>Released on **2024-08-25**</sup>
 
 #### 🐛 Bug Fixes
 
 - **misc**: 默认注入主题.
 
-
 <br/>
-
-
 
 <details>
 <summary><kbd>Improvements and Fixes</kbd></summary>
 
-
-
 #### What's fixed
 
-* **misc**: 默认注入主题 ([402f4c6](https://github.com/lobehub/lobe-vidol/commit/402f4c6))
+- **misc**: 默认注入主题 ([402f4c6](https://github.com/lobehub/lobe-vidol/commit/402f4c6))
 
 </details>
-
 
 <div align="right">
 
@@ -201,41 +162,32 @@
 
 </div>
 
-## [Version&nbsp;0.25.0](https://github.com/lobehub/lobe-vidol/compare/v0.24.0...v0.25.0)
-<sup>Released on **2024-08-24**</sup>
+## [Version 0.25.0](https://github.com/lobehub/lobe-vidol/compare/v0.24.0...v0.25.0)
 
+<sup>Released on **2024-08-24**</sup>
 
 #### ✨ Features
 
 - **misc**: 添加舞蹈市场按钮 & 优化 dynamic 引入 panel.
 
-
 #### 🐛 Bug Fixes
 
 - **misc**: 修复订阅按钮位移问题.
 
-
 <br/>
-
-
 
 <details>
 <summary><kbd>Improvements and Fixes</kbd></summary>
 
-
-
 #### What's improved
 
-* **misc**: 添加舞蹈市场按钮 & 优化 dynamic 引入 panel ([5d0672b](https://github.com/lobehub/lobe-vidol/commit/5d0672b))
-
-
+- **misc**: 添加舞蹈市场按钮 & 优化 dynamic 引入 panel ([5d0672b](https://github.com/lobehub/lobe-vidol/commit/5d0672b))
 
 #### What's fixed
 
-* **misc**: 修复订阅按钮位移问题 ([5a2178c](https://github.com/lobehub/lobe-vidol/commit/5a2178c))
+- **misc**: 修复订阅按钮位移问题 ([5a2178c](https://github.com/lobehub/lobe-vidol/commit/5a2178c))
 
 </details>
-
 
 <div align="right">
 
@@ -243,42 +195,33 @@
 
 </div>
 
-## [Version&nbsp;0.24.0](https://github.com/lobehub/lobe-vidol/compare/v0.23.0...v0.24.0)
-<sup>Released on **2024-08-05**</sup>
+## [Version 0.24.0](https://github.com/lobehub/lobe-vidol/compare/v0.23.0...v0.24.0)
 
+<sup>Released on **2024-08-05**</sup>
 
 #### ✨ Features
 
 - **misc**: Use viewer dance.
 
-
 #### 🐛 Bug Fixes
 
 - **misc**: Dance player error, play error.
 
-
 <br/>
-
-
 
 <details>
 <summary><kbd>Improvements and Fixes</kbd></summary>
 
-
-
 #### What's improved
 
-* **misc**: Use viewer dance ([0e57daa](https://github.com/lobehub/lobe-vidol/commit/0e57daa))
-
-
+- **misc**: Use viewer dance ([0e57daa](https://github.com/lobehub/lobe-vidol/commit/0e57daa))
 
 #### What's fixed
 
-* **misc**: Dance player error ([fccf0b6](https://github.com/lobehub/lobe-vidol/commit/fccf0b6))
-* **misc**: Play error ([a7646c2](https://github.com/lobehub/lobe-vidol/commit/a7646c2))
+- **misc**: Dance player error ([fccf0b6](https://github.com/lobehub/lobe-vidol/commit/fccf0b6))
+- **misc**: Play error ([a7646c2](https://github.com/lobehub/lobe-vidol/commit/a7646c2))
 
 </details>
-
 
 <div align="right">
 
@@ -286,33 +229,27 @@
 
 </div>
 
-## [Version&nbsp;0.23.0](https://github.com/lobehub/lobe-vidol/compare/v0.22.0...v0.23.0)
-<sup>Released on **2024-08-04**</sup>
+## [Version 0.23.0](https://github.com/lobehub/lobe-vidol/compare/v0.22.0...v0.23.0)
 
+<sup>Released on **2024-08-04**</sup>
 
 #### ✨ Features
 
 - **misc**: Audio 统一使用 blob url, dance 文件统一使用 blob, model 统一使用 blob url, 添加 loadVMDAnimation.ts.
 
-
 <br/>
-
-
 
 <details>
 <summary><kbd>Improvements and Fixes</kbd></summary>
 
-
-
 #### What's improved
 
-* **misc**: Audio 统一使用 blob url ([7ecc313](https://github.com/lobehub/lobe-vidol/commit/7ecc313))
-* **misc**: Dance 文件统一使用 blob ([11d55af](https://github.com/lobehub/lobe-vidol/commit/11d55af))
-* **misc**: Model 统一使用 blob url ([0b1d0a5](https://github.com/lobehub/lobe-vidol/commit/0b1d0a5))
-* **misc**: 添加 loadVMDAnimation.ts ([b629c6e](https://github.com/lobehub/lobe-vidol/commit/b629c6e))
+- **misc**: Audio 统一使用 blob url ([7ecc313](https://github.com/lobehub/lobe-vidol/commit/7ecc313))
+- **misc**: Dance 文件统一使用 blob ([11d55af](https://github.com/lobehub/lobe-vidol/commit/11d55af))
+- **misc**: Model 统一使用 blob url ([0b1d0a5](https://github.com/lobehub/lobe-vidol/commit/0b1d0a5))
+- **misc**: 添加 loadVMDAnimation.ts ([b629c6e](https://github.com/lobehub/lobe-vidol/commit/b629c6e))
 
 </details>
-
 
 <div align="right">
 
@@ -320,30 +257,24 @@
 
 </div>
 
-## [Version&nbsp;0.22.0](https://github.com/lobehub/lobe-vidol/compare/v0.21.0...v0.22.0)
-<sup>Released on **2024-08-03**</sup>
+## [Version 0.22.0](https://github.com/lobehub/lobe-vidol/compare/v0.21.0...v0.22.0)
 
+<sup>Released on **2024-08-03**</sup>
 
 #### ✨ Features
 
 - **misc**: 添加重置舞蹈动作.
 
-
 <br/>
-
-
 
 <details>
 <summary><kbd>Improvements and Fixes</kbd></summary>
 
-
-
 #### What's improved
 
-* **misc**: 添加重置舞蹈动作 ([054d94a](https://github.com/lobehub/lobe-vidol/commit/054d94a))
+- **misc**: 添加重置舞蹈动作 ([054d94a](https://github.com/lobehub/lobe-vidol/commit/054d94a))
 
 </details>
-
 
 <div align="right">
 
@@ -351,45 +282,36 @@
 
 </div>
 
-## [Version&nbsp;0.21.0](https://github.com/lobehub/lobe-vidol/compare/v0.20.0...v0.21.0)
-<sup>Released on **2024-08-03**</sup>
+## [Version 0.21.0](https://github.com/lobehub/lobe-vidol/compare/v0.20.0...v0.21.0)
 
+<sup>Released on **2024-08-03**</sup>
 
 #### ✨ Features
 
-- **misc**: 优化聊天记录页面, 优化舞蹈播放页面, 添加拍照功能, 添加舞蹈播放列表, 调整网站架构.
-
+- **misc**: 优化聊天记录页面，优化舞蹈播放页面，添加拍照功能，添加舞蹈播放列表，调整网站架构.
 
 #### 🐛 Bug Fixes
 
 - **misc**: List item height.
 
-
 <br/>
-
-
 
 <details>
 <summary><kbd>Improvements and Fixes</kbd></summary>
 
-
-
 #### What's improved
 
-* **misc**: 优化聊天记录页面 ([b063ad5](https://github.com/lobehub/lobe-vidol/commit/b063ad5))
-* **misc**: 优化舞蹈播放页面 ([71e213c](https://github.com/lobehub/lobe-vidol/commit/71e213c))
-* **misc**: 添加拍照功能 ([6b2b0a7](https://github.com/lobehub/lobe-vidol/commit/6b2b0a7))
-* **misc**: 添加舞蹈播放列表 ([d72c6cd](https://github.com/lobehub/lobe-vidol/commit/d72c6cd))
-* **misc**: 调整网站架构 ([8a78dcc](https://github.com/lobehub/lobe-vidol/commit/8a78dcc))
-
-
+- **misc**: 优化聊天记录页面 ([b063ad5](https://github.com/lobehub/lobe-vidol/commit/b063ad5))
+- **misc**: 优化舞蹈播放页面 ([71e213c](https://github.com/lobehub/lobe-vidol/commit/71e213c))
+- **misc**: 添加拍照功能 ([6b2b0a7](https://github.com/lobehub/lobe-vidol/commit/6b2b0a7))
+- **misc**: 添加舞蹈播放列表 ([d72c6cd](https://github.com/lobehub/lobe-vidol/commit/d72c6cd))
+- **misc**: 调整网站架构 ([8a78dcc](https://github.com/lobehub/lobe-vidol/commit/8a78dcc))
 
 #### What's fixed
 
-* **misc**: List item height ([bb1e8e0](https://github.com/lobehub/lobe-vidol/commit/bb1e8e0))
+- **misc**: List item height ([bb1e8e0](https://github.com/lobehub/lobe-vidol/commit/bb1e8e0))
 
 </details>
-
 
 <div align="right">
 
@@ -397,61 +319,52 @@
 
 </div>
 
-## [Version&nbsp;0.20.0](https://github.com/lobehub/lobe-vidol/compare/v0.19.0...v0.20.0)
-<sup>Released on **2024-08-01**</sup>
+## [Version 0.20.0](https://github.com/lobehub/lobe-vidol/compare/v0.19.0...v0.20.0)
 
+<sup>Released on **2024-08-01**</sup>
 
 #### ✨ Features
 
-- **misc**: Add posture bind, add posturelist, 将动作库设置为固定, 支持 gpt-4o-mini, 支持设置触摸列表, 添加 mixamo animation, 添加 mixamo 脚本处理, 添加不同性别的动作列表, 添加侧边栏模式，去掉 video 切换, 添加动作与舞蹈, 添加动作库, 添加动作库, 添加动作库下载, 添加动作类别筛选, 添加姿势, 添加播放列表空状态, 添加男性动作, 添加男性姿势, 默认关闭侧边栏 & 打开消息栏.
-
+- **misc**: Add posture bind, add posturelist, 将动作库设置为固定，支持 gpt-4o-mini, 支持设置触摸列表，添加 mixamo animation, 添加 mixamo 脚本处理，添加不同性别的动作列表，添加侧边栏模式，去掉 video 切换，添加动作与舞蹈，添加动作库，添加动作库，添加动作库下载，添加动作类别筛选，添加姿势，添加播放列表空状态，添加男性动作，添加男性姿势，默认关闭侧边栏 & 打开消息栏.
 
 #### 🐛 Bug Fixes
 
 - **misc**: Vrm  model bind, vrm  model bind, 动作列表描述 ....
 
-
 <br/>
-
-
 
 <details>
 <summary><kbd>Improvements and Fixes</kbd></summary>
 
-
-
 #### What's improved
 
-* **misc**: Add posture bind ([d0cf78e](https://github.com/lobehub/lobe-vidol/commit/d0cf78e))
-* **misc**: Add posturelist ([0989334](https://github.com/lobehub/lobe-vidol/commit/0989334))
-* **misc**: 将动作库设置为固定 ([87862a9](https://github.com/lobehub/lobe-vidol/commit/87862a9))
-* **misc**: 支持 gpt-4o-mini ([4cfed2f](https://github.com/lobehub/lobe-vidol/commit/4cfed2f))
-* **misc**: 支持设置触摸列表 ([1d83f3b](https://github.com/lobehub/lobe-vidol/commit/1d83f3b))
-* **misc**: 添加 mixamo animation ([13bd91d](https://github.com/lobehub/lobe-vidol/commit/13bd91d))
-* **misc**: 添加 mixamo 脚本处理 ([e434049](https://github.com/lobehub/lobe-vidol/commit/e434049))
-* **misc**: 添加不同性别的动作列表 ([bfed1a8](https://github.com/lobehub/lobe-vidol/commit/bfed1a8))
-* **misc**: 添加侧边栏模式，去掉 video 切换 ([6bd66a2](https://github.com/lobehub/lobe-vidol/commit/6bd66a2))
-* **misc**: 添加动作与舞蹈 ([cd04f30](https://github.com/lobehub/lobe-vidol/commit/cd04f30))
-* **misc**: 添加动作库 ([16ca334](https://github.com/lobehub/lobe-vidol/commit/16ca334))
-* **misc**: 添加动作库 ([e5854e2](https://github.com/lobehub/lobe-vidol/commit/e5854e2))
-* **misc**: 添加动作库下载 ([8c4dc77](https://github.com/lobehub/lobe-vidol/commit/8c4dc77))
-* **misc**: 添加动作类别筛选 ([a4bffcf](https://github.com/lobehub/lobe-vidol/commit/a4bffcf))
-* **misc**: 添加姿势 ([9450400](https://github.com/lobehub/lobe-vidol/commit/9450400))
-* **misc**: 添加播放列表空状态 ([9338025](https://github.com/lobehub/lobe-vidol/commit/9338025))
-* **misc**: 添加男性动作 ([d7cc89b](https://github.com/lobehub/lobe-vidol/commit/d7cc89b))
-* **misc**: 添加男性姿势 ([b0e86c6](https://github.com/lobehub/lobe-vidol/commit/b0e86c6))
-* **misc**: 默认关闭侧边栏 & 打开消息栏 ([ebeb74f](https://github.com/lobehub/lobe-vidol/commit/ebeb74f))
-
-
+- **misc**: Add posture bind ([d0cf78e](https://github.com/lobehub/lobe-vidol/commit/d0cf78e))
+- **misc**: Add posturelist ([0989334](https://github.com/lobehub/lobe-vidol/commit/0989334))
+- **misc**: 将动作库设置为固定 ([87862a9](https://github.com/lobehub/lobe-vidol/commit/87862a9))
+- **misc**: 支持 gpt-4o-mini ([4cfed2f](https://github.com/lobehub/lobe-vidol/commit/4cfed2f))
+- **misc**: 支持设置触摸列表 ([1d83f3b](https://github.com/lobehub/lobe-vidol/commit/1d83f3b))
+- **misc**: 添加 mixamo animation ([13bd91d](https://github.com/lobehub/lobe-vidol/commit/13bd91d))
+- **misc**: 添加 mixamo 脚本处理 ([e434049](https://github.com/lobehub/lobe-vidol/commit/e434049))
+- **misc**: 添加不同性别的动作列表 ([bfed1a8](https://github.com/lobehub/lobe-vidol/commit/bfed1a8))
+- **misc**: 添加侧边栏模式，去掉 video 切换 ([6bd66a2](https://github.com/lobehub/lobe-vidol/commit/6bd66a2))
+- **misc**: 添加动作与舞蹈 ([cd04f30](https://github.com/lobehub/lobe-vidol/commit/cd04f30))
+- **misc**: 添加动作库 ([16ca334](https://github.com/lobehub/lobe-vidol/commit/16ca334))
+- **misc**: 添加动作库 ([e5854e2](https://github.com/lobehub/lobe-vidol/commit/e5854e2))
+- **misc**: 添加动作库下载 ([8c4dc77](https://github.com/lobehub/lobe-vidol/commit/8c4dc77))
+- **misc**: 添加动作类别筛选 ([a4bffcf](https://github.com/lobehub/lobe-vidol/commit/a4bffcf))
+- **misc**: 添加姿势 ([9450400](https://github.com/lobehub/lobe-vidol/commit/9450400))
+- **misc**: 添加播放列表空状态 ([9338025](https://github.com/lobehub/lobe-vidol/commit/9338025))
+- **misc**: 添加男性动作 ([d7cc89b](https://github.com/lobehub/lobe-vidol/commit/d7cc89b))
+- **misc**: 添加男性姿势 ([b0e86c6](https://github.com/lobehub/lobe-vidol/commit/b0e86c6))
+- **misc**: 默认关闭侧边栏 & 打开消息栏 ([ebeb74f](https://github.com/lobehub/lobe-vidol/commit/ebeb74f))
 
 #### What's fixed
 
-* **misc**: Vrm  model bind ([52a0052](https://github.com/lobehub/lobe-vidol/commit/52a0052))
-* **misc**: Vrm  model bind ([2979b51](https://github.com/lobehub/lobe-vidol/commit/2979b51))
-* **misc**: 动作列表描述 ... ([35cfc04](https://github.com/lobehub/lobe-vidol/commit/35cfc04))
+- **misc**: Vrm  model bind ([52a0052](https://github.com/lobehub/lobe-vidol/commit/52a0052))
+- **misc**: Vrm  model bind ([2979b51](https://github.com/lobehub/lobe-vidol/commit/2979b51))
+- **misc**: 动作列表描述 ... ([35cfc04](https://github.com/lobehub/lobe-vidol/commit/35cfc04))
 
 </details>
-
 
 <div align="right">
 
@@ -459,43 +372,34 @@
 
 </div>
 
-## [Version&nbsp;0.19.0](https://github.com/lobehub/lobe-vidol/compare/v0.18.0...v0.19.0)
+## [Version 0.19.0](https://github.com/lobehub/lobe-vidol/compare/v0.18.0...v0.19.0)
+
 <sup>Released on **2024-07-15**</sup>
 
-
 #### ✨ Features
 
-- **misc**: 添加角色设定模板, 添加角色设定模板翻译.
-
+- **misc**: 添加角色设定模板，添加角色设定模板翻译.
 
 #### 🐛 Bug Fixes
 
-- **misc**: 修复上传问题和语言切换问题, 修复订阅下载和删除角色时的体验.
-
+- **misc**: 修复上传问题和语言切换问题，修复订阅下载和删除角色时的体验.
 
 <br/>
-
-
 
 <details>
 <summary><kbd>Improvements and Fixes</kbd></summary>
 
-
-
 #### What's improved
 
-* **misc**: 添加角色设定模板 ([e097d91](https://github.com/lobehub/lobe-vidol/commit/e097d91))
-* **misc**: 添加角色设定模板翻译 ([bfe5dbe](https://github.com/lobehub/lobe-vidol/commit/bfe5dbe))
-
-
+- **misc**: 添加角色设定模板 ([e097d91](https://github.com/lobehub/lobe-vidol/commit/e097d91))
+- **misc**: 添加角色设定模板翻译 ([bfe5dbe](https://github.com/lobehub/lobe-vidol/commit/bfe5dbe))
 
 #### What's fixed
 
-* **misc**: 修复上传问题和语言切换问题 ([2259ea2](https://github.com/lobehub/lobe-vidol/commit/2259ea2))
-* **misc**: 修复订阅下载和删除角色时的体验 ([cf9e64e](https://github.com/lobehub/lobe-vidol/commit/cf9e64e))
+- **misc**: 修复上传问题和语言切换问题 ([2259ea2](https://github.com/lobehub/lobe-vidol/commit/2259ea2))
+- **misc**: 修复订阅下载和删除角色时的体验 ([cf9e64e](https://github.com/lobehub/lobe-vidol/commit/cf9e64e))
 
 </details>
-
 
 <div align="right">
 
@@ -503,33 +407,27 @@
 
 </div>
 
-## [Version&nbsp;0.18.0](https://github.com/lobehub/lobe-vidol/compare/v0.17.1...v0.18.0)
+## [Version 0.18.0](https://github.com/lobehub/lobe-vidol/compare/v0.17.1...v0.18.0)
+
 <sup>Released on **2024-07-14**</sup>
 
-
 #### ✨ Features
 
-- **misc**: Settings 添加触控全局配置, support touch list, 添加 touch setting, 添加 touch setting.
-
+- **misc**: Settings 添加触控全局配置，support touch list, 添加 touch setting, 添加 touch setting.
 
 <br/>
 
-
-
 <details>
 <summary><kbd>Improvements and Fixes</kbd></summary>
-
-
 
 #### What's improved
 
-* **misc**: Settings 添加触控全局配置 ([4de71db](https://github.com/lobehub/lobe-vidol/commit/4de71db))
-* **misc**: Support touch list ([c33ee7d](https://github.com/lobehub/lobe-vidol/commit/c33ee7d))
-* **misc**: 添加 touch setting ([3b0fe95](https://github.com/lobehub/lobe-vidol/commit/3b0fe95))
-* **misc**: 添加 touch setting ([d196b78](https://github.com/lobehub/lobe-vidol/commit/d196b78))
+- **misc**: Settings 添加触控全局配置 ([4de71db](https://github.com/lobehub/lobe-vidol/commit/4de71db))
+- **misc**: Support touch list ([c33ee7d](https://github.com/lobehub/lobe-vidol/commit/c33ee7d))
+- **misc**: 添加 touch setting ([3b0fe95](https://github.com/lobehub/lobe-vidol/commit/3b0fe95))
+- **misc**: 添加 touch setting ([d196b78](https://github.com/lobehub/lobe-vidol/commit/d196b78))
 
 </details>
-
 
 <div align="right">
 
@@ -537,32 +435,26 @@
 
 </div>
 
-### [Version&nbsp;0.17.1](https://github.com/lobehub/lobe-vidol/compare/v0.17.0...v0.17.1)
-<sup>Released on **2024-07-11**</sup>
+### [Version 0.17.1](https://github.com/lobehub/lobe-vidol/compare/v0.17.0...v0.17.1)
 
+<sup>Released on **2024-07-11**</sup>
 
 #### 🐛 Bug Fixes
 
-- **misc**: 修复多语言未加载问题, 修复多语言未加载问题, 修复多语言未加载问题.
-
+- **misc**: 修复多语言未加载问题，修复多语言未加载问题，修复多语言未加载问题.
 
 <br/>
-
-
 
 <details>
 <summary><kbd>Improvements and Fixes</kbd></summary>
 
-
-
 #### What's fixed
 
-* **misc**: 修复多语言未加载问题 ([0ec684b](https://github.com/lobehub/lobe-vidol/commit/0ec684b))
-* **misc**: 修复多语言未加载问题 ([848da10](https://github.com/lobehub/lobe-vidol/commit/848da10))
-* **misc**: 修复多语言未加载问题 ([23118dc](https://github.com/lobehub/lobe-vidol/commit/23118dc))
+- **misc**: 修复多语言未加载问题 ([0ec684b](https://github.com/lobehub/lobe-vidol/commit/0ec684b))
+- **misc**: 修复多语言未加载问题 ([848da10](https://github.com/lobehub/lobe-vidol/commit/848da10))
+- **misc**: 修复多语言未加载问题 ([23118dc](https://github.com/lobehub/lobe-vidol/commit/23118dc))
 
 </details>
-
 
 <div align="right">
 
@@ -570,31 +462,25 @@
 
 </div>
 
-## [Version&nbsp;0.17.0](https://github.com/lobehub/lobe-vidol/compare/v0.16.0...v0.17.0)
-<sup>Released on **2024-07-09**</sup>
+## [Version 0.17.0](https://github.com/lobehub/lobe-vidol/compare/v0.16.0...v0.17.0)
 
+<sup>Released on **2024-07-09**</sup>
 
 #### ✨ Features
 
 - **misc**: Add llm i18n, 添加语言设置存储.
 
-
 <br/>
-
-
 
 <details>
 <summary><kbd>Improvements and Fixes</kbd></summary>
 
-
-
 #### What's improved
 
-* **misc**: Add llm i18n ([16c3a95](https://github.com/lobehub/lobe-vidol/commit/16c3a95))
-* **misc**: 添加语言设置存储 ([48ae825](https://github.com/lobehub/lobe-vidol/commit/48ae825))
+- **misc**: Add llm i18n ([16c3a95](https://github.com/lobehub/lobe-vidol/commit/16c3a95))
+- **misc**: 添加语言设置存储 ([48ae825](https://github.com/lobehub/lobe-vidol/commit/48ae825))
 
 </details>
-
 
 <div align="right">
 
@@ -602,44 +488,35 @@
 
 </div>
 
-## [Version&nbsp;0.16.0](https://github.com/lobehub/lobe-vidol/compare/v0.15.0...v0.16.0)
-<sup>Released on **2024-07-08**</sup>
+## [Version 0.16.0](https://github.com/lobehub/lobe-vidol/compare/v0.15.0...v0.16.0)
 
+<sup>Released on **2024-07-08**</sup>
 
 #### ✨ Features
 
-- **misc**: Upload avatar with cover, 迁移 voice 表单, 迁移表单到 json 表单，设计角色设定布局.
-
+- **misc**: Upload avatar with cover, 迁移 voice 表单，迁移表单到 json 表单，设计角色设定布局.
 
 #### 🐛 Bug Fixes
 
 - **misc**: Duplicate version of remark, i18n problem.
 
-
 <br/>
-
-
 
 <details>
 <summary><kbd>Improvements and Fixes</kbd></summary>
 
-
-
 #### What's improved
 
-* **misc**: Upload avatar with cover ([28273ba](https://github.com/lobehub/lobe-vidol/commit/28273ba))
-* **misc**: 迁移 voice 表单 ([c5ad9bf](https://github.com/lobehub/lobe-vidol/commit/c5ad9bf))
-* **misc**: 迁移表单到 json 表单，设计角色设定布局 ([0ca3192](https://github.com/lobehub/lobe-vidol/commit/0ca3192))
-
-
+- **misc**: Upload avatar with cover ([28273ba](https://github.com/lobehub/lobe-vidol/commit/28273ba))
+- **misc**: 迁移 voice 表单 ([c5ad9bf](https://github.com/lobehub/lobe-vidol/commit/c5ad9bf))
+- **misc**: 迁移表单到 json 表单，设计角色设定布局 ([0ca3192](https://github.com/lobehub/lobe-vidol/commit/0ca3192))
 
 #### What's fixed
 
-* **misc**: Duplicate version of remark ([c8d89d6](https://github.com/lobehub/lobe-vidol/commit/c8d89d6))
-* **misc**: I18n problem ([bafdf39](https://github.com/lobehub/lobe-vidol/commit/bafdf39))
+- **misc**: Duplicate version of remark ([c8d89d6](https://github.com/lobehub/lobe-vidol/commit/c8d89d6))
+- **misc**: I18n problem ([bafdf39](https://github.com/lobehub/lobe-vidol/commit/bafdf39))
 
 </details>
-
 
 <div align="right">
 
@@ -647,42 +524,36 @@
 
 </div>
 
-## [Version&nbsp;0.15.0](https://github.com/lobehub/lobe-vidol/compare/v0.14.0...v0.15.0)
-<sup>Released on **2024-07-08**</sup>
+## [Version 0.15.0](https://github.com/lobehub/lobe-vidol/compare/v0.14.0...v0.15.0)
 
+<sup>Released on **2024-07-08**</sup>
 
 #### ✨ Features
 
-- **misc**: Add chat file i18n, add componets file i18n, add constant about i18n, add i18n default, add i18n language file, add i18next, add jest file, add judge environment utils, add my file i18n, add role file i18n, add test file, i18n-cli config file, 更新i18n相关依赖.
-
+- **misc**: Add chat file i18n, add componets file i18n, add constant about i18n, add i18n default, add i18n language file, add i18next, add jest file, add judge environment utils, add my file i18n, add role file i18n, add test file, i18n-cli config file, 更新 i18n 相关依赖.
 
 <br/>
-
-
 
 <details>
 <summary><kbd>Improvements and Fixes</kbd></summary>
 
-
-
 #### What's improved
 
-* **misc**: Add chat file i18n ([21ec05c](https://github.com/lobehub/lobe-vidol/commit/21ec05c))
-* **misc**: Add componets file i18n ([96ad19f](https://github.com/lobehub/lobe-vidol/commit/96ad19f))
-* **misc**: Add constant about i18n ([b8efb5e](https://github.com/lobehub/lobe-vidol/commit/b8efb5e))
-* **misc**: Add i18n default ([e4ef91e](https://github.com/lobehub/lobe-vidol/commit/e4ef91e))
-* **misc**: Add i18n language file ([27b57e4](https://github.com/lobehub/lobe-vidol/commit/27b57e4))
-* **misc**: Add i18next ([c19f4c3](https://github.com/lobehub/lobe-vidol/commit/c19f4c3))
-* **misc**: Add jest file ([65cd766](https://github.com/lobehub/lobe-vidol/commit/65cd766))
-* **misc**: Add judge environment utils ([08a8d4c](https://github.com/lobehub/lobe-vidol/commit/08a8d4c))
-* **misc**: Add my file i18n ([12128ff](https://github.com/lobehub/lobe-vidol/commit/12128ff))
-* **misc**: Add role file i18n ([66bb7d4](https://github.com/lobehub/lobe-vidol/commit/66bb7d4))
-* **misc**: Add test file ([01d8f39](https://github.com/lobehub/lobe-vidol/commit/01d8f39))
-* **misc**: I18n-cli config file ([6345b7c](https://github.com/lobehub/lobe-vidol/commit/6345b7c))
-* **misc**: 更新 i18n 相关依赖 ([cf54e7e](https://github.com/lobehub/lobe-vidol/commit/cf54e7e))
+- **misc**: Add chat file i18n ([21ec05c](https://github.com/lobehub/lobe-vidol/commit/21ec05c))
+- **misc**: Add componets file i18n ([96ad19f](https://github.com/lobehub/lobe-vidol/commit/96ad19f))
+- **misc**: Add constant about i18n ([b8efb5e](https://github.com/lobehub/lobe-vidol/commit/b8efb5e))
+- **misc**: Add i18n default ([e4ef91e](https://github.com/lobehub/lobe-vidol/commit/e4ef91e))
+- **misc**: Add i18n language file ([27b57e4](https://github.com/lobehub/lobe-vidol/commit/27b57e4))
+- **misc**: Add i18next ([c19f4c3](https://github.com/lobehub/lobe-vidol/commit/c19f4c3))
+- **misc**: Add jest file ([65cd766](https://github.com/lobehub/lobe-vidol/commit/65cd766))
+- **misc**: Add judge environment utils ([08a8d4c](https://github.com/lobehub/lobe-vidol/commit/08a8d4c))
+- **misc**: Add my file i18n ([12128ff](https://github.com/lobehub/lobe-vidol/commit/12128ff))
+- **misc**: Add role file i18n ([66bb7d4](https://github.com/lobehub/lobe-vidol/commit/66bb7d4))
+- **misc**: Add test file ([01d8f39](https://github.com/lobehub/lobe-vidol/commit/01d8f39))
+- **misc**: I18n-cli config file ([6345b7c](https://github.com/lobehub/lobe-vidol/commit/6345b7c))
+- **misc**: 更新 i18n 相关依赖 ([cf54e7e](https://github.com/lobehub/lobe-vidol/commit/cf54e7e))
 
 </details>
-
 
 <div align="right">
 
@@ -690,53 +561,44 @@
 
 </div>
 
-## [Version&nbsp;0.14.0](https://github.com/lobehub/lobe-vidol/compare/v0.13.0...v0.14.0)
-<sup>Released on **2024-07-07**</sup>
+## [Version 0.14.0](https://github.com/lobehub/lobe-vidol/compare/v0.13.0...v0.14.0)
 
+<sup>Released on **2024-07-07**</sup>
 
 #### ✨ Features
 
-- **misc**: 上传封面, 成功上传文件到 S3, 添加 Agent 大模型参数, 添加 required 标签 & 抽取 base64ToFile 方法, 添加 trpc upload 调用接口, 添加 trpc upload 调用接口, 添加 trpc upload 调用接口, 添加 useUploadAgent 方法上传角色文件, 添加更多配置参数, 添加模型分类.
-
+- **misc**: 上传封面，成功上传文件到 S3, 添加 Agent 大模型参数，添加 required 标签 & 抽取 base64ToFile 方法，添加 trpc upload 调用接口，添加 trpc upload 调用接口，添加 trpc upload 调用接口，添加 useUploadAgent 方法上传角色文件，添加更多配置参数，添加模型分类.
 
 #### 🐛 Bug Fixes
 
 - **misc**: Axios upload error, build error, numeral type error, 文件上传处理.
 
-
 <br/>
-
-
 
 <details>
 <summary><kbd>Improvements and Fixes</kbd></summary>
 
-
-
 #### What's improved
 
-* **misc**: 上传封面 ([5291b97](https://github.com/lobehub/lobe-vidol/commit/5291b97))
-* **misc**: 成功上传文件到 S3 ([66fad94](https://github.com/lobehub/lobe-vidol/commit/66fad94))
-* **misc**: 添加 Agent 大模型参数 ([6ca10ce](https://github.com/lobehub/lobe-vidol/commit/6ca10ce))
-* **misc**: 添加 required 标签 & 抽取 base64ToFile 方法 ([4b7d288](https://github.com/lobehub/lobe-vidol/commit/4b7d288))
-* **misc**: 添加 trpc upload 调用接口 ([2941823](https://github.com/lobehub/lobe-vidol/commit/2941823))
-* **misc**: 添加 trpc upload 调用接口 ([73f149a](https://github.com/lobehub/lobe-vidol/commit/73f149a))
-* **misc**: 添加 trpc upload 调用接口 ([6892099](https://github.com/lobehub/lobe-vidol/commit/6892099))
-* **misc**: 添加 useUploadAgent 方法上传角色文件 ([8c7112e](https://github.com/lobehub/lobe-vidol/commit/8c7112e))
-* **misc**: 添加更多配置参数 ([146a5c1](https://github.com/lobehub/lobe-vidol/commit/146a5c1))
-* **misc**: 添加模型分类 ([a75de1b](https://github.com/lobehub/lobe-vidol/commit/a75de1b))
-
-
+- **misc**: 上传封面 ([5291b97](https://github.com/lobehub/lobe-vidol/commit/5291b97))
+- **misc**: 成功上传文件到 S3 ([66fad94](https://github.com/lobehub/lobe-vidol/commit/66fad94))
+- **misc**: 添加 Agent 大模型参数 ([6ca10ce](https://github.com/lobehub/lobe-vidol/commit/6ca10ce))
+- **misc**: 添加 required 标签 & 抽取 base64ToFile 方法 ([4b7d288](https://github.com/lobehub/lobe-vidol/commit/4b7d288))
+- **misc**: 添加 trpc upload 调用接口 ([2941823](https://github.com/lobehub/lobe-vidol/commit/2941823))
+- **misc**: 添加 trpc upload 调用接口 ([73f149a](https://github.com/lobehub/lobe-vidol/commit/73f149a))
+- **misc**: 添加 trpc upload 调用接口 ([6892099](https://github.com/lobehub/lobe-vidol/commit/6892099))
+- **misc**: 添加 useUploadAgent 方法上传角色文件 ([8c7112e](https://github.com/lobehub/lobe-vidol/commit/8c7112e))
+- **misc**: 添加更多配置参数 ([146a5c1](https://github.com/lobehub/lobe-vidol/commit/146a5c1))
+- **misc**: 添加模型分类 ([a75de1b](https://github.com/lobehub/lobe-vidol/commit/a75de1b))
 
 #### What's fixed
 
-* **misc**: Axios upload error ([fc70a3d](https://github.com/lobehub/lobe-vidol/commit/fc70a3d))
-* **misc**: Build error ([e64fdda](https://github.com/lobehub/lobe-vidol/commit/e64fdda))
-* **misc**: Numeral type error ([73b1b48](https://github.com/lobehub/lobe-vidol/commit/73b1b48))
-* **misc**: 文件上传处理 ([7c2822c](https://github.com/lobehub/lobe-vidol/commit/7c2822c))
+- **misc**: Axios upload error ([fc70a3d](https://github.com/lobehub/lobe-vidol/commit/fc70a3d))
+- **misc**: Build error ([e64fdda](https://github.com/lobehub/lobe-vidol/commit/e64fdda))
+- **misc**: Numeral type error ([73b1b48](https://github.com/lobehub/lobe-vidol/commit/73b1b48))
+- **misc**: 文件上传处理 ([7c2822c](https://github.com/lobehub/lobe-vidol/commit/7c2822c))
 
 </details>
-
 
 <div align="right">
 

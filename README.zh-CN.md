@@ -6,7 +6,7 @@
 
 # Lobe Vidol
 
-与Lobe Vidol一起体验虚拟偶像创作的魔力，享受我们精致的UI设计，支持MMD的舞蹈内容，并能与人物进行流畅的对话—所有这些功能都集成在一个无缝的平台上。
+与 Lobe Vidol 一起体验虚拟偶像创作的魔力，享受我们精致的 UI 设计，支持 MMD 的舞蹈内容，并能与人物进行流畅的对话 — 所有这些功能都集成在一个无缝的平台上。
 
 <sup>每个人都可以创造虚拟偶像</sup>
 
@@ -39,8 +39,19 @@
 
 - [👋🏻 开始使用 & 交流](#-开始使用--交流)
 - [✨ 特性一览](#-特性一览)
+  - [1. **流畅的对话体验**](#1-流畅的对话体验)
+  - [2. **背景情境设定**](#2-背景情境设定)
+  - [3. **丰富的动作和姿式库**](#3-丰富的动作和姿式库)
+  - [4. **精致 UI 设计**](#4-精致-ui-设计)
+  - [5. **丰富的角色编辑体验**](#5-丰富的角色编辑体验)
+  - [6. **MMD 舞蹈支持**](#6-mmd-舞蹈支持)
+  - [7. \*\* PMX 舞台加载功能 \*\*](#7--pmx-舞台加载功能-)
+  - [8. \*\* 触摸响应功能 \*\*](#8--触摸响应功能-)
+  - [9. \*\* 角色市场 \*\*](#9--角色市场-)
+  - [10. \*\* 舞蹈市场 \*\*](#10--舞蹈市场-)
+  - [11. \*\* TTS & STT 语音会话 \*\*](#11--tts--stt-语音会话-)
 - [📦 生态](#-生态)
-- [⌨️ 本地开发](#-本地开发)
+- [⌨️ 本地开发](#️-本地开发)
 - [🤝 参与贡献](#-参与贡献)
 - [🩷 社区赞助](#-社区赞助)
 - [🔗 更多工具](#-更多工具)
@@ -53,10 +64,10 @@
 
 ## 👋🏻 开始使用 & 交流
 
-LobeVidol 目前正在积极开发中，有任何需求或者问题，欢迎提交 [issues][issues-link]
+LobeVidol 目前正在积极开发中，有任何需求或者问题，欢迎提交 \[issues]\[issues-link]
 
-| [![][vercel-shield-badge]][vercel-link]   | 无需安装或注册！访问我们的网站，即可快速体验                          |
-| :---------------------------------------- | :----------------------------------------------------------------------------------------------------------------- |
+| [![][vercel-shield-badge]][vercel-link]   | 无需安装或注册！访问我们的网站，即可快速体验                                  |
+| :---------------------------------------- | :---------------------------------------------------------------------------- |
 | [![][discord-shield-badge]][discord-link] | 加入我们的 Discord 社区！这是你可以与开发者和其他 LobeHub 热衷用户交流的地方. |
 
 > \[!IMPORTANT]
@@ -81,70 +92,71 @@ LobeVidol 目前正在积极开发中，有任何需求或者问题，欢迎提�
 ## ✨ 特性一览
 
 ### 1. **流畅的对话体验**
-流式响应带来流畅的对话体验，你可以通过设定角色对话情境把人物的动作和表情放入（）内，将正在发生的事或场景放入[]内来身临其境。
+
+流式响应带来流畅的对话体验，你可以通过设定角色对话情境把人物的动作和表情放入（）内，将正在发生的事或场景放入 \[] 内来身临其境。
 
 <img width="1291" alt="fluent chat experience" src="https://github.com/user-attachments/assets/6b3a2df4-c80e-4cb4-8d62-c6c5532d0f00">
 
 ### 2. **背景情境设定**
+
 你可以通过设定背景图片的方式让对话更加符合情境：
 
 <img width="1318" alt="background setting" src="https://github.com/user-attachments/assets/e62b635c-168d-4f4e-8741-39aac0f7cfd3">
 
 ### 3. **丰富的动作和姿式库**
+
 内置 Mixamo 角色动作与姿式库，你可以让角色在对话时摆出你想要的姿势或动作:
 
 <img width="1323" alt="motions and postures" src="https://github.com/user-attachments/assets/95d9a42e-4215-45f2-8171-f631a91065c9">
 
-
 ### 4. **精致 UI 设计**
+
 经过精心设计的界面，具有优雅的外观和流畅的交互效果，支持亮暗色主题，适配移动端。支持 PWA，提供更加接近原生应用的体验。
 
 <img width="1408" alt="ui design" src="https://github.com/user-attachments/assets/e55df3c0-4e7b-4b5d-b903-e5865498da7a">
 
 ### 5. **丰富的角色编辑体验**
-使用角色编辑器，你可以创建属于你自己的虚拟偶像，设定触摸反应，上传 VRM 模型到网站并与他们互动。 
+
+使用角色编辑器，你可以创建属于你自己的虚拟偶像，设定触摸反应，上传 VRM 模型到网站并与他们互动。
 
 <img width="1291" alt="role edit" src="https://github.com/user-attachments/assets/3d319554-ae14-4932-b527-e220c910fd51">
 
 ### 6. **MMD 舞蹈支持**
 
-借助 mmd-parser 的支持，你可以使用 vmd 文件和最喜欢的偶像一起跳舞; Just Dance!
-
+借助 mmd-parser 的支持，你可以使用 vmd 文件和最喜欢的偶像一起跳舞；Just Dance!
 
 <https://github.com/user-attachments/assets/c017be86-dbac-4ce1-9f00-a10248b58621>
 
-
-### 7. ** PMX 舞台加载功能**
+### 7. \*\* PMX 舞台加载功能 \*\*
 
 我们添加了舞台加载功能并内置丰富的舞台选择，让角色跳舞时可以搭配不同的舞台风格:
 
 <img width="1317" alt="pmx stage" src="https://github.com/user-attachments/assets/ec436b96-c270-431a-acef-f140584e6938">
 
-### 8. ** 触摸响应功能 **
+### 8. \*\* 触摸响应功能 \*\*
 
 点击角色的不同身体部位，角色将做出不同的反应，你也可以自己编辑角色的触摸反应来创造与众不同的交互效果：
 
-
 <https://github.com/user-attachments/assets/a283bca0-222c-4ac8-8757-8c56ce3873c2>
 
-
-### 9. ** 角色市场 **
+### 9. \*\* 角色市场 \*\*
 
 在 LobeVidol 的角色市场中汇聚了众多精心设计的角色，这些角色让你可以体验到不同的情境和交互体验，让你拥有不一样的陪伴体验。
 我们的市场不仅是一个展示平台，更是一个协作的空间。在这里，每个人都可以贡献自己的想象，分享个人设定的角色。
 
 > \[!TIP]
-> 通过创建角色功能你可以轻松地将你的角色作品提交到我们的平台, 我们特别强调的是，LobeVidol 建立了一套精密的自动化国际化（i18n）工作流程， 它的强大之处在于能够无缝地将你的角色转化为多种语言版本。 这意味着，不论你的用户使用何种语言，他们都能无障碍地体验到你的角色。
+>
+> 通过创建角色功能你可以轻松地将你的角色作品提交到我们的平台，我们特别强调的是，LobeVidol 建立了一套精密的自动化国际化（i18n）工作流程， 它的强大之处在于能够无缝地将你的角色转化为多种语言版本。 这意味着，不论你的用户使用何种语言，他们都能无障碍地体验到你的角色。
 
 <img width="1320" alt="discover" src="https://github.com/user-attachments/assets/9f155227-6856-4957-9f6e-a9b3f534df24">
 
-### 10. ** 舞蹈市场 **
+### 10. \*\* 舞蹈市场 \*\*
 
 在 LobeVidol 的舞蹈市场中添加了丰富的 MMD 舞蹈资源，这些舞蹈构成了丰富的视觉体验，你可以搭配不同的角色，舞台，音乐和舞蹈来创造不一样的观看体验。
 
 <img width="1323" alt="Snipaste_2024-11-05_21-22-47" src="https://github.com/user-attachments/assets/684ba6ad-17a9-4af3-9943-fcaaee121216">
 
-### 11. ** TTS & STT 语音会话 **
+### 11. \*\* TTS & STT 语音会话 \*\*
 
 LobeVidol 支持文字转语音（Text-to-Speech，TTS）和语音转文字（Speech-to-Text，STT）技术，这使得我们的应用能够将文本信息转化为清晰的语音输出，用户可以像与真人交谈一样与我们的对话助手进行交流。
 用户可以从多种声音中选择，给助手搭配合适的音源。 同时，对于那些倾向于听觉学习或者想要在忙碌中获取信息的用户来说，TTS 提供了一个极佳的解决方案。
@@ -167,8 +179,8 @@ LobeVidol 支持文字转语音（Text-to-Speech，TTS）和语音转文字（Sp
 | [@lobehub/lint][lobe-lint-link]   | [lobehub/lobe-lint][lobe-lint-github]   | LobeHub 代码样式规范 ESlint，Stylelint，Commitlint，Prettier，Remark 和 Semantic Release | [![][lobe-lint-shield]][lobe-lint-link]   |
 
 - **[Vidol market](https://github.com/v-idol/vidol-chat-agents)** - This is the Market Index of Vidol Chat. Vidol accesses index.json from this repo to show user the list of available agents and dances.
-- **[Vidol agent sample](https://github.com/v-idol/vidol-agent-sample)** - Vidol人物数据模版
-- **[Vidol dance sample](https://github.com/v-idol/vidol-dance-sample)** - Vidol舞蹈数据模版
+- **[Vidol agent sample](https://github.com/v-idol/vidol-agent-sample)** - Vidol 人物数据模版
+- **[Vidol dance sample](https://github.com/v-idol/vidol-dance-sample)** - Vidol 舞蹈数据模版
 
 <div align="right">
 
@@ -201,7 +213,7 @@ $ bun dev
 
 ## 🤝 参与贡献
 
-我们非常欢迎各种形式的贡献。如果你对贡献代码感兴趣，可以查看我们的 GitHub [Issues][github-issues-link] 和 [Projects][github-project-link]，大展身手，向我们展示你的奇思妙想。
+我们非常欢迎各种形式的贡献。如果你对贡献代码感兴趣，可以查看我们的 GitHub [Issues][github-issues-link] 和 \[Projects]\[github-project-link]，大展身手，向我们展示你的奇思妙想。
 
 [![][pr-welcome-shield]][pr-welcome-link]
 
