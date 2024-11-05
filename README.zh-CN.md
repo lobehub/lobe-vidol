@@ -10,7 +10,7 @@
 
 <sup>每个人都可以创造虚拟偶像</sup>
 
-[English](./README.md) · **简体中文** · [Changelog](./CHANGELOG.md) · [Report Bug][github-issues-link] · [Request Feature][github-issues-link]
+[English](./README.md) · **简体中文** · [日本語](./README.ja-JP.md) · [文档][docs] · [Changelog](./CHANGELOG.md) · [Report Bug][github-issues-link] · [Request Feature][github-issues-link]
 
 [![][github-release-shield]][github-release-link]
 [![][vercel-shield]][vercel-link]
@@ -306,6 +306,7 @@ This project is [MIT](./LICENSE) licensed.
 [discord-link]: https://discord.gg/AYFPHvv2jT
 [discord-shield]: https://img.shields.io/discord/1127171173982154893?color=5865F2&label=discord&labelColor=black&logo=discord&logoColor=white&style=flat-square
 [discord-shield-badge]: https://img.shields.io/discord/1127171173982154893?color=5865F2&label=discord&labelColor=black&logo=discord&logoColor=white&style=for-the-badge
+[docs]: https://docs.vidol.chat
 [github-action-release-link]: https://github.com/actions/workflows/lobehub/lobe-vidol/release.yml
 [github-action-release-shield]: https://img.shields.io/github/actions/workflow/status/lobehub/lobe-vidol/release.yml?label=release&labelColor=black&logo=githubactions&logoColor=white&style=flat-square
 [github-action-test-link]: https://github.com/actions/workflows/lobehub/lobe-vidol/test.yml
