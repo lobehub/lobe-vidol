@@ -6,11 +6,11 @@
 
 # Lobe Vidol
 
-Experience the magic of virtual idol creation with Lobe Vidol, enjoy the elegance of our Exquisite UI Design, dance along using MMD Dance Support, and engage in Smooth Conversations—all in one seamless platform.
+Experience the magic of virtual idol creation with Lobe Vidol. Enjoy our exquisite UI design, support for MMD dance content, and seamless conversations with characters—all integrated into one cohesive platform.
 
-<sup>Making Virtual Idols Accessible for EveryOne</sup>
+<sup>Anyone can create a virtual idol</sup>
 
-**English** · [简体中文](./README.zh-CN.md) · [Changelog](./CHANGELOG.md) · [Report Bug][github-issues-link] · [Request Feature][github-issues-link]
+[English](./README.md) · **简体中文** · [Changelog](./CHANGELOG.md) · [Report Bug][github-issues-link] · [Request Feature][github-issues-link]
 
 [![][github-release-shield]][github-release-link]
 [![][vercel-shield]][vercel-link]
@@ -30,42 +30,51 @@ Experience the magic of virtual idol creation with Lobe Vidol, enjoy the eleganc
 </div>
 
 > \[!NOTE]
-> Lobe Vidol is currently in the early stages of development and available for beta testing. You are welcome to join and contribute.
+> Lobe Vidol is currently in the early stages of development and is now open for Beta testing. We welcome you to join us and contribute!
 
 <details>
-<summary><kbd>Table of contents</kbd></summary>
+<summary><kbd>Table of Contents</kbd></summary>
 
 #### TOC
 
-- [👋🏻 Getting Started & Join Our Community](#-getting-started--join-our-community)
-- [✨ Features](#-features)
-  - [1.🗣️ **Smooth Conversation Experience**](#1️-smooth-conversation-experience)
-  - [2. 💎 **Exquisite UI Design**](#2--exquisite-ui-design)
-  - [3. 💨 **Vroid Model Preview**](#3--vroid-model-preview)
-  - [4. 🎇 **MMD Dance Support**](#4--mmd-dance-support)
+- [👋🏻 Getting Started & Community](#-getting-started--community)
+- [✨ Features Overview](#-features-overview)
+  - [1. **Seamless Conversation Experience**](#1-seamless-conversation-experience)
+  - [2. **Background Context Setting**](#2-background-context-setting)
+  - [3. **Rich Library of Actions and Poses**](#3-rich-library-of-actions-and-poses)
+  - [4. **Exquisite UI Design**](#4-exquisite-ui-design)
+  - [5. **Rich Character Editing Experience**](#5-rich-character-editing-experience)
+  - [6. **MMD Dance Support**](#6-mmd-dance-support)
+  - [7. **PMX Stage Loading Feature**](#7-pmx-stage-loading-feature)
+  - [8. **Touch Response Feature**](#8-touch-response-feature)
+  - [9. **Character Marketplace**](#9-character-marketplace)
+  - [10. **Dance Marketplace**](#10-dance-marketplace)
+  - [11. **TTS & STT Voice Conversations**](#11-tts--stt-voice-conversations)
 - [📦 Ecosystem](#-ecosystem)
 - [⌨️ Local Development](#️-local-development)
 - [🤝 Contributing](#-contributing)
-- [🩷 Sponsor](#-sponsor)
-- [🔗 Links](#-links)
-  - [More Products](#more-products)
-  - [Credits](#credits)
+- [🩷 Community Sponsorship](#-community-sponsorship)
+- [🔗 More Tools](#-more-tools)
+  - [More Projects](#more-projects)
+  - [Related Links](#related-links)
 
 ####
 
 </details>
 
-## 👋🏻 Getting Started & Join Our Community
+## 👋🏻 Getting Started & Community
 
-Please be aware that LobeVidol is currently under active development, and feedback is welcome for any [issues][github-issues-link] encountered.
+Lobe Vidol is actively under development. If you have any requests or questions, feel free to submit \[issues]\[issues-link].
 
-| [![][vercel-shield-badge]][vercel-link]   | No installation or registration necessary! Visit our website to experience it firsthand.                           |
-| :---------------------------------------- | :----------------------------------------------------------------------------------------------------------------- |
-| [![][discord-shield-badge]][discord-link] | Join our Discord community! This is where you can connect with developers and other enthusiastic users of LobeHub. |
+| [![][vercel-shield-badge]][vercel-link]   | No installation or registration required! Visit our website for a quick experience.                              |
+| :---------------------------------------- | :--------------------------------------------------------------------------------------------------------------- |
+| [![][discord-shield-badge]][discord-link] | Join our Discord community! This is where you can interact with developers and other enthusiastic LobeHub users. |
 
 > \[!IMPORTANT]
 >
-> **Star Us**, You will receive all release notifications from GitHub without any delay \~ ⭐️
+> **Star the project** to receive all release notifications from GitHub without delay!～⭐️
+
+<img width="1749" alt="star (1)" src="https://github.com/user-attachments/assets/73f96340-ef2b-4d9b-ab6f-71f30c0c02fb">
 
 <details><summary><kbd>Star History</kbd></summary>
   <picture>
@@ -80,31 +89,79 @@ Please be aware that LobeVidol is currently under active development, and feedba
 
 </div>
 
-## ✨ Features
+## ✨ Feature Overview
 
-### 1.🗣️ **Smooth Conversation Experience**
+### 1. **Smooth Conversational Experience**
 
-Fluid responses ensure a smooth conversation experience. It fully supports Markdown rendering, including code highlighting, LaTex formulas and more.
+Streamed responses provide a smooth conversational experience. You can set the dialogue context by placing character actions and expressions in parentheses () and the ongoing events or scenes in square brackets [] to create an immersive experience.
 
-<img width="1503" alt="Snipaste_2024-04-23_23-47-02" src="https://github.com/lobehub/lobe-vidol/assets/4705237/51942769-332d-4829-8732-b901dc290b8d">
+<img width="1291" alt="fluent chat experience" src="https://github.com/user-attachments/assets/6b3a2df4-c80e-4cb4-8d62-c6c5532d0f00">
 
-### 2. 💎 **Exquisite UI Design**
+### 2. **Background Context Setting**
 
-With a carefully designed interface, it offers an elegant appearance and smooth interaction. It supports light and dark themes. PWA support provides a more native-like experience;
+You can enhance the dialogue by setting a background image that fits the context:
 
-<img width="1503" alt="Snipaste_2024-04-23_23-48-56" src="https://github.com/lobehub/lobe-vidol/assets/4705237/3e30f842-dc01-426c-9683-06b00357bc8d">
+<img width="1318" alt="background setting" src="https://github.com/user-attachments/assets/e62b635c-168d-4f4e-8741-39aac0f7cfd3">
 
-### 3. 💨 **Vroid Model Preview**
+### 3. **Rich Library of Actions and Poses**
 
-Using the Vroid Editor, you can create and upload your own virtual idol to the website, play with them;
+With a built-in library of Mixamo character actions and poses, you can have characters strike the desired poses or perform actions during conversations:
 
-![324259872-113e4882-6710-4d81-a04f-a407989f947d](https://github.com/lobehub/lobe-vidol/assets/4705237/c3cf87c3-f8c0-49ef-b966-e451e2fbf583)
+<img width="1323" alt="motions and postures" src="https://github.com/user-attachments/assets/95d9a42e-4215-45f2-8171-f631a91065c9">
 
-### 4. 🎇 **MMD Dance Support**
+### 4. **Elegant UI Design**
 
-With the support of mmd-parser, you can play vmd files with your favarite idol; Just Dance!
+The meticulously designed interface features an elegant appearance and smooth interaction effects, supporting both light and dark themes, and is optimized for mobile devices. It also supports PWA, providing an experience closer to that of a native application.
 
-<img width="1455" alt="Snipaste_2024-04-23_23-43-21" src="https://github.com/lobehub/lobe-vidol/assets/4705237/8d1107c7-bec9-4f20-a8ac-1413d3682587">
+<img width="1408" alt="ui design" src="https://github.com/user-attachments/assets/e55df3c0-4e7b-4b5d-b903-e5865498da7a">
+
+### 5. **Rich Character Editing Experience**
+
+Using the character editor, you can create your own virtual idol, set touch responses, upload VRM models to the site, and interact with them.
+
+<img width="1291" alt="role edit" src="https://github.com/user-attachments/assets/3d319554-ae14-4932-b527-e220c910fd51">
+
+### 6. **MMD Dance Support**
+
+With the support of mmd-parser, you can dance with your favorite idols using vmd files; Just Dance!
+
+<https://github.com/user-attachments/assets/c017be86-dbac-4ce1-9f00-a10248b58621>
+
+### 7. **PMX Stage Loading Feature**
+
+We have added a stage loading feature with a rich selection of stages, allowing characters to dance with different stage styles:
+
+<img width="1317" alt="pmx stage" src="https://github.com/user-attachments/assets/ec436b96-c270-431a-acef-f140584e6938">
+
+### 8. **Touch Response Feature**
+
+By clicking on different body parts of the character, they will respond differently. You can also edit the character's touch responses to create unique interactive effects:
+
+<https://github.com/user-attachments/assets/a283bca0-222c-4ac8-8757-8c56ce3873c2>
+
+### 9. **Character Marketplace**
+
+The LobeVidol character marketplace gathers a variety of meticulously designed characters, allowing you to experience different contexts and interactions, providing a unique companionship experience.
+Our marketplace is not just a display platform but a collaborative space where everyone can contribute their imagination and share their personally designed characters.
+
+> \[!TIP]
+>
+> With the character creation feature, you can easily submit your character creations to our platform. We emphasize that LobeVidol has established a sophisticated automated internationalization (i18n) workflow, which seamlessly converts your characters into multiple language versions. This means that regardless of the language your users speak, they can experience your characters without barriers.
+
+<img width="1320" alt="discover" src="https://github.com/user-attachments/assets/9f155227-6856-4957-9f6e-a9b3f534df24">
+
+### 10. **Dance Marketplace**
+
+The LobeVidol dance marketplace features a rich collection of MMD dance resources, creating a wealth of visual experiences. You can combine different characters, stages, music, and dances to create a unique viewing experience.
+
+<img width="1323" alt="Snipaste_2024-11-05_21-22-47" src="https://github.com/user-attachments/assets/684ba6ad-17a9-4af3-9943-fcaaee121216">
+
+### 11. **TTS & STT Voice Conversations**
+
+LobeVidol supports Text-to-Speech (TTS) and Speech-to-Text (STT) technologies, enabling our application to convert text information into clear voice output. Users can interact with our conversational assistant as if they were talking to a real person.
+Users can choose from a variety of voices to match their assistant with the appropriate sound source. Additionally, for those who prefer auditory learning or want to obtain information while busy, TTS provides an excellent solution.
+
+In LobeVidol, we have carefully selected a range of high-quality voice options (OpenAI Audio, Microsoft Edge Speech) to meet the needs of users from different regions and cultural backgrounds. Users can select suitable voices based on personal preferences or specific scenarios to achieve a personalized communication experience.
 
 <div align="right">
 
@@ -114,16 +171,16 @@ With the support of mmd-parser, you can play vmd files with your favarite idol; 
 
 ## 📦 Ecosystem
 
-| NPM                               | Repository                              | Description                                                                                           | Version                                   |
-| --------------------------------- | --------------------------------------- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------- |
-| [@lobehub/ui][lobe-ui-link]       | [lobehub/lobe-ui][lobe-ui-github]       | Open-source UI component library dedicated to building AIGC web applications.                         | [![][lobe-ui-shield]][lobe-ui-link]       |
-| [@lobehub/icons][lobe-icons-link] | [lobehub/lobe-icons][lobe-icons-github] | Popular AI / LLM Model Brand SVG Logo and Icon Collection.                                            | [![][lobe-icons-shield]][lobe-icons-link] |
-| [@lobehub/tts][lobe-tts-link]     | [lobehub/lobe-tts][lobe-tts-github]     | High-quality & reliable TTS/STT React Hooks library                                                   | [![][lobe-tts-shield]][lobe-tts-link]     |
-| [@lobehub/lint][lobe-lint-link]   | [lobehub/lobe-lint][lobe-lint-github]   | Configurations for ESlint, Stylelint, Commitlint, Prettier, Remark, and Semantic Release for LobeHub. | [![][lobe-lint-shield]][lobe-lint-link]   |
+| NPM                               | Repository                              | Description                                                                                             | Version                                   |
+| --------------------------------- | --------------------------------------- | ------------------------------------------------------------------------------------------------------- | ----------------------------------------- |
+| [@lobehub/ui][lobe-ui-link]       | [lobehub/lobe-ui][lobe-ui-github]       | An open-source UI component library designed for building AIGC web applications                         | [![][lobe-ui-shield]][lobe-ui-link]       |
+| [@lobehub/icons][lobe-icons-link] | [lobehub/lobe-icons][lobe-icons-github] | A collection of SVG logos and icons for mainstream AI / LLM models and companies                        | [![][lobe-icons-shield]][lobe-icons-link] |
+| [@lobehub/tts][lobe-tts-link]     | [lobehub/lobe-tts][lobe-tts-github]     | A React Hooks library for AI TTS / STT voice synthesis / recognition                                    | [![][lobe-tts-shield]][lobe-tts-link]     |
+| [@lobehub/lint][lobe-lint-link]   | [lobehub/lobe-lint][lobe-lint-github]   | LobeHub code style guidelines for ESlint, Stylelint, Commitlint, Prettier, Remark, and Semantic Release | [![][lobe-lint-shield]][lobe-lint-link]   |
 
-- **[Vidol market](https://github.com/v-idol/vidol-chat-agents)** - This is the Market Index of Vidol Chat. Vidol accesses index.json from this repo to show user the list of available agents and dances.
-- **[Vidol agent sample](https://github.com/v-idol/vidol-agent-sample)** - This is the sample repo to define an AI agent in Vidol.
-- **[Vidol dance sample](https://github.com/v-idol/vidol-dance-sample)** - This is the sample repo to define a dance in Vidol.
+- **[Vidol market](https://github.com/v-idol/vidol-chat-agents)** - This is the Market Index of Vidol Chat. Vidol accesses index.json from this repo to show users the list of available agents and dances.
+- **[Vidol agent sample](https://github.com/v-idol/vidol-agent-sample)** - Vidol character data template
+- **[Vidol dance sample](https://github.com/v-idol/vidol-dance-sample)** - Vidol dance data template
 
 <div align="right">
 
@@ -133,11 +190,11 @@ With the support of mmd-parser, you can play vmd files with your favarite idol; 
 
 ## ⌨️ Local Development
 
-You can use Github Codespaces for online development:
+You can use GitHub Codespaces for online development:
 
 [![][github-codespace-shield]][github-codespace-link]
 
-Or clone it for local development:
+Or use the following commands for local development:
 
 [![][bun-shield]][bun-link]
 
@@ -156,7 +213,7 @@ $ bun dev
 
 ## 🤝 Contributing
 
-Contributions of all types are more than welcome, if you are interested in contributing code, feel free to check out our GitHub [Issues][github-issues-link] to get stuck in to show us what you’re made of.
+We warmly welcome contributions in various forms. If you're interested in contributing code, please check out our GitHub [Issues][github-issues-link] and [Projects][github-project-link] to showcase your creativity and skills.
 
 [![][pr-welcome-shield]][pr-welcome-link]
 
@@ -198,14 +255,14 @@ Contributions of all types are more than welcome, if you are interested in contr
 
 </div>
 
-## 🩷 Sponsor
+## 🩷 Community Sponsorship
 
-Every bit counts and your one-time donation sparkles in our galaxy of support! You're a shooting star, making a swift and bright impact on our journey. Thank you for believing in us – your generosity guides us toward our mission, one brilliant flash at a time.
+Every bit of support is incredibly valuable, coming together to form the brilliant galaxy we support! You are like a shooting star that lights up our path forward in an instant. Thank you for your trust — your support acts like a guiding star, repeatedly illuminating the way for the project.
 
 <a href="https://opencollective.com/lobehub" target="_blank">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://github.com/lobehub/.github/blob/main/static/sponsor-dark.png?raw=true">
-    <img  src="https://github.com/lobehub/.github/blob/main/static/sponsor-light.png?raw=true">
+    <img src="https://github.com/lobehub/.github/blob/main/static/sponsor-light.png?raw=true">
   </picture>
 </a>
 
@@ -215,16 +272,16 @@ Every bit counts and your one-time donation sparkles in our galaxy of support! Y
 
 </div>
 
-## 🔗 Links
+## 🔗 More Tools
 
-### More Products
+### More Projects
 
-- **[🤖 Lobe Chat][lobe-chat] :** An open-source, extensible (Function Calling), high-performance chatbot framework. It supports one-click free deployment of your private ChatGPT/LLM web application.
-- **[🅰️ Lobe SD Theme][lobe-theme]:** Modern theme for Stable Diffusion WebUI, exquisite interface design, highly customizable UI, and efficiency-boosting features.
-- **[⛵️ Lobe Midjourney WebUI][lobe-midjourney-webui]:** WebUI for Midjourney, leverages AI to quickly generate a wide array of rich and diverse images from text prompts, sparking creativity and enhancing conversations.
-- **[🌏 Lobe i18n][lobe-i18n] :** Lobe i18n is an automation tool for the i18n (internationalization) translation process, powered by ChatGPT. It supports features such as automatic splitting of large files, incremental updates, and customization options for the OpenAI model, API proxy, and temperature.
+- **[🤖 Lobe Chat][lobe-chat] :** An open-source, extensible (Function Calling) plugin system, modern design ChatGPT/LLMs chat application and development framework. Supports one-click free deployment of your private ChatGPT/LLMs application.
+- **[🅰️ Lobe SD Theme][lobe-theme]:** A modern theme for Stable Diffusion WebUI, featuring exquisite interface design, highly customizable UI, and efficiency-enhancing features.
+- **[⛵️ Lobe Midjourney WebUI][lobe-midjourney-webui]:** Midjourney WebUI, capable of quickly generating a rich variety of images based on text prompts, inspiring creativity and enhancing dialogue.
+- **[🌏 Lobe i18n][lobe-i18n]:** Lobe i18n is an automation tool for the i18n (internationalization) translation process powered by ChatGPT. It supports automatic splitting of large files, incremental updates, and customizable options for OpenAI models, API proxies, and temperature.
 
-### Credits
+### Related Links
 
 - **mmd-parser** - <https://github.com/takahirox/mmd-parser>
 - **three-vrm** - <https://github.com/pixiv/three-vrm>
@@ -288,7 +345,7 @@ This project is [MIT](./LICENSE) licensed.
 [pr-welcome-link]: https://github.com/lobehub/lobe-vidol/pulls
 [pr-welcome-shield]: https://img.shields.io/badge/%F0%9F%A4%AF%20PR%20WELCOME-%E2%86%92-ffcb47?labelColor=black&style=for-the-badge
 [profile-link]: https://github.com/lobehub
-[sponsor-link]: https://opencollective.com/lobehub "Become 🩷 LobeHub Sponsor"
+[sponsor-link]: https://opencollective.com/lobehub 'Become 🩷 LobeHub Sponsor'
 [sponsor-shield]: https://img.shields.io/badge/-Sponsor%20LobeHub-f04f88?logo=opencollective&logoColor=white&style=flat-square
 [vercel-link]: https://vidol.lobehub.com
 [vercel-shield]: https://img.shields.io/website?down_message=offline&label=vercel&labelColor=black&logo=vercel&style=flat-square&up_message=online&url=https%3A%2F%2Fvidol.lobehub.com

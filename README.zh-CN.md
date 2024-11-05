@@ -66,8 +66,8 @@
 
 LobeVidol 目前正在积极开发中，有任何需求或者问题，欢迎提交 \[issues]\[issues-link]
 
-| [![][vercel-shield-badge]][vercel-link]   | 无需安装或注册！访问我们的网站，即可快速体验                           |
-| :---------------------------------------- | :----------------------------------------------- |
+| [![][vercel-shield-badge]][vercel-link]   | 无需安装或注册！访问我们的网站，即可快速体验                                  |
+| :---------------------------------------- | :---------------------------------------------------------------------------- |
 | [![][discord-shield-badge]][discord-link] | 加入我们的 Discord 社区！这是你可以与开发者和其他 LobeHub 热衷用户交流的地方. |
 
 > \[!IMPORTANT]
@@ -145,6 +145,7 @@ LobeVidol 目前正在积极开发中，有任何需求或者问题，欢迎提�
 我们的市场不仅是一个展示平台，更是一个协作的空间。在这里，每个人都可以贡献自己的想象，分享个人设定的角色。
 
 > \[!TIP]
+>
 > 通过创建角色功能你可以轻松地将你的角色作品提交到我们的平台，我们特别强调的是，LobeVidol 建立了一套精密的自动化国际化（i18n）工作流程， 它的强大之处在于能够无缝地将你的角色转化为多种语言版本。 这意味着，不论你的用户使用何种语言，他们都能无障碍地体验到你的角色。
 
 <img width="1320" alt="discover" src="https://github.com/user-attachments/assets/9f155227-6856-4957-9f6e-a9b3f534df24">
@@ -170,11 +171,11 @@ LobeVidol 支持文字转语音（Text-to-Speech，TTS）和语音转文字（Sp
 
 ## 📦 生态
 
-| NPM                               | 仓库                                      | 描述                                                                            | 版本                                        |
-| --------------------------------- | --------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------- |
-| [@lobehub/ui][lobe-ui-link]       | [lobehub/lobe-ui][lobe-ui-github]       | 构建 AIGC 网页应用程序而设计的开源 UI 组件库                                                   | [![][lobe-ui-shield]][lobe-ui-link]       |
-| [@lobehub/icons][lobe-icons-link] | [lobehub/lobe-icons][lobe-icons-github] | 主流 AI / LLM 模型和公司 SVG Logo 与 Icon 合集                                          | [![][lobe-icons-shield]][lobe-icons-link] |
-| [@lobehub/tts][lobe-tts-link]     | [lobehub/lobe-tts][lobe-tts-github]     | AI TTS / STT 语音合成 / 识别 React Hooks 库                                          | [![][lobe-tts-shield]][lobe-tts-link]     |
+| NPM                               | 仓库                                    | 描述                                                                                     | 版本                                      |
+| --------------------------------- | --------------------------------------- | ---------------------------------------------------------------------------------------- | ----------------------------------------- |
+| [@lobehub/ui][lobe-ui-link]       | [lobehub/lobe-ui][lobe-ui-github]       | 构建 AIGC 网页应用程序而设计的开源 UI 组件库                                             | [![][lobe-ui-shield]][lobe-ui-link]       |
+| [@lobehub/icons][lobe-icons-link] | [lobehub/lobe-icons][lobe-icons-github] | 主流 AI / LLM 模型和公司 SVG Logo 与 Icon 合集                                           | [![][lobe-icons-shield]][lobe-icons-link] |
+| [@lobehub/tts][lobe-tts-link]     | [lobehub/lobe-tts][lobe-tts-github]     | AI TTS / STT 语音合成 / 识别 React Hooks 库                                              | [![][lobe-tts-shield]][lobe-tts-link]     |
 | [@lobehub/lint][lobe-lint-link]   | [lobehub/lobe-lint][lobe-lint-github]   | LobeHub 代码样式规范 ESlint，Stylelint，Commitlint，Prettier，Remark 和 Semantic Release | [![][lobe-lint-shield]][lobe-lint-link]   |
 
 - **[Vidol market](https://github.com/v-idol/vidol-chat-agents)** - This is the Market Index of Vidol Chat. Vidol accesses index.json from this repo to show user the list of available agents and dances.
@@ -344,7 +345,7 @@ This project is [MIT](./LICENSE) licensed.
 [pr-welcome-link]: https://github.com/lobehub/lobe-vidol/pulls
 [pr-welcome-shield]: https://img.shields.io/badge/%F0%9F%A4%AF%20PR%20WELCOME-%E2%86%92-ffcb47?labelColor=black&style=for-the-badge
 [profile-link]: https://github.com/lobehub
-[sponsor-link]: https://opencollective.com/lobehub "Become 🩷 LobeHub Sponsor"
+[sponsor-link]: https://opencollective.com/lobehub 'Become 🩷 LobeHub Sponsor'
 [sponsor-shield]: https://img.shields.io/badge/-Sponsor%20LobeHub-f04f88?logo=opencollective&logoColor=white&style=flat-square
 [vercel-link]: https://vidol.lobehub.com
 [vercel-shield]: https://img.shields.io/website?down_message=offline&label=vercel&labelColor=black&logo=vercel&style=flat-square&up_message=online&url=https%3A%2F%2Fvidol.lobehub.com
