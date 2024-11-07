@@ -11,6 +11,7 @@ import SystemRole from '@/components/agent/SystemRole';
 import { SIDEBAR_MAX_WIDTH, SIDEBAR_WIDTH } from '@/constants/token';
 import { getAgentDetail } from '@/services/agent';
 import { agentSelectors, useAgentStore } from '@/store/agent';
+import { configSelectors, useSettingStore } from '@/store/setting';
 
 import ChatButton from './actions/ChatButton';
 import Subscribe from './actions/Subscribe';
@@ -38,10 +39,11 @@ const RoleInfo = (props: RoleInfoProps) => {
   const { activateAgent, currentAgentId, deactivateAgent } = props;
   const { styles } = useStyles();
   const [tempId, setTempId] = useState<string>('');
+  const locale = useSettingStore((s) => configSelectors.currentLanguage(s));
 
   const { data: currentAgentItem, isLoading } = useSWR(
     currentAgentId ? `/api/agent/${currentAgentId}` : null,
-    () => (currentAgentId ? getAgentDetail(currentAgentId) : null),
+    () => (currentAgentId ? getAgentDetail(currentAgentId, locale) : null),
   );
 
   const showAgentSideBar = !!currentAgentId;

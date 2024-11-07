@@ -16,6 +16,7 @@ import SystemRole from '@/components/agent/SystemRole';
 import { AGENTS_INDEX_GITHUB_ISSUE } from '@/constants/url';
 import { useUploadAgent } from '@/hooks/useUploadAgent';
 import { agentSelectors, useAgentStore } from '@/store/agent';
+import { configSelectors, useSettingStore } from '@/store/setting';
 import { Agent } from '@/types/agent';
 
 const SubmitAgentModal = memo<ModalProps>(({ open, onCancel }) => {
@@ -25,6 +26,8 @@ const SubmitAgentModal = memo<ModalProps>(({ open, onCancel }) => {
     (s) => agentSelectors.currentAgentItem(s),
     isEqual,
   );
+  const language = useSettingStore((s) => configSelectors.currentLanguage(s));
+
   const meta = currentAgent?.meta;
   const { t } = useTranslation(['role', 'common', 'error']);
 
@@ -81,6 +84,8 @@ const SubmitAgentModal = memo<ModalProps>(({ open, onCancel }) => {
       currentAgent.model,
       '### params',
       JSON.stringify(currentAgent.params),
+      '### locale',
+      language,
     ].join('\n\n');
 
     const url = qs.stringifyUrl({

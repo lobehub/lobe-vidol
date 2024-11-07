@@ -7,6 +7,7 @@ import useSWR from 'swr';
 
 import { HEADER_HEIGHT } from '@/constants/token';
 import { getAgentIndex } from '@/services/agent';
+import { configSelectors, useSettingStore } from '@/store/setting';
 import { Agent } from '@/types/agent';
 
 import DiscoverList from './List';
@@ -42,8 +43,10 @@ const useStyles = createStyles(({ css }) => ({
 const Index = () => {
   const { styles } = useStyles();
 
-  const { data, isLoading } = useSWR<Agent[]>(FETCH_AGENT_INDEX_KEY, async () => {
-    const { agents = [] } = await getAgentIndex();
+  const locale = useSettingStore((s) => configSelectors.currentLanguage(s));
+
+  const { data, isLoading } = useSWR<Agent[]>(`${FETCH_AGENT_INDEX_KEY}-${locale}`, async () => {
+    const { agents = [] } = await getAgentIndex(locale);
     return agents;
   });
 
