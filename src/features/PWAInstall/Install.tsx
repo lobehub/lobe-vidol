@@ -56,7 +56,6 @@ const PWAInstall = memo(() => {
   useEffect(() => {
     if (!canInstall || hidePWAInstaller) return;
 
-    console.log('canInstall', canInstall);
     // trigger the pwa installer and register the service worker
     install();
     if ('serviceWorker' in navigator && window.serwist !== undefined) {
