@@ -8,10 +8,12 @@ const viewer = new Viewer();
 
 export interface GlobalStore {
   backgroundUrl: string | undefined;
+  hidePWAInstaller: boolean;
   isPlaying: boolean;
   setBackgroundUrl: (url: string | undefined) => void;
   setChatDialog: (show: boolean) => void;
   setChatSidebar: (show: boolean) => void;
+  setHidePWAInstaller: (hide: boolean) => void;
   setIsPlaying: (isPlaying: boolean) => void;
   setRoleList: (show: boolean) => void;
   setSessionList: (show: boolean) => void;
@@ -35,6 +37,7 @@ const initialState = {
   showChatSidebar: false,
   showSessionList: true,
   showChatDialog: true,
+  hidePWAInstaller: false,
   showRoleList: true,
   backgroundUrl: undefined,
 };
@@ -43,6 +46,9 @@ export const useGlobalStore = createWithEqualityFn<GlobalStore>()(
     ...initialState,
     setIsPlaying: (isPlaying: boolean) => {
       set({ isPlaying: isPlaying });
+    },
+    setHidePWAInstaller: (hide: boolean) => {
+      set({ hidePWAInstaller: hide });
     },
     setBackgroundUrl: (url: string | undefined) => {
       set({ backgroundUrl: url });

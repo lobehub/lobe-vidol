@@ -2,6 +2,7 @@ import { PropsWithChildren } from 'react';
 
 import Analytics from '@/components/Analytics';
 import NProgress from '@/components/NProgress';
+import PWAInstall from '@/features/PWAInstall';
 import Layout from '@/layout';
 
 import StyleRegistry from './StyleRegistry';
@@ -15,6 +16,7 @@ const RootLayout = ({ children }: PropsWithChildren) => {
         <StyleRegistry>
           <Layout>
             <NProgress />
+            <PWAInstall />
             {children}
           </Layout>
         </StyleRegistry>

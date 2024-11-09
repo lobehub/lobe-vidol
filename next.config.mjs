@@ -1,15 +1,7 @@
-import nextPWA from '@ducanh2912/next-pwa';
 import analyzer from '@next/bundle-analyzer';
+import withSerwistInit from '@serwist/next';
 
 const isProd = process.env.NODE_ENV === 'production';
-
-const withPWA = nextPWA({
-  dest: 'public',
-  register: true,
-  workboxOptions: {
-    skipWaiting: true,
-  },
-});
 
 const withBundleAnalyzer = analyzer({
   enabled: process.env.ANALYZE === 'true',
@@ -30,6 +22,15 @@ const nextConfig = {
     ],
   },
   reactStrictMode: true,
+  redirects: async () => {
+    return [
+      {
+        destination: '/manifest.webmanifest',
+        permanent: true,
+        source: '/manifest.json',
+      },
+    ];
+  },
   webpack(config) {
     config.experiments = {
       asyncWebAssembly: true,
@@ -55,5 +56,15 @@ const nextConfig = {
     return config;
   },
 };
+
+const noWrapper = (config) => config;
+
+const withPWA = isProd
+  ? withSerwistInit({
+      register: false,
+      swDest: 'public/sw.js',
+      swSrc: 'src/app/sw.ts',
+    })
+  : noWrapper;
 
 export default isProd ? withBundleAnalyzer(withPWA(nextConfig)) : nextConfig;

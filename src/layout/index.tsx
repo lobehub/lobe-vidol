@@ -65,6 +65,7 @@ const Layout = async (props: LayoutProps) => {
           defaultPrimaryColor={primaryColor?.value as any}
         >
           {/*<DebugUI />*/}
+
           <StoreHydration />
           {children}
         </AppTheme>
