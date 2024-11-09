@@ -133,22 +133,32 @@ const Header = (props: Props) => {
               backgroundColor: token.colorBgContainer,
               flex: 1,
             }}
-            items={navigationItems.map((item) => ({
-              key: item.key,
-              icon: item.icon,
-              label: (
-                <Link
-                  href={`/${item.key}`}
-                  style={{ color: 'inherit' }}
-                  onClick={() => setDrawerVisible(false)}
-                >
-                  {item.component}
-                </Link>
-              ),
-            }))}
+            items={[
+              {
+                key: 'create',
+                label: <CreateRole mobile />,
+                style: { background: 'none' },
+              },
+              { type: 'divider' },
+              ...navigationItems.map((item) => ({
+                key: item.key,
+                icon: item.icon,
+                label: (
+                  <Link
+                    href={`/${item.key}`}
+                    style={{ color: 'inherit' }}
+                    onClick={() => setDrawerVisible(false)}
+                  >
+                    {item.component}
+                  </Link>
+                ),
+              })),
+            ]}
             onClick={({ key }) => {
-              router.push(`/${key}`);
-              setDrawerVisible(false);
+              if (Object.values(HeaderNavKey).includes(key as HeaderNavKey)) {
+                router.push(`/${key}`);
+                setDrawerVisible(false);
+              }
             }}
           />
         </ConfigProvider>
@@ -160,7 +170,7 @@ const Header = (props: Props) => {
     <LobeHeader
       actions={[
         <Flexbox key="actions" gap={8} direction="horizontal">
-          <CreateRole key="create" />
+          {!mobile && <CreateRole key="create" />}
           <Documentation key="doc" />
           <Github key="github" />
           <Support key="support" />

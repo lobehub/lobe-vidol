@@ -8,12 +8,21 @@ import Header from '@/components/Header';
 import ListItem from '@/components/ListItem';
 import { TouchAreaEnum } from '@/types/touch';
 
-const useStyles = createStyles(({ css, token }) => ({
+const useStyles = createStyles(({ css, token, responsive }) => ({
   item: css`
     position: relative;
-    width: 180px;
+    width: 100%;
     margin-block: 2px;
     border-radius: ${token.borderRadius}px;
+  `,
+  container: css`
+    display: flex;
+    flex-direction: column;
+    width: 180px;
+    ${responsive.mobile} {
+      flex-flow: row wrap;
+      width: 100%;
+    }
   `,
 }));
 
@@ -29,7 +38,7 @@ const Index = (props: IndexProps) => {
   const { t } = useTranslation('role');
 
   return (
-    <Flexbox>
+    <Flexbox className={styles.container}>
       <Header title={t('touch.touchArea')} />
       {areaOptions.map((item) => (
         <ListItem

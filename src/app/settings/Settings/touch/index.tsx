@@ -3,12 +3,13 @@ import classNames from 'classnames';
 import React, { memo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import { useIsMobile } from '@/hooks/useIsMobile';
 import { TouchAreaEnum } from '@/types/touch';
 
 import ActionList from './ActionList';
 import SideBar from './SideBar';
 
-const useStyles = createStyles(({ css, token }) => ({
+const useStyles = createStyles(({ css, token, responsive }) => ({
   container: css`
     position: relative;
 
@@ -20,6 +21,11 @@ const useStyles = createStyles(({ css, token }) => ({
 
     background-color: rgba(255, 255, 255, 2%);
     border-radius: ${token.borderRadius}px;
+
+    ${responsive.mobile} {
+      flex-direction: column;
+      min-height: auto;
+    }
   `,
 }));
 
@@ -62,6 +68,8 @@ const Touch = (props: TouchProps) => {
     },
   ];
 
+  const isMobile = useIsMobile();
+
   return (
     <div className={classNames(className, styles.container)} style={style}>
       <SideBar
@@ -71,7 +79,7 @@ const Touch = (props: TouchProps) => {
       />
       <ActionList
         currentTouchArea={currentTouchArea}
-        style={{ marginLeft: 12 }}
+        style={{ marginLeft: isMobile ? 0 : 12, marginTop: isMobile ? 12 : 0 }}
         areaOptions={TOUCH_AREA_OPTIONS}
       />
     </div>

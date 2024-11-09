@@ -41,7 +41,7 @@ const useStyles = createStyles(({ css, token }) => ({
   `,
 }));
 
-export default function CreateRole() {
+export default function CreateRole({ mobile }: { mobile?: boolean }) {
   const { t } = useTranslation('role');
   const { styles } = useStyles();
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -81,7 +81,12 @@ export default function CreateRole() {
 
   return (
     <>
-      <Button type="default" onClick={() => setIsModalOpen(true)} icon={<PlusOutlined />}>
+      <Button
+        type={mobile ? 'primary' : 'default'}
+        onClick={() => setIsModalOpen(true)}
+        icon={<PlusOutlined />}
+        style={{ width: mobile ? '100%' : 'auto' }}
+      >
         {t('role.create')}
       </Button>
 

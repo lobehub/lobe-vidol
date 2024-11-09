@@ -12,6 +12,9 @@ venv
 temp
 tmp
 
+public/sw*
+public/swe-worker*
+
 # dependencies
 node_modules
 *.log

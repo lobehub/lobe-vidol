@@ -12,7 +12,10 @@ export const usePWAInstall = () => {
 
   useEffect(() => {
     if (isOnServerSide) return;
-    pwaInstallHandler.addListener(setCanInstall);
+    pwaInstallHandler.addListener((canInstall) => {
+      setCanInstall(canInstall);
+      console.log('canInstall', canInstall);
+    });
     return () => {
       pwaInstallHandler.removeListener(setCanInstall);
     };
