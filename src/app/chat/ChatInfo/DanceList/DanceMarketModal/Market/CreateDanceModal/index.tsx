@@ -158,7 +158,7 @@ const CreateDanceModal = () => {
 
   return (
     <>
-      <Button icon={<PlusCircle />} onClick={() => setOpen(true)}>
+      <Button icon={<PlusCircle />} onClick={() => setOpen(true)} type="primary">
         {t('create.title', { ns: 'dance' })}
       </Button>
       <Modal

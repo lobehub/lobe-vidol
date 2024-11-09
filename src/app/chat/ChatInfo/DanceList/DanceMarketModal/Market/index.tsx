@@ -1,5 +1,7 @@
-import { SearchBar } from '@lobehub/ui';
+import { ActionIcon, SearchBar } from '@lobehub/ui';
+import { useTheme } from 'antd-style';
 import classNames from 'classnames';
+import { BookOpen } from 'lucide-react';
 import dynamic from 'next/dynamic';
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -21,6 +23,8 @@ interface DanceProps {
 const Dance = (props: DanceProps) => {
   const { style, className } = props;
   const { styles } = useStyles();
+  const theme = useTheme();
+
   const { t } = useTranslation('dance');
   const [searchName, setSearchName] = useState<string>();
 
@@ -45,6 +49,12 @@ const Dance = (props: DanceProps) => {
             type={'block'}
             value={searchName}
             style={{ flex: 1 }}
+          />
+          <ActionIcon
+            icon={BookOpen}
+            style={{ border: `1px solid ${theme.colorFillSecondary}` }}
+            onClick={() => window.open('https://docs.vidol.chat/dance-manual')}
+            title={t('danceManual')}
           />
           <CreateDanceModal />
         </Flexbox>

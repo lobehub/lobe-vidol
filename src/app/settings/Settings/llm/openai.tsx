@@ -57,10 +57,10 @@ const Config = (props: ConfigProps) => {
       >
         <FormGroup icon={BotIcon} title={t('llm.openai.title')}>
           <FormItem desc={t('llm.openai.apiKey.desc')} divider label={'API Key'} name="apikey">
-            <Input.Password placeholder="sk-" style={{ width: 480 }} />
+            <Input.Password placeholder="sk-" type={'block'} style={{ minWidth: 400 }} />
           </FormItem>
           <FormItem desc={'http(s)://'} divider label={t('llm.openai.proxy.title')} name="endpoint">
-            <Input placeholder="" style={{ width: 360 }} />
+            <Input type={'block'} style={{ minWidth: 400 }} placeholder="http(s)://" />
           </FormItem>
           <FormItem desc={t('llm.check.desc')} divider label={t('llm.check.title')}>
             <Button

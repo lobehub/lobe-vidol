@@ -10,6 +10,7 @@ export default {
   addPlaySuccess: '已添加到播放列表',
   cancelAddPlay: '确定取消订阅音乐{{musicName}}吗？',
   confirmClearPlayList: '',
+  danceManual: '舞蹈手册',
   cancelSubscribed: '取消订阅',
   findDance: '找到你最喜欢的舞蹈',
   createDance: '创建你最爱的舞蹈',
