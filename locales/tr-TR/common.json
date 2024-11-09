@@ -24,6 +24,7 @@
     "settings": "Ayarlar",
     "tips": "Proje şu anda inşaat aşamasındadır, veri kararlılığı garanti edilmemektedir. Sorunlarla karşılaşırsanız, sistem ayarlarından oturum mesajlarını temizleyebilir ve sistem ayarlarını sıfırlayabilirsiniz. Verdiğimiz rahatsızlıktan dolayı özür dileriz."
   },
+  "installPWA": "İlerlemeli Web Uygulaması (PWA) Kur",
   "loading": "Yükleniyor...",
   "menu": {
     "discord": "Topluluk Desteği",

@@ -24,6 +24,7 @@
     "settings": "Einstellungen",
     "tips": "Das Projekt befindet sich derzeit in der Bauphase, daher kann die Datenstabilität nicht garantiert werden. Bei Problemen können Sie in den Systemeinstellungen die Sitzungsnachrichten löschen und die Systemeinstellungen zurücksetzen. Wir bitten um Ihr Verständnis für eventuelle Unannehmlichkeiten."
   },
+  "installPWA": "Progressive Web App (PWA) installieren",
   "loading": "Wird geladen...",
   "menu": {
     "discord": "Community Support",

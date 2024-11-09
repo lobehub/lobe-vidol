@@ -24,6 +24,7 @@
     "settings": "Impostazioni",
     "tips": "Il progetto è attualmente in fase di costruzione, non garantiamo la stabilità dei dati. Se riscontri problemi, puoi cancellare i messaggi di sessione e ripristinare le impostazioni di sistema nelle impostazioni. Ci scusiamo per l'inconveniente."
   },
+  "installPWA": "Installa l'applicazione progressiva (PWA)",
   "loading": "Caricamento in corso...",
   "menu": {
     "discord": "Supporto della comunità",
