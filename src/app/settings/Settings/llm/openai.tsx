@@ -1,6 +1,6 @@
 import { Form, FormGroup, FormItem } from '@lobehub/ui';
 import { useRequest } from 'ahooks';
-import { Form as AForm, Button, Input, message } from 'antd';
+import { Form as AForm, Button, Input, Switch, message } from 'antd';
 import { createStyles } from 'antd-style';
 import classNames from 'classnames';
 import { debounce, isEqual } from 'lodash-es';
@@ -8,6 +8,7 @@ import { BotIcon } from 'lucide-react';
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import { DEFAULT_CHAT_MODEL } from '@/constants/agent';
 import { chatCompletion } from '@/services/chat';
 import { configSelectors, useSettingStore } from '@/store/setting';
 import { ChatMessage } from '@/types/chat';
@@ -46,6 +47,9 @@ const Config = (props: ConfigProps) => {
       }
       message.success(t('llm.check.success'));
     },
+    onError: () => {
+      message.error(t('llm.check.error'));
+    },
   });
 
   return (
@@ -62,6 +66,16 @@ const Config = (props: ConfigProps) => {
           <FormItem desc={'http(s)://'} divider label={t('llm.openai.proxy.title')} name="endpoint">
             <Input type={'block'} style={{ minWidth: 400 }} placeholder="http(s)://" />
           </FormItem>
+
+          <FormItem
+            desc={t('llm.openai.fetchOnClient.desc')}
+            divider
+            label={t('llm.openai.fetchOnClient.title')}
+            name="fetchOnClient"
+          >
+            <Switch />
+          </FormItem>
+
           <FormItem desc={t('llm.check.desc')} divider label={t('llm.check.title')}>
             <Button
               loading={loading}
@@ -73,7 +87,7 @@ const Config = (props: ConfigProps) => {
                       role: 'user',
                     } as ChatMessage,
                   ],
-                  model: 'gpt-4o-mini',
+                  model: DEFAULT_CHAT_MODEL,
                 })
               }
             >

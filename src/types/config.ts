@@ -15,6 +15,10 @@ export interface OpenAIConfig {
    * OpenAI API 端点
    */
   endpoint?: string;
+  /**
+   * 是否客户端调用
+   */
+  fetchOnClient?: boolean;
 }
 
 export interface TTSConfig {

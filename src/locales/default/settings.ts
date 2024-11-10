@@ -69,10 +69,15 @@ export default {
     openai: {
       callError: '调用接口失败，请检查 APIKey 和接口代理地址是否设置正确',
       checkOk: '检查通过',
+      checkError: '检查失败，请检查 APIKey 和接口代理地址是否设置正确',
       title: 'OpenAI',
       apiKey: {
         title: 'API Key',
         desc: '请使用自己的 OpenAI Key',
+      },
+      fetchOnClient: {
+        title: '客户端调用',
+        desc: '客户端请求模式将从浏览器直接发起会话请求，可提升响应速度',
       },
       proxy: {
         title: '接口代理地址',
