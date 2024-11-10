@@ -65,11 +65,11 @@ export default {
     },
   },
   llm: {
-    title: '大语言模型',
+    title: '语言模型',
     openai: {
       callError: '调用接口失败，请检查 APIKey 和接口代理地址是否设置正确',
       checkOk: '检查通过',
-      title: 'OpenAI 语言模型',
+      title: 'OpenAI',
       apiKey: {
         title: 'API Key',
         desc: '请使用自己的 OpenAI Key',
