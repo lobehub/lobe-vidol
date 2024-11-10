@@ -28,7 +28,7 @@ export const ErrorActionContainer = memo<{ children: ReactNode }>(({ children })
 
 // eslint-disable-next-line react/display-name
 export const FormAction = memo<{
-  avatar: string;
+  avatar: ReactNode;
   children: ReactNode;
   description: string;
   title: string;
