@@ -1,6 +1,6 @@
 import { AnimationClip, PerspectiveCamera } from 'three';
-import { MMDAnimationHelper } from 'three/examples/jsm/animation/MMDAnimationHelper';
-import { MMDLoader } from 'three/examples/jsm/loaders/MMDLoader';
+import { MMDAnimationHelper } from 'three/examples/jsm/animation/MMDAnimationHelper.js';
+import { MMDLoader } from 'three/examples/jsm/loaders/MMDLoader.js';
 
 import { VRM_TO_MMD_SCALE } from '@/constants/common';
 

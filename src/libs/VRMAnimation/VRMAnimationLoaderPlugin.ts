@@ -1,7 +1,7 @@
 import { GLTF as GLTFSchema } from '@gltf-transform/core';
 import { VRMHumanBoneName, VRMHumanBoneParentMap } from '@pixiv/three-vrm';
 import * as THREE from 'three';
-import { GLTF, GLTFLoaderPlugin, GLTFParser } from 'three/examples/jsm/loaders/GLTFLoader';
+import { GLTF, GLTFLoaderPlugin, GLTFParser } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
 import { VRMAnimation } from './VRMAnimation';
 import { VRMAnimationLoaderPluginOptions } from './VRMAnimationLoaderPluginOptions';
@@ -56,14 +56,16 @@ export class VRMAnimationLoaderPlugin implements GLTFLoaderPlugin {
     const restHipsPosition = hips.getWorldPosition(new THREE.Vector3());
 
     const clips = gltf.animations;
-    const animations: VRMAnimation[] = clips.map((clip, iAnimation) => {
-      const defAnimation = defGltf.animations![iAnimation];
+    const animations: VRMAnimation[] = clips.map(
+      (clip: THREE.AnimationClip, iAnimation: number) => {
+        const defAnimation = defGltf.animations![iAnimation];
 
-      const animation = this._parseAnimation(clip, defAnimation, nodeMap, worldMatrixMap);
-      animation.restHipsPosition = restHipsPosition;
+        const animation = this._parseAnimation(clip, defAnimation, nodeMap, worldMatrixMap);
+        animation.restHipsPosition = restHipsPosition;
 
-      return animation;
-    });
+        return animation;
+      },
+    );
 
     gltf.userData.vrmAnimations = animations;
   }

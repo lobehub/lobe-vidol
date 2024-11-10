@@ -1,5 +1,5 @@
 import { Group, Mesh } from 'three';
-import { MMDLoader } from 'three/examples/jsm/loaders/MMDLoader';
+import { MMDLoader } from 'three/examples/jsm/loaders/MMDLoader.js';
 
 import { VRM_TO_MMD_SCALE } from '@/constants/common';
 

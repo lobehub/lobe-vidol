@@ -1,6 +1,6 @@
 import { VRMHumanBoneName as HumanoidBoneName, VRM } from '@pixiv/three-vrm';
 import { KeyframeTrack, Object3D, Quaternion, Skeleton, Vector3 } from 'three';
-import { BVHLoader } from 'three/examples/jsm/loaders/BVHLoader';
+import { BVHLoader } from 'three/examples/jsm/loaders/BVHLoader.js';
 
 import { centerOfDescendant, transverse } from '@/utils/three-helpers';
 
