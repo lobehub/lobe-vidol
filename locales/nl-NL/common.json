@@ -24,6 +24,7 @@
     "settings": "Instellingen",
     "tips": "Het project is momenteel in uitvoering, waardoor de stabiliteit van de gegevens niet gegarandeerd kan worden. Als u problemen ondervindt, kunt u in de systeeminstellingen de sessieberichten wissen en de systeeminstellingen resetten. Onze excuses voor het ongemak."
   },
+  "installPWA": "Installeer Progressieve Webapp (PWA)",
   "loading": "Laden...",
   "menu": {
     "discord": "Gemeenschapssteun",

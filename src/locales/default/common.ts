@@ -43,6 +43,7 @@ export default {
   },
   community: '社区支持',
   random: '随机',
+  installPWA: '安装渐进式应用(PWA)',
   delete: '删除',
   submit: '提交',
   confirmDel: '确定删除吗？',

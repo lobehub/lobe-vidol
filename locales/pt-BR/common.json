@@ -24,6 +24,7 @@
     "settings": "Configurações",
     "tips": "O projeto está atualmente em construção, não garantimos a estabilidade dos dados. Se você encontrar problemas, pode limpar as mensagens de sessão e redefinir as configurações do sistema nas configurações. Pedimos desculpas pelo inconveniente."
   },
+  "installPWA": "Instalar Aplicativo Progressivo (PWA)",
   "loading": "Carregando...",
   "menu": {
     "discord": "Suporte da Comunidade",

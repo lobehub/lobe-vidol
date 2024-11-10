@@ -24,6 +24,7 @@
     "discover": "发现",
     "settings": "设置"
   },
+  "installPWA": "安装渐进式应用(PWA)",
   "loading": "加载中...",
   "menu": {
     "github": "Github",

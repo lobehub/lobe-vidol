@@ -24,6 +24,7 @@
     "settings": "Ustawienia",
     "tips": "Projekt jest obecnie w trakcie budowy, nie gwarantujemy stabilności danych. W przypadku problemów można w ustawieniach systemu wyczyścić wiadomości sesji i zresetować ustawienia systemowe. Przepraszamy za wszelkie niedogodności."
   },
+  "installPWA": "Zainstaluj aplikację progresywną (PWA)",
   "loading": "Ładowanie...",
   "menu": {
     "discord": "Wsparcie społeczności",

@@ -4,11 +4,13 @@ import { Agent, CategoryEnum, GenderEnum } from '@/types/agent';
 export const LOBE_VIDOL_DEFAULT_AGENT_ID = 'lobe-vidol-default-agent';
 const OFFICIAL_ROLE_NAME = '莉莉娅';
 
+export const DEFAULT_CHAT_MODEL = 'gpt-4o-mini';
+
 /**
  * 默认使用的 ChatGPT 聊天模型配置
  */
 export const DEFAULT_LLM_CONFIG: Partial<Agent> = {
-  model: 'gpt-4o-mini',
+  model: DEFAULT_CHAT_MODEL,
   params: {
     frequency_penalty: 0,
     presence_penalty: 0,

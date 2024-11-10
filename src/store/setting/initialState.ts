@@ -21,6 +21,7 @@ const initialState: SettingState = {
       openAI: {
         apikey: '',
         endpoint: '',
+        fetchOnClient: false,
       },
     },
     touch: {
