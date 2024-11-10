@@ -99,4 +99,14 @@ export default {
   delSessionAlert: '确认删除对话吗？删除后无法恢复, 请谨慎操作！',
   chat: '聊天',
   sessionCreate: '创建聊天',
+  ModelSelect: {
+    featureTag: {
+      custom: '自定义模型，默认设定同时支持函数调用与视觉识别，请根据实际情况验证上述能力的可用性',
+      file: '该模型支持上传文件读取与识别',
+      functionCall: '该模型支持函数调用（Function Call）',
+      tokens: '该模型单个会话最多支持 {{tokens}} Tokens',
+      vision: '该模型支持视觉识别',
+    },
+    removed: '该模型不在列表中，若取消选中将会自动移除',
+  },
 };

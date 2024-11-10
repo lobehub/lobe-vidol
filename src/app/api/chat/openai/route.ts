@@ -3,7 +3,7 @@ import OpenAI, { ClientOptions } from 'openai';
 
 import { OPENAI_API_KEY, OPENAI_END_POINT } from '@/constants/openai';
 import { ErrorTypeEnum } from '@/types/api';
-import { ChatStreamPayload } from '@/types/openai/chat';
+import { ChatStreamPayload } from '@/types/provider/chat';
 
 import { createErrorResponse } from './createErrorResponse';
 

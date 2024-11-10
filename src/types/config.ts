@@ -4,35 +4,16 @@ import { GenderEnum } from '@/types/agent';
 import { LocaleMode } from '@/types/locale';
 import { TouchActionConfig } from '@/types/touch';
 
-export type BackgroundEffect = 'glow' | 'none';
+import { UserKeyVaults } from './provider/keyVaults';
+import { UserModelProviderConfig } from './provider/modelProvider';
 
-export interface OpenAIConfig {
-  /**
-   * OpenAI API 密钥
-   */
-  apikey?: string;
-  /**
-   * OpenAI API 端点
-   */
-  endpoint?: string;
-  /**
-   * 是否客户端调用
-   */
-  fetchOnClient?: boolean;
-}
+export type BackgroundEffect = 'glow' | 'none';
 
 export interface TTSConfig {
   /**
    * 是否客户端调用
    */
   clientCall: boolean;
-}
-
-export interface LanguageModelConfig {
-  /**
-   * OpenAI 配置
-   */
-  openAI: OpenAIConfig;
 }
 
 export interface TouchConfig {
@@ -48,9 +29,13 @@ export interface TouchConfig {
 
 export interface Config extends CommonConfig {
   /**
+   * 密钥配置
+   */
+  keyVaults: UserKeyVaults;
+  /**
    * 语言模型配置
    */
-  languageModel: LanguageModelConfig;
+  languageModel: UserModelProviderConfig;
   /**
    * 全局触摸配置
    */

@@ -91,6 +91,10 @@ export interface Agent {
    */
   params?: LLMParams;
   /**
+   * @default openai
+   */
+  provider?: string;
+  /**
    * 角色设定
    */
   systemRole: string;

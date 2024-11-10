@@ -1,6 +1,7 @@
 import { NeutralColors, PrimaryColors } from '@lobehub/ui';
 import { produce } from 'immer';
 import { isEqual } from 'lodash-es';
+import { DeepPartial } from 'utility-types';
 import {
   PersistOptions,
   createJSONStorage,
@@ -12,8 +13,9 @@ import { shallow } from 'zustand/shallow';
 import { createWithEqualityFn } from 'zustand/traditional';
 import { StateCreator } from 'zustand/vanilla';
 
+import { ModelListAction, createModelListSlice } from '@/store/setting/slices/modelList';
 import createTouchStore, { TouchStore } from '@/store/setting/slices/touch';
-import { BackgroundEffect, Config, OpenAIConfig } from '@/types/config';
+import { BackgroundEffect, Config } from '@/types/config';
 import { LocaleMode } from '@/types/locale';
 import { mergeWithUndefined } from '@/utils/common';
 import { vidolStorage } from '@/utils/storage';
@@ -42,7 +44,7 @@ export interface SettingAction extends TouchStore {
    * Set config
    * @param config
    */
-  setConfig: (config: Partial<Config>) => void;
+  setConfig: (config: DeepPartial<Config>) => void;
   /**
    * Set neutral color
    * @param neutralColor
@@ -53,11 +55,6 @@ export interface SettingAction extends TouchStore {
    * @param nickName
    */
   setNickName: (nickName: string) => void;
-  /**
-   * Set OpenAI config
-   * @param config
-   */
-  setOpenAIConfig: (config: Partial<OpenAIConfig>) => void;
 
   /**
    * Set primary color
@@ -72,7 +69,7 @@ export interface SettingAction extends TouchStore {
   switchLocale: (locale: LocaleMode) => void;
 }
 
-export interface SettingStore extends SettingState, SettingAction {}
+export interface SettingStore extends SettingState, SettingAction, ModelListAction {}
 
 const createStore: StateCreator<SettingStore, [['zustand/devtools', never]], [], SettingStore> = (
   set,
@@ -81,6 +78,7 @@ const createStore: StateCreator<SettingStore, [['zustand/devtools', never]], [],
 ) => ({
   ...initialState,
   ...createTouchStore(set, get, store),
+  ...createModelListSlice(set, get, store),
   resetConfig: () => {
     localStorage.removeItem(SETTING_STORAGE_KEY);
     set({ ...initialState });
@@ -111,10 +109,6 @@ const createStore: StateCreator<SettingStore, [['zustand/devtools', never]], [],
     });
     if (isEqual(prevSetting, nextSetting)) return;
     set({ config: nextSetting });
-  },
-
-  setOpenAIConfig: (config) => {
-    get().setConfig({ languageModel: { openAI: config } });
   },
 });
 

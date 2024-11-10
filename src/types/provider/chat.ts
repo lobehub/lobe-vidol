@@ -1,5 +1,5 @@
 import { LLMRoleType } from '@/types/llm';
-import { OpenAIFunctionCall } from '@/types/openai/functionCall';
+import { OpenAIFunctionCall } from '@/types/provider/functionCall';
 
 interface UserMessageContentPartText {
   text: string;
@@ -57,6 +57,7 @@ export interface ChatStreamPayload {
    * @title 返回的文本数量
    */
   n?: number;
+
   /**
    * 开启的插件列表
    */
@@ -66,6 +67,10 @@ export interface ChatStreamPayload {
    * @default 0
    */
   presence_penalty?: number;
+  /**
+   * @default openai
+   */
+  provider?: string;
   /**
    * @title 是否开启流式请求
    * @default true

@@ -236,6 +236,8 @@ export const createSessionStore: StateCreator<SessionStore, [['zustand/devtools'
       return chatCompletion(
         {
           model: currentAgent.model || DEFAULT_LLM_CONFIG.model,
+          provider: currentAgent.provider || DEFAULT_LLM_CONFIG.provider,
+          stream: true,
           ...(currentAgent.params || DEFAULT_LLM_CONFIG.params),
           messages: [
             {

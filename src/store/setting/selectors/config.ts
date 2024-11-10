@@ -1,16 +1,28 @@
 import { t } from 'i18next';
 
+// import { merge } from 'lodash-es';
 import { DEFAULT_LANG } from '@/constants/locale';
 import { Locales } from '@/locales/resources';
 import { SettingStore } from '@/store/setting';
 import { GenderEnum } from '@/types/agent';
-import { OpenAIConfig, TTSConfig, TouchConfig } from '@/types/config';
+import { Config, TTSConfig, TouchConfig } from '@/types/config';
+import {
+  GlobalLLMProviderKey,
+  ProviderConfig,
+  UserModelProviderConfig,
+} from '@/types/provider/modelProvider';
 import { TouchAction, TouchAreaEnum } from '@/types/touch';
 import { isOnServerSide } from '@/utils/env';
 
-const currentOpenAIConfig = (s: SettingStore): OpenAIConfig => {
-  return s.config.languageModel.openAI;
+export const currentConfig = (s: SettingStore): Config => s.config;
+// merge(s.defaultConfig, s.config);
+
+export const currentLanguageModelConfig = (s: SettingStore): UserModelProviderConfig => {
+  return s.config.languageModel || {};
 };
+
+export const getProviderConfigById = (provider: string) => (s: SettingStore) =>
+  currentLanguageModelConfig(s)[provider as GlobalLLMProviderKey] as ProviderConfig | undefined;
 
 const currentTouchConfig = (s: SettingStore): TouchConfig => {
   return s.config.touch;
@@ -42,9 +54,11 @@ const getTouchActionsByGenderAndArea = (
 };
 
 export const configSelectors = {
-  currentOpenAIConfig,
+  currentLanguageModelConfig,
   currentTouchConfig,
   currentLanguage,
+  currentConfig,
   currentTTSConfig,
   getTouchActionsByGenderAndArea,
+  getProviderConfigById,
 };

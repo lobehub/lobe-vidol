@@ -3,9 +3,8 @@ import React, { memo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
-import OpenAIConfig from '@/app/settings/Settings/llm/openai';
-
 import CommonConfig from './common';
+import LLMConfig from './llm';
 import Touch from './touch';
 import TTSConfig from './tts';
 
@@ -48,7 +47,7 @@ const Config = (props: ConfigProps) => {
         />
       </div>
       <Flexbox flex={1} width={'100%'} height={'100%'}>
-        {tab === 'languageModel' ? <OpenAIConfig /> : null}
+        {tab === 'languageModel' ? <LLMConfig /> : null}
         {tab === 'common' ? <CommonConfig /> : null}
         {tab === 'touch' ? <Touch /> : null}
         {tab === 'tts' ? <TTSConfig /> : null}
