@@ -43,7 +43,7 @@ export class LobeWenxinAI implements LobeRuntimeAI {
   async chat(payload: ChatStreamPayload, options?: ChatCompetitionOptions) {
     try {
       const result = await this.client.chat(
-        { messages: payload.messages as any, stream: true, user_id: options?.user },
+        { messages: payload.messages as any, stream: true },
         payload.model,
       );
 

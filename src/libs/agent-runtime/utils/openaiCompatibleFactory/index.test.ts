@@ -400,14 +400,11 @@ describe('LobeOpenAICompatibleFactory', () => {
       it('should add user in payload correctly', async () => {
         const mockCreateMethod = vi.spyOn(instance['client'].chat.completions, 'create');
 
-        await instance.chat(
-          {
-            messages: [{ content: 'Hello', role: 'user' }],
-            model: 'mistralai/mistral-7b-instruct:free',
-            temperature: 0,
-          },
-          { user: 'abc' },
-        );
+        await instance.chat({
+          messages: [{ content: 'Hello', role: 'user' }],
+          model: 'mistralai/mistral-7b-instruct:free',
+          temperature: 0,
+        });
 
         expect(mockCreateMethod).toHaveBeenCalledWith(
           expect.objectContaining({
@@ -433,14 +430,11 @@ describe('LobeOpenAICompatibleFactory', () => {
           .spyOn(instance['client'].chat.completions, 'create')
           .mockResolvedValue(new ReadableStream() as any);
 
-        await instance.chat(
-          {
-            messages: [{ content: 'Hello', role: 'user' }],
-            model: 'open-mistral-7b',
-            temperature: 0,
-          },
-          { user: 'testUser' },
-        );
+        await instance.chat({
+          messages: [{ content: 'Hello', role: 'user' }],
+          model: 'open-mistral-7b',
+          temperature: 0,
+        });
 
         expect(mockCreateMethod).toHaveBeenCalledWith(
           expect.not.objectContaining({
@@ -464,14 +458,11 @@ describe('LobeOpenAICompatibleFactory', () => {
           .spyOn(instance['client'].chat.completions, 'create')
           .mockResolvedValue(new ReadableStream() as any);
 
-        await instance.chat(
-          {
-            messages: [{ content: 'Hello', role: 'user' }],
-            model: 'open-mistral-7b',
-            temperature: 0,
-          },
-          { user: 'testUser' },
-        );
+        await instance.chat({
+          messages: [{ content: 'Hello', role: 'user' }],
+          model: 'open-mistral-7b',
+          temperature: 0,
+        });
 
         expect(mockCreateMethod).toHaveBeenCalledWith(
           expect.objectContaining({
@@ -492,14 +483,11 @@ describe('LobeOpenAICompatibleFactory', () => {
           .spyOn(instance['client'].chat.completions, 'create')
           .mockResolvedValue(new ReadableStream() as any);
 
-        await instance.chat(
-          {
-            messages: [{ content: 'Hello', role: 'user' }],
-            model: 'open-mistral-7b',
-            temperature: 0,
-          },
-          { user: 'testUser' },
-        );
+        await instance.chat({
+          messages: [{ content: 'Hello', role: 'user' }],
+          model: 'open-mistral-7b',
+          temperature: 0,
+        });
 
         expect(mockCreateMethod).toHaveBeenCalledWith(
           expect.objectContaining({

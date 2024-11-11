@@ -98,10 +98,6 @@ export interface ChatCompetitionOptions {
   callback?: ChatStreamCallbacks;
   headers?: Record<string, any>;
   signal?: AbortSignal;
-  /**
-   * userId for the chat completion
-   */
-  user?: string;
 }
 
 export interface ChatCompletionFunctions {

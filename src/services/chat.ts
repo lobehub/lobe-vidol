@@ -166,7 +166,7 @@ export const chatCompletion = async (
   params: ChatCompletionPayload,
   options?: ChatCompletionOptions,
 ) => {
-  const { provider = DEFAULT_CHAT_PROVIDER, ...res } = params;
+  const { provider = DEFAULT_CHAT_PROVIDER, messages, ...res } = params;
   const { signal } = options ?? {};
 
   let model = res.model || DEFAULT_CHAT_MODEL;
@@ -180,7 +180,12 @@ export const chatCompletion = async (
     if (deploymentName) model = deploymentName;
   }
 
-  const payload = { ...res, model };
+  const postMessages = messages.map((message) => ({
+    role: message.role,
+    content: message.content,
+  }));
+
+  const payload = { ...res, model, messages: postMessages };
 
   /**
    * Use browser agent runtime
@@ -214,9 +219,7 @@ export const chatCompletion = async (
 
   // 使用服务端调用
   return await fetch(`/api/chat/${provider}`, {
-    body: JSON.stringify({
-      payload,
-    }),
+    body: JSON.stringify(payload),
     headers: headers,
     method: 'POST',
     signal: signal,

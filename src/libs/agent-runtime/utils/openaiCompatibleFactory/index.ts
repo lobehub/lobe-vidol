@@ -207,7 +207,6 @@ export const LobeOpenAICompatibleFactory = <T extends Record<string, any> = any>
             {
               ...postPayload,
               messages,
-              ...(chatCompletion?.noUserId ? {} : { user: options?.user }),
             },
             {
               // https://github.com/lobehub/lobe-chat/pull/318

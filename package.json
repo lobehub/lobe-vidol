@@ -89,6 +89,7 @@
     "@pixiv/three-vrm-core": "2.1.2",
     "@react-spring/web": "^9.7.5",
     "@serwist/next": "^9.0.10",
+    "@t3-oss/env-nextjs": "^0.11.0",
     "@trpc/client": "next",
     "@trpc/next": "next",
     "@trpc/server": "next",
