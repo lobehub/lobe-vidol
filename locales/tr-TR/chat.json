@@ -21,6 +21,7 @@
     "addProxy": "OpenAI proxy adresi ekleyin (isteğe bağlı)",
     "closeTip": "İpucu'nu kapat",
     "confirmRetry": "Onayla ve yeniden dene",
+    "proxyDocs": "API Anahtarı nasıl alınır?",
     "startDesc": "OpenAI API Anahtarınızı girerek sohbete başlayabilirsiniz. Uygulama API Anahtarınızı kaydetmeyecek.",
     "startTitle": "Özel API Anahtarı"
   },

@@ -27,7 +27,22 @@ const APIKeyForm = ({ id }: APIKeyFormProps) => {
 
   return (
     <Center gap={16} style={{ maxWidth: 300 }}>
-      <FormAction avatar={'🔑'} description={t('apiKey.startDesc')} title={t('apiKey.startTitle')}>
+      <FormAction
+        avatar={'🔑'}
+        description={
+          <span>
+            {t('apiKey.startDesc')}
+            <a
+              href="https://docs.vidol.chat/usage/providers/openai"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {t('apiKey.proxyDocs')}
+            </a>
+          </span>
+        }
+        title={t('apiKey.startTitle')}
+      >
         <Input.Password
           autoComplete="new-password"
           onChange={(e) => {
@@ -58,7 +73,7 @@ const APIKeyForm = ({ id }: APIKeyFormProps) => {
           </Button>
         )}
       </FormAction>
-      <Flexbox gap={12} width={'100%'}>
+      <Flexbox gap={12} width={'100%'} align={'center'}>
         <Button
           block
           onClick={() => {
@@ -71,6 +86,7 @@ const APIKeyForm = ({ id }: APIKeyFormProps) => {
           {t('apiKey.confirmRetry')}
         </Button>
         <Button
+          block
           onClick={() => {
             deleteMessage(id);
           }}

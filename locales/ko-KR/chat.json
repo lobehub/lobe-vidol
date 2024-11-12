@@ -21,6 +21,7 @@
     "addProxy": "OpenAI 프록시 주소 추가(선택 사항)",
     "closeTip": "팁 닫기",
     "confirmRetry": "확인 후 재시도",
+    "proxyDocs": "API 키를 신청하는 방법이 궁금하신가요?",
     "startDesc": "당신의 OpenAI API 키를 입력하면 대화를 시작할 수 있습니다. 애플리케이션은 당신의 API 키를 기록하지 않습니다.",
     "startTitle": "사용자 정의 API 키"
   },

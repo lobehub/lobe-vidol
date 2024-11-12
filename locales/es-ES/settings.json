@@ -78,7 +78,12 @@
         "title": "API Key"
       },
       "callError": "Error al llamar a la interfaz, por favor verifica que la APIKey y la dirección del proxy estén configuradas correctamente",
+      "checkError": "Error de verificación, por favor verifica si la APIKey y la dirección del proxy están configuradas correctamente",
       "checkOk": "Verificación exitosa",
+      "fetchOnClient": {
+        "desc": "El modo de solicitud del cliente iniciará la solicitud de sesión directamente desde el navegador, lo que puede mejorar la velocidad de respuesta",
+        "title": "Llamada desde el cliente"
+      },
       "proxy": {
         "desc": "http(s)://",
         "title": "Dirección del Proxy de la Interfaz"

@@ -78,7 +78,12 @@
         "title": "API Anahtarı"
       },
       "callError": "API çağrısı başarısız oldu, lütfen API Anahtarınızı ve arayüz proxy adresinizi doğru ayarladığınızdan emin olun",
+      "checkError": "Kontrol hatası, lütfen API Anahtarının ve arayüz proxy adresinin doğru ayarlandığını kontrol edin",
       "checkOk": "Kontrol başarılı",
+      "fetchOnClient": {
+        "desc": "İstemci istek modu, oturum isteklerini doğrudan tarayıcıdan başlatarak yanıt hızını artırabilir",
+        "title": "İstemci Çağrısı"
+      },
       "proxy": {
         "desc": "http(s)://",
         "title": "Arayüz Proxy Adresi"

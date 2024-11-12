@@ -18,9 +18,10 @@
     "totalCount": "共 {{total}} 项"
   },
   "apiKey": {
-    "startDesc": "输入你的 OpenAI API Key 即可开始会话。应用不会记录你的 API Key",
+    "startDesc": "输入你的 OpenAI API Key 即可开始会话。",
     "startTitle": "自定义 API Key",
     "addProxy": "添加 OpenAI 代理地址（可选）",
+    "proxyDocs": "不清楚如何申请 API Key?",
     "confirmRetry": "确认并重试",
     "closeTip": "关闭提示"
   },

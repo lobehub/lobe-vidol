@@ -78,7 +78,12 @@
         "title": "API-Schlüssel"
       },
       "callError": "Fehler beim Aufruf der Schnittstelle. Bitte überprüfen Sie, ob der API-Schlüssel und die Schnittstellen-Proxy-Adresse korrekt eingestellt sind.",
+      "checkError": "Überprüfung fehlgeschlagen, bitte überprüfen Sie, ob der API-Schlüssel und die Proxy-Adresse korrekt eingestellt sind",
       "checkOk": "Überprüfung erfolgreich",
+      "fetchOnClient": {
+        "desc": "Der Client-Anforderungsmodus initiiert die Sitzungsanfrage direkt aus dem Browser, was die Reaktionsgeschwindigkeit erhöhen kann",
+        "title": "Client-Anruf"
+      },
       "proxy": {
         "desc": "http(s)://",
         "title": "Schnittstellen-Proxy-Adresse"

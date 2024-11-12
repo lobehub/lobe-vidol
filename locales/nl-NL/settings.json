@@ -78,7 +78,12 @@
         "title": "API-sleutel"
       },
       "callError": "Fout bij het aanroepen van de interface, controleer of de API-sleutel en het proxyadres correct zijn ingesteld",
+      "checkError": "Controleer mislukt, controleer of de API-sleutel en de interface proxy-adres correct zijn ingesteld",
       "checkOk": "Controle geslaagd",
+      "fetchOnClient": {
+        "desc": "De clientaanroepmodus start het sessieverzoek rechtstreeks vanuit de browser, wat de responssnelheid kan verbeteren",
+        "title": "Clientaanroep"
+      },
       "proxy": {
         "desc": "http(s)://",
         "title": "Proxyadres"

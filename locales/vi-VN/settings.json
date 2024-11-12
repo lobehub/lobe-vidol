@@ -78,7 +78,12 @@
         "title": "API Key"
       },
       "callError": "Gọi API thất bại, vui lòng kiểm tra xem API Key và địa chỉ proxy đã được thiết lập đúng chưa",
+      "checkError": "Kiểm tra thất bại, vui lòng kiểm tra xem APIKey và địa chỉ proxy có được thiết lập đúng không",
       "checkOk": "Kiểm tra thành công",
+      "fetchOnClient": {
+        "desc": "Chế độ yêu cầu từ khách hàng sẽ khởi động yêu cầu phiên trực tiếp từ trình duyệt, có thể cải thiện tốc độ phản hồi",
+        "title": "Gọi từ phía khách hàng"
+      },
       "proxy": {
         "desc": "http(s)://",
         "title": "Địa chỉ proxy API"
