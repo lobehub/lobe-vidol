@@ -78,7 +78,12 @@
         "title": "Clé API"
       },
       "callError": "Échec de l'appel de l'API, veuillez vérifier si la clé API et l'adresse du proxy sont correctement configurées",
+      "checkError": "Échec de la vérification, veuillez vérifier si la clé API et l'adresse du proxy sont correctement configurées",
       "checkOk": "Vérification réussie",
+      "fetchOnClient": {
+        "desc": "Le mode de requête côté client lancera la demande de session directement depuis le navigateur, ce qui peut améliorer la vitesse de réponse",
+        "title": "Appel côté client"
+      },
       "proxy": {
         "desc": "http(s)://",
         "title": "Adresse du proxy API"

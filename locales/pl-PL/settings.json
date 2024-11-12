@@ -78,7 +78,12 @@
         "title": "Klucz API"
       },
       "callError": "Nie udało się wywołać interfejsu, sprawdź, czy APIKey i adres proxy są poprawnie ustawione",
+      "checkError": "Sprawdzenie nie powiodło się, proszę sprawdzić, czy klucz API i adres proxy są poprawnie ustawione",
       "checkOk": "Sprawdzenie zakończone pomyślnie",
+      "fetchOnClient": {
+        "desc": "Tryb żądania po stronie klienta rozpocznie sesję bezpośrednio z przeglądarki, co może zwiększyć szybkość odpowiedzi",
+        "title": "Wywołanie po stronie klienta"
+      },
       "proxy": {
         "desc": "http(s)://",
         "title": "Adres proxy interfejsu"

@@ -78,7 +78,12 @@
         "title": "Chave da API"
       },
       "callError": "Falha ao chamar a interface, verifique se a APIKey e o endereço do proxy estão configurados corretamente",
+      "checkError": "Verificação falhou, por favor, verifique se a APIKey e o endereço do proxy estão configurados corretamente",
       "checkOk": "Verificação concluída com sucesso",
+      "fetchOnClient": {
+        "desc": "O modo de solicitação do cliente iniciará a solicitação de sessão diretamente do navegador, o que pode aumentar a velocidade de resposta",
+        "title": "Chamada do Cliente"
+      },
       "proxy": {
         "desc": "http(s)://",
         "title": "Endereço do Proxy da Interface"

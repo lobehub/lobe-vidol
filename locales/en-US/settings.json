@@ -78,7 +78,12 @@
         "title": "API Key"
       },
       "callError": "Failed to call the API. Please check if the API Key and proxy address are set correctly.",
+      "checkError": "Check failed, please verify that the API key and interface proxy address are set correctly",
       "checkOk": "Check passed",
+      "fetchOnClient": {
+        "desc": "The client request mode will initiate session requests directly from the browser, which can improve response speed",
+        "title": "Client Call"
+      },
       "proxy": {
         "desc": "http(s)://",
         "title": "Proxy Address"

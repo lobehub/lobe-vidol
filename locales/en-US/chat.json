@@ -21,6 +21,7 @@
     "addProxy": "Add OpenAI proxy address (optional)",
     "closeTip": "Close tip",
     "confirmRetry": "Confirm and retry",
+    "proxyDocs": "Not sure how to apply for an API Key?",
     "startDesc": "Enter your OpenAI API Key to start the conversation. The application will not record your API Key.",
     "startTitle": "Custom API Key"
   },

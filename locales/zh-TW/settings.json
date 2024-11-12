@@ -78,7 +78,12 @@
         "title": "API 金鑰"
       },
       "callError": "呼叫介面失敗，請檢查 APIKey 和介面代理地址是否設置正確",
+      "checkError": "檢查失敗，請確認 APIKey 和接口代理地址是否設置正確",
       "checkOk": "檢查通過",
+      "fetchOnClient": {
+        "desc": "客戶端請求模式將從瀏覽器直接發起會話請求，可提升響應速度",
+        "title": "客戶端調用"
+      },
       "proxy": {
         "desc": "http(s)://",
         "title": "介面代理地址"

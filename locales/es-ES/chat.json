@@ -21,6 +21,7 @@
     "addProxy": "Añadir dirección del proxy de OpenAI (opcional)",
     "closeTip": "Cerrar aviso",
     "confirmRetry": "Confirmar y reintentar",
+    "proxyDocs": "¿No estás seguro de cómo solicitar una clave API?",
     "startDesc": "Introduce tu clave API de OpenAI para comenzar la conversación. La aplicación no registrará tu clave API.",
     "startTitle": "Clave API personalizada"
   },

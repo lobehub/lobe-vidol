@@ -78,7 +78,12 @@
         "title": "API Key"
       },
       "callError": "Chiamata all'interfaccia fallita, controlla se l'API Key e l'indirizzo del proxy sono impostati correttamente",
+      "checkError": "Controlla errore, verifica se l'APIKey e l'indirizzo del proxy sono impostati correttamente",
       "checkOk": "Controllo superato",
+      "fetchOnClient": {
+        "desc": "La modalità di richiesta client avvierà direttamente la richiesta di sessione dal browser, migliorando la velocità di risposta",
+        "title": "Chiamata client"
+      },
       "proxy": {
         "desc": "http(s)://",
         "title": "Indirizzo del Proxy"
