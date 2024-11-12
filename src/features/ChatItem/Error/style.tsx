@@ -30,7 +30,7 @@ export const ErrorActionContainer = memo<{ children: ReactNode }>(({ children })
 export const FormAction = memo<{
   avatar: string;
   children: ReactNode;
-  description: string;
+  description: ReactNode;
   title: string;
 }>(({ children, title, description, avatar }) => {
   const { styles, theme } = useStyles();

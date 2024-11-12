@@ -1,5 +1,7 @@
 import { Flexbox } from 'react-layout-kit';
 
+import ApiKeyForm from '@/features/ChatItem/Error/ApiKeyForm';
+
 import ChatList from './VirtualizedList';
 
 interface ConversationProps {
@@ -17,6 +19,7 @@ const Conversation = ({ mobile }: ConversationProps) => {
       }}
       width={'100%'}
     >
+      <ApiKeyForm id="api-key-form" />
       <ChatList mobile={mobile} />
     </Flexbox>
   );

@@ -22,7 +22,8 @@
     "startTitle": "自定义 API Key",
     "addProxy": "添加 OpenAI 代理地址（可选）",
     "confirmRetry": "确认并重试",
-    "closeTip": "关闭提示"
+    "closeTip": "关闭提示",
+    "proxyDocs": "查看代理设置文档"
   },
   "background": {
     "backgroundList": "背景列表",
