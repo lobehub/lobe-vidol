@@ -297,8 +297,8 @@ $ bun dev
 
 #### 📝 ライセンス
 
-Copyright © 2023 \[lobehub]\[profile-link]. <br />
-このプロジェクトは [MIT](./LICENSE) ライセンスです。
+Copyright © 2024 \[lobehub]\[profile-link]. <br />
+このプロジェクトは [Apache 2.0](./LICENSE) ライセンスです。
 
 [back-to-top]: https://img.shields.io/badge/-BACK_TO_TOP-black?style=flat-square
 [bun-link]: https://bun.sh

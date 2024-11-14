@@ -297,8 +297,8 @@ Every bit of support is incredibly valuable, coming together to form the brillia
 
 #### 📝 License
 
-Copyright © 2023 [lobehub][profile-link]. <br />
-This project is [MIT](./LICENSE) licensed.
+Copyright © 2024 [lobehub][profile-link]. <br />
+This project is [Apache 2.0](./LICENSE) licensed.
 
 [back-to-top]: https://img.shields.io/badge/-BACK_TO_TOP-black?style=flat-square
 [bun-link]: https://bun.sh
