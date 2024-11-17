@@ -82,6 +82,7 @@ const createStore: StateCreator<SettingStore, [['zustand/devtools', never]], [],
   resetConfig: () => {
     localStorage.removeItem(SETTING_STORAGE_KEY);
     set({ ...initialState });
+    get().refreshDefaultModelProviderList();
   },
   setAvatar: (avatar) => {
     get().setConfig({ avatar });
@@ -109,6 +110,8 @@ const createStore: StateCreator<SettingStore, [['zustand/devtools', never]], [],
     });
     if (isEqual(prevSetting, nextSetting)) return;
     set({ config: nextSetting });
+
+    get().refreshDefaultModelProviderList();
   },
 });
 

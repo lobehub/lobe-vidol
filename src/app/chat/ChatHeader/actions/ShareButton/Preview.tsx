@@ -1,8 +1,9 @@
+import { ModelTag } from '@lobehub/icons';
 import { Avatar, ChatHeaderTitle, Logo, Markdown } from '@lobehub/ui';
 import { memo } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
-import ModelTag from '@/components/ModelTag';
+import { DEFAULT_CHAT_MODEL } from '@/constants/agent';
 import useSessionContext from '@/hooks/useSessionContext';
 
 import pkg from '../../../../../../package.json';
@@ -26,7 +27,7 @@ const Preview = memo<FieldType & { title?: string }>(
                 <Avatar avatar={sessionAgent.meta.avatar} size={40} title={title} />
                 <ChatHeaderTitle
                   desc={sessionAgent.meta.description}
-                  tag={<ModelTag model={sessionAgent?.model} />}
+                  tag={<ModelTag model={sessionAgent?.model || DEFAULT_CHAT_MODEL} />}
                   title={title}
                 />
               </Flexbox>

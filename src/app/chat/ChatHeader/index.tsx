@@ -2,12 +2,9 @@
 
 import { Skeleton, Space } from 'antd';
 import classNames from 'classnames';
-import { isEqual } from 'lodash-es';
 import dynamic from 'next/dynamic';
 import React from 'react';
 import { Flexbox } from 'react-layout-kit';
-
-import { sessionSelectors, useSessionStore } from '@/store/session';
 
 import ShareButton from './actions/ShareButton';
 import ToggleChatSideBar from './actions/ToggleChatSideBar';
@@ -15,7 +12,7 @@ import ToggleSessionList from './actions/ToggleSessionList';
 import Voice from './actions/Voice';
 import { useStyles } from './style';
 
-const AgentMeta = dynamic(() => import('@/components/agent/AgentMeta'), {
+const AgentMeta = dynamic(() => import('./AgentMeta'), {
   ssr: false,
   loading: () => (
     <Skeleton
@@ -35,7 +32,6 @@ interface Props {
 export default (props: Props) => {
   const { className, style } = props;
   const { styles } = useStyles();
-  const [currentAgent] = useSessionStore((s) => [sessionSelectors.currentAgent(s)], isEqual);
 
   return (
     <Flexbox
@@ -48,7 +44,7 @@ export default (props: Props) => {
       <Flexbox horizontal align={'center'} className={styles.leftSection}>
         <ToggleSessionList />
         <div className={styles.agentMetaWrapper}>
-          <AgentMeta meta={currentAgent?.meta} />
+          <AgentMeta />
         </div>
       </Flexbox>
       <Space className={styles.actions}>

@@ -4,6 +4,7 @@ import isEqual from 'fast-deep-equal';
 import { memo, useMemo } from 'react';
 
 import { ModelItemRender, ProviderItemRender } from '@/components/ModelSelect';
+import { agentSelectors, useAgentStore } from '@/store/agent';
 import { useSettingStore } from '@/store/setting';
 import { modelProviderSelectors } from '@/store/setting/selectors';
 import { ModelProviderCard } from '@/types/llm';
@@ -25,14 +26,19 @@ interface ModelOption {
 interface ModelSelectProps {
   onChange?: (props: { model: string; provider: string }) => void;
   showAbility?: boolean;
-  value?: { model: string; provider?: string };
 }
 
-const ModelSelect = memo<ModelSelectProps>(({ value, onChange, showAbility = true }) => {
+const ModelSelect = memo<ModelSelectProps>(({ showAbility = true }) => {
   const enabledList = useSettingStore(
     modelProviderSelectors.modelProviderListForModelSelect,
     isEqual,
   );
+
+  const [model, provider, updateAgentConfig] = useAgentStore((s) => [
+    agentSelectors.currentAgentModel(s),
+    agentSelectors.currentAgentProvider(s),
+    s.updateAgentConfig,
+  ]);
 
   const { styles } = useStyles();
 
@@ -60,12 +66,12 @@ const ModelSelect = memo<ModelSelectProps>(({ value, onChange, showAbility = tru
     <Select
       onChange={(value, option) => {
         const model = value.split('/').slice(1).join('/');
-        onChange?.({ model, provider: (option as unknown as ModelOption).provider });
+        updateAgentConfig({ model, provider: (option as unknown as ModelOption).provider });
       }}
       options={options}
       popupClassName={styles.select}
       popupMatchSelectWidth={false}
-      value={`${value?.provider}/${value?.model}`}
+      value={`${provider}/${model}`}
     />
   );
 });

@@ -22,9 +22,9 @@ const ViewerWithUpload = memo<ViewerWithUploadProps>(({ style }) => {
   const { t } = useTranslation('role');
   const { styles } = useStyles();
 
-  const [currentAgentId, currentAgentModel, updateAgentConfig] = useAgentStore((s) => [
+  const [currentAgentId, currentAgent3DModel, updateAgentConfig] = useAgentStore((s) => [
     agentSelectors.currentAgentId(s),
-    agentSelectors.currentAgentModel(s),
+    agentSelectors.currentAgent3DModel(s),
     s.updateAgentConfig,
   ]);
 
@@ -40,7 +40,7 @@ const ViewerWithUpload = memo<ViewerWithUploadProps>(({ style }) => {
     });
   };
 
-  return currentAgentModel && currentAgentId ? (
+  return currentAgent3DModel && currentAgentId ? (
     <AgentViewer
       height={`calc(100vh - ${HEADER_HEIGHT}px)`}
       agentId={currentAgentId}
@@ -54,7 +54,7 @@ const ViewerWithUpload = memo<ViewerWithUploadProps>(({ style }) => {
       accept={'.vrm'}
       maxCount={1}
       style={style}
-      openFileDialogOnClick={!currentAgentModel}
+      openFileDialogOnClick={!currentAgent3DModel}
     >
       <Flexbox className={styles.guide} align="center" justify={'center'} width={'100%'}>
         <InboxOutlined className={styles.icon} />

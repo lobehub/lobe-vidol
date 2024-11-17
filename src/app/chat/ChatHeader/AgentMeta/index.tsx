@@ -1,21 +1,24 @@
+import { ModelTag } from '@lobehub/icons';
 import { Avatar } from '@lobehub/ui';
 import { Space, Typography } from 'antd';
 import React from 'react';
 
-import ModelSelect from '@/features/Actions/ModelSelect';
-import { AgentMeta } from '@/types/agent';
+import { DEFAULT_CHAT_MODEL } from '@/constants/agent';
+import useSessionContext from '@/hooks/useSessionContext';
 
+import ModelSwitchPanel from './ModelSwitchPanel';
 import { useStyles } from './style';
 
 interface AgentMetaProps {
   className?: string;
-  meta?: AgentMeta;
   style?: React.CSSProperties;
 }
 
 export default (props: AgentMetaProps) => {
   const { styles, cx } = useStyles();
-  const { meta, style, className } = props;
+  const { style, className } = props;
+
+  const { model, meta } = useSessionContext()?.sessionAgent || {};
   const { avatar, name, description } = meta || {};
 
   return (
@@ -24,7 +27,10 @@ export default (props: AgentMetaProps) => {
       <div className={styles.content}>
         <div className={styles.title}>
           <Space size={4} align={'center'}>
-            {name} <ModelSelect />
+            {name}
+            <ModelSwitchPanel>
+              <ModelTag model={model || DEFAULT_CHAT_MODEL} />
+            </ModelSwitchPanel>
           </Space>
         </div>
         <Typography.Text className={styles.desc} ellipsis={{ tooltip: true }}>
