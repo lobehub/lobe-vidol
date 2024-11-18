@@ -54,11 +54,6 @@ const currentAgent = (s: SessionStore) => {
   return agentStore.getAgentById(activeId);
 };
 
-const currentAgentMeta = (s: SessionStore) => {
-  const agent = currentAgent(s);
-  return agent?.meta;
-};
-
 const currentChats = (s: SessionStore): ChatMessage[] => {
   const session = currentSession(s);
   const agent = currentAgent(s);
@@ -152,7 +147,6 @@ const getLastMessageByAgentId = (s: SessionStore) => {
 export const sessionSelectors = {
   currentChatsWithGreetingMessage,
   filterSessionListIds,
-  currentAgentMeta,
   currentAgent,
   getAgentById,
   currentChatIDsWithGreetingMessage,

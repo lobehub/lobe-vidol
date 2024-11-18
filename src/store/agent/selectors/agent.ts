@@ -104,10 +104,31 @@ const currentAgentId = (s: AgentStore): string | undefined => {
   return currentAgent.agentId;
 };
 
-const getAgentModelById = (s: AgentStore) => {
+const getAgent3DModelById = (s: AgentStore) => {
   return (id: string): string | undefined => {
     const agent = s.getAgentById(id);
     return agent?.meta.model;
+  };
+};
+
+const getAgentProviderById = (s: AgentStore) => {
+  return (id: string): string | undefined => {
+    const agent = s.getAgentById(id);
+    return agent?.provider;
+  };
+};
+
+const getAgentModelById = (s: AgentStore) => {
+  return (id: string): string | undefined => {
+    const agent = s.getAgentById(id);
+    return agent?.model;
+  };
+};
+
+const getAgentMetaById = (s: AgentStore) => {
+  return (id: string): AgentMeta | undefined => {
+    const agent = s.getAgentById(id);
+    return agent?.meta;
   };
 };
 
@@ -149,6 +170,9 @@ export const agentSelectors = {
   currentAgentParams,
   currentAgentGreeting,
   filterAgentListIds,
+  getAgentMetaById,
+  getAgent3DModelById,
+  getAgentProviderById,
   getAgentModelById,
   agentListIds,
   isDefaultAgent,

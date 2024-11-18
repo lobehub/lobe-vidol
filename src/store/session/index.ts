@@ -17,6 +17,7 @@ import { ShareGPTConversation } from '@/types/share';
 import { fetchSEE } from '@/utils/fetch';
 import { vidolStorage } from '@/utils/storage';
 
+import { useAgentStore } from '../agent';
 import { initialState } from './initialState';
 import { MessageActionType, messageReducer } from './reducers/message';
 import { sessionSelectors } from './selectors';
@@ -309,7 +310,7 @@ export const createSessionStore: StateCreator<SessionStore, [['zustand/devtools'
   shareToShareGPT: async ({ withSystemRole }) => {
     const messages = sessionSelectors.currentChats(get());
     const agent = sessionSelectors.currentAgent(get());
-    const meta = sessionSelectors.currentAgentMeta(get());
+    const meta = agent?.meta;
 
     if (!agent || !meta) return;
 
@@ -461,6 +462,7 @@ export const createSessionStore: StateCreator<SessionStore, [['zustand/devtools'
     const { sessionList } = get();
     if (agentId === LOBE_VIDOL_DEFAULT_AGENT_ID) {
       set({ activeId: agentId });
+      useAgentStore.setState({ currentIdentifier: agentId });
       return;
     }
     const targetSession = sessionList.find((session) => session.agentId === agentId);
@@ -472,6 +474,7 @@ export const createSessionStore: StateCreator<SessionStore, [['zustand/devtools'
       set({ sessionList: [...sessionList, session] });
     }
     set({ activeId: agentId });
+    useAgentStore.setState({ currentIdentifier: agentId });
   },
   toggleVoice: () => {
     const { voiceOn } = get();

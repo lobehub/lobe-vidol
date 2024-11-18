@@ -1,3 +1,4 @@
+import { ModelTag } from '@lobehub/icons';
 import { Icon } from '@lobehub/ui';
 import { Dropdown } from 'antd';
 import { createStyles } from 'antd-style';
@@ -10,10 +11,9 @@ import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
 import { ModelItemRender, ProviderItemRender } from '@/components/ModelSelect';
-import { LOBE_VIDOL_DEFAULT_AGENT_ID } from '@/constants/agent';
+import { DEFAULT_CHAT_MODEL } from '@/constants/agent';
 import { useIsMobile } from '@/hooks/useIsMobile';
-import { useAgentStore } from '@/store/agent';
-import { sessionSelectors, useSessionStore } from '@/store/session';
+import { agentSelectors, useAgentStore } from '@/store/agent';
 import { useSettingStore } from '@/store/setting';
 import { modelProviderSelectors } from '@/store/setting/selectors';
 import { ModelProviderCard } from '@/types/llm';
@@ -41,14 +41,15 @@ const useStyles = createStyles(({ css, prefixCls }) => ({
 
 const menuKey = (provider?: string, model?: string) => `${provider}-${model}`;
 
-const ModelSwitchPanel = memo<PropsWithChildren>(({ children }) => {
+const ModelSwitchPanel = memo<PropsWithChildren>(() => {
   const { t } = useTranslation('components');
   const { styles, theme } = useStyles();
-  const [agent] = useSessionStore((s) => [sessionSelectors.currentAgent(s)], isEqual);
 
-  const [updateAgentConfig] = useAgentStore((s) => [s.updateAgentConfig]);
-
-  console.log(agent);
+  const [updateAgentConfig, provider, model] = useAgentStore((s) => [
+    s.updateAgentConfig,
+    agentSelectors.currentAgentProvider(s),
+    agentSelectors.currentAgentModel(s),
+  ]);
 
   const isMobile = useIsMobile();
 
@@ -65,10 +66,7 @@ const ModelSwitchPanel = memo<PropsWithChildren>(({ children }) => {
         key: menuKey(provider.id, model.id),
         label: <ModelItemRender {...model} />,
         onClick: () => {
-          updateAgentConfig(
-            { model: model.id, provider: provider.id },
-            agent?.agentId || LOBE_VIDOL_DEFAULT_AGENT_ID,
-          );
+          updateAgentConfig({ model: model.id, provider: provider.id });
         },
       }));
 
@@ -84,7 +82,7 @@ const ModelSwitchPanel = memo<PropsWithChildren>(({ children }) => {
               </Flexbox>
             ),
             onClick: () => {
-              router.push('/settings/llm');
+              router.push('/settings');
             },
           },
         ];
@@ -104,7 +102,7 @@ const ModelSwitchPanel = memo<PropsWithChildren>(({ children }) => {
   return (
     <Dropdown
       menu={{
-        activeKey: menuKey(agent?.provider, agent?.model),
+        activeKey: menuKey(provider, model),
         className: styles.menu,
         items,
         style: {
@@ -115,7 +113,9 @@ const ModelSwitchPanel = memo<PropsWithChildren>(({ children }) => {
       placement={isMobile ? 'top' : 'topLeft'}
       trigger={['click']}
     >
-      <div className={styles.tag}>{children}</div>
+      <div className={styles.tag}>
+        <ModelTag model={model || DEFAULT_CHAT_MODEL} />
+      </div>
     </Dropdown>
   );
 });
