@@ -1,4 +1,14 @@
 {
+  "ModelSelect": {
+    "featureTag": {
+      "custom": "Aangepast model, de standaardinstelling ondersteunt zowel functieaanroepen als visuele herkenning. Gelieve de beschikbaarheid van bovenstaande mogelijkheden te verifiëren op basis van de werkelijke situatie.",
+      "file": "Dit model ondersteunt het uploaden van bestanden voor lezen en herkenning.",
+      "functionCall": "Dit model ondersteunt functieaanroepen (Function Call).",
+      "tokens": "Dit model ondersteunt maximaal {{tokens}} tokens per sessie.",
+      "vision": "Dit model ondersteunt visuele herkenning."
+    },
+    "removed": "Dit model staat niet op de lijst. Als u het deselecteert, wordt het automatisch verwijderd."
+  },
   "actions": {
     "add": "Toevoegen",
     "copy": "Kopiëren",

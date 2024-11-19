@@ -64,28 +64,78 @@
     },
     "title": "일반 설정"
   },
+  "fetchOnClient": {
+    "desc": "클라이언트 요청 모드는 브라우저에서 직접 세션 요청을 시작하여 응답 속도를 향상시킵니다.",
+    "title": "클라이언트 요청 모드 사용"
+  },
+  "fetcher": {
+    "fetch": "모델 목록 가져오기",
+    "fetching": "모델 목록을 가져오는 중...",
+    "latestTime": "마지막 업데이트 시간: {{time}}",
+    "noLatestTime": "아직 목록을 가져오지 않았습니다."
+  },
+  "helpDoc": "구성 튜토리얼",
   "llm": {
-    "check": {
-      "action": "검사",
-      "desc": "API 키와 프록시 주소가 올바르게 설정되었는지 확인하세요.",
-      "error": "API 호출에 실패했습니다. API 키와 프록시 주소가 올바르게 설정되었는지 확인하세요.",
-      "success": "확인 완료",
+    "aesGcm": "귀하의 비밀 키와 프록시 주소 등은 <1>AES-GCM</1> 암호화 알고리즘을 사용하여 암호화됩니다.",
+    "apiKey": {
+      "desc": "{{name}} API 키를 입력하세요.",
+      "placeholder": "{{name}} API 키",
+      "title": "API 키"
+    },
+    "checker": {
+      "button": "검사",
+      "desc": "API 키와 프록시 주소가 올바르게 입력되었는지 테스트합니다.",
+      "pass": "검사 통과",
       "title": "연결성 검사"
     },
-    "openai": {
-      "apiKey": {
-        "desc": "자신의 OpenAI 키를 사용하세요.",
-        "title": "API 키"
-      },
-      "callError": "API 호출에 실패했습니다. API 키와 프록시 주소가 올바르게 설정되었는지 확인하세요.",
-      "checkOk": "확인 완료",
-      "proxy": {
-        "desc": "http(s)://",
-        "title": "프록시 주소"
-      },
-      "title": "OpenAI 언어 모델"
-    },
-    "title": "대형 언어 모델"
+    "customModelCards": {
+      "addNew": "{{id}} 모델 생성 및 추가",
+      "config": "모델 구성",
+      "confirmDelete": "이 사용자 정의 모델을 삭제하려고 합니다. 삭제 후에는 복구할 수 없으니 신중하게 진행하세요.",
+      "modelConfig": {
+        "azureDeployName": {
+          "extra": "Azure OpenAI에서 실제 요청되는 필드",
+          "placeholder": "Azure에서 모델 배포 이름을 입력하세요.",
+          "title": "모델 배포 이름"
+        },
+        "displayName": {
+          "placeholder": "모델의 표시 이름을 입력하세요. 예: ChatGPT, GPT-4 등",
+          "title": "모델 표시 이름"
+        },
+        "files": {
+          "extra": "현재 파일 업로드 구현은 일종의 해킹 방법으로, 개인적으로 시도하는 것만 가능합니다. 완전한 파일 업로드 기능은 후속 구현을 기다려 주세요.",
+          "title": "파일 업로드 지원"
+        },
+        "functionCall": {
+          "extra": "이 구성은 애플리케이션 내에서 함수 호출 기능만 활성화합니다. 함수 호출 지원 여부는 모델 자체에 따라 다르므로, 해당 모델의 함수 호출 가능성을 직접 테스트하세요.",
+          "title": "함수 호출 지원"
+        },
+        "id": {
+          "extra": "모델 태그로 표시됩니다.",
+          "placeholder": "모델 ID를 입력하세요. 예: gpt-4-turbo-preview 또는 claude-2.1",
+          "title": "모델 ID"
+        },
+        "modalTitle": "사용자 정의 모델 구성",
+        "tokens": {
+          "title": "최대 토큰 수",
+          "unlimited": "무제한"
+        },
+        "vision": {
+          "extra": "이 구성은 애플리케이션 내에서 이미지 업로드 기능만 활성화합니다. 인식 지원 여부는 모델 자체에 따라 다르므로, 해당 모델의 시각 인식 가능성을 직접 테스트하세요.",
+          "title": "시각 인식 지원"
+        }
+      }
+    }
+  },
+  "modelList": {
+    "desc": "세션에서 표시할 모델을 선택하세요. 선택한 모델은 모델 목록에 표시됩니다.",
+    "placeholder": "목록에서 모델을 선택하세요.",
+    "title": "모델 목록",
+    "total": "총 {{count}} 개의 모델이 사용 가능합니다."
+  },
+  "proxyUrl": {
+    "desc": "기본 주소 외에 http(s)://를 포함해야 합니다.",
+    "title": "API 프록시 주소"
   },
   "touch": {
     "title": "터치 설정"
@@ -96,5 +146,6 @@
       "title": "클라이언트 호출"
     },
     "title": "음성 설정"
-  }
+  },
+  "waitingForMore": "더 많은 모델이 <1>계획 중</1>입니다. 기대해 주세요."
 }

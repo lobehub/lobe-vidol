@@ -64,28 +64,78 @@
     },
     "title": "Paramètres généraux"
   },
+  "fetchOnClient": {
+    "desc": "Le mode de requête client lancera la demande de session directement depuis le navigateur, ce qui peut améliorer la vitesse de réponse.",
+    "title": "Utiliser le mode de requête client"
+  },
+  "fetcher": {
+    "fetch": "Obtenir la liste des modèles",
+    "fetching": "Obtention de la liste des modèles...",
+    "latestTime": "Dernière mise à jour : {{time}}",
+    "noLatestTime": "Liste non encore obtenue"
+  },
+  "helpDoc": "Guide de configuration",
   "llm": {
-    "check": {
-      "action": "Vérifier",
-      "desc": "Vérifiez si la clé API et l'adresse du proxy sont correctement configurées",
-      "error": "Échec de l'appel de l'API, veuillez vérifier si la clé API et l'adresse du proxy sont correctement configurées",
-      "success": "Vérification réussie",
-      "title": "Vérification de la connectivité"
+    "aesGcm": "Votre clé et l'adresse du proxy seront chiffrées à l'aide de l'algorithme de chiffrement <1>AES-GCM</1>",
+    "apiKey": {
+      "desc": "Veuillez entrer votre {{name}} clé API",
+      "placeholder": "{{name}} clé API",
+      "title": "Clé API"
     },
-    "openai": {
-      "apiKey": {
-        "desc": "Veuillez utiliser votre propre clé OpenAI",
-        "title": "Clé API"
-      },
-      "callError": "Échec de l'appel de l'API, veuillez vérifier si la clé API et l'adresse du proxy sont correctement configurées",
-      "checkOk": "Vérification réussie",
-      "proxy": {
-        "desc": "http(s)://",
-        "title": "Adresse du proxy API"
-      },
-      "title": "Modèle de langage OpenAI"
+    "checker": {
+      "button": "Vérifier",
+      "desc": "Tester si la clé API et l'adresse du proxy sont correctement renseignées",
+      "pass": "Vérification réussie",
+      "title": "Vérification de connectivité"
     },
-    "title": "Modèle de langage étendu"
+    "customModelCards": {
+      "addNew": "Créer et ajouter le modèle {{id}}",
+      "config": "Configurer le modèle",
+      "confirmDelete": "Vous allez supprimer ce modèle personnalisé. Une fois supprimé, il ne pourra pas être récupéré. Veuillez agir avec prudence.",
+      "modelConfig": {
+        "azureDeployName": {
+          "extra": "Champ réellement demandé dans Azure OpenAI",
+          "placeholder": "Veuillez entrer le nom de déploiement du modèle dans Azure",
+          "title": "Nom de déploiement du modèle"
+        },
+        "displayName": {
+          "placeholder": "Veuillez entrer le nom d'affichage du modèle, par exemple ChatGPT, GPT-4, etc.",
+          "title": "Nom d'affichage du modèle"
+        },
+        "files": {
+          "extra": "La mise en œuvre actuelle du téléchargement de fichiers n'est qu'une solution de contournement, à essayer par vous-même. La capacité complète de téléchargement de fichiers sera disponible dans une mise à jour ultérieure.",
+          "title": "Téléchargement de fichiers pris en charge"
+        },
+        "functionCall": {
+          "extra": "Cette configuration n'activera que la capacité d'appel de fonction dans l'application. La prise en charge des appels de fonction dépend entièrement du modèle lui-même. Veuillez tester la disponibilité des appels de fonction de ce modèle.",
+          "title": "Appels de fonction pris en charge"
+        },
+        "id": {
+          "extra": "S'affichera comme une étiquette de modèle",
+          "placeholder": "Veuillez entrer l'id du modèle, par exemple gpt-4-turbo-preview ou claude-2.1",
+          "title": "ID du modèle"
+        },
+        "modalTitle": "Configuration du modèle personnalisé",
+        "tokens": {
+          "title": "Nombre maximum de tokens",
+          "unlimited": "Illimité"
+        },
+        "vision": {
+          "extra": "Cette configuration n'activera que la capacité de téléchargement d'images dans l'application. La prise en charge de la reconnaissance dépend entièrement du modèle lui-même. Veuillez tester la disponibilité de la capacité de reconnaissance visuelle de ce modèle.",
+          "title": "Reconnaissance visuelle prise en charge"
+        }
+      }
+    }
+  },
+  "modelList": {
+    "desc": "Choisissez les modèles à afficher dans la session. Les modèles sélectionnés seront affichés dans la liste des modèles.",
+    "placeholder": "Veuillez sélectionner un modèle dans la liste",
+    "title": "Liste des modèles",
+    "total": "{{count}} modèles disponibles"
+  },
+  "proxyUrl": {
+    "desc": "Doit inclure http(s)://, en plus de l'adresse par défaut",
+    "title": "Adresse du proxy API"
   },
   "touch": {
     "title": "Paramètres de toucher"
@@ -96,5 +146,6 @@
       "title": "Appel client"
     },
     "title": "Paramètres de synthèse vocale"
-  }
+  },
+  "waitingForMore": "D'autres modèles sont en cours de <1>planification d'intégration</1>, restez à l'écoute."
 }

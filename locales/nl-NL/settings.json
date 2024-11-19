@@ -64,28 +64,78 @@
     },
     "title": "Algemene instellingen"
   },
+  "fetchOnClient": {
+    "desc": "De clientaanroepmodus start sessieaanroepen rechtstreeks vanuit de browser, wat de responstijd kan verbeteren",
+    "title": "Gebruik clientaanroepmodus"
+  },
+  "fetcher": {
+    "fetch": "Haal modellenlijst op",
+    "fetching": "Modellenlijst wordt opgehaald...",
+    "latestTime": "Laatste update tijd: {{time}}",
+    "noLatestTime": "Lijst nog niet opgehaald"
+  },
+  "helpDoc": "Configuratiehandleiding",
   "llm": {
-    "check": {
-      "action": "Controleren",
-      "desc": "Controleer of de API-sleutel en het proxyadres correct zijn ingesteld",
-      "error": "Fout bij het aanroepen van de interface, controleer of de API-sleutel en het proxyadres correct zijn ingesteld",
-      "success": "Controle geslaagd",
+    "aesGcm": "Uw sleutel en proxy-adres worden versleuteld met het <1>AES-GCM</1> encryptie-algoritme",
+    "apiKey": {
+      "desc": "Vul uw {{name}} API-sleutel in",
+      "placeholder": "{{name}} API-sleutel",
+      "title": "API-sleutel"
+    },
+    "checker": {
+      "button": "Controleer",
+      "desc": "Test of de API-sleutel en proxy-adres correct zijn ingevuld",
+      "pass": "Controle geslaagd",
       "title": "Connectiviteitstest"
     },
-    "openai": {
-      "apiKey": {
-        "desc": "Gebruik uw eigen OpenAI-sleutel",
-        "title": "API-sleutel"
-      },
-      "callError": "Fout bij het aanroepen van de interface, controleer of de API-sleutel en het proxyadres correct zijn ingesteld",
-      "checkOk": "Controle geslaagd",
-      "proxy": {
-        "desc": "http(s)://",
-        "title": "Proxyadres"
-      },
-      "title": "OpenAI Taalmodel"
-    },
-    "title": "Grote Taalmodellen"
+    "customModelCards": {
+      "addNew": "Maak en voeg {{id}} model toe",
+      "config": "Configureer model",
+      "confirmDelete": "U staat op het punt dit aangepaste model te verwijderen. Verwijderen is onomkeerbaar, wees voorzichtig.",
+      "modelConfig": {
+        "azureDeployName": {
+          "extra": "Het veld dat daadwerkelijk wordt aangevraagd in Azure OpenAI",
+          "placeholder": "Voer de modelimplementatienaam in Azure in",
+          "title": "Model implementatienaam"
+        },
+        "displayName": {
+          "placeholder": "Voer de weergavenaam van het model in, bijvoorbeeld ChatGPT, GPT-4, enz.",
+          "title": "Weergavenaam model"
+        },
+        "files": {
+          "extra": "De huidige bestandsuploadimplementatie is slechts een hackoplossing en alleen voor eigen gebruik. Volledige bestandsuploadcapaciteit is in de toekomst beschikbaar.",
+          "title": "Ondersteuning voor bestandsupload"
+        },
+        "functionCall": {
+          "extra": "Deze configuratie schakelt alleen de functieaanroepcapaciteit in de applicatie in. Of functieaanroepen worden ondersteund, hangt volledig af van het model zelf. Test de beschikbaarheid van functieaanroepen van dit model zelf.",
+          "title": "Ondersteuning voor functieaanroepen"
+        },
+        "id": {
+          "extra": "Zal worden weergegeven als modellabel",
+          "placeholder": "Voer model-id in, bijvoorbeeld gpt-4-turbo-preview of claude-2.1",
+          "title": "Model ID"
+        },
+        "modalTitle": "Configuratie van aangepast model",
+        "tokens": {
+          "title": "Maximaal aantal tokens",
+          "unlimited": "Onbeperkt"
+        },
+        "vision": {
+          "extra": "Deze configuratie schakelt alleen de afbeeldinguploadconfiguratie in de applicatie in. Of herkenning wordt ondersteund, hangt volledig af van het model zelf. Test de beschikbaarheid van visuele herkenning van dit model zelf.",
+          "title": "Ondersteuning voor visuele herkenning"
+        }
+      }
+    }
+  },
+  "modelList": {
+    "desc": "Kies de modellen die in de sessie moeten worden weergegeven. De gekozen modellen worden in de modellenlijst weergegeven.",
+    "placeholder": "Selecteer een model uit de lijst",
+    "title": "Modellenlijst",
+    "total": "In totaal {{count}} modellen beschikbaar"
+  },
+  "proxyUrl": {
+    "desc": "Moet http(s):// bevatten, naast het standaardadres",
+    "title": "API proxy-adres"
   },
   "touch": {
     "title": "Aanraakinstellingen"
@@ -96,5 +146,6 @@
       "title": "Cliëntaanroep"
     },
     "title": "Spraakinstellingen"
-  }
+  },
+  "waitingForMore": "Meer modellen worden momenteel <1>gepland voor integratie</1>, blijf op de hoogte"
 }

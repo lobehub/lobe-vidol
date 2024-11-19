@@ -64,28 +64,78 @@
     },
     "title": "General Settings"
   },
+  "fetchOnClient": {
+    "desc": "The client request mode will initiate session requests directly from the browser, which can improve response speed.",
+    "title": "Use Client Request Mode"
+  },
+  "fetcher": {
+    "fetch": "Fetch Model List",
+    "fetching": "Fetching model list...",
+    "latestTime": "Last updated: {{time}}",
+    "noLatestTime": "List not yet fetched"
+  },
+  "helpDoc": "Configuration Tutorial",
   "llm": {
-    "check": {
-      "action": "Check",
-      "desc": "Verify if the API Key and proxy address are set correctly",
-      "error": "Failed to call the API. Please check if the API Key and proxy address are set correctly.",
-      "success": "Check passed",
+    "aesGcm": "Your key and proxy address will be encrypted using the <1>AES-GCM</1> encryption algorithm.",
+    "apiKey": {
+      "desc": "Please enter your {{name}} API Key.",
+      "placeholder": "{{name}} API Key",
+      "title": "API Key"
+    },
+    "checker": {
+      "button": "Check",
+      "desc": "Test if the API Key and proxy address are filled in correctly.",
+      "pass": "Check passed",
       "title": "Connectivity Check"
     },
-    "openai": {
-      "apiKey": {
-        "desc": "Please use your own OpenAI Key",
-        "title": "API Key"
-      },
-      "callError": "Failed to call the API. Please check if the API Key and proxy address are set correctly.",
-      "checkOk": "Check passed",
-      "proxy": {
-        "desc": "http(s)://",
-        "title": "Proxy Address"
-      },
-      "title": "OpenAI Language Model"
-    },
-    "title": "Large Language Model"
+    "customModelCards": {
+      "addNew": "Create and add {{id}} model",
+      "config": "Configure Model",
+      "confirmDelete": "You are about to delete this custom model. Once deleted, it cannot be recovered. Please proceed with caution.",
+      "modelConfig": {
+        "azureDeployName": {
+          "extra": "The field used for actual requests in Azure OpenAI.",
+          "placeholder": "Please enter the model deployment name in Azure.",
+          "title": "Model Deployment Name"
+        },
+        "displayName": {
+          "placeholder": "Please enter the display name of the model, e.g., ChatGPT, GPT-4, etc.",
+          "title": "Model Display Name"
+        },
+        "files": {
+          "extra": "The current file upload implementation is just a hack solution, limited to self-experimentation. Please wait for full file upload capabilities in future implementations.",
+          "title": "File Upload Support"
+        },
+        "functionCall": {
+          "extra": "This configuration will only enable function calling capabilities in the application. Whether function calling is supported depends entirely on the model itself. Please test the function calling capabilities of the model yourself.",
+          "title": "Function Calling Support"
+        },
+        "id": {
+          "extra": "This will be displayed as the model label.",
+          "placeholder": "Please enter the model ID, e.g., gpt-4-turbo-preview or claude-2.1.",
+          "title": "Model ID"
+        },
+        "modalTitle": "Custom Model Configuration",
+        "tokens": {
+          "title": "Maximum Token Count",
+          "unlimited": "Unlimited"
+        },
+        "vision": {
+          "extra": "This configuration will only enable image upload capabilities in the application. Whether recognition is supported depends entirely on the model itself. Please test the visual recognition capabilities of the model yourself.",
+          "title": "Visual Recognition Support"
+        }
+      }
+    }
+  },
+  "modelList": {
+    "desc": "Select the models to display in the session. The selected models will be shown in the model list.",
+    "placeholder": "Please select a model from the list.",
+    "title": "Model List",
+    "total": "{{count}} models available in total."
+  },
+  "proxyUrl": {
+    "desc": "Must include http(s)://, in addition to the default address.",
+    "title": "API Proxy Address"
   },
   "touch": {
     "title": "Touch Settings"
@@ -96,5 +146,6 @@
       "title": "Client Call"
     },
     "title": "Voice Settings"
-  }
+  },
+  "waitingForMore": "More models are currently <1>being planned for integration</1>. Stay tuned."
 }

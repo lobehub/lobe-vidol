@@ -1,4 +1,14 @@
 {
+  "ModelSelect": {
+    "featureTag": {
+      "custom": "自訂模型，預設設定同時支持函數調用與視覺識別，請根據實際情況驗證上述能力的可用性",
+      "file": "該模型支持上傳文件讀取與識別",
+      "functionCall": "該模型支持函數調用（Function Call）",
+      "tokens": "該模型單個會話最多支持 {{tokens}} Tokens",
+      "vision": "該模型支持視覺識別"
+    },
+    "removed": "該模型不在列表中，若取消選中將會自動移除"
+  },
   "actions": {
     "add": "新增",
     "copy": "複製",

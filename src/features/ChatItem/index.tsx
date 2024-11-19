@@ -1,8 +1,7 @@
-import { AlertProps } from '@lobehub/ui';
 import { createStyles } from 'antd-style';
 import classNames from 'classnames';
 import isEqual from 'fast-deep-equal';
-import { ReactNode, memo, useCallback, useMemo, useState } from 'react';
+import { ReactNode, memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import ChatItem, { ChatItemProps } from '@/components/ChatItem';
@@ -12,7 +11,7 @@ import { sessionSelectors } from '@/store/session/selectors';
 import { ChatMessage } from '@/types/chat';
 
 import ActionsBar from './ActionsBar';
-import ErrorMessageExtra, { getErrorAlertConfig } from './Error';
+import ErrorMessageExtra, { useErrorContent } from './Error';
 import { renderMessages } from './Messages';
 
 const useStyles = createStyles(({ css, prefixCls }) => ({
@@ -71,14 +70,7 @@ const Item = memo<ChatListItemProps>(
       [item?.role],
     );
 
-    const error = useMemo<AlertProps | undefined>(() => {
-      if (!item?.error) return;
-      const messageError = item.error;
-
-      const alertConfig = getErrorAlertConfig(messageError.type);
-
-      return { message: messageError.message, ...alertConfig };
-    }, [item?.error]);
+    const error = useErrorContent(item?.error);
 
     return (
       item && (

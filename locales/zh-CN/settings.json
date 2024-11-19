@@ -65,27 +65,78 @@
     }
   },
   "llm": {
-    "title": "大语言模型",
-    "openai": {
-      "callError": "调用接口失败，请检查 APIKey 和接口代理地址是否设置正确",
-      "checkOk": "检查通过",
-      "title": "OpenAI 语言模型",
-      "apiKey": {
-        "title": "API Key",
-        "desc": "请使用自己的 OpenAI Key"
-      },
-      "proxy": {
-        "title": "接口代理地址",
-        "desc": "http(s)://"
+    "aesGcm": "您的秘钥与代理地址等将使用 <1>AES-GCM</1> 加密算法进行加密",
+    "apiKey": {
+      "desc": "请填写你的 {{name}} API Key",
+      "placeholder": "{{name}} API Key",
+      "title": "API Key"
+    },
+    "checker": {
+      "button": "检查",
+      "desc": "测试 Api Key 与代理地址是否正确填写",
+      "pass": "检查通过",
+      "title": "连通性检查"
+    },
+    "customModelCards": {
+      "addNew": "创建并添加 {{id}} 模型",
+      "config": "配置模型",
+      "confirmDelete": "即将删除该自定义模型，删除后将不可恢复，请谨慎操作。",
+      "modelConfig": {
+        "azureDeployName": {
+          "extra": "在 Azure OpenAI 中实际请求的字段",
+          "placeholder": "请输入 Azure 中的模型部署名称",
+          "title": "模型部署名称"
+        },
+        "displayName": {
+          "placeholder": "请输入模型的展示名称，例如 ChatGPT、GPT-4 等",
+          "title": "模型展示名称"
+        },
+        "files": {
+          "extra": "当前文件上传实现仅为一种 Hack 方案，仅限自行尝试。完整文件上传能力请等待后续实现",
+          "title": "支持文件上传"
+        },
+        "functionCall": {
+          "extra": "此配置将仅开启应用中的函数调用能力，是否支持函数调用完全取决于模型本身，请自行测试该模型的函数调用能力可用性",
+          "title": "支持函数调用"
+        },
+        "id": {
+          "extra": "将作为模型标签进行展示",
+          "placeholder": "请输入模型id，例如 gpt-4-turbo-preview 或 claude-2.1",
+          "title": "模型 ID"
+        },
+        "modalTitle": "自定义模型配置",
+        "tokens": {
+          "title": "最大 token 数",
+          "unlimited": "无限制"
+        },
+        "vision": {
+          "extra": "此配置将仅开启应用中的图片上传配置，是否支持识别完全取决于模型本身，请自行测试该模型的视觉识别能力可用性",
+          "title": "支持视觉识别"
+        }
       }
     },
-    "check": {
-      "title": "连通性检查",
-      "action": "检查",
-      "desc": "检查 APIKey 和接口代理地址是否设置正确",
-      "error": "调用接口失败，请检查 APIKey 和接口代理地址是否设置正确",
-      "success": "检查通过"
-    }
+    "fetchOnClient": {
+      "desc": "客户端请求模式将从浏览器直接发起会话请求，可提升响应速度",
+      "title": "使用客户端请求模式"
+    },
+    "fetcher": {
+      "fetch": "获取模型列表",
+      "fetching": "正在获取模型列表...",
+      "latestTime": "上次更新时间：{{time}}",
+      "noLatestTime": "暂未获取列表"
+    },
+    "helpDoc": "配置教程",
+    "modelList": {
+      "desc": "选择在会话中展示的模型，选择的模型会在模型列表中展示",
+      "placeholder": "请从列表中选择模型",
+      "title": "模型列表",
+      "total": "共 {{count}} 个模型可用"
+    },
+    "proxyUrl": {
+      "desc": "除默认地址外，必须包含 http(s)://",
+      "title": "API 代理地址"
+    },
+    "waitingForMore": "更多模型正在 <1>计划接入</1> 中，敬请期待"
   },
   "touch": {
     "title": "触摸设定"

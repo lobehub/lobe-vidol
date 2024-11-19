@@ -6,10 +6,6 @@ export const ChatErrorType = {
 
   InvalidAccessCode: 'InvalidAccessCode', // is in valid password
   InvalidClerkUser: 'InvalidClerkUser', // is not Clerk User
-  /**
-   * @deprecated
-   */
-  NoOpenAIAPIKey: 'NoOpenAIAPIKey',
   OllamaServiceUnavailable: 'OllamaServiceUnavailable', // 未启动/检测到 Ollama 服务
   PluginFailToTransformArguments: 'PluginFailToTransformArguments',
   UnknownChatFetchError: 'UnknownChatFetchError',

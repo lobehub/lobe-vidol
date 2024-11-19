@@ -70,6 +70,10 @@ export interface SessionStore {
    */
   defaultSession: Session;
   /**
+   * 删除并重新生成消息
+   */
+  delAndRegenerateMessage: (id: string) => void;
+  /**
    *  删除消息
    */
   deleteMessage: (id: string) => void;
@@ -202,6 +206,12 @@ export const createSessionStore: StateCreator<SessionStore, [['zustand/devtools'
       type: 'DELETE_MESSAGE',
     });
   },
+  delAndRegenerateMessage: (id) => {
+    const { deleteMessage, regenerateMessage } = get();
+    deleteMessage(id);
+    regenerateMessage(id);
+  },
+
   dispatchMessage: (payload) => {
     const { updateSessionMessages } = get();
     const session = sessionSelectors.currentSession(get());

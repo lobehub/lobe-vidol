@@ -64,28 +64,78 @@
     },
     "title": "Configurações Gerais"
   },
+  "fetchOnClient": {
+    "desc": "O modo de solicitação do cliente iniciará a solicitação de sessão diretamente do navegador, o que pode aumentar a velocidade de resposta.",
+    "title": "Usar Modo de Solicitação do Cliente"
+  },
+  "fetcher": {
+    "fetch": "Obter lista de modelos",
+    "fetching": "Obtendo lista de modelos...",
+    "latestTime": "Última atualização: {{time}}",
+    "noLatestTime": "Lista ainda não obtida"
+  },
+  "helpDoc": "Tutorial de Configuração",
   "llm": {
-    "check": {
-      "action": "Verificar",
-      "desc": "Verifique se a APIKey e o endereço do proxy estão configurados corretamente",
-      "error": "Falha ao chamar a interface, verifique se a APIKey e o endereço do proxy estão configurados corretamente",
-      "success": "Verificação concluída com sucesso",
+    "aesGcm": "Sua chave e o endereço do proxy serão criptografados usando o algoritmo de criptografia <1>AES-GCM</1>",
+    "apiKey": {
+      "desc": "Por favor, insira sua chave API {{name}}",
+      "placeholder": "Chave API {{name}}",
+      "title": "Chave API"
+    },
+    "checker": {
+      "button": "Verificar",
+      "desc": "Teste se a chave API e o endereço do proxy estão preenchidos corretamente",
+      "pass": "Verificação bem-sucedida",
       "title": "Verificação de Conectividade"
     },
-    "openai": {
-      "apiKey": {
-        "desc": "Por favor, use sua própria chave OpenAI",
-        "title": "Chave da API"
-      },
-      "callError": "Falha ao chamar a interface, verifique se a APIKey e o endereço do proxy estão configurados corretamente",
-      "checkOk": "Verificação concluída com sucesso",
-      "proxy": {
-        "desc": "http(s)://",
-        "title": "Endereço do Proxy da Interface"
-      },
-      "title": "Modelo de Linguagem OpenAI"
-    },
-    "title": "Modelo de Linguagem Grande"
+    "customModelCards": {
+      "addNew": "Criar e adicionar o modelo {{id}}",
+      "config": "Configurar modelo",
+      "confirmDelete": "Você está prestes a excluir este modelo personalizado. Após a exclusão, não poderá ser recuperado. Por favor, proceda com cautela.",
+      "modelConfig": {
+        "azureDeployName": {
+          "extra": "Campo solicitado na Azure OpenAI",
+          "placeholder": "Insira o nome de implantação do modelo na Azure",
+          "title": "Nome de Implantação do Modelo"
+        },
+        "displayName": {
+          "placeholder": "Insira o nome de exibição do modelo, como ChatGPT, GPT-4, etc.",
+          "title": "Nome de Exibição do Modelo"
+        },
+        "files": {
+          "extra": "A implementação atual de upload de arquivos é apenas uma solução alternativa, limitada a tentativas pessoais. A capacidade completa de upload de arquivos será implementada posteriormente.",
+          "title": "Suporte a Upload de Arquivos"
+        },
+        "functionCall": {
+          "extra": "Esta configuração ativará apenas a capacidade de chamada de função no aplicativo. O suporte a chamadas de função depende totalmente do modelo em si. Teste a disponibilidade da capacidade de chamada de função desse modelo.",
+          "title": "Suporte a Chamadas de Função"
+        },
+        "id": {
+          "extra": "Será exibido como um rótulo do modelo",
+          "placeholder": "Insira o id do modelo, como gpt-4-turbo-preview ou claude-2.1",
+          "title": "ID do Modelo"
+        },
+        "modalTitle": "Configuração do Modelo Personalizado",
+        "tokens": {
+          "title": "Número máximo de tokens",
+          "unlimited": "Ilimitado"
+        },
+        "vision": {
+          "extra": "Esta configuração ativará apenas a configuração de upload de imagens no aplicativo. O suporte ao reconhecimento depende totalmente do modelo em si. Teste a disponibilidade da capacidade de reconhecimento visual desse modelo.",
+          "title": "Suporte ao Reconhecimento Visual"
+        }
+      }
+    }
+  },
+  "modelList": {
+    "desc": "Escolha os modelos a serem exibidos na sessão. Os modelos selecionados serão exibidos na lista de modelos.",
+    "placeholder": "Por favor, selecione um modelo da lista",
+    "title": "Lista de Modelos",
+    "total": "Um total de {{count}} modelos disponíveis"
+  },
+  "proxyUrl": {
+    "desc": "Além do endereço padrão, deve incluir http(s)://",
+    "title": "Endereço do Proxy API"
   },
   "touch": {
     "title": "Configurações de Toque"
@@ -96,5 +146,6 @@
       "title": "Chamada do Cliente"
     },
     "title": "Configurações de Voz"
-  }
+  },
+  "waitingForMore": "Mais modelos estão <1>planejados para integração</1>, fique atento"
 }

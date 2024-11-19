@@ -1,4 +1,14 @@
 {
+  "ModelSelect": {
+    "featureTag": {
+      "custom": "Custom model, the default settings support both function calls and visual recognition. Please verify the availability of the above capabilities based on actual conditions.",
+      "file": "This model supports file upload for reading and recognition.",
+      "functionCall": "This model supports function calls.",
+      "tokens": "This model supports a maximum of {{tokens}} tokens per session.",
+      "vision": "This model supports visual recognition."
+    },
+    "removed": "This model is not in the list. If unchecked, it will be automatically removed."
+  },
   "actions": {
     "add": "Add",
     "copy": "Copy",

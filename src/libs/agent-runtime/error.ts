@@ -16,15 +16,6 @@ export const AgentRuntimeErrorType = {
   StreamChunkError: 'StreamChunkError',
 
   InvalidGithubToken: 'InvalidGithubToken',
-
-  /**
-   * @deprecated
-   */
-  NoOpenAIAPIKey: 'NoOpenAIAPIKey',
-  /**
-   * @deprecated
-   */
-  OpenAIBizError: 'OpenAIBizError',
 } as const;
 
 export const AGENT_RUNTIME_ERROR_SET = new Set<string>(Object.values(AgentRuntimeErrorType));

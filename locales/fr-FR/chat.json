@@ -1,4 +1,14 @@
 {
+  "ModelSelect": {
+    "featureTag": {
+      "custom": "Modèle personnalisé, les paramètres par défaut prennent en charge à la fois les appels de fonction et la reconnaissance visuelle. Veuillez vérifier la disponibilité de ces capacités en fonction de votre situation.",
+      "file": "Ce modèle prend en charge le téléchargement de fichiers pour la lecture et la reconnaissance.",
+      "functionCall": "Ce modèle prend en charge les appels de fonction (Function Call).",
+      "tokens": "Ce modèle prend en charge jusqu'à {{tokens}} tokens par session.",
+      "vision": "Ce modèle prend en charge la reconnaissance visuelle."
+    },
+    "removed": "Ce modèle n'est pas dans la liste, si vous le désélectionnez, il sera automatiquement supprimé."
+  },
   "actions": {
     "add": "Ajouter",
     "copy": "Copier",

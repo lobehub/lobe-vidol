@@ -1,4 +1,14 @@
 {
+  "ModelSelect": {
+    "featureTag": {
+      "custom": "Benutzerdefiniertes Modell, die Standardeinstellungen unterstützen sowohl Funktionsaufrufe als auch visuelle Erkennung. Bitte überprüfen Sie die Verfügbarkeit dieser Funktionen basierend auf den tatsächlichen Gegebenheiten.",
+      "file": "Dieses Modell unterstützt das Hochladen von Dateien zur Lesung und Erkennung.",
+      "functionCall": "Dieses Modell unterstützt Funktionsaufrufe (Function Call).",
+      "tokens": "Dieses Modell unterstützt maximal {{tokens}} Tokens pro Sitzung.",
+      "vision": "Dieses Modell unterstützt die visuelle Erkennung."
+    },
+    "removed": "Dieses Modell ist nicht in der Liste. Wenn Sie die Auswahl aufheben, wird es automatisch entfernt."
+  },
   "actions": {
     "add": "Hinzufügen",
     "copy": "Kopieren",

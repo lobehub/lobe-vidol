@@ -1,7 +1,5 @@
-import { t } from 'i18next';
-
-import { APIErrorResponse, ErrorTypeEnum } from '@/types/api';
 import { ChatMessageError } from '@/types/chat';
+import { ChatErrorType } from '@/types/fetch';
 
 const createSmoothMessage = (params: { onTextUpdate: (delta: string, text: string) => void }) => {
   let buffer = '';
@@ -76,14 +74,6 @@ const createSmoothMessage = (params: { onTextUpdate: (delta: string, text: strin
   };
 };
 
-const getMessageByErrorType = (errorType: ErrorTypeEnum) => {
-  const errorMap = {
-    API_KEY_MISSING: t('apiKeyMiss', { ns: 'error' }),
-    INTERNAL_SERVER_ERROR: t('serverError', { ns: 'error' }),
-    OPENAI_API_ERROR: t('openaiError', { ns: 'error' }),
-  };
-  return errorMap[errorType] || t('unknownError', { ns: 'error' });
-};
 /**
  * @description: 封装fetch请求，使用流式方法获取数据
  */
@@ -109,13 +99,21 @@ export const fetchSEE = async (
     const res = await fetcher();
 
     if (!res.ok) {
-      const data = (await res.json()) as APIErrorResponse;
+      const error = await res.json();
 
-      handler.onMessageError?.({
-        body: data.body,
-        message: getMessageByErrorType(data.errorType),
-        type: data.errorType,
-      });
+      handler.onMessageError?.(
+        error.type
+          ? error
+          : {
+              body: {
+                message: error.message,
+                name: error.name,
+                stack: error.stack,
+              },
+              message: error.message,
+              type: ChatErrorType.UnknownChatFetchError,
+            },
+      );
       return;
     }
 

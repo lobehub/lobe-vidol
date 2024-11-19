@@ -1,4 +1,14 @@
 {
+  "ModelSelect": {
+    "featureTag": {
+      "custom": "Mô hình tùy chỉnh, cài đặt mặc định hỗ trợ cả gọi hàm và nhận diện hình ảnh, vui lòng xác minh khả năng trên thực tế",
+      "file": "Mô hình này hỗ trợ tải lên tệp để đọc và nhận diện",
+      "functionCall": "Mô hình này hỗ trợ gọi hàm (Function Call)",
+      "tokens": "Mô hình này hỗ trợ tối đa {{tokens}} Tokens cho mỗi phiên",
+      "vision": "Mô hình này hỗ trợ nhận diện hình ảnh"
+    },
+    "removed": "Mô hình này không có trong danh sách, nếu bỏ chọn sẽ tự động bị xóa"
+  },
   "actions": {
     "add": "Thêm",
     "copy": "Sao chép",

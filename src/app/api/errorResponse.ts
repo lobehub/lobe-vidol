@@ -6,9 +6,7 @@ const getStatus = (errorType: ILobeAgentRuntimeErrorType | ErrorType) => {
   if (errorType.toString().includes('Invalid')) return 401;
 
   switch (errorType) {
-    // TODO: Need to refactor to Invalid OpenAI API Key
-    case AgentRuntimeErrorType.InvalidProviderAPIKey:
-    case AgentRuntimeErrorType.NoOpenAIAPIKey: {
+    case AgentRuntimeErrorType.InvalidProviderAPIKey: {
       return 401;
     }
 
@@ -25,8 +23,7 @@ const getStatus = (errorType: ILobeAgentRuntimeErrorType | ErrorType) => {
       return 470;
     }
 
-    case AgentRuntimeErrorType.ProviderBizError:
-    case AgentRuntimeErrorType.OpenAIBizError: {
+    case AgentRuntimeErrorType.ProviderBizError: {
       return 471;
     }
 
