@@ -87,5 +87,29 @@
   "serverError": "Błąd serwera, proszę skontaktować się z administratorem",
   "triggerError": "Wystąpił błąd",
   "ttsTransformFailed": "Nie udało się przetworzyć mowy, sprawdź połączenie sieciowe lub spróbuj ponownie po włączeniu wywołania klienta w ustawieniach.",
-  "unknownError": "Nieznany błąd"
+  "unknownError": "Nieznany błąd",
+  "unlock": {
+    "addProxyUrl": "Dodaj adres proxy OpenAI (opcjonalnie)",
+    "apiKey": {
+      "description": "Wprowadź swój klucz API {{name}}, aby rozpocząć sesję",
+      "title": "Użyj niestandardowego klucza API {{name}}"
+    },
+    "closeMessage": "Zamknij powiadomienie",
+    "confirm": "Potwierdź i spróbuj ponownie",
+    "oauth": {
+      "description": "Administrator włączył jednolitą autoryzację logowania, kliknij przycisk poniżej, aby się zalogować i odblokować aplikację",
+      "success": "Zalogowano pomyślnie",
+      "title": "Zaloguj się",
+      "welcome": "Witaj!"
+    },
+    "password": {
+      "description": "Administrator włączył szyfrowanie aplikacji, wprowadź hasło aplikacji, aby odblokować aplikację. Hasło należy wpisać tylko raz",
+      "placeholder": "Wprowadź hasło",
+      "title": "Wprowadź hasło, aby odblokować aplikację"
+    },
+    "tabs": {
+      "apiKey": "Niestandardowy klucz API",
+      "password": "Hasło"
+    }
+  }
 }

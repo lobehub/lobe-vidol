@@ -87,5 +87,29 @@
   "serverError": "Erreur du serveur, veuillez contacter l'administrateur",
   "triggerError": "Erreur déclenchée",
   "ttsTransformFailed": "Échec de la conversion vocale, veuillez vérifier votre connexion réseau ou essayer d'activer l'appel client dans les paramètres.",
-  "unknownError": "Erreur inconnue"
+  "unknownError": "Erreur inconnue",
+  "unlock": {
+    "addProxyUrl": "Ajouter l'adresse du proxy OpenAI (facultatif)",
+    "apiKey": {
+      "description": "Entrez votre clé API {{name}} pour commencer la session",
+      "title": "Utiliser la clé API {{name}} personnalisée"
+    },
+    "closeMessage": "Fermer l'alerte",
+    "confirm": "Confirmer et réessayer",
+    "oauth": {
+      "description": "L'administrateur a activé l'authentification unique, cliquez sur le bouton ci-dessous pour vous connecter et déverrouiller l'application",
+      "success": "Connexion réussie",
+      "title": "Se connecter",
+      "welcome": "Bienvenue !"
+    },
+    "password": {
+      "description": "L'administrateur a activé le cryptage de l'application, entrez le mot de passe de l'application pour déverrouiller. Le mot de passe n'a besoin d'être saisi qu'une seule fois",
+      "placeholder": "Veuillez entrer le mot de passe",
+      "title": "Entrer le mot de passe pour déverrouiller l'application"
+    },
+    "tabs": {
+      "apiKey": "Clé API personnalisée",
+      "password": "Mot de passe"
+    }
+  }
 }

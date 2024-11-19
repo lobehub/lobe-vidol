@@ -64,17 +64,6 @@
     },
     "title": "Genel Ayarlar"
   },
-  "fetchOnClient": {
-    "desc": "İstemci istek modu, tarayıcıdan doğrudan oturum isteği başlatacaktır, yanıt hızını artırabilir.",
-    "title": "İstemci İstek Modunu Kullan"
-  },
-  "fetcher": {
-    "fetch": "Model listesini al",
-    "fetching": "Model listesi alınıyor...",
-    "latestTime": "Son güncelleme zamanı: {{time}}",
-    "noLatestTime": "Henüz liste alınmadı"
-  },
-  "helpDoc": "Yapılandırma Kılavuzu",
   "llm": {
     "aesGcm": "Anahtarınız ve proxy adresi gibi bilgiler <1>AES-GCM</1> şifreleme algoritması ile şifrelenecektir.",
     "apiKey": {
@@ -125,17 +114,29 @@
           "title": "Görsel Tanımayı Destekle"
         }
       }
-    }
-  },
-  "modelList": {
-    "desc": "Oturumda gösterilecek modeli seçin, seçilen model model listesinde gösterilecektir.",
-    "placeholder": "Lütfen listeden bir model seçin",
-    "title": "Model Listesi",
-    "total": "Toplam {{count}} model mevcut"
-  },
-  "proxyUrl": {
-    "desc": "Varsayılan adres dışında, http(s):// içermelidir.",
-    "title": "API Proxy Adresi"
+    },
+    "fetchOnClient": {
+      "desc": "İstemci talep modu, oturum taleplerini doğrudan tarayıcıdan başlatır ve yanıt hızını artırabilir",
+      "title": "İstemci talep modunu kullan"
+    },
+    "fetcher": {
+      "fetch": "Model listesini al",
+      "fetching": "Model listesi alınıyor...",
+      "latestTime": "Son güncelleme zamanı: {{time}}",
+      "noLatestTime": "Henüz liste alınmadı"
+    },
+    "helpDoc": "Yapılandırma kılavuzu",
+    "modelList": {
+      "desc": "Oturumda gösterilecek modeli seçin, seçilen model model listesinde gösterilecektir",
+      "placeholder": "Lütfen listeden bir model seçin",
+      "title": "Model listesi",
+      "total": "Toplam {{count}} model mevcut"
+    },
+    "proxyUrl": {
+      "desc": "Varsayılan adres dışında, http(s):// içermelidir",
+      "title": "API proxy adresi"
+    },
+    "waitingForMore": "Daha fazla model <1>planlanıyor</1>, lütfen bekleyin"
   },
   "touch": {
     "title": "Dokunma Ayarları"
@@ -146,6 +147,5 @@
       "title": "İstemci Çağrısı"
     },
     "title": "Ses Ayarları"
-  },
-  "waitingForMore": "Daha fazla model <1>planlanıyor</1>, lütfen bekleyin."
+  }
 }

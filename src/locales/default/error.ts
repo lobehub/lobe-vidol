@@ -20,6 +20,30 @@ export default {
   formValidationFailed: '表单验证失败:',
   dancePlayError: '舞蹈文件播放失败, 请稍后重试',
   ttsTransformFailed: '语音转换失败, 请检查网络或在设置中打开客户端调用后尝试',
+  unlock: {
+    addProxyUrl: '添加 OpenAI 代理地址（可选）',
+    apiKey: {
+      description: '输入你的 {{name}} API Key 即可开始会话',
+      title: '使用自定义 {{name}} API Key',
+    },
+    closeMessage: '关闭提示',
+    confirm: '确认并重试',
+    oauth: {
+      description: '管理员已开启统一登录认证，点击下方按钮登录，即可解锁应用',
+      success: '登录成功',
+      title: '登录账号',
+      welcome: '欢迎你！',
+    },
+    password: {
+      description: '管理员已开启应用加密，输入应用密码后即可解锁应用。密码只需填写一次',
+      placeholder: '请输入密码',
+      title: '输入密码解锁应用',
+    },
+    tabs: {
+      apiKey: '自定义 API Key',
+      password: '密码',
+    },
+  },
   response: {
     400: '很抱歉，服务器不明白您的请求，请确认您的请求参数是否正确',
     401: '很抱歉，服务器拒绝了您的请求，可能是因为您的权限不足或未提供有效的身份验证',

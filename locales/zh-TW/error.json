@@ -87,5 +87,29 @@
   "serverError": "伺服器錯誤，請聯絡管理員",
   "triggerError": "觸發錯誤",
   "ttsTransformFailed": "語音轉換失敗，請檢查網路或在設定中開啟客戶端調用後再試",
-  "unknownError": "未知錯誤"
+  "unknownError": "未知錯誤",
+  "unlock": {
+    "addProxyUrl": "添加 OpenAI 代理地址（可選）",
+    "apiKey": {
+      "description": "輸入你的 {{name}} API Key 即可開始會話",
+      "title": "使用自訂 {{name}} API Key"
+    },
+    "closeMessage": "關閉提示",
+    "confirm": "確認並重試",
+    "oauth": {
+      "description": "管理員已開啟統一登入認證，點擊下方按鈕登入，即可解鎖應用",
+      "success": "登入成功",
+      "title": "登入帳號",
+      "welcome": "歡迎你！"
+    },
+    "password": {
+      "description": "管理員已開啟應用加密，輸入應用密碼後即可解鎖應用。密碼只需填寫一次",
+      "placeholder": "請輸入密碼",
+      "title": "輸入密碼解鎖應用"
+    },
+    "tabs": {
+      "apiKey": "自訂 API Key",
+      "password": "密碼"
+    }
+  }
 }

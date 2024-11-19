@@ -64,17 +64,6 @@
     },
     "title": "Allgemeine Einstellungen"
   },
-  "fetchOnClient": {
-    "desc": "Der Client-Anforderungsmodus initiiert die Sitzung direkt aus dem Browser, was die Reaktionsgeschwindigkeit erhöhen kann.",
-    "title": "Client-Anforderungsmodus verwenden"
-  },
-  "fetcher": {
-    "fetch": "Modellliste abrufen",
-    "fetching": "Modellliste wird abgerufen...",
-    "latestTime": "Letzte Aktualisierung: {{time}}",
-    "noLatestTime": "Liste wurde noch nicht abgerufen"
-  },
-  "helpDoc": "Konfigurationsanleitung",
   "llm": {
     "aesGcm": "Ihr Schlüssel und die Proxy-Adresse werden mit dem <1>AES-GCM</1> Verschlüsselungsalgorithmus verschlüsselt.",
     "apiKey": {
@@ -125,17 +114,29 @@
           "title": "Unterstützung für visuelle Erkennung"
         }
       }
-    }
-  },
-  "modelList": {
-    "desc": "Wählen Sie das Modell aus, das in der Sitzung angezeigt werden soll. Das ausgewählte Modell wird in der Modellliste angezeigt.",
-    "placeholder": "Bitte wählen Sie ein Modell aus der Liste aus.",
-    "title": "Modellliste",
-    "total": "Insgesamt {{count}} Modelle verfügbar"
-  },
-  "proxyUrl": {
-    "desc": "Muss http(s):// enthalten, zusätzlich zur Standardadresse.",
-    "title": "API-Proxy-Adresse"
+    },
+    "fetchOnClient": {
+      "desc": "Der Client-Anforderungsmodus initiiert die Sitzung direkt über den Browser, was die Reaktionsgeschwindigkeit erhöht.",
+      "title": "Client-Anforderungsmodus verwenden"
+    },
+    "fetcher": {
+      "fetch": "Modellliste abrufen",
+      "fetching": "Modellliste wird abgerufen...",
+      "latestTime": "Letzte Aktualisierung: {{time}}",
+      "noLatestTime": "Liste wurde noch nicht abgerufen"
+    },
+    "helpDoc": "Konfigurationsanleitung",
+    "modelList": {
+      "desc": "Wählen Sie die Modelle aus, die in der Sitzung angezeigt werden sollen. Die ausgewählten Modelle werden in der Modellliste angezeigt.",
+      "placeholder": "Bitte wählen Sie ein Modell aus der Liste aus",
+      "title": "Modellliste",
+      "total": "Insgesamt {{count}} Modelle verfügbar"
+    },
+    "proxyUrl": {
+      "desc": "Neben der Standardadresse muss http(s):// enthalten sein.",
+      "title": "API-Proxy-Adresse"
+    },
+    "waitingForMore": "Weitere Modelle werden gerade <1>geplant</1>, bitte warten Sie."
   },
   "touch": {
     "title": "Berührungseinstellungen"
@@ -146,6 +147,5 @@
       "title": "Client Aufruf"
     },
     "title": "Sprach Einstellungen"
-  },
-  "waitingForMore": "Weitere Modelle werden gerade <1>geplant</1>, bitte warten Sie."
+  }
 }

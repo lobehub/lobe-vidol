@@ -87,5 +87,29 @@
   "serverError": "Erro no servidor, por favor entre em contato com o administrador",
   "triggerError": "Erro acionado",
   "ttsTransformFailed": "Falha na conversão de voz, por favor verifique a conexão com a internet ou ative a chamada do cliente nas configurações e tente novamente.",
-  "unknownError": "Erro desconhecido"
+  "unknownError": "Erro desconhecido",
+  "unlock": {
+    "addProxyUrl": "Adicionar endereço de proxy OpenAI (opcional)",
+    "apiKey": {
+      "description": "Insira sua chave de API {{name}} para começar a conversa",
+      "title": "Usar chave de API {{name}} personalizada"
+    },
+    "closeMessage": "Fechar mensagem",
+    "confirm": "Confirmar e tentar novamente",
+    "oauth": {
+      "description": "O administrador ativou a autenticação unificada, clique no botão abaixo para fazer login e desbloquear o aplicativo",
+      "success": "Login bem-sucedido",
+      "title": "Fazer login na conta",
+      "welcome": "Bem-vindo!"
+    },
+    "password": {
+      "description": "O administrador ativou a criptografia do aplicativo, insira a senha do aplicativo para desbloqueá-lo. A senha precisa ser preenchida apenas uma vez",
+      "placeholder": "Digite a senha",
+      "title": "Digite a senha para desbloquear o aplicativo"
+    },
+    "tabs": {
+      "apiKey": "Chave de API personalizada",
+      "password": "Senha"
+    }
+  }
 }

@@ -87,5 +87,29 @@
   "serverError": "服务器错误，请联系管理员",
   "triggerError": "触发错误",
   "ttsTransformFailed": "语音转换失败, 请检查网络或在设置中打开客户端调用后尝试",
-  "unknownError": "未知错误"
+  "unknownError": "未知错误",
+  "unlock": {
+    "addProxyUrl": "添加 OpenAI 代理地址（可选）",
+    "apiKey": {
+      "description": "输入你的 {{name}} API Key 即可开始会话",
+      "title": "使用自定义 {{name}} API Key"
+    },
+    "closeMessage": "关闭提示",
+    "confirm": "确认并重试",
+    "oauth": {
+      "description": "管理员已开启统一登录认证，点击下方按钮登录，即可解锁应用",
+      "success": "登录成功",
+      "title": "登录账号",
+      "welcome": "欢迎你！"
+    },
+    "password": {
+      "description": "管理员已开启应用加密，输入应用密码后即可解锁应用。密码只需填写一次",
+      "placeholder": "请输入密码",
+      "title": "输入密码解锁应用"
+    },
+    "tabs": {
+      "apiKey": "自定义 API Key",
+      "password": "密码"
+    }
+  }
 }

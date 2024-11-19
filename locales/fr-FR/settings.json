@@ -64,17 +64,6 @@
     },
     "title": "Paramètres généraux"
   },
-  "fetchOnClient": {
-    "desc": "Le mode de requête client lancera la demande de session directement depuis le navigateur, ce qui peut améliorer la vitesse de réponse.",
-    "title": "Utiliser le mode de requête client"
-  },
-  "fetcher": {
-    "fetch": "Obtenir la liste des modèles",
-    "fetching": "Obtention de la liste des modèles...",
-    "latestTime": "Dernière mise à jour : {{time}}",
-    "noLatestTime": "Liste non encore obtenue"
-  },
-  "helpDoc": "Guide de configuration",
   "llm": {
     "aesGcm": "Votre clé et l'adresse du proxy seront chiffrées à l'aide de l'algorithme de chiffrement <1>AES-GCM</1>",
     "apiKey": {
@@ -125,17 +114,29 @@
           "title": "Reconnaissance visuelle prise en charge"
         }
       }
-    }
-  },
-  "modelList": {
-    "desc": "Choisissez les modèles à afficher dans la session. Les modèles sélectionnés seront affichés dans la liste des modèles.",
-    "placeholder": "Veuillez sélectionner un modèle dans la liste",
-    "title": "Liste des modèles",
-    "total": "{{count}} modèles disponibles"
-  },
-  "proxyUrl": {
-    "desc": "Doit inclure http(s)://, en plus de l'adresse par défaut",
-    "title": "Adresse du proxy API"
+    },
+    "fetchOnClient": {
+      "desc": "Le mode de requête client lancera la demande de session directement depuis le navigateur, ce qui peut améliorer la vitesse de réponse",
+      "title": "Utiliser le mode de requête client"
+    },
+    "fetcher": {
+      "fetch": "Obtenir la liste des modèles",
+      "fetching": "Obtention de la liste des modèles en cours...",
+      "latestTime": "Dernière mise à jour : {{time}}",
+      "noLatestTime": "Liste non encore obtenue"
+    },
+    "helpDoc": "Tutoriel de configuration",
+    "modelList": {
+      "desc": "Sélectionnez les modèles à afficher dans la session, les modèles sélectionnés seront affichés dans la liste des modèles",
+      "placeholder": "Veuillez sélectionner un modèle dans la liste",
+      "title": "Liste des modèles",
+      "total": "Un total de {{count}} modèles disponibles"
+    },
+    "proxyUrl": {
+      "desc": "En plus de l'adresse par défaut, doit inclure http(s)://",
+      "title": "Adresse du proxy API"
+    },
+    "waitingForMore": "D'autres modèles sont en <1>planification d'intégration</1>, restez à l'écoute"
   },
   "touch": {
     "title": "Paramètres de toucher"
@@ -146,6 +147,5 @@
       "title": "Appel client"
     },
     "title": "Paramètres de synthèse vocale"
-  },
-  "waitingForMore": "D'autres modèles sont en cours de <1>planification d'intégration</1>, restez à l'écoute."
+  }
 }

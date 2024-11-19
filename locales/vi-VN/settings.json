@@ -64,17 +64,6 @@
     },
     "title": "Cài đặt chung"
   },
-  "fetchOnClient": {
-    "desc": "Chế độ yêu cầu từ khách hàng sẽ phát động yêu cầu phiên trực tiếp từ trình duyệt, có thể tăng tốc độ phản hồi.",
-    "title": "Sử dụng chế độ yêu cầu từ khách hàng"
-  },
-  "fetcher": {
-    "fetch": "Lấy danh sách mô hình",
-    "fetching": "Đang lấy danh sách mô hình...",
-    "latestTime": "Thời gian cập nhật lần cuối: {{time}}",
-    "noLatestTime": "Chưa lấy được danh sách"
-  },
-  "helpDoc": "Hướng dẫn cấu hình",
   "llm": {
     "aesGcm": "Khóa của bạn và địa chỉ proxy sẽ được mã hóa bằng thuật toán <1>AES-GCM</1>",
     "apiKey": {
@@ -125,17 +114,29 @@
           "title": "Hỗ trợ nhận diện hình ảnh"
         }
       }
-    }
-  },
-  "modelList": {
-    "desc": "Chọn mô hình sẽ hiển thị trong phiên, mô hình đã chọn sẽ được hiển thị trong danh sách mô hình.",
-    "placeholder": "Vui lòng chọn mô hình từ danh sách",
-    "title": "Danh sách mô hình",
-    "total": "Tổng cộng có {{count}} mô hình có sẵn"
-  },
-  "proxyUrl": {
-    "desc": "Ngoài địa chỉ mặc định, phải bao gồm http(s)://",
-    "title": "Địa chỉ proxy API"
+    },
+    "fetchOnClient": {
+      "desc": "Chế độ yêu cầu từ khách hàng sẽ gửi yêu cầu phiên trực tiếp từ trình duyệt, có thể cải thiện tốc độ phản hồi",
+      "title": "Sử dụng chế độ yêu cầu từ khách hàng"
+    },
+    "fetcher": {
+      "fetch": "Lấy danh sách mô hình",
+      "fetching": "Đang lấy danh sách mô hình...",
+      "latestTime": "Thời gian cập nhật lần cuối: {{time}}",
+      "noLatestTime": "Chưa lấy được danh sách"
+    },
+    "helpDoc": "Hướng dẫn cấu hình",
+    "modelList": {
+      "desc": "Chọn mô hình sẽ hiển thị trong phiên, mô hình đã chọn sẽ được hiển thị trong danh sách mô hình",
+      "placeholder": "Vui lòng chọn mô hình từ danh sách",
+      "title": "Danh sách mô hình",
+      "total": "Tổng cộng có {{count}} mô hình khả dụng"
+    },
+    "proxyUrl": {
+      "desc": "Ngoài địa chỉ mặc định, phải bao gồm http(s)://",
+      "title": "Địa chỉ proxy API"
+    },
+    "waitingForMore": "Nhiều mô hình hơn đang <1>được lên kế hoạch kết nối</1>, xin hãy chờ đợi"
   },
   "touch": {
     "title": "Cài đặt chạm"
@@ -146,6 +147,5 @@
       "title": "Gọi từ khách hàng"
     },
     "title": "Cài đặt giọng nói"
-  },
-  "waitingForMore": "Nhiều mô hình hơn đang <1>được lên kế hoạch kết nối</1>, xin hãy chờ đợi."
+  }
 }

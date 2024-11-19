@@ -64,17 +64,6 @@
     },
     "title": "Algemene instellingen"
   },
-  "fetchOnClient": {
-    "desc": "De clientaanroepmodus start sessieaanroepen rechtstreeks vanuit de browser, wat de responstijd kan verbeteren",
-    "title": "Gebruik clientaanroepmodus"
-  },
-  "fetcher": {
-    "fetch": "Haal modellenlijst op",
-    "fetching": "Modellenlijst wordt opgehaald...",
-    "latestTime": "Laatste update tijd: {{time}}",
-    "noLatestTime": "Lijst nog niet opgehaald"
-  },
-  "helpDoc": "Configuratiehandleiding",
   "llm": {
     "aesGcm": "Uw sleutel en proxy-adres worden versleuteld met het <1>AES-GCM</1> encryptie-algoritme",
     "apiKey": {
@@ -125,17 +114,29 @@
           "title": "Ondersteuning voor visuele herkenning"
         }
       }
-    }
-  },
-  "modelList": {
-    "desc": "Kies de modellen die in de sessie moeten worden weergegeven. De gekozen modellen worden in de modellenlijst weergegeven.",
-    "placeholder": "Selecteer een model uit de lijst",
-    "title": "Modellenlijst",
-    "total": "In totaal {{count}} modellen beschikbaar"
-  },
-  "proxyUrl": {
-    "desc": "Moet http(s):// bevatten, naast het standaardadres",
-    "title": "API proxy-adres"
+    },
+    "fetchOnClient": {
+      "desc": "De client-aanroepmodus start sessieverzoeken rechtstreeks vanuit de browser, wat de responstijd kan verbeteren.",
+      "title": "Gebruik client-aanroepmodus"
+    },
+    "fetcher": {
+      "fetch": "Haal modellenlijst op",
+      "fetching": "Modellenlijst wordt opgehaald...",
+      "latestTime": "Laatste update tijd: {{time}}",
+      "noLatestTime": "Lijst nog niet opgehaald"
+    },
+    "helpDoc": "Configuratiehandleiding",
+    "modelList": {
+      "desc": "Kies de modellen die in de sessie worden weergegeven; de gekozen modellen worden in de modellenlijst getoond.",
+      "placeholder": "Selecteer een model uit de lijst",
+      "title": "Modellenlijst",
+      "total": "In totaal zijn er {{count}} modellen beschikbaar"
+    },
+    "proxyUrl": {
+      "desc": "Moet http(s):// bevatten, naast het standaardadres.",
+      "title": "API proxy adres"
+    },
+    "waitingForMore": "Meer modellen zijn momenteel <1>in planning</1>, blijf op de hoogte."
   },
   "touch": {
     "title": "Aanraakinstellingen"
@@ -146,6 +147,5 @@
       "title": "Cliëntaanroep"
     },
     "title": "Spraakinstellingen"
-  },
-  "waitingForMore": "Meer modellen worden momenteel <1>gepland voor integratie</1>, blijf op de hoogte"
+  }
 }

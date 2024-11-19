@@ -64,17 +64,6 @@
     },
     "title": "General Settings"
   },
-  "fetchOnClient": {
-    "desc": "The client request mode will initiate session requests directly from the browser, which can improve response speed.",
-    "title": "Use Client Request Mode"
-  },
-  "fetcher": {
-    "fetch": "Fetch Model List",
-    "fetching": "Fetching model list...",
-    "latestTime": "Last updated: {{time}}",
-    "noLatestTime": "List not yet fetched"
-  },
-  "helpDoc": "Configuration Tutorial",
   "llm": {
     "aesGcm": "Your key and proxy address will be encrypted using the <1>AES-GCM</1> encryption algorithm.",
     "apiKey": {
@@ -125,17 +114,29 @@
           "title": "Visual Recognition Support"
         }
       }
-    }
-  },
-  "modelList": {
-    "desc": "Select the models to display in the session. The selected models will be shown in the model list.",
-    "placeholder": "Please select a model from the list.",
-    "title": "Model List",
-    "total": "{{count}} models available in total."
-  },
-  "proxyUrl": {
-    "desc": "Must include http(s)://, in addition to the default address.",
-    "title": "API Proxy Address"
+    },
+    "fetchOnClient": {
+      "desc": "The client request mode will initiate session requests directly from the browser, which can enhance response speed.",
+      "title": "Use Client Request Mode"
+    },
+    "fetcher": {
+      "fetch": "Fetch Model List",
+      "fetching": "Fetching model list...",
+      "latestTime": "Last updated: {{time}}",
+      "noLatestTime": "List not yet fetched"
+    },
+    "helpDoc": "Configuration Guide",
+    "modelList": {
+      "desc": "Select the models to display in the session; the chosen models will be shown in the model list.",
+      "placeholder": "Please select a model from the list",
+      "title": "Model List",
+      "total": "{{count}} models available"
+    },
+    "proxyUrl": {
+      "desc": "Must include http(s)://, in addition to the default address.",
+      "title": "API Proxy Address"
+    },
+    "waitingForMore": "More models are currently <1>being planned for integration</1>, please stay tuned."
   },
   "touch": {
     "title": "Touch Settings"
@@ -146,6 +147,5 @@
       "title": "Client Call"
     },
     "title": "Voice Settings"
-  },
-  "waitingForMore": "More models are currently <1>being planned for integration</1>. Stay tuned."
+  }
 }

@@ -87,5 +87,29 @@
   "serverError": "Serverfehler, bitte kontaktieren Sie den Administrator",
   "triggerError": "Fehler auslösen",
   "ttsTransformFailed": "Die Sprachumwandlung ist fehlgeschlagen. Bitte überprüfen Sie Ihre Internetverbindung oder versuchen Sie es nach dem Aktivieren der Clientanrufe in den Einstellungen erneut.",
-  "unknownError": "Unbekannter Fehler"
+  "unknownError": "Unbekannter Fehler",
+  "unlock": {
+    "addProxyUrl": "Fügen Sie die OpenAI-Proxy-URL hinzu (optional)",
+    "apiKey": {
+      "description": "Geben Sie Ihren {{name}} API-Schlüssel ein, um das Gespräch zu beginnen",
+      "title": "Verwenden Sie den benutzerdefinierten {{name}} API-Schlüssel"
+    },
+    "closeMessage": "Hinweis schließen",
+    "confirm": "Bestätigen und erneut versuchen",
+    "oauth": {
+      "description": "Der Administrator hat die einheitliche Anmeldesystem aktiviert. Klicken Sie auf die Schaltfläche unten, um sich anzumelden und die Anwendung freizuschalten",
+      "success": "Anmeldung erfolgreich",
+      "title": "Konto anmelden",
+      "welcome": "Willkommen!"
+    },
+    "password": {
+      "description": "Der Administrator hat die Anwendung verschlüsselt. Geben Sie das Anwendungskennwort ein, um die Anwendung freizuschalten. Das Kennwort muss nur einmal eingegeben werden",
+      "placeholder": "Bitte Passwort eingeben",
+      "title": "Passwort eingeben, um die Anwendung freizuschalten"
+    },
+    "tabs": {
+      "apiKey": "Benutzerdefinierter API-Schlüssel",
+      "password": "Passwort"
+    }
+  }
 }

@@ -87,5 +87,29 @@
   "serverError": "Server error, please contact the administrator.",
   "triggerError": "Trigger Error",
   "ttsTransformFailed": "Voice conversion failed. Please check your network or enable client invocation in the settings and try again.",
-  "unknownError": "Unknown error"
+  "unknownError": "Unknown error",
+  "unlock": {
+    "addProxyUrl": "Add OpenAI proxy URL (optional)",
+    "apiKey": {
+      "description": "Enter your {{name}} API Key to start the session",
+      "title": "Use custom {{name}} API Key"
+    },
+    "closeMessage": "Close notification",
+    "confirm": "Confirm and retry",
+    "oauth": {
+      "description": "The administrator has enabled unified login authentication. Click the button below to log in and unlock the application.",
+      "success": "Login successful",
+      "title": "Log in to your account",
+      "welcome": "Welcome!"
+    },
+    "password": {
+      "description": "The administrator has enabled application encryption. Enter the application password to unlock it. The password only needs to be entered once.",
+      "placeholder": "Please enter password",
+      "title": "Enter password to unlock the application"
+    },
+    "tabs": {
+      "apiKey": "Custom API Key",
+      "password": "Password"
+    }
+  }
 }

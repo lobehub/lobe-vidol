@@ -87,5 +87,29 @@
   "serverError": "Serverfout, neem contact op met de beheerder",
   "triggerError": "Fout activeren",
   "ttsTransformFailed": "Spraakconversie mislukt, controleer het netwerk of probeer het opnieuw nadat u de clientaanroep in de instellingen hebt ingeschakeld.",
-  "unknownError": "Onbekende fout"
+  "unknownError": "Onbekende fout",
+  "unlock": {
+    "addProxyUrl": "Voeg OpenAI proxy-adres toe (optioneel)",
+    "apiKey": {
+      "description": "Voer je {{name}} API-sleutel in om een gesprek te starten",
+      "title": "Gebruik aangepaste {{name}} API-sleutel"
+    },
+    "closeMessage": "Sluit melding",
+    "confirm": "Bevestigen en opnieuw proberen",
+    "oauth": {
+      "description": "De beheerder heeft een uniforme inlogauthenticatie ingeschakeld. Klik op de onderstaande knop om in te loggen en de applicatie te ontgrendelen",
+      "success": "Inloggen geslaagd",
+      "title": "Inloggen",
+      "welcome": "Welkom!"
+    },
+    "password": {
+      "description": "De beheerder heeft applicatieversleuteling ingeschakeld. Voer het applicatiewachtwoord in om de applicatie te ontgrendelen. Het wachtwoord hoeft maar één keer te worden ingevoerd",
+      "placeholder": "Voer wachtwoord in",
+      "title": "Voer wachtwoord in om de applicatie te ontgrendelen"
+    },
+    "tabs": {
+      "apiKey": "Aangepaste API-sleutel",
+      "password": "Wachtwoord"
+    }
+  }
 }

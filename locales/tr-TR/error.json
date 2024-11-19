@@ -87,5 +87,29 @@
   "serverError": "Sunucu hatası, lütfen yönetici ile iletişime geçin",
   "triggerError": "Hata tetiklendi",
   "ttsTransformFailed": "Ses dönüştürme başarısız oldu, lütfen ağı kontrol edin veya ayarlardan istemci çağrısını açmayı deneyin.",
-  "unknownError": "Bilinmeyen hata"
+  "unknownError": "Bilinmeyen hata",
+  "unlock": {
+    "addProxyUrl": "OpenAI proxy adresi ekle (isteğe bağlı)",
+    "apiKey": {
+      "description": "Sohbete başlamak için {{name}} API Anahtarınızı girin",
+      "title": "Özel {{name}} API Anahtarını kullan"
+    },
+    "closeMessage": "Mesajı kapat",
+    "confirm": "Onayla ve tekrar dene",
+    "oauth": {
+      "description": "Yönetici tek oturum açma kimlik doğrulamasını etkinleştirdi, aşağıdaki düğmeye tıklayarak giriş yapın ve uygulamayı açın",
+      "success": "Giriş başarılı",
+      "title": "Hesabınıza giriş yapın",
+      "welcome": "Hoş geldiniz!"
+    },
+    "password": {
+      "description": "Yönetici uygulama şifrelemesini etkinleştirdi, uygulama şifresini girdikten sonra uygulamayı açabilirsiniz. Şifreyi yalnızca bir kez girmeniz yeterlidir",
+      "placeholder": "Şifreyi girin",
+      "title": "Uygulamayı açmak için şifreyi girin"
+    },
+    "tabs": {
+      "apiKey": "Özel API Anahtarı",
+      "password": "Şifre"
+    }
+  }
 }

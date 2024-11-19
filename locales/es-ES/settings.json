@@ -64,17 +64,6 @@
     },
     "title": "Configuración General"
   },
-  "fetchOnClient": {
-    "desc": "El modo de solicitud del cliente iniciará la solicitud de sesión directamente desde el navegador, lo que puede mejorar la velocidad de respuesta.",
-    "title": "Usar modo de solicitud del cliente"
-  },
-  "fetcher": {
-    "fetch": "Obtener lista de modelos",
-    "fetching": "Obteniendo lista de modelos...",
-    "latestTime": "Última actualización: {{time}}",
-    "noLatestTime": "Lista aún no obtenida"
-  },
-  "helpDoc": "Tutorial de configuración",
   "llm": {
     "aesGcm": "Su clave y la dirección del proxy se cifrarán utilizando el algoritmo de cifrado <1>AES-GCM</1>",
     "apiKey": {
@@ -125,17 +114,29 @@
           "title": "Soporte para reconocimiento visual"
         }
       }
-    }
-  },
-  "modelList": {
-    "desc": "Seleccione los modelos que se mostrarán en la sesión. Los modelos seleccionados se mostrarán en la lista de modelos.",
-    "placeholder": "Por favor, seleccione un modelo de la lista",
-    "title": "Lista de modelos",
-    "total": "Un total de {{count}} modelos disponibles"
-  },
-  "proxyUrl": {
-    "desc": "Además de la dirección predeterminada, debe incluir http(s)://",
-    "title": "Dirección del proxy API"
+    },
+    "fetchOnClient": {
+      "desc": "El modo de solicitud del cliente iniciará la solicitud de sesión directamente desde el navegador, lo que puede mejorar la velocidad de respuesta",
+      "title": "Usar modo de solicitud del cliente"
+    },
+    "fetcher": {
+      "fetch": "Obtener lista de modelos",
+      "fetching": "Obteniendo lista de modelos...",
+      "latestTime": "Última actualización: {{time}}",
+      "noLatestTime": "Lista aún no obtenida"
+    },
+    "helpDoc": "Tutorial de configuración",
+    "modelList": {
+      "desc": "Selecciona los modelos que se mostrarán en la sesión, los modelos seleccionados se mostrarán en la lista de modelos",
+      "placeholder": "Por favor, selecciona un modelo de la lista",
+      "title": "Lista de modelos",
+      "total": "Un total de {{count}} modelos disponibles"
+    },
+    "proxyUrl": {
+      "desc": "Además de la dirección predeterminada, debe incluir http(s)://",
+      "title": "Dirección del proxy API"
+    },
+    "waitingForMore": "Más modelos están <1>programados para integrarse</1>, por favor espera"
   },
   "touch": {
     "title": "Configuración de toque"
@@ -146,6 +147,5 @@
       "title": "Llamada del cliente"
     },
     "title": "Configuración de voz"
-  },
-  "waitingForMore": "Más modelos están en <1>planificación de integración</1>, por favor, esté atento."
+  }
 }

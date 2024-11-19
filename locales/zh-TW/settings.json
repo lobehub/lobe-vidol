@@ -64,17 +64,6 @@
     },
     "title": "通用設定"
   },
-  "fetchOnClient": {
-    "desc": "客戶端請求模式將從瀏覽器直接發起會話請求，可提升響應速度",
-    "title": "使用客戶端請求模式"
-  },
-  "fetcher": {
-    "fetch": "獲取模型列表",
-    "fetching": "正在獲取模型列表...",
-    "latestTime": "上次更新時間：{{time}}",
-    "noLatestTime": "暫未獲取列表"
-  },
-  "helpDoc": "配置教程",
   "llm": {
     "aesGcm": "您的密鑰與代理地址等將使用 <1>AES-GCM</1> 加密演算法進行加密",
     "apiKey": {
@@ -125,17 +114,29 @@
           "title": "支持視覺識別"
         }
       }
-    }
-  },
-  "modelList": {
-    "desc": "選擇在會話中展示的模型，選擇的模型會在模型列表中展示",
-    "placeholder": "請從列表中選擇模型",
-    "title": "模型列表",
-    "total": "共 {{count}} 個模型可用"
-  },
-  "proxyUrl": {
-    "desc": "除默認地址外，必須包含 http(s)://",
-    "title": "API 代理地址"
+    },
+    "fetchOnClient": {
+      "desc": "客戶端請求模式將從瀏覽器直接發起會話請求，可提升響應速度",
+      "title": "使用客戶端請求模式"
+    },
+    "fetcher": {
+      "fetch": "獲取模型列表",
+      "fetching": "正在獲取模型列表...",
+      "latestTime": "上次更新時間：{{time}}",
+      "noLatestTime": "暫未獲取列表"
+    },
+    "helpDoc": "配置教程",
+    "modelList": {
+      "desc": "選擇在會話中展示的模型，選擇的模型會在模型列表中展示",
+      "placeholder": "請從列表中選擇模型",
+      "title": "模型列表",
+      "total": "共 {{count}} 個模型可用"
+    },
+    "proxyUrl": {
+      "desc": "除默認地址外，必須包含 http(s)://",
+      "title": "API 代理地址"
+    },
+    "waitingForMore": "更多模型正在 <1>計劃接入</1> 中，敬請期待"
   },
   "touch": {
     "title": "觸摸設定"
@@ -146,6 +147,5 @@
       "title": "客戶端調用"
     },
     "title": "語音設定"
-  },
-  "waitingForMore": "更多模型正在 <1>計劃接入</1> 中，敬請期待"
+  }
 }

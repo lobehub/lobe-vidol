@@ -57,6 +57,7 @@
     "InvalidAccessCode": "La contraseña es incorrecta o está vacía. Por favor, ingrese la contraseña de acceso correcta o agregue una clave API personalizada.",
     "InvalidBedrockCredentials": "La autenticación de Bedrock no pasó. Por favor, verifique AccessKeyId/SecretAccessKey y vuelva a intentarlo.",
     "InvalidClerkUser": "Lo sentimos, actualmente no ha iniciado sesión. Por favor, inicie sesión o registre una cuenta antes de continuar.",
+    "InvalidGithubToken": "El PAT de Github es incorrecto o está vacío, por favor verifica el PAT de Github y vuelve a intentarlo",
     "InvalidOllamaArgs": "La configuración de Ollama no es correcta. Por favor, verifique la configuración de Ollama y vuelva a intentarlo.",
     "InvalidProviderAPIKey": "{{provider}} La clave API es incorrecta o está vacía. Por favor, verifique la clave API de {{provider}} y vuelva a intentarlo.",
     "LocationNotSupportError": "Lo sentimos, su ubicación actual no soporta este servicio de modelo, posiblemente debido a restricciones regionales o que el servicio no está habilitado. Por favor, confirme si su ubicación actual soporta este servicio o intente cambiar a otra ubicación y vuelva a intentarlo.",
@@ -86,5 +87,29 @@
   "serverError": "Error del servidor, por favor contacte al administrador",
   "triggerError": "Error desencadenado",
   "ttsTransformFailed": "La conversión de voz ha fallado, por favor verifica la conexión a internet o intenta habilitar la llamada del cliente en la configuración.",
-  "unknownError": "Error desconocido"
+  "unknownError": "Error desconocido",
+  "unlock": {
+    "addProxyUrl": "Agregar dirección de proxy de OpenAI (opcional)",
+    "apiKey": {
+      "description": "Introduce tu {{name}} API Key para comenzar la conversación",
+      "title": "Usar {{name}} API Key personalizada"
+    },
+    "closeMessage": "Cerrar aviso",
+    "confirm": "Confirmar y reintentar",
+    "oauth": {
+      "description": "El administrador ha habilitado la autenticación unificada, haz clic en el botón de abajo para iniciar sesión y desbloquear la aplicación",
+      "success": "Inicio de sesión exitoso",
+      "title": "Iniciar sesión",
+      "welcome": "¡Bienvenido!"
+    },
+    "password": {
+      "description": "El administrador ha habilitado la encriptación de la aplicación, introduce la contraseña de la aplicación para desbloquearla. La contraseña solo necesita ser ingresada una vez",
+      "placeholder": "Introduce la contraseña",
+      "title": "Introducir contraseña para desbloquear la aplicación"
+    },
+    "tabs": {
+      "apiKey": "API Key personalizada",
+      "password": "Contraseña"
+    }
+  }
 }

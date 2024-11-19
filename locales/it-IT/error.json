@@ -87,5 +87,29 @@
   "serverError": "Erro del server, contattare l'amministratore",
   "triggerError": "Errore di attivazione",
   "ttsTransformFailed": "La conversione vocale è fallita, controlla la connessione di rete o prova ad attivare l'app nelle impostazioni.",
-  "unknownError": "Erro sconosciuto"
+  "unknownError": "Erro sconosciuto",
+  "unlock": {
+    "addProxyUrl": "Aggiungi indirizzo proxy OpenAI (opzionale)",
+    "apiKey": {
+      "description": "Inserisci la tua {{name}} API Key per iniziare la conversazione",
+      "title": "Usa la {{name}} API Key personalizzata"
+    },
+    "closeMessage": "Chiudi il messaggio",
+    "confirm": "Conferma e riprova",
+    "oauth": {
+      "description": "L'amministratore ha attivato l'autenticazione unificata, clicca sul pulsante qui sotto per accedere e sbloccare l'applicazione",
+      "success": "Accesso riuscito",
+      "title": "Accedi al tuo account",
+      "welcome": "Benvenuto!"
+    },
+    "password": {
+      "description": "L'amministratore ha attivato la crittografia dell'app, inserisci la password dell'app per sbloccarla. La password deve essere inserita solo una volta",
+      "placeholder": "Inserisci la password",
+      "title": "Inserisci la password per sbloccare l'app"
+    },
+    "tabs": {
+      "apiKey": "API Key personalizzata",
+      "password": "Password"
+    }
+  }
 }

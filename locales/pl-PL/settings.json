@@ -64,17 +64,6 @@
     },
     "title": "Ustawienia ogólne"
   },
-  "fetchOnClient": {
-    "desc": "Tryb żądania klienta rozpocznie sesję bezpośrednio z przeglądarki, co może przyspieszyć czas odpowiedzi",
-    "title": "Użyj trybu żądania klienta"
-  },
-  "fetcher": {
-    "fetch": "Pobierz listę modeli",
-    "fetching": "Pobieranie listy modeli...",
-    "latestTime": "Ostatnia aktualizacja: {{time}}",
-    "noLatestTime": "Lista nie została jeszcze pobrana"
-  },
-  "helpDoc": "Instrukcja konfiguracji",
   "llm": {
     "aesGcm": "Twój klucz i adres proxy będą szyfrowane za pomocą algorytmu <1>AES-GCM</1>",
     "apiKey": {
@@ -125,17 +114,29 @@
           "title": "Wsparcie dla rozpoznawania wizualnego"
         }
       }
-    }
-  },
-  "modelList": {
-    "desc": "Wybierz modele, które mają być wyświetlane w sesji, wybrane modele będą wyświetlane na liście modeli",
-    "placeholder": "Proszę wybrać model z listy",
-    "title": "Lista modeli",
-    "total": "Łącznie dostępnych jest {{count}} modeli"
-  },
-  "proxyUrl": {
-    "desc": "Oprócz domyślnego adresu, musi zawierać http(s)://",
-    "title": "Adres proxy API"
+    },
+    "fetchOnClient": {
+      "desc": "Tryb żądania klienta rozpocznie sesję bezpośrednio z przeglądarki, co może zwiększyć szybkość odpowiedzi",
+      "title": "Użyj trybu żądania klienta"
+    },
+    "fetcher": {
+      "fetch": "Pobierz listę modeli",
+      "fetching": "Pobieranie listy modeli...",
+      "latestTime": "Ostatnia aktualizacja: {{time}}",
+      "noLatestTime": "Lista nie została jeszcze pobrana"
+    },
+    "helpDoc": "Instrukcja konfiguracji",
+    "modelList": {
+      "desc": "Wybierz modele, które mają być wyświetlane w sesji; wybrane modele będą wyświetlane na liście modeli",
+      "placeholder": "Proszę wybrać model z listy",
+      "title": "Lista modeli",
+      "total": "Łącznie dostępnych jest {{count}} modeli"
+    },
+    "proxyUrl": {
+      "desc": "Oprócz domyślnego adresu, musi zawierać http(s)://",
+      "title": "Adres proxy API"
+    },
+    "waitingForMore": "Więcej modeli jest w <1>planowanej integracji</1>, prosimy o cierpliwość"
   },
   "touch": {
     "title": "Ustawienia dotykowe"
@@ -146,6 +147,5 @@
       "title": "Wywołanie klienta"
     },
     "title": "Ustawienia głosowe"
-  },
-  "waitingForMore": "Więcej modeli jest w <1>planowanej integracji</1>, proszę czekać"
+  }
 }
