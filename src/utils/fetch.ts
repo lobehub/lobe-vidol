@@ -1,5 +1,6 @@
 import { ChatMessageError } from '@/types/chat';
-import { ChatErrorType } from '@/types/fetch';
+
+import { getMessageError } from './parseError';
 
 const createSmoothMessage = (params: { onTextUpdate: (delta: string, text: string) => void }) => {
   let buffer = '';
@@ -99,21 +100,10 @@ export const fetchSEE = async (
     const res = await fetcher();
 
     if (!res.ok) {
-      const error = await res.json();
+      getMessageError(res).then((err) => {
+        handler.onMessageError?.(err);
+      });
 
-      handler.onMessageError?.(
-        error.type
-          ? error
-          : {
-              body: {
-                message: error.message,
-                name: error.name,
-                stack: error.stack,
-              },
-              message: error.message,
-              type: ChatErrorType.UnknownChatFetchError,
-            },
-      );
       return;
     }
 
