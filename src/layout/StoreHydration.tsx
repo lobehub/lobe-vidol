@@ -41,6 +41,13 @@ const migrate = async () => {
         },
       },
     });
+    // 删除原来的 OpenAI 配置
+    useSettingStore.getState().setConfig({
+      languageModel: {
+        // @ts-ignore
+        OpenAI: undefined,
+      },
+    });
   }
 };
 const StoreHydration = () => {
