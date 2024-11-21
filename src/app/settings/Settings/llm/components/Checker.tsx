@@ -56,17 +56,17 @@ const Checker = memo<ConnectionCheckerProps>(({ model, provider }) => {
     manual: true,
     onSuccess: (res) => {
       if (!res.ok) {
-        message.error(t('llm.check.error'));
+        message.error(t('llm.checker.error'));
         getMessageError(res).then((err) => {
           setError(err);
         });
         return;
       }
       setPass(true);
-      message.success(t('llm.check.success'));
+      message.success(t('llm.checker.pass'));
     },
     onError: () => {
-      message.error(t('llm.check.error'));
+      message.error(t('llm.checker.error'));
     },
   });
 

@@ -133,8 +133,10 @@ const getLlmOptionsFromPayload = (provider: string, payload: JWTPayload) => {
     }
     case ModelProvider.OpenRouter: {
       const { OPENROUTER_API_KEY } = getLLMConfig();
-
+      console.log('OPENROUTER_API_KEY', OPENROUTER_API_KEY);
+      console.log('payload?.apiKey', payload?.apiKey);
       const apiKey = apiKeyManager.pick(payload?.apiKey || OPENROUTER_API_KEY);
+      console.log('apiKey', apiKey);
 
       return { apiKey };
     }

@@ -65,6 +65,7 @@ export default {
     },
   },
   llm: {
+    title: '语言模型',
     aesGcm: '您的秘钥与代理地址等将使用 <1>AES-GCM</1> 加密算法进行加密',
     apiKey: {
       desc: '请填写你的 {{name}} API Key',
@@ -74,6 +75,7 @@ export default {
     checker: {
       button: '检查',
       desc: '测试 Api Key 与代理地址是否正确填写',
+      error: '检查失败',
       pass: '检查通过',
       title: '连通性检查',
     },
