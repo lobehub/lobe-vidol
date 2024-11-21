@@ -3,6 +3,7 @@
 import { useRouter } from 'next/navigation';
 import { memo, useEffect } from 'react';
 
+import { ModelProvider } from '@/libs/agent-runtime/types';
 import { AGENT_STORAGE_KEY, useAgentStore } from '@/store/agent';
 import { DANCE_STORAGE_KEY } from '@/store/dance';
 import { SESSION_STORAGE_KEY } from '@/store/session';
@@ -20,12 +21,27 @@ const migrateLocalStorageToIndexedDB = async (storageKey: string) => {
 };
 
 const migrate = async () => {
+  // localstorage 迁移到 indexeddb 后，删除迁移标识
   if (localStorage.getItem(MIGRATION_KEY)) return;
   await migrateLocalStorageToIndexedDB(AGENT_STORAGE_KEY);
   await migrateLocalStorageToIndexedDB(SESSION_STORAGE_KEY);
   await migrateLocalStorageToIndexedDB(SETTING_STORAGE_KEY);
   await migrateLocalStorageToIndexedDB(DANCE_STORAGE_KEY);
   localStorage.setItem(MIGRATION_KEY, 'true');
+
+  // 将原来的 OpenAI Key 迁移到 KeyValuts
+  // @ts-ignore
+  const openAI = useSettingStore.getState().config.languageModel.OpenAI;
+  if (openAI) {
+    useSettingStore.getState().setConfig({
+      keyVaults: {
+        [ModelProvider.OpenAI]: {
+          apiKey: openAI.apikey,
+          baseURL: openAI.endpoint,
+        },
+      },
+    });
+  }
 };
 const StoreHydration = () => {
   const router = useRouter();
