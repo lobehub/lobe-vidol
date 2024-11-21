@@ -12,6 +12,7 @@ import { useTranslation } from 'react-i18next';
 import { Center, Flexbox } from 'react-layout-kit';
 import urlJoin from 'url-join';
 
+import { useSyncSettings } from '@/app/settings/Settings/hooks/useSyncSettings';
 import {
   KeyVaultsConfigKey,
   LLMProviderApiTokenKey,
@@ -135,6 +136,8 @@ const ProviderConfig = memo<ProviderConfigProps>(
       keyVaultsConfigSelectors.isProviderEndpointNotEmpty(id)(s),
       keyVaultsConfigSelectors.isProviderApiKeyNotEmpty(id)(s),
     ]);
+
+    useSyncSettings(form);
 
     const apiKeyItem: FormItemProps[] = !showApiKey
       ? []
