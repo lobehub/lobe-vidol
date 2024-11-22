@@ -20,7 +20,6 @@ import {
   PerplexityProviderCard,
   QwenProviderCard,
   SenseNovaProviderCard,
-  SiliconCloudProviderCard,
   SparkProviderCard,
   StepfunProviderCard,
   TogetherAIProviderCard,
@@ -139,10 +138,6 @@ const initialState: SettingState = {
       sensenova: {
         enabled: false,
         enabledModels: filterEnabledModels(SenseNovaProviderCard),
-      },
-      siliconcloud: {
-        enabled: false,
-        enabledModels: filterEnabledModels(SiliconCloudProviderCard),
       },
       spark: {
         enabled: false,

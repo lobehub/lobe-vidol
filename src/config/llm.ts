@@ -102,11 +102,6 @@ export const getLLMConfig = () => {
       ENABLED_AI360: z.boolean(),
       AI360_API_KEY: z.string().optional(),
 
-      ENABLED_SILICONCLOUD: z.boolean(),
-      SILICONCLOUD_API_KEY: z.string().optional(),
-      SILICONCLOUD_MODEL_LIST: z.string().optional(),
-      SILICONCLOUD_PROXY_URL: z.string().optional(),
-
       ENABLED_SPARK: z.boolean(),
       SPARK_API_KEY: z.string().optional(),
 
@@ -211,11 +206,6 @@ export const getLLMConfig = () => {
 
       ENABLED_AI360: !!process.env.AI360_API_KEY,
       AI360_API_KEY: process.env.AI360_API_KEY,
-
-      ENABLED_SILICONCLOUD: !!process.env.SILICONCLOUD_API_KEY,
-      SILICONCLOUD_API_KEY: process.env.SILICONCLOUD_API_KEY,
-      SILICONCLOUD_MODEL_LIST: process.env.SILICONCLOUD_MODEL_LIST,
-      SILICONCLOUD_PROXY_URL: process.env.SILICONCLOUD_PROXY_URL,
 
       ENABLED_SPARK: !!process.env.SPARK_API_KEY,
       SPARK_API_KEY: process.env.SPARK_API_KEY,
