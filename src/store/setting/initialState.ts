@@ -1,5 +1,4 @@
 import {
-  Ai21ProviderCard,
   Ai360ProviderCard,
   AnthropicProviderCard,
   BaichuanProviderCard,
@@ -60,10 +59,6 @@ const initialState: SettingState = {
       clientCall: false,
     },
     languageModel: {
-      ai21: {
-        enabled: false,
-        enabledModels: filterEnabledModels(Ai21ProviderCard),
-      },
       ai360: {
         enabled: false,
         enabledModels: filterEnabledModels(Ai360ProviderCard),

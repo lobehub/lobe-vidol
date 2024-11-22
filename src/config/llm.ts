@@ -119,9 +119,6 @@ export const getLLMConfig = () => {
       ENABLED_SPARK: z.boolean(),
       SPARK_API_KEY: z.string().optional(),
 
-      ENABLED_AI21: z.boolean(),
-      AI21_API_KEY: z.string().optional(),
-
       ENABLED_HUNYUAN: z.boolean(),
       HUNYUAN_API_KEY: z.string().optional(),
       HUNYUAN_MODEL_LIST: z.string().optional(),
@@ -240,9 +237,6 @@ export const getLLMConfig = () => {
 
       ENABLED_SPARK: !!process.env.SPARK_API_KEY,
       SPARK_API_KEY: process.env.SPARK_API_KEY,
-
-      ENABLED_AI21: !!process.env.AI21_API_KEY,
-      AI21_API_KEY: process.env.AI21_API_KEY,
 
       ENABLED_HUNYUAN: !!process.env.HUNYUAN_API_KEY,
       HUNYUAN_API_KEY: process.env.HUNYUAN_API_KEY,

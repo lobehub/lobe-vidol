@@ -229,13 +229,6 @@ const getLlmOptionsFromPayload = (provider: string, payload: JWTPayload) => {
 
       return { apiKey };
     }
-    case ModelProvider.Ai21: {
-      const { AI21_API_KEY } = getLLMConfig();
-
-      const apiKey = apiKeyManager.pick(payload?.apiKey || AI21_API_KEY);
-
-      return { apiKey };
-    }
     case ModelProvider.Hunyuan: {
       const { HUNYUAN_API_KEY } = getLLMConfig();
 
