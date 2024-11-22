@@ -74,6 +74,7 @@
     "checker": {
       "button": "Überprüfen",
       "desc": "Testen Sie, ob der API-Schlüssel und die Proxy-Adresse korrekt eingegeben wurden.",
+      "error": "Überprüfung fehlgeschlagen",
       "pass": "Überprüfung bestanden",
       "title": "Verbindungsprüfung"
     },
@@ -136,6 +137,7 @@
       "desc": "Neben der Standardadresse muss http(s):// enthalten sein.",
       "title": "API-Proxy-Adresse"
     },
+    "title": "Sprachmodell",
     "waitingForMore": "Weitere Modelle werden gerade <1>geplant</1>, bitte warten Sie."
   },
   "touch": {

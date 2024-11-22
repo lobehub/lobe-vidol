@@ -74,6 +74,7 @@
     "checker": {
       "button": "Vérifier",
       "desc": "Tester si la clé API et l'adresse du proxy sont correctement renseignées",
+      "error": "Échec de la vérification",
       "pass": "Vérification réussie",
       "title": "Vérification de connectivité"
     },
@@ -136,6 +137,7 @@
       "desc": "En plus de l'adresse par défaut, doit inclure http(s)://",
       "title": "Adresse du proxy API"
     },
+    "title": "Modèle de Langue",
     "waitingForMore": "D'autres modèles sont en <1>planification d'intégration</1>, restez à l'écoute"
   },
   "touch": {

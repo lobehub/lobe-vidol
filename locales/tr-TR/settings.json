@@ -74,6 +74,7 @@
     "checker": {
       "button": "Kontrol Et",
       "desc": "API Anahtarının ve proxy adresinin doğru girilip girilmediğini test edin",
+      "error": "Kontrol Başarısız",
       "pass": "Kontrol başarılı",
       "title": "Bağlantı Kontrolü"
     },
@@ -136,6 +137,7 @@
       "desc": "Varsayılan adres dışında, http(s):// içermelidir",
       "title": "API proxy adresi"
     },
+    "title": "Dil Modeli",
     "waitingForMore": "Daha fazla model <1>planlanıyor</1>, lütfen bekleyin"
   },
   "touch": {

@@ -74,6 +74,7 @@
     "checker": {
       "button": "Controleer",
       "desc": "Test of de API-sleutel en proxy-adres correct zijn ingevuld",
+      "error": "Controle mislukt",
       "pass": "Controle geslaagd",
       "title": "Connectiviteitstest"
     },
@@ -136,6 +137,7 @@
       "desc": "Moet http(s):// bevatten, naast het standaardadres.",
       "title": "API proxy adres"
     },
+    "title": "Taalmodel",
     "waitingForMore": "Meer modellen zijn momenteel <1>in planning</1>, blijf op de hoogte."
   },
   "touch": {

@@ -74,6 +74,7 @@
     "checker": {
       "button": "Verificar",
       "desc": "Teste se a chave API e o endereço do proxy estão preenchidos corretamente",
+      "error": "Verificação falhou",
       "pass": "Verificação bem-sucedida",
       "title": "Verificação de Conectividade"
     },
@@ -136,6 +137,7 @@
       "desc": "Além do endereço padrão, deve incluir http(s)://",
       "title": "Endereço do proxy da API"
     },
+    "title": "Modelo de Linguagem",
     "waitingForMore": "Mais modelos estão <1>planejados para serem integrados</1>, fique atento"
   },
   "touch": {

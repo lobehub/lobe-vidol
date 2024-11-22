@@ -74,6 +74,7 @@
     "checker": {
       "button": "Controlla",
       "desc": "Verifica se l'API Key e l'indirizzo del proxy sono stati inseriti correttamente",
+      "error": "Controllo fallito",
       "pass": "Controllo superato",
       "title": "Verifica connettività"
     },
@@ -136,6 +137,7 @@
       "desc": "Oltre all'indirizzo predefinito, deve includere http(s)://",
       "title": "Indirizzo proxy API"
     },
+    "title": "Modello Linguistico",
     "waitingForMore": "Altri modelli sono in fase di <1>programmazione per l'integrazione</1>, resta sintonizzato"
   },
   "touch": {

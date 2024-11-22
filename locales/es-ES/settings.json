@@ -74,6 +74,7 @@
     "checker": {
       "button": "Comprobar",
       "desc": "Pruebe si la API Key y la dirección del proxy están correctamente ingresadas",
+      "error": "Verificación fallida",
       "pass": "Comprobación exitosa",
       "title": "Verificación de conectividad"
     },
@@ -136,6 +137,7 @@
       "desc": "Además de la dirección predeterminada, debe incluir http(s)://",
       "title": "Dirección del proxy API"
     },
+    "title": "Modelo de Lenguaje",
     "waitingForMore": "Más modelos están <1>programados para integrarse</1>, por favor espera"
   },
   "touch": {

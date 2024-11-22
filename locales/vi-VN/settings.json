@@ -74,6 +74,7 @@
     "checker": {
       "button": "Kiểm tra",
       "desc": "Kiểm tra xem Api Key và địa chỉ proxy đã được điền đúng chưa",
+      "error": "Kiểm tra không thành công",
       "pass": "Kiểm tra thành công",
       "title": "Kiểm tra kết nối"
     },
@@ -136,6 +137,7 @@
       "desc": "Ngoài địa chỉ mặc định, phải bao gồm http(s)://",
       "title": "Địa chỉ proxy API"
     },
+    "title": "Mô hình ngôn ngữ",
     "waitingForMore": "Nhiều mô hình hơn đang <1>được lên kế hoạch kết nối</1>, xin hãy chờ đợi"
   },
   "touch": {

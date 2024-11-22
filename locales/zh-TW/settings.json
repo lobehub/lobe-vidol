@@ -74,6 +74,7 @@
     "checker": {
       "button": "檢查",
       "desc": "測試 Api Key 與代理地址是否正確填寫",
+      "error": "檢查失敗",
       "pass": "檢查通過",
       "title": "連通性檢查"
     },
@@ -136,6 +137,7 @@
       "desc": "除默認地址外，必須包含 http(s)://",
       "title": "API 代理地址"
     },
+    "title": "語言模型",
     "waitingForMore": "更多模型正在 <1>計劃接入</1> 中，敬請期待"
   },
   "touch": {

@@ -74,6 +74,7 @@
     "checker": {
       "button": "Check",
       "desc": "Test if the API Key and proxy address are filled in correctly.",
+      "error": "Check Failed",
       "pass": "Check passed",
       "title": "Connectivity Check"
     },
@@ -136,6 +137,7 @@
       "desc": "Must include http(s)://, in addition to the default address.",
       "title": "API Proxy Address"
     },
+    "title": "Language Model",
     "waitingForMore": "More models are currently <1>being planned for integration</1>, please stay tuned."
   },
   "touch": {
