@@ -55,7 +55,6 @@ export interface UserKeyVaults {
   stepfun?: OpenAICompatibleKeyVault;
   taichu?: OpenAICompatibleKeyVault;
   togetherai?: OpenAICompatibleKeyVault;
-  upstage?: OpenAICompatibleKeyVault;
   wenxin?: WenxinKeyVault;
   zeroone?: OpenAICompatibleKeyVault;
   zhipu?: OpenAICompatibleKeyVault;

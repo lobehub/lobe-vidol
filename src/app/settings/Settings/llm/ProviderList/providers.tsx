@@ -20,7 +20,6 @@ import {
   StepfunProviderCard,
   TaichuProviderCard,
   TogetherAIProviderCard,
-  UpstageProviderCard,
   ZeroOneProviderCard,
   ZhiPuProviderCard,
 } from '@/config/modelProviders';
@@ -62,7 +61,6 @@ export const useProviderList = (): ProviderItem[] => {
       FireworksAIProviderCard,
       GroqProviderCard,
       PerplexityProviderCard,
-      UpstageProviderCard,
       QwenProviderCard,
       WenxinProvider,
       HunyuanProviderCard,

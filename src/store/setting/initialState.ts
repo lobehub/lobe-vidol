@@ -25,7 +25,6 @@ import {
   StepfunProviderCard,
   TaichuProviderCard,
   TogetherAIProviderCard,
-  UpstageProviderCard,
   WenxinProviderCard,
   ZeroOneProviderCard,
   ZhiPuProviderCard,
@@ -161,10 +160,6 @@ const initialState: SettingState = {
       togetherai: {
         enabled: false,
         enabledModels: filterEnabledModels(TogetherAIProviderCard),
-      },
-      upstage: {
-        enabled: false,
-        enabledModels: filterEnabledModels(UpstageProviderCard),
       },
       wenxin: {
         enabled: false,
