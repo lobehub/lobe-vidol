@@ -53,7 +53,6 @@ export interface UserKeyVaults {
   siliconcloud?: OpenAICompatibleKeyVault;
   spark?: OpenAICompatibleKeyVault;
   stepfun?: OpenAICompatibleKeyVault;
-  taichu?: OpenAICompatibleKeyVault;
   togetherai?: OpenAICompatibleKeyVault;
   wenxin?: WenxinKeyVault;
   zeroone?: OpenAICompatibleKeyVault;

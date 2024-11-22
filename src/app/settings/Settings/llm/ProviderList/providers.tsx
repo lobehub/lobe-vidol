@@ -18,7 +18,6 @@ import {
   SiliconCloudProviderCard,
   SparkProviderCard,
   StepfunProviderCard,
-  TaichuProviderCard,
   TogetherAIProviderCard,
   ZeroOneProviderCard,
   ZhiPuProviderCard,
@@ -73,7 +72,6 @@ export const useProviderList = (): ProviderItem[] => {
       BaichuanProviderCard,
       MinimaxProviderCard,
       Ai360ProviderCard,
-      TaichuProviderCard,
       SiliconCloudProviderCard,
     ],
     [

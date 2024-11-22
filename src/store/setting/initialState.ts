@@ -23,7 +23,6 @@ import {
   SiliconCloudProviderCard,
   SparkProviderCard,
   StepfunProviderCard,
-  TaichuProviderCard,
   TogetherAIProviderCard,
   WenxinProviderCard,
   ZeroOneProviderCard,
@@ -152,10 +151,6 @@ const initialState: SettingState = {
       stepfun: {
         enabled: false,
         enabledModels: filterEnabledModels(StepfunProviderCard),
-      },
-      taichu: {
-        enabled: false,
-        enabledModels: filterEnabledModels(TaichuProviderCard),
       },
       togetherai: {
         enabled: false,

@@ -46,7 +46,6 @@ export enum ModelProvider {
   SiliconCloud = 'siliconcloud',
   Spark = 'spark',
   Stepfun = 'stepfun',
-  Taichu = 'taichu',
   TogetherAI = 'togetherai',
   Wenxin = 'wenxin',
   ZeroOne = 'zeroone',
