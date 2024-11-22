@@ -1,3 +1,4 @@
+import { DEFAULT_MODEL_PROVIDER_LIST } from '@/config/modelProviders';
 import { DEFAULT_CHAT_MODEL, DEFAULT_CHAT_PROVIDER } from '@/constants/agent';
 import { AgentRuntime, ChatCompletionErrorPayload, ModelProvider } from '@/libs/agent-runtime';
 import { speakCharacter } from '@/libs/messages/speakCharacter';
@@ -10,6 +11,7 @@ import { ChatMessage } from '@/types/chat';
 import { ChatErrorType } from '@/types/fetch';
 import { ChatStreamPayload } from '@/types/provider/chat';
 import { createErrorResponse } from '@/utils/errorResponse';
+import { FetchSSEOptions, fetchSSE } from '@/utils/fetch';
 
 import { createHeaderWithAuth, getProviderAuthPayload } from './_auth';
 
@@ -17,8 +19,10 @@ interface ChatCompletionPayload extends Partial<Omit<ChatStreamPayload, 'message
   messages: ChatMessage[];
 }
 
-interface ChatCompletionOptions {
-  signal?: AbortSignal;
+interface FetchOptions extends FetchSSEOptions {
+  historySummary?: string;
+  isWelcomeQuestion?: boolean;
+  signal?: AbortSignal | undefined;
 }
 
 /**
@@ -162,10 +166,7 @@ const fetchOnClient = async (params: {
   return agentRuntime.chat(data, { signal: params.signal });
 };
 
-export const chatCompletion = async (
-  params: ChatCompletionPayload,
-  options?: ChatCompletionOptions,
-) => {
+export const chatCompletion = async (params: ChatCompletionPayload, options?: FetchOptions) => {
   const { provider = DEFAULT_CHAT_PROVIDER, messages, ...res } = params;
   const { signal } = options ?? {};
 
@@ -194,22 +195,26 @@ export const chatCompletion = async (
     useSettingStore.getState(),
   );
 
+  let fetcher: typeof fetch | undefined = undefined;
+
   if (enableFetchOnClient) {
-    try {
-      return await fetchOnClient({ payload, provider, signal });
-    } catch (e) {
-      const {
-        errorType = ChatErrorType.BadRequest,
-        error: errorContent,
-        ...res
-      } = e as ChatCompletionErrorPayload;
+    fetcher = async () => {
+      try {
+        return await fetchOnClient({ payload, provider, signal });
+      } catch (e) {
+        const {
+          errorType = ChatErrorType.BadRequest,
+          error: errorContent,
+          ...res
+        } = e as ChatCompletionErrorPayload;
 
-      const error = errorContent || e;
-      // track the error at server side
-      console.error(`Route: [${provider}] ${errorType}:`, error);
+        const error = errorContent || e;
+        // track the error at server side
+        console.error(`Route: [${provider}] ${errorType}:`, error);
 
-      return createErrorResponse(errorType, { error, ...res, provider });
-    }
+        return createErrorResponse(errorType, { error, ...res, provider });
+      }
+    };
   }
 
   const headers = await createHeaderWithAuth({
@@ -217,12 +222,21 @@ export const chatCompletion = async (
     provider,
   });
 
-  // 使用服务端调用
-  return await fetch(`/api/chat/${provider}`, {
+  const providerConfig = DEFAULT_MODEL_PROVIDER_LIST.find((item) => item.id === provider);
+
+  return fetchSSE(`/api/chat/${provider}`, {
     body: JSON.stringify(payload),
-    headers: headers,
+    fetcher: fetcher,
+    headers,
     method: 'POST',
-    signal: signal,
+    onAbort: options?.onAbort,
+    onErrorHandle: options?.onErrorHandle,
+    onFinish: options?.onFinish,
+    onMessageHandle: options?.onMessageHandle,
+    signal,
+    // use smoothing when enable client fetch
+    // https://github.com/lobehub/lobe-chat/issues/3800
+    smoothing: providerConfig?.smoothing || enableFetchOnClient,
   });
 };
 

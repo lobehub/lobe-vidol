@@ -14,7 +14,6 @@ import { Agent } from '@/types/agent';
 import { ChatMessage } from '@/types/chat';
 import { Session } from '@/types/session';
 import { ShareGPTConversation } from '@/types/share';
-import { fetchSEE } from '@/utils/fetch';
 import { vidolStorage } from '@/utils/storage';
 
 import { useAgentStore } from '../agent';
@@ -243,78 +242,91 @@ export const createSessionStore: StateCreator<SessionStore, [['zustand/devtools'
 
     set({ chatLoadingId: assistantId, abortController });
 
-    const fetcher = () => {
-      return chatCompletion(
-        {
-          model: currentAgent.model || DEFAULT_LLM_CONFIG.model,
-          provider: currentAgent.provider || DEFAULT_LLM_CONFIG.provider,
-          stream: true,
-          ...(currentAgent.params || DEFAULT_LLM_CONFIG.params),
-          messages: [
-            {
-              content: currentAgent.systemRole,
-              role: 'system',
-            } as ChatMessage,
-            ...messages,
-          ],
-        },
-        { signal: abortController.signal },
-      );
-    };
-
     let receivedMessage = '';
     let aiMessage = '';
     const sentences = [];
 
-    await fetchSEE(fetcher, {
-      onMessageError: (error) => {
-        dispatchMessage({
-          payload: {
-            id: assistantId,
-            key: 'error',
-            value: error,
-          },
-          type: 'UPDATE_MESSAGE',
-        });
+    await chatCompletion(
+      {
+        model: currentAgent.model || DEFAULT_LLM_CONFIG.model,
+        provider: currentAgent.provider || DEFAULT_LLM_CONFIG.provider,
+        stream: true,
+        ...(currentAgent.params || DEFAULT_LLM_CONFIG.params),
+        messages: [
+          {
+            content: currentAgent.systemRole,
+            role: 'system',
+          } as ChatMessage,
+          ...messages,
+        ],
       },
-      onMessageUpdate: (txt: string) => {
-        const { voiceOn } = get();
+      {
+        onErrorHandle: (error) => {
+          dispatchMessage({
+            payload: {
+              id: assistantId,
+              key: 'error',
+              value: error,
+            },
+            type: 'UPDATE_MESSAGE',
+          });
+        },
+        onMessageHandle: (chunk) => {
+          switch (chunk.type) {
+            case 'text': {
+              const { voiceOn } = get();
 
-        if (voiceOn) {
-          // 语音合成
-          receivedMessage += txt;
-          // 文本切割
-          const sentenceMatch = receivedMessage.match(/^(.+[\n~。！．？]|.{10,}[,、])/);
-          if (sentenceMatch && sentenceMatch[0]) {
-            const sentence = sentenceMatch[0];
-            sentences.push(sentence);
-            receivedMessage = receivedMessage.slice(sentence.length).trimStart();
+              if (voiceOn) {
+                // 语音合成
+                receivedMessage += chunk.text;
+                // 文本切割
+                const sentenceMatch = receivedMessage.match(/^(.+[\n~。！．？]|.{10,}[,、])/);
+                if (sentenceMatch && sentenceMatch[0]) {
+                  const sentence = sentenceMatch[0];
+                  sentences.push(sentence);
+                  receivedMessage = receivedMessage.slice(sentence.length).trimStart();
 
-            if (
-              !sentence.replaceAll(
-                /^[\s()[\]}«»‹›〈〉《》「」『』【】〔〕〘〙〚〛（）［］｛]+$/g,
-                '',
-              )
-            ) {
-              return;
+                  if (
+                    !sentence.replaceAll(
+                      /^[\s()[\]}«»‹›〈〉《》「」『』【】〔〕〘〙〚〛（）［］｛]+$/g,
+                      '',
+                    )
+                  ) {
+                    return;
+                  }
+                  handleSpeakAi(sentence);
+                }
+              }
+
+              // 对话更新
+              aiMessage += chunk.text;
+
+              dispatchMessage({
+                payload: {
+                  id: assistantId,
+                  key: 'content',
+                  value: aiMessage,
+                },
+                type: 'UPDATE_MESSAGE',
+              });
+              break;
             }
-            handleSpeakAi(sentence);
+
+            // is this message is just a tool call
+            // case 'tool_calls': {
+            // internal_toggleToolCallingStreaming(assistantId, chunk.isAnimationActives);
+            // internal_dispatchMessage({
+            //   id: assistantId,
+            //   type: 'updateMessage',
+            //   value: { tools: get().internal_transformToolCalls(chunk.tool_calls) },
+            // });
+            // isFunctionCall = true;
+            // }
           }
-        }
-
-        // 对话更新
-        aiMessage += txt;
-
-        dispatchMessage({
-          payload: {
-            id: assistantId,
-            key: 'content',
-            value: aiMessage,
-          },
-          type: 'UPDATE_MESSAGE',
-        });
+        },
+        signal: abortController.signal,
       },
-    });
+    );
     set({ chatLoadingId: undefined });
   },
   shareToShareGPT: async ({ withSystemRole }) => {
