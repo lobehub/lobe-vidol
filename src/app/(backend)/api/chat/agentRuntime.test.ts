@@ -10,7 +10,6 @@ import {
   LobeGoogleAI,
   LobeGroq,
   LobeMinimaxAI,
-  LobeMistralAI,
   LobeMoonshotAI,
   LobeOllamaAI,
   LobeOpenAI,
@@ -50,7 +49,6 @@ vi.mock('@/config/llm', () => ({
     DEEPSEEK_API_KEY: 'test-deepseek-key',
     ANTHROPIC_API_KEY: 'test-anthropic-key',
     MINIMAX_API_KEY: 'test-minimax-key',
-    MISTRAL_API_KEY: 'test-mistral-key',
     OPENROUTER_API_KEY: 'test-openrouter-key',
     TOGETHERAI_API_KEY: 'test-togetherai-key',
     QWEN_API_KEY: 'test-qwen-key',
@@ -155,13 +153,6 @@ describe('initAgentRuntimeWithUserPayload method', () => {
       const runtime = await initAgentRuntimeWithUserPayload(ModelProvider.Minimax, jwtPayload);
       expect(runtime).toBeInstanceOf(AgentRuntime);
       expect(runtime['_runtime']).toBeInstanceOf(LobeMinimaxAI);
-    });
-
-    it('Mistral AI provider: with apikey', async () => {
-      const jwtPayload: JWTPayload = { apiKey: 'user-mistral-key' };
-      const runtime = await initAgentRuntimeWithUserPayload(ModelProvider.Mistral, jwtPayload);
-      expect(runtime).toBeInstanceOf(AgentRuntime);
-      expect(runtime['_runtime']).toBeInstanceOf(LobeMistralAI);
     });
 
     it('OpenRouter AI provider: with apikey', async () => {
@@ -311,14 +302,6 @@ describe('initAgentRuntimeWithUserPayload method', () => {
 
       // 假设 LobeMistralAI 是 Mistral 提供者的实现类
       expect(runtime['_runtime']).toBeInstanceOf(LobeMinimaxAI);
-    });
-
-    it('Mistral AI provider: without apikey', async () => {
-      const jwtPayload = {};
-      const runtime = await initAgentRuntimeWithUserPayload(ModelProvider.Mistral, jwtPayload);
-
-      // 假设 LobeMistralAI 是 Mistral 提供者的实现类
-      expect(runtime['_runtime']).toBeInstanceOf(LobeMistralAI);
     });
 
     it('OpenRouter AI provider: without apikey', async () => {

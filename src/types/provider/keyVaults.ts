@@ -41,7 +41,6 @@ export interface UserKeyVaults {
   hunyuan?: OpenAICompatibleKeyVault;
   lobehub?: any;
   minimax?: OpenAICompatibleKeyVault;
-  mistral?: OpenAICompatibleKeyVault;
   moonshot?: OpenAICompatibleKeyVault;
   novita?: OpenAICompatibleKeyVault;
   ollama?: OpenAICompatibleKeyVault;

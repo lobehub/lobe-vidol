@@ -12,7 +12,6 @@ import {
   HuggingFaceProviderCard,
   HunyuanProviderCard,
   MinimaxProviderCard,
-  MistralProviderCard,
   MoonshotProviderCard,
   NovitaProviderCard,
   OllamaProviderCard,
@@ -109,10 +108,6 @@ const initialState: SettingState = {
       minimax: {
         enabled: false,
         enabledModels: filterEnabledModels(MinimaxProviderCard),
-      },
-      mistral: {
-        enabled: false,
-        enabledModels: filterEnabledModels(MistralProviderCard),
       },
       moonshot: {
         enabled: false,

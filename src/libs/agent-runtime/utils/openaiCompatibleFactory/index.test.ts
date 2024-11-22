@@ -418,11 +418,11 @@ describe('LobeOpenAICompatibleFactory', () => {
     describe('noUserId option', () => {
       it('should not add user to payload when noUserId is true', async () => {
         const LobeMockProvider = LobeOpenAICompatibleFactory({
-          baseURL: 'https://api.mistral.ai/v1',
+          baseURL: 'https://api.openai.com/v1',
           chatCompletion: {
             noUserId: true,
           },
-          provider: ModelProvider.Mistral,
+          provider: ModelProvider.OpenAI,
         });
 
         const instance = new LobeMockProvider({ apiKey: 'test' });
@@ -450,7 +450,7 @@ describe('LobeOpenAICompatibleFactory', () => {
           chatCompletion: {
             noUserId: false,
           },
-          provider: ModelProvider.Mistral,
+          provider: ModelProvider.OpenAI,
         });
 
         const instance = new LobeMockProvider({ apiKey: 'test' });
@@ -474,8 +474,8 @@ describe('LobeOpenAICompatibleFactory', () => {
 
       it('should add user to payload when noUserId is not set in chatCompletion', async () => {
         const LobeMockProvider = LobeOpenAICompatibleFactory({
-          baseURL: 'https://api.mistral.ai/v1',
-          provider: ModelProvider.Mistral,
+          baseURL: 'https://api.openai.com/v1',
+          provider: ModelProvider.OpenAI,
         });
 
         const instance = new LobeMockProvider({ apiKey: 'test' });

@@ -14,7 +14,6 @@ import { LobeGroq } from './groq';
 import { LobeHuggingFaceAI } from './huggingface';
 import { LobeHunyuanAI } from './hunyuan';
 import { LobeMinimaxAI } from './minimax';
-import { LobeMistralAI } from './mistral';
 import { LobeMoonshotAI } from './moonshot';
 import { LobeNovitaAI } from './novita';
 import { LobeOllamaAI } from './ollama';
@@ -134,7 +133,6 @@ class AgentRuntime {
       huggingface: { apiKey?: string; baseURL?: string };
       hunyuan: Partial<ClientOptions>;
       minimax: Partial<ClientOptions>;
-      mistral: Partial<ClientOptions>;
       moonshot: Partial<ClientOptions>;
       novita: Partial<ClientOptions>;
       ollama: Partial<ClientOptions>;
@@ -219,11 +217,6 @@ class AgentRuntime {
 
       case ModelProvider.Minimax: {
         runtimeModel = new LobeMinimaxAI(params.minimax);
-        break;
-      }
-
-      case ModelProvider.Mistral: {
-        runtimeModel = new LobeMistralAI(params.mistral);
         break;
       }
 

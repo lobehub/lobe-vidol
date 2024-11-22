@@ -13,7 +13,6 @@ import GroqProvider from './groq';
 import HuggingFaceProvider from './huggingface';
 import HunyuanProvider from './hunyuan';
 import MinimaxProvider from './minimax';
-import MistralProvider from './mistral';
 import MoonshotProvider from './moonshot';
 import NovitaProvider from './novita';
 import OllamaProvider from './ollama';
@@ -42,7 +41,6 @@ export const LOBE_DEFAULT_MODEL_LIST: ChatModelCard[] = [
   GroqProvider.chatModels,
   GithubProvider.chatModels,
   MinimaxProvider.chatModels,
-  MistralProvider.chatModels,
   MoonshotProvider.chatModels,
   OllamaProvider.chatModels,
   OpenRouterProvider.chatModels,
@@ -81,7 +79,6 @@ export const DEFAULT_MODEL_PROVIDER_LIST = [
   FireworksAIProvider,
   GroqProvider,
   PerplexityProvider,
-  MistralProvider,
   UpstageProvider,
   QwenProvider,
   WenxinProvider,
@@ -121,7 +118,6 @@ export { default as GroqProviderCard } from './groq';
 export { default as HuggingFaceProviderCard } from './huggingface';
 export { default as HunyuanProviderCard } from './hunyuan';
 export { default as MinimaxProviderCard } from './minimax';
-export { default as MistralProviderCard } from './mistral';
 export { default as MoonshotProviderCard } from './moonshot';
 export { default as NovitaProviderCard } from './novita';
 export { default as OllamaProviderCard } from './ollama';

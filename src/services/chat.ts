@@ -105,9 +105,6 @@ export function initializeWithClientStore(provider: string, payload: any) {
       break;
     }
 
-    case ModelProvider.Mistral: {
-      break;
-    }
     case ModelProvider.Groq: {
       providerOptions = {
         apikey: providerAuthPayload?.apiKey,

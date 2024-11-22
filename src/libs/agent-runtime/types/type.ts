@@ -35,7 +35,6 @@ export enum ModelProvider {
   HuggingFace = 'huggingface',
   Hunyuan = 'hunyuan',
   Minimax = 'minimax',
-  Mistral = 'mistral',
   Moonshot = 'moonshot',
   Novita = 'novita',
   Ollama = 'ollama',

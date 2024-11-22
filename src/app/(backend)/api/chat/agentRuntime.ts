@@ -109,13 +109,7 @@ const getLlmOptionsFromPayload = (provider: string, payload: JWTPayload) => {
 
       return { apiKey };
     }
-    case ModelProvider.Mistral: {
-      const { MISTRAL_API_KEY } = getLLMConfig();
 
-      const apiKey = apiKeyManager.pick(payload?.apiKey || MISTRAL_API_KEY);
-
-      return { apiKey };
-    }
     case ModelProvider.Groq: {
       const { GROQ_API_KEY, GROQ_PROXY_URL } = getLLMConfig();
 
