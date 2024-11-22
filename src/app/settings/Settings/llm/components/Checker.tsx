@@ -56,7 +56,6 @@ const Checker = memo<ConnectionCheckerProps>(({ model, provider }) => {
     manual: true,
     onSuccess: (res) => {
       if (!res.ok) {
-        message.error(t('llm.checker.error'));
         getMessageError(res).then((err) => {
           setError(err);
         });
