@@ -7,7 +7,7 @@ import { memo, useEffect } from 'react';
 import { AGENT_STORAGE_KEY, useAgentStore } from '@/store/agent';
 import { DANCE_STORAGE_KEY } from '@/store/dance';
 import { SESSION_STORAGE_KEY } from '@/store/session';
-import { SETTING_STORAGE_KEY } from '@/store/setting';
+import { SETTING_STORAGE_KEY, useSettingStore } from '@/store/setting';
 import { vidolStorage } from '@/utils/storage';
 
 const MIGRATION_KEY = 'MIGRATE_TO_INDEXED_DB';
@@ -33,11 +33,15 @@ const migrate = async () => {
 const StoreHydration = () => {
   const router = useRouter();
 
+  const refreshDefaultModelProviderList = useSettingStore((s) => s.refreshDefaultModelProviderList);
+
   useEffect(() => {
     // refs: https://github.com/pmndrs/zustand/blob/main/docs/integrations/persisting-store-data.md#hashydrated
     migrate().then(() => {
       useAgentStore.persist.rehydrate();
     });
+
+    refreshDefaultModelProviderList();
   }, []);
 
   useEffect(() => {
