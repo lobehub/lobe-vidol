@@ -13,6 +13,7 @@ import { shallow } from 'zustand/shallow';
 import { createWithEqualityFn } from 'zustand/traditional';
 import { StateCreator } from 'zustand/vanilla';
 
+import { ModelProvider } from '@/libs/agent-runtime/types/type';
 import { ModelListAction, createModelListSlice } from '@/store/setting/slices/modelList';
 import createTouchStore, { TouchStore } from '@/store/setting/slices/touch';
 import { BackgroundEffect, Config } from '@/types/config';
@@ -118,7 +119,35 @@ const createStore: StateCreator<SettingStore, [['zustand/devtools', never]], [],
 const persistOptions: PersistOptions<SettingStore> = {
   name: SETTING_STORAGE_KEY, // name of the item in the storage (must be unique)
   storage: createJSONStorage(() => vidolStorage),
-  version: 0,
+  version: 1,
+  migrate: (persistedState: unknown, version: number): SettingStore => {
+    if (version === 0) {
+      const state = persistedState as SettingStore;
+      if (state.config.languageModel) {
+        state.config.languageModel = {
+          ...state.config.languageModel,
+          [ModelProvider.OpenAI]: {
+            //@ts-ignore
+            ...state.config.languageModel['openAI'],
+          },
+        };
+        state.config.languageModel[ModelProvider.OpenAI]!.fetchOnClient =
+          //@ts-ignore
+          state.config.languageModel['openAI']!.fetchOnClient;
+        state.config.keyVaults = {
+          ...state.config.keyVaults,
+          [ModelProvider.OpenAI]: {
+            //@ts-ignore
+            apiKey: state.config.languageModel['openAI']!.apiKey,
+            //@ts-ignore
+            baseURL: state.config.languageModel['openAI']!.endpoint,
+          },
+        };
+      }
+      return state;
+    }
+    return persistedState as SettingStore;
+  },
 };
 
 export const useSettingStore = createWithEqualityFn<SettingStore>()(

@@ -557,7 +557,9 @@ const settings = {
       backgroundEffect: 'glow',
       languageModel: {
         openAI: {
-          model: 'gpt-4o',
+          fetchOnClient: true,
+          apiKey: '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',
+          endpoint: 'https://openrouter.ai/api/v1',
         },
       },
     },
