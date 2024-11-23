@@ -5,8 +5,8 @@ import { Flexbox } from 'react-layout-kit';
 
 import { DEFAULT_CHAT_MODEL } from '@/constants/agent';
 import useSessionContext from '@/hooks/useSessionContext';
+import { siteUrl } from '@/server/utils/url';
 
-import pkg from '../../../../../../package.json';
 import ChatList from './ChatList';
 import { useStyles } from './style';
 import { FieldType } from './type';
@@ -41,7 +41,7 @@ const Preview = memo<FieldType & { title?: string }>(
             {withFooter ? (
               <Flexbox align={'center'} className={styles.footer} gap={4}>
                 <Logo extra={'vidol'} type={'combine'} />
-                <div className={styles.url}>{pkg.homepage}</div>
+                <div className={styles.url}>{siteUrl}</div>
               </Flexbox>
             ) : (
               <div />

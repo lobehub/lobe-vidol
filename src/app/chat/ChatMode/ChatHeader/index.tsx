@@ -7,9 +7,7 @@ import React from 'react';
 import { Flexbox } from 'react-layout-kit';
 
 import ShareButton from './actions/ShareButton';
-import ToggleChatSideBar from './actions/ToggleChatSideBar';
 import ToggleSessionList from './actions/ToggleSessionList';
-import Voice from './actions/Voice';
 import { useStyles } from './style';
 
 const AgentMeta = dynamic(() => import('./AgentMeta'), {
@@ -48,9 +46,7 @@ export default (props: Props) => {
         </div>
       </Flexbox>
       <Space className={styles.actions}>
-        <Voice key={'voice'} />
         <ShareButton key={'share'} />
-        <ToggleChatSideBar key={'sidebar'} />
       </Space>
     </Flexbox>
   );

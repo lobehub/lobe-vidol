@@ -8,7 +8,7 @@ import {
   Orbit,
   Pointer,
   PointerOff,
-  Power,
+  RotateCcw,
   SwitchCamera,
 } from 'lucide-react';
 import React from 'react';
@@ -63,8 +63,8 @@ const ToolBar = (props: ToolBarProps) => {
       dropdownMenu={dropdownMenu}
       items={[
         {
-          icon: Power,
-          key: 'power',
+          icon: RotateCcw,
+          key: 'reset',
           label: t('toolBar.resetToIdle'),
         },
         {
@@ -96,7 +96,7 @@ const ToolBar = (props: ToolBarProps) => {
 
             break;
           }
-          case 'power': {
+          case 'reset': {
             viewer.resetToIdle();
             break;
           }

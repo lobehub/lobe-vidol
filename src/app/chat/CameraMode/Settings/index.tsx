@@ -1,7 +1,8 @@
 'use client';
 
-import { DraggablePanel, TabsNav } from '@lobehub/ui';
+import { ActionIcon, DraggablePanel, TabsNav } from '@lobehub/ui';
 import { createStyles } from 'antd-style';
+import { X } from 'lucide-react';
 import dynamic from 'next/dynamic';
 import { rgba } from 'polished';
 import React, { useState } from 'react';
@@ -19,11 +20,6 @@ const Loading = () => (
     <SkeletonList avatar count={8} />
   </div>
 );
-
-const ChatList = dynamic(() => import('./ChatList'), {
-  ssr: false,
-  loading: Loading,
-});
 
 const BackGround = dynamic(() => import('./BackGroundList'), {
   ssr: false,
@@ -66,6 +62,15 @@ const useStyles = createStyles(({ css, token }) => ({
   player: css`
     min-width: 480px;
   `,
+  closeIcon: css`
+    cursor: pointer;
+    margin-right: 12px;
+    color: ${token.colorTextSecondary};
+
+    &:hover {
+      color: ${token.colorText};
+    }
+  `,
 }));
 
 export default () => {
@@ -74,7 +79,7 @@ export default () => {
     s.setChatSidebar,
   ]);
 
-  const [tab, setTab] = useState<Tab>(Tab.ChatList);
+  const [tab, setTab] = useState<Tab>(Tab.DanceList);
   const { t } = useTranslation('chat');
 
   const { styles } = useStyles();
@@ -84,7 +89,7 @@ export default () => {
       classNames={{ content: styles.content }}
       minWidth={CHAT_INFO_WIDTH}
       maxWidth={CHAT_INFO_MAX_WIDTH}
-      mode={'fixed'}
+      mode={'float'}
       onExpandChange={(expand) => {
         setChatSidebar(expand);
       }}
@@ -93,12 +98,20 @@ export default () => {
     >
       <Flexbox justify={'space-between'} horizontal align={'center'} className={styles.header}>
         <TabsNav
+          variant={'compact'}
           activeKey={tab}
+          tabBarExtraContent={{
+            left: (
+              <ActionIcon
+                icon={X}
+                onClick={() => {
+                  setChatSidebar(false);
+                }}
+                style={{ marginLeft: 12 }}
+              />
+            ),
+          }}
           items={[
-            {
-              label: t('info.chat'),
-              key: Tab.ChatList,
-            },
             {
               label: t('info.dance'),
               key: Tab.DanceList,
@@ -125,8 +138,7 @@ export default () => {
           }}
         />
       </Flexbox>
-      <Flexbox height={'calc(100vh - 128px)'}>
-        {tab === Tab.ChatList && <ChatList />}
+      <Flexbox height={`calc(100vh - ${CHAT_HEADER_HEIGHT}px)`}>
         {tab === Tab.DanceList && <DanceList />}
         {tab === Tab.Motions && <MotionList />}
         {tab === Tab.Posture && <PostureList />}

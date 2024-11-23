@@ -3,11 +3,12 @@ import { ReactNode, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
-import CategoryFilter from '@/app/chat/ChatInfo/PostureList/SideBar/filters/CategoryFilter';
-import GenderFilter from '@/app/chat/ChatInfo/PostureList/SideBar/filters/GenderFilter';
 import Header from '@/components/Header';
 import { GenderEnum } from '@/types/agent';
 import { PostureCategoryEnum } from '@/types/touch';
+
+import CategoryFilter from './filters/CategoryFilter';
+import GenderFilter from './filters/GenderFilter';
 
 interface IndexProps {
   categoryOptions: { icon: ReactNode; label: string; value: PostureCategoryEnum | undefined }[];

@@ -13,7 +13,9 @@ import { useSessionStore } from '@/store/session';
 import { isMacOS } from '@/utils/platform';
 
 import TextArea from './TextArea';
-import Record from './actions/Record';
+import Camera from './actions/Camera';
+import History from './actions/History';
+import TokenMini from './actions/TokenMini';
 import { useStyles } from './style';
 
 interface InputAreaProps {
@@ -61,6 +63,9 @@ const InputArea = memo((props: InputAreaProps) => {
 
   return (
     <Flexbox className={className} style={style}>
+      <Flexbox horizontal justify={'flex-end'} align="center">
+        <TokenMini /> <History />
+      </Flexbox>
       <Flexbox width={'100%'} horizontal gap={4}>
         <TextArea />
         <Button
@@ -74,7 +79,7 @@ const InputArea = memo((props: InputAreaProps) => {
           icon={loading ? <StopLoadingIcon /> : <SendOutlined />}
           type={loading ? undefined : 'primary'}
         />
-        <Record />
+        <Camera />
       </Flexbox>
       <Flexbox horizontal justify={'space-between'} align={'center'} style={{ marginTop: 4 }}>
         <div className={styles.alert}>{t('input.alert')}</div>
