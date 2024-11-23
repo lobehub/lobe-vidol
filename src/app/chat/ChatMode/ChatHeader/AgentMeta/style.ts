@@ -10,7 +10,7 @@ export const useStyles = createStyles(({ css, token }) => ({
     line-height: 1;
   `,
   desc: css`
-    width: 480px;
+    max-width: 320px;
     margin-top: ${token.marginXXS}px;
 
     font-size: ${token.fontSizeSM}px;

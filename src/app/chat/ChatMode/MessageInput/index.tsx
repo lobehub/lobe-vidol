@@ -71,7 +71,7 @@ const InputArea = memo((props: InputAreaProps) => {
           <History />
         </Space>
       </Flexbox>
-      <Flexbox width={'100%'} horizontal gap={4}>
+      <Flexbox width={'100%'} horizontal gap={4} align={'center'}>
         <TextArea />
         <Button
           onClick={() => {

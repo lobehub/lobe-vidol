@@ -14,7 +14,7 @@ import ActionsBar from './ActionsBar';
 import ErrorMessageExtra, { useErrorContent } from './Error';
 import { renderMessages } from './Messages';
 
-const useStyles = createStyles(({ css, prefixCls }) => ({
+const useStyles = createStyles(({ css, prefixCls, responsive }) => ({
   message: css`
     width: 100%;
     min-width: 480px;
@@ -25,7 +25,7 @@ const useStyles = createStyles(({ css, prefixCls }) => ({
       max-height: 900px;
     }
 
-    @media (max-width: 1024px) {
+    ${responsive.mobile} {
       width: 100%;
     }
   `,

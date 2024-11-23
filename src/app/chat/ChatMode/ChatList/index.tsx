@@ -1,12 +1,24 @@
+import dynamic from 'next/dynamic';
 import { Flexbox } from 'react-layout-kit';
 
-import ChatList from './VirtualizedList';
+import SkeletonList from './SkeletonList';
 
 interface ConversationProps {
   mobile?: boolean;
 }
 
 const Conversation = ({ mobile }: ConversationProps) => {
+  const Loading = () => (
+    <div style={{ margin: '0 auto' }}>
+      <SkeletonList count={3} mobile={mobile} />
+    </div>
+  );
+
+  const ChatList = dynamic(() => import('./VirtualizedList'), {
+    ssr: false,
+    loading: Loading,
+  });
+
   return (
     <Flexbox
       flex={1}

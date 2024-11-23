@@ -4,7 +4,7 @@ import { Mic } from 'lucide-react';
 import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { DESKTOP_OPERATION_ICON_SIZE } from '@/constants/token';
+import { DESKTOP_OPERATION_ICON_SIZE_LARGE } from '@/constants/token';
 import { useSpeechRecognition } from '@/hooks/useSpeechRecognition';
 import { useSessionStore } from '@/store/session';
 
@@ -33,7 +33,7 @@ const Record = () => {
       loading={isRecording}
       onClick={toggleRecord}
       title={t('tts.record')}
-      size={DESKTOP_OPERATION_ICON_SIZE}
+      size={DESKTOP_OPERATION_ICON_SIZE_LARGE}
       style={{
         backgroundColor: theme.colorBgElevated,
       }}

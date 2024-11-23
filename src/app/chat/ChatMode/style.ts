@@ -2,7 +2,7 @@ import { createStyles } from 'antd-style';
 
 import { CHAT_HEADER_HEIGHT, CHAT_INPUT_WIDTH } from '@/constants/token';
 
-export const useStyles = createStyles(({ css, token }) => ({
+export const useStyles = createStyles(({ css, token, responsive }) => ({
   chat: css``,
   list: css`
     margin-top: ${CHAT_HEADER_HEIGHT}px;
@@ -12,7 +12,7 @@ export const useStyles = createStyles(({ css, token }) => ({
     min-width: 480px;
     max-width: 100vw;
 
-    @media (max-width: 1024px) {
+    ${responsive.mobile} {
       width: 100%;
     }
   `,

@@ -21,8 +21,8 @@ const AssistantActionsBar: RenderAction = ({ onActionClick, id }) => {
 
   return (
     <ActionIconGroup
-      dropdownMenu={[edit, copy, divider, tts, regenerate, delAndRegenerate, divider, del]}
-      items={[edit, copy]}
+      dropdownMenu={[edit, copy, divider, regenerate, delAndRegenerate, divider, del]}
+      items={[edit, copy, tts]}
       onActionClick={onActionClick}
       type="ghost"
     />

@@ -10,12 +10,12 @@ import { useGlobalStore } from '@/store/global';
 export default () => {
   const [toggleChatSideBar] = useGlobalStore((s) => [s.toggleChatSideBar]);
   const theme = useTheme();
-  const { t } = useTranslation('common');
+  const { t } = useTranslation('dance');
   return (
     <ActionIcon
       icon={Box}
       onClick={() => toggleChatSideBar()}
-      title={t('sideBar')}
+      title={t('menu')}
       size={DESKTOP_OPERATION_ICON_SIZE}
       style={{
         backgroundColor: theme.colorBgElevated,

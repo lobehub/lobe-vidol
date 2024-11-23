@@ -22,8 +22,8 @@ const CallOff = () => {
       title={t('callOff')}
       size={DESKTOP_OPERATION_ICON_SIZE}
       style={{
-        backgroundColor: theme.colorWhite,
-        color: theme.colorError,
+        backgroundColor: theme.colorError,
+        color: theme.colorWhite,
       }}
     />
   );

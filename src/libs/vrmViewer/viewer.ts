@@ -124,8 +124,6 @@ export class Viewer {
     if (cameraUrl) this.playCameraAnimation();
     // 将 canvas 全屏加载
     this.requestFullScreen();
-    // 如果没有加载舞台，那么开启网格
-    if (!this._currentStage) this.enableGrid();
   }
 
   public resetToIdle() {
@@ -199,6 +197,9 @@ export class Viewer {
     if (this._canvas) {
       this._canvas.addEventListener('click', this._boundHandleClick, false);
     }
+
+    // 如果没有加载舞台，那么开启网格
+    if (!this._currentStage) this.enableGrid();
   }
 
   public unloadVRM(): void {

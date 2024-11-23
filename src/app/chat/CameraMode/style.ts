@@ -1,8 +1,6 @@
 import { createStyles } from 'antd-style';
 
-import { CHAT_HEADER_HEIGHT } from '@/constants/token';
-
-export const useStyles = createStyles(({ css, token }) => ({
+export const useStyles = createStyles(({ css, token, responsive }) => ({
   viewer: css`
     position: absolute;
     top: 0;
@@ -16,13 +14,13 @@ export const useStyles = createStyles(({ css, token }) => ({
     max-width: 100vw;
     padding: 0 12px;
 
-    @media (max-width: 768px) {
+    ${responsive.mobile} {
       width: 100%;
     }
   `,
   dialog: css`
     z-index: 2;
-    margin: ${CHAT_HEADER_HEIGHT}px auto 0;
+    margin: ${token.marginLG}px auto 0;
   `,
   docker: css`
     z-index: 2;

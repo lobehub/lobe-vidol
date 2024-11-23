@@ -52,7 +52,7 @@ const useStyles = createStyles(({ css, token }) => ({
     display: flex;
     flex-direction: column;
 
-    background-color: ${rgba(token.colorBgLayout, 0.2)};
+    background-color: ${rgba(token.colorBgLayout, 0.8)};
     backdrop-filter: saturate(180%) blur(8px);
   `,
   header: css`

@@ -9,9 +9,9 @@ import Setting from './actions/Setting';
 
 const VoiceOperation = memo(() => {
   return (
-    <Flexbox gap={24} horizontal>
-      <Record />
+    <Flexbox gap={24} horizontal align={'center'}>
       <CallOff />
+      <Record />
       <Setting />
     </Flexbox>
   );

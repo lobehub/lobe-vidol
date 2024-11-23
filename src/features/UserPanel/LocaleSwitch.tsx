@@ -13,7 +13,7 @@ import { useSettingStore } from '@/store/setting';
 import { LocaleMode } from '@/types/locale';
 
 const LocaleSwitch = memo(() => {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation(['common', 'settings']);
   const theme = useTheme();
   const [switchLocale] = useSettingStore((s) => [s.switchLocale], isEqual);
   const router = useRouter();

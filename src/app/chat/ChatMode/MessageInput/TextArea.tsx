@@ -12,7 +12,6 @@ const InputArea = memo(() => {
   const isChineseInput = useRef(false);
   const onSend = useChatInput();
   const { t } = useTranslation('chat');
-
   const [loading, messageInput, setMessageInput] = useSessionStore((s) => [
     !!s.chatLoadingId,
     s.messageInput,
@@ -26,6 +25,7 @@ const InputArea = memo(() => {
       onBlur={(e) => {
         setMessageInput?.(e.target.value);
       }}
+      // className={styles.input}
       onChange={(e) => {
         setMessageInput?.(e.target.value);
       }}
@@ -48,6 +48,7 @@ const InputArea = memo(() => {
       }}
       placeholder={t('input.placeholder')}
       ref={ref}
+      rows={1}
       autoSize={{ minRows: 1, maxRows: 10 }}
       type={'block'}
       value={messageInput}

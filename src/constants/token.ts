@@ -4,6 +4,7 @@ import type { FormProps } from '@lobehub/ui';
 export const INITIAL_COORDINATES = { x: 360, y: 360 };
 export const DESKTOP_HEADER_ICON_SIZE = { fontSize: 24 };
 export const DESKTOP_OPERATION_ICON_SIZE = { fontSize: 24, borderRadius: 24, blockSize: 48 };
+export const DESKTOP_OPERATION_ICON_SIZE_LARGE = { fontSize: 24, borderRadius: 32, blockSize: 64 };
 export const MAX_WIDTH = 1024;
 
 export const FORM_STYLE: FormProps = {

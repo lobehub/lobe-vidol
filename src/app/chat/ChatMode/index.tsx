@@ -18,14 +18,7 @@ const Chat = () => {
     <Flexbox flex={1} className={styles.chat} horizontal>
       <SideBar />
       <Flexbox flex={1} style={{ position: 'relative' }} height={'100%'} width={'100%'}>
-        <ChatHeader
-          style={{
-            position: 'absolute',
-            zIndex: 1,
-            top: 0,
-            left: 0,
-          }}
-        />
+        <ChatHeader />
         <ChatList />
         <Flexbox align={'center'} className={styles.docker} ref={ref}>
           <div className={classNames(styles.input)}>
