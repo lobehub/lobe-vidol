@@ -20,15 +20,7 @@ const migrateLocalStorageToIndexedDB = async (storageKey: string) => {
   }
 };
 
-const migrate = async () => {
-  // localstorage 迁移到 indexeddb 后，删除迁移标识
-  if (localStorage.getItem(MIGRATION_KEY)) return;
-  await migrateLocalStorageToIndexedDB(AGENT_STORAGE_KEY);
-  await migrateLocalStorageToIndexedDB(SESSION_STORAGE_KEY);
-  await migrateLocalStorageToIndexedDB(SETTING_STORAGE_KEY);
-  await migrateLocalStorageToIndexedDB(DANCE_STORAGE_KEY);
-  localStorage.setItem(MIGRATION_KEY, 'true');
-
+const migrateOpenAIKey = async () => {
   // 将原来的 OpenAI Key 迁移到 KeyValuts
   // @ts-ignore
   const openAI = useSettingStore.getState().config.languageModel.OpenAI;
@@ -50,6 +42,19 @@ const migrate = async () => {
     });
   }
 };
+
+const migrate = async () => {
+  await migrateOpenAIKey();
+
+  // localstorage 迁移到 indexeddb 后，删除迁移标识
+  if (localStorage.getItem(MIGRATION_KEY)) return;
+  await migrateLocalStorageToIndexedDB(AGENT_STORAGE_KEY);
+  await migrateLocalStorageToIndexedDB(SESSION_STORAGE_KEY);
+  await migrateLocalStorageToIndexedDB(SETTING_STORAGE_KEY);
+  await migrateLocalStorageToIndexedDB(DANCE_STORAGE_KEY);
+  localStorage.setItem(MIGRATION_KEY, 'true');
+};
+
 const StoreHydration = () => {
   const router = useRouter();
 

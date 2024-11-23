@@ -27,14 +27,14 @@ import { useAzureProvider } from './Azure';
 import { useBedrockProvider } from './Bedrock';
 import { useGithubProvider } from './Github';
 import { useHuggingFaceProvider } from './HuggingFace';
-// import { useOllamaProvider } from './Ollama';
+import { useOllamaProvider } from './Ollama';
 import { useOpenAIProvider } from './OpenAI';
 import { useSenseNovaProvider } from './SenseNova';
 import { useWenxinProvider } from './Wenxin';
 
 export const useProviderList = (): ProviderItem[] => {
   const AzureProvider = useAzureProvider();
-  // const OllamaProvider = useOllamaProvider();
+  const OllamaProvider = useOllamaProvider();
   const OpenAIProvider = useOpenAIProvider();
   const BedrockProvider = useBedrockProvider();
   const GithubProvider = useGithubProvider();
@@ -46,7 +46,7 @@ export const useProviderList = (): ProviderItem[] => {
     () => [
       OpenAIProvider,
       AzureProvider,
-      // OllamaProvider,
+      OllamaProvider,
       AnthropicProviderCard,
       BedrockProvider,
       GoogleProviderCard,
@@ -74,7 +74,7 @@ export const useProviderList = (): ProviderItem[] => {
     ],
     [
       AzureProvider,
-      // OllamaProvider,
+      OllamaProvider,
       OpenAIProvider,
       BedrockProvider,
       GithubProvider,
