@@ -187,7 +187,7 @@ function detectSkeleton(skeleton: Skeleton) {
   return finalMap;
 }
 
-export function convert(data: ArrayBufferLike, vrm: VRM) {
+export function convert(data: AllowSharedBufferSource, vrm: VRM) {
   const textDecoder = new TextDecoder();
   const { clip, skeleton } = new BVHLoader().parse(textDecoder.decode(data));
   const keepTracks = new Set<KeyframeTrack>();

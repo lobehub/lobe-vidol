@@ -21,10 +21,10 @@ import {
   OpenChat,
   OpenRouter,
   Perplexity,
+  Qwen,
   Rwkv,
   Spark,
   Stability,
-  Tongyi,
   Wenxin,
   Yi,
 } from '@lobehub/icons';
@@ -54,7 +54,7 @@ const ModelIcon = memo<ModelProviderIconProps>(({ model: originModel, size = 12 
   if (model.includes('gemini')) return <Gemini.Avatar size={size} />;
   if (model.includes('gemma')) return <Gemma.Avatar size={size} />;
   if (model.includes('moonshot')) return <Moonshot.Avatar size={size} />;
-  if (model.includes('qwen')) return <Tongyi.Avatar background={Tongyi.colorPrimary} size={size} />;
+  if (model.includes('qwen')) return <Qwen.Avatar background={Qwen.colorPrimary} size={size} />;
   if (model.includes('minmax') || model.includes('abab')) return <Minimax.Avatar size={size} />;
   if (model.includes('pplx') || model.includes('sonar')) return <Perplexity.Avatar size={size} />;
   if (model.includes('yi-')) return <Yi.Avatar size={size} />;
