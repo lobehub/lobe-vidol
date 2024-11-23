@@ -86,7 +86,7 @@ export interface AgentStore extends TouchStore {
   /**
    * 更新角色配置
    */
-  updateAgentConfig: (agent: DeepPartial<Agent>, updateAgentId?: string) => void;
+  updateAgentConfig: (agent: DeepPartial<Agent>) => void;
   /**
    *  更新角色元数据
    */
@@ -165,12 +165,10 @@ const createAgentStore: StateCreator<AgentStore, [['zustand/devtools', never]]> 
 
     return newAgent;
   },
-  updateAgentConfig: (agent, updateAgentId) => {
+  updateAgentConfig: (agent) => {
     const { localAgentList, currentIdentifier, defaultAgent } = get();
 
-    const updateIdentifier = updateAgentId || currentIdentifier;
-
-    if (updateIdentifier === LOBE_VIDOL_DEFAULT_AGENT_ID) {
+    if (currentIdentifier === LOBE_VIDOL_DEFAULT_AGENT_ID) {
       const mergeAgent = produce(defaultAgent, (draft) => {
         mergeWithUndefined(draft, agent);
       });
@@ -179,7 +177,7 @@ const createAgentStore: StateCreator<AgentStore, [['zustand/devtools', never]]> 
     }
 
     const agents = produce(localAgentList, (draft) => {
-      const index = draft.findIndex((localAgent) => localAgent.agentId === updateIdentifier);
+      const index = draft.findIndex((localAgent) => localAgent.agentId === currentIdentifier);
       if (index === -1) return;
       mergeWithUndefined(draft[index], agent);
     });

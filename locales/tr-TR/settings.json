@@ -65,32 +65,80 @@
     "title": "Genel Ayarlar"
   },
   "llm": {
-    "check": {
-      "action": "Kontrol Et",
-      "desc": "API Anahtarınızın ve arayüz proxy adresinizin doğru ayarlandığını kontrol edin",
-      "error": "API çağrısı başarısız oldu, lütfen API Anahtarınızı ve arayüz proxy adresinizi doğru ayarladığınızdan emin olun",
-      "success": "Kontrol başarılı",
+    "aesGcm": "Anahtarınız ve proxy adresi gibi bilgiler <1>AES-GCM</1> şifreleme algoritması ile şifrelenecektir.",
+    "apiKey": {
+      "desc": "Lütfen {{name}} API Anahtarınızı girin",
+      "placeholder": "{{name}} API Anahtarı",
+      "title": "API Anahtarı"
+    },
+    "checker": {
+      "button": "Kontrol Et",
+      "desc": "API Anahtarının ve proxy adresinin doğru girilip girilmediğini test edin",
+      "error": "Kontrol Başarısız",
+      "pass": "Kontrol başarılı",
       "title": "Bağlantı Kontrolü"
     },
-    "openai": {
-      "apiKey": {
-        "desc": "Lütfen kendi OpenAI Anahtarınızı kullanın",
-        "title": "API Anahtarı"
-      },
-      "callError": "API çağrısı başarısız oldu, lütfen API Anahtarınızı ve arayüz proxy adresinizi doğru ayarladığınızdan emin olun",
-      "checkError": "Kontrol hatası, lütfen API Anahtarının ve arayüz proxy adresinin doğru ayarlandığını kontrol edin",
-      "checkOk": "Kontrol başarılı",
-      "fetchOnClient": {
-        "desc": "İstemci istek modu, oturum isteklerini doğrudan tarayıcıdan başlatarak yanıt hızını artırabilir",
-        "title": "İstemci Çağrısı"
-      },
-      "proxy": {
-        "desc": "http(s)://",
-        "title": "Arayüz Proxy Adresi"
-      },
-      "title": "OpenAI Dil Modeli"
+    "customModelCards": {
+      "addNew": "{{id}} modelini oluştur ve ekle",
+      "config": "Modeli yapılandır",
+      "confirmDelete": "Bu özel modeli silmek üzeresiniz, silindikten sonra geri alınamaz, lütfen dikkatli olun.",
+      "modelConfig": {
+        "azureDeployName": {
+          "extra": "Azure OpenAI'de gerçek istek için kullanılan alan",
+          "placeholder": "Lütfen Azure'daki model dağıtım adını girin",
+          "title": "Model Dağıtım Adı"
+        },
+        "displayName": {
+          "placeholder": "Lütfen modelin gösterim adını girin, örneğin ChatGPT, GPT-4 vb.",
+          "title": "Model Gösterim Adı"
+        },
+        "files": {
+          "extra": "Mevcut dosya yükleme uygulaması yalnızca bir Hack çözümüdür, yalnızca kendi denemeniz için geçerlidir. Tam dosya yükleme yeteneği için lütfen sonraki uygulamayı bekleyin.",
+          "title": "Dosya Yüklemeyi Destekle"
+        },
+        "functionCall": {
+          "extra": "Bu yapılandırma yalnızca uygulamadaki fonksiyon çağırma yeteneğini açacaktır, fonksiyon çağırma desteği tamamen modele bağlıdır, lütfen bu modelin fonksiyon çağırma yeteneğini kendiniz test edin.",
+          "title": "Fonksiyon Çağırmayı Destekle"
+        },
+        "id": {
+          "extra": "Model etiketi olarak gösterilecektir",
+          "placeholder": "Lütfen model id'sini girin, örneğin gpt-4-turbo-preview veya claude-2.1",
+          "title": "Model ID"
+        },
+        "modalTitle": "Özel Model Yapılandırması",
+        "tokens": {
+          "title": "Maksimum token sayısı",
+          "unlimited": "Sınırsız"
+        },
+        "vision": {
+          "extra": "Bu yapılandırma yalnızca uygulamadaki resim yükleme yapılandırmasını açacaktır, tanıma desteği tamamen modele bağlıdır, lütfen bu modelin görsel tanıma yeteneğini kendiniz test edin.",
+          "title": "Görsel Tanımayı Destekle"
+        }
+      }
     },
-    "title": "Büyük Dil Modeli"
+    "fetchOnClient": {
+      "desc": "İstemci talep modu, oturum taleplerini doğrudan tarayıcıdan başlatır ve yanıt hızını artırabilir",
+      "title": "İstemci talep modunu kullan"
+    },
+    "fetcher": {
+      "fetch": "Model listesini al",
+      "fetching": "Model listesi alınıyor...",
+      "latestTime": "Son güncelleme zamanı: {{time}}",
+      "noLatestTime": "Henüz liste alınmadı"
+    },
+    "helpDoc": "Yapılandırma kılavuzu",
+    "modelList": {
+      "desc": "Oturumda gösterilecek modeli seçin, seçilen model model listesinde gösterilecektir",
+      "placeholder": "Lütfen listeden bir model seçin",
+      "title": "Model listesi",
+      "total": "Toplam {{count}} model mevcut"
+    },
+    "proxyUrl": {
+      "desc": "Varsayılan adres dışında, http(s):// içermelidir",
+      "title": "API proxy adresi"
+    },
+    "title": "Dil Modeli",
+    "waitingForMore": "Daha fazla model <1>planlanıyor</1>, lütfen bekleyin"
   },
   "touch": {
     "title": "Dokunma Ayarları"

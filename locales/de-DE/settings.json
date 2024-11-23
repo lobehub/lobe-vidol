@@ -65,32 +65,80 @@
     "title": "Allgemeine Einstellungen"
   },
   "llm": {
-    "check": {
-      "action": "Überprüfen",
-      "desc": "Überprüfen Sie, ob der API-Schlüssel und die Schnittstellen-Proxy-Adresse korrekt eingestellt sind.",
-      "error": "Fehler beim Aufruf der Schnittstelle. Bitte überprüfen Sie, ob der API-Schlüssel und die Schnittstellen-Proxy-Adresse korrekt eingestellt sind.",
-      "success": "Überprüfung erfolgreich",
+    "aesGcm": "Ihr Schlüssel und die Proxy-Adresse werden mit dem <1>AES-GCM</1> Verschlüsselungsalgorithmus verschlüsselt.",
+    "apiKey": {
+      "desc": "Bitte geben Sie Ihren {{name}} API-Schlüssel ein.",
+      "placeholder": "{{name}} API-Schlüssel",
+      "title": "API-Schlüssel"
+    },
+    "checker": {
+      "button": "Überprüfen",
+      "desc": "Testen Sie, ob der API-Schlüssel und die Proxy-Adresse korrekt eingegeben wurden.",
+      "error": "Überprüfung fehlgeschlagen",
+      "pass": "Überprüfung bestanden",
       "title": "Verbindungsprüfung"
     },
-    "openai": {
-      "apiKey": {
-        "desc": "Bitte verwenden Sie Ihren eigenen OpenAI-Schlüssel",
-        "title": "API-Schlüssel"
-      },
-      "callError": "Fehler beim Aufruf der Schnittstelle. Bitte überprüfen Sie, ob der API-Schlüssel und die Schnittstellen-Proxy-Adresse korrekt eingestellt sind.",
-      "checkError": "Überprüfung fehlgeschlagen, bitte überprüfen Sie, ob der API-Schlüssel und die Proxy-Adresse korrekt eingestellt sind",
-      "checkOk": "Überprüfung erfolgreich",
-      "fetchOnClient": {
-        "desc": "Der Client-Anforderungsmodus initiiert die Sitzungsanfrage direkt aus dem Browser, was die Reaktionsgeschwindigkeit erhöhen kann",
-        "title": "Client-Anruf"
-      },
-      "proxy": {
-        "desc": "http(s)://",
-        "title": "Schnittstellen-Proxy-Adresse"
-      },
-      "title": "OpenAI Sprachmodell"
+    "customModelCards": {
+      "addNew": "Erstellen und Hinzufügen des {{id}} Modells",
+      "config": "Modell konfigurieren",
+      "confirmDelete": "Das benutzerdefinierte Modell wird gelöscht. Nach dem Löschen kann es nicht wiederhergestellt werden. Bitte vorsichtig vorgehen.",
+      "modelConfig": {
+        "azureDeployName": {
+          "extra": "Das Feld, das in Azure OpenAI tatsächlich angefordert wird.",
+          "placeholder": "Bitte geben Sie den Modellbereitstellungsnamen in Azure ein.",
+          "title": "Modellbereitstellungsname"
+        },
+        "displayName": {
+          "placeholder": "Bitte geben Sie den Anzeigenamen des Modells ein, z. B. ChatGPT, GPT-4 usw.",
+          "title": "Anzeigename des Modells"
+        },
+        "files": {
+          "extra": "Der aktuelle Datei-Upload ist nur eine Hack-Lösung und nur für eigene Versuche gedacht. Warten Sie auf die vollständige Implementierung der Datei-Upload-Funktion.",
+          "title": "Unterstützung für Datei-Uploads"
+        },
+        "functionCall": {
+          "extra": "Diese Konfiguration aktiviert nur die Funktionalität für Funktionsaufrufe in der Anwendung. Ob Funktionsaufrufe unterstützt werden, hängt vollständig vom Modell selbst ab. Bitte testen Sie die Verwendbarkeit der Funktionsaufrufe dieses Modells selbst.",
+          "title": "Unterstützung für Funktionsaufrufe"
+        },
+        "id": {
+          "extra": "Wird als Modell-Tag angezeigt.",
+          "placeholder": "Bitte geben Sie die Modell-ID ein, z. B. gpt-4-turbo-preview oder claude-2.1.",
+          "title": "Modell-ID"
+        },
+        "modalTitle": "Konfiguration des benutzerdefinierten Modells",
+        "tokens": {
+          "title": "Maximale Token-Anzahl",
+          "unlimited": "Unbegrenzt"
+        },
+        "vision": {
+          "extra": "Diese Konfiguration aktiviert nur die Bild-Upload-Funktionalität in der Anwendung. Ob die Erkennung unterstützt wird, hängt vollständig vom Modell selbst ab. Bitte testen Sie die Verwendbarkeit der visuellen Erkennungsfähigkeiten dieses Modells selbst.",
+          "title": "Unterstützung für visuelle Erkennung"
+        }
+      }
     },
-    "title": "Großes Sprachmodell"
+    "fetchOnClient": {
+      "desc": "Der Client-Anforderungsmodus initiiert die Sitzung direkt über den Browser, was die Reaktionsgeschwindigkeit erhöht.",
+      "title": "Client-Anforderungsmodus verwenden"
+    },
+    "fetcher": {
+      "fetch": "Modellliste abrufen",
+      "fetching": "Modellliste wird abgerufen...",
+      "latestTime": "Letzte Aktualisierung: {{time}}",
+      "noLatestTime": "Liste wurde noch nicht abgerufen"
+    },
+    "helpDoc": "Konfigurationsanleitung",
+    "modelList": {
+      "desc": "Wählen Sie die Modelle aus, die in der Sitzung angezeigt werden sollen. Die ausgewählten Modelle werden in der Modellliste angezeigt.",
+      "placeholder": "Bitte wählen Sie ein Modell aus der Liste aus",
+      "title": "Modellliste",
+      "total": "Insgesamt {{count}} Modelle verfügbar"
+    },
+    "proxyUrl": {
+      "desc": "Neben der Standardadresse muss http(s):// enthalten sein.",
+      "title": "API-Proxy-Adresse"
+    },
+    "title": "Sprachmodell",
+    "waitingForMore": "Weitere Modelle werden gerade <1>geplant</1>, bitte warten Sie."
   },
   "touch": {
     "title": "Berührungseinstellungen"

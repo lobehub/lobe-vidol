@@ -1,4 +1,7 @@
-import { ErrorTypeEnum } from '@/types/api';
+import { IPluginErrorType } from '@lobehub/chat-plugin-sdk';
+
+import { ILobeAgentRuntimeErrorType } from '@/libs/agent-runtime';
+import { ErrorType } from '@/types/fetch';
 
 import { LLMRoleType } from './llm';
 
@@ -6,18 +9,9 @@ import { LLMRoleType } from './llm';
  * 聊天消息错误对象
  */
 export interface ChatMessageError {
-  /**
-   * 错误的具体内容
-   */
   body?: any;
-  /**
-   * 错误信息
-   */
   message: string;
-  /**
-   * 错误类型
-   */
-  type: ErrorTypeEnum;
+  type: ErrorType | IPluginErrorType | ILobeAgentRuntimeErrorType;
 }
 
 /**

@@ -1,4 +1,14 @@
 {
+  "ModelSelect": {
+    "featureTag": {
+      "custom": "Modelo personalizado, a configuração padrão suporta chamadas de função e reconhecimento visual, por favor, verifique a disponibilidade dessas capacidades de acordo com a situação real",
+      "file": "Este modelo suporta upload de arquivos para leitura e reconhecimento",
+      "functionCall": "Este modelo suporta chamadas de função (Function Call)",
+      "tokens": "Este modelo suporta até {{tokens}} Tokens por sessão",
+      "vision": "Este modelo suporta reconhecimento visual"
+    },
+    "removed": "Este modelo não está na lista, se desmarcado, será removido automaticamente"
+  },
   "actions": {
     "add": "Adicionar",
     "copy": "Copiar",

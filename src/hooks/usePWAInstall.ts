@@ -14,7 +14,6 @@ export const usePWAInstall = () => {
     if (isOnServerSide) return;
     pwaInstallHandler.addListener((canInstall) => {
       setCanInstall(canInstall);
-      console.log('canInstall', canInstall);
     });
     return () => {
       pwaInstallHandler.removeListener(setCanInstall);

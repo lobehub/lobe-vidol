@@ -1,6 +1,6 @@
 import { VRMHumanBoneName as HumanoidBoneName, VRM } from '@pixiv/three-vrm';
 import { KeyframeTrack, Object3D, Quaternion, Skeleton, Vector3 } from 'three';
-import { BVHLoader } from 'three/examples/jsm/loaders/BVHLoader';
+import { BVHLoader } from 'three/examples/jsm/loaders/BVHLoader.js';
 
 import { centerOfDescendant, transverse } from '@/utils/three-helpers';
 
@@ -187,7 +187,7 @@ function detectSkeleton(skeleton: Skeleton) {
   return finalMap;
 }
 
-export function convert(data: ArrayBufferLike, vrm: VRM) {
+export function convert(data: AllowSharedBufferSource, vrm: VRM) {
   const textDecoder = new TextDecoder();
   const { clip, skeleton } = new BVHLoader().parse(textDecoder.decode(data));
   const keepTracks = new Set<KeyframeTrack>();

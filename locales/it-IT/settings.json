@@ -65,32 +65,80 @@
     "title": "Impostazioni generali"
   },
   "llm": {
-    "check": {
-      "action": "Controlla",
-      "desc": "Controlla se l'API Key e l'indirizzo del proxy sono impostati correttamente",
-      "error": "Chiamata all'interfaccia fallita, controlla se l'API Key e l'indirizzo del proxy sono impostati correttamente",
-      "success": "Controllo superato",
-      "title": "Controllo di Connettività"
+    "aesGcm": "La tua chiave e l'indirizzo del proxy saranno crittografati utilizzando l'algoritmo di crittografia <1>AES-GCM</1>",
+    "apiKey": {
+      "desc": "Si prega di inserire la tua {{name}} API Key",
+      "placeholder": "{{name}} API Key",
+      "title": "API Key"
     },
-    "openai": {
-      "apiKey": {
-        "desc": "Si prega di utilizzare la propria OpenAI Key",
-        "title": "API Key"
-      },
-      "callError": "Chiamata all'interfaccia fallita, controlla se l'API Key e l'indirizzo del proxy sono impostati correttamente",
-      "checkError": "Controlla errore, verifica se l'APIKey e l'indirizzo del proxy sono impostati correttamente",
-      "checkOk": "Controllo superato",
-      "fetchOnClient": {
-        "desc": "La modalità di richiesta client avvierà direttamente la richiesta di sessione dal browser, migliorando la velocità di risposta",
-        "title": "Chiamata client"
-      },
-      "proxy": {
-        "desc": "http(s)://",
-        "title": "Indirizzo del Proxy"
-      },
-      "title": "Modello di Linguaggio OpenAI"
+    "checker": {
+      "button": "Controlla",
+      "desc": "Verifica se l'API Key e l'indirizzo del proxy sono stati inseriti correttamente",
+      "error": "Controllo fallito",
+      "pass": "Controllo superato",
+      "title": "Verifica connettività"
     },
-    "title": "Modello di Linguaggio di Grandi Dimensioni"
+    "customModelCards": {
+      "addNew": "Crea e aggiungi il modello {{id}}",
+      "config": "Configura il modello",
+      "confirmDelete": "Stai per eliminare questo modello personalizzato, una volta eliminato non sarà recuperabile, procedi con cautela.",
+      "modelConfig": {
+        "azureDeployName": {
+          "extra": "Campo richiesto per la richiesta effettiva in Azure OpenAI",
+          "placeholder": "Inserisci il nome del modello distribuito in Azure",
+          "title": "Nome distribuzione modello"
+        },
+        "displayName": {
+          "placeholder": "Inserisci il nome di visualizzazione del modello, ad esempio ChatGPT, GPT-4, ecc.",
+          "title": "Nome di visualizzazione modello"
+        },
+        "files": {
+          "extra": "L'attuale implementazione del caricamento file è solo una soluzione temporanea, limitata a tentativi personali. Attendere implementazioni complete per la capacità di caricamento file.",
+          "title": "Supporto per il caricamento file"
+        },
+        "functionCall": {
+          "extra": "Questa configurazione abiliterà solo la capacità di chiamata di funzioni nell'app, il supporto per le chiamate di funzioni dipende interamente dal modello stesso, si prega di testare la disponibilità delle chiamate di funzioni di questo modello.",
+          "title": "Supporto per chiamate di funzioni"
+        },
+        "id": {
+          "extra": "Sarà visualizzato come etichetta del modello",
+          "placeholder": "Inserisci l'id del modello, ad esempio gpt-4-turbo-preview o claude-2.1",
+          "title": "ID modello"
+        },
+        "modalTitle": "Configurazione modello personalizzato",
+        "tokens": {
+          "title": "Numero massimo di token",
+          "unlimited": "Illimitato"
+        },
+        "vision": {
+          "extra": "Questa configurazione abiliterà solo la configurazione di caricamento immagini nell'app, il supporto per il riconoscimento dipende interamente dal modello stesso, si prega di testare la disponibilità delle capacità di riconoscimento visivo di questo modello.",
+          "title": "Supporto per riconoscimento visivo"
+        }
+      }
+    },
+    "fetchOnClient": {
+      "desc": "La modalità di richiesta client invierà direttamente la richiesta di sessione dal browser, migliorando la velocità di risposta",
+      "title": "Utilizza la modalità di richiesta client"
+    },
+    "fetcher": {
+      "fetch": "Ottieni l'elenco dei modelli",
+      "fetching": "Sto ottenendo l'elenco dei modelli...",
+      "latestTime": "Ultimo aggiornamento: {{time}}",
+      "noLatestTime": "Elenco non ancora ottenuto"
+    },
+    "helpDoc": "Guida alla configurazione",
+    "modelList": {
+      "desc": "Seleziona i modelli da visualizzare nella sessione; i modelli selezionati verranno mostrati nell'elenco dei modelli",
+      "placeholder": "Seleziona un modello dall'elenco",
+      "title": "Elenco dei modelli",
+      "total": "Totale di {{count}} modelli disponibili"
+    },
+    "proxyUrl": {
+      "desc": "Oltre all'indirizzo predefinito, deve includere http(s)://",
+      "title": "Indirizzo proxy API"
+    },
+    "title": "Modello Linguistico",
+    "waitingForMore": "Altri modelli sono in fase di <1>programmazione per l'integrazione</1>, resta sintonizzato"
   },
   "touch": {
     "title": "Impostazioni di tocco"

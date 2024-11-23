@@ -1,4 +1,14 @@
 {
+  "ModelSelect": {
+    "featureTag": {
+      "custom": "Özelleştirilmiş model, varsayılan ayarlarla hem fonksiyon çağrısını hem de görsel tanımayı destekler, yukarıdaki yeteneklerin kullanılabilirliğini gerçek duruma göre doğrulayın",
+      "file": "Bu model dosya yüklemeyi ve tanımayı destekler",
+      "functionCall": "Bu model fonksiyon çağrısını (Function Call) destekler",
+      "tokens": "Bu model tek bir oturumda en fazla {{tokens}} Token destekler",
+      "vision": "Bu model görsel tanımayı destekler"
+    },
+    "removed": "Bu model listede yok, eğer seçimden çıkarırsanız otomatik olarak kaldırılacaktır"
+  },
   "actions": {
     "add": "Ekle",
     "copy": "Kopyala",

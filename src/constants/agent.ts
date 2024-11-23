@@ -1,16 +1,19 @@
 import { DEFAULT_TTS_CONFIG_FEMALE } from '@/constants/tts';
+import { ModelProvider } from '@/libs/agent-runtime';
 import { Agent, CategoryEnum, GenderEnum } from '@/types/agent';
 
 export const LOBE_VIDOL_DEFAULT_AGENT_ID = 'lobe-vidol-default-agent';
 const OFFICIAL_ROLE_NAME = '莉莉娅';
 
 export const DEFAULT_CHAT_MODEL = 'gpt-4o-mini';
+export const DEFAULT_CHAT_PROVIDER = ModelProvider.OpenAI;
 
 /**
  * 默认使用的 ChatGPT 聊天模型配置
  */
 export const DEFAULT_LLM_CONFIG: Partial<Agent> = {
   model: DEFAULT_CHAT_MODEL,
+  provider: DEFAULT_CHAT_PROVIDER,
   params: {
     frequency_penalty: 0,
     presence_penalty: 0,

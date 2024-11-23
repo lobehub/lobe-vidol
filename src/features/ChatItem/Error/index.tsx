@@ -1,14 +1,27 @@
+import { IPluginErrorType } from '@lobehub/chat-plugin-sdk';
 import type { AlertProps } from '@lobehub/ui';
-import { memo } from 'react';
+import { Skeleton } from 'antd';
+import dynamic from 'next/dynamic';
+import { Suspense, memo, useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 
-import { ErrorTypeEnum } from '@/types/api';
-import { ChatMessage, ChatMessageError } from '@/types/chat';
+import { useProviderName } from '@/hooks/useProviderName';
+import { AgentRuntimeErrorType, ILobeAgentRuntimeErrorType } from '@/libs/agent-runtime';
+import { ErrorType } from '@/types/fetch';
+import { ChatMessage, ChatMessageError } from '@/types/message';
 
-import ApiError from './ApiError';
 import ErrorJsonViewer from './ErrorJsonViewer';
-import OpenAPIKey from './OpenAPIKey';
+import InvalidAPIKey from './InvalidAPIKey';
 
-export const getErrorAlertConfig = (errorType?: ErrorTypeEnum): AlertProps | undefined => {
+const loading = () => <Skeleton active />;
+
+const OllamaBizError = dynamic(() => import('./OllamaBizError'), { loading, ssr: false });
+
+// Config for the errorMessage display
+const getErrorAlertConfig = (
+  errorType?: IPluginErrorType | ILobeAgentRuntimeErrorType | ErrorType,
+): AlertProps | undefined => {
+  // OpenAIBizError / ZhipuBizError / GoogleBizError / ...
   if (typeof errorType === 'string' && (errorType.includes('Biz') || errorType.includes('Invalid')))
     return {
       extraDefaultExpand: true,
@@ -17,11 +30,10 @@ export const getErrorAlertConfig = (errorType?: ErrorTypeEnum): AlertProps | und
     };
 
   switch (errorType) {
-    case ErrorTypeEnum.OPENAI_API_ERROR:
-    case ErrorTypeEnum.API_KEY_MISSING: {
+    case AgentRuntimeErrorType.PermissionDenied:
+    case AgentRuntimeErrorType.QuotaLimitReached:
+    case AgentRuntimeErrorType.LocationNotSupportError: {
       return {
-        extraDefaultExpand: true,
-        extraIsolate: true,
         type: 'warning',
       };
     }
@@ -32,23 +44,46 @@ export const getErrorAlertConfig = (errorType?: ErrorTypeEnum): AlertProps | und
   }
 };
 
+export const useErrorContent = (error: any) => {
+  const { t } = useTranslation('error');
+  const providerName = useProviderName(error?.body?.provider || '');
+
+  return useMemo<AlertProps | undefined>(() => {
+    if (!error) return;
+    const messageError = error;
+
+    const alertConfig = getErrorAlertConfig(messageError.type);
+
+    return {
+      message: t(`response.${messageError.type}` as any, { provider: providerName }),
+      ...alertConfig,
+    };
+  }, [error]);
+};
+
 const ErrorMessageExtra = memo<{ data: ChatMessage }>(({ data }) => {
   const error = data.error as ChatMessageError;
   if (!error?.type) return;
 
   switch (error.type) {
-    case ErrorTypeEnum.API_KEY_MISSING: {
-      return <OpenAPIKey id={data.id} />;
-    }
+    // case PluginErrorType.PluginSettingsInvalid: {
+    //   return <PluginSettings id={data.id} plugin={data.plugin} />;
+    // }
 
-    case ErrorTypeEnum.OPENAI_API_ERROR: {
-      return <ApiError {...data} />;
-    }
-
-    default: {
-      return <ErrorJsonViewer error={data.error} id={data.id} />;
+    case AgentRuntimeErrorType.OllamaBizError: {
+      return <OllamaBizError {...data} />;
     }
   }
+
+  if (error.type.toString().includes('Invalid')) {
+    return <InvalidAPIKey id={data.id} provider={data.error?.body?.provider} />;
+  }
+
+  return <ErrorJsonViewer error={data.error} id={data.id} />;
 });
 
-export default ErrorMessageExtra;
+export default memo<{ data: ChatMessage }>(({ data }) => (
+  <Suspense fallback={<Skeleton active style={{ width: '100%' }} />}>
+    <ErrorMessageExtra data={data} />
+  </Suspense>
+));

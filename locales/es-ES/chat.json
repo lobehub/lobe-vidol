@@ -1,4 +1,14 @@
 {
+  "ModelSelect": {
+    "featureTag": {
+      "custom": "Modelo personalizado, la configuración predeterminada admite tanto llamadas a funciones como reconocimiento visual. Verifique la disponibilidad de estas capacidades según su situación real.",
+      "file": "Este modelo admite la carga de archivos para lectura y reconocimiento.",
+      "functionCall": "Este modelo admite llamadas a funciones (Function Call).",
+      "tokens": "Este modelo admite un máximo de {{tokens}} tokens por sesión.",
+      "vision": "Este modelo admite reconocimiento visual."
+    },
+    "removed": "Este modelo no está en la lista, si se deselecciona, se eliminará automáticamente."
+  },
   "actions": {
     "add": "Añadir",
     "copy": "Copiar",

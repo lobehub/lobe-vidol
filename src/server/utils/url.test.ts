@@ -2,6 +2,8 @@
 import urlJoin from 'url-join';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
+import { siteUrl } from './url';
+
 // 模拟 urlJoin 函数
 vi.mock('url-join', () => ({
   default: vi.fn((...args) => args.join('/')),
@@ -27,8 +29,8 @@ describe('getCanonicalUrl', () => {
 
     const { getCanonicalUrl } = await import('./url'); // 动态导入以获取最新的环境变量状态
     const result = getCanonicalUrl('path', 'to', 'page');
-    expect(result).toBe('https://lobechat.com/path/to/page');
-    expect(urlJoin).toHaveBeenCalledWith('https://lobechat.com', 'path', 'to', 'page');
+    expect(result).toBe(`${siteUrl}/path/to/page`);
+    expect(urlJoin).toHaveBeenCalledWith(siteUrl, 'path', 'to', 'page');
   });
 
   it('should return correct URL for Vercel preview environment', async () => {
@@ -48,14 +50,14 @@ describe('getCanonicalUrl', () => {
 
     const { getCanonicalUrl } = await import('./url'); // 动态导入
     const result = getCanonicalUrl('path', 'to', 'page');
-    expect(result).toBe('https://lobechat.com/path/to/page');
-    expect(urlJoin).toHaveBeenCalledWith('https://lobechat.com', 'path', 'to', 'page');
+    expect(result).toBe(`${siteUrl}/path/to/page`);
+    expect(urlJoin).toHaveBeenCalledWith(siteUrl, 'path', 'to', 'page');
   });
 
   it('should work correctly without additional path arguments', async () => {
     const { getCanonicalUrl } = await import('./url'); // 动态导入
     const result = getCanonicalUrl();
-    expect(result).toBe('https://lobechat.com');
-    expect(urlJoin).toHaveBeenCalledWith('https://lobechat.com');
+    expect(result).toBe(siteUrl);
+    expect(urlJoin).toHaveBeenCalledWith(siteUrl);
   });
 });

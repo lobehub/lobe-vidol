@@ -1,5 +1,5 @@
 import { VRMHumanoid, VRMLookAt, VRMLookAtLoaderPlugin } from '@pixiv/three-vrm';
-import { GLTF } from 'three/examples/jsm/loaders/GLTFLoader';
+import { GLTF, GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
 import { VRMLookAtSmoother } from './VRMLookAtSmoother';
 

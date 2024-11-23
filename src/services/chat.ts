@@ -1,73 +1,239 @@
-import { OpenAIStream, StreamingTextResponse } from 'ai';
-import OpenAI from 'openai';
-
-import { DEFAULT_CHAT_MODEL } from '@/constants/agent';
-import { OPENAI_API_KEY, OPENAI_END_POINT } from '@/constants/openai';
+import { DEFAULT_MODEL_PROVIDER_LIST } from '@/config/modelProviders';
+import { DEFAULT_CHAT_MODEL, DEFAULT_CHAT_PROVIDER } from '@/constants/agent';
+import { AgentRuntime, ChatCompletionErrorPayload, ModelProvider } from '@/libs/agent-runtime';
 import { speakCharacter } from '@/libs/messages/speakCharacter';
 import { useGlobalStore } from '@/store/global';
 import { sessionSelectors, useSessionStore } from '@/store/session';
-import { configSelectors, useSettingStore } from '@/store/setting';
+import { useSettingStore } from '@/store/setting';
+import { modelConfigSelectors } from '@/store/setting/selectors/modelConfig';
+import { modelProviderSelectors } from '@/store/setting/selectors/modelProvider';
 import { ChatMessage } from '@/types/chat';
-import { ChatStreamPayload } from '@/types/openai/chat';
+import { ChatErrorType } from '@/types/fetch';
+import { ChatStreamPayload } from '@/types/provider/chat';
+import { createErrorResponse } from '@/utils/errorResponse';
+import { FetchSSEOptions, fetchSSE } from '@/utils/fetch';
 
-const createHeader = (header?: any) => {
-  const config = configSelectors.currentOpenAIConfig(useSettingStore.getState());
-  return {
-    'Content-Type': 'application/json',
-    [OPENAI_API_KEY]: config?.apikey || '',
-    [OPENAI_END_POINT]: config?.endpoint || '',
-    ...header,
-  };
-};
+import { createHeaderWithAuth, getProviderAuthPayload } from './_auth';
 
 interface ChatCompletionPayload extends Partial<Omit<ChatStreamPayload, 'messages'>> {
   messages: ChatMessage[];
 }
 
-interface ChatCompletionOptions {
-  signal?: AbortSignal;
+interface FetchOptions extends FetchSSEOptions {
+  historySummary?: string;
+  isWelcomeQuestion?: boolean;
+  signal?: AbortSignal | undefined;
 }
 
-export const chatCompletion = async (
-  payload: ChatCompletionPayload,
-  options?: ChatCompletionOptions,
-) => {
-  const { messages, model } = payload;
+/**
+ * Initializes the AgentRuntime with the client store.
+ * @param provider - The provider name.
+ * @param payload - Init options
+ * @returns The initialized AgentRuntime instance
+ *
+ * **Note**: if you try to fetch directly, use `fetchOnClient` instead.
+ */
+export function initializeWithClientStore(provider: string, payload: any) {
+  // add auth payload
+  const providerAuthPayload = getProviderAuthPayload(provider);
+  const commonOptions = {
+    // Some provider base openai sdk, so enable it run on browser
+    dangerouslyAllowBrowser: true,
+  };
+  let providerOptions = {};
 
-  const postMessages = messages.map((m) => ({ content: m.content, role: m.role }));
+  switch (provider) {
+    default:
+    case ModelProvider.OpenAI: {
+      providerOptions = {
+        baseURL: providerAuthPayload?.endpoint,
+      };
+      break;
+    }
+    case ModelProvider.Azure: {
+      providerOptions = {
+        apiVersion: providerAuthPayload?.azureApiVersion,
+        // That's a wired properity, but just remapped it
+        apikey: providerAuthPayload?.apiKey,
+      };
+      break;
+    }
+    case ModelProvider.ZhiPu: {
+      break;
+    }
+    case ModelProvider.Google: {
+      providerOptions = {
+        baseURL: providerAuthPayload?.endpoint,
+      };
+      break;
+    }
+    case ModelProvider.Moonshot: {
+      break;
+    }
+    case ModelProvider.Bedrock: {
+      if (providerAuthPayload?.apiKey) {
+        providerOptions = {
+          accessKeyId: providerAuthPayload?.awsAccessKeyId,
+          accessKeySecret: providerAuthPayload?.awsSecretAccessKey,
+          region: providerAuthPayload?.awsRegion,
+          sessionToken: providerAuthPayload?.awsSessionToken,
+        };
+      }
+      break;
+    }
+    case ModelProvider.Ollama: {
+      providerOptions = {
+        baseURL: providerAuthPayload?.endpoint,
+      };
+      break;
+    }
+    case ModelProvider.Perplexity: {
+      providerOptions = {
+        apikey: providerAuthPayload?.apiKey,
+        baseURL: providerAuthPayload?.endpoint,
+      };
+      break;
+    }
+    case ModelProvider.Qwen: {
+      break;
+    }
 
-  const config = configSelectors.currentOpenAIConfig(useSettingStore.getState());
-  const enableFetchOnClient = config.fetchOnClient;
+    case ModelProvider.Anthropic: {
+      providerOptions = {
+        baseURL: providerAuthPayload?.endpoint,
+      };
+      break;
+    }
 
-  if (enableFetchOnClient) {
-    const openai = new OpenAI({
-      apiKey: config.apikey,
-      baseURL: config.endpoint,
-      // 允许在浏览器中使用
-      dangerouslyAllowBrowser: true,
-    });
-
-    const completion = await openai.chat.completions.create({
-      ...payload,
-      messages: postMessages,
-      model: model || DEFAULT_CHAT_MODEL,
-      stream: true,
-    });
-
-    const stream = OpenAIStream(completion);
-
-    return new StreamingTextResponse(stream);
+    case ModelProvider.Groq: {
+      providerOptions = {
+        apikey: providerAuthPayload?.apiKey,
+        baseURL: providerAuthPayload?.endpoint,
+      };
+      break;
+    }
+    case ModelProvider.DeepSeek: {
+      break;
+    }
+    case ModelProvider.OpenRouter: {
+      break;
+    }
+    case ModelProvider.TogetherAI: {
+      break;
+    }
+    case ModelProvider.ZeroOne: {
+      break;
+    }
   }
 
-  // 使用服务端调用
-  return await fetch('/api/chat/openai', {
-    body: JSON.stringify({
+  /**
+   * Configuration override order:
+   * payload -> providerOptions -> providerAuthPayload -> commonOptions
+   */
+  return AgentRuntime.initializeWithProviderOptions(provider, {
+    [provider]: {
+      ...commonOptions,
+      ...providerAuthPayload,
+      ...providerOptions,
       ...payload,
-      messages: postMessages,
-    }),
-    headers: createHeader(),
+    },
+  });
+}
+
+/**
+   * Fetch chat completion on the client side.
+
+   */
+const fetchOnClient = async (params: {
+  payload: Partial<ChatStreamPayload>;
+  provider: string;
+  signal?: AbortSignal;
+}) => {
+  const agentRuntime = await initializeWithClientStore(params.provider, params.payload);
+  const data = params.payload as ChatStreamPayload;
+
+  /**
+   * if enable login and not signed in, return unauthorized error
+   */
+  // const userStore = useUserStore.getState();
+  // if (userStore.enableAuth() && !userStore.isSignedIn) {
+  //   throw AgentRuntimeError.createError(ChatErrorType.InvalidAccessCode);
+  // }
+
+  return agentRuntime.chat(data, { signal: params.signal });
+};
+
+export const chatCompletion = async (params: ChatCompletionPayload, options?: FetchOptions) => {
+  const { provider = DEFAULT_CHAT_PROVIDER, messages, ...res } = params;
+  const { signal } = options ?? {};
+
+  let model = res.model || DEFAULT_CHAT_MODEL;
+
+  if (provider === ModelProvider.Azure) {
+    const chatModelCards = modelProviderSelectors.getModelCardsById(provider)(
+      useSettingStore.getState(),
+    );
+
+    const deploymentName = chatModelCards.find((i) => i.id === model)?.deploymentName;
+    if (deploymentName) model = deploymentName;
+  }
+
+  const postMessages = messages.map((message) => ({
+    role: message.role,
+    content: message.content,
+  }));
+
+  const payload = { ...res, model, messages: postMessages };
+
+  /**
+   * Use browser agent runtime
+   */
+  const enableFetchOnClient = modelConfigSelectors.isProviderFetchOnClient(provider)(
+    useSettingStore.getState(),
+  );
+
+  let fetcher: typeof fetch | undefined = undefined;
+
+  if (enableFetchOnClient) {
+    fetcher = async () => {
+      try {
+        return await fetchOnClient({ payload, provider, signal });
+      } catch (e) {
+        const {
+          errorType = ChatErrorType.BadRequest,
+          error: errorContent,
+          ...res
+        } = e as ChatCompletionErrorPayload;
+
+        const error = errorContent || e;
+        // track the error at server side
+        console.error(`Route: [${provider}] ${errorType}:`, error);
+
+        return createErrorResponse(errorType, { error, ...res, provider });
+      }
+    };
+  }
+
+  const headers = await createHeaderWithAuth({
+    headers: { 'Content-Type': 'application/json' },
+    provider,
+  });
+
+  const providerConfig = DEFAULT_MODEL_PROVIDER_LIST.find((item) => item.id === provider);
+
+  return fetchSSE(`/api/chat/${provider}`, {
+    body: JSON.stringify(payload),
+    fetcher: fetcher,
+    headers,
     method: 'POST',
-    signal: options?.signal,
+    onAbort: options?.onAbort,
+    onErrorHandle: options?.onErrorHandle,
+    onFinish: options?.onFinish,
+    onMessageHandle: options?.onMessageHandle,
+    signal,
+    // use smoothing when enable client fetch
+    // https://github.com/lobehub/lobe-chat/issues/3800
+    smoothing: providerConfig?.smoothing || enableFetchOnClient,
   });
 };
 

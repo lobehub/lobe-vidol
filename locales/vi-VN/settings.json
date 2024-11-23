@@ -65,32 +65,80 @@
     "title": "Cài đặt chung"
   },
   "llm": {
-    "check": {
-      "action": "Kiểm tra",
-      "desc": "Kiểm tra xem API Key và địa chỉ proxy đã được thiết lập đúng chưa",
-      "error": "Gọi API thất bại, vui lòng kiểm tra xem API Key và địa chỉ proxy đã được thiết lập đúng chưa",
-      "success": "Kiểm tra thành công",
+    "aesGcm": "Khóa của bạn và địa chỉ proxy sẽ được mã hóa bằng thuật toán <1>AES-GCM</1>",
+    "apiKey": {
+      "desc": "Vui lòng điền {{name}} API Key của bạn",
+      "placeholder": "{{name}} API Key",
+      "title": "API Key"
+    },
+    "checker": {
+      "button": "Kiểm tra",
+      "desc": "Kiểm tra xem Api Key và địa chỉ proxy đã được điền đúng chưa",
+      "error": "Kiểm tra không thành công",
+      "pass": "Kiểm tra thành công",
       "title": "Kiểm tra kết nối"
     },
-    "openai": {
-      "apiKey": {
-        "desc": "Vui lòng sử dụng API Key của riêng bạn",
-        "title": "API Key"
-      },
-      "callError": "Gọi API thất bại, vui lòng kiểm tra xem API Key và địa chỉ proxy đã được thiết lập đúng chưa",
-      "checkError": "Kiểm tra thất bại, vui lòng kiểm tra xem APIKey và địa chỉ proxy có được thiết lập đúng không",
-      "checkOk": "Kiểm tra thành công",
-      "fetchOnClient": {
-        "desc": "Chế độ yêu cầu từ khách hàng sẽ khởi động yêu cầu phiên trực tiếp từ trình duyệt, có thể cải thiện tốc độ phản hồi",
-        "title": "Gọi từ phía khách hàng"
-      },
-      "proxy": {
-        "desc": "http(s)://",
-        "title": "Địa chỉ proxy API"
-      },
-      "title": "Mô hình ngôn ngữ OpenAI"
+    "customModelCards": {
+      "addNew": "Tạo và thêm mô hình {{id}}",
+      "config": "Cấu hình mô hình",
+      "confirmDelete": "Bạn sắp xóa mô hình tùy chỉnh này, sau khi xóa sẽ không thể khôi phục, xin hãy cẩn thận.",
+      "modelConfig": {
+        "azureDeployName": {
+          "extra": "Trường thực tế được yêu cầu trong Azure OpenAI",
+          "placeholder": "Vui lòng nhập tên triển khai mô hình trong Azure",
+          "title": "Tên triển khai mô hình"
+        },
+        "displayName": {
+          "placeholder": "Vui lòng nhập tên hiển thị của mô hình, ví dụ ChatGPT, GPT-4, v.v.",
+          "title": "Tên hiển thị mô hình"
+        },
+        "files": {
+          "extra": "Chức năng tải lên tệp hiện tại chỉ là một giải pháp Hack, chỉ dành cho thử nghiệm cá nhân. Vui lòng chờ đợi khả năng tải lên tệp hoàn chỉnh trong các bản cập nhật sau.",
+          "title": "Hỗ trợ tải lên tệp"
+        },
+        "functionCall": {
+          "extra": "Cấu hình này chỉ mở khả năng gọi hàm trong ứng dụng, việc hỗ trợ gọi hàm hoàn toàn phụ thuộc vào mô hình, vui lòng tự kiểm tra khả năng gọi hàm của mô hình này.",
+          "title": "Hỗ trợ gọi hàm"
+        },
+        "id": {
+          "extra": "Sẽ được hiển thị dưới dạng nhãn mô hình",
+          "placeholder": "Vui lòng nhập id mô hình, ví dụ gpt-4-turbo-preview hoặc claude-2.1",
+          "title": "ID mô hình"
+        },
+        "modalTitle": "Cấu hình mô hình tùy chỉnh",
+        "tokens": {
+          "title": "Số lượng token tối đa",
+          "unlimited": "Không giới hạn"
+        },
+        "vision": {
+          "extra": "Cấu hình này chỉ mở khả năng tải lên hình ảnh trong ứng dụng, việc hỗ trợ nhận diện hoàn toàn phụ thuộc vào mô hình, vui lòng tự kiểm tra khả năng nhận diện hình ảnh của mô hình này.",
+          "title": "Hỗ trợ nhận diện hình ảnh"
+        }
+      }
     },
-    "title": "Mô hình ngôn ngữ lớn"
+    "fetchOnClient": {
+      "desc": "Chế độ yêu cầu từ khách hàng sẽ gửi yêu cầu phiên trực tiếp từ trình duyệt, có thể cải thiện tốc độ phản hồi",
+      "title": "Sử dụng chế độ yêu cầu từ khách hàng"
+    },
+    "fetcher": {
+      "fetch": "Lấy danh sách mô hình",
+      "fetching": "Đang lấy danh sách mô hình...",
+      "latestTime": "Thời gian cập nhật lần cuối: {{time}}",
+      "noLatestTime": "Chưa lấy được danh sách"
+    },
+    "helpDoc": "Hướng dẫn cấu hình",
+    "modelList": {
+      "desc": "Chọn mô hình sẽ hiển thị trong phiên, mô hình đã chọn sẽ được hiển thị trong danh sách mô hình",
+      "placeholder": "Vui lòng chọn mô hình từ danh sách",
+      "title": "Danh sách mô hình",
+      "total": "Tổng cộng có {{count}} mô hình khả dụng"
+    },
+    "proxyUrl": {
+      "desc": "Ngoài địa chỉ mặc định, phải bao gồm http(s)://",
+      "title": "Địa chỉ proxy API"
+    },
+    "title": "Mô hình ngôn ngữ",
+    "waitingForMore": "Nhiều mô hình hơn đang <1>được lên kế hoạch kết nối</1>, xin hãy chờ đợi"
   },
   "touch": {
     "title": "Cài đặt chạm"

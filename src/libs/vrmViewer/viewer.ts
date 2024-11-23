@@ -12,9 +12,9 @@ import {
   PlaneGeometry,
   Vector3,
 } from 'three';
-import { MMDAnimationHelper } from 'three/examples/jsm/animation/MMDAnimationHelper';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-import { MMDLoader } from 'three/examples/jsm/loaders/MMDLoader';
+import { MMDAnimationHelper } from 'three/examples/jsm/animation/MMDAnimationHelper.js';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+import { MMDLoader } from 'three/examples/jsm/loaders/MMDLoader.js';
 
 import { loadVMDCamera } from '@/libs/VMDAnimation/loadVMDCamera';
 import { MotionFileType } from '@/libs/emoteController/type';

@@ -1,10 +1,13 @@
-import { Select } from 'antd';
+import { Select, SelectProps } from 'antd';
 import { createStyles } from 'antd-style';
-import { memo } from 'react';
+import isEqual from 'fast-deep-equal';
+import { memo, useMemo } from 'react';
 
-import { ModelItemRender } from '@/components/ModelSelect';
-import { OPENAI_MODEL_LIST } from '@/constants/openai';
+import { ModelItemRender, ProviderItemRender } from '@/components/ModelSelect';
 import { agentSelectors, useAgentStore } from '@/store/agent';
+import { useSettingStore } from '@/store/setting';
+import { modelProviderSelectors } from '@/store/setting/selectors';
+import { ModelProviderCard } from '@/types/llm';
 
 const useStyles = createStyles(({ css, prefixCls }) => ({
   select: css`
@@ -14,23 +17,61 @@ const useStyles = createStyles(({ css, prefixCls }) => ({
   `,
 }));
 
-const ModelSelect = memo(() => {
-  const { styles } = useStyles();
-  const [model, updateAgentConfig] = useAgentStore((s) => [
-    agentSelectors.currentAgentItem(s)?.model,
+interface ModelOption {
+  label: any;
+  provider: string;
+  value: string;
+}
+
+interface ModelSelectProps {
+  onChange?: (props: { model: string; provider: string }) => void;
+  showAbility?: boolean;
+}
+
+const ModelSelect = memo<ModelSelectProps>(({ showAbility = true }) => {
+  const enabledList = useSettingStore(
+    modelProviderSelectors.modelProviderListForModelSelect,
+    isEqual,
+  );
+
+  const [model, provider, updateAgentConfig] = useAgentStore((s) => [
+    agentSelectors.currentAgentModel(s),
+    agentSelectors.currentAgentProvider(s),
     s.updateAgentConfig,
   ]);
 
+  const { styles } = useStyles();
+
+  const options = useMemo<SelectProps['options']>(() => {
+    const getChatModels = (provider: ModelProviderCard) =>
+      provider.chatModels.map((model) => ({
+        label: <ModelItemRender {...model} showInfoTag={showAbility} />,
+        provider: provider.id,
+        value: `${provider.id}/${model.id}`,
+      }));
+
+    if (enabledList.length === 1) {
+      const provider = enabledList[0];
+
+      return getChatModels(provider);
+    }
+
+    return enabledList.map((provider) => ({
+      label: <ProviderItemRender name={provider.name} provider={provider.id} />,
+      options: getChatModels(provider),
+    }));
+  }, [enabledList]);
+
   return (
     <Select
-      options={OPENAI_MODEL_LIST.map((model) => ({
-        label: <ModelItemRender {...model} />,
-        value: model.id,
-      }))}
+      onChange={(value, option) => {
+        const model = value.split('/').slice(1).join('/');
+        updateAgentConfig({ model, provider: (option as unknown as ModelOption).provider });
+      }}
+      options={options}
       popupClassName={styles.select}
-      value={model}
-      onChange={(value) => updateAgentConfig({ model: value })}
-      placeholder="请选择"
+      popupMatchSelectWidth={false}
+      value={`${provider}/${model}`}
     />
   );
 });

@@ -1,4 +1,81 @@
+import { ReactNode } from 'react';
+
+export type ModelPriceCurrency = 'CNY' | 'USD';
+
 export type LLMRoleType = 'user' | 'assistant' | 'system';
+
+export interface SmoothingParams {
+  speed?: number;
+  text?: boolean;
+  toolsCalling?: boolean;
+}
+
+export interface ModelProviderCard {
+  chatModels: ChatModelCard[];
+  /**
+   * the default model that used for connection check
+   */
+  checkModel?: string;
+  /**
+   * whether provider show browser request option by default
+   *
+   * @default false
+   */
+  defaultShowBrowserRequest?: boolean;
+  description?: string;
+  /**
+   * some provider server like stepfun and aliyun don't support browser request,
+   * So we should disable it
+   *
+   * @default false
+   */
+  disableBrowserRequest?: boolean;
+  /**
+   * whether provider is enabled by default
+   */
+  enabled?: boolean;
+  id: string;
+  modelList?: {
+    azureDeployName?: boolean;
+    notFoundContent?: ReactNode;
+    placeholder?: string;
+    showModelFetcher?: boolean;
+  };
+  /**
+   * the url show the all models in the provider
+   */
+  modelsUrl?: string;
+  /**
+   * the name show for end user
+   */
+  name: string;
+  proxyUrl?:
+    | {
+        desc?: string;
+        placeholder: string;
+        title?: string;
+      }
+    | false;
+
+  /**
+   * whether show api key in the provider config
+   * so provider like ollama don't need api key field
+   */
+  showApiKey?: boolean;
+  /**
+   * whether show checker in the provider config
+   */
+  showChecker?: boolean;
+  /**
+   * whether to smoothing the output
+   */
+  smoothing?: SmoothingParams;
+
+  /**
+   * provider's website url
+   */
+  url: string;
+}
 
 /**
  * 聊天模型卡片接口
@@ -44,6 +121,24 @@ export interface ChatModelCard {
    * 最大输出长度
    */
   maxOutput?: number;
+  pricing?: {
+    cachedInput?: number;
+    /**
+     * the currency of the pricing
+     * @default USD
+     */
+    currency?: ModelPriceCurrency;
+    /**
+     * the input pricing, e.g. $1 / 1M tokens
+     */
+    input?: number;
+    /**
+     * the output pricing, e.g. $2 / 1M tokens
+     */
+    output?: number;
+    writeCacheInput?: number;
+  };
+  releasedAt?: string;
   /**
    * 上下文窗口（或输入 + 输出 token 限制）
    */

@@ -65,32 +65,80 @@
     "title": "通用設定"
   },
   "llm": {
-    "check": {
-      "action": "檢查",
-      "desc": "檢查 APIKey 和介面代理地址是否設置正確",
-      "error": "呼叫介面失敗，請檢查 APIKey 和介面代理地址是否設置正確",
-      "success": "檢查通過",
+    "aesGcm": "您的密鑰與代理地址等將使用 <1>AES-GCM</1> 加密演算法進行加密",
+    "apiKey": {
+      "desc": "請填寫您的 {{name}} API Key",
+      "placeholder": "{{name}} API Key",
+      "title": "API Key"
+    },
+    "checker": {
+      "button": "檢查",
+      "desc": "測試 Api Key 與代理地址是否正確填寫",
+      "error": "檢查失敗",
+      "pass": "檢查通過",
       "title": "連通性檢查"
     },
-    "openai": {
-      "apiKey": {
-        "desc": "請使用您自己的 OpenAI 金鑰",
-        "title": "API 金鑰"
-      },
-      "callError": "呼叫介面失敗，請檢查 APIKey 和介面代理地址是否設置正確",
-      "checkError": "檢查失敗，請確認 APIKey 和接口代理地址是否設置正確",
-      "checkOk": "檢查通過",
-      "fetchOnClient": {
-        "desc": "客戶端請求模式將從瀏覽器直接發起會話請求，可提升響應速度",
-        "title": "客戶端調用"
-      },
-      "proxy": {
-        "desc": "http(s)://",
-        "title": "介面代理地址"
-      },
-      "title": "OpenAI 語言模型"
+    "customModelCards": {
+      "addNew": "創建並添加 {{id}} 模型",
+      "config": "配置模型",
+      "confirmDelete": "即將刪除該自定義模型，刪除後將不可恢復，請謹慎操作。",
+      "modelConfig": {
+        "azureDeployName": {
+          "extra": "在 Azure OpenAI 中實際請求的字段",
+          "placeholder": "請輸入 Azure 中的模型部署名稱",
+          "title": "模型部署名稱"
+        },
+        "displayName": {
+          "placeholder": "請輸入模型的展示名稱，例如 ChatGPT、GPT-4 等",
+          "title": "模型展示名稱"
+        },
+        "files": {
+          "extra": "當前文件上傳實現僅為一種 Hack 方案，僅限自行嘗試。完整文件上傳能力請等待後續實現",
+          "title": "支持文件上傳"
+        },
+        "functionCall": {
+          "extra": "此配置將僅開啟應用中的函數調用能力，是否支持函數調用完全取決於模型本身，請自行測試該模型的函數調用能力可用性",
+          "title": "支持函數調用"
+        },
+        "id": {
+          "extra": "將作為模型標籤進行展示",
+          "placeholder": "請輸入模型id，例如 gpt-4-turbo-preview 或 claude-2.1",
+          "title": "模型 ID"
+        },
+        "modalTitle": "自定義模型配置",
+        "tokens": {
+          "title": "最大 token 數",
+          "unlimited": "無限制"
+        },
+        "vision": {
+          "extra": "此配置將僅開啟應用中的圖片上傳配置，是否支持識別完全取決於模型本身，請自行測試該模型的視覺識別能力可用性",
+          "title": "支持視覺識別"
+        }
+      }
     },
-    "title": "大型語言模型"
+    "fetchOnClient": {
+      "desc": "客戶端請求模式將從瀏覽器直接發起會話請求，可提升響應速度",
+      "title": "使用客戶端請求模式"
+    },
+    "fetcher": {
+      "fetch": "獲取模型列表",
+      "fetching": "正在獲取模型列表...",
+      "latestTime": "上次更新時間：{{time}}",
+      "noLatestTime": "暫未獲取列表"
+    },
+    "helpDoc": "配置教程",
+    "modelList": {
+      "desc": "選擇在會話中展示的模型，選擇的模型會在模型列表中展示",
+      "placeholder": "請從列表中選擇模型",
+      "title": "模型列表",
+      "total": "共 {{count}} 個模型可用"
+    },
+    "proxyUrl": {
+      "desc": "除默認地址外，必須包含 http(s)://",
+      "title": "API 代理地址"
+    },
+    "title": "語言模型",
+    "waitingForMore": "更多模型正在 <1>計劃接入</1> 中，敬請期待"
   },
   "touch": {
     "title": "觸摸設定"

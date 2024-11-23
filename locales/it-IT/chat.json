@@ -1,4 +1,14 @@
 {
+  "ModelSelect": {
+    "featureTag": {
+      "custom": "Modello personalizzato, le impostazioni predefinite supportano sia le chiamate di funzione che il riconoscimento visivo. Si prega di verificare la disponibilità di queste capacità in base alla situazione reale",
+      "file": "Questo modello supporta il caricamento di file per la lettura e il riconoscimento",
+      "functionCall": "Questo modello supporta le chiamate di funzione (Function Call)",
+      "tokens": "Questo modello supporta un massimo di {{tokens}} Tokens per singola sessione",
+      "vision": "Questo modello supporta il riconoscimento visivo"
+    },
+    "removed": "Questo modello non è nella lista, se deselezionato verrà rimosso automaticamente"
+  },
   "actions": {
     "add": "Aggiungi",
     "copy": "Copia",

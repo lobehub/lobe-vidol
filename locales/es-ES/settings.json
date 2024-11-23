@@ -65,32 +65,80 @@
     "title": "Configuración General"
   },
   "llm": {
-    "check": {
-      "action": "Verificar",
-      "desc": "Verifica que la APIKey y la dirección del proxy estén configuradas correctamente",
-      "error": "Error al llamar a la interfaz, por favor verifica que la APIKey y la dirección del proxy estén configuradas correctamente",
-      "success": "Verificación exitosa",
-      "title": "Verificación de Conectividad"
+    "aesGcm": "Su clave y la dirección del proxy se cifrarán utilizando el algoritmo de cifrado <1>AES-GCM</1>",
+    "apiKey": {
+      "desc": "Por favor, introduzca su {{name}} API Key",
+      "placeholder": "{{name}} API Key",
+      "title": "API Key"
     },
-    "openai": {
-      "apiKey": {
-        "desc": "Por favor utiliza tu propia clave de OpenAI",
-        "title": "API Key"
-      },
-      "callError": "Error al llamar a la interfaz, por favor verifica que la APIKey y la dirección del proxy estén configuradas correctamente",
-      "checkError": "Error de verificación, por favor verifica si la APIKey y la dirección del proxy están configuradas correctamente",
-      "checkOk": "Verificación exitosa",
-      "fetchOnClient": {
-        "desc": "El modo de solicitud del cliente iniciará la solicitud de sesión directamente desde el navegador, lo que puede mejorar la velocidad de respuesta",
-        "title": "Llamada desde el cliente"
-      },
-      "proxy": {
-        "desc": "http(s)://",
-        "title": "Dirección del Proxy de la Interfaz"
-      },
-      "title": "Modelo de Lenguaje de OpenAI"
+    "checker": {
+      "button": "Comprobar",
+      "desc": "Pruebe si la API Key y la dirección del proxy están correctamente ingresadas",
+      "error": "Verificación fallida",
+      "pass": "Comprobación exitosa",
+      "title": "Verificación de conectividad"
     },
-    "title": "Modelo de Lenguaje Grande"
+    "customModelCards": {
+      "addNew": "Crear y añadir el modelo {{id}}",
+      "config": "Configurar modelo",
+      "confirmDelete": "Está a punto de eliminar este modelo personalizado. Una vez eliminado, no se podrá recuperar. Por favor, proceda con precaución.",
+      "modelConfig": {
+        "azureDeployName": {
+          "extra": "Campo solicitado en Azure OpenAI",
+          "placeholder": "Por favor, introduzca el nombre de despliegue del modelo en Azure",
+          "title": "Nombre de despliegue del modelo"
+        },
+        "displayName": {
+          "placeholder": "Por favor, introduzca el nombre para mostrar del modelo, por ejemplo, ChatGPT, GPT-4, etc.",
+          "title": "Nombre para mostrar del modelo"
+        },
+        "files": {
+          "extra": "La implementación actual de carga de archivos es solo una solución temporal, limitada a pruebas personales. Espere la implementación completa de la capacidad de carga de archivos.",
+          "title": "Soporte para carga de archivos"
+        },
+        "functionCall": {
+          "extra": "Esta configuración solo habilitará la capacidad de llamada a funciones en la aplicación. Si se admite la llamada a funciones depende completamente del modelo en sí. Pruebe la disponibilidad de la capacidad de llamada a funciones de este modelo.",
+          "title": "Soporte para llamadas a funciones"
+        },
+        "id": {
+          "extra": "Se mostrará como etiqueta del modelo",
+          "placeholder": "Por favor, introduzca el id del modelo, por ejemplo, gpt-4-turbo-preview o claude-2.1",
+          "title": "ID del modelo"
+        },
+        "modalTitle": "Configuración del modelo personalizado",
+        "tokens": {
+          "title": "Número máximo de tokens",
+          "unlimited": "Sin límite"
+        },
+        "vision": {
+          "extra": "Esta configuración solo habilitará la carga de imágenes en la aplicación. Si se admite el reconocimiento depende completamente del modelo en sí. Pruebe la disponibilidad de la capacidad de reconocimiento visual de este modelo.",
+          "title": "Soporte para reconocimiento visual"
+        }
+      }
+    },
+    "fetchOnClient": {
+      "desc": "El modo de solicitud del cliente iniciará la solicitud de sesión directamente desde el navegador, lo que puede mejorar la velocidad de respuesta",
+      "title": "Usar modo de solicitud del cliente"
+    },
+    "fetcher": {
+      "fetch": "Obtener lista de modelos",
+      "fetching": "Obteniendo lista de modelos...",
+      "latestTime": "Última actualización: {{time}}",
+      "noLatestTime": "Lista aún no obtenida"
+    },
+    "helpDoc": "Tutorial de configuración",
+    "modelList": {
+      "desc": "Selecciona los modelos que se mostrarán en la sesión, los modelos seleccionados se mostrarán en la lista de modelos",
+      "placeholder": "Por favor, selecciona un modelo de la lista",
+      "title": "Lista de modelos",
+      "total": "Un total de {{count}} modelos disponibles"
+    },
+    "proxyUrl": {
+      "desc": "Además de la dirección predeterminada, debe incluir http(s)://",
+      "title": "Dirección del proxy API"
+    },
+    "title": "Modelo de Lenguaje",
+    "waitingForMore": "Más modelos están <1>programados para integrarse</1>, por favor espera"
   },
   "touch": {
     "title": "Configuración de toque"

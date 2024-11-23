@@ -1,6 +1,6 @@
 import { VRM } from '@pixiv/three-vrm';
 import * as THREE from 'three';
-import { FBXLoader } from 'three/examples/jsm/loaders/FBXLoader';
+import { FBXLoader } from 'three/examples/jsm/loaders/FBXLoader.js';
 
 import { mixamoVRMRigMap } from './mixamoVRMRigMap';
 

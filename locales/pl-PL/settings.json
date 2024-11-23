@@ -65,32 +65,80 @@
     "title": "Ustawienia ogólne"
   },
   "llm": {
-    "check": {
-      "action": "Sprawdź",
-      "desc": "Sprawdź, czy APIKey i adres proxy są poprawnie ustawione",
-      "error": "Nie udało się wywołać interfejsu, sprawdź, czy APIKey i adres proxy są poprawnie ustawione",
-      "success": "Sprawdzenie zakończone pomyślnie",
+    "aesGcm": "Twój klucz i adres proxy będą szyfrowane za pomocą algorytmu <1>AES-GCM</1>",
+    "apiKey": {
+      "desc": "Proszę wprowadzić swój {{name}} klucz API",
+      "placeholder": "{{name}} klucz API",
+      "title": "Klucz API"
+    },
+    "checker": {
+      "button": "Sprawdź",
+      "desc": "Przetestuj, czy klucz API i adres proxy są poprawnie wprowadzone",
+      "error": "Sprawdzenie nie powiodło się",
+      "pass": "Sprawdzenie zakończone sukcesem",
       "title": "Sprawdzanie łączności"
     },
-    "openai": {
-      "apiKey": {
-        "desc": "Proszę użyć własnego klucza OpenAI",
-        "title": "Klucz API"
-      },
-      "callError": "Nie udało się wywołać interfejsu, sprawdź, czy APIKey i adres proxy są poprawnie ustawione",
-      "checkError": "Sprawdzenie nie powiodło się, proszę sprawdzić, czy klucz API i adres proxy są poprawnie ustawione",
-      "checkOk": "Sprawdzenie zakończone pomyślnie",
-      "fetchOnClient": {
-        "desc": "Tryb żądania po stronie klienta rozpocznie sesję bezpośrednio z przeglądarki, co może zwiększyć szybkość odpowiedzi",
-        "title": "Wywołanie po stronie klienta"
-      },
-      "proxy": {
-        "desc": "http(s)://",
-        "title": "Adres proxy interfejsu"
-      },
-      "title": "Model językowy OpenAI"
+    "customModelCards": {
+      "addNew": "Utwórz i dodaj model {{id}}",
+      "config": "Konfiguracja modelu",
+      "confirmDelete": "Zaraz usuniesz ten niestandardowy model, po usunięciu nie będzie można go przywrócić, proszę działać ostrożnie.",
+      "modelConfig": {
+        "azureDeployName": {
+          "extra": "Pole, które jest rzeczywiście używane w Azure OpenAI",
+          "placeholder": "Proszę wprowadzić nazwę wdrożenia modelu w Azure",
+          "title": "Nazwa wdrożenia modelu"
+        },
+        "displayName": {
+          "placeholder": "Proszę wprowadzić nazwę wyświetlaną modelu, np. ChatGPT, GPT-4 itp.",
+          "title": "Nazwa wyświetlana modelu"
+        },
+        "files": {
+          "extra": "Obecna implementacja przesyłania plików to tylko rozwiązanie typu Hack, przeznaczone do samodzielnego testowania. Pełna funkcjonalność przesyłania plików będzie dostępna w późniejszym terminie.",
+          "title": "Wsparcie dla przesyłania plików"
+        },
+        "functionCall": {
+          "extra": "Ta konfiguracja włączy tylko możliwość wywoływania funkcji w aplikacji, czy model obsługuje wywołania funkcji, zależy od samego modelu, proszę samodzielnie przetestować dostępność wywołań funkcji tego modelu.",
+          "title": "Wsparcie dla wywołań funkcji"
+        },
+        "id": {
+          "extra": "Będzie wyświetlane jako etykieta modelu",
+          "placeholder": "Proszę wprowadzić id modelu, np. gpt-4-turbo-preview lub claude-2.1",
+          "title": "ID modelu"
+        },
+        "modalTitle": "Konfiguracja niestandardowego modelu",
+        "tokens": {
+          "title": "Maksymalna liczba tokenów",
+          "unlimited": "Bez ograniczeń"
+        },
+        "vision": {
+          "extra": "Ta konfiguracja włączy tylko możliwość przesyłania obrazów w aplikacji, czy model obsługuje rozpoznawanie, zależy od samego modelu, proszę samodzielnie przetestować dostępność rozpoznawania wizualnego tego modelu.",
+          "title": "Wsparcie dla rozpoznawania wizualnego"
+        }
+      }
     },
-    "title": "Duży model językowy"
+    "fetchOnClient": {
+      "desc": "Tryb żądania klienta rozpocznie sesję bezpośrednio z przeglądarki, co może zwiększyć szybkość odpowiedzi",
+      "title": "Użyj trybu żądania klienta"
+    },
+    "fetcher": {
+      "fetch": "Pobierz listę modeli",
+      "fetching": "Pobieranie listy modeli...",
+      "latestTime": "Ostatnia aktualizacja: {{time}}",
+      "noLatestTime": "Lista nie została jeszcze pobrana"
+    },
+    "helpDoc": "Instrukcja konfiguracji",
+    "modelList": {
+      "desc": "Wybierz modele, które mają być wyświetlane w sesji; wybrane modele będą wyświetlane na liście modeli",
+      "placeholder": "Proszę wybrać model z listy",
+      "title": "Lista modeli",
+      "total": "Łącznie dostępnych jest {{count}} modeli"
+    },
+    "proxyUrl": {
+      "desc": "Oprócz domyślnego adresu, musi zawierać http(s)://",
+      "title": "Adres proxy API"
+    },
+    "title": "Model językowy",
+    "waitingForMore": "Więcej modeli jest w <1>planowanej integracji</1>, prosimy o cierpliwość"
   },
   "touch": {
     "title": "Ustawienia dotykowe"

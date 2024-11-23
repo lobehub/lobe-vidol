@@ -1,4 +1,9 @@
-import { DEFAULT_AGENT_CONFIG, LOBE_VIDOL_DEFAULT_AGENT_ID } from '@/constants/agent';
+import {
+  DEFAULT_AGENT_CONFIG,
+  DEFAULT_CHAT_MODEL,
+  DEFAULT_CHAT_PROVIDER,
+  LOBE_VIDOL_DEFAULT_AGENT_ID,
+} from '@/constants/agent';
 import { EMPTY_TOUCH_CONFIG } from '@/constants/touch';
 import { configSelectors, useSettingStore } from '@/store/setting';
 import { Agent, AgentMeta, GenderEnum } from '@/types/agent';
@@ -26,6 +31,20 @@ const currentAgentMeta = (s: AgentStore): AgentMeta | undefined => {
   if (!currentAgent) return undefined;
 
   return currentAgent.meta;
+};
+
+const currentAgentModel = (s: AgentStore): string | undefined => {
+  const currentAgent = currentAgentItem(s);
+  if (!currentAgent) return undefined;
+
+  return currentAgent.model || DEFAULT_CHAT_MODEL;
+};
+
+const currentAgentProvider = (s: AgentStore): string | undefined => {
+  const currentAgent = currentAgentItem(s);
+  if (!currentAgent) return undefined;
+
+  return currentAgent.provider || DEFAULT_CHAT_PROVIDER;
 };
 
 const currentAgentGreeting = (s: AgentStore): string | undefined => {
@@ -64,7 +83,7 @@ const filterAgentListIds = (s: AgentStore, filter: string | undefined) => {
   });
 };
 
-const currentAgentModel = (s: AgentStore): string | undefined => {
+const currentAgent3DModel = (s: AgentStore): string | undefined => {
   const currentAgent = currentAgentItem(s);
   if (!currentAgent) return undefined;
 
@@ -85,10 +104,31 @@ const currentAgentId = (s: AgentStore): string | undefined => {
   return currentAgent.agentId;
 };
 
-const getAgentModelById = (s: AgentStore) => {
+const getAgent3DModelById = (s: AgentStore) => {
   return (id: string): string | undefined => {
     const agent = s.getAgentById(id);
     return agent?.meta.model;
+  };
+};
+
+const getAgentProviderById = (s: AgentStore) => {
+  return (id: string): string | undefined => {
+    const agent = s.getAgentById(id);
+    return agent?.provider;
+  };
+};
+
+const getAgentModelById = (s: AgentStore) => {
+  return (id: string): string | undefined => {
+    const agent = s.getAgentById(id);
+    return agent?.model;
+  };
+};
+
+const getAgentMetaById = (s: AgentStore) => {
+  return (id: string): AgentMeta | undefined => {
+    const agent = s.getAgentById(id);
+    return agent?.meta;
   };
 };
 
@@ -130,11 +170,16 @@ export const agentSelectors = {
   currentAgentParams,
   currentAgentGreeting,
   filterAgentListIds,
+  getAgentMetaById,
+  getAgent3DModelById,
+  getAgentProviderById,
   getAgentModelById,
   agentListIds,
   isDefaultAgent,
   showSideBar,
+  currentAgent3DModel,
   currentAgentModel,
+  currentAgentProvider,
   currentAgentId,
   subscribed,
 };

@@ -6,7 +6,7 @@ import {
   VRMUtils,
 } from '@pixiv/three-vrm';
 import * as THREE from 'three';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
+import { GLTFLoader, GLTFParser } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
 import { VRMLookAtSmootherLoaderPlugin } from '@/libs/VRMLookAtSmootherLoaderPlugin/VRMLookAtSmootherLoaderPlugin';
 import { EmoteController } from '@/libs/emoteController/emoteController';
@@ -40,7 +40,7 @@ export class Model {
     loader.crossOrigin = 'anonymous';
 
     loader.register(
-      (parser) =>
+      (parser: GLTFParser) =>
         new VRMLoaderPlugin(parser, {
           lookAtPlugin: new VRMLookAtSmootherLoaderPlugin(parser),
           autoUpdateHumanBones: true,
