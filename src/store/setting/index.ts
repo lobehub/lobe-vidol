@@ -143,6 +143,8 @@ const persistOptions: PersistOptions<SettingStore> = {
             baseURL: state.config.languageModel['openAI']!.endpoint,
           },
         };
+        //@ts-ignore
+        delete state.config.languageModel['openAI'];
       }
       return state;
     }

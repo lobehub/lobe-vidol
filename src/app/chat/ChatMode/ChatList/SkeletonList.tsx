@@ -15,6 +15,7 @@ const useStyles = createStyles(({ css, prefixCls, responsive }) => ({
     width: ${CHAT_INPUT_WIDTH};
     min-width: 480px;
     max-width: 100vw;
+
     .${prefixCls}-skeleton-header {
       padding: 0;
     }
@@ -48,7 +49,7 @@ const SkeletonList = memo<SkeletonListProps>(({ count = 3, mobile }) => {
   const { cx, styles } = useStyles();
 
   return (
-    <Flexbox gap={24} padding={mobile ? 8 : 12} style={{ marginTop: 24 + (mobile ? 0 : 64) }}>
+    <Flexbox gap={24} padding={mobile ? 8 : 12}>
       {Array.from({ length: count }).map(() => (
         <>
           <Skeleton

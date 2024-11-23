@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import isEqual from 'fast-deep-equal';
-import React, { memo, useEffect, useRef, useState } from 'react';
+import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
 import { Flexbox } from 'react-layout-kit';
 import { Virtuoso, VirtuosoHandle } from 'react-virtuoso';
 
@@ -10,14 +10,6 @@ import { sessionSelectors, useSessionStore } from '@/store/session';
 import AutoScroll from './AutoScroll';
 import { useStyles } from './style';
 
-const itemContent = (index: number, id: string) => {
-  return index === 0 ? (
-    <div style={{ height: 24 }} />
-  ) : (
-    <Item id={id} index={index - 1} showTitle />
-  );
-};
-
 interface VirtualizedListProps {
   className?: string;
   mobile?: boolean;
@@ -26,6 +18,7 @@ interface VirtualizedListProps {
 const VirtualizedList = memo<VirtualizedListProps>(({ mobile, className, style }) => {
   const virtuosoRef = useRef<VirtuosoHandle>(null);
   const [atBottom, setAtBottom] = useState(true);
+  const [isScrolling, setIsScrolling] = useState(false);
   const { styles } = useStyles();
 
   const data = useSessionStore(
@@ -34,24 +27,47 @@ const VirtualizedList = memo<VirtualizedListProps>(({ mobile, className, style }
   );
   const [id, chatLoading] = useSessionStore((s) => [s.activeId, !!s.chatLoadingId]);
 
+  const prevDataLengthRef = useRef(data.length);
+
+  const getFollowOutput = useCallback(() => {
+    const newFollowOutput = data.length > prevDataLengthRef.current ? 'auto' : false;
+    prevDataLengthRef.current = data.length;
+    return newFollowOutput;
+  }, [data.length]);
+
   useEffect(() => {
     if (virtuosoRef.current) {
       virtuosoRef.current.scrollToIndex({ align: 'end', behavior: 'auto', index: 'LAST' });
     }
   }, [id]);
 
-  // overscan should be 1.5 times the height of the window
-  const overscan = typeof window !== 'undefined' ? window.innerHeight * 1.5 : 0;
+  const itemContent = useCallback(
+    (index: number, id: string) => {
+      // if (id === WELCOME_GUIDE_CHAT_ID) return <InboxWelcome />;
+
+      return index === 0 ? (
+        <div style={{ height: 24 }} />
+      ) : (
+        <Item id={id} index={index - 1} showTitle />
+      );
+    },
+    [mobile],
+  );
+
+  // overscan should be 3 times the height of the window
+  const overscan = typeof window !== 'undefined' ? window.innerHeight * 3 : 0;
 
   // @ts-ignore
   return chatLoading && data.length === 2 ? null : (
     <Flexbox style={style} className={classNames(className, styles.list)}>
       <Virtuoso
         atBottomStateChange={setAtBottom}
-        atBottomThreshold={60 * (mobile ? 2 : 1)}
+        atBottomThreshold={50 * (mobile ? 2 : 1)}
         computeItemKey={(_, item) => item}
         data={data}
-        followOutput={'auto'}
+        followOutput={getFollowOutput}
+        increaseViewportBy={overscan}
+        isScrolling={setIsScrolling}
         initialTopMostItemIndex={data?.length - 1}
         itemContent={itemContent}
         overscan={overscan}
@@ -59,6 +75,7 @@ const VirtualizedList = memo<VirtualizedListProps>(({ mobile, className, style }
       />
       <AutoScroll
         atBottom={atBottom}
+        isScrolling={isScrolling}
         onScrollToBottom={(type) => {
           const virtuoso = virtuosoRef.current;
           switch (type) {

@@ -10,7 +10,7 @@ interface ConversationProps {
 const Conversation = ({ mobile }: ConversationProps) => {
   const Loading = () => (
     <div style={{ margin: '0 auto' }}>
-      <SkeletonList count={3} mobile={mobile} />
+      <SkeletonList mobile={mobile} />
     </div>
   );
 
