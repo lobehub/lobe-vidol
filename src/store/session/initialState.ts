@@ -13,8 +13,7 @@ const initialState = {
   messageInput: '',
   sessionList: [],
   defaultSession: defaultSession,
-  viewerMode: false,
-  voiceOn: true,
+  voiceOn: false,
   interactive: true,
 };
 

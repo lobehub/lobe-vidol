@@ -49,6 +49,9 @@ export default {
     combine: '语音合成',
   },
   interactive: '可交互',
+  voiceOn: '开启语音',
+  camera: '视频通话',
+  callOff: '挂断',
   sessionList: '会话列表',
   selectModel: '请选择模型',
   share: {

@@ -447,7 +447,6 @@ const sessions = {
         },
       ],
     },
-    viewerMode: false,
     voiceOn: false,
     localAgentList: [
       {

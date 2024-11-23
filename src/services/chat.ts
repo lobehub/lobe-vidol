@@ -252,12 +252,3 @@ export const handleSpeakAi = async (message: string) => {
     viewer,
   );
 };
-
-export const toggleVoice = async () => {
-  const { toggleVoice, voiceOn } = useSessionStore.getState();
-  if (voiceOn) {
-    const viewer = useGlobalStore.getState().viewer;
-    viewer.model?.stopSpeak();
-  }
-  toggleVoice();
-};

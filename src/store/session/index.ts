@@ -23,11 +23,6 @@ import { sessionSelectors } from './selectors';
 
 export const SESSION_STORAGE_KEY = 'vidol-chat-session-storage';
 
-export enum ViewerModeEnum {
-  Img = 'Img',
-  Normal = 'Normal',
-}
-
 interface ShareMessage {
   from: 'human' | 'gpt';
   value: string;
@@ -111,19 +106,21 @@ export interface SessionStore {
    * @returns
    */
   sendMessage: (message: string) => void;
+
   /**
    * 会话列表
    */
   sessionList: Session[];
+
   /**
    * 设置消息输入
    * @param messageInput
    */
   setMessageInput: (messageInput: string) => void;
   /**
-   * 触发 3D 渲染开关
+   * 触发语音开关
    */
-  setViewerMode: (mode: boolean) => void;
+  setVoiceOn: (voiceOn: boolean) => void;
   shareLoading: boolean;
   shareToShareGPT: (props: { withSystemRole?: boolean }) => Promise<void>;
   /**
@@ -140,10 +137,7 @@ export interface SessionStore {
    * 触摸响应开关
    */
   toggleInteractive: () => void;
-  /**
-   * 触发语音开关
-   */
-  toggleVoice: () => void;
+
   /**
    * 更新消息
    * @returns
@@ -154,10 +148,6 @@ export interface SessionStore {
    * @param messages
    */
   updateSessionMessages: (messages: ChatMessage[]) => void;
-  /**
-   * 角色渲染模式
-   */
-  viewerMode: boolean;
   /**
    * 语音开关
    */
@@ -477,9 +467,6 @@ export const createSessionStore: StateCreator<SessionStore, [['zustand/devtools'
   setMessageInput: (messageInput) => {
     set({ messageInput }, false, 'session/setMessageInput');
   },
-  setViewerMode: (mode) => {
-    set({ viewerMode: mode });
-  },
   switchSession: (agentId) => {
     const { sessionList } = get();
     if (agentId === LOBE_VIDOL_DEFAULT_AGENT_ID) {
@@ -498,9 +485,8 @@ export const createSessionStore: StateCreator<SessionStore, [['zustand/devtools'
     set({ activeId: agentId });
     useAgentStore.setState({ currentIdentifier: agentId });
   },
-  toggleVoice: () => {
-    const { voiceOn } = get();
-    set({ voiceOn: !voiceOn });
+  setVoiceOn: (voiceOn) => {
+    set({ voiceOn });
   },
   toggleInteractive: () => {
     const { interactive: touchOn } = get();

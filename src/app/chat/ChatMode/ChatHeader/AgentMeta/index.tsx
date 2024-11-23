@@ -4,7 +4,6 @@ import React from 'react';
 
 import useSessionContext from '@/hooks/useSessionContext';
 
-import ModelSwitchPanel from './ModelSwitchPanel';
 import { useStyles } from './style';
 
 interface AgentMetaProps {
@@ -28,7 +27,6 @@ export default (props: AgentMetaProps) => {
         <div className={styles.title}>
           <Space size={4} align={'center'}>
             {name}
-            <ModelSwitchPanel />
           </Space>
         </div>
         <Typography.Text className={styles.desc} ellipsis={{ tooltip: true }}>

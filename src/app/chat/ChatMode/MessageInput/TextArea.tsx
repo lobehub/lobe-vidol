@@ -48,7 +48,7 @@ const InputArea = memo(() => {
       }}
       placeholder={t('input.placeholder')}
       ref={ref}
-      autoSize={true}
+      autoSize={{ minRows: 1, maxRows: 10 }}
       type={'block'}
       value={messageInput}
     />
