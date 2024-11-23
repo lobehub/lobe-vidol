@@ -65,6 +65,9 @@ const StoreHydration = () => {
     migrate().then(() => {
       useAgentStore.persist.rehydrate();
     });
+
+    // 刷新默认模型提供者列表
+    refreshDefaultModelProviderList();
   }, []);
 
   useEffect(() => {
@@ -73,9 +76,6 @@ const StoreHydration = () => {
     router.prefetch('/role');
     router.prefetch('/market');
   }, [router]);
-
-  // 刷新默认模型提供者列表
-  refreshDefaultModelProviderList();
 
   return null;
 };
