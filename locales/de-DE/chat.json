@@ -31,6 +31,7 @@
     "addProxy": "Fügen Sie die OpenAI-Proxy-Adresse hinzu (optional)",
     "closeTip": "Hinweis schließen",
     "confirmRetry": "Bestätigen und erneut versuchen",
+    "proxyDocs": "Wie beantrage ich einen API-Schlüssel?",
     "startDesc": "Geben Sie Ihren OpenAI API-Schlüssel ein, um das Gespräch zu beginnen. Die Anwendung wird Ihren API-Schlüssel nicht speichern.",
     "startTitle": "Benutzerdefinierter API-Schlüssel"
   },

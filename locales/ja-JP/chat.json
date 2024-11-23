@@ -31,6 +31,7 @@
     "addProxy": "OpenAI プロキシアドレスを追加（オプション）",
     "closeTip": "ヒントを閉じる",
     "confirmRetry": "確認して再試行",
+    "proxyDocs": "APIキーの申請方法がわかりませんか？",
     "startDesc": "あなたの OpenAI API キーを入力して会話を開始してください。アプリはあなたの API キーを記録しません。",
     "startTitle": "カスタム API キー"
   },

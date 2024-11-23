@@ -31,6 +31,7 @@
     "addProxy": "Thêm địa chỉ proxy OpenAI (tùy chọn)",
     "closeTip": "Đóng thông báo",
     "confirmRetry": "Xác nhận và thử lại",
+    "proxyDocs": "Không rõ cách xin API Key?",
     "startDesc": "Nhập API Key OpenAI của bạn để bắt đầu cuộc trò chuyện. Ứng dụng sẽ không ghi lại API Key của bạn.",
     "startTitle": "Tùy chỉnh API Key"
   },

@@ -10,7 +10,7 @@ Experience the magic of virtual idol creation with Lobe Vidol. Enjoy our exquisi
 
 <sup>Anyone can create a virtual idol</sup>
 
-[English](./README.md) · **简体中文** · [Changelog](./CHANGELOG.md) · [Report Bug][github-issues-link] · [Request Feature][github-issues-link]
+**English** · [简体中文](./README.zh-CN.md) · [日本語](./README.ja-JP.md) · [Docs][docs] · [Changelog](./CHANGELOG.md) · [Report Bug][github-issues-link] · [Request Feature][github-issues-link]
 
 [![][github-release-shield]][github-release-link]
 [![][vercel-shield]][vercel-link]
@@ -38,11 +38,11 @@ Experience the magic of virtual idol creation with Lobe Vidol. Enjoy our exquisi
 #### TOC
 
 - [👋🏻 Getting Started & Community](#-getting-started--community)
-- [✨ Features Overview](#-features-overview)
-  - [1. **Seamless Conversation Experience**](#1-seamless-conversation-experience)
+- [✨ Feature Overview](#-feature-overview)
+  - [1. **Smooth Conversational Experience**](#1-smooth-conversational-experience)
   - [2. **Background Context Setting**](#2-background-context-setting)
   - [3. **Rich Library of Actions and Poses**](#3-rich-library-of-actions-and-poses)
-  - [4. **Exquisite UI Design**](#4-exquisite-ui-design)
+  - [4. **Elegant UI Design**](#4-elegant-ui-design)
   - [5. **Rich Character Editing Experience**](#5-rich-character-editing-experience)
   - [6. **MMD Dance Support**](#6-mmd-dance-support)
   - [7. **PMX Stage Loading Feature**](#7-pmx-stage-loading-feature)
@@ -93,7 +93,7 @@ Lobe Vidol is actively under development. If you have any requests or questions,
 
 ### 1. **Smooth Conversational Experience**
 
-Streamed responses provide a smooth conversational experience. You can set the dialogue context by placing character actions and expressions in parentheses () and the ongoing events or scenes in square brackets [] to create an immersive experience.
+Streamed responses provide a smooth conversational experience. You can set the dialogue context by placing character actions and expressions in parentheses () and the ongoing events or scenes in square brackets \[] to create an immersive experience.
 
 <img width="1291" alt="fluent chat experience" src="https://github.com/user-attachments/assets/6b3a2df4-c80e-4cb4-8d62-c6c5532d0f00">
 
@@ -213,7 +213,7 @@ $ bun dev
 
 ## 🤝 Contributing
 
-We warmly welcome contributions in various forms. If you're interested in contributing code, please check out our GitHub [Issues][github-issues-link] and [Projects][github-project-link] to showcase your creativity and skills.
+We warmly welcome contributions in various forms. If you're interested in contributing code, please check out our GitHub [Issues][github-issues-link] and \[Projects]\[github-project-link] to showcase your creativity and skills.
 
 [![][pr-welcome-shield]][pr-welcome-link]
 
@@ -297,8 +297,8 @@ Every bit of support is incredibly valuable, coming together to form the brillia
 
 #### 📝 License
 
-Copyright © 2023 [lobehub][profile-link]. <br />
-This project is [MIT](./LICENSE) licensed.
+Copyright © 2024 [lobehub][profile-link]. <br />
+This project is [Apache 2.0](./LICENSE) licensed.
 
 [back-to-top]: https://img.shields.io/badge/-BACK_TO_TOP-black?style=flat-square
 [bun-link]: https://bun.sh
@@ -326,6 +326,7 @@ This project is [MIT](./LICENSE) licensed.
 [github-releasedate-shield]: https://img.shields.io/github/release-date/lobehub/lobe-vidol?labelColor=black&style=flat-square
 [github-stars-link]: https://github.com/lobehub/lobe-vidol/network/stargazers
 [github-stars-shield]: https://img.shields.io/github/stars/lobehub/lobe-vidol?color=ffcb47&labelColor=black&style=flat-square
+[docs]: https://docs.vidol.chat
 [lobe-chat]: https://github.com/lobehub/lobe-chat
 [lobe-i18n]: https://github.com/lobehub/lobe-commit/tree/master/packages/lobe-i18n
 [lobe-icons-github]: https://github.com/lobehub/lobe-icons

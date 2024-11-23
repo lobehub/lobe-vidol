@@ -31,6 +31,7 @@
     "addProxy": "Adicionar endereço de proxy OpenAI (opcional)",
     "closeTip": "Fechar dica",
     "confirmRetry": "Confirmar e tentar novamente",
+    "proxyDocs": "Não sei como solicitar uma chave de API?",
     "startDesc": "Insira sua chave de API OpenAI para iniciar a conversa. O aplicativo não registrará sua chave de API.",
     "startTitle": "Chave de API personalizada"
   },

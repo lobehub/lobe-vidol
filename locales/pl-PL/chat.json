@@ -31,6 +31,7 @@
     "addProxy": "Dodaj adres proxy OpenAI (opcjonalnie)",
     "closeTip": "Zamknij wskazówkę",
     "confirmRetry": "Potwierdź i spróbuj ponownie",
+    "proxyDocs": "Nie wiesz, jak ubiegać się o klucz API?",
     "startDesc": "Wprowadź swój klucz API OpenAI, aby rozpocząć rozmowę. Aplikacja nie będzie rejestrować twojego klucza API.",
     "startTitle": "Dostosuj klucz API"
   },

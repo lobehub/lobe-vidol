@@ -31,6 +31,7 @@
     "addProxy": "Voeg een OpenAI proxyadres toe (optioneel)",
     "closeTip": "Sluit de tip",
     "confirmRetry": "Bevestigen en opnieuw proberen",
+    "proxyDocs": "Weet je niet hoe je een API-sleutel kunt aanvragen?",
     "startDesc": "Voer je OpenAI API-sleutel in om de sessie te starten. De applicatie zal je API-sleutel niet opslaan.",
     "startTitle": "Aangepaste API-sleutel"
   },
