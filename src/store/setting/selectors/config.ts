@@ -1,6 +1,5 @@
 import { t } from 'i18next';
 
-// import { merge } from 'lodash-es';
 import { DEFAULT_LANG } from '@/constants/locale';
 import { Locales } from '@/locales/resources';
 import { SettingStore } from '@/store/setting';
@@ -13,23 +12,23 @@ import {
 } from '@/types/provider/modelProvider';
 import { TouchAction, TouchAreaEnum } from '@/types/touch';
 import { isOnServerSide } from '@/utils/env';
+import { merge } from '@/utils/merge';
 
-export const currentConfig = (s: SettingStore): Config => s.config;
-// merge(s.defaultConfig, s.config);
+export const currentConfig = (s: SettingStore): Config => merge(s.defaultConfig, s.config);
 
 export const currentLanguageModelConfig = (s: SettingStore): UserModelProviderConfig => {
-  return s.config.languageModel || {};
+  return currentConfig(s).languageModel || {};
 };
 
 export const getProviderConfigById = (provider: string) => (s: SettingStore) =>
   currentLanguageModelConfig(s)[provider as GlobalLLMProviderKey] as ProviderConfig | undefined;
 
 const currentTouchConfig = (s: SettingStore): TouchConfig => {
-  return s.config.touch;
+  return currentConfig(s).touch || {};
 };
 
 const currentLanguage = (s: SettingStore) => {
-  const locale = s.config.locale;
+  const locale = currentConfig(s).locale;
 
   if (locale === 'auto') {
     if (isOnServerSide) return DEFAULT_LANG;
@@ -41,7 +40,7 @@ const currentLanguage = (s: SettingStore) => {
 };
 
 const currentTTSConfig = (s: SettingStore): TTSConfig => {
-  return s.config.tts;
+  return currentConfig(s).tts || {};
 };
 
 const getTouchActionsByGenderAndArea = (
@@ -49,7 +48,7 @@ const getTouchActionsByGenderAndArea = (
   gender: GenderEnum,
   touchArea: TouchAreaEnum,
 ): TouchAction[] => {
-  const items = s.config.touch?.[gender]?.[touchArea] || [];
+  const items = currentConfig(s).touch?.[gender]?.[touchArea] || [];
   return items.map((item) => ({ ...item, text: t(item.text, { ns: 'role' }) || item.text }));
 };
 

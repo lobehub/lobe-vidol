@@ -6,10 +6,12 @@ import { LucideBugPlay } from 'lucide-react';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
+// import { migrateOpenAIKey } from '@/layout/StoreHydration';
 import { AGENT_STORAGE_KEY } from '@/store/agent';
 import { DANCE_STORAGE_KEY } from '@/store/dance';
 import { SESSION_STORAGE_KEY } from '@/store/session';
 import { SETTING_STORAGE_KEY } from '@/store/setting';
+import { vidolStorage } from '@/utils/storage';
 
 import { agents, dances, sessions, settings } from './data';
 
@@ -20,21 +22,21 @@ const DebugUI = memo(() => {
       <FloatButton
         icon={<Icon icon={LucideBugPlay} />}
         onClick={async () => {
-          localStorage.setItem(AGENT_STORAGE_KEY, JSON.stringify(agents));
-          localStorage.setItem(DANCE_STORAGE_KEY, JSON.stringify(dances));
-          localStorage.setItem(SESSION_STORAGE_KEY, JSON.stringify(sessions));
-          localStorage.setItem(SETTING_STORAGE_KEY, JSON.stringify(settings));
+          vidolStorage.setItem(AGENT_STORAGE_KEY, JSON.stringify(agents));
+          vidolStorage.setItem(DANCE_STORAGE_KEY, JSON.stringify(dances));
+          vidolStorage.setItem(SESSION_STORAGE_KEY, JSON.stringify(sessions));
+          vidolStorage.setItem(SETTING_STORAGE_KEY, JSON.stringify(settings));
         }}
         tooltip={t('setLocalStorage')}
       />
 
-      {/*<FloatButton*/}
-      {/*  icon={<Icon icon={LucideBugPlay} />}*/}
-      {/*  onClick={async () => {*/}
-      {/*    await migrateLocalStorageToIndexedDB('vidol-chat-agent-storage');*/}
-      {/*  }}*/}
-      {/*  tooltip={'迁移'}*/}
-      {/*/>*/}
+      {/* <FloatButton
+        icon={<Icon icon={LucideBugPlay} />}
+        onClick={async () => {
+          await migrateOpenAIKey();
+        }}
+        tooltip={'迁移'}
+      /> */}
     </FloatButton.Group>
   );
 });
