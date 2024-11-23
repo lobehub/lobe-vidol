@@ -1,3 +1,5 @@
+import { DeepPartial } from 'utility-types';
+
 import {
   Ai360ProviderCard,
   AnthropicProviderCard,
@@ -37,7 +39,8 @@ import { Config } from '@/types/config';
 import { ModelProviderCard } from '@/types/llm';
 
 export interface SettingState {
-  config: Config;
+  config: DeepPartial<Config>;
+  defaultConfig: Config;
   defaultModelProviderList: ModelProviderCard[];
   editingCustomCardModel?: { id: string; provider: string } | undefined;
   modelProviderList: ModelProviderCard[];
@@ -46,7 +49,7 @@ export interface SettingState {
 const initialState: SettingState = {
   modelProviderList: DEFAULT_MODEL_PROVIDER_LIST,
   defaultModelProviderList: DEFAULT_MODEL_PROVIDER_LIST,
-  config: {
+  defaultConfig: {
     keyVaults: {},
     locale: 'auto',
     backgroundEffect: 'glow',
@@ -169,6 +172,7 @@ const initialState: SettingState = {
       [GenderEnum.MALE]: DEFAULT_TOUCH_ACTION_CONFIG_MALE,
     },
   },
+  config: {},
 };
 
 export { initialState };
