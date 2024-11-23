@@ -154,6 +154,7 @@
   "devDependencies": {
     "@commitlint/cli": "^19.6.0",
     "@ducanh2912/next-pwa": "^10.2.9",
+    "@edge-runtime/vm": "^4.0.3",
     "@lobehub/lint": "^1.24.4",
     "@next/bundle-analyzer": "^14.2.18",
     "@next/eslint-plugin-next": "^14.2.18",
@@ -173,6 +174,7 @@
     "consola": "^3.2.3",
     "dpdm": "^3.14.0",
     "eslint": "^8.57.1",
+    "fake-indexeddb": "^6.0.0",
     "glob": "^10.4.5",
     "gray-matter": "^4.0.3",
     "husky": "^9.1.7",
