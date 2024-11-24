@@ -35,8 +35,6 @@ export default memo((props: Props) => {
       onClick={() => {
         setLoading(true);
 
-        console.log('touchAction', touchAction);
-
         speakCharacter(
           {
             expression: touchAction.expression,

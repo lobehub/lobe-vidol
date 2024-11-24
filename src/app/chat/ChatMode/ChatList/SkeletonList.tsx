@@ -50,8 +50,8 @@ const SkeletonList = memo<SkeletonListProps>(({ count = 3, mobile }) => {
 
   return (
     <Flexbox gap={24} padding={mobile ? 8 : 12}>
-      {Array.from({ length: count }).map(() => (
-        <>
+      {Array.from({ length: count }).map((_, index) => (
+        <div key={index}>
           <Skeleton
             active
             avatar={{ size: mobile ? 32 : 40 }}
@@ -66,7 +66,7 @@ const SkeletonList = memo<SkeletonListProps>(({ count = 3, mobile }) => {
             paragraph={{ width: mobile ? ['80%', '40%'] : ['50%', '30%'] }}
             title={false}
           />
-        </>
+        </div>
       ))}
     </Flexbox>
   );

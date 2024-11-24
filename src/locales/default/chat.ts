@@ -102,6 +102,7 @@ export default {
   delSession: '删除会话',
   delSessionAlert: '确认删除对话吗？删除后无法恢复, 请谨慎操作！',
   chat: '聊天',
+  noSession: '暂无会话, 可以通过 + 创建自定义角色, 也可通过发现页添加角色',
   sessionCreate: '创建聊天',
   ModelSelect: {
     featureTag: {
