@@ -1,5 +1,5 @@
 import { ActionIconGroupItems } from '@lobehub/ui/es/ActionIconGroup';
-import { Copy, Edit, ListRestart, RotateCcw, Trash } from 'lucide-react';
+import { Copy, Edit, ListRestart, Play, RotateCcw, Trash } from 'lucide-react';
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -10,6 +10,7 @@ interface ChatListActionsBar {
   divider: { type: 'divider' };
   edit: ActionIconGroupItems;
   regenerate: ActionIconGroupItems;
+  tts: ActionIconGroupItems;
 }
 
 export const useChatListActionsBar = (): ChatListActionsBar => {
@@ -39,6 +40,11 @@ export const useChatListActionsBar = (): ChatListActionsBar => {
         icon: Edit,
         key: 'edit',
         label: t('actions.edit'),
+      },
+      tts: {
+        icon: Play,
+        key: 'tts',
+        label: t('actions.tts'),
       },
       regenerate: {
         icon: RotateCcw,

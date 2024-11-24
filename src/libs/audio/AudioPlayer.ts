@@ -13,7 +13,7 @@ export class AudioPlayer {
     return AudioPlayer.instance;
   }
 
-  public async play(audioBuffer: ArrayBuffer): Promise<void> {
+  public async play(audioBuffer: ArrayBuffer, onEnded?: () => void): Promise<void> {
     // 如果正在播放，先停止当前播放
     this.stop();
 
@@ -31,6 +31,7 @@ export class AudioPlayer {
           // 播放结束时清理资源
           this.audioSource.onended = () => {
             this.stop();
+            onEnded?.();
             resolve();
           };
         }

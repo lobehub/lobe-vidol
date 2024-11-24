@@ -33,8 +33,6 @@ export default memo((props: Props) => {
       title={t('play', { ns: 'common' })}
       key="play"
       onClick={() => {
-        setLoading(true);
-
         speakCharacter(
           {
             expression: touchAction.expression,
@@ -45,9 +43,13 @@ export default memo((props: Props) => {
             motion: touchAction.motion,
           },
           viewer,
-          () => {},
-          () => {
-            setLoading(false);
+          {
+            onStart: () => {
+              setLoading(true);
+            },
+            onComplete: () => {
+              setLoading(false);
+            },
           },
         );
       }}

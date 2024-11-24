@@ -78,10 +78,11 @@ function AgentViewer(props: Props) {
             motion: touchAction.motion,
           },
           viewer,
-          () => {},
-          () => {
-            viewer.model?.loadIdleAnimation();
-            playingRef.current = false;
+          {
+            onComplete: () => {
+              viewer.model?.loadIdleAnimation();
+              playingRef.current = false;
+            },
           },
         );
       }
@@ -177,11 +178,11 @@ function AgentViewer(props: Props) {
                 motion: MotionPresetName.FemaleGreeting,
               },
               viewer,
-              () => {},
-              () => {
-                //
-                viewer.resetToIdle();
-                playingRef.current = false;
+              {
+                onComplete: () => {
+                  viewer.resetToIdle();
+                  playingRef.current = false;
+                },
               },
             );
           }

@@ -7,17 +7,14 @@ import { Screenplay } from '@/types/touch';
 import { getPreloadedVoice } from '@/utils/voice';
 import { wait } from '@/utils/wait';
 
+import { SpeakAudioOptions } from './type';
+
 const createSpeakCharacter = () => {
   let lastTime = 0;
   let prevFetchPromise: Promise<unknown> = Promise.resolve();
   let prevSpeakPromise: Promise<unknown> = Promise.resolve();
 
-  return (
-    screenplay: Screenplay,
-    viewer: Viewer,
-    onStart?: () => void,
-    onComplete?: () => void,
-  ) => {
+  return (screenplay: Screenplay, viewer: Viewer, options?: SpeakAudioOptions) => {
     const fetchPromise = prevFetchPromise.then(async () => {
       const now = Date.now();
       if (now - lastTime < 1000) {
@@ -27,7 +24,7 @@ const createSpeakCharacter = () => {
       const buffer =
         (await getPreloadedVoice(screenplay.tts)) ||
         (await speechApi(screenplay.tts).catch((err) => {
-          message.error((err as Error).message);
+          options?.onError?.(err as Error);
         }));
       lastTime = Date.now();
       return buffer;
@@ -35,20 +32,15 @@ const createSpeakCharacter = () => {
 
     prevFetchPromise = fetchPromise;
     prevSpeakPromise = Promise.all([fetchPromise, prevSpeakPromise]).then(([audioBuffer]) => {
-      onStart?.();
       if (!audioBuffer) {
+        options?.onError?.(new Error('No audio buffer'));
         return;
       }
-      if (viewer.model) {
-        viewer.model.speak(audioBuffer, screenplay);
-      } else {
-        // 使用 AudioPlayer 单例来播放音频
-        const audioPlayer = AudioPlayer.getInstance();
-        audioPlayer.play(audioBuffer);
-      }
+      options?.onStart?.();
+      viewer.model?.speak(audioBuffer, screenplay);
     });
     prevSpeakPromise.then(() => {
-      onComplete?.();
+      options?.onComplete?.();
     });
   };
 };

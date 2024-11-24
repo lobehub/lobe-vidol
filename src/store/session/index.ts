@@ -8,7 +8,7 @@ import { StateCreator } from 'zustand/vanilla';
 
 import { DEFAULT_LLM_CONFIG, LOBE_VIDOL_DEFAULT_AGENT_ID } from '@/constants/agent';
 import { DEFAULT_USER_AVATAR_URL, LOADING_FLAG } from '@/constants/common';
-import { chatCompletion, handleSpeakAi } from '@/services/chat';
+import { chatCompletion, handleSpeakAi, handleStopSpeak } from '@/services/chat';
 import { shareService } from '@/services/share';
 import { Agent } from '@/types/agent';
 import { ChatMessage } from '@/types/chat';
@@ -45,6 +45,7 @@ export interface SessionStore {
    * 聊天加载中的消息 ID
    */
   chatLoadingId: string | undefined;
+
   /**
    * 清空历史消息
    */
@@ -128,15 +129,28 @@ export interface SessionStore {
    */
   stopGenerateMessage: () => void;
   /**
+   * 停止语音消息
+   */
+  stopTtsMessage: () => void;
+  /**
    * 切换会话
    * @param agent
    * @returns
    */
   switchSession: (agentId: string) => void;
+
   /**
    * 触摸响应开关
    */
   toggleInteractive: () => void;
+  /**
+   * 语音加载中的消息 ID
+   */
+  ttsLoadingId: string | undefined;
+  /**
+   * 语音消息
+   */
+  ttsMessage: (id: string, content: string) => void;
 
   /**
    * 更新消息
@@ -318,6 +332,18 @@ export const createSessionStore: StateCreator<SessionStore, [['zustand/devtools'
       },
     );
     set({ chatLoadingId: undefined });
+  },
+  /**
+   * 语音消息
+   */
+  ttsMessage: async (id: string, content: string) => {
+    set({ ttsLoadingId: id });
+    await handleSpeakAi(content);
+    set({ ttsLoadingId: undefined });
+  },
+  stopTtsMessage: () => {
+    set({ ttsLoadingId: undefined });
+    handleStopSpeak();
   },
   shareToShareGPT: async ({ withSystemRole }) => {
     const messages = sessionSelectors.currentChats(get());

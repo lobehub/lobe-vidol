@@ -36,7 +36,7 @@ const Avatar = memo<AvatarProps>(
 
     if (!addon) return avatarContent;
     return (
-      <Flexbox align={'center'} className={styles.avatarGroupContainer} gap={8}>
+      <Flexbox align={'center'} className={styles.avatarGroupContainer} gap={4}>
         {avatarContent}
         {addon}
       </Flexbox>

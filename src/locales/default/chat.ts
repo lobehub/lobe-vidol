@@ -12,6 +12,7 @@ export default {
     delAndRegenerate: '删除并重新生成',
     copySuccess: '复制成功',
     edit: '编辑',
+    tts: '语音',
     del: '删除',
     save: '保存',
     share: '分享',

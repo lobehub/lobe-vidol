@@ -1,7 +1,10 @@
 import { DEFAULT_MODEL_PROVIDER_LIST } from '@/config/modelProviders';
 import { DEFAULT_CHAT_MODEL, DEFAULT_CHAT_PROVIDER } from '@/constants/agent';
 import { AgentRuntime, ChatCompletionErrorPayload, ModelProvider } from '@/libs/agent-runtime';
+import { AudioPlayer } from '@/libs/audio/AudioPlayer';
 import { speakCharacter } from '@/libs/messages/speakCharacter';
+import { speakChatItem } from '@/libs/messages/speakChatItem';
+import { SpeakAudioOptions } from '@/libs/messages/type';
 import { useGlobalStore } from '@/store/global';
 import { sessionSelectors, useSessionStore } from '@/store/session';
 import { useSettingStore } from '@/store/setting';
@@ -237,18 +240,33 @@ export const chatCompletion = async (params: ChatCompletionPayload, options?: Fe
   });
 };
 
-export const handleSpeakAi = async (message: string) => {
+export const handleSpeakAi = async (message: string, options?: SpeakAudioOptions) => {
   const viewer = useGlobalStore.getState().viewer;
   const currentAgent = sessionSelectors.currentAgent(useSessionStore.getState());
 
-  speakCharacter(
-    {
-      expression: 'aa',
-      tts: {
-        ...currentAgent?.tts,
-        message: message,
+  if (viewer.model) {
+    await speakCharacter(
+      {
+        expression: 'aa',
+        tts: {
+          ...currentAgent?.tts,
+          message: message,
+        },
       },
-    },
-    viewer,
-  );
+      viewer,
+      options,
+    );
+  } else {
+    await speakChatItem({ ...currentAgent?.tts, message }, options);
+  }
+};
+
+export const handleStopSpeak = async () => {
+  const viewer = useGlobalStore.getState().viewer;
+  if (viewer.model) {
+    viewer.model.stopSpeak();
+  } else {
+    const audioPlayer = AudioPlayer.getInstance();
+    audioPlayer.stop();
+  }
 };
