@@ -351,8 +351,14 @@ export const createSessionStore: StateCreator<SessionStore, [['zustand/devtools'
    */
   ttsMessage: async (id: string, content: string) => {
     set({ ttsLoadingId: id });
-    await handleSpeakAi(content);
-    set({ ttsLoadingId: undefined });
+    await handleSpeakAi(content, {
+      onComplete: () => {
+        set({ ttsLoadingId: undefined });
+      },
+      onError: () => {
+        set({ ttsLoadingId: undefined });
+      },
+    });
   },
   stopTtsMessage: () => {
     set({ ttsLoadingId: undefined });

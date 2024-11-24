@@ -83,6 +83,9 @@ function AgentViewer(props: Props) {
               viewer.model?.loadIdleAnimation();
               playingRef.current = false;
             },
+            onError: () => {
+              message.error(t('ttsTransformFailed', { ns: 'error' }));
+            },
           },
         );
       }
@@ -185,6 +188,7 @@ function AgentViewer(props: Props) {
                 },
                 onError: () => {
                   viewer.resetToIdle();
+                  message.error(t('ttsTransformFailed', { ns: 'error' }));
                   playingRef.current = false;
                 },
               },

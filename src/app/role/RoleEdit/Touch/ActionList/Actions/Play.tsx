@@ -1,4 +1,5 @@
 import { ActionIcon } from '@lobehub/ui';
+import { message } from 'antd';
 import { isEqual } from 'lodash-es';
 import { Loader2, PlayIcon } from 'lucide-react';
 import { memo, useState } from 'react';
@@ -49,6 +50,9 @@ export default memo((props: Props) => {
             },
             onComplete: () => {
               setLoading(false);
+            },
+            onError: () => {
+              message.error(t('ttsTransformFailed', { ns: 'error' }));
             },
           },
         );
