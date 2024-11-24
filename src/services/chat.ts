@@ -242,29 +242,31 @@ export const chatCompletion = async (params: ChatCompletionPayload, options?: Fe
 
 export const handleSpeakAi = async (message: string, options?: SpeakAudioOptions) => {
   const viewer = useGlobalStore.getState().viewer;
-  const currentAgent = sessionSelectors.currentAgent(useSessionStore.getState());
+  const chatMode = useSessionStore.getState().chatMode;
 
-  if (viewer.model) {
+  const currentAgent = sessionSelectors.currentAgent(useSessionStore.getState());
+  const tts = { ...currentAgent?.tts, message };
+
+  if (chatMode === 'camera') {
     await speakCharacter(
       {
         expression: 'aa',
-        tts: {
-          ...currentAgent?.tts,
-          message: message,
-        },
+        tts,
       },
       viewer,
       options,
     );
   } else {
-    await speakChatItem({ ...currentAgent?.tts, message }, options);
+    await speakChatItem(tts, options);
   }
 };
 
 export const handleStopSpeak = async () => {
   const viewer = useGlobalStore.getState().viewer;
-  if (viewer.model) {
-    viewer.model.stopSpeak();
+  const chatMode = useSessionStore.getState().chatMode;
+
+  if (chatMode === 'camera') {
+    viewer.model?.stopSpeak();
   } else {
     const audioPlayer = AudioPlayer.getInstance();
     audioPlayer.stop();

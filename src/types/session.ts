@@ -1,5 +1,7 @@
 import { ChatMessage } from './chat';
 
+export type ChatMode = 'camera' | 'chat' | 'call';
+
 export interface Session {
   /**
    * 会话对应的 Agent ID

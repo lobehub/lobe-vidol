@@ -183,6 +183,10 @@ function AgentViewer(props: Props) {
                   viewer.resetToIdle();
                   playingRef.current = false;
                 },
+                onError: () => {
+                  viewer.resetToIdle();
+                  playingRef.current = false;
+                },
               },
             );
           }

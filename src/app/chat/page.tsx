@@ -7,9 +7,9 @@ import React, { memo } from 'react';
 import { Center, Flexbox } from 'react-layout-kit';
 
 import DebugUI from '@/features/DebugUI';
+import { useSessionStore } from '@/store/session';
 
 import ChatMode from './ChatMode';
-import { useChatStore } from './store/chat';
 
 const CameraMode = dynamic(() => import('./CameraMode'), {
   ssr: false,
@@ -21,14 +21,14 @@ const CameraMode = dynamic(() => import('./CameraMode'), {
 });
 
 const Chat = () => {
-  const mode = useChatStore((s) => s.mode);
+  const chatMode = useSessionStore((s) => s.chatMode);
 
   const searchParams = useSearchParams();
   const showDebug = process.env.NODE_ENV === 'development' && searchParams.get('debug') === 'true';
   return (
     <Flexbox flex={1} height={'100%'} width={'100%'} horizontal>
-      {mode === 'camera' && <CameraMode />}
-      {mode === 'chat' && <ChatMode />}
+      {chatMode === 'camera' && <CameraMode />}
+      {chatMode === 'chat' && <ChatMode />}
       {showDebug && <DebugUI />}
     </Flexbox>
   );

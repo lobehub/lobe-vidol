@@ -1,5 +1,5 @@
 import { LOBE_VIDOL_DEFAULT_AGENT_ID } from '@/constants/agent';
-import { Session } from '@/types/session';
+import { ChatMode, Session } from '@/types/session';
 
 const defaultSession: Session = {
   agentId: LOBE_VIDOL_DEFAULT_AGENT_ID,
@@ -7,6 +7,7 @@ const defaultSession: Session = {
 };
 
 const initialState = {
+  chatMode: 'chat' as ChatMode,
   activeId: defaultSession.agentId,
   chatLoadingId: undefined,
   ttsLoadingId: undefined,

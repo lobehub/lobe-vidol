@@ -12,7 +12,7 @@ import { chatCompletion, handleSpeakAi, handleStopSpeak } from '@/services/chat'
 import { shareService } from '@/services/share';
 import { Agent } from '@/types/agent';
 import { ChatMessage } from '@/types/chat';
-import { Session } from '@/types/session';
+import { ChatMode, Session } from '@/types/session';
 import { ShareGPTConversation } from '@/types/share';
 import { vidolStorage } from '@/utils/storage';
 
@@ -45,6 +45,10 @@ export interface SessionStore {
    * 聊天加载中的消息 ID
    */
   chatLoadingId: string | undefined;
+  /**
+   * 当前模式
+   */
+  chatMode: ChatMode;
 
   /**
    * 清空历史消息
@@ -112,6 +116,11 @@ export interface SessionStore {
    * 会话列表
    */
   sessionList: Session[];
+
+  /**
+   * 设置当前聊天模式
+   */
+  setChatMode: (chatMode: ChatMode) => void;
 
   /**
    * 设置消息输入
@@ -278,9 +287,10 @@ export const createSessionStore: StateCreator<SessionStore, [['zustand/devtools'
         onMessageHandle: (chunk) => {
           switch (chunk.type) {
             case 'text': {
-              const { voiceOn } = get();
+              const { voiceOn, chatMode } = get();
 
-              if (voiceOn) {
+              // 只有视频模式下才需要连续语音合成
+              if (voiceOn && chatMode === 'camera') {
                 // 语音合成
                 receivedMessage += chunk.text;
                 // 文本切割
@@ -332,6 +342,9 @@ export const createSessionStore: StateCreator<SessionStore, [['zustand/devtools'
       },
     );
     set({ chatLoadingId: undefined });
+  },
+  setChatMode: (chatMode: ChatMode) => {
+    set({ chatMode });
   },
   /**
    * 语音消息
