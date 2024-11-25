@@ -22,6 +22,7 @@ import { MotionFileType } from '../emoteController/type';
 export class Model {
   public vrm?: VRM | null;
   public emoteController?: EmoteController;
+  public speaking: boolean = false; // 是否正在说话
 
   private _lookAtTargetParent: THREE.Object3D;
   private _lipSync?: LipSync;
@@ -85,6 +86,7 @@ export class Model {
    * @param screenplay
    */
   public async speak(buffer: ArrayBuffer, screenplay: Screenplay) {
+    this.speaking = true;
     // 播放人物表情
     this.emoteController?.playEmotion(screenplay.expression);
     // 播放人物动作
@@ -95,12 +97,14 @@ export class Model {
         resolve(true);
       });
     });
+    this.speaking = false;
   }
 
   /**
    * 停止语音
    */
   public stopSpeak() {
+    this.speaking = false;
     this._lipSync?.stopPlay();
     this.emoteController?.playEmotion('neutral');
   }

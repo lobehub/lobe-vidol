@@ -412,7 +412,8 @@ export class Viewer {
   };
 
   private handleClick = (event: MouseEvent) => {
-    if (this._isDancing || !this.model || !this._camera || !this._renderer) return;
+    if (this._isDancing || !this.model || !this._camera || !this._renderer || this.model.speaking)
+      return;
 
     const rect = this._renderer.domElement.getBoundingClientRect();
     this._mouse.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
