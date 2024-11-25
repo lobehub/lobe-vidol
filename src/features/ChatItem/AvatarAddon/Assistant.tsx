@@ -9,7 +9,6 @@ import TTS from './TTS';
 
 export const AssistantAvatarAddon: RenderAvatarAddon = memo<ChatMessage>(({ content, id }) => {
   const loading = useSessionStore((s) => sessionSelectors.ttsLoading(s)(id));
-  console.log('loading', loading);
 
   return <TTS content={content} id={id} loading={loading} />;
 });

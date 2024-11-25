@@ -27,13 +27,13 @@ const createSpeakChatItem = () => {
     });
 
     prevFetchPromise = fetchPromise;
-    prevSpeakPromise = Promise.all([fetchPromise, prevSpeakPromise]).then(([audioBuffer]) => {
+    prevSpeakPromise = Promise.all([fetchPromise, prevSpeakPromise]).then(async ([audioBuffer]) => {
       if (!audioBuffer) {
         options?.onError?.(new Error('No audio buffer'));
         return;
       }
       options?.onStart?.();
-      audioPlayer.play(audioBuffer, () => {
+      await audioPlayer.play(audioBuffer, () => {
         options?.onComplete?.();
       });
     });
