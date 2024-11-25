@@ -257,6 +257,7 @@ export const handleSpeakAi = async (message: string, options?: SpeakAudioOptions
       options,
     );
   } else {
+    console.log('speakChatItem');
     await speakChatItem(tts, options);
   }
 };

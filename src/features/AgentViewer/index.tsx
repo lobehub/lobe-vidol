@@ -42,7 +42,6 @@ interface Props {
 function AgentViewer(props: Props) {
   const { className, style, height, agentId, width, interactive = true, toolbar = true } = props;
   const { styles } = useStyles();
-  const playingRef = useRef(false);
   const ref = useRef<HTMLDivElement>(null);
   const viewer = useGlobalStore((s) => s.viewer);
   const { t } = useTranslation('welcome');
@@ -66,8 +65,7 @@ function AgentViewer(props: Props) {
     if (currentTouch) {
       // 随机挑选一个
       const touchAction = currentTouch[Math.floor(Math.random() * (currentTouch.length || 1))];
-      if (touchAction && !playingRef.current) {
-        playingRef.current = true;
+      if (touchAction) {
         speakCharacter(
           {
             expression: touchAction.expression,
@@ -81,7 +79,6 @@ function AgentViewer(props: Props) {
           {
             onComplete: () => {
               viewer.model?.loadIdleAnimation();
-              playingRef.current = false;
             },
             onError: () => {
               message.error(t('ttsTransformFailed', { ns: 'error' }));
@@ -169,7 +166,6 @@ function AgentViewer(props: Props) {
         viewer.setup(canvas, handleTouchArea);
         preloadAgentResources().then(() => {
           if (interactive) {
-            playingRef.current = true;
             // load motion
             speakCharacter(
               {
@@ -184,12 +180,10 @@ function AgentViewer(props: Props) {
               {
                 onComplete: () => {
                   viewer.resetToIdle();
-                  playingRef.current = false;
                 },
                 onError: () => {
                   viewer.resetToIdle();
                   message.error(t('ttsTransformFailed', { ns: 'error' }));
-                  playingRef.current = false;
                 },
               },
             );
