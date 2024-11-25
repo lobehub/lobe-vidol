@@ -19,7 +19,8 @@
     "goBottom": "맨 아래로 가기",
     "regenerate": "재생성",
     "save": "저장",
-    "share": "공유"
+    "share": "공유",
+    "tts": "음성"
   },
   "agentMarket": "캐릭터 마켓",
   "animation": {
@@ -39,6 +40,8 @@
     "backgroundList": "배경 목록",
     "totalCount": "총 {{total}} 항목"
   },
+  "callOff": "통화 종료",
+  "camera": "영상 통화",
   "chat": "채팅",
   "chatList": "채팅 목록",
   "danceList": "댄스 목록",
@@ -68,6 +71,7 @@
   "interactive": "상호작용 가능",
   "noDanceList": "재생 목록이 없습니다. 좋아하는 댄스를 마켓에서 구독할 수 있습니다.",
   "noRoleList": "역할 목록이 없습니다",
+  "noSession": "현재 세션이 없습니다. +를 통해 사용자 정의 역할을 생성하거나 발견 페이지에서 역할을 추가할 수 있습니다.",
   "selectModel": "모델을 선택하세요",
   "sessionCreate": "채팅 생성",
   "sessionList": "세션 목록",
@@ -109,5 +113,6 @@
   "tts": {
     "combine": "음성 합성",
     "record": "음성 인식(과학적 인터넷 필요)"
-  }
+  },
+  "voiceOn": "음성 켜기"
 }

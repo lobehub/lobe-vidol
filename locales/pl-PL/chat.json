@@ -19,7 +19,8 @@
     "goBottom": "Przejdź na dół",
     "regenerate": "Regeneruj",
     "save": "Zapisz",
-    "share": "Udostępnij"
+    "share": "Udostępnij",
+    "tts": "Głos"
   },
   "agentMarket": "Rynek postaci",
   "animation": {
@@ -39,6 +40,8 @@
     "backgroundList": "Lista tła",
     "totalCount": "Łącznie {{total}} pozycji"
   },
+  "callOff": "Zakończ połączenie",
+  "camera": "Wideokonferencja",
   "chat": "Czat",
   "chatList": "Lista czatów",
   "danceList": "Lista tańców",
@@ -68,6 +71,7 @@
   "interactive": "Interaktywny",
   "noDanceList": "Brak dostępnych list odtwarzania. Możesz subskrybować ulubione tańce na rynku.",
   "noRoleList": "Brak dostępnych ról",
+  "noSession": "Brak aktywnej sesji, możesz stworzyć własną rolę przez + lub dodać rolę przez stronę odkrywania",
   "selectModel": "Wybierz model",
   "sessionCreate": "Utwórz czat",
   "sessionList": "Lista sesji",
@@ -109,5 +113,6 @@
   "tts": {
     "combine": "Syntezator mowy",
     "record": "Rozpoznawanie mowy (wymaga dostępu do internetu przez VPN)"
-  }
+  },
+  "voiceOn": "Włącz głos"
 }

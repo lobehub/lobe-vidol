@@ -19,7 +19,8 @@
     "goBottom": "Go to Bottom",
     "regenerate": "Regenerate",
     "save": "Save",
-    "share": "Share"
+    "share": "Share",
+    "tts": "Voice"
   },
   "agentMarket": "Character Market",
   "animation": {
@@ -39,6 +40,8 @@
     "backgroundList": "Background List",
     "totalCount": "Total {{total}} items"
   },
+  "callOff": "Hang up",
+  "camera": "Video call",
   "chat": "Chat",
   "chatList": "Chat List",
   "danceList": "Dance List",
@@ -68,6 +71,7 @@
   "interactive": "Interactive",
   "noDanceList": "No playlist available. You can subscribe to your favorite dances through the market.",
   "noRoleList": "No Role List Available",
+  "noSession": "No sessions available. You can create a custom role by clicking +, or add roles through the discovery page.",
   "selectModel": "Please select a model",
   "sessionCreate": "Create Chat",
   "sessionList": "Session List",
@@ -109,5 +113,6 @@
   "tts": {
     "combine": "Voice Synthesis",
     "record": "Voice Recognition (requires VPN access)"
-  }
+  },
+  "voiceOn": "Turn on voice"
 }

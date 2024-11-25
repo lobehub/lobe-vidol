@@ -19,7 +19,8 @@
     "goBottom": "Aşağı Git",
     "regenerate": "Yeniden Oluştur",
     "save": "Kaydet",
-    "share": "Paylaş"
+    "share": "Paylaş",
+    "tts": "Sesli"
   },
   "agentMarket": "Karakter Pazarı",
   "animation": {
@@ -39,6 +40,8 @@
     "backgroundList": "Arka Plan Listesi",
     "totalCount": "Toplam {{total}} Öğe"
   },
+  "callOff": "Sonlandır",
+  "camera": "Görüntülü Arama",
   "chat": "sohbet",
   "chatList": "Sohbet Listesi",
   "danceList": "Dans Listesi",
@@ -68,6 +71,7 @@
   "interactive": "Etkileşimli",
   "noDanceList": "Henüz bir çalma listesi yok, sevdiğiniz dansları pazardan abone olabilirsiniz",
   "noRoleList": "Rol Listesi Yok",
+  "noSession": "Henüz bir oturum yok, + ile özel bir rol oluşturabilir veya keşif sayfasından rol ekleyebilirsiniz.",
   "selectModel": "Lütfen bir model seçin",
   "sessionCreate": "Sohbet Oluştur",
   "sessionList": "Oturum Listesi",
@@ -109,5 +113,6 @@
   "tts": {
     "combine": "Ses Sentezi",
     "record": "Ses Tanıma (bilimsel bir ağ bağlantısı gerektirir)"
-  }
+  },
+  "voiceOn": "Sesi Aç"
 }

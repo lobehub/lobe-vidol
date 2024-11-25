@@ -19,7 +19,8 @@
     "goBottom": "Aller en bas",
     "regenerate": "Régénérer",
     "save": "Enregistrer",
-    "share": "Partager"
+    "share": "Partager",
+    "tts": "Voix"
   },
   "agentMarket": "Marché des personnages",
   "animation": {
@@ -39,6 +40,8 @@
     "backgroundList": "Liste des contextes",
     "totalCount": "Total de {{total}} éléments"
   },
+  "callOff": "Raccrocher",
+  "camera": "Appel vidéo",
   "chat": "Discussion",
   "chatList": "Liste de discussion",
   "danceList": "Liste des danses",
@@ -68,6 +71,7 @@
   "interactive": "Interactif",
   "noDanceList": "Aucune liste de lecture disponible pour le moment, vous pouvez vous abonner à vos danses préférées sur le marché",
   "noRoleList": "Aucune liste de rôles disponible",
+  "noSession": "Aucune session en cours, vous pouvez créer un rôle personnalisé en appuyant sur +, ou ajouter un rôle via la page de découverte.",
   "selectModel": "Veuillez sélectionner un modèle",
   "sessionCreate": "Créer une conversation",
   "sessionList": "Liste des sessions",
@@ -109,5 +113,6 @@
   "tts": {
     "combine": "Synthèse vocale",
     "record": "Reconnaissance vocale (nécessite un accès Internet scientifique)"
-  }
+  },
+  "voiceOn": "Activer la voix"
 }

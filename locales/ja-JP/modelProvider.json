@@ -1,0 +1,164 @@
+{
+  "azure": {
+    "azureApiVersion": {
+      "desc": "AzureのAPIバージョン。YYYY-MM-DD形式に従い、[最新バージョン](https://learn.microsoft.com/zh-cn/azure/ai-services/openai/reference#chat-completions)を確認してください。",
+      "fetch": "リストを取得",
+      "title": "Azure APIバージョン"
+    },
+    "empty": "モデルIDを入力して最初のモデルを追加してください",
+    "endpoint": {
+      "desc": "Azureポータルでリソースを確認する際、「キーとエンドポイント」セクションでこの値を見つけることができます。",
+      "placeholder": "https://docs-test-001.openai.azure.com",
+      "title": "Azure APIアドレス"
+    },
+    "modelListPlaceholder": "デプロイしたOpenAIモデルを選択または追加してください",
+    "title": "Azure OpenAI",
+    "token": {
+      "desc": "Azureポータルでリソースを確認する際、「キーとエンドポイント」セクションでこの値を見つけることができます。KEY1またはKEY2を使用できます。",
+      "placeholder": "Azure APIキー",
+      "title": "APIキー"
+    }
+  },
+  "bedrock": {
+    "accessKeyId": {
+      "desc": "AWSアクセスキーIDを入力してください",
+      "placeholder": "AWSアクセスキーID",
+      "title": "AWSアクセスキーID"
+    },
+    "checker": {
+      "desc": "AccessKeyId / SecretAccessKeyが正しく入力されているかテストします"
+    },
+    "region": {
+      "desc": "AWSリージョンを入力してください",
+      "placeholder": "AWSリージョン",
+      "title": "AWSリージョン"
+    },
+    "secretAccessKey": {
+      "desc": "AWSシークレットアクセスキーを入力してください",
+      "placeholder": "AWSシークレットアクセスキー",
+      "title": "AWSシークレットアクセスキー"
+    },
+    "sessionToken": {
+      "desc": "AWS SSO/STSを使用している場合は、AWSセッショントークンを入力してください",
+      "placeholder": "AWSセッショントークン",
+      "title": "AWSセッショントークン（オプション）"
+    },
+    "title": "Bedrock",
+    "unlock": {
+      "customRegion": "カスタムサービスリージョン",
+      "customSessionToken": "カスタムセッショントークン",
+      "description": "AWS AccessKeyId / SecretAccessKeyを入力することでセッションを開始できます。アプリは認証設定を記録しません。",
+      "title": "カスタムBedrock認証情報を使用"
+    }
+  },
+  "github": {
+    "personalAccessToken": {
+      "desc": "あなたのGithub PATを入力してください。 [こちら](https://github.com/settings/tokens)をクリックして作成します。",
+      "placeholder": "ghp_xxxxxx",
+      "title": "Github PAT"
+    }
+  },
+  "huggingface": {
+    "accessToken": {
+      "desc": "あなたのHuggingFaceトークンを入力してください。 [こちら](https://huggingface.co/settings/tokens)をクリックして作成します。",
+      "placeholder": "hf_xxxxxxxxx",
+      "title": "HuggingFaceトークン"
+    }
+  },
+  "ollama": {
+    "checker": {
+      "desc": "プロキシアドレスが正しく入力されているかテストします",
+      "title": "接続性チェック"
+    },
+    "customModelName": {
+      "desc": "カスタムモデルを追加します。複数のモデルはカンマ（,）で区切ります。",
+      "placeholder": "vicuna,llava,codellama,llama2:13b-text",
+      "title": "カスタムモデル名"
+    },
+    "download": {
+      "desc": "Ollamaがこのモデルをダウンロードしています。このページを閉じないでください。再ダウンロード時は中断したところから続行されます。",
+      "remainingTime": "残り時間",
+      "speed": "ダウンロード速度",
+      "title": "{{model}}モデルをダウンロード中"
+    },
+    "endpoint": {
+      "desc": "Ollamaインターフェースのプロキシアドレスを入力してください。ローカルで特に指定がない場合は空白のままで構いません。",
+      "title": "Ollamaサービスアドレス"
+    },
+    "setup": {
+      "cors": {
+        "description": "ブラウザのセキュリティ制限のため、Ollamaのクロスオリジン設定を行う必要があります。",
+        "linux": {
+          "env": "[Service]セクションに`Environment`を追加し、OLLAMA_ORIGINS環境変数を追加します：",
+          "reboot": "systemdをリロードし、Ollamaを再起動します",
+          "systemd": "systemdを呼び出してollamaサービスを編集します："
+        },
+        "macos": "「ターミナル」アプリを開き、以下のコマンドを貼り付けてEnterを押して実行します",
+        "reboot": "実行が完了したらOllamaサービスを再起動してください",
+        "title": "Ollamaのクロスオリジンアクセスを許可する設定",
+        "windows": "Windowsでは、「コントロールパネル」をクリックし、システム環境変数を編集します。ユーザーアカウントに「OLLAMA_ORIGINS」という名前の環境変数を新規作成し、値を*に設定し、「OK/適用」をクリックして保存します"
+      },
+      "install": {
+        "description": "Ollamaが起動していることを確認してください。Ollamaをダウンロードしていない場合は、公式サイト<1>からダウンロード</1>してください。",
+        "docker": "Dockerを使用することを好む場合、Ollamaは公式のDockerイメージも提供しています。以下のコマンドでプルできます：",
+        "linux": {
+          "command": "以下のコマンドでインストールします：",
+          "manual": "または、<1>Linux手動インストールガイド</1>を参考にして自分でインストールすることもできます"
+        },
+        "title": "ローカルにOllamaアプリをインストールして起動する",
+        "windowsTab": "Windows（プレビュー版）"
+      }
+    },
+    "title": "Ollama",
+    "unlock": {
+      "cancel": "ダウンロードをキャンセル",
+      "confirm": "ダウンロード",
+      "description": "Ollamaモデルのラベルを入力し、完了すればセッションを続行できます",
+      "downloaded": "{{completed}} / {{total}}",
+      "starting": "ダウンロードを開始しています...",
+      "title": "指定されたOllamaモデルをダウンロード"
+    }
+  },
+  "sensenova": {
+    "sensenovaAccessKeyID": {
+      "desc": "SenseNovaアクセスキーIDを入力してください",
+      "placeholder": "SenseNovaアクセスキーID",
+      "title": "アクセスキーID"
+    },
+    "sensenovaAccessKeySecret": {
+      "desc": "SenseNovaシークレットアクセスキーを入力してください",
+      "placeholder": "SenseNovaシークレットアクセスキー",
+      "title": "アクセスキーシークレット"
+    },
+    "unlock": {
+      "description": "アクセスキーID / アクセスキーシークレットを入力することでセッションを開始できます。アプリは認証設定を記録しません。",
+      "title": "カスタムSenseNova認証情報を使用"
+    }
+  },
+  "wenxin": {
+    "accessKey": {
+      "desc": "百度千帆プラットフォームのアクセスキーを入力してください",
+      "placeholder": "Qianfanアクセスキー",
+      "title": "アクセスキー"
+    },
+    "checker": {
+      "desc": "AccessKey / SecretAccessが正しく入力されているかテストします"
+    },
+    "secretKey": {
+      "desc": "百度千帆プラットフォームのシークレットキーを入力してください",
+      "placeholder": "Qianfanシークレットキー",
+      "title": "シークレットキー"
+    },
+    "unlock": {
+      "customRegion": "カスタムサービスリージョン",
+      "description": "アクセスキー / シークレットキーを入力することでセッションを開始できます。アプリは認証設定を記録しません。",
+      "title": "カスタム文心一言認証情報を使用"
+    }
+  },
+  "zeroone": {
+    "title": "01.AI ゼロ一万物"
+  },
+  "zhipu": {
+    "title": "智谱"
+  }
+}

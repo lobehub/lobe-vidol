@@ -19,7 +19,8 @@
     "goBottom": "Ga naar onderaan",
     "regenerate": "Opnieuw genereren",
     "save": "Opslaan",
-    "share": "Delen"
+    "share": "Delen",
+    "tts": "Spraak"
   },
   "agentMarket": "Rolmarkt",
   "animation": {
@@ -39,6 +40,8 @@
     "backgroundList": "Achtergrondlijst",
     "totalCount": "Totaal {{total}} items"
   },
+  "callOff": "Ophangen",
+  "camera": "Videobellen",
   "chat": "Chatten",
   "chatList": "Chatlijst",
   "danceList": "Danslijst",
@@ -68,6 +71,7 @@
   "interactive": "Interactief",
   "noDanceList": "Geen afspeellijst beschikbaar. U kunt zich abonneren op uw favoriete dansen via de markt.",
   "noRoleList": "Geen rol lijst beschikbaar",
+  "noSession": "Geen sessie beschikbaar, je kunt een aangepaste rol maken via + of een rol toevoegen via de ontdekkingpagina",
   "selectModel": "Selecteer een model",
   "sessionCreate": "Chat aanmaken",
   "sessionList": "Sessielijst",
@@ -109,5 +113,6 @@
   "tts": {
     "combine": "Spraaksynthese",
     "record": "Spraakherkenning (vereist een wetenschappelijke internetverbinding)"
-  }
+  },
+  "voiceOn": "Spraak inschakelen"
 }
