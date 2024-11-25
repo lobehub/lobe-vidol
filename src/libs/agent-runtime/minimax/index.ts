@@ -102,7 +102,6 @@ export class LobeMinimaxAI implements LobeRuntimeAI {
 
       return StreamingResponse(MinimaxStream(prod), { headers: options?.headers });
     } catch (error) {
-      console.log('error', error);
       const err = error as Error | ChatCompletionErrorPayload;
       if ('provider' in err) {
         throw error;

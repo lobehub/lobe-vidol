@@ -12,6 +12,7 @@ export default {
     delAndRegenerate: '删除并重新生成',
     copySuccess: '复制成功',
     edit: '编辑',
+    tts: '语音',
     del: '删除',
     save: '保存',
     share: '分享',
@@ -49,6 +50,9 @@ export default {
     combine: '语音合成',
   },
   interactive: '可交互',
+  voiceOn: '开启语音',
+  camera: '视频通话',
+  callOff: '挂断',
   sessionList: '会话列表',
   selectModel: '请选择模型',
   share: {
@@ -99,6 +103,7 @@ export default {
   delSession: '删除会话',
   delSessionAlert: '确认删除对话吗？删除后无法恢复, 请谨慎操作！',
   chat: '聊天',
+  noSession: '暂无会话, 可以通过 + 创建自定义角色, 也可通过发现页添加角色',
   sessionCreate: '创建聊天',
   ModelSelect: {
     featureTag: {

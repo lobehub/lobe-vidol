@@ -11,10 +11,11 @@ import { sessionSelectors } from '@/store/session/selectors';
 import { ChatMessage } from '@/types/chat';
 
 import ActionsBar from './ActionsBar';
+import { renderAvatarAddon } from './AvatarAddon';
 import ErrorMessageExtra, { useErrorContent } from './Error';
 import { renderMessages } from './Messages';
 
-const useStyles = createStyles(({ css, prefixCls }) => ({
+const useStyles = createStyles(({ css, prefixCls, responsive }) => ({
   message: css`
     width: 100%;
     min-width: 480px;
@@ -25,7 +26,7 @@ const useStyles = createStyles(({ css, prefixCls }) => ({
       max-height: 900px;
     }
 
-    @media (max-width: 1024px) {
+    ${responsive.mobile} {
       width: 100%;
     }
   `,
@@ -70,6 +71,18 @@ const Item = memo<ChatListItemProps>(
       [item?.role],
     );
 
+    const AvatarAddon = useCallback(
+      ({ data }: { data: ChatMessage }) => {
+        if (!item?.role) return;
+        let RenderFunction;
+        if (renderAvatarAddon?.[item.role]) RenderFunction = renderAvatarAddon[item.role];
+
+        if (!RenderFunction) return;
+        return <RenderFunction {...data} />;
+      },
+      [item?.role],
+    );
+
     const error = useErrorContent(item?.error);
 
     return (
@@ -77,6 +90,7 @@ const Item = memo<ChatListItemProps>(
         <ChatItem
           actions={<ActionsBar index={index} setEditing={setEditing} />}
           avatar={item.meta}
+          avatarAddon={<AvatarAddon data={item} />}
           className={classNames(styles.message, className)}
           editing={editing}
           error={error}

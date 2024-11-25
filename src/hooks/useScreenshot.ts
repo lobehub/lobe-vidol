@@ -2,7 +2,7 @@ import dayjs from 'dayjs';
 import { domToJpeg, domToPng, domToSvg, domToWebp } from 'modern-screenshot';
 import { useCallback, useState } from 'react';
 
-import { ImageType } from '@/app/chat/ChatHeader/actions/ShareButton/type';
+import { ImageType } from '@/app/chat/ChatMode/ChatHeader/actions/ShareButton/type';
 import { useSessionStore } from '@/store/session';
 import { sessionSelectors } from '@/store/session/selectors';
 

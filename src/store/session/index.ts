@@ -8,11 +8,11 @@ import { StateCreator } from 'zustand/vanilla';
 
 import { DEFAULT_LLM_CONFIG, LOBE_VIDOL_DEFAULT_AGENT_ID } from '@/constants/agent';
 import { DEFAULT_USER_AVATAR_URL, LOADING_FLAG } from '@/constants/common';
-import { chatCompletion, handleSpeakAi } from '@/services/chat';
+import { chatCompletion, handleSpeakAi, handleStopSpeak } from '@/services/chat';
 import { shareService } from '@/services/share';
 import { Agent } from '@/types/agent';
 import { ChatMessage } from '@/types/chat';
-import { Session } from '@/types/session';
+import { ChatMode, Session } from '@/types/session';
 import { ShareGPTConversation } from '@/types/share';
 import { vidolStorage } from '@/utils/storage';
 
@@ -22,11 +22,6 @@ import { MessageActionType, messageReducer } from './reducers/message';
 import { sessionSelectors } from './selectors';
 
 export const SESSION_STORAGE_KEY = 'vidol-chat-session-storage';
-
-export enum ViewerModeEnum {
-  Img = 'Img',
-  Normal = 'Normal',
-}
 
 interface ShareMessage {
   from: 'human' | 'gpt';
@@ -50,6 +45,11 @@ export interface SessionStore {
    * 聊天加载中的消息 ID
    */
   chatLoadingId: string | undefined;
+  /**
+   * 当前模式
+   */
+  chatMode: ChatMode;
+
   /**
    * 清空历史消息
    */
@@ -111,19 +111,26 @@ export interface SessionStore {
    * @returns
    */
   sendMessage: (message: string) => void;
+
   /**
    * 会话列表
    */
   sessionList: Session[];
+
+  /**
+   * 设置当前聊天模式
+   */
+  setChatMode: (chatMode: ChatMode) => void;
+
   /**
    * 设置消息输入
    * @param messageInput
    */
   setMessageInput: (messageInput: string) => void;
   /**
-   * 触发 3D 渲染开关
+   * 触发语音开关
    */
-  setViewerMode: (mode: boolean) => void;
+  setVoiceOn: (voiceOn: boolean) => void;
   shareLoading: boolean;
   shareToShareGPT: (props: { withSystemRole?: boolean }) => Promise<void>;
   /**
@@ -131,19 +138,29 @@ export interface SessionStore {
    */
   stopGenerateMessage: () => void;
   /**
+   * 停止语音消息
+   */
+  stopTtsMessage: () => void;
+  /**
    * 切换会话
    * @param agent
    * @returns
    */
   switchSession: (agentId: string) => void;
+
   /**
    * 触摸响应开关
    */
   toggleInteractive: () => void;
   /**
-   * 触发语音开关
+   * 语音加载中的消息 ID
    */
-  toggleVoice: () => void;
+  ttsLoadingId: string | undefined;
+  /**
+   * 语音消息
+   */
+  ttsMessage: (id: string, content: string) => void;
+
   /**
    * 更新消息
    * @returns
@@ -154,10 +171,6 @@ export interface SessionStore {
    * @param messages
    */
   updateSessionMessages: (messages: ChatMessage[]) => void;
-  /**
-   * 角色渲染模式
-   */
-  viewerMode: boolean;
   /**
    * 语音开关
    */
@@ -274,9 +287,10 @@ export const createSessionStore: StateCreator<SessionStore, [['zustand/devtools'
         onMessageHandle: (chunk) => {
           switch (chunk.type) {
             case 'text': {
-              const { voiceOn } = get();
+              const { voiceOn, chatMode } = get();
 
-              if (voiceOn) {
+              // 只有视频模式下才需要连续语音合成
+              if (voiceOn && chatMode === 'camera') {
                 // 语音合成
                 receivedMessage += chunk.text;
                 // 文本切割
@@ -328,6 +342,27 @@ export const createSessionStore: StateCreator<SessionStore, [['zustand/devtools'
       },
     );
     set({ chatLoadingId: undefined });
+  },
+  setChatMode: (chatMode: ChatMode) => {
+    set({ chatMode });
+  },
+  /**
+   * 语音消息
+   */
+  ttsMessage: async (id: string, content: string) => {
+    set({ ttsLoadingId: id });
+    await handleSpeakAi(content, {
+      onComplete: () => {
+        set({ ttsLoadingId: undefined });
+      },
+      onError: () => {
+        set({ ttsLoadingId: undefined });
+      },
+    });
+  },
+  stopTtsMessage: () => {
+    set({ ttsLoadingId: undefined });
+    handleStopSpeak();
   },
   shareToShareGPT: async ({ withSystemRole }) => {
     const messages = sessionSelectors.currentChats(get());
@@ -477,9 +512,6 @@ export const createSessionStore: StateCreator<SessionStore, [['zustand/devtools'
   setMessageInput: (messageInput) => {
     set({ messageInput }, false, 'session/setMessageInput');
   },
-  setViewerMode: (mode) => {
-    set({ viewerMode: mode });
-  },
   switchSession: (agentId) => {
     const { sessionList } = get();
     if (agentId === LOBE_VIDOL_DEFAULT_AGENT_ID) {
@@ -498,9 +530,8 @@ export const createSessionStore: StateCreator<SessionStore, [['zustand/devtools'
     set({ activeId: agentId });
     useAgentStore.setState({ currentIdentifier: agentId });
   },
-  toggleVoice: () => {
-    const { voiceOn } = get();
-    set({ voiceOn: !voiceOn });
+  setVoiceOn: (voiceOn) => {
+    set({ voiceOn });
   },
   toggleInteractive: () => {
     const { interactive: touchOn } = get();

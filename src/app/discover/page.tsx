@@ -15,7 +15,7 @@ import MarketInfo from './MarketInfo';
 
 const FETCH_AGENT_INDEX_KEY = 'agentIndex';
 
-const useStyles = createStyles(({ css }) => ({
+const useStyles = createStyles(({ css, responsive }) => ({
   container: css`
     overflow-y: auto;
 
@@ -24,7 +24,7 @@ const useStyles = createStyles(({ css }) => ({
     min-height: 500px;
     padding: 0 32px 16px;
 
-    @media screen and (max-width: 768px) {
+    ${responsive.mobile} {
       padding: 0 16px;
     }
   `,

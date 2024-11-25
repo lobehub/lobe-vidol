@@ -1,4 +1,5 @@
 import { ActionIcon } from '@lobehub/ui';
+import { message } from 'antd';
 import { isEqual } from 'lodash-es';
 import { Loader2, PlayIcon } from 'lucide-react';
 import { memo, useState } from 'react';
@@ -33,10 +34,6 @@ export default memo((props: Props) => {
       title={t('play', { ns: 'common' })}
       key="play"
       onClick={() => {
-        setLoading(true);
-
-        console.log('touchAction', touchAction);
-
         speakCharacter(
           {
             expression: touchAction.expression,
@@ -47,9 +44,16 @@ export default memo((props: Props) => {
             motion: touchAction.motion,
           },
           viewer,
-          () => {},
-          () => {
-            setLoading(false);
+          {
+            onStart: () => {
+              setLoading(true);
+            },
+            onComplete: () => {
+              setLoading(false);
+            },
+            onError: () => {
+              message.error(t('ttsTransformFailed', { ns: 'error' }));
+            },
           },
         );
       }}

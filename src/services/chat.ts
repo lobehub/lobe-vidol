@@ -1,7 +1,10 @@
 import { DEFAULT_MODEL_PROVIDER_LIST } from '@/config/modelProviders';
 import { DEFAULT_CHAT_MODEL, DEFAULT_CHAT_PROVIDER } from '@/constants/agent';
 import { AgentRuntime, ChatCompletionErrorPayload, ModelProvider } from '@/libs/agent-runtime';
+import { AudioPlayer } from '@/libs/audio/AudioPlayer';
 import { speakCharacter } from '@/libs/messages/speakCharacter';
+import { speakChatItem } from '@/libs/messages/speakChatItem';
+import { SpeakAudioOptions } from '@/libs/messages/type';
 import { useGlobalStore } from '@/store/global';
 import { sessionSelectors, useSessionStore } from '@/store/session';
 import { useSettingStore } from '@/store/setting';
@@ -237,27 +240,35 @@ export const chatCompletion = async (params: ChatCompletionPayload, options?: Fe
   });
 };
 
-export const handleSpeakAi = async (message: string) => {
+export const handleSpeakAi = async (message: string, options?: SpeakAudioOptions) => {
   const viewer = useGlobalStore.getState().viewer;
-  const currentAgent = sessionSelectors.currentAgent(useSessionStore.getState());
+  const chatMode = useSessionStore.getState().chatMode;
 
-  speakCharacter(
-    {
-      expression: 'aa',
-      tts: {
-        ...currentAgent?.tts,
-        message: message,
+  const currentAgent = sessionSelectors.currentAgent(useSessionStore.getState());
+  const tts = { ...currentAgent?.tts, message };
+
+  if (chatMode === 'camera') {
+    await speakCharacter(
+      {
+        expression: 'aa',
+        tts,
       },
-    },
-    viewer,
-  );
+      viewer,
+      options,
+    );
+  } else {
+    await speakChatItem(tts, options);
+  }
 };
 
-export const toggleVoice = async () => {
-  const { toggleVoice, voiceOn } = useSessionStore.getState();
-  if (voiceOn) {
-    const viewer = useGlobalStore.getState().viewer;
+export const handleStopSpeak = async () => {
+  const viewer = useGlobalStore.getState().viewer;
+  const chatMode = useSessionStore.getState().chatMode;
+
+  if (chatMode === 'camera') {
     viewer.model?.stopSpeak();
+  } else {
+    const audioPlayer = AudioPlayer.getInstance();
+    audioPlayer.stop();
   }
-  toggleVoice();
 };

@@ -132,6 +132,11 @@ const currentChatMessage = (s: SessionStore): ChatMessage | undefined => {
   return currentChats(s).find((item) => item.id === chatLoadingId);
 };
 
+const ttsLoading = (s: SessionStore) => {
+  const { ttsLoadingId } = s;
+  return (id: string) => ttsLoadingId === id;
+};
+
 const getLastMessageByAgentId = (s: SessionStore) => {
   return (id: string): ChatMessage | undefined => {
     const { sessionList, defaultSession } = s;
@@ -157,4 +162,5 @@ export const sessionSelectors = {
   currentSession,
   currentSystemRole,
   sessionListIds,
+  ttsLoading,
 };

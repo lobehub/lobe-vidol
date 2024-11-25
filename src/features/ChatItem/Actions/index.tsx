@@ -4,7 +4,6 @@ import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { OnActionsClick, RenderAction } from '@/features/ChatItem/type';
-import { handleSpeakAi } from '@/services/chat';
 import { useSessionStore } from '@/store/session';
 import { LLMRoleType } from '@/types/llm';
 
@@ -19,9 +18,10 @@ export const renderActions: Record<LLMRoleType, RenderAction> = {
 };
 
 export const useActionsClick = (): OnActionsClick => {
-  const [deleteMessage, regenerateMessage] = useSessionStore((s) => [
+  const [deleteMessage, regenerateMessage, ttsMessage] = useSessionStore((s) => [
     s.deleteMessage,
     s.regenerateMessage,
+    s.ttsMessage,
   ]);
   const { message } = App.useApp();
   const { t } = useTranslation('chat');
@@ -53,7 +53,7 @@ export const useActionsClick = (): OnActionsClick => {
       }
 
       case 'tts': {
-        handleSpeakAi(content);
+        ttsMessage(id, content);
         break;
       }
     }

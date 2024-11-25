@@ -15,8 +15,6 @@ const chatStreamable = async function* (stream: AsyncIterable<ResponseStream>) {
 
         yield chunk;
       } catch (e) {
-        console.log('bedrock stream parser error:', e);
-
         yield value;
       }
     } else {

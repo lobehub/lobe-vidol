@@ -1,13 +1,17 @@
+'use client';
+
 import { Spin } from 'antd';
 import dynamic from 'next/dynamic';
+import { useSearchParams } from 'next/navigation';
 import React, { memo } from 'react';
 import { Center, Flexbox } from 'react-layout-kit';
 
-import ChatHeader from './ChatHeader';
-import ChatInfo from './ChatInfo';
-import SideBar from './SideBar';
+import DebugUI from '@/features/DebugUI';
+import { useSessionStore } from '@/store/session';
 
-const ViewerMode = dynamic(() => import('./ViewerMode'), {
+import ChatMode from './ChatMode';
+
+const CameraMode = dynamic(() => import('./CameraMode'), {
   ssr: false,
   loading: () => (
     <Center style={{ height: '100%', width: '100%' }}>
@@ -17,21 +21,15 @@ const ViewerMode = dynamic(() => import('./ViewerMode'), {
 });
 
 const Chat = () => {
+  const chatMode = useSessionStore((s) => s.chatMode);
+
+  const searchParams = useSearchParams();
+  const showDebug = process.env.NODE_ENV === 'development' && searchParams.get('debug') === 'true';
   return (
     <Flexbox flex={1} height={'100%'} width={'100%'} horizontal>
-      <SideBar />
-      <Flexbox flex={1} style={{ position: 'relative' }} height={'100%'} width={'100%'}>
-        <ChatHeader
-          style={{
-            position: 'absolute',
-            zIndex: 1,
-            top: 0,
-            left: 0,
-          }}
-        />
-        <ViewerMode />
-      </Flexbox>
-      <ChatInfo />
+      {chatMode === 'camera' && <CameraMode />}
+      {chatMode === 'chat' && <ChatMode />}
+      {showDebug && <DebugUI />}
     </Flexbox>
   );
 };

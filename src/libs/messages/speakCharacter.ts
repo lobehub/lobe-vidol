@@ -1,22 +1,20 @@
 import { message } from 'antd';
 
+import { AudioPlayer } from '@/libs/audio/AudioPlayer';
 import { Viewer } from '@/libs/vrmViewer/viewer';
 import { speechApi } from '@/services/tts';
 import { Screenplay } from '@/types/touch';
 import { getPreloadedVoice } from '@/utils/voice';
 import { wait } from '@/utils/wait';
 
+import { SpeakAudioOptions } from './type';
+
 const createSpeakCharacter = () => {
   let lastTime = 0;
   let prevFetchPromise: Promise<unknown> = Promise.resolve();
   let prevSpeakPromise: Promise<unknown> = Promise.resolve();
 
-  return (
-    screenplay: Screenplay,
-    viewer: Viewer,
-    onStart?: () => void,
-    onComplete?: () => void,
-  ) => {
+  return (screenplay: Screenplay, viewer: Viewer, options?: SpeakAudioOptions) => {
     const fetchPromise = prevFetchPromise.then(async () => {
       const now = Date.now();
       if (now - lastTime < 1000) {
@@ -26,22 +24,23 @@ const createSpeakCharacter = () => {
       const buffer =
         (await getPreloadedVoice(screenplay.tts)) ||
         (await speechApi(screenplay.tts).catch((err) => {
-          message.error((err as Error).message);
+          options?.onError?.(err as Error);
         }));
       lastTime = Date.now();
       return buffer;
     });
 
     prevFetchPromise = fetchPromise;
-    prevSpeakPromise = Promise.all([fetchPromise, prevSpeakPromise]).then(([audioBuffer]) => {
-      onStart?.();
+    prevSpeakPromise = Promise.all([fetchPromise, prevSpeakPromise]).then(async ([audioBuffer]) => {
       if (!audioBuffer) {
+        options?.onError?.(new Error('No audio buffer'));
         return;
       }
-      return viewer.model?.speak(audioBuffer, screenplay);
+      options?.onStart?.();
+      await viewer.model?.speak(audioBuffer, screenplay);
     });
     prevSpeakPromise.then(() => {
-      onComplete?.();
+      options?.onComplete?.();
     });
   };
 };

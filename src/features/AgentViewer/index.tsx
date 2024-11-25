@@ -78,10 +78,14 @@ function AgentViewer(props: Props) {
             motion: touchAction.motion,
           },
           viewer,
-          () => {},
-          () => {
-            viewer.model?.loadIdleAnimation();
-            playingRef.current = false;
+          {
+            onComplete: () => {
+              viewer.model?.loadIdleAnimation();
+              playingRef.current = false;
+            },
+            onError: () => {
+              message.error(t('ttsTransformFailed', { ns: 'error' }));
+            },
           },
         );
       }
@@ -177,11 +181,16 @@ function AgentViewer(props: Props) {
                 motion: MotionPresetName.FemaleGreeting,
               },
               viewer,
-              () => {},
-              () => {
-                //
-                viewer.resetToIdle();
-                playingRef.current = false;
+              {
+                onComplete: () => {
+                  viewer.resetToIdle();
+                  playingRef.current = false;
+                },
+                onError: () => {
+                  viewer.resetToIdle();
+                  message.error(t('ttsTransformFailed', { ns: 'error' }));
+                  playingRef.current = false;
+                },
               },
             );
           }
