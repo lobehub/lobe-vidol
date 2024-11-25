@@ -19,7 +19,8 @@
     "goBottom": "返回底部",
     "regenerate": "重新生成",
     "save": "儲存",
-    "share": "分享"
+    "share": "分享",
+    "tts": "語音"
   },
   "agentMarket": "角色市場",
   "animation": {
@@ -39,6 +40,8 @@
     "backgroundList": "背景列表",
     "totalCount": "共 {{total}} 項"
   },
+  "callOff": "掛斷",
+  "camera": "視頻通話",
   "chat": "聊天",
   "chatList": "聊天列表",
   "danceList": "舞蹈列表",
@@ -68,6 +71,7 @@
   "interactive": "可互動",
   "noDanceList": "暫無播放列表，您可以透過市場訂閱您喜歡的舞蹈",
   "noRoleList": "目前沒有角色列表",
+  "noSession": "暫無會話，可以通過 + 創建自定義角色，也可通過發現頁添加角色",
   "selectModel": "請選擇模型",
   "sessionCreate": "建立聊天",
   "sessionList": "會話列表",
@@ -109,5 +113,6 @@
   "tts": {
     "combine": "語音合成",
     "record": "語音識別（需科學上網）"
-  }
+  },
+  "voiceOn": "開啟語音"
 }

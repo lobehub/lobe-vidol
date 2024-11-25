@@ -19,7 +19,8 @@
     "goBottom": "Ir para o final",
     "regenerate": "Regenerar",
     "save": "Salvar",
-    "share": "Compartilhar"
+    "share": "Compartilhar",
+    "tts": "Voz"
   },
   "agentMarket": "Mercado de Personagens",
   "animation": {
@@ -39,6 +40,8 @@
     "backgroundList": "Lista de Fundos",
     "totalCount": "Total de {{total}} itens"
   },
+  "callOff": "Encerrar",
+  "camera": "Chamada de vídeo",
   "chat": "Bate-papo",
   "chatList": "Lista de Chats",
   "danceList": "Lista de Danças",
@@ -68,6 +71,7 @@
   "interactive": "Interativo",
   "noDanceList": "Nenhuma lista de reprodução disponível no momento. Você pode assinar suas danças favoritas no mercado.",
   "noRoleList": "Nenhuma lista de papéis disponível",
+  "noSession": "Nenhuma sessão disponível, você pode criar um papel personalizado através de + ou adicionar papéis pela página de descoberta",
   "selectModel": "Por favor, selecione um modelo",
   "sessionCreate": "Criar chat",
   "sessionList": "Lista de Sessões",
@@ -109,5 +113,6 @@
   "tts": {
     "combine": "Síntese de voz",
     "record": "Reconhecimento de voz (necessita de acesso à internet com VPN)"
-  }
+  },
+  "voiceOn": "Ativar voz"
 }

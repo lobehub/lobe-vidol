@@ -15,6 +15,7 @@
     "delAndRegenerate": "删除并重新生成",
     "copySuccess": "复制成功",
     "edit": "编辑",
+    "tts": "语音",
     "del": "删除",
     "save": "保存",
     "share": "分享",
@@ -39,6 +40,8 @@
     "backgroundList": "背景列表",
     "totalCount": "共 {{total}} 项"
   },
+  "callOff": "挂断",
+  "camera": "视频通话",
   "chat": "聊天",
   "chatList": "聊天列表",
   "danceList": "舞蹈列表",
@@ -68,6 +71,7 @@
   "interactive": "可交互",
   "noDanceList": "暂无播放列表，您可以通过市场订阅你喜欢的舞蹈",
   "noRoleList": "暂无角色列表",
+  "noSession": "暂无会话, 可以通过 + 创建自定义角色, 也可通过发现页添加角色",
   "selectModel": "请选择模型",
   "sessionCreate": "创建聊天",
   "sessionList": "会话列表",
@@ -109,5 +113,6 @@
   "tts": {
     "record": "语音识别（需科学上网）",
     "combine": "语音合成"
-  }
+  },
+  "voiceOn": "开启语音"
 }

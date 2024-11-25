@@ -1,0 +1,164 @@
+{
+  "azure": {
+    "azureApiVersion": {
+      "desc": "Wersja API Azure, w formacie YYYY-MM-DD, sprawdź [najnowszą wersję](https://learn.microsoft.com/zh-cn/azure/ai-services/openai/reference#chat-completions)",
+      "fetch": "Pobierz listę",
+      "title": "Wersja API Azure"
+    },
+    "empty": "Wprowadź identyfikator modelu, aby dodać pierwszy model",
+    "endpoint": {
+      "desc": "Możesz znaleźć tę wartość w sekcji 'Klucze i punkty końcowe' w portalu Azure",
+      "placeholder": "https://docs-test-001.openai.azure.com",
+      "title": "Adres API Azure"
+    },
+    "modelListPlaceholder": "Wybierz lub dodaj swój wdrożony model OpenAI",
+    "title": "Azure OpenAI",
+    "token": {
+      "desc": "Możesz znaleźć tę wartość w sekcji 'Klucze i punkty końcowe' w portalu Azure. Możesz użyć KEY1 lub KEY2",
+      "placeholder": "Klucz API Azure",
+      "title": "Klucz API"
+    }
+  },
+  "bedrock": {
+    "accessKeyId": {
+      "desc": "Wprowadź identyfikator klucza dostępu AWS",
+      "placeholder": "Identyfikator klucza dostępu AWS",
+      "title": "Identyfikator klucza dostępu AWS"
+    },
+    "checker": {
+      "desc": "Sprawdź, czy AccessKeyId / SecretAccessKey są poprawnie wypełnione"
+    },
+    "region": {
+      "desc": "Wprowadź region AWS",
+      "placeholder": "Region AWS",
+      "title": "Region AWS"
+    },
+    "secretAccessKey": {
+      "desc": "Wprowadź tajny klucz dostępu AWS",
+      "placeholder": "Tajny klucz dostępu AWS",
+      "title": "Tajny klucz dostępu AWS"
+    },
+    "sessionToken": {
+      "desc": "Jeśli używasz AWS SSO/STS, wprowadź swój token sesji AWS",
+      "placeholder": "Token sesji AWS",
+      "title": "Token sesji AWS (opcjonalnie)"
+    },
+    "title": "Bedrock",
+    "unlock": {
+      "customRegion": "Niestandardowy region usługi",
+      "customSessionToken": "Niestandardowy token sesji",
+      "description": "Wprowadź swój AccessKeyId / SecretAccessKey, aby rozpocząć sesję. Aplikacja nie zapisuje twojej konfiguracji uwierzytelniania",
+      "title": "Użyj niestandardowych informacji uwierzytelniających Bedrock"
+    }
+  },
+  "github": {
+    "personalAccessToken": {
+      "desc": "Wprowadź swój Github PAT, kliknij [tutaj](https://github.com/settings/tokens), aby utworzyć",
+      "placeholder": "ghp_xxxxxx",
+      "title": "Github PAT"
+    }
+  },
+  "huggingface": {
+    "accessToken": {
+      "desc": "Wprowadź swój token HuggingFace, kliknij [tutaj](https://huggingface.co/settings/tokens), aby utworzyć",
+      "placeholder": "hf_xxxxxxxxx",
+      "title": "Token HuggingFace"
+    }
+  },
+  "ollama": {
+    "checker": {
+      "desc": "Sprawdź, czy adres proxy jest poprawnie wypełniony",
+      "title": "Sprawdzenie łączności"
+    },
+    "customModelName": {
+      "desc": "Dodaj niestandardowy model, oddzielając wiele modeli przecinkiem (,)",
+      "placeholder": "vicuna,llava,codellama,llama2:13b-text",
+      "title": "Nazwa niestandardowego modelu"
+    },
+    "download": {
+      "desc": "Ollama pobiera ten model, postaraj się nie zamykać tej strony. Ponowne pobieranie przerwie kontynuację",
+      "remainingTime": "Pozostały czas",
+      "speed": "Prędkość pobierania",
+      "title": "Pobieranie modelu {{model}}"
+    },
+    "endpoint": {
+      "desc": "Wprowadź adres proxy interfejsu Ollama, pozostaw puste, jeśli lokalnie nie określono dodatkowo",
+      "title": "Adres usługi Ollama"
+    },
+    "setup": {
+      "cors": {
+        "description": "Z powodu ograniczeń bezpieczeństwa przeglądarki musisz skonfigurować CORS dla Ollama, aby móc go używać.",
+        "linux": {
+          "env": "Dodaj `Environment` w sekcji [Service], dodaj zmienną środowiskową OLLAMA_ORIGINS:",
+          "reboot": "Przeładuj systemd i uruchom ponownie Ollama",
+          "systemd": "Wywołaj systemd, aby edytować usługę ollama:"
+        },
+        "macos": "Otwórz aplikację 'Terminal' i wklej poniższe polecenie, a następnie naciśnij Enter",
+        "reboot": "Uruchom ponownie usługę Ollama po zakończeniu",
+        "title": "Skonfiguruj Ollama, aby zezwolić na dostęp CORS",
+        "windows": "Na Windowsie kliknij 'Panel sterowania', aby edytować zmienne środowiskowe systemu. Utwórz nową zmienną środowiskową o nazwie 'OLLAMA_ORIGINS' z wartością *, kliknij 'OK/Zastosuj', aby zapisać"
+      },
+      "install": {
+        "description": "Upewnij się, że uruchomiłeś Ollama, jeśli nie, przejdź na stronę <1>pobierz</1> Ollama",
+        "docker": "Jeśli wolisz używać Dockera, Ollama również oferuje oficjalny obraz Dockera, który możesz pobrać za pomocą poniższego polecenia:",
+        "linux": {
+          "command": "Zainstaluj za pomocą poniższego polecenia:",
+          "manual": "Lub możesz zapoznać się z <1>podręcznikiem instalacji ręcznej dla Linuxa</1>, aby zainstalować samodzielnie"
+        },
+        "title": "Zainstaluj i uruchom aplikację Ollama lokalnie",
+        "windowsTab": "Windows (wersja podglądowa)"
+      }
+    },
+    "title": "Ollama",
+    "unlock": {
+      "cancel": "Anuluj pobieranie",
+      "confirm": "Pobierz",
+      "description": "Wprowadź etykietę modelu Ollama, aby kontynuować sesję",
+      "downloaded": "{{completed}} / {{total}}",
+      "starting": "Rozpoczynam pobieranie...",
+      "title": "Pobierz określony model Ollama"
+    }
+  },
+  "sensenova": {
+    "sensenovaAccessKeyID": {
+      "desc": "Wprowadź identyfikator klucza dostępu SenseNova",
+      "placeholder": "Identyfikator klucza dostępu SenseNova",
+      "title": "Identyfikator klucza dostępu"
+    },
+    "sensenovaAccessKeySecret": {
+      "desc": "Wprowadź tajny klucz dostępu SenseNova",
+      "placeholder": "Tajny klucz dostępu SenseNova",
+      "title": "Tajny klucz dostępu"
+    },
+    "unlock": {
+      "description": "Wprowadź swój identyfikator klucza dostępu / tajny klucz dostępu, aby rozpocząć sesję. Aplikacja nie zapisuje twojej konfiguracji uwierzytelniania",
+      "title": "Użyj niestandardowych informacji uwierzytelniających SenseNova"
+    }
+  },
+  "wenxin": {
+    "accessKey": {
+      "desc": "Wprowadź klucz dostępu z platformy Baidu Qianfan",
+      "placeholder": "Klucz dostępu Qianfan",
+      "title": "Klucz dostępu"
+    },
+    "checker": {
+      "desc": "Sprawdź, czy AccessKey / SecretAccess są poprawnie wypełnione"
+    },
+    "secretKey": {
+      "desc": "Wprowadź tajny klucz z platformy Baidu Qianfan",
+      "placeholder": "Tajny klucz Qianfan",
+      "title": "Tajny klucz"
+    },
+    "unlock": {
+      "customRegion": "Niestandardowy region usługi",
+      "description": "Wprowadź swój AccessKey / SecretKey, aby rozpocząć sesję. Aplikacja nie zapisuje twojej konfiguracji uwierzytelniania",
+      "title": "Użyj niestandardowych informacji uwierzytelniających Wenxin"
+    }
+  },
+  "zeroone": {
+    "title": "01.AI Zero One"
+  },
+  "zhipu": {
+    "title": "Zhipu"
+  }
+}

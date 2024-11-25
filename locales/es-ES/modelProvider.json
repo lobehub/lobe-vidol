@@ -1,0 +1,164 @@
+{
+  "azure": {
+    "azureApiVersion": {
+      "desc": "La versión de la API de Azure, en formato YYYY-MM-DD. Consulta la [última versión](https://learn.microsoft.com/es-es/azure/ai-services/openai/reference#chat-completions)",
+      "fetch": "Obtener lista",
+      "title": "Versión de la API de Azure"
+    },
+    "empty": "Por favor, introduce el ID del modelo para añadir el primer modelo",
+    "endpoint": {
+      "desc": "Este valor se puede encontrar en la sección 'Claves y puntos finales' al verificar los recursos en el portal de Azure",
+      "placeholder": "https://docs-test-001.openai.azure.com",
+      "title": "Dirección de la API de Azure"
+    },
+    "modelListPlaceholder": "Selecciona o añade tu modelo de OpenAI desplegado",
+    "title": "Azure OpenAI",
+    "token": {
+      "desc": "Este valor se puede encontrar en la sección 'Claves y puntos finales' al verificar los recursos en el portal de Azure. Puedes usar KEY1 o KEY2",
+      "placeholder": "Clave API de Azure",
+      "title": "Clave API"
+    }
+  },
+  "bedrock": {
+    "accessKeyId": {
+      "desc": "Introduce el AWS Access Key Id",
+      "placeholder": "AWS Access Key Id",
+      "title": "AWS Access Key Id"
+    },
+    "checker": {
+      "desc": "Verifica si el AccessKeyId / SecretAccessKey está correctamente ingresado"
+    },
+    "region": {
+      "desc": "Introduce la región de AWS",
+      "placeholder": "Región de AWS",
+      "title": "Región de AWS"
+    },
+    "secretAccessKey": {
+      "desc": "Introduce el AWS Secret Access Key",
+      "placeholder": "AWS Secret Access Key",
+      "title": "AWS Secret Access Key"
+    },
+    "sessionToken": {
+      "desc": "Si estás usando AWS SSO/STS, introduce tu AWS Session Token",
+      "placeholder": "AWS Session Token",
+      "title": "AWS Session Token (opcional)"
+    },
+    "title": "Bedrock",
+    "unlock": {
+      "customRegion": "Región de servicio personalizada",
+      "customSessionToken": "Token de sesión personalizado",
+      "description": "Introduce tu AWS AccessKeyId / SecretAccessKey para comenzar la sesión. La aplicación no registrará tu configuración de autenticación",
+      "title": "Usar información de autenticación personalizada de Bedrock"
+    }
+  },
+  "github": {
+    "personalAccessToken": {
+      "desc": "Introduce tu Github PAT, haz clic [aquí](https://github.com/settings/tokens) para crear uno",
+      "placeholder": "ghp_xxxxxx",
+      "title": "Github PAT"
+    }
+  },
+  "huggingface": {
+    "accessToken": {
+      "desc": "Introduce tu HuggingFace Token, haz clic [aquí](https://huggingface.co/settings/tokens) para crear uno",
+      "placeholder": "hf_xxxxxxxxx",
+      "title": "HuggingFace Token"
+    }
+  },
+  "ollama": {
+    "checker": {
+      "desc": "Verifica si la dirección del proxy está correctamente ingresada",
+      "title": "Verificación de conectividad"
+    },
+    "customModelName": {
+      "desc": "Añade modelos personalizados, separa múltiples modelos con comas (,) ",
+      "placeholder": "vicuna,llava,codellama,llama2:13b-text",
+      "title": "Nombre del modelo personalizado"
+    },
+    "download": {
+      "desc": "Ollama está descargando este modelo, por favor no cierres esta página. La re-descarga continuará desde donde se interrumpió",
+      "remainingTime": "Tiempo restante",
+      "speed": "Velocidad de descarga",
+      "title": "Descargando modelo {{model}} "
+    },
+    "endpoint": {
+      "desc": "Introduce la dirección del proxy de la interfaz de Ollama, puedes dejarlo vacío si no se especifica localmente",
+      "title": "Dirección del servicio Ollama"
+    },
+    "setup": {
+      "cors": {
+        "description": "Debido a las restricciones de seguridad del navegador, necesitas configurar CORS para Ollama antes de poder usarlo correctamente.",
+        "linux": {
+          "env": "Añade `Environment` en la sección [Service], añadiendo la variable de entorno OLLAMA_ORIGINS:",
+          "reboot": "Recarga systemd y reinicia Ollama",
+          "systemd": "Llama a systemd para editar el servicio de ollama:"
+        },
+        "macos": "Abre la aplicación 'Terminal' y pega el siguiente comando, luego presiona Enter para ejecutarlo",
+        "reboot": "Por favor, reinicia el servicio de Ollama después de completar la ejecución",
+        "title": "Configurar Ollama para permitir acceso CORS",
+        "windows": "En Windows, haz clic en 'Panel de control', entra en la edición de variables de entorno del sistema. Crea una nueva variable de entorno llamada 'OLLAMA_ORIGINS' para tu cuenta de usuario, con el valor *, haz clic en 'OK/Aplicar' para guardar"
+      },
+      "install": {
+        "description": "Por favor, asegúrate de que has iniciado Ollama, si no has descargado Ollama, visita el sitio oficial <1>para descargar</1>",
+        "docker": "Si prefieres usar Docker, Ollama también proporciona una imagen oficial de Docker, puedes descargarla con el siguiente comando:",
+        "linux": {
+          "command": "Instala con el siguiente comando:",
+          "manual": "O también puedes consultar la <1>guía de instalación manual de Linux</1> para instalarlo tú mismo"
+        },
+        "title": "Instalar y activar la aplicación Ollama localmente",
+        "windowsTab": "Windows (versión preliminar)"
+      }
+    },
+    "title": "Ollama",
+    "unlock": {
+      "cancel": "Cancelar descarga",
+      "confirm": "Descargar",
+      "description": "Introduce la etiqueta de tu modelo Ollama para continuar la sesión",
+      "downloaded": "{{completed}} / {{total}}",
+      "starting": "Iniciando descarga...",
+      "title": "Descargar el modelo Ollama especificado"
+    }
+  },
+  "sensenova": {
+    "sensenovaAccessKeyID": {
+      "desc": "Introduce el SenseNova Access Key ID",
+      "placeholder": "SenseNova Access Key ID",
+      "title": "Access Key ID"
+    },
+    "sensenovaAccessKeySecret": {
+      "desc": "Introduce el SenseNova Access Key Secret",
+      "placeholder": "SenseNova Access Key Secret",
+      "title": "Access Key Secret"
+    },
+    "unlock": {
+      "description": "Introduce tu Access Key ID / Access Key Secret para comenzar la sesión. La aplicación no registrará tu configuración de autenticación",
+      "title": "Usar información de autenticación personalizada de SenseNova"
+    }
+  },
+  "wenxin": {
+    "accessKey": {
+      "desc": "Introduce el Access Key de la plataforma Qianfan de Baidu",
+      "placeholder": "Qianfan Access Key",
+      "title": "Access Key"
+    },
+    "checker": {
+      "desc": "Verifica si el AccessKey / SecretAccess está correctamente ingresado"
+    },
+    "secretKey": {
+      "desc": "Introduce el Secret Key de la plataforma Qianfan de Baidu",
+      "placeholder": "Qianfan Secret Key",
+      "title": "Secret Key"
+    },
+    "unlock": {
+      "customRegion": "Región de servicio personalizada",
+      "description": "Introduce tu AccessKey / SecretKey para comenzar la sesión. La aplicación no registrará tu configuración de autenticación",
+      "title": "Usar información de autenticación personalizada de Wenxin"
+    }
+  },
+  "zeroone": {
+    "title": "01.AI Cero Uno"
+  },
+  "zhipu": {
+    "title": "Zhipu"
+  }
+}

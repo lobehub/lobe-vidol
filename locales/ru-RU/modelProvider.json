@@ -1,0 +1,164 @@
+{
+  "azure": {
+    "azureApiVersion": {
+      "desc": "Версия API Azure, формат YYYY-MM-DD, смотрите [последнюю версию](https://learn.microsoft.com/zh-cn/azure/ai-services/openai/reference#chat-completions)",
+      "fetch": "Получить список",
+      "title": "Версия API Azure"
+    },
+    "empty": "Пожалуйста, введите ID модели, чтобы добавить первую модель",
+    "endpoint": {
+      "desc": "Это значение можно найти в разделе «Ключи и конечные точки» в портале Azure при проверке ресурсов",
+      "placeholder": "https://docs-test-001.openai.azure.com",
+      "title": "Адрес API Azure"
+    },
+    "modelListPlaceholder": "Пожалуйста, выберите или добавьте вашу развернутую модель OpenAI",
+    "title": "Azure OpenAI",
+    "token": {
+      "desc": "Это значение можно найти в разделе «Ключи и конечные точки» в портале Azure при проверке ресурсов. Можно использовать KEY1 или KEY2",
+      "placeholder": "Ключ API Azure",
+      "title": "Ключ API"
+    }
+  },
+  "bedrock": {
+    "accessKeyId": {
+      "desc": "Введите AWS Access Key Id",
+      "placeholder": "AWS Access Key Id",
+      "title": "AWS Access Key Id"
+    },
+    "checker": {
+      "desc": "Проверьте, правильно ли введены AccessKeyId / SecretAccessKey"
+    },
+    "region": {
+      "desc": "Введите AWS Region",
+      "placeholder": "AWS Region",
+      "title": "AWS Region"
+    },
+    "secretAccessKey": {
+      "desc": "Введите AWS Secret Access Key",
+      "placeholder": "AWS Secret Access Key",
+      "title": "AWS Secret Access Key"
+    },
+    "sessionToken": {
+      "desc": "Если вы используете AWS SSO/STS, введите ваш AWS Session Token",
+      "placeholder": "AWS Session Token",
+      "title": "AWS Session Token (необязательно)"
+    },
+    "title": "Bedrock",
+    "unlock": {
+      "customRegion": "Пользовательский регион сервиса",
+      "customSessionToken": "Пользовательский токен сессии",
+      "description": "Введите ваш AWS AccessKeyId / SecretAccessKey, чтобы начать сессию. Приложение не будет записывать ваши учетные данные",
+      "title": "Использовать пользовательскую информацию для аутентификации Bedrock"
+    }
+  },
+  "github": {
+    "personalAccessToken": {
+      "desc": "Введите ваш Github PAT, нажмите [здесь](https://github.com/settings/tokens) для создания",
+      "placeholder": "ghp_xxxxxx",
+      "title": "Github PAT"
+    }
+  },
+  "huggingface": {
+    "accessToken": {
+      "desc": "Введите ваш HuggingFace Token, нажмите [здесь](https://huggingface.co/settings/tokens) для создания",
+      "placeholder": "hf_xxxxxxxxx",
+      "title": "HuggingFace Token"
+    }
+  },
+  "ollama": {
+    "checker": {
+      "desc": "Проверьте, правильно ли введен адрес прокси",
+      "title": "Проверка соединения"
+    },
+    "customModelName": {
+      "desc": "Добавьте пользовательскую модель, несколько моделей разделяйте запятой (,) ",
+      "placeholder": "vicuna,llava,codellama,llama2:13b-text",
+      "title": "Имя пользовательской модели"
+    },
+    "download": {
+      "desc": "Ollama загружает эту модель, пожалуйста, старайтесь не закрывать эту страницу. При повторной загрузке процесс будет продолжен с места остановки",
+      "remainingTime": "Оставшееся время",
+      "speed": "Скорость загрузки",
+      "title": "Загрузка модели {{model}} "
+    },
+    "endpoint": {
+      "desc": "Введите адрес прокси интерфейса Ollama, если не указано дополнительно, оставьте пустым",
+      "title": "Адрес сервиса Ollama"
+    },
+    "setup": {
+      "cors": {
+        "description": "Из-за ограничений безопасности браузера вам необходимо настроить кросс-доменные запросы для Ollama, чтобы использовать его нормально.",
+        "linux": {
+          "env": "Добавьте `Environment` в разделе [Service], добавьте переменную окружения OLLAMA_ORIGINS:",
+          "reboot": "Перезагрузите systemd и перезапустите Ollama",
+          "systemd": "Вызовите systemd для редактирования сервиса ollama:"
+        },
+        "macos": "Откройте приложение «Терминал» и вставьте следующую команду, затем нажмите Enter для выполнения",
+        "reboot": "Пожалуйста, перезапустите сервис Ollama после завершения выполнения",
+        "title": "Настройка Ollama для разрешения кросс-доменных запросов",
+        "windows": "На Windows нажмите «Панель управления», перейдите к редактированию системных переменных окружения. Создайте новую переменную окружения с именем «OLLAMA_ORIGINS» для вашей учетной записи пользователя, значение - *, нажмите «OK/Применить» для сохранения"
+      },
+      "install": {
+        "description": "Пожалуйста, убедитесь, что вы включили Ollama, если нет, перейдите на официальный сайт <1>для загрузки</1>",
+        "docker": "Если вы предпочитаете использовать Docker, Ollama также предоставляет официальный образ Docker, вы можете загрузить его с помощью следующей команды:",
+        "linux": {
+          "command": "Установите с помощью следующей команды:",
+          "manual": "Или вы можете обратиться к <1>руководству по ручной установке для Linux</1> для самостоятельной установки"
+        },
+        "title": "Установите и запустите приложение Ollama локально",
+        "windowsTab": "Windows (предварительная версия)"
+      }
+    },
+    "title": "Ollama",
+    "unlock": {
+      "cancel": "Отменить загрузку",
+      "confirm": "Загрузить",
+      "description": "Введите метку вашей модели Ollama, чтобы продолжить сессию",
+      "downloaded": "{{completed}} / {{total}}",
+      "starting": "Начинаю загрузку...",
+      "title": "Загрузка указанной модели Ollama"
+    }
+  },
+  "sensenova": {
+    "sensenovaAccessKeyID": {
+      "desc": "Введите SenseNova Access Key ID",
+      "placeholder": "SenseNova Access Key ID",
+      "title": "Access Key ID"
+    },
+    "sensenovaAccessKeySecret": {
+      "desc": "Введите SenseNova Access Key Secret",
+      "placeholder": "SenseNova Access Key Secret",
+      "title": "Access Key Secret"
+    },
+    "unlock": {
+      "description": "Введите ваш Access Key ID / Access Key Secret, чтобы начать сессию. Приложение не будет записывать ваши учетные данные",
+      "title": "Использовать пользовательскую информацию для аутентификации SenseNova"
+    }
+  },
+  "wenxin": {
+    "accessKey": {
+      "desc": "Введите Access Key платформы Baidu Qianfan",
+      "placeholder": "Qianfan Access Key",
+      "title": "Access Key"
+    },
+    "checker": {
+      "desc": "Проверьте, правильно ли введены AccessKey / Secret Access"
+    },
+    "secretKey": {
+      "desc": "Введите Secret Key платформы Baidu Qianfan",
+      "placeholder": "Qianfan Secret Key",
+      "title": "Secret Key"
+    },
+    "unlock": {
+      "customRegion": "Пользовательский регион сервиса",
+      "description": "Введите ваш AccessKey / SecretKey, чтобы начать сессию. Приложение не будет записывать ваши учетные данные",
+      "title": "Использовать пользовательскую информацию для аутентификации Wenxin"
+    }
+  },
+  "zeroone": {
+    "title": "01.AI Ноль и единица"
+  },
+  "zhipu": {
+    "title": "Zhiyu"
+  }
+}

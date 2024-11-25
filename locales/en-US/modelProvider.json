@@ -1,0 +1,164 @@
+{
+  "azure": {
+    "azureApiVersion": {
+      "desc": "The API version for Azure, following the YYYY-MM-DD format. Refer to the [latest version](https://learn.microsoft.com/en-us/azure/ai-services/openai/reference#chat-completions)",
+      "fetch": "Fetch list",
+      "title": "Azure API Version"
+    },
+    "empty": "Please enter a model ID to add the first model",
+    "endpoint": {
+      "desc": "You can find this value in the 'Keys and Endpoint' section when checking resources in the Azure portal",
+      "placeholder": "https://docs-test-001.openai.azure.com",
+      "title": "Azure API Address"
+    },
+    "modelListPlaceholder": "Please select or add your deployed OpenAI model",
+    "title": "Azure OpenAI",
+    "token": {
+      "desc": "You can find this value in the 'Keys and Endpoint' section when checking resources in the Azure portal. You can use KEY1 or KEY2",
+      "placeholder": "Azure API Key",
+      "title": "API Key"
+    }
+  },
+  "bedrock": {
+    "accessKeyId": {
+      "desc": "Enter your AWS Access Key Id",
+      "placeholder": "AWS Access Key Id",
+      "title": "AWS Access Key Id"
+    },
+    "checker": {
+      "desc": "Test if AccessKeyId / SecretAccessKey is filled in correctly"
+    },
+    "region": {
+      "desc": "Enter AWS Region",
+      "placeholder": "AWS Region",
+      "title": "AWS Region"
+    },
+    "secretAccessKey": {
+      "desc": "Enter your AWS Secret Access Key",
+      "placeholder": "AWS Secret Access Key",
+      "title": "AWS Secret Access Key"
+    },
+    "sessionToken": {
+      "desc": "If you are using AWS SSO/STS, please enter your AWS Session Token",
+      "placeholder": "AWS Session Token",
+      "title": "AWS Session Token (optional)"
+    },
+    "title": "Bedrock",
+    "unlock": {
+      "customRegion": "Custom Service Region",
+      "customSessionToken": "Custom Session Token",
+      "description": "Enter your AWS AccessKeyId / SecretAccessKey to start the session. The application will not log your authentication configuration",
+      "title": "Use Custom Bedrock Authentication Information"
+    }
+  },
+  "github": {
+    "personalAccessToken": {
+      "desc": "Enter your GitHub PAT, click [here](https://github.com/settings/tokens) to create one",
+      "placeholder": "ghp_xxxxxx",
+      "title": "GitHub PAT"
+    }
+  },
+  "huggingface": {
+    "accessToken": {
+      "desc": "Enter your HuggingFace Token, click [here](https://huggingface.co/settings/tokens) to create one",
+      "placeholder": "hf_xxxxxxxxx",
+      "title": "HuggingFace Token"
+    }
+  },
+  "ollama": {
+    "checker": {
+      "desc": "Test if the proxy address is filled in correctly",
+      "title": "Connectivity Check"
+    },
+    "customModelName": {
+      "desc": "Add custom models, separate multiple models with commas (,) ",
+      "placeholder": "vicuna,llava,codellama,llama2:13b-text",
+      "title": "Custom Model Name"
+    },
+    "download": {
+      "desc": "Ollama is downloading this model, please do not close this page. Resuming will continue from where it left off",
+      "remainingTime": "Remaining Time",
+      "speed": "Download Speed",
+      "title": "Downloading Model {{model}}"
+    },
+    "endpoint": {
+      "desc": "Enter the Ollama interface proxy address, leave blank if not specified locally",
+      "title": "Ollama Service Address"
+    },
+    "setup": {
+      "cors": {
+        "description": "Due to browser security restrictions, you need to configure CORS for Ollama to use it normally.",
+        "linux": {
+          "env": "Add `Environment` under the [Service] section, adding the OLLAMA_ORIGINS environment variable:",
+          "reboot": "Reload systemd and restart Ollama",
+          "systemd": "Invoke systemd to edit the ollama service:"
+        },
+        "macos": "Please open the 'Terminal' application, paste the following command, and press Enter to run",
+        "reboot": "Please restart the Ollama service after execution is complete",
+        "title": "Configure Ollama for Cross-Origin Access",
+        "windows": "On Windows, click 'Control Panel', go to edit system environment variables. Create a new environment variable named 'OLLAMA_ORIGINS' for your user account, with the value *, and click 'OK/Apply' to save"
+      },
+      "install": {
+        "description": "Please ensure you have started Ollama. If you haven't downloaded Ollama, please go to the official website <1>download</1>",
+        "docker": "If you prefer to use Docker, Ollama also provides an official Docker image, you can pull it using the following command:",
+        "linux": {
+          "command": "Install using the following command:",
+          "manual": "Alternatively, you can refer to the <1>Linux Manual Installation Guide</1> for manual installation"
+        },
+        "title": "Install and Start Ollama Application Locally",
+        "windowsTab": "Windows (Preview)"
+      }
+    },
+    "title": "Ollama",
+    "unlock": {
+      "cancel": "Cancel Download",
+      "confirm": "Download",
+      "description": "Enter your Ollama model label to continue the session",
+      "downloaded": "{{completed}} / {{total}}",
+      "starting": "Starting Download...",
+      "title": "Download Specified Ollama Model"
+    }
+  },
+  "sensenova": {
+    "sensenovaAccessKeyID": {
+      "desc": "Enter SenseNova Access Key ID",
+      "placeholder": "SenseNova Access Key ID",
+      "title": "Access Key ID"
+    },
+    "sensenovaAccessKeySecret": {
+      "desc": "Enter SenseNova Access Key Secret",
+      "placeholder": "SenseNova Access Key Secret",
+      "title": "Access Key Secret"
+    },
+    "unlock": {
+      "description": "Enter your Access Key ID / Access Key Secret to start the session. The application will not log your authentication configuration",
+      "title": "Use Custom SenseNova Authentication Information"
+    }
+  },
+  "wenxin": {
+    "accessKey": {
+      "desc": "Enter the Access Key from Baidu Qianfan platform",
+      "placeholder": "Qianfan Access Key",
+      "title": "Access Key"
+    },
+    "checker": {
+      "desc": "Test if AccessKey / Secret Access is filled in correctly"
+    },
+    "secretKey": {
+      "desc": "Enter the Secret Key from Baidu Qianfan platform",
+      "placeholder": "Qianfan Secret Key",
+      "title": "Secret Key"
+    },
+    "unlock": {
+      "customRegion": "Custom Service Region",
+      "description": "Enter your AccessKey / SecretKey to start the session. The application will not log your authentication configuration",
+      "title": "Use Custom Wenxin Authentication Information"
+    }
+  },
+  "zeroone": {
+    "title": "01.AI Zero One Everything"
+  },
+  "zhipu": {
+    "title": "Zhipu"
+  }
+}

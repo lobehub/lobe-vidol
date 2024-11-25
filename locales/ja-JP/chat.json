@@ -19,7 +19,8 @@
     "goBottom": "最下部に移動",
     "regenerate": "再生成",
     "save": "保存",
-    "share": "共有"
+    "share": "共有",
+    "tts": "音声"
   },
   "agentMarket": "キャラクターマーケット",
   "animation": {
@@ -39,6 +40,8 @@
     "backgroundList": "背景リスト",
     "totalCount": "合計 {{total}} 件"
   },
+  "callOff": "通話を終了する",
+  "camera": "ビデオ通話",
   "chat": "チャット",
   "chatList": "チャットリスト",
   "danceList": "ダンスリスト",
@@ -68,6 +71,7 @@
   "interactive": "インタラクティブ",
   "noDanceList": "現在再生リストはありません。お気に入りのダンスをマーケットで購読できます。",
   "noRoleList": "ロールリストはありません",
+  "noSession": "現在セッションはありません。+ を使ってカスタムキャラクターを作成するか、発見ページからキャラクターを追加できます。",
   "selectModel": "モデルを選択してください",
   "sessionCreate": "チャットを作成",
   "sessionList": "セッションリスト",
@@ -109,5 +113,6 @@
   "tts": {
     "combine": "音声合成",
     "record": "音声認識（科学的なインターネット接続が必要）"
-  }
+  },
+  "voiceOn": "音声をオンにする"
 }

@@ -1,0 +1,164 @@
+{
+  "azure": {
+    "azureApiVersion": {
+      "desc": "Azure API sürümü, YYYY-AA-GG formatına uymaktadır, [en son sürümü kontrol edin](https://learn.microsoft.com/tr-tr/azure/ai-services/openai/reference#chat-completions)",
+      "fetch": "Listeyi al",
+      "title": "Azure API Sürümü"
+    },
+    "empty": "İlk modeli eklemek için model ID'sini girin",
+    "endpoint": {
+      "desc": "Azure portalında kaynakları kontrol ederken, bu değeri 'Anahtarlar ve Uç Noktalar' bölümünde bulabilirsiniz",
+      "placeholder": "https://docs-test-001.openai.azure.com",
+      "title": "Azure API Adresi"
+    },
+    "modelListPlaceholder": "Dağıttığınız OpenAI modelini seçin veya ekleyin",
+    "title": "Azure OpenAI",
+    "token": {
+      "desc": "Azure portalında kaynakları kontrol ederken, bu değeri 'Anahtarlar ve Uç Noktalar' bölümünde bulabilirsiniz. KEY1 veya KEY2 kullanılabilir",
+      "placeholder": "Azure API Anahtarı",
+      "title": "API Anahtarı"
+    }
+  },
+  "bedrock": {
+    "accessKeyId": {
+      "desc": "AWS Erişim Anahtarını girin",
+      "placeholder": "AWS Erişim Anahtarı",
+      "title": "AWS Erişim Anahtarı"
+    },
+    "checker": {
+      "desc": "AccessKeyId / SecretAccessKey'in doğru girilip girilmediğini test et"
+    },
+    "region": {
+      "desc": "AWS Bölgesini girin",
+      "placeholder": "AWS Bölgesi",
+      "title": "AWS Bölgesi"
+    },
+    "secretAccessKey": {
+      "desc": "AWS Gizli Erişim Anahtarını girin",
+      "placeholder": "AWS Gizli Erişim Anahtarı",
+      "title": "AWS Gizli Erişim Anahtarı"
+    },
+    "sessionToken": {
+      "desc": "AWS SSO/STS kullanıyorsanız, AWS Oturum Anahtarınızı girin",
+      "placeholder": "AWS Oturum Anahtarı",
+      "title": "AWS Oturum Anahtarı (isteğe bağlı)"
+    },
+    "title": "Bedrock",
+    "unlock": {
+      "customRegion": "Özel hizmet bölgesi",
+      "customSessionToken": "Özel Oturum Anahtarı",
+      "description": "Oturuma başlamak için AWS Erişim Anahtarınızı / Gizli Erişim Anahtarınızı girin. Uygulama kimlik bilgilerinizi kaydetmeyecek",
+      "title": "Özel Bedrock kimlik bilgileri ile kullan"
+    }
+  },
+  "github": {
+    "personalAccessToken": {
+      "desc": "Github PAT'nizi girin, [buraya](https://github.com/settings/tokens) tıklayarak oluşturun",
+      "placeholder": "ghp_xxxxxx",
+      "title": "Github PAT"
+    }
+  },
+  "huggingface": {
+    "accessToken": {
+      "desc": "HuggingFace Token'inizi girin, [buraya](https://huggingface.co/settings/tokens) tıklayarak oluşturun",
+      "placeholder": "hf_xxxxxxxxx",
+      "title": "HuggingFace Token"
+    }
+  },
+  "ollama": {
+    "checker": {
+      "desc": "Proxy adresinin doğru girilip girilmediğini test et",
+      "title": "Bağlantı Kontrolü"
+    },
+    "customModelName": {
+      "desc": "Özel model ekleyin, birden fazla modeli virgül (,) ile ayırın",
+      "placeholder": "vicuna,llava,codellama,llama2:13b-text",
+      "title": "Özel Model Adı"
+    },
+    "download": {
+      "desc": "Ollama bu modeli indiriyor, lütfen bu sayfayı kapatmamaya çalışın. Yeniden indirme sırasında kesintiye uğrayacaktır",
+      "remainingTime": "Kalan süre",
+      "speed": "İndirme hızı",
+      "title": "{{model}} modeli indiriliyor"
+    },
+    "endpoint": {
+      "desc": "Ollama arayüzü proxy adresini girin, yerel olarak ek bir şey belirtilmediyse boş bırakabilirsiniz",
+      "title": "Ollama Hizmet Adresi"
+    },
+    "setup": {
+      "cors": {
+        "description": "Tarayıcı güvenlik kısıtlamaları nedeniyle, Ollama'nın düzgün çalışabilmesi için CORS yapılandırması yapmanız gerekmektedir.",
+        "linux": {
+          "env": "[Service] bölümüne `Environment` ekleyin, OLLAMA_ORIGINS ortam değişkenini ekleyin:",
+          "reboot": "systemd'yi yeniden yükleyin ve Ollama'yı yeniden başlatın",
+          "systemd": "ollama hizmetini düzenlemek için systemd'yi çağırın:"
+        },
+        "macos": "Lütfen 'Terminal' uygulamasını açın, aşağıdaki komutları yapıştırın ve çalıştırmak için Enter'a basın",
+        "reboot": "İşlem tamamlandıktan sonra Ollama hizmetini yeniden başlatın",
+        "title": "Ollama'nın CORS erişimini yapılandırın",
+        "windows": "Windows'ta, 'Denetim Masası'na tıklayın, sistem ortam değişkenlerini düzenlemeye gidin. Kullanıcı hesabınız için 'OLLAMA_ORIGINS' adında bir ortam değişkeni oluşturun, değeri * olarak ayarlayın, 'Tamam/Uygula'ya tıklayarak kaydedin"
+      },
+      "install": {
+        "description": "Ollama'yı açtığınızdan emin olun, eğer Ollama'yı indirmediyseniz, lütfen resmi web sitesinden <1>indirin</1>",
+        "docker": "Docker kullanmayı tercih ediyorsanız, Ollama resmi Docker imajını da sunmaktadır, aşağıdaki komutla çekebilirsiniz:",
+        "linux": {
+          "command": "Aşağıdaki komutla kurun:",
+          "manual": "Ya da <1>Linux manuel kurulum kılavuzuna</1> bakarak kendiniz kurabilirsiniz"
+        },
+        "title": "Ollama uygulamasını yerel olarak kurun ve başlatın",
+        "windowsTab": "Windows (önizleme)"
+      }
+    },
+    "title": "Ollama",
+    "unlock": {
+      "cancel": "İndirmeyi iptal et",
+      "confirm": "İndir",
+      "description": "Ollama model etiketinizi girin, tamamladıktan sonra oturuma devam edebilirsiniz",
+      "downloaded": "{{completed}} / {{total}}",
+      "starting": "İndirmeye başlıyor...",
+      "title": "Belirtilen Ollama modelini indir"
+    }
+  },
+  "sensenova": {
+    "sensenovaAccessKeyID": {
+      "desc": "SenseNova Erişim Anahtarını girin",
+      "placeholder": "SenseNova Erişim Anahtar ID'si",
+      "title": "Erişim Anahtar ID'si"
+    },
+    "sensenovaAccessKeySecret": {
+      "desc": "SenseNova Gizli Erişim Anahtarını girin",
+      "placeholder": "SenseNova Gizli Erişim Anahtarı",
+      "title": "Erişim Anahtar Gizlisi"
+    },
+    "unlock": {
+      "description": "Oturuma başlamak için Erişim Anahtar ID'nizi / Erişim Anahtar Gizlinizi girin. Uygulama kimlik bilgilerinizi kaydetmeyecek",
+      "title": "Özel SenseNova kimlik bilgileri ile kullan"
+    }
+  },
+  "wenxin": {
+    "accessKey": {
+      "desc": "Baidu Qianfan platformunun Erişim Anahtarını girin",
+      "placeholder": "Qianfan Erişim Anahtarı",
+      "title": "Erişim Anahtarı"
+    },
+    "checker": {
+      "desc": "AccessKey / SecretAccess'in doğru girilip girilmediğini test et"
+    },
+    "secretKey": {
+      "desc": "Baidu Qianfan platformunun Gizli Anahtarını girin",
+      "placeholder": "Qianfan Gizli Anahtarı",
+      "title": "Gizli Anahtar"
+    },
+    "unlock": {
+      "customRegion": "Özel hizmet bölgesi",
+      "description": "Oturuma başlamak için Erişim Anahtarınızı / Gizli Anahtarınızı girin. Uygulama kimlik bilgilerinizi kaydetmeyecek",
+      "title": "Özel Wenxin Yiyan kimlik bilgileri ile kullan"
+    }
+  },
+  "zeroone": {
+    "title": "01.AI Sıfır Bir"
+  },
+  "zhipu": {
+    "title": "Zhipu"
+  }
+}
