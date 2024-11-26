@@ -1,6 +1,6 @@
 import { SendOutlined } from '@ant-design/icons';
 import { Icon } from '@lobehub/ui';
-import { Button, Space } from 'antd';
+import { Button } from 'antd';
 import { useTheme } from 'antd-style';
 import { ChevronUp, CornerDownLeft, LucideCommand } from 'lucide-react';
 import React, { memo } from 'react';
@@ -14,9 +14,6 @@ import { isMacOS } from '@/utils/platform';
 
 import TextArea from './TextArea';
 import Camera from './actions/Camera';
-import History from './actions/History';
-import ModelSwitchPanel from './actions/ModelSwitchPanel';
-import TokenMini from './actions/TokenMini';
 import { useStyles } from './style';
 
 interface InputAreaProps {
@@ -64,13 +61,6 @@ const InputArea = memo((props: InputAreaProps) => {
 
   return (
     <Flexbox className={className} style={style}>
-      <Flexbox horizontal justify={'space-between'} align="center">
-        <ModelSwitchPanel />
-        <Space size={4}>
-          <TokenMini />
-          <History />
-        </Space>
-      </Flexbox>
       <Flexbox width={'100%'} horizontal gap={4} align={'center'}>
         <TextArea />
         <Button
