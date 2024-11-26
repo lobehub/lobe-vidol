@@ -159,10 +159,6 @@ export interface SessionStore {
    * @param messages
    */
   updateSessionMessages: (messages: ChatMessage[]) => void;
-  /**
-   * 语音开关
-   */
-  voiceOn: boolean;
 }
 
 export const createSessionStore: StateCreator<SessionStore, [['zustand/devtools', never]]> = (
@@ -275,7 +271,7 @@ export const createSessionStore: StateCreator<SessionStore, [['zustand/devtools'
         onMessageHandle: (chunk) => {
           switch (chunk.type) {
             case 'text': {
-              const { voiceOn } = get();
+              const voiceOn = useGlobalStore.getState().voiceOn;
               const chatMode = useGlobalStore.getState().chatMode;
 
               // 只有视频模式下才需要连续语音合成
