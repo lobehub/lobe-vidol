@@ -1,4 +1,5 @@
 import dynamic from 'next/dynamic';
+import { memo } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
 import SkeletonList from './SkeletonList';
@@ -7,7 +8,7 @@ interface ConversationProps {
   mobile?: boolean;
 }
 
-const Conversation = ({ mobile }: ConversationProps) => {
+const Conversation = memo(({ mobile }: ConversationProps) => {
   const Loading = () => (
     <div style={{ margin: '0 auto' }}>
       <SkeletonList mobile={mobile} />
@@ -32,6 +33,6 @@ const Conversation = ({ mobile }: ConversationProps) => {
       <ChatList mobile={mobile} />
     </Flexbox>
   );
-};
+});
 
 export default Conversation;

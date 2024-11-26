@@ -7,6 +7,7 @@ import React from 'react';
 import { Flexbox } from 'react-layout-kit';
 
 import ShareButton from './actions/ShareButton';
+import ToggleChatInfo from './actions/ToggleChatInfo';
 import ToggleSessionList from './actions/ToggleSessionList';
 import { useStyles } from './style';
 
@@ -47,6 +48,7 @@ export default (props: Props) => {
       </Flexbox>
       <Space className={styles.actions}>
         <ShareButton key={'share'} />
+        <ToggleChatInfo />
       </Space>
     </Flexbox>
   );

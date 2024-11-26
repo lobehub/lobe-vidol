@@ -7,7 +7,7 @@ import React, { memo } from 'react';
 import { Center, Flexbox } from 'react-layout-kit';
 
 import DebugUI from '@/features/DebugUI';
-import { useSessionStore } from '@/store/session';
+import { useGlobalStore } from '@/store/global';
 
 import ChatMode from './ChatMode';
 
@@ -21,7 +21,7 @@ const CameraMode = dynamic(() => import('./CameraMode'), {
 });
 
 const Chat = () => {
-  const chatMode = useSessionStore((s) => s.chatMode);
+  const chatMode = useGlobalStore((s) => s.chatMode);
 
   const searchParams = useSearchParams();
   const showDebug = process.env.NODE_ENV === 'development' && searchParams.get('debug') === 'true';

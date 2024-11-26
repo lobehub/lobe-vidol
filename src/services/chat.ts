@@ -242,7 +242,7 @@ export const chatCompletion = async (params: ChatCompletionPayload, options?: Fe
 
 export const handleSpeakAi = async (message: string, options?: SpeakAudioOptions) => {
   const viewer = useGlobalStore.getState().viewer;
-  const chatMode = useSessionStore.getState().chatMode;
+  const chatMode = useGlobalStore.getState().chatMode;
 
   const currentAgent = sessionSelectors.currentAgent(useSessionStore.getState());
   const tts = { ...currentAgent?.tts, message };
@@ -264,7 +264,7 @@ export const handleSpeakAi = async (message: string, options?: SpeakAudioOptions
 
 export const handleStopSpeak = async () => {
   const viewer = useGlobalStore.getState().viewer;
-  const chatMode = useSessionStore.getState().chatMode;
+  const chatMode = useGlobalStore.getState().chatMode;
 
   if (chatMode === 'camera') {
     viewer.model?.stopSpeak();

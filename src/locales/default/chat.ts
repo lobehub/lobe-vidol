@@ -33,6 +33,10 @@ export default {
     action: '清除上下文',
     tip: '该操作不可逆，请谨慎操作',
   },
+  editRole: {
+    action: '编辑角色',
+  },
+
   input: {
     send: '发送',
     warp: '换行',
@@ -54,6 +58,7 @@ export default {
   camera: '视频通话',
   callOff: '挂断',
   sessionList: '会话列表',
+  agentInfo: '角色信息',
   selectModel: '请选择模型',
   share: {
     screenshot: '截图',

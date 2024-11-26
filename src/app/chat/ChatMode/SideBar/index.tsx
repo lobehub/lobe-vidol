@@ -1,9 +1,9 @@
 'use client';
 
 import { DraggablePanel } from '@lobehub/ui';
-import { createStyles, useResponsive } from 'antd-style';
+import { createStyles } from 'antd-style';
 import { rgba } from 'polished';
-import { useEffect } from 'react';
+import { memo, useEffect } from 'react';
 
 import { HEADER_HEIGHT, SIDEBAR_MAX_WIDTH, SIDEBAR_WIDTH } from '@/constants/token';
 import { useGlobalStore } from '@/store/global';
@@ -27,14 +27,16 @@ const useStyles = createStyles(({ css, token }) => ({
   `,
 }));
 
-const SideBar = () => {
+interface SideBarProps {
+  mobile?: boolean;
+}
+
+const SideBar = memo(({ mobile }: SideBarProps) => {
   const { styles } = useStyles();
   const [showSessionList, setSessionList] = useGlobalStore((s) => [
     s.showSessionList,
     s.setSessionList,
   ]);
-
-  const { mobile } = useResponsive();
 
   useEffect(() => {
     if (mobile && showSessionList) {
@@ -62,6 +64,6 @@ const SideBar = () => {
       <SessionList />
     </DraggablePanel>
   );
-};
+});
 
-export default SideBar;
+export default memo(SideBar);
