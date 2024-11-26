@@ -12,11 +12,12 @@ import { chatCompletion, handleSpeakAi, handleStopSpeak } from '@/services/chat'
 import { shareService } from '@/services/share';
 import { Agent } from '@/types/agent';
 import { ChatMessage } from '@/types/chat';
-import { ChatMode, Session } from '@/types/session';
+import { Session } from '@/types/session';
 import { ShareGPTConversation } from '@/types/share';
 import { vidolStorage } from '@/utils/storage';
 
 import { useAgentStore } from '../agent';
+import { useGlobalStore } from '../global';
 import { initialState } from './initialState';
 import { MessageActionType, messageReducer } from './reducers/message';
 import { sessionSelectors } from './selectors';
@@ -45,10 +46,6 @@ export interface SessionStore {
    * 聊天加载中的消息 ID
    */
   chatLoadingId: string | undefined;
-  /**
-   * 当前模式
-   */
-  chatMode: ChatMode;
 
   /**
    * 清空历史消息
@@ -118,19 +115,10 @@ export interface SessionStore {
   sessionList: Session[];
 
   /**
-   * 设置当前聊天模式
-   */
-  setChatMode: (chatMode: ChatMode) => void;
-
-  /**
    * 设置消息输入
    * @param messageInput
    */
   setMessageInput: (messageInput: string) => void;
-  /**
-   * 触发语音开关
-   */
-  setVoiceOn: (voiceOn: boolean) => void;
   shareLoading: boolean;
   shareToShareGPT: (props: { withSystemRole?: boolean }) => Promise<void>;
   /**
@@ -287,7 +275,8 @@ export const createSessionStore: StateCreator<SessionStore, [['zustand/devtools'
         onMessageHandle: (chunk) => {
           switch (chunk.type) {
             case 'text': {
-              const { voiceOn, chatMode } = get();
+              const { voiceOn } = get();
+              const chatMode = useGlobalStore.getState().chatMode;
 
               // 只有视频模式下才需要连续语音合成
               if (voiceOn && chatMode === 'camera') {
@@ -343,9 +332,7 @@ export const createSessionStore: StateCreator<SessionStore, [['zustand/devtools'
     );
     set({ chatLoadingId: undefined });
   },
-  setChatMode: (chatMode: ChatMode) => {
-    set({ chatMode });
-  },
+
   /**
    * 语音消息
    */
@@ -530,9 +517,7 @@ export const createSessionStore: StateCreator<SessionStore, [['zustand/devtools'
     set({ activeId: agentId });
     useAgentStore.setState({ currentIdentifier: agentId });
   },
-  setVoiceOn: (voiceOn) => {
-    set({ voiceOn });
-  },
+
   toggleInteractive: () => {
     const { interactive: touchOn } = get();
     set({ interactive: !touchOn });

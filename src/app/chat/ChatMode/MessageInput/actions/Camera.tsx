@@ -3,11 +3,10 @@ import { message } from 'antd';
 import { Video } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
-import { useSessionStore } from '@/store/session';
+import { useGlobalStore } from '@/store/global';
 
 const Camera = () => {
-  const [setChatMode] = useSessionStore((s) => [s.setChatMode]);
-  const setVoiceOn = useSessionStore((s) => s.setVoiceOn);
+  const [setChatMode, setVoiceOn] = useGlobalStore((s) => [s.setChatMode, s.setVoiceOn]);
   const { t } = useTranslation('chat');
 
   return (
