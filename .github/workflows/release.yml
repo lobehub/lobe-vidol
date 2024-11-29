@@ -19,7 +19,7 @@ jobs:
           node-version: 20
 
       - name: Install bun
-        uses: oven-sh/setup-bun@v1
+        uses: oven-sh/setup-bun@v2
 
       - name: Install deps
         run: bun i
