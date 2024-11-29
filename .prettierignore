@@ -61,3 +61,4 @@ Dockerfile*
 # misc
 # add other ignore file below
 .next
+src/venders

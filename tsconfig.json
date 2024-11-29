@@ -21,10 +21,12 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@framework/*": ["./src/venders/live2d/Framework/src/*"]
     }
   },
-  "exclude": ["node_modules", ".next"],
+
+  "exclude": ["node_modules", ".next", "src/venders"],
   "include": [
     "next-env.d.ts",
     "vitest.config.ts",
