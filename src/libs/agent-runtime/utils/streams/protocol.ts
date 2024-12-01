@@ -60,14 +60,14 @@ export const convertIterableToStream = <T>(stream: AsyncIterable<T>) => {
     async pull(controller) {
       const { done, value } = await it.next();
       if (done) controller.close();
-      else controller.enqueue(value);
+      else controller.enqueue(value as T);
     },
 
     async start(controller) {
       try {
         const { done, value } = await it.next();
         if (done) controller.close();
-        else controller.enqueue(value);
+        else controller.enqueue(value as T);
       } catch (e) {
         const error = e as Error;
 

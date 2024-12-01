@@ -4,11 +4,10 @@
  * Use of this source code is governed by the Live2D Open Software license
  * that can be found at https://www.live2d.com/eula/live2d-open-software-license-agreement_en.html.
  */
-
-import { LogLevel } from '@framework/live2dcubismframework';
+import { LogLevel } from '@live2dFramework/live2dcubismframework';
 
 /**
- * Sample Appで使用する定数
+ * 在Sample+App中使用的常数
  */
 
 // Canvas width and height pixel values, or dynamic screen size ('auto').
@@ -29,56 +28,44 @@ export const ViewLogicalMaxRight = 2.0;
 export const ViewLogicalMaxBottom = -2.0;
 export const ViewLogicalMaxTop = 2.0;
 
-// 相対パス
-export const ResourcesPath = '../../Resources/';
+// 相对路径
+export const ResourcesPath = 'https://r2.vidol.chat/live2d/';
+export const BgResourcesPath = '/backgrounds/';
 
-// モデルの後ろにある背景の画像ファイル
-export const BackImageName = 'back_class_normal.png';
+// 嘴唇说话闭合程度
+export const LipSyncWeight = 5.0;
 
-// 歯車
-export const GearImageName = 'icon_gear.png';
+// 模型后面的背景图像文件
+export const BackImages: string[] = ['forest_trail', 'night_street'];
+// export const BackImageDefault = '3';
 
-// 終了ボタン
-export const PowerImageName = 'CloseNormal.png';
+//模型定义----------------------------------
+export const ModelsDesc: string[] = ['Haru', 'Hiyori', 'Mark', 'Natori', 'Rice', 'Mao', 'Wanko'];
+export const ModelDefault = 'Haru';
+// 与外部定义文件（json）匹配
+export const MotionGroupIdle = 'Idle'; // 空闲
+export const MotionGroupTapBody = 'TapBody'; // 点击身体的时候
 
-// モデル定義---------------------------------------------
-// モデルを配置したディレクトリ名の配列
-// ディレクトリ名とmodel3.jsonの名前を一致させておくこと
-export const ModelDir: string[] = [
-  'Haru',
-  'Hiyori',
-  'Mark',
-  'Natori',
-  'Rice',
-  'Mao',
-  'Wanko'
-];
-export const ModelDirSize: number = ModelDir.length;
-
-// 外部定義ファイル（json）と合わせる
-export const MotionGroupIdle = 'Idle'; // アイドリング
-export const MotionGroupTapBody = 'TapBody'; // 体をタップしたとき
-
-// 外部定義ファイル（json）と合わせる
+// 与外部定义文件（json）匹配
 export const HitAreaNameHead = 'Head';
 export const HitAreaNameBody = 'Body';
 
-// モーションの優先度定数
+// 运动优先级常数
 export const PriorityNone = 0;
 export const PriorityIdle = 1;
 export const PriorityNormal = 2;
 export const PriorityForce = 3;
 
-// MOC3の一貫性検証オプション
+// MOC3一致性验证选项
 export const MOCConsistencyValidationEnable = true;
 
-// デバッグ用ログの表示オプション
+// 调试日志显示选项
 export const DebugLogEnable = true;
 export const DebugTouchLogEnable = false;
 
-// Frameworkから出力するログのレベル設定
+// 从框架输出的日志级别设置
 export const CubismLoggingLevel: LogLevel = LogLevel.LogLevel_Verbose;
 
-// デフォルトのレンダーターゲットサイズ
+// 默认渲染目标大小
 export const RenderTargetWidth = 1900;
 export const RenderTargetHeight = 1000;

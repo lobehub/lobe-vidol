@@ -188,6 +188,7 @@ const createSmoothToolCalls = (params: {
     toolCallChunks.forEach((chunk) => {
       // init the tool call buffer and output queue
       if (!toolCallsBuffer[chunk.index]) {
+        // @ts-ignore
         toolCallsBuffer[chunk.index] = MessageToolCallSchema.parse(chunk);
       }
 

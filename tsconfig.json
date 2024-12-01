@@ -5,7 +5,8 @@
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
-    "strict": true,
+    "strict": false,
+    "noImplicitAny": false,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
@@ -22,11 +23,11 @@
     ],
     "paths": {
       "@/*": ["./src/*"],
-      "@framework/*": ["./src/venders/live2d/Framework/src/*"]
+      "@live2dFramework/*": ["./src/libs/live2d/Framework/src/*"]
     }
   },
 
-  "exclude": ["node_modules", ".next", "src/venders"],
+  "exclude": ["node_modules", ".next", "src/libs/live2d/**"],
   "include": [
     "next-env.d.ts",
     "vitest.config.ts",

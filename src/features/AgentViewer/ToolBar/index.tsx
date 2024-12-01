@@ -101,7 +101,7 @@ const ToolBar = (props: ToolBarProps) => {
             break;
           }
           case 'screenShot': {
-            const canvas = document.querySelector('#canvas') as HTMLCanvasElement;
+            const canvas = document.querySelector('#vrm-canvas') as HTMLCanvasElement;
             const imageType = 'png';
             const dataUrl = canvas.toDataURL(`image/${imageType}`);
             const link = document.createElement('a');

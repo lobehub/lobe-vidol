@@ -7,7 +7,7 @@
 
 export class TouchManager {
   /**
-   * コンストラクタ
+   * 构造函数
    */
   constructor() {
     this._startX = 0.0;
@@ -91,9 +91,9 @@ export class TouchManager {
   }
 
   /**
-   * タッチ開始時イベント
-   * @param deviceX タッチした画面のxの値
-   * @param deviceY タッチした画面のyの値
+   * 触摸开始时事件
+   * @param deviceX 触摸画面的x值
+   * @param deviceY 触摸画面的y值
    */
   public touchesBegan(deviceX: number, deviceY: number): void {
     this._lastX = deviceX;
@@ -106,9 +106,9 @@ export class TouchManager {
   }
 
   /**
-   * ドラッグ時のイベント
-   * @param deviceX タッチした画面のxの値
-   * @param deviceY タッチした画面のyの値
+   * 拖动事件
+   * @param deviceX 触摸画面的x值
+   * @param deviceY 触摸画面的y值
    */
   public touchesMoved(deviceX: number, deviceY: number): void {
     this._lastX = deviceX;
@@ -118,8 +118,8 @@ export class TouchManager {
   }
 
   /**
-   * フリックの距離測定
-   * @return フリック距離
+   * 触摸滑动的距离计算(欧几里得公式)
+   * @return 移动的距離
    */
   public getFlickDistance(): number {
     return this.calculateDistance(
@@ -131,12 +131,12 @@ export class TouchManager {
   }
 
   /**
-   * 点１から点２への距離を求める
+   * 求出点1和点2的距离
    *
-   * @param x1 １つ目のタッチした画面のxの値
-   * @param y1 １つ目のタッチした画面のyの値
-   * @param x2 ２つ目のタッチした画面のxの値
-   * @param y2 ２つ目のタッチした画面のyの値
+   * @param x1 第一个触摸画面的x值
+   * @param y1 第一个触摸画面的y值
+   * @param x2 第二个触摸画面的x值
+   * @param y2 第二个触摸画面的x值
    */
   public calculateDistance(
     x1: number,
@@ -148,13 +148,13 @@ export class TouchManager {
   }
 
   /**
-   * ２つ目の値から、移動量を求める。
-   * 違う方向の場合は移動量０。同じ方向の場合は、絶対値が小さい方の値を参照する。
+   * 根据第二个值求出移动量
+   * 在不同方向的情况下移动量为0。在相同方向的情况下，参照绝对值小的值
    *
-   * @param v1 １つ目の移動量
-   * @param v2 ２つ目の移動量
+   * @param v1 第一个移动量
+   * @param v2 第二个移动量
    *
-   * @return 小さい方の移動量
+   * @return 小移动量
    */
   public calculateMovingAmount(v1: number, v2: number): number {
     if (v1 > 0.0 != v2 > 0.0) {
@@ -169,18 +169,18 @@ export class TouchManager {
     );
   }
 
-  _startY: number; // タッチを開始した時のxの値
-  _startX: number; // タッチを開始した時のyの値
-  _lastX: number; // シングルタッチ時のxの値
-  _lastY: number; // シングルタッチ時のyの値
-  _lastX1: number; // ダブルタッチ時の一つ目のxの値
-  _lastY1: number; // ダブルタッチ時の一つ目のyの値
-  _lastX2: number; // ダブルタッチ時の二つ目のxの値
-  _lastY2: number; // ダブルタッチ時の二つ目のyの値
-  _lastTouchDistance: number; // 2本以上でタッチしたときの指の距離
-  _deltaX: number; // 前回の値から今回の値へのxの移動距離。
-  _deltaY: number; // 前回の値から今回の値へのyの移動距離。
-  _scale: number; // このフレームで掛け合わせる拡大率。拡大操作中以外は1。
-  _touchSingle: boolean; // シングルタッチ時はtrue
-  _flipAvailable: boolean; // フリップが有効かどうか
+  _startY: number; // 开始触摸时的x值
+  _startX: number; // 开始触摸时的y值
+  _lastX: number; // 单次触摸时x的值
+  _lastY: number; // 单次触摸时y的值
+  _lastX1: number; // 双击时第一个x的值
+  _lastY1: number; // 双击时第一个y的值
+  _lastX2: number; // 双击时的第二个x值
+  _lastY2: number; // 双击时的第二个y值
+  _lastTouchDistance: number; // 用2根以上触摸时手指的距离
+  _deltaX: number; // 从上一个值到这次值的x的移动距离
+  _deltaY: number; // 从上一个值到这次值的y的移动距离
+  _scale: number; // 在这个框架中相乘的放大率。放大操作中以外为1
+  _touchSingle: boolean; // 单触时为真
+  _flipAvailable: boolean; // 翻转是否有效
 }

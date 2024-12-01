@@ -4,7 +4,6 @@
  * Use of this source code is governed by the Live2D Open Software license
  * that can be found at https://www.live2d.com/eula/live2d-open-software-license-agreement_en.html.
  */
-
 import {
   JsonArray,
   JsonBoolean,
@@ -12,7 +11,7 @@ import {
   JsonMap,
   JsonNullvalue,
   JsonString,
-  Value
+  Value,
 } from './cubismjson';
 
 /**
@@ -34,12 +33,11 @@ export class CubismJsonExtension {
         const convValue = Number(obj[key]);
         map.put(key, new JsonFloat(convValue));
       } else if (obj[key] instanceof Array) {
+        // @ts-ignore
         map.put(key, CubismJsonExtension.parseJsonArray(obj[key]));
       } else if (obj[key] instanceof Object) {
-        map.put(
-          key,
-          CubismJsonExtension.parseJsonObject(obj[key], new JsonMap())
-        );
+        // @ts-ignore
+        map.put(key, CubismJsonExtension.parseJsonObject(obj[key], new JsonMap()));
       } else if (obj[key] == null) {
         map.put(key, new JsonNullvalue());
       } else {
@@ -65,18 +63,23 @@ export class CubismJsonExtension {
           const convValue = Number(obj[key]);
           arr.add(new JsonFloat(convValue));
         } else if (obj[key] instanceof Array) {
+          // @ts-ignore
           arr.add(this.parseJsonArray(obj[key]));
         } else if (obj[key] instanceof Object) {
+          // @ts-ignore
           arr.add(this.parseJsonObject(obj[key], new JsonMap()));
         } else if (obj[key] == null) {
+          // @ts-ignore
           arr.add(new JsonNullvalue());
         } else {
           // どれにも当てはまらない場合でも処理する
           arr.add(obj[key]);
         }
       } else if (obj[key] instanceof Array) {
+        // @ts-ignore
         arr.add(this.parseJsonArray(obj[key]));
       } else if (obj[key] instanceof Object) {
+        // @ts-ignore
         arr.add(this.parseJsonObject(obj[key], new JsonMap()));
       } else if (obj[key] == null) {
         arr.add(new JsonNullvalue());

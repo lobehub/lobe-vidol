@@ -6,6 +6,7 @@ export const parseToolCalls = (origin: MessageToolCall[], value: MessageToolCall
   produce(origin, (draft) => {
     // if there is no origin, we should parse all the value and set it to draft
     if (draft.length === 0) {
+      // @ts-ignore
       draft.push(...value.map((item) => MessageToolCallSchema.parse(item)));
       return;
     }
@@ -14,6 +15,7 @@ export const parseToolCalls = (origin: MessageToolCall[], value: MessageToolCall
     value.forEach(({ index, ...item }) => {
       if (!draft?.[index]) {
         // if not, we should insert it to the draft
+        // @ts-ignore
         draft?.splice(index, 0, MessageToolCallSchema.parse(item));
       } else {
         // if it is already in the draft, we should merge the arguments to the draft

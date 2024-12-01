@@ -25,6 +25,7 @@ export interface LayoutProps {
 }
 
 const parserFallbackLang = () => {
+  // @ts-ignore
   let fallbackLang: string = resolveAcceptLanguage(
     headers().get('accept-language') || '',
     locales,

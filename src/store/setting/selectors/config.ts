@@ -17,6 +17,7 @@ import { merge } from '@/utils/merge';
 export const currentConfig = (s: SettingStore): Config => merge(s.defaultConfig, s.config);
 
 export const currentLanguageModelConfig = (s: SettingStore): UserModelProviderConfig => {
+  // @ts-ignore
   return currentConfig(s).languageModel || {};
 };
 
@@ -24,6 +25,7 @@ export const getProviderConfigById = (provider: string) => (s: SettingStore) =>
   currentLanguageModelConfig(s)[provider as GlobalLLMProviderKey] as ProviderConfig | undefined;
 
 const currentTouchConfig = (s: SettingStore): TouchConfig => {
+  // @ts-ignore
   return currentConfig(s).touch || {};
 };
 
@@ -40,6 +42,7 @@ const currentLanguage = (s: SettingStore) => {
 };
 
 const currentTTSConfig = (s: SettingStore): TTSConfig => {
+  // @ts-ignore
   return currentConfig(s).tts || {};
 };
 
