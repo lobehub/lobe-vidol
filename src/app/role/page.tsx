@@ -6,7 +6,6 @@ import React, { memo } from 'react';
 import { Center, Flexbox } from 'react-layout-kit';
 
 import SideBar from './SideBar';
-import ViewerWithUpload from './ViewerWithUpload';
 import { useStyles } from './style';
 
 const RoleEdit = dynamic(() => import('./RoleEdit'), {
@@ -21,15 +20,16 @@ const RoleEdit = dynamic(() => import('./RoleEdit'), {
 const Role = () => {
   const { styles } = useStyles();
   return (
-    <Flexbox flex={1} height={'100%'} width={'100%'} horizontal>
+    <Flexbox
+      flex={1}
+      height={'100%'}
+      width={'100%'}
+      horizontal
+      style={{ overflow: 'hidden', position: 'relative' }}
+    >
       <SideBar />
       <Flexbox className={styles.preview} horizontal>
-        <Flexbox className={styles.container}>
-          <RoleEdit />
-        </Flexbox>
-        <Flexbox className={styles.model}>
-          <ViewerWithUpload />
-        </Flexbox>
+        <RoleEdit />
       </Flexbox>
     </Flexbox>
   );

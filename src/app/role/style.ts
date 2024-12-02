@@ -8,13 +8,13 @@ export const useStyles = createStyles(({ css, cx }) => ({
     css`
       overflow: auto;
       width: 100%;
+      padding: 0 12px;
     `,
   ),
   container: css`
     width: 1024px;
     height: 100%;
     margin: 0 auto;
-    padding: 0 24px;
   `,
   model: css`
     width: ${ROLE_VIEWER_WIDTH}px;

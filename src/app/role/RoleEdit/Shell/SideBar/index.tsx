@@ -5,18 +5,27 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
-import Enabled from '@/app/role/RoleEdit/Touch/ActionList/Actions/Enabled';
 import ListItem from '@/components/ListItem';
 import { TouchAreaEnum } from '@/types/touch';
 
+import Enabled from '../ActionList/Actions/Enabled';
 import Header from '../components/Header';
 
-const useStyles = createStyles(({ css, token }) => ({
+const useStyles = createStyles(({ css, token, responsive }) => ({
   listItem: css`
     position: relative;
-    width: 180px;
+    width: 100%;
     margin-block: 2px;
     border-radius: ${token.borderRadius}px;
+  `,
+  container: css`
+    display: flex;
+    flex-direction: column;
+    width: 180px;
+    ${responsive.lg} {
+      flex-flow: row wrap;
+      width: 100%;
+    }
   `,
 }));
 
@@ -32,7 +41,7 @@ const Index = (props: IndexProps) => {
   const { t } = useTranslation('role');
 
   return (
-    <Flexbox>
+    <Flexbox className={styles.container}>
       <Header title={t('touch.customEnable')} extra={<Enabled />} />
       {areaOptions.map((item) => (
         <ListItem

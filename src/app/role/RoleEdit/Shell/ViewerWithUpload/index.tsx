@@ -56,7 +56,13 @@ const ViewerWithUpload = memo<ViewerWithUploadProps>(({ style }) => {
       style={style}
       openFileDialogOnClick={!currentAgent3DModel}
     >
-      <Flexbox className={styles.guide} align="center" justify={'center'} width={'100%'}>
+      <Flexbox
+        className={styles.guide}
+        align="center"
+        justify={'center'}
+        width={'100%'}
+        height={'100%'}
+      >
         <InboxOutlined className={styles.icon} />
         <p className={styles.info}>{t('uploadTip', { ns: 'common' })}</p>
         <p className={styles.extra}>{t('upload.support')}</p>

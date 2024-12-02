@@ -11,7 +11,7 @@ import { Flexbox } from 'react-layout-kit';
 import Info from './Info';
 import LangModel from './LangModel';
 import Role from './Role';
-import Touch from './Touch';
+import Shell from './Shell';
 import Voice from './Voice';
 import SubmitAgentButton from './actions/SubmitAgentButton';
 import { useStyles } from './style';
@@ -52,8 +52,8 @@ const RolePanel = (props: RolePanelProps) => {
                   label: t('nav.voice'),
                 },
                 {
-                  key: 'touch',
-                  label: t('nav.touch'),
+                  key: 'shell',
+                  label: t('nav.shell'),
                 },
                 {
                   key: 'llm',
@@ -77,7 +77,7 @@ const RolePanel = (props: RolePanelProps) => {
             {tab === 'info' ? <Info /> : null}
             {tab === 'role' ? <Role /> : null}
             {tab === 'voice' ? <Voice /> : null}
-            {tab === 'touch' ? <Touch /> : null}
+            {tab === 'shell' ? <Shell /> : null}
             {tab === 'llm' ? <LangModel /> : null}
           </div>
         </Flexbox>

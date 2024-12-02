@@ -2,13 +2,16 @@ import { createStyles } from 'antd-style';
 import classNames from 'classnames';
 import React, { memo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Flexbox } from 'react-layout-kit';
 
+import { ROLE_VIEWER_WIDTH } from '@/constants/common';
 import { TouchAreaEnum } from '@/types/touch';
 
 import ActionList from './ActionList';
 import SideBar from './SideBar';
+import ViewerWithUpload from './ViewerWithUpload';
 
-const useStyles = createStyles(({ css, token }) => ({
+const useStyles = createStyles(({ css, token, responsive }) => ({
   container: css`
     position: relative;
 
@@ -20,6 +23,18 @@ const useStyles = createStyles(({ css, token }) => ({
 
     background-color: rgba(255, 255, 255, 2%);
     border-radius: ${token.borderRadius}px;
+
+    ${responsive.lg} {
+      flex-direction: column;
+      min-height: auto;
+    }
+  `,
+  model: css`
+    width: ${ROLE_VIEWER_WIDTH}px;
+    height: 100%;
+    ${responsive.lg} {
+      width: 100%;
+    }
   `,
 }));
 
@@ -63,18 +78,17 @@ const Touch = (props: TouchProps) => {
   ];
 
   return (
-    <div className={classNames(className, styles.container)} style={style}>
+    <Flexbox className={classNames(className, styles.container)} style={style} horizontal gap={12}>
       <SideBar
         currentTouchArea={currentTouchArea}
         setCurrentTouchArea={setCurrentTouchArea}
         areaOptions={TOUCH_AREA_OPTIONS}
       />
-      <ActionList
-        currentTouchArea={currentTouchArea}
-        style={{ marginLeft: 12 }}
-        areaOptions={TOUCH_AREA_OPTIONS}
-      />
-    </div>
+      <ActionList currentTouchArea={currentTouchArea} areaOptions={TOUCH_AREA_OPTIONS} />
+      <Flexbox className={styles.model}>
+        <ViewerWithUpload />
+      </Flexbox>
+    </Flexbox>
   );
 };
 

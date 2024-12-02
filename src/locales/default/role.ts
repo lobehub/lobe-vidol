@@ -224,7 +224,7 @@ export default {
     info: '基本信息',
     role: '角色设定',
     voice: '语音',
-    touch: '触摸',
+    shell: '化身',
     llm: '语言模型',
     model: '3D模型',
   },
