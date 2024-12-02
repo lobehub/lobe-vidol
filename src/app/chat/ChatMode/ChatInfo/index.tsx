@@ -1,10 +1,13 @@
-import { DraggablePanel } from '@lobehub/ui';
+import { DraggablePanel, DraggablePanelContainer } from '@lobehub/ui';
 import { Skeleton, Space } from 'antd';
+import { createStyles, useResponsive } from 'antd-style';
+import isEqual from 'lodash-es/isEqual';
 import dynamic from 'next/dynamic';
-import React, { memo, useEffect } from 'react';
+import { rgba } from 'polished';
+import React, { memo, useEffect, useState } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
-import { SIDEBAR_MAX_WIDTH, SIDEBAR_WIDTH } from '@/constants/token';
+import { SIDEBAR_WIDTH } from '@/constants/token';
 import { useGlobalStore } from '@/store/global';
 
 const AgentDetail = dynamic(() => import('./AgentDetail'), {
@@ -23,39 +26,72 @@ const AgentDetail = dynamic(() => import('./AgentDetail'), {
   ),
 });
 
-interface ChatInfoProps {
-  mobile?: boolean;
-}
+const useStyles = createStyles(({ css, token, isDarkMode }) => ({
+  content: css`
+    display: flex;
+    flex-direction: column;
+    height: 100% !important;
+  `,
+  drawer: css`
+    z-index: 10;
+    background: ${token.colorBgLayout};
+  `,
+  header: css`
+    border-block-end: 1px solid ${token.colorBorder};
+  `,
+  panel: css`
+    overflow: hidden;
+    height: 100%;
+    background: ${isDarkMode ? rgba(token.colorBgElevated, 0.8) : token.colorBgElevated};
+  `,
+}));
 
-const ChatInfo = memo(({ mobile }: ChatInfoProps) => {
+const ChatInfo = memo(() => {
+  const { styles } = useStyles();
+  const { md = true, lg = true } = useResponsive();
+
   const [showAgentInfo, setShowAgentInfo] = useGlobalStore((s) => [
     s.showAgentInfo,
     s.setShowAgentInfo,
   ]);
 
-  useEffect(() => {
-    if (mobile && showAgentInfo) {
-      setShowAgentInfo(false);
-    }
-  }, [mobile]);
+  const [cacheExpand, setCacheExpand] = useState<boolean>(Boolean(showAgentInfo));
 
-  const handleExpandChange = (expand: boolean) => {
-    if (!mobile) {
-      setShowAgentInfo(expand);
-    }
+  const handleExpand = (expand: boolean) => {
+    if (isEqual(expand, Boolean(showAgentInfo))) return;
+    setShowAgentInfo(expand);
+    setCacheExpand(expand);
   };
+
+  useEffect(() => {
+    if (lg && cacheExpand) setShowAgentInfo(true);
+    if (!lg) setShowAgentInfo(false);
+  }, [lg, cacheExpand]);
 
   return (
     <DraggablePanel
-      defaultSize={{ width: SIDEBAR_WIDTH }}
+      className={styles.drawer}
+      classNames={{
+        content: styles.content,
+      }}
       minWidth={SIDEBAR_WIDTH}
-      maxWidth={SIDEBAR_MAX_WIDTH}
-      mode={'fixed'}
+      mode={md ? 'fixed' : 'float'}
+      showHandlerWhenUnexpand={false}
+      showHandlerWideArea={false}
       placement={'right'}
-      onExpandChange={handleExpandChange}
+      onExpandChange={handleExpand}
       expand={showAgentInfo}
     >
-      <AgentDetail />
+      <DraggablePanelContainer
+        style={{
+          flex: 'none',
+          height: '100%',
+          maxHeight: '100vh',
+          minWidth: SIDEBAR_WIDTH,
+        }}
+      >
+        <AgentDetail />
+      </DraggablePanelContainer>
     </DraggablePanel>
   );
 });
