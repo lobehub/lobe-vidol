@@ -16,7 +16,12 @@ const Chat = () => {
   const ref = React.useRef<HTMLDivElement>(null);
 
   return (
-    <Flexbox flex={1} className={styles.chat} horizontal>
+    <Flexbox
+      flex={1}
+      className={styles.chat}
+      horizontal
+      style={{ maxWidth: '100%', overflow: 'hidden', position: 'relative' }}
+    >
       <SideBar />
       <Flexbox flex={1} style={{ position: 'relative' }} height={'100%'} width={'100%'}>
         <ChatHeader />

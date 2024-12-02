@@ -15,14 +15,10 @@ const useStyles = createStyles(({ css, token }) => ({
   content: css`
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: 100% !important;
   `,
   sidebar: css`
-    display: flex;
-    flex-direction: column;
-
-    height: 100%;
-
+    z-index: 10;
     background-color: ${rgba(token.colorBgLayout, 0.2)};
     backdrop-filter: saturate(180%) blur(8px);
   `,

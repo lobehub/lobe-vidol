@@ -26,7 +26,7 @@ const AgentDetail = dynamic(() => import('./AgentDetail'), {
   ),
 });
 
-const useStyles = createStyles(({ css, token, isDarkMode }) => ({
+const useStyles = createStyles(({ css, token }) => ({
   content: css`
     display: flex;
     flex-direction: column;
@@ -34,15 +34,8 @@ const useStyles = createStyles(({ css, token, isDarkMode }) => ({
   `,
   drawer: css`
     z-index: 10;
-    background: ${token.colorBgLayout};
-  `,
-  header: css`
-    border-block-end: 1px solid ${token.colorBorder};
-  `,
-  panel: css`
-    overflow: hidden;
-    height: 100%;
-    background: ${isDarkMode ? rgba(token.colorBgElevated, 0.8) : token.colorBgElevated};
+    background-color: ${rgba(token.colorBgLayout, 0.2)};
+    backdrop-filter: saturate(180%) blur(8px);
   `,
 }));
 
@@ -76,8 +69,6 @@ const ChatInfo = memo(() => {
       }}
       minWidth={SIDEBAR_WIDTH}
       mode={md ? 'fixed' : 'float'}
-      showHandlerWhenUnexpand={false}
-      showHandlerWideArea={false}
       placement={'right'}
       onExpandChange={handleExpand}
       expand={showAgentInfo}
