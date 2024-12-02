@@ -16,6 +16,7 @@ export default (props: Props) => {
 
   return (
     <Modal
+      allowFullscreen
       footer={null}
       width={900}
       bodyProps={{

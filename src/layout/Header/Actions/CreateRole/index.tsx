@@ -1,5 +1,6 @@
 import { PlusOutlined } from '@ant-design/icons';
-import { Avatar, Button, Modal, message } from 'antd';
+import { Modal } from '@lobehub/ui';
+import { Avatar, Button, message } from 'antd';
 import { createStyles } from 'antd-style';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
@@ -41,7 +42,7 @@ const useStyles = createStyles(({ css, token }) => ({
   `,
 }));
 
-export default function CreateRole({ mobile }: { mobile?: boolean }) {
+export default function CreateRole() {
   const { t } = useTranslation('role');
   const { styles } = useStyles();
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -70,31 +71,38 @@ export default function CreateRole({ mobile }: { mobile?: boolean }) {
     {
       key: GenderEnum.MALE,
       label: t('agent.male'),
-      icon: 'https://r2.vidol.chat/common/Anime%20boy.png',
+      icon: 'https://oss.vidol.chat/docs/2024/12/8fc3717dd8f190f26cf204789d54b297.png',
     },
     {
       key: GenderEnum.FEMALE,
       label: t('agent.female'),
-      icon: 'https://r2.vidol.chat/common/Anime%20girl.png',
+      icon: 'https://oss.vidol.chat/docs/2024/12/6c45a6c800590acdb782ab905939fa04.png',
     },
   ];
 
   return (
     <>
-      <Button
-        type={mobile ? 'primary' : 'default'}
-        onClick={() => setIsModalOpen(true)}
-        icon={<PlusOutlined />}
-        style={{ width: mobile ? '100%' : 'auto' }}
-      >
+      <Button type={'default'} onClick={() => setIsModalOpen(true)} icon={<PlusOutlined />}>
         {t('role.create')}
       </Button>
 
       <Modal
+        allowFullscreen
+        height={360}
         title={t('role.selectGender')}
         open={isModalOpen}
-        footer={null}
-        width={560}
+        footer={
+          <Button
+            className={styles.createButton}
+            type="primary"
+            disabled={!selectedGender || loading}
+            onClick={handleCreateRole}
+            loading={loading}
+          >
+            {t('role.create')}
+          </Button>
+        }
+        width={480}
         onCancel={() => !loading && setIsModalOpen(false)}
         closable={!loading}
         maskClosable={!loading}
@@ -111,16 +119,6 @@ export default function CreateRole({ mobile }: { mobile?: boolean }) {
             />
           ))}
         </div>
-
-        <Button
-          className={styles.createButton}
-          type="primary"
-          disabled={!selectedGender || loading}
-          onClick={handleCreateRole}
-          loading={loading}
-        >
-          {t('role.create')}
-        </Button>
       </Modal>
     </>
   );
