@@ -23,7 +23,11 @@ export default memo(() => {
   );
 
   return (
-    <Flexbox flex={1} horizontal>
+    <Flexbox
+      flex={1}
+      horizontal
+      style={{ height: '100%', position: 'relative', overflow: 'hidden' }}
+    >
       <Flexbox flex={1} style={{ position: 'relative' }}>
         {currentAgent ? (
           <div className={styles.viewer}>
