@@ -1,6 +1,6 @@
 import { SendOutlined } from '@ant-design/icons';
 import { Icon } from '@lobehub/ui';
-import { Button } from 'antd';
+import { Button, Typography } from 'antd';
 import { useTheme } from 'antd-style';
 import { ChevronUp, CornerDownLeft, LucideCommand } from 'lucide-react';
 import React, { memo } from 'react';
@@ -77,7 +77,9 @@ const InputArea = memo((props: InputAreaProps) => {
         <Camera />
       </Flexbox>
       <Flexbox horizontal justify={'space-between'} align={'center'} style={{ marginTop: 4 }}>
-        <div className={styles.alert}>{t('input.alert')}</div>
+        <Typography.Text className={styles.alert} ellipsis>
+          {t('input.alert')}
+        </Typography.Text>
         {ShortCuts}
       </Flexbox>
     </Flexbox>

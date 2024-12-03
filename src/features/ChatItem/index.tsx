@@ -18,7 +18,7 @@ import { renderMessages } from './Messages';
 const useStyles = createStyles(({ css, prefixCls, responsive }) => ({
   message: css`
     width: 100%;
-    min-width: 480px;
+    min-width: 360px;
     max-width: ${CHAT_INPUT_WIDTH};
     margin: 0 auto;
     // prevent the textarea too long

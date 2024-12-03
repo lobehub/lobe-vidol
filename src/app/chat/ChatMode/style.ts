@@ -9,7 +9,7 @@ export const useStyles = createStyles(({ css, token, responsive }) => ({
   `,
   input: css`
     width: ${CHAT_INPUT_WIDTH};
-    min-width: 480px;
+    min-width: 360px;
     max-width: 100vw;
 
     ${responsive.mobile} {
