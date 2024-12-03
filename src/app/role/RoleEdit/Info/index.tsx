@@ -2,7 +2,7 @@ import { Form, FormProps } from '@lobehub/ui';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { INPUT_WIDTH_LG, INPUT_WIDTH_MD } from '@/constants/token';
+import { FORM_STYLE } from '@/constants/token';
 
 import Greeting from './Greeting';
 import PreviewWithUpload from './PreviewWithUpload';
@@ -27,41 +27,41 @@ const Info = () => {
       label: t('info.nameLabel'),
       desc: t('info.nameDescription'),
       name: 'name',
-      children: <RoleName style={{ width: INPUT_WIDTH_MD }} />,
+      children: <RoleName />,
     },
     {
       label: t('info.descLabel'),
       desc: t('info.descDescription'),
       name: 'description',
-      children: <RoleDescription style={{ width: INPUT_WIDTH_LG }} />,
+      children: <RoleDescription />,
     },
     {
       label: t('info.greetLabel'),
       desc: t('info.greetDescription'),
       name: 'greeting',
-      children: <Greeting style={{ width: INPUT_WIDTH_LG }} />,
+      children: <Greeting />,
     },
     {
       label: t('info.genderLabel'),
       desc: t('info.genderDescription'),
       name: 'gender',
-      children: <RoleGender style={{ width: INPUT_WIDTH_MD }} />,
+      children: <RoleGender />,
     },
     {
       label: t('info.categoryLabel'),
       desc: t('info.categoryDescription'),
       name: 'category',
-      children: <RoleCategory style={{ width: INPUT_WIDTH_MD }} />,
+      children: <RoleCategory />,
     },
     {
       label: t('info.readmeLabel'),
       desc: t('info.readmeDescription'),
       name: 'readme',
-      children: <ReadMe style={{ width: INPUT_WIDTH_LG }} />,
+      children: <ReadMe />,
     },
   ];
 
-  return <Form form={form} variant="block" items={basic} itemsType={'flat'} />;
+  return <Form form={form} items={basic} itemsType={'flat'} variant={'block'} {...FORM_STYLE} />;
 };
 
 export default Info;

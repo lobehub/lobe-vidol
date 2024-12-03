@@ -1,15 +1,19 @@
 'use client';
 
+import { useResponsive } from 'antd-style';
 import React from 'react';
 import { Flexbox } from 'react-layout-kit';
 
 import Actions from './components/Actions';
 import Avatar from './components/Avatar';
+import BorderSpacing from './components/BorderSpacing';
 import ErrorContent from './components/ErrorContent';
 import MessageContent from './components/MessageContent';
 import Title from './components/Title';
 import { useStyles } from './style';
 import { ChatItemProps } from './type';
+
+const MOBILE_AVATAR_SIZE = 32;
 
 const ChatItem = React.forwardRef<HTMLDivElement, ChatItemProps>(
   ({
@@ -38,6 +42,8 @@ const ChatItem = React.forwardRef<HTMLDivElement, ChatItemProps>(
     fontSize,
     ...rest
   }: ChatItemProps) => {
+    const { mobile } = useResponsive();
+
     const { cx, styles } = useStyles({
       editing,
       placement,
@@ -52,6 +58,7 @@ const ChatItem = React.forwardRef<HTMLDivElement, ChatItemProps>(
       <Flexbox
         className={cx(styles.container, className)}
         direction={placement === 'left' ? 'horizontal' : 'horizontal-reverse'}
+        gap={mobile ? 6 : 12}
         {...rest}
       >
         <Avatar
@@ -61,6 +68,7 @@ const ChatItem = React.forwardRef<HTMLDivElement, ChatItemProps>(
           loading={loading}
           onClick={onAvatarClick}
           placement={placement}
+          size={mobile ? MOBILE_AVATAR_SIZE : undefined}
         />
         <Flexbox
           align={placement === 'left' ? 'flex-start' : 'flex-end'}
@@ -100,6 +108,7 @@ const ChatItem = React.forwardRef<HTMLDivElement, ChatItemProps>(
             <Actions actions={actions} editing={editing} placement={placement} type={type} />
           </Flexbox>
         </Flexbox>
+        {mobile && type === 'block' && <BorderSpacing borderSpacing={MOBILE_AVATAR_SIZE} />}
       </Flexbox>
     );
   },

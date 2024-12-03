@@ -31,6 +31,7 @@ const useStyles = createStyles(({ css, token }) => ({
   list: css`
     overflow-y: scroll;
     width: 100%;
+    height: 100%;
     padding: 0 ${token.paddingSM}px;
   `,
   player: css`

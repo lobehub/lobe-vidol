@@ -39,6 +39,7 @@ const ModelConfigModal = memo<ModelConfigModalProps>(({ showAzureDeployName, pro
 
   return (
     <Modal
+      allowFullscreen
       destroyOnClose
       footer={[
         <Button key="cancel" onClick={closeModal}>

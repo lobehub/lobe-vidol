@@ -14,7 +14,6 @@ const initialState = {
   messageInput: '',
   sessionList: [],
   defaultSession: defaultSession,
-  voiceOn: false,
   interactive: true,
 };
 

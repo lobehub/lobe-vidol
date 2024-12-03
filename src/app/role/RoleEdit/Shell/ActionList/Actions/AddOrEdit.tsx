@@ -1,6 +1,6 @@
-import { ActionIcon, Form, FormItem } from '@lobehub/ui';
+import { ActionIcon, Form, FormItem, Modal } from '@lobehub/ui';
 import { VRMExpressionPresetName } from '@pixiv/three-vrm';
-import { Input, Modal, Select } from 'antd';
+import { Input, Select } from 'antd';
 import { Edit2Icon, Plus } from 'lucide-react';
 import React, { memo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -56,6 +56,7 @@ export default memo((props: Props) => {
         onClick={showModal}
       />
       <Modal
+        allowFullscreen
         onCancel={handleCancel}
         onOk={handleOk}
         open={open}

@@ -162,6 +162,7 @@ const CreateDanceModal = () => {
         {t('create.title', { ns: 'dance' })}
       </Button>
       <Modal
+        allowFullscreen
         open={open}
         title={t('create.title', { ns: 'dance' })}
         onCancel={() => setOpen(false)}

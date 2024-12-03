@@ -12,6 +12,9 @@ const RootLayout = ({ children }: PropsWithChildren) => {
 
   return (
     <html lang="cn" suppressHydrationWarning>
+      <head>
+        <script src="https://cubism.live2d.com/sdk-web/cubismcore/live2dcubismcore.min.js" defer />
+      </head>
       <body>
         <StyleRegistry>
           <Layout>

@@ -1,67 +1,88 @@
-import { DraggablePanel } from '@lobehub/ui';
-import { Space } from 'antd';
-import React, { memo, useEffect } from 'react';
+import { DraggablePanel, DraggablePanelContainer } from '@lobehub/ui';
+import { Skeleton, Space } from 'antd';
+import { createStyles, useResponsive } from 'antd-style';
+import isEqual from 'lodash-es/isEqual';
+import dynamic from 'next/dynamic';
+import { rgba } from 'polished';
+import React, { memo, useEffect, useState } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
-import AgentCard from '@/components/agent/AgentCard';
-import SystemRole from '@/components/agent/SystemRole';
-import { CHAT_HEADER_HEIGHT, SIDEBAR_MAX_WIDTH, SIDEBAR_WIDTH } from '@/constants/token';
-import useSessionContext from '@/hooks/useSessionContext';
+import { SIDEBAR_WIDTH } from '@/constants/token';
 import { useGlobalStore } from '@/store/global';
 
-import EditRole from './actions/EditRole';
-import History from './actions/History';
-import TokenMini from './actions/TokenMini';
+const AgentDetail = dynamic(() => import('./AgentDetail'), {
+  ssr: false,
+  loading: () => (
+    <Flexbox style={{ padding: 12 }} gap={16} align={'center'} justify={'center'}>
+      <Skeleton.Avatar active shape="circle" size={96} />
+      <Skeleton.Input active size="small" />
+      <Skeleton active paragraph={{ rows: 2, width: '100%' }} title={false} />
+      <Space>
+        <Skeleton.Button active />
+        <Skeleton.Button active />
+      </Space>
+      <Skeleton active paragraph={{ rows: 3, width: '100%' }} title={false} />
+    </Flexbox>
+  ),
+});
 
-interface ChatInfoProps {
-  mobile?: boolean;
-}
+const useStyles = createStyles(({ css, token }) => ({
+  content: css`
+    display: flex;
+    flex-direction: column;
+    height: 100% !important;
+  `,
+  drawer: css`
+    z-index: 10;
+    background-color: ${rgba(token.colorBgLayout, 0.2)};
+    backdrop-filter: saturate(180%) blur(8px);
+  `,
+}));
 
-const ChatInfo = memo(({ mobile }: ChatInfoProps) => {
-  const { sessionAgent } = useSessionContext();
+const ChatInfo = memo(() => {
+  const { styles } = useStyles();
+  const { md = true, lg = true } = useResponsive();
+
   const [showAgentInfo, setShowAgentInfo] = useGlobalStore((s) => [
     s.showAgentInfo,
     s.setShowAgentInfo,
   ]);
 
-  useEffect(() => {
-    if (mobile && showAgentInfo) {
-      setShowAgentInfo(false);
-    }
-  }, [mobile]);
+  const [cacheExpand, setCacheExpand] = useState<boolean>(Boolean(showAgentInfo));
 
-  const handleExpandChange = (expand: boolean) => {
-    if (!mobile) {
-      setShowAgentInfo(expand);
-    }
+  const handleExpand = (expand: boolean) => {
+    if (isEqual(expand, Boolean(showAgentInfo))) return;
+    setShowAgentInfo(expand);
+    setCacheExpand(expand);
   };
+
+  useEffect(() => {
+    if (lg && cacheExpand) setShowAgentInfo(true);
+    if (!lg) setShowAgentInfo(false);
+  }, [lg, cacheExpand]);
 
   return (
     <DraggablePanel
-      defaultSize={{ width: SIDEBAR_WIDTH }}
+      className={styles.drawer}
+      classNames={{
+        content: styles.content,
+      }}
       minWidth={SIDEBAR_WIDTH}
-      maxWidth={SIDEBAR_MAX_WIDTH}
-      mode={'fixed'}
+      mode={md ? 'fixed' : 'float'}
       placement={'right'}
-      onExpandChange={handleExpandChange}
+      onExpandChange={handleExpand}
       expand={showAgentInfo}
     >
-      {sessionAgent && (
-        <AgentCard
-          style={{ height: `calc(100vh - ${CHAT_HEADER_HEIGHT}px)` }}
-          agent={sessionAgent}
-          actions={[
-            <Flexbox horizontal justify={'space-between'} align="center" key="token-history">
-              <Space size={4}>
-                <TokenMini />
-                <History />
-              </Space>
-              <EditRole />
-            </Flexbox>,
-          ]}
-          footer={<SystemRole systemRole={sessionAgent.systemRole} style={{ marginTop: 16 }} />}
-        />
-      )}
+      <DraggablePanelContainer
+        style={{
+          flex: 'none',
+          height: '100%',
+          maxHeight: '100vh',
+          minWidth: SIDEBAR_WIDTH,
+        }}
+      >
+        <AgentDetail />
+      </DraggablePanelContainer>
     </DraggablePanel>
   );
 });

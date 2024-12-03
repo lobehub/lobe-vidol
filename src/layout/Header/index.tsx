@@ -97,7 +97,7 @@ const Header = (props: Props) => {
         placement="left"
         onClose={() => setDrawerVisible(false)}
         open={drawerVisible}
-        width={300}
+        width={320}
         closeIcon={null}
         styles={{
           body: {
@@ -113,7 +113,23 @@ const Header = (props: Props) => {
             borderBottom: 'none',
             backgroundColor: token.colorBgContainer,
           },
+          footer: {
+            backgroundColor: token.colorBgContainer,
+            padding: 16,
+            borderTop: `1px solid ${token.colorBorder}`,
+          },
         }}
+        footer={
+          <Flexbox gap={8} direction="horizontal" justify="space-between" align="center">
+            <Space>
+              <Documentation key="doc" />
+              <Github key="github" />
+              <Support key="support" />
+            </Space>
+            <CreateRole />
+            <Avatar key="avatar" />
+          </Flexbox>
+        }
       >
         <ConfigProvider
           theme={{
@@ -133,27 +149,19 @@ const Header = (props: Props) => {
               backgroundColor: token.colorBgContainer,
               flex: 1,
             }}
-            items={[
-              {
-                key: 'create',
-                label: <CreateRole mobile />,
-                style: { background: 'none' },
-              },
-              { type: 'divider' },
-              ...navigationItems.map((item) => ({
-                key: item.key,
-                icon: item.icon,
-                label: (
-                  <Link
-                    href={`/${item.key}`}
-                    style={{ color: 'inherit' }}
-                    onClick={() => setDrawerVisible(false)}
-                  >
-                    {item.component}
-                  </Link>
-                ),
-              })),
-            ]}
+            items={navigationItems.map((item) => ({
+              key: item.key,
+              icon: item.icon,
+              label: (
+                <Link
+                  href={`/${item.key}`}
+                  style={{ color: 'inherit' }}
+                  onClick={() => setDrawerVisible(false)}
+                >
+                  {item.component}
+                </Link>
+              ),
+            }))}
             onClick={({ key }) => {
               if (Object.values(HeaderNavKey).includes(key as HeaderNavKey)) {
                 router.push(`/${key}`);
@@ -170,16 +178,20 @@ const Header = (props: Props) => {
     <LobeHeader
       actions={[
         <Flexbox key="actions" gap={8} direction="horizontal">
-          {!mobile && <CreateRole key="create" />}
-          <Documentation key="doc" />
-          <Github key="github" />
-          <Support key="support" />
-          <Avatar key="avatar" />
+          {!mobile && (
+            <>
+              <CreateRole key="create" />
+              <Documentation key="doc" />
+              <Github key="github" />
+              <Support key="support" />
+              <Avatar key="avatar" />
+            </>
+          )}
+          {mobile ? renderMobileNav() : null}
         </Flexbox>,
       ]}
       logo={
         <Space>
-          {mobile ? renderMobileNav() : null}
           <Link href="/" style={{ color: 'inherit' }}>
             <Logo extra={'Lobe Vidol'} size={36} />
           </Link>
