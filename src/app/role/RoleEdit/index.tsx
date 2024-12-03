@@ -1,8 +1,7 @@
 'use client';
 
-import { BookOutlined } from '@ant-design/icons';
 import { TabsNav } from '@lobehub/ui';
-import { Button } from 'antd';
+import { useResponsive } from 'ahooks';
 import classNames from 'classnames';
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -13,6 +12,7 @@ import LangModel from './LangModel';
 import Role from './Role';
 import Shell from './Shell';
 import Voice from './Voice';
+import RoleBookButton from './actions/RoleBook';
 import SubmitAgentButton from './actions/SubmitAgentButton';
 import { useStyles } from './style';
 
@@ -21,68 +21,55 @@ interface RolePanelProps {
   style?: React.CSSProperties;
 }
 
-const handleOpenDocs = () => {
-  window.open('https://docs.vidol.chat/role-manual/quickstart/introduction', '_blank');
-};
-
 const RolePanel = (props: RolePanelProps) => {
   const { styles } = useStyles();
+  const { md = true } = useResponsive();
   const { className, style } = props;
   const [tab, setTab] = useState('info');
   const { t } = useTranslation('role');
 
   return (
-    <div className={classNames(styles.edit, className)} style={style}>
-      <Flexbox horizontal flex={1} gap={12}>
-        <Flexbox flex={2}>
-          <div style={{ marginBottom: 12 }}>
-            <TabsNav
-              activeKey={tab}
-              items={[
-                {
-                  key: 'info',
-                  label: t('nav.info'),
-                },
-                {
-                  key: 'role',
-                  label: t('nav.role'),
-                },
-                {
-                  key: 'voice',
-                  label: t('nav.voice'),
-                },
-                {
-                  key: 'shell',
-                  label: t('nav.shell'),
-                },
-                {
-                  key: 'llm',
-                  label: t('nav.llm'),
-                },
-              ]}
-              tabBarExtraContent={
-                <Flexbox horizontal gap={8}>
-                  <Button icon={<BookOutlined />} onClick={handleOpenDocs}>
-                    {t('roleBook')} {/* 需要在翻译文件中添加对应的翻译 */}
-                  </Button>
-                  <SubmitAgentButton modal />
-                </Flexbox>
-              }
-              onChange={(key) => {
-                setTab(key);
-              }}
-            />
-          </div>
-          <div className={styles.content}>
-            {tab === 'info' ? <Info /> : null}
-            {tab === 'role' ? <Role /> : null}
-            {tab === 'voice' ? <Voice /> : null}
-            {tab === 'shell' ? <Shell /> : null}
-            {tab === 'llm' ? <LangModel /> : null}
-          </div>
-        </Flexbox>
-      </Flexbox>
-    </div>
+    <Flexbox flex={1} gap={12} className={classNames(styles.container, className)} style={style}>
+      <TabsNav
+        activeKey={tab}
+        items={[
+          {
+            key: 'info',
+            label: t('nav.info'),
+          },
+          {
+            key: 'role',
+            label: t('nav.role'),
+          },
+          {
+            key: 'voice',
+            label: t('nav.voice'),
+          },
+          {
+            key: 'shell',
+            label: t('nav.shell'),
+          },
+          {
+            key: 'llm',
+            label: t('nav.llm'),
+          },
+        ]}
+        tabBarExtraContent={
+          <Flexbox horizontal gap={8}>
+            <RoleBookButton modal={md} />
+            <SubmitAgentButton modal={md} />
+          </Flexbox>
+        }
+        onChange={(key) => {
+          setTab(key);
+        }}
+      />
+      {tab === 'info' ? <Info /> : null}
+      {tab === 'role' ? <Role /> : null}
+      {tab === 'voice' ? <Voice /> : null}
+      {tab === 'shell' ? <Shell /> : null}
+      {tab === 'llm' ? <LangModel /> : null}
+    </Flexbox>
   );
 };
 

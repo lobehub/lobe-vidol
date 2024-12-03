@@ -57,6 +57,7 @@ const useStyles = createStyles(({ css, token }) => ({
     backdrop-filter: saturate(180%) blur(8px);
   `,
   header: css`
+    width: 100%;
     border-bottom: 1px solid ${token.colorBorder};
   `,
   player: css`

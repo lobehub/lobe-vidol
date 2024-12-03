@@ -2,7 +2,7 @@ import { Form, FormProps } from '@lobehub/ui';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { INPUT_WIDTH_MD } from '@/constants/token';
+import { FORM_STYLE } from '@/constants/token';
 
 import TTSEngine from './TTSEngine';
 import TTSLocale from './TTSLocale';
@@ -19,37 +19,37 @@ export default () => {
       label: t('tts.engineLabel'),
       desc: t('tts.engineDescription'),
       name: 'engine',
-      children: <TTSEngine style={{ width: INPUT_WIDTH_MD }} />,
+      children: <TTSEngine />,
     },
     {
       label: t('tts.localeLabel'),
       desc: t('tts.localeDescription'),
       name: 'locale',
-      children: <TTSLocale style={{ width: INPUT_WIDTH_MD }} />,
+      children: <TTSLocale />,
     },
     {
       label: t('tts.voiceLabel'),
       desc: t('tts.voiceDescription'),
       name: 'voice',
-      children: <TTSVoice style={{ width: INPUT_WIDTH_MD }} />,
+      children: <TTSVoice />,
     },
     {
       label: t('tts.speedLabel'),
       desc: t('tts.speedDescription'),
       name: 'speed',
-      children: <TTSSpeed style={{ width: INPUT_WIDTH_MD }} />,
+      children: <TTSSpeed />,
     },
     {
       label: t('tts.pitchLabel'),
       desc: t('tts.pitchDescription'),
       name: 'pitch',
-      children: <TTSPitch style={{ width: INPUT_WIDTH_MD }} />,
+      children: <TTSPitch />,
     },
     {
       label: t('tts.audition'),
       desc: t('tts.auditionDescription'),
-      children: <TTSPlay style={{ width: INPUT_WIDTH_MD }} />,
+      children: <TTSPlay />,
     },
   ];
-  return <Form items={voice} itemsType={'flat'} variant={'block'} />;
+  return <Form items={voice} itemsType={'flat'} variant={'block'} {...FORM_STYLE} />;
 };
