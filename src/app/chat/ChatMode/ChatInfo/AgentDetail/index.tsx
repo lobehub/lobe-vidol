@@ -4,7 +4,6 @@ import { Flexbox } from 'react-layout-kit';
 
 import AgentCard from '@/components/agent/AgentCard';
 import SystemRole from '@/components/agent/SystemRole';
-import { CHAT_HEADER_HEIGHT } from '@/constants/token';
 import useSessionContext from '@/hooks/useSessionContext';
 
 import EditRole from '../actions/EditRole';
@@ -17,7 +16,6 @@ const ChatInfo = () => {
   return (
     sessionAgent && (
       <AgentCard
-        style={{ height: `calc(100vh - ${CHAT_HEADER_HEIGHT}px)` }}
         agent={sessionAgent}
         actions={[
           <Flexbox horizontal justify={'space-between'} align="center" key="token-history">

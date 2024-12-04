@@ -1,4 +1,4 @@
-import { DraggablePanel, DraggablePanelContainer } from '@lobehub/ui';
+import { DraggablePanel } from '@lobehub/ui';
 import { Skeleton, Space } from 'antd';
 import { createStyles, useResponsive } from 'antd-style';
 import isEqual from 'lodash-es/isEqual';
@@ -7,7 +7,7 @@ import { rgba } from 'polished';
 import React, { memo, useEffect, useState } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
-import { SIDEBAR_WIDTH } from '@/constants/token';
+import { CHAT_HEADER_HEIGHT, SIDEBAR_WIDTH } from '@/constants/token';
 import { useGlobalStore } from '@/store/global';
 
 const AgentDetail = dynamic(() => import('./AgentDetail'), {
@@ -73,16 +73,9 @@ const ChatInfo = memo(() => {
       onExpandChange={handleExpand}
       expand={showAgentInfo}
     >
-      <DraggablePanelContainer
-        style={{
-          flex: 'none',
-          height: '100%',
-          maxHeight: '100vh',
-          minWidth: SIDEBAR_WIDTH,
-        }}
-      >
+      <div style={{ height: `calc(100vh - ${CHAT_HEADER_HEIGHT}px)`, overflowY: 'auto' }}>
         <AgentDetail />
-      </DraggablePanelContainer>
+      </div>
     </DraggablePanel>
   );
 });
