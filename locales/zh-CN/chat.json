@@ -22,6 +22,7 @@
     "goBottom": "返回底部",
     "regenerate": "重新生成"
   },
+  "agentInfo": "角色信息",
   "agentMarket": "角色市场",
   "animation": {
     "animationList": "动作列表",
@@ -48,6 +49,9 @@
   "danceMarket": "舞蹈市场",
   "delSession": "删除会话",
   "delSessionAlert": "确认删除对话吗？删除后无法恢复, 请谨慎操作！",
+  "editRole": {
+    "action": "编辑角色"
+  },
   "history": {
     "title": "聊天记录",
     "alert": "确定删除历史消息？",

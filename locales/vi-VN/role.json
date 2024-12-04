@@ -74,7 +74,7 @@
     "llm": "Mô hình ngôn ngữ",
     "model": "Mô hình 3D",
     "role": "Thiết lập vai trò",
-    "touch": "Cảm ứng",
+    "shell": "Hóa thân",
     "voice": "Giọng nói"
   },
   "noRole": "Chưa có vai trò nào, bạn có thể tạo vai trò tùy chỉnh bằng cách nhấn + hoặc thêm vai trò qua trang khám phá.",

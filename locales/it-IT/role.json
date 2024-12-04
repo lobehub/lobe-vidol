@@ -74,7 +74,7 @@
     "llm": "Modello linguistico",
     "model": "Modello 3D",
     "role": "Impostazione del ruolo",
-    "touch": "Tocco",
+    "shell": "Incarna",
     "voice": "Voce"
   },
   "noRole": "Nessun ruolo disponibile. Puoi creare un ruolo personalizzato cliccando su + oppure aggiungere ruoli dalla pagina di scoperta.",

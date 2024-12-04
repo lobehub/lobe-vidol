@@ -22,6 +22,7 @@
     "share": "Udostępnij",
     "tts": "Głos"
   },
+  "agentInfo": "Informacje o roli",
   "agentMarket": "Rynek postaci",
   "animation": {
     "animationList": "Lista animacji",
@@ -48,6 +49,9 @@
   "danceMarket": "Rynek tańca",
   "delSession": "Usuń sesję",
   "delSessionAlert": "Czy na pewno chcesz usunąć rozmowę? Po usunięciu nie będzie można jej przywrócić, proszę działać ostrożnie!",
+  "editRole": {
+    "action": "Edytuj rolę"
+  },
   "history": {
     "action": "Wyczyść kontekst",
     "alert": "Czy na pewno chcesz usunąć historię wiadomości?",

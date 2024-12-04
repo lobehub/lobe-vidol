@@ -22,6 +22,7 @@
     "share": "Share",
     "tts": "Voice"
   },
+  "agentInfo": "Role Information",
   "agentMarket": "Character Market",
   "animation": {
     "animationList": "Action List",
@@ -48,6 +49,9 @@
   "danceMarket": "Dance Market",
   "delSession": "Delete Session",
   "delSessionAlert": "Are you sure you want to delete this conversation? Once deleted, it cannot be recovered, so please proceed with caution!",
+  "editRole": {
+    "action": "Edit Role"
+  },
   "history": {
     "action": "Clear Context",
     "alert": "Are you sure you want to delete the history messages?",

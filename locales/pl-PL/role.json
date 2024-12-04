@@ -74,7 +74,7 @@
     "llm": "Model językowy",
     "model": "Model 3D",
     "role": "Ustawienia roli",
-    "touch": "Dotyk",
+    "shell": "Wcielenie",
     "voice": "Głos"
   },
   "noRole": "Brak ról, możesz stworzyć własną rolę klikając + lub dodać rolę przez stronę odkrywania.",
