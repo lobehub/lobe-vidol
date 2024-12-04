@@ -74,7 +74,7 @@
     "llm": "Taalmodel",
     "model": "3D-model",
     "role": "Rolinstellingen",
-    "touch": "Aanraking",
+    "shell": "Gedaante",
     "voice": "Stem"
   },
   "noRole": "Geen rol beschikbaar. U kunt een aangepaste rol maken door op + te klikken, of rollen toevoegen via de ontdekkingpagina.",

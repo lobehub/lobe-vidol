@@ -22,6 +22,7 @@
     "share": "공유",
     "tts": "음성"
   },
+  "agentInfo": "역할 정보",
   "agentMarket": "캐릭터 마켓",
   "animation": {
     "animationList": "애니메이션 목록",
@@ -48,6 +49,9 @@
   "danceMarket": "댄스 마켓",
   "delSession": "세션 삭제",
   "delSessionAlert": "대화를 삭제하시겠습니까? 삭제 후에는 복구할 수 없으니 신중하게 결정해 주세요!",
+  "editRole": {
+    "action": "역할 편집"
+  },
   "history": {
     "action": "문맥 지우기",
     "alert": "역사 메시지를 삭제하시겠습니까?",

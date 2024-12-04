@@ -22,6 +22,7 @@
     "share": "Delen",
     "tts": "Spraak"
   },
+  "agentInfo": "Rol informatie",
   "agentMarket": "Rolmarkt",
   "animation": {
     "animationList": "Actielijst",
@@ -48,6 +49,9 @@
   "danceMarket": "Dansmarkt",
   "delSession": "Verwijder sessie",
   "delSessionAlert": "Weet je zeker dat je de conversatie wilt verwijderen? Na verwijdering kan deze niet worden hersteld, wees voorzichtig!",
+  "editRole": {
+    "action": "Rol bewerken"
+  },
   "history": {
     "action": "Context wissen",
     "alert": "Weet je zeker dat je de historische berichten wilt verwijderen?",

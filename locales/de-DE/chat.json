@@ -22,6 +22,7 @@
     "share": "Teilen",
     "tts": "Sprachausgabe"
   },
+  "agentInfo": "Rolleninformationen",
   "agentMarket": "Charaktermarkt",
   "animation": {
     "animationList": "Animationsliste",
@@ -48,6 +49,9 @@
   "danceMarket": "Tanzmarkt",
   "delSession": "Sitzung löschen",
   "delSessionAlert": "Möchten Sie den Chat wirklich löschen? Nach dem Löschen kann er nicht wiederhergestellt werden, bitte seien Sie vorsichtig!",
+  "editRole": {
+    "action": "Rolle bearbeiten"
+  },
   "history": {
     "action": "Kontext löschen",
     "alert": "Möchten Sie die historischen Nachrichten wirklich löschen?",

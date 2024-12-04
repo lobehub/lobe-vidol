@@ -22,6 +22,7 @@
     "share": "Compartilhar",
     "tts": "Voz"
   },
+  "agentInfo": "Informações do papel",
   "agentMarket": "Mercado de Personagens",
   "animation": {
     "animationList": "Lista de Ações",
@@ -48,6 +49,9 @@
   "danceMarket": "Mercado de Danças",
   "delSession": "Excluir sessão",
   "delSessionAlert": "Você tem certeza de que deseja excluir a conversa? Após a exclusão, não será possível recuperar. Por favor, proceda com cautela!",
+  "editRole": {
+    "action": "Editar papel"
+  },
   "history": {
     "action": "Limpar Contexto",
     "alert": "Tem certeza de que deseja excluir as mensagens do histórico?",

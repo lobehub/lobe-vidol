@@ -22,6 +22,7 @@
     "share": "Condividi",
     "tts": "Voce"
   },
+  "agentInfo": "Informazioni sul ruolo",
   "agentMarket": "Mercato dei personaggi",
   "animation": {
     "animationList": "Elenco delle azioni",
@@ -48,6 +49,9 @@
   "danceMarket": "Mercato delle danze",
   "delSession": "Elimina la sessione",
   "delSessionAlert": "Sei sicuro di voler eliminare la conversazione? Una volta eliminata, non potrà essere recuperata, si prega di procedere con cautela!",
+  "editRole": {
+    "action": "Modifica ruolo"
+  },
   "history": {
     "action": "Cancella contesto",
     "alert": "Sei sicuro di voler eliminare i messaggi storici?",

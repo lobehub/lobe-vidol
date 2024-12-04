@@ -74,7 +74,7 @@
     "llm": "Language Model",
     "model": "3D Model",
     "role": "Character Settings",
-    "touch": "Touch",
+    "shell": "Avatar",
     "voice": "Voice"
   },
   "noRole": "No roles available. You can create a custom role by clicking +, or add roles through the discovery page.",

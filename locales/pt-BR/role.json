@@ -74,7 +74,7 @@
     "llm": "Modelo de Linguagem",
     "model": "Modelo 3D",
     "role": "Definição de Papel",
-    "touch": "Toque",
+    "shell": "Encarnar",
     "voice": "Voz"
   },
   "noRole": "Nenhum papel disponível. Você pode criar um papel personalizado clicando em + ou adicionar papéis pela página de descoberta.",

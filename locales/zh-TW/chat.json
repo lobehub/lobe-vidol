@@ -22,6 +22,7 @@
     "share": "分享",
     "tts": "語音"
   },
+  "agentInfo": "角色資訊",
   "agentMarket": "角色市場",
   "animation": {
     "animationList": "動作列表",
@@ -48,6 +49,9 @@
   "danceMarket": "舞蹈市場",
   "delSession": "刪除會話",
   "delSessionAlert": "確認刪除對話嗎？刪除後無法恢復，請謹慎操作！",
+  "editRole": {
+    "action": "編輯角色"
+  },
   "history": {
     "action": "清除上下文",
     "alert": "確定刪除歷史消息？",

@@ -22,6 +22,7 @@
     "share": "Chia sẻ",
     "tts": "Giọng nói"
   },
+  "agentInfo": "Thông tin vai trò",
   "agentMarket": "Thị trường nhân vật",
   "animation": {
     "animationList": "Danh sách hành động",
@@ -48,6 +49,9 @@
   "danceMarket": "Thị trường khiêu vũ",
   "delSession": "Xóa cuộc trò chuyện",
   "delSessionAlert": "Bạn có chắc chắn muốn xóa cuộc trò chuyện này không? Sau khi xóa, bạn sẽ không thể khôi phục lại, xin hãy cẩn thận!",
+  "editRole": {
+    "action": "Chỉnh sửa vai trò"
+  },
   "history": {
     "action": "Xóa ngữ cảnh",
     "alert": "Bạn có chắc chắn muốn xóa tin nhắn lịch sử không?",

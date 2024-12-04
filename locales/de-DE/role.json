@@ -74,7 +74,7 @@
     "llm": "Sprachmodell",
     "model": "3D-Modell",
     "role": "Rolleneinstellung",
-    "touch": "Berührung",
+    "shell": "Erscheinung",
     "voice": "Stimme"
   },
   "noRole": "Keine Rolle vorhanden. Sie können eine benutzerdefinierte Rolle durch Klicken auf + erstellen oder Rollen über die Entdeckungsseite hinzufügen.",

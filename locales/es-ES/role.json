@@ -74,7 +74,7 @@
     "llm": "Modelo de lenguaje",
     "model": "Modelo 3D",
     "role": "Configuración de roles",
-    "touch": "Tocar",
+    "shell": "Encarnación",
     "voice": "Voz"
   },
   "noRole": "No hay roles disponibles. Puedes crear un rol personalizado haciendo clic en +, o agregar roles a través de la página de descubrimiento.",

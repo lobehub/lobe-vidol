@@ -22,6 +22,7 @@
     "share": "共有",
     "tts": "音声"
   },
+  "agentInfo": "ロール情報",
   "agentMarket": "キャラクターマーケット",
   "animation": {
     "animationList": "アニメーションリスト",
@@ -48,6 +49,9 @@
   "danceMarket": "ダンスマーケット",
   "delSession": "セッションを削除",
   "delSessionAlert": "会話を削除してもよろしいですか？削除後は復元できませんので、慎重に操作してください！",
+  "editRole": {
+    "action": "ロールを編集"
+  },
   "history": {
     "action": "コンテキストをクリア",
     "alert": "履歴メッセージを削除してもよろしいですか？",
