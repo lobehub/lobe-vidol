@@ -18,7 +18,6 @@ const List = dynamic(() => import('./List'), {
 
 const useStyles = createStyles(({ css, token, prefixCls }) => ({
   session: css`
-    overflow-y: auto;
     height: 100%;
   `,
   list: css`
