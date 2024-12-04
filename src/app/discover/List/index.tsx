@@ -17,8 +17,12 @@ const useStyles = createStyles(({ css, token }) => ({
     background-color: rgba(255, 255, 255, 2%);
     border-radius: ${token.borderRadius}px;
   `,
-  header: css`
-    padding: ${token.padding}px ${token.paddingSM}px;
+  searchBar: css`
+    margin-top: ${token.margin}px;
+    padding-inline: ${token.paddingSM}px;
+  `,
+  tabsNav: css`
+    padding-inline: ${token.paddingSM}px;
   `,
   list: css`
     overflow-y: scroll;
@@ -72,25 +76,20 @@ const AgentList = (props: AgentListProps) => {
 
   return (
     <Flexbox className={classNames(className, styles.container)} style={style}>
-      <Flexbox
-        className={styles.header}
-        gap={16}
-        direction="horizontal"
-        align="center"
-        justify="space-between"
-      >
-        <TabsNav
-          activeKey={activeCategory}
-          items={CATEGORIES}
-          onChange={(key) => setActiveCategory(key)}
-        />
-        <SearchBar
-          placeholder={t('search', { ns: 'common' })}
-          value={searchKeyword}
-          onChange={(e) => setSearchKeyword(e.target.value)}
-          allowClear
-        />
-      </Flexbox>
+      <SearchBar
+        placeholder={t('search', { ns: 'common' })}
+        value={searchKeyword}
+        className={styles.searchBar}
+        onChange={(e) => setSearchKeyword(e.target.value)}
+        allowClear
+      />
+
+      <TabsNav
+        activeKey={activeCategory}
+        items={CATEGORIES}
+        className={styles.tabsNav}
+        onChange={(key) => setActiveCategory(key)}
+      />
 
       {loading ? (
         <SkeletonList count={6} />
