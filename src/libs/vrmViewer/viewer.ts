@@ -231,10 +231,13 @@ export class Viewer {
     this._camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 2000);
     this._camera.position.set(0, 1.5, 2.0);
 
-    // camera 控制
+    // camera 控制 - 添加一些限制
     this._cameraControls = new OrbitControls(this._camera, this._renderer.domElement);
     this._cameraControls.screenSpacePanning = true;
-    this._cameraControls?.target.set(0, 0, 0);
+    this._cameraControls.target.set(0, 1.0, 0); // 将目标点稍微抬高
+    // this._cameraControls.minDistance = 1.0; // 设置最小距离
+    // this._cameraControls.maxDistance = 5.0; // 设置最大距离
+    // this._cameraControls.maxPolarAngle = Math.PI * 0.75; // 限制相机俯仰角度
     this._cameraControls.update();
 
     // Audio 音频播放
