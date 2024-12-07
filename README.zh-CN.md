@@ -39,12 +39,12 @@
 
 - [👋🏻 开始使用 & 交流](#-开始使用--交流)
 - [✨ 特性一览](#-特性一览)
-  - [1. **流畅的对话体验**](#1-流畅的对话体验)
-  - [2. **视频对话体验**](#2-视频对话体验)
-  - [3. **多模型服务商支持**](#3-多模型服务商支持)
-  - [4. **角色与舞蹈市场**](#4-角色与舞蹈市场)
-  - [5. **TTS & STT 语音会话**](#5-tts--stt-语音会话)
-  - [6. **渐进式 Web 应用 (PWA)**](#6-渐进式-web-应用-pwa)
+  - [`1`. **文字聊天模式**](#1-文字聊天模式)
+  - [`2`. **视频对话模式**](#2-视频对话模式)
+  - [`3`. **多模型服务商支持**](#3-多模型服务商支持)
+  - [`4`. **角色与舞蹈市场**](#4-角色与舞蹈市场)
+  - [`5`. **TTS & STT 语音会话**](#5-tts--stt-语音会话)
+  - [`6`. **渐进式 Web 应用 (PWA)**](#6-渐进式-web-应用-pwa)
 - [📦 生态](#-生态)
 - [⌨️ 本地开发](#️-本地开发)
 - [🤝 参与贡献](#-参与贡献)
@@ -61,8 +61,8 @@
 
 LobeVidol 目前正在积极开发中，有任何需求或者问题，欢迎提交 \[issues]\[issues-link]
 
-| [![][vercel-shield-badge]][vercel-link]   | 无需安装或注册！访问我们的网站，即可快速体验                                  |
-| :---------------------------------------- | :---------------------------------------------------------------------------- |
+| [![][vercel-shield-badge]][vercel-link]   | 无需安装或注册！访问我们的网站，即可快速体验                           |
+| :---------------------------------------- | :----------------------------------------------- |
 | [![][discord-shield-badge]][discord-link] | 加入我们的 Discord 社区！这是你可以与开发者和其他 LobeHub 热衷用户交流的地方. |
 
 > \[!IMPORTANT]
@@ -144,7 +144,7 @@ LobeVidol 目前正在积极开发中，有任何需求或者问题，欢迎提�
 - **Minimax**: 接入了 Minimax 的 AI 模型，包括 MoE 模型 **abab6**，提供了更多的选择空间。[了解更多](https://www.minimaxi.com/)
 - **DeepSeek**: 接入了 DeepSeek 的 AI 模型，包括最新的 **DeepSeek-V2**，提供兼顾性能与价格的模型。[了解更多](https://www.deepseek.com/)
 - **Qwen**: 接入了 Qwen 的 AI 模型，包括最新的 **qwen-turbo**，**qwen-plus** 和 **qwen-max** 等模型。[了解更多](https://help.aliyun.com/zh/dashscope/developer-reference/model-introduction)
-- **Novita AI**: 性价比最高的开源模型供应商，支持 **Llama**，**Mistral** 系列等最前沿的开源模型。在情感陪伴等场景表现优异，无任何内容限制或审查。 [了解更多](https://novita.ai/model-api/product/llm-api?utm_source=lobechat&utm_medium=ch&utm_campaign=api)
+- **Novita AI**: 性价比最高的开源模型供应商，支持 **Llama**，**Mistral** 系列等最前沿的开源模型。在情感陪伴等场景表现优异，无任何内容限制或审查。 [了解更多](https://novita.ai/model-api/product/llm-api?utm_source=lobechat\&utm_medium=ch\&utm_campaign=api)
 
 同时，我们也在计划支持更多的模型服务商以进一步丰富我们的服务商库。如果你希望让 LobeVidol 支持你喜爱的服务商，欢迎加入我们的[社区讨论](https://github.com/lobehub/lobe-vidol/discussions/162)。
 
@@ -205,11 +205,11 @@ LobeVidol 支持文字转语音（Text-to-Speech，TTS）和语音转文字（Sp
 
 ## 📦 生态
 
-| NPM                               | 仓库                                    | 描述                                                                                     | 版本                                      |
-| --------------------------------- | --------------------------------------- | ---------------------------------------------------------------------------------------- | ----------------------------------------- |
-| [@lobehub/ui][lobe-ui-link]       | [lobehub/lobe-ui][lobe-ui-github]       | 构建 AIGC 网页应用程序而设计的开源 UI 组件库                                             | [![][lobe-ui-shield]][lobe-ui-link]       |
-| [@lobehub/icons][lobe-icons-link] | [lobehub/lobe-icons][lobe-icons-github] | 主流 AI / LLM 模型和公司 SVG Logo 与 Icon 合集                                           | [![][lobe-icons-shield]][lobe-icons-link] |
-| [@lobehub/tts][lobe-tts-link]     | [lobehub/lobe-tts][lobe-tts-github]     | AI TTS / STT 语音合成 / 识别 React Hooks 库                                              | [![][lobe-tts-shield]][lobe-tts-link]     |
+| NPM                               | 仓库                                      | 描述                                                                            | 版本                                        |
+| --------------------------------- | --------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------- |
+| [@lobehub/ui][lobe-ui-link]       | [lobehub/lobe-ui][lobe-ui-github]       | 构建 AIGC 网页应用程序而设计的开源 UI 组件库                                                   | [![][lobe-ui-shield]][lobe-ui-link]       |
+| [@lobehub/icons][lobe-icons-link] | [lobehub/lobe-icons][lobe-icons-github] | 主流 AI / LLM 模型和公司 SVG Logo 与 Icon 合集                                          | [![][lobe-icons-shield]][lobe-icons-link] |
+| [@lobehub/tts][lobe-tts-link]     | [lobehub/lobe-tts][lobe-tts-github]     | AI TTS / STT 语音合成 / 识别 React Hooks 库                                          | [![][lobe-tts-shield]][lobe-tts-link]     |
 | [@lobehub/lint][lobe-lint-link]   | [lobehub/lobe-lint][lobe-lint-github]   | LobeHub 代码样式规范 ESlint，Stylelint，Commitlint，Prettier，Remark 和 Semantic Release | [![][lobe-lint-shield]][lobe-lint-link]   |
 
 - **[Vidol market](https://github.com/v-idol/vidol-chat-agents)** - This is the Market Index of Vidol Chat. Vidol accesses index.json from this repo to show user the list of available agents and dances.
@@ -380,7 +380,7 @@ This project is [Apache 2.0](./LICENSE) licensed.
 [pr-welcome-link]: https://github.com/lobehub/lobe-vidol/pulls
 [pr-welcome-shield]: https://img.shields.io/badge/%F0%9F%A4%AF%20PR%20WELCOME-%E2%86%92-ffcb47?labelColor=black&style=for-the-badge
 [profile-link]: https://github.com/lobehub
-[sponsor-link]: https://opencollective.com/lobehub 'Become 🩷 LobeHub Sponsor'
+[sponsor-link]: https://opencollective.com/lobehub "Become 🩷 LobeHub Sponsor"
 [sponsor-shield]: https://img.shields.io/badge/-Sponsor%20LobeHub-f04f88?logo=opencollective&logoColor=white&style=flat-square
 [vercel-link]: https://vidol.lobehub.com
 [vercel-shield]: https://img.shields.io/website?down_message=offline&label=vercel&labelColor=black&logo=vercel&style=flat-square&up_message=online&url=https%3A%2F%2Fvidol.lobehub.com
