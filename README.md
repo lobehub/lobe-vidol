@@ -95,7 +95,7 @@ Lobe Vidol is actively under development. If you have any requests or questions,
 
 Streamed responses provide a smooth conversational experience. You can set the dialogue context by placing character actions and expressions in parentheses () and the ongoing events or scenes in square brackets \[] to create an immersive experience.
 
-<img width="1291" alt="fluent chat experience" src="https://github.com/user-attachments/assets/6b3a2df4-c80e-4cb4-8d62-c6c5532d0f00">
+<img width="1285" alt="fluent chat experience8" src="https://github.com/user-attachments/assets/d2585e90-b44e-494b-ac55-113f924abefc">
 
 ### 2. **Background Context Setting**
 

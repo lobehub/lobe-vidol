@@ -40,16 +40,11 @@
 - [👋🏻 开始使用 & 交流](#-开始使用--交流)
 - [✨ 特性一览](#-特性一览)
   - [1. **流畅的对话体验**](#1-流畅的对话体验)
-  - [2. **背景情境设定**](#2-背景情境设定)
-  - [3. **丰富的动作和姿式库**](#3-丰富的动作和姿式库)
-  - [4. **精致 UI 设计**](#4-精致-ui-设计)
-  - [5. **丰富的角色编辑体验**](#5-丰富的角色编辑体验)
-  - [6. **MMD 舞蹈支持**](#6-mmd-舞蹈支持)
-  - [7. ** PMX 舞台加载功能 **](#7--pmx-舞台加载功能-)
-  - [8. ** 触摸响应功能 **](#8--触摸响应功能-)
-  - [9. ** 角色市场 **](#9--角色市场-)
-  - [10. ** 舞蹈市场 **](#10--舞蹈市场-)
-  - [11. ** TTS & STT 语音会话 **](#11--tts--stt-语音会话-)
+  - [2. **视频对话体验**](#2-视频对话体验)
+  - [3. **多模型服务商支持**](#3-多模型服务商支持)
+  - [4. **角色与舞蹈市场**](#4-角色与舞蹈市场)
+  - [5. **TTS & STT 语音会话**](#5-tts--stt-语音会话)
+  - [6. **渐进式 Web 应用 (PWA)**](#6-渐进式-web-应用-pwa)
 - [📦 生态](#-生态)
 - [⌨️ 本地开发](#️-本地开发)
 - [🤝 参与贡献](#-参与贡献)
@@ -91,55 +86,75 @@ LobeVidol 目前正在积极开发中，有任何需求或者问题，欢迎提�
 
 ## ✨ 特性一览
 
-### 1. **流畅的对话体验**
+### `1`. **文字聊天模式**
 
-流式响应带来流畅的对话体验，你可以通过设定角色对话情境把人物的动作和表情放入（）内，将正在发生的事或场景放入 \[] 内来身临其境。
+流式响应带来流畅的对话体验，你可以通过设定角色对话情境来创造沉浸式的对话体验。
 
-<img width="1291" alt="fluent chat experience" src="https://github.com/user-attachments/assets/6b3a2df4-c80e-4cb4-8d62-c6c5532d0f00">
+<img width="1285" alt="fluent chat experience" src="https://github.com/user-attachments/assets/d2585e90-b44e-494b-ac55-113f924abefc">
 
-### 2. **背景情境设定**
+### `2`. **视频对话模式**
+
+通过消息框中的视频按钮，你可以与角色模型进行更丰富的交互体验，如面对面聊天，角色表演等，也可以设置角色所处的背景，舞台，动作，舞蹈等。
+
+<img width="1285" alt="video chat experience" src="https://github.com/user-attachments/assets/4af0dfb3-97b9-468e-b1c9-a672242d8aad">
 
 你可以通过设定背景图片的方式让对话更加符合情境：
 
 <img width="1318" alt="background setting" src="https://github.com/user-attachments/assets/e62b635c-168d-4f4e-8741-39aac0f7cfd3">
 
-### 3. **丰富的动作和姿式库**
-
 内置 Mixamo 角色动作与姿式库，你可以让角色在对话时摆出你想要的姿势或动作:
 
 <img width="1323" alt="motions and postures" src="https://github.com/user-attachments/assets/95d9a42e-4215-45f2-8171-f631a91065c9">
-
-### 4. **精致 UI 设计**
-
-经过精心设计的界面，具有优雅的外观和流畅的交互效果，支持亮暗色主题，适配移动端。支持 PWA，提供更加接近原生应用的体验。
-
-<img width="1408" alt="ui design" src="https://github.com/user-attachments/assets/e55df3c0-4e7b-4b5d-b903-e5865498da7a">
-
-### 5. **丰富的角色编辑体验**
 
 使用角色编辑器，你可以创建属于你自己的虚拟偶像，设定触摸反应，上传 VRM 模型到网站并与他们互动。
 
 <img width="1291" alt="role edit" src="https://github.com/user-attachments/assets/3d319554-ae14-4932-b527-e220c910fd51">
 
-### 6. **MMD 舞蹈支持**
-
 借助 mmd-parser 的支持，你可以使用 vmd 文件和最喜欢的偶像一起跳舞；Just Dance!
 
-<https://github.com/user-attachments/assets/c017be86-dbac-4ce1-9f00-a10248b58621>
-
-### 7. ** PMX 舞台加载功能 **
+<https://github.com/user-attachments/assets/c017be86-dbac-4ce1-9f00-a10248b58621">
 
 我们添加了舞台加载功能并内置丰富的舞台选择，让角色跳舞时可以搭配不同的舞台风格:
 
 <img width="1317" alt="pmx stage" src="https://github.com/user-attachments/assets/ec436b96-c270-431a-acef-f140584e6938">
 
-### 8. ** 触摸响应功能 **
-
 点击角色的不同身体部位，角色将做出不同的反应，你也可以自己编辑角色的触摸反应来创造与众不同的交互效果：
 
 <https://github.com/user-attachments/assets/a283bca0-222c-4ac8-8757-8c56ce3873c2>
 
-### 9. ** 角色市场 **
+### `3`. **多模型服务商支持**
+
+<img width="1285" alt="multi model provider" src="https://oss.vidol.chat/docs/2024/12/7ae6ec6df8f75837f30204069b823736.png">
+
+在提供 AI 会话服务时模型服务商的多样性对于满足社区需求非常重要。因此，我们不再局限于单一的模型服务商，而是拓展了对多种模型服务商的支持，以便为用户提供更为丰富和多样化的会话选择。通过这种方式，LobeVidol 能够更灵活地适应不同用户的需求，同时也为开发者提供了更为广泛的选择空间。
+
+#### 已支持的模型服务商
+
+我们已经实现了对以下模型服务商的支持：
+
+- **AWS Bedrock**：集成了 AWS Bedrock 服务，支持了 **Claude / LLama2** 等模型，提供了强大的自然语言处理能力。[了解更多](https://aws.amazon.com/cn/bedrock)
+- **Google AI (Gemini Pro、Gemini Vision)**：接入了 Google 的 **Gemini** 系列模型，包括 Gemini 和 Gemini Pro，以支持更高级的语言理解和生成。[了解更多](https://deepmind.google/technologies/gemini/)
+- **Anthropic (Claude)**：接入了 Anthropic 的 **Claude** 系列模型，包括 Claude 3 和 Claude 2，多模态突破，超长上下文，树立行业新基准。[了解更多](https://www.anthropic.com/claude)
+- **ChatGLM**：加入了智谱的 **ChatGLM** 系列模型（GLM-4/GLM-4-vision/GLM-3-turbo），为用户提供了另一种高效的会话模型选择。[了解更多](https://www.zhipuai.cn/)
+- **Moonshot AI (月之暗面)**：集成了 Moonshot 系列模型，这是一家来自中国的创新性 AI 创业公司，旨在提供更深层次的会话理解。[了解更多](https://www.moonshot.cn/)
+- **Together.ai**：集成部署了数百种开源模型和向量模型，无需本地部署即可随时访问这些模型。[了解更多](https://www.together.ai/)
+- **01.AI (零一万物)**：集成了零一万物模型，系列 API 具备较快的推理速度，这不仅缩短了处理时间，同时也保持了出色的模型效果。[了解更多](https://www.lingyiwanwu.com/)
+- **Groq**：接入了 Groq 的 AI 模型，高效处理消息序列，生成回应，胜任多轮对话及单次交互任务。[了解更多](https://groq.com/)
+- **OpenRouter**：其支持包括 **Claude 3**，**Gemma**，**Mistral**，**Llama2**和**Cohere**等模型路由，支持智能路由优化，提升使用效率，开放且灵活。[了解更多](https://openrouter.ai/)
+- **Minimax**: 接入了 Minimax 的 AI 模型，包括 MoE 模型 **abab6**，提供了更多的选择空间。[了解更多](https://www.minimaxi.com/)
+- **DeepSeek**: 接入了 DeepSeek 的 AI 模型，包括最新的 **DeepSeek-V2**，提供兼顾性能与价格的模型。[了解更多](https://www.deepseek.com/)
+- **Qwen**: 接入了 Qwen 的 AI 模型，包括最新的 **qwen-turbo**，**qwen-plus** 和 **qwen-max** 等模型。[了解更多](https://help.aliyun.com/zh/dashscope/developer-reference/model-introduction)
+- **Novita AI**: 性价比最高的开源模型供应商，支持 **Llama**，**Mistral** 系列等最前沿的开源模型。在情感陪伴等场景表现优异，无任何内容限制或审查。 [了解更多](https://novita.ai/model-api/product/llm-api?utm_source=lobechat&utm_medium=ch&utm_campaign=api)
+
+同时，我们也在计划支持更多的模型服务商以进一步丰富我们的服务商库。如果你希望让 LobeVidol 支持你喜爱的服务商，欢迎加入我们的[社区讨论](https://github.com/lobehub/lobe-vidol/discussions/162)。
+
+<div align="right">
+
+[![][back-to-top]](#readme-top)
+
+</div>
+
+### `4`. **角色与舞蹈市场**
 
 在 LobeVidol 的角色市场中汇聚了众多精心设计的角色，这些角色让你可以体验到不同的情境和交互体验，让你拥有不一样的陪伴体验。
 我们的市场不仅是一个展示平台，更是一个协作的空间。在这里，每个人都可以贡献自己的想象，分享个人设定的角色。
@@ -150,18 +165,37 @@ LobeVidol 目前正在积极开发中，有任何需求或者问题，欢迎提�
 
 <img width="1320" alt="discover" src="https://github.com/user-attachments/assets/9f155227-6856-4957-9f6e-a9b3f534df24">
 
-### 10. ** 舞蹈市场 **
-
 在 LobeVidol 的舞蹈市场中添加了丰富的 MMD 舞蹈资源，这些舞蹈构成了丰富的视觉体验，你可以搭配不同的角色，舞台，音乐和舞蹈来创造不一样的观看体验。
 
 <img width="1323" alt="Snipaste_2024-11-05_21-22-47" src="https://github.com/user-attachments/assets/684ba6ad-17a9-4af3-9943-fcaaee121216">
 
-### 11. ** TTS & STT 语音会话 **
+### `5`. **TTS & STT 语音会话**
 
 LobeVidol 支持文字转语音（Text-to-Speech，TTS）和语音转文字（Speech-to-Text，STT）技术，这使得我们的应用能够将文本信息转化为清晰的语音输出，用户可以像与真人交谈一样与我们的对话助手进行交流。
 用户可以从多种声音中选择，给助手搭配合适的音源。 同时，对于那些倾向于听觉学习或者想要在忙碌中获取信息的用户来说，TTS 提供了一个极佳的解决方案。
 
 在 LobeVidol 中，我们精心挑选了一系列高品质的声音选项 (OpenAI Audio, Microsoft Edge Speech)，以满足不同地域和文化背景用户的需求。用户可以根据个人喜好或者特定场景来选择合适的语音，从而获得个性化的交流体验。
+
+<div align="right">
+
+[![][back-to-top]](#readme-top)
+
+</div>
+
+### `6`. **渐进式 Web 应用 (PWA)**
+
+我们深知在当今多设备环境下为用户提供无缝体验的重要性。为此，我们采用了渐进式 Web 应用 [PWA](https://support.google.com/chrome/answer/9658361) 技术，
+这是一种能够将网页应用提升至接近原生应用体验的现代 Web 技术。通过 PWA，LobeVidol 能够在桌面和移动设备上提供高度优化的用户体验，同时保持轻量级和高性能的特点。
+在视觉和感觉上，我们也经过精心设计，以确保它的界面与原生应用无差别，提供流畅的动画、响应式布局和适配不同设备的屏幕分辨率。
+
+> \[!NOTE]
+>
+> 若您未熟悉 PWA 的安装过程，您可以按照以下步骤将 LobeVidol 添加为您的桌面应用（也适用于移动设备）：
+>
+> - 在电脑上运行 Chrome 或 Edge 浏览器 .
+> - 访问 LobeVidol 网页 .
+> - 在地址栏的右上角，单击 <kbd>安装</kbd> 图标 .
+> - 根据屏幕上的指示完成 PWA 的安装 .
 
 <div align="right">
 
