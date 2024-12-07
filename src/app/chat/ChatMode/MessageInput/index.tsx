@@ -77,7 +77,7 @@ const InputArea = memo((props: InputAreaProps) => {
         <Camera />
       </Flexbox>
       <Flexbox horizontal justify={'space-between'} align={'center'} style={{ marginTop: 4 }}>
-        <Typography.Text className={styles.alert} ellipsis>
+        <Typography.Text className={styles.alert} ellipsis title={t('input.alert')}>
           {t('input.alert')}
         </Typography.Text>
         {ShortCuts}
