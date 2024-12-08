@@ -239,9 +239,9 @@ export const createSessionStore: StateCreator<SessionStore, [['zustand/devtools'
 
     set({ chatLoadingId: assistantId, abortController });
 
-    let receivedMessage = '';
+    // let receivedMessage = '';
     let aiMessage = '';
-    const sentences = [];
+    // const sentences = [];
 
     await chatCompletion(
       {
@@ -268,34 +268,26 @@ export const createSessionStore: StateCreator<SessionStore, [['zustand/devtools'
             type: 'UPDATE_MESSAGE',
           });
         },
-        onMessageHandle: (chunk) => {
+        onMessageHandle: async (chunk) => {
           switch (chunk.type) {
             case 'text': {
-              const voiceOn = useGlobalStore.getState().voiceOn;
-              const chatMode = useGlobalStore.getState().chatMode;
+              // receivedMessage += chunk.text;
+              // // 文本切割
+              // const sentenceMatch = receivedMessage.match(/^(.+[\n~。！．？]|.{10,}[,、])/);
+              // if (sentenceMatch && sentenceMatch[0]) {
+              //   const sentence = sentenceMatch[0];
+              //   sentences.push(sentence);
+              //   receivedMessage = receivedMessage.slice(sentence.length).trimStart();
 
-              // 只有视频模式下才需要连续语音合成
-              if (voiceOn && chatMode === 'camera') {
-                // 语音合成
-                receivedMessage += chunk.text;
-                // 文本切割
-                const sentenceMatch = receivedMessage.match(/^(.+[\n~。！．？]|.{10,}[,、])/);
-                if (sentenceMatch && sentenceMatch[0]) {
-                  const sentence = sentenceMatch[0];
-                  sentences.push(sentence);
-                  receivedMessage = receivedMessage.slice(sentence.length).trimStart();
-
-                  if (
-                    !sentence.replaceAll(
-                      /^[\s()[\]}«»‹›〈〉《》「」『』【】〔〕〘〙〚〛（）［］｛]+$/g,
-                      '',
-                    )
-                  ) {
-                    return;
-                  }
-                  handleSpeakAi(sentence);
-                }
-              }
+              //   if (
+              //     !sentence.replaceAll(
+              //       /^[\s()[\]}«»‹›〈〉《》「」『』【】〔〕〘〙〚〛（）［］｛]+$/g,
+              //       '',
+              //     )
+              //   ) {
+              //     return;
+              //   }
+              // }
 
               // 对话更新
               aiMessage += chunk.text;
@@ -323,10 +315,24 @@ export const createSessionStore: StateCreator<SessionStore, [['zustand/devtools'
             // }
           }
         },
+        onFinish: async (text) => {
+          set({ chatLoadingId: undefined });
+          // 语音合成
+          const voiceOn = useGlobalStore.getState().voiceOn;
+          const chatMode = useGlobalStore.getState().chatMode;
+
+          // 只有视频模式下才需要语音合成
+          if (voiceOn && chatMode === 'camera') {
+            const sentences = text.replaceAll(
+              /^[\s()[\]}«»‹›〈〉《》「」『』【】〔〕〘〙〚〛（）［］｛]+$/g,
+              '',
+            );
+            get().ttsMessage(assistantId, sentences);
+          }
+        },
         signal: abortController.signal,
       },
     );
-    set({ chatLoadingId: undefined });
   },
 
   /**

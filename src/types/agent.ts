@@ -3,6 +3,19 @@ import { LLMParams } from '@/types/llm';
 import { TouchActionConfig } from './touch';
 import { TTS } from './tts';
 
+export interface SystemAgentItem {
+  customPrompt?: string;
+  enabled?: boolean;
+  model: string;
+  provider: string;
+}
+
+export interface SystemAgentConfig {
+  emotionAnalysis: SystemAgentItem;
+}
+
+export type SystemAgentConfigKey = keyof SystemAgentConfig;
+
 /**
  * Category Enum, 当前包括 Anime, Game, Realistic, VTuber, Book, History, Movie, Animal, Vroid
  */

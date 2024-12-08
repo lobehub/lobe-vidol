@@ -5,6 +5,7 @@ import { Flexbox } from 'react-layout-kit';
 
 import CommonConfig from './common';
 import LLMConfig from './llm';
+import SystemAgent from './system-agent';
 import Touch from './touch';
 import TTSConfig from './tts';
 
@@ -33,6 +34,10 @@ const Config = (props: ConfigProps) => {
               label: t('llm.title'),
             },
             {
+              key: 'systemAgent',
+              label: t('systemAgent.title'),
+            },
+            {
               key: 'touch',
               label: t('touch.title'),
             },
@@ -49,6 +54,7 @@ const Config = (props: ConfigProps) => {
       <Flexbox flex={1} width={'100%'} height={'100%'}>
         {tab === 'languageModel' ? <LLMConfig /> : null}
         {tab === 'common' ? <CommonConfig /> : null}
+        {tab === 'systemAgent' ? <SystemAgent /> : null}
         {tab === 'touch' ? <Touch /> : null}
         {tab === 'tts' ? <TTSConfig /> : null}
       </Flexbox>
