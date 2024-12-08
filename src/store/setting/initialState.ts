@@ -30,6 +30,7 @@ import {
   ZhiPuProviderCard,
   filterEnabledModels,
 } from '@/config/modelProviders';
+import { DEFAULT_SYSTEM_AGENT_CONFIG } from '@/constants/agent';
 import {
   DEFAULT_TOUCH_ACTION_CONFIG_FEMALE,
   DEFAULT_TOUCH_ACTION_CONFIG_MALE,
@@ -50,6 +51,9 @@ const initialState: SettingState = {
   modelProviderList: DEFAULT_MODEL_PROVIDER_LIST,
   defaultModelProviderList: DEFAULT_MODEL_PROVIDER_LIST,
   defaultConfig: {
+    systemAgent: {
+      emotionAnalysis: DEFAULT_SYSTEM_AGENT_CONFIG.emotionAnalysis,
+    },
     keyVaults: {},
     locale: 'auto',
     backgroundEffect: 'glow',

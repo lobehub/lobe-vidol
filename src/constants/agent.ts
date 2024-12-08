@@ -1,6 +1,12 @@
 import { DEFAULT_TTS_CONFIG_FEMALE } from '@/constants/tts';
 import { ModelProvider } from '@/libs/agent-runtime';
-import { Agent, GenderEnum, RoleCategoryEnum } from '@/types/agent';
+import {
+  Agent,
+  GenderEnum,
+  RoleCategoryEnum,
+  SystemAgentConfig,
+  SystemAgentItem,
+} from '@/types/agent';
 
 export const LOBE_VIDOL_DEFAULT_AGENT_ID = 'lobe-vidol-default-agent';
 const OFFICIAL_ROLE_NAME = '莉莉娅';
@@ -53,4 +59,13 @@ export const LOBE_VIDOL_DEFAULT_AGENT: Agent = {
     pitch: 1.25,
   },
   ...DEFAULT_LLM_CONFIG,
+};
+
+export const DEFAULT_SYSTEM_AGENT_ITEM: SystemAgentItem = {
+  model: DEFAULT_CHAT_MODEL,
+  provider: DEFAULT_CHAT_PROVIDER,
+};
+
+export const DEFAULT_SYSTEM_AGENT_CONFIG: SystemAgentConfig = {
+  emotionAnalysis: DEFAULT_SYSTEM_AGENT_ITEM,
 };

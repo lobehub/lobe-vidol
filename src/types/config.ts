@@ -1,6 +1,6 @@
 import { NeutralColors, PrimaryColors } from '@lobehub/ui';
 
-import { GenderEnum } from '@/types/agent';
+import { GenderEnum, SystemAgentConfig } from '@/types/agent';
 import { LocaleMode } from '@/types/locale';
 import { TouchActionConfig } from '@/types/touch';
 
@@ -36,6 +36,10 @@ export interface Config extends CommonConfig {
    * 语言模型配置
    */
   languageModel: UserModelProviderConfig;
+  /**
+   * 系统代理配置
+   */
+  systemAgent: SystemAgentConfig;
   /**
    * 全局触摸配置
    */

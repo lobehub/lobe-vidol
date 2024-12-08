@@ -1,31 +1,44 @@
+import { chainEmotionAnalysis } from '@/chains/emotionAnalysis';
 import { DEFAULT_MODEL_PROVIDER_LIST } from '@/config/modelProviders';
 import { DEFAULT_CHAT_MODEL, DEFAULT_CHAT_PROVIDER } from '@/constants/agent';
 import { AgentRuntime, ChatCompletionErrorPayload, ModelProvider } from '@/libs/agent-runtime';
 import { AudioPlayer } from '@/libs/audio/AudioPlayer';
+import { MotionPresetName } from '@/libs/emoteController/motionPresetMap';
 import { speakCharacter } from '@/libs/messages/speakCharacter';
 import { speakChatItem } from '@/libs/messages/speakChatItem';
 import { SpeakAudioOptions } from '@/libs/messages/type';
 import { useGlobalStore } from '@/store/global';
 import { sessionSelectors, useSessionStore } from '@/store/session';
 import { useSettingStore } from '@/store/setting';
+import { systemAgentSelectors } from '@/store/setting/selectors';
 import { modelConfigSelectors } from '@/store/setting/selectors/modelConfig';
 import { modelProviderSelectors } from '@/store/setting/selectors/modelProvider';
-import { ChatMessage } from '@/types/chat';
 import { ChatErrorType } from '@/types/fetch';
 import { ChatStreamPayload } from '@/types/provider/chat';
+import { ExpressionType } from '@/types/touch';
 import { createErrorResponse } from '@/utils/errorResponse';
 import { FetchSSEOptions, fetchSSE } from '@/utils/fetch';
 
 import { createHeaderWithAuth, getProviderAuthPayload } from './_auth';
 
-interface ChatCompletionPayload extends Partial<Omit<ChatStreamPayload, 'messages'>> {
-  messages: ChatMessage[];
-}
-
 interface FetchOptions extends FetchSSEOptions {
   historySummary?: string;
   isWelcomeQuestion?: boolean;
   signal?: AbortSignal | undefined;
+}
+
+interface FetchAITaskResultParams extends FetchSSEOptions {
+  abortController?: AbortController;
+  onError?: (e: Error, rawError?: any) => void;
+  /**
+   * 加载状态变化处理函数
+   * @param loading - 是否处于加载状态
+   */
+  onLoadingChange?: (loading: boolean) => void;
+  /**
+   * 请求对象
+   */
+  params: Partial<ChatStreamPayload>;
 }
 
 /**
@@ -166,7 +179,10 @@ const fetchOnClient = async (params: {
   return agentRuntime.chat(data, { signal: params.signal });
 };
 
-export const chatCompletion = async (params: ChatCompletionPayload, options?: FetchOptions) => {
+export const chatCompletion = async (
+  params: Partial<ChatStreamPayload>,
+  options?: FetchOptions,
+) => {
   const { provider = DEFAULT_CHAT_PROVIDER, messages, ...res } = params;
   const { signal } = options ?? {};
 
@@ -240,14 +256,120 @@ export const chatCompletion = async (params: ChatCompletionPayload, options?: Fe
   });
 };
 
-export const handleSpeakAi = async (message: string, options?: SpeakAudioOptions) => {
-  const viewer = useGlobalStore.getState().viewer;
-  const chatMode = useGlobalStore.getState().chatMode;
+export const fetchPresetTaskResult = async ({
+  params,
+  onMessageHandle,
+  onFinish,
+  onError,
+  onLoadingChange,
+  abortController,
+}: FetchAITaskResultParams) => {
+  const errorHandle = (error: Error, errorContent?: any) => {
+    onLoadingChange?.(false);
+    if (abortController?.signal.aborted) {
+      return;
+    }
+    onError?.(error, errorContent);
+    console.error(error);
+  };
 
+  onLoadingChange?.(true);
+
+  try {
+    await chatCompletion(params, {
+      onErrorHandle: (error) => {
+        errorHandle(new Error(error.message), error);
+      },
+      onFinish,
+      onMessageHandle,
+      signal: abortController?.signal,
+    });
+
+    onLoadingChange?.(false);
+  } catch (e) {
+    errorHandle(e as Error);
+  }
+};
+
+/**
+ * 情感分析, 添加情绪类别，然后类似触摸响应播放表情和动作
+ * @param message - 文本
+ * @returns 表情和动作
+ */
+export const analyzeEmotion = async (message: string) => {
+  // 获取系统代理情感分析模型配置
+  const systemAgentForEmotionAnalysis = systemAgentSelectors.emotionAnalysis(
+    useSettingStore.getState(),
+  );
+  // 进行情感分析
+  const { messages } = chainEmotionAnalysis(message);
+
+  let expression: ExpressionType = 'aa';
+  let motion: MotionPresetName = MotionPresetName.Idle;
+
+  await fetchPresetTaskResult({
+    params: {
+      ...systemAgentForEmotionAnalysis,
+      messages,
+      stream: false,
+    },
+    onMessageHandle: async (chunk) => {
+      if (chunk.type === 'text') {
+        try {
+          const result = JSON.parse(chunk.text);
+          expression = result.expression;
+          motion = result.motion;
+        } catch (e) {
+          console.error('情感分析结果解析失败:', e);
+        }
+      }
+    },
+  });
+
+  return { expression, motion };
+};
+
+/**
+ * 情感分析, 播放表情和动作
+ * @param message - 文本
+ * @param options - 语音选项
+ * @returns 表情和动作
+ */
+export const handleEmotionSpeak = async (message: string, options?: SpeakAudioOptions) => {
+  const chatMode = useGlobalStore.getState().chatMode;
   const currentAgent = sessionSelectors.currentAgent(useSessionStore.getState());
   const tts = { ...currentAgent?.tts, message };
 
   if (chatMode === 'camera') {
+    const viewer = useGlobalStore.getState().viewer;
+    const { expression, motion } = await analyzeEmotion(message);
+    await speakCharacter(
+      {
+        expression,
+        motion,
+        tts,
+      },
+      viewer,
+      {
+        ...options,
+        onComplete: () => {
+          options?.onComplete?.();
+          viewer.resetToIdle();
+        },
+      },
+    );
+  } else {
+    await speakChatItem(tts, options);
+  }
+};
+
+export const handleSpeakAi = async (message: string, options?: SpeakAudioOptions) => {
+  const chatMode = useGlobalStore.getState().chatMode;
+  const currentAgent = sessionSelectors.currentAgent(useSessionStore.getState());
+  const tts = { ...currentAgent?.tts, message };
+
+  if (chatMode === 'camera') {
+    const viewer = useGlobalStore.getState().viewer;
     await speakCharacter(
       {
         expression: 'aa',
@@ -257,7 +379,6 @@ export const handleSpeakAi = async (message: string, options?: SpeakAudioOptions
       options,
     );
   } else {
-    console.log('speakChatItem');
     await speakChatItem(tts, options);
   }
 };

@@ -7,6 +7,11 @@ const robots = (): MetadataRoute.Robots => {
     host: getCanonicalUrl(),
     rules: [
       {
+        userAgent: ['Googlebot', 'Applebot', 'Bingbot'],
+        allow: ['/discover/*'],
+        disallow: ['/'],
+      },
+      {
         allow: ['/discover/*'],
         disallow: [],
         userAgent: ['Facebot', 'facebookexternalhit'],
@@ -27,7 +32,7 @@ const robots = (): MetadataRoute.Robots => {
         userAgent: '*',
       },
     ],
-    sitemap: [getCanonicalUrl('/sitemap-index.xml')],
+    sitemap: [getCanonicalUrl('/sitemap.xml')],
   };
 };
 
