@@ -1,5 +1,20 @@
 {
   "chat": {
-    "description": "{{appName}} est une application de chat alimentée par l'IA, conçue pour permettre à chacun d'avoir son propre compagnon virtuel IA."
+    "description": "{{appName}} est une application de chat alimentée par l'IA, conçue pour permettre à chacun d'avoir son propre compagnon virtuel IA.",
+    "keywords": [
+      "IA",
+      "idole virtuelle",
+      "discussion",
+      "personnage virtuel",
+      "grand modèle de langage",
+      "partenaire virtuel IA",
+      "Genshin Impact",
+      "Honkai",
+      "Genshin Impact",
+      "Hololive",
+      "VTuber",
+      "Vidol",
+      "Vdroid"
+    ]
   }
 }

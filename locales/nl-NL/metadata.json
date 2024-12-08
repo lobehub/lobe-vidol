@@ -1,5 +1,20 @@
 {
   "chat": {
-    "description": "{{appName}} is een door AI aangedreven chatapplicatie, ontworpen om iedereen zijn eigen AI virtuele metgezel te geven."
+    "description": "{{appName}} is een door AI aangedreven chatapplicatie, ontworpen om iedereen zijn eigen AI virtuele metgezel te geven.",
+    "keywords": [
+      "AI",
+      "virtuele idolen",
+      "chatten",
+      "virtuele karakters",
+      "grote taalmodellen",
+      "AI virtuele metgezel",
+      "Genshin Impact",
+      "Honkai",
+      "Genshin Impact",
+      "Hololive",
+      "VTuber",
+      "Vidol",
+      "Vdroid"
+    ]
   }
 }

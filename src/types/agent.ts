@@ -6,7 +6,7 @@ import { TTS } from './tts';
 /**
  * Category Enum, 当前包括 Anime, Game, Realistic, VTuber, Book, History, Movie, Animal, Vroid
  */
-export enum CategoryEnum {
+export enum RoleCategoryEnum {
   ANIMAL = 'Animal',
   ANIME = 'Anime',
   BOOK = 'Book',
@@ -30,7 +30,7 @@ export interface AgentMeta {
   /**
    * 角色分类
    */
-  category?: CategoryEnum;
+  category?: RoleCategoryEnum;
   /**
    * 封面图片路径
    */
