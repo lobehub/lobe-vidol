@@ -14,6 +14,7 @@ import Shell from './Shell';
 import Voice from './Voice';
 import RoleBookButton from './actions/RoleBook';
 import SubmitAgentButton from './actions/SubmitAgentButton';
+import ToogleRoleList from './actions/ToogleRoleList';
 import { useStyles } from './style';
 
 interface RolePanelProps {
@@ -54,12 +55,15 @@ const RolePanel = (props: RolePanelProps) => {
             label: t('nav.llm'),
           },
         ]}
-        tabBarExtraContent={
-          <Flexbox horizontal gap={8}>
-            <RoleBookButton modal={md} />
-            <SubmitAgentButton modal={md} />
-          </Flexbox>
-        }
+        tabBarExtraContent={{
+          left: <ToogleRoleList />,
+          right: (
+            <Flexbox horizontal gap={8}>
+              <RoleBookButton modal={md} />
+              <SubmitAgentButton modal={md} />
+            </Flexbox>
+          ),
+        }}
         onChange={(key) => {
           setTab(key);
         }}

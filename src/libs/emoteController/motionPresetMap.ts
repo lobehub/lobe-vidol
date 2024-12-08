@@ -29,9 +29,9 @@ export const motionPresetMap: Record<
   }
 > = {
   idle: {
-    type: MotionFileType.VRMA,
-    name: 'Idle',
-    url: './idle_loop.vrma',
+    url: 'https://r2.vidol.chat/vmd/stand.vmd',
+    type: MotionFileType.VMD,
+    name: 'Female/Stand',
   },
   female_happy: {
     url: 'https://r2.vidol.chat/animations/c9c98a38-b96c-11e4-a802-0aaa78deedf9.fbx',

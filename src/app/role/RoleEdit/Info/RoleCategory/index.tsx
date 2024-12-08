@@ -3,7 +3,7 @@ import React, { CSSProperties, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { agentSelectors, useAgentStore } from '@/store/agent';
-import { CategoryEnum } from '@/types/agent';
+import { RoleCategoryEnum } from '@/types/agent';
 
 interface Props {
   className?: string;
@@ -24,15 +24,15 @@ export default memo<Props>((props) => {
       className={className}
       style={style}
       options={[
-        { label: t('category.animal'), value: CategoryEnum.ANIMAL },
-        { label: t('category.anime'), value: CategoryEnum.ANIME },
-        { label: t('category.book'), value: CategoryEnum.BOOK },
-        { label: t('category.game'), value: CategoryEnum.GAME },
-        { label: t('category.history'), value: CategoryEnum.HISTORY },
-        { label: t('category.movie'), value: CategoryEnum.MOVIE },
-        { label: t('category.realistic'), value: CategoryEnum.REALISTIC },
-        { label: t('category.vroid'), value: CategoryEnum.VROID },
-        { label: t('category.vtuber'), value: CategoryEnum.VTUBER },
+        { label: t('category.animal'), value: RoleCategoryEnum.ANIMAL },
+        { label: t('category.anime'), value: RoleCategoryEnum.ANIME },
+        { label: t('category.book'), value: RoleCategoryEnum.BOOK },
+        { label: t('category.game'), value: RoleCategoryEnum.GAME },
+        { label: t('category.history'), value: RoleCategoryEnum.HISTORY },
+        { label: t('category.movie'), value: RoleCategoryEnum.MOVIE },
+        { label: t('category.realistic'), value: RoleCategoryEnum.REALISTIC },
+        { label: t('category.vroid'), value: RoleCategoryEnum.VROID },
+        { label: t('category.vtuber'), value: RoleCategoryEnum.VTUBER },
       ]}
       value={category}
       defaultActiveFirstOption={true}

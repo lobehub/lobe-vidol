@@ -29,7 +29,7 @@ module.exports = defineConfig({
   },
   // 后续说明文档、技术文档等所需的国际化配置（暂时不需要）
   markdown: {
-    // reference: '你需要保持 mdx 的组件格式，输出文本不需要在最外层包裹任何代码块语法',
+    reference: '你需要保持 md 的格式，输出文本不需要包裹任何代码块语法',
     entry: ['./README.zh-CN.md', './contributing/**/*.zh-CN.md', './docs/**/*.zh-CN.mdx'],
     entryLocale: 'zh-CN',
     outputLocales: ['en-US'],

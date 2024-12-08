@@ -1,6 +1,12 @@
 import { DEFAULT_TTS_CONFIG_FEMALE } from '@/constants/tts';
 import { ModelProvider } from '@/libs/agent-runtime';
-import { Agent, CategoryEnum, GenderEnum } from '@/types/agent';
+import {
+  Agent,
+  GenderEnum,
+  RoleCategoryEnum,
+  SystemAgentConfig,
+  SystemAgentItem,
+} from '@/types/agent';
 
 export const LOBE_VIDOL_DEFAULT_AGENT_ID = 'lobe-vidol-default-agent';
 const OFFICIAL_ROLE_NAME = '莉莉娅';
@@ -37,7 +43,7 @@ export const LOBE_VIDOL_DEFAULT_AGENT: Agent = {
   meta: {
     cover: 'https://r2.vidol.chat/agents/vidol-agent-lilia/cover.jpg',
     avatar: 'https://r2.vidol.chat/agents/vidol-agent-lilia/avatar.jpg',
-    category: CategoryEnum.VROID,
+    category: RoleCategoryEnum.VROID,
     description: `${OFFICIAL_ROLE_NAME}是 Vidol 的默认角色，是你的专属私人助理`,
     gender: GenderEnum.FEMALE,
     model: 'https://r2.vidol.chat/agents/vidol-agent-lilia/model.vrm',
@@ -53,4 +59,13 @@ export const LOBE_VIDOL_DEFAULT_AGENT: Agent = {
     pitch: 1.25,
   },
   ...DEFAULT_LLM_CONFIG,
+};
+
+export const DEFAULT_SYSTEM_AGENT_ITEM: SystemAgentItem = {
+  model: DEFAULT_CHAT_MODEL,
+  provider: DEFAULT_CHAT_PROVIDER,
+};
+
+export const DEFAULT_SYSTEM_AGENT_CONFIG: SystemAgentConfig = {
+  emotionAnalysis: DEFAULT_SYSTEM_AGENT_ITEM,
 };

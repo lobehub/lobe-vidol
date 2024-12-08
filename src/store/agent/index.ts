@@ -21,7 +21,7 @@ import {
 import { DEFAULT_AGENT_AVATAR_URL } from '@/constants/common';
 import { DEFAULT_TTS_CONFIG_FEMALE, DEFAULT_TTS_CONFIG_MALE } from '@/constants/tts';
 import createTouchStore from '@/store/agent/slices/touch';
-import { Agent, AgentMeta, CategoryEnum, GenderEnum } from '@/types/agent';
+import { Agent, AgentMeta, GenderEnum, RoleCategoryEnum } from '@/types/agent';
 import { TTS } from '@/types/tts';
 import { mergeWithUndefined } from '@/utils/common';
 import { getModelPathByAgentId } from '@/utils/file';
@@ -148,7 +148,7 @@ const createAgentStore: StateCreator<AgentStore, [['zustand/devtools', never]]> 
         description: t('agent.meta.description', { ns: 'welcome' }),
         avatar: DEFAULT_AGENT_AVATAR_URL,
         cover: '',
-        category: CategoryEnum.ANIME,
+        category: RoleCategoryEnum.ANIME,
         readme: '',
         gender: gender,
       },

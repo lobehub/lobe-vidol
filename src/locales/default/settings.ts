@@ -152,4 +152,18 @@ export default {
       desc: '启用后，将使用客户端调用语音合成服务，语音合成速度更快，但需要科学上网或具备访问外网的能力',
     },
   },
+  systemAgent: {
+    title: '系统代理',
+    customPrompt: {
+      addPrompt: '添加自定义提示',
+      desc: '填写后，系统助理将在生成内容时使用自定义提示',
+      placeholder: '请输入自定义提示词',
+      title: '自定义提示词',
+    },
+    emotionAnalysis: {
+      label: '情感分析模型',
+      title: '自动进行情感分析',
+      modelDesc: '指定用于情感分析的模型',
+    },
+  },
 };

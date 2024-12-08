@@ -1,5 +1,20 @@
 {
   "chat": {
-    "description": "{{appName}} 是一款由 AI 驅動的聊天應用，旨在讓每個人都擁有自己的 AI 虛擬伴侶"
+    "description": "{{appName}} 是一款由 AI 驅動的聊天應用，旨在讓每個人都擁有自己的 AI 虛擬伴侶",
+    "keywords": [
+      "AI",
+      "虛擬偶像",
+      "聊天",
+      "虛擬角色",
+      "大語言模型",
+      "AI 虛擬伴侶",
+      "原神",
+      "崩壞",
+      "Genshin Impact",
+      "Hololive",
+      "VTuber",
+      "Vidol",
+      "Vdroid"
+    ]
   }
 }

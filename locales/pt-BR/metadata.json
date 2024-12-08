@@ -1,5 +1,20 @@
 {
   "chat": {
-    "description": "{{appName}} é um aplicativo de chat impulsionado por IA, projetado para que todos tenham seu próprio parceiro virtual de IA"
+    "description": "{{appName}} é um aplicativo de chat impulsionado por IA, projetado para que todos tenham seu próprio parceiro virtual de IA",
+    "keywords": [
+      "IA",
+      "ídolo virtual",
+      "bate-papo",
+      "personagem virtual",
+      "grande modelo de linguagem",
+      "companheiro virtual de IA",
+      "Genshin Impact",
+      "Honkai",
+      "Genshin Impact",
+      "Hololive",
+      "VTuber",
+      "Vidol",
+      "Vdroid"
+    ]
   }
 }

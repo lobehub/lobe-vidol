@@ -31,12 +31,13 @@ const createSpeakCharacter = () => {
     });
 
     prevFetchPromise = fetchPromise;
+
     prevSpeakPromise = Promise.all([fetchPromise, prevSpeakPromise]).then(async ([audioBuffer]) => {
+      options?.onStart?.();
       if (!audioBuffer) {
         options?.onError?.(new Error('No audio buffer'));
         return;
       }
-      options?.onStart?.();
       await viewer.model?.speak(audioBuffer, screenplay);
     });
     prevSpeakPromise.then(() => {

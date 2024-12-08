@@ -1,5 +1,20 @@
 {
   "chat": {
-    "description": "{{appName}} is an AI-driven chat application designed to provide everyone with their own AI virtual companion."
+    "description": "{{appName}} is an AI-driven chat application designed to provide everyone with their own AI virtual companion.",
+    "keywords": [
+      "AI",
+      "virtual idol",
+      "chat",
+      "virtual character",
+      "large language model",
+      "AI virtual companion",
+      "Genshin Impact",
+      "Honkai",
+      "Genshin Impact",
+      "Hololive",
+      "VTuber",
+      "Vidol",
+      "Vdroid"
+    ]
   }
 }

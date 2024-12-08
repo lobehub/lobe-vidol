@@ -8,7 +8,7 @@ import { Flexbox } from 'react-layout-kit';
 
 import RoleCard from '@/components/RoleCard';
 import SkeletonList from '@/components/SkeletonList';
-import { Agent, CategoryEnum } from '@/types/agent';
+import { Agent, RoleCategoryEnum } from '@/types/agent';
 
 const useStyles = createStyles(({ css, token }) => ({
   container: css`
@@ -49,16 +49,16 @@ const AgentList = (props: AgentListProps) => {
   // 定义分类选项
   const CATEGORIES = [
     { key: 'all', label: t('category.all') },
-    { label: t('category.game'), key: CategoryEnum.GAME },
-    { label: t('category.vroid'), key: CategoryEnum.VROID },
-    { label: t('category.anime'), key: CategoryEnum.ANIME },
-    { label: t('category.animal'), key: CategoryEnum.ANIMAL },
-    { label: t('category.book'), key: CategoryEnum.BOOK },
-    { label: t('category.history'), key: CategoryEnum.HISTORY },
-    { label: t('category.movie'), key: CategoryEnum.MOVIE },
-    { label: t('category.realistic'), key: CategoryEnum.REALISTIC },
+    { label: t('category.game'), key: RoleCategoryEnum.GAME },
+    { label: t('category.vroid'), key: RoleCategoryEnum.VROID },
+    { label: t('category.anime'), key: RoleCategoryEnum.ANIME },
+    { label: t('category.animal'), key: RoleCategoryEnum.ANIMAL },
+    { label: t('category.book'), key: RoleCategoryEnum.BOOK },
+    { label: t('category.history'), key: RoleCategoryEnum.HISTORY },
+    { label: t('category.movie'), key: RoleCategoryEnum.MOVIE },
+    { label: t('category.realistic'), key: RoleCategoryEnum.REALISTIC },
 
-    { label: t('category.vtuber'), key: CategoryEnum.VTUBER },
+    { label: t('category.vtuber'), key: RoleCategoryEnum.VTUBER },
   ];
 
   // 添加状态管理

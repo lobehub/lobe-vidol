@@ -268,7 +268,7 @@ export const createSessionStore: StateCreator<SessionStore, [['zustand/devtools'
             type: 'UPDATE_MESSAGE',
           });
         },
-        onMessageHandle: (chunk) => {
+        onMessageHandle: async (chunk) => {
           switch (chunk.type) {
             case 'text': {
               const voiceOn = useGlobalStore.getState().voiceOn;
@@ -323,10 +323,26 @@ export const createSessionStore: StateCreator<SessionStore, [['zustand/devtools'
             // }
           }
         },
+        onFinish: async () =>
+          // text
+          {
+            set({ chatLoadingId: undefined });
+            // TODO: 实现情感分析，语音一次性合成与解析
+            // const voiceOn = useGlobalStore.getState().voiceOn;
+            // const chatMode = useGlobalStore.getState().chatMode;
+
+            // // 只有视频模式下才需要语音合成
+            // if (voiceOn && chatMode === 'camera') {
+            //   const sentences = text.replaceAll(
+            //     /^[\s()[\]}«»‹›〈〉《》「」『』【】〔〕〘〙〚〛（）［］｛]+$/g,
+            //     '',
+            //   );
+            //   get().ttsMessage(assistantId, sentences);
+            // }
+          },
         signal: abortController.signal,
       },
     );
-    set({ chatLoadingId: undefined });
   },
 
   /**
