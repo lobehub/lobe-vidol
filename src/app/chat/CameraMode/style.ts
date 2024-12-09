@@ -10,7 +10,7 @@ export const useStyles = createStyles(({ css, token, responsive }) => ({
     height: 100%;
   `,
   content: css`
-    min-width: 480px;
+    min-width: 360px;
     max-width: 100vw;
     padding: 0 12px;
 

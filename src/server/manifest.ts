@@ -24,6 +24,7 @@ export class Manifest {
   public generate({
     color = COLOR,
     description,
+    keywords,
     name,
     id,
     icons,
@@ -33,6 +34,7 @@ export class Manifest {
     description: string;
     icons: IconItem[];
     id: string;
+    keywords: string;
     name: string;
     screenshots: ScreenshotItem[];
   }) {
@@ -41,6 +43,7 @@ export class Manifest {
       cache_busting_mode: 'all',
       categories: ['roleplay', 'social', 'entertainment', 'ai', 'chat'],
       description: description,
+      keywords: keywords,
       display: 'standalone',
       display_override: ['tabbed'],
       edge_side_panel: {

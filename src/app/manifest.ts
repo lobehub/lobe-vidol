@@ -3,12 +3,14 @@ import type { MetadataRoute } from 'next';
 
 import { BRANDING_LOGO_URL, BRANDING_NAME } from '@/constants/branding';
 import { manifestModule } from '@/server/manifest';
-
-import pkg from '../../package.json';
+import { translation } from '@/server/translation';
 
 const manifest = async (): Promise<MetadataRoute.Manifest | any> => {
+  const { t } = await translation('metadata');
+
   return manifestModule.generate({
-    description: pkg.description,
+    description: t('chat.description', { appName: BRANDING_NAME }),
+    keywords: t('chat.keywords').join(','),
     icons: [
       {
         purpose: 'any',

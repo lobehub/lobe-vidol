@@ -1,5 +1,20 @@
 {
   "chat": {
-    "description": "{{appName}} to aplikacja czatu napędzana przez AI, mająca na celu umożliwienie każdemu posiadania własnego wirtualnego towarzysza AI"
+    "description": "{{appName}} to aplikacja czatu napędzana przez AI, mająca na celu umożliwienie każdemu posiadania własnego wirtualnego towarzysza AI",
+    "keywords": [
+      "AI",
+      "wirtualna idol",
+      "czat",
+      "wirtualna postać",
+      "duży model językowy",
+      "AI wirtualny towarzysz",
+      "Genshin Impact",
+      "Honkai",
+      "Genshin Impact",
+      "Hololive",
+      "VTuber",
+      "Vidol",
+      "Vdroid"
+    ]
   }
 }

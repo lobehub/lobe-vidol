@@ -1,5 +1,20 @@
 {
   "chat": {
-    "description": "{{appName}} ist eine KI-gesteuerte Chat-Anwendung, die darauf abzielt, jedem einen eigenen KI-virtuellen Begleiter zu bieten."
+    "description": "{{appName}} ist eine KI-gesteuerte Chat-Anwendung, die darauf abzielt, jedem einen eigenen KI-virtuellen Begleiter zu bieten.",
+    "keywords": [
+      "KI",
+      "virtueller Idol",
+      "Chat",
+      "virtuelle Charaktere",
+      "großes Sprachmodell",
+      "KI virtueller Begleiter",
+      "Genshin Impact",
+      "Honkai",
+      "Genshin Impact",
+      "Hololive",
+      "VTuber",
+      "Vidol",
+      "Vdroid"
+    ]
   }
 }

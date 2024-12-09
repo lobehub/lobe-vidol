@@ -1,5 +1,20 @@
 {
   "chat": {
-    "description": "{{appName}} là một ứng dụng trò chuyện được điều khiển bởi AI, nhằm mang đến cho mọi người một người bạn ảo AI của riêng mình"
+    "description": "{{appName}} là một ứng dụng trò chuyện được điều khiển bởi AI, nhằm mang đến cho mọi người một người bạn ảo AI của riêng mình",
+    "keywords": [
+      "AI",
+      "thần tượng ảo",
+      "trò chuyện",
+      "nhân vật ảo",
+      "mô hình ngôn ngữ lớn",
+      "bạn đồng hành ảo AI",
+      "Genshin Impact",
+      "Honkai",
+      "Genshin Impact",
+      "Hololive",
+      "VTuber",
+      "Vidol",
+      "Vdroid"
+    ]
   }
 }
