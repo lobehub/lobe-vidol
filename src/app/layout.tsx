@@ -27,6 +27,7 @@ const RootLayout = async ({ children }: PropsWithChildren) => {
       </head>
       <body>
         <StyleRegistry>
+          {/* @ts-ignore */}
           <Layout>
             <NProgress />
             <PWAInstall />
