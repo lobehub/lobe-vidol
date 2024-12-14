@@ -22,7 +22,7 @@ const VirtualizedList = memo<VirtualizedListProps>(({ mobile, className, style, 
   const [isScrolling, setIsScrolling] = useState(false);
   const { styles } = useStyles();
 
-  const [id, chatLoading] = useSessionStore((s) => [s.activeId, !!s.chatLoadingId]);
+  const [id] = useSessionStore((s) => [s.activeId]);
 
   const prevDataLengthRef = useRef(data.length);
 
@@ -42,7 +42,7 @@ const VirtualizedList = memo<VirtualizedListProps>(({ mobile, className, style, 
   const overscan = typeof window !== 'undefined' ? window.innerHeight * 2 : 0;
 
   // @ts-ignore
-  return chatLoading && data.length === 2 ? null : (
+  return (
     <Flexbox style={style} className={classNames(className, styles.list)}>
       <Virtuoso
         atBottomStateChange={setAtBottom}
