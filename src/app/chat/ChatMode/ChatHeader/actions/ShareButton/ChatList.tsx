@@ -9,8 +9,8 @@ const ChatList = memo(() => {
 
   return (
     <Flexbox height={'100%'} style={{ paddingTop: 24, position: 'relative' }}>
-      {ids.map((id, index) => (
-        <Item id={id} index={index} key={id} />
+      {ids.map((id) => (
+        <Item id={id} key={id} />
       ))}
     </Flexbox>
   );

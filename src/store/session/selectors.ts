@@ -138,3 +138,15 @@ export const sessionSelectors = {
   sessionListIds,
   ttsLoading,
 };
+
+export const createItemSelector = (id: string) => (state: SessionStore) => {
+  const message = sessionSelectors.getChatMessageById(state)(id);
+  const loading = state.chatLoadingId === id;
+  const updateMessage = state.updateMessage;
+
+  return {
+    message,
+    loading,
+    updateMessage,
+  };
+};

@@ -21,11 +21,11 @@ const ActionsBar = memo<ActionsBarProps>((props) => {
 });
 
 interface ActionsProps {
-  index: number;
+  id: string;
   setEditing: (edit: boolean) => void;
 }
-const Actions = memo<ActionsProps>(({ index, setEditing }) => {
-  const item = useSessionStore((s) => sessionSelectors.currentChats(s)[index], isEqual);
+const Actions = memo<ActionsProps>(({ id, setEditing }) => {
+  const item = useSessionStore((s) => sessionSelectors.getChatMessageById(s)(id), isEqual);
   const onActionsClick = useActionsClick();
 
   const handleActionClick = useCallback(

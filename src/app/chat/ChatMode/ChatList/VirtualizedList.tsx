@@ -38,18 +38,8 @@ const VirtualizedList = memo<VirtualizedListProps>(({ mobile, className, style, 
     }
   }, [id]);
 
-  const itemContent = useCallback((index: number, id: string) => {
-    // if (id === WELCOME_GUIDE_CHAT_ID) return <InboxWelcome />;
-
-    return index === 0 ? (
-      <div style={{ height: 24 }} />
-    ) : (
-      <Item id={id} index={index - 1} showTitle />
-    );
-  }, []);
-
   // overscan should be 3 times the height of the window
-  const overscan = typeof window !== 'undefined' ? window.innerHeight * 3 : 0;
+  const overscan = typeof window !== 'undefined' ? window.innerHeight * 2 : 0;
 
   // @ts-ignore
   return chatLoading && data.length === 2 ? null : (
@@ -63,7 +53,7 @@ const VirtualizedList = memo<VirtualizedListProps>(({ mobile, className, style, 
         increaseViewportBy={overscan}
         isScrolling={setIsScrolling}
         initialTopMostItemIndex={data?.length - 1}
-        itemContent={itemContent}
+        itemContent={(index, id) => <Item id={id} showTitle />}
         overscan={overscan}
         ref={virtuosoRef}
       />

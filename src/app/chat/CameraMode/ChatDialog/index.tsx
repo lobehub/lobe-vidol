@@ -36,12 +36,7 @@ const Dialog = (props: DialogProps) => {
 
   return lastAgentChatIndex !== -1 && showChatDialog ? (
     <Flexbox className={classNames(className, styles.dialog)} style={style} ref={ref} horizontal>
-      <ChatItem
-        id={currentChats[lastAgentChatIndex].id}
-        index={lastAgentChatIndex}
-        showTitle={true}
-        type="pure"
-      />
+      <ChatItem id={currentChats[lastAgentChatIndex].id} showTitle={true} type="pure" />
       <Tooltip key="close" title={t('close', { ns: 'common' })}>
         <ActionIcon icon={XIcon} onClick={() => setChatDialog(false)} className={styles.close} />
       </Tooltip>
