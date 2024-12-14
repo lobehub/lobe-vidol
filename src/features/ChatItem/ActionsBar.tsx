@@ -25,10 +25,7 @@ interface ActionsProps {
   setEditing: (edit: boolean) => void;
 }
 const Actions = memo<ActionsProps>(({ index, setEditing }) => {
-  const item = useSessionStore(
-    (s) => sessionSelectors.currentChatsWithGreetingMessage(s)[index],
-    isEqual,
-  );
+  const item = useSessionStore((s) => sessionSelectors.currentChats(s)[index], isEqual);
   const onActionsClick = useActionsClick();
 
   const handleActionClick = useCallback(

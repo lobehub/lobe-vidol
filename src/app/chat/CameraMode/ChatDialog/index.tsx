@@ -20,7 +20,7 @@ interface DialogProps {
 const Dialog = (props: DialogProps) => {
   const { className, style } = props;
   const [currentChats, chatLoading] = useSessionStore(
-    (s) => [sessionSelectors.currentChatsWithGreetingMessage(s), !!s.chatLoadingId],
+    (s) => [sessionSelectors.currentChats(s), !!s.chatLoadingId],
     isEqual,
   );
   const lastAgentChatIndex = currentChats.findLastIndex((item) => item.role === 'assistant');

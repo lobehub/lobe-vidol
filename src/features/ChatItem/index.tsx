@@ -46,13 +46,7 @@ const Item = memo<ChatListItemProps>(
     const [editing, setEditing] = useState(false);
     const { t } = useTranslation('common');
 
-    const item = useSessionStore((s) => {
-      const chats = sessionSelectors.currentChatsWithGreetingMessage(s);
-
-      if (index >= chats.length) return;
-
-      return chats[index];
-    }, isEqual);
+    const item = useSessionStore((s) => sessionSelectors.getChatMessageById(s)(id), isEqual);
 
     const [loading, updateMessageContent] = useSessionStore((s) => [
       s.chatLoadingId === id,
