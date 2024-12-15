@@ -9,12 +9,14 @@ import { LLMRoleType } from '@/types/llm';
 
 import AssistantActionsBar from './Assistant';
 import SystemActionBar from './System';
+import ToolActionsBar from './Tool';
 import UserActionsBar from './User';
 
 export const renderActions: Record<LLMRoleType, RenderAction> = {
   assistant: AssistantActionsBar,
   user: UserActionsBar,
   system: SystemActionBar,
+  tool: ToolActionsBar,
 };
 
 export const useActionsClick = (): OnActionsClick => {

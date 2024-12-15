@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 
 export type ModelPriceCurrency = 'CNY' | 'USD';
 
-export type LLMRoleType = 'user' | 'assistant' | 'system';
+export type LLMRoleType = 'user' | 'system' | 'assistant' | 'tool';
 
 export interface SmoothingParams {
   speed?: number;

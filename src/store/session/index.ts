@@ -17,6 +17,7 @@ import { chatCompletion, handleSpeakAi, handleStopSpeak } from '@/services/chat'
 import { shareService } from '@/services/share';
 import { Agent } from '@/types/agent';
 import { ChatMessage } from '@/types/chat';
+import { OpenAIChatMessage } from '@/types/provider/chat';
 import { Session, SessionChatConfig } from '@/types/session';
 import { ShareGPTConversation } from '@/types/share';
 import { merge } from '@/utils/merge';
@@ -24,6 +25,7 @@ import { vidolStorage } from '@/utils/storage';
 
 import { useAgentStore } from '../agent';
 import { useGlobalStore } from '../global';
+import { chatHelpers } from './helpers';
 import { initialState } from './initialState';
 import { MessageActionType, messageReducer } from './reducers/message';
 import { sessionSelectors } from './selectors';
@@ -260,8 +262,21 @@ export const createSessionStore: StateCreator<SessionStore, [['zustand/devtools'
     let aiMessage = '';
     const sentences = [];
 
-    const voiceOn = useGlobalStore.getState().voiceOn;
-    const chatMode = useGlobalStore.getState().chatMode;
+    const { voiceOn, chatMode } = useGlobalStore.getState();
+
+    // 处理历史消息数
+    const chatConfig = sessionSelectors.currentSessionChatConfig(get());
+
+    const preprocessMsgs = chatHelpers.getSlicedMessagesWithConfig(messages, chatConfig, true);
+
+    if (currentAgent.systemRole) {
+      preprocessMsgs.unshift({ content: currentAgent.systemRole, role: 'system' } as ChatMessage);
+    }
+
+    const postMessages: OpenAIChatMessage[] = preprocessMsgs.map((message) => ({
+      role: message.role,
+      content: message.content,
+    }));
 
     await chatCompletion(
       {
@@ -269,13 +284,7 @@ export const createSessionStore: StateCreator<SessionStore, [['zustand/devtools'
         provider: currentAgent.provider || DEFAULT_LLM_CONFIG.provider,
         stream: true,
         ...(currentAgent.params || DEFAULT_LLM_CONFIG.params),
-        messages: [
-          {
-            content: currentAgent.systemRole,
-            role: 'system',
-          } as ChatMessage,
-          ...messages,
-        ],
+        messages: postMessages,
       },
       {
         onErrorHandle: (error) => {
