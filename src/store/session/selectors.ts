@@ -1,9 +1,10 @@
-import { LOBE_VIDOL_DEFAULT_AGENT_ID } from '@/constants/agent';
+import { DEFAULT_CHAT_CONFIG, LOBE_VIDOL_DEFAULT_AGENT_ID } from '@/constants/agent';
 import { DEFAULT_USER_AVATAR } from '@/constants/common';
 import { useAgentStore } from '@/store/agent';
 import { useSettingStore } from '@/store/setting';
 import { ChatMessage } from '@/types/chat';
 import { Session } from '@/types/session';
+import { merge } from '@/utils/merge';
 
 import { SessionStore } from './index';
 
@@ -13,6 +14,15 @@ const currentSession = (s: SessionStore): Session | undefined => {
     return defaultSession;
   }
   return sessionList.find((item) => item.agentId === activeId);
+};
+
+const currentSessionConfig = (s: SessionStore): Session['config'] => {
+  const session = currentSession(s);
+  return merge(DEFAULT_CHAT_CONFIG, session?.config);
+};
+
+const currentSessionChatConfig = (s: SessionStore): Session['config']['chatConfig'] => {
+  return currentSessionConfig(s).chatConfig || DEFAULT_CHAT_CONFIG;
 };
 
 const sessionListIds = (s: SessionStore): string[] => {
@@ -133,6 +143,8 @@ export const sessionSelectors = {
   currentChats,
   currentChatsString,
   getChatMessageById,
+  currentSessionConfig,
+  currentSessionChatConfig,
   currentSession,
   currentSystemRole,
   sessionListIds,

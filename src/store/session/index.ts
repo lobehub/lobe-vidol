@@ -1,3 +1,4 @@
+import { DeepPartial } from '@trpc/server';
 import { nanoid } from 'ai';
 import dayjs from 'dayjs';
 import { produce } from 'immer';
@@ -6,14 +7,19 @@ import { shallow } from 'zustand/shallow';
 import { createWithEqualityFn } from 'zustand/traditional';
 import { StateCreator } from 'zustand/vanilla';
 
-import { DEFAULT_LLM_CONFIG, LOBE_VIDOL_DEFAULT_AGENT_ID } from '@/constants/agent';
+import {
+  DEFAULT_CHAT_CONFIG,
+  DEFAULT_LLM_CONFIG,
+  LOBE_VIDOL_DEFAULT_AGENT_ID,
+} from '@/constants/agent';
 import { DEFAULT_USER_AVATAR_URL, LOADING_FLAG } from '@/constants/common';
 import { chatCompletion, handleSpeakAi, handleStopSpeak } from '@/services/chat';
 import { shareService } from '@/services/share';
 import { Agent } from '@/types/agent';
 import { ChatMessage } from '@/types/chat';
-import { Session } from '@/types/session';
+import { Session, SessionChatConfig } from '@/types/session';
 import { ShareGPTConversation } from '@/types/share';
+import { merge } from '@/utils/merge';
 import { vidolStorage } from '@/utils/storage';
 
 import { useAgentStore } from '../agent';
@@ -155,6 +161,16 @@ export interface SessionStore {
    */
   updateMessage: (id: string, content: string) => void;
   /**
+   * 更新会话聊天配置
+   * @param config
+   */
+  updateSessionChatConfig: (config: DeepPartial<SessionChatConfig>) => void;
+  /**
+   * 更新会话配置
+   * @param config
+   */
+  updateSessionConfig: (config: DeepPartial<Session['config']>) => void;
+  /**
    * 更新会话消息
    * @param messages
    */
@@ -175,23 +191,24 @@ export const createSessionStore: StateCreator<SessionStore, [['zustand/devtools'
     set({ ...initialState });
   },
   createSession: (agent: Agent) => {
-    const { sessionList } = get();
-    if (agent.agentId === LOBE_VIDOL_DEFAULT_AGENT_ID) {
-      set({ activeId: agent.agentId });
-      return;
-    }
+    const { sessionList, switchSession } = get();
 
     const newSessionList = produce(sessionList, (draft) => {
       const index = draft.findIndex((session) => session.agentId === agent.agentId);
       if (index === -1) {
-        draft.push({
+        const session = {
           agentId: agent.agentId,
           messages: [],
-        });
+          config: {
+            chatConfig: DEFAULT_CHAT_CONFIG,
+          },
+        };
+        draft.push(session);
       }
     });
 
-    set({ activeId: agent.agentId, sessionList: newSessionList });
+    set({ sessionList: newSessionList });
+    switchSession(agent.agentId); // 切换会话
   },
   deleteMessage: (id) => {
     const { dispatchMessage } = get();
@@ -497,22 +514,9 @@ export const createSessionStore: StateCreator<SessionStore, [['zustand/devtools'
     set({ messageInput }, false, 'session/setMessageInput');
   },
   switchSession: (agentId) => {
-    const { sessionList } = get();
-    if (agentId === LOBE_VIDOL_DEFAULT_AGENT_ID) {
-      set({ activeId: agentId });
-      useAgentStore.setState({ currentIdentifier: agentId });
-      return;
-    }
-    const targetSession = sessionList.find((session) => session.agentId === agentId);
-    if (!targetSession) {
-      const session = {
-        agentId: agentId,
-        messages: [],
-      };
-      set({ sessionList: [...sessionList, session] });
-    }
+    if (get().activeId === agentId) return;
     set({ activeId: agentId });
-    useAgentStore.setState({ currentIdentifier: agentId });
+    useAgentStore.setState({ currentIdentifier: agentId }, false, `switchSession/${agentId}`);
   },
 
   toggleInteractive: () => {
@@ -529,6 +533,26 @@ export const createSessionStore: StateCreator<SessionStore, [['zustand/devtools'
       },
       type: 'UPDATE_MESSAGE',
     });
+  },
+  updateSessionConfig: (config) => {
+    const { sessionList, activeId, defaultSession } = get();
+    if (activeId === LOBE_VIDOL_DEFAULT_AGENT_ID) {
+      const mergeSession = produce(defaultSession, (draft) => {
+        draft.config = merge(draft.config, config);
+      });
+      set({ defaultSession: mergeSession });
+    } else {
+      const sessions = produce(sessionList, (draft) => {
+        const index = draft.findIndex((session) => session.agentId === activeId);
+        if (index === -1) return;
+        draft[index].config = merge(draft[index].config, config);
+      });
+      set({ sessionList: sessions });
+    }
+  },
+  updateSessionChatConfig: (config) => {
+    const { updateSessionConfig } = get();
+    updateSessionConfig({ chatConfig: config });
   },
   updateSessionMessages: (messages) => {
     const { sessionList, activeId, defaultSession } = get();

@@ -34,6 +34,11 @@ export const DEFAULT_AGENT_CONFIG = {
   ...DEFAULT_TTS_CONFIG_FEMALE,
 };
 
+export const DEFAULT_CHAT_CONFIG = {
+  enableHistoryCount: true,
+  historyCount: 8,
+};
+
 export const LOBE_VIDOL_DEFAULT_AGENT: Agent = {
   agentId: LOBE_VIDOL_DEFAULT_AGENT_ID,
   author: 'LobeVidol',

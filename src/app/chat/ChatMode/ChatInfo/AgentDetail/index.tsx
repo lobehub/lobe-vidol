@@ -4,14 +4,15 @@ import { Flexbox } from 'react-layout-kit';
 
 import AgentCard from '@/components/agent/AgentCard';
 import SystemRole from '@/components/agent/SystemRole';
-import useSessionContext from '@/hooks/useSessionContext';
+import { sessionSelectors, useSessionStore } from '@/store/session';
 
+import Clear from '../actions/Clear';
 import EditRole from '../actions/EditRole';
 import History from '../actions/History';
 import TokenMini from '../actions/TokenMini';
 
 const ChatInfo = () => {
-  const { sessionAgent } = useSessionContext();
+  const sessionAgent = useSessionStore((s) => sessionSelectors.currentAgent(s));
 
   return (
     sessionAgent && (
@@ -21,6 +22,7 @@ const ChatInfo = () => {
           <Flexbox horizontal justify={'space-between'} align="center" key="token-history">
             <Space size={4}>
               <TokenMini />
+              <Clear />
               <History />
             </Space>
             <EditRole />

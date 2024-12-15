@@ -27,11 +27,17 @@ export default {
     background: '背景',
     stage: '舞台',
   },
-  history: {
-    title: '聊天记录',
+  clear: {
     alert: '确定删除历史消息？',
     action: '清除上下文',
     tip: '该操作不可逆，请谨慎操作',
+  },
+  enableHistoryCount: {
+    alias: '不限制',
+    limited: '只包含 {{number}} 条会话消息',
+    setlimited: '使用历史消息数',
+    title: '限制历史消息数',
+    unlimited: '不限历史消息数',
   },
   editRole: {
     action: '编辑角色',

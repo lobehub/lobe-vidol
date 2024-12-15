@@ -4,8 +4,8 @@ import { memo } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
 import { DEFAULT_CHAT_MODEL } from '@/constants/agent';
-import useSessionContext from '@/hooks/useSessionContext';
 import { siteUrl } from '@/server/utils/url';
+import { sessionSelectors, useSessionStore } from '@/store/session';
 
 import ChatList from './ChatList';
 import { useStyles } from './style';
@@ -13,7 +13,7 @@ import { FieldType } from './type';
 
 const Preview = memo<FieldType & { title?: string }>(
   ({ title, withSystemRole, withBackground, withFooter }) => {
-    const { sessionAgent } = useSessionContext();
+    const sessionAgent = useSessionStore((s) => sessionSelectors.currentAgent(s));
     const { styles } = useStyles(withBackground);
 
     if (!sessionAgent) return null;
