@@ -1,5 +1,3 @@
-import { t } from 'i18next';
-
 import { LOBE_VIDOL_DEFAULT_AGENT_ID } from '@/constants/agent';
 import { DEFAULT_USER_AVATAR } from '@/constants/common';
 import { useAgentStore } from '@/store/agent';
@@ -76,36 +74,8 @@ const currentChats = (s: SessionStore): ChatMessage[] => {
   });
 };
 
-const initTime = Date.now();
-
-const currentChatsWithGreetingMessage = (s: SessionStore): ChatMessage[] => {
-  const data = currentChats(s);
-
-  const isBrandNewChat = data.length === 0;
-
-  if (!isBrandNewChat) return data;
-
-  const agent = currentAgent(s);
-
-  const emptyGuideMessage = {
-    content: agent?.greeting || t('greet', { ns: 'welcome', name: agent?.meta.name }),
-    createdAt: initTime,
-    id: 'default',
-    meta: {
-      avatar: agent?.meta.avatar,
-      title: agent?.meta.name,
-      description: agent?.meta.description,
-    },
-    role: 'assistant',
-    updatedAt: initTime,
-  } as ChatMessage;
-
-  return [emptyGuideMessage];
-};
-
-const currentChatIDsWithGreetingMessage = (s: SessionStore): string[] => {
-  const currentChats = currentChatsWithGreetingMessage(s);
-  return currentChats.map((item) => item.id);
+const currentChatIDs = (s: SessionStore): string[] => {
+  return currentChats(s).map((item) => item.id);
 };
 
 const currentChatsString = (s: SessionStore): string => {
@@ -132,6 +102,10 @@ const currentChatMessage = (s: SessionStore): ChatMessage | undefined => {
   return currentChats(s).find((item) => item.id === chatLoadingId);
 };
 
+const getChatMessageById = (s: SessionStore) => {
+  return (id: string) => currentChats(s).find((item) => item.id === id);
+};
+
 const ttsLoading = (s: SessionStore) => {
   const { ttsLoadingId } = s;
   return (id: string) => ttsLoadingId === id;
@@ -150,17 +124,29 @@ const getLastMessageByAgentId = (s: SessionStore) => {
 };
 
 export const sessionSelectors = {
-  currentChatsWithGreetingMessage,
+  currentChatIDs,
   filterSessionListIds,
   currentAgent,
   getAgentById,
-  currentChatIDsWithGreetingMessage,
   getLastMessageByAgentId,
   currentChatMessage,
   currentChats,
   currentChatsString,
+  getChatMessageById,
   currentSession,
   currentSystemRole,
   sessionListIds,
   ttsLoading,
+};
+
+export const createItemSelector = (id: string) => (state: SessionStore) => {
+  const message = sessionSelectors.getChatMessageById(state)(id);
+  const loading = state.chatLoadingId === id;
+  const updateMessage = state.updateMessage;
+
+  return {
+    message,
+    loading,
+    updateMessage,
+  };
 };

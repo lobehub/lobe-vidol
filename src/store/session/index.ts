@@ -243,6 +243,9 @@ export const createSessionStore: StateCreator<SessionStore, [['zustand/devtools'
     let aiMessage = '';
     const sentences = [];
 
+    const voiceOn = useGlobalStore.getState().voiceOn;
+    const chatMode = useGlobalStore.getState().chatMode;
+
     await chatCompletion(
       {
         model: currentAgent.model || DEFAULT_LLM_CONFIG.model,
@@ -271,9 +274,6 @@ export const createSessionStore: StateCreator<SessionStore, [['zustand/devtools'
         onMessageHandle: async (chunk) => {
           switch (chunk.type) {
             case 'text': {
-              const voiceOn = useGlobalStore.getState().voiceOn;
-              const chatMode = useGlobalStore.getState().chatMode;
-
               // 只有视频模式下才需要连续语音合成
               if (voiceOn && chatMode === 'camera') {
                 // 语音合成
@@ -323,26 +323,11 @@ export const createSessionStore: StateCreator<SessionStore, [['zustand/devtools'
             // }
           }
         },
-        onFinish: async () =>
-          // text
-          {
-            set({ chatLoadingId: undefined });
-            // TODO: 实现情感分析，语音一次性合成与解析
-            // const voiceOn = useGlobalStore.getState().voiceOn;
-            // const chatMode = useGlobalStore.getState().chatMode;
-
-            // // 只有视频模式下才需要语音合成
-            // if (voiceOn && chatMode === 'camera') {
-            //   const sentences = text.replaceAll(
-            //     /^[\s()[\]}«»‹›〈〉《》「」『』【】〔〕〘〙〚〛（）［］｛]+$/g,
-            //     '',
-            //   );
-            //   get().ttsMessage(assistantId, sentences);
-            // }
-          },
         signal: abortController.signal,
       },
     );
+
+    set({ chatLoadingId: undefined });
   },
 
   /**

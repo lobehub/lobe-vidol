@@ -1,31 +1,28 @@
 import classNames from 'classnames';
-import isEqual from 'fast-deep-equal';
 import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
 import { Flexbox } from 'react-layout-kit';
 import { Virtuoso, VirtuosoHandle } from 'react-virtuoso';
 
 import Item from '@/features/ChatItem';
-import { sessionSelectors, useSessionStore } from '@/store/session';
+import { useSessionStore } from '@/store/session';
 
 import AutoScroll from './AutoScroll';
 import { useStyles } from './style';
 
 interface VirtualizedListProps {
   className?: string;
+  data: string[];
   mobile?: boolean;
+
   style?: React.CSSProperties;
 }
-const VirtualizedList = memo<VirtualizedListProps>(({ mobile, className, style }) => {
+const VirtualizedList = memo<VirtualizedListProps>(({ mobile, className, style, data }) => {
   const virtuosoRef = useRef<VirtuosoHandle>(null);
   const [atBottom, setAtBottom] = useState(true);
   const [isScrolling, setIsScrolling] = useState(false);
   const { styles } = useStyles();
 
-  const data = useSessionStore(
-    (s) => ['empty', ...sessionSelectors.currentChatIDsWithGreetingMessage(s)],
-    isEqual,
-  );
-  const [id, chatLoading] = useSessionStore((s) => [s.activeId, !!s.chatLoadingId]);
+  const [id] = useSessionStore((s) => [s.activeId]);
 
   const prevDataLengthRef = useRef(data.length);
 
@@ -41,24 +38,11 @@ const VirtualizedList = memo<VirtualizedListProps>(({ mobile, className, style }
     }
   }, [id]);
 
-  const itemContent = useCallback(
-    (index: number, id: string) => {
-      // if (id === WELCOME_GUIDE_CHAT_ID) return <InboxWelcome />;
-
-      return index === 0 ? (
-        <div style={{ height: 24 }} />
-      ) : (
-        <Item id={id} index={index - 1} showTitle />
-      );
-    },
-    [mobile],
-  );
-
   // overscan should be 3 times the height of the window
-  const overscan = typeof window !== 'undefined' ? window.innerHeight * 3 : 0;
+  const overscan = typeof window !== 'undefined' ? window.innerHeight * 2 : 0;
 
   // @ts-ignore
-  return chatLoading && data.length === 2 ? null : (
+  return (
     <Flexbox style={style} className={classNames(className, styles.list)}>
       <Virtuoso
         atBottomStateChange={setAtBottom}
@@ -69,7 +53,7 @@ const VirtualizedList = memo<VirtualizedListProps>(({ mobile, className, style }
         increaseViewportBy={overscan}
         isScrolling={setIsScrolling}
         initialTopMostItemIndex={data?.length - 1}
-        itemContent={itemContent}
+        itemContent={(index, id) => <Item id={id} showTitle />}
         overscan={overscan}
         ref={virtuosoRef}
       />

@@ -20,7 +20,7 @@ interface DialogProps {
 const Dialog = (props: DialogProps) => {
   const { className, style } = props;
   const [currentChats, chatLoading] = useSessionStore(
-    (s) => [sessionSelectors.currentChatsWithGreetingMessage(s), !!s.chatLoadingId],
+    (s) => [sessionSelectors.currentChats(s), !!s.chatLoadingId],
     isEqual,
   );
   const lastAgentChatIndex = currentChats.findLastIndex((item) => item.role === 'assistant');
@@ -36,12 +36,7 @@ const Dialog = (props: DialogProps) => {
 
   return lastAgentChatIndex !== -1 && showChatDialog ? (
     <Flexbox className={classNames(className, styles.dialog)} style={style} ref={ref} horizontal>
-      <ChatItem
-        id={currentChats[lastAgentChatIndex].id}
-        index={lastAgentChatIndex}
-        showTitle={true}
-        type="pure"
-      />
+      <ChatItem id={currentChats[lastAgentChatIndex].id} showTitle={true} type="pure" />
       <Tooltip key="close" title={t('close', { ns: 'common' })}>
         <ActionIcon icon={XIcon} onClick={() => setChatDialog(false)} className={styles.close} />
       </Tooltip>
