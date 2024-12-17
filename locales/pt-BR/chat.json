@@ -45,6 +45,11 @@
   "camera": "Chamada de vídeo",
   "chat": "Bate-papo",
   "chatList": "Lista de Chats",
+  "clear": {
+    "action": "Limpar contexto",
+    "alert": "Tem certeza de que deseja excluir as mensagens históricas?",
+    "tip": "Esta ação é irreversível, por favor, proceda com cautela"
+  },
   "danceList": "Lista de Danças",
   "danceMarket": "Mercado de Danças",
   "delSession": "Excluir sessão",
@@ -52,11 +57,12 @@
   "editRole": {
     "action": "Editar papel"
   },
-  "history": {
-    "action": "Limpar Contexto",
-    "alert": "Tem certeza de que deseja excluir as mensagens do histórico?",
-    "tip": "Esta ação é irreversível, por favor, proceda com cautela.",
-    "title": "Histórico de Conversa"
+  "enableHistoryCount": {
+    "alias": "Sem restrições",
+    "limited": "Apenas inclui {{number}} mensagens de sessão",
+    "setlimited": "Usar número de mensagens históricas",
+    "title": "Limitar número de mensagens históricas",
+    "unlimited": "Sem limite de mensagens históricas"
   },
   "info": {
     "background": "Fundo",

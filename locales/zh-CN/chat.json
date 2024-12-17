@@ -45,6 +45,11 @@
   "camera": "视频通话",
   "chat": "聊天",
   "chatList": "聊天列表",
+  "clear": {
+    "alert": "确定删除历史消息？",
+    "action": "清除上下文",
+    "tip": "该操作不可逆，请谨慎操作"
+  },
   "danceList": "舞蹈列表",
   "danceMarket": "舞蹈市场",
   "delSession": "删除会话",
@@ -52,11 +57,12 @@
   "editRole": {
     "action": "编辑角色"
   },
-  "history": {
-    "title": "聊天记录",
-    "alert": "确定删除历史消息？",
-    "action": "清除上下文",
-    "tip": "该操作不可逆，请谨慎操作"
+  "enableHistoryCount": {
+    "alias": "不限制",
+    "limited": "只包含 {{number}} 条会话消息",
+    "setlimited": "使用历史消息数",
+    "title": "限制历史消息数",
+    "unlimited": "不限历史消息数"
   },
   "info": {
     "chat": "聊天",

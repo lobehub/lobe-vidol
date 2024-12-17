@@ -140,6 +140,20 @@
     "title": "Modèle de Langue",
     "waitingForMore": "D'autres modèles sont en <1>planification d'intégration</1>, restez à l'écoute"
   },
+  "systemAgent": {
+    "customPrompt": {
+      "addPrompt": "Ajouter un prompt personnalisé",
+      "desc": "Une fois rempli, l'assistant système utilisera le prompt personnalisé lors de la génération de contenu",
+      "placeholder": "Veuillez entrer le mot-clé du prompt personnalisé",
+      "title": "Mot-clé du prompt personnalisé"
+    },
+    "emotionAnalysis": {
+      "label": "Modèle d'analyse des émotions",
+      "modelDesc": "Modèle spécifié pour l'analyse des émotions",
+      "title": "Analyse des émotions automatique"
+    },
+    "title": "Agent système"
+  },
   "touch": {
     "title": "Paramètres de toucher"
   },

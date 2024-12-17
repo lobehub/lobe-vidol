@@ -45,6 +45,11 @@
   "camera": "Videollamada",
   "chat": "charlar",
   "chatList": "Lista de chat",
+  "clear": {
+    "action": "Borrar contexto",
+    "alert": "¿Estás seguro de que deseas eliminar los mensajes históricos?",
+    "tip": "Esta acción es irreversible, por favor actúa con precaución"
+  },
   "danceList": "Lista de danzas",
   "danceMarket": "Mercado de danzas",
   "delSession": "Eliminar sesión",
@@ -52,11 +57,12 @@
   "editRole": {
     "action": "Editar rol"
   },
-  "history": {
-    "action": "Borrar contexto",
-    "alert": "¿Estás seguro de que deseas eliminar los mensajes históricos?",
-    "tip": "Esta acción es irreversible, por favor actúa con precaución",
-    "title": "Registro de chat"
+  "enableHistoryCount": {
+    "alias": "Sin límite",
+    "limited": "Solo incluye {{number}} mensajes de sesión",
+    "setlimited": "Usar número de mensajes históricos",
+    "title": "Limitar el número de mensajes históricos",
+    "unlimited": "Sin límite en el número de mensajes históricos"
   },
   "info": {
     "background": "Fondo",

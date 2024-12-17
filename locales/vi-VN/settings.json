@@ -140,6 +140,20 @@
     "title": "Mô hình ngôn ngữ",
     "waitingForMore": "Nhiều mô hình hơn đang <1>được lên kế hoạch kết nối</1>, xin hãy chờ đợi"
   },
+  "systemAgent": {
+    "customPrompt": {
+      "addPrompt": "Thêm gợi ý tùy chỉnh",
+      "desc": "Sau khi điền, trợ lý hệ thống sẽ sử dụng gợi ý tùy chỉnh khi tạo nội dung",
+      "placeholder": "Vui lòng nhập từ gợi ý tùy chỉnh",
+      "title": "Từ gợi ý tùy chỉnh"
+    },
+    "emotionAnalysis": {
+      "label": "Mô hình phân tích cảm xúc",
+      "modelDesc": "Chỉ định mô hình được sử dụng cho phân tích cảm xúc",
+      "title": "Tự động thực hiện phân tích cảm xúc"
+    },
+    "title": "Đại lý hệ thống"
+  },
   "touch": {
     "title": "Cài đặt chạm"
   },

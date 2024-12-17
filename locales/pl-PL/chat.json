@@ -45,6 +45,11 @@
   "camera": "Wideokonferencja",
   "chat": "Czat",
   "chatList": "Lista czatów",
+  "clear": {
+    "action": "Wyczyść kontekst",
+    "alert": "Czy na pewno chcesz usunąć historię wiadomości?",
+    "tip": "Ta operacja jest nieodwracalna, proszę działać ostrożnie"
+  },
   "danceList": "Lista tańców",
   "danceMarket": "Rynek tańca",
   "delSession": "Usuń sesję",
@@ -52,11 +57,12 @@
   "editRole": {
     "action": "Edytuj rolę"
   },
-  "history": {
-    "action": "Wyczyść kontekst",
-    "alert": "Czy na pewno chcesz usunąć historię wiadomości?",
-    "tip": "Ta operacja jest nieodwracalna, proszę działać ostrożnie",
-    "title": "Historia czatu"
+  "enableHistoryCount": {
+    "alias": "Brak ograniczeń",
+    "limited": "Zawiera tylko {{number}} wiadomości sesji",
+    "setlimited": "Ustaw liczbę wiadomości w historii",
+    "title": "Ogranicz liczbę wiadomości w historii",
+    "unlimited": "Brak ograniczeń w historii wiadomości"
   },
   "info": {
     "background": "Tło",

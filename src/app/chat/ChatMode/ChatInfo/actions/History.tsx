@@ -18,7 +18,7 @@ const History = memo(() => {
   });
 
   const title = t(
-    enableHistoryCount ? 'enableHistoryCount.limited' : '.enableHistoryCount.unlimited',
+    enableHistoryCount ? 'enableHistoryCount.limited' : 'enableHistoryCount.unlimited',
     { number: historyCount || 0 },
   );
   const mobile = useIsMobile();

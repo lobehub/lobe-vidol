@@ -140,6 +140,20 @@
     "title": "Model językowy",
     "waitingForMore": "Więcej modeli jest w <1>planowanej integracji</1>, prosimy o cierpliwość"
   },
+  "systemAgent": {
+    "customPrompt": {
+      "addPrompt": "Dodaj niestandardowy podpowiedź",
+      "desc": "Po wypełnieniu, asystent systemowy użyje niestandardowej podpowiedzi podczas generowania treści",
+      "placeholder": "Wprowadź niestandardowe słowo kluczowe",
+      "title": "Niestandardowe słowo kluczowe"
+    },
+    "emotionAnalysis": {
+      "label": "Model analizy emocji",
+      "modelDesc": "Określ model używany do analizy emocji",
+      "title": "Automatyczna analiza emocji"
+    },
+    "title": "Agent systemowy"
+  },
   "touch": {
     "title": "Ustawienia dotykowe"
   },

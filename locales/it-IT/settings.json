@@ -140,6 +140,20 @@
     "title": "Modello Linguistico",
     "waitingForMore": "Altri modelli sono in fase di <1>programmazione per l'integrazione</1>, resta sintonizzato"
   },
+  "systemAgent": {
+    "customPrompt": {
+      "addPrompt": "Aggiungi suggerimento personalizzato",
+      "desc": "Una volta compilato, l'assistente di sistema utilizzerà il suggerimento personalizzato nella generazione dei contenuti",
+      "placeholder": "Inserisci il suggerimento personalizzato",
+      "title": "Parola chiave personalizzata"
+    },
+    "emotionAnalysis": {
+      "label": "Modello di analisi delle emozioni",
+      "modelDesc": "Specifica il modello da utilizzare per l'analisi delle emozioni",
+      "title": "Analisi delle emozioni automatica"
+    },
+    "title": "Agente di sistema"
+  },
   "touch": {
     "title": "Impostazioni di tocco"
   },

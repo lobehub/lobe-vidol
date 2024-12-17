@@ -140,6 +140,20 @@
     "title": "Dil Modeli",
     "waitingForMore": "Daha fazla model <1>planlanıyor</1>, lütfen bekleyin"
   },
+  "systemAgent": {
+    "customPrompt": {
+      "addPrompt": "Özel İpucu Ekle",
+      "desc": "Doldurduğunuzda, sistem asistanı içerik oluştururken özel ipucunu kullanacaktır",
+      "placeholder": "Lütfen özel ipucu kelimelerini girin",
+      "title": "Özel İpucu Kelimeleri"
+    },
+    "emotionAnalysis": {
+      "label": "Duygu Analizi Modeli",
+      "modelDesc": "Duygu analizi için kullanılacak modeli belirtin",
+      "title": "Otomatik Duygu Analizi Yap"
+    },
+    "title": "Sistem Ajanı"
+  },
   "touch": {
     "title": "Dokunma Ayarları"
   },

@@ -140,6 +140,20 @@
     "title": "Sprachmodell",
     "waitingForMore": "Weitere Modelle werden gerade <1>geplant</1>, bitte warten Sie."
   },
+  "systemAgent": {
+    "customPrompt": {
+      "addPrompt": "Benutzerdefinierte Eingabe hinzufügen",
+      "desc": "Nachdem Sie dies ausgefüllt haben, wird der Systemassistent die benutzerdefinierte Eingabe bei der Inhaltserstellung verwenden",
+      "placeholder": "Bitte benutzerdefinierte Eingabe eingeben",
+      "title": "Benutzerdefinierte Eingabe"
+    },
+    "emotionAnalysis": {
+      "label": "Emotionanalyse-Modell",
+      "modelDesc": "Das für die Emotionanalyse verwendete Modell angeben",
+      "title": "Automatische Emotionanalyse durchführen"
+    },
+    "title": "System-Agent"
+  },
   "touch": {
     "title": "Berührungseinstellungen"
   },

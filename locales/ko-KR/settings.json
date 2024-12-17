@@ -140,6 +140,20 @@
     "title": "언어 모델",
     "waitingForMore": "더 많은 모델이 <1>계획 중입니다</1>, 기대해 주세요."
   },
+  "systemAgent": {
+    "customPrompt": {
+      "addPrompt": "사용자 정의 프롬프트 추가",
+      "desc": "입력 후, 시스템 어시스턴트는 콘텐츠 생성 시 사용자 정의 프롬프트를 사용합니다",
+      "placeholder": "사용자 정의 프롬프트 입력",
+      "title": "사용자 정의 프롬프트"
+    },
+    "emotionAnalysis": {
+      "label": "감정 분석 모델",
+      "modelDesc": "감정 분석에 사용할 모델 지정",
+      "title": "자동 감정 분석 수행"
+    },
+    "title": "시스템 에이전트"
+  },
   "touch": {
     "title": "터치 설정"
   },

@@ -45,6 +45,11 @@
   "camera": "Videoanruf",
   "chat": "Chat",
   "chatList": "Chatliste",
+  "clear": {
+    "action": "Kontext löschen",
+    "alert": "Möchten Sie die Verlaufsmeldungen wirklich löschen?",
+    "tip": "Diese Aktion ist irreversibel, bitte vorsichtig sein"
+  },
   "danceList": "Tanzliste",
   "danceMarket": "Tanzmarkt",
   "delSession": "Sitzung löschen",
@@ -52,11 +57,12 @@
   "editRole": {
     "action": "Rolle bearbeiten"
   },
-  "history": {
-    "action": "Kontext löschen",
-    "alert": "Möchten Sie die historischen Nachrichten wirklich löschen?",
-    "tip": "Diese Aktion ist nicht umkehrbar, bitte vorsichtig handeln.",
-    "title": "Chatverlauf"
+  "enableHistoryCount": {
+    "alias": "Keine Einschränkung",
+    "limited": "Enthält nur {{number}} Sitzungsnachrichten",
+    "setlimited": "Verwendete Anzahl der Verlaufsmeldungen",
+    "title": "Einschränkung der Anzahl der Verlaufsmeldungen",
+    "unlimited": "Keine Einschränkung der Verlaufsmeldungen"
   },
   "info": {
     "background": "Hintergrund",
