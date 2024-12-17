@@ -45,6 +45,11 @@
   "camera": "Videochiamata",
   "chat": "Chat",
   "chatList": "Elenco chat",
+  "clear": {
+    "action": "Cancella contesto",
+    "alert": "Sei sicuro di voler eliminare i messaggi storici?",
+    "tip": "Questa operazione è irreversibile, procedi con cautela"
+  },
   "danceList": "Elenco delle danze",
   "danceMarket": "Mercato delle danze",
   "delSession": "Elimina la sessione",
@@ -52,11 +57,12 @@
   "editRole": {
     "action": "Modifica ruolo"
   },
-  "history": {
-    "action": "Cancella contesto",
-    "alert": "Sei sicuro di voler eliminare i messaggi storici?",
-    "tip": "Questa operazione è irreversibile, procedi con cautela",
-    "title": "Cronologia chat"
+  "enableHistoryCount": {
+    "alias": "Nessun limite",
+    "limited": "Include solo {{number}} messaggi di conversazione",
+    "setlimited": "Imposta il numero di messaggi storici",
+    "title": "Limita il numero di messaggi storici",
+    "unlimited": "Nessun limite ai messaggi storici"
   },
   "info": {
     "background": "Sfondo",

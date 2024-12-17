@@ -140,6 +140,20 @@
     "title": "語言模型",
     "waitingForMore": "更多模型正在 <1>計劃接入</1> 中，敬請期待"
   },
+  "systemAgent": {
+    "customPrompt": {
+      "addPrompt": "添加自訂提示",
+      "desc": "填寫後，系統助理將在生成內容時使用自訂提示",
+      "placeholder": "請輸入自訂提示詞",
+      "title": "自訂提示詞"
+    },
+    "emotionAnalysis": {
+      "label": "情感分析模型",
+      "modelDesc": "指定用於情感分析的模型",
+      "title": "自動進行情感分析"
+    },
+    "title": "系統代理"
+  },
   "touch": {
     "title": "觸摸設定"
   },

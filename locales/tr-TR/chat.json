@@ -45,6 +45,11 @@
   "camera": "Görüntülü Arama",
   "chat": "sohbet",
   "chatList": "Sohbet Listesi",
+  "clear": {
+    "action": "Bağlamı temizle",
+    "alert": "Geçmiş mesajları silmek istediğinize emin misiniz?",
+    "tip": "Bu işlem geri alınamaz, lütfen dikkatli olun"
+  },
   "danceList": "Dans Listesi",
   "danceMarket": "Dans Pazarı",
   "delSession": "Oturumu Sil",
@@ -52,11 +57,12 @@
   "editRole": {
     "action": "Rolü Düzenle"
   },
-  "history": {
-    "action": "Bağlamı Temizle",
-    "alert": "Geçmiş mesajları silmek istediğinize emin misiniz?",
-    "tip": "Bu işlem geri alınamaz, lütfen dikkatli olun.",
-    "title": "Sohbet Geçmişi"
+  "enableHistoryCount": {
+    "alias": "Sınırsız",
+    "limited": "Sadece {{number}} oturum mesajını içerir",
+    "setlimited": "Geçmiş mesaj sayısını kullan",
+    "title": "Geçmiş mesaj sayısını sınırlama",
+    "unlimited": "Geçmiş mesaj sayısında sınırlama yok"
   },
   "info": {
     "background": "Arka Plan",

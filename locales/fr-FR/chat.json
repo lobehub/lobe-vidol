@@ -45,6 +45,11 @@
   "camera": "Appel vidéo",
   "chat": "Discussion",
   "chatList": "Liste de discussion",
+  "clear": {
+    "action": "Effacer le contexte",
+    "alert": "Êtes-vous sûr de vouloir supprimer les messages historiques ?",
+    "tip": "Cette action est irréversible, veuillez agir avec prudence"
+  },
   "danceList": "Liste des danses",
   "danceMarket": "Marché de la danse",
   "delSession": "Supprimer la session",
@@ -52,11 +57,12 @@
   "editRole": {
     "action": "Modifier le rôle"
   },
-  "history": {
-    "action": "Effacer le contexte",
-    "alert": "Êtes-vous sûr de vouloir supprimer les messages historiques ?",
-    "tip": "Cette action est irréversible, veuillez agir avec prudence",
-    "title": "Historique des discussions"
+  "enableHistoryCount": {
+    "alias": "Pas de limite",
+    "limited": "Inclut seulement {{number}} messages de conversation",
+    "setlimited": "Utiliser le nombre de messages historiques",
+    "title": "Limiter le nombre de messages historiques",
+    "unlimited": "Pas de limite sur le nombre de messages historiques"
   },
   "info": {
     "background": "Contexte",

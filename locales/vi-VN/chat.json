@@ -45,6 +45,11 @@
   "camera": "Gọi video",
   "chat": "Trò chuyện",
   "chatList": "Danh sách trò chuyện",
+  "clear": {
+    "action": "Xóa ngữ cảnh",
+    "alert": "Bạn có chắc chắn muốn xóa tin nhắn lịch sử không?",
+    "tip": "Hành động này không thể hoàn tác, xin hãy cẩn thận"
+  },
   "danceList": "Danh sách khiêu vũ",
   "danceMarket": "Thị trường khiêu vũ",
   "delSession": "Xóa cuộc trò chuyện",
@@ -52,11 +57,12 @@
   "editRole": {
     "action": "Chỉnh sửa vai trò"
   },
-  "history": {
-    "action": "Xóa ngữ cảnh",
-    "alert": "Bạn có chắc chắn muốn xóa tin nhắn lịch sử không?",
-    "tip": "Hành động này không thể hoàn tác, xin hãy cẩn thận khi thực hiện.",
-    "title": "Lịch sử trò chuyện"
+  "enableHistoryCount": {
+    "alias": "Không giới hạn",
+    "limited": "Chỉ bao gồm {{number}} tin nhắn cuộc trò chuyện",
+    "setlimited": "Sử dụng số lượng tin nhắn lịch sử",
+    "title": "Giới hạn số lượng tin nhắn lịch sử",
+    "unlimited": "Không giới hạn số lượng tin nhắn lịch sử"
   },
   "info": {
     "background": "Nền",

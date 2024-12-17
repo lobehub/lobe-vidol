@@ -183,7 +183,7 @@ export const chatCompletion = async (
   params: Partial<ChatStreamPayload>,
   options?: FetchOptions,
 ) => {
-  const { provider = DEFAULT_CHAT_PROVIDER, messages, ...res } = params;
+  const { provider = DEFAULT_CHAT_PROVIDER, ...res } = params;
   const { signal } = options ?? {};
 
   let model = res.model || DEFAULT_CHAT_MODEL;
@@ -197,12 +197,7 @@ export const chatCompletion = async (
     if (deploymentName) model = deploymentName;
   }
 
-  const postMessages = messages.map((message) => ({
-    role: message.role,
-    content: message.content,
-  }));
-
-  const payload = { ...res, model, messages: postMessages };
+  const payload = { ...res, model };
 
   /**
    * Use browser agent runtime

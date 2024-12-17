@@ -45,6 +45,11 @@
   "camera": "Video call",
   "chat": "Chat",
   "chatList": "Chat List",
+  "clear": {
+    "action": "Clear Context",
+    "alert": "Are you sure you want to delete the history messages?",
+    "tip": "This action is irreversible, please proceed with caution"
+  },
   "danceList": "Dance List",
   "danceMarket": "Dance Market",
   "delSession": "Delete Session",
@@ -52,11 +57,12 @@
   "editRole": {
     "action": "Edit Role"
   },
-  "history": {
-    "action": "Clear Context",
-    "alert": "Are you sure you want to delete the history messages?",
-    "tip": "This action is irreversible, please proceed with caution.",
-    "title": "Chat History"
+  "enableHistoryCount": {
+    "alias": "No Limit",
+    "limited": "Only includes {{number}} session messages",
+    "setlimited": "Set the number of historical messages",
+    "title": "Limit Historical Message Count",
+    "unlimited": "Unlimited Historical Message Count"
   },
   "info": {
     "background": "Background",

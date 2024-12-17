@@ -140,6 +140,20 @@
     "title": "Language Model",
     "waitingForMore": "More models are currently <1>being planned for integration</1>, please stay tuned."
   },
+  "systemAgent": {
+    "customPrompt": {
+      "addPrompt": "Add Custom Prompt",
+      "desc": "Once filled out, the system assistant will use the custom prompt when generating content",
+      "placeholder": "Please enter custom prompt",
+      "title": "Custom Prompt"
+    },
+    "emotionAnalysis": {
+      "label": "Emotion Analysis Model",
+      "modelDesc": "Specify the model used for emotion analysis",
+      "title": "Automatic Emotion Analysis"
+    },
+    "title": "System Agent"
+  },
   "touch": {
     "title": "Touch Settings"
   },

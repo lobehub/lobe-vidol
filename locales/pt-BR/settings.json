@@ -140,6 +140,20 @@
     "title": "Modelo de Linguagem",
     "waitingForMore": "Mais modelos estão <1>planejados para serem integrados</1>, fique atento"
   },
+  "systemAgent": {
+    "customPrompt": {
+      "addPrompt": "Adicionar Prompt Personalizado",
+      "desc": "Após preenchido, o assistente do sistema usará o prompt personalizado ao gerar conteúdo",
+      "placeholder": "Digite a palavra-chave do prompt personalizado",
+      "title": "Palavra-chave do Prompt Personalizado"
+    },
+    "emotionAnalysis": {
+      "label": "Modelo de Análise de Emoção",
+      "modelDesc": "Modelo especificado para análise de emoção",
+      "title": "Análise de Emoção Automática"
+    },
+    "title": "Agente do Sistema"
+  },
   "touch": {
     "title": "Configurações de Toque"
   },

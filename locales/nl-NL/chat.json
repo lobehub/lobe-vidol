@@ -45,6 +45,11 @@
   "camera": "Videobellen",
   "chat": "Chatten",
   "chatList": "Chatlijst",
+  "clear": {
+    "action": "Context wissen",
+    "alert": "Weet je zeker dat je de historische berichten wilt verwijderen?",
+    "tip": "Deze actie is onomkeerbaar, wees voorzichtig"
+  },
   "danceList": "Danslijst",
   "danceMarket": "Dansmarkt",
   "delSession": "Verwijder sessie",
@@ -52,11 +57,12 @@
   "editRole": {
     "action": "Rol bewerken"
   },
-  "history": {
-    "action": "Context wissen",
-    "alert": "Weet je zeker dat je de historische berichten wilt verwijderen?",
-    "tip": "Deze actie is onomkeerbaar, wees voorzichtig.",
-    "title": "Chatgeschiedenis"
+  "enableHistoryCount": {
+    "alias": "Geen beperking",
+    "limited": "Bevat alleen {{number}} gespreksberichten",
+    "setlimited": "Gebruik het aantal historische berichten",
+    "title": "Beperk het aantal historische berichten",
+    "unlimited": "Geen beperking op het aantal historische berichten"
   },
   "info": {
     "background": "Achtergrond",

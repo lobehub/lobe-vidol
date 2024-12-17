@@ -140,6 +140,20 @@
     "title": "Modelo de Lenguaje",
     "waitingForMore": "Más modelos están <1>programados para integrarse</1>, por favor espera"
   },
+  "systemAgent": {
+    "customPrompt": {
+      "addPrompt": "Agregar aviso personalizado",
+      "desc": "Al completarlo, el asistente del sistema utilizará el aviso personalizado al generar contenido",
+      "placeholder": "Introduce la palabra clave del aviso personalizado",
+      "title": "Palabra clave del aviso personalizado"
+    },
+    "emotionAnalysis": {
+      "label": "Modelo de análisis de emociones",
+      "modelDesc": "Modelo designado para el análisis de emociones",
+      "title": "Análisis de emociones automático"
+    },
+    "title": "Agente del sistema"
+  },
   "touch": {
     "title": "Configuración de toque"
   },

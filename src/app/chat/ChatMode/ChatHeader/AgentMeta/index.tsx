@@ -2,7 +2,7 @@ import { Avatar } from '@lobehub/ui';
 import { Space, Typography } from 'antd';
 import React from 'react';
 
-import useSessionContext from '@/hooks/useSessionContext';
+import { sessionSelectors, useSessionStore } from '@/store/session';
 
 import ModelSwitchPanel from '../actions/ModelSwitchPanel';
 import { useStyles } from './style';
@@ -16,7 +16,7 @@ export default (props: AgentMetaProps) => {
   const { styles, cx } = useStyles();
   const { style, className } = props;
 
-  const { sessionAgent } = useSessionContext();
+  const sessionAgent = useSessionStore((s) => sessionSelectors.currentAgent(s));
 
   const meta = sessionAgent?.meta;
   const { avatar, name, description } = meta || {};

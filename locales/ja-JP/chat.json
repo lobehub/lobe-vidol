@@ -45,6 +45,11 @@
   "camera": "ビデオ通話",
   "chat": "チャット",
   "chatList": "チャットリスト",
+  "clear": {
+    "action": "コンテキストをクリア",
+    "alert": "履歴メッセージを削除してもよろしいですか？",
+    "tip": "この操作は元に戻せませんので、慎重に行ってください"
+  },
   "danceList": "ダンスリスト",
   "danceMarket": "ダンスマーケット",
   "delSession": "セッションを削除",
@@ -52,11 +57,12 @@
   "editRole": {
     "action": "ロールを編集"
   },
-  "history": {
-    "action": "コンテキストをクリア",
-    "alert": "履歴メッセージを削除してもよろしいですか？",
-    "tip": "この操作は元に戻せませんので、慎重に行ってください",
-    "title": "チャット履歴"
+  "enableHistoryCount": {
+    "alias": "制限なし",
+    "limited": "{{number}} 件のセッションメッセージのみを含む",
+    "setlimited": "履歴メッセージ数を使用",
+    "title": "履歴メッセージ数を制限",
+    "unlimited": "履歴メッセージ数に制限なし"
   },
   "info": {
     "background": "背景",

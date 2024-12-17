@@ -140,6 +140,20 @@
     "title": "Taalmodel",
     "waitingForMore": "Meer modellen zijn momenteel <1>in planning</1>, blijf op de hoogte."
   },
+  "systemAgent": {
+    "customPrompt": {
+      "addPrompt": "Voeg aangepaste prompt toe",
+      "desc": "Vul dit in, zodat de systeemassistent de aangepaste prompt gebruikt bij het genereren van inhoud",
+      "placeholder": "Voer aangepaste prompt in",
+      "title": "Aangepaste prompt"
+    },
+    "emotionAnalysis": {
+      "label": "Emotie-analysemode",
+      "modelDesc": "Specificeer het model dat voor emotie-analyse moet worden gebruikt",
+      "title": "Automatische emotie-analyse"
+    },
+    "title": "Systeemagent"
+  },
   "touch": {
     "title": "Aanraakinstellingen"
   },

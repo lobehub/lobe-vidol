@@ -45,6 +45,11 @@
   "camera": "영상 통화",
   "chat": "채팅",
   "chatList": "채팅 목록",
+  "clear": {
+    "action": "컨텍스트 지우기",
+    "alert": "역사 메시지를 삭제하시겠습니까?",
+    "tip": "이 작업은 되돌릴 수 없으니 주의하시기 바랍니다."
+  },
   "danceList": "댄스 목록",
   "danceMarket": "댄스 마켓",
   "delSession": "세션 삭제",
@@ -52,11 +57,12 @@
   "editRole": {
     "action": "역할 편집"
   },
-  "history": {
-    "action": "문맥 지우기",
-    "alert": "역사 메시지를 삭제하시겠습니까?",
-    "tip": "이 작업은 되돌릴 수 없으니 신중하게 진행하세요.",
-    "title": "채팅 기록"
+  "enableHistoryCount": {
+    "alias": "제한 없음",
+    "limited": "단지 {{number}}개의 세션 메시지만 포함",
+    "setlimited": "역사 메시지 수 사용",
+    "title": "역사 메시지 수 제한",
+    "unlimited": "역사 메시지 수 제한 없음"
   },
   "info": {
     "background": "배경",
