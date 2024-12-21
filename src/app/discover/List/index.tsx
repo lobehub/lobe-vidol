@@ -22,6 +22,7 @@ const useStyles = createStyles(({ css, token }) => ({
     padding-inline: ${token.paddingSM}px;
   `,
   tabsNav: css`
+    margin-bottom: ${token.margin}px;
     padding-inline: ${token.paddingSM}px;
   `,
   list: css`

@@ -60,7 +60,7 @@ const RoleList = () => {
 
   return (
     <div className={styles.role}>
-      <Flexbox style={{ padding: '16px 8px 0' }}>
+      <Flexbox style={{ padding: '0 8px 0' }} gap={8}>
         <SearchBar
           enableShortKey
           onChange={(e) => {

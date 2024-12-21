@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 import { SIDEBAR_MAX_WIDTH, SIDEBAR_WIDTH } from '@/constants/token';
 import { useGlobalStore } from '@/store/global';
 
+import RoleHeader from './RoleHeader';
 import RoleList from './RoleList';
 
 const useStyles = createStyles(({ css, token }) => ({
@@ -52,6 +53,7 @@ const SideBar = () => {
       onExpandChange={handleExpand}
       expand={showRoleList}
     >
+      <RoleHeader />
       <RoleList />
     </DraggablePanel>
   );

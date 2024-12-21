@@ -5,7 +5,6 @@ import React, { useState } from 'react';
 import { Flexbox } from 'react-layout-kit';
 import useSWR from 'swr';
 
-import { HEADER_HEIGHT } from '@/constants/token';
 import { getAgentIndex } from '@/services/agent';
 import { configSelectors, useSettingStore } from '@/store/setting';
 import { Agent } from '@/types/agent';
@@ -20,7 +19,7 @@ const useStyles = createStyles(({ css, responsive }) => ({
     overflow-y: auto;
 
     width: 100%;
-    height: calc(100% - ${HEADER_HEIGHT}px);
+    height: 100%;
     min-height: 500px;
     padding: 0 32px 16px;
 

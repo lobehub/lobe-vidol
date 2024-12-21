@@ -1,7 +1,8 @@
 import { DiscordIcon, Icon } from '@lobehub/ui';
 import { ItemType } from 'antd/es/menu/interface';
-import { Book, Download, Feather, LifeBuoy, Mail } from 'lucide-react';
+import { Book, Download, Feather, LifeBuoy, Mail, Settings2 } from 'lucide-react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { useTranslation } from 'react-i18next';
 
 import type { MenuProps } from '@/components/Menu';
@@ -13,7 +14,20 @@ import { usePWAInstall } from '@/hooks/usePWAInstall';
 
 export const useMenu = () => {
   const { canInstall, install } = usePWAInstall();
-  const { t } = useTranslation(['common', 'setting', 'auth']);
+  const { t } = useTranslation(['common', 'setting']);
+  const router = useRouter();
+
+  const settings: MenuProps['items'] = [
+    {
+      label: t('userPanel.setting'),
+      onClick: () => router.push('/settings'),
+      icon: <Icon icon={Settings2} />,
+      key: 'setting',
+    },
+    {
+      type: 'divider',
+    },
+  ];
 
   /* ↓ cloud slot ↓ */
 
@@ -125,6 +139,7 @@ export const useMenu = () => {
     {
       type: 'divider',
     },
+    ...settings,
     ...(canInstall ? pwa : []),
     // ...data,
     ...helps,

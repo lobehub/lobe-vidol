@@ -58,7 +58,7 @@ const SessionList = () => {
   const { t } = useTranslation('chat');
   return (
     <div className={styles.session}>
-      <Flexbox style={{ padding: '16px 8px 0' }}>
+      <Flexbox style={{ padding: '0 8px 0' }}>
         <SearchBar
           enableShortKey
           onChange={(e) => {

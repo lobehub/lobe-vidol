@@ -34,6 +34,7 @@ export default {
   delRoleDesc: '确定删除角色 {{name}} 以及相关联的会话消息吗？删除后无法恢复, 请谨慎操作！',
   noRole: '暂无角色，可以通过 + 创建自定义角色，也可通过发现页添加角色',
   role: {
+    myRole: '我的角色',
     create: '创建角色',
     selectGender: '选择角色性别',
     uploadSize: '支持单个文件上传，推荐尺寸为 {{width}} * {{height}} 的倍数',

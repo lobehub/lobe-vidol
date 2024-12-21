@@ -6,9 +6,10 @@ import isEqual from 'lodash-es/isEqual';
 import { rgba } from 'polished';
 import { memo, useEffect, useState } from 'react';
 
-import { CHAT_HEADER_HEIGHT, SIDEBAR_WIDTH } from '@/constants/token';
+import { SIDEBAR_WIDTH } from '@/constants/token';
 import { useGlobalStore } from '@/store/global';
 
+import ChatHeader from './ChatHeader';
 import SessionList from './SessionList';
 
 const useStyles = createStyles(({ css, token }) => ({
@@ -58,9 +59,8 @@ const SideBar = memo(() => {
       onExpandChange={handleExpand}
       expand={showSessionList}
     >
-      <div style={{ height: `calc(100vh - ${CHAT_HEADER_HEIGHT}px)`, overflowY: 'auto' }}>
-        <SessionList />
-      </div>
+      <ChatHeader />
+      <SessionList />
     </DraggablePanel>
   );
 });

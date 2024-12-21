@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { createStyles, useTheme } from 'antd-style';
 import { ReactNode, memo } from 'react';
 import { type HTMLAttributes } from 'react';
@@ -42,10 +43,14 @@ const Logo = memo<LobeHubProps>(({ size = 32, style, extra, className, ...rest }
       {...rest}
     >
       <img alt={'logo'} src={'/icons/logo.svg'} width={size} height={size} />
-      <Divider size={extraSize} style={{ color: theme.colorFill }} />
-      <div className={styles.extraTitle} style={{ fontSize: extraSize }}>
-        {extra}
-      </div>
+      {extra && (
+        <>
+          <Divider size={extraSize} style={{ color: theme.colorFill }} />
+          <div className={styles.extraTitle} style={{ fontSize: extraSize }}>
+            {extra}
+          </div>
+        </>
+      )}
     </Flexbox>
   );
 });

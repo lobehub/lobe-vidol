@@ -1,7 +1,7 @@
-import { PlusOutlined } from '@ant-design/icons';
-import { Modal } from '@lobehub/ui';
+import { ActionIcon, Modal } from '@lobehub/ui';
 import { Avatar, Button, message } from 'antd';
 import { createStyles } from 'antd-style';
+import { MessageSquarePlus } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -82,9 +82,12 @@ export default function CreateRole() {
 
   return (
     <>
-      <Button type={'default'} onClick={() => setIsModalOpen(true)} icon={<PlusOutlined />}>
-        {t('role.create')}
-      </Button>
+      <ActionIcon
+        onClick={() => setIsModalOpen(true)}
+        icon={MessageSquarePlus}
+        size="large"
+        title={t('role.create')}
+      />
 
       <Modal
         allowFullscreen

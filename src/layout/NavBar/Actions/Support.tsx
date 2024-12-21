@@ -50,7 +50,7 @@ const Support: React.FC = () => {
   );
 
   return (
-    <Popover content={content} title={t('support.title')} trigger="hover" placement="bottom">
+    <Popover content={content} title={t('support.title')} trigger="hover" placement="right">
       <ActionIcon
         icon={Coffee}
         key="coffee"
