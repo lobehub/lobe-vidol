@@ -8,6 +8,7 @@ import NProgress from '@/components/NProgress';
 import { DEFAULT_LANG, LOBE_LOCALE_COOKIE } from '@/constants/locale';
 import PWAInstall from '@/features/PWAInstall';
 import Layout from '@/layout';
+import AppLayout from '@/layout/AppLayout';
 import { isMobileDevice } from '@/utils/server/responsive';
 
 import StyleRegistry from './StyleRegistry';
@@ -31,7 +32,7 @@ const RootLayout = async ({ children }: PropsWithChildren) => {
           <Layout>
             <NProgress />
             <PWAInstall />
-            {children}
+            <AppLayout>{children}</AppLayout>
           </Layout>
         </StyleRegistry>
         <Analytics />

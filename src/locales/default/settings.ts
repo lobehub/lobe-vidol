@@ -166,4 +166,12 @@ export default {
       modelDesc: '指定用于情感分析的模型',
     },
   },
+  header: {
+    desc: '偏好与模型设置',
+    global: '全局设置',
+    session: '会话设置',
+    sessionDesc: '角色设定与会话偏好',
+    sessionWithName: '会话设置 · {{name}}',
+    title: '设置',
+  },
 };

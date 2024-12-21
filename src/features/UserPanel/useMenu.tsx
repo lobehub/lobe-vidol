@@ -4,11 +4,13 @@ import { Book, Download, Feather, LifeBuoy, Mail, Settings2 } from 'lucide-react
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useTranslation } from 'react-i18next';
+import urlJoin from 'url-join';
 
 import type { MenuProps } from '@/components/Menu';
 import { DISCORD, DOCUMENTS_REFER_URL, EMAIL_SUPPORT, GITHUB_ISSUES } from '@/constants/url';
 // import DataImporter from '@/features/DataImporter';
 import { usePWAInstall } from '@/hooks/usePWAInstall';
+import { SettingsTabs } from '@/store/global';
 
 // import { configService } from '@/services/config';
 
@@ -20,7 +22,7 @@ export const useMenu = () => {
   const settings: MenuProps['items'] = [
     {
       label: t('userPanel.setting'),
-      onClick: () => router.push('/settings'),
+      onClick: () => router.push(urlJoin('/settings', SettingsTabs.Common)),
       icon: <Icon icon={Settings2} />,
       key: 'setting',
     },

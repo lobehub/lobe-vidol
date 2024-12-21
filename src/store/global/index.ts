@@ -7,6 +7,13 @@ import { ChatMode } from '@/types/session';
 
 const viewer = new Viewer();
 
+export enum SettingsTabs {
+  Common = 'common',
+  LLM = 'llm',
+  TTS = 'tts',
+  Touch = 'touch',
+}
+
 export interface GlobalStore {
   backgroundUrl: string | undefined;
   chatMode: ChatMode;

@@ -12,14 +12,7 @@ import { useTranslation } from 'react-i18next';
 import { Center, Flexbox } from 'react-layout-kit';
 import urlJoin from 'url-join';
 
-import { useSyncSettings } from '@/app/settings/Settings/hooks/useSyncSettings';
-import {
-  KeyVaultsConfigKey,
-  LLMProviderApiTokenKey,
-  LLMProviderBaseUrlKey,
-  LLMProviderConfigKey,
-  LLMProviderModelListKey,
-} from '@/app/settings/Settings/llm/const';
+import { useSyncSettings } from '@/app/settings/hooks/useSyncSettings';
 import { FORM_STYLE } from '@/constants/token';
 import { BASE_PROVIDER_DOC_URL } from '@/constants/url';
 import { useSettingStore } from '@/store/setting';
@@ -27,6 +20,13 @@ import { keyVaultsConfigSelectors, modelConfigSelectors } from '@/store/setting/
 import { ModelProviderCard } from '@/types/llm';
 import { GlobalLLMProviderKey } from '@/types/provider/modelProvider';
 
+import {
+  KeyVaultsConfigKey,
+  LLMProviderApiTokenKey,
+  LLMProviderBaseUrlKey,
+  LLMProviderConfigKey,
+  LLMProviderModelListKey,
+} from '../../const';
 import Checker from '../Checker';
 import ProviderModelListSelect from '../ProviderModelList';
 

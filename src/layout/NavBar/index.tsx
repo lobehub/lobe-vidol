@@ -3,11 +3,12 @@
 import { ActionIcon, SideNav } from '@lobehub/ui';
 import { theme } from 'antd';
 import { Compass, MessageSquare, User } from 'lucide-react';
-import { usePathname, useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import { memo, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
+import { useActiveTabKey } from '@/hooks/useActiveTabKey';
 import { HeaderNavKey } from '@/layout/type';
 
 import Avatar from './Actions/Avatar';
@@ -15,24 +16,11 @@ import Documentation from './Actions/Documentation';
 import Github from './Actions/Github';
 import Support from './Actions/Support';
 
-interface NavBarProps {
-  headerKey?: HeaderNavKey;
-}
-
-const NavBar = (props: NavBarProps) => {
-  const { headerKey: propHeaderKey } = props;
+const NavBar = () => {
   const router = useRouter();
-  const pathname = usePathname();
   const { t } = useTranslation('common');
   const { token } = theme.useToken();
-
-  const headerKey = useMemo(() => {
-    if (propHeaderKey) return propHeaderKey;
-    const path = pathname.split('/')[1];
-    return Object.values(HeaderNavKey).includes(path as HeaderNavKey)
-      ? (path as HeaderNavKey)
-      : HeaderNavKey.Chat;
-  }, [propHeaderKey, pathname]);
+  const headerKey = useActiveTabKey();
 
   const navigationItems = useMemo(() => {
     return [

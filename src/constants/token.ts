@@ -11,6 +11,9 @@ export const FORM_STYLE: FormProps = {
   itemMinWidth: 'max(30%,240px)',
   style: { width: '100%' },
 };
+
+export const MAX_WIDTH = 1440;
+
 // 默认 zIndex
 export const INITIAL_Z_INDEX = 10;
 export const CHAT_TEXTAREA_MAX_HEIGHT = 570;

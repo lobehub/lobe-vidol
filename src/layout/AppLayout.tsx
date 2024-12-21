@@ -2,17 +2,15 @@ import { ReactNode, memo } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
 import NavBar from './NavBar';
-import { HeaderNavKey } from './type';
 
 interface AppLayoutDesktopProps {
   children: ReactNode;
-  headerKey?: HeaderNavKey;
 }
 
-const AppLayoutDesktop = memo<AppLayoutDesktopProps>(({ children, headerKey }) => {
+const AppLayoutDesktop = memo<AppLayoutDesktopProps>(({ children }) => {
   return (
     <Flexbox height={'100%'} width={'100%'} horizontal>
-      <NavBar headerKey={headerKey} />
+      <NavBar />
       <Flexbox flex={1} height={'100%'} width={'100%'}>
         {children}
       </Flexbox>
