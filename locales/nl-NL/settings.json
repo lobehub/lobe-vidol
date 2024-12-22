@@ -64,6 +64,14 @@
     },
     "title": "Algemene instellingen"
   },
+  "header": {
+    "desc": "Voorkeuren en modelinstellingen",
+    "global": "Globale instellingen",
+    "session": "Sessie-instellingen",
+    "sessionDesc": "Rolinstellingen en sessievoorkeuren",
+    "sessionWithName": "Sessie-instellingen · {{name}}",
+    "title": "Instellingen"
+  },
   "llm": {
     "aesGcm": "Uw sleutel en proxy-adres worden versleuteld met het <1>AES-GCM</1> encryptie-algoritme",
     "apiKey": {

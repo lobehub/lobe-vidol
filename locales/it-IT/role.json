@@ -83,6 +83,7 @@
     "createRoleFailed": "Creazione del ruolo fallita",
     "greetTip": "Inserisci il saluto che utilizzerai per interagire con il ruolo",
     "inputRoleSetting": "Inserisci le impostazioni del sistema per il ruolo",
+    "myRole": "Il mio ruolo",
     "roleDescriptionTip": "Inserisci la descrizione del ruolo",
     "roleNameTip": "Inserisci il nome del ruolo",
     "roleReadmeTip": "Inserisci la descrizione del ruolo",

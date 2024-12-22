@@ -83,6 +83,7 @@
     "createRoleFailed": "Tạo nhân vật thất bại",
     "greetTip": "Vui lòng nhập lời chào khi bạn gặp gỡ nhân vật",
     "inputRoleSetting": "Vui lòng nhập cài đặt hệ thống cho nhân vật",
+    "myRole": "Vai trò của tôi",
     "roleDescriptionTip": "Vui lòng nhập mô tả cho nhân vật",
     "roleNameTip": "Vui lòng nhập tên nhân vật",
     "roleReadmeTip": "Vui lòng nhập mô tả về nhân vật",

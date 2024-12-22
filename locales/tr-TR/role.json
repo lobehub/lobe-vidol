@@ -83,6 +83,7 @@
     "createRoleFailed": "Rol oluşturma başarısız oldu",
     "greetTip": "Rol ile selamlaşırken kullanacağınız ifadeyi girin",
     "inputRoleSetting": "Rolün sistem ayarlarını girin",
+    "myRole": "Benim Rolüm",
     "roleDescriptionTip": "Rol tanımını girin",
     "roleNameTip": "Rol adını girin",
     "roleReadmeTip": "Rol açıklamasını girin",

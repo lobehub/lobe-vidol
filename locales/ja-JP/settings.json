@@ -64,6 +64,14 @@
     },
     "title": "一般設定"
   },
+  "header": {
+    "desc": "好みとモデル設定",
+    "global": "グローバル設定",
+    "session": "セッション設定",
+    "sessionDesc": "役割設定とセッションの好み",
+    "sessionWithName": "セッション設定 · {{name}}",
+    "title": "設定"
+  },
   "llm": {
     "aesGcm": "あなたのキーとプロキシアドレスなどは <1>AES-GCM</1> 暗号化アルゴリズムを使用して暗号化されます",
     "apiKey": {

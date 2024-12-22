@@ -64,6 +64,14 @@
     },
     "title": "Impostazioni generali"
   },
+  "header": {
+    "desc": "Preferenze e impostazioni del modello",
+    "global": "Impostazioni globali",
+    "session": "Impostazioni della sessione",
+    "sessionDesc": "Impostazioni del ruolo e preferenze della sessione",
+    "sessionWithName": "Impostazioni della sessione · {{name}}",
+    "title": "Impostazioni"
+  },
   "llm": {
     "aesGcm": "La tua chiave e l'indirizzo del proxy saranno crittografati utilizzando l'algoritmo di crittografia <1>AES-GCM</1>",
     "apiKey": {

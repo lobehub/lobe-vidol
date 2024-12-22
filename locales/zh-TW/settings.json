@@ -64,6 +64,14 @@
     },
     "title": "通用設定"
   },
+  "header": {
+    "desc": "偏好與模型設定",
+    "global": "全局設定",
+    "session": "會話設定",
+    "sessionDesc": "角色設定與會話偏好",
+    "sessionWithName": "會話設定 · {{name}}",
+    "title": "設定"
+  },
   "llm": {
     "aesGcm": "您的密鑰與代理地址等將使用 <1>AES-GCM</1> 加密演算法進行加密",
     "apiKey": {

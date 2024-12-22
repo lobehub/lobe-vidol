@@ -64,6 +64,14 @@
     },
     "title": "General Settings"
   },
+  "header": {
+    "desc": "Preferences and Model Settings",
+    "global": "Global Settings",
+    "session": "Session Settings",
+    "sessionDesc": "Role Configuration and Session Preferences",
+    "sessionWithName": "Session Settings · {{name}}",
+    "title": "Settings"
+  },
   "llm": {
     "aesGcm": "Your key and proxy address will be encrypted using the <1>AES-GCM</1> encryption algorithm.",
     "apiKey": {

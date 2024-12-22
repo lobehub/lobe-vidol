@@ -64,6 +64,14 @@
       }
     }
   },
+  "header": {
+    "desc": "偏好与模型设置",
+    "global": "全局设置",
+    "session": "会话设置",
+    "sessionDesc": "角色设定与会话偏好",
+    "sessionWithName": "会话设置 · {{name}}",
+    "title": "设置"
+  },
   "llm": {
     "title": "语言模型",
     "aesGcm": "您的秘钥与代理地址等将使用 <1>AES-GCM</1> 加密算法进行加密",

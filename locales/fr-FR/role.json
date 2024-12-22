@@ -83,6 +83,7 @@
     "createRoleFailed": "Échec de la création du rôle",
     "greetTip": "Veuillez entrer une salutation pour le personnage",
     "inputRoleSetting": "Veuillez entrer les paramètres système du personnage",
+    "myRole": "Mon rôle",
     "roleDescriptionTip": "Veuillez entrer la description du personnage",
     "roleNameTip": "Veuillez entrer le nom du personnage",
     "roleReadmeTip": "Veuillez entrer la description du personnage",

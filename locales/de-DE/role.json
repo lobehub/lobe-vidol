@@ -83,6 +83,7 @@
     "createRoleFailed": "Rolle konnte nicht erstellt werden",
     "greetTip": "Bitte geben Sie die Begrüßungsformel für den Charakter ein",
     "inputRoleSetting": "Bitte geben Sie die Systemeinstellungen des Charakters ein",
+    "myRole": "Meine Rolle",
     "roleDescriptionTip": "Bitte geben Sie die Charakterbeschreibung ein",
     "roleNameTip": "Bitte geben Sie den Namen des Charakters ein",
     "roleReadmeTip": "Bitte geben Sie die Beschreibung des Charakters ein",

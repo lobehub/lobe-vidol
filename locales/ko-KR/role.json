@@ -83,6 +83,7 @@
     "createRoleFailed": "역할 생성 실패",
     "greetTip": "캐릭터와 인사할 때 사용할 문구를 입력하세요.",
     "inputRoleSetting": "캐릭터의 시스템 설정을 입력하세요.",
+    "myRole": "내 역할",
     "roleDescriptionTip": "캐릭터의 설명을 입력하세요.",
     "roleNameTip": "캐릭터의 이름을 입력하세요.",
     "roleReadmeTip": "캐릭터 설명을 입력하세요.",

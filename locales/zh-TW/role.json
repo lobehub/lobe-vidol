@@ -83,6 +83,7 @@
     "createRoleFailed": "角色建立失敗",
     "greetTip": "請輸入角色與你打招呼時的用語",
     "inputRoleSetting": "請輸入角色的系統設定",
+    "myRole": "我的角色",
     "roleDescriptionTip": "請輸入角色描述",
     "roleNameTip": "請輸入角色名稱",
     "roleReadmeTip": "請輸入角色說明",

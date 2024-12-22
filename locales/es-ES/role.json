@@ -83,6 +83,7 @@
     "createRoleFailed": "Error al crear el rol",
     "greetTip": "Introduce la frase de saludo que usarás con el personaje",
     "inputRoleSetting": "Introduce la configuración del sistema del personaje",
+    "myRole": "Mi rol",
     "roleDescriptionTip": "Introduce la descripción del personaje",
     "roleNameTip": "Introduce el nombre del personaje",
     "roleReadmeTip": "Introduce la descripción del personaje",
