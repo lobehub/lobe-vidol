@@ -3,7 +3,6 @@
 import { ReactNode, memo } from 'react';
 
 import AppLayout from '@/layout/AppLayout';
-import { HeaderNavKey } from '@/layout/type';
 
 import Effect from './Effect';
 
@@ -15,7 +14,7 @@ const LayoutDesktop = (props: LayoutProps) => {
   const { children } = props;
 
   return (
-    <AppLayout headerKey={HeaderNavKey.Chat}>
+    <AppLayout>
       {children}
       <Effect />
     </AppLayout>

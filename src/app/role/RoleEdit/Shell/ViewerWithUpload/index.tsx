@@ -4,7 +4,6 @@ import React, { CSSProperties, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
-import { HEADER_HEIGHT } from '@/constants/token';
 import AgentViewer from '@/features/AgentViewer';
 import { agentSelectors, useAgentStore } from '@/store/agent';
 import { useGlobalStore } from '@/store/global';
@@ -41,12 +40,7 @@ const ViewerWithUpload = memo<ViewerWithUploadProps>(({ style }) => {
   };
 
   return currentAgent3DModel && currentAgentId ? (
-    <AgentViewer
-      height={`calc(100vh - ${HEADER_HEIGHT}px)`}
-      agentId={currentAgentId}
-      interactive={false}
-      toolbar={false}
-    />
+    <AgentViewer agentId={currentAgentId} interactive={false} toolbar={false} />
   ) : (
     <Upload
       beforeUpload={handleUploadAvatar}

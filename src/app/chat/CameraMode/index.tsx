@@ -6,7 +6,6 @@ import React, { memo } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
 import ChatDialog from '@/app/chat/CameraMode/ChatDialog';
-import { HEADER_HEIGHT } from '@/constants/token';
 import AgentViewer from '@/features/AgentViewer';
 import { sessionSelectors, useSessionStore } from '@/store/session';
 
@@ -31,11 +30,7 @@ export default memo(() => {
       <Flexbox flex={1} style={{ position: 'relative' }}>
         {currentAgent ? (
           <div className={styles.viewer}>
-            <AgentViewer
-              height={`calc(100vh - ${HEADER_HEIGHT}px)`}
-              agentId={currentAgent.agentId}
-              interactive={interactive}
-            />
+            <AgentViewer agentId={currentAgent.agentId} interactive={interactive} />
           </div>
         ) : null}
         <ChatDialog className={classNames(styles.dialog, styles.content)} />

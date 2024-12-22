@@ -1,17 +1,12 @@
-'use client';
+import { PropsWithChildren } from 'react';
 
-import { ReactNode, memo } from 'react';
+import ServerLayout from '@/components/server/ServerLayout';
 
-import AppLayout from '@/layout/AppLayout';
-import { HeaderNavKey } from '@/layout/type';
+import Desktop from './_layout/Desktop';
+import Mobile from './_layout/Mobile';
 
-export interface LayoutProps {
-  children?: ReactNode;
-}
+const MainLayout = ServerLayout<PropsWithChildren>({ Desktop, Mobile });
 
-const LayoutDesktop = (props: LayoutProps) => {
-  const { children } = props;
-  return <AppLayout headerKey={HeaderNavKey.Settings}>{children}</AppLayout>;
-};
+MainLayout.displayName = 'DiscoverStoreLayout';
 
-export default memo(LayoutDesktop);
+export default MainLayout;

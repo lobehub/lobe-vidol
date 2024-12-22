@@ -3,7 +3,6 @@
 import { ReactNode, memo } from 'react';
 
 import AppLayout from '@/layout/AppLayout';
-import { HeaderNavKey } from '@/layout/type';
 
 export interface LayoutProps {
   children?: ReactNode;
@@ -12,7 +11,7 @@ export interface LayoutProps {
 const LayoutDesktop = (props: LayoutProps) => {
   const { children } = props;
 
-  return <AppLayout headerKey={HeaderNavKey.Role}>{children}</AppLayout>;
+  return <AppLayout>{children}</AppLayout>;
 };
 
 export default memo(LayoutDesktop);
