@@ -64,6 +64,14 @@
     },
     "title": "Allgemeine Einstellungen"
   },
+  "header": {
+    "desc": "Präferenzen und Modelleinstellungen",
+    "global": "Globale Einstellungen",
+    "session": "Sitzungseinstellungen",
+    "sessionDesc": "Rolleneinstellungen und Sitzungseinstellungen",
+    "sessionWithName": "Sitzungseinstellungen · {{name}}",
+    "title": "Einstellungen"
+  },
   "llm": {
     "aesGcm": "Ihr Schlüssel und die Proxy-Adresse werden mit dem <1>AES-GCM</1> Verschlüsselungsalgorithmus verschlüsselt.",
     "apiKey": {

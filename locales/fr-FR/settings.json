@@ -64,6 +64,14 @@
     },
     "title": "Paramètres généraux"
   },
+  "header": {
+    "desc": "Préférences et paramètres du modèle",
+    "global": "Paramètres globaux",
+    "session": "Paramètres de session",
+    "sessionDesc": "Configuration des rôles et préférences de session",
+    "sessionWithName": "Paramètres de session · {{name}}",
+    "title": "Paramètres"
+  },
   "llm": {
     "aesGcm": "Votre clé et l'adresse du proxy seront chiffrées à l'aide de l'algorithme de chiffrement <1>AES-GCM</1>",
     "apiKey": {

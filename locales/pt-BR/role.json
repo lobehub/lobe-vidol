@@ -83,6 +83,7 @@
     "createRoleFailed": "Falha ao criar papel",
     "greetTip": "Digite a saudação que você usaria ao cumprimentar o personagem",
     "inputRoleSetting": "Digite as configurações do sistema do personagem",
+    "myRole": "Meu papel",
     "roleDescriptionTip": "Digite a descrição do personagem",
     "roleNameTip": "Digite o nome do personagem",
     "roleReadmeTip": "Digite a descrição do personagem",

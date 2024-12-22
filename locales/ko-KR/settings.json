@@ -64,6 +64,14 @@
     },
     "title": "일반 설정"
   },
+  "header": {
+    "desc": "선호도 및 모델 설정",
+    "global": "전역 설정",
+    "session": "세션 설정",
+    "sessionDesc": "역할 설정 및 세션 선호도",
+    "sessionWithName": "세션 설정 · {{name}}",
+    "title": "설정"
+  },
   "llm": {
     "aesGcm": "귀하의 비밀 키와 프록시 주소 등은 <1>AES-GCM</1> 암호화 알고리즘을 사용하여 암호화됩니다.",
     "apiKey": {

@@ -64,6 +64,14 @@
     },
     "title": "Genel Ayarlar"
   },
+  "header": {
+    "desc": "Tercihler ve Model Ayarları",
+    "global": "Küresel Ayarlar",
+    "session": "Oturum Ayarları",
+    "sessionDesc": "Rol Ayarları ve Oturum Tercihleri",
+    "sessionWithName": "Oturum Ayarları · {{name}}",
+    "title": "Ayarlar"
+  },
   "llm": {
     "aesGcm": "Anahtarınız ve proxy adresi gibi bilgiler <1>AES-GCM</1> şifreleme algoritması ile şifrelenecektir.",
     "apiKey": {

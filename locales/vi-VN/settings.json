@@ -64,6 +64,14 @@
     },
     "title": "Cài đặt chung"
   },
+  "header": {
+    "desc": "Cài đặt sở thích và mô hình",
+    "global": "Cài đặt toàn cầu",
+    "session": "Cài đặt phiên",
+    "sessionDesc": "Thiết lập vai trò và sở thích phiên",
+    "sessionWithName": "Cài đặt phiên · {{name}}",
+    "title": "Cài đặt"
+  },
   "llm": {
     "aesGcm": "Khóa của bạn và địa chỉ proxy sẽ được mã hóa bằng thuật toán <1>AES-GCM</1>",
     "apiKey": {

@@ -83,6 +83,7 @@
     "createRoleFailed": "Role Creation Failed",
     "greetTip": "Please enter the greeting phrase for the character",
     "inputRoleSetting": "Please enter the system settings for the character",
+    "myRole": "My Role",
     "roleDescriptionTip": "Please enter the character's description",
     "roleNameTip": "Please enter the character's name",
     "roleReadmeTip": "Please enter the character's description",

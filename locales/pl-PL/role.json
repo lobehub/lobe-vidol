@@ -83,6 +83,7 @@
     "createRoleFailed": "Nie udało się utworzyć postaci",
     "greetTip": "Wprowadź powitanie, które chcesz użyć w rozmowie z postacią",
     "inputRoleSetting": "Wprowadź ustawienia systemowe postaci",
+    "myRole": "Moja rola",
     "roleDescriptionTip": "Wprowadź opis postaci",
     "roleNameTip": "Wprowadź nazwę postaci",
     "roleReadmeTip": "Wprowadź opis postaci",
