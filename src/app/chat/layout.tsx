@@ -2,6 +2,8 @@
 
 import { ReactNode, memo } from 'react';
 
+import AppLayout from '@/layout/AppLayout';
+
 import Effect from './Effect';
 
 export interface LayoutProps {
@@ -12,10 +14,10 @@ const LayoutDesktop = (props: LayoutProps) => {
   const { children } = props;
 
   return (
-    <>
+    <AppLayout>
       {children}
       <Effect />
-    </>
+    </AppLayout>
   );
 };
 

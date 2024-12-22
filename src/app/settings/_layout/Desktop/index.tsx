@@ -5,6 +5,8 @@ import { memo, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
+import AppLayout from '@/layout/AppLayout';
+
 import { useActiveSettingsKey } from '../../hooks/useActiveSettingsKey';
 import { LayoutProps } from '../type';
 import Header from './Header';
@@ -18,22 +20,24 @@ const Layout = memo<LayoutProps>(({ children, category }) => {
   const activeKey = useActiveSettingsKey();
 
   return (
-    <Flexbox
-      height={'100%'}
-      horizontal={md}
-      ref={ref}
-      style={{ position: 'relative' }}
-      width={'100%'}
-    >
-      {md ? (
-        <SideBar>{category}</SideBar>
-      ) : (
-        <Header getContainer={() => ref.current} title={<>{t(`tab.${activeKey}`)}</>}>
-          {category}
-        </Header>
-      )}
-      <SettingContainer>{children}</SettingContainer>
-    </Flexbox>
+    <AppLayout>
+      <Flexbox
+        height={'100%'}
+        horizontal={md}
+        ref={ref}
+        style={{ position: 'relative' }}
+        width={'100%'}
+      >
+        {md ? (
+          <SideBar>{category}</SideBar>
+        ) : (
+          <Header getContainer={() => ref.current} title={<>{t(`tab.${activeKey}`)}</>}>
+            {category}
+          </Header>
+        )}
+        <SettingContainer>{children}</SettingContainer>
+      </Flexbox>
+    </AppLayout>
   );
 });
 

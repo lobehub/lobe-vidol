@@ -2,6 +2,8 @@
 
 import { ReactNode, memo } from 'react';
 
+import AppLayout from '@/layout/AppLayout';
+
 export interface LayoutProps {
   children?: ReactNode;
 }
@@ -9,7 +11,7 @@ export interface LayoutProps {
 const LayoutDesktop = (props: LayoutProps) => {
   const { children } = props;
 
-  return children;
+  return <AppLayout>{children}</AppLayout>;
 };
 
 export default memo(LayoutDesktop);
