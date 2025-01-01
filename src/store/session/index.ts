@@ -205,7 +205,7 @@ export const createSessionStore: StateCreator<SessionStore, [['zustand/devtools'
             chatConfig: DEFAULT_CHAT_CONFIG,
           },
         };
-        draft.push(session);
+        draft.unshift(session);
       }
     });
 

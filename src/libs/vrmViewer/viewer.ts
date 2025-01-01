@@ -16,6 +16,7 @@ import { MMDAnimationHelper } from 'three/examples/jsm/animation/MMDAnimationHel
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { MMDLoader } from 'three/examples/jsm/loaders/MMDLoader.js';
 
+import { VRM_TO_MMD_SCALE } from '@/constants/common';
 import { loadVMDCamera } from '@/libs/VMDAnimation/loadVMDCamera';
 import { MotionFileType } from '@/libs/emoteController/type';
 import { TouchAreaEnum } from '@/types/touch';
@@ -105,7 +106,8 @@ export class Viewer {
     // 加载摄像机动画
     let cameraPromise = null;
     if (cameraUrl && this._camera) {
-      cameraPromise = loadVMDCamera(cameraUrl, this._camera).then((cameraAnimation) => {
+      const scale = this.calculateVRMScale();
+      cameraPromise = loadVMDCamera(cameraUrl, this._camera, scale).then((cameraAnimation) => {
         if (this._camera && cameraAnimation) {
           this._cameraMixer = new THREE.AnimationMixer(this._camera);
           this._cameraAction = this._cameraMixer.clipAction(cameraAnimation);
@@ -507,5 +509,24 @@ export class Viewer {
       this._camera.aspect = width / height;
       this._camera.updateProjectionMatrix();
     }
+  }
+
+  /**
+   * 计算当前加载的 VRM 模型的缩放比例
+   * @returns 基于模型高度计算的缩放比例
+   */
+  private calculateVRMScale(): number {
+    if (!this.model?.vrm) {
+      return VRM_TO_MMD_SCALE;
+    }
+
+    const boundingBox = new Box3().setFromObject(this.model.vrm.scene);
+    const size = new Vector3();
+    boundingBox.getSize(size);
+    const vrmHeight = size.y;
+
+    // MMD 标准模型高度约为 20 单位
+    const MMD_STANDARD_HEIGHT = 20;
+    return vrmHeight / MMD_STANDARD_HEIGHT;
   }
 }

@@ -16,6 +16,7 @@ export const useStyles = createStyles(({ css, token }) => ({
     position: sticky;
     inset-block-start: 0;
     height: 64px;
+    line-height: 64px;
   `,
 }));
 
