@@ -1,4 +1,4 @@
-import { AnimationClip, PerspectiveCamera } from 'three';
+import { AnimationClip, Box3, Object3D, PerspectiveCamera, Vector3 } from 'three';
 import { MMDAnimationHelper } from 'three/examples/jsm/animation/MMDAnimationHelper.js';
 import { MMDLoader } from 'three/examples/jsm/loaders/MMDLoader.js';
 
