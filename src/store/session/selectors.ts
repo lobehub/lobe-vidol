@@ -42,18 +42,15 @@ const filterSessionListIds = (s: SessionStore, filter: string | undefined) => {
   });
 };
 
-const getAgentById = (s: SessionStore) => {
+const getAgentById = (s: SessionStore, id: string) => {
   const { sessionList } = s;
   const agentStore = useAgentStore.getState();
-  return (id: string) => {
-    if (id === LOBE_VIDOL_DEFAULT_AGENT_ID) {
-      return agentStore.defaultAgent;
-    }
+  if (id === LOBE_VIDOL_DEFAULT_AGENT_ID) {
+    return agentStore.defaultAgent;
+  }
 
-    const agentId = sessionList.find((item) => item.agentId === id)?.agentId;
-
-    return agentStore.getAgentById(agentId || '');
-  };
+  const agentId = sessionList.find((item) => item.agentId === id)?.agentId;
+  return agentStore.getAgentById(agentId || '');
 };
 
 const currentAgent = (s: SessionStore) => {
