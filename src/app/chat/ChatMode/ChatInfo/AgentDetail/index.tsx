@@ -1,4 +1,5 @@
 import { Space } from 'antd';
+import isEqual from 'lodash-es/isEqual';
 import React, { memo } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
@@ -12,7 +13,7 @@ import History from '../actions/History';
 import TokenMini from '../actions/TokenMini';
 
 const ChatInfo = () => {
-  const sessionAgent = useSessionStore((s) => sessionSelectors.currentAgent(s));
+  const sessionAgent = useSessionStore((s) => sessionSelectors.currentAgent(s), isEqual);
 
   return (
     sessionAgent && (

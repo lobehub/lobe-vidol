@@ -1,5 +1,6 @@
 import { Empty } from 'antd';
 import { createStyles } from 'antd-style';
+import isEqual from 'lodash-es/isEqual';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import LazyLoad from 'react-lazy-load';
@@ -20,10 +21,10 @@ interface SessionListProps {
 }
 
 const SessionList = memo<SessionListProps>(({ filter }) => {
-  const [sessionListIds, switchSession] = useSessionStore((s) => [
-    sessionSelectors.filterSessionListIds(s, filter),
-    s.switchSession,
-  ]);
+  const [sessionListIds, switchSession] = useSessionStore(
+    (s) => [sessionSelectors.filterSessionListIds(s, filter), s.switchSession],
+    isEqual,
+  );
 
   const { styles } = useStyles();
   const { t } = useTranslation('chat');

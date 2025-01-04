@@ -1,5 +1,6 @@
 import { Avatar } from '@lobehub/ui';
 import { Space, Typography } from 'antd';
+import isEqual from 'lodash-es/isEqual';
 import React from 'react';
 
 import { sessionSelectors, useSessionStore } from '@/store/session';
@@ -16,7 +17,7 @@ export default (props: AgentMetaProps) => {
   const { styles, cx } = useStyles();
   const { style, className } = props;
 
-  const sessionAgent = useSessionStore((s) => sessionSelectors.currentAgent(s));
+  const sessionAgent = useSessionStore((s) => sessionSelectors.currentAgent(s), isEqual);
 
   const meta = sessionAgent?.meta;
   const { avatar, name, description } = meta || {};

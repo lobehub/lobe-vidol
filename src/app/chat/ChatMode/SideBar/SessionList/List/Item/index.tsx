@@ -1,3 +1,4 @@
+import isEqual from 'lodash-es/isEqual';
 import { memo, useMemo, useState } from 'react';
 
 import { sessionSelectors, useSessionStore } from '@/store/session';
@@ -13,13 +14,12 @@ interface SessionItemProps {
 const SessionItem = memo<SessionItemProps>(({ id, onClick }) => {
   const [open, setOpen] = useState(false);
 
-  const [activeSessionId, getAgentById] = useSessionStore((s) => [
-    s.activeId,
-    sessionSelectors.getAgentById(s),
-  ]);
+  const [activeSessionId, agentDetail] = useSessionStore(
+    (s) => [s.activeId, sessionSelectors.getAgentById(s, id)],
+    isEqual,
+  );
 
-  const { greeting, meta: { name = '', avatar = '', description = '' } = {} } =
-    getAgentById(id) || {};
+  const { greeting, meta: { name = '', avatar = '', description = '' } = {} } = agentDetail || {};
 
   const actions = useMemo(() => <Actions id={id} setOpen={setOpen} />, [id]);
 
