@@ -1,5 +1,5 @@
 import { Button } from 'antd';
-import { createStyles , useResponsive } from 'antd-style';
+import { createStyles, useResponsive } from 'antd-style';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import React, { useState } from 'react';
 import { Flexbox } from 'react-layout-kit';
@@ -134,7 +134,7 @@ const useStyles = createStyles(({ css, token, responsive }) => ({
 
     width: 160px;
     height: 240px;
-    border: 1px solid rgba(255, 255, 255, 80%);
+    border: 1px solid ${token.colorBorderSecondary};
     border-radius: 16px;
 
     transition: all 0.3s ease;
@@ -294,7 +294,7 @@ const RomanceCarousel = ({ items, onEmojiClick, onSelect }: RomanceCarouselProps
                 const zIndex = -Math.abs(position) + 10;
                 const opacity = Math.max(0.6, 1 - Math.abs(position) * 0.2);
                 const xOffset = position * 100; // Reduce spacing between cards
-                const scale = Math.max(0.8, 1 - Math.abs(position) * 0.15);
+                const scale = Math.max(0.8, 1 - Math.abs(position) * 0.1);
 
                 return (
                   <div

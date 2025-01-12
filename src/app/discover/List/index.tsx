@@ -129,7 +129,7 @@ const AgentList = (props: AgentListProps) => {
               image={Empty.PRESENTED_IMAGE_SIMPLE}
             />
           ) : (
-            <Grid maxItemWidth={240} gap={16}>
+            <Grid maxItemWidth={160} gap={16} rows={6}>
               {filteredAgents.map((agent) => (
                 <RoleCard
                   key={agent.agentId}
