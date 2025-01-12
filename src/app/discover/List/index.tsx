@@ -19,7 +19,6 @@ const useStyles = createStyles(({ css, token }) => ({
     background-color: rgba(255, 255, 255, 2%);
   `,
   searchBar: css`
-    margin-top: ${token.margin}px;
     padding-inline: ${token.paddingSM}px;
   `,
   tabsNav: css`
@@ -102,6 +101,7 @@ const AgentList = (props: AgentListProps) => {
           title: agent.meta.name,
           stats: agent.meta.description,
         }))}
+        onSelect={activateAgent}
         onEmojiClick={handleEmojiClick}
       />
       <SearchBar
