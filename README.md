@@ -162,7 +162,8 @@ The character market at LobeVidol brings together a variety of meticulously desi
 >
 > With the character creation feature, you can easily submit your character creations to our platform. We emphasize that LobeVidol has established a sophisticated automated internationalization (i18n) workflow, which seamlessly transforms your characters into multiple language versions. This means that regardless of the language your users speak, they can experience your characters without barriers.
 
-<img width="1320" alt="discover" src="https://github.com/user-attachments/assets/9f155227-6856-4957-9f6e-a9b3f534df24">
+<img width="1320" alt="discover" src="https://github.com/user-attachments/assets/6d2b35cb-6f49-424a-bfd0-5e68bbdaecd4" />
+
 
 The dance market at LobeVidol is enriched with a variety of MMD dance resources, creating a rich visual experience. You can combine different characters, stages, music, and dances to create a unique viewing experience.
 
