@@ -2,11 +2,12 @@ import { Grid, SearchBar, TabsNav } from '@lobehub/ui';
 import { Empty } from 'antd';
 import { createStyles } from 'antd-style';
 import classNames from 'classnames';
-import React, { memo, useState } from 'react';
+import React, { memo, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
 
 import RoleCard from '@/components/RoleCard';
+import RomanceCarousel from '@/components/RomanceCarousel';
 import SkeletonList from '@/components/SkeletonList';
 import { Agent, RoleCategoryEnum } from '@/types/agent';
 
@@ -14,8 +15,8 @@ const useStyles = createStyles(({ css, token }) => ({
   container: css`
     position: relative;
     height: 100%;
-    background-color: rgba(255, 255, 255, 2%);
     border-radius: ${token.borderRadius}px;
+    background-color: rgba(255, 255, 255, 2%);
   `,
   searchBar: css`
     margin-top: ${token.margin}px;
@@ -47,6 +48,23 @@ const AgentList = (props: AgentListProps) => {
 
   const { t } = useTranslation('role');
 
+  // Initialize with first 5 agents
+  const [selectedAgents, setSelectedAgents] = useState<Agent[]>([]);
+
+  // Update selected agents when agents list changes
+  useEffect(() => {
+    if (agents.length > 0) {
+      setSelectedAgents(agents.slice(0, 5));
+    }
+  }, [agents]);
+
+  // Function to randomly select 5 agents
+  const handleEmojiClick = () => {
+    const shuffled = [...agents].sort(() => 0.5 - Math.random());
+    const selected = shuffled.slice(0, 5);
+    setSelectedAgents(selected);
+  };
+
   // 定义分类选项
   const CATEGORIES = [
     { key: 'all', label: t('category.all') },
@@ -76,7 +94,16 @@ const AgentList = (props: AgentListProps) => {
   });
 
   return (
-    <Flexbox className={classNames(className, styles.container)} style={style}>
+    <Flexbox className={classNames(styles.container, className)} style={style}>
+      <RomanceCarousel
+        items={selectedAgents.map((agent) => ({
+          id: agent.agentId,
+          image: agent.meta.cover,
+          title: agent.meta.name,
+          stats: agent.meta.description,
+        }))}
+        onEmojiClick={handleEmojiClick}
+      />
       <SearchBar
         placeholder={t('search', { ns: 'common' })}
         value={searchKeyword}
