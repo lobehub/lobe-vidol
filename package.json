@@ -138,7 +138,7 @@
     "react-lazy-load": "^4.0.1",
     "react-virtuoso": "^4.12.3",
     "remark": "^15.0.1",
-    "remark-gfm": "^3.0.1",
+    "remark-gfm": "^4.0.0",
     "remark-html": "^16.0.1",
     "resolve-accept-language": "^3.1.9",
     "rtl-detect": "^1.1.2",
