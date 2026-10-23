@@ -13,7 +13,12 @@ jobs:
     runs-on: ubuntu-latest
     name: Wiki sync
     steps:
+      - uses: actions/create-github-app-token@v2
+        id: app-token
+        with:
+          app-id: ${{ vars.LOBEHUB_BOT_APP_ID }}
+          private-key: ${{ secrets.LOBEHUB_BOT_APP_PRIVATE_KEY }}
       - uses: OrlovM/Wiki-Action@v1
         with:
           path: 'contributing'
-          token: ${{ secrets.GH_TOKEN }}
+          token: ${{ steps.app-token.outputs.token }}
